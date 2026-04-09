@@ -113,9 +113,89 @@ exports[`Video Configure Menu Button 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -594,9 +674,89 @@ exports[`Video End event handler 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -1063,9 +1223,89 @@ exports[`Video Play and Pause event handlers 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -1544,7 +1784,7 @@ exports[`Video Play and Pause event handlers 2`] = `
             class="StyledBox-sc-13pk1d4-0 cazNit"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWzvhP"
+              class="StyledText-sc-1sadyjn-0 joVJYY"
             >
               NaN:NaN
             </span>
@@ -1561,7 +1801,7 @@ exports[`Video Play and Pause event handlers 2`] = `
             class="StyledBox-sc-13pk1d4-0 bmTeen"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hqLUOz"
+              class="StyledText-sc-1sadyjn-0 hLuLpA"
             />
             <svg
               aria-label="Actions"
@@ -1696,9 +1936,89 @@ exports[`Video autoPlay renders 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -2164,9 +2484,89 @@ exports[`Video controls below renders 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -2629,9 +3029,89 @@ exports[`Video controls over renders 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -3098,9 +3578,89 @@ exports[`Video duration event handler 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -3567,9 +4127,89 @@ exports[`Video fit  cover renders 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -4039,9 +4679,89 @@ exports[`Video fit contain renders 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -4511,9 +5231,89 @@ exports[`Video loop renders 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -4981,9 +5781,89 @@ exports[`Video mouse events handlers of controls 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -5422,7 +6302,7 @@ exports[`Video mouse events handlers of controls 2`] = `
             class="StyledBox-sc-13pk1d4-0 cazNit"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWzvhP"
+              class="StyledText-sc-1sadyjn-0 joVJYY"
             >
               NaN:NaN
             </span>
@@ -5439,7 +6319,7 @@ exports[`Video mouse events handlers of controls 2`] = `
             class="StyledBox-sc-13pk1d4-0 bmTeen"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hqLUOz"
+              class="StyledText-sc-1sadyjn-0 hLuLpA"
             />
             <svg
               aria-label="Actions"
@@ -5546,7 +6426,7 @@ exports[`Video mouse events handlers of controls 3`] = `
             class="StyledBox-sc-13pk1d4-0 cazNit"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWzvhP"
+              class="StyledText-sc-1sadyjn-0 joVJYY"
             >
               NaN:NaN
             </span>
@@ -5563,7 +6443,7 @@ exports[`Video mouse events handlers of controls 3`] = `
             class="StyledBox-sc-13pk1d4-0 bmTeen"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hqLUOz"
+              class="StyledText-sc-1sadyjn-0 hLuLpA"
             />
             <svg
               aria-label="Actions"
@@ -5698,9 +6578,89 @@ exports[`Video mute renders 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -6167,9 +7127,89 @@ exports[`Video renders 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -6636,9 +7676,89 @@ exports[`Video renders with theme 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -7105,9 +8225,89 @@ exports[`Video scrubber 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -7546,7 +8746,7 @@ exports[`Video scrubber 2`] = `
             class="StyledBox-sc-13pk1d4-0 cazNit"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWzvhP"
+              class="StyledText-sc-1sadyjn-0 joVJYY"
             >
               NaN:NaN
             </span>
@@ -7563,7 +8763,7 @@ exports[`Video scrubber 2`] = `
             class="StyledBox-sc-13pk1d4-0 bmTeen"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 hqLUOz"
+              class="StyledText-sc-1sadyjn-0 hLuLpA"
             />
             <svg
               aria-label="Actions"
@@ -7698,9 +8898,89 @@ exports[`Video should render outside grommet wrapper 1`] = `
   line-height: 24px;
 }
 
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c17 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c4 {
@@ -8146,9 +9426,89 @@ exports[`Video theme time container pad and scrubber thickness 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -8612,9 +9972,89 @@ exports[`Video timeUpdate event handler 1`] = `
   line-height: 24px;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c18:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus >circle,
+.c18:focus >ellipse,
+.c18:focus >line,
+.c18:focus >path,
+.c18:focus >polygon,
+.c18:focus >polyline,
+.c18:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c18:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c18:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) >circle,
+.c18:focus:not(:focus-visible) >ellipse,
+.c18:focus:not(:focus-visible) >line,
+.c18:focus:not(:focus-visible) >path,
+.c18:focus:not(:focus-visible) >polygon,
+.c18:focus:not(:focus-visible) >polyline,
+.c18:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c18:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {

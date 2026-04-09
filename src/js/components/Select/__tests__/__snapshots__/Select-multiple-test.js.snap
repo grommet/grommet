@@ -830,6 +830,46 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   line-height: 24px;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -1386,6 +1426,46 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   line-height: 24px;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -1876,6 +1956,46 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {
@@ -2372,6 +2492,46 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
   line-height: 24px;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -2573,7 +2733,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             1
           </span>
@@ -2592,7 +2752,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             2
           </span>
@@ -2647,7 +2807,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             1
           </span>
@@ -2666,7 +2826,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             2
           </span>
@@ -3280,6 +3440,46 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   line-height: 24px;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -3481,7 +3681,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             Value1
           </span>
@@ -3500,7 +3700,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             Value2
           </span>
@@ -3555,7 +3755,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             Value1
           </span>
@@ -3574,7 +3774,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             Value2
           </span>
@@ -4190,6 +4390,46 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
   line-height: 24px;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -4390,7 +4630,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             1
           </span>
@@ -4408,7 +4648,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             2
           </span>
@@ -4462,7 +4702,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             1
           </span>
@@ -4480,7 +4720,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
           class="StyledBox-sc-13pk1d4-0 dPAImr"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 eWzvhP"
+            class="StyledText-sc-1sadyjn-0 joVJYY"
           >
             2
           </span>
@@ -5150,6 +5390,46 @@ exports[`Select Controlled multiple values 3`] = `
   line-height: 24px;
 }
 
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c5 {
   display: inline-block;
   box-sizing: border-box;
@@ -5642,6 +5922,46 @@ exports[`Select Controlled multiple with empty results 2`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
+}
+
+.c8:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus >circle,
+.c8:focus >ellipse,
+.c8:focus >line,
+.c8:focus >path,
+.c8:focus >polygon,
+.c8:focus >polyline,
+.c8:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c8:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c8:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 .c5 {

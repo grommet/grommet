@@ -9,7 +9,7 @@ import React, {
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Keyboard } from '../Keyboard';
-import { useForwardedRef, useKeyboard } from '../../utils';
+import { useForwardedRef, useId, useKeyboard } from '../../utils';
 import { TipPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
@@ -32,14 +32,13 @@ const getReactNodeRef = (element) => {
 };
 
 const Tip = forwardRef(
-  (
-    { children, content, defaultVisible = false, dropProps, plain, id },
-    tipRef,
-  ) => {
+  ({ children, content, defaultVisible = false, dropProps, plain }, tipRef) => {
     const { theme } = useThemeValue();
     const [over, setOver] = useState(false);
     const [tooltipOver, setTooltipOver] = useState(false);
     const usingKeyboard = useKeyboard();
+    const tooltipId = useId();
+    const isVisible = over || tooltipOver;
 
     const componentRef = useForwardedRef(tipRef);
 
@@ -53,6 +52,15 @@ const Tip = forwardRef(
         <span>{children}</span>
       )) ||
       Children.only(children);
+
+    // When content is a plain string, use aria-description (ARIA 1.3) to
+    // provide the description inline on the trigger element. This ensures
+    // screen readers always announce the tooltip content when the element
+    // receives focus, without needing a referenced DOM element. It avoids
+    // the "aria-describedby element ID does not exist" axe violation that
+    // occurs when the tooltip Drop hasn't rendered yet.
+    // When content is a React node, fall back to conditional aria-describedby.
+    const isStringContent = typeof content === 'string';
 
     const clonedChild = cloneElement(child, {
       onMouseEnter: (event) => {
@@ -71,6 +79,25 @@ const Tip = forwardRef(
         if (usingKeyboard) setOver(false);
         if (child.props?.onBlur) child.props.onBlur(event);
       },
+      ...(isStringContent
+        ? {
+            // aria-description is always present for string content, so the
+            // screen reader reads it at focus time without waiting for a
+            // re-render. No DOM element reference needed.
+            'aria-description':
+              [child.props['aria-description'], content]
+                .filter(Boolean)
+                .join(' ') || undefined,
+          }
+        : {
+            // For React node content, reference the tooltip Drop element.
+            // Only set when visible to avoid dangling ID references (axe).
+            'aria-describedby': isVisible
+              ? [child.props['aria-describedby'], tooltipId]
+                  .filter(Boolean)
+                  .join(' ')
+              : child.props['aria-describedby'],
+          }),
       key: 'tip-child',
       ref: (node) => {
         // https://github.com/facebook/react/issues/8873#issuecomment-287873307
@@ -95,7 +122,9 @@ const Tip = forwardRef(
 
     return [
       clonedChild,
-      (over || tooltipOver) && (
+      // Visual tooltip Drop for sighted users. For React node content, the
+      // Drop also has id + role="tooltip" so aria-describedby can reference it.
+      isVisible && (
         <Keyboard
           key="tip-keyboard"
           onEsc={() => {
@@ -107,13 +136,25 @@ const Tip = forwardRef(
             target={componentRef.current}
             trapFocus={false}
             key="tip-drop"
-            id={id}
             {...theme.tip.drop}
             {...dropProps}
             onMouseEnter={() => setTooltipOver(true)}
             onMouseLeave={() => setTooltipOver(false)}
           >
-            {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
+            {plain ? (
+              <span
+                {...(isStringContent ? {} : { id: tooltipId, role: 'tooltip' })}
+              >
+                {content}
+              </span>
+            ) : (
+              <Box
+                {...(isStringContent ? {} : { id: tooltipId, role: 'tooltip' })}
+                {...theme.tip.content}
+              >
+                {content}
+              </Box>
+            )}
           </Drop>
         </Keyboard>
       ),

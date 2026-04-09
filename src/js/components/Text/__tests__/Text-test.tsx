@@ -172,7 +172,7 @@ describe('Text', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should apply aria-label when tip is a string', () => {
+  test('should apply aria-description when tip is a string', () => {
     const { container, getByText } = render(
       <Grommet>
         <Text tip="tooltip description">Example with tip as a string</Text>
@@ -180,12 +180,12 @@ describe('Text', () => {
     );
 
     const textWithTip = getByText('Example with tip as a string');
-    const ariaLabel = textWithTip.getAttribute('aria-label');
-    expect(ariaLabel).toMatch('tooltip description');
+    const ariaDescription = textWithTip.getAttribute('aria-description');
+    expect(ariaDescription).toBe('tooltip description');
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should apply aria-labelledby when aria-label is not defined', () => {
+  test('should apply aria-describedby when tip is React node content', () => {
     const { container, getByText } = render(
       <Grommet>
         <Text
@@ -213,13 +213,16 @@ describe('Text', () => {
     );
 
     const textWithTip = getByText('Example with tip that is not a string');
-    const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
-    expect(ariaLabelledBy).toBeTruthy();
-    expect(ariaLabelledBy).toMatch(/-tipId$/); // Ends with '-tipId'
+    fireEvent.mouseOver(textWithTip);
+    const ariaDescribedBy = textWithTip.getAttribute('aria-describedby');
+    expect(ariaDescribedBy).toBeTruthy();
+    const tooltipEl = document.getElementById(ariaDescribedBy as string);
+    expect(tooltipEl).not.toBeNull();
+    expect(tooltipEl?.getAttribute('role')).toBe('tooltip');
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should apply aria-labelledby with id specified when aria-label is not defined', () => {
+  test('should apply aria-describedby to tooltip and preserve id on element when tip is React node content', () => {
     const { container, getByText } = render(
       <Grommet>
         <Text
@@ -250,9 +253,15 @@ describe('Text', () => {
     const textWithTip = getByText(
       'Example with tip that is not a string with id prop',
     );
-    const ariaLabelledBy = textWithTip.getAttribute('aria-labelledby');
-    expect(ariaLabelledBy).toBeTruthy();
-    expect(ariaLabelledBy).toBe('tip-id');
+    expect(textWithTip.getAttribute('id')).toBe('tip-id');
+    fireEvent.mouseOver(textWithTip);
+    const ariaDescribedBy = textWithTip.getAttribute('aria-describedby');
+    expect(ariaDescribedBy).toBeTruthy();
+    // aria-describedby references the tooltip element, not the element's own id
+    expect(ariaDescribedBy).not.toBe('tip-id');
+    const tooltipEl = document.getElementById(ariaDescribedBy as string);
+    expect(tooltipEl).not.toBeNull();
+    expect(tooltipEl?.getAttribute('role')).toBe('tooltip');
     expect(container.firstChild).toMatchSnapshot();
   });
 });

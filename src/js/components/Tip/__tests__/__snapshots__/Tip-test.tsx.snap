@@ -185,6 +185,7 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
   class="c0"
 >
   <button
+    aria-description="tooltip"
     class="c1"
     type="button"
   >
@@ -198,6 +199,7 @@ exports[`Tip focus and blur events on the Tip's child 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
 >
   <button
+    aria-description="tooltip"
     class="StyledButton-sc-323bzc-0 eJnOht"
     type="button"
   >
@@ -314,6 +316,8 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
 >
   <div
     class="c2"
+    id="_r_2_"
+    role="tooltip"
   >
     <div
       class="c3"
@@ -373,24 +377,26 @@ exports[`Tip plain 1`] = `
   }
 }
 
-<div>
+<div
+  aria-hidden="false"
+>
   <div
-    aria-hidden="false"
+    class="c0 c1"
+    data-g-portal-id="0"
+    style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+    tabindex="-1"
   >
-    <div
-      class="c0 c1"
-      data-g-portal-id="0"
-      style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-      tabindex="-1"
-    >
+    <span>
       tooltip
-    </div>
+    </span>
   </div>
 </div>
 `;
 
 exports[`Tip renders outside grommet wrapper 1`] = `
-<span>
+<span
+  aria-description="tooltip content"
+>
    Example
 </span>
 `;
@@ -518,7 +524,9 @@ exports[`Tip should have no accessibility violations 1`] = `
 <div
   class="c0"
 >
-  <span>
+  <span
+    aria-description="tooltip content"
+  >
      Example
   </span>
 </div>
@@ -538,7 +546,9 @@ exports[`Tip should work with a child that isn't a React Element 1`] = `
 <div
   class="c0"
 >
-  <span>
+  <span
+    aria-description="Hello"
+  >
     Not React Element
   </span>
 </div>

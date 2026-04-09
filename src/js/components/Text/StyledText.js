@@ -6,6 +6,7 @@ import {
   normalizeColor,
   textAlignStyle,
   styledComponentsConfig,
+  unfocusStyle,
 } from '../../utils';
 
 const sizeStyle = (props) => {
@@ -57,7 +58,15 @@ const StyledText = styled('span').withConfig(styledComponentsConfig)`
   ${(props) =>
     props.theme.text.font && props.theme.text.font.family && fontFamily}
 
+  &:focus {
+    ${focusStyle()}
+  }
+
+  &:focus:not(:focus-visible) {
+    ${unfocusStyle()}
+  }
+
   ${(props) => props.theme.text && props.theme.text.extend}
-  ${(props) => props.focus && focusStyle()};
 `;
+
 export { StyledText };
