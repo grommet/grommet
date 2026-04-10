@@ -477,16 +477,16 @@ exports[`TextInput calls onSuggestionsClose 3`] = `""`;
 
 exports[`TextInput calls onSuggestionsClose 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 iXibYV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fVjMuG"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kPNQeA"
+      class="StyledTextInput-sc-1x30a0s-0 gEYfIW"
       data-testid="test-input"
       id="item"
       name="item"
@@ -984,16 +984,16 @@ exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 iXibYV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fVjMuG"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kPNQeA"
+      class="StyledTextInput-sc-1x30a0s-0 gEYfIW"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1566,14 +1566,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 iXibYV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fVjMuG"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kPNQeA"
+      class="StyledTextInput-sc-1x30a0s-0 gEYfIW"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2985,6 +2985,106 @@ exports[`TextInput read only copy 1`] = `
     </div>
   </div>
 </DocumentFragment>
+`;
+
+exports[`TextInput read only with width applies on container not input 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  padding: 11px;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  border: none;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c2:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c2 ::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c2::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c2:-moz-placeholder,
+.c2::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  width: 192px;
+  border: 1px solid rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <input
+        autocomplete="off"
+        class="c2"
+        readonly=""
+        value="test"
+      />
+    </div>
+  </div>
+</div>
 `;
 
 exports[`TextInput renders size 1`] = `
@@ -4446,16 +4546,16 @@ exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 iXibYV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fVjMuG"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 dyjCId"
+      class="StyledTextInput-sc-1x30a0s-0 bOtRjL"
       data-testid="test-input"
       id="item"
       name="item"
@@ -5044,14 +5144,14 @@ exports[`TextInput should only show default placeholder when placeholder is a\\n
 
 exports[`TextInput should only show default placeholder when placeholder is a\\n  string 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 iXibYV"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cWqzrJ"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 fVjMuG"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kPNQeA"
+      class="StyledTextInput-sc-1x30a0s-0 gEYfIW"
       data-testid="placeholder"
       id="placeholder"
       name="placeholder"

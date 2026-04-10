@@ -727,6 +727,16 @@ describe('TextInput', () => {
     expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
+  test('read only with width applies on container not input', () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput value="test" readOnly width="small" />
+      </Grommet>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   test('read only copy', async () => {
     const user = userEvent.setup();
 
