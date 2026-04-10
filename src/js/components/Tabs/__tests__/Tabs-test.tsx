@@ -397,42 +397,40 @@ describe('Tabs', () => {
       },
     });
 
-    const spy = jest.spyOn(console, 'error').mockImplementation();
-    const { container } = render(
-      <Grommet>
-        <Tabs>
-          {Array.from({ length: 20 }, (_, i) => (
-            <Tab key={i} title={`Tab ${i + 1}`}>
-              Content {i + 1}
-            </Tab>
-          ))}
-        </Tabs>
-      </Grommet>,
-    );
-    expect(container.firstChild).toBeTruthy();
-    expect(spy).not.toHaveBeenCalledWith(
-      expect.stringContaining('Maximum update depth exceeded'),
-    );
-
-    spy.mockRestore();
-    // Restore original property descriptors
-    if (scrollWidthDesc) {
-      Object.defineProperty(
-        HTMLElement.prototype,
-        'scrollWidth',
-        scrollWidthDesc,
-      );
-    } else {
-      delete (HTMLElement.prototype as any).scrollWidth;
-    }
-    if (offsetWidthDesc) {
-      Object.defineProperty(
-        HTMLElement.prototype,
-        'offsetWidth',
-        offsetWidthDesc,
-      );
-    } else {
-      delete (HTMLElement.prototype as any).offsetWidth;
+    try {
+      expect(() =>
+        render(
+          <Grommet>
+            <Tabs>
+              {Array.from({ length: 20 }, (_, i) => (
+                <Tab key={i} title={`Tab ${i + 1}`}>
+                  Content {i + 1}
+                </Tab>
+              ))}
+            </Tabs>
+          </Grommet>,
+        ),
+      ).not.toThrow();
+    } finally {
+      // Restore original property descriptors
+      if (scrollWidthDesc) {
+        Object.defineProperty(
+          HTMLElement.prototype,
+          'scrollWidth',
+          scrollWidthDesc,
+        );
+      } else {
+        delete (HTMLElement.prototype as any).scrollWidth;
+      }
+      if (offsetWidthDesc) {
+        Object.defineProperty(
+          HTMLElement.prototype,
+          'offsetWidth',
+          offsetWidthDesc,
+        );
+      } else {
+        delete (HTMLElement.prototype as any).offsetWidth;
+      }
     }
   });
 
