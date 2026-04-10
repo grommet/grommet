@@ -55,10 +55,12 @@ const Avatar = ({
   }
 
   let content;
+  let hasImage = false;
   if (typeof children === 'string') {
     content = (
       <StyledAvatarText
         alignSelf="center"
+        aria-label={a11yTitle || ariaLabel || undefined}
         size={avatarTextSize}
         {...passThemeFlag}
       >
@@ -66,6 +68,7 @@ const Avatar = ({
       </StyledAvatarText>
     );
   } else if (typeof src === 'string') {
+    hasImage = true;
     content = (
       <Image
         alt={a11yTitle || ariaLabel || ''}
@@ -79,11 +82,7 @@ const Avatar = ({
   if (typeof children === 'string' || typeof src === 'string') {
     return (
       <StyledAvatar
-        aria-label={
-          typeof src === 'string'
-            ? undefined
-            : a11yTitle || ariaLabel || undefined
-        }
+        aria-label={hasImage ? undefined : a11yTitle || ariaLabel || undefined}
         {...avatarProps}
         {...passThemeFlag}
         {...rest}
