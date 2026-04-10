@@ -60,7 +60,7 @@ const Avatar = ({
     content = (
       <StyledAvatarText
         alignSelf="center"
-        aria-label={a11yTitle || ariaLabel || undefined}
+        aria-hidden={a11yTitle || ariaLabel ? true : undefined}
         size={avatarTextSize}
         {...passThemeFlag}
       >
