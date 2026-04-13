@@ -153,6 +153,86 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('reference and onReference control displayed month', () => {
+    const REFERENCE_DATE = '2020-03-15T00:00:00-08:00'; // March 2020
+    const SELECTED_DATE = '2020-01-15T00:00:00-08:00'; // January 2020
+
+    // When both reference and onReference are provided (controlled), the
+    // displayed month should be the reference month even when date is set
+    // to a different month.
+    const { getByLabelText, unmount } = render(
+      <Grommet>
+        <Calendar
+          reference={REFERENCE_DATE}
+          onReference={jest.fn()}
+          date={SELECTED_DATE}
+          onSelect={jest.fn()}
+          animate={false}
+        />
+      </Grommet>,
+    );
+
+    expect(getByLabelText(/^March 2020/)).toBeInTheDocument();
+    unmount();
+
+    // Simulate a controlled parent that selects a date in a different month
+    // but keeps reference fixed — the displayed month should not change.
+    const onSelect = jest.fn();
+    const ControlledCalendar = () => {
+      const [date, setDate] = React.useState<string | undefined>(undefined);
+      return (
+        <Grommet>
+          <Calendar
+            reference={REFERENCE_DATE}
+            onReference={jest.fn()}
+            date={date}
+            onSelect={(nextDate) => {
+              onSelect(nextDate);
+              setDate(nextDate as string);
+            }}
+            animate={false}
+          />
+        </Grommet>
+      );
+    };
+
+    const { getByLabelText: getByLabelText2, getByText } = render(
+      <ControlledCalendar />,
+    );
+
+    // March 2020 should be displayed initially
+    expect(getByLabelText2(/^March 2020/)).toBeInTheDocument();
+
+    // Select a date in March (the currently displayed month)
+    fireEvent.click(getByText('20'));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/^2020-03-20T/),
+    );
+
+    // The displayed month should still be March 2020 after selection
+    expect(getByLabelText2(/^March 2020/)).toBeInTheDocument();
+  });
+
+  test('without onReference, initial displayed month matches date not reference', () => {
+    const REFERENCE_DATE = '2020-03-15T00:00:00-08:00'; // March 2020
+    const SELECTED_DATE = '2020-01-15T00:00:00-08:00'; // January 2020
+
+    // When reference is provided without onReference (uncontrolled), the
+    // displayed month should follow the date prop, not the reference prop.
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          reference={REFERENCE_DATE}
+          date={SELECTED_DATE}
+          onSelect={jest.fn()}
+          animate={false}
+        />
+      </Grommet>,
+    );
+
+    expect(getByLabelText(/^January 2020/)).toBeInTheDocument();
+  });
+
   test('showAdjacentDays', () => {
     const { container } = render(
       <Grommet>

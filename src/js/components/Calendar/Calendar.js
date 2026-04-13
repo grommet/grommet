@@ -131,7 +131,7 @@ const getReference = (reference, onReference, value, activeDate) => {
   if (reference && onReference) {
     // controlled component, so use the reference provided
     nextReference = reference;
-  } else if (value && !reference) {
+  } else if (value) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
         // if we just selected an end date, active date will be 'start'
