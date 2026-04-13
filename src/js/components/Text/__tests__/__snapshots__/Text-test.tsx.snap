@@ -1949,7 +1949,7 @@ exports[`Text should apply aria-describedby to tooltip and preserve id on elemen
   class="c0"
 >
   <span
-    aria-describedby="_r_3_"
+    aria-describedby="_r_5_"
     class="c1"
     id="tip-id"
     tabindex="0"
@@ -2039,7 +2039,7 @@ exports[`Text should apply aria-describedby when tip is React node content 1`] =
   class="c0"
 >
   <span
-    aria-describedby="_r_2_"
+    aria-describedby="_r_4_"
     class="c1"
     tabindex="0"
   >

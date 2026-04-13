@@ -1,8 +1,9 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
+import '@testing-library/jest-dom';
 import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
@@ -113,6 +114,73 @@ describe('Text', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders truncate="tip"', async () => {
+    // Mock scrollWidth to be larger than offsetWidth to trigger truncation
+    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+      configurable: true,
+      value: 200,
+    });
+    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+      configurable: true,
+      value: 100,
+    });
+
+    render(
+      <Grommet>
+        <Text truncate="tip">{LONG}</Text>
+      </Grommet>,
+    );
+
+    const text = screen.getByText(LONG);
+    fireEvent.mouseOver(text);
+
+    const tip = await waitFor(() => {
+      const tips = screen.getAllByText(LONG);
+      return tips.find((el) => el.closest('[role="tooltip"]'));
+    });
+    expect(tip).toBeInTheDocument();
+  });
+
+  test('Tip should have proper ARIA attributes for screen readers', async () => {
+    render(
+      <Grommet>
+        <Text
+          id="test-text"
+          tip={{
+            content: (
+              <Box id="test-tooltip" data-testid="tooltip">
+                Accessible tooltip
+              </Box>
+            ),
+          }}
+        >
+          Screen reader accessible text
+        </Text>
+      </Grommet>,
+    );
+
+    const textElement = screen.getByText('Screen reader accessible text');
+
+    // Text should have aria-describedby pointing to tooltip when tooltip is visible
+    expect(textElement).not.toHaveAttribute('aria-describedby');
+    expect(textElement).toHaveAttribute('tabIndex', '0');
+
+    // Focus the text to show tooltip
+    fireEvent.keyDown(document, { key: 'Tab' });
+    fireEvent.focus(textElement);
+
+    const tooltip = await waitFor(() => screen.getByText('Accessible tooltip'));
+    expect(tooltip).toBeInTheDocument();
+
+    const ariaDescribedBy = textElement.getAttribute('aria-describedby');
+    expect(ariaDescribedBy).toBeTruthy();
+
+    // Check that the tooltip container has the id referenced by aria-describedby
+    const tooltipContainer = document.getElementById(ariaDescribedBy as string);
+    expect(tooltipContainer).toBeInTheDocument();
+    expect(tooltipContainer).toContainElement(tooltip);
   });
 
   test('renders color', () => {
