@@ -1,6 +1,15 @@
 import React from 'react';
 import { css } from 'styled-components';
-import { ThemeType, BoxTypes, Grommet, Box, Anchor, Button } from 'grommet';
+import {
+  ThemeType,
+  BoxTypes,
+  AnchorType,
+  ButtonType,
+  Grommet,
+  Box,
+  Anchor,
+  Button,
+} from 'grommet';
 
 // Custom theme to verify that various `extend` types work correctly
 // Type annotations can only be used in TypeScript files.
@@ -12,12 +21,12 @@ const custom: ThemeType = {
     `,
   },
   anchor: {
-    extend: (props) => css`
+    extend: (props: AnchorType) => css`
       color: ${props['href'] ? 'green' : 'red'};
     `,
   },
   button: {
-    extend: (props) => {
+    extend: (props: ButtonType) => {
       let extraStyles = '';
       if (props.primary) {
         extraStyles = `
@@ -36,7 +45,7 @@ const custom: ThemeType = {
   },
   icon: {
     // Components without typed theme props should pass type-checking
-    extend: (props) => css`
+    extend: (props: Record<string, unknown>) => css`
       color: ${props.untypedProp === 'some value' ? 'red' : 'green'};
     `,
   },
