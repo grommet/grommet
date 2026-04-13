@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 
 import { Box, Calendar } from 'grommet';
 
+const end = new Date();
+const start = new Date(Date.now() - 1000 * 60 * 60 *24 * 90); // 90 days ago
+const bounds = [
+  `${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`,
+  `${end.getFullYear()}-${end.getMonth() + 1}-${end.getDate()}`,
+];
+
 export const Multiple = () => {
   const [dates, setDates] = useState([]);
 
@@ -23,7 +30,7 @@ export const Multiple = () => {
           console.log('Select iso date:', date, nextDates);
           console.log('Select utc date:', new Date(date));
         }}
-        bounds={['2020-09-08', '2025-12-13']}
+        bounds={bounds}
       />
     </Box>
     // </Grommet>
