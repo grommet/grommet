@@ -146,11 +146,11 @@
     "testcafe": "^3.7.4",
     "testcafe-react-selectors": "^5.0.3",
     "testcafe-reporter-xunit": "^2.2.3",
-    "ts-jest": "^29.4.9",
-    "ts-loader": "^9.5.7",
-    "typescript": "^6.0.2",
-    "webpack": "^5.106.1",
-    "webpack-cli": "^7.0.2",
+    "ts-jest": "^29.4.6",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.105.2",
+    "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.3"
   },
   "jest": {
