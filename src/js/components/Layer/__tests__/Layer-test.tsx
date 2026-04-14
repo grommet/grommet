@@ -5,7 +5,15 @@ import { getByTestId, queryByTestId } from '@testing-library/dom';
 import 'regenerator-runtime/runtime';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Box, Layer, Select, Button } from '../..';
+import {
+  Grommet,
+  Box,
+  Layer,
+  Select,
+  Button,
+  LayerExtendedProps,
+  LayerPositionType,
+} from '../..';
 import { LayerContainer } from '../LayerContainer';
 
 const SimpleLayer = () => {
@@ -20,7 +28,11 @@ const SimpleLayer = () => {
   return <Box>{layer}</Box>;
 };
 
-const FakeLayer = ({ children, dataTestid, ...rest }) => {
+const FakeLayer = ({
+  children,
+  dataTestid,
+  ...rest
+}: LayerExtendedProps & { dataTestid?: string }) => {
   const [showLayer, setShowLayer] = React.useState(false);
 
   React.useEffect(() => setShowLayer(true), []);
@@ -44,8 +56,8 @@ const FakeLayer = ({ children, dataTestid, ...rest }) => {
   );
 };
 
-const TargetLayer = (props) => {
-  const [target, setTarget] = React.useState();
+const TargetLayer = (props: LayerExtendedProps) => {
+  const [target, setTarget] = React.useState<HTMLElement | null>(null);
   let layer;
   if (target) {
     layer = (
@@ -64,7 +76,7 @@ const TargetLayer = (props) => {
 
 describe('Layer', () => {
   beforeEach(createPortal);
-  const positions = [
+  const positions: LayerPositionType[] = [
     'top',
     'bottom',
     'left',
@@ -78,7 +90,12 @@ describe('Layer', () => {
     'bottom-right',
   ];
 
-  const fullOptions = [true, false, 'horizontal', 'vertical'];
+  const fullOptions: LayerExtendedProps['full'][] = [
+    true,
+    false,
+    'horizontal',
+    'vertical',
+  ];
 
   positions.forEach((position) =>
     fullOptions.forEach((full) => {
@@ -222,7 +239,9 @@ describe('Layer', () => {
     expectPortal('non-modal-test').toMatchSnapshot();
   });
 
-  ['slide', 'fadeIn', false, true].forEach((animation) =>
+  (
+    ['slide', 'fadeIn', false, true] as LayerExtendedProps['animation'][]
+  ).forEach((animation) =>
     test(`animation ${animation}`, () => {
       render(
         <Grommet>
@@ -245,7 +264,7 @@ describe('Layer', () => {
       </Grommet>,
     );
 
-    const inputNode = getByTestId(document, 'test-input');
+    const inputNode = getByTestId(document.body, 'test-input');
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
     expect(onEsc).toHaveBeenCalled();
   });
@@ -257,25 +276,25 @@ describe('Layer', () => {
         <FakeLayer dataTestid="test-layer-node">
           <div data-testid="test-body-node">
             <input />
-            <input tabIndex="10" />
+            <input tabIndex={10} />
           </div>
         </FakeLayer>
       </Grommet>,
     );
     /* eslint-enable jsx-a11y/tabindex-no-positive */
 
-    let bodyNode = getByTestId(document, 'test-body-node');
-    const layerNode = getByTestId(document, 'test-layer-node');
-    const inputNode = getByTestId(document, 'test-input');
+    let bodyNode = getByTestId(document.body, 'test-body-node');
+    const layerNode = getByTestId(document.body, 'test-layer-node');
+    const inputNode = getByTestId(document.body, 'test-input');
     expect(bodyNode).toMatchSnapshot();
     expect(layerNode).toMatchSnapshot();
 
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
     // because of de-animation, we test both the initial and delayed states
-    bodyNode = getByTestId(document, 'test-body-node');
+    bodyNode = getByTestId(document.body, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
     setTimeout(() => {
-      expect(queryByTestId(document, 'test-layer-node')).toBeNull();
+      expect(queryByTestId(document.body, 'test-layer-node')).toBeNull();
       done();
     }, 300);
   });
@@ -291,9 +310,9 @@ describe('Layer', () => {
       </Grommet>,
     );
 
-    const layerNode = getByTestId(document, 'focus-layer-test');
+    const layerNode = getByTestId(document.body, 'focus-layer-test');
     expect(layerNode).toMatchSnapshot();
-    expect(document.activeElement.nodeName).toBe('SPAN');
+    expect(document.activeElement?.nodeName).toBe('SPAN');
   });
 
   test('not steal focus from an autofocus focusable element', () => {
@@ -306,8 +325,8 @@ describe('Layer', () => {
         </Layer>
       </Grommet>,
     );
-    const layerNode = getByTestId(document, 'focus-layer-input-test');
-    const inputNode = getByTestId(document, 'focus-input');
+    const layerNode = getByTestId(document.body, 'focus-layer-input-test');
+    const inputNode = getByTestId(document.body, 'focus-input');
     expect(layerNode).toMatchSnapshot();
     expect(document.activeElement).toBe(inputNode);
   });
@@ -339,7 +358,7 @@ describe('Layer', () => {
       </Grommet>,
     );
     setTimeout(() => {
-      expect(queryByTestId(document, 'test-dom-removal')).toBeNull();
+      expect(queryByTestId(document.body, 'test-dom-removal')).toBeNull();
     }, 1000);
   });
 
@@ -349,8 +368,8 @@ describe('Layer', () => {
         <Layer data-testid="layer">Test</Layer>
       </Grommet>,
     );
-    const layer = getByTestId(document, 'layer');
-    const actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
+    const layer = getByTestId(document.body, 'layer');
+    const actualRoot = layer.parentNode?.parentNode?.parentNode?.parentNode;
     expect(actualRoot).toBe(document.body);
   });
 
@@ -363,8 +382,8 @@ describe('Layer', () => {
           <Layer data-testid="layer">Test</Layer>
         </Grommet>,
       );
-      const layer = getByTestId(document, 'layer');
-      const actualRoot = layer.parentNode.parentNode.parentNode.parentNode;
+      const layer = getByTestId(document.body, 'layer');
+      const actualRoot = layer.parentNode?.parentNode?.parentNode?.parentNode;
       expect(actualRoot).toBe(target);
     } finally {
       document.body.removeChild(target);
@@ -487,7 +506,7 @@ describe('Layer', () => {
       </Grommet>,
     );
 
-    const selectNode = getByTestId(document, 'test-select');
+    const selectNode = getByTestId(document.body, 'test-select');
 
     fireEvent.click(selectNode);
     // advance timers so the select opens
