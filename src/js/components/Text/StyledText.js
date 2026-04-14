@@ -58,13 +58,17 @@ const StyledText = styled('span').withConfig(styledComponentsConfig)`
   ${(props) =>
     props.theme.text.font && props.theme.text.font.family && fontFamily}
 
-  &:focus {
-    ${focusStyle()}
-  }
+  ${(props) =>
+    (props.truncate || props.tabIndex === 0) &&
+    css`
+      &:focus {
+        ${focusStyle()}
+      }
 
-  &:focus:not(:focus-visible) {
-    ${unfocusStyle()}
-  }
+      &:focus:not(:focus-visible) {
+        ${unfocusStyle()}
+      }
+    `}
 
   ${(props) => props.theme.text && props.theme.text.extend}
 `;

@@ -1842,46 +1842,6 @@ exports[`Form uncontrolled errors 1`] = `
   color: #EB0000;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c5:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2015,46 +1975,6 @@ exports[`Form uncontrolled infos 1`] = `
   color: #666666;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c5:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2157,46 +2077,6 @@ exports[`Form uncontrolled regexp validation 1`] = `
   color: #EB0000;
 }
 
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -2228,46 +2108,6 @@ exports[`Form uncontrolled regexp validation with status 1`] = `
   color: #EB0000;
 }
 
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -2289,46 +2129,6 @@ exports[`Form uncontrolled regexp validation with status 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #666666;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2356,46 +2156,6 @@ exports[`Form uncontrolled required validation 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #EB0000;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2690,46 +2450,6 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c2:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c2:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus:not(:focus-visible) >circle,
-.c2:focus:not(:focus-visible) >ellipse,
-.c2:focus:not(:focus-visible) >line,
-.c2:focus:not(:focus-visible) >path,
-.c2:focus:not(:focus-visible) >polygon,
-.c2:focus:not(:focus-visible) >polyline,
-.c2:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c2:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c4 {
@@ -3224,7 +2944,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       class="StyledBox-sc-13pk1d4-0 cavIHi FormField__FormFieldBox-sc-m9hood-0 Qrvlw"
     >
       <label
-        class="StyledText-sc-1sadyjn-0 iFEsdn"
+        class="StyledText-sc-1sadyjn-0 ljVquT"
         for="test-select__input"
         id="grommet-test-select__input__label"
       >
@@ -3289,7 +3009,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       class="StyledBox-sc-13pk1d4-0 cavIHi FormField__FormFieldBox-sc-m9hood-0 Qrvlw"
     >
       <label
-        class="StyledText-sc-1sadyjn-0 iFEsdn"
+        class="StyledText-sc-1sadyjn-0 ljVquT"
         for="test-checkbox"
         id="grommet-test-checkbox__label"
       >
@@ -3325,7 +3045,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       class="StyledBox-sc-13pk1d4-0 cavIHi FormField__FormFieldBox-sc-m9hood-0 Qrvlw"
     >
       <label
-        class="StyledText-sc-1sadyjn-0 iFEsdn"
+        class="StyledText-sc-1sadyjn-0 ljVquT"
         for="test-radiobuttongroup"
         id="grommet-test-radiobuttongroup__label"
       >
@@ -3916,46 +3636,6 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
   color: #EB0000;
 }
 
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -4206,46 +3886,6 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
   font-size: 18px;
   line-height: 24px;
   color: #EB0000;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4500,46 +4140,6 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
   color: #666666;
 }
 
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -4785,46 +4385,6 @@ exports[`Form uncontrolled validate 1`] = `
   color: #EB0000;
 }
 
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -4848,46 +4408,6 @@ exports[`Form uncontrolled validate 2`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4928,46 +4448,6 @@ exports[`Form uncontrolled validate 3`] = `
   color: #EB0000;
 }
 
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 @media only screen and (max-width: 768px) {
 
 }
@@ -5004,46 +4484,6 @@ exports[`Form uncontrolled validate 4`] = `
   font-size: 18px;
   line-height: 24px;
   color: #666666;
-}
-
-.c0:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus >circle,
-.c0:focus >ellipse,
-.c0:focus >line,
-.c0:focus >path,
-.c0:focus >polygon,
-.c0:focus >polyline,
-.c0:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c0:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c0:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) >circle,
-.c0:focus:not(:focus-visible) >ellipse,
-.c0:focus:not(:focus-visible) >line,
-.c0:focus:not(:focus-visible) >path,
-.c0:focus:not(:focus-visible) >polygon,
-.c0:focus:not(:focus-visible) >polyline,
-.c0:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c0:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 @media only screen and (max-width: 768px) {

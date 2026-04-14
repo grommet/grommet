@@ -160,90 +160,10 @@ exports[`DataTableColumns pinned 1`] = `
   line-height: 24px;
 }
 
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c5:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c8 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
-}
-
-.c8:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus >circle,
-.c8:focus >ellipse,
-.c8:focus >line,
-.c8:focus >path,
-.c8:focus >polygon,
-.c8:focus >polyline,
-.c8:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c8:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c8:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) >circle,
-.c8:focus:not(:focus-visible) >ellipse,
-.c8:focus:not(:focus-visible) >line,
-.c8:focus:not(:focus-visible) >path,
-.c8:focus:not(:focus-visible) >polygon,
-.c8:focus:not(:focus-visible) >polyline,
-.c8:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c8:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c14 {
@@ -252,91 +172,11 @@ exports[`DataTableColumns pinned 1`] = `
   color: #555555;
 }
 
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c14:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c15 {
   font-size: 18px;
   line-height: 24px;
   color: #555555;
   font-weight: bold;
-}
-
-.c15:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus >circle,
-.c15:focus >ellipse,
-.c15:focus >line,
-.c15:focus >path,
-.c15:focus >polygon,
-.c15:focus >polyline,
-.c15:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c15:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) >circle,
-.c15:focus:not(:focus-visible) >ellipse,
-.c15:focus:not(:focus-visible) >line,
-.c15:focus:not(:focus-visible) >path,
-.c15:focus:not(:focus-visible) >polygon,
-.c15:focus:not(:focus-visible) >polyline,
-.c15:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c15:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c10 {
@@ -861,90 +701,10 @@ exports[`DataTableColumns remove column 1`] = `
   line-height: 24px;
 }
 
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c14:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c3 {
@@ -1812,90 +1572,10 @@ exports[`DataTableColumns renders 1`] = `
   line-height: 24px;
 }
 
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus >circle,
-.c18:focus >ellipse,
-.c18:focus >line,
-.c18:focus >path,
-.c18:focus >polygon,
-.c18:focus >polyline,
-.c18:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) >circle,
-.c18:focus:not(:focus-visible) >ellipse,
-.c18:focus:not(:focus-visible) >line,
-.c18:focus:not(:focus-visible) >path,
-.c18:focus:not(:focus-visible) >polygon,
-.c18:focus:not(:focus-visible) >polyline,
-.c18:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c5 {
@@ -2798,46 +2478,6 @@ exports[`DataTableColumns renders 3`] = `
   line-height: 24px;
 }
 
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -3283,90 +2923,10 @@ exports[`DataTableColumns search 1`] = `
   line-height: 24px;
 }
 
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c14 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
-}
-
-.c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c14:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c3 {
@@ -4412,90 +3972,10 @@ exports[`DataTableColumns should use theme icons 1`] = `
   line-height: 24px;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c13 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
-}
-
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c4 {
@@ -4504,91 +3984,11 @@ exports[`DataTableColumns should use theme icons 1`] = `
   color: #555555;
 }
 
-.c4:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus >circle,
-.c4:focus >ellipse,
-.c4:focus >line,
-.c4:focus >path,
-.c4:focus >polygon,
-.c4:focus >polyline,
-.c4:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c4:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c4:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c4:focus:not(:focus-visible) >circle,
-.c4:focus:not(:focus-visible) >ellipse,
-.c4:focus:not(:focus-visible) >line,
-.c4:focus:not(:focus-visible) >path,
-.c4:focus:not(:focus-visible) >polygon,
-.c4:focus:not(:focus-visible) >polyline,
-.c4:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c4:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c7 {
   font-size: 18px;
   line-height: 24px;
   color: #555555;
   font-weight: bold;
-}
-
-.c7:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus >circle,
-.c7:focus >ellipse,
-.c7:focus >line,
-.c7:focus >path,
-.c7:focus >polygon,
-.c7:focus >polyline,
-.c7:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c7:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c7:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) >circle,
-.c7:focus:not(:focus-visible) >ellipse,
-.c7:focus:not(:focus-visible) >line,
-.c7:focus:not(:focus-visible) >path,
-.c7:focus:not(:focus-visible) >polygon,
-.c7:focus:not(:focus-visible) >polyline,
-.c7:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c7:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c15 {
@@ -5432,46 +4832,6 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 .c3 {
   font-size: 18px;
   line-height: 24px;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c7 {

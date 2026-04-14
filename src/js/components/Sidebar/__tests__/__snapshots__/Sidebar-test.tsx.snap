@@ -57,46 +57,6 @@ exports[`Sidebar all 1`] = `
   line-height: 28px;
 }
 
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -580,46 +540,6 @@ exports[`Sidebar theme gap and pad 1`] = `
   align-self: center;
   font-size: 22px;
   line-height: 28px;
-}
-
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c0 {

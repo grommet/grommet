@@ -165,91 +165,11 @@ exports[`DataFilter !inDataForm 1`] = `
   text-align: right;
 }
 
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c21 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
-}
-
-.c21:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus >circle,
-.c21:focus >ellipse,
-.c21:focus >line,
-.c21:focus >path,
-.c21:focus >polygon,
-.c21:focus >polyline,
-.c21:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c21:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c21:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible) >circle,
-.c21:focus:not(:focus-visible) >ellipse,
-.c21:focus:not(:focus-visible) >line,
-.c21:focus:not(:focus-visible) >path,
-.c21:focus:not(:focus-visible) >polygon,
-.c21:focus:not(:focus-visible) >polyline,
-.c21:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c21:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c3 {
@@ -656,46 +576,6 @@ exports[`DataFilter children 1`] = `
   line-height: 24px;
 }
 
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c11 {
   display: inline-block;
   box-sizing: border-box;
@@ -1020,46 +900,6 @@ exports[`DataFilter options 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c16 {
@@ -1625,46 +1465,6 @@ exports[`DataFilter range Data 1`] = `
   line-height: 24px;
 }
 
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c9 {
   margin-left: 12px;
   margin-right: 12px;
@@ -1673,91 +1473,11 @@ exports[`DataFilter range Data 1`] = `
   text-align: right;
 }
 
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c18 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus >circle,
-.c18:focus >ellipse,
-.c18:focus >line,
-.c18:focus >path,
-.c18:focus >polygon,
-.c18:focus >polyline,
-.c18:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) >circle,
-.c18:focus:not(:focus-visible) >ellipse,
-.c18:focus:not(:focus-visible) >line,
-.c18:focus:not(:focus-visible) >path,
-.c18:focus:not(:focus-visible) >polygon,
-.c18:focus:not(:focus-visible) >polyline,
-.c18:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c20 {
@@ -2197,46 +1917,6 @@ exports[`DataFilter range prop 1`] = `
   line-height: 24px;
 }
 
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c9 {
   margin-left: 12px;
   margin-right: 12px;
@@ -2245,91 +1925,11 @@ exports[`DataFilter range prop 1`] = `
   text-align: right;
 }
 
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c18 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus >circle,
-.c18:focus >ellipse,
-.c18:focus >line,
-.c18:focus >path,
-.c18:focus >polygon,
-.c18:focus >polyline,
-.c18:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) >circle,
-.c18:focus:not(:focus-visible) >ellipse,
-.c18:focus:not(:focus-visible) >line,
-.c18:focus:not(:focus-visible) >path,
-.c18:focus:not(:focus-visible) >polygon,
-.c18:focus:not(:focus-visible) >polyline,
-.c18:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c20 {
@@ -2811,46 +2411,6 @@ exports[`DataFilter renders 1`] = `
   line-height: 24px;
 }
 
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c16 {
   margin-left: 12px;
   margin-right: 12px;
@@ -2859,91 +2419,11 @@ exports[`DataFilter renders 1`] = `
   text-align: right;
 }
 
-.c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c16:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c16:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c25 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
-}
-
-.c25:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c25:focus >circle,
-.c25:focus >ellipse,
-.c25:focus >line,
-.c25:focus >path,
-.c25:focus >polygon,
-.c25:focus >polyline,
-.c25:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c25:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c25:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c25:focus:not(:focus-visible) >circle,
-.c25:focus:not(:focus-visible) >ellipse,
-.c25:focus:not(:focus-visible) >line,
-.c25:focus:not(:focus-visible) >path,
-.c25:focus:not(:focus-visible) >polygon,
-.c25:focus:not(:focus-visible) >polyline,
-.c25:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c25:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c27 {
@@ -3514,46 +2994,6 @@ exports[`DataFilter select multiple options 1`] = `
   font-weight: normal;
 }
 
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -4118,46 +3558,6 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
   font-weight: normal;
 }
 
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c3 {
   display: inline-block;
   box-sizing: border-box;
@@ -4700,46 +4100,6 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
   line-height: 24px;
 }
 
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c9 {
   margin-left: 12px;
   margin-right: 12px;
@@ -4748,91 +4108,11 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
   text-align: right;
 }
 
-.c9:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus >circle,
-.c9:focus >ellipse,
-.c9:focus >line,
-.c9:focus >path,
-.c9:focus >polygon,
-.c9:focus >polyline,
-.c9:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c9:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c9:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) >circle,
-.c9:focus:not(:focus-visible) >ellipse,
-.c9:focus:not(:focus-visible) >line,
-.c9:focus:not(:focus-visible) >path,
-.c9:focus:not(:focus-visible) >polygon,
-.c9:focus:not(:focus-visible) >polyline,
-.c9:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c9:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
 .c18 {
   margin-left: 12px;
   margin-right: 12px;
   font-size: 14px;
   line-height: 20px;
-}
-
-.c18:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus >circle,
-.c18:focus >ellipse,
-.c18:focus >line,
-.c18:focus >path,
-.c18:focus >polygon,
-.c18:focus >polyline,
-.c18:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c18:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c18:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) >circle,
-.c18:focus:not(:focus-visible) >ellipse,
-.c18:focus:not(:focus-visible) >line,
-.c18:focus:not(:focus-visible) >path,
-.c18:focus:not(:focus-visible) >polygon,
-.c18:focus:not(:focus-visible) >polyline,
-.c18:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c18:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c22 {
@@ -5456,46 +4736,6 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
 .c6 {
   font-size: 14px;
   line-height: 20px;
-}
-
-.c6:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus >circle,
-.c6:focus >ellipse,
-.c6:focus >line,
-.c6:focus >path,
-.c6:focus >polygon,
-.c6:focus >polyline,
-.c6:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c6:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c6:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
 }
 
 .c8 {
