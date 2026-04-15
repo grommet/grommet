@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FileInput accept 1`] = `
 .c0 {
@@ -12,44 +12,75 @@ exports[`FileInput accept 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -74,7 +105,7 @@ exports[`FileInput accept 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -94,7 +125,7 @@ exports[`FileInput accept 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -124,24 +155,24 @@ exports[`FileInput accept 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -189,46 +220,77 @@ exports[`FileInput background 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51, 51, 51, 0.06274509803921569);
+  background-color: rgba(51,51,51,0.06274509803921569);
   color: #444444;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -253,7 +315,7 @@ exports[`FileInput background 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -273,7 +335,7 @@ exports[`FileInput background 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -303,24 +365,24 @@ exports[`FileInput background 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -367,44 +429,75 @@ exports[`FileInput basic 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -429,7 +522,7 @@ exports[`FileInput basic 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -449,7 +542,7 @@ exports[`FileInput basic 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -479,24 +572,24 @@ exports[`FileInput basic 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -533,44 +626,75 @@ exports[`FileInput basic 1`] = `
 
 exports[`FileInput basic outside grommet wrapper 1`] = `
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c5 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c5:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -595,7 +719,7 @@ exports[`FileInput basic outside grommet wrapper 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -615,7 +739,7 @@ exports[`FileInput basic outside grommet wrapper 1`] = `
   color: #AAAAAA;
 }
 
-.c2 ::-webkit-search-decoration {
+.c2::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -645,24 +769,24 @@ exports[`FileInput basic outside grommet wrapper 1`] = `
   box-shadow: none;
 }
 
-.c1 >circle,
-.c1 >ellipse,
-.c1 >line,
-.c1 >path,
-.c1 >polygon,
-.c1 >polyline,
-.c1 >rect {
+.c1 > circle,
+.c1 > ellipse,
+.c1 > line,
+.c1 > path,
+.c1 > polygon,
+.c1 > polyline,
+.c1 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c1 ::-moz-focus-inner {
+.c1::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c0 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -705,44 +829,75 @@ exports[`FileInput border 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border: dashed 12px #7D4CDB;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -767,7 +922,7 @@ exports[`FileInput border 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -787,7 +942,7 @@ exports[`FileInput border 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -817,22 +972,22 @@ exports[`FileInput border 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     border: dashed 6px #7D4CDB;
   }
@@ -881,44 +1036,75 @@ exports[`FileInput custom theme input font size 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -943,7 +1129,7 @@ exports[`FileInput custom theme input font size 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -963,7 +1149,7 @@ exports[`FileInput custom theme input font size 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -993,24 +1179,24 @@ exports[`FileInput custom theme input font size 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1056,43 +1242,74 @@ exports[`FileInput disabled 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
   opacity: 0.3;
   cursor: default;
+  -webkit-text-decoration: none;
   text-decoration: none;
 }
 
@@ -1117,7 +1334,7 @@ exports[`FileInput disabled 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1136,7 +1353,7 @@ exports[`FileInput disabled 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1168,24 +1385,24 @@ exports[`FileInput disabled 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1226,6 +1443,8 @@ exports[`FileInput disabled 1`] = `
 exports[`FileInput disabled with file selected 1`] = `
 .c12 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1267,82 +1486,139 @@ exports[`FileInput disabled with file selected 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c13 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   margin: 12px;
   opacity: 0.3;
   cursor: default;
+  -webkit-text-decoration: none;
   text-decoration: none;
 }
 
@@ -1370,6 +1646,7 @@ exports[`FileInput disabled with file selected 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1380,6 +1657,8 @@ exports[`FileInput disabled with file selected 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   opacity: 0.3;
   cursor: default;
   line-height: 0;
@@ -1391,18 +1670,18 @@ exports[`FileInput disabled with file selected 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus >circle,
-.c11:focus >ellipse,
-.c11:focus >line,
-.c11:focus >path,
-.c11:focus >polygon,
-.c11:focus >polyline,
-.c11:focus >rect {
+.c11:focus > circle,
+.c11:focus > ellipse,
+.c11:focus > line,
+.c11:focus > path,
+.c11:focus > polygon,
+.c11:focus > polyline,
+.c11:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c11:focus ::-moz-focus-inner {
+.c11:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -1411,18 +1690,18 @@ exports[`FileInput disabled with file selected 1`] = `
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) >circle,
-.c11:focus:not(:focus-visible) >ellipse,
-.c11:focus:not(:focus-visible) >line,
-.c11:focus:not(:focus-visible) >path,
-.c11:focus:not(:focus-visible) >polygon,
-.c11:focus:not(:focus-visible) >polyline,
-.c11:focus:not(:focus-visible) >rect {
+.c11:focus:not(:focus-visible) > circle,
+.c11:focus:not(:focus-visible) > ellipse,
+.c11:focus:not(:focus-visible) > line,
+.c11:focus:not(:focus-visible) > path,
+.c11:focus:not(:focus-visible) > polygon,
+.c11:focus:not(:focus-visible) > polyline,
+.c11:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c11:focus:not(:focus-visible) ::-moz-focus-inner {
+.c11:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -1441,7 +1720,7 @@ exports[`FileInput disabled with file selected 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1462,7 +1741,7 @@ exports[`FileInput disabled with file selected 1`] = `
   color: #AAAAAA;
 }
 
-.c6 ::-webkit-search-decoration {
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1494,34 +1773,34 @@ exports[`FileInput disabled with file selected 1`] = `
   box-shadow: none;
 }
 
-.c5 >circle,
-.c5 >ellipse,
-.c5 >line,
-.c5 >path,
-.c5 >polygon,
-.c5 >polyline,
-.c5 >rect {
+.c5 > circle,
+.c5 > ellipse,
+.c5 > line,
+.c5 > path,
+.c5 > polygon,
+.c5 > polyline,
+.c5 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5 ::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin: 6px;
   }
@@ -1618,45 +1897,76 @@ exports[`FileInput margin 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1681,7 +1991,7 @@ exports[`FileInput margin 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1701,7 +2011,7 @@ exports[`FileInput margin 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1731,30 +2041,30 @@ exports[`FileInput margin 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1801,44 +2111,75 @@ exports[`FileInput maxSize 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1863,7 +2204,7 @@ exports[`FileInput maxSize 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -1883,7 +2224,7 @@ exports[`FileInput maxSize 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1913,24 +2254,24 @@ exports[`FileInput maxSize 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1977,44 +2318,75 @@ exports[`FileInput messages 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2039,7 +2411,7 @@ exports[`FileInput messages 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -2059,7 +2431,7 @@ exports[`FileInput messages 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2089,24 +2461,24 @@ exports[`FileInput messages 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -2153,44 +2525,75 @@ exports[`FileInput multiple 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2215,7 +2618,7 @@ exports[`FileInput multiple 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -2235,7 +2638,7 @@ exports[`FileInput multiple 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2265,24 +2668,24 @@ exports[`FileInput multiple 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -2330,44 +2733,75 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2392,7 +2826,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -2412,7 +2846,7 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2442,24 +2876,24 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -2507,44 +2941,75 @@ exports[`FileInput multiple max 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2569,7 +3034,7 @@ exports[`FileInput multiple max 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -2589,7 +3054,7 @@ exports[`FileInput multiple max 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2619,24 +3084,24 @@ exports[`FileInput multiple max 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -2684,45 +3149,76 @@ exports[`FileInput pad 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 12px;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 12px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2747,7 +3243,7 @@ exports[`FileInput pad 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -2767,7 +3263,7 @@ exports[`FileInput pad 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -2797,28 +3293,28 @@ exports[`FileInput pad 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 6px;
   }
@@ -2858,6 +3354,8 @@ exports[`FileInput pad 1`] = `
 exports[`FileInput should use theme icons 1`] = `
 .c9 {
   display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -2899,89 +3397,150 @@ exports[`FileInput should use theme icons 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin-bottom: 12px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
   margin: 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
 .c10 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
   align-self: stretch;
   width: 6px;
 }
 
 .c14 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   margin: 12px;
 }
 
 .c14:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -3009,6 +3568,7 @@ exports[`FileInput should use theme icons 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -3019,12 +3579,14 @@ exports[`FileInput should use theme icons 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-width: 24px;
+  min-height: 24px;
   line-height: 0;
   padding: 12px;
 }
 
 .c13:hover {
-  background-color: rgba(221, 221, 221, 0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #000000;
 }
 
@@ -3033,18 +3595,18 @@ exports[`FileInput should use theme icons 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
+.c13:focus > circle,
+.c13:focus > ellipse,
+.c13:focus > line,
+.c13:focus > path,
+.c13:focus > polygon,
+.c13:focus > polyline,
+.c13:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c13:focus ::-moz-focus-inner {
+.c13:focus::-moz-focus-inner {
   border: 0;
 }
 
@@ -3053,18 +3615,18 @@ exports[`FileInput should use theme icons 1`] = `
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) > circle,
+.c13:focus:not(:focus-visible) > ellipse,
+.c13:focus:not(:focus-visible) > line,
+.c13:focus:not(:focus-visible) > path,
+.c13:focus:not(:focus-visible) > polygon,
+.c13:focus:not(:focus-visible) > polyline,
+.c13:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible)::-moz-focus-inner {
   border: 0;
 }
 
@@ -3083,7 +3645,7 @@ exports[`FileInput should use theme icons 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -3105,7 +3667,7 @@ exports[`FileInput should use theme icons 1`] = `
   color: #AAAAAA;
 }
 
-.c6 ::-webkit-search-decoration {
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3135,40 +3697,40 @@ exports[`FileInput should use theme icons 1`] = `
   box-shadow: none;
 }
 
-.c5 >circle,
-.c5 >ellipse,
-.c5 >line,
-.c5 >path,
-.c5 >polygon,
-.c5 >polyline,
-.c5 >rect {
+.c5 > circle,
+.c5 > ellipse,
+.c5 > line,
+.c5 > path,
+.c5 > polygon,
+.c5 > polyline,
+.c5 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5 ::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c3 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin: 6px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c10 {
     width: 3px;
   }
@@ -3277,44 +3839,75 @@ exports[`FileInput theme anchor margin and label gap 1`] = `
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  border: dashed 2px rgba(0, 0, 0, 0.33);
+  border: dashed 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
   width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .c6 {
   box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: inherit;
   line-height: inherit;
   color: #7D4CDB;
   font-weight: 600;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   align-self: center;
   margin: 48px;
 }
 
 .c6:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -3339,7 +3932,7 @@ exports[`FileInput theme anchor margin and label gap 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0, 0, 0, 0.33);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   font-size: 0;
   opacity: 0;
@@ -3359,7 +3952,7 @@ exports[`FileInput theme anchor margin and label gap 1`] = `
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c3::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -3389,24 +3982,24 @@ exports[`FileInput theme anchor margin and label gap 1`] = `
   box-shadow: none;
 }
 
-.c2 >circle,
-.c2 >ellipse,
-.c2 >line,
-.c2 >path,
-.c2 >polygon,
-.c2 >polyline,
-.c2 >rect {
+.c2 > circle,
+.c2 > ellipse,
+.c2 > line,
+.c2 > path,
+.c2 > polygon,
+.c2 > polyline,
+.c2 > rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2 ::-moz-focus-inner {
+.c2::-moz-focus-inner {
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:768px) {
   .c1 {
-    border: dashed 2px rgba(0, 0, 0, 0.33);
+    border: dashed 2px rgba(0,0,0,0.33);
   }
 }
 
