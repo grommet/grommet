@@ -24,14 +24,16 @@ var StyledTextInput = styled.input.withConfig(styledComponentsConfig).withConfig
 }, function (props) {
   return props.textAlign && textAlignStyle;
 }, function (props) {
-  return props.widthProp && widthStyle(props.widthProp, props.theme);
+  return props.widthProp && !props.readOnly && widthStyle(props.widthProp, props.theme);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.extend;
 });
 var StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledTextInputContainer",
   componentId: "sc-1x30a0s-1"
-})(["position:relative;width:100%;", ";", ";", " ", ";"], function (props) {
+})(["position:relative;width:100%;", " ", ";", ";", " ", ";"], function (props) {
+  return props.widthProp && props.readOnlyProp && widthStyle(props.widthProp, props.theme);
+}, function (props) {
   return props.readOnlyProp && !props.plain && controlBorderStyle;
 }, function (props) {
   return props.readOnlyCopy && "\n    box-sizing: border-box;\n    flex-direction: row;\n    display: flex;\n  ";

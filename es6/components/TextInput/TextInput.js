@@ -399,6 +399,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     readOnlyCopy: readOnlyCopy,
     plain: plain,
     border: !plain,
+    widthProp: widthProp,
     onMouseMove: function onMouseMove() {
       return setMouseMovedSinceLastKey(true);
     }

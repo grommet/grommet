@@ -29,14 +29,16 @@ var StyledTextInput = exports.StyledTextInput = _styledComponents["default"].inp
 }, function (props) {
   return props.textAlign && _utils.textAlignStyle;
 }, function (props) {
-  return props.widthProp && (0, _utils.widthStyle)(props.widthProp, props.theme);
+  return props.widthProp && !props.readOnly && (0, _utils.widthStyle)(props.widthProp, props.theme);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.extend;
 });
 var StyledTextInputContainer = exports.StyledTextInputContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledTextInputContainer",
   componentId: "sc-1x30a0s-1"
-})(["position:relative;width:100%;", ";", ";", " ", ";"], function (props) {
+})(["position:relative;width:100%;", " ", ";", ";", " ", ";"], function (props) {
+  return props.widthProp && props.readOnlyProp && (0, _utils.widthStyle)(props.widthProp, props.theme);
+}, function (props) {
   return props.readOnlyProp && !props.plain && _utils.controlBorderStyle;
 }, function (props) {
   return props.readOnlyCopy && "\n    box-sizing: border-box;\n    flex-direction: row;\n    display: flex;\n  ";

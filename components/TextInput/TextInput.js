@@ -405,6 +405,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
     readOnlyCopy: readOnlyCopy,
     plain: plain,
     border: !plain,
+    widthProp: widthProp,
     onMouseMove: function onMouseMove() {
       return setMouseMovedSinceLastKey(true);
     }

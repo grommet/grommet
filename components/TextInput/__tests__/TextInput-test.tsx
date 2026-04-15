@@ -727,6 +727,15 @@ describe('TextInput', () => {
     expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
+  test('read only with width', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TextInput value="test" readOnly aria-readonly width={'small'} />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('read only copy', async () => {
     const user = userEvent.setup();
 
@@ -752,5 +761,28 @@ describe('TextInput', () => {
     );
 
     expect(screen.getByLabelText('Add')).toBeInTheDocument();
+  });
+
+  test('read only copy with width', async () => {
+    const user = userEvent.setup();
+
+    const { asFragment } = render(
+      <Grommet>
+        <TextInput
+          value="test"
+          readOnly
+          readOnlyCopy
+          aria-readonly
+          width={'small'}
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button'));
+
+    const clipboardText = await navigator.clipboard.readText();
+    expect(clipboardText).toBe('test');
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });
