@@ -46,7 +46,7 @@ export interface CalendarProps {
     next?: string;
   };
   onReference?: (reference: string) => void;
-  onSelect?: (select: string | string[]) => any;
+  onSelect?: (select: string | string[], activeDate?: 'start' | 'end' | undefined) => any;
   range?: boolean | 'array';
   reference?: string;
   responsive?: boolean;

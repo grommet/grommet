@@ -9,7 +9,12 @@ export const Dual = () => {
   const [dates, setDates] = useState();
   const [reference1, setReference1] = useState('2020-08-07T15:13:47.290Z');
   const [reference2, setReference2] = useState('2020-09-01T15:15:34.916Z');
-  const onSelect = (arg) => {
+  
+  // We have to track the active date because the Calendars don't know about
+  // each other.
+  const [activeDate, setActiveDate] = useState();
+  
+  const onSelect = (arg, nextActiveDate) => {
     if (Array.isArray(arg)) {
       setDate(undefined);
       setDates(arg);
@@ -17,15 +22,9 @@ export const Dual = () => {
       setDate(arg);
       setDates(undefined);
     }
+    setActiveDate(nextActiveDate);
   };
 
-  // We have to track the active date because the Calendars don't know about
-  // each other.
-  const activeDate =
-    date || (dates && dates[0] && dates[0][0] && !dates[0][1])
-      ? 'end'
-      : undefined;
-  
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
