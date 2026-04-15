@@ -142,11 +142,17 @@ const Tip = forwardRef(
             onMouseLeave={() => setTooltipOver(false)}
           >
             {plain ? (
-              <span
+              // When plain, we wrap content in a Box using as="span" to:
+              // 1. Provide a DOM target for aria-describedby when content is
+              // a React node, without adding block-level layout or padding.
+              // 2. Ensure string content is a valid, identifiable child within
+              // the Drop.
+              <Box
+                as="span"
                 {...(isStringContent ? {} : { id: tooltipId, role: 'tooltip' })}
               >
                 {content}
-              </span>
+              </Box>
             ) : (
               <Box
                 {...(isStringContent ? {} : { id: tooltipId, role: 'tooltip' })}

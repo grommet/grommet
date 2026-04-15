@@ -344,6 +344,15 @@ exports[`Tip plain 1`] = `
   box-shadow: none;
 }
 
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 24px;
@@ -386,7 +395,9 @@ exports[`Tip plain 1`] = `
     style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
     tabindex="-1"
   >
-    <span>
+    <span
+      class="c2"
+    >
       tooltip
     </span>
   </div>
