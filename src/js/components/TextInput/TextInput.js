@@ -501,6 +501,7 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
+        widthProp={widthProp}
         onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
