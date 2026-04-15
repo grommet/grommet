@@ -108,7 +108,7 @@ const Grommet = forwardRef((props, ref) => {
 
   useEffect(() => {
     const onResize = () => {
-      setResponsive(getBreakpoint(document.body.clientWidth, theme));
+      setResponsive(getBreakpoint(document.body?.clientWidth ?? window.innerWidth, theme));
     };
     window.addEventListener('resize', onResize);
     onResize();
