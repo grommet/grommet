@@ -136,14 +136,18 @@ const Message = ({ error, info, message, type, ...rest }) => {
       containerProps = theme.formField[type] && theme.formField[type].container;
     }
 
+    // id is in rest; extract it so we can place it on the outermost element
+    const { id, ...contentRest } = rest;
+
     let messageContent;
     if (typeof message === 'string')
-      messageContent = <Text {...rest}>{message}</Text>;
-    else messageContent = <Box {...rest}>{message}</Box>;
+      messageContent = <Text {...contentRest}>{message}</Text>;
+    else messageContent = <Box {...contentRest}>{message}</Box>;
 
     return icon || containerProps ? (
       <StyledMessageContainer
         direction="row"
+        id={id}
         messageType={type}
         {...containerProps}
         {...passThemeFlag}
@@ -151,6 +155,12 @@ const Message = ({ error, info, message, type, ...rest }) => {
         {icon && <Box flex={false}>{icon}</Box>}
         {messageContent}
       </StyledMessageContainer>
+    ) : id ? (
+      typeof message === 'string' ? (
+        <Text id={id} {...contentRest}>{message}</Text>
+      ) : (
+        <Box id={id} {...contentRest}>{message}</Box>
+      )
     ) : (
       messageContent
     );
@@ -342,6 +352,11 @@ const FormField = forwardRef(
           invalid={!!error}
           name={name}
           label={component === CheckBox ? label : undefined}
+          aria-describedby={
+            error && htmlFor
+              ? `grommet-${adjustedHtmlFor}__error`
+              : rest['aria-describedby']
+          }
           {...rest}
         />
       );
@@ -687,7 +702,12 @@ const FormField = forwardRef(
           </>
         ) : undefined}
         {contents}
-        <Message type="error" message={error} {...formFieldTheme.error} />
+        <Message
+          type="error"
+          message={error}
+          id={error && htmlFor ? `grommet-${adjustedHtmlFor}__error` : undefined}
+          {...formFieldTheme.error}
+        />
         <Message type="info" message={info} {...themeInfoProps} />
       </FormFieldBox>
     );
