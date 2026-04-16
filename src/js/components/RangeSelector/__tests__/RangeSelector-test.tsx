@@ -369,4 +369,27 @@ describe('RangeSelector', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should not trigger onClick after drag', () => {
+    const handleChange = jest.fn();
+
+    const { container } = render(
+      <Grommet>
+        <RangeSelector values={[20, 30]} onChange={handleChange} />
+      </Grommet>,
+    );
+
+    const upperControl = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+    fireEvent.mouseDown(upperControl);
+    fireEvent.mouseMove(document, { clientX: 0, clientY: 0 });
+    fireEvent.mouseUp(document);
+
+    // this click should be ignored
+    fireEvent.click(document);
+
+    expect(handleChange).not.toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
