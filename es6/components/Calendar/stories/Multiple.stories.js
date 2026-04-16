@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Box, Calendar } from 'grommet';
+var initialMonth = '2026-03-12T21:09:16.501Z';
 export var Multiple = function Multiple() {
-  var _useState = useState([]),
+  var _useState = useState(),
     dates = _useState[0],
     setDates = _useState[1];
+  var _useState2 = useState(initialMonth),
+    reference = _useState2[0],
+    setReference = _useState2[1];
   return (
     /*#__PURE__*/
     // Uncomment <Grommet> lines when using outside of storybook
@@ -14,7 +18,7 @@ export var Multiple = function Multiple() {
     }, /*#__PURE__*/React.createElement(Calendar, {
       dates: dates,
       onSelect: function onSelect(date) {
-        var nextDates = [].concat(dates);
+        var nextDates = dates ? [].concat(dates) : [];
         var index = nextDates.indexOf(date);
         if (index === -1) {
           nextDates.push(date);
@@ -25,7 +29,8 @@ export var Multiple = function Multiple() {
         console.log('Select iso date:', date, nextDates);
         console.log('Select utc date:', new Date(date));
       },
-      bounds: ['2020-09-08', '2025-12-13']
+      reference: reference,
+      onReference: setReference
     }))
     // </Grommet>
   );

@@ -13,6 +13,10 @@ var customHeading = (0, _utils.deepMerge)(_grommet.grommet, {
     }
   }
 });
+var reference = '2026-04-12T21:09:16.501Z';
+var end = new Date(reference);
+var start = new Date(end.getTime() - 1000 * 60 * 60 * 24 * 90); // 90 days ago
+var bounds = [start.getFullYear() + "-" + (start.getMonth() + 1) + "-" + start.getDate(), end.getFullYear() + "-" + (end.getMonth() + 1) + "-" + end.getDate()];
 var CustomSizeCalendar = exports.CustomSizeCalendar = function CustomSizeCalendar() {
   var _useState = (0, _react.useState)(),
     date = _useState[0],
@@ -28,7 +32,8 @@ var CustomSizeCalendar = exports.CustomSizeCalendar = function CustomSizeCalenda
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Calendar, {
     date: date,
     onSelect: onSelect,
-    bounds: ['2020-09-08', '2025-12-13']
+    bounds: bounds,
+    reference: reference
   })));
 };
 CustomSizeCalendar.storyName = 'Heading size';

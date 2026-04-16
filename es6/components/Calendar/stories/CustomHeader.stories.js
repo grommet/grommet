@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Box, Button, Calendar, Text } from 'grommet';
 import { FormPreviousLink } from "grommet-icons/es6/icons/FormPreviousLink";
 import { FormNextLink } from "grommet-icons/es6/icons/FormNextLink";
+var reference = '2026-04-12T21:09:16.501Z';
+var end = new Date(reference);
+var start = new Date(end.getTime() - 1000 * 60 * 60 * 24 * 90); // 90 days ago
+var bounds = [start.getFullYear() + "-" + (start.getMonth() + 1) + "-" + start.getDate(), end.getFullYear() + "-" + (end.getMonth() + 1) + "-" + end.getDate()];
 export var CustomHeaderCalendar = function CustomHeaderCalendar() {
   var _useState = useState(),
     date = _useState[0],
@@ -20,7 +24,8 @@ export var CustomHeaderCalendar = function CustomHeaderCalendar() {
       date: date,
       onSelect: onSelect,
       size: "small",
-      bounds: ['2020-09-08', '2025-12-13'],
+      bounds: bounds,
+      reference: reference,
       header: function header(_ref) {
         var currentDate = _ref.date,
           locale = _ref.locale,

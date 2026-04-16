@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Calendar } from 'grommet';
+var reference = '2026-04-12T21:09:16.501Z';
+var end = new Date(reference);
+var start = new Date(end.getTime() - 1000 * 60 * 60 * 24 * 90); // 90 days ago
+var bounds = [start.getFullYear() + "-" + (start.getMonth() + 1) + "-" + start.getDate(), end.getFullYear() + "-" + (end.getMonth() + 1) + "-" + end.getDate()];
 export var Simple = function Simple() {
   var _useState = useState(),
     date = _useState[0],
@@ -19,7 +23,8 @@ export var Simple = function Simple() {
       daysOfWeek: true,
       onSelect: onSelect,
       size: "small",
-      bounds: ['2020-09-08', '2025-12-13']
+      bounds: bounds,
+      reference: reference
     })))
     // </Grommet>
   );

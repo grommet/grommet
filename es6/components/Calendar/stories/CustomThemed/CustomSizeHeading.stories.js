@@ -8,6 +8,10 @@ var customHeading = deepMerge(grommet, {
     }
   }
 });
+var reference = '2026-04-12T21:09:16.501Z';
+var end = new Date(reference);
+var start = new Date(end.getTime() - 1000 * 60 * 60 * 24 * 90); // 90 days ago
+var bounds = [start.getFullYear() + "-" + (start.getMonth() + 1) + "-" + start.getDate(), end.getFullYear() + "-" + (end.getMonth() + 1) + "-" + end.getDate()];
 export var CustomSizeCalendar = function CustomSizeCalendar() {
   var _useState = useState(),
     date = _useState[0],
@@ -23,7 +27,8 @@ export var CustomSizeCalendar = function CustomSizeCalendar() {
   }, /*#__PURE__*/React.createElement(Calendar, {
     date: date,
     onSelect: onSelect,
-    bounds: ['2020-09-08', '2025-12-13']
+    bounds: bounds,
+    reference: reference
   })));
 };
 CustomSizeCalendar.storyName = 'Heading size';
