@@ -313,7 +313,7 @@ describe('Calendar', () => {
     fireEvent.click(getByText('17'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-17T/),
-      undefined,
+      {},
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -329,7 +329,7 @@ describe('Calendar', () => {
     fireEvent.click(getByText('17'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-17T/),
-      undefined,
+      {},
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -413,7 +413,7 @@ describe('Calendar', () => {
     fireEvent.click(getByText('11'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/2020-01-11T/),
-      'end',
+      { activeDate: 'end' },
     );
     fireEvent.click(getByText('20'));
     expect(onSelect).toHaveBeenCalledWith(
@@ -423,7 +423,7 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-01-20T/),
         ],
       ],
-      'start',
+      { activeDate: 'start' },
     );
   });
 
@@ -546,7 +546,7 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-07-20T/),
         ],
       ],
-      'start',
+      { activeDate: 'start' },
     );
   });
 
@@ -571,13 +571,16 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-01-05T/),
         ],
       ],
-      'end',
+      { activeDate: 'end' },
     );
     // select date less than January 3rd
     // activeDate is end, since this is before the start
     // date we should update the date
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
-    expect(onSelect).toHaveBeenCalledWith(expect.stringMatching(/2020-01-01T/), 'end');
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/2020-01-01T/),
+      { activeDate: 'end' },
+    );
   });
 
   test('select date with same start date', () => {
@@ -596,7 +599,7 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-03T/),
-      'start',
+      { activeDate: 'start' },
     );
   });
 
@@ -615,10 +618,10 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-03T/),
-      'end',
+      { activeDate: 'end' },
     );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith(undefined, 'start');
+    expect(onSelect).toHaveBeenCalledWith(undefined, { activeDate: 'start' });
   });
 
   test('select date with same end date', () => {
@@ -637,7 +640,7 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-01T/),
-      'end',
+      { activeDate: 'end' },
     );
   });
 
@@ -663,7 +666,7 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-01-05T/),
         ],
       ],
-      'end',
+      { activeDate: 'end' },
     );
     // select date less than January 3rd
     // activeDate is end, since this is before the start
@@ -671,7 +674,7 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
     expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-01T/), undefined],
-    ], 'end');
+    ], { activeDate: 'end' });
 
     // should select end date again
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
@@ -682,14 +685,14 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-01-03T/),
         ],
       ],
-      'start',
+      { activeDate: 'start' },
     );
 
     // should select start date, if great than end date, clear end date
     fireEvent.click(getByLabelText('Sun Jan 05 2020'));
     expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-05T/), undefined],
-    ], 'end');
+    ], { activeDate: 'end' });
   });
 
   test('range as array with date', () => {
@@ -714,7 +717,7 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-01-05T/),
         ],
       ],
-      'end',
+      { activeDate: 'end' },
     );
     // select date less than January 3rd
     // activeDate is end, since this is before the start
@@ -722,7 +725,7 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
     expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-01T/), undefined],
-    ], 'end');
+    ], { activeDate: 'end' });
 
     // should select end date again
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
@@ -733,14 +736,14 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-01-03T/),
         ],
       ],
-      'start',
+      { activeDate: 'start' },
     );
 
     // should select start date, if great than end date, clear end date
     fireEvent.click(getByLabelText('Sun Jan 05 2020'));
     expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-05T/), undefined],
-    ], 'end');
+    ], { activeDate: 'end' });
   });
 
   test('activeDate start', () => {
@@ -764,7 +767,7 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-01-05T/),
         ],
       ],
-      'end',
+      { activeDate: 'end' },
     );
   });
 
@@ -789,7 +792,7 @@ describe('Calendar', () => {
           expect.stringMatching(/^2020-01-03T/),
         ],
       ],
-      'start',
+      { activeDate: 'start' },
     );
   });
 
@@ -807,7 +810,7 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Fri Jul 15 2022'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2022-07-15T08:00:00.000Z/),
-      undefined,
+      {},
     );
 
     // Change the Calendar from July to March
@@ -828,7 +831,7 @@ describe('Calendar', () => {
       expect.stringMatching(
         `2022-03-02T0${hasDaylightSavings ? 9 : 8}:00:00.000Z`,
       ),
-      undefined,
+      {},
 
     );
   });

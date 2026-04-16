@@ -14,7 +14,7 @@ export const Dual = () => {
   // each other.
   const [activeDate, setActiveDate] = useState();
   
-  const onSelect = (arg, nextActiveDate) => {
+  const onSelect = (arg, { activeDate: nextActiveDate }) => {
     if (Array.isArray(arg)) {
       setDate(undefined);
       setDates(arg);

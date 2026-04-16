@@ -639,15 +639,17 @@ const Calendar = forwardRef(
 
         let nextValue;
         let nextActiveDate;
+        const details = {};
         if (range || Array.isArray(value?.[0])) {
           [nextValue, nextActiveDate] = handleRange(selectedDate);
+          details.activeDate = nextActiveDate;
         } else {
           nextValue = selectedDate;
         }
 
         if (onSelect) {
           nextValue = normalizeOutput(nextValue, outputFormat);
-          onSelect(nextValue, nextActiveDate);
+          onSelect(nextValue, details);
         }
       },
       [handleRange, onSelect, outputFormat, range, value],
