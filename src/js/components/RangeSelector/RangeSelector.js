@@ -195,10 +195,7 @@ const RangeSelector = forwardRef(
     );
 
     useEffect(() => {
-      const onMouseUp = () => {
-        setChanging(undefined);
-        isDraggingRef.current = false;
-      };
+      const onMouseUp = () => setChanging(undefined);
 
       if (changing) {
         window.addEventListener('mousemove', onMouseMove);
@@ -311,10 +308,7 @@ const RangeSelector = forwardRef(
             isDraggingRef.current = false;
             setChanging('lower');
           }}
-          onTouchStart={() => {
-            isDraggingRef.current = false;
-            setChanging('lower');
-          }}
+          onTouchStart={() => setChanging('lower')}
           onDecrease={() => change([lower - step, upper])}
           onIncrease={
             lower + step <= upper
@@ -355,10 +349,7 @@ const RangeSelector = forwardRef(
             isDraggingRef.current = false;
             setChanging('upper');
           }}
-          onTouchStart={() => {
-            isDraggingRef.current = false;
-            setChanging('upper');
-          }}
+          onTouchStart={() => setChanging('upper')}
           onDecrease={
             upper - step >= lower
               ? () => change([lower, upper - step])
