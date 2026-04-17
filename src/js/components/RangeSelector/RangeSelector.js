@@ -79,6 +79,7 @@ const RangeSelector = forwardRef(
     const maxRef = useRef();
     const minRef = useRef();
     const labelWidthRef = useRef(0);
+    const isDraggingRef = useRef(false);
 
     const [values, setValues] = formContext.useFormInput({
       name,
@@ -152,6 +153,8 @@ const RangeSelector = forwardRef(
 
     const onMouseMove = useCallback(
       (event) => {
+        isDraggingRef.current = true;
+
         const value = valueForMouseCoord(event);
         let nextValues;
         if (changing === 'lower' && value <= values[1] && value !== moveValue) {
@@ -192,7 +195,10 @@ const RangeSelector = forwardRef(
     );
 
     useEffect(() => {
-      const onMouseUp = () => setChanging(undefined);
+      const onMouseUp = () => {
+        setChanging(undefined);
+        isDraggingRef.current = false;
+      };
 
       if (changing) {
         window.addEventListener('mousemove', onMouseMove);
@@ -208,6 +214,8 @@ const RangeSelector = forwardRef(
 
     const onClick = useCallback(
       (event) => {
+        if (isDraggingRef.current) return;
+
         const value = valueForMouseCoord(event);
         if (
           value <= values[0] ||
@@ -299,8 +307,14 @@ const RangeSelector = forwardRef(
           messages={messages}
           value={lower}
           step={step}
-          onMouseDown={() => setChanging('lower')}
-          onTouchStart={() => setChanging('lower')}
+          onMouseDown={() => {
+            isDraggingRef.current = false;
+            setChanging('lower');
+          }}
+          onTouchStart={() => {
+            isDraggingRef.current = false;
+            setChanging('lower');
+          }}
           onDecrease={() => change([lower - step, upper])}
           onIncrease={
             lower + step <= upper
@@ -322,6 +336,7 @@ const RangeSelector = forwardRef(
           }
           {...layoutProps}
           onMouseDown={(event) => {
+            isDraggingRef.current = false;
             const nextMoveValue = valueForMouseCoord(event);
             setChanging('selection');
             setMoveValue(nextMoveValue);
@@ -336,8 +351,14 @@ const RangeSelector = forwardRef(
           max={max}
           value={upper}
           step={step}
-          onMouseDown={() => setChanging('upper')}
-          onTouchStart={() => setChanging('upper')}
+          onMouseDown={() => {
+            isDraggingRef.current = false;
+            setChanging('upper');
+          }}
+          onTouchStart={() => {
+            isDraggingRef.current = false;
+            setChanging('upper');
+          }}
           onDecrease={
             upper - step >= lower
               ? () => change([lower, upper - step])
