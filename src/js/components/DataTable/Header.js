@@ -381,6 +381,7 @@ const Header = forwardRef(
                     }
                   } else if (theme.dataTable.icons.sortable) {
                     Icon = theme.dataTable.icons.sortable;
+                    ariaSort = 'none';
                   }
                 }
 
@@ -404,7 +405,12 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon aria-label={iconAriaLabel} />}
+                      {Icon && (
+                        <Icon
+                          aria-label={iconAriaLabel}
+                          aria-hidden={!iconAriaLabel ? true : undefined}
+                        />
+                      )}
                     </Box>
                   </StyledHeaderCellButton>
                 );
