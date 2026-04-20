@@ -90,9 +90,12 @@ var normalizeRange = function normalizeRange(value, activeDate) {
   if (range instanceof Date) range = activeDate === 'start' ? [[undefined, range]] : [[range, undefined]];else if (Array.isArray(range) && !Array.isArray(range[0])) range = [range];
   return range;
 };
-var getReference = function getReference(reference, value, activeDate) {
+var getReference = function getReference(reference, onReference, value, activeDate) {
   var nextReference;
-  if (value) {
+  if (reference && onReference) {
+    // controlled component, so use the reference provided
+    nextReference = reference;
+  } else if (value) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
         // if we just selected an end date, active date will be 'start'
@@ -295,14 +298,12 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
     var val = dateProp || datesProp;
     setValue(_normalizeInput(val));
   }, [dateProp, datesProp]);
-  var _useState3 = useState(getReference(_normalizeInput(referenceProp), value, activeDate)),
+  var _useState3 = useState(getReference(_normalizeInput(referenceProp), onReference, value, activeDate)),
     reference = _useState3[0],
     setReference = _useState3[1];
   useEffect(function () {
-    if (value) {
-      setReference(getReference(_normalizeInput(referenceProp), value, activeDate));
-    }
-  }, [referenceProp, value, activeDate]);
+    setReference(getReference(_normalizeInput(referenceProp), onReference, value, activeDate));
+  }, [referenceProp, onReference, value, activeDate]);
   var _useState4 = useState(_getOutputFormat(dateProp || datesProp)),
     outputFormat = _useState4[0],
     setOutputFormat = _useState4[1];
@@ -459,14 +460,15 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
   var handleRange = useCallback(function (selectedDate) {
     var _priorRange$, _priorRange$2;
     var result;
+    var nextActiveDate = activeDate;
     var priorRange = normalizeRange(value, activeDate);
     // deselect when date clicked was the start/end of the range
     if (selectedDate.getTime() === (priorRange == null || (_priorRange$ = priorRange[0]) == null || (_priorRange$ = _priorRange$[0]) == null ? void 0 : _priorRange$.getTime())) {
       result = [[undefined, priorRange[0][1]]];
-      setActiveDate('start');
+      nextActiveDate = 'start';
     } else if (selectedDate.getTime() === (priorRange == null || (_priorRange$2 = priorRange[0]) == null || (_priorRange$2 = _priorRange$2[1]) == null ? void 0 : _priorRange$2.getTime())) {
       result = [[priorRange[0][0], undefined]];
-      setActiveDate('end');
+      nextActiveDate = 'end';
     }
     // selecting start date
     else if (activeDate === 'start') {
@@ -479,18 +481,18 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       } else if (selectedDate.getTime() > priorRange[0][1].getTime()) {
         result = [[selectedDate, undefined]];
       }
-      setActiveDate('end');
+      nextActiveDate = 'end';
     }
     // selecting end date
     else if (!priorRange) {
       result = [[undefined, selectedDate]];
-      setActiveDate('start');
+      nextActiveDate = 'start';
     } else if (selectedDate.getTime() < priorRange[0][0].getTime()) {
       result = [[selectedDate, undefined]];
-      setActiveDate('end');
+      nextActiveDate = 'end';
     } else if (selectedDate.getTime() > priorRange[0][0].getTime()) {
       result = [[priorRange[0][0], selectedDate]];
-      setActiveDate('start');
+      nextActiveDate = 'start';
     }
 
     // If no dates selected, always return undefined; else format
@@ -504,21 +506,27 @@ var Calendar = /*#__PURE__*/forwardRef(function (_ref4, ref) {
         });
       }
     }
+    setActiveDate(nextActiveDate);
     setValue(result);
-    return result;
+    return [result, nextActiveDate];
   }, [activeDate, value, range]);
   var selectDate = useCallback(function (selectedDate) {
     // If no onSelect prop is provided, the calendar should be read-only
     if (!onSelect) return;
     var nextValue;
+    var nextActiveDate;
+    var details = {};
     if (range || Array.isArray(value == null ? void 0 : value[0])) {
-      nextValue = handleRange(selectedDate);
+      var _handleRange = handleRange(selectedDate);
+      nextValue = _handleRange[0];
+      nextActiveDate = _handleRange[1];
+      details.activeDate = nextActiveDate;
     } else {
       nextValue = selectedDate;
     }
     if (onSelect) {
       nextValue = _normalizeOutput(nextValue, outputFormat);
-      onSelect(nextValue);
+      onSelect(nextValue, details);
     }
   }, [handleRange, onSelect, outputFormat, range, value]);
   var onClick = function onClick(selectedDate) {

@@ -16,7 +16,14 @@ export var Dual = function Dual() {
   var _useState4 = useState('2020-09-01T15:15:34.916Z'),
     reference2 = _useState4[0],
     setReference2 = _useState4[1];
-  var onSelect = function onSelect(arg) {
+
+  // We have to track the active date because the Calendars don't know about
+  // each other.
+  var _useState5 = useState(),
+    activeDate = _useState5[0],
+    setActiveDate = _useState5[1];
+  var onSelect = function onSelect(arg, _ref) {
+    var nextActiveDate = _ref.activeDate;
     if (Array.isArray(arg)) {
       setDate(undefined);
       setDates(arg);
@@ -24,6 +31,7 @@ export var Dual = function Dual() {
       setDate(arg);
       setDates(undefined);
     }
+    setActiveDate(nextActiveDate);
   };
   return (
     /*#__PURE__*/
@@ -35,6 +43,7 @@ export var Dual = function Dual() {
       direction: "row",
       gap: "small"
     }, /*#__PURE__*/React.createElement(Calendar, {
+      activeDate: activeDate,
       animate: false,
       showAdjacentDays: false,
       range: true,
@@ -46,13 +55,14 @@ export var Dual = function Dual() {
         var refDate = new Date(reference);
         var nextDate = new Date(refDate);
         nextDate.setMonth(refDate.getMonth() + 1, 1);
+        setReference1(reference);
         setReference2(nextDate.toISOString());
       },
-      header: function header(_ref) {
-        var currentDate = _ref.date,
-          locale = _ref.locale,
-          onPreviousMonth = _ref.onPreviousMonth,
-          previousInBound = _ref.previousInBound;
+      header: function header(_ref2) {
+        var currentDate = _ref2.date,
+          locale = _ref2.locale,
+          onPreviousMonth = _ref2.onPreviousMonth,
+          previousInBound = _ref2.previousInBound;
         return /*#__PURE__*/React.createElement(Box, {
           direction: "row",
           align: "center",
@@ -70,6 +80,7 @@ export var Dual = function Dual() {
         })), /*#__PURE__*/React.createElement(Blank, null));
       }
     }), /*#__PURE__*/React.createElement(Calendar, {
+      activeDate: activeDate,
       animate: false,
       showAdjacentDays: false,
       date: date,
@@ -82,12 +93,13 @@ export var Dual = function Dual() {
         var priorDate = new Date(refDate);
         priorDate.setMonth(refDate.getMonth() - 1, 1);
         setReference1(priorDate.toISOString());
+        setReference2(reference);
       },
-      header: function header(_ref2) {
-        var currentDate = _ref2.date,
-          locale = _ref2.locale,
-          onNextMonth = _ref2.onNextMonth,
-          nextInBound = _ref2.nextInBound;
+      header: function header(_ref3) {
+        var currentDate = _ref3.date,
+          locale = _ref3.locale,
+          onNextMonth = _ref3.onNextMonth,
+          nextInBound = _ref3.nextInBound;
         return /*#__PURE__*/React.createElement(Box, {
           direction: "row",
           align: "center",
