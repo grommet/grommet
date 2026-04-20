@@ -120,7 +120,6 @@ exports[`DataSort drop 1`] = `
     id="test-data"
   >
     <button
-      aria-description="Open sort"
       aria-label="Open sort"
       class="c2"
       id="test-data--sort-control"
@@ -145,7 +144,6 @@ exports[`DataSort drop 1`] = `
 
 exports[`DataSort drop 2`] = `
 <button
-  aria-description="Open sort"
   aria-label="Open sort"
   class="StyledButton-sc-323bzc-0 emHfGN"
   data-g-tabindex="none"

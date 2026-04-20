@@ -546,7 +546,6 @@ exports[`DataFilters drop 1`] = `
       class="c2"
     >
       <button
-        aria-description="Open filters"
         aria-label="Open filters"
         class="c3"
         id="test-data--filters-control"
@@ -572,7 +571,6 @@ exports[`DataFilters drop 1`] = `
 
 exports[`DataFilters drop 2`] = `
 <button
-  aria-description="Open filters"
   aria-label="Open filters"
   class="StyledButton-sc-323bzc-0 emHfGN"
   data-g-tabindex="none"
@@ -891,7 +889,6 @@ exports[`DataFilters drop badge 1`] = `
       class="c2"
     >
       <button
-        aria-description="Open filters, 1 filter applied"
         aria-label="Open filters, 1 filter applied"
         class="c3"
         id="data--filters-control"
@@ -1081,7 +1078,6 @@ exports[`DataFilters layer 1`] = `
       class="c2"
     >
       <button
-        aria-description="Open filters"
         aria-label="Open filters"
         class="c3"
         id="test-data--filters-control"
@@ -3696,7 +3692,6 @@ exports[`DataFilters should not badge when RangeSelector returns to min/max 1`] 
         class="c2"
       >
         <button
-          aria-description="Open filters"
           aria-label="Open filters"
           class="c3"
           id="data--filters-control"
@@ -4875,7 +4870,6 @@ exports[`DataFilters sub objects with rangeSelector 1`] = `
         class="c2"
       >
         <button
-          aria-description="Open filters, 1 filter applied"
           aria-label="Open filters, 1 filter applied"
           class="c3"
           id="data--filters-control"

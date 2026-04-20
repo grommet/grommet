@@ -84,10 +84,14 @@ const Tip = forwardRef(
             // aria-description is always present for string content, so the
             // screen reader reads it at focus time without waiting for a
             // re-render. No DOM element reference needed.
-            'aria-description':
-              [child.props['aria-description'], content]
-                .filter(Boolean)
-                .join(' ') || undefined,
+            // Skip if the child's aria-label already matches the content
+            // to avoid SR announcing the same text twice.
+            ...(child.props['aria-label'] !== content && {
+              'aria-description':
+                [child.props['aria-description'], content]
+                  .filter(Boolean)
+                  .join(' ') || undefined,
+            }),
           }
         : {
             // For React node content, reference the tooltip Drop element.
@@ -149,13 +153,17 @@ const Tip = forwardRef(
               // the Drop.
               <Box
                 as="span"
-                {...(isStringContent ? {} : { id: tooltipId, role: 'tooltip' })}
+                {...(isStringContent
+                  ? { 'aria-hidden': true }
+                  : { id: tooltipId, role: 'tooltip' })}
               >
                 {content}
               </Box>
             ) : (
               <Box
-                {...(isStringContent ? {} : { id: tooltipId, role: 'tooltip' })}
+                {...(isStringContent
+                  ? { 'aria-hidden': true }
+                  : { id: tooltipId, role: 'tooltip' })}
                 {...theme.tip.content}
               >
                 {content}

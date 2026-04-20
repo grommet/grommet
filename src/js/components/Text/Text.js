@@ -69,11 +69,18 @@ const Text = forwardRef(
       );
     }
 
+    // When a11yTitle is provided, aria-label is set on the element.
+    // aria-label is not permitted on a <span> with no
+    // role (implicit "generic"). Add role="group" so aria-label is
+    // valid per ARIA spec.
+    const role = a11yTitle && !as && !tag ? 'group' : undefined;
+
     const styledTextResult = (
       <StyledText
         as={!as && tag ? tag : as}
         colorProp={color}
         aria-label={a11yTitle}
+        role={role}
         level={level}
         truncate={truncate}
         size={size}

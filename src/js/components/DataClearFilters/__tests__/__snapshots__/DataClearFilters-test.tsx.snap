@@ -395,7 +395,6 @@ exports[`DataClearFilters clear filters should not clear search, sort, or step 1
             class="c9"
           >
             <button
-              aria-description="Open filters"
               aria-label="Open filters"
               class="c10"
               id="data--filters-control"
@@ -1029,7 +1028,6 @@ exports[`DataClearFilters renders custom message 1`] = `
             class="c9"
           >
             <button
-              aria-description="Open filters"
               aria-label="Open filters"
               class="c10"
               id="data--filters-control"

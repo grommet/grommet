@@ -3239,7 +3239,6 @@ exports[`DataFilter select multiple options 1`] = `
         class="c2"
       >
         <button
-          aria-description="Open filters, 1 filter applied"
           aria-label="Open filters, 1 filter applied"
           class="c3"
           id="data--filters-control"
@@ -3431,7 +3430,6 @@ exports[`DataFilter select multiple options search 1`] = `
         class="c2"
       >
         <button
-          aria-description="Open filters"
           aria-label="Open filters"
           class="c3"
           id="test-data--filters-control"
@@ -3791,7 +3789,6 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
         class="c2"
       >
         <button
-          aria-description="Open filters, 2 filters applied"
           aria-label="Open filters, 2 filters applied"
           class="c3"
           id="data--filters-control"

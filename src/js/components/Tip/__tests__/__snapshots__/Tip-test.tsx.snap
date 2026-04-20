@@ -101,6 +101,7 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
     tabindex="-1"
   >
     <div
+      aria-hidden="true"
       class="c2"
     >
       hello dropProps
@@ -396,6 +397,7 @@ exports[`Tip plain 1`] = `
     tabindex="-1"
   >
     <span
+      aria-hidden="true"
       class="c2"
     >
       tooltip
@@ -513,6 +515,7 @@ exports[`Tip should be visible by default 1`] = `
     tabindex="-1"
   >
     <div
+      aria-hidden="true"
       class="c2"
     >
       tooltip
@@ -686,6 +689,7 @@ exports[`Tip themed 1`] = `
     tabindex="-1"
   >
     <div
+      aria-hidden="true"
       class="c2"
     >
       tooltip
@@ -795,6 +799,7 @@ exports[`Tip tip content margin overides global drop margin 1`] = `
     tabindex="-1"
   >
     <div
+      aria-hidden="true"
       class="c2"
     >
       tooltip

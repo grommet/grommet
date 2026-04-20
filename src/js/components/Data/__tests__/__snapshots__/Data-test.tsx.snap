@@ -416,7 +416,6 @@ exports[`Data controlled search 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -595,7 +594,6 @@ exports[`Data controlled search 2`] = `
           class="StyledBox-sc-13pk1d4-0 kIHeMW"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="StyledButton-sc-323bzc-0 emHfGN"
             id="data--filters-control"
@@ -1144,7 +1142,6 @@ exports[`Data messages 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -3283,7 +3280,6 @@ exports[`Data properties when property is an array 1`] = `
             class="c9"
           >
             <button
-              aria-description="Open filters"
               aria-label="Open filters"
               class="c10"
               id="data--filters-control"
@@ -3711,7 +3707,6 @@ exports[`Data properties when property is an array 2`] = `
 }
 
 <button
-  aria-description="Open filters"
   aria-label="Open filters"
   class="c0"
   id="data--filters-control"
@@ -5176,7 +5171,6 @@ exports[`Data toolbar 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -5658,7 +5652,6 @@ exports[`Data toolbar filters 1`] = `
           class="c4"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c5"
             id="data--filters-control"
@@ -6653,7 +6646,6 @@ exports[`Data uncontrolled search 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -6832,7 +6824,6 @@ exports[`Data uncontrolled search 2`] = `
           class="StyledBox-sc-13pk1d4-0 kIHeMW"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="StyledButton-sc-323bzc-0 emHfGN"
             id="data--filters-control"
@@ -7706,7 +7697,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -7937,7 +7927,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
           class="StyledBox-sc-13pk1d4-0 kIHeMW"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="StyledButton-sc-323bzc-0 emHfGN"
             id="data--filters-control"
@@ -8299,7 +8288,6 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           class="StyledBox-sc-13pk1d4-0 kIHeMW"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="StyledButton-sc-323bzc-0 emHfGN"
             id="data--filters-control"
@@ -9441,7 +9429,6 @@ exports[`Data view all 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -9930,7 +9917,6 @@ exports[`Data view columns 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -10466,7 +10452,6 @@ exports[`Data view property option 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -11107,7 +11092,6 @@ exports[`Data view property range 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters, 1 filter applied"
             aria-label="Open filters, 1 filter applied"
             class="c10"
             id="data--filters-control"
@@ -11679,7 +11663,6 @@ exports[`Data view search 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
@@ -12195,7 +12178,6 @@ exports[`Data view sort 1`] = `
           class="c9"
         >
           <button
-            aria-description="Open filters"
             aria-label="Open filters"
             class="c10"
             id="data--filters-control"
