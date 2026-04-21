@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
@@ -7,6 +7,7 @@ import { Box } from '../../Box';
 import { Text } from '../../Text';
 import { DataChart, DataChartProps } from '..';
 import { ChartProps } from '../../Chart';
+import userEvent from '@testing-library/user-event';
 
 const data = [
   { a: 1, b: 'one', c: 111111, d: '2020-06-24' },
@@ -31,6 +32,11 @@ describe('DataChart', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('default without grommet wrapper', () => {
+    const { container } = render(<DataChart data={data} series="a" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -470,6 +476,76 @@ describe('DataChart', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme overrides', async () => {
+    const user = userEvent.setup();
+
+    const data: any = [];
+    for (let i = 1; i < 3; i += 1) {
+      const v = Math.sin(i / 2.0);
+      data.push({
+        percent: Math.abs(v * 100),
+      });
+    }
+
+    const { container } = render(
+      <Grommet
+        theme={{
+          dataChart: {
+            detail: {
+              pad: 'large',
+            },
+            granularity: {
+              y: {
+                xsmall: { fine: 5, medium: 3 },
+                small: { fine: 5, medium: 3 },
+                medium: { fine: 7, medium: 5 },
+                large: { fine: 7, medium: 5 },
+                xlarge: { fine: 9, medium: 5 },
+              },
+            },
+            halfPad: {
+              xlarge: 'xlarge',
+              large: 'large',
+              medium: 'medium',
+              small: 'small',
+              xsmall: 'xsmall',
+            },
+          },
+        }}
+      >
+        <DataChart detail data={data} series={[{ property: 'percent' }, {}]} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    await user.tab();
+    fireEvent.keyDown(screen.getByRole('list'), {
+      key: 'Right',
+      keyCode: 39,
+      which: 39,
+    });
+
+    expect(
+      document.querySelector('div[data-g-portal-id="0"]'),
+    ).toMatchSnapshot();
+  });
+
+  test('applies colors from theme.dataChart.colors', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          dataChart: {
+            colors: ['brand', 'accent-3', 'accent-2'],
+          },
+        }}
+      >
+        <DataChart data={data} series="a" />
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });

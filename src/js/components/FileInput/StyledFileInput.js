@@ -1,9 +1,7 @@
 import styled from 'styled-components';
+import { inputStyle, styledComponentsConfig } from '../../utils';
 
-import { inputStyle } from '../../utils';
-import { defaultProps } from '../../default-props';
-
-const StyledFileInput = styled.input`
+const StyledFileInput = styled.input.withConfig(styledComponentsConfig)`
   position: absolute;
   height: 100%;
   width: 100%;
@@ -27,8 +25,5 @@ const StyledFileInput = styled.input`
     cursor: pointer;
   }
 `;
-
-StyledFileInput.defaultProps = {};
-Object.setPrototypeOf(StyledFileInput.defaultProps, defaultProps);
 
 export { StyledFileInput };

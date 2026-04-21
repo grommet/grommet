@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -9,6 +9,8 @@ import {
   useDisabled,
   arrayIncludes,
 } from '../Select/utils';
+import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const SelectionSummary = ({
   allOptions,
@@ -18,6 +20,7 @@ const SelectionSummary = ({
   isSelected,
   labelKey,
   limit,
+  messages,
   onChange,
   onMore,
   options,
@@ -27,6 +30,8 @@ const SelectionSummary = ({
   value,
   valueKey,
 }) => {
+  const { format } = useContext(MessageContext);
+  const { theme } = useThemeValue();
   const isDisabled = useDisabled(
     disabled,
     disabledKey,
@@ -68,13 +73,19 @@ const SelectionSummary = ({
     selectedInSearch().length === 0
   );
 
-  const summaryText =
+  const messageId =
     value?.length === 0 ||
     onMore ||
     !value ||
     (search !== '' && search !== undefined)
-      ? `${value?.length || 0} selected`
-      : `${value?.length || 0} selected of ${options.length}`;
+      ? 'selectMultiple.selected'
+      : 'selectMultiple.selectedOfTotal';
+
+  const summaryText = format({
+    id: messageId,
+    messages,
+    values: { selected: value?.length || 0, total: options.length },
+  });
 
   const summaryButtonClick = (event) => {
     if (onChange) {
@@ -109,15 +120,17 @@ const SelectionSummary = ({
   return (
     <Box
       pad={
-        showSelectedInline ? { left: 'xsmall', vertical: 'xsmall' } : 'xsmall'
+        showSelectedInline
+          ? theme.selectMultiple?.summary?.showSelectedInline?.pad
+          : theme.selectMultiple?.summary?.pad
       }
       direction="row"
       justify="between"
-      gap="small"
+      gap={theme.selectMultiple?.summary?.gap}
       fill="horizontal"
       flex={showSelectedInline}
       align="center"
-      height={{ min: 'xxsmall' }}
+      height={theme.selectMultiple?.summary?.height}
     >
       <Text size="small">{summaryText}</Text>
       {(options.length &&
@@ -128,10 +141,27 @@ const SelectionSummary = ({
           <Button
             a11yTitle={
               showSelectAll
-                ? `Select all ${options.length} options`
-                : `${value?.length} options selected. Clear all?`
+                ? format({
+                    id: 'selectMultiple.selectAllA11y',
+                    messages,
+                    values: {
+                      total: options.length,
+                    },
+                  })
+                : format({
+                    id: 'selectMultiple.clearAllA11y',
+                    messages,
+                    values: {
+                      selected: value?.length || 0,
+                    },
+                  })
             }
-            label={showSelectAll ? 'Select All' : 'Clear All'}
+            label={format({
+              id: showSelectAll
+                ? 'selectMultiple.selectAll'
+                : 'selectMultiple.clearAll',
+              messages,
+            })}
             onClick={(event) => summaryButtonClick(event)}
             onFocus={() => setActiveIndex(-1)}
             ref={clearRef}

@@ -1,5 +1,4 @@
-import React, { forwardRef, useContext, useMemo, useState } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { forwardRef, useMemo, useState } from 'react';
 import { Box } from '../Box';
 import { Chart, calcs, calcBounds } from '../Chart';
 import { Grid } from '../Grid';
@@ -22,6 +21,7 @@ import {
   points,
 } from './utils';
 import { DataChartPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const stackedChartType = {
   areas: 'area',
@@ -45,7 +45,7 @@ const DataChart = forwardRef(
       data = [],
       detail,
       direction = 'vertical',
-      gap = 'small',
+      gap,
       guide: guideProp,
       legend,
       offset,
@@ -57,7 +57,7 @@ const DataChart = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
 
     // legend interaction, if any
     const [activeProperty, setActiveProperty] = useState();
@@ -196,8 +196,12 @@ const DataChart = forwardRef(
         fine: data.length,
         medium,
       };
+      const yGranularity =
+        theme.dataChart?.granularity?.y || heightYGranularity;
       const granularity1 = {
-        ...(heightYGranularity[(size && size.height) || 'small'] || {
+        ...(yGranularity[
+          (size && size.height) || theme.dataChart.size?.height
+        ] || {
           fine: 5,
           medium: 3,
         }),
@@ -206,8 +210,7 @@ const DataChart = forwardRef(
       return horizontal
         ? { x: granularity1, y: granularity0 }
         : { x: granularity0, y: granularity1 };
-    }, [charts, data.length, horizontal, size]);
-
+    }, [charts, data.length, horizontal, size, theme]);
     // normalize axis to objects, convert granularity to a number
     const axis = useMemo(() => {
       if (!axisProp) return undefined;
@@ -333,6 +336,7 @@ const DataChart = forwardRef(
           direction,
           steps,
           thickness,
+          theme,
         });
       });
     }, [
@@ -344,6 +348,7 @@ const DataChart = forwardRef(
       direction,
       granularities,
       horizontal,
+      theme,
     ]);
 
     // normalize how we style data properties for use by Legend and Detail
@@ -396,7 +401,14 @@ const DataChart = forwardRef(
       Object.keys(result).forEach((key) => {
         const seriesStyle = result[key];
         if (!seriesStyle.aspect && !seriesStyle.color) {
-          seriesStyle.color = `graph-${colorIndex}`;
+          if (theme.dataChart?.colors?.length > 0) {
+            seriesStyle.color =
+              theme.dataChart.colors[
+                colorIndex % theme.dataChart.colors.length
+              ];
+          } else {
+            seriesStyle.color = `graph-${colorIndex}`;
+          }
           colorIndex += 1;
         }
         // set opacity if it isn't set and this isn't the active property
@@ -410,7 +422,7 @@ const DataChart = forwardRef(
       });
 
       return result;
-    }, [activeProperty, charts, chartProps]);
+    }, [activeProperty, charts, chartProps, theme.dataChart?.colors]);
 
     // normalize guide
     const guide = useMemo(() => {
@@ -447,17 +459,17 @@ const DataChart = forwardRef(
       if (padProp !== undefined) return padProp;
       let pad0;
       let pad1;
-
+      const halfPadValues = halfPad(theme);
       charts.forEach(({ type }, index) => {
         const { thickness } = chartProps[index];
-        pad0 = largestSize(pad0, halfPad[thickness]);
+        pad0 = largestSize(theme, pad0, halfPadValues[thickness]);
         if (type && type !== 'bar')
-          pad1 = largestSize(pad1, halfPad[thickness]);
+          pad1 = largestSize(theme, pad1, halfPadValues[thickness]);
       });
       return horizontal
         ? { horizontal: pad1, vertical: pad0 }
         : { horizontal: pad0, vertical: pad1 };
-    }, [chartProps, charts, horizontal, padProp]);
+    }, [chartProps, charts, horizontal, padProp, theme]);
 
     // calculate the thickness in pixels of each chart
     const thicknesses = useMemo(
@@ -745,7 +757,7 @@ const DataChart = forwardRef(
           { name: 'xAxis', start: [1, 1], end: [1, 1] },
           { name: 'charts', start: [1, 0], end: [1, 0] },
         ]}
-        gap={gap}
+        gap={gap || theme.dataChart?.gap}
         {...rest}
       >
         {xAxisElement}

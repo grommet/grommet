@@ -19,6 +19,10 @@
     "enterCalendar": "Calendar is open, use arrow keys and enter to select a date.",
     "exitCalendar": "Exited calendar dialog"
   },
+  "dataChart": {
+    "detailTitle": "Data chart",
+    "detailFocus": "Use the left and right arrow keys to navigate the chart data."
+  },
   "dataFilters": {
     "clear": "Clear filters",
     "heading": "Filters",
@@ -29,7 +33,6 @@
     }
   },
   "dataForm": {
-    "reset": "Undo changes",
     "submit": "Apply filters"
   },
   "dataSearch": {
@@ -44,15 +47,39 @@
     "open": "Open sort"
   },
   "dataSummary": {
-    "filtered": "{filteredTotal} results of {total} items",
-    "filteredSingle": "{filteredTotal} result of {total} items",
-    "total": "{total} items"
+    "filtered": "{filteredTotal} results of {total} {items}",
+    "filteredSingle": "{filteredTotal} result of {total} {items}",
+    "items": "items",
+    "itemsSingle": "item",
+    "selected": "{selected} selected",
+    "total": "{total} {items}",
+    "totalSingle": "{total} {items}"
+  },
+  "dataTable": {
+    "ascending": "ascending",
+    "collapse": "collapse {label}",
+    "collapseAll": "collapse all",
+    "decrease": "Decrease {headerText} column width",
+    "descending": "descending",
+    "increase": "Increase {headerText} column width",
+    "expand": "expand {label}",
+    "expandAll": "expand all",
+    "resizerAria": "Resize {headerText} column",
+    "rows": "rows",
+    "rowsChanged": "Number of rows changed",
+    "rowsSingle": "row",
+    "searchBy": "Open search by {property}",
+    "total": "{total} {rows}",
+    "totalSingle": "{total} {rows}"
   },
   "dataTableColumns": {
     "open": "Open column selector",
     "order": "Order columns",
+    "pinned": "Column locked, order cannot be changed.",
     "select": "Select columns",
-    "tip": "Manage columns"
+    "tip": "Manage columns",
+    "selectAria": "Select which columns to show in the data table",
+    "orderAria": "Reorder the visible columns in the data table"
   },
   "dataTableGroupBy": {
     "clear": "Clear group",
@@ -62,6 +89,10 @@
     "label": "View"
   },
   "fileInput": {
+    "alert": {
+      "maxFile": "Error, {fileName} exceeds {maxFile} files limit.",
+      "maxSize": "Error, {fileName} exceeds {maxSize} limit."
+    },
     "browse": "browse",
     "dropPrompt": "Drop file here or",
     "dropPromptMultiple": "Drop files here or",
@@ -69,33 +100,105 @@
     "maxFile": "Attach a maximum of {max} files only.",
     "maxSizeSingle": "The file is too large. Select a file no larger than {maxSize}.",
     "maxSizeMultiple": {
-      "singular": "One file is too large. Select files which are no larger than {maxSize}.",
+      "singular": "{fileName} file is too large. Select files which are no larger than {maxSize}.",
       "plural": "{numOfFiles} files are too large. Select files which are no larger than {maxSize}."
     },
-    "remove": "remove",
+    "remove": "remove {fileName}",
     "removeAll": "remove all"
   },
   "form": {
     "invalid": "invalid",
     "required": "required"
   },
+  "formField": {
+    "maxCharacters": {
+      "remaining": {
+        "singular": "{number} character left",
+        "plural": "{number} characters left"
+      },
+      "overLimit": {
+        "singular": "{number} character over limit",
+        "plural": "{number} characters over limit"
+      }
+    }
+  },
+  "input": {
+    "readOnlyCopy": {
+      "prompt": "Copy to clipboard",
+      "validation": "Copied"
+    }
+  },
+  "list": {
+    "pinned": "Item pinned, order cannot be changed."
+  },
   "menu": {
     "openMenu": "Open Menu",
     "closeMenu": "Close Menu"
+  },
+  "meter": {
+    "bar": {
+      "singular": "Bar meter with value {meterValue} out of {max}",
+      "plural": "Bar meter with values {meterValue} out of {max}"
+    },
+    "circle": {
+      "singular": "Circle meter with value {meterValue} out of {max}",
+      "plural": "Circle meter with values {meterValue} out of {max}"
+    },
+    "pie": {
+      "singular": "Pie meter with value {meterValue} out of {max}",
+      "plural": "Pie meter with values {meterValue} out of {max}"
+    },
+    "semicircle": {
+      "singular": "Semicircle meter with value {meterValue} out of {max}",
+      "plural": "Semicircle meter with values {meterValue} out of {max}"
+    }
+  },
+  "notification": {
+    "close": "Dismiss notification"
+  },
+  "pagination": {
+    "stepLabel": "Items per page",
+    "summary": "Showing {start}-{end} of {total}",
+    "summaryNoItems": "0 items"
   },
   "rangeSelector": {
     "lower": "Lower Bounds",
     "upper": "Upper Bounds"
   },
   "select": {
+    "optionsA11y": "list of options",
     "multiple": "multiple",
+    "searchA11y": "Search options",
     "selected": "; Selected: {currentSelectedValue}"
+  },
+  "selectMultiple": {
+    "clearAll": "Clear All",
+    "clearAllA11y": "{selected} options selected. Clear all?",
+    "open": "Open drop",
+    "optionNotSelected": "{optionLabel} not selected",
+    "optionsA11y": "list of options",
+    "optionSelected": "{optionLabel} selected",
+    "search": "Search to filter options",
+    "selectAll": "Select All",
+    "selectAllA11y": "Select all {total} options",
+    "selectDrop": "Select dropdown",
+    "selected": "{selected} selected",
+    "selectedOfTotal": "{selected} selected of {total}",
+    "selectedOptions": "Selected options",
+    "showMore": "+ {remaining} more",
+    "summarizedValue": "{selected} selected"
   },
   "skipLinks": {
     "skipTo": "Skip To:"
   },
   "tabs": {
     "tabContents": "Tab Contents"
+  },
+  "tag": {
+    "removeLabel": {
+      "nameAndValue": "Remove {name}: {value}",
+      "valueOnly": "Remove {value}"
+    }
   },
   "textInput": {
     "enterSelect": "(Press Enter to Select)",

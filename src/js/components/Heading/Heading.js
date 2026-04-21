@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useContext, useState } from 'react';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { StyledHeading } from './StyledHeading';
@@ -6,6 +6,8 @@ import { HeadingPropTypes } from './propTypes';
 import { useForwardedRef } from '../../utils';
 import { useSkeleton } from '../Skeleton';
 import { HeadingSkeleton } from './HeadingSkeleton';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { ResponsiveContainerContext } from '../../contexts';
 
 const Heading = forwardRef(
   (
@@ -13,19 +15,24 @@ const Heading = forwardRef(
       children,
       color,
       fill,
-      level,
+      level = 1,
       overflowWrap: overflowWrapProp,
+      responsive: responsiveProp = true,
       weight,
       ...rest
     },
 
     ref, // munged to avoid styled-components putting it in the DOM
   ) => {
+    const { passThemeFlag } = useThemeValue();
     const headingRef = useForwardedRef(ref);
     const [overflowWrap, setOverflowWrap] = useState(
       overflowWrapProp || 'break-word',
     );
 
+    const responsiveContainer = useContext(ResponsiveContainerContext);
+    const responsive =
+      responsiveContainer && responsiveProp ? 'container' : responsiveProp;
     const skeleton = useSkeleton();
 
     // handle overflowWrap of heading
@@ -48,7 +55,14 @@ const Heading = forwardRef(
 
     let content = children;
     if (skeleton) {
-      content = <HeadingSkeleton level={level} fill={fill} {...rest} />;
+      content = (
+        <HeadingSkeleton
+          level={level}
+          fill={fill}
+          responsive={responsive}
+          {...rest}
+        />
+      );
     }
 
     return (
@@ -59,7 +73,9 @@ const Heading = forwardRef(
         fillProp={fill}
         level={+level}
         overflowWrap={overflowWrap}
+        responsive={responsive}
         weight={weight}
+        {...passThemeFlag}
         {...rest}
         ref={headingRef}
       >
@@ -70,10 +86,6 @@ const Heading = forwardRef(
 );
 
 Heading.displayName = 'Heading';
-Heading.defaultProps = {
-  level: 1,
-  responsive: true,
-};
 Heading.propTypes = HeadingPropTypes;
 
 export { Heading };

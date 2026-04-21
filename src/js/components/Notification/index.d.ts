@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { LayerPositionType } from '../Layer';
 import { AnchorType } from '..';
+
 export type StatusType = 'critical' | 'warning' | 'normal' | 'info' | 'unknown';
 
 export interface NotificationProps {
+  id?: string;
   actions?: AnchorType[];
   global?: boolean;
   title?: string;
   message?: string | React.ReactNode;
+  messages?: {
+    close?: string;
+  };
   status?: StatusType;
   time?: number;
   toast?:

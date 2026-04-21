@@ -4,6 +4,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
 
 import { axe } from 'jest-axe';
 import { fireEvent, render, act, screen } from '@testing-library/react';
@@ -26,6 +27,12 @@ describe('Calendar', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('render without grommet wrapper', () => {
+    const { container } = render(<Calendar date={DATE} animate={false} />);
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('date', () => {
@@ -94,6 +101,25 @@ describe('Calendar', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('prop header size', () => {
+    const {} = render(
+      <Grommet>
+        <Calendar size="small" level={3} date={DATE} />
+        <Calendar size="medium" level={2} date={DATE} />
+        <Calendar size="large" level={1} date={DATE} />
+      </Grommet>,
+    );
+
+    // Check for each calendar heading level
+    const smallCalendarHeading = screen.getByRole('heading', { level: 3 });
+    const mediumCalendarHeading = screen.getByRole('heading', { level: 2 });
+    const largeCalendarHeading = screen.getByRole('heading', { level: 1 });
+
+    expect(smallCalendarHeading).toBeInTheDocument();
+    expect(mediumCalendarHeading).toBeInTheDocument();
+    expect(largeCalendarHeading).toBeInTheDocument();
   });
 
   test('fill', () => {
@@ -205,7 +231,9 @@ describe('Calendar', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('17'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-17T/));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/^2020-01-17T/),
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -218,8 +246,38 @@ describe('Calendar', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('17'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-17T/));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/^2020-01-17T/),
+    );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('read-only with range when no onSelect prop provided', () => {
+    const initialRange = [
+      ['2020-01-03T00:00:00-08:00', '2020-01-08T00:00:00-08:00'],
+    ];
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar date={initialRange} range />
+      </Grommet>,
+    );
+
+    // Verify initial range is set (dates 3-8 should be selected)
+    const date3 = getByLabelText('Fri Jan 03 2020').closest('div');
+    const date8 = getByLabelText('Wed Jan 08 2020').closest('div');
+    const date10 = getByLabelText('Fri Jan 10 2020').closest('div');
+
+    expect(date3).toHaveAttribute('aria-selected', 'true');
+    expect(date8).toHaveAttribute('aria-selected', 'true');
+    expect(date10).toHaveAttribute('aria-selected', 'false');
+
+    // Click on date outside the range
+    fireEvent.click(getByLabelText('Fri Jan 10 2020'));
+
+    // Verify range hasn't changed after click
+    expect(date3).toHaveAttribute('aria-selected', 'true');
+    expect(date8).toHaveAttribute('aria-selected', 'true');
+    expect(date10).toHaveAttribute('aria-selected', 'false');
   });
 
   test('first day sunday week monday', () => {
@@ -258,6 +316,7 @@ describe('Calendar', () => {
       jest.runAllTimers();
     });
     expect(container.firstChild).toMatchSnapshot();
+    jest.useRealTimers();
   });
 
   test('select date with range', () => {
@@ -270,9 +329,9 @@ describe('Calendar', () => {
     // expect to be selecting end date of range, because date serves
     // as start. since selected date is < date we should set it as start
     fireEvent.click(getByText('11'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/2020-01-11T/));
+    expect(onSelect).toHaveBeenCalledWith(expect.stringMatching(/2020-01-11T/));
     fireEvent.click(getByText('20'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-01-11T/),
         expect.stringMatching(/^2020-01-20T/),
@@ -348,7 +407,9 @@ describe('Calendar', () => {
 
     fireEvent.click(nextMonthButton);
 
-    expect(onReference).toBeCalledWith(expect.stringContaining('2019-02-01'));
+    expect(onReference).toHaveBeenCalledWith(
+      expect.stringContaining('2019-02-01'),
+    );
   });
 
   test('change to next month when date is after bounds', () => {
@@ -371,7 +432,9 @@ describe('Calendar', () => {
 
     fireEvent.click(previousMonthButton);
 
-    expect(onReference).toBeCalledWith(expect.stringContaining('2020-12-31'));
+    expect(onReference).toHaveBeenCalledWith(
+      expect.stringContaining('2020-12-31'),
+    );
   });
 
   test('select date with range no date set', () => {
@@ -388,7 +451,7 @@ describe('Calendar', () => {
     );
     fireEvent.click(getByText('17'));
     fireEvent.click(getByText('20'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-07-17T/),
         expect.stringMatching(/^2020-07-20T/),
@@ -410,7 +473,7 @@ describe('Calendar', () => {
     );
     // select date greater than January 1st
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-01-03T/),
         expect.stringMatching(/^2020-01-05T/),
@@ -420,7 +483,7 @@ describe('Calendar', () => {
     // activeDate is end, since this is before the start
     // date we should update the date
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/2020-01-01T/));
+    expect(onSelect).toHaveBeenCalledWith(expect.stringMatching(/2020-01-01T/));
   });
 
   test('select date with same start date', () => {
@@ -437,7 +500,9 @@ describe('Calendar', () => {
     );
     // selecting same starting day
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-03T/));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/^2020-01-03T/),
+    );
   });
 
   test('select date with same date twice', () => {
@@ -453,9 +518,11 @@ describe('Calendar', () => {
       </Grommet>,
     );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-03T/));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/^2020-01-03T/),
+    );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith(undefined);
+    expect(onSelect).toHaveBeenCalledWith(undefined);
   });
 
   test('select date with same end date', () => {
@@ -472,7 +539,9 @@ describe('Calendar', () => {
     );
     // selecting same ending day
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-01T/));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/^2020-01-01T/),
+    );
   });
 
   test('range as array', () => {
@@ -490,7 +559,7 @@ describe('Calendar', () => {
     // select date greater than January 1st
     // activeDate by default is start
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-01-03T/),
         expect.stringMatching(/^2020-01-05T/),
@@ -500,13 +569,13 @@ describe('Calendar', () => {
     // activeDate is end, since this is before the start
     // date we should update the date
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-01T/), undefined],
     ]);
 
     // should select end date again
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-01-01T/),
         expect.stringMatching(/^2020-01-03T/),
@@ -515,7 +584,7 @@ describe('Calendar', () => {
 
     // should select start date, if great than end date, clear end date
     fireEvent.click(getByLabelText('Sun Jan 05 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-05T/), undefined],
     ]);
   });
@@ -535,7 +604,7 @@ describe('Calendar', () => {
     // select date greater than January 1st
     // activeDate by default is start
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-01-03T/),
         expect.stringMatching(/^2020-01-05T/),
@@ -545,13 +614,13 @@ describe('Calendar', () => {
     // activeDate is end, since this is before the start
     // date we should update the date
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-01T/), undefined],
     ]);
 
     // should select end date again
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-01-01T/),
         expect.stringMatching(/^2020-01-03T/),
@@ -560,7 +629,7 @@ describe('Calendar', () => {
 
     // should select start date, if great than end date, clear end date
     fireEvent.click(getByLabelText('Sun Jan 05 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-05T/), undefined],
     ]);
   });
@@ -579,7 +648,7 @@ describe('Calendar', () => {
       </Grommet>,
     );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-01-03T/),
         expect.stringMatching(/^2020-01-05T/),
@@ -601,7 +670,7 @@ describe('Calendar', () => {
       </Grommet>,
     );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toBeCalledWith([
+    expect(onSelect).toHaveBeenCalledWith([
       [
         expect.stringMatching(/^2020-01-01T/),
         expect.stringMatching(/^2020-01-03T/),
@@ -621,7 +690,7 @@ describe('Calendar', () => {
       </Grommet>,
     );
     fireEvent.click(getByLabelText('Fri Jul 15 2022'));
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2022-07-15T08:00:00.000Z/),
     );
 
@@ -638,121 +707,101 @@ describe('Calendar', () => {
     const july = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
     const hasDaylightSavings = january !== july;
 
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       // expecting one hour diff bc of daylight savings shift, otherwise no shift
       expect.stringMatching(
         `2022-03-02T0${hasDaylightSavings ? 9 : 8}:00:00.000Z`,
       ),
     );
   });
-});
 
-describe('Calendar Keyboard events', () => {
-  let onSelect: CalendarProps['onSelect'];
-  let App: React.FC;
-
-  beforeEach(() => {
-    onSelect = jest.fn();
-    App = () => (
-      <Grommet>
-        <Calendar
-          bounds={['2020-01-01', '2020-01-31']}
-          date={DATE}
-          onSelect={onSelect}
-          animate={false}
-        />
-      </Grommet>
+  test('should render day and range rounding and states', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{
+          global: {
+            colors: {
+              blue: '#00C8FF',
+              purple: '#F740FF',
+            },
+            active: {
+              background: 'skyblue',
+            },
+          },
+          calendar: {
+            day: {
+              hover: {
+                background: 'blue',
+                color: 'red',
+              },
+              selected: {
+                background: 'purple',
+                color: '#000000',
+                font: {
+                  weight: 500,
+                },
+                hover: {
+                  background: '#006750',
+                  color: '#FFFFFF',
+                },
+              },
+              inRange: {
+                color: 'blue',
+                hover: {
+                  background: 'rgb(174, 246, 223)',
+                  color: 'text-strong',
+                },
+              },
+            },
+            range: {
+              background: '#CBFAEB',
+            },
+            medium: {
+              day: {
+                round: 'full',
+              },
+              range: {
+                round: 'none',
+                start: {
+                  round: {
+                    corner: 'left',
+                    size: 'full',
+                  },
+                },
+                end: {
+                  round: {
+                    corner: 'right',
+                    size: 'full',
+                  },
+                },
+              },
+            },
+          },
+        }}
+      >
+        <Calendar date={DATES} animate={false} />
+      </Grommet>,
     );
-  });
+    expect(asFragment()).toMatchSnapshot();
 
-  test('onEnter', async () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    fireEvent.mouseOut(getByText('15'));
-    // Jan 15th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-15T/));
-  });
+    let style: CSSStyleDeclaration;
+    const selectedDay = screen.getByText('10');
+    fireEvent.mouseOver(selectedDay);
+    style = window.getComputedStyle(selectedDay);
+    expect(style.background).toEqual('rgb(0, 103, 80)'); // rgb equivalent of selected.hover.background
+    expect(style.color).toEqual('rgb(255, 255, 255)');
 
-  test('onKeyUp', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowUp',
-      keyCode: 38,
-      which: 38,
-    });
-    // press enter to change date to active
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    // Jan 8th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-08T/));
-  });
+    const inRangeDay = screen.getByText('9');
+    fireEvent.mouseOver(inRangeDay);
+    style = window.getComputedStyle(inRangeDay);
+    expect(style.background).toEqual('rgb(174, 246, 223)');
+    expect(style.color).toEqual('rgb(0, 0, 0)'); // rgb equivalent of text-strong
 
-  test('onKeyDown', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowDown',
-      keyCode: 40,
-      which: 40,
-    });
-    // press enter to change date to active
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    // Jan 22th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-22T/));
-  });
-
-  test('onKeyLeft', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowLeft',
-      keyCode: 37,
-      which: 37,
-    });
-    // press enter to change date to active
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    // Jan 14th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-14T/));
-  });
-
-  test('onKeyRight', () => {
-    const { getByText } = render(<App />);
-    fireEvent.mouseOver(getByText('15'));
-    fireEvent.click(getByText('15'));
-    fireEvent.keyDown(getByText('15'), {
-      key: 'ArrowRight',
-      keyCode: 39,
-      which: 39,
-    });
-    // press enter to change date to active
-    fireEvent.keyDown(getByText('15'), {
-      key: 'Enter',
-      keyCode: 13,
-      which: 13,
-    });
-    // Jan 16th is set to active
-    expect(onSelect).toBeCalledWith(expect.stringMatching(/^2020-01-16T/));
+    const day = screen.getByText('16');
+    fireEvent.mouseOver(day);
+    style = window.getComputedStyle(day);
+    expect(style.background).toEqual('rgb(0, 200, 255)'); // rgb equivalent of theme blue
+    expect(style.color).toEqual('rgb(255, 0, 0)'); // rgb equivalent of red
   });
 
   test('heading text font size', () => {
@@ -782,5 +831,130 @@ describe('Calendar Keyboard events', () => {
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('theme title container pad', () => {
+    const customTheme = {
+      calendar: {
+        medium: {
+          title: {
+            container: {
+              pad: {
+                horizontal: 'large',
+              },
+            },
+          },
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Calendar date={DATE} size="medium" animate={false} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+
+describe('Calendar Keyboard events', () => {
+  let App: React.FC;
+
+  beforeEach(() => {
+    App = () => {
+      const [date, setDate] = React.useState<any>(DATE);
+      const onSelect = (nextDate: CalendarProps['date']) => {
+        setDate(nextDate);
+      };
+      return (
+        <Grommet>
+          <Calendar
+            bounds={['2020-01-01', '2020-01-31']}
+            date={date}
+            onSelect={onSelect}
+            animate={false}
+          />
+        </Grommet>
+      );
+    };
+  });
+
+  test('onEnter', async () => {
+    jest.useFakeTimers();
+    const user = userEvent.setup({ delay: null });
+    render(<App />);
+
+    const dateButton = screen.getByRole('button', {
+      name: 'Wed Jan 15 2020',
+    });
+    const firstDateButton = screen.getByRole('button', {
+      name: 'Wed Jan 01 2020',
+    });
+    await user.tab();
+    await user.tab();
+    await user.type(firstDateButton, '{enter}');
+    expect(dateButton.closest('div')).toHaveAttribute('aria-selected', 'false');
+    expect(firstDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+    jest.useRealTimers();
+  });
+
+  test('onArrowUp and onArrowDown', async () => {
+    jest.useFakeTimers();
+    const user = userEvent.setup({ delay: null });
+    render(<App />);
+
+    const firstDateButton = screen.getByRole('button', {
+      name: 'Wed Jan 01 2020',
+    });
+    const eightDateButton = screen.getByRole('button', {
+      name: 'Wed Jan 08 2020',
+    });
+    await user.tab();
+    await user.tab();
+    await user.type(firstDateButton, '{arrowDown}');
+    await user.type(eightDateButton, '{enter}');
+    expect(eightDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+    await user.type(eightDateButton, '{arrowUp}');
+    await user.type(firstDateButton, '{enter}');
+    expect(firstDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+    jest.useRealTimers();
+  });
+
+  test('onArrowRight and onArrowLeft', async () => {
+    jest.useFakeTimers();
+    const user = userEvent.setup({ delay: null });
+    render(<App />);
+
+    const firstDateButton = screen.getByRole('button', {
+      name: 'Wed Jan 01 2020',
+    });
+    const secondDateButton = screen.getByRole('button', {
+      name: 'Thu Jan 02 2020',
+    });
+    await user.tab();
+    await user.tab();
+    await user.type(firstDateButton, '{arrowRight}');
+    await user.type(secondDateButton, '{space}');
+    expect(secondDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+    await user.type(secondDateButton, '{arrowLeft}');
+    await user.type(firstDateButton, '{space}');
+    expect(firstDateButton.closest('div')).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+    jest.useRealTimers();
   });
 });

@@ -39,6 +39,7 @@ export interface CalendarProps {
   fill?: boolean;
   firstDayOfWeek?: 0 | 1;
   header?: (args: CalendarHeaderProps) => React.ReactNode;
+  level?: '1' | '2' | '3' | '4' | '5' | '6' | 1 | 2 | 3 | 4 | 5 | 6;
   locale?: string;
   messages?: {
     previous?: string;
@@ -48,17 +49,30 @@ export interface CalendarProps {
   onSelect?: (select: string | string[]) => any;
   range?: boolean | 'array';
   reference?: string;
+  responsive?: boolean;
   showAdjacentDays?: boolean | 'trim';
   size?: 'small' | 'medium' | 'large' | string;
 }
 
 export interface CalendarExtendedProps
   extends CalendarProps,
-    Omit<JSX.IntrinsicElements['div'], keyof CalendarProps> {}
+    Omit<
+      React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLDivElement>,
+        HTMLDivElement
+      >,
+      keyof CalendarProps
+    > {}
 
 // Keep type alias for backwards compatibility.
 export type CalendarType = CalendarProps &
-  Omit<JSX.IntrinsicElements['div'], 'onSelect'>;
+  Omit<
+    React.DetailedHTMLProps<
+      React.HTMLAttributes<HTMLDivElement>,
+      HTMLDivElement
+    >,
+    'onSelect'
+  >;
 
 declare const Calendar: React.ComponentClass<CalendarExtendedProps>;
 

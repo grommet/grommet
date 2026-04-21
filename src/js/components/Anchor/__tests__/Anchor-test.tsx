@@ -35,6 +35,11 @@ describe('Anchor', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('renders anchor without grommet wrapper', () => {
+    const { container } = render(<Anchor />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('renders with children', () => {
     const { container } = render(
       <Grommet>
@@ -170,7 +175,7 @@ describe('Anchor', () => {
     const anchor = getByText('Test');
     fireEvent.click(anchor);
     expect(container.firstChild).toMatchSnapshot();
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
   });
 
   test('renders tag', () => {
@@ -231,10 +236,23 @@ describe('Anchor', () => {
         textDecoration: 'underline',
         fontWeight: 700,
         size: {
+          small: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+            gap: 'xsmall',
+          },
+          medium: {
+            color: 'brand',
+            textDecoration: 'none',
+            fontWeight: 500,
+            gap: 'small',
+          },
           large: {
             color: 'brand',
             textDecoration: 'none',
             fontWeight: 500,
+            gap: 'large',
           },
           xlarge: {
             color: 'brand',
@@ -268,11 +286,48 @@ describe('Anchor', () => {
         <Anchor label="Default anchor with no size prop should receive medium" />
         <Anchor label="Anchor with icon" icon={<LinkNext />} />
         <Anchor
+          label="small anchor with icon should receive color on icon"
+          icon={<LinkNext />}
+          size="small"
+        />
+        <Anchor
           label="Large anchor with icon should receive color on icon"
           icon={<LinkNext />}
           size="large"
         />
       </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders specific icon color', () => {
+    const theme = {
+      anchor: {
+        icon: {
+          color: 'accent-2',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <>
+        <Grommet theme={theme}>
+          <Anchor
+            label="Color prop on icon"
+            icon={<LinkNext color="brand" />}
+          />
+          <Anchor
+            label="Anchor with color prop"
+            color="brand"
+            icon={<LinkNext />}
+          />
+          <Anchor label="Anchor using theme" icon={<LinkNext />} />
+        </Grommet>
+        <Grommet>
+          <Anchor label="Anchor color" icon={<LinkNext />} />
+        </Grommet>
+      </>,
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -295,5 +350,24 @@ describe('Anchor', () => {
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('theme iconOnly pad', () => {
+    const customTheme = {
+      anchor: {
+        iconOnly: {
+          pad: 'large',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Anchor icon={<LinkNext />} />
+        <Anchor icon={<svg />} />
+      </Grommet>,
+    );
+
+    expect(container).toMatchSnapshot();
   });
 });

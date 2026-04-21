@@ -42,6 +42,11 @@ describe('CheckBox', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders without grommet wrapper', () => {
+    const { container } = render(<CheckBox />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('label renders', () => {
     const { container } = render(
       <Grommet>
@@ -135,7 +140,7 @@ describe('CheckBox', () => {
         <CheckBox indeterminate checked />
       </Grommet>,
     );
-    expect(warnSpy).toBeCalledWith(
+    expect(warnSpy).toHaveBeenCalledWith(
       'Checkbox cannot be "checked" and "indeterminate" at the same time.',
     );
 
@@ -150,7 +155,7 @@ describe('CheckBox', () => {
         <CheckBox indeterminate toggle />
       </Grommet>,
     );
-    expect(warnSpy).toBeCalledWith(
+    expect(warnSpy).toHaveBeenCalledWith(
       'Checkbox of type toggle does not have "indeterminate" state.',
     );
 
@@ -217,5 +222,23 @@ describe('CheckBox', () => {
     expect(getByLabelText(LABEL)).toBeTruthy();
     expect(getByLabelText(`${LABEL}-2`)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme gap', () => {
+    const customTheme = {
+      checkBox: {
+        gap: 'large',
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <CheckBox label="test label" />
+        <CheckBox label="test label" reverse />
+        <CheckBox label="test label" toggle />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

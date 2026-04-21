@@ -7,9 +7,8 @@ import React, {
   useState,
   useEffect,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -19,6 +18,7 @@ import { Text } from '../Text';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { MenuPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -29,7 +29,7 @@ const ContainerBox = styled(Box)`
   }
 
   /* remove the browser default focus outline */
-  :focus {
+  &:focus {
     outline: none;
   }
 
@@ -57,6 +57,8 @@ To make a selection:
 - Space is pressed.
 */
 
+const defaultItems = [];
+
 const Menu = forwardRef((props, ref) => {
   const {
     a11yTitle,
@@ -67,9 +69,9 @@ const Menu = forwardRef((props, ref) => {
     dropBackground,
     dropProps,
     dropTarget,
-    justifyContent,
+    justifyContent = 'start',
     icon,
-    items,
+    items = defaultItems,
     label,
     messages,
     onKeyDown,
@@ -78,9 +80,13 @@ const Menu = forwardRef((props, ref) => {
     size,
     ...rest
   } = props;
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { theme, passThemeFlag } = useThemeValue();
   const { format } = useContext(MessageContext);
   const iconColor = normalizeColor(theme.menu.icons.color || 'control', theme);
+  const iconDisabledColor = normalizeColor(
+    theme.menu.disabled?.icons?.color || theme.menu.icons.color || 'control',
+    theme,
+  );
   // need to destructure the align otherwise it will get passed through
   // to DropButton and override prop values
   const { align: themeDropAlign, ...themeDropProps } = theme.menu.drop;
@@ -241,7 +247,12 @@ const Menu = forwardRef((props, ref) => {
 
   const menuIcon =
     icon !== false
-      ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} />
+      ? (icon !== true && icon) || (
+          <MenuIcon
+            color={disabled ? iconDisabledColor : iconColor}
+            size={size}
+          />
+        )
       : null;
 
   let buttonProps = { plain, size };
@@ -249,6 +260,11 @@ const Menu = forwardRef((props, ref) => {
   if (children) {
     content = children;
   } else if (!theme.button.default) {
+    /*
+    Not adding a theme object now because this code path
+    is not used in the HPE theme, but we may add theme
+    support here in the future.
+    */
     content = (
       <Box
         direction="row"
@@ -305,6 +321,11 @@ const Menu = forwardRef((props, ref) => {
     // Determine whether the label is done as a child or
     // as an option Button kind property.
     const child = !theme.button.option ? (
+      /*
+     Not adding a theme object now because this code path
+     is not used in the HPE theme, but we may add theme
+     support here in the future.
+     */
       <Box
         align={theme.menu.item?.align || 'start'}
         pad="small"
@@ -320,7 +341,8 @@ const Menu = forwardRef((props, ref) => {
 
     // if we have a child, turn on plain, and hoverIndicator
     return (
-      // eslint-disable-next-line react/no-array-index-key
+      // lint isn't flagging this but we shouldn't use index as a key
+      // see no-array-index-key lint rule
       <Box key={index} flex={false} role="none">
         <Button
           ref={(r) => {
@@ -363,7 +385,8 @@ const Menu = forwardRef((props, ref) => {
   };
 
   let menuContent;
-  if (itemCount && Array.isArray(items[0])) {
+  const grouped = itemCount && Array.isArray(items[0]);
+  if (grouped) {
     let index = 0;
     menuContent = items.map((group, groupIndex) => (
       <Box
@@ -384,7 +407,7 @@ const Menu = forwardRef((props, ref) => {
             />
           </Box>
         )}
-        <Box {...theme.menu.group?.container}>
+        <Box {...theme.menu.container} {...theme.menu.group?.container}>
           {group.map((item) => {
             // item index needs to be its index in the entire menu as if
             // it were a flat array
@@ -435,11 +458,19 @@ const Menu = forwardRef((props, ref) => {
               ref={dropContainerRef}
               tabIndex={-1}
               background={dropBackground || theme.menu.background}
+              {...passThemeFlag}
             >
-              {alignControlMirror === 'top' && align.top === 'top'
+              {alignControlMirror === 'top' &&
+              align.bottom !== 'top' &&
+              align.top !== 'bottom'
                 ? controlMirror
                 : undefined}
-              <Box overflow="auto" role="menu" a11yTitle={a11y}>
+              <Box
+                overflow="auto"
+                role="menu"
+                a11yTitle={a11y}
+                {...(!grouped ? theme.menu.container : {})}
+              >
                 {menuContent}
               </Box>
               {/*
@@ -449,8 +480,9 @@ const Menu = forwardRef((props, ref) => {
               {!initialAlignTop &&
               // don't show controlMirror if caller is using
               // align.bottom === 'top'
-              ((alignControlMirror === 'bottom' && !align.bottom === 'top') ||
-                align.bottom === 'bottom')
+              alignControlMirror === 'bottom' &&
+              align.bottom !== 'top' &&
+              align.top !== 'bottom'
                 ? controlMirror
                 : undefined}
             </ContainerBox>
@@ -462,12 +494,6 @@ const Menu = forwardRef((props, ref) => {
     </Keyboard>
   );
 });
-
-Menu.defaultProps = {
-  items: [],
-  messages: undefined,
-  justifyContent: 'start',
-};
 
 Menu.displayName = 'Menu';
 Menu.propTypes = MenuPropTypes;

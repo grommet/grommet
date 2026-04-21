@@ -5,7 +5,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import { Grommet, Tab, Tabs } from '../..';
 import { ThemeType } from '../../../themes';
@@ -56,6 +56,17 @@ describe('Tabs', () => {
           <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
       </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <Tabs>
+        <Tab title="Tab 1">Tab body 1</Tab>
+        {undefined}
+        <Tab title="Tab 2">Tab body 2</Tab>
+      </Tabs>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -128,7 +139,7 @@ describe('Tabs', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByText('Tab 2'));
-    expect(onActive).toBeCalledWith(1);
+    expect(onActive).toHaveBeenCalledWith(1);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -206,8 +217,8 @@ describe('Tabs', () => {
 
     const disabledTab = getByText('Disabled Tab').parentElement!;
     const disabledTabStyle = window.getComputedStyle(disabledTab);
-    expect(disabledTabStyle.color).toBe(disabledTextColor);
-    expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
+    expect(disabledTabStyle.color).toBe('rgb(0, 0, 255)'); // blue
+    expect(disabledTabStyle.borderBottomColor).toBe('rgb(0, 128, 0)');
   });
 
   test(`should apply custom theme disabled style when theme.button.default is 
@@ -245,8 +256,8 @@ describe('Tabs', () => {
 
     const disabledTab = getByText('Disabled Tab').parentElement!;
     const disabledTabStyle = window.getComputedStyle(disabledTab);
-    expect(disabledTabStyle.color).toBe(disabledTextColor);
-    expect(disabledTabStyle.borderBottomColor).toBe(disabledBorderBottomColor);
+    expect(disabledTabStyle.color).toBe('rgb(0, 0, 255)');
+    expect(disabledTabStyle.borderBottomColor).toBe('rgb(0, 128, 0)');
   });
 
   test('styled component should change tab color when active', () => {
@@ -281,7 +292,7 @@ describe('Tabs', () => {
     expect(container.firstChild).toMatchSnapshot();
     const plainTab = getByText('Title 1').parentElement!;
     const plainTabStyle = window.getComputedStyle(plainTab);
-    expect(plainTabStyle.borderBottom).toBe('');
+    expect(['', 'ButtonText']).toContain(plainTabStyle.borderBottom);
   });
 
   test('should allow to extend tab styles', () => {
@@ -308,11 +319,11 @@ describe('Tabs', () => {
     const extendedPlainTab = getByText('Title 1')!;
     const extendedPlainTabStyle = window.getComputedStyle(extendedPlainTab);
     // color can be changed only when plain prop used
-    expect(extendedPlainTabStyle.color).toBe('red');
+    expect(extendedPlainTabStyle.color).toBe('rgb(255, 0, 0)'); // red
 
     const extendedTab = getByText('Title 2')!;
     const extendedTabStyle = window.getComputedStyle(extendedTab);
-    expect(extendedTabStyle.color).not.toBe('red');
+    expect(extendedTabStyle.color).not.toBe('rgb(255, 0, 0)');
 
     const extendedTabParent = extendedTab.parentElement!;
     const extendedTabParentStyle = window.getComputedStyle(extendedTabParent);
@@ -335,7 +346,7 @@ describe('Tabs', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByText('Tab 2'));
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
   });
 
   test('should apply theme alignSelf to tab controls', () => {
@@ -357,9 +368,28 @@ describe('Tabs', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
 
-    const tabsHeader = screen.getByRole('tablist')!;
-    const tabsHeaderStyle = window.getComputedStyle(tabsHeader);
-    expect(tabsHeaderStyle.alignSelf).toBe('flex-start');
+  test('theme tab gap', () => {
+    const customTheme = {
+      tab: {
+        gap: 'large',
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Tabs>
+          <Tab title="Tab 1" icon={<svg />}>
+            Tab body 1
+          </Tab>
+          <Tab title="Tab 2" icon={<svg />}>
+            Tab body 2
+          </Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

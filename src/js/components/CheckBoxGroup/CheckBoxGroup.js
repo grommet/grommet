@@ -1,20 +1,23 @@
 import React, { forwardRef, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { CheckBox } from '../CheckBox';
 import { FormContext } from '../Form/FormContext';
 import { StyledCheckBoxGroup } from './StyledCheckBoxGroup';
 import { CheckBoxGroupPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const CheckBoxGroup = forwardRef(
   (
     {
+      'aria-label': ariaLabelProp,
+      'aria-labelledby': ariaLabelledByProp,
       children,
       defaultValue,
       value: valueProp,
       disabled: disabledProp,
       focusIndicator = true,
       gap,
+      id,
       labelKey,
       valueKey,
       onChange,
@@ -25,7 +28,7 @@ const CheckBoxGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
 
     // In case option is a string, normalize it to be an object
     const options = optionsProp.map((option) =>
@@ -65,17 +68,21 @@ const CheckBoxGroup = forwardRef(
       }
     };
 
+    let ariaLabelledBy;
+    if (formContext?.useFormField({})?.inForm && id && !ariaLabelProp) {
+      ariaLabelledBy = `grommet-${id}__label`;
+    }
+
     return (
       <StyledCheckBoxGroup
         ref={ref}
+        aria-label={ariaLabelProp}
+        aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
         role="group"
         {...theme.checkBoxGroup.container}
-        gap={
-          gap ||
-          (theme.checkBoxGroup.container && theme.checkBoxGroup.container.gap
-            ? theme.checkBoxGroup.container.gap
-            : 'small') // consistent with RadioButtonGroup default
-        }
+        gap={gap || theme.checkBoxGroup?.container?.gap}
+        id={id}
+        {...passThemeFlag}
         {...rest}
       >
         {options.map((option, index) => {

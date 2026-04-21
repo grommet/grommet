@@ -22,6 +22,7 @@ export interface DateInputProps {
   };
   name?: string;
   onChange?: (event: { value: string | string[] }) => void;
+  readOnlyCopy?: boolean;
   size?:
     | 'xsmall'
     | 'small'
@@ -40,7 +41,10 @@ export interface DateInputProps {
 export interface DateInputExtendedProps
   extends DateInputProps,
     Omit<
-      JSX.IntrinsicElements['input'],
+      React.DetailedHTMLProps<
+        React.InputHTMLAttributes<HTMLInputElement>,
+        HTMLInputElement
+      >,
       'defaultValue' | 'onChange' | 'value' | 'size'
     > {}
 

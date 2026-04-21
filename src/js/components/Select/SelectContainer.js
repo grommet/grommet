@@ -1,20 +1,20 @@
 import React, {
   forwardRef,
   useCallback,
-  useContext,
   useEffect,
   useRef,
   useState,
+  useContext,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
 
+import styled from 'styled-components';
+import { Search } from 'grommet-icons/icons/Search';
 import {
   setFocusWithoutScroll,
   getHoverIndicatorStyle,
   containsFocus,
 } from '../../utils';
-
-import { defaultProps } from '../../default-props';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -30,6 +30,7 @@ import {
 } from './StyledSelect';
 import { applyKey, useDisabled, getOptionLabel, getOptionValue } from './utils';
 import { EmptySearchOption } from './EmptySearchOption';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // ensure ClearButton receives visual indication of keyboard
 const StyledButton = styled(Button)`
@@ -43,20 +44,59 @@ const ClearButton = forwardRef(
     const { label, position } = clear;
     const align = position !== 'bottom' ? 'start' : 'center';
     const buttonLabel = label || `Clear ${name || 'selection'}`;
-    return (
-      <StyledButton
-        a11yTitle={`${buttonLabel}. Or, press ${
-          position === 'bottom' ? 'shift tab' : 'down arrow'
-        } to move to select options`}
-        fill="horizontal"
-        ref={ref}
-        onClick={onClear}
-        focusIndicator={false}
-        {...rest}
-      >
-        <Box {...theme.select.clear.container} align={align}>
-          <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+    const { passThemeFlag } = useThemeValue();
+    const buttonKind = theme.select.clear?.button;
+    const containerProps = theme.select.clear?.container || {};
+    const textProps = theme.select.clear?.text || {};
+
+    const buttonProps = {
+      a11yTitle: `${buttonLabel}. Or, press ${
+        position === 'bottom' ? 'shift tab' : 'down arrow'
+      } to move to select options`,
+      align,
+      fill: 'horizontal',
+      onClick: onClear,
+      ref,
+      ...passThemeFlag,
+      ...rest,
+    };
+
+    if (buttonKind) {
+      // new structure when `theme.select.clear.button` is defined
+
+      return (
+        <Box flex="grow" {...containerProps}>
+          <Button
+            kind={buttonKind}
+            label={
+              textProps ? (
+                <Text {...textProps}>{buttonLabel}</Text>
+              ) : (
+                buttonLabel
+              )
+            }
+            {...buttonProps}
+          />
         </Box>
+      );
+    }
+
+    // default structure when `theme.select.clear.button` is not defined
+    return (
+      <StyledButton focusIndicator={false} plain {...buttonProps}>
+        {({ hover }) => {
+          const boxProps = { ...theme.select.clear.container };
+          delete boxProps.hover; // avoid passing hover object to Box
+          return (
+            <Box
+              {...boxProps}
+              {...(hover ? theme.select.clear?.container?.hover : {})}
+              align={align}
+            >
+              <Text {...theme.select.clear.text}>{buttonLabel}</Text>
+            </Box>
+          );
+        }}
       </StyledButton>
     );
   },
@@ -73,6 +113,7 @@ const SelectContainer = forwardRef(
       emptySearchMessage = 'No matches found',
       id,
       labelKey,
+      messages,
       multiple,
       name,
       onChange,
@@ -93,7 +134,7 @@ const SelectContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const shouldShowClearButton = useCallback(
       (position) => {
         const hasValue = Boolean(multiple && value ? value.length : value);
@@ -115,13 +156,15 @@ const SelectContainer = forwardRef(
     );
 
     const [activeIndex, setActiveIndex] = useState(
-      usingKeyboard && !shouldShowClearButton('top') ? 0 : -1,
+      usingKeyboard && !shouldShowClearButton('top') && !onSearch ? 0 : -1,
     );
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
     const searchRef = useRef();
     const optionsRef = useRef();
     const clearRef = useRef();
     const activeRef = useRef();
+    const { format } = useContext(MessageContext);
+    const searchIcon = theme.select.icons?.search || <Search aria-hidden />;
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
@@ -136,7 +179,7 @@ const SelectContainer = forwardRef(
         const clearButton = clearRef.current;
         if (onSearch) {
           const searchInput = searchRef.current;
-          if (searchInput && searchInput.focus) {
+          if (searchInput && searchInput.focus && !activeRef.current) {
             setFocusWithoutScroll(searchInput);
           }
         } else if (
@@ -357,13 +400,20 @@ const SelectContainer = forwardRef(
       >
         <StyledContainer
           ref={ref}
-          as={Box}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
+          {...passThemeFlag}
         >
           {onSearch && (
-            <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
+            <Box
+              pad={!customSearchInput ? theme.select?.search?.pad : undefined}
+              flex={false}
+            >
               <SelectTextInput
+                aria-label={format({
+                  id: 'select.searchA11y',
+                  messages,
+                })}
                 focusIndicator={!customSearchInput}
                 size="small"
                 ref={searchRef}
@@ -376,6 +426,8 @@ const SelectContainer = forwardRef(
                   setActiveIndex(-1);
                   onSearch(nextSearch);
                 }}
+                onFocus={() => setActiveIndex(-1)}
+                icon={searchIcon}
               />
             </Box>
           )}
@@ -392,6 +444,10 @@ const SelectContainer = forwardRef(
           )}
           {options.length > 0 ? (
             <OptionsContainer
+              aria-label={format({
+                id: 'select.optionsA11y',
+                messages,
+              })}
               role="listbox"
               tabIndex="-1"
               ref={optionsRef}
@@ -440,7 +496,8 @@ const SelectContainer = forwardRef(
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
-                      // eslint-disable-next-line react/no-array-index-key
+                      // lint isn't flagging this but we shouldn't use index
+                      // as a key see no-array-index-key lint rule
                       key={index}
                       // merge optionRef and activeRef
                       ref={(node) => {
@@ -448,12 +505,22 @@ const SelectContainer = forwardRef(
                         if (optionRef) optionRef.current = node;
                         if (optionActive) activeRef.current = node;
                       }}
-                      tabIndex={optionSelected ? '0' : '-1'}
+                      tabIndex={
+                        optionSelected ||
+                        activeIndex === index ||
+                        // when nothing is selected and entering listbox
+                        // first option should be focused
+                        ((!value ||
+                          (Array.isArray(value) && value.length === 0)) &&
+                          activeIndex === -1 &&
+                          index === 0)
+                          ? '0'
+                          : '-1'
+                      }
                       role="option"
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      focusIndicator={false}
                       aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"
@@ -472,10 +539,14 @@ const SelectContainer = forwardRef(
                       onMouseOver={
                         !optionDisabled ? onActiveOption(index) : undefined
                       }
+                      onMouseOut={
+                        !optionDisabled ? onActiveOption(-1) : undefined
+                      }
                       onClick={
                         !optionDisabled ? selectOption(index) : undefined
                       }
                       textComponent={textComponent}
+                      {...passThemeFlag}
                     >
                       {child}
                     </SelectOption>

@@ -8,13 +8,37 @@ export interface SelectMultipleProps extends BasicSelectProps {
   value?: (string | number | object)[];
   showSelectedInline?: boolean;
   sortSelectedOnClose?: boolean;
+  messages?: {
+    clearAll?: string;
+    clearAllA11y?: string;
+    multiple?: string; // kept for backwards compatibility, but summarizedValue should be used instead
+    open?: string;
+    optionNotSelected?: string;
+    optionSelected?: string;
+    optionsA11y?: string;
+    search?: string;
+    selectAll?: string;
+    selectAllA11y?: string;
+    selectDrop?: string;
+    selected?: string;
+    selectedOfTotal?: string;
+    selectedOptions?: string;
+    showMore?: string;
+    summarizedValue?: string;
+  };
 }
 
 // Try without Omit<> to see where we define our own attributes for overrides
 // value, name, id, onChange, placeholder
 export interface SelectMultipleExtendedProps
   extends SelectMultipleProps,
-    Omit<JSX.IntrinsicElements['input'], keyof SelectMultipleProps> {}
+    Omit<
+      React.DetailedHTMLProps<
+        React.InputHTMLAttributes<HTMLInputElement>,
+        HTMLInputElement
+      >,
+      keyof SelectMultipleProps
+    > {}
 
 declare const SelectMultiple: React.FC<SelectMultipleExtendedProps>;
 

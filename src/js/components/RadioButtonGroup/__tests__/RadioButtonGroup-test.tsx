@@ -25,6 +25,14 @@ describe('RadioButtonGroup', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(
+      <RadioButtonGroup name="test" options={['one', 'two']} value="one" />,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('string options', () => {
     const { container } = render(
       <Grommet>
@@ -188,15 +196,15 @@ describe('RadioButtonGroup', () => {
 
     // Select first radio button
     fireEvent.click(getByTestId('testid-1'));
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
 
     // Select first radio button again - should not trigger onChange
     fireEvent.click(getByTestId('testid-1'));
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
 
     // Select second radio button
     fireEvent.click(getByTestId('testid-2'));
-    expect(onChange).toBeCalledTimes(2);
+    expect(onChange).toHaveBeenCalledTimes(2);
   });
 
   test('Works with keyboard', async () => {
@@ -251,5 +259,27 @@ describe('RadioButtonGroup', () => {
         target: screen.getByRole('radio', { name: 'radio button 1' }),
       }),
     );
+  });
+
+  test('theme container gap', () => {
+    const customTheme = {
+      radioButtonGroup: {
+        container: {
+          gap: 'large',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <RadioButtonGroup
+          name="test"
+          options={['one', 'two', 'three']}
+          value="one"
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

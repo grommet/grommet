@@ -5,8 +5,8 @@ import {
   genericStyles,
   normalizeColor,
   textAlignStyle,
+  styledComponentsConfig,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 const sizeStyle = (props) => {
   // size is a combination of the level and size properties
@@ -44,6 +44,7 @@ const sizeStyle = (props) => {
             line-height: ${responsiveData.height};
             max-width: ${(props.fillProp && 'none') || responsiveData.maxWidth};
           `,
+              props.responsive,
             ),
           );
         }
@@ -81,7 +82,7 @@ const colorStyle = css`
     normalizeColor(props.colorProp || props.theme.heading.color, props.theme)};
 `;
 
-const StyledHeading = styled.h1`
+const StyledHeading = styled.h1.withConfig(styledComponentsConfig)`
   ${genericStyles}
   ${(props) => fontFamily(props)}
   ${(props) => sizeStyle(props)}
@@ -90,8 +91,5 @@ const StyledHeading = styled.h1`
   ${(props) => (props.colorProp || props.theme.heading.color) && colorStyle}
   ${(props) => props.theme.heading && props.theme.heading.extend}
 `;
-
-StyledHeading.defaultProps = {};
-Object.setPrototypeOf(StyledHeading.defaultProps, defaultProps);
 
 export { StyledHeading };

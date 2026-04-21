@@ -6,7 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import 'jest-styled-components';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
@@ -21,11 +21,20 @@ const customTheme = {
       },
       elevation: 'xlarge',
     },
+    container: {
+      pad: 'xsmall',
+      gap: 'xsmall',
+    },
     icons: {
       color: '#F08080',
     },
     item: {
       align: 'center',
+    },
+    disabled: {
+      icons: {
+        color: '#F08080',
+      },
     },
   },
 };
@@ -68,6 +77,19 @@ describe('Menu', () => {
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
       </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(
+      <Menu
+        icon={<svg />}
+        label="Test Menu"
+        id="test-menu"
+        items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+      />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -170,7 +192,7 @@ describe('Menu', () => {
 
     fireEvent.click(getByLabelText('Close Menu'));
     expect(document.getElementById('test-menu__drop')).toBeNull();
-    expect(window.scrollTo).toBeCalled();
+    expect(window.scrollTo).toHaveBeenCalled();
   });
 
   test('close by clicking outside', (done) => {
@@ -216,7 +238,7 @@ describe('Menu', () => {
 
     // click in the first menu item
     fireEvent.click(getByTextDOM(document, 'Item 1'));
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
@@ -258,7 +280,7 @@ describe('Menu', () => {
       which: 13,
     });
 
-    expect(onClick).toBeCalled();
+    expect(onClick).toHaveBeenCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
@@ -549,6 +571,20 @@ describe('Menu', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('custom theme disabled icon color', () => {
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Menu
+          disabled
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('custom theme icon alignment', () => {
     const { container } = render(
       <Grommet theme={customTheme}>
@@ -615,6 +651,26 @@ describe('Menu', () => {
             [{ label: 'Item 1' }, { label: 'Item 2' }],
             [{ label: 'Item 3' }],
           ]}
+        />
+      </Grommet>,
+    );
+    fireEvent.keyDown(screen.getByText('Test Menu'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+
+    expectPortal('test-menu__drop').toMatchSnapshot();
+  });
+
+  test('should apply theme.menu.container', () => {
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet theme={customTheme}>
+        <Menu
+          id="test-menu"
+          label="Test Menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
       </Grommet>,
     );

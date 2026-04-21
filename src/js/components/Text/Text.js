@@ -9,6 +9,7 @@ import { TextPropTypes } from './propTypes';
 import { useSkeleton } from '../Skeleton';
 import { TextSkeleton } from './TextSkeleton';
 import { TextContext } from './TextContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Text = forwardRef(
   (
@@ -25,10 +26,12 @@ const Text = forwardRef(
       truncate,
       size,
       skeleton: skeletonProp,
+      level = 1,
       ...rest
     },
     ref,
   ) => {
+    const { passThemeFlag } = useThemeValue();
     const textRef = useForwardedRef(ref);
     const [textTruncated, setTextTruncated] = useState(false);
     const textContextValue = useMemo(() => ({ size }), [size]);
@@ -60,6 +63,7 @@ const Text = forwardRef(
         <TextSkeleton
           ref={ref}
           as={as}
+          level={level}
           size={size}
           {...skeletonProp}
           {...rest}
@@ -72,8 +76,10 @@ const Text = forwardRef(
         as={!as && tag ? tag : as}
         colorProp={color}
         aria-label={a11yTitle}
+        level={level}
         truncate={truncate}
         size={size}
+        {...passThemeFlag}
         {...rest}
         ref={textRef}
       >
@@ -85,12 +91,14 @@ const Text = forwardRef(
       </StyledText>
     );
 
+    const tipProps = tipProp && typeof tipProp === 'object' ? tipProp : {};
+
     if (tipProp || textTruncated) {
       // place the text content in a tip if truncate === 'tip'
       // and the text has been truncated
       if (textTruncated) {
         return (
-          <Tip content={children} {...tipProp}>
+          <Tip content={children} {...tipProps}>
             {styledTextResult}
           </Tip>
         );
@@ -98,7 +106,7 @@ const Text = forwardRef(
       // place the text content in a tip if truncate !== 'tip'
       // it displays even if the text has not truncated
       if (truncate !== 'tip') {
-        return <Tip {...tipProp}>{styledTextResult}</Tip>;
+        return <Tip {...tipProps}>{styledTextResult}</Tip>;
       }
     }
 
@@ -107,9 +115,6 @@ const Text = forwardRef(
 );
 
 Text.displayName = 'Text';
-Text.defaultProps = {
-  level: 1,
-};
 Text.propTypes = TextPropTypes;
 
 export { Text };

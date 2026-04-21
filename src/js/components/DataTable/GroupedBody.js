@@ -8,6 +8,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { datumValue, normalizeRowCellProps } from './buildState';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 export const GroupedBody = forwardRef(
   (
@@ -19,6 +20,7 @@ export const GroupedBody = forwardRef(
       groupBy,
       groups,
       groupState,
+      messages,
       pinnedOffset,
       primaryProperty,
       onMore,
@@ -35,6 +37,7 @@ export const GroupedBody = forwardRef(
     },
     ref,
   ) => {
+    const { passThemeFlag } = useThemeValue();
     const items = useMemo(() => {
       const nextItems = [];
       groups.forEach((group) => {
@@ -139,7 +142,7 @@ export const GroupedBody = forwardRef(
     ]);
 
     return (
-      <StyledDataTableBody ref={ref} size={size} {...rest}>
+      <StyledDataTableBody ref={ref} size={size} {...passThemeFlag} {...rest}>
         <InfiniteScroll
           items={items}
           onMore={onMore}
@@ -165,17 +168,39 @@ export const GroupedBody = forwardRef(
             } = row;
             const cellProps = normalizeRowCellProps(
               rowProps,
-              cellPropsProp,
+              context === 'groupHeader'
+                ? cellPropsProp.groupHeader
+                : cellPropsProp.body,
               primaryValue,
               index,
             );
 
+            let ariaLabel;
+            if (
+              typeof groupBy === 'object' &&
+              typeof groupBy.expandLabel === 'function'
+            ) {
+              const labelRow =
+                context === 'groupHeader' ? row.datum : row.datum;
+              ariaLabel = groupBy.expandLabel(labelRow);
+            }
+
             return (
-              <StyledDataTableRow ref={rowRef} key={key} size={size}>
+              <StyledDataTableRow
+                ref={rowRef}
+                key={key}
+                size={size}
+                {...passThemeFlag}
+              >
                 <ExpanderCell
-                  background={cellProps.background}
+                  background={
+                    (isSelected && cellProps.selected.background) ||
+                    cellProps.background
+                  }
+                  expandLabel={ariaLabel}
                   border={cellProps.border}
                   context={context}
+                  messages={messages}
                   pad={cellProps.pad}
                   onToggle={
                     context === 'groupHeader' ? onToggle(key) : undefined
@@ -185,7 +210,10 @@ export const GroupedBody = forwardRef(
                 />
                 {(selected || onSelect) && (
                   <TableCell
-                    background={cellProps.background}
+                    background={
+                      (isSelected && cellProps.selected.background) ||
+                      cellProps.background
+                    }
                     border={cellProps.pinned.border || cellProps.border}
                     plain="noPad"
                     size="auto"
@@ -215,7 +243,10 @@ export const GroupedBody = forwardRef(
                   return (
                     <Cell
                       key={column.property}
-                      background={cellProps.background}
+                      background={
+                        (isSelected && cellProps.selected.background) ||
+                        cellProps.background
+                      }
                       border={cellProps.border}
                       context={context}
                       column={column}
@@ -223,9 +254,7 @@ export const GroupedBody = forwardRef(
                       pad={cellProps.pad}
                       scope={scope}
                       pinnedOffset={
-                        context === 'groupHeader' &&
-                        pinnedOffset &&
-                        pinnedOffset[column.property]
+                        pinnedOffset && pinnedOffset[column.property]
                       }
                       verticalAlign={verticalAlign}
                     />

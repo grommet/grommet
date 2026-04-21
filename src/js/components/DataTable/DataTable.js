@@ -7,12 +7,11 @@ import React, {
   useState,
   Fragment,
 } from 'react';
-import { ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { Header } from './Header';
@@ -37,6 +36,7 @@ import {
 } from './StyledDataTable';
 import { DataTablePropTypes } from './propTypes';
 import { PlaceholderBody } from './PlaceholderBody';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
@@ -66,6 +66,7 @@ const DataTable = ({
   disabled,
   fill,
   groupBy: groupByProp,
+  messages,
   onClickRow, // removing unknown DOM attributes
   onMore,
   onSearch, // removing unknown DOM attributes
@@ -90,12 +91,13 @@ const DataTable = ({
   verticalAlign,
   ...rest
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { theme, passThemeFlag } = useThemeValue();
   const {
     view,
     data: contextData,
     properties,
     onView,
+    setSelected: setSelectedDataContext,
   } = useContext(DataContext);
   const data = dataProp || contextData || emptyData;
 
@@ -178,7 +180,39 @@ const DataTable = ({
   const [groupState, setGroupState] = useGroupState(groups, groupBy);
 
   const [limit, setLimit] = useState(step);
+  const announce = useContext(AnnounceContext);
+  const { format } = useContext(MessageContext);
+  // only announce number of rows that are rendered
+  // when outside of DataContext, otherwise
+  // Data will make this announcement
+  useEffect(() => {
+    if (dataProp) {
+      let messageId;
+      const rows = format({
+        id:
+          adjustedData.length === 1 ? 'dataTable.rowsSingle' : 'dataTable.rows',
+        messages,
+      });
+      // when less than one page returned, use specific amount
+      if (adjustedData.length < limit) {
+        if (adjustedData.length === 1) messageId = 'dataTable.totalSingle';
+        else messageId = 'dataTable.total';
+      } else {
+        messageId = 'dataTable.rowsChanged';
+      }
 
+      announce(
+        format({
+          id: messageId,
+          messages,
+          values: {
+            total: adjustedData.length,
+            rows,
+          },
+        }),
+      );
+    }
+  }, [dataProp, adjustedData, announce, format, limit, messages, paginate]);
   const [selected, setSelected] = useState(
     select || (onSelect && []) || undefined,
   );
@@ -186,8 +220,18 @@ const DataTable = ({
     () => setSelected(select || (onSelect && []) || undefined),
     [onSelect, select],
   );
+  useEffect(() => {
+    if (select && setSelectedDataContext) {
+      setSelectedDataContext(select.length);
+    }
+  }, [select, setSelectedDataContext]);
 
-  const [rowExpand, setRowExpand] = useState([]);
+  const [rowExpand, setRowExpand] = useState(rowDetails?.expand || []);
+  useEffect(() => {
+    if (rowDetails?.expand) {
+      setRowExpand(rowDetails.expand);
+    }
+  }, [rowDetails?.expand]);
 
   // any customized column widths
   const [widths, setWidths] = useState({});
@@ -216,7 +260,7 @@ const DataTable = ({
       }
       const nextPinnedOffset = {};
 
-      if (columnWidths !== []) {
+      if (columnWidths.length !== 0) {
         pinnedProperties.forEach((property, index) => {
           const columnIndex =
             property === '_grommetDataTableSelect'
@@ -368,7 +412,7 @@ const DataTable = ({
   );
 
   if (size && resizeable) {
-    console.warn('DataTable cannot combine "size" and "resizeble".');
+    console.warn('DataTable cannot combine "size" and "resizeable".');
   }
   if (onUpdate && onMore) {
     console.warn('DataTable cannot combine "onUpdate" and "onMore".');
@@ -384,7 +428,11 @@ const DataTable = ({
 
   const Container = paginate ? StyledContainer : Fragment;
   const containterProps = paginate
-    ? { ...theme.dataTable.container, fill }
+    ? {
+        ...theme.dataTable.container,
+        fill,
+        ...passThemeFlag,
+      }
     : undefined;
 
   // DataTable should overflow if paginating but pagination component
@@ -416,15 +464,26 @@ const DataTable = ({
     );
   }
 
+  const handleSelect = (nextSelected, row) => {
+    setSelected(nextSelected);
+    if (setSelectedDataContext) setSelectedDataContext(nextSelected.length);
+    if (row) onSelect(nextSelected, row);
+    else onSelect(nextSelected);
+  };
+
   const bodyContent = groups ? (
     <GroupedBody
       ref={bodyRef}
-      cellProps={cellProps.body}
+      cellProps={{
+        body: cellProps.body,
+        groupHeader: { ...cellProps.body, ...cellProps.groupHeader },
+      }}
       columns={columns}
       disabled={disabled}
       groupBy={typeof groupBy === 'string' ? { property: groupBy } : groupBy}
       groups={groups}
       groupState={groupState}
+      messages={messages}
       pinnedOffset={pinnedOffset}
       primaryProperty={primaryProperty}
       onMore={
@@ -445,14 +504,7 @@ const DataTable = ({
             }
           : onMore
       }
-      onSelect={
-        onSelect
-          ? (nextSelected, row) => {
-              setSelected(nextSelected);
-              if (onSelect) onSelect(nextSelected, row);
-            }
-          : undefined
-      }
+      onSelect={onSelect ? handleSelect : undefined}
       onToggle={onToggleGroup}
       onUpdate={onUpdate}
       replace={replace}
@@ -488,14 +540,7 @@ const DataTable = ({
       }
       replace={replace}
       onClickRow={onClickRow}
-      onSelect={
-        onSelect
-          ? (nextSelected, row) => {
-              setSelected(nextSelected);
-              if (onSelect) onSelect(nextSelected, row);
-            }
-          : undefined
-      }
+      onSelect={onSelect ? handleSelect : undefined}
       pinnedCellProps={cellProps.pinned}
       pinnedOffset={pinnedOffset}
       primaryProperty={primaryProperty}
@@ -519,6 +564,7 @@ const DataTable = ({
         <StyledDataTable
           fillProp={!paginate ? fill : undefined}
           {...paginatedDataTableProps}
+          {...passThemeFlag}
           {...rest}
         >
           <Header
@@ -540,17 +586,11 @@ const DataTable = ({
             size={size}
             sort={sort}
             widths={widths}
+            messages={messages}
             onFiltering={onFiltering}
             onFilter={onFilter}
             onResize={resizeable ? onResize : undefined}
-            onSelect={
-              onSelect
-                ? (nextSelected) => {
-                    setSelected(nextSelected);
-                    if (onSelect) onSelect(nextSelected);
-                  }
-                : undefined
-            }
+            onSelect={onSelect ? handleSelect : undefined}
             onSort={sortable || sortProp || onSortProp ? onSort : undefined}
             onToggle={onToggleGroups}
             onWidths={onHeaderWidths}

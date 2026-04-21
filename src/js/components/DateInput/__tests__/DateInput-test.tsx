@@ -6,7 +6,11 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import { Calendar as CalendarIcon, Clock as ClockIcon } from 'grommet-icons';
+import {
+  Calendar as CalendarIcon,
+  Clock as ClockIcon,
+  Schedule,
+} from 'grommet-icons';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
@@ -88,6 +92,16 @@ describe('DateInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('should use theme icons', () => {
+    render(
+      <Grommet theme={{ dateInput: { icon: { calendar: Schedule } } }}>
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Schedule')).toBeInTheDocument();
+  });
+
   test('should handle typing date and clicking date simultaneously', async () => {
     const user = userEvent.setup();
 
@@ -126,6 +140,13 @@ describe('DateInput', () => {
       <Grommet>
         <DateInput id="item" name="item" value={DATE} />
       </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('render basic outside grommet wrapper', () => {
+    const { container } = render(
+      <DateInput id="item" name="item" value={DATE} />,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -1106,7 +1127,9 @@ describe('DateInput', () => {
 
   test('icon', () => {
     const { container } = render(
-      <DateInput icon={<CalendarIcon color="red" />} name="item" />,
+      <Grommet>
+        <DateInput icon={<CalendarIcon color="red" />} name="item" />,
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -1150,10 +1173,12 @@ describe('DateInput', () => {
     render(
       // onReset e.stopPropagation() is testing to ensure
       // the event won't be lost if caller adds custom reset
-      <Form onReset={(e) => e.stopPropagation()}>
-        <DateInput format="mm/dd/yyyy" name="date" />
-        <Button label="Reset" type="reset" />
-      </Form>,
+      <Grommet>
+        <Form onReset={(e) => e.stopPropagation()}>
+          <DateInput format="mm/dd/yyyy" name="date" />
+          <Button label="Reset" type="reset" />
+        </Form>
+      </Grommet>,
     );
     const input = screen.getByRole('textbox');
     await user.type(input, '09/09/2022');
@@ -1163,5 +1188,64 @@ describe('DateInput', () => {
     await user.click(screen.getByRole('button', { name: 'Reset' }));
 
     expect(input).toHaveValue('');
+  });
+
+  test('read only', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <DateInput
+          format="mm/dd/yyyy"
+          value="01/01/2024"
+          readOnly
+          aria-readonly
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('read only copy', async () => {
+    const user = userEvent.setup();
+
+    const { asFragment } = render(
+      <Grommet>
+        <DateInput
+          format="mm/dd/yyyy"
+          value="01/01/2024"
+          readOnly
+          readOnlyCopy
+          aria-readonly
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button'));
+
+    const clipboardText = await navigator.clipboard.readText();
+    expect(clipboardText).toBe('01/01/2024');
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('theme button margin and icon size', () => {
+    const customTheme = {
+      dateInput: {
+        button: {
+          margin: 'large',
+        },
+        icon: {
+          size: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <DateInput format="mm/dd/yyyy" />
+        <DateInput format="mm/dd/yyyy" icon={<CalendarIcon />} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

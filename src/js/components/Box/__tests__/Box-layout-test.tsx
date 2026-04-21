@@ -4,8 +4,14 @@ import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Box, BoxProps } from '..';
+import { Text } from '../../Text';
+import { ResponsiveContext } from '../../..';
 
 describe('Box', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   test('direction', () => {
     const { container } = render(
       <Grommet>
@@ -25,6 +31,56 @@ describe('Box', () => {
       <Grommet>
         <Box responsive />
         <Box responsive={false} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('responsive container medium', () => {
+    jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+      width: 1280,
+      height: 0,
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    });
+    const { container } = render(
+      <Grommet>
+        <Box responsive="container" width="1280px">
+          <ResponsiveContext.Consumer>
+            {(size2) => size2}
+          </ResponsiveContext.Consumer>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('responsive container small', () => {
+    jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
+      width: 300,
+      height: 0,
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    });
+    const { container } = render(
+      <Grommet>
+        <Box responsive="container" width="300px">
+          <ResponsiveContext.Consumer>
+            {(size2) => size2}
+          </ResponsiveContext.Consumer>
+        </Box>
       </Grommet>,
     );
 
@@ -113,7 +169,6 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  // the test is being skipped until we change styled box to use attrs
   test('alignSelf', () => {
     const { container } = render(
       <Grommet>
@@ -227,6 +282,23 @@ describe('Box', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('row and column gap', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Box gap={{ row: 'xlarge', column: '30px' }} direction="row">
+          <Box />
+          <Box />
+        </Box>
+        <Box as="span" gap="small">
+          <span>first</span>
+          <span>second</span>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('margin', () => {
@@ -390,5 +462,26 @@ describe('Box', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme border size', () => {
+    const customTheme = {
+      box: {
+        border: {
+          offset: 'medium',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Box direction="row" gap="small" border={{ side: 'between' }}>
+          <Text>Default</Text>
+          <Text>Between Size</Text>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

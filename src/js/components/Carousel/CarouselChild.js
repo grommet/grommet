@@ -7,7 +7,7 @@ import { Box } from '../Box';
 
 const CarouselChild = ({
   animationDuration,
-  fill,
+  fill = false,
   index,
   activeIndex,
   priorActiveIndex,
@@ -55,11 +55,5 @@ const CarouselChild = ({
 };
 
 CarouselChild.propTypes = CarouselChildPropTypes;
-
-CarouselChild.defaultProps = {
-  fill: false,
-  play: undefined,
-  priorActiveIndex: undefined,
-};
 
 export { CarouselChild };

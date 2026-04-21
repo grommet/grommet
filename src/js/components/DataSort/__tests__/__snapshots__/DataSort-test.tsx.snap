@@ -1,10 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`DataSort drop 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
 .c3 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -35,29 +43,11 @@ exports[`DataSort drop 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
 .c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -77,18 +67,18 @@ exports[`DataSort drop 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus > circle,
-.c2:focus > ellipse,
-.c2:focus > line,
-.c2:focus > path,
-.c2:focus > polygon,
-.c2:focus > polyline,
-.c2:focus > rect {
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:focus::-moz-focus-inner {
+.c2:focus ::-moz-focus-inner {
   border: 0;
 }
 
@@ -97,18 +87,18 @@ exports[`DataSort drop 1`] = `
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible) > circle,
-.c2:focus:not(:focus-visible) > ellipse,
-.c2:focus:not(:focus-visible) > line,
-.c2:focus:not(:focus-visible) > path,
-.c2:focus:not(:focus-visible) > polygon,
-.c2:focus:not(:focus-visible) > polyline,
-.c2:focus:not(:focus-visible) > rect {
+.c2:focus:not(:focus-visible) >circle,
+.c2:focus:not(:focus-visible) >ellipse,
+.c2:focus:not(:focus-visible) >line,
+.c2:focus:not(:focus-visible) >path,
+.c2:focus:not(:focus-visible) >polygon,
+.c2:focus:not(:focus-visible) >polyline,
+.c2:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c2:focus:not(:focus-visible)::-moz-focus-inner {
+.c2:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -155,7 +145,7 @@ exports[`DataSort drop 1`] = `
 exports[`DataSort drop 2`] = `
 <button
   aria-label="Open sort"
-  class="StyledButton-sc-323bzc-0 hZNOgI"
+  class="StyledButton-sc-323bzc-0 emHfGN"
   data-g-tabindex="none"
   id="test-data--sort-control"
   tabindex="-1"
@@ -163,7 +153,7 @@ exports[`DataSort drop 2`] = `
 >
   <svg
     aria-label="Descend"
-    class="StyledIcon-sc-ofa7kd-0 bQiAMQ"
+    class="StyledIcon-sc-ofa7kd-0 fmAnVC"
     viewBox="0 0 24 24"
   >
     <path
@@ -178,63 +168,403 @@ exports[`DataSort drop 2`] = `
 
 exports[`DataSort drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jstWSP {
+  .cavIHi {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bnAVOh {
+  .dtBsqs {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gnAxhJ {
+  .gMMZpE {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .jlUwqJ {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gkHEjs {
+  .jlUwqJ {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iuoTxe {
+  .cwyghz {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bKYcZs {
+  .eyvVbN {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .dypTlm {
-    margin-top: 6px;
+  .dwoePz {
+    margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .biJsVL {
+  .eEiScb {
     height: 6px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .EuOQj {
-    width: 6px;
   }
 }"
 `;
 
+exports[`DataSort properties 1`] = `
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 0px;
+  flex: 0 0 auto;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c0 {
+  position: relative;
+  scroll-behavior: smooth;
+  overflow: auto;
+  outline: none;
+}
+
+.c2 {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  aria-label="list of options"
+  class="c0"
+  role="listbox"
+  tabindex="-1"
+>
+  <button
+    aria-posinset="1"
+    aria-selected="false"
+    aria-setsize="2"
+    class="c1 c2"
+    role="option"
+    tabindex="0"
+    type="button"
+  >
+    <div
+      class="c3"
+    >
+      <span
+        class="c4"
+      >
+        Location
+      </span>
+    </div>
+  </button>
+  <button
+    aria-posinset="2"
+    aria-selected="false"
+    aria-setsize="2"
+    class="c1 c2"
+    role="option"
+    tabindex="-1"
+    type="button"
+  >
+    <div
+      class="c3"
+    >
+      <span
+        class="c4"
+      >
+        My Name
+      </span>
+    </div>
+  </button>
+  <div
+    class="c5"
+  />
+</div>
+`;
+
 exports[`DataSort renders 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 1;
+  overflow: auto;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c10 {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  flex-basis: auto;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c16 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c21 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c24 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: 24px;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 0 0 auto;
+  justify-content: space-between;
+}
+
+.c23 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
 .c15 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -265,266 +595,6 @@ exports[`DataSort renders 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  overflow: auto;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-bottom: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 100%;
-}
-
-.c23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-top: 12px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c22 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 12px;
-}
-
-.c25 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  width: 12px;
-}
-
 .c6 {
   margin-left: 12px;
   margin-right: 12px;
@@ -539,7 +609,6 @@ exports[`DataSort renders 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -557,27 +626,26 @@ exports[`DataSort renders 1`] = `
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible) > circle,
-.c8:focus:not(:focus-visible) > ellipse,
-.c8:focus:not(:focus-visible) > line,
-.c8:focus:not(:focus-visible) > path,
-.c8:focus:not(:focus-visible) > polygon,
-.c8:focus:not(:focus-visible) > polyline,
-.c8:focus:not(:focus-visible) > rect {
+.c8:focus:not(:focus-visible) >circle,
+.c8:focus:not(:focus-visible) >ellipse,
+.c8:focus:not(:focus-visible) >line,
+.c8:focus:not(:focus-visible) >path,
+.c8:focus:not(:focus-visible) >polygon,
+.c8:focus:not(:focus-visible) >polyline,
+.c8:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c8:focus:not(:focus-visible)::-moz-focus-inner {
+.c8:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c24 {
+.c25 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -592,127 +660,53 @@ exports[`DataSort renders 1`] = `
   background-color: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
   transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 
-.c24:hover {
+.c25:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-.c24:focus {
+.c25:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus > circle,
-.c24:focus > ellipse,
-.c24:focus > line,
-.c24:focus > path,
-.c24:focus > polygon,
-.c24:focus > polyline,
-.c24:focus > rect {
+.c25:focus >circle,
+.c25:focus >ellipse,
+.c25:focus >line,
+.c25:focus >path,
+.c25:focus >polygon,
+.c25:focus >polyline,
+.c25:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c24:focus::-moz-focus-inner {
+.c25:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c24:focus:not(:focus-visible) {
+.c25:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible) > circle,
-.c24:focus:not(:focus-visible) > ellipse,
-.c24:focus:not(:focus-visible) > line,
-.c24:focus:not(:focus-visible) > path,
-.c24:focus:not(:focus-visible) > polygon,
-.c24:focus:not(:focus-visible) > polyline,
-.c24:focus:not(:focus-visible) > rect {
+.c25:focus:not(:focus-visible) >circle,
+.c25:focus:not(:focus-visible) >ellipse,
+.c25:focus:not(:focus-visible) >line,
+.c25:focus:not(:focus-visible) >path,
+.c25:focus:not(:focus-visible) >polygon,
+.c25:focus:not(:focus-visible) >polyline,
+.c25:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c24:focus:not(:focus-visible)::-moz-focus-inner {
+.c25:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-.c26 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  opacity: 0.3;
-  cursor: default;
-  -webkit-transition-property: color,background-color,border-color,box-shadow;
-  transition-property: color,background-color,border-color,box-shadow;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-
-.c26:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c26:focus > circle,
-.c26:focus > ellipse,
-.c26:focus > line,
-.c26:focus > path,
-.c26:focus > polygon,
-.c26:focus > polyline,
-.c26:focus > rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c26:focus::-moz-focus-inner {
-  border: 0;
-}
-
-.c26:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c26:focus:not(:focus-visible) > circle,
-.c26:focus:not(:focus-visible) > ellipse,
-.c26:focus:not(:focus-visible) > line,
-.c26:focus:not(:focus-visible) > path,
-.c26:focus:not(:focus-visible) > polygon,
-.c26:focus:not(:focus-visible) > polyline,
-.c26:focus:not(:focus-visible) > rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c26:focus:not(:focus-visible)::-moz-focus-inner {
-  border: 0;
-}
-
-.c27 {
-  opacity: 0;
 }
 
 .c2 {
@@ -720,29 +714,16 @@ exports[`DataSort renders 1`] = `
 }
 
 .c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-.c18:hover input:not([disabled]) + div,
-.c18:hover input:not([disabled]) + span {
+.c18:hover input:not([disabled])+div,
+.c18:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -753,6 +734,10 @@ exports[`DataSort renders 1`] = `
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+.c22 {
+  transform: scale(1);
 }
 
 .c12 {
@@ -767,8 +752,9 @@ exports[`DataSort renders 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -785,7 +771,7 @@ exports[`DataSort renders 1`] = `
   color: #AAAAAA;
 }
 
-.c12::-webkit-search-decoration {
+.c12 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -818,64 +804,58 @@ exports[`DataSort renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c7 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c14 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c16 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c16 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c19 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c21 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
+  .c24 {
+    margin-top: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .c23 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c22 {
     height: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c25 {
-    width: 6px;
   }
 }
 
@@ -903,17 +883,19 @@ exports[`DataSort renders 1`] = `
             >
               <label
                 class="c6"
-                for="data--sort-property"
+                for="data--sort-property__input"
+                id="grommet-data--sort-property__input__label"
               >
                 Sort by
               </label>
               <div
-                class="c7 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c7 "
               >
                 <button
                   aria-expanded="false"
                   aria-haspopup="listbox"
                   aria-label="Open Drop"
+                  aria-labelledby="grommet-data--sort-property__input__label data--sort-property"
                   class="c8 "
                   id="data--sort-property"
                   type="button"
@@ -931,6 +913,7 @@ exports[`DataSort renders 1`] = `
                           autocomplete="off"
                           class="c12 c13"
                           id="data--sort-property__input"
+                          inert=""
                           name="_sort.property"
                           readonly=""
                           tabindex="-1"
@@ -966,13 +949,15 @@ exports[`DataSort renders 1`] = `
               <label
                 class="c6"
                 for="data--sort-direction"
+                id="grommet-data--sort-direction__label"
               >
                 Sort direction
               </label>
               <div
-                class="c16 FormField__FormFieldContentBox-sc-m9hood-1"
+                class="c16 "
               >
                 <div
+                  aria-labelledby="grommet-data--sort-direction__label"
                   class="c17"
                   id="data--sort-direction"
                   role="radiogroup"
@@ -991,7 +976,7 @@ exports[`DataSort renders 1`] = `
                         value="asc"
                       />
                       <div
-                        class="c21 "
+                        class="c21 c22"
                       />
                     </div>
                     <span
@@ -1001,7 +986,7 @@ exports[`DataSort renders 1`] = `
                     </span>
                   </label>
                   <div
-                    class="c22"
+                    class="c23"
                   />
                   <label
                     class="c18"
@@ -1017,7 +1002,7 @@ exports[`DataSort renders 1`] = `
                         value="desc"
                       />
                       <div
-                        class="c21 "
+                        class="c21 c22"
                       />
                     </div>
                     <span
@@ -1032,25 +1017,13 @@ exports[`DataSort renders 1`] = `
           </div>
         </div>
         <footer
-          class="c23"
+          class="c24"
         >
           <button
-            class="c24"
+            class="c25"
             type="submit"
           >
             Apply filters
-          </button>
-          <div
-            class="c25"
-          />
-          <button
-            aria-hidden="true"
-            class="c26 c27"
-            disabled=""
-            tabindex="-1"
-            type="reset"
-          >
-            Undo changes
           </button>
         </footer>
       </div>
@@ -1060,10 +1033,123 @@ exports[`DataSort renders 1`] = `
 `;
 
 exports[`DataSort sort when data array is empty 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c5 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  flex: 1 1;
+  flex-basis: auto;
+}
+
+.c12 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c14 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c17 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.c19 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  border: solid 2px rgba(0, 0, 0, 0.15);
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.c21 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 12px;
+}
+
 .c13 {
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
@@ -1094,197 +1180,6 @@ exports[`DataSort sort when data array is empty 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-bottom: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 12px;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 24px;
-  width: 24px;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 100%;
-}
-
-.c20 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  height: 12px;
-}
-
 .c4 {
   margin-left: 12px;
   margin-right: 12px;
@@ -1299,7 +1194,6 @@ exports[`DataSort sort when data array is empty 1`] = `
   box-sizing: border-box;
   cursor: pointer;
   font: inherit;
-  -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
   background: transparent;
@@ -1317,18 +1211,18 @@ exports[`DataSort sort when data array is empty 1`] = `
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) > circle,
-.c6:focus:not(:focus-visible) > ellipse,
-.c6:focus:not(:focus-visible) > line,
-.c6:focus:not(:focus-visible) > path,
-.c6:focus:not(:focus-visible) > polygon,
-.c6:focus:not(:focus-visible) > polyline,
-.c6:focus:not(:focus-visible) > rect {
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible)::-moz-focus-inner {
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -1337,29 +1231,16 @@ exports[`DataSort sort when data array is empty 1`] = `
 }
 
 .c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-.c16:hover input:not([disabled]) + div,
-.c16:hover input:not([disabled]) + span {
+.c16:hover input:not([disabled])+div,
+.c16:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
@@ -1370,6 +1251,10 @@ exports[`DataSort sort when data array is empty 1`] = `
   height: 0;
   margin: 0;
   cursor: pointer;
+}
+
+.c20 {
+  transform: scale(1);
 }
 
 .c10 {
@@ -1384,8 +1269,9 @@ exports[`DataSort sort when data array is empty 1`] = `
   padding: 11px;
   font-weight: 600;
   margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
+  border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  border: none;
   outline: none;
   border: none;
 }
@@ -1402,7 +1288,7 @@ exports[`DataSort sort when data array is empty 1`] = `
   color: #AAAAAA;
 }
 
-.c10::-webkit-search-decoration {
+.c10 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1435,51 +1321,51 @@ exports[`DataSort sort when data array is empty 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c3 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c5 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c12 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c14 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c14 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c17 {
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .c19 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c20 {
+@media only screen and (max-width: 768px) {
+  .c21 {
     height: 6px;
   }
 }
@@ -1499,17 +1385,19 @@ exports[`DataSort sort when data array is empty 1`] = `
       >
         <label
           class="c4"
-          for="test-data--sort-property"
+          for="test-data--sort-property__input"
+          id="grommet-test-data--sort-property__input__label"
         >
           Sort by
         </label>
         <div
-          class="c5 FormField__FormFieldContentBox-sc-m9hood-1"
+          class="c5 "
         >
           <button
             aria-expanded="false"
             aria-haspopup="listbox"
             aria-label="Open Drop"
+            aria-labelledby="grommet-test-data--sort-property__input__label test-data--sort-property"
             class="c6 "
             id="test-data--sort-property"
             type="button"
@@ -1527,6 +1415,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                     autocomplete="off"
                     class="c10 c11"
                     id="test-data--sort-property__input"
+                    inert=""
                     name="_sort.property"
                     readonly=""
                     tabindex="-1"
@@ -1562,13 +1451,15 @@ exports[`DataSort sort when data array is empty 1`] = `
         <label
           class="c4"
           for="test-data--sort-direction"
+          id="grommet-test-data--sort-direction__label"
         >
           Sort direction
         </label>
         <div
-          class="c14 FormField__FormFieldContentBox-sc-m9hood-1"
+          class="c14 "
         >
           <div
+            aria-labelledby="grommet-test-data--sort-direction__label"
             class="c15"
             id="test-data--sort-direction"
             role="radiogroup"
@@ -1587,7 +1478,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                   value="asc"
                 />
                 <div
-                  class="c19 "
+                  class="c19 c20"
                 />
               </div>
               <span
@@ -1597,7 +1488,7 @@ exports[`DataSort sort when data array is empty 1`] = `
               </span>
             </label>
             <div
-              class="c20"
+              class="c21"
             />
             <label
               class="c16"
@@ -1613,7 +1504,7 @@ exports[`DataSort sort when data array is empty 1`] = `
                   value="desc"
                 />
                 <div
-                  class="c19 "
+                  class="c19 c20"
                 />
               </div>
               <span

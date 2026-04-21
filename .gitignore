@@ -27,6 +27,14 @@ report*
 grommet-*-licenses.json
 grommet-*-src-with-dependecies.tgz
 
+#yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # misc
 .cache
 .env

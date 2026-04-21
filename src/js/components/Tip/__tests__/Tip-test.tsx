@@ -6,6 +6,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 import { Box } from '../../Box';
 import { Button } from '../../Button';
@@ -21,6 +22,12 @@ describe('Tip', () => {
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders outside grommet wrapper', async () => {
+    const { container } = render(<Tip content="tooltip content"> Example</Tip>);
+
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -88,6 +95,31 @@ describe('Tip', () => {
               background: 'brand',
               elevation: 'large',
               margin: '21px',
+            },
+          },
+        }}
+      >
+        <Tip content="tooltip">Example</Tip>
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(getByText('Example'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
+  });
+
+  test('tip content margin overides global drop margin', async () => {
+    const { getByText } = render(
+      <Grommet
+        theme={{
+          global: {
+            drop: {
+              margin: '10px',
+            },
+          },
+          tip: {
+            content: {
+              margin: '20px',
             },
           },
         }}
@@ -196,5 +228,47 @@ describe('Tip', () => {
     expect(onFocus).toHaveBeenCalledTimes(1);
     await user.tab();
     expect(onBlur).toHaveBeenCalledTimes(1);
+  });
+
+  test(`should be visible by default`, async () => {
+    const { getByText } = render(
+      <Grommet>
+        <Tip content="tooltip" defaultVisible>
+          Default Visible
+        </Tip>
+      </Grommet>,
+    );
+
+    fireEvent.mouseOver(getByText('Default Visible'));
+    const tooltip = await waitFor(() => screen.getByText('tooltip'));
+    expect(tooltip?.parentNode?.parentNode).toMatchSnapshot();
+  });
+
+  test('pressing Escape key closes tooltip', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Tip content="tooltip text">
+          <button>Hover me</button>
+        </Tip>
+      </Grommet>,
+    );
+
+    const button = screen.getByText('Hover me');
+    expect(button).toBeInTheDocument();
+
+    // Tab to the button
+    await user.tab();
+    expect(button).toHaveFocus();
+    await waitFor(() => {
+      expect(screen.queryByText('tooltip text')).toBeInTheDocument();
+    });
+
+    // pressing the Escape key
+    fireEvent.keyDown(document, { key: 'Escape', keyCode: 27 });
+
+    await waitFor(() => {
+      expect(screen.queryByText('tooltip text')).not.toBeInTheDocument();
+    });
   });
 });

@@ -7,9 +7,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
 
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -35,6 +34,8 @@ import {
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
+import { CopyButton } from './CopyButton';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const renderLabel = (suggestion) => {
   if (suggestion && typeof suggestion === 'object') {
@@ -73,6 +74,7 @@ const TextInput = forwardRef(
       a11yTitle,
       defaultSuggestion,
       defaultValue,
+      disabled,
       dropAlign = defaultDropAlign,
       dropHeight,
       dropTarget,
@@ -92,7 +94,8 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
-      readOnly,
+      readOnly: readOnlyProp,
+      readOnlyCopy,
       reverse,
       suggestions,
       textAlign,
@@ -102,13 +105,14 @@ const TextInput = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
     const inputRef = useForwardedRef(ref);
     const dropRef = useRef();
     const suggestionsRef = useRef();
+    const readOnly = readOnlyProp || readOnlyCopy;
     // if this is a readOnly property, don't set a name with the form context
     // this allows Select to control the form context for the name.
     const [value, setValue] = formContext.useFormInput({
@@ -129,6 +133,27 @@ const TextInput = forwardRef(
     );
 
     const [suggestionsAtClose, setSuggestionsAtClose] = useState();
+
+    const readOnlyCopyValidation = format({
+      id: 'input.readOnlyCopy.validation',
+      messages,
+    });
+    const readOnlyCopyPrompt = format({
+      id: 'input.readOnlyCopy.prompt',
+      messages,
+    });
+
+    const [tip, setTip] = useState(readOnlyCopyPrompt);
+
+    const onClickCopy = () => {
+      navigator.clipboard.writeText(value);
+      announce(readOnlyCopyValidation, 'assertive');
+      setTip(readOnlyCopyValidation);
+    };
+
+    const onBlurCopy = () => {
+      if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+    };
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
@@ -266,6 +291,12 @@ const TextInput = forwardRef(
       return () => clearTimeout(timer);
     }, [activeSuggestionIndex, showDrop]);
 
+    useEffect(() => {
+      if (readOnly && inputRef?.current && inputRef.current.scrollLeft > 0) {
+        inputRef.current.scrollLeft = 0;
+      }
+    }, [readOnly, inputRef, inputRef?.current?.scrollLeft]);
+
     const setValueFromSuggestion = (event, suggestion) => {
       // if we stole the focus in the drop, perhaps by interacting with
       // a suggestion button or the scrollbar, give it back
@@ -326,6 +357,8 @@ const TextInput = forwardRef(
           target={dropTarget || inputRef.current}
           onClickOutside={clickOutside}
           onEsc={closeDrop}
+          // TextInput manages its own keyboard behavior via keyboardProps
+          trapFocus={false}
           {...dropProps}
         >
           <ContainerBox
@@ -334,8 +367,9 @@ const TextInput = forwardRef(
             overflow="auto"
             dropHeight={dropHeight}
             onMouseMove={() => setMouseMovedSinceLastKey(true)}
+            {...passThemeFlag}
           >
-            <StyledSuggestions ref={suggestionsRef}>
+            <StyledSuggestions ref={suggestionsRef} {...passThemeFlag}>
               <InfiniteScroll
                 items={suggestions}
                 step={theme.select.step}
@@ -357,6 +391,11 @@ const TextInput = forwardRef(
                     child = renderedLabel;
                   else if (!theme.button.option)
                     // don't have theme support, need to layout here
+                    /*
+                    Not adding a theme object now because this code path
+                    is not used in the HPE theme, but we may add theme
+                    support here in the future.
+                    */
                     child = (
                       <Box align="start" pad="small">
                         {renderedLabel}
@@ -388,6 +427,7 @@ const TextInput = forwardRef(
                             ? () => setActiveSuggestionIndex(index)
                             : undefined
                         }
+                        keyboard={!mouseMovedSinceLastKey}
                       >
                         {child}
                       </Button>
@@ -444,12 +484,33 @@ const TextInput = forwardRef(
 
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
 
+    const ReadOnlyCopyButton = (
+      <CopyButton
+        disabled={disabled}
+        onBlurCopy={onBlurCopy}
+        onClickCopy={onClickCopy}
+        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        tip={tip}
+        value={value}
+      />
+    );
+
     return (
-      <StyledTextInputContainer plain={plain}>
+      <StyledTextInputContainer
+        readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
+        readOnlyCopy={readOnlyCopy}
+        plain={plain}
+        border={!plain}
+        onMouseMove={() => setMouseMovedSinceLastKey(true)}
+        {...passThemeFlag}
+      >
+        {reverse && readOnlyCopy && ReadOnlyCopyButton}
         {showStyledPlaceholder && (
-          <StyledPlaceholder>{placeholder}</StyledPlaceholder>
+          <StyledPlaceholder {...passThemeFlag}>
+            {placeholder}
+          </StyledPlaceholder>
         )}
-        {textInputIcon && (
+        {textInputIcon && !readOnlyCopy && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
@@ -461,22 +522,25 @@ const TextInput = forwardRef(
             id={id}
             name={name}
             autoComplete="off"
+            disabled={disabled}
             plain={plain}
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={icon}
+            icon={!readOnlyCopy && icon}
             reverse={reverse}
             focus={focus}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
             widthProp={widthProp}
+            {...passThemeFlag}
             {...rest}
             {...extraProps}
             {...comboboxProps}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             readOnly={readOnly}
+            readOnlyCopy={readOnlyCopy}
             onFocus={(event) => {
               // Don't do anything if we are acting like we already have
               // focus. This can happen when this input loses focus temporarily
@@ -526,8 +590,8 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-
-        {drop}
+        {!reverse && readOnlyCopy && ReadOnlyCopyButton}
+        {!readOnly && drop}
       </StyledTextInputContainer>
     );
   },

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { DataForm } from '../Data/DataForm';
 import { DataContext } from '../../contexts/DataContext';
-import { FormContext } from '../Form/FormContext';
+import { DataFormContext } from '../../contexts/DataFormContext';
 import { FormField } from '../FormField';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Select } from '../Select';
@@ -16,13 +16,13 @@ export const DataView = ({ id: idProp, ...rest }) => {
     views,
     addToolbarKey,
   } = useContext(DataContext);
-  const { noForm } = useContext(FormContext);
+  const { inDataForm } = useContext(DataFormContext);
   const { format } = useContext(MessageContext);
   const id = idProp || `${dataId}--view`;
 
   useEffect(() => {
-    if (noForm) addToolbarKey('_view');
-  }, [addToolbarKey, noForm]);
+    if (!inDataForm) addToolbarKey('_view');
+  }, [addToolbarKey, inDataForm]);
 
   if (!views) return null;
 
@@ -30,7 +30,7 @@ export const DataView = ({ id: idProp, ...rest }) => {
 
   let content;
 
-  if (!noForm && names.length < 7) {
+  if (inDataForm && names.length < 7) {
     content = (
       <RadioButtonGroup
         id={id}
@@ -46,7 +46,7 @@ export const DataView = ({ id: idProp, ...rest }) => {
         id={id}
         name="_view"
         showSelectedInline
-        placeholder={noForm ? 'Select view' : undefined}
+        placeholder={!inDataForm ? 'Select view' : undefined}
         options={names}
         value={view?.name}
         {...rest}
@@ -54,7 +54,7 @@ export const DataView = ({ id: idProp, ...rest }) => {
     );
   }
 
-  if (noForm)
+  if (!inDataForm)
     // likely in Toolbar
     content = (
       <DataForm footer={false} updateOn="change">

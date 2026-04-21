@@ -4,6 +4,7 @@ import { DropType } from '../Drop';
 export interface TipProps {
   children?: React.ReactNode;
   content?: React.ReactNode;
+  defaultVisible?: boolean;
   dropProps?: DropType;
   plain?: boolean;
 }

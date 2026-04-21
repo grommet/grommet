@@ -6,11 +6,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+import { Search } from 'grommet-icons/icons/Search';
 
 import { setFocusWithoutScroll } from '../../utils';
-
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -32,8 +30,11 @@ import {
   useDisabled,
   getOptionIndex,
   arrayIncludes,
+  inertTrueValue,
 } from '../Select/utils';
 import { EmptySearchOption } from '../Select/EmptySearchOption';
+import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const SelectMultipleContainer = forwardRef(
   (
@@ -49,6 +50,7 @@ const SelectMultipleContainer = forwardRef(
       id,
       labelKey,
       limit,
+      messages,
       onChange,
       onClose,
       onKeyDown,
@@ -67,12 +69,19 @@ const SelectMultipleContainer = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
+    // the currently active option based on keyboard navigation
+    // or mouse hover, -1 means no active option
     const [activeIndex, setActiveIndex] = useState(-1);
     const [keyboardNavigation, setKeyboardNavigation] = useState(usingKeyboard);
+    const { format } = useContext(MessageContext);
     const searchRef = useRef();
     const optionsRef = useRef();
     const [disabled, setDisabled] = useState(disabledProp);
+    // the node of the currently active option, as activeIndex changes
+    // this is updated too and the useEffect below ensures the
+    // active option remains in keyboard focus since we're
+    // following roving tab index pattern
     const activeRef = useRef();
     const [showA11yLimit, setShowA11yLimit] = useState();
     const clearRef = useRef();
@@ -82,6 +91,7 @@ const SelectMultipleContainer = forwardRef(
       options,
       valueKey || labelKey,
     );
+    const searchIcon = theme.select.icons?.search || <Search aria-hidden />;
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
@@ -185,7 +195,10 @@ const SelectMultipleContainer = forwardRef(
       (event) => {
         event.preventDefault();
         const nextActiveIndex = activeIndex + 1;
-        if (nextActiveIndex !== options?.length) {
+        // checking activeIndex > -1 ensures arrow keys don't
+        // move focus when select all/clear all button or search input
+        // are focused
+        if (nextActiveIndex !== options?.length && activeIndex > -1) {
           setActiveIndex(nextActiveIndex);
           setKeyboardNavigation(true);
         }
@@ -198,16 +211,11 @@ const SelectMultipleContainer = forwardRef(
         event.preventDefault();
         const nextActiveIndex = activeIndex - 1;
 
-        if (nextActiveIndex === -1) {
-          const searchInput = searchRef.current;
-          if (searchInput && searchInput.focus) {
-            setActiveIndex(nextActiveIndex);
-            setFocusWithoutScroll(searchInput);
-          }
-        }
-
-        if (nextActiveIndex >= 0) {
-          setActiveIndex(nextActiveIndex);
+        // checking activeIndex > -1 ensures arrow keys don't
+        // move focus when select all/clear all button or search input
+        // are focused
+        if (activeIndex > -1) {
+          setActiveIndex(Math.max(nextActiveIndex, 0));
           setKeyboardNavigation(true);
         }
       },
@@ -343,6 +351,7 @@ const SelectMultipleContainer = forwardRef(
         isSelected={isSelected}
         labelKey={labelKey}
         limit={limit}
+        messages={messages}
         onChange={onChange}
         onMore={onMore}
         options={options}
@@ -358,7 +367,7 @@ const SelectMultipleContainer = forwardRef(
     if (help) {
       if (typeof help === 'string')
         helpContent = (
-          <Box flex={false} pad="xsmall">
+          <Box flex={false} pad={theme.selectMultiple?.help?.container?.pad}>
             <Text size="small">{help}</Text>
           </Box>
         );
@@ -388,21 +397,33 @@ const SelectMultipleContainer = forwardRef(
       >
         <StyledContainer
           ref={ref}
-          as={Box}
           id={id ? `${id}__select-drop` : undefined}
           dropHeight={dropHeight}
-          a11yTitle="Select dropdown"
+          a11yTitle={format({
+            id: 'selectMultiple.selectDrop',
+            messages,
+          })}
         >
           {summaryContent}
           {onSearch && (
-            <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
+            <Box
+              pad={
+                !customSearchInput
+                  ? theme.selectMultiple?.search?.pad
+                  : undefined
+              }
+              flex={false}
+            >
               <Keyboard
                 onEnter={(event) => {
                   onNextOption(event);
                 }}
               >
                 <SelectTextInput
-                  a11yTitle="Search to filter options."
+                  a11yTitle={format({
+                    id: 'selectMultiple.search',
+                    messages,
+                  })}
                   focusIndicator={!customSearchInput}
                   size="small"
                   ref={searchRef}
@@ -415,6 +436,8 @@ const SelectMultipleContainer = forwardRef(
                     setActiveIndex(-1);
                     onSearch(nextSearch);
                   }}
+                  onFocus={() => setActiveIndex(-1)}
+                  icon={searchIcon}
                 />
               </Keyboard>
             </Box>
@@ -422,12 +445,16 @@ const SelectMultipleContainer = forwardRef(
           {helpContent}
           {options?.length > 0 ? (
             <OptionsContainer
+              aria-label={format({
+                id: 'selectMultiple.optionsA11y',
+                messages,
+              })}
               role="listbox"
-              tabIndex="0"
+              tabIndex="-1"
               ref={optionsRef}
               aria-multiselectable
               onMouseMove={() => setKeyboardNavigation(false)}
-              aria-activedescendant={optionsRef?.current?.children[activeIndex]}
+              selectMultiple // internal prop
             >
               <InfiniteScroll
                 items={options}
@@ -479,10 +506,20 @@ const SelectMultipleContainer = forwardRef(
                             {optionLabel}
                           </Box>
                         }
-                        pad="xsmall"
+                        pad={theme.selectMultiple?.option?.pad}
                         tabIndex="-1"
                         checked={optionSelected}
                         disabled={optionDisabled}
+                        inert={inertTrueValue}
+                        containerProps={{
+                          // in Firefox when we have inert set, the checkbox
+                          // click event gets swallowed by the checkbox.
+                          // We need the click event to go the the button
+                          // around the checkbox so we use pointerEvents =
+                          // none. For code clarity we decided an inline
+                          // style made sense here.
+                          style: { pointerEvents: 'none' },
+                        }}
                       />
                     );
                   }
@@ -525,10 +562,20 @@ const SelectMultipleContainer = forwardRef(
                               </Text>
                             </Box>
                           }
-                          pad="xsmall"
+                          pad={theme.selectMultiple?.option?.pad}
                           tabIndex="-1"
                           checked={optionSelected}
                           disabled={optionDisabled}
+                          inert={inertTrueValue}
+                          containerProps={{
+                            // in Firefox when we have inert set, the checkbox
+                            // click event gets swallowed by the checkbox.
+                            // We need the click event to go the the button
+                            // around the checkbox so we use pointerEvents =
+                            // none. For code clarity we decided an inline
+                            // style made sense here.
+                            style: { pointerEvents: 'none' },
+                          }}
                         />
                       );
                     }
@@ -537,12 +584,17 @@ const SelectMultipleContainer = forwardRef(
                   // if we have a child, turn on plain, and hoverIndicator
                   return (
                     <SelectOption
-                      a11yTitle={
-                        optionSelected
-                          ? `${optionLabel} selected`
-                          : `${optionLabel} not selected`
-                      }
-                      // eslint-disable-next-line react/no-array-index-key
+                      a11yTitle={format({
+                        id: optionSelected
+                          ? 'selectMultiple.optionSelected'
+                          : 'selectMultiple.optionNotSelected',
+                        messages,
+                        values: {
+                          optionLabel,
+                        },
+                      })}
+                      // lint isn't flagging this but we shouldn't use index
+                      // as a key see no-array-index-key lint rule
                       key={index}
                       // merge optionRef and activeRef
                       ref={(node) => {
@@ -550,13 +602,23 @@ const SelectMultipleContainer = forwardRef(
                         if (optionRef) optionRef.current = node;
                         if (optionActive) activeRef.current = node;
                       }}
-                      tabIndex={optionSelected ? '0' : '-1'}
+                      tabIndex={
+                        optionSelected ||
+                        activeIndex === index ||
+                        // when nothing is selected and entering listbox
+                        // first option should be focused
+                        (value.length === 0 &&
+                          activeIndex === -1 &&
+                          index === 0)
+                          ? '0'
+                          : '-1'
+                      }
                       role="option"
                       id={`option${index}`}
                       aria-setsize={options.length}
                       aria-posinset={index + 1}
                       aria-selected={optionSelected}
-                      focusIndicator={false}
+                      focusIndicator={usingKeyboard}
                       aria-disabled={optionDisabled || undefined}
                       plain={!child ? undefined : true}
                       align="start"

@@ -1,13 +1,15 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import 'jest-styled-components';
+import '@testing-library/jest-dom';
 import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { DataFilter } from '..';
 import { Toolbar } from '../../Toolbar';
+import { DataTable } from '../../DataTable';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 const data = [
@@ -18,6 +20,7 @@ const data = [
     type: { name: 'ZZ', id: 1 },
     blank: '',
     zero: 0,
+    total: 4,
   },
   {
     name: 'bb',
@@ -26,8 +29,9 @@ const data = [
     type: { name: 'YY', id: 2 },
     blank: '',
     zero: 0,
+    total: 200,
   },
-  { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0 },
+  { name: 'cc', type: { name: 'ZZ', id: 1 }, blank: '', zero: 0, total: 35 },
 ];
 
 describe('DataFilter', () => {
@@ -182,9 +186,6 @@ describe('DataFilter', () => {
 
     const searchInput = screen.getByLabelText(/Search to filter/);
     expect(searchInput).toBeTruthy();
-
-    // snapshot on search box
-    expectPortal('test-data-type.name__drop').toMatchSnapshot();
   });
 
   test('range prop', () => {
@@ -199,6 +200,62 @@ describe('DataFilter', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('range prop step', async () => {
+    render(
+      <Grommet>
+        <Data data={data}>
+          <DataFilters>
+            <DataFilter
+              property="total"
+              range={{ step: 15, min: 0, max: 250 }}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const lowerHandle = lowerBound.parentElement?.querySelector('div');
+    if (lowerHandle) {
+      fireEvent.mouseDown(lowerHandle);
+      fireEvent.mouseMove(lowerHandle, { clientX: 31, clientY: 20 });
+      fireEvent.mouseUp(lowerHandle);
+    }
+    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('45');
+  });
+
+  test('range step Data', () => {
+    render(
+      <Grommet>
+        <Data
+          data={data}
+          properties={{
+            total: {
+              label: 'Total',
+            },
+          }}
+        >
+          <DataFilters>
+            <DataFilter property="total" range={{ step: 15 }} />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const lowerHandle = lowerBound.parentElement?.querySelector('div');
+    if (lowerHandle) {
+      fireEvent.mouseDown(lowerHandle);
+      fireEvent.mouseMove(lowerHandle, { clientX: 31, clientY: 20 });
+      fireEvent.mouseUp(lowerHandle);
+    }
+    expect(lowerBound.getAttribute('aria-valuenow')).toEqual('49');
   });
 
   test('range Data', () => {
@@ -223,6 +280,38 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('includes range min and max in filtered results', () => {
+    const { getByRole } = render(
+      <Grommet>
+        <Data data={[{ age: 1 }, { age: 2 }, { age: 3 }, { age: 4 }]}>
+          <DataFilters>
+            <DataFilter range={{ min: 1, max: 4, step: 1 }} property="age" />
+          </DataFilters>
+          <DataTable />
+        </Data>
+      </Grommet>,
+    );
+
+    const lowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    const lowerHandle = lowerBound.parentElement?.querySelector('div');
+
+    act(() => {
+      if (lowerHandle) {
+        lowerHandle.focus();
+      }
+    });
+    if (lowerHandle) {
+      fireEvent.keyDown(lowerHandle, { key: 'Right', keyCode: 39 });
+    }
+    const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
+    fireEvent.click(applyFiltersButton);
+
+    expect(screen.queryByText('1')).not.toBeInTheDocument();
+    expect(screen.queryAllByText('2')[1]).toBeInTheDocument();
+  });
+
   test('children', () => {
     const { container } = render(
       <Grommet>
@@ -239,7 +328,7 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('noForm', () => {
+  test('!inDataForm', () => {
     const { container } = render(
       <Grommet>
         <Data data={data}>
@@ -255,8 +344,7 @@ describe('DataFilter', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should allow filtering on multiple sub-properties from same parent property', async () => {
-    const user = userEvent.setup();
+  test('should allow filtering on multiple sub-properties from same parent property', () => {
     const { asFragment } = render(
       <Grommet>
         <Data
@@ -285,27 +373,27 @@ describe('DataFilter', () => {
 
     const filterButton = getByRole('button', { name: 'Open filters' });
     expect(filterButton).toBeTruthy();
-    await user.click(filterButton);
+    fireEvent.click(filterButton);
 
     // open SelectMultiple
     const selectInput = getByRole('button', { name: /Open Drop/i });
     expect(selectInput).toBeTruthy();
-    await user.click(selectInput);
+    fireEvent.click(selectInput);
 
     // click the first option 'ZZ'
-    await user.click(getByRole('option', { name: /ZZ/i }));
+    fireEvent.click(getByRole('option', { name: /ZZ/i }));
 
     // close SelectMultiple
-    await user.click(getByRole('button', { name: /Close Select/i }));
+    fireEvent.click(getByRole('button', { name: /Close Select/i }));
 
     const checkBox = getByLabelText(1);
 
-    await user.click(checkBox);
+    fireEvent.click(checkBox);
 
     // click Apply Filters button
     const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
     expect(applyFiltersButton).toBeTruthy();
-    await user.click(applyFiltersButton);
+    fireEvent.click(applyFiltersButton);
 
     const updatedFilterButton = getByRole('button', {
       name: 'Open filters, 2 filters applied',
@@ -314,5 +402,51 @@ describe('DataFilter', () => {
     expect(updatedFilterButton).toBeTruthy();
     // snapshot on selected filter
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('theme rangeSelector size and round, selectMultiple dropHeight', () => {
+    const customTheme = {
+      dataFilter: {
+        rangeSelector: {
+          size: 'large',
+          round: 'large',
+        },
+        selectMultiple: {
+          dropHeight: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Data
+          data={data}
+          properties={{
+            'type.name': {
+              label: 'Type',
+            },
+          }}
+        >
+          <DataFilters>
+            <DataFilter property="rating" range={{ min: 0, max: 5 }} />
+            <DataFilter
+              id="test-data"
+              property="type.name"
+              options={['ZZ', 'YY', 'aa', 'bb', 'cc', 'dd', 'ee']}
+            />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    expect(screen.getByText('rating')).toBeTruthy();
+    expect(screen.getByLabelText('Type')).toBeTruthy();
+
+    expect(asFragment()).toMatchSnapshot();
+
+    const selectInput = screen.getByRole('button', { name: /Open Drop/i });
+    fireEvent.click(selectInput);
+
+    expectPortal('data-type.name__drop').toMatchSnapshot();
   });
 });

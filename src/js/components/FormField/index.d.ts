@@ -32,12 +32,19 @@ export interface FormFieldProps {
             status?: 'error' | 'info';
           }
         | ((...args: any[]) => any)
-      )[];
+      )[]
+    | {
+        max: number;
+        threshold?: number;
+      };
   validateOn?: 'blur' | 'submit' | 'change';
 }
 
 type inputProps = Omit<
-  JSX.IntrinsicElements['input'],
+  React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >,
   'placeholder' | 'required'
 >;
 

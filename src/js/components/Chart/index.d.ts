@@ -31,8 +31,8 @@ export interface ChartProps {
   dash?: boolean;
   direction?: 'horizontal' | 'vertical';
   gap?: GapType;
-  onClick?: (...args: any[]) => any;
-  onHover?: (...args: any[]) => any;
+  onClick?: (event: React.MouseEvent) => void;
+  onHover?: (over: boolean) => void;
   opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
   overflow?: boolean;
   pad?: EdgeSizeType | { horizontal?: EdgeSizeType; vertical?: EdgeSizeType };
@@ -93,8 +93,8 @@ export interface ChartProps {
     | {
         color?: ColorType;
         label?: string;
-        onClick?: (...args: any[]) => any;
-        onHover?: (...args: any[]) => any;
+        onClick?: (event: React.MouseEvent) => void;
+        onHover?: (over: boolean) => void;
         opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
         thickness?: ThicknessType;
         value: number | number[];
@@ -104,7 +104,13 @@ export interface ChartProps {
 
 export interface ChartExtendedProps
   extends ChartProps,
-    Omit<JSX.IntrinsicElements['svg'], keyof ChartProps> {}
+    Omit<
+      React.DetailedHTMLProps<
+        React.SVGAttributes<SVGSVGElement>,
+        SVGSVGElement
+      >,
+      keyof ChartProps
+    > {}
 
 declare const Chart: React.FC<ChartExtendedProps>;
 

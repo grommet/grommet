@@ -15,10 +15,12 @@ describe('DropButton', () => {
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
-      <DropButton
-        a11yTitle="test"
-        dropContent={<div id="drop-contents">drop contents</div>}
-      />,
+      <Grommet>
+        <DropButton
+          a11yTitle="test"
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+      </Grommet>,
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
@@ -26,6 +28,21 @@ describe('DropButton', () => {
   });
 
   test('closed', () => {
+    window.scrollTo = jest.fn();
+
+    const { container } = render(
+      <Grommet>
+        <DropButton
+          label="Dropper"
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('closed outside grommet wrapper', () => {
     window.scrollTo = jest.fn();
 
     const { container } = render(
@@ -40,11 +57,13 @@ describe('DropButton', () => {
 
   test('opened', () => {
     const { container } = render(
-      <DropButton
-        label="Dropper"
-        open
-        dropContent={<div id="drop-contents">drop contents</div>}
-      />,
+      <Grommet>
+        <DropButton
+          label="Dropper"
+          open
+          dropContent={<div id="drop-contents">drop contents</div>}
+        />
+      </Grommet>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -55,11 +74,13 @@ describe('DropButton', () => {
     const onClose = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
-      <DropButton
-        label="Dropper"
-        onClose={onClose}
-        dropContent={<div id="drop-contents">Drop Contents</div>}
-      />,
+      <Grommet>
+        <DropButton
+          label="Dropper"
+          onClose={onClose}
+          dropContent={<div id="drop-contents">Drop Contents</div>}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -70,9 +91,11 @@ describe('DropButton', () => {
 
     fireEvent.click(getByText('Dropper'));
     expect(document.getElementById('drop-contents')).toBeNull();
-    expect(window.scrollTo).toBeCalled();
+    expect(window.scrollTo).toHaveBeenCalled();
 
-    expect(onClose).toBeCalledWith(expect.objectContaining({ type: 'click' }));
+    expect(onClose).toHaveBeenCalledWith(
+      expect.objectContaining({ type: 'click' }),
+    );
   });
 
   test('close by clicking outside', (done) => {
@@ -80,12 +103,14 @@ describe('DropButton', () => {
     const onOpen = jest.fn((event) => event.persist());
 
     const { getByText, container } = render(
-      <DropButton
-        label="Dropper"
-        onClose={onClose}
-        onOpen={onOpen}
-        dropContent={<div id="drop-contents">Drop Contents</div>}
-      />,
+      <Grommet>
+        <DropButton
+          label="Dropper"
+          onClose={onClose}
+          onOpen={onOpen}
+          dropContent={<div id="drop-contents">Drop Contents</div>}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -93,7 +118,9 @@ describe('DropButton', () => {
     fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
 
-    expect(onOpen).toBeCalledWith(expect.objectContaining({ type: 'click' }));
+    expect(onOpen).toHaveBeenCalledWith(
+      expect.objectContaining({ type: 'click' }),
+    );
     expect(document.getElementById('drop-contents')).not.toBeNull();
 
     fireEvent(
@@ -106,18 +133,20 @@ describe('DropButton', () => {
       done();
     }, 50);
 
-    expect(onClose).toBeCalledWith(
+    expect(onClose).toHaveBeenCalledWith(
       expect.objectContaining({ type: 'mousedown' }),
     );
   });
 
   test('disabled', () => {
     const { getByText, container } = render(
-      <DropButton
-        disabled
-        label="Dropper"
-        dropContent={<div id="drop-contents">Drop Contents</div>}
-      />,
+      <Grommet>
+        <DropButton
+          disabled
+          label="Dropper"
+          dropContent={<div id="drop-contents">Drop Contents</div>}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -127,31 +156,35 @@ describe('DropButton', () => {
   });
 
   test('opened ref', () => {
-    const ref: React.RefObject<HTMLButtonElement> = React.createRef();
+    const ref: React.RefObject<HTMLButtonElement | null> = React.createRef();
     const { container } = render(
-      <DropButton
-        ref={ref}
-        open
-        label="Dropper"
-        dropContent={<div id="drop-contents">Drop Contents</div>}
-      />,
+      <Grommet>
+        <DropButton
+          ref={ref}
+          open
+          label="Dropper"
+          dropContent={<div id="drop-contents">Drop Contents</div>}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('drop-contents').toMatchSnapshot();
   });
 
   test('ref function', () => {
-    const ref: React.LegacyRef<HTMLElement> = jest.fn();
+    const ref: React.Ref<HTMLElement> = jest.fn();
     const { container } = render(
-      <DropButton
-        ref={ref}
-        open
-        label="Dropper"
-        dropContent={<div id="drop-contents">Drop Contents</div>}
-      />,
+      <Grommet>
+        <DropButton
+          ref={ref}
+          open
+          label="Dropper"
+          dropContent={<div id="drop-contents">Drop Contents</div>}
+        />
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    expect(ref).toBeCalled();
+    expect(ref).toHaveBeenCalled();
     expectPortal('drop-contents').toMatchSnapshot();
   });
 

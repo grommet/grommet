@@ -49,6 +49,11 @@ describe('Cards', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('empty no grommet wrapper', () => {
+    const { container } = render(<Cards />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('data strings', () => {
     const { container } = render(
       <Grommet>
@@ -122,6 +127,25 @@ describe('Cards', () => {
         <Cards data={['one', 'two']} pad={{ horizontal: 'large' }} />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme grid columns and gap', () => {
+    const customTheme = {
+      cards: {
+        grid: {
+          columns: 'large',
+          gap: 'large',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Cards data={['one', 'two', 'three', 'four']} />
+      </Grommet>,
+    );
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });

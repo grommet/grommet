@@ -20,4 +20,27 @@ describe('Nav', () => {
     expect(results).toHaveNoViolations();
     expect(container).toMatchSnapshot();
   });
+  test('should render without grommet wrapper', async () => {
+    const { container } = render(<Nav />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('theme gap', () => {
+    const customTheme = {
+      nav: {
+        gap: 'large',
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Nav>
+          <div>Nav Item 1</div>
+          <div>Nav Item 2</div>
+          <div>Nav Item 3</div>
+        </Nav>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

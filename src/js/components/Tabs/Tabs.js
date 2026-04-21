@@ -9,10 +9,7 @@ import React, {
 } from 'react';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { Next } from 'grommet-icons/icons/Next';
-import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -23,6 +20,7 @@ import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Tabs = forwardRef(
   (
@@ -37,7 +35,7 @@ const Tabs = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const { format } = useContext(MessageContext);
     const { activeIndex: propsActiveIndex, onActive } = rest;
     const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
@@ -49,6 +47,8 @@ const Tabs = forwardRef(
     const [focusIndex, setFocusIndex] = useState(-1);
     const headerRef = useRef();
     const size = useContext(ResponsiveContext);
+    const PreviousIcon = theme.tabs.header?.previousButton?.icon || Previous;
+    const NextIcon = theme.tabs.header?.nextButton?.icon || Next;
 
     const sendAnalytics = useAnalytics();
 
@@ -324,15 +324,14 @@ const Tabs = forwardRef(
     return (
       <StyledTabs
         ref={ref}
-        as={Box}
         flex={flex}
         responsive={responsive}
+        {...passThemeFlag}
         {...rest}
         background={theme.tabs.background}
       >
         <Box
           alignSelf={alignControls || theme.tabs.header?.alignSelf}
-          role="tablist"
           flex={false}
           direction={overflow ? 'row' : 'column'}
           {...tabsHeaderStyles}
@@ -345,8 +344,8 @@ const Tabs = forwardRef(
               tabIndex={-1}
               onClick={() => moveByArrowKey('previous')}
             >
-              <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
-                <Previous
+              <Box pad={theme.tabs.header.previousButton.pad}>
+                <PreviousIcon
                   color={
                     disableLeftArrow
                       ? theme.button.disabled.color
@@ -357,8 +356,8 @@ const Tabs = forwardRef(
             </Button>
           )}
           <StyledTabsHeader
+            role="tablist"
             ref={headerRef}
-            as={Box}
             direction="row"
             justify={overflow ? 'start' : justify}
             flex={!!overflow}
@@ -368,6 +367,7 @@ const Tabs = forwardRef(
             gap={theme.tabs.gap}
             pad={overflow ? '2px' : undefined}
             margin={overflow ? '-2px' : undefined}
+            {...passThemeFlag}
           >
             {tabs}
           </StyledTabsHeader>
@@ -379,8 +379,8 @@ const Tabs = forwardRef(
               tabIndex={-1}
               onClick={() => moveByArrowKey('next')}
             >
-              <Box pad={{ vertical: 'xsmall', horizontal: 'small' }}>
-                <Next
+              <Box pad={theme.tabs.header?.nextButton?.pad}>
+                <NextIcon
                   color={
                     disableRightArrow
                       ? theme.button.disabled.color
@@ -396,6 +396,7 @@ const Tabs = forwardRef(
           flex={flex}
           aria-label={tabContentTitle}
           role="tabpanel"
+          {...passThemeFlag}
         >
           {activeContent}
         </StyledTabPanel>

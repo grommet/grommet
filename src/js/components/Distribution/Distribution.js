@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { DistributionPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
@@ -16,15 +17,24 @@ Value.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+const defaultChildrenPropValue = (value) => (
+  <Box fill border>
+    <Text>{value.value}</Text>
+  </Box>
+);
+
+const defaultValues = [];
+
 const Distribution = ({
   basis,
-  children,
-  direction,
+  children = defaultChildrenPropValue,
+  direction = 'row',
   fill,
   gap,
-  values,
+  values = defaultValues,
   ...rest
 }) => {
+  const { theme } = useThemeValue();
   if (values.length === 1) {
     const value = values[0];
     return (
@@ -81,7 +91,7 @@ const Distribution = ({
         basis={basis}
         flex={basis ? 'shrink' : true}
         overflow="hidden"
-        gap={gap}
+        gap={gap || theme.distribution?.gap}
         fill={fill}
         {...rest}
       >
@@ -89,7 +99,7 @@ const Distribution = ({
           values={values.slice(0, subIndex)}
           basis={childBasis[0]}
           direction={direction === 'row' ? 'column' : 'row'}
-          gap={gap}
+          gap={gap || theme.distribution?.gap}
         >
           {children}
         </Distribution>
@@ -97,7 +107,7 @@ const Distribution = ({
           values={values.slice(subIndex)}
           basis={childBasis[1]}
           direction={direction === 'row' ? 'column' : 'row'}
-          gap={gap}
+          gap={gap || theme.distribution?.gap}
         >
           {children}
         </Distribution>
@@ -105,19 +115,6 @@ const Distribution = ({
     );
   }
   return null;
-};
-
-Distribution.defaultProps = {
-  basis: undefined,
-  children: (value) => (
-    <Box fill border>
-      {/* eslint-disable-next-line react/destructuring-assignment */}
-      <Text>{value.value}</Text>
-    </Box>
-  ),
-  direction: 'row',
-  gap: 'xsmall',
-  values: [],
 };
 
 Distribution.propTypes = DistributionPropTypes;

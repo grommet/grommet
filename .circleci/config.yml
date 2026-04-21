@@ -1,10 +1,10 @@
 version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.4.4
+  browser-tools: circleci/browser-tools@1.4.8
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
-    - image: cimg/node:18.13.0-browsers
+    - image: cimg/node:20.19.0-browsers
 jobs:
   checkout:
     <<: *defaults
@@ -49,8 +49,11 @@ jobs:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
+          name: Force git to use HTTPS instead of SSH
+          command: git config --global url."https://github.com/".insteadOf "git@github.com:"
+      - run:
           name: Running chromatic test
-          command: yarn chromatic --exit-zero-on-changes
+          command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes
   chromatic-accept:
     <<: *defaults
     steps:
@@ -58,7 +61,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running chromatic test
-          command: yarn chromatic --exit-zero-on-changes --auto-accept-changes
+          command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes --auto-accept-changes
   build:
     <<: *defaults
     resource_class: medium+
@@ -92,10 +95,6 @@ jobs:
       - run: sudo apt-get update
       - browser-tools/install-chrome:
           replace-existing: true
-          chrome-version: 116.0.5845.96
-          # temporary solution until
-          # https://github.com/CircleCI-Public/browser-tools-orb/issues/90
-          # is fixed. Once fixed remove chrome-version.
       - browser-tools/install-chromedriver
       - run:
           name: Start project
@@ -116,16 +115,6 @@ jobs:
             git config --global user.name "Grommet Community Bot"
             git config --global user.email "grommet@hpe.com"
             yarn release-stable
-  release-styled-components-beta-stable:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/grommet-ci
-      - run:
-          command: |
-            git config --global user.name "Grommet Community Bot"
-            git config --global user.email "grommet@hpe.com"
-            yarn release-styled-components-beta-stable
   publish:
     <<: *defaults
     steps:
@@ -194,6 +183,8 @@ workflows:
             tags:
               only: /.*/
       - release:
+          context:
+            - grommet
           requires:
             - jest
             - chromatic
@@ -203,17 +194,9 @@ workflows:
             branches:
               only:
                 - master
-      - release-styled-components-beta-stable:
-          requires:
-            - jest
-            - chromatic
-            - lint
-            - build
-          filters:
-            branches:
-              only:
-                - styled-components-beta
       - publish:
+          context:
+            - grommet
           requires:
             - jest
             - chromatic

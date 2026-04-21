@@ -8,7 +8,6 @@ import React, {
 import { ThemeContext } from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
-import { defaultProps } from '../../default-props';
 import { backgroundIsDark, useForwardedRef } from '../../utils';
 
 import { Box } from '../Box';
@@ -16,6 +15,7 @@ import { Box } from '../Box';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 import { TableCellPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 export const verticalAlignToJustify = {
   middle: 'center',
@@ -33,6 +33,7 @@ const TableCell = forwardRef(
       children,
       className, // so StyledDataTableCell is applied to td/th
       colSpan,
+      onResize, // for DataTable
       onWidth,
       pad,
       plain,
@@ -40,21 +41,61 @@ const TableCell = forwardRef(
       scope,
       size,
       verticalAlign,
+      property, // for DataTable
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const tableContext = useContext(TableContext);
     const cellRef = useForwardedRef(ref);
     const containerRef = useRef();
+    const widthRef = useRef();
+
+    // if the screen is resized, we need to recalculate the width
+    useLayoutEffect(() => {
+      const handleResize = () => {
+        if (onResize && property && cellRef.current) {
+          const { width } = cellRef.current.getBoundingClientRect();
+          onResize(property, width);
+        }
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, [cellRef, onResize, property]);
 
     useLayoutEffect(() => {
+      let resizeObserver;
+      const element = cellRef.current;
       if (onWidth) {
-        const { width } = cellRef.current.getBoundingClientRect();
-        onWidth(width);
+        if (typeof window !== 'undefined' && window.ResizeObserver) {
+          resizeObserver = new window.ResizeObserver((entries) => {
+            const entry = entries[0].borderBoxSize[0];
+            const width = entry?.inlineSize;
+            if (widthRef.current !== width) {
+              widthRef.current = width;
+              onWidth(width);
+            }
+          });
+          if (element) {
+            resizeObserver.observe(cellRef.current);
+          }
+        } else {
+          // fallback for server side rendering
+          const { width } = cellRef.current.getBoundingClientRect();
+          if (widthRef.current !== width) {
+            widthRef.current = width;
+            onWidth(width);
+          }
+        }
       }
-    }, [cellRef, onWidth]);
+      return () => {
+        if (resizeObserver && element) {
+          resizeObserver.unobserve(element);
+        }
+      };
+    }, [onWidth, cellRef, widthRef]);
 
     // if window resizes, recalculate cell height so that content
     // will continue to fill the height if the dimensions of the cell
@@ -176,6 +217,7 @@ const TableCell = forwardRef(
           {...(plain === true ? mergedProps : {})}
           {...cellProps}
           className={className}
+          {...passThemeFlag}
         >
           {plain || !Object.keys(mergedProps).length ? (
             content

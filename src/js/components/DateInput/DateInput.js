@@ -7,9 +7,8 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import { ThemeContext } from 'styled-components';
-import { Calendar as CalendarIcon } from 'grommet-icons/icons/Calendar';
-import { defaultProps } from '../../default-props';
+import styled from 'styled-components';
+import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
@@ -20,7 +19,13 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef, setHoursWithOffset } from '../../utils';
+import {
+  useForwardedRef,
+  setHoursWithOffset,
+  disabledStyle,
+  useKeyboard,
+} from '../../utils';
+import { readOnlyStyle } from '../../utils/readOnly';
 import {
   formatToSchema,
   schemaToMask,
@@ -31,6 +36,16 @@ import {
 } from './utils';
 import { DateInputPropTypes } from './propTypes';
 import { getOutputFormat } from '../Calendar/Calendar';
+import { CopyButton } from '../TextInput/CopyButton';
+import { useThemeValue } from '../../utils/useThemeValue';
+
+const StyledDateInputContainer = styled(Box).withConfig({
+  // to not pass props on dom through Box
+  shouldForwardProp: (prop) => prop !== 'disabled',
+})`
+  ${(props) => props.disabled && disabledStyle()}
+  ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}}
+`;
 
 const getReference = (value) => {
   let adjustedDate;
@@ -63,6 +78,8 @@ const DateInput = forwardRef(
       onChange,
       onFocus,
       plain,
+      readOnly: readOnlyProp,
+      readOnlyCopy,
       reverse: reverseProp = false,
       value: valueArg,
       messages,
@@ -70,21 +87,22 @@ const DateInput = forwardRef(
     },
     refArg,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const iconSize =
-      (theme.icon?.matchSize && rest.size) ||
-      theme.dateInput.icon?.size ||
-      'medium';
+      (theme.icon?.matchSize && rest.size) || theme.dateInput.icon?.size;
     const { useFormInput } = useContext(FormContext);
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
+    const readOnly = readOnlyProp || readOnlyCopy;
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
       initialValue: defaultValue,
     });
+    const usingKeyboard = useKeyboard();
+    const CalendarIcon = theme.dateInput.icon?.calendar || GrommetCalendarIcon;
 
     const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
     useEffect(() => {
@@ -113,6 +131,17 @@ const DateInput = forwardRef(
     const [textValue, setTextValue] = useState(
       schema ? valueToText(value, schema) : undefined,
     );
+
+    const readOnlyCopyValidation = formatMessage({
+      id: 'input.readOnlyCopy.validation',
+      messages,
+    });
+    const readOnlyCopyPrompt = formatMessage({
+      id: 'input.readOnlyCopy.prompt',
+      messages,
+    });
+
+    const [tip, setTip] = useState(readOnlyCopyPrompt);
 
     // Setting the icon through `inputProps` is deprecated.
     // The `icon` prop should be used instead.
@@ -175,9 +204,14 @@ Use the icon prop instead.`,
     }, [announce, formatMessage, messages]);
 
     const closeCalendar = useCallback(() => {
+      if (usingKeyboard && !inline && ref?.current) {
+        setTimeout(() => {
+          ref?.current?.focus();
+        }, 0);
+      }
       setOpen(false);
       announce(formatMessage({ id: 'dateInput.exitCalendar', messages }));
-    }, [announce, formatMessage, messages]);
+    }, [announce, formatMessage, messages, usingKeyboard, ref, inline]);
 
     const dates = useMemo(
       () => (range && value?.length ? [value] : undefined),
@@ -213,7 +247,6 @@ Use the icon prop instead.`,
                 if (onChange) onChange({ value: normalizedValue });
                 if (open && !range) {
                   closeCalendar();
-                  setTimeout(() => ref.current?.focus(), 1);
                 }
               }
         }
@@ -244,12 +277,36 @@ Use the icon prop instead.`,
       );
     }
 
-    const calendarButton = (
+    const onClickCopy = () => {
+      navigator.clipboard.writeText(textValue);
+      announce(readOnlyCopyValidation, 'assertive');
+      setTip(readOnlyCopyValidation);
+    };
+
+    const onBlurCopy = () => {
+      if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+    };
+
+    const DateInputButton = readOnlyCopy ? (
+      <CopyButton
+        disabled={disabled}
+        onBlurCopy={onBlurCopy}
+        onClickCopy={onClickCopy}
+        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        tip={tip}
+        value={value}
+      />
+    ) : (
       <Button
         onClick={open ? closeCalendar : openCalendar}
+        disabled={disabled}
         plain
         icon={icon || MaskedInputIcon || <CalendarIcon size={iconSize} />}
-        margin={reverse ? { left: 'small' } : { right: 'small' }}
+        margin={
+          reverse
+            ? { left: theme.dateInput.button?.margin }
+            : { right: theme.dateInput.button?.margin }
+        }
       />
     );
 
@@ -262,19 +319,26 @@ Use the icon prop instead.`,
         <Keyboard
           onEsc={open ? () => closeCalendar() : undefined}
           onSpace={(event) => {
-            event.preventDefault();
-            openCalendar();
+            if (!readOnlyCopy) {
+              event.preventDefault();
+              if (!readOnly) openCalendar();
+            }
           }}
         >
-          <Box
+          <StyledDateInputContainer
             ref={containerRef}
             border={!plain}
             round={theme.dateInput.container.round}
             direction="row"
+            disabled={disabled}
+            // readOnly prop shouldn't get passed to the dom here
+            readOnlyProp={readOnly}
             fill
+            {...passThemeFlag}
           >
-            {reverse && calendarButton}
+            {reverse && (!readOnly || readOnlyCopy) && DateInputButton}
             <MaskedInput
+              readOnly={readOnly}
               ref={ref}
               id={id}
               name={name}
@@ -317,14 +381,16 @@ Use the icon prop instead.`,
                 }
               }}
               onFocus={(event) => {
-                announce(
-                  formatMessage({ id: 'dateInput.openCalendar', messages }),
-                );
+                if (!readOnly) {
+                  announce(
+                    formatMessage({ id: 'dateInput.openCalendar', messages }),
+                  );
+                }
                 if (onFocus) onFocus(event);
               }}
             />
-            {!reverse && calendarButton}
-          </Box>
+            {!reverse && (!readOnly || readOnlyCopy) && DateInputButton}
+          </StyledDateInputContainer>
         </Keyboard>
       </FormContext.Provider>
     );
@@ -338,29 +404,28 @@ Use the icon prop instead.`,
       );
     }
 
-    if (open) {
+    if (open && !readOnly) {
       return [
         input,
-        <Keyboard key="drop" onEsc={() => ref.current.focus()}>
-          <Drop
-            overflow="visible"
-            id={id ? `${id}__drop` : undefined}
-            target={containerRef.current}
-            align={{ ...calendarDropdownAlign, ...dropProps }}
-            onEsc={closeCalendar}
-            onClickOutside={({ target }) => {
-              if (
-                target !== containerRef.current &&
-                !containerRef.current.contains(target)
-              ) {
-                closeCalendar();
-              }
-            }}
-            {...dropProps}
-          >
-            {calendar}
-          </Drop>
-        </Keyboard>,
+        <Drop
+          key="drop"
+          overflow="visible"
+          id={id ? `${id}__drop` : undefined}
+          target={containerRef.current}
+          align={{ ...calendarDropdownAlign, ...dropProps }}
+          onEsc={closeCalendar}
+          onClickOutside={({ target }) => {
+            if (
+              target !== containerRef.current &&
+              !containerRef.current.contains(target)
+            ) {
+              closeCalendar();
+            }
+          }}
+          {...dropProps}
+        >
+          {calendar}
+        </Drop>,
       ];
     }
 

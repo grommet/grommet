@@ -300,6 +300,77 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  // Custom theme with intelligentPad set to true
+  const themeWithIntelligentPadTrue = {
+    button: {
+      size: {
+        medium: {
+          pad: {
+            horizontal: '10px',
+            vertical: '10px',
+          },
+        },
+      },
+      default: {},
+      secondary: {
+        border: {
+          color: 'brand',
+          width: '2px',
+        },
+        color: 'text-strong',
+        font: {
+          weight: 600,
+        },
+      },
+    },
+  };
+
+  test('padding is applied correctly when intelligentPad is true', () => {
+    const { container } = render(
+      <Grommet theme={themeWithIntelligentPadTrue}>
+        <Button secondary label="Test" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  // Custom theme with intelligentPad set to false
+  const themeWithIntelligentPadFalse = {
+    button: {
+      size: {
+        medium: {
+          pad: {
+            horizontal: '10px',
+            vertical: '10px',
+          },
+        },
+      },
+      intelligentPad: false,
+      default: {},
+      secondary: {
+        border: {
+          color: 'brand',
+          width: '2px',
+        },
+        color: 'text-strong',
+        font: {
+          weight: 600,
+        },
+      },
+    },
+  };
+
+  test('padding is applied correctly when intelligentPad is false', () => {
+    const { container } = render(
+      <Grommet theme={themeWithIntelligentPadFalse}>
+        <Button secondary label="Test" />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('no padding on default button', () => {
     const { container } = render(
       <Grommet
@@ -347,7 +418,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`disabled state cursor should indicate the button cannot be 
+  test(`disabled state cursor should indicate the button cannot be
   clicked`, () => {
     const { getByText } = render(
       <Grommet
@@ -421,7 +492,7 @@ describe('Button kind', () => {
         }}
       >
         <Button label="Button" size="small" />
-        {/* button with no size specified should have medium styling applied 
+        {/* button with no size specified should have medium styling applied
         by default */}
         <Button label="Button" />
         <Button label="Button" size="medium" />
@@ -551,7 +622,7 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`badge should render relative to contents when button has no 
+  test(`badge should render relative to contents when button has no
   border or background`, () => {
     const { container } = render(
       <Grommet
@@ -748,7 +819,7 @@ describe('Button kind', () => {
       >
         <Box
           background={{ dark: true, color: 'background' }}
-          pad="large"
+          pad="xlarge"
           gap="medium"
           align="start"
         >
@@ -759,7 +830,7 @@ describe('Button kind', () => {
             active
           />
         </Box>
-        <Box pad="large" gap="medium" align="start">
+        <Box pad="xlarge" gap="medium" align="start">
           <Button label="Test button" kind="background-contrast" />
           <Button
             label="Active Test button"
@@ -839,5 +910,74 @@ describe('Button kind', () => {
     expect(style.padding).toBe('0px');
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should render elevation', () => {
+    const DEFAULT_ELEVATION = 'inset 3px 0 red';
+    const PRIMARY_ELEVATION = 'inset 5px 0 blue';
+
+    const theme = {
+      global: {
+        elevation: {
+          light: {
+            'test-elevation': DEFAULT_ELEVATION,
+            'test-elevation-primary': PRIMARY_ELEVATION,
+          },
+          dark: {
+            'test-elevation': DEFAULT_ELEVATION,
+            'test-elevation-primary': PRIMARY_ELEVATION,
+          },
+        },
+      },
+      button: {
+        default: {
+          elevation: 'test-elevation',
+        },
+        primary: {
+          elevation: 'test-elevation-primary',
+        },
+        hover: {
+          elevation: 'large',
+          primary: {
+            elevation: 'medium',
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <Button label="Default" />
+        <Button label="Primary" primary />
+        {/* should not render elevation on plain button */}
+        <Button>Plain</Button>
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('theme busy gap', () => {
+    const customTheme = {
+      button: {
+        default: {},
+        busy: {
+          gap: 'large',
+        },
+      },
+    };
+
+    const { container, getByText } = render(
+      <Grommet theme={customTheme}>
+        <Button label="Loading" busy />
+        <Button label="Success" success />
+      </Grommet>,
+    );
+
+    // Verify the buttons render with busy states
+    expect(getByText('Loading')).toBeTruthy();
+    expect(getByText('Success')).toBeTruthy();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

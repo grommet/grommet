@@ -14,6 +14,8 @@ export type LayerPositionType =
   | 'hidden'
   | 'left'
   | 'right'
+  | 'start'
+  | 'end'
   | 'top'
   | 'top-left'
   | 'top-right';
@@ -34,7 +36,10 @@ export interface LayerProps {
   target?: object;
 }
 
-type divProps = JSX.IntrinsicElements['div'];
+type divProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>;
 
 export interface LayerExtendedProps extends LayerProps, divProps {}
 

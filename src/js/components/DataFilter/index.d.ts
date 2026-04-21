@@ -12,12 +12,16 @@ export interface DataFilterProps {
   )[];
   property: string;
   range?: {
-    max: number;
-    min: number;
+    max?: number;
+    min?: number;
+    step?: number;
   };
 }
 
-type divProps = Omit<JSX.IntrinsicElements['div'], 'onClick' | 'property'>;
+type divProps = Omit<
+  React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+  'onClick' | 'property'
+>;
 
 export interface DataFilterExtendedProps
   extends BoxProps,

@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react';
 
-import { defaultProps } from '../../default-props';
-
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableCell, StyledDataTableFooter } from './StyledDataTable';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Footer = forwardRef(
   (
@@ -27,6 +26,8 @@ const Footer = forwardRef(
     ref,
   ) => {
     const pin = pinProp ? ['bottom'] : [];
+    const { passThemeFlag } = useThemeValue();
+    const { theme } = useThemeValue();
 
     return (
       <StyledDataTableFooter ref={ref} fillProp={fill} pin={pinProp} {...rest}>
@@ -34,7 +35,7 @@ const Footer = forwardRef(
           {groups && (
             <TableCell
               plain
-              size="xxsmall"
+              size={theme.dataTable.expand?.size}
               pad="none"
               verticalAlign="top"
               background={cellProps.background}
@@ -47,6 +48,7 @@ const Footer = forwardRef(
               context="footer"
               pin={pin}
               verticalAlign={verticalAlign}
+              {...passThemeFlag}
             />
           )}
           {columns.map((column) => {
@@ -81,8 +83,5 @@ const Footer = forwardRef(
 );
 
 Footer.displayName = 'Footer';
-
-Footer.defaultProps = {};
-Object.setPrototypeOf(Footer.defaultProps, defaultProps);
 
 export { Footer };

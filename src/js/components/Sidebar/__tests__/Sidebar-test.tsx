@@ -6,7 +6,7 @@ import { Avatar } from '../../Avatar';
 import { Grommet } from '../../Grommet';
 import { Sidebar } from '..';
 
-const src = '';
+const src = 'test.png';
 
 describe('Sidebar', () => {
   test('renders', () => {
@@ -15,6 +15,12 @@ describe('Sidebar', () => {
         <Sidebar id="test id" />
       </Grommet>,
     );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders outside grommet', () => {
+    const { container } = render(<Sidebar id="test id" />);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -61,6 +67,27 @@ describe('Sidebar', () => {
           background="brand"
         >
           test all props and children
+        </Sidebar>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme gap and pad', () => {
+    const customTheme = {
+      sidebar: {
+        gap: 'small',
+        pad: 'small',
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Sidebar header={<Avatar src={src} />} footer={<Avatar>SY</Avatar>}>
+          <div>Sidebar content 1</div>
+          <div>Sidebar content 2</div>
+          <div>Sidebar content 3</div>
         </Sidebar>
       </Grommet>,
     );

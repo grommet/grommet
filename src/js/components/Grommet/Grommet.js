@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useMemo, useState } from 'react';
+import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
 import {
@@ -10,8 +10,8 @@ import {
 import {
   deepMerge,
   backgroundIsDark,
+  deviceResponsive,
   getBreakpoint,
-  getDeviceBreakpoint,
   normalizeColor,
   useForwardedRef,
 } from '../../utils';
@@ -28,27 +28,6 @@ const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
 `;
 
-const deviceResponsive = (userAgent, theme) => {
-  // log('--deviceResponsive', userAgent, theme);
-  /*
-   * Regexes provided for mobile and tablet detection are meant to replace
-   * a full-featured specific library due to contributing a considerable size
-   * into the bundle.
-   *
-   * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
-   */
-  if (userAgent) {
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
-      return getDeviceBreakpoint('tablet', theme);
-    }
-    if (/Mobile|iPhone|Android/.test(userAgent)) {
-      return getDeviceBreakpoint('phone', theme);
-    }
-    return getDeviceBreakpoint('computer', theme);
-  }
-  return undefined;
-};
-
 const defaultOptions = {};
 
 const Grommet = forwardRef((props, ref) => {
@@ -64,7 +43,6 @@ const Grommet = forwardRef((props, ref) => {
   } = props;
   const { background, dir, themeMode, userAgent } = props;
   const [stateResponsive, setResponsive] = useState();
-  const [roots, setRoots] = useState([]);
 
   const theme = useMemo(() => {
     const nextTheme = deepMerge(baseTheme, themeProp || {});
@@ -89,6 +67,7 @@ const Grommet = forwardRef((props, ref) => {
 
     if (
       themeMode === 'auto' &&
+      typeof window !== 'undefined' &&
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
@@ -145,14 +124,18 @@ const Grommet = forwardRef((props, ref) => {
 
   const grommetRef = useForwardedRef(ref);
 
+  // track open FocusedContainers in a global array to manage
+  // focus event listeners for trapFocus
+  const roots = useRef([]);
   useEffect(() => {
-    if (grommetRef.current) setRoots([grommetRef.current]);
+    if (grommetRef.current) roots.current.push(grommetRef.current);
   }, [grommetRef]);
+  const rootsContextValue = useMemo(() => ({ roots }), []);
 
   return (
     <ThemeContext.Provider value={theme}>
       <ResponsiveContext.Provider value={responsive}>
-        <RootsContext.Provider value={roots}>
+        <RootsContext.Provider value={rootsContextValue}>
           <ContainerTargetContext.Provider value={containerTarget}>
             <OptionsContext.Provider value={options}>
               <MessageContext.Provider value={messages}>

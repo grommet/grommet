@@ -2,6 +2,8 @@ import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Checkmark } from 'grommet-icons/icons/Checkmark';
 import { Box } from '../Box';
+import { styledComponentsConfig } from '../../utils/styles';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const bounceDelay = keyframes`
   0%, 80%, 100% { 
@@ -25,22 +27,25 @@ const Dot = styled(Box)`
   ${(props) => props.delay && `animation-delay: ${props.delay};`}
 `;
 
-export const EllipsisAnimation = () => (
-  <Box
-    style={{ position: 'absolute' }}
-    fill
-    alignContent="center"
-    justify="center"
-  >
-    <Box alignSelf="center" direction="row" gap="small">
-      {/* A negative delay starts the animation sooner. The first dot
+export const EllipsisAnimation = () => {
+  const { theme } = useThemeValue();
+  return (
+    <Box
+      style={{ position: 'absolute' }}
+      fill
+      alignContent="center"
+      justify="center"
+    >
+      <Box alignSelf="center" direction="row" gap={theme.button?.busy?.gap}>
+        {/* A negative delay starts the animation sooner. The first dot
       should begin animating before the second and so on. */}
-      <Dot delay="-0.32s" />
-      <Dot delay="-0.16s" />
-      <Dot />
+        <Dot delay="-0.32s" />
+        <Dot delay="-0.16s" />
+        <Dot />
+      </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 const grow = keyframes`
   0% {
@@ -63,6 +68,6 @@ export const GrowCheckmark = styled(Checkmark)`
   animation: ${grow} 0.9s ease-in-out;
 `;
 
-export const StyledBusyContents = styled.div`
+export const StyledBusyContents = styled.div.withConfig(styledComponentsConfig)`
   opacity: ${(props) => (props.animating ? 0 : 1)};}
 `;

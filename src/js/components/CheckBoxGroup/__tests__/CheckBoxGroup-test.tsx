@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import 'jest-styled-components';
 
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
@@ -25,6 +26,14 @@ describe('CheckBoxGroup', () => {
       <Grommet>
         <CheckBoxGroup options={['First', 'Second']} />
       </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders without grommet wrapper', () => {
+    const { container } = render(
+      <CheckBoxGroup options={['First', 'Second']} />,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -83,7 +92,7 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
     fireEvent.click(getByText('first-label'));
-    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -101,10 +110,10 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
     fireEvent.click(getByText('first-label'));
-    expect(onClick).toBeCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('first-label'));
-    expect(onClick).toBeCalledTimes(2);
+    expect(onClick).toHaveBeenCalledTimes(2);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -179,7 +188,7 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
 
-    expect(errorSpy).not.toBeCalledWith(
+    expect(errorSpy).not.toHaveBeenCalledWith(
       expect.stringMatching('same key'),
       expect.stringMatching('Yes!'),
       expect.anything(),
@@ -203,7 +212,7 @@ describe('CheckBoxGroup', () => {
       </Grommet>,
     );
 
-    expect(warnSpy).toBeCalled();
+    expect(warnSpy).toHaveBeenCalled();
     warnSpy.mockReset();
     warnSpy.mockRestore();
   });
@@ -212,6 +221,24 @@ describe('CheckBoxGroup', () => {
     const { asFragment } = render(
       <Grommet>
         <CheckBoxGroup options={['First', 'Second']} defaultValue={['First']} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('theme container gap', () => {
+    const customTheme = {
+      checkBoxGroup: {
+        container: {
+          gap: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <CheckBoxGroup options={['First', 'Second', 'Third']} />
       </Grommet>,
     );
 

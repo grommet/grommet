@@ -9,12 +9,11 @@ import {
   PortalContext,
   useForwardedRef,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
-import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -83,7 +82,7 @@ const DropContainer = forwardRef(
     ref,
   ) => {
     const containerTarget = useContext(ContainerTargetContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     // dropOptions was created to preserve backwards compatibility
     const { drop: dropOptions } = useContext(OptionsContext);
     const portalContext = useContext(PortalContext);
@@ -110,8 +109,15 @@ const DropContainer = forwardRef(
           if (attr !== null) clickedPortalId = parseInt(attr, 10);
           node = node.parentNode;
         }
+        // Check if the click happened within the dropTarget
+        const clickInsideDropTarget =
+          (dropTarget?.current && dropTarget.current.contains(event.target)) ||
+          (dropTarget &&
+            typeof dropTarget.contains === 'function' &&
+            dropTarget.contains(event.target));
+
         if (
-          clickedPortalId === null ||
+          (!clickInsideDropTarget && clickedPortalId === null) ||
           portalContext.indexOf(clickedPortalId) !== -1
         ) {
           onClickOutside(event);
@@ -127,7 +133,7 @@ const DropContainer = forwardRef(
           document.removeEventListener('mousedown', onClickDocument);
         }
       };
-    }, [onClickOutside, containerTarget, portalContext]);
+    }, [onClickOutside, containerTarget, portalContext, dropTarget]);
 
     useEffect(() => {
       const target = dropTarget?.current || dropTarget;
@@ -204,21 +210,55 @@ const DropContainer = forwardRef(
             position. */
           if (
             responsive &&
-            ((align.top === 'top' && targetRect.top < 0) ||
-              (align.bottom === 'top' &&
-                targetRect.top - containerRect.height <= 0 &&
-                targetRect.bottom + containerRect.height < windowHeight))
+            // drop is above target
+            align.bottom === 'top' &&
+            // drop is overflowing above window
+            targetRect.top - containerRect.height <= 0 &&
+            // there is room to display the drop below the target
+            targetRect.bottom + containerRect.height < windowHeight
           ) {
+            // top of drop is aligned to bottom of target
             top = targetRect.bottom;
             maxHeight = top;
           } else if (
             responsive &&
-            ((align.bottom === 'bottom' && targetRect.bottom > windowHeight) ||
-              (align.top === 'bottom' &&
-                targetRect.bottom + containerRect.height >= windowHeight &&
-                targetRect.top - containerRect.height > 0))
+            // top of drop is aligned to top of target
+            align.top === 'top' &&
+            // drop is overflowing below window
+            targetRect.top + containerRect.height >= windowHeight &&
+            // height of the drop is larger than the target.
+            targetRect.top + containerRect.height > targetRect.bottom &&
+            // there is room to display the drop above the target
+            targetRect.bottom - containerRect.height > 0
           ) {
+            // bottom of drop is aligned to bottom of target
+            bottom = targetRect.bottom;
+            maxHeight = top;
+          } else if (
+            responsive &&
+            // top of drop is aligned to bottom of target
+            align.top === 'bottom' &&
+            // drop is overflowing below window
+            targetRect.bottom + containerRect.height >= windowHeight &&
+            // there is room to display the drop above the target
+            targetRect.top - containerRect.height > 0
+          ) {
+            // bottom of drop is aligned to top of target
             bottom = targetRect.top;
+            maxHeight = bottom;
+          } else if (
+            responsive &&
+            // bottom of drop is aligned to bottom of target
+            align.bottom === 'bottom' &&
+            // drop is overflowing above window
+            targetRect.bottom - containerRect.height <= 0 &&
+            // height of the drop is larger than the target.
+            targetRect.bottom - containerRect.height > targetRect.top &&
+            // there is room to display the drop below the target
+            targetRect.top + containerRect.height > 0
+          ) {
+            // top of drop is aligned to top of target
+            top = targetRect.top;
             maxHeight = bottom;
           } else if (align.top === 'top') {
             top = targetRect.top;
@@ -256,8 +296,9 @@ const DropContainer = forwardRef(
           const containerOffsetLeft = containingBlock?.scrollLeft ?? 0;
           const containerOffsetTop = containingBlock?.scrollTop ?? 0;
 
-          container.style.left = `${left - viewportOffsetLeft +
-            containerOffsetLeft}px`;
+          container.style.left = `${
+            left - viewportOffsetLeft + containerOffsetLeft
+          }px`;
 
           if (stretch) {
             // offset width by 0.1 to avoid a bug in ie11 that
@@ -268,12 +309,14 @@ const DropContainer = forwardRef(
           // the (position:absolute + scrollTop)
           // is presenting issues with desktop scroll flickering
           if (top !== '') {
-            container.style.top = `${top - viewportOffsetTop +
-              containerOffsetTop}px`;
+            container.style.top = `${
+              top - viewportOffsetTop + containerOffsetTop
+            }px`;
           }
           if (bottom !== '') {
-            container.style.bottom = `${viewportOffsetBottom - bottom -
-              containerOffsetTop}px`;
+            container.style.bottom = `${
+              viewportOffsetBottom - bottom - containerOffsetTop
+            }px`;
           }
           if (!preserveHeight) {
             if (theme.drop && theme.drop.maxHeight) {
@@ -334,9 +377,18 @@ const DropContainer = forwardRef(
       dropOptions,
     ]);
 
+    // Once drop is open the focus will be put on the drop container
+    // if restrictFocus is true. If the caller put focus
+    // on an element already, we honor that. Otherwise, we put
+    // the focus on the drop container.
     useEffect(() => {
       if (restrictFocus) {
-        dropRef.current.focus();
+        const dropContainer = dropRef.current;
+        if (dropContainer) {
+          if (!dropContainer.contains(document.activeElement)) {
+            dropContainer.focus();
+          }
+        }
       }
     }, [dropRef, restrictFocus]);
 
@@ -344,7 +396,6 @@ const DropContainer = forwardRef(
       <StyledDrop
         aria-label={a11yTitle || ariaLabel}
         ref={dropRef}
-        as={Box}
         background={background}
         plain={plain}
         elevation={
@@ -359,6 +410,7 @@ const DropContainer = forwardRef(
         alignProp={align}
         overflow={overflow}
         data-g-portal-id={portalId}
+        {...passThemeFlag}
         {...rest}
       >
         {children}

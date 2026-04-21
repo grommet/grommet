@@ -30,11 +30,16 @@ export interface BasicSelectProps {
   id?: string;
   labelKey?: string | ((...args: any[]) => string | React.ReactNode);
   margin?: MarginType;
-  messages?: { multiple?: string };
+  messages?: {
+    optionsA11y?: string;
+    multiple?: string;
+    searchA11y?: string;
+    selected?: string;
+  };
   name?: string;
   onChange?: (...args: any[]) => void;
   onClose?: (...args: any[]) => any;
-  onMore?: (...args: any[]) => any;
+  onMore?: () => void;
   onOpen?: (...args: any[]) => any;
   onSearch?: (search: string) => void;
   options: (string | boolean | number | JSX.Element | object)[];
@@ -63,7 +68,13 @@ export interface SelectProps extends BasicSelectProps {
 // value, name, id, onChange, placeholder
 export interface SelectExtendedProps
   extends SelectProps,
-    Omit<JSX.IntrinsicElements['input'], keyof SelectProps | 'readOnly'> {}
+    Omit<
+      React.DetailedHTMLProps<
+        React.InputHTMLAttributes<HTMLInputElement>,
+        HTMLInputElement
+      >,
+      keyof SelectProps | 'readOnly'
+    > {}
 
 declare const Select: React.FC<SelectExtendedProps>;
 

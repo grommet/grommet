@@ -41,8 +41,8 @@ describe('Keyboard', () => {
 
     fireEvent.keyDown(element, { keyCode: 40 });
 
-    expect(onDown).toBeCalled();
-    expect(onKeyDown).toBeCalled();
+    expect(onDown).toHaveBeenCalled();
+    expect(onKeyDown).toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -61,7 +61,7 @@ describe('Keyboard', () => {
       getByText('hi'),
       new KeyboardEvent('keydown', { bubbles: true, cancelable: true }),
     );
-    expect(firstOnKeyDown).toBeCalled();
+    expect(firstOnKeyDown).toHaveBeenCalled();
 
     rerender(
       <Keyboard target="document" onKeyDown={secondOnKeyDown}>
@@ -74,6 +74,6 @@ describe('Keyboard', () => {
       getByText('hi'),
       new KeyboardEvent('keydown', { bubbles: true, cancelable: true }),
     );
-    expect(secondOnKeyDown).toBeCalled();
+    expect(secondOnKeyDown).toHaveBeenCalled();
   });
 });

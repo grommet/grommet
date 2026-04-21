@@ -29,6 +29,12 @@ describe('TextArea', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(<TextArea id="item" name="item" />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('placeholder', () => {
     const { container } = render(
       <Grommet>

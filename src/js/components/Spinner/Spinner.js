@@ -4,16 +4,25 @@ import React, {
   useContext,
   useEffect,
 } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { Box } from '../Box';
-import { defaultProps } from '../../default-props';
 import { SpinnerPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const BasicSpinner = ({ ref, size, ...rest }) => (
-  <Box flex={false} height={size} width={size} ref={ref} {...rest} />
-);
+const BasicSpinner = ({ ref, size, ...rest }) => {
+  const { theme } = useThemeValue();
+  return (
+    <Box
+      flex={false}
+      height={size}
+      width={size}
+      ref={ref}
+      responsive={theme.spinner.responsive}
+      {...rest}
+    />
+  );
+};
 /**
  * If the user is calling <Spinner>…</Spinner> with children, it will take
  * precedence over theme styling. Yet, it will still inherit the
@@ -31,7 +40,7 @@ const BasicSpinner = ({ ref, size, ...rest }) => (
  */
 const Spinner = forwardRef(
   ({ children, color: colorProp, size, message, ...rest }, ref) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
     const announce = useContext(AnnounceContext);
 
     useEffect(() => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
@@ -10,12 +10,17 @@ import { Grommet } from '../../Grommet';
 import { List } from '../../List';
 import { DataFilters } from '..';
 import { createPortal, expectPortal } from '../../../utils/portal';
+import { ThemeType } from '../../../themes';
+import { Add, Trash } from 'grommet-icons';
 
 const data = [{ name: 'a' }, { name: 'b' }];
 
 describe('DataFilters', () => {
   window.scrollTo = jest.fn();
   beforeEach(createPortal);
+  afterEach(() => {
+    jest.useRealTimers();
+  });
 
   test('renders', () => {
     const { container } = render(
@@ -105,8 +110,7 @@ describe('DataFilters', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('should display all filter options regardless of result set', async () => {
-    const user = userEvent.setup();
+  test('should display all filter options regardless of result set', () => {
     const filters = ['a', 'blue', 'b', 'red'];
     const { asFragment } = render(
       <Grommet>
@@ -137,14 +141,14 @@ describe('DataFilters', () => {
     // expect all results to be present
     expect(results).toHaveTextContent('a');
     expect(results).toHaveTextContent('b');
-    await user.click(screen.getByRole('checkbox', { name: 'a' }));
-    await user.click(applyFiltersButton);
+    fireEvent.click(screen.getByRole('checkbox', { name: 'a' }));
+    fireEvent.click(applyFiltersButton);
 
     // expect only 'a' to be present
     expect(results).toHaveTextContent('a');
     expect(results).not.toHaveTextContent('b');
-    await user.click(screen.getByRole('checkbox', { name: 'red' }));
-    await user.click(applyFiltersButton);
+    fireEvent.click(screen.getByRole('checkbox', { name: 'red' }));
+    fireEvent.click(applyFiltersButton);
 
     // expect no results to be present
     expect(results).not.toHaveTextContent('a');
@@ -199,5 +203,225 @@ describe('DataFilters', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sub objects with rangeSelector', () => {
+    jest.useFakeTimers();
+    const { asFragment } = render(
+      <Grommet>
+        <Data
+          data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
+          properties={{
+            'location.lat': { label: 'Latitude', range: { min: -90, max: 90 } },
+          }}
+        >
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+    const { getByRole } = screen;
+
+    // find open filters button and click open
+    const filterButton = getByRole('button', { name: 'Open filters' });
+    expect(filterButton).toBeTruthy();
+    fireEvent.click(filterButton);
+
+    // move rangeselector
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    act(() => {
+      lowerBound.focus();
+    });
+    fireEvent.keyDown(lowerBound, { key: 'Right', keyCode: 39 });
+
+    // click Apply Filters button
+    const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
+    expect(applyFiltersButton).toBeTruthy();
+    fireEvent.click(applyFiltersButton);
+
+    // should be 1 filter applied
+    const updatedFilterButton = getByRole('button', {
+      name: 'Open filters, 1 filter applied',
+    });
+
+    expect(updatedFilterButton).toBeTruthy();
+    // snapshot on selected filter
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(updatedFilterButton);
+    // allow layer to open
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
+    // move rangeselector back to min
+    const updatedLowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    act(() => {
+      updatedLowerBound.focus();
+    });
+    fireEvent.keyDown(updatedLowerBound, { key: 'Left', keyCode: 37 });
+    fireEvent.click(getByRole('button', { name: 'Apply filters' }));
+
+    // allow layer to close
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
+    const updatedOpenFiltersButton = getByRole('button', {
+      name: 'Open filters',
+    });
+    // badge should be cleared, so filter button should be in original state
+    expect(updatedOpenFiltersButton).toBeTruthy();
+  });
+
+  test('should not badge when RangeSelector returns to min/max', () => {
+    jest.useFakeTimers();
+    const { asFragment } = render(
+      <Grommet>
+        <Data
+          data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
+          properties={{
+            'location.lat': { label: 'Latitude', range: { min: -90, max: 90 } },
+          }}
+        >
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+    const { getByRole } = screen;
+
+    // find open filters button and click open
+    const filterButton = getByRole('button', { name: 'Open filters' });
+    expect(filterButton).toBeTruthy();
+    fireEvent.click(filterButton);
+
+    // move rangeselector
+    const lowerBound = screen.getByRole('slider', { name: 'Lower Bounds' });
+    act(() => {
+      lowerBound.focus();
+    });
+    fireEvent.keyDown(lowerBound, { key: 'Right', keyCode: 39 });
+
+    // click Apply Filters button
+    const applyFiltersButton = getByRole('button', { name: 'Apply filters' });
+    expect(applyFiltersButton).toBeTruthy();
+    fireEvent.click(applyFiltersButton);
+
+    // should be 1 filter applied
+    const updatedFilterButton = getByRole('button', {
+      name: 'Open filters, 1 filter applied',
+    });
+
+    fireEvent.click(updatedFilterButton);
+
+    // allow layer animation to finish
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
+    // move rangeselector
+    const updatedLowerBound = screen.getByRole('slider', {
+      name: 'Lower Bounds',
+    });
+    act(() => {
+      updatedLowerBound.focus();
+    });
+    fireEvent.keyDown(updatedLowerBound, { key: 'Left', keyCode: 37 });
+    fireEvent.click(getByRole('button', { name: 'Apply filters' }));
+
+    // filter button should be at original state, no badge
+    expect(getByRole('button', { name: 'Open filters' })).toBeTruthy();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('theme footer actions margin and gap', () => {
+    const customTheme = {
+      dataFilters: {
+        footer: {
+          actions: {
+            margin: { top: 'large' },
+            gap: 'large',
+          },
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <Data data={data} view={{ search: 'a', properties: { name: ['a'] } }}>
+          <DataFilters />
+        </Data>
+      </Grommet>,
+    );
+
+    // Verify the DataFilters renders with the Apply button in footer
+    expect(screen.getByRole('button', { name: 'Apply filters' })).toBeTruthy();
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should use theme icons', async () => {
+    const user = userEvent.setup();
+
+    let theme: ThemeType = {
+      dataFilters: {
+        icons: {
+          close: Trash,
+          filter: Add,
+        },
+      },
+    };
+    const { getByRole } = render(
+      <Grommet theme={theme}>
+        <Data
+          data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
+          properties={{
+            'location.lat': { label: 'Latitude', range: { min: -90, max: 90 } },
+          }}
+        >
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+
+    // find open filters button and click open
+    const filterButton = getByRole('button', { name: 'Open filters' });
+    expect(filterButton).toBeTruthy();
+    fireEvent.click(filterButton);
+    await user.click(getByRole('button', { name: 'Open filters' }));
+
+    expect(screen.getAllByLabelText('Trash')[0]).toBeInTheDocument();
+  });
+
+  test('should use theme icons svg', async () => {
+    let theme: ThemeType = {
+      dataFilters: {
+        icons: {
+          filter: () => (
+            <svg
+              aria-label="Custom svg"
+              height="100"
+              width="100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle r="45" cx="50" cy="50" fill="red" />
+            </svg>
+          ),
+        },
+      },
+    };
+    render(
+      <Grommet theme={theme}>
+        <Data
+          data={[{ location: { lat: 48 } }, { location: { lat: -33 } }]}
+          properties={{
+            'location.lat': { label: 'Latitude', range: { min: -90, max: 90 } },
+          }}
+        >
+          <DataFilters layer />
+        </Data>
+      </Grommet>,
+    );
+    expect(screen.getByLabelText('Custom svg')).toBeInTheDocument();
   });
 });

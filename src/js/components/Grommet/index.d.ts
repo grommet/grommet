@@ -41,6 +41,10 @@ export interface GrommetProps {
         enterCalendar?: string;
         exitCalendar?: string;
       };
+      dataChart?: {
+        detailTitle?: string;
+        detailFocus?: string;
+      };
       dataFilters?: {
         clear?: string;
         heading?: string;
@@ -51,7 +55,6 @@ export interface GrommetProps {
         };
       };
       dataForm?: {
-        reset?: string;
         submit?: string;
       };
       dataSearch?: {
@@ -68,13 +71,37 @@ export interface GrommetProps {
       dataSummary?: {
         filtered?: string;
         filteredSingle?: string;
+        items?: string;
+        itemsSingle?: string;
+        selected?: string;
         total?: string;
+        totalSingle?: string;
+      };
+      dataTable?: {
+        ascending?: string;
+        collapse?: string;
+        collapseAll?: string;
+        decrease?: string;
+        descending?: string;
+        increase?: string;
+        expand?: string;
+        expandAll?: string;
+        resizerAria?: string;
+        rows?: string;
+        rowsChanged?: string;
+        rowsSingle?: string;
+        searchBy?: string;
+        total?: string;
+        totalSingle?: string;
       };
       dataTableColumns?: {
         open?: string;
         order?: string;
+        pinned?: string;
         select?: string;
         tip?: string;
+        orderAria?: string;
+        selectAria?: string;
       };
       dataTableGroupBy?: {
         clear?: string;
@@ -84,6 +111,10 @@ export interface GrommetProps {
         label?: string;
       };
       fileInput?: {
+        alert?: {
+          maxFile?: string;
+          maxSize?: string;
+        };
         browse?: string;
         dropPrompt?: string;
         dropPromptMultiple?: string;
@@ -101,17 +132,83 @@ export interface GrommetProps {
         invalid?: string;
         required?: string;
       };
+      formField?: {
+        maxCharacters?: {
+          remaining?: {
+            singular?: string;
+            plural?: string;
+          };
+          overLimit?: {
+            singular?: string;
+            plural: string;
+          };
+        };
+      };
+      list?: {
+        pinned?: string;
+      };
       menu?: {
         openMenu?: string;
         closeMenu?: string;
+      };
+      meter?: {
+        bar?: {
+          singular?: string;
+          plural?: string;
+        };
+        circle?: {
+          singular?: string;
+          plural?: string;
+        };
+        pie?: {
+          singular?: string;
+          plural?: string;
+        };
+        semicircle?: {
+          singular?: string;
+          plural?: string;
+        };
+      };
+      notification?: {
+        close?: string;
+      };
+      pagination?: {
+        stepLabel?: string;
+        summary?: string;
+        summaryNoItems?: string;
       };
       rangeSelector?: {
         lower?: string;
         upper?: string;
       };
+      tag?: {
+        removeLabel?: {
+          nameAndValue?: string;
+          valueOnly?: string;
+        };
+      };
       select?: {
+        optionsA11y?: string;
         multiple?: string;
+        searchA11y?: string;
         selected?: string;
+      };
+      selectMultiple?: {
+        clearAll?: string;
+        clearAllA11y?: string;
+        open?: string;
+        optionNotSelected?: string;
+        optionSelected?: string;
+        optionsA11y?: string;
+        search?: string;
+        selectAll?: string;
+        selectAllA11y?: string;
+        selectDrop?: string;
+        selected?: string;
+        selectedOfTotal?: string;
+        selectedOptions?: string;
+        showMore?: string;
+        summarizedValue?: string;
       };
       skipLinks?: {
         skipTo?: string;
@@ -140,7 +237,7 @@ export interface GrommetProps {
         volumeUp?: string;
       };
     };
-    format: (...args: any[]) => void;
+    format?: (...args: any[]) => void;
   };
   onAnalytics?: (data: any) => void;
   plain?: boolean;
@@ -151,7 +248,13 @@ export interface GrommetProps {
 
 export interface GrommetExtendedProps
   extends GrommetProps,
-    Omit<JSX.IntrinsicElements['div'], 'dir'> {}
+    Omit<
+      React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLDivElement>,
+        HTMLDivElement
+      >,
+      'dir'
+    > {}
 
 declare const Grommet: React.FC<GrommetExtendedProps>;
 

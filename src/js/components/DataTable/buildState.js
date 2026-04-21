@@ -253,7 +253,7 @@ export const normalizeRowProp = (name, rowProp, prop) => {
   return prop;
 };
 
-const tableContextNames = ['header', 'body', 'footer'];
+const tableContextNames = ['header', 'body', 'footer', 'groupHeader'];
 const cellPropertyNames = ['background', 'border', 'pad'];
 
 // Convert property specific cell props to context specific cell props.
@@ -302,6 +302,7 @@ export const normalizeCellProps = (props, theme) => {
       }
     });
   });
+  result.body.selected = { ...theme?.dataTable?.body?.selected };
   return result;
 };
 
@@ -311,7 +312,7 @@ export const normalizeRowCellProps = (
   primaryKey,
   index,
 ) => {
-  const result = { pinned: {} };
+  const result = { pinned: {}, selected: cellProps.selected };
   ['background', 'border', 'pad'].forEach((propName) => {
     const row = primaryKey && rowProps && rowProps?.[primaryKey]?.[propName];
     const cell = cellProps[propName];

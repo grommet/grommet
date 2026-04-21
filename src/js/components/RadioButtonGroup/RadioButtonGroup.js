@@ -1,26 +1,22 @@
-import React, {
-  forwardRef,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useRef, useState } from 'react';
 
-import { ThemeContext } from 'styled-components';
 import { FormContext } from '../Form/FormContext';
-import { defaultProps } from '../../default-props';
 import { Keyboard } from '../Keyboard';
 import { Box } from '../Box';
 import { RadioButton } from '../RadioButton';
 import { RadioButtonGroupPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const RadioButtonGroup = forwardRef(
   (
     {
+      'aria-label': ariaLabelProp,
+      'aria-labelledby': ariaLabelledByProp,
       children,
       defaultValue,
       disabled,
       focusIndicator = true,
+      id,
       name,
       onChange,
       options: optionsProp,
@@ -31,14 +27,14 @@ const RadioButtonGroup = forwardRef(
     ref,
   ) => {
     const formContext = useContext(FormContext);
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme } = useThemeValue();
 
     // normalize options to always use an object
     const options = optionsProp.map((o) =>
       typeof o !== 'object'
         ? {
             disabled,
-            id: rest.id ? `${rest.id}-${o}` : `${o}`, // force string
+            id: id ? `${id}-${o}` : `${o}`, // force string
             label: typeof o !== 'string' ? JSON.stringify(o) : o,
             value: o,
           }
@@ -67,14 +63,6 @@ const RadioButtonGroup = forwardRef(
       });
       return result;
     }, [options, value]);
-
-    useEffect(() => {
-      // if tab comes back to RadioButtonGroup when there still is no selection,
-      // we want focus to be on the first RadioButton
-      if (focus && !valueIndex) {
-        optionRefs.current[0].focus();
-      }
-    }, [focus, valueIndex]);
 
     const onNext = () => {
       if (valueIndex !== undefined && valueIndex < options.length - 1) {
@@ -116,6 +104,11 @@ const RadioButtonGroup = forwardRef(
 
     const onBlur = () => setFocus(false);
 
+    let ariaLabelledBy;
+    if (formContext?.useFormField({})?.inForm && id && !ariaLabelProp) {
+      ariaLabelledBy = `grommet-${id}__label`;
+    }
+
     return (
       <Keyboard
         target="document"
@@ -125,23 +118,20 @@ const RadioButtonGroup = forwardRef(
         onRight={focus ? onNext : undefined}
       >
         <Box
+          aria-label={ariaLabelProp}
+          aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
+          id={id}
           ref={ref}
           role="radiogroup"
           {...theme.radioButtonGroup.container}
-          gap={
-            gap ||
-            (theme.radioButtonGroup.container &&
-            theme.radioButtonGroup.container.gap
-              ? theme.radioButtonGroup.container.gap
-              : 'small')
-          }
+          gap={gap || theme.radioButtonGroup.container?.gap}
           {...rest}
         >
           {options.map(
             (
               {
                 disabled: optionDisabled,
-                id,
+                id: optionId,
                 label,
                 value: optionValue,
                 ...optionRest
@@ -181,7 +171,7 @@ const RadioButtonGroup = forwardRef(
                   // In RadioButton, if focus = true but focusIndicator = false,
                   // we will apply the hover treament.
                   focusIndicator={focusIndicator}
-                  id={id}
+                  id={optionId}
                   value={optionValue}
                   onFocus={onFocus}
                   onBlur={onBlur}

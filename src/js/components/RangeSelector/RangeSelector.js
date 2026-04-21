@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
@@ -14,12 +14,39 @@ import { EdgeControl } from './EdgeControl';
 import { FormContext } from '../Form/FormContext';
 import { Text } from '../Text';
 import { parseMetricToNum } from '../../utils';
-import { MessageContext } from '../../contexts/MessageContext';
 import { RangeSelectorPropTypes } from './propTypes';
+import { DataFormContext } from '../../contexts/DataFormContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Container = styled(Box)`
   user-select: none;
 `;
+
+export const getDecimalCount = (number) => {
+  if (Number.isInteger(number)) {
+    return 0;
+  }
+  // handle small numbers (0.00000001) which javascript
+  // will turn into `e-`
+  if (Math.abs(number) < 1) {
+    const parts = number.toExponential().split('e-');
+    const decimalPart = parts[0].split('.')[1] || '';
+    return decimalPart.length + parseInt(parts[1], 10);
+  }
+
+  const decimalPart = number.toString().split('.')[1] || '';
+  return decimalPart.length;
+};
+
+// avoid floating point issues like 0.15 + 0.3 = 0.44999999999999996
+// and turn into 0.15 + 0.3 = 0.45
+export const valueToStepPrecision = (value, step, min) => {
+  const nearestTrueStep = Math.round((value - min) / step) * step + min;
+  return Number(nearestTrueStep.toFixed(getDecimalCount(step)));
+};
+
+// ensure values are within min/max
+const clamp = (value, min, max) => Math.min(Math.max(min, value), max);
 
 const RangeSelector = forwardRef(
   (
@@ -43,8 +70,7 @@ const RangeSelector = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
-    const { format } = useContext(MessageContext);
+    const { theme } = useThemeValue();
     const formContext = useContext(FormContext);
     const [changing, setChanging] = useState();
     const [lastChange, setLastChange] = useState();
@@ -56,17 +82,45 @@ const RangeSelector = forwardRef(
 
     const [values, setValues] = formContext.useFormInput({
       name,
-      // ensure values are within min/max
-      value: valuesProp?.map((n) => Math.min(max, Math.max(min, n))),
+      value: valuesProp?.map((n) => clamp(n, min, max)),
       initialValue: defaultValues,
     });
 
+    // for DataFilters to know when RangeSelector is set to its min/max
+    const { pendingReset } = useContext(DataFormContext);
+    const updatePendingReset = useCallback(
+      (nextMin, nextMax) => {
+        if (nextMin === min && nextMax === max) {
+          pendingReset?.current.add(name);
+        } else if (pendingReset?.current?.has(name)) {
+          pendingReset?.current.delete(name);
+        }
+      },
+      [max, min, name, pendingReset],
+    );
+
     const change = useCallback(
       (nextValues) => {
-        setValues(nextValues);
-        if (onChange) onChange(nextValues);
+        let [nextMin, nextMax] = nextValues;
+        // only adjust value to step precision if it's not the min/max
+        if (nextMin !== min && nextMin !== max)
+          nextMin = valueToStepPrecision(nextValues[0], step, min);
+        if (nextMax !== min && nextMax !== max)
+          nextMax = valueToStepPrecision(nextValues[1], step, min);
+
+        // ensure values are within min/max
+        nextMin = clamp(nextMin, min, max);
+        nextMax = clamp(nextMax, min, max);
+
+        // make sure this is only called if both of the values
+        // are actually distinct from the previous values
+        if (nextMin !== values[0] || nextMax !== values[1]) {
+          updatePendingReset(nextMin, nextMax);
+          setValues([nextMin, nextMax]);
+          if (onChange) onChange([nextMin, nextMax]);
+        }
       },
-      [onChange, setValues],
+      [onChange, setValues, step, max, min, values, updatePendingReset],
     );
 
     const valueForMouseCoord = useCallback(
@@ -235,28 +289,23 @@ const RangeSelector = forwardRef(
           {...layoutProps}
         />
         <EdgeControl
-          a11yTitle={format({ id: 'rangeSelector.lower', messages })}
-          role="slider"
-          aria-valuenow={lower}
-          aria-valuemin={min}
-          aria-valuemax={max}
-          tabIndex={0}
           ref={ref}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="lower"
+          min={min}
+          max={max}
+          messages={messages}
+          value={lower}
+          step={step}
           onMouseDown={() => setChanging('lower')}
           onTouchStart={() => setChanging('lower')}
-          onDecrease={
-            lower - step >= min
-              ? () => change([lower - step, upper])
-              : undefined
-          }
+          onDecrease={() => change([lower - step, upper])}
           onIncrease={
             lower + step <= upper
               ? () => change([lower + step, upper])
-              : undefined
+              : () => change([upper, upper])
           }
         />
         <Box
@@ -279,28 +328,22 @@ const RangeSelector = forwardRef(
           }}
         />
         <EdgeControl
-          a11yTitle={format({ id: 'rangeSelector.upper', messages })}
-          role="slider"
-          aria-valuenow={upper}
-          aria-valuemin={min}
-          aria-valuemax={max}
-          tabIndex={0}
           color={color}
           direction={direction}
           thickness={thickness}
           edge="upper"
+          min={min}
+          max={max}
+          value={upper}
+          step={step}
           onMouseDown={() => setChanging('upper')}
           onTouchStart={() => setChanging('upper')}
           onDecrease={
             upper - step >= lower
               ? () => change([lower, upper - step])
-              : undefined
+              : () => change([lower, lower])
           }
-          onIncrease={
-            upper + step <= max
-              ? () => change([lower, upper + step])
-              : undefined
-          }
+          onIncrease={() => change([lower, upper + step])}
         />
         <Box
           style={{ flex: `${max - upper} 0 0` }}
@@ -333,12 +376,16 @@ const RangeSelector = forwardRef(
             ref={minRef}
             textAlign="end"
             size="small"
-            margin={{ horizontal: 'small' }}
+            margin={theme.rangeSelector.label.margin}
           >
             {typeof label === 'function' ? label(lower) : lower}
           </Text>
           {content}
-          <Text ref={maxRef} size="small" margin={{ horizontal: 'small' }}>
+          <Text
+            ref={maxRef}
+            size="small"
+            margin={theme.rangeSelector.label.margin}
+          >
             {typeof label === 'function' ? label(upper) : upper}
           </Text>
         </Box>

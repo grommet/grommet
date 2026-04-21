@@ -1,10 +1,9 @@
-import React, { useCallback, useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useCallback, useMemo } from 'react';
 
 import { Image } from '../Image';
-import { defaultProps } from '../../default-props';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
 import { AvatarPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const Avatar = ({
   a11yTitle,
@@ -12,6 +11,7 @@ const Avatar = ({
   align = 'center',
   children,
   height, // for warning check and discarding the value
+  imageProps,
   justify = 'center',
   round = 'full',
   size = 'medium',
@@ -19,7 +19,7 @@ const Avatar = ({
   width, // for warning check and discarding the value
   ...rest
 }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+  const { theme, passThemeFlag } = useThemeValue();
   const avatarSize = theme.avatar.size[size] || size;
   const avatarTextSize = theme.avatar.text.size[size] || 'large';
 
@@ -53,12 +53,18 @@ const Avatar = ({
   let content;
   if (typeof children === 'string') {
     content = (
-      <StyledAvatarText alignSelf="center" size={avatarTextSize}>
+      <StyledAvatarText
+        alignSelf="center"
+        size={avatarTextSize}
+        {...passThemeFlag}
+      >
         {children}
       </StyledAvatarText>
     );
   } else if (typeof src === 'string') {
-    content = <Image role="presentation" fit="contain" src={src} />;
+    content = (
+      <Image role="presentation" fit="contain" src={src} {...imageProps} />
+    );
   }
 
   if (typeof children === 'string' || typeof src === 'string') {
@@ -67,6 +73,7 @@ const Avatar = ({
         role={typeof src === 'string' ? 'figure' : undefined}
         a11yTitle={a11yTitle || ariaLabel}
         {...avatarProps}
+        {...passThemeFlag}
         {...rest}
       >
         {content}

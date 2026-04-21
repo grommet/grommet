@@ -1,9 +1,13 @@
 import React from 'react';
 import 'jest-styled-components';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
 import { FileInput } from '..';
+import { Form } from '../../Form';
+import { FormField } from '../../FormField';
+import { Alert } from 'grommet-icons';
 
 describe('FileInput', () => {
   test('basic', () => {
@@ -12,6 +16,38 @@ describe('FileInput', () => {
         <FileInput name="file" />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should use theme icons', () => {
+    const exampleFile = { name: 'file-size-error.csv', size: 15000 };
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        fileInput: [exampleFile],
+      });
+      return (
+        <Form validate="change" value={value} onChange={setValue}>
+          <FormField
+            label="File input with max size"
+            htmlFor="fileInput"
+            name="fileInput"
+          >
+            <FileInput id="fileInput" name="fileInput" maxSize={200} />
+          </FormField>
+        </Form>
+      );
+    };
+    const { container } = render(
+      <Grommet theme={{ fileInput: { icons: { error: Alert } } }}>
+        <Test />
+      </Grommet>,
+    );
+    expect(screen.getByLabelText(/Error, /i)).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('basic outside grommet wrapper', () => {
+    const { container } = render(<FileInput name="file" />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -157,5 +193,49 @@ describe('FileInput', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disabled with file selected', () => {
+    const exampleFile = { name: 'file-size-okay.csv', size: 15000 };
+    const Test = () => {
+      const [value, setValue] = React.useState({
+        fileInput: [exampleFile],
+      });
+      return (
+        <Form validate="change" value={value} onChange={setValue}>
+          <FormField
+            label="File input with max size"
+            htmlFor="fileInput"
+            name="fileInput"
+          >
+            <FileInput id="fileInput" name="fileInput" disabled />
+          </FormField>
+        </Form>
+      );
+    };
+    const { container } = render(
+      <Grommet>
+        <Test />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme anchor margin and label gap', () => {
+    const customTheme = {
+      fileInput: {
+        anchor: {
+          margin: 'large',
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <FileInput name="file" />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
   });
 });

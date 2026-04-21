@@ -1,5 +1,4 @@
 import React, { Fragment, useContext } from 'react';
-import { ThemeContext } from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -11,6 +10,7 @@ import { Pagination } from '../Pagination';
 import { normalizeShow, usePagination } from '../../utils';
 
 import { CardsPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const emptyData = [];
 
@@ -25,13 +25,13 @@ const Cards = React.forwardRef(
       pad,
       paginate,
       show: showProp,
-      size = 'small',
+      size,
       step = paginate ? 50 : undefined,
       ...rest
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext);
+    const { theme } = useThemeValue();
     const { data: contextData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
 
@@ -53,8 +53,8 @@ const Cards = React.forwardRef(
         <Grid
           ref={ref}
           as={as}
-          columns={size}
-          gap="medium"
+          gap={theme.cards.grid.gap}
+          columns={size || theme.cards.grid.columns}
           margin={(!paginate && margin) || 'none'}
           pad={(!paginate && pad) || 'none'}
           {...rest}

@@ -8,8 +8,7 @@ import React, {
 } from 'react';
 
 import { ThemeContext } from 'styled-components';
-import { defaultProps } from '../../default-props';
-import { backgroundIsDark } from '../../utils';
+import { backgroundIsDark, useForwardedRef } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
@@ -17,6 +16,10 @@ import { BoxPropTypes } from './propTypes';
 import { SkeletonContext, useSkeleton } from '../Skeleton';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { OptionsContext } from '../../contexts/OptionsContext';
+import { ResponsiveContainerContext } from '../../contexts';
+import { ResponsiveContainerProvider } from './ResponsiveContainerProvider';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { supportsContainerQueries } from '../../utils/responsive';
 
 const Box = forwardRef(
   (
@@ -25,7 +28,7 @@ const Box = forwardRef(
       background: backgroundProp,
       border,
       children,
-      cssGap, // internal for now
+      cssGap,
       direction = 'column',
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
@@ -35,7 +38,7 @@ const Box = forwardRef(
       onClick,
       onFocus,
       overflow, // munged to avoid styled-components putting it in the DOM
-      responsive = true,
+      responsive: responsiveProp = true,
       tag,
       as,
       wrap, // munged to avoid styled-components putting it in the DOM,
@@ -45,18 +48,77 @@ const Box = forwardRef(
       skeleton: skeletonProp,
       ...rest
     },
-    ref,
+    refProp,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     // boxOptions was created to preserve backwards compatibility but
     // should not be supported in v3
     const { box: boxOptions } = useContext(OptionsContext);
 
     const skeleton = useSkeleton();
 
+    const [containerElement, setContainerElement] = useState(undefined);
+    const responsiveContainer = useContext(ResponsiveContainerContext);
+    const responsive =
+      responsiveContainer && responsiveProp ? 'container' : responsiveProp;
+
     let background = backgroundProp;
 
+    useEffect(() => {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        backgroundProp &&
+        theme.global.deprecated?.backgrounds
+      ) {
+        let deprecatedBackground;
+        if (typeof backgroundProp === 'string') {
+          deprecatedBackground = theme.global.deprecated.backgrounds.find(
+            (item) => item.name === backgroundProp,
+          );
+        } else if (typeof backgroundProp === 'object') {
+          deprecatedBackground = theme.global.deprecated.backgrounds.find(
+            (item) =>
+              item.name === backgroundProp.image ||
+              item.name === backgroundProp.color,
+          );
+        }
+        if (deprecatedBackground) {
+          console.warn(
+            deprecatedBackground.message ||
+              `The background ${deprecatedBackground.name} is deprecated.`,
+          );
+        }
+      }
+    }, [backgroundProp, theme.global.deprecated?.backgrounds]);
+
     const announce = useContext(AnnounceContext);
+
+    const containerRef = useForwardedRef(refProp);
+
+    // Save the ref as a state if we're in a responsive container.
+    // We only need it in the responsive container case and it
+    // needs to be in a state to cause a re-render.
+    useEffect(() => {
+      if (responsiveProp === 'container' && containerRef.current) {
+        setContainerElement(containerRef.current);
+      }
+    }, [containerRef, responsiveProp]);
+
+    useEffect(() => {
+      if (typeof as === 'function') {
+        if (refProp) {
+          console.warn(
+            'ref and as={function} are incompatible. The ref will not get set.',
+          );
+        }
+        if (responsiveProp === 'container') {
+          console.warn(
+            // eslint-disable-next-line max-len
+            'responsive="container" and as={function} are incompatible. Use one or the other.',
+          );
+        }
+      }
+    }, [refProp, as, responsiveProp]);
 
     useEffect(() => {
       if (skeletonProp?.message?.start) announce(skeletonProp.message.start);
@@ -113,7 +175,7 @@ const Box = forwardRef(
     if (
       gap &&
       gap !== 'none' &&
-      (!(boxOptions?.cssGap || cssGap) ||
+      (!(boxOptions?.cssGap || cssGap || typeof gap === 'object') ||
         // need this approach to show border between
         border === 'between' ||
         border?.side === 'between' ||
@@ -140,6 +202,7 @@ const Box = forwardRef(
                 directionProp={direction}
                 responsive={responsive}
                 border={styledBoxGapBorder}
+                {...passThemeFlag}
               />,
             );
           }
@@ -209,6 +272,12 @@ const Box = forwardRef(
       return result || theme;
     }, [background, theme]);
 
+    // Only pass along the ref if the as prop is not a function.
+    // The styled component will throw a warning if we try to pass
+    // a ref when the as prop is a function. We do a console.warn
+    // about this above in this case.
+    const ref = typeof as === 'function' ? undefined : containerRef;
+
     let content = (
       <StyledBox
         as={!as && tag ? tag : as}
@@ -221,7 +290,7 @@ const Box = forwardRef(
         fillProp={fill}
         focus={focus}
         gap={
-          (boxOptions?.cssGap || cssGap) &&
+          (boxOptions?.cssGap || cssGap || typeof gap === 'object') &&
           gap &&
           gap !== 'none' &&
           border !== 'between' &&
@@ -236,8 +305,10 @@ const Box = forwardRef(
         widthProp={width}
         heightProp={height}
         responsive={responsive}
+        responsiveContainer={responsiveProp === 'container'}
         tabIndex={adjustedTabIndex}
         {...clickProps}
+        {...passThemeFlag}
         {...rest}
         {...skeletonProps}
       >
@@ -247,8 +318,35 @@ const Box = forwardRef(
       </StyledBox>
     );
 
+    if (responsiveProp === 'container') {
+      if (supportsContainerQueries()) {
+        content = (
+          <ResponsiveContainerProvider
+            container={containerElement}
+            theme={theme}
+          >
+            {content}
+          </ResponsiveContainerProvider>
+        );
+      } else {
+        console.warn(
+          '<Box responsive="container"> requires styled-components v6 or later',
+        );
+      }
+    }
+
     if (onClick) {
-      content = <Keyboard onEnter={onClick}>{content}</Keyboard>;
+      content = (
+        <Keyboard
+          onEnter={onClick}
+          onSpace={(e) => {
+            e.preventDefault(); // prevent page scroll
+            onClick(e);
+          }}
+        >
+          {content}
+        </Keyboard>
+      );
     }
 
     return content;

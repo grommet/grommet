@@ -9,7 +9,7 @@ import React, {
   useEffect,
 } from 'react';
 
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import {
   backgroundAndTextColors,
   colorIsDark,
@@ -18,7 +18,6 @@ import {
   normalizeBackground,
   normalizeColor,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { ButtonPropTypes } from './propTypes';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
@@ -36,6 +35,7 @@ import {
   GrowCheckmark,
   StyledBusyContents,
 } from './BusyAnimation';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 const RelativeBox = styled(Box)`
   position: relative;
@@ -216,7 +216,7 @@ const Button = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
     const announce = useContext(AnnounceContext);
@@ -248,6 +248,20 @@ const Button = forwardRef(
         'Button should not have children if icon or label is provided',
       );
     }
+
+    useEffect(() => {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        theme.global.deprecated?.button?.kind &&
+        kindArg
+      ) {
+        const deprecatedKind = theme.global.deprecated.button.kind.find(
+          (item) => item.name === kindArg,
+        );
+        if (deprecatedKind)
+          console.warn(deprecatedKind.message || `${kindArg} is deprecated.`);
+      }
+    }, [kindArg, theme.global.deprecated?.button?.kind]);
 
     const skeleton = useSkeleton();
 
@@ -412,7 +426,7 @@ const Button = forwardRef(
         </Box>
       );
     } else if (typeof children === 'function') {
-      contents = children({ disabled, hover, focus });
+      contents = children({ active, disabled, hover, focus });
     } else {
       contents = first || second || children;
     }
@@ -469,7 +483,11 @@ const Button = forwardRef(
               alignContent="center"
               justify="center"
             >
-              <GrowCheckmark color={animationColor} aria-hidden />
+              <GrowCheckmark
+                color={animationColor}
+                aria-hidden
+                as={theme.button?.busy?.icons?.success}
+              />
             </Box>
           )}
           <StyledBusyContents animating={busy || success}>
@@ -517,9 +535,11 @@ const Button = forwardRef(
           pad={pad}
           plain={plain || Children.count(children) > 0}
           primary={primary}
+          selected={selected}
           sizeProp={size}
           success={success}
           type={!href ? type : undefined}
+          {...passThemeFlag}
         >
           {contents}
         </StyledButtonKind>
@@ -566,6 +586,7 @@ const Button = forwardRef(
           sizeProp={size}
           success={success}
           type={!href ? type : undefined}
+          {...passThemeFlag}
         >
           {contents}
         </StyledButton>

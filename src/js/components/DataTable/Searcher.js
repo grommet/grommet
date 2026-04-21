@@ -1,21 +1,32 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import { ThemeContext } from 'styled-components';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
-
-import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
+import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
-const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
-  const theme = useContext(ThemeContext) || defaultProps.theme;
+const Searcher = ({
+  filtering,
+  filters,
+  focusIndicator,
+  messages,
+  onFilter,
+  onFiltering,
+  property,
+}) => {
+  const { theme } = useThemeValue();
   const inputRef = useRef();
+  const buttonRef = useRef();
   const needsFocus = filtering === property;
+  const [buttonNeedsFocus, setButtonNeedsFocus] = useState(false);
+  const { format } = useContext(MessageContext);
+  const SearchIcon = theme.dataTable?.icons?.search || FormSearch;
 
   useEffect(() => {
     if (inputRef && needsFocus) {
@@ -23,15 +34,41 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
     }
   }, [needsFocus, inputRef]);
 
+  // Focus the button after closing the search
+  useEffect(() => {
+    if (buttonNeedsFocus && buttonRef.current) {
+      buttonRef.current.focus();
+      setButtonNeedsFocus(false);
+    }
+  }, [buttonNeedsFocus]);
+
+  const a11yTitle = format({
+    id: 'dataTable.searchBy',
+    messages,
+    values: {
+      property,
+    },
+  });
   return filtering === property ? (
-    <Keyboard onEsc={() => onFiltering(undefined)}>
-      <Box width={{ min: 'xsmall' }} flex pad={{ horizontal: 'small' }}>
+    <Keyboard
+      onEsc={() => {
+        onFiltering(undefined);
+        setButtonNeedsFocus(true);
+      }}
+    >
+      <Box
+        width={{ min: 'xsmall' }}
+        flex
+        // padding right is not needed any longer. There is margin
+        // right set already on the container, see Header.js
+        pad={theme.dataTable.search?.pad}
+      >
         <TextInput
           name={`search-${property}`}
-          a11yTitle={`Search by ${property}`}
+          a11yTitle={a11yTitle}
           ref={inputRef}
           value={filters[property]}
-          onChange={event => onFilter(property, event.target.value)}
+          onChange={(event) => onFilter(property, event.target.value)}
           onBlur={() => onFiltering(undefined)}
         />
       </Box>
@@ -41,7 +78,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
       {filters[property] ? (
         <Box
           flex={false}
-          pad={{ horizontal: 'small' }}
+          pad={theme.dataTable.search?.text?.pad}
           direction="row"
           align="center"
         >
@@ -49,9 +86,10 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
         </Box>
       ) : null}
       <Button
-        a11yTitle={`Open search by ${property}`}
+        ref={buttonRef}
+        a11yTitle={a11yTitle}
         icon={
-          <FormSearch
+          <SearchIcon
             color={normalizeColor(
               filtering === property ? 'brand' : 'border',
               theme,
@@ -59,6 +97,7 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
           />
         }
         hoverIndicator
+        focusIndicator={focusIndicator}
         onClick={() =>
           onFiltering(filtering === property ? undefined : property)
         }
@@ -68,8 +107,5 @@ const Searcher = ({ filtering, filters, onFilter, onFiltering, property }) => {
 };
 
 Searcher.displayName = 'Searcher';
-
-Searcher.defaultProps = {};
-Object.setPrototypeOf(Searcher.defaultProps, defaultProps);
 
 export { Searcher };

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { render, screen, fireEvent, createEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -7,35 +7,31 @@ import 'regenerator-runtime/runtime';
 
 import { Grommet } from '../../Grommet';
 import { RoutedAnchor } from '..';
+import { RouterContext } from '../RouterContext';
 
-class FakeRouter extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    push: PropTypes.func.isRequired,
-    replace: PropTypes.func.isRequired,
-  };
-
-  static childContextTypes = {
-    router: PropTypes.shape({}).isRequired,
-  };
-
-  getChildContext() {
-    const { push, replace } = this.props;
-    return {
-      router: {
-        history: {
-          push,
-          replace,
-        },
+const FakeRouter = ({ children, push, replace }) => {
+  const value = useMemo(
+    () => ({
+      history: {
+        push,
+        replace,
       },
-    };
-  }
+    }),
+    [push, replace],
+  );
 
-  render() {
-    const { children } = this.props;
-    return <div>{children}</div>;
-  }
-}
+  return (
+    <RouterContext.Provider value={value}>
+      <div>{children}</div>
+    </RouterContext.Provider>
+  );
+};
+
+FakeRouter.propTypes = {
+  children: PropTypes.node.isRequired,
+  push: PropTypes.func.isRequired,
+  replace: PropTypes.func.isRequired,
+};
 
 describe('RoutedAnchor', () => {
   const replace = jest.fn();
@@ -80,9 +76,9 @@ describe('RoutedAnchor', () => {
     clickEvent.preventDefault = preventDefault;
     fireEvent(anchor, clickEvent);
 
-    expect(onClick).toBeCalledTimes(1);
-    expect(push).toBeCalledTimes(1);
-    expect(preventDefault).toBeCalledTimes(1);
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(push).toHaveBeenCalledTimes(1);
+    expect(preventDefault).toHaveBeenCalledTimes(1);
     expect(warnSpy).toHaveBeenCalled();
   });
 

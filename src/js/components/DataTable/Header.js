@@ -1,14 +1,8 @@
 /* eslint-disable no-underscore-dangle */
-import React, {
-  forwardRef,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
-import styled, { css, ThemeContext } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
+import React, { forwardRef, useCallback, useContext, useRef } from 'react';
+import styled, { css } from 'styled-components';
+import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -22,11 +16,16 @@ import { ExpanderCell } from './ExpanderCell';
 import {
   StyledDataTableCell,
   StyledDataTableHeader,
-  StyledDataTableRow,
+  StyledDataTableRowHeader,
 } from './StyledDataTable';
 import { datumValue } from './buildState';
 import { kindPartStyles } from '../../utils/styles';
 import { normalizeColor } from '../../utils/colors';
+import { useThemeValue } from '../../utils/useThemeValue';
+
+// delay before triggering width update. This allows most/all header resizes
+// to be batched together causing fewer render passes
+const WIDTH_UPDATE_DELAY = 100;
 
 // separate theme values into groupings depending on what
 // part of header cell they should style
@@ -128,6 +127,7 @@ const Header = forwardRef(
       groupBy,
       groups,
       groupState,
+      messages,
       onFilter,
       onFiltering,
       onResize,
@@ -147,21 +147,38 @@ const Header = forwardRef(
     },
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
+    const { theme, passThemeFlag } = useThemeValue();
     const [layoutProps, textProps] = separateThemeProps(theme);
+    const { total: contextTotal } = useContext(DataContext);
+    const { format } = useContext(MessageContext);
 
-    const [cellWidths, setCellWidths] = useState([]);
+    const cellWidthsRef = useRef({});
+    const timerRef = useRef();
+
+    const handleWidths = useCallback(() => {
+      const cellWidths = cellWidthsRef.current;
+      if (onWidths && cellWidths) {
+        const internalColumnWidths =
+          selected || onSelect ? [cellWidths._grommetDataTableSelect] : [];
+        onWidths([
+          ...internalColumnWidths,
+          ...columns.map(({ property }) => cellWidths[property]),
+        ]);
+      }
+    }, [columns, onSelect, onWidths, selected]);
 
     const updateWidths = useCallback(
-      (width) => setCellWidths((values) => [...values, width]),
-      [],
+      (property, width) => {
+        if (typeof width !== 'number') return;
+        // Only update if width actually changed
+        if (cellWidthsRef?.current[property] !== width) {
+          cellWidthsRef.current[property] = width;
+          if (timerRef.current) clearTimeout(timerRef.current);
+          timerRef.current = setTimeout(handleWidths, WIDTH_UPDATE_DELAY);
+        }
+      },
+      [handleWidths],
     );
-
-    useEffect(() => {
-      if (onWidths && cellWidths.length !== 0) {
-        onWidths(cellWidths);
-      }
-    }, [cellWidths, onWidths]);
 
     const pin = pinProp ? ['top'] : [];
     const selectPin = pinnedOffset?._grommetDataTableSelect
@@ -178,14 +195,13 @@ const Header = forwardRef(
     const totalSelected = (selected?.length || 0) + totalSelectedGroups;
 
     const onChangeSelection = useCallback(() => {
-      let nextSelected;
+      const nextSelected = [...selected];
       const nextGroupSelected = {};
 
-      // Since some rows might be disabled but already selected, we need to
-      // note which rows are enabled when determining how aggregate selection
-      // works.
+      // get primary values for current data view
       const primaryValues =
         data.map((datum) => datumValue(datum, primaryProperty)) || [];
+
       // enabled includes what can be changed
       const enabled =
         (disabled && primaryValues.filter((v) => !disabled.includes(v))) ||
@@ -199,27 +215,28 @@ const Header = forwardRef(
         ? groupBy.select[''] === 'all'
         : enabledSelected.length === enabled.length;
 
+      // if all enabled are already selected, remove them from selected,
+      // otherwise add them.
       if (allSelected) {
-        // if any are disabled and selected, leave those, otherwise clear
-        nextSelected = disabled
-          ? primaryValues.filter(
-              (v) => disabled.includes(v) && selected.includes(v),
-            )
-          : [];
+        enabledSelected.forEach((p) => {
+          const index = nextSelected.indexOf(p);
+          if (index >= 0) {
+            nextSelected.splice(index, 1);
+          }
+        });
         nextGroupSelected[''] = 'none';
       } else {
-        // if some or none are selected, select all enabled plus all disabled
-        // that are already selected
-        nextSelected = disabled
-          ? primaryValues.filter(
-              (v) => !disabled.includes(v) || selected.includes(v),
-            )
-          : primaryValues;
+        enabled.forEach((p) => {
+          if (!nextSelected.includes(p)) {
+            nextSelected.push(p);
+          }
+        });
         nextGroupSelected[''] = 'all';
         groupBy?.expandable?.forEach((key) => {
           nextGroupSelected[key] = 'all';
         });
       }
+
       if (groupBy?.onSelect) {
         groupBy.onSelect(nextSelected, undefined, nextGroupSelected);
       } else onSelect(nextSelected);
@@ -227,7 +244,7 @@ const Header = forwardRef(
 
     return (
       <StyledDataTableHeader ref={ref} fillProp={fill} {...rest}>
-        <StyledDataTableRow>
+        <StyledDataTableRowHeader>
           {groups && (
             <ExpanderCell
               background={cellProps.background}
@@ -245,7 +262,9 @@ const Header = forwardRef(
           {(selected || onSelect) && (
             <StyledDataTableCell
               background={cellProps.background}
-              onWidth={updateWidths}
+              onWidth={(width) =>
+                updateWidths('_grommetDataTableSelect', width)
+              }
               plain="noPad"
               size="auto"
               context="header"
@@ -253,6 +272,7 @@ const Header = forwardRef(
               pin={selectPin}
               pinnedOffset={pinnedOffset?._grommetDataTableSelect}
               verticalAlign={verticalAlign}
+              {...passThemeFlag}
             >
               {onSelect && allowSelectAll && (
                 <CheckBox
@@ -266,12 +286,13 @@ const Header = forwardRef(
                       ? groupBy.select[''] === 'all'
                       : totalSelected > 0 &&
                         data.length > 0 &&
-                        totalSelected === data.length
+                        totalSelected === (contextTotal || data.length)
                   }
                   indeterminate={
                     groupBy?.select
                       ? groupBy.select[''] === 'some'
-                      : totalSelected > 0 && totalSelected < data.length
+                      : totalSelected > 0 &&
+                        totalSelected < (contextTotal || data.length)
                   }
                   onChange={onChangeSelection}
                   pad={cellProps.pad}
@@ -279,7 +300,9 @@ const Header = forwardRef(
               )}
             </StyledDataTableCell>
           )}
-          {rowDetails && <TableCell size="xxsmall" plain pad="none" />}
+          {rowDetails && (
+            <TableCell size={theme.dataTable.expand?.size} plain pad="none" />
+          )}
           {columns.map(
             ({
               property,
@@ -333,14 +356,29 @@ const Header = forwardRef(
                 );
               }
 
+              let ariaSort;
               if (onSort && sortable !== false) {
                 let Icon;
+                let iconAriaLabel;
                 if (onSort && sortable !== false) {
                   if (sort && sort.property === property) {
                     Icon =
                       theme.dataTable.icons[
                         sort.direction !== 'asc' ? 'ascending' : 'descending'
                       ];
+                    if (sort.direction === 'asc') {
+                      ariaSort = 'ascending';
+                      iconAriaLabel = format({
+                        id: 'dataTable.ascending',
+                        messages,
+                      });
+                    } else if (sort.direction === 'desc') {
+                      ariaSort = 'descending';
+                      iconAriaLabel = format({
+                        id: 'dataTable.descending',
+                        messages,
+                      });
+                    }
                   } else if (theme.dataTable.icons.sortable) {
                     Icon = theme.dataTable.icons.sortable;
                   }
@@ -351,20 +389,22 @@ const Header = forwardRef(
                     plain
                     column={property}
                     fill="vertical"
+                    focusIndicator={size ? 'inset' : undefined}
                     onClick={onSort(property)}
                     sort={sort}
                     pad={cellProps.pad}
                     sortable
                     verticalAlign={verticalAlign || columnVerticalAlign}
+                    {...passThemeFlag}
                   >
                     <Box
                       direction="row"
                       align="center"
-                      gap="xsmall"
+                      gap={theme.dataTable.sort?.gap}
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon />}
+                      {Icon && <Icon aria-label={iconAriaLabel} />}
                     </Box>
                   </StyledHeaderCellButton>
                 );
@@ -377,7 +417,7 @@ const Header = forwardRef(
               // from automatically filling the vertical space.
               content = (
                 <Box
-                  flex="grow"
+                  flex={onResize || search ? { grow: 1, shrink: 1 } : 'grow'}
                   fill={onResize || search ? 'vertical' : false}
                   justify={(!align && 'center') || align}
                 >
@@ -385,15 +425,14 @@ const Header = forwardRef(
                 </Box>
               );
 
-              if (search || onResize) {
-                const resizer = onResize ? (
-                  <Resizer property={property} onResize={onResize} />
-                ) : null;
+              if (search) {
                 const searcher =
                   search && filters ? (
                     <Searcher
                       filtering={filtering}
                       filters={filters}
+                      focusIndicator={size ? 'inset' : undefined}
+                      messages={messages}
                       property={property}
                       onFilter={onFilter}
                       onFiltering={onFiltering}
@@ -409,18 +448,26 @@ const Header = forwardRef(
                     style={onResize ? { position: 'relative' } : undefined}
                   >
                     {content}
-                    {searcher && resizer ? (
+                    {searcher && onResize ? (
                       <Box
-                        flex="shrink"
-                        direction="row"
-                        align="center"
-                        gap={theme.dataTable.header.gap}
+                        flex={{
+                          shrink: filtering === property ? 1 : 0,
+                        }}
+                        direction={filtering === property ? 'column' : 'row'}
+                        // margin right set to half (12px) of resizer width
+                        // (24px) to prevent overlap with resizer control.
+                        // this also creates enough space when search input
+                        // is open. so, padding right is not needed for
+                        // the search input box any longer.
+                        // see Searcher.js
+                        margin={{
+                          right: '12px',
+                        }}
                       >
                         {searcher}
-                        {resizer}
                       </Box>
                     ) : (
-                      searcher || resizer
+                      searcher
                     )}
                   </Box>
                 );
@@ -428,15 +475,19 @@ const Header = forwardRef(
               const cellPin = [...pin];
               if (columnPin) cellPin.push('left');
 
+              const headerId = `grommet-data-table-header-${property}`;
+
               return (
                 <StyledDataTableCell
+                  aria-sort={ariaSort}
                   key={property}
                   align={align}
                   context="header"
                   verticalAlign={verticalAlign || columnVerticalAlign}
                   background={cellProps.background}
                   border={cellProps.border}
-                  onWidth={updateWidths}
+                  id={headerId}
+                  onWidth={(width) => updateWidths(property, width)}
                   // if sortable, pad will be included in the button styling
                   pad={sortable === false || !onSort ? cellProps.pad : 'none'}
                   pin={cellPin}
@@ -444,26 +495,47 @@ const Header = forwardRef(
                   pinnedOffset={pinnedOffset && pinnedOffset[property]}
                   scope="col"
                   size={widths && widths[property] ? undefined : size}
-                  style={
-                    widths && widths[property]
-                      ? { width: widths[property] }
-                      : undefined
-                  }
+                  style={{
+                    width: widths?.[property]
+                      ? `${widths[property]}px`
+                      : undefined,
+                    boxSizing: onResize ? 'border-box' : undefined,
+                    // Don't override positioning when DataTable has pin prop
+                    position:
+                      onResize && !columnPin && !pinProp
+                        ? 'relative'
+                        : undefined,
+                    overflow: onResize ? 'visible' : undefined,
+                  }}
+                  onResize={onResize}
+                  property={property}
+                  {...passThemeFlag}
                 >
                   {content}
+                  {onResize && (
+                    <Resizer
+                      property={property}
+                      onResize={(prop, width) => {
+                        onResize(prop, width);
+                        updateWidths(prop, width);
+                      }}
+                      headerText={
+                        typeof header === 'string' ? header : property
+                      }
+                      messages={messages}
+                      headerId={headerId}
+                    />
+                  )}
                 </StyledDataTableCell>
               );
             },
           )}
-        </StyledDataTableRow>
+        </StyledDataTableRowHeader>
       </StyledDataTableHeader>
     );
   },
 );
 
 Header.displayName = 'Header';
-
-Header.defaultProps = {};
-Object.setPrototypeOf(Header.defaultProps, defaultProps);
 
 export { Header };

@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'jest-styled-components';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
 import { Button } from '../../Button';
+import { Data } from '../../Data';
+import { Pagination } from '../../Pagination';
 import { Text } from '../../Text';
 import { DataTable, Sections, SortType } from '..';
 import { BackgroundType, BorderType } from '../../../utils';
+import { Add, Next, Previous } from 'grommet-icons';
 
 interface TestDataItem {
   a: string;
   b: number;
+  c?: string;
 }
 
 const DATA: TestDataItem[] = [];
 for (let i = 0; i < 95; i += 1) {
-  DATA.push({ a: `entry-${i}`, b: i });
+  DATA.push({
+    a: `entry-${i}`,
+    b: i,
+    c: i === 0 || i === 1 || i === 35 || i === 50 ? 'option 1' : 'option 2',
+  });
 }
 
 describe('DataTable', () => {
@@ -26,6 +35,11 @@ describe('DataTable', () => {
         <DataTable />
       </Grommet>,
     );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('renders outside grommet wrapper', () => {
+    const { container } = render(<DataTable />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -220,7 +234,7 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({ property: 'a', direction: 'asc' }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -249,7 +263,7 @@ describe('DataTable', () => {
 
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({
         property: 'a',
         direction: 'desc',
@@ -381,7 +395,7 @@ describe('DataTable', () => {
 
     fireEvent.click(getByText('Value'));
 
-    expect(onSort).toBeCalledWith(
+    expect(onSort).toHaveBeenCalledWith(
       expect.objectContaining({ property: 'b.value' }),
     );
 
@@ -412,15 +426,16 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('search', () => {
+  test('should use theme icons', () => {
     const { container } = render(
-      <Grommet>
+      <Grommet theme={{ dataTable: { icons: { search: Add } } }}>
         <DataTable
           columns={[{ property: 'a', header: 'A', search: true }]}
           data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
         />
       </Grommet>,
     );
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(
       container.querySelector(
@@ -437,6 +452,41 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('header search onEsc returns focus to search button', async () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A', search: true }]}
+          data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
+        />
+      </Grommet>,
+    );
+
+    // Open the search input
+    const searchButton = container.querySelector(
+      '[aria-label="Open search by a"]',
+    ) as HTMLButtonElement;
+    fireEvent.click(searchButton);
+
+    // Focus should be on the search input
+    const searchInput = container.querySelector(
+      '[name="search-a"]',
+    ) as HTMLInputElement;
+    expect(document.activeElement).toBe(searchInput);
+
+    // Press Escape key
+    fireEvent.keyDown(searchInput, {
+      key: 'Escape',
+      code: 'Escape',
+      keyCode: 27,
+    });
+
+    await waitFor(() => {
+      const active = document.activeElement;
+      expect(active?.getAttribute('aria-label')).toBe('Open search by a');
+    });
+  });
+
   test('resizeable', () => {
     const { container } = render(
       <Grommet>
@@ -450,10 +500,39 @@ describe('DataTable', () => {
             { a: 'two', b: 2 },
           ]}
           resizeable
+          messages={{ resizerAria: 'Change size of {headerText} column' }}
         />
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should render resizeable theme icons', () => {
+    window.scrollTo = jest.fn();
+    render(
+      <Grommet
+        theme={{
+          dataTable: {
+            icons: { resizeIncrease: Previous, resizeDecrease: Next },
+          },
+        }}
+      >
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          resizeable
+        />
+      </Grommet>,
+    );
+    fireEvent.click(screen.getByRole('separator', { name: 'Resize A column' }));
+    expect(screen.getByLabelText('Previous')).toBeInTheDocument();
+    expect(screen.getByLabelText('Next')).toBeInTheDocument();
   });
 
   test('aggregate', () => {
@@ -661,7 +740,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
-    expect(onClickRow).toBeCalledWith(
+    expect(onClickRow).toHaveBeenCalledWith(
       expect.objectContaining({ datum: { a: 'beta' } }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -681,7 +760,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('beta'));
-    expect(onClickRow).toBeCalledWith(
+    expect(onClickRow).toHaveBeenCalledWith(
       expect.objectContaining({ datum: { a: 'beta' } }),
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -868,9 +947,9 @@ describe('DataTable', () => {
     );
 
     const expandButtons = getAllByLabelText('expand');
-    fireEvent.click(expandButtons[1], {});
+    fireEvent.click(expandButtons[0], {});
 
-    expect(onExpand).toBeCalled();
+    expect(onExpand).toHaveBeenCalled();
     expect(onExpand.mock.results[0].value).toEqual(['one']);
     expect(onExpand.mock.results[0].value).toMatchSnapshot();
   });
@@ -1089,9 +1168,12 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
-      a: 'beta',
-    });
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      {
+        a: 'beta',
+      },
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1111,9 +1193,12 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByLabelText('select beta'));
-    expect(onSelect).toBeCalledWith(expect.arrayContaining(['alpha', 'beta']), {
-      a: 'beta',
-    });
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.arrayContaining(['alpha', 'beta']),
+      {
+        a: 'beta',
+      },
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1133,7 +1218,7 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(getByText('alpha'));
-    expect(onSelect).not.toBeCalled();
+    expect(onSelect).not.toHaveBeenCalled();
   });
 
   test('custom theme', () => {
@@ -1164,6 +1249,9 @@ describe('DataTable', () => {
               size: 'xsmall',
             },
           },
+          padding: {
+            vertical: '7px',
+          },
         },
       },
     };
@@ -1184,6 +1272,168 @@ describe('DataTable', () => {
 
     fireEvent.mouseOver(getByLabelText('select beta'));
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('should apply custom theme for groupHeader', () => {
+    const theme = {
+      dataTable: {
+        groupHeader: {
+          background: 'tomato',
+          border: {
+            side: 'top',
+            size: 'medium',
+          },
+          pad: 'medium',
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { header: 'Group', property: 'group' },
+            { header: 'Value', primary: true, property: 'value' },
+          ]}
+          data={[
+            { group: 1, value: 1 },
+            { group: 1, value: 2 },
+            { group: 2, value: 3 },
+            { group: 2, value: 4 },
+          ]}
+          groupBy="group"
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for selected row', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          select={['two']}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for selected row group', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+            { a: 'three', b: 3.1 },
+            { a: 'three', b: 3.2 },
+          ]}
+          groupBy={{
+            property: 'a',
+            expand: ['one', 'two'],
+          }}
+          primaryKey={'b'}
+          select={[1.1, 1.2]}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for selected row detail parent only', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          selected: {
+            background: 'red',
+          },
+        },
+      },
+    };
+    const { asFragment, getAllByLabelText } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+          rowDetails={(row) => <div>{row.a}</div>}
+          select={['two']}
+        />
+      </Grommet>,
+    );
+    // No means to expand row details declaratively
+    fireEvent.click(getAllByLabelText('expand')[1]);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should apply theme for removing border on the last table row', () => {
+    const theme = {
+      dataTable: {
+        body: {
+          row: {
+            extend: `&:last-child td {
+              border: none;
+              }
+              &:last-child th {
+              border: none;
+              }`,
+          },
+        },
+      },
+    };
+    const { asFragment } = render(
+      <Grommet theme={theme}>
+        <DataTable
+          border={{ body: 'bottom' }}
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1 },
+            { a: 'two', b: 2 },
+          ]}
+        />
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('units', () => {
@@ -1446,14 +1696,14 @@ describe('DataTable', () => {
     let headerCheckBox;
     headerCheckBox = getByLabelText('select all');
     fireEvent.click(headerCheckBox);
-    expect(onSelect).toBeCalledWith([1.1, 1.2, 2.1, 2.2]);
+    expect(onSelect).toHaveBeenCalledWith([1.1, 1.2, 2.1, 2.2]);
     expect(container.firstChild).toMatchSnapshot();
 
     // aria-label should have changed since all entries
     // are selected
     headerCheckBox = getByLabelText('unselect all');
     fireEvent.click(headerCheckBox);
-    expect(onSelect).toBeCalledWith([]);
+    expect(onSelect).toHaveBeenCalledWith([]);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -1514,7 +1764,7 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    expect(onSelect).toBeCalledWith(
+    expect(onSelect).toHaveBeenCalledWith(
       expect.arrayContaining([1.1, 1.2]),
       expect.objectContaining({ a: 'one' }),
     );
@@ -1524,7 +1774,7 @@ describe('DataTable', () => {
   test(`onSelect + groupBy should render indeterminate checkbox on table and
   group if subset of group items are selected`, () => {
     const onSelect = jest.fn();
-    const { container, getAllByLabelText, getByLabelText } = render(
+    const { container, getByLabelText } = render(
       <Grommet>
         <DataTable
           columns={[
@@ -1546,8 +1796,9 @@ describe('DataTable', () => {
 
     const groupCheckBox = getByLabelText('select one');
     fireEvent.click(groupCheckBox);
-    const expandButtons = getAllByLabelText('expand');
-    fireEvent.click(expandButtons[1], {});
+
+    const expandButton = getByLabelText('expand all');
+    fireEvent.click(expandButton);
 
     fireEvent.click(getByLabelText('unselect 1.1'));
     expect(container.firstChild).toMatchSnapshot();
@@ -1739,6 +1990,427 @@ describe('DataTable', () => {
       </Grommet>,
     );
     fireEvent.click(screen.getByRole('checkbox', { name: 'select Alan' }));
-    expect(onSelect).toBeCalledWith(['Alan'], { name: 'Alan', percent: 20 });
+    expect(onSelect).toHaveBeenCalledWith(['Alan'], {
+      name: 'Alan',
+      percent: 20,
+    });
+  });
+
+  test('Data + onSelect should display correct selected amount', () => {
+    const App = () => {
+      const [select, setSelect] = useState<(string | number)[]>([]);
+      return (
+        <Grommet>
+          <Data data={DATA} toolbar>
+            <DataTable
+              select={select}
+              onSelect={(select, _) => setSelect(select)}
+            />
+            <Pagination />
+          </Data>
+        </Grommet>
+      );
+    };
+    render(<App />);
+
+    const headerCheckBox = screen.getByLabelText('select all');
+
+    // select all first page
+    fireEvent.click(headerCheckBox);
+    expect(screen.getByText('10 selected')).toBeTruthy();
+
+    // navigate to new page
+    const secondPageButton = screen.getByRole('button', {
+      name: 'Go to page 2',
+    });
+    fireEvent.click(secondPageButton);
+    // select all second page
+    fireEvent.click(headerCheckBox);
+    // should add to previous selection
+    expect(screen.getByText('20 selected')).toBeTruthy();
+
+    // apply filters and select view
+    const filterButton = screen.getByRole('button', { name: 'Open filters' });
+    fireEvent.click(filterButton);
+    fireEvent.click(screen.getByRole('checkbox', { name: 'option 1' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+    fireEvent.click(headerCheckBox);
+    expect(screen.getByText('22 selected')).toBeTruthy();
+
+    // unselect single checkbox
+    fireEvent.click(
+      screen.getByRole('checkbox', { name: 'unselect entry-35' }),
+    );
+    expect(screen.getByText('21 selected')).toBeTruthy();
+
+    // clear view + unselect all from current page
+    fireEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
+    fireEvent.click(headerCheckBox);
+    expect(screen.getByText('11 selected')).toBeTruthy();
+  });
+
+  test('onUpdate groupBy.onSelect', () => {
+    const onGroupSelect = jest.fn();
+    const App = () => {
+      const [groupSelected] = React.useState<{
+        [key: string]: 'all' | 'some' | 'none';
+      }>({ '': 'some', 'Fort Collins': 'some' });
+
+      const groupBy = React.useMemo(() => {
+        return {
+          property: 'location',
+          select: groupSelected,
+          onSelect: onGroupSelect,
+        };
+      }, [groupSelected]);
+
+      return (
+        <DataTable
+          primaryKey="id"
+          columns={[
+            {
+              property: 'id',
+              header: 'ID',
+            },
+            {
+              property: 'b',
+              header: 'B',
+            },
+            {
+              property: 'location',
+              header: 'Location',
+            },
+          ]}
+          data={[
+            {
+              id: 0,
+              b: 'zero',
+              location: 'Fort Collins',
+            },
+            {
+              id: 1,
+              b: 'one',
+              location: 'Fort Collins',
+            },
+            {
+              id: 2,
+              b: 'two',
+              location: 'San Francisco',
+            },
+            {
+              id: 3,
+              b: 'three',
+              location: 'San Francisco',
+            },
+            {
+              id: 4,
+              b: 'four',
+              location: 'Boise',
+            },
+            {
+              id: 5,
+              b: 'five',
+              location: 'Los Angeles',
+            },
+          ]}
+          step={10}
+          groupBy={groupBy}
+          onSelect={() => {}}
+          onUpdate={() => {}}
+        />
+      );
+    };
+
+    const { asFragment } = render(<App />);
+    expect(asFragment()).toMatchSnapshot();
+
+    fireEvent.click(
+      screen.getByRole('checkbox', { name: 'select San Francisco' }),
+    );
+    expect(onGroupSelect).toHaveBeenCalledWith(
+      [2, 3],
+      { location: 'San Francisco' },
+      { '': 'some', 'Fort Collins': 'some' },
+    );
+    fireEvent.click(screen.getByRole('checkbox', { name: 'select all' }));
+    expect(onGroupSelect).toHaveBeenCalledWith([0, 1, 2, 3, 4, 5], undefined, {
+      '': 'all',
+    });
+  });
+
+  test('row click using space key press', () => {
+    const onClickRow = jest.fn();
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'name', header: 'Name' }]}
+          data={[{ name: 'alpha' }]}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const row = screen.getByText('alpha').closest('tr');
+    fireEvent.focus(row!);
+    fireEvent.keyDown(row!, {
+      code: 'Space',
+      keyCode: 32,
+    });
+
+    expect(onClickRow).toHaveBeenCalledWith(
+      expect.objectContaining({ datum: { name: 'alpha' } }),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('disable row click using space key press', () => {
+    const onClickRow = jest.fn();
+    const { container, getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'name', header: 'Name' }]}
+          data={[{ name: 'alpha' }]}
+          disabled={['alpha']}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    fireEvent.mouseEnter(getByText('alpha'));
+    fireEvent.keyDown(getByText('alpha'), {
+      code: 'Space',
+      keyCode: 32,
+    });
+
+    expect(onClickRow).not.toHaveBeenCalled();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  type Ship = {
+    name: string;
+    model: string;
+    manufacturer: string;
+    passengers: string;
+  };
+
+  test('rowDetails renders only for expanded rows', () => {
+    const data: Ship[] = [
+      {
+        name: 'Y-wing',
+        model: 'BTL Y-wing',
+        manufacturer: 'Koensayr Manufacturing',
+        passengers: '0',
+      },
+      {
+        name: 'X-wing',
+        model: 'T-65 X-wing',
+        manufacturer: 'Incom Corporation',
+        passengers: '0',
+      },
+    ];
+
+    const rowDetails = {
+      render: (row: Ship) => <Text>Model: {row.model}</Text>,
+      expand: ['Y-wing'],
+      expandLabel: (row: Ship) => `Show details for ${row.name}`,
+      onExpand: jest.fn(),
+    };
+
+    render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'name', header: 'Name', primary: true },
+            { property: 'manufacturer', header: 'Manufacturer' },
+          ]}
+          data={data}
+          rowDetails={rowDetails}
+        />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByLabelText('expand Show details for X-wing'),
+    ).toBeInTheDocument();
+    expect(screen.getByText('Model: BTL Y-wing')).toBeInTheDocument();
+    expect(screen.queryByText('Model: T-65 X-wing')).not.toBeInTheDocument();
+  });
+
+  test('expandLabel function', () => {
+    const expandLabel = (row: any) => `${row.a} items`;
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy={{ property: 'a', expandLabel: expandLabel }}
+        />
+      </Grommet>,
+    );
+
+    // Check that expand buttons have the custom labels with group names
+    expect(screen.getByLabelText('expand one items')).toBeInTheDocument();
+    expect(screen.getByLabelText('expand two items')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('expandAriaLabel default', () => {
+    const { container, getAllByLabelText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+        />
+      </Grommet>,
+    );
+
+    // Check that expand buttons have default labels
+    const expandButtons = getAllByLabelText('expand');
+    expect(expandButtons.length).toBeGreaterThanOrEqual(2);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('messages prop overrides theme messages', () => {
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          primaryKey="b"
+          messages={{
+            expandAll: 'expandir todo',
+            collapseAll: 'colapsar todo',
+            expand: 'expandir',
+            collapse: 'colapsar',
+          }}
+        />
+      </Grommet>,
+    );
+
+    // Check that DataTable messages prop overrides theme messages
+    const expandButtons = screen.getAllByLabelText('expandir');
+    expect(expandButtons).toHaveLength(2);
+    expect(container.firstChild).toMatchSnapshot();
+
+    // Click to expand and check collapse message from prop
+    fireEvent.click(expandButtons[0]);
+    const collapseButton = screen.getByLabelText('colapsar');
+    expect(collapseButton).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('theme search pad, search text pad, sort gap, and expand size', () => {
+    const customTheme = {
+      dataTable: {
+        search: {
+          pad: {
+            left: 'large',
+          },
+          text: {
+            pad: {
+              horizontal: 'large',
+            },
+          },
+        },
+        sort: {
+          gap: 'large',
+        },
+        expand: {
+          size: 'large',
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', search: true },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'one', b: 1.1 },
+            { a: 'one', b: 1.2 },
+            { a: 'two', b: 2.1 },
+            { a: 'two', b: 2.2 },
+          ]}
+          groupBy="a"
+          sortable
+          rowDetails={(row) => <div>Details for {row.a}</div>}
+          primaryKey="b"
+        />
+      </Grommet>,
+    );
+
+    // Open search to show search pad and text pad
+    fireEvent.click(
+      container.querySelector(
+        '[aria-label="Open search by a"]',
+      ) as HTMLButtonElement,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('pinned column with resizable does not have position relative', () => {
+    const columns = [
+      { property: 'location', header: 'Location', pin: true },
+      { property: 'date', header: 'Date' },
+    ];
+
+    const data = [
+      { location: 'Fort Collins', date: '2018-06-10' },
+      { location: 'Palo Alto', date: '2018-06-09' },
+    ];
+
+    render(
+      <Grommet>
+        <DataTable columns={columns} data={data} resizeable />
+      </Grommet>,
+    );
+
+    // Get the pinned header cell
+    const pinnedHeader = screen.getByRole('columnheader', { name: /Location/ });
+    const pinnedHeaderStyles = window.getComputedStyle(pinnedHeader);
+
+    // Get the non-pinned header cell
+    const nonPinnedHeader = screen.getByRole('columnheader', { name: /Date/ });
+    const nonPinnedHeaderStyles = window.getComputedStyle(nonPinnedHeader);
+
+    // Pinned column should NOT have position: relative
+    expect(pinnedHeaderStyles.position).not.toBe('relative');
+
+    // column SHOULD have position: relative (for resizer positioning)
+    expect(nonPinnedHeaderStyles.position).toBe('relative');
   });
 });

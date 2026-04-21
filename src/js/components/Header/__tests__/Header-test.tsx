@@ -16,4 +16,27 @@ describe('Header', () => {
     expect(ref.current).not.toBe(null);
     expect(ref.current?.nodeName).toBe('HEADER');
   });
+  it('should render outside grommet wrapper', () => {
+    const { container } = render(<Header>Hello, World!</Header>);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+  test('theme gap', () => {
+    const customTheme = {
+      header: {
+        gap: 'large',
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Header>
+          <div>Header Item 1</div>
+          <div>Header Item 2</div>
+          <div>Header Item 3</div>
+        </Header>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

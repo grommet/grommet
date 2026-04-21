@@ -1,7 +1,9 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useContext } from 'react';
 
 import { StyledGrid } from './StyledGrid';
 import { GridPropTypes } from './propTypes';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { ResponsiveContainerContext } from '../../contexts';
 
 const Grid = forwardRef((props, ref) => {
   const {
@@ -10,18 +12,22 @@ const Grid = forwardRef((props, ref) => {
     border,
     fill, // munged to avoid styled-components putting it in the DOM
     height, // munged to avoid styled-components putting it in the DOM
-    responsive = true,
+    responsive: responsiveProp = true,
     rows, // munged to avoid styled-components putting it in the DOM
     tag,
     as,
     width, // munged to avoid styled-components putting it in the DOM
     ...rest
   } = props;
+  const { passThemeFlag } = useThemeValue();
+  const responsiveContainer = useContext(ResponsiveContainerContext);
+  const responsive =
+    responsiveContainer && responsiveProp ? 'container' : responsiveProp;
 
   return (
     <StyledGrid
       ref={ref}
-      a11yTitleProp={ariaLabel || a11yTitle}
+      aria-label={ariaLabel || a11yTitle}
       as={!as && tag ? tag : as}
       border={border}
       fillContainer={fill}
@@ -29,6 +35,7 @@ const Grid = forwardRef((props, ref) => {
       responsive={responsive}
       rowsProp={rows}
       widthProp={width}
+      {...passThemeFlag}
       {...rest}
     />
   );

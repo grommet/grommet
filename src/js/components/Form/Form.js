@@ -20,6 +20,7 @@ const defaultValidationResults = {
   errors: {},
   infos: {},
 };
+const defaultThreshold = 0.5;
 
 const stringToArray = (string) => {
   const match = string?.match(/^(.+)\[([0-9]+)\]\.(.*)$/);
@@ -81,9 +82,38 @@ const setFieldValue = (name, componentValue, prevValue) => {
   return nextValue;
 };
 
+const validateCharacterCount = (format, rule, value) => {
+  const { max, threshold } = rule;
+
+  const getMessage = () => {
+    const charactersRemaining = (plural) => ({
+      id: `formField.maxCharacters.remaining.${plural ? 'plural' : 'singular'}`,
+      values: { number: max - value.length },
+    });
+
+    const charactersOverLimit = (plural) => ({
+      id: `formField.maxCharacters.overLimit.${plural ? 'plural' : 'singular'}`,
+      values: { number: value.length - max },
+    });
+
+    if (max - value.length >= 0) {
+      return format(charactersRemaining(max - value.length > 1));
+    }
+    return format(charactersOverLimit(value.length - max > 1));
+  };
+
+  return value.length / max > (threshold ?? defaultThreshold)
+    ? {
+        status: max - value.length >= 0 ? 'info' : 'error',
+        message: getMessage(),
+      }
+    : undefined;
+};
+
 // Apply validation rule to field value and send correct messaging.
 const validate = (rule, fieldValue, formValue, format, messages) => {
   let result;
+
   if (typeof rule === 'function') {
     result = rule(fieldValue, formValue);
   } else if (rule.regexp) {
@@ -93,7 +123,10 @@ const validate = (rule, fieldValue, formValue, format, messages) => {
         result = { message: result, status: rule.status };
       }
     }
+  } else if (rule.max) {
+    result = validateCharacterCount(format, rule, fieldValue);
   }
+
   return result;
 };
 
@@ -458,7 +491,9 @@ const Form = forwardRef(
           if (
             name && // we have somewhere to put this
             componentValue !== undefined && // input driving
-            componentValue !== formValue // don't already have it
+            (Array.isArray(componentValue) && Array.isArray(formValue)
+              ? componentValue.toString() !== formValue.toString()
+              : componentValue !== formValue) // don't already have it
           ) {
             setValueState((prevValue) =>
               setFieldValue(name, componentValue, prevValue),
@@ -672,59 +707,73 @@ const Form = forwardRef(
           // if the validation fails. And, we assume a javascript action handler
           // otherwise.
           event.preventDefault();
-          setPendingValidation(undefined);
-          // adding validateOn: "submit" prop to the undefined validateOn fields
-          // as we want to trigger "submit" validation once form is submitted
-          const newValidationRulesRef = Object.keys(
-            validationRulesRef.current,
-          ).reduce((acc, key) => {
-            acc[key] = validationRulesRef.current[key];
-            if (!acc[key].validateOn) {
-              acc[key] = {
-                ...validationRulesRef.current[key],
-                validateOn: 'submit',
+          // Prevent any "outer" forms from performing `onSubmit`.
+          // Nesting forms is not recommended in HTML. However, with React
+          // portals, if the portal (such as Grommet's Layer) contains a form
+          // and is nested within another form in the React tree, the event
+          // bubbles up to the "outer" form even though in the DOM the portal
+          // doesn't render as child of the "outer" form.
+          // https://legacy.reactjs.org/docs/portals.html#event-bubbling-through-portals
+          if (
+            formRef.current &&
+            (event.target === formRef.current ||
+              event.target.form === formRef.current)
+          ) {
+            setPendingValidation(undefined);
+            // adding validateOn: "submit" prop to the undefined validateOn
+            // fields as we want to trigger "submit" validation once form
+            // is submitted
+            const newValidationRulesRef = Object.keys(
+              validationRulesRef.current,
+            ).reduce((acc, key) => {
+              acc[key] = validationRulesRef.current[key];
+              if (!acc[key].validateOn) {
+                acc[key] = {
+                  ...validationRulesRef.current[key],
+                  validateOn: 'submit',
+                };
+              }
+              return acc;
+            }, {});
+
+            const [nextErrors, nextInfos] = validateForm(
+              Object.entries(newValidationRulesRef),
+              value,
+              format,
+              messages,
+              true,
+            );
+
+            setValidationResults(() => {
+              const nextValidationResults = {
+                errors: nextErrors,
+                infos: nextInfos,
+                // Show form's validity when clicking on Submit
+                valid: buildValid(nextErrors),
               };
-            }
-            return acc;
-          }, {});
-
-          const [nextErrors, nextInfos] = validateForm(
-            Object.entries(newValidationRulesRef),
-            value,
-            format,
-            messages,
-            true,
-          );
-
-          setValidationResults(() => {
-            const nextValidationResults = {
-              errors: nextErrors,
-              infos: nextInfos,
-              // Show form's validity when clicking on Submit
-              valid: buildValid(nextErrors),
-            };
-            if (onValidate) onValidate(nextValidationResults);
-            validationResultsRef.current = nextValidationResults;
-            updateAnalytics();
-            return nextValidationResults;
-          });
-
-          if (Object.keys(nextErrors).length === 0 && onSubmit) {
-            event.persist(); // extract from React's synthetic event pool
-            const adjustedEvent = event;
-            adjustedEvent.value = value;
-            adjustedEvent.touched = touched;
-            onSubmit(adjustedEvent);
-            sendAnalytics({
-              type: 'formSubmit',
-              element: formRef.current,
-              data: adjustedEvent,
-              errors: analyticsRef.current.errors,
-              elapsed:
-                new Date().getTime() - analyticsRef.current.start.getTime(),
+              if (onValidate) onValidate(nextValidationResults);
+              validationResultsRef.current = nextValidationResults;
+              updateAnalytics();
+              return nextValidationResults;
             });
-            analyticsRef.current.errors = {};
-            analyticsRef.current.submitted = true;
+
+            if (Object.keys(nextErrors).length === 0 && onSubmit) {
+              event.persist(); // extract from React's synthetic event pool
+              const adjustedEvent = event;
+              adjustedEvent.value = value;
+              adjustedEvent.touched = touched;
+              onSubmit(adjustedEvent);
+              sendAnalytics({
+                type: 'formSubmit',
+                element: formRef.current,
+                data: adjustedEvent,
+                errors: analyticsRef.current.errors,
+                elapsed:
+                  new Date().getTime() - analyticsRef.current.start.getTime(),
+              });
+              analyticsRef.current.errors = {};
+              analyticsRef.current.submitted = true;
+            }
           }
         }}
       >

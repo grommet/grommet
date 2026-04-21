@@ -12,6 +12,24 @@ if (process.env.NODE_ENV !== 'production') {
     page: PropTypes.number,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     step: PropTypes.number,
+    stepOptions: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+          PropTypes.bool,
+          PropTypes.element,
+          PropTypes.object,
+        ]),
+      ),
+    ]),
+    summary: PropTypes.bool,
+    messages: PropTypes.shape({
+      stepLabel: PropTypes.string,
+      summary: PropTypes.string,
+      summaryNoItems: PropType.string,
+    }),
   };
 }
 export const PaginationPropTypes = PropType;
