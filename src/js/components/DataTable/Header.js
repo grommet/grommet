@@ -379,8 +379,10 @@ const Header = forwardRef(
                         messages,
                       });
                     }
-                  } else if (theme.dataTable.icons.sortable) {
-                    Icon = theme.dataTable.icons.sortable;
+                  } else {
+                    if (theme.dataTable.icons.sortable) {
+                      Icon = theme.dataTable.icons.sortable;
+                    }
                     ariaSort = 'none';
                   }
                 }
