@@ -6,11 +6,13 @@ import { hpe as hpeTheme } from 'grommet-theme-hpe';
 
 import { Grommet } from '..';
 import { AnnounceContext } from '../../../contexts';
+import type { AnnounceValue } from '../../../contexts/AnnounceContext/index.d';
 import { grommet } from '../../../themes/grommet';
 import { MessageContext } from '../../../contexts/MessageContext';
+import type { MessageContextValue } from '../../../contexts/MessageContext/index.d';
 
-const TestAnnouncer = ({ announce }) => {
-  React.useEffect(() => announce('hello', 'assertive'));
+const TestAnnouncer = ({ announce }: { announce: AnnounceValue }) => {
+  React.useEffect(() => announce('hello', 'assertive', 500));
   return <div>hi</div>;
 };
 
@@ -65,7 +67,7 @@ describe('Grommet', () => {
     const { container } = render(
       <Grommet>
         <AnnounceContext.Consumer>
-          {(announce) => <TestAnnouncer announce={announce} />}
+          {(announce: AnnounceValue) => <TestAnnouncer announce={announce} />}
         </AnnounceContext.Consumer>
       </Grommet>,
     );
@@ -90,14 +92,14 @@ describe('Grommet', () => {
       <Grommet
         messages={{
           messages: {
-            test: {
-              label: 'My Label',
+            button: {
+              busy: 'My Label',
             },
           },
         }}
       >
         <MessageContext.Consumer>
-          {({ format }) => format({ id: 'test.label' })}
+          {({ format }: MessageContextValue) => format({ id: 'button.busy' })}
         </MessageContext.Consumer>
       </Grommet>,
     );
@@ -105,17 +107,13 @@ describe('Grommet', () => {
   });
 
   test('message format function', () => {
-    const messages = {
+    const messages: Record<string, string> = {
       'test.label': 'My Label',
     };
     const { container } = render(
-      <Grommet full background="#0000ff">
-        Grommet App
-      </Grommet>,
-
-      <Grommet messages={{ format: (opts) => messages[opts.id] }}>
+      <Grommet messages={{ format: (opts) => messages[opts.id || ''] }}>
         <MessageContext.Consumer>
-          {({ format }) => format({ id: 'test.label' })}
+          {({ format }: MessageContextValue) => format({ id: 'test.label' })}
         </MessageContext.Consumer>
       </Grommet>,
     );
