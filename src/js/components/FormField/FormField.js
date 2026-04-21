@@ -144,26 +144,28 @@ const Message = ({ error, info, message, type, ...rest }) => {
       messageContent = <Text {...contentRest}>{message}</Text>;
     else messageContent = <Box {...contentRest}>{message}</Box>;
 
-    return icon || containerProps ? (
-      <StyledMessageContainer
-        direction="row"
-        id={id}
-        messageType={type}
-        {...containerProps}
-        {...passThemeFlag}
-      >
-        {icon && <Box flex={false}>{icon}</Box>}
-        {messageContent}
-      </StyledMessageContainer>
-    ) : id ? (
-      typeof message === 'string' ? (
+    if (icon || containerProps) {
+      return (
+        <StyledMessageContainer
+          direction="row"
+          id={id}
+          messageType={type}
+          {...containerProps}
+          {...passThemeFlag}
+        >
+          {icon && <Box flex={false}>{icon}</Box>}
+          {messageContent}
+        </StyledMessageContainer>
+      );
+    }
+    if (id) {
+      return typeof message === 'string' ? (
         <Text id={id} {...contentRest}>{message}</Text>
       ) : (
         <Box id={id} {...contentRest}>{message}</Box>
-      )
-    ) : (
-      messageContent
-    );
+      );
+    }
+    return messageContent;
   }
   return null;
 };
@@ -341,10 +343,38 @@ const FormField = forwardRef(
         })) ||
       children;
 
+    // Check if child is Select or SelectMultiple and modify htmlFor if needed
+    let adjustedHtmlFor = htmlFor;
+    if (htmlFor) {
+      let isSelectComponent = false;
+
+      // Check if children contain Select or SelectMultiple
+      if (children) {
+        Children.forEach(children, (child) => {
+          if (
+            child &&
+            child.type &&
+            (child.type.displayName === 'Select' ||
+              child.type.displayName === 'SelectMultiple') &&
+            child.props.id === htmlFor
+          ) {
+            isSelectComponent = true;
+          }
+        });
+      }
+
+      // If it's a Select component and htmlFor doesn't end with __input, add it
+      if (isSelectComponent && !htmlFor.endsWith('__input')) {
+        adjustedHtmlFor = `${htmlFor}__input`;
+      }
+    }
+
     // put rest on container, unless we use internal Input
     let containerRest = rest;
     if (inForm) {
       if (!contents) containerRest = {};
+      // Destructure aria-describedby out of rest so the error id always wins
+      const { 'aria-describedby': ariaDescribedBy, ...restWithoutAria } = rest;
       contents = contents || (
         <Input
           component={component}
@@ -352,12 +382,12 @@ const FormField = forwardRef(
           invalid={!!error}
           name={name}
           label={component === CheckBox ? label : undefined}
+          {...restWithoutAria}
           aria-describedby={
             error && htmlFor
               ? `grommet-${adjustedHtmlFor}__error`
-              : rest['aria-describedby']
+              : ariaDescribedBy
           }
-          {...rest}
         />
       );
     }
@@ -612,32 +642,6 @@ const FormField = forwardRef(
     if (typeof required === 'object' && required.indicator === false)
       showRequiredIndicator = false;
 
-    // Check if child is Select or SelectMultiple and modify htmlFor if needed
-    let adjustedHtmlFor = htmlFor;
-    if (htmlFor) {
-      let isSelectComponent = false;
-
-      // Check if children contain Select or SelectMultiple
-      if (children) {
-        Children.forEach(children, (child) => {
-          if (
-            child &&
-            child.type &&
-            (child.type.displayName === 'Select' ||
-              child.type.displayName === 'SelectMultiple') &&
-            child.props.id === htmlFor
-          ) {
-            isSelectComponent = true;
-          }
-        });
-      }
-
-      // If it's a Select component and htmlFor doesn't end with __input, add it
-      if (isSelectComponent && !htmlFor.endsWith('__input')) {
-        adjustedHtmlFor = `${htmlFor}__input`;
-      }
-    }
-
     return (
       <FormFieldBox
         ref={formFieldRef}
@@ -705,7 +709,11 @@ const FormField = forwardRef(
         <Message
           type="error"
           message={error}
-          id={error && htmlFor ? `grommet-${adjustedHtmlFor}__error` : undefined}
+          id={
+            error && htmlFor
+              ? `grommet-${adjustedHtmlFor}__error`
+              : undefined
+          }
           {...formFieldTheme.error}
         />
         <Message type="info" message={info} {...themeInfoProps} />
