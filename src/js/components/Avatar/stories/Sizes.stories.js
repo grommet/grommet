@@ -9,11 +9,11 @@ export const Sizes = () => {
     // <Grommet theme={grommet}>
     <Box>
       <Box direction="row" pad="large" gap="small">
-        <Avatar size="small" src={src} ariaLabel="Shimi" />
-        <Avatar size="medium" src={src} ariaLabel="Shimi" />
-        <Avatar size="large" src={src} ariaLabel="Shimi" />
-        <Avatar size="xlarge" src={src} ariaLabel="Shimi" />
-        <Avatar size="2xl" src={src} ariaLabel="Shimi" />
+        <Avatar size="small" src={src} aria-label="Shimi" />
+        <Avatar size="medium" src={src} aria-label="Shimi" />
+        <Avatar size="large" src={src} aria-label="Shimi" />
+        <Avatar size="xlarge" src={src} aria-label="Shimi" />
+        <Avatar size="2xl" src={src} aria-label="Shimi" />
       </Box>
       <Box direction="row" pad="large" align="center" gap="small">
         <Avatar background="dark-2" size="small">
@@ -48,9 +48,9 @@ export const Sizes = () => {
           </Avatar>
         </Box>
         <Box direction="row" pad="large" gap="small">
-          <Avatar size="3xl" src={src} ariaLabel="Shimi" />
-          <Avatar size="4xl" src={src} ariaLabel="Shimi" />
-          <Avatar size="5xl" src={src} ariaLabel="Shimi" />
+          <Avatar size="3xl" src={src} aria-label="Shimi" />
+          <Avatar size="4xl" src={src} aria-label="Shimi" />
+          <Avatar size="5xl" src={src} aria-label="Shimi" />
         </Box>
       </Box>
     </Box>

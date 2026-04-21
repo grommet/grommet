@@ -17,8 +17,8 @@ export const Basic = () => {
       gap="small"
       pad="large"
     >
-      <Avatar src={src} ariaLabel="Shimi" />
-      <Avatar background="dark-4" ariaLabel="Favorites">
+      <Avatar src={src} aria-label="Shimi" />
+      <Avatar background="dark-4" aria-label="Favorites">
         <Favorite color="light-2" />
       </Avatar>
       <Avatar background="dark-2">R</Avatar>

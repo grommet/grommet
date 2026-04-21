@@ -9,12 +9,12 @@ export const Round = () => {
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={grommet}>
     <Box direction="row" alignContent="center" gap="small" pad="large">
-      <Avatar size="large" src={src} round={false} ariaLabel="Shimi" />
-      <Avatar size="large" src={src} round="xsmall" ariaLabel="Shimi" />
-      <Avatar size="large" src={src} round="small" ariaLabel="Shimi" />
-      <Avatar size="large" src={src} round="medium" ariaLabel="Shimi" />
-      <Avatar size="large" src={src} round="large" ariaLabel="Shimi" />
-      <Avatar size="large" src={src} ariaLabel="Shimi" />
+      <Avatar size="large" src={src} round={false} aria-label="Shimi" />
+      <Avatar size="large" src={src} round="xsmall" aria-label="Shimi" />
+      <Avatar size="large" src={src} round="small" aria-label="Shimi" />
+      <Avatar size="large" src={src} round="medium" aria-label="Shimi" />
+      <Avatar size="large" src={src} round="large" aria-label="Shimi" />
+      <Avatar size="large" src={src} aria-label="Shimi" />
     </Box>
     // </Grommet>
   );

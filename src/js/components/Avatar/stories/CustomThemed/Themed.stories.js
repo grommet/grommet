@@ -34,7 +34,7 @@ export const Themed = () => {
         pad="large"
         background="dark-2"
       >
-        <Avatar src={src} ariaLabel="Shimi" size="myLarge" />
+        <Avatar src={src} aria-label="Shimi" size="myLarge" />
         <Avatar size="myLarge" background="accent-4">
           <Favorite color="accent-2" size="36px" />
         </Avatar>
