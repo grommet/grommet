@@ -39,13 +39,21 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
       props.theme.textInput.disabled && props.theme.textInput.disabled.opacity,
     )}
   ${(props) => props.textAlign && textAlignStyle}
-  ${(props) => props.widthProp && widthStyle(props.widthProp, props.theme)}
+  ${(props) =>
+    props.widthProp &&
+    !props.readOnly &&
+    widthStyle(props.widthProp, props.theme)}
   ${(props) => props.theme.textInput && props.theme.textInput.extend};
 `;
 
 const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   width: 100%;
+
+  ${(props) =>
+    props.widthProp &&
+    props.readOnlyProp &&
+    widthStyle(props.widthProp, props.theme)}
 
   ${(props) => props.readOnlyProp && !props.plain && controlBorderStyle};
 
