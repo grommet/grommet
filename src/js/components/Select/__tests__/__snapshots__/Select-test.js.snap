@@ -13075,30 +13075,8 @@ exports[`Select renders custom clear selection styling 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c6 {
-    padding-top: 6px;
-    padding-bottom: 6px;
   }
 }
 
@@ -14466,10 +14444,6 @@ exports[`Select renders empty search with select.emptySearchMessage styling 1`] 
 .c0:-moz-placeholder,
 .c0::-moz-placeholder {
   opacity: 1;
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {

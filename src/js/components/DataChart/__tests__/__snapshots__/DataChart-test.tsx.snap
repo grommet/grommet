@@ -84,18 +84,6 @@ exports[`DataChart applies colors from theme.dataChart.colors 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -267,18 +255,6 @@ exports[`DataChart areas 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -465,18 +441,6 @@ exports[`DataChart axis 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 <div
@@ -943,18 +907,6 @@ exports[`DataChart axis x granularity 1`] = `
 .c4 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 <div
@@ -2446,18 +2398,6 @@ exports[`DataChart bars 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -2675,18 +2615,6 @@ exports[`DataChart bars colors 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -2862,18 +2790,6 @@ exports[`DataChart bars empty 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c3 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -2991,18 +2907,6 @@ exports[`DataChart bars invalid 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -3215,18 +3119,6 @@ exports[`DataChart bounds align 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -3388,18 +3280,6 @@ exports[`DataChart bounds explicit 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 <div
@@ -3621,18 +3501,6 @@ exports[`DataChart dates 1`] = `
 .c12 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -4439,18 +4307,6 @@ exports[`DataChart default 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -4602,18 +4458,6 @@ exports[`DataChart default without grommet wrapper 1`] = `
 .c6 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding-inline-end: 0px;
-  }
 }
 
 <div
@@ -4855,18 +4699,6 @@ exports[`DataChart detail 1`] = `
 
 .c11:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 <div
@@ -5377,57 +5209,9 @@ exports[`DataChart detail pad + thickness 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c14 {
-    padding-inline-start: -48px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c14 {
-    padding-inline-end: -48px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c16 {
     padding-top: 6px;
     padding-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c19 {
-    padding-inline-start: -36px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c19 {
-    padding-inline-end: -36px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c22 {
-    padding-inline-start: 72px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c22 {
-    padding-inline-end: 72px;
   }
 }
 
@@ -6059,18 +5843,6 @@ exports[`DataChart gap 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -6436,18 +6208,6 @@ exports[`DataChart guide 1`] = `
 .c12 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -6973,18 +6733,6 @@ exports[`DataChart horizontal 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c4 {
-    padding-top: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c4 {
-    padding-bottom: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c9 {
     border-left: solid 1px rgba(0, 0, 0, 0.33);
   }
@@ -7250,18 +6998,6 @@ exports[`DataChart legend 1`] = `
 .c8 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    padding-inline-end: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -7569,18 +7305,6 @@ exports[`DataChart lines 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c4 {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -7767,18 +7491,6 @@ exports[`DataChart negative values 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 <div
@@ -8195,18 +7907,6 @@ exports[`DataChart nothing 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
-  .c3 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c3 {
-    padding-inline-end: 0px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -8405,18 +8105,6 @@ exports[`DataChart offset 1`] = `
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 48px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -8580,18 +8268,6 @@ exports[`DataChart offset gap 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 48px;
-  }
 }
 
 <div
@@ -8783,18 +8459,6 @@ exports[`DataChart pad 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: -48px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: -48px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -9155,18 +8819,6 @@ exports[`DataChart placeholder node 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -9357,18 +9009,6 @@ exports[`DataChart placeholder text 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c10 {
     margin-left: 24px;
     margin-right: 24px;
@@ -9532,18 +9172,6 @@ exports[`DataChart single 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 <div
@@ -9741,18 +9369,6 @@ exports[`DataChart size 1`] = `
 .c13 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 <div
@@ -10149,18 +9765,6 @@ exports[`DataChart theme overrides 1`] = `
   border: 0;
 }
 
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 48px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 48px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -10335,14 +9939,6 @@ exports[`DataChart theme overrides 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
   .c2 {
     padding: 24px;
   }
@@ -10490,18 +10086,6 @@ exports[`DataChart type 1`] = `
 .c7 {
   position: relative;
   display: block;
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-start: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
-    padding-inline-end: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
