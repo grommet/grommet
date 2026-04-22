@@ -153,6 +153,86 @@ describe('Calendar', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('reference and onReference control displayed month', () => {
+    const REFERENCE_DATE = '2020-03-15T00:00:00-08:00'; // March 2020
+    const SELECTED_DATE = '2020-01-15T00:00:00-08:00'; // January 2020
+
+    // When both reference and onReference are provided (controlled), the
+    // displayed month should be the reference month even when date is set
+    // to a different month.
+    const { getByLabelText, unmount } = render(
+      <Grommet>
+        <Calendar
+          reference={REFERENCE_DATE}
+          onReference={jest.fn()}
+          date={SELECTED_DATE}
+          onSelect={jest.fn()}
+          animate={false}
+        />
+      </Grommet>,
+    );
+
+    expect(getByLabelText(/^March 2020/)).toBeInTheDocument();
+    unmount();
+
+    // Simulate a controlled parent that selects a date in a different month
+    // but keeps reference fixed — the displayed month should not change.
+    const onSelect = jest.fn();
+    const ControlledCalendar = () => {
+      const [date, setDate] = React.useState<string | undefined>(undefined);
+      return (
+        <Grommet>
+          <Calendar
+            reference={REFERENCE_DATE}
+            onReference={jest.fn()}
+            date={date}
+            onSelect={(nextDate) => {
+              onSelect(nextDate);
+              setDate(nextDate as string);
+            }}
+            animate={false}
+          />
+        </Grommet>
+      );
+    };
+
+    const { getByLabelText: getByLabelText2, getByText } = render(
+      <ControlledCalendar />,
+    );
+
+    // March 2020 should be displayed initially
+    expect(getByLabelText2(/^March 2020/)).toBeInTheDocument();
+
+    // Select a date in March (the currently displayed month)
+    fireEvent.click(getByText('20'));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/^2020-03-20T/),
+    );
+
+    // The displayed month should still be March 2020 after selection
+    expect(getByLabelText2(/^March 2020/)).toBeInTheDocument();
+  });
+
+  test('without onReference, initial displayed month matches date not reference', () => {
+    const REFERENCE_DATE = '2020-03-15T00:00:00-08:00'; // March 2020
+    const SELECTED_DATE = '2020-01-15T00:00:00-08:00'; // January 2020
+
+    // When reference is provided without onReference (uncontrolled), the
+    // displayed month should follow the date prop, not the reference prop.
+    const { getByLabelText } = render(
+      <Grommet>
+        <Calendar
+          reference={REFERENCE_DATE}
+          date={SELECTED_DATE}
+          onSelect={jest.fn()}
+          animate={false}
+        />
+      </Grommet>,
+    );
+
+    expect(getByLabelText(/^January 2020/)).toBeInTheDocument();
+  });
+
   test('showAdjacentDays', () => {
     const { container } = render(
       <Grommet>
@@ -233,6 +313,7 @@ describe('Calendar', () => {
     fireEvent.click(getByText('17'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-17T/),
+      {},
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -248,6 +329,7 @@ describe('Calendar', () => {
     fireEvent.click(getByText('17'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-17T/),
+      {},
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -329,14 +411,20 @@ describe('Calendar', () => {
     // expect to be selecting end date of range, because date serves
     // as start. since selected date is < date we should set it as start
     fireEvent.click(getByText('11'));
-    expect(onSelect).toHaveBeenCalledWith(expect.stringMatching(/2020-01-11T/));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/2020-01-11T/),
+      { activeDate: 'end' },
+    );
     fireEvent.click(getByText('20'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-01-11T/),
-        expect.stringMatching(/^2020-01-20T/),
+        [
+          expect.stringMatching(/^2020-01-11T/),
+          expect.stringMatching(/^2020-01-20T/),
+        ],
       ],
-    ]);
+      { activeDate: 'start' },
+    );
   });
 
   test('disabled previous month button when date is before bounds', () => {
@@ -451,12 +539,15 @@ describe('Calendar', () => {
     );
     fireEvent.click(getByText('17'));
     fireEvent.click(getByText('20'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-07-17T/),
-        expect.stringMatching(/^2020-07-20T/),
+        [
+          expect.stringMatching(/^2020-07-17T/),
+          expect.stringMatching(/^2020-07-20T/),
+        ],
       ],
-    ]);
+      { activeDate: 'start' },
+    );
   });
 
   test('select date greater and less than', () => {
@@ -473,17 +564,23 @@ describe('Calendar', () => {
     );
     // select date greater than January 1st
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-01-03T/),
-        expect.stringMatching(/^2020-01-05T/),
+        [
+          expect.stringMatching(/^2020-01-03T/),
+          expect.stringMatching(/^2020-01-05T/),
+        ],
       ],
-    ]);
+      { activeDate: 'end' },
+    );
     // select date less than January 3rd
     // activeDate is end, since this is before the start
     // date we should update the date
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
-    expect(onSelect).toHaveBeenCalledWith(expect.stringMatching(/2020-01-01T/));
+    expect(onSelect).toHaveBeenCalledWith(
+      expect.stringMatching(/2020-01-01T/),
+      { activeDate: 'end' },
+    );
   });
 
   test('select date with same start date', () => {
@@ -502,6 +599,7 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-03T/),
+      { activeDate: 'start' },
     );
   });
 
@@ -520,9 +618,10 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-03T/),
+      { activeDate: 'end' },
     );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith(undefined);
+    expect(onSelect).toHaveBeenCalledWith(undefined, { activeDate: 'start' });
   });
 
   test('select date with same end date', () => {
@@ -541,6 +640,7 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2020-01-01T/),
+      { activeDate: 'end' },
     );
   });
 
@@ -559,34 +659,40 @@ describe('Calendar', () => {
     // select date greater than January 1st
     // activeDate by default is start
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-01-03T/),
-        expect.stringMatching(/^2020-01-05T/),
+        [
+          expect.stringMatching(/^2020-01-03T/),
+          expect.stringMatching(/^2020-01-05T/),
+        ],
       ],
-    ]);
+      { activeDate: 'end' },
+    );
     // select date less than January 3rd
     // activeDate is end, since this is before the start
     // date we should update the date
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
     expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-01T/), undefined],
-    ]);
+    ], { activeDate: 'end' });
 
     // should select end date again
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-01-01T/),
-        expect.stringMatching(/^2020-01-03T/),
+        [
+          expect.stringMatching(/^2020-01-01T/),
+          expect.stringMatching(/^2020-01-03T/),
+        ],
       ],
-    ]);
+      { activeDate: 'start' },
+    );
 
     // should select start date, if great than end date, clear end date
     fireEvent.click(getByLabelText('Sun Jan 05 2020'));
     expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-05T/), undefined],
-    ]);
+    ], { activeDate: 'end' });
   });
 
   test('range as array with date', () => {
@@ -604,34 +710,40 @@ describe('Calendar', () => {
     // select date greater than January 1st
     // activeDate by default is start
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-01-03T/),
-        expect.stringMatching(/^2020-01-05T/),
+        [
+          expect.stringMatching(/^2020-01-03T/),
+          expect.stringMatching(/^2020-01-05T/),
+        ],
       ],
-    ]);
+      { activeDate: 'end' },
+    );
     // select date less than January 3rd
     // activeDate is end, since this is before the start
     // date we should update the date
     fireEvent.click(getByLabelText('Wed Jan 01 2020'));
     expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-01T/), undefined],
-    ]);
+    ], { activeDate: 'end' });
 
     // should select end date again
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-01-01T/),
-        expect.stringMatching(/^2020-01-03T/),
+        [
+          expect.stringMatching(/^2020-01-01T/),
+          expect.stringMatching(/^2020-01-03T/),
+        ],
       ],
-    ]);
+      { activeDate: 'start' },
+    );
 
     // should select start date, if great than end date, clear end date
     fireEvent.click(getByLabelText('Sun Jan 05 2020'));
     expect(onSelect).toHaveBeenCalledWith([
       [expect.stringMatching(/^2020-01-05T/), undefined],
-    ]);
+    ], { activeDate: 'end' });
   });
 
   test('activeDate start', () => {
@@ -648,12 +760,15 @@ describe('Calendar', () => {
       </Grommet>,
     );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-01-03T/),
-        expect.stringMatching(/^2020-01-05T/),
+        [
+          expect.stringMatching(/^2020-01-03T/),
+          expect.stringMatching(/^2020-01-05T/),
+        ],
       ],
-    ]);
+      { activeDate: 'end' },
+    );
   });
 
   test('activeDate end', () => {
@@ -670,12 +785,15 @@ describe('Calendar', () => {
       </Grommet>,
     );
     fireEvent.click(getByLabelText('Fri Jan 03 2020'));
-    expect(onSelect).toHaveBeenCalledWith([
+    expect(onSelect).toHaveBeenCalledWith(
       [
-        expect.stringMatching(/^2020-01-01T/),
-        expect.stringMatching(/^2020-01-03T/),
+        [
+          expect.stringMatching(/^2020-01-01T/),
+          expect.stringMatching(/^2020-01-03T/),
+        ],
       ],
-    ]);
+      { activeDate: 'start' },
+    );
   });
 
   test('daylight savings', () => {
@@ -692,6 +810,7 @@ describe('Calendar', () => {
     fireEvent.click(getByLabelText('Fri Jul 15 2022'));
     expect(onSelect).toHaveBeenCalledWith(
       expect.stringMatching(/^2022-07-15T08:00:00.000Z/),
+      {},
     );
 
     // Change the Calendar from July to March
@@ -712,6 +831,8 @@ describe('Calendar', () => {
       expect.stringMatching(
         `2022-03-02T0${hasDaylightSavings ? 9 : 8}:00:00.000Z`,
       ),
+      {},
+
     );
   });
 

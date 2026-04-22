@@ -278,7 +278,7 @@ Use the icon prop instead.`,
     }
 
     const onClickCopy = () => {
-      global.navigator.clipboard.writeText(textValue);
+      navigator.clipboard.writeText(textValue);
       announce(readOnlyCopyValidation, 'assertive');
       setTip(readOnlyCopyValidation);
     };

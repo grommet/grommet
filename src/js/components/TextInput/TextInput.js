@@ -146,7 +146,7 @@ const TextInput = forwardRef(
     const [tip, setTip] = useState(readOnlyCopyPrompt);
 
     const onClickCopy = () => {
-      global.navigator.clipboard.writeText(value);
+      navigator.clipboard.writeText(value);
       announce(readOnlyCopyValidation, 'assertive');
       setTip(readOnlyCopyValidation);
     };
@@ -501,6 +501,7 @@ const TextInput = forwardRef(
         readOnlyCopy={readOnlyCopy}
         plain={plain}
         border={!plain}
+        widthProp={widthProp}
         onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
@@ -510,7 +511,7 @@ const TextInput = forwardRef(
             {placeholder}
           </StyledPlaceholder>
         )}
-        {textInputIcon && !readOnly && (
+        {textInputIcon && !readOnlyCopy && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
@@ -527,7 +528,7 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={!readOnly && icon}
+            icon={!readOnlyCopy && icon}
             reverse={reverse}
             focus={focus}
             focusIndicator={focusIndicator}
