@@ -17416,7 +17416,7 @@ exports[`List onOrder Mouse move down 2`] = `
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 cejToA"
+        class="StyledText-sc-1sadyjn-0 jyhSGI"
       >
         1
       </span>
@@ -17427,7 +17427,7 @@ exports[`List onOrder Mouse move down 2`] = `
         class="StyledBox-sc-13pk1d4-0 ibOyuR"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bAcCYq"
+          class="StyledText-sc-1sadyjn-0 keDOHK"
         >
           beta
         </span>
@@ -17486,7 +17486,7 @@ exports[`List onOrder Mouse move down 2`] = `
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 cejToA"
+        class="StyledText-sc-1sadyjn-0 jyhSGI"
       >
         2
       </span>
@@ -17497,7 +17497,7 @@ exports[`List onOrder Mouse move down 2`] = `
         class="StyledBox-sc-13pk1d4-0 ibOyuR"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bAcCYq"
+          class="StyledText-sc-1sadyjn-0 keDOHK"
         >
           alpha
         </span>
@@ -21361,7 +21361,7 @@ exports[`List onOrder with no-index Mouse move down 2`] = `
         class="StyledBox-sc-13pk1d4-0 ibOyuR"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bAcCYq"
+          class="StyledText-sc-1sadyjn-0 keDOHK"
         >
           beta
         </span>
@@ -21423,7 +21423,7 @@ exports[`List onOrder with no-index Mouse move down 2`] = `
         class="StyledBox-sc-13pk1d4-0 ibOyuR"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bAcCYq"
+          class="StyledText-sc-1sadyjn-0 keDOHK"
         >
           alpha
         </span>

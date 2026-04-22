@@ -2180,6 +2180,7 @@ exports[`ToggleGroup icon with tooltip 1`] = `
     tabindex="-1"
   >
     <div
+      aria-hidden="true"
       class="c2"
     >
       add

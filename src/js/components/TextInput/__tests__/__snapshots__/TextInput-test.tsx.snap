@@ -2965,6 +2965,7 @@ exports[`TextInput read only copy 1`] = `
         value="test"
       />
       <button
+        aria-description="Copied"
         aria-label="Copy to clipboard test"
         class="c3 c4"
         type="button"
@@ -3210,6 +3211,7 @@ exports[`TextInput read only copy with width 1`] = `
         value="test"
       />
       <button
+        aria-description="Copied"
         aria-label="Copy to clipboard test"
         class="c3 c4"
         type="button"
