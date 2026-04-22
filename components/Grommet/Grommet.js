@@ -79,7 +79,8 @@ var Grommet = exports.Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (pr
   }, [messagesProp]);
   (0, _react.useEffect)(function () {
     var onResize = function onResize() {
-      setResponsive((0, _utils.getBreakpoint)(document.body.clientWidth, theme));
+      var _document$body$client, _document$body;
+      setResponsive((0, _utils.getBreakpoint)((_document$body$client = (_document$body = document.body) == null ? void 0 : _document$body.clientWidth) != null ? _document$body$client : window.innerWidth, theme));
     };
     window.addEventListener('resize', onResize);
     onResize();
