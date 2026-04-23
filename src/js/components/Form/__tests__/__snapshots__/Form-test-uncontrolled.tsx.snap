@@ -1115,7 +1115,9 @@ exports[`Form uncontrolled dynamically removed fields should be removed from for
       class="c11"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1175,7 +1177,9 @@ exports[`Form uncontrolled dynamically removed fields should be removed from for
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1489,7 +1493,9 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation\\n  do
       class="c11"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1715,7 +1721,9 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation\\n  do
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1775,7 +1783,9 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation\\n  do
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2929,7 +2939,9 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 1`] =
       class="c28"
       type="reset"
     >
-      Reset
+      <span>
+        Reset
+      </span>
     </button>
   </form>
 </div>
@@ -3148,7 +3160,9 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="reset"
     >
-      Reset
+      <span>
+        Reset
+      </span>
     </button>
   </form>
 </div>
@@ -3340,7 +3354,9 @@ exports[`Form uncontrolled uncontrolled 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3373,7 +3389,9 @@ exports[`Form uncontrolled uncontrolled 2`] = `
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3406,7 +3424,9 @@ exports[`Form uncontrolled uncontrolled 3`] = `
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3598,7 +3618,9 @@ exports[`Form uncontrolled uncontrolled onValidate 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3658,7 +3680,9 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3850,7 +3874,9 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3910,7 +3936,9 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -4102,7 +4130,9 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -4158,7 +4188,9 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
       class="StyledButton-sc-323bzc-0 sqHMX"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -4368,7 +4400,9 @@ exports[`Form uncontrolled update 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>

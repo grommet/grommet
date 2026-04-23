@@ -2999,7 +2999,9 @@ exports[`Tabs should allow to extend tab styles 1`] = `
           <div
             class="c1 c5"
           >
-            Title 1
+            <span>
+              Title 1
+            </span>
           </div>
         </button>
         <button
@@ -4322,7 +4324,9 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
           <div
             class="c1 c5"
           >
-            Title 1
+            <span>
+              Title 1
+            </span>
           </div>
         </button>
       </div>

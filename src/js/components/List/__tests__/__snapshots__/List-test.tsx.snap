@@ -17967,7 +17967,9 @@ exports[`List onOrder with action Render 1`] = `
             class="c9"
             type="button"
           >
-            Action
+            <span>
+              Action
+            </span>
           </button>
         </div>
         <div
@@ -18050,7 +18052,9 @@ exports[`List onOrder with action Render 1`] = `
             class="c9"
             type="button"
           >
-            Action
+            <span>
+              Action
+            </span>
           </button>
         </div>
         <div

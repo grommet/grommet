@@ -408,8 +408,14 @@ const Button = forwardRef(
 
     const reverse = reverseProp ?? theme.button[kind]?.reverse;
     const domTag = !as && href ? 'a' : as;
-    const first = reverse ? label : buttonIcon;
-    const second = reverse ? buttonIcon : label;
+    // Wrap a plain string label in a span so browser translation tools
+    // (e.g. Chrome's Google Translate) replace the text node inside the span
+    // rather than a text node that is a direct sibling of React-managed
+    // elements, which would break React's DOM reconciliation
+    // (NotFoundError on insertBefore).
+    const safeLabel = typeof label === 'string' ? <span>{label}</span> : label;
+    const first = reverse ? safeLabel : buttonIcon;
+    const second = reverse ? buttonIcon : safeLabel;
 
     let contents;
     if (first && second) {

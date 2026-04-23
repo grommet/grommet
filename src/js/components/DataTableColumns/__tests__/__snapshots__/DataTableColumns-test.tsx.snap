@@ -1856,7 +1856,9 @@ exports[`DataTableColumns renders 1`] = `
               class="c8"
               type="submit"
             >
-              Apply filters
+              <span>
+                Apply filters
+              </span>
             </button>
           </footer>
         </div>

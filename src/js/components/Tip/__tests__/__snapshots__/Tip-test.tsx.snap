@@ -188,7 +188,9 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
     class="c1"
     type="button"
   >
-    Test Events
+    <span>
+      Test Events
+    </span>
   </button>
 </div>
 `;
@@ -201,7 +203,9 @@ exports[`Tip focus and blur events on the Tip's child 2`] = `
     class="StyledButton-sc-323bzc-0 eJnOht"
     type="button"
   >
-    Test Events
+    <span>
+      Test Events
+    </span>
   </button>
 </div>
 `;
