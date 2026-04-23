@@ -129,7 +129,9 @@ exports[`Button kind badge should align to button container if specified in them
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -284,7 +286,9 @@ exports[`Button kind badge should apply background 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -432,7 +436,9 @@ exports[`Button kind badge should be offset from top-right corner 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -581,7 +587,9 @@ exports[`Button kind badge should display "+" when number is greater than max 1`
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -736,7 +744,9 @@ exports[`Button kind badge should display number content 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -904,7 +914,9 @@ exports[`Button kind badge should render custom element 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -1202,7 +1214,9 @@ exports[`Button kind border on default button 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -1834,7 +1848,9 @@ exports[`Button kind button with transparent background 1`] = `
         class="c2"
         type="button"
       >
-        Test button
+        <span>
+          Test button
+        </span>
       </button>
       <div
         class="c3"
@@ -1843,7 +1859,9 @@ exports[`Button kind button with transparent background 1`] = `
         class="c4"
         type="button"
       >
-        Active Test button
+        <span>
+          Active Test button
+        </span>
       </button>
     </div>
     <div
@@ -1853,7 +1871,9 @@ exports[`Button kind button with transparent background 1`] = `
         class="c6"
         type="button"
       >
-        Test button
+        <span>
+          Test button
+        </span>
       </button>
       <div
         class="c3"
@@ -1862,7 +1882,9 @@ exports[`Button kind button with transparent background 1`] = `
         class="c7"
         type="button"
       >
-        Active Test button
+        <span>
+          Active Test button
+        </span>
       </button>
     </div>
   </div>
@@ -2041,7 +2063,9 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
     disabled=""
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -2055,7 +2079,9 @@ exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
     disabled=""
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -2140,7 +2166,9 @@ exports[`Button kind extend on default button 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -2352,19 +2380,25 @@ exports[`Button kind fill 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
   <button
     class="c2"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
   <button
     class="c3"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -2450,7 +2484,9 @@ exports[`Button kind font on button default 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -2534,7 +2570,9 @@ exports[`Button kind font undefined 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -2619,7 +2657,9 @@ exports[`Button kind hover on default button 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -2710,7 +2750,9 @@ exports[`Button kind hover secondary with color and background 1`] = `
     class="c1"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -2723,7 +2765,9 @@ exports[`Button kind hover secondary with color and background 2`] = `
     class="StyledButtonKind-sc-1vhfpnt-0 czElJO"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -2812,7 +2856,9 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
     class="c1"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -2825,7 +2871,9 @@ exports[`Button kind hoverIndicator with color and background 2`] = `
     class="StyledButtonKind-sc-1vhfpnt-0 gVhrlZ"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -3282,7 +3330,9 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
       class="c3"
       type="button"
     >
-      Add
+      <span>
+        Add
+      </span>
     </button>
     <button
       class="c4"
@@ -3305,7 +3355,9 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
       class="c5"
       type="button"
     >
-      Add
+      <span>
+        Add
+      </span>
     </button>
     <button
       class="c6"
@@ -3328,7 +3380,9 @@ exports[`Button kind icon only pad should apply when icon but no label 1`] = `
       class="c7"
       type="button"
     >
-      Add
+      <span>
+        Add
+      </span>
     </button>
   </div>
 </DocumentFragment>
@@ -3883,7 +3937,9 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
         <div
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </div>
     </button>
     <button
@@ -3908,7 +3964,9 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
         <div
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </div>
     </button>
     <button
@@ -3933,7 +3991,9 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
         <div
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </div>
     </button>
     <button
@@ -3958,7 +4018,9 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
         <div
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </div>
     </button>
     <button
@@ -3983,7 +4045,9 @@ exports[`Button kind match icon size to size prop when theme.icon.matchSize is t
         <div
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </div>
     </button>
   </div>
@@ -4144,7 +4208,9 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
       <div
         class="c4"
       />
-      label
+      <span>
+        label
+      </span>
     </div>
   </button>
 </div>
@@ -4176,7 +4242,9 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
       <div
         class="StyledBox__StyledBoxGap-sc-13pk1d4-1 jeSzjR"
       />
-      label
+      <span>
+        label
+      </span>
     </div>
   </button>
 </div>
@@ -4262,7 +4330,9 @@ exports[`Button kind no border on default button 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -4348,7 +4418,9 @@ exports[`Button kind no padding on default button 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -4433,7 +4505,9 @@ exports[`Button kind opacity on default button 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -4523,7 +4597,9 @@ exports[`Button kind padding is applied correctly when intelligentPad is false 1
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -4613,7 +4689,9 @@ exports[`Button kind padding is applied correctly when intelligentPad is true 1`
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -4700,7 +4778,9 @@ exports[`Button kind padding on default button 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -5374,7 +5454,9 @@ exports[`Button kind should apply kind direction 1`] = `
         <div
           class="c3"
         />
-        Button
+        <span>
+          Button
+        </span>
       </div>
     </button>
   </div>
@@ -5582,25 +5664,33 @@ exports[`Button kind should apply styling according to theme size definitions 1`
     class="c1"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
   <button
     class="c2"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
   <button
     class="c2"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
   <button
     class="c3"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -5817,13 +5907,17 @@ exports[`Button kind should render elevation 1`] = `
       class="c1"
       type="button"
     >
-      Default
+      <span>
+        Default
+      </span>
     </button>
     <button
       class="c2"
       type="button"
     >
-      Primary
+      <span>
+        Primary
+      </span>
     </button>
     <button
       class="c3"
@@ -6118,7 +6212,9 @@ exports[`Button kind should render pad 1`] = `
         <div
           class="c4"
         />
-        String pad
+        <span>
+          String pad
+        </span>
       </div>
     </button>
     <button
@@ -6144,7 +6240,9 @@ exports[`Button kind should render pad 1`] = `
         <div
           class="c4"
         />
-        Object pad
+        <span>
+          Object pad
+        </span>
       </div>
     </button>
     <button
@@ -6248,7 +6346,9 @@ exports[`Button kind size of default button 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -6492,7 +6592,9 @@ exports[`Button kind theme busy gap 1`] = `
       <div
         class="c11"
       >
-        Loading
+        <span>
+          Loading
+        </span>
       </div>
     </div>
   </button>
@@ -6524,7 +6626,9 @@ exports[`Button kind theme busy gap 1`] = `
       <div
         class="c11"
       >
-        Success
+        <span>
+          Success
+        </span>
       </div>
     </div>
   </button>

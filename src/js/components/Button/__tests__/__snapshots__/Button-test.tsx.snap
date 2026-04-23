@@ -180,7 +180,9 @@ exports[`Button active + primary 1`] = `
     class="c1"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -270,7 +272,9 @@ exports[`Button active 1`] = `
     class="c1"
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
 </div>
 `;
@@ -497,7 +501,9 @@ exports[`Button badge should apply background 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -645,7 +651,9 @@ exports[`Button badge should be offset from top-right corner 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -794,7 +802,9 @@ exports[`Button badge should display "+" when number is greater than max 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -949,7 +959,9 @@ exports[`Button badge should display number content 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -1117,7 +1129,9 @@ exports[`Button badge should render custom element 1`] = `
         class="c3"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
     <div
@@ -1408,7 +1422,9 @@ exports[`Button basic 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;
@@ -1961,25 +1977,33 @@ exports[`Button color 1`] = `
     class="c1"
     type="button"
   >
-    accent-1
+    <span>
+      accent-1
+    </span>
   </button>
   <button
     class="c2"
     type="button"
   >
-    primary accent-1
+    <span>
+      primary accent-1
+    </span>
   </button>
   <button
     class="c3"
     type="button"
   >
-    custom color #1
+    <span>
+      custom color #1
+    </span>
   </button>
   <button
     class="c4"
     type="button"
   >
-    custom color #2
+    <span>
+      custom color #2
+    </span>
   </button>
 </div>
 `;
@@ -2399,28 +2423,36 @@ exports[`Button disabled 1`] = `
     disabled=""
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
   <button
     class="c1"
     disabled=""
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
   <button
     class="c3"
     disabled=""
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
   <button
     class="c1"
     disabled=""
     type="button"
   >
-    Button
+    <span>
+      Button
+    </span>
   </button>
   <button
     class="c4"
@@ -2455,7 +2487,9 @@ exports[`Button disabled 1`] = `
       <div
         class="c8"
       />
-      Button
+      <span>
+        Button
+      </span>
     </div>
   </button>
   <button
@@ -2470,7 +2504,9 @@ exports[`Button disabled 1`] = `
       <div
         class="c8"
       />
-      Button
+      <span>
+        Button
+      </span>
     </div>
   </button>
   <button
@@ -2487,7 +2523,9 @@ exports[`Button disabled 1`] = `
       <div
         class="c8"
       />
-      Button
+      <span>
+        Button
+      </span>
     </div>
   </button>
 </div>
@@ -2777,25 +2815,33 @@ exports[`Button fill 1`] = `
     class="c1"
     type="button"
   >
-    fill
+    <span>
+      fill
+    </span>
   </button>
   <button
     class="c2"
     type="button"
   >
-    fill false
+    <span>
+      fill false
+    </span>
   </button>
   <button
     class="c3"
     type="button"
   >
-    fill horizontal
+    <span>
+      fill horizontal
+    </span>
   </button>
   <button
     class="c4"
     type="button"
   >
-    fill vertical
+    <span>
+      fill vertical
+    </span>
   </button>
 </div>
 `;
@@ -2879,7 +2925,9 @@ exports[`Button focus 1`] = `
     class="c1"
     type="button"
   >
-    Test focus
+    <span>
+      Test focus
+    </span>
   </button>
 </div>
 `;
@@ -3307,7 +3355,9 @@ exports[`Button href 1`] = `
     class="c1"
     href="test"
   >
-    Button as link
+    <span>
+      Button as link
+    </span>
   </a>
 </div>
 `;
@@ -3421,7 +3471,9 @@ exports[`Button icon label 1`] = `
       <div
         class="c3"
       />
-      Test
+      <span>
+        Test
+      </span>
     </div>
   </button>
 </div>
@@ -3513,7 +3565,9 @@ exports[`Button primary 1`] = `
     class="c1"
     type="button"
   >
-    Primary Button
+    <span>
+      Primary Button
+    </span>
   </button>
 </div>
 `;
@@ -3588,7 +3642,9 @@ exports[`Button render without grommet wrapper 1`] = `
   class="c0"
   type="button"
 >
-  Test
+  <span>
+    Test
+  </span>
 </button>
 `;
 
@@ -3695,7 +3751,9 @@ exports[`Button reverse icon label 1`] = `
     <div
       class="c2"
     >
-      Test
+      <span>
+        Test
+      </span>
       <div
         class="c3"
       />
@@ -3919,13 +3977,17 @@ exports[`Button should render elevation 1`] = `
       class="c1"
       type="button"
     >
-      Default
+      <span>
+        Default
+      </span>
     </button>
     <button
       class="c2"
       type="button"
     >
-      Primary
+      <span>
+        Primary
+      </span>
     </button>
     <button
       class="c3"
@@ -4216,7 +4278,9 @@ exports[`Button should render pad 1`] = `
         <div
           class="c4"
         />
-        String pad
+        <span>
+          String pad
+        </span>
       </div>
     </button>
     <button
@@ -4242,7 +4306,9 @@ exports[`Button should render pad 1`] = `
         <div
           class="c4"
         />
-        Object pad
+        <span>
+          Object pad
+        </span>
       </div>
     </button>
     <button
@@ -4827,49 +4893,65 @@ exports[`Button size 1`] = `
     class="c1"
     type="button"
   >
-    Small
+    <span>
+      Small
+    </span>
   </button>
   <button
     class="c2"
     type="button"
   >
-    Medium
+    <span>
+      Medium
+    </span>
   </button>
   <button
     class="c2"
     type="button"
   >
-    Default
+    <span>
+      Default
+    </span>
   </button>
   <button
     class="c3"
     type="button"
   >
-    Large
+    <span>
+      Large
+    </span>
   </button>
   <button
     class="c4"
     type="button"
   >
-    Small
+    <span>
+      Small
+    </span>
   </button>
   <button
     class="c5"
     type="button"
   >
-    Medium
+    <span>
+      Medium
+    </span>
   </button>
   <button
     class="c5"
     type="button"
   >
-    Default
+    <span>
+      Default
+    </span>
   </button>
   <button
     class="c6"
     type="button"
   >
-    Large
+    <span>
+      Large
+    </span>
   </button>
   <button
     class="c7"
@@ -4946,7 +5028,9 @@ exports[`Button size 1`] = `
     <div
       class="c9"
     >
-      Small
+      <span>
+        Small
+      </span>
       <div
         class="c10"
       />
@@ -4971,7 +5055,9 @@ exports[`Button size 1`] = `
     <div
       class="c9"
     >
-      Medium
+      <span>
+        Medium
+      </span>
       <div
         class="c10"
       />
@@ -4996,7 +5082,9 @@ exports[`Button size 1`] = `
     <div
       class="c9"
     >
-      Default
+      <span>
+        Default
+      </span>
       <div
         class="c10"
       />
@@ -5021,7 +5109,9 @@ exports[`Button size 1`] = `
     <div
       class="c9"
     >
-      Large
+      <span>
+        Large
+      </span>
       <div
         class="c10"
       />
@@ -5150,7 +5240,9 @@ exports[`Button tip 1`] = `
     class="c1"
     type="button"
   >
-    Default Tip
+    <span>
+      Default Tip
+    </span>
   </button>
 </div>
 `;
@@ -5312,7 +5404,9 @@ exports[`Button warns about invalid label 1`] = `
     class="c1"
     type="button"
   >
-    Test
+    <span>
+      Test
+    </span>
   </button>
 </div>
 `;

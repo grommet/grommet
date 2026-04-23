@@ -174,8 +174,20 @@ const Tab = forwardRef(
       normalizedIcon = renderIcon(icon);
     }
 
-    const first = reverse ? normalizedTitle : normalizedIcon;
-    const second = reverse ? normalizedIcon : normalizedTitle;
+    // Wrap a plain string title in a span so browser translation tools
+    // (e.g. Chrome's Google Translate) replace the text node inside the span
+    // rather than a text node that is a direct sibling of React-managed
+    // elements, which would break React's DOM reconciliation
+    // (NotFoundError on insertBefore). Only relevant when plain={true},
+    // since otherwise normalizedTitle is already wrapped in <Text>.
+    const safeTitle =
+      typeof normalizedTitle === 'string' ? (
+        <span>{normalizedTitle}</span>
+      ) : (
+        normalizedTitle
+      );
+    const first = reverse ? safeTitle : normalizedIcon;
+    const second = reverse ? normalizedIcon : safeTitle;
 
     let withIconStyles;
     if (first && second) {
