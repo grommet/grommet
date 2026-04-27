@@ -2516,11 +2516,11 @@ exports[`DataFilter negative decimal values [-19.99, -4.895] - preserves actual 
                       >
                         <input
                           aria-label="Lower Bounds"
-                          aria-valuemax="-4.86"
+                          aria-valuemax="-4.85"
                           aria-valuemin="-19.99"
                           aria-valuenow="-19.99"
                           class="c14"
-                          max="-4.86"
+                          max="-4.85"
                           min="-19.99"
                           readonly=""
                           step="0.76"
@@ -2539,7 +2539,7 @@ exports[`DataFilter negative decimal values [-19.99, -4.895] - preserves actual 
                       </div>
                       <div
                         class="c17"
-                        style="flex: 16.13 0 0px; cursor: ew-resize;"
+                        style="flex: 16.14 0 0px; cursor: ew-resize;"
                       />
                       <div
                         class="c13"
@@ -2547,16 +2547,16 @@ exports[`DataFilter negative decimal values [-19.99, -4.895] - preserves actual 
                       >
                         <input
                           aria-label="Upper Bounds"
-                          aria-valuemax="-4.86"
+                          aria-valuemax="-4.85"
                           aria-valuemin="-19.99"
-                          aria-valuenow="-4.86"
+                          aria-valuenow="-4.85"
                           class="c14"
-                          max="-4.86"
+                          max="-4.85"
                           min="-19.99"
                           readonly=""
                           step="0.76"
                           type="range"
-                          value="-4.86"
+                          value="-4.85"
                         />
                         <div
                           class="c15"
@@ -2577,7 +2577,7 @@ exports[`DataFilter negative decimal values [-19.99, -4.895] - preserves actual 
                       class="c18"
                       style="width: 0px;"
                     >
-                      -4.86
+                      -4.85
                     </span>
                   </div>
                 </div>

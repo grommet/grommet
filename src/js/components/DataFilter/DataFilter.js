@@ -81,17 +81,17 @@ export const DataFilter = ({
     // all values are numeric, treat as range
     let min = uniqueValues[0];
     let max = uniqueValues[uniqueValues.length - 1];
-
-    // Clean up floating-point precision artifacts
-    // Round to maximum 2 decimal places
+    // Clean up floating-point precision artifacts, capped to 2 decimal places.
+    // Use floor for min and ceil for max so actual data values always fall
+    // within the computed range (e.g. -4.859 stays inside [-19.99, -4.85]).
     const maxDecimalPlaces = Math.max(
       getDecimalCount(uniqueValues[0]),
       getDecimalCount(uniqueValues[uniqueValues.length - 1]),
     );
     if (maxDecimalPlaces > 0) {
       const multiplier = 10 ** Math.min(maxDecimalPlaces, 2);
-      min = Math.round(min * multiplier) / multiplier;
-      max = Math.round(max * multiplier) / multiplier;
+      min = Math.floor(min * multiplier) / multiplier;
+      max = Math.ceil(max * multiplier) / multiplier;
     }
     return [undefined, [min, max]];
   }, [

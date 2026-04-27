@@ -530,9 +530,11 @@ describe('DataFilter', () => {
     expect(lowerBound).toBeTruthy();
     expect(upperBound).toBeTruthy();
 
-    // Should preserve actual values and round to max 2 decimals
+    // Should preserve actual values and round to max 2 decimals.
+    // max uses Math.ceil so -4.859 rounds to -4.85 (not -4.86),
+    // ensuring -4.859 remains within the range [-19.99, -4.85].
     expect(lowerBound.getAttribute('aria-valuemin')).toBe('-19.99');
-    expect(upperBound.getAttribute('aria-valuemax')).toBe('-4.86');
+    expect(upperBound.getAttribute('aria-valuemax')).toBe('-4.85');
 
     expect(asFragment()).toMatchSnapshot();
   });
