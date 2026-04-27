@@ -508,7 +508,7 @@ describe('DataFilter', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('negative decimal values [-19.99, -4.895] - preserves actual range, caps decimals to 2', () => {
+  test('negative decimal values [-19.99, -4.859] - preserves actual range, caps decimals to 2', () => {
     const negativeDecimalData = [{ price: -19.99 }, { price: -4.859 }];
     const { asFragment } = render(
       <Grommet>
