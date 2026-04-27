@@ -37,11 +37,15 @@ const Avatar = ({
 
   const AvatarChildren = useCallback(
     () => (
-      <StyledAvatar {...avatarProps} {...rest}>
+      <StyledAvatar
+        aria-label={a11yTitle || ariaLabel || undefined}
+        {...avatarProps}
+        {...rest}
+      >
         {children}
       </StyledAvatar>
     ),
-    [avatarProps, children, rest],
+    [a11yTitle, ariaLabel, avatarProps, children, rest],
   );
 
   if (height || width) {
@@ -51,10 +55,12 @@ const Avatar = ({
   }
 
   let content;
+  let hasImage = false;
   if (typeof children === 'string') {
     content = (
       <StyledAvatarText
         alignSelf="center"
+        aria-hidden={a11yTitle || ariaLabel ? true : undefined}
         size={avatarTextSize}
         {...passThemeFlag}
       >
@@ -62,16 +68,21 @@ const Avatar = ({
       </StyledAvatarText>
     );
   } else if (typeof src === 'string') {
+    hasImage = true;
     content = (
-      <Image role="presentation" fit="contain" src={src} {...imageProps} />
+      <Image
+        alt={a11yTitle || ariaLabel || ''}
+        fit="contain"
+        src={src}
+        {...imageProps}
+      />
     );
   }
 
   if (typeof children === 'string' || typeof src === 'string') {
     return (
       <StyledAvatar
-        role={typeof src === 'string' ? 'figure' : undefined}
-        a11yTitle={a11yTitle || ariaLabel}
+        aria-label={hasImage ? undefined : a11yTitle || ariaLabel || undefined}
         {...avatarProps}
         {...passThemeFlag}
         {...rest}
