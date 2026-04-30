@@ -6,7 +6,7 @@ const suggestions = Array(100)
   .fill()
   .map((_, i) => `suggestion ${i + 1}`);
 
-export const OnSelect = () => {
+const OnSelectExample = () => {
   const [value, setValue] = React.useState('');
 
   const onChange = (event) => setValue(event.target.value);
@@ -44,10 +44,12 @@ export const OnSelect = () => {
   );
 };
 
-OnSelect.storyName = 'onSelect and onSuggestionSelect';
-
-OnSelect.parameters = {
-  chromatic: { disable: true },
+export const OnSelect = {
+  name: 'onSelect and onSuggestionSelect',
+  render: OnSelectExample,
+  parameters: {
+    chromatic: { disable: true },
+  },
 };
 
 export default {
