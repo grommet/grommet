@@ -54,6 +54,12 @@ export const Animated = () => {
   const [draw, toogleDraw] = useReducer(reducer, true);
 
   useEffect(() => {
+    // Skip animation toggle in Chromatic mode to keep connections visible
+    // eslint-disable-next-line no-underscore-dangle
+    if (typeof window !== 'undefined' && window.__CHROMATIC__) {
+      return undefined;
+    }
+
     const timer = setInterval(() => {
       toogleDraw();
     }, 2000);
@@ -103,7 +109,7 @@ export const Animated = () => {
 
 Animated.parameters = {
   chromatic: {
-    delay: 4000, // Wait for animation to complete before snapshot
+    delay: 3500, // Wait for the draw animation (3000ms) to complete
   },
 };
 
