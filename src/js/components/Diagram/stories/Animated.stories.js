@@ -101,6 +101,12 @@ export const Animated = () => {
   );
 };
 
+Animated.parameters = {
+  chromatic: {
+    delay: 4000, // Wait for animation to complete before snapshot
+  },
+};
+
 export default {
   title: 'Visualizations/Diagram/Animated',
 };
