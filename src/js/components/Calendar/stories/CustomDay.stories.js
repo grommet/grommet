@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Box, Calendar, DropButton, Heading, Stack, Text } from 'grommet';
 import { Notification } from 'grommet-icons';
 
-export const CustomDayCalendar = () => {
+const CustomDayCalendarExample = () => {
   const calendarContent = [7, 8, 9];
   const [selectedDay, setSelectedDay] = useState();
   const onSelect = (value) => {
@@ -65,7 +65,10 @@ export const CustomDayCalendar = () => {
   );
 };
 
-CustomDayCalendar.storyName = 'Custom day';
+export const CustomDayCalendar = {
+  name: 'Custom day',
+  render: CustomDayCalendarExample,
+};
 
 export default {
   title: 'Visualizations/Calendar/Custom day',

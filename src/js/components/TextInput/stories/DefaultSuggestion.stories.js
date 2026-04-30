@@ -6,7 +6,7 @@ const suggestions = Array(100)
   .fill()
   .map((_, i) => `suggestion ${i + 1}`);
 
-export const DefaultSuggestion = () => {
+const DefaultSuggestionExample = () => {
   const [value, setValue] = React.useState('');
 
   const onChange = (event) => setValue(event.target.value);
@@ -33,10 +33,12 @@ export const DefaultSuggestion = () => {
   );
 };
 
-DefaultSuggestion.storyName = 'Default suggestion';
-
-DefaultSuggestion.parameters = {
-  chromatic: { disable: true },
+export const DefaultSuggestion = {
+  name: 'Default suggestion',
+  render: DefaultSuggestionExample,
+  parameters: {
+    chromatic: { disable: true },
+  },
 };
 
 export default {

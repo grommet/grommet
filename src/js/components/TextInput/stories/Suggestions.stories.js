@@ -6,7 +6,7 @@ const allSuggestions = Array(100)
   .fill()
   .map((_, i) => `${i + 1} suggestion`);
 
-export const Suggestions = () => {
+const SuggestionsExample = () => {
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
   const [value, setValue] = React.useState('');
 
@@ -43,8 +43,11 @@ export const Suggestions = () => {
   );
 };
 
-Suggestions.parameters = {
-  chromatic: { disable: true },
+export const Suggestions = {
+  render: SuggestionsExample,
+  parameters: {
+    chromatic: { disable: true },
+  },
 };
 
 export default {

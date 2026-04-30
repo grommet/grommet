@@ -4,13 +4,13 @@ import { Box, Calendar } from 'grommet';
 
 const reference = '2026-04-12T21:09:16.501Z';
 const end = new Date(reference);
-const start = new Date(end.getTime() - 1000 * 60 * 60 *24 * 90); // 90 days ago
+const start = new Date(end.getTime() - 1000 * 60 * 60 * 24 * 90); // 90 days ago
 const bounds = [
   `${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`,
   `${end.getFullYear()}-${end.getMonth() + 1}-${end.getDate()}`,
 ];
 
-export const HeaderLevel = () => {
+const HeaderLevelExample = () => {
   const [date, setDate] = useState();
 
   const onSelect = (nextDate) => {
@@ -36,7 +36,10 @@ export const HeaderLevel = () => {
   );
 };
 
-HeaderLevel.storyName = 'Heading level';
+export const HeaderLevel = {
+  name: 'Heading level',
+  render: HeaderLevelExample,
+};
 
 export default {
   title: 'Visualizations/Calendar/Heading level',

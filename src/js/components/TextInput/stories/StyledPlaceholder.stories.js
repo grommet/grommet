@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, Form, TextInput, Text } from 'grommet';
 
-export const StyledPlaceholder = () => (
+const StyledPlaceholderExample = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box>
@@ -17,7 +17,10 @@ export const StyledPlaceholder = () => (
   // </Grommet>
 );
 
-StyledPlaceholder.storyName = 'Styled placeholder';
+export const StyledPlaceholder = {
+  name: 'Styled placeholder',
+  render: StyledPlaceholderExample,
+};
 
 export default {
   title: 'Input/TextInput/Styled placeholder',
