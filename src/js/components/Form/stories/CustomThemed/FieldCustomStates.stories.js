@@ -63,7 +63,11 @@ export const FieldCustomStates = () => {
   const inputRef = useRef();
 
   useEffect(() => {
-    inputRef.current.focus();
+    const focusTimeout = setTimeout(() => {
+      inputRef.current?.focus();
+    });
+
+    return () => clearTimeout(focusTimeout);
   }, []);
 
   return (

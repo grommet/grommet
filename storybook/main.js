@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   addons: [
     '@storybook/addon-a11y',
@@ -37,5 +39,20 @@ module.exports = {
 
   typescript: {
     reactDocgen: 'react-docgen-typescript',
+  },
+
+  webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.stories\.[jt]sx?$/,
+      exclude: [/node_modules/, /\.d\.ts$/],
+      enforce: 'pre',
+      use: [
+        {
+          loader: path.resolve(__dirname, './storySourceLoader.js'),
+        },
+      ],
+    });
+
+    return config;
   },
 };
