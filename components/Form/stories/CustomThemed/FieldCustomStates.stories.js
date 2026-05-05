@@ -67,7 +67,13 @@ var customTheme = (0, _utils.deepMerge)(_grommet.grommet, {
 var FieldCustomStates = exports.FieldCustomStates = function FieldCustomStates() {
   var inputRef = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
-    inputRef.current.focus();
+    var focusTimeout = setTimeout(function () {
+      var _inputRef$current;
+      (_inputRef$current = inputRef.current) == null || _inputRef$current.focus();
+    });
+    return function () {
+      return clearTimeout(focusTimeout);
+    };
   }, []);
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: customTheme

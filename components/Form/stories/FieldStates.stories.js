@@ -8,7 +8,13 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 var FieldStates = exports.FieldStates = function FieldStates() {
   var inputRef = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
-    inputRef.current.focus();
+    var focusTimeout = setTimeout(function () {
+      var _inputRef$current;
+      (_inputRef$current = inputRef.current) == null || _inputRef$current.focus();
+    });
+    return function () {
+      return clearTimeout(focusTimeout);
+    };
   }, []);
   return (
     /*#__PURE__*/
