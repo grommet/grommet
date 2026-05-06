@@ -1,15 +1,19 @@
+const path = require('path');
+
 module.exports = {
   addons: [
-    '@storybook/addon-toolbars',
+    '@storybook/addon-a11y',
     {
-      name: '@storybook/addon-storysource',
+      name: '@storybook/addon-docs',
       options: {
-        loaderOptions: {
-          injectStoryParameters: false,
+        csfPluginOptions: null,
+        mdxPluginOptions: {
+          mdxCompileOptions: {
+            remarkPlugins: [],
+          },
         },
       },
     },
-    '@storybook/addon-a11y',
     '@storybook/addon-webpack5-compiler-babel',
     '@chromatic-com/storybook',
   ],
@@ -21,12 +25,8 @@ module.exports = {
     '../src/js/components/**/stories/CustomThemed/*.stories.@(ts|tsx|js|jsx)',
     '../src/js/components/**/*stories.js',
     '../src/js/contexts/**/*stories.js',
-    '../src/js/contexts/**/stories/typescript/*.stories.tsx',
     '../src/js/contexts/**/stories/*.stories.@(ts|tsx|js|jsx)',
   ],
-  features: {
-    postcss: false,
-  },
 
   staticDirs: ['./public'],
 
@@ -39,5 +39,20 @@ module.exports = {
 
   typescript: {
     reactDocgen: 'react-docgen-typescript',
+  },
+
+  webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.stories\.[jt]sx?$/,
+      exclude: [/node_modules/, /\.d\.ts$/],
+      enforce: 'pre',
+      use: [
+        {
+          loader: path.resolve(__dirname, './storySourceLoader.js'),
+        },
+      ],
+    });
+
+    return config;
   },
 };
