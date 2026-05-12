@@ -19,9 +19,11 @@ var Basic = exports.Basic = function Basic() {
       gap: "small",
       pad: "large"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
-      background: "dark-4"
+      background: "dark-4",
+      "aria-label": "Favorites"
     }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.Favorite, {
       color: "light-2"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {

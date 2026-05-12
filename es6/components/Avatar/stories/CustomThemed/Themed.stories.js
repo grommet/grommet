@@ -29,6 +29,7 @@ export var Themed = function Themed() {
     background: "dark-2"
   }, /*#__PURE__*/React.createElement(Avatar, {
     src: src,
+    "aria-label": "Shimi",
     size: "myLarge"
   }), /*#__PURE__*/React.createElement(Avatar, {
     size: "myLarge",

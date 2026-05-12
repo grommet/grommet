@@ -12,19 +12,24 @@ export var Sizes = function Sizes() {
       gap: "small"
     }, /*#__PURE__*/React.createElement(Avatar, {
       size: "small",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "medium",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "xlarge",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "2xl",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     })), /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       pad: "large",
@@ -72,13 +77,16 @@ export var Sizes = function Sizes() {
       gap: "small"
     }, /*#__PURE__*/React.createElement(Avatar, {
       size: "3xl",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "4xl",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "5xl",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }))))
     // </Grommet>
   );

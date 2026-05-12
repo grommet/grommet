@@ -14,9 +14,11 @@ export var Basic = function Basic() {
       gap: "small",
       pad: "large"
     }, /*#__PURE__*/React.createElement(Avatar, {
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/React.createElement(Avatar, {
-      background: "dark-4"
+      background: "dark-4",
+      "aria-label": "Favorites"
     }, /*#__PURE__*/React.createElement(Favorite, {
       color: "light-2"
     })), /*#__PURE__*/React.createElement(Avatar, {

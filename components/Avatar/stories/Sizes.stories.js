@@ -17,19 +17,24 @@ var Sizes = exports.Sizes = function Sizes() {
       gap: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "small",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "medium",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "large",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "xlarge",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "2xl",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       pad: "large",
@@ -77,13 +82,16 @@ var Sizes = exports.Sizes = function Sizes() {
       gap: "small"
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "3xl",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "4xl",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
       size: "5xl",
-      src: src
+      src: src,
+      "aria-label": "Shimi"
     }))))
     // </Grommet>
   );

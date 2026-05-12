@@ -39,28 +39,32 @@ var Avatar = function Avatar(_ref) {
     };
   }, [align, avatarSize, justify, round]);
   var AvatarChildren = useCallback(function () {
-    return /*#__PURE__*/React.createElement(StyledAvatar, _extends({}, avatarProps, rest), children);
-  }, [avatarProps, children, rest]);
+    return /*#__PURE__*/React.createElement(StyledAvatar, _extends({
+      "aria-label": a11yTitle || ariaLabel || undefined
+    }, avatarProps, rest), children);
+  }, [a11yTitle, ariaLabel, avatarProps, children, rest]);
   if (height || width) {
     console.warn('Avatar should use `size` instead of `height` or `width` props');
   }
   var content;
+  var hasImage = false;
   if (typeof children === 'string') {
     content = /*#__PURE__*/React.createElement(StyledAvatarText, _extends({
       alignSelf: "center",
+      "aria-hidden": a11yTitle || ariaLabel ? true : undefined,
       size: avatarTextSize
     }, passThemeFlag), children);
   } else if (typeof src === 'string') {
+    hasImage = true;
     content = /*#__PURE__*/React.createElement(Image, _extends({
-      role: "presentation",
+      alt: a11yTitle || ariaLabel || '',
       fit: "contain",
       src: src
     }, imageProps));
   }
   if (typeof children === 'string' || typeof src === 'string') {
     return /*#__PURE__*/React.createElement(StyledAvatar, _extends({
-      role: typeof src === 'string' ? 'figure' : undefined,
-      a11yTitle: a11yTitle || ariaLabel
+      "aria-label": hasImage ? undefined : a11yTitle || ariaLabel || undefined
     }, avatarProps, passThemeFlag, rest), content);
   }
   return /*#__PURE__*/React.createElement(AvatarChildren, null);

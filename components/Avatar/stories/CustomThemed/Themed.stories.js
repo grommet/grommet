@@ -34,6 +34,7 @@ var Themed = exports.Themed = function Themed() {
     background: "dark-2"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     src: src,
+    "aria-label": "Shimi",
     size: "myLarge"
   }), /*#__PURE__*/_react["default"].createElement(_grommet.Avatar, {
     size: "myLarge",
