@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { FormClose } from 'grommet-icons';
-import { Box, Button, Text } from 'grommet';
+import { Box, Tag, Text } from 'grommet';
 import { SelectMultiple } from '../../SelectMultiple.js';
 
 const allSeasons = [
@@ -24,35 +23,7 @@ export const Children = () => {
     setSelected(selected.filter((selectedSeason) => selectedSeason !== season));
   };
 
-  const renderSeason = (season) => (
-    <Button
-      key={`season_tag_${season}`}
-      onClick={(event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        onRemoveSeason(season);
-      }}
-      onFocus={(event) => event.stopPropagation()}
-      a11yTitle={season}
-    >
-      <Box
-        align="center"
-        direction="row"
-        gap="xsmall"
-        pad={{ vertical: 'xsmall', horizontal: 'small' }}
-        margin="xsmall"
-        background="light-3"
-        round="large"
-      >
-        <Text size="small">{season}</Text>
-        <Box round="full" margin={{ left: 'xsmall' }}>
-          <FormClose size="small" style={{ width: '12px', height: '12px' }} />
-        </Box>
-      </Box>
-    </Button>
-  );
-
-  const renderOption = (option, state) => (
+  const renderOption = (option, index, options, state) => (
     <Box pad="small" background={state.active ? 'active' : undefined}>
       {option}
     </Box>
@@ -66,25 +37,30 @@ export const Children = () => {
       <SelectMultiple
         sortSelectedOnClose={false}
         showSelectedInline
-        valueLabel={(option) => (
-          <Box wrap direction="row" width="small">
-            {option && option.length ? (
-              <>
-                {option.map((i) => {
-                  console.log(option);
-                  return renderSeason(i);
-                })}
-              </>
-            ) : (
-              <Text color="text-weak">Select Season</Text>
-            )}
+        placeholder="Select Season"
+        valueLabel={(options) => (
+          <Box
+            wrap
+            direction="row"
+            pad="xsmall"
+            gap="xsmall"
+            cssGap
+            width="small"
+          >
+            {options && options.length &&
+              options.map((season) => (
+                <Tag
+                  key={`season_tag_${season}`}
+                  value={season}
+                  onRemove={() => onRemoveSeason(season)}
+                />
+              ))
+            }
           </Box>
         )}
         options={allSeasons}
         value={selected}
-        onChange={({ value }) => {
-          setSelected([...value]);
-        }}
+        onChange={({ value }) => setSelected([...value])}
       >
         {renderOption}
       </SelectMultiple>
