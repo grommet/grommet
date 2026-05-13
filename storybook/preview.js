@@ -94,6 +94,9 @@ export const parameters = {
         ? ['internal']
         : [],
   },
+  docs: {
+    codePanel: true,
+  },
   options: {
     storySort: (first, second) => {
       /**

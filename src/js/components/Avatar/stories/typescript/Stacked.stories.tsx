@@ -13,36 +13,64 @@ export const Stacked = () => {
 
   const GroupedGravatar = ({ border }) => (
     <Stack anchor="left">
-      <Avatar src={bryan} border={border} />
-      <Avatar src={eric} border={border} margin={{ left: 'medium' }} />
-      <Avatar src={shimi} border={border} margin={{ left: 'large' }} />
+      <Avatar src={bryan} border={border} aria-label="Bryan" />
+      <Avatar
+        src={eric}
+        border={border}
+        margin={{ left: 'medium' }}
+        aria-label="Eric"
+      />
+      <Avatar
+        src={shimi}
+        border={border}
+        margin={{ left: 'large' }}
+        aria-label="Shimi"
+      />
     </Stack>
   );
 
   const GroupedGravatarCentered = () => (
     <Stack anchor="right" margin={{ left: 'xlarge' }}>
-      <Avatar src={bryan} />
-      <Avatar src={shimi} margin={{ right: 'large' }} />
-      <Avatar src={eric} margin={{ right: 'medium' }} />
+      <Avatar src={bryan} aria-label="Bryan" />
+      <Avatar src={shimi} margin={{ right: 'large' }} aria-label="Shimi" />
+      <Avatar src={eric} margin={{ right: 'medium' }} aria-label="Eric" />
     </Stack>
   );
   const GroupedGravatarRTL = () => (
     <Stack anchor="right" margin={{ left: 'xlarge' }}>
-      <Avatar size="large" src={shimi} />
-      <Avatar size="large" src={eric} margin={{ right: 'large' }} />
-      <Avatar size="large" src={bryan} margin={{ right: 'xlarge' }} />
+      <Avatar size="large" src={shimi} aria-label="Shimi" />
+      <Avatar
+        size="large"
+        src={eric}
+        margin={{ right: 'large' }}
+        aria-label="Eric"
+      />
+      <Avatar
+        size="large"
+        src={bryan}
+        margin={{ right: 'xlarge' }}
+        aria-label="Bryan"
+      />
     </Stack>
   );
 
   const GroupedIcons = () => (
     <Stack anchor="left">
-      <Avatar background="dark-1">
+      <Avatar background="dark-1" aria-label="New user">
         <UserNew color="light-2" />
       </Avatar>
-      <Avatar background="dark-2" margin={{ left: 'medium' }}>
+      <Avatar
+        background="dark-2"
+        margin={{ left: 'medium' }}
+        aria-label="Female user"
+      >
         <UserFemale color="light-1" />
       </Avatar>
-      <Avatar background="dark-4" margin={{ left: 'large' }}>
+      <Avatar
+        background="dark-4"
+        margin={{ left: 'large' }}
+        aria-label="Favorites"
+      >
         <Favorite color="light-2" />
       </Avatar>
     </Stack>
@@ -55,17 +83,22 @@ export const Stacked = () => {
         <Stack anchor="bottom-right">
           <Box>
             <Box direction="row">
-              <Avatar size="xlarge" src={shimi} border={borderSmall} />
+              <Avatar
+                size="xlarge"
+                src={shimi}
+                border={borderSmall}
+                aria-label="Shimi"
+              />
               <Box pad="xxsmall" />
             </Box>
             <Box pad="xxsmall" />
           </Box>
-          <Avatar src={eric} border={borderSmall} />
+          <Avatar src={eric} border={borderSmall} aria-label="Eric" />
         </Stack>
 
         {/* Notification */}
         <Stack anchor="top-right">
-          <Avatar src={shimi} />
+          <Avatar src={shimi} aria-label="Shimi" />
           <Box pad="xsmall" round background="light-1" responsive={false} />
         </Stack>
 
