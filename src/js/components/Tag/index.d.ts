@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BoxProps } from '../Box';
 
 export interface TagProps {
+  children?: React.ReactNode;
   name?: string;
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;

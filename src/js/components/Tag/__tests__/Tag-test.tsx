@@ -8,7 +8,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
 
-import { Grommet, Tag } from '../..';
+import { Box, Grommet, Tag } from '../..';
 import { grommet } from '../../../themes/grommet';
 import { deepMerge } from '../../../utils';
 import { ThemeType } from '../../../themes';
@@ -36,6 +36,17 @@ describe('Tag', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('renders children when provided', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Tag value="Value">
+          <Box>Custom Child</Box>
+        </Tag>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('basic', () => {
