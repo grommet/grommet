@@ -4,8 +4,8 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     children: PropTypes.node,
-    name: PropTypes.string,
-    value: PropTypes.string.isRequired,
+    name: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    value: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
     onClick: PropTypes.func,
     onRemove: PropTypes.func,
     messages: PropTypes.shape({

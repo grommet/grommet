@@ -3,7 +3,7 @@ import { BoxProps } from '../Box';
 
 export interface TagProps {
   children?: React.ReactNode;
-  name?: string;
+  name?: string | React.ReactNode;
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;
   messages?: {
@@ -20,7 +20,7 @@ export interface TagProps {
     | 'xlarge'
     | 'xxlarge'
     | string;
-  value: string | number;
+  value: string | number | React.ReactNode;
 }
 
 export interface TagExtendedProps extends BoxProps, TagProps {}

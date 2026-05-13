@@ -59,6 +59,16 @@ describe('Tag', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('renders node name and value', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Tag name={<Box>Custom name</Box>} value={<Box>Custom value</Box>} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('basic outside grommet wrapper', () => {
     const { container } = render(<Tag name="Name" value="Value" />);
 
