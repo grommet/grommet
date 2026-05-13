@@ -1011,22 +1011,8 @@ exports[`Tag renders custom remove button kind and size 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c8 {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c13 {
-    padding-left: 18px;
-    padding-right: 18px;
   }
 }
 
@@ -1747,22 +1733,8 @@ exports[`Tag size 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c2 {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c2 {
     padding-top: 2px;
     padding-bottom: 2px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c5 {
-    padding-left: 9.600000000000001px;
-    padding-right: 9.600000000000001px;
   }
 }
 
@@ -1789,22 +1761,8 @@ exports[`Tag size 1`] = `
 
 @media only screen and (max-width: 768px) {
   .c11 {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c14 {
-    padding-left: 18px;
-    padding-right: 18px;
   }
 }
 

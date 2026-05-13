@@ -1103,12 +1103,6 @@ exports[`Pagination should apply a select component with default values for step
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
-    padding: 11px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c14 {
     margin-left: 6px;
     margin-right: 6px;
@@ -14138,12 +14132,6 @@ exports[`Pagination theme container gap and step container gap 1`] = `
   font-weight: bold;
   font-size: 18px;
   line-height: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .c12 {
-    padding: 11px;
-  }
 }
 
 @media only screen and (max-width: 768px) {

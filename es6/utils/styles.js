@@ -30,9 +30,11 @@ export var controlBorderStyle = css(["border:", " solid ", ";border-radius:", ";
   return props.theme.global.control.border.radius;
 });
 export var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint, theme) {
-  var breakpoint = responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
+  var breakpoint = getBreakpointStyle(theme, responsiveBreakpoint);
   if (typeof data === 'string') {
-    return css(["", ":", ";", ";"], kind, theme.global.edgeSize[data] || data, responsive && breakpoint ? breakpointStyle(breakpoint, "\n        " + kind + ": " + (breakpoint.edgeSize[data] || data) + ";\n      ", responsive) : '');
+    var value = theme.global.edgeSize[data] || data;
+    var responsiveValue = responsive && breakpoint && breakpoint.edgeSize[data];
+    return css(["", ":", ";", ";"], kind, value, responsiveValue ? breakpointStyle(breakpoint, "\n        " + kind + ": " + responsiveValue + ";\n      ", responsive) : '');
   }
   var result = [];
   var horizontal = data.horizontal,
@@ -50,32 +52,41 @@ export var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBrea
   if (horizontalVerticalEqual || allSidesEqual) {
     // since the values will be the same between vertical & horizontal OR
     // left, right, top, & bottom, we can just choose one
-    var value = horizontalVerticalEqual ? horizontal : top;
-    return css(["", ":", ";", ";"], kind, theme.global.edgeSize[value] || value, responsive && breakpoint ? breakpointStyle(breakpoint, "\n        " + kind + ": " + (breakpoint.edgeSize[value] || value) + ";\n      ", responsive) : '');
+    var allSidesValue = horizontalVerticalEqual ? horizontal : top;
+    var allSidesResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[allSidesValue];
+    return css(["", ":", ";", ";"], kind, theme.global.edgeSize[allSidesValue] || allSidesValue, allSidesResponsiveValue ? breakpointStyle(breakpoint, "\n        " + kind + ": " + allSidesResponsiveValue + ";\n      ", responsive) : '');
   }
   if (horizontal) {
-    result.push(css(["", "-left:", ";", "-right:", ";", ";"], kind, theme.global.edgeSize[horizontal] || horizontal, kind, theme.global.edgeSize[horizontal] || horizontal, responsive && breakpoint ? breakpointStyle(breakpoint, "\n          " + kind + "-left: " + (breakpoint.edgeSize[horizontal] || horizontal) + ";\n          " + kind + "-right: " + (breakpoint.edgeSize[horizontal] || horizontal) + ";\n        ", responsive) : ''));
+    var horizontalResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[horizontal];
+    result.push(css(["", "-left:", ";", "-right:", ";", ";"], kind, theme.global.edgeSize[horizontal] || horizontal, kind, theme.global.edgeSize[horizontal] || horizontal, horizontalResponsiveValue ? breakpointStyle(breakpoint, "\n          " + kind + "-left: " + horizontalResponsiveValue + ";\n          " + kind + "-right: " + horizontalResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (vertical) {
-    result.push(css(["", "-top:", ";", "-bottom:", ";", ";"], kind, theme.global.edgeSize[vertical] || vertical, kind, theme.global.edgeSize[vertical] || vertical, responsive && breakpoint ? breakpointStyle(breakpoint, "\n          " + kind + "-top: " + (breakpoint.edgeSize[vertical] || vertical) + ";\n          " + kind + "-bottom: " + (breakpoint.edgeSize[vertical] || vertical) + ";\n        ", responsive) : ''));
+    var verticalResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[vertical];
+    result.push(css(["", "-top:", ";", "-bottom:", ";", ";"], kind, theme.global.edgeSize[vertical] || vertical, kind, theme.global.edgeSize[vertical] || vertical, verticalResponsiveValue ? breakpointStyle(breakpoint, "\n          " + kind + "-top: " + verticalResponsiveValue + ";\n          " + kind + "-bottom: " + verticalResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (top) {
-    result.push(css(["", "-top:", ";", ";"], kind, theme.global.edgeSize[top] || top, responsive && breakpoint ? breakpointStyle(breakpoint, "\n          " + kind + "-top: " + (breakpoint.edgeSize[top] || top) + ";\n        ", responsive) : ''));
+    var topResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[top];
+    result.push(css(["", "-top:", ";", ";"], kind, theme.global.edgeSize[top] || top, topResponsiveValue ? breakpointStyle(breakpoint, "\n          " + kind + "-top: " + topResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (bottom) {
-    result.push(css(["", "-bottom:", ";", ";"], kind, theme.global.edgeSize[bottom] || bottom, responsive && breakpoint ? breakpointStyle(breakpoint, "\n          " + kind + "-bottom: " + (breakpoint.edgeSize[bottom] || bottom) + ";\n        ", responsive) : ''));
+    var bottomResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[bottom];
+    result.push(css(["", "-bottom:", ";", ";"], kind, theme.global.edgeSize[bottom] || bottom, bottomResponsiveValue ? breakpointStyle(breakpoint, "\n          " + kind + "-bottom: " + bottomResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (left) {
-    result.push(css(["", "-left:", ";", ";"], kind, theme.global.edgeSize[left] || left, responsive && breakpoint ? breakpointStyle(breakpoint, "\n          " + kind + "-left: " + (breakpoint.edgeSize[left] || left) + ";\n        ", responsive) : ''));
+    var leftResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[left];
+    result.push(css(["", "-left:", ";", ";"], kind, theme.global.edgeSize[left] || left, leftResponsiveValue ? breakpointStyle(breakpoint, "\n          " + kind + "-left: " + leftResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (right) {
-    result.push(css(["", "-right:", ";", ";"], kind, theme.global.edgeSize[right] || right, responsive && breakpoint ? breakpointStyle(breakpoint, "\n          " + kind + "-right: " + (breakpoint.edgeSize[right] || right) + ";\n        ", responsive) : ''));
+    var rightResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[right];
+    result.push(css(["", "-right:", ";", ";"], kind, theme.global.edgeSize[right] || right, rightResponsiveValue ? breakpointStyle(breakpoint, "\n          " + kind + "-right: " + rightResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (data.start) {
-    result.push(css(["", "-inline-start:", ";", ";"], kind, theme.global.edgeSize[data.start] || data.start, responsive && breakpoint ? breakpointStyle(breakpoint, "\n          " + kind + "-inline-start: " + (breakpoint.edgeSize[data.start] || data.start) + ";\n        ", responsive) : ''));
+    var startResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[data.start];
+    result.push(css(["", "-inline-start:", ";", ";"], kind, theme.global.edgeSize[data.start] || data.start, startResponsiveValue ? breakpointStyle(breakpoint, "\n          " + kind + "-inline-start: " + startResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (data.end) {
-    result.push(css(["", "-inline-end:", ";", ";"], kind, theme.global.edgeSize[data.end] || data.end, responsive && breakpoint ? breakpointStyle(breakpoint, "\n          " + kind + "-inline-end: " + (breakpoint.edgeSize[data.end] || data.end) + ";\n        ", responsive) : ''));
+    var endResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[data.end];
+    result.push(css(["", "-inline-end:", ";", ";"], kind, theme.global.edgeSize[data.end] || data.end, endResponsiveValue ? breakpointStyle(breakpoint, "\n          " + kind + "-inline-end: " + endResponsiveValue + ";\n        ", responsive) : ''));
   }
   return result;
 };

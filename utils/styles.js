@@ -34,9 +34,11 @@ var controlBorderStyle = exports.controlBorderStyle = (0, _styledComponents.css)
   return props.theme.global.control.border.radius;
 });
 var edgeStyle = exports.edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint, theme) {
-  var breakpoint = responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
+  var breakpoint = (0, _responsive.getBreakpointStyle)(theme, responsiveBreakpoint);
   if (typeof data === 'string') {
-    return (0, _styledComponents.css)(["", ":", ";", ";"], kind, theme.global.edgeSize[data] || data, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n        " + kind + ": " + (breakpoint.edgeSize[data] || data) + ";\n      ", responsive) : '');
+    var value = theme.global.edgeSize[data] || data;
+    var responsiveValue = responsive && breakpoint && breakpoint.edgeSize[data];
+    return (0, _styledComponents.css)(["", ":", ";", ";"], kind, value, responsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n        " + kind + ": " + responsiveValue + ";\n      ", responsive) : '');
   }
   var result = [];
   var horizontal = data.horizontal,
@@ -54,32 +56,41 @@ var edgeStyle = exports.edgeStyle = function edgeStyle(kind, data, responsive, r
   if (horizontalVerticalEqual || allSidesEqual) {
     // since the values will be the same between vertical & horizontal OR
     // left, right, top, & bottom, we can just choose one
-    var value = horizontalVerticalEqual ? horizontal : top;
-    return (0, _styledComponents.css)(["", ":", ";", ";"], kind, theme.global.edgeSize[value] || value, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n        " + kind + ": " + (breakpoint.edgeSize[value] || value) + ";\n      ", responsive) : '');
+    var allSidesValue = horizontalVerticalEqual ? horizontal : top;
+    var allSidesResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[allSidesValue];
+    return (0, _styledComponents.css)(["", ":", ";", ";"], kind, theme.global.edgeSize[allSidesValue] || allSidesValue, allSidesResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n        " + kind + ": " + allSidesResponsiveValue + ";\n      ", responsive) : '');
   }
   if (horizontal) {
-    result.push((0, _styledComponents.css)(["", "-left:", ";", "-right:", ";", ";"], kind, theme.global.edgeSize[horizontal] || horizontal, kind, theme.global.edgeSize[horizontal] || horizontal, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-left: " + (breakpoint.edgeSize[horizontal] || horizontal) + ";\n          " + kind + "-right: " + (breakpoint.edgeSize[horizontal] || horizontal) + ";\n        ", responsive) : ''));
+    var horizontalResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[horizontal];
+    result.push((0, _styledComponents.css)(["", "-left:", ";", "-right:", ";", ";"], kind, theme.global.edgeSize[horizontal] || horizontal, kind, theme.global.edgeSize[horizontal] || horizontal, horizontalResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-left: " + horizontalResponsiveValue + ";\n          " + kind + "-right: " + horizontalResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (vertical) {
-    result.push((0, _styledComponents.css)(["", "-top:", ";", "-bottom:", ";", ";"], kind, theme.global.edgeSize[vertical] || vertical, kind, theme.global.edgeSize[vertical] || vertical, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-top: " + (breakpoint.edgeSize[vertical] || vertical) + ";\n          " + kind + "-bottom: " + (breakpoint.edgeSize[vertical] || vertical) + ";\n        ", responsive) : ''));
+    var verticalResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[vertical];
+    result.push((0, _styledComponents.css)(["", "-top:", ";", "-bottom:", ";", ";"], kind, theme.global.edgeSize[vertical] || vertical, kind, theme.global.edgeSize[vertical] || vertical, verticalResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-top: " + verticalResponsiveValue + ";\n          " + kind + "-bottom: " + verticalResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (top) {
-    result.push((0, _styledComponents.css)(["", "-top:", ";", ";"], kind, theme.global.edgeSize[top] || top, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-top: " + (breakpoint.edgeSize[top] || top) + ";\n        ", responsive) : ''));
+    var topResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[top];
+    result.push((0, _styledComponents.css)(["", "-top:", ";", ";"], kind, theme.global.edgeSize[top] || top, topResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-top: " + topResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (bottom) {
-    result.push((0, _styledComponents.css)(["", "-bottom:", ";", ";"], kind, theme.global.edgeSize[bottom] || bottom, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-bottom: " + (breakpoint.edgeSize[bottom] || bottom) + ";\n        ", responsive) : ''));
+    var bottomResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[bottom];
+    result.push((0, _styledComponents.css)(["", "-bottom:", ";", ";"], kind, theme.global.edgeSize[bottom] || bottom, bottomResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-bottom: " + bottomResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (left) {
-    result.push((0, _styledComponents.css)(["", "-left:", ";", ";"], kind, theme.global.edgeSize[left] || left, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-left: " + (breakpoint.edgeSize[left] || left) + ";\n        ", responsive) : ''));
+    var leftResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[left];
+    result.push((0, _styledComponents.css)(["", "-left:", ";", ";"], kind, theme.global.edgeSize[left] || left, leftResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-left: " + leftResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (right) {
-    result.push((0, _styledComponents.css)(["", "-right:", ";", ";"], kind, theme.global.edgeSize[right] || right, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-right: " + (breakpoint.edgeSize[right] || right) + ";\n        ", responsive) : ''));
+    var rightResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[right];
+    result.push((0, _styledComponents.css)(["", "-right:", ";", ";"], kind, theme.global.edgeSize[right] || right, rightResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-right: " + rightResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (data.start) {
-    result.push((0, _styledComponents.css)(["", "-inline-start:", ";", ";"], kind, theme.global.edgeSize[data.start] || data.start, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-inline-start: " + (breakpoint.edgeSize[data.start] || data.start) + ";\n        ", responsive) : ''));
+    var startResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[data.start];
+    result.push((0, _styledComponents.css)(["", "-inline-start:", ";", ";"], kind, theme.global.edgeSize[data.start] || data.start, startResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-inline-start: " + startResponsiveValue + ";\n        ", responsive) : ''));
   }
   if (data.end) {
-    result.push((0, _styledComponents.css)(["", "-inline-end:", ";", ";"], kind, theme.global.edgeSize[data.end] || data.end, responsive && breakpoint ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-inline-end: " + (breakpoint.edgeSize[data.end] || data.end) + ";\n        ", responsive) : ''));
+    var endResponsiveValue = responsive && breakpoint && breakpoint.edgeSize[data.end];
+    result.push((0, _styledComponents.css)(["", "-inline-end:", ";", ";"], kind, theme.global.edgeSize[data.end] || data.end, endResponsiveValue ? (0, _mixins.breakpointStyle)(breakpoint, "\n          " + kind + "-inline-end: " + endResponsiveValue + ";\n        ", responsive) : ''));
   }
   return result;
 };
