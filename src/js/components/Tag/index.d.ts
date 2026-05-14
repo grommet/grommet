@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BoxProps } from '../Box';
+import { BoxExtendedProps } from '../Box';
 
 export interface TagProps {
   name?: string;
@@ -22,7 +22,7 @@ export interface TagProps {
   value: string | number;
 }
 
-export interface TagExtendedProps extends BoxProps, TagProps {}
+export interface TagExtendedProps extends Omit<BoxExtendedProps, keyof TagProps>, TagProps {}
 
 // Keep type alias for backwards compatibility.
 export type TagType = TagProps;

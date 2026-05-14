@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Box, Tag, Text } from 'grommet';
 import { SelectMultiple } from '../../SelectMultiple.js';
@@ -18,9 +18,23 @@ const tags = [
 
 export const ValueLabel = () => {
   const [selected, setSelected] = useState(tags.slice(0, 3));
-
-  const onRemoveTag = (tag) => {
-    setSelected(selected.filter((selectedTag) => selectedTag !== tag));
+  const valuesRef = useRef(undefined as unknown as HTMLDivElement);
+  const onRemoveTag = (tag: string) => {
+    const nextSelected = selected.filter((selectedTag) => selectedTag !== tag);
+    if (nextSelected.length > 0) {
+      const index = selected.indexOf(tag);
+      // update focus to the next tag's remove button
+      // if there is one, otherwise the previous one
+      const nextFocusIndex = index < nextSelected.length ? index : index - 1;
+      if (nextFocusIndex >= 0 && valuesRef.current) {
+        setTimeout(() => {
+          const element = valuesRef.current as HTMLElement;
+          const buttons = element?.querySelectorAll('button');
+          buttons[nextFocusIndex].focus();
+        }, 200);
+      }
+    }
+    setSelected(nextSelected);
   };
 
   return (
@@ -31,8 +45,9 @@ export const ValueLabel = () => {
       <SelectMultiple
         showSelectedInline
         placeholder="Select tag"
-        valueLabel={(options) => (
+        valueLabel={(options: any[]) => (
           <Box
+            ref={valuesRef}
             wrap
             direction="row"
             pad="xsmall"
@@ -53,7 +68,7 @@ export const ValueLabel = () => {
         )}
         options={tags}
         value={selected}
-        onChange={({ value }) => setSelected([...value])}
+        onChange={({ value }: { value: string[] }) => setSelected([...value])}
       />
     </Box>
     // </Grommet>
