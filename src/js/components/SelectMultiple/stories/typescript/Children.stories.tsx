@@ -17,13 +17,13 @@ const allSeasons = [
 ];
 
 export const Children = () => {
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState<string[]>([]);
 
-  const onRemoveSeason = (season) => {
+  const onRemoveSeason = (season: string) => {
     setSelected(selected.filter((selectedSeason) => selectedSeason !== season));
   };
 
-  const renderOption = (option, index, options, state) => (
+  const renderOption = (option: string, _index: number, _options: string[], state: { active: boolean }) => (
     <Box pad="small" background={state.active ? 'active' : undefined}>
       {option}
     </Box>
@@ -38,14 +38,14 @@ export const Children = () => {
         sortSelectedOnClose={false}
         showSelectedInline
         placeholder="Select Season"
-        valueLabel={(options) => (
+        width="medium"
+        valueLabel={(options: any[]) => (
           <Box
             wrap
             direction="row"
             pad="xsmall"
             gap="xsmall"
             cssGap
-            width="small"
           >
             {options && options.length &&
               options.map((season) => (
@@ -60,7 +60,7 @@ export const Children = () => {
         )}
         options={allSeasons}
         value={selected}
-        onChange={({ value }) => setSelected([...value])}
+        onChange={({ value }: { value: any[] }) => setSelected([...value])}
       >
         {renderOption}
       </SelectMultiple>

@@ -45,6 +45,7 @@ export const ValueLabel = () => {
       <SelectMultiple
         showSelectedInline
         placeholder="Select tag"
+        width="medium"
         valueLabel={(options: any[]) => (
           <Box
             ref={valuesRef}
@@ -53,7 +54,6 @@ export const ValueLabel = () => {
             pad="xsmall"
             gap="xsmall"
             cssGap
-            width="small"
           >
             {options && options.length &&
               options.map((tag) => (
