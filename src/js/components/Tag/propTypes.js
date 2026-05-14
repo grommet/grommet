@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     children: PropTypes.node,
     name: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-    value: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+    value: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     onClick: PropTypes.func,
     onRemove: PropTypes.func,
     messages: PropTypes.shape({

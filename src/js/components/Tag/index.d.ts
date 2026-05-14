@@ -20,7 +20,7 @@ export interface TagProps {
     | 'xlarge'
     | 'xxlarge'
     | string;
-  value: string | number | React.ReactNode;
+  value?: string | number | React.ReactNode;
 }
 
 export interface TagExtendedProps extends BoxProps, TagProps {}
