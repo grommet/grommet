@@ -3,7 +3,6 @@
 exports.__esModule = true;
 exports["default"] = exports.Children = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
@@ -16,49 +15,13 @@ var Children = exports.Children = function Children() {
       return selectedSeason !== season;
     }));
   };
-  var renderSeason = function renderSeason(season) {
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-      key: "season_tag_" + season,
-      href: "#",
-      onClick: function onClick(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        onRemoveSeason(season);
-      },
-      onFocus: function onFocus(event) {
-        return event.stopPropagation();
-      }
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      align: "center",
-      direction: "row",
-      gap: "xsmall",
-      pad: {
-        vertical: 'xsmall',
-        horizontal: 'small'
-      },
-      margin: "xsmall",
-      background: "brand",
-      round: "large"
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      size: "small"
-    }, season), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      round: "full",
-      margin: {
-        left: 'xsmall'
-      }
-    }, /*#__PURE__*/_react["default"].createElement(_grommetIcons.FormClose, {
-      size: "small",
-      style: {
-        width: '12px',
-        height: '12px'
-      }
-    }))));
-  };
-  var renderOption = function renderOption(option, state) {
+  var renderOption = function renderOption(option, index, options, state) {
     return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       pad: "small",
-      background: state.active ? 'active' : undefined
-    }, option);
+      background: state.selected ? 'brand' : undefined
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+      color: state.disabled ? 'text-disabled' : 'text-strong'
+    }, option));
   };
   return (
     /*#__PURE__*/
@@ -71,19 +34,29 @@ var Children = exports.Children = function Children() {
     }, /*#__PURE__*/_react["default"].createElement(_grommet.Select, {
       closeOnChange: false,
       multiple: true,
-      valueLabel: /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-        wrap: true,
-        direction: "row",
-        width: "small"
-      }, selected && selected.length ? selected.map(function (value) {
-        return renderSeason(value);
-      }) : /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-        pad: {
-          vertical: 'xsmall',
-          horizontal: 'small'
-        },
-        margin: "xsmall"
-      }, "Select Season")),
+      placeholder: "Select Season",
+      valueLabel: function valueLabel(options) {
+        return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+          wrap: true,
+          direction: "row",
+          pad: "xsmall",
+          gap: "xsmall",
+          cssGap: true,
+          width: "small"
+        }, options && options.length ? options.map(function (season) {
+          return /*#__PURE__*/_react["default"].createElement(_grommet.Tag, {
+            key: "season_tag_" + season,
+            value: season,
+            onRemove: function onRemove(event) {
+              event.preventDefault();
+              event.stopPropagation();
+              onRemoveSeason(season);
+            }
+          });
+        }) : /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
+          color: "text-weak"
+        }, "Select Season"));
+      },
       options: allSeasons,
       value: selected,
       disabled: [2, 6],

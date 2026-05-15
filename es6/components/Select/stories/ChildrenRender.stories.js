@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { FormClose } from "grommet-icons/es6/icons/FormClose";
-import { Box, Button, Select, Text } from 'grommet';
+import { Box, Select, Tag, Text } from 'grommet';
 var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
 export var Children = function Children() {
   var _useState = useState([]),
@@ -11,49 +10,13 @@ export var Children = function Children() {
       return selectedSeason !== season;
     }));
   };
-  var renderSeason = function renderSeason(season) {
-    return /*#__PURE__*/React.createElement(Button, {
-      key: "season_tag_" + season,
-      href: "#",
-      onClick: function onClick(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        onRemoveSeason(season);
-      },
-      onFocus: function onFocus(event) {
-        return event.stopPropagation();
-      }
-    }, /*#__PURE__*/React.createElement(Box, {
-      align: "center",
-      direction: "row",
-      gap: "xsmall",
-      pad: {
-        vertical: 'xsmall',
-        horizontal: 'small'
-      },
-      margin: "xsmall",
-      background: "brand",
-      round: "large"
-    }, /*#__PURE__*/React.createElement(Text, {
-      size: "small"
-    }, season), /*#__PURE__*/React.createElement(Box, {
-      round: "full",
-      margin: {
-        left: 'xsmall'
-      }
-    }, /*#__PURE__*/React.createElement(FormClose, {
-      size: "small",
-      style: {
-        width: '12px',
-        height: '12px'
-      }
-    }))));
-  };
-  var renderOption = function renderOption(option, state) {
+  var renderOption = function renderOption(option, index, options, state) {
     return /*#__PURE__*/React.createElement(Box, {
       pad: "small",
-      background: state.active ? 'active' : undefined
-    }, option);
+      background: state.selected ? 'brand' : undefined
+    }, /*#__PURE__*/React.createElement(Text, {
+      color: state.disabled ? 'text-disabled' : 'text-strong'
+    }, option));
   };
   return (
     /*#__PURE__*/
@@ -66,19 +29,29 @@ export var Children = function Children() {
     }, /*#__PURE__*/React.createElement(Select, {
       closeOnChange: false,
       multiple: true,
-      valueLabel: /*#__PURE__*/React.createElement(Box, {
-        wrap: true,
-        direction: "row",
-        width: "small"
-      }, selected && selected.length ? selected.map(function (value) {
-        return renderSeason(value);
-      }) : /*#__PURE__*/React.createElement(Box, {
-        pad: {
-          vertical: 'xsmall',
-          horizontal: 'small'
-        },
-        margin: "xsmall"
-      }, "Select Season")),
+      placeholder: "Select Season",
+      valueLabel: function valueLabel(options) {
+        return /*#__PURE__*/React.createElement(Box, {
+          wrap: true,
+          direction: "row",
+          pad: "xsmall",
+          gap: "xsmall",
+          cssGap: true,
+          width: "small"
+        }, options && options.length ? options.map(function (season) {
+          return /*#__PURE__*/React.createElement(Tag, {
+            key: "season_tag_" + season,
+            value: season,
+            onRemove: function onRemove(event) {
+              event.preventDefault();
+              event.stopPropagation();
+              onRemoveSeason(season);
+            }
+          });
+        }) : /*#__PURE__*/React.createElement(Text, {
+          color: "text-weak"
+        }, "Select Season"));
+      },
       options: allSeasons,
       value: selected,
       disabled: [2, 6],
