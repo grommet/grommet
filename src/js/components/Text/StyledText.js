@@ -1,10 +1,12 @@
 import styled, { css } from 'styled-components';
 
 import {
+  focusStyle,
   genericStyles,
   normalizeColor,
   textAlignStyle,
   styledComponentsConfig,
+  unfocusStyle,
 } from '../../utils';
 
 const sizeStyle = (props) => {
@@ -55,6 +57,18 @@ const StyledText = styled('span').withConfig(styledComponentsConfig)`
   ${(props) => props.wordBreak && wordBreakStyle}
   ${(props) =>
     props.theme.text.font && props.theme.text.font.family && fontFamily}
+
+  ${(props) =>
+    (props.truncate || props.tabIndex === 0) &&
+    css`
+      &:focus {
+        ${focusStyle()}
+      }
+
+      &:focus:not(:focus-visible) {
+        ${unfocusStyle()}
+      }
+    `}
 
   ${(props) => props.theme.text && props.theme.text.extend}
 `;

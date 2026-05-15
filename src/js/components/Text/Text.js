@@ -20,9 +20,7 @@ const Text = forwardRef(
       as,
       tip: tipProp,
       // can't alphabetize a11yTitle before tip is defined
-      a11yTitle = (typeof tipProp === 'string' && tipProp) ||
-        tipProp?.content ||
-        undefined,
+      a11yTitle,
       truncate,
       size,
       skeleton: skeletonProp,
@@ -71,16 +69,27 @@ const Text = forwardRef(
       );
     }
 
+    // When a11yTitle is provided, aria-label is set on the element.
+    // aria-label is not permitted on a <span> with no
+    // role (implicit "generic"). Add role="group" so aria-label is
+    // valid per ARIA spec.
+    const role = a11yTitle && !as && !tag ? 'group' : undefined;
+
     const styledTextResult = (
       <StyledText
         as={!as && tag ? tag : as}
         colorProp={color}
         aria-label={a11yTitle}
+        role={role}
         level={level}
         truncate={truncate}
         size={size}
         {...passThemeFlag}
         {...rest}
+        tabIndex={
+          rest.tabIndex ??
+          (tipProp !== undefined || truncate === 'tip' ? 0 : undefined)
+        }
         ref={textRef}
       >
         {children !== undefined ? (
@@ -91,14 +100,27 @@ const Text = forwardRef(
       </StyledText>
     );
 
+    // When tip is a string, use it as the tooltip content.
+    // When tip is an object, spread it as props
+    // (content comes from tipProp.content).
     const tipProps = tipProp && typeof tipProp === 'object' ? tipProp : {};
 
     if (tipProp || textTruncated) {
       // place the text content in a tip if truncate === 'tip'
       // and the text has been truncated
       if (textTruncated) {
+        // For string tip, the string IS the content. For object tip, content
+        // comes from tipProps.content via spread. For no tip (textTruncated
+        // only), fall back to the visible children text wrapped in aria-hidden
+        // so the SR reads the element text once rather than twice.
+        const truncatedContent =
+          typeof tipProp === 'string' ? (
+            tipProp
+          ) : (
+            <span aria-hidden="true">{children}</span>
+          );
         return (
-          <Tip content={children} {...tipProps}>
+          <Tip content={truncatedContent} {...tipProps}>
             {styledTextResult}
           </Tip>
         );
@@ -106,7 +128,14 @@ const Text = forwardRef(
       // place the text content in a tip if truncate !== 'tip'
       // it displays even if the text has not truncated
       if (truncate !== 'tip') {
-        return <Tip {...tipProps}>{styledTextResult}</Tip>;
+        // For string tip, the string IS the tooltip content.
+        // For object tip, content comes from tipProps.content via spread.
+        const tipContent = typeof tipProp === 'string' ? tipProp : undefined;
+        return (
+          <Tip content={tipContent} {...tipProps}>
+            {styledTextResult}
+          </Tip>
+        );
       }
     }
 

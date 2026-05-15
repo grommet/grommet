@@ -876,6 +876,7 @@ exports[`DataTableColumns remove column 1`] = `
         class="c2"
       >
         <button
+          aria-description="Manage columns"
           aria-label="Open column selector"
           class="c3"
           id="test-data--columns-control"
@@ -1829,6 +1830,7 @@ exports[`DataTableColumns renders 1`] = `
               class="c1"
             >
               <button
+                aria-description="Manage columns"
                 aria-label="Open column selector"
                 class="c5"
                 id="test-data--columns-control"
@@ -3096,6 +3098,7 @@ exports[`DataTableColumns search 1`] = `
       class="c2"
     >
       <button
+        aria-description="Manage columns"
         aria-label="Open column selector"
         class="c3"
         id="test-data--columns-control"
@@ -3627,6 +3630,7 @@ exports[`DataTableColumns search 2`] = `
 
 exports[`DataTableColumns search 3`] = `
 <button
+  aria-description="Manage columns"
   aria-label="Open column selector"
   class="StyledButton-sc-323bzc-0 emHfGN"
   data-g-tabindex="none"

@@ -12511,7 +12511,7 @@ exports[`Select prop: onOpen 5`] = `
       class="StyledBox-sc-13pk1d4-0 dPAImr"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 jQsnaU"
+        class="StyledText-sc-1sadyjn-0 cUjjmE"
       >
         one
       </span>
@@ -12530,7 +12530,7 @@ exports[`Select prop: onOpen 5`] = `
       class="StyledBox-sc-13pk1d4-0 dPAImr"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 jQsnaU"
+        class="StyledText-sc-1sadyjn-0 cUjjmE"
       >
         two
       </span>

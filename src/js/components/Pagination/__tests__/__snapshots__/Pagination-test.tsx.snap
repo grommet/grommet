@@ -8411,7 +8411,7 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 cejToA StyledPageControl__StyledSeparator-sc-1vlfaez-2 fyjSEJ"
+            class="StyledText-sc-1sadyjn-0 jyhSGI StyledPageControl__StyledSeparator-sc-1vlfaez-2 fyjSEJ"
           >
             …
           </span>
@@ -9493,7 +9493,7 @@ exports[`Pagination should display previous page of results when "previous" is\\
           class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 cejToA StyledPageControl__StyledSeparator-sc-1vlfaez-2 fyjSEJ"
+            class="StyledText-sc-1sadyjn-0 jyhSGI StyledPageControl__StyledSeparator-sc-1vlfaez-2 fyjSEJ"
           >
             …
           </span>

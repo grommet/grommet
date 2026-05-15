@@ -616,7 +616,7 @@ exports[`Data controlled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 kWrfLj"
+      class="StyledText-sc-1sadyjn-0 cKcEoL"
     >
       4 results of undefined items
     </span>
@@ -654,7 +654,7 @@ exports[`Data controlled search 2`] = `
               class="StyledBox-sc-13pk1d4-0 eLlRsv"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 keDOHK"
               >
                 aa
               </span>
@@ -672,7 +672,7 @@ exports[`Data controlled search 2`] = `
               class="StyledBox-sc-13pk1d4-0 eLlRsv"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 keDOHK"
               >
                 bb
               </span>
@@ -690,7 +690,7 @@ exports[`Data controlled search 2`] = `
               class="StyledBox-sc-13pk1d4-0 eLlRsv"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 keDOHK"
               >
                 cc
               </span>
@@ -708,7 +708,7 @@ exports[`Data controlled search 2`] = `
               class="StyledBox-sc-13pk1d4-0 eLlRsv"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 keDOHK"
               >
                 dd
               </span>
@@ -6846,7 +6846,7 @@ exports[`Data uncontrolled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 kWrfLj"
+      class="StyledText-sc-1sadyjn-0 cKcEoL"
     >
       1 result of 4 items
     </span>
@@ -6884,7 +6884,7 @@ exports[`Data uncontrolled search 2`] = `
               class="StyledBox-sc-13pk1d4-0 eLlRsv"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 keDOHK"
               >
                 aa
               </span>
@@ -7949,7 +7949,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 kWrfLj"
+      class="StyledText-sc-1sadyjn-0 cKcEoL"
     >
       1 result of 4 items
     </span>
@@ -7971,7 +7971,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
               class="StyledBox-sc-13pk1d4-0 faLdcD"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 cejToA"
+                class="StyledText-sc-1sadyjn-0 jyhSGI"
               >
                 Name
               </span>
@@ -8310,7 +8310,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 kWrfLj"
+      class="StyledText-sc-1sadyjn-0 cKcEoL"
     >
       4 items
     </span>
@@ -8332,7 +8332,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
               class="StyledBox-sc-13pk1d4-0 faLdcD"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 cejToA"
+                class="StyledText-sc-1sadyjn-0 jyhSGI"
               >
                 Name
               </span>
@@ -8354,7 +8354,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
               class="StyledBox-sc-13pk1d4-0 eLlRsv"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 keDOHK"
               >
                 aa
               </span>
