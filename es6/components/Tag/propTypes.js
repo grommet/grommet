@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
-    name: PropTypes.string,
-    value: PropTypes.string.isRequired,
+    children: PropTypes.node,
+    name: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    value: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     onClick: PropTypes.func,
     onRemove: PropTypes.func,
     messages: PropTypes.shape({

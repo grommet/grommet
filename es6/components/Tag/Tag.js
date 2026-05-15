@@ -1,4 +1,4 @@
-var _excluded = ["name", "value", "size", "onRemove", "onClick", "messages"];
+var _excluded = ["children", "name", "value", "size", "onRemove", "onClick", "messages"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 import React, { useContext, forwardRef } from 'react';
@@ -11,7 +11,8 @@ import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
 var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _theme$tag$icons, _theme$tag$size, _theme$tag$size2, _theme$tag$size3, _theme$tag$size4, _theme$tag$size5;
-  var name = _ref.name,
+  var children = _ref.children,
+    name = _ref.name,
     value = _ref.value,
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? 'medium' : _ref$size,
@@ -41,7 +42,7 @@ var Tag = /*#__PURE__*/forwardRef(function (_ref, ref) {
     border: theme.tag.border,
     round: ((_theme$tag$size = theme.tag.size) == null || (_theme$tag$size = _theme$tag$size[size]) == null ? void 0 : _theme$tag$size.round) || theme.tag.round
   }, rest);
-  var contents = /*#__PURE__*/React.createElement(Box, {
+  var contents = children || /*#__PURE__*/React.createElement(Box, {
     width: {
       min: 'min-content'
     },
