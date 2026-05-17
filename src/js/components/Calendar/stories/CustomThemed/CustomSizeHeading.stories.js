@@ -11,10 +11,9 @@ const customHeading = deepMerge(grommet, {
   },
 });
 
-
 const reference = '2026-04-12T21:09:16.501Z';
 const end = new Date(reference);
-const start = new Date(end.getTime() - 1000 * 60 * 60 *24 * 90); // 90 days ago
+const start = new Date(end.getTime() - 1000 * 60 * 60 * 24 * 90); // 90 days ago
 const bounds = [
   `${start.getFullYear()}-${start.getMonth() + 1}-${start.getDate()}`,
   `${end.getFullYear()}-${end.getMonth() + 1}-${end.getDate()}`,
