@@ -405,6 +405,23 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "DualRangeInput": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "a11yTitle": [Function],
+      "color": [Function],
+      "defaultValues": [Function],
+      "label": [Function],
+      "max": [Function],
+      "messages": [Function],
+      "min": [Function],
+      "name": [Function],
+      "onChange": [Function],
+      "step": [Function],
+      "values": [Function],
+    },
+    "render": [Function],
+  },
   "FileInput": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
