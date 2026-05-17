@@ -370,6 +370,70 @@ describe('Tabs', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('should not infinite loop when tabs overflow', () => {
+    // Regression: including overflow/arrow state (disableLeftArrow,
+    // disableRightArrow, overflow) in useLayoutEffect deps caused
+    // "Maximum update depth exceeded" when the header was overflowing.
+    // To reproduce, we must mock scrollWidth > offsetWidth so the
+    // overflow branch inside the useLayoutEffect actually fires.
+    const scrollWidthDesc = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      'scrollWidth',
+    );
+    const offsetWidthDesc = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      'offsetWidth',
+    );
+    Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+      configurable: true,
+      get() {
+        return 1000;
+      },
+    });
+    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+      configurable: true,
+      get() {
+        return 500;
+      },
+    });
+
+    try {
+      expect(() =>
+        render(
+          <Grommet>
+            <Tabs>
+              {Array.from({ length: 20 }, (_, i) => (
+                <Tab key={i} title={`Tab ${i + 1}`}>
+                  Content {i + 1}
+                </Tab>
+              ))}
+            </Tabs>
+          </Grommet>,
+        ),
+      ).not.toThrow();
+    } finally {
+      // Restore original property descriptors
+      if (scrollWidthDesc) {
+        Object.defineProperty(
+          HTMLElement.prototype,
+          'scrollWidth',
+          scrollWidthDesc,
+        );
+      } else {
+        delete (HTMLElement.prototype as any).scrollWidth;
+      }
+      if (offsetWidthDesc) {
+        Object.defineProperty(
+          HTMLElement.prototype,
+          'offsetWidth',
+          offsetWidthDesc,
+        );
+      } else {
+        delete (HTMLElement.prototype as any).offsetWidth;
+      }
+    }
+  });
+
   test('theme tab gap', () => {
     const customTheme = {
       tab: {
