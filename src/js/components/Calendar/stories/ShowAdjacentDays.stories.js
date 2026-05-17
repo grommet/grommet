@@ -8,7 +8,7 @@ const Container = ({ ...rest }) => (
   <Box align="center" border gap="small" pad="medium" {...rest} />
 );
 
-export const ShowAdjacent = () => {
+const ShowAdjacentExample = () => {
   const [date, setDate] = useState(new Date(2020, 6, 15).toISOString());
 
   const onSelect = (nextDate) => {
@@ -55,7 +55,10 @@ export const ShowAdjacent = () => {
   );
 };
 
-ShowAdjacent.storyName = 'Show adjacent days';
+export const ShowAdjacent = {
+  name: 'Show adjacent days',
+  render: ShowAdjacentExample,
+};
 
 export default {
   title: 'Visualizations/Calendar/Show adjacent days',

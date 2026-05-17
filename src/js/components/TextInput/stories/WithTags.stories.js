@@ -91,7 +91,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
   );
 };
 
-export const WithTags = () => {
+const WithTagsExample = () => {
   const [selectedTags, setSelectedTags] = React.useState(['foo', 'sony']);
   const [suggestions, setSuggestions] = React.useState(allSuggestions);
 
@@ -132,7 +132,10 @@ export const WithTags = () => {
   );
 };
 
-WithTags.storyName = 'With tags';
+export const WithTags = {
+  name: 'With tags',
+  render: WithTagsExample,
+};
 
 export default {
   title: 'Input/TextInput/With tags',
