@@ -1046,6 +1046,9 @@ export interface ThemeType {
     pinned?: {
       body?: {
         background?: BackgroundType;
+        hover?: {
+          background?: BackgroundType;
+        };
         extend?: ExtendType;
       };
       header?: {
