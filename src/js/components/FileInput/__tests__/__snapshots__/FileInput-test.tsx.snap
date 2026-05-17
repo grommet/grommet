@@ -170,7 +170,9 @@ exports[`FileInput accept 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -348,7 +350,9 @@ exports[`FileInput background 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -524,7 +528,9 @@ exports[`FileInput basic 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -687,7 +693,9 @@ exports[`FileInput basic outside grommet wrapper 1`] = `
       class="c5"
       tabindex="-1"
     >
-      browse
+      <span>
+        browse
+      </span>
     </a>
   </div>
 </div>
@@ -862,7 +870,9 @@ exports[`FileInput border 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -1037,7 +1047,9 @@ exports[`FileInput custom theme input font size 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -1216,7 +1228,9 @@ exports[`FileInput disabled 1`] = `
         disabled=""
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -1595,7 +1609,9 @@ exports[`FileInput disabled with file selected 1`] = `
                 disabled=""
                 tabindex="-1"
               >
-                browse
+                <span>
+                  browse
+                </span>
               </a>
             </div>
           </div>
@@ -1782,7 +1798,9 @@ exports[`FileInput margin 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -1958,7 +1976,9 @@ exports[`FileInput maxSize 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -2134,7 +2154,9 @@ exports[`FileInput messages 1`] = `
         class="c6"
         tabindex="-1"
       >
-        test browse
+        <span>
+          test browse
+        </span>
       </a>
     </div>
   </div>
@@ -2311,7 +2333,9 @@ exports[`FileInput multiple 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -2488,7 +2512,9 @@ exports[`FileInput multiple aggregateThreshold 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -2665,7 +2691,9 @@ exports[`FileInput multiple max 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -2848,7 +2876,9 @@ exports[`FileInput pad 1`] = `
         class="c6"
         tabindex="-1"
       >
-        browse
+        <span>
+          browse
+        </span>
       </a>
     </div>
   </div>
@@ -3253,7 +3283,9 @@ exports[`FileInput should use theme icons 1`] = `
                 class="c14"
                 tabindex="-1"
               >
-                browse
+                <span>
+                  browse
+                </span>
               </a>
             </div>
           </div>
@@ -3434,7 +3466,9 @@ exports[`FileInput theme anchor margin and label gap 1`] = `
           class="c6"
           tabindex="-1"
         >
-          browse
+          <span>
+            browse
+          </span>
         </a>
       </div>
     </div>

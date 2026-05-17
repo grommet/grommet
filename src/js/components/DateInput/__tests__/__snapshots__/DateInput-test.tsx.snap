@@ -1779,7 +1779,9 @@ exports[`DateInput controlled format inline 1`] = `
     class="c23"
     type="button"
   >
-    first
+    <span>
+      first
+    </span>
   </button>
 </div>
 `;
@@ -2733,7 +2735,9 @@ exports[`DateInput controlled format inline 2`] = `
     class="StyledButton-sc-323bzc-0 eJnOht"
     type="button"
   >
-    first
+    <span>
+      first
+    </span>
   </button>
 </div>
 `;
@@ -4262,7 +4266,9 @@ exports[`DateInput controlled format inline without timezone 1`] = `
       class="c23"
       type="button"
     >
-      first
+      <span>
+        first
+      </span>
     </button>
   </div>
 </DocumentFragment>
@@ -5792,7 +5798,9 @@ exports[`DateInput controlled format inline without timezone 2`] = `
       class="c23"
       type="button"
     >
-      first
+      <span>
+        first
+      </span>
     </button>
   </div>
 </DocumentFragment>

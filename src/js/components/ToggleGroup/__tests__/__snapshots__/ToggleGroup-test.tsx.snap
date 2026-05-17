@@ -169,7 +169,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -182,7 +184,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
       <div
@@ -195,7 +199,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios 1`] = `
           tabindex="-1"
           type="button"
         >
-          three
+          <span>
+            three
+          </span>
         </button>
       </div>
     </div>
@@ -371,7 +377,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -383,7 +391,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
       <div
@@ -395,7 +405,9 @@ exports[`ToggleGroup Should call onToggle in uncontrolled scenarios with multipl
           tabindex="-1"
           type="button"
         >
-          three
+          <span>
+            three
+          </span>
         </button>
       </div>
     </div>
@@ -635,7 +647,9 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
           tabindex="-1"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -648,7 +662,9 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
       <div
@@ -661,7 +677,9 @@ exports[`ToggleGroup Should put tab focus on active button when value 1`] = `
           tabindex="0"
           type="button"
         >
-          three
+          <span>
+            three
+          </span>
         </button>
       </div>
     </div>
@@ -967,7 +985,9 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
           tabindex="-1"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -979,7 +999,9 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
           tabindex="0"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
       <div
@@ -991,7 +1013,9 @@ exports[`ToggleGroup Should put tab focus on active button when value with multi
           tabindex="-1"
           type="button"
         >
-          three
+          <span>
+            three
+          </span>
         </button>
       </div>
     </div>
@@ -1229,7 +1253,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -1242,7 +1268,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
       <div
@@ -1255,7 +1283,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value 1`] = `
           tabindex="-1"
           type="button"
         >
-          three
+          <span>
+            three
+          </span>
         </button>
       </div>
     </div>
@@ -1492,7 +1522,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -1504,7 +1536,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
       <div
@@ -1516,7 +1550,9 @@ exports[`ToggleGroup Should put tab focus on first button when no value with mul
           tabindex="-1"
           type="button"
         >
-          three
+          <span>
+            three
+          </span>
         </button>
       </div>
     </div>
@@ -1681,7 +1717,9 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
           tabindex="0"
           type="button"
         >
-          One
+          <span>
+            One
+          </span>
         </button>
       </div>
       <div
@@ -1693,7 +1731,9 @@ exports[`ToggleGroup Should render when options is array of objects with multipl
           tabindex="-1"
           type="button"
         >
-          Two
+          <span>
+            Two
+          </span>
         </button>
       </div>
     </div>
@@ -1867,7 +1907,9 @@ exports[`ToggleGroup custom theme with hover green 1`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -1880,7 +1922,9 @@ exports[`ToggleGroup custom theme with hover green 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
     </div>
@@ -2054,7 +2098,9 @@ exports[`ToggleGroup custom theme with hover green 2`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -2067,7 +2113,9 @@ exports[`ToggleGroup custom theme with hover green 2`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
     </div>
@@ -2634,7 +2682,9 @@ exports[`ToggleGroup object options 1`] = `
           tabindex="0"
           type="button"
         >
-          One
+          <span>
+            One
+          </span>
         </button>
       </div>
       <div
@@ -2647,7 +2697,9 @@ exports[`ToggleGroup object options 1`] = `
           tabindex="-1"
           type="button"
         >
-          Two
+          <span>
+            Two
+          </span>
         </button>
       </div>
     </div>
@@ -2855,7 +2907,9 @@ exports[`ToggleGroup should allow divider to be set to false 1`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -2868,7 +2922,9 @@ exports[`ToggleGroup should allow divider to be set to false 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
     </div>
@@ -3020,7 +3076,9 @@ exports[`ToggleGroup should allow rounding on individual buttons 1`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -3033,7 +3091,9 @@ exports[`ToggleGroup should allow rounding on individual buttons 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
     </div>
@@ -3174,7 +3234,9 @@ exports[`ToggleGroup should allow toggleGroup.button.kind as string 1`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -3187,7 +3249,9 @@ exports[`ToggleGroup should allow toggleGroup.button.kind as string 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
     </div>
@@ -3364,7 +3428,9 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
           tabindex="0"
           type="button"
         >
-          Option 1
+          <span>
+            Option 1
+          </span>
         </button>
       </div>
       <div
@@ -3377,7 +3443,9 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
           tabindex="-1"
           type="button"
         >
-          Option 2
+          <span>
+            Option 2
+          </span>
         </button>
       </div>
       <div
@@ -3390,7 +3458,9 @@ exports[`ToggleGroup should have no accessibility violations 1`] = `
           tabindex="-1"
           type="button"
         >
-          Option 3
+          <span>
+            Option 3
+          </span>
         </button>
       </div>
     </div>
@@ -3556,7 +3626,9 @@ exports[`ToggleGroup string options 1`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -3569,7 +3641,9 @@ exports[`ToggleGroup string options 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
     </div>
@@ -3734,7 +3808,9 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
           tabindex="0"
           type="button"
         >
-          one
+          <span>
+            one
+          </span>
         </button>
       </div>
       <div
@@ -3746,7 +3822,9 @@ exports[`ToggleGroup string options with multiple prop 1`] = `
           tabindex="-1"
           type="button"
         >
-          two
+          <span>
+            two
+          </span>
         </button>
       </div>
     </div>

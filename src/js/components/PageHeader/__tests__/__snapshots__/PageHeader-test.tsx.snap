@@ -218,7 +218,9 @@ exports[`PageHeader basic 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -248,7 +250,9 @@ exports[`PageHeader basic 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -462,7 +466,9 @@ exports[`PageHeader basic renders outside grommet wrapper 1`] = `
         <a
           class="c3"
         >
-          Parent Page
+          <span>
+            Parent Page
+          </span>
         </a>
       </div>
       <div
@@ -492,7 +498,9 @@ exports[`PageHeader basic renders outside grommet wrapper 1`] = `
           class="c9"
           type="button"
         >
-          Get Started
+          <span>
+            Get Started
+          </span>
         </button>
       </div>
     </div>
@@ -728,7 +736,9 @@ exports[`PageHeader custom theme 1`] = `
           <a
             class="c4"
           >
-            Settings
+            <span>
+              Settings
+            </span>
           </a>
         </div>
         <div
@@ -759,7 +769,9 @@ exports[`PageHeader custom theme 1`] = `
               class="c11"
               type="button"
             >
-              Edit
+              <span>
+                Edit
+              </span>
             </button>
           </div>
         </div>
@@ -987,7 +999,9 @@ exports[`PageHeader level - 1 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -1017,7 +1031,9 @@ exports[`PageHeader level - 1 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -1244,7 +1260,9 @@ exports[`PageHeader level - 1 2`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -1274,7 +1292,9 @@ exports[`PageHeader level - 1 2`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -1501,7 +1521,9 @@ exports[`PageHeader level - 2 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -1531,7 +1553,9 @@ exports[`PageHeader level - 2 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -1758,7 +1782,9 @@ exports[`PageHeader level - 2 2`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -1788,7 +1814,9 @@ exports[`PageHeader level - 2 2`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -2015,7 +2043,9 @@ exports[`PageHeader level - 3 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -2045,7 +2075,9 @@ exports[`PageHeader level - 3 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -2272,7 +2304,9 @@ exports[`PageHeader level - 3 2`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -2302,7 +2336,9 @@ exports[`PageHeader level - 3 2`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -2529,7 +2565,9 @@ exports[`PageHeader level - 4 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -2559,7 +2597,9 @@ exports[`PageHeader level - 4 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -2786,7 +2826,9 @@ exports[`PageHeader level - 4 2`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -2816,7 +2858,9 @@ exports[`PageHeader level - 4 2`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -3043,7 +3087,9 @@ exports[`PageHeader level - 5 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -3073,7 +3119,9 @@ exports[`PageHeader level - 5 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -3300,7 +3348,9 @@ exports[`PageHeader level - 5 2`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -3330,7 +3380,9 @@ exports[`PageHeader level - 5 2`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -3557,7 +3609,9 @@ exports[`PageHeader level - 6 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -3587,7 +3641,9 @@ exports[`PageHeader level - 6 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -3814,7 +3870,9 @@ exports[`PageHeader level - 6 2`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -3844,7 +3902,9 @@ exports[`PageHeader level - 6 2`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -4071,7 +4131,9 @@ exports[`PageHeader size - large 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -4101,7 +4163,9 @@ exports[`PageHeader size - large 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -4328,7 +4392,9 @@ exports[`PageHeader size - medium 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -4358,7 +4424,9 @@ exports[`PageHeader size - medium 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
@@ -4585,7 +4653,9 @@ exports[`PageHeader size - small 1`] = `
           <a
             class="c4"
           >
-            Parent Page
+            <span>
+              Parent Page
+            </span>
           </a>
         </div>
         <div
@@ -4615,7 +4685,9 @@ exports[`PageHeader size - small 1`] = `
             class="c10"
             type="button"
           >
-            Get Started
+            <span>
+              Get Started
+            </span>
           </button>
         </div>
       </div>
