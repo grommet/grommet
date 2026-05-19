@@ -484,6 +484,55 @@ describe('Drop', () => {
       expect(dropEl.style.maxHeight).toBe('910px');
     });
 
+    test('flips above when align.top is "top" and more room above', () => {
+      setWindowHeight(1000);
+      render(<TestInput align={{ top: 'top', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      // target sits near the bottom of the viewport
+      mockRect(inputEl, { top: 800, bottom: 840, height: 40 });
+      // drop content is too tall for either side; above space (840) > below
+      // space (200), so the new branch should flip the drop upward and pin
+      // its bottom edge to the target's bottom edge.
+      mockRect(dropEl, { top: 0, bottom: 900, height: 900 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      // CSS bottom = windowHeight (1000) - 840 = 160
+      expect(dropEl.style.bottom).toBe('160px');
+      expect(dropEl.style.top).toBe('');
+      expect(dropEl.style.maxHeight).toBe('840px');
+    });
+
+    test('flips below when align.bottom is "bottom" and more room below', () => {
+      setWindowHeight(1000);
+      render(<TestInput align={{ bottom: 'bottom', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      // target sits near the top of the viewport
+      mockRect(inputEl, { top: 50, bottom: 90, height: 40 });
+      // drop content is too tall for either side; below space (950) > above
+      // space (90), so the new branch should flip the drop downward and pin
+      // its top edge to the target's top edge.
+      mockRect(dropEl, { top: 0, bottom: 950, height: 950 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      expect(dropEl.style.top).toBe('50px');
+      expect(dropEl.style.bottom).toBe('');
+      expect(dropEl.style.maxHeight).toBe('950px');
+    });
+
     test('keeps requested side when it already has more room', () => {
       setWindowHeight(1000);
       render(<TestInput align={{ top: 'bottom', left: 'left' }} />);
