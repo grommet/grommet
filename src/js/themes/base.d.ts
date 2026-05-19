@@ -2018,6 +2018,62 @@ export interface ThemeType {
       unselected?: React.ReactNode | Icon;
     };
   };
+  stepper?: {
+    connector?: {
+      size?: string;
+      color?: {
+        pending?: ColorType;
+        completed?: ColorType;
+        error?: ColorType;
+        disabled?: ColorType;
+      };
+    };
+    step?: {
+      indicator?: {
+        size?: string;
+        icon?: { size?: string };
+      };
+      colors?: {
+        pending?: {
+          background?: ColorType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+        current?: {
+          background?: ColorType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+        completed?: {
+          background?: ColorType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+        error?: {
+          background?: ColorType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+        disabled?: {
+          background?: ColorType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+      };
+    };
+    label?: {
+      color?: {
+        pending?: ColorType;
+        current?: ColorType;
+        completed?: ColorType;
+        error?: ColorType;
+        disabled?: ColorType;
+      };
+      weight?: { default?: string; current?: string };
+    };
+    horizontal?: { label?: { truncate?: boolean } };
+    vertical?: { labelAlign?: string };
+  };
   thumbsRating?: {
     dislike?: {
       color?: ColorType;
@@ -2324,6 +2380,75 @@ export interface ThemeType {
     time?: {
       container?: {
         pad?: PadType;
+      };
+    };
+  };
+  wizard?: {
+    container?: {
+      background?: ColorType;
+      gap?: GapType;
+    };
+    header?: {
+      background?: ColorType;
+      pad?: PadType;
+    };
+    progress?: {
+      margin?: MarginType;
+    };
+    stepHeader?: {
+      margin?: MarginType;
+      counter?: {
+        color?: ColorType;
+        size?: string;
+      };
+      title?: {
+        weight?: number | string;
+      };
+      description?: {
+        color?: ColorType;
+      };
+    };
+    content?: {
+      pad?: PadType;
+      minHeight?: string;
+    };
+    error?: {
+      background?: BackgroundType;
+      pad?: PadType;
+      margin?: MarginType;
+    };
+    actions?: {
+      previous?: {
+        color?: ColorType;
+      };
+      next?: {
+        color?: ColorType;
+      };
+      skip?: {
+        color?: ColorType;
+      };
+      cancel?: {
+        color?: ColorType;
+      };
+    };
+    footer?: {
+      background?: ColorType;
+      pad?: PadType;
+      gap?: GapType;
+    };
+    horizontal?: {
+      progress?: {
+        margin?: MarginType;
+      };
+    };
+    vertical?: {
+      progress?: {
+        width?: string;
+      };
+    };
+    focus?: {
+      outline?: {
+        color?: ColorType;
       };
     };
   };

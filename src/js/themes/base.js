@@ -2241,6 +2241,73 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   unselected: undefined,
       // },
     },
+    stepper: {
+      connector: {
+        size: '2px',
+        color: {
+          pending: 'border',
+          completed: 'status-ok',
+          error: 'status-error',
+          disabled: 'border',
+        },
+      },
+      step: {
+        indicator: {
+          size: '32px',
+          icon: {
+            size: 'small',
+          },
+        },
+        colors: {
+          pending: {
+            background: 'background-front',
+            text: 'text',
+            border: 'border',
+          },
+          current: {
+            background: 'brand',
+            text: 'white',
+            border: 'brand',
+          },
+          completed: {
+            background: 'status-ok',
+            text: 'white',
+            border: 'status-ok',
+          },
+          error: {
+            background: 'status-error',
+            text: 'white',
+            border: 'status-error',
+          },
+          disabled: {
+            background: 'background-contrast',
+            text: 'text-weak',
+            border: 'border',
+          },
+        },
+      },
+      label: {
+        color: {
+          pending: 'text',
+          current: 'brand',
+          completed: 'text-weak',
+          error: 'status-error',
+          disabled: 'text-weak',
+        },
+        weight: {
+          default: 'normal',
+          current: 'bold',
+        },
+      },
+      horizontal: {
+        label: {
+          truncate: true,
+        },
+      },
+      vertical: {
+        labelAlign: 'start',
+      },
+    },
     tab: {
       active: {
         color: 'text',
@@ -2526,6 +2593,75 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: {
             horizontal: 'small',
           },
+        },
+      },
+    },
+    wizard: {
+      container: {
+        background: 'background-front',
+        gap: 'medium',
+      },
+      header: {
+        background: 'background-back',
+        pad: { horizontal: 'large', vertical: 'medium' },
+      },
+      progress: {
+        margin: { bottom: 'medium' },
+      },
+      stepHeader: {
+        margin: { bottom: 'small' },
+        counter: {
+          color: 'text-weak',
+          size: 'small',
+        },
+        title: {
+          weight: 'bold',
+        },
+        description: {
+          color: 'text-weak',
+        },
+      },
+      content: {
+        pad: 'medium',
+        minHeight: '200px',
+      },
+      error: {
+        background: 'status-error',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        margin: { bottom: 'small' },
+      },
+      actions: {
+        previous: {
+          color: 'text',
+        },
+        next: {
+          color: 'brand',
+        },
+        skip: {
+          color: 'text-weak',
+        },
+        cancel: {
+          color: 'text-weak',
+        },
+      },
+      footer: {
+        background: 'background-back',
+        pad: { horizontal: 'large', vertical: 'medium' },
+        gap: 'small',
+      },
+      horizontal: {
+        progress: {
+          margin: { bottom: 'medium' },
+        },
+      },
+      vertical: {
+        progress: {
+          width: 'small',
+        },
+      },
+      focus: {
+        outline: {
+          color: 'focus',
         },
       },
     },

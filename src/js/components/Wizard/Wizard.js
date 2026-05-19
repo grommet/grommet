@@ -1,0 +1,635 @@
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+
+import { Box } from '../Box';
+import { Text } from '../Text';
+import { useForwardedRef } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
+import { WizardContent } from './WizardContent';
+import { WizardContext } from './WizardContext';
+import { WizardFooter } from './WizardFooter';
+import { WizardHeader } from './WizardHeader';
+import { WizardProgress } from './WizardProgress';
+import { WizardStepHeader } from './WizardStepHeader';
+import { WizardPropTypes } from './propTypes';
+
+const Wizard = forwardRef(
+  (
+    {
+      steps = [],
+      // Uncontrolled mode
+      defaultStep,
+      // Controlled mode
+      currentStep: currentStepProp,
+      onStepChange,
+      // Completion / cancellation
+      onComplete,
+      onCancel,
+      // Progress display
+      showProgress = false,
+      // Behavior
+      scrollToTop = true,
+      // Layout
+      id,
+      a11yTitle,
+      children,
+      ...rest
+    },
+    ref,
+  ) => {
+    const { theme } = useThemeValue();
+    const wizardTheme = theme.wizard || {};
+
+    const isControlled = currentStepProp !== undefined;
+
+    // Internal state used when currentStep is uncontrolled.
+    const [internalStep, setInternalStep] = useState(
+      defaultStep || steps[0]?.id,
+    );
+    const [isValidating, setIsValidating] = useState(false);
+    const [isBlocked, setIsBlocked] = useState(false);
+    const [isCompleted, setIsCompleted] = useState(false);
+    const [stepStates, setStepStates] = useState({});
+    const [formValue, setFormValue] = useState(undefined);
+
+    const requestedStepId = isControlled ? currentStepProp : internalStep;
+    const hasValidRequestedStep = steps.some((s) => s.id === requestedStepId);
+    const effectiveStepId = hasValidRequestedStep
+      ? requestedStepId
+      : steps[0]?.id;
+
+    useEffect(() => {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        requestedStepId !== undefined &&
+        requestedStepId !== null &&
+        !hasValidRequestedStep &&
+        steps.length
+      ) {
+        console.warn(
+          `Wizard: invalid step id "${requestedStepId}".` +
+            ` Falling back to first step "${steps[0].id}".`,
+        );
+      }
+    }, [requestedStepId, hasValidRequestedStep, steps]);
+
+    useEffect(() => {
+      if (
+        !isControlled &&
+        effectiveStepId &&
+        effectiveStepId !== internalStep
+      ) {
+        setInternalStep(effectiveStepId);
+      }
+    }, [isControlled, effectiveStepId, internalStep]);
+
+    const activeStepId = effectiveStepId;
+    const activeStepIndex = steps.findIndex((s) => s.id === activeStepId);
+
+    // Keep history of step ids visited (for "previous" navigation)
+    const historyRef = useRef(activeStepId ? [activeStepId] : []);
+
+    useEffect(() => {
+      if (!activeStepId) return;
+      const prev = historyRef.current;
+      if (!prev.length) {
+        historyRef.current = [activeStepId];
+        return;
+      }
+      if (prev[prev.length - 1] !== activeStepId) {
+        historyRef.current = [...prev, activeStepId];
+      }
+    }, [activeStepId]);
+
+    // Scroll to top of Wizard after a successful step transition
+    const containerRef = useForwardedRef(ref);
+    const doScrollToTop = useCallback(() => {
+      if (!scrollToTop) return;
+      const el = containerRef.current;
+      if (!el) return;
+      // Container-first: scroll nearest scrollable ancestor
+      let target = el.parentElement;
+      while (target && target !== document.body) {
+        const { overflow, overflowY } = window.getComputedStyle(target);
+        if (/(auto|scroll)/.test(overflow + overflowY)) {
+          target.scrollTop = 0;
+          return;
+        }
+        target = target.parentElement;
+      }
+      window.scrollTo({ top: 0 });
+    }, [scrollToTop, containerRef]);
+
+    const emitStepChange = useCallback(
+      (event) => {
+        if (onStepChange) onStepChange(event);
+      },
+      [onStepChange],
+    );
+
+    const focusStepHeader = useCallback((stepId) => {
+      if (!stepId || typeof document === 'undefined') return;
+      requestAnimationFrame(() => {
+        const heading = document.getElementById(
+          `wizard-step-heading-${stepId}`,
+        );
+        if (heading) heading.focus();
+      });
+    }, []);
+
+    const focusErrorSummary = useCallback((stepId) => {
+      if (!stepId || typeof document === 'undefined') return;
+      requestAnimationFrame(() => {
+        const errorNode = document.getElementById(`wizard-error-${stepId}`);
+        if (errorNode) errorNode.focus();
+      });
+    }, []);
+
+    // Mark a step as completed in internal step state
+    const markCompleted = useCallback((stepId) => {
+      setStepStates((prev) => ({
+        ...prev,
+        [stepId]: { ...prev[stepId], completed: true, hasError: false },
+      }));
+    }, []);
+
+    const markError = useCallback((stepId, error) => {
+      setStepStates((prev) => ({
+        ...prev,
+        [stepId]: { ...prev[stepId], hasError: true, error },
+      }));
+    }, []);
+
+    const clearError = useCallback((stepId) => {
+      setStepStates((prev) => ({
+        ...prev,
+        [stepId]: { ...prev[stepId], hasError: false, error: undefined },
+      }));
+    }, []);
+
+    // Perform the actual step transition
+    const performTransition = useCallback(
+      (fromStepId, toStepId, trigger) => {
+        markCompleted(fromStepId);
+        clearError(fromStepId);
+        historyRef.current.push(toStepId);
+        emitStepChange({
+          fromStepId,
+          toStepId,
+          trigger,
+          phase: 'completed',
+        });
+        if (!isControlled) setInternalStep(toStepId);
+        doScrollToTop();
+        focusStepHeader(toStepId);
+      },
+      [
+        markCompleted,
+        clearError,
+        emitStepChange,
+        isControlled,
+        doScrollToTop,
+        focusStepHeader,
+      ],
+    );
+
+    // Validate current step and advance if valid
+    const next = useCallback(async () => {
+      const currentStep = steps[activeStepIndex];
+      if (!currentStep) return;
+
+      emitStepChange({
+        fromStepId: currentStep.id,
+        toStepId: steps[activeStepIndex + 1]?.id,
+        trigger: 'next',
+        phase: 'attempted',
+      });
+
+      setIsValidating(true);
+      setIsBlocked(false);
+
+      try {
+        if (currentStep.validation) {
+          await currentStep.validation(formValue);
+        }
+
+        // Resolve next step (branching support)
+        let toStepId;
+        if (currentStep.nextStep) {
+          toStepId = currentStep.nextStep(formValue);
+          if (!steps.find((s) => s.id === toStepId)) {
+            const message =
+              `Wizard: nextStep() returned unknown step id ` +
+              `"${toStepId}". Staying on current step.`;
+            if (process.env.NODE_ENV !== 'production') {
+              console.warn(message);
+            }
+            setIsValidating(false);
+            setIsBlocked(true);
+            focusErrorSummary(currentStep.id);
+            emitStepChange({
+              fromStepId: currentStep.id,
+              toStepId,
+              trigger: 'next',
+              phase: 'blocked',
+              blocked: true,
+              error: message,
+            });
+            return;
+          }
+        } else {
+          toStepId = steps[activeStepIndex + 1]?.id;
+        }
+
+        if (!toStepId) {
+          // On final step, emit terminal blocked phase for attempted next.
+          setIsValidating(false);
+          emitStepChange({
+            fromStepId: currentStep.id,
+            toStepId: currentStep.id,
+            trigger: 'next',
+            phase: 'blocked',
+            blocked: true,
+            error: 'No next step available. Use complete() on the final step.',
+          });
+          return;
+        }
+
+        setIsValidating(false);
+        performTransition(currentStep.id, toStepId, 'next');
+      } catch (error) {
+        const normalizedError =
+          error instanceof Error ? error.message : String(error);
+        markError(currentStep.id, normalizedError);
+        setIsBlocked(true);
+        focusErrorSummary(currentStep.id);
+        setIsValidating(false);
+        emitStepChange({
+          fromStepId: currentStep.id,
+          toStepId: steps[activeStepIndex + 1]?.id,
+          trigger: 'next',
+          phase: 'blocked',
+          blocked: true,
+          error: normalizedError,
+        });
+      }
+    }, [
+      steps,
+      activeStepIndex,
+      formValue,
+      emitStepChange,
+      performTransition,
+      markError,
+      focusErrorSummary,
+    ]);
+
+    // Navigate to previous step (no validation)
+    const previous = useCallback(() => {
+      const currentStep = steps[activeStepIndex];
+      if (!currentStep || activeStepIndex === 0) return; // first step
+
+      emitStepChange({
+        fromStepId: currentStep.id,
+        toStepId: steps[activeStepIndex - 1]?.id,
+        trigger: 'previous',
+        phase: 'attempted',
+      });
+
+      let toStepId;
+      const prevHistory = historyRef.current;
+      if (prevHistory.length >= 2) {
+        toStepId = prevHistory[prevHistory.length - 2];
+        historyRef.current = prevHistory.slice(0, -1);
+      } else {
+        // No navigation history: fall back to linear previous
+        toStepId = steps[activeStepIndex - 1]?.id;
+      }
+
+      if (!toStepId) return;
+
+      emitStepChange({
+        fromStepId: currentStep.id,
+        toStepId,
+        trigger: 'previous',
+        phase: 'completed',
+      });
+      if (!isControlled) setInternalStep(toStepId);
+      doScrollToTop();
+      focusStepHeader(toStepId);
+    }, [
+      steps,
+      activeStepIndex,
+      emitStepChange,
+      isControlled,
+      doScrollToTop,
+      focusStepHeader,
+    ]);
+
+    // Jump to a specific step
+    const goTo = useCallback(
+      async (toStepId) => {
+        const currentStep = steps[activeStepIndex];
+        if (!currentStep) return;
+
+        const toIndex = steps.findIndex((s) => s.id === toStepId);
+
+        // Same-step goTo is a no-op.
+        if (toIndex === activeStepIndex) return;
+
+        emitStepChange({
+          fromStepId: currentStep.id,
+          toStepId,
+          trigger: 'goTo',
+          phase: 'attempted',
+        });
+
+        if (toIndex === -1) {
+          emitStepChange({
+            fromStepId: currentStep.id,
+            toStepId,
+            trigger: 'goTo',
+            phase: 'blocked',
+            blocked: true,
+            error: `Step "${toStepId}" not found`,
+          });
+          return;
+        }
+
+        const targetStep = steps[toIndex];
+        if (
+          stepStates[toStepId]?.disabled ||
+          targetStep?.status === 'disabled'
+        ) {
+          emitStepChange({
+            fromStepId: currentStep.id,
+            toStepId,
+            trigger: 'goTo',
+            phase: 'blocked',
+            blocked: true,
+            error: 'Target step is disabled',
+          });
+          return;
+        }
+
+        const isForwardNavigation = toIndex > activeStepIndex;
+        if (isForwardNavigation) {
+          // Validate current step before jumping forward
+          setIsValidating(true);
+          try {
+            if (currentStep.validation) {
+              await currentStep.validation(formValue);
+            }
+            setIsValidating(false);
+            performTransition(currentStep.id, toStepId, 'goTo');
+          } catch (error) {
+            const normalizedError =
+              error instanceof Error ? error.message : String(error);
+            markError(currentStep.id, normalizedError);
+            setIsBlocked(true);
+            focusErrorSummary(currentStep.id);
+            setIsValidating(false);
+            emitStepChange({
+              fromStepId: currentStep.id,
+              toStepId,
+              trigger: 'goTo',
+              phase: 'blocked',
+              blocked: true,
+              error: normalizedError,
+            });
+          }
+        } else {
+          // Backward navigation: no validation
+          performTransition(currentStep.id, toStepId, 'goTo');
+        }
+      },
+      [
+        steps,
+        activeStepIndex,
+        stepStates,
+        formValue,
+        emitStepChange,
+        performTransition,
+        markError,
+        focusErrorSummary,
+      ],
+    );
+
+    // Skip without validation (only if step is skippable)
+    const skip = useCallback(() => {
+      const currentStep = steps[activeStepIndex];
+      if (!currentStep?.skippable) return;
+      const toStepId = steps[activeStepIndex + 1]?.id;
+      if (!toStepId) return;
+
+      emitStepChange({
+        fromStepId: currentStep.id,
+        toStepId,
+        trigger: 'skip',
+        phase: 'attempted',
+      });
+      performTransition(currentStep.id, toStepId, 'skip');
+    }, [steps, activeStepIndex, emitStepChange, performTransition]);
+
+    // Complete the workflow
+    const complete = useCallback(() => {
+      const currentStep = steps[activeStepIndex];
+      if (!currentStep) return;
+
+      emitStepChange({
+        fromStepId: currentStep.id,
+        trigger: 'complete',
+        phase: 'attempted',
+      });
+
+      const completedSteps = steps
+        .filter(
+          (s) =>
+            stepStates[s.id]?.completed || steps.indexOf(s) < activeStepIndex,
+        )
+        .map((s) => s.id);
+
+      setIsCompleted(true);
+      emitStepChange({
+        fromStepId: currentStep.id,
+        trigger: 'complete',
+        phase: 'completed',
+      });
+
+      if (onComplete) {
+        onComplete({ completedSteps, formValue });
+      }
+    }, [
+      steps,
+      activeStepIndex,
+      stepStates,
+      formValue,
+      emitStepChange,
+      onComplete,
+    ]);
+
+    // Cancel the workflow
+    const cancel = useCallback(() => {
+      const currentStep = steps[activeStepIndex];
+      if (!currentStep) return;
+
+      emitStepChange({
+        fromStepId: currentStep.id,
+        trigger: 'cancel',
+        phase: 'attempted',
+      });
+      emitStepChange({
+        fromStepId: currentStep.id,
+        trigger: 'cancel',
+        phase: 'completed',
+        reason: 'user',
+      });
+
+      if (onCancel) onCancel('user');
+    }, [steps, activeStepIndex, emitStepChange, onCancel]);
+
+    const navigation = useMemo(
+      () => ({ next, previous, goTo, skip, complete, cancel }),
+      [next, previous, goTo, skip, complete, cancel],
+    );
+
+    const contextValue = useMemo(
+      () => ({
+        currentStep: activeStepId,
+        currentStepIndex: activeStepIndex,
+        steps,
+        isValidating,
+        isBlocked,
+        isCompleted,
+        stepStates,
+        formValue,
+        setFormValue,
+        navigation,
+      }),
+      [
+        activeStepId,
+        activeStepIndex,
+        steps,
+        isValidating,
+        isBlocked,
+        isCompleted,
+        stepStates,
+        formValue,
+        navigation,
+      ],
+    );
+
+    const defaultHeader = (
+      <WizardHeader>
+        <Text as="h1" margin="none" weight="bold">
+          {a11yTitle || 'Multi-step workflow'}
+        </Text>
+      </WizardHeader>
+    );
+
+    const defaultBody = (
+      <>
+        <WizardStepHeader />
+        <WizardContent>
+          {/* Validation error */}
+          {isBlocked && (
+            <Box
+              role="alert"
+              id={`wizard-error-${activeStepId}`}
+              tabIndex={-1}
+              aria-live="polite"
+              pad={wizardTheme.error?.pad || 'small'}
+              background={wizardTheme.error?.background || 'status-error'}
+              round="xsmall"
+              margin={wizardTheme.error?.margin || { bottom: 'small' }}
+            >
+              {stepStates[activeStepId]?.error ||
+                'Please fix the error before continuing.'}
+            </Box>
+          )}
+        </WizardContent>
+        <WizardFooter onCancel={onCancel} />
+      </>
+    );
+
+    const renderDefaultContract = () => {
+      if (!showProgress) {
+        return (
+          <>
+            {defaultHeader}
+            {defaultBody}
+          </>
+        );
+      }
+
+      const progress = (
+        <WizardProgress
+          direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
+        />
+      );
+
+      if (showProgress === 'vertical') {
+        return (
+          <>
+            {defaultHeader}
+            <Box
+              direction="row"
+              gap={wizardTheme.vertical?.body?.gap || 'medium'}
+              align="start"
+            >
+              <Box
+                width={wizardTheme.vertical?.progress?.width || 'small'}
+                flex={{ shrink: 0 }}
+              >
+                {progress}
+              </Box>
+              <Box flex>{defaultBody}</Box>
+            </Box>
+          </>
+        );
+      }
+
+      return (
+        <>
+          {defaultHeader}
+          {progress}
+          {defaultBody}
+        </>
+      );
+    };
+
+    const renderWithProgress = () => {
+      // In custom composition mode, consumers place WizardProgress explicitly.
+      if (children) return children;
+      return renderDefaultContract();
+    };
+
+    return (
+      <WizardContext.Provider value={contextValue}>
+        <Box
+          ref={containerRef}
+          id={id}
+          role="region"
+          aria-label={a11yTitle || 'Multi-step workflow'}
+          aria-busy={isValidating}
+          background={wizardTheme.container?.background}
+          gap={wizardTheme.container?.gap}
+          pad={wizardTheme.container?.pad}
+          {...rest}
+        >
+          {renderWithProgress()}
+        </Box>
+      </WizardContext.Provider>
+    );
+  },
+);
+
+Wizard.displayName = 'Wizard';
+Wizard.propTypes = WizardPropTypes;
+
+export { Wizard };

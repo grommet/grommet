@@ -1,0 +1,366 @@
+id: wizard
+name: Wizard
+description: >
+  Multi-step workflow orchestrator with smart defaults for linear flows and
+  composable primitives for advanced custom layouts. Supports branching and
+  skippable steps in v1, optional progress display via Stepper, and optional
+  form integration without coupling. Designed for WCAG 2.2 AA accessibility.
+importPath: grommet
+props:
+  - name: steps
+    type: >-
+      { id: string, title: string, description?: string | ReactNode,
+      skippable?: boolean, validation?: (data: unknown) => Promise<void> | void,
+      nextStep?: (data: unknown) => string }[]
+    required: true
+    description: >-
+      Ordered step definitions. Each step includes a unique id, title, optional
+      description, optional skippable behavior, optional validation hook, and
+      optional branching resolver via nextStep. Wizard treats this as the
+      canonical workflow definition.
+
+  - name: initialStep
+    type: string
+    required: false
+    description: >-
+      Initial active step id for uncontrolled mode. Defaults to the first step
+      id when omitted.
+
+  - name: currentStep
+    type: string
+    required: false
+    description: >-
+      Active step id for controlled mode. When provided, parent owns active-step
+      state and must update this prop in response to onStepChange.
+
+  - name: onStepChange
+    type: "(event: { fromStepId: string, toStepId?: string, trigger: 'next' | 'previous' | 'goTo' | 'skip' | 'complete' | 'cancel', phase: 'attempted' | 'completed' | 'blocked', blocked?: boolean, error?: unknown }) => void"
+    required: false
+    description: >-
+      Callback fired when Wizard attempts or completes a step transition.
+      Includes enough context for parent-controlled navigation state updates.
+      toStepId may be omitted for non-transition events such as cancel/complete.
+
+  - name: onComplete
+    type: '(data: { completedSteps: string[], formData?: unknown }) => void'
+    required: false
+    description: >-
+      Called when workflow completes. Returns completed step ids and optional
+      form data payload supplied by parent or integration layer.
+
+  - name: onCancel
+    type: "(reason: 'user' | 'timeout') => void"
+    required: false
+    description: >-
+      Called when cancellation is confirmed or timeout-driven cancellation is
+      triggered by parent orchestration.
+
+  - name: showProgress
+    type: "boolean | 'horizontal' | 'vertical'"
+    required: false
+    defaultValue: "'horizontal'"
+    description: >-
+      Controls whether progress is displayed and where it is placed.
+      false hides Stepper, true maps to horizontal, 'horizontal' places Stepper
+      above content, and 'vertical' places Stepper in a sidebar region.
+
+  - name: width
+    type: 'string | ResponsiveValue'
+    required: false
+    description: >-
+      Width constraint for Wizard container. Layout still adapts based on
+      available container real estate.
+
+  - name: scrollToTop
+    type: boolean
+    required: false
+    defaultValue: true
+    description: >-
+      When true, Wizard scrolls to top of the step container on successful
+      transition.
+
+  - name: confirmOnCancel
+    type: boolean
+    required: false
+    defaultValue: true
+    description: >-
+      When true, cancellation requires explicit user confirmation via modal
+      dialog before exiting workflow.
+
+  - name: cancelTimeoutMs
+    type: number
+    required: false
+    description: >-
+      Optional auto-cancel timeout in milliseconds. When configured and the
+      timeout elapses, Wizard exits through onCancel with reason 'timeout'.
+
+  - name: id
+    type: string
+    required: false
+    description: HTML id attribute applied to the root Wizard container.
+
+  - name: children
+    type: React.ReactNode
+    required: false
+    description: >-
+      Optional custom composition tree. Consumers may render WizardHeader,
+      WizardContent, WizardFooter, and WizardStep with useWizard() context for
+      advanced layouts.
+
+usage:
+  whenToUse:
+    - Use for multi-step workflows that require clear progress and guided navigation.
+    - Use for linear workflows with minimal setup using default Wizard structure.
+    - Use for branching workflows where next step depends on prior user input.
+    - Use when optional progress placement (horizontal, vertical, hidden) is needed.
+    - Use with or without forms; Wizard remains form-agnostic.
+  whenToAvoid:
+    - Do not use for single-step forms or one-click actions.
+    - Do not use for flat navigation with no sequence; use Tabs or Nav instead.
+    - Do not couple Wizard directly to backend persistence contracts in component logic.
+    - Do not rely on Stepper alone for validation gating; Wizard owns orchestration.
+
+variants:
+  - name: linear-horizontal
+    description: Default linear workflow with horizontal progress above content.
+    when: >-
+      Use for short-to-medium workflows where top progress is sufficient and
+      sidebar presentation is unnecessary.
+    example: >-
+      <Wizard steps={steps} showProgress="horizontal" onComplete={handleComplete} />
+
+  - name: linear-vertical
+    description: Linear workflow with vertical progress in a sidebar.
+    when: >-
+      Use for longer workflows or when step descriptions need persistent space
+      adjacent to content.
+    example: >-
+      <Wizard steps={steps} showProgress="vertical" onComplete={handleComplete} />
+
+  - name: no-progress
+    description: Workflow with progress indicator hidden.
+    when: >-
+      Use for constrained embeds or contextual flows where progress display is
+      unnecessary.
+    example: >-
+      <Wizard steps={steps} showProgress={false} onComplete={handleComplete} />
+
+  - name: branching
+    description: Deterministic branching workflow via nextStep resolver.
+    when: >-
+      Use when workflow path depends on user-provided data and conditional
+      transitions are required.
+    example: >-
+      <Wizard steps={branchingSteps} onComplete={handleComplete} />
+
+  - name: custom-composition
+    description: Advanced layout with explicit Wizard subcomponents and context.
+    when: >-
+      Use when default header/content/footer ordering must be customized while
+      preserving Wizard navigation logic.
+    example: >-
+      <Wizard steps={steps}><WizardHeader /><WizardContent /><WizardFooter /></Wizard>
+
+examples:
+  - description: Basic linear wizard
+    code: |
+      <Wizard
+        steps={[
+          { id: 'account', title: 'Account Details' },
+          { id: 'profile', title: 'Profile Setup' },
+          { id: 'review', title: 'Review & Submit' },
+        ]}
+        onComplete={handleComplete}
+      />
+
+  - description: Vertical progress wizard
+    code: |
+      <Wizard
+        steps={[
+          { id: 'company', title: 'Company Info' },
+          { id: 'users', title: 'User Access' },
+          { id: 'security', title: 'Security' },
+          { id: 'review', title: 'Review & Submit' },
+        ]}
+        showProgress="vertical"
+        onComplete={handleComplete}
+      />
+
+  - description: Branching wizard
+    code: |
+      <Wizard
+        steps={[
+          {
+            id: 'accountType',
+            title: 'Choose Account Type',
+            nextStep: (data) => data.type === 'business' ? 'businessDetails' : 'personalDetails',
+          },
+          { id: 'businessDetails', title: 'Business Details' },
+          { id: 'personalDetails', title: 'Personal Details' },
+          { id: 'review', title: 'Review & Submit' },
+        ]}
+        onComplete={handleComplete}
+      />
+
+  - description: Validation and skip behavior
+    code: |
+      <Wizard
+        steps={[
+          {
+            id: 'identity',
+            title: 'Identity Verification',
+            validation: async (data) => {
+              if (!data.email) throw new Error('Email is required.')
+            },
+          },
+          { id: 'preferences', title: 'Preferences', skippable: true },
+          { id: 'review', title: 'Review & Submit' },
+        ]}
+        onComplete={handleComplete}
+      />
+
+anatomy:
+  - label: '1'
+    region: Wizard Container
+    purpose: Root orchestration and layout boundary for all Wizard regions.
+    availability: required
+    notes: Width and placement are parent-controlled.
+
+  - label: '2'
+    region: Modal Header Region
+    purpose: Displays wizard-level title and top actions (help/close).
+    availability: required
+    notes: Rendered at top of modal/container above Body region.
+
+  - label: 3a
+    region: Progress Region
+    purpose: Hosts Stepper progress indicator when showProgress is enabled.
+    availability: optional
+    notes: Hidden when showProgress is false; built-in layout places it in Body before Step Header and Content Surface.
+
+  - label: 3b(i)
+    region: Step Header Region
+    purpose: Displays step counter, step title, and optional step description.
+    availability: required
+    notes: Primary focus target after successful step transition.
+
+  - label: 3b(ii)
+    region: Content Surface Region
+    purpose: Hosts step-specific content, form fields, and validation feedback.
+    availability: required
+    notes: Works with arbitrary JSX and optional Form integration.
+
+  - label: '4'
+    region: Footer Region
+    purpose: Hosts navigation actions such as Previous, Next, Skip, Cancel, and Complete.
+    availability: required
+    notes: Visible actions depend on step position and current state.
+
+contentGuidelines:
+  - Write step titles as short, meaningful noun phrases (2-5 words) in sentence case.
+  - Use step descriptions to clarify user intent for that step, not implementation details.
+  - Keep descriptions concise (recommended <= 150 characters) for constrained layouts.
+  - Use action-oriented button labels such as Continue, Back, Skip, and Complete.
+  - Error text should be specific and actionable, with clear correction guidance.
+
+dosAndDonts:
+  - do: Keep branching deterministic by returning the same nextStep id for identical inputs.
+    dont: Return non-deterministic next steps for identical step data.
+    reason: Deterministic branching is required for testability and predictable UX.
+
+  - do: Let Wizard own validation and transition gating.
+    dont: Offload workflow gating entirely to Stepper interactions.
+    reason: Wizard is the orchestration layer; Stepper is presentational.
+
+  - do: Use showProgress vertical when step count and descriptions need persistent space.
+    dont: Force dense horizontal progress when labels are unreadable.
+    reason: Readability degrades quickly when inline space is constrained.
+
+  - do: Move focus to the step heading on successful transition.
+    dont: Leave focus in stale controls from previous step after navigation.
+    reason: Deterministic focus management improves keyboard and screen-reader usability.
+
+  - do: Require confirmation for destructive cancellation in high-stakes flows.
+    dont: Exit workflows without warning when confirmOnCancel is enabled.
+    reason: Prevents accidental data loss.
+
+  - do: Configure cancelTimeoutMs only when timeout-driven exits are a product requirement.
+    dont: Emit timeout cancellation without an explicit timeout configuration.
+    reason: Keeps timeout semantics predictable and avoids accidental workflow termination.
+
+behaviors:
+  interactiveStates:
+    - rest
+    - hover
+    - focus
+    - active
+  applicationStates:
+    - idle
+    - editing
+    - validating
+    - blocked
+    - ready
+    - completed
+    - cancelled
+  dataStates:
+    - linear
+    - branching
+    - skippable
+    - non-skippable
+  realEstate:
+    - responsive
+    - overflow
+    - truncation
+
+accessibility:
+  keyboard:
+    - key: Tab / Shift+Tab
+      action: Moves focus across modal header controls, step header, content surface elements, footer actions, and optional progress controls.
+    - key: Enter / Space
+      action: Activates focused Wizard action controls.
+    - key: Escape
+      action: Dismisses an open cancel confirmation modal or triggers configured cancel behavior.
+    - key: Arrow Left / Arrow Right / Arrow Up / Arrow Down
+      action: Delegated to Stepper keyboard model when focus is in progress region.
+  aria:
+    - attribute: role
+      value: region
+      condition: applied to Wizard container with descriptive label.
+    - attribute: aria-label
+      value: 'Wizard: {title}'
+      condition: applied to root region or heading association for workflow context.
+    - attribute: aria-live
+      value: polite
+      condition: applied to validation feedback and step transition announcements.
+    - attribute: aria-describedby
+      value: id referencing validation or summary message
+      condition: applied when navigation is blocked by validation errors.
+  announcements:
+    - trigger: Step transition success
+      message: 'Step {n} of {total}: {title}.'
+    - trigger: Validation blocked
+      message: 'Cannot continue. Resolve the highlighted errors.'
+    - trigger: Workflow completed
+      message: 'Wizard completed.'
+  wcag:
+    - criterion: 1.4.3 Contrast (Minimum)
+      status: pass
+    - criterion: 2.1.1 Keyboard
+      status: pass
+    - criterion: 2.4.3 Focus Order
+      status: pass
+    - criterion: 2.4.7 Focus Visible
+      status: pass
+    - criterion: 2.5.3 Label in Name
+      status: pass
+    - criterion: 2.5.8 Target Size (Minimum)
+      status: pass
+    - criterion: 3.3.1 Error Identification
+      status: pass
+    - criterion: 4.1.2 Name, Role, Value
+      status: pass
+
+relatedComponents:
+  - stepper
+  - form
+  - button

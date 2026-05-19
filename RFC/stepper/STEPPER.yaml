@@ -1,0 +1,346 @@
+id: stepper
+name: Stepper
+description: >
+  Progress indicator that visualizes multi-step workflows. Displays each step
+  as a numbered node connected by lines, reflecting current position and
+  completion state. Supports horizontal and vertical directions, direct step
+  navigation, and error and disabled states. Can be used standalone or
+  embedded inside Wizard.
+importPath: grommet
+props:
+  - name: steps
+    type: >-
+      { id: string, title: string, description?: string, status?: 'pending' |
+      'completed' | 'error' | 'disabled', disabledReason?: string,
+      errorMessage?: string }[]
+    required: true
+    description: >-
+      Ordered array of step descriptors. Each step supplies its own id, display
+      title, optional description, and optional status. Status reflects the
+      step's progress history: 'pending' (not yet visited), 'completed'
+      (successfully finished), 'error' (has a validation or processing error),
+      or 'disabled' (unreachable). 'current' is intentionally absent from the
+      status enum — which step is active is determined solely by the currentStep
+      prop, not by a status value. The parent owns all state; Stepper is purely
+      presentational.
+
+  - name: currentStep
+    type: string
+    required: true
+    description: >-
+      The id of the step that is currently active. This is the sole mechanism
+      for marking a step as current — no status value is needed. The matched
+      step's status determines the compound effective state: 'pending' renders
+      as Current (first visit), 'completed' renders as Current + Completed
+      (returned to a finished step), and 'error' renders as Current + Error
+      (active step has a validation error). Providing an id that matches a
+      'disabled' step is invalid and will produce a development warning.
+
+  - name: direction
+    type: "'horizontal' | 'vertical'"
+    required: false
+    defaultValue: horizontal
+    description: >-
+      Layout axis for steps and connectors. Horizontal renders steps
+      left-to-right with labels below; vertical renders steps top-to-bottom
+      with labels to the right.
+
+  - name: onStepClick
+    type: '(stepId: string) => void'
+    required: false
+    description: >-
+      Callback fired when a user activates a clickable, non-disabled step.
+      Stepper does not navigate on its own; the parent must update currentStep
+      and step statuses in response.
+
+  - name: clickableSteps
+    type: boolean
+    required: false
+    defaultValue: true
+    description: >-
+      When true, non-disabled steps are interactive (receive hover, focus, and
+      active states) and fire onStepClick on activation. When false, all steps
+      are purely decorative — no focus ring, no cursor change, no callbacks.
+
+  - name: id
+    type: string
+    required: false
+    description: HTML id attribute applied to the root container element.
+
+  - name: children
+    type: React.ReactNode
+    required: false
+    description: >-
+      Optional custom step renderer for advanced composition. When provided,
+      the consumer renders StepperStep, StepperIndicator, StepperLabel, and
+      StepperDescription directly and may call useStepper() to read Stepper
+      context. When omitted, Stepper auto-renders all steps from the steps
+      array using its default layout.
+
+usage:
+  whenToUse:
+    - Use to communicate position and progress in a multi-step workflow.
+    - Use horizontal direction in compact headers or above step content.
+    - Use vertical direction in sidebars or when 5 or more steps are present.
+    - Use as a standalone indicator when the parent handles all navigation logic.
+    - Use inside Wizard when showProgress is 'horizontal' or 'vertical'.
+    - Use clickableSteps when users should be able to revisit non-disabled steps.
+  whenToAvoid:
+    - Do not use Stepper for flat navigation with no inherent sequence — use Tabs or Nav instead.
+    - Do not use for fewer than 2 steps.
+    - Do not embed Stepper inside another Stepper.
+    - Do not drive navigation from Stepper alone; always validate in the parent before advancing.
+
+variants:
+  - name: horizontal
+    description: Steps laid out left-to-right. Labels appear below indicators. Default variant.
+    when: >-
+      Use at the top of a workflow page or inside a Wizard header when vertical
+      space is limited and the step count is 5 or fewer.
+    example: >-
+      <Stepper steps={steps} currentStep={currentId} direction="horizontal" />
+
+  - name: vertical
+    description: Steps laid out top-to-bottom. Labels and descriptions appear to the right of indicators.
+    when: >-
+      Use in a sidebar layout or when 5 or more steps need to display, giving
+      each step room for a description.
+    example: >-
+      <Stepper steps={steps} currentStep={currentId} direction="vertical" />
+
+  - name: clickable
+    description: Non-disabled steps are directly interactive and fire onStepClick when activated.
+    when: >-
+      Use when users should be able to revisit available steps directly and the
+      parent owns any gating or validation logic.
+    example: >-
+      <Stepper steps={steps} currentStep={currentId}
+        clickableSteps={true} onStepClick={handleStepClick} />
+
+  - name: non-clickable
+    description: Steps are non-interactive; Stepper is a decorative progress indicator only.
+    when: >-
+      Use when the workflow is driven entirely by system logic or submit actions
+      and user-initiated navigation is not permitted.
+    example: >-
+      <Stepper steps={steps} currentStep={currentId} clickableSteps={false} />
+
+  - name: all-states
+    description: Shows the supported effective visual states for design and implementation verification.
+    when: >-
+      Use in Storybook, visual QA, or design review to verify pending,
+      current, completed, error, and disabled rendering across directions.
+    example: >-
+      <Stepper steps={stateMatrixSteps} currentStep={currentId} />
+
+examples:
+  - description: Basic horizontal stepper
+    code: |
+      <Stepper
+        steps={[
+          { id: 'account', title: 'Account', status: 'completed' },
+          { id: 'profile', title: 'Profile', status: 'pending' },
+          { id: 'review', title: 'Review', status: 'pending' },
+        ]}
+        currentStep="profile"
+      />
+
+  - description: Vertical stepper with descriptions
+    code: |
+      <Stepper
+        steps={[
+          { id: 'setup', title: 'Setup', description: 'Configure your environment.', status: 'completed' },
+          { id: 'deploy', title: 'Deploy', description: 'Push your application.', status: 'pending' },
+          { id: 'verify', title: 'Verify', description: 'Run post-deploy checks.', status: 'pending' },
+        ]}
+        currentStep="deploy"
+        direction="vertical"
+      />
+
+  - description: Stepper with disabled step
+    code: |
+      <Stepper
+        steps={[
+          { id: 'account', title: 'Account', status: 'completed' },
+          { id: 'billing', title: 'Billing', status: 'pending' },
+          { id: 'confirm', title: 'Confirm', status: 'disabled', disabledReason: 'Complete billing first.' },
+        ]}
+        currentStep="billing"
+      />
+
+  - description: Stepper with error state
+    code: |
+      <Stepper
+        steps={[
+          { id: 'billing', title: 'Billing', status: 'error', errorMessage: 'Card number is invalid.' },
+          { id: 'confirm', title: 'Confirm', status: 'pending' },
+        ]}
+        currentStep="billing"
+        onStepClick={handleStepClick}
+      />
+
+anatomy:
+  - label: '1'
+    region: Stepper
+    purpose: Container that arranges steps and connectors in the chosen direction.
+    availability: required
+    notes: Width is determined by parent layout, not Stepper itself.
+
+  - label: '2'
+    region: Step
+    purpose: >-
+      A single node in the workflow sequence. Contains the indicator, label, and
+      optional description.
+    availability: required
+    notes: Repeats once per entry in the steps array.
+
+  - label: 2a
+    region: Indicator
+    purpose: >-
+      Circular badge displaying the step number, a checkmark, or a status icon.
+    availability: required
+    notes: >-
+      Content and visual treatment reflect the effective state (see Step State
+      Matrix). Minimum touch target is 44×44px.
+
+  - label: 2b
+    region: Label
+    purpose: Text identifying the step.
+    availability: required
+    notes: >-
+      Truncates to one line as horizontal real estate becomes constrained; may
+      wrap in vertical layouts when space allows.
+
+  - label: 2c
+    region: Description
+    purpose: Secondary text providing additional context for the step.
+    availability: optional
+    notes: >-
+      When present, renders below the label. In constrained horizontal layouts
+      it may be visually truncated or hidden by parent-managed CSS treatment.
+
+  - label: '3'
+    region: Connector
+    purpose: Decorative line linking adjacent indicator centers.
+    availability: required
+    notes: >-
+      Length is computed from layout, not a fixed token. Color reflects the
+      status of the preceding step (pending, completed, or error). Marked
+      aria-hidden="true". Minimum stroke width is 1px.
+
+contentGuidelines:
+  - >-
+    Write step labels as short noun phrases or sentence fragments (2-4 words).
+    Use sentence case. Examples: "Account details", "Review & submit".
+  - Avoid repeating the step number in the label text — the indicator already communicates position.
+  - Write step descriptions as a single sentence stating what the user will do or provide on that step. Keep them under 150 characters and shorter when possible in constrained layouts.
+  - Use consistent verb tense across all step descriptions within a single Stepper instance.
+  - Do not use labels like "Step 1", "Next", or "Continue" — those convey sequence, not content.
+
+dosAndDonts:
+  - do: Use concise, action-oriented labels that describe the content of the step (e.g. "Billing info").
+    dont: Use generic labels like "Step 1" or "Next" that give no content signal.
+    reason: Users scanning a Stepper need to understand where they are in context, not just their position number.
+
+  - do: Let the parent own all navigation logic and update step statuses in response to user actions.
+    dont: Attempt to derive or mutate step status inside Stepper or a child component.
+    reason: Stepper is presentational; centralizing state in the parent prevents sync bugs and keeps validation logic in one place.
+
+  - do: Use vertical direction when 5 or more steps are needed or when step descriptions add important context.
+    dont: Force a 6-step flow into horizontal direction when inline space is constrained.
+    reason: Horizontal steppers become illegible as real estate shrinks; vertical gives each step room to breathe.
+
+  - do: Let container real estate drive truncation and icon-first fallback behavior.
+    dont: Define responsive behavior only by viewport breakpoints.
+    reason: Stepper layout should respond to the actual space available to the component, not assumptions about the whole page.
+
+  - do: Set clickableSteps={false} when the workflow is fully system-driven and user-initiated navigation is not appropriate.
+    dont: Rely on navigation policy alone to prevent interaction when Stepper should be read-only.
+    reason: clickableSteps={false} removes all interactive affordances (cursor, focus ring, callbacks) cleanly and communicates intent to screen readers.
+
+behaviors:
+  interactiveStates:
+    - rest
+    - hover
+    - focus
+    - active
+  # Effective visual states are derived by combining step.status with whether
+  # step.id matches the currentStep prop. The compound results are:
+  #   pending               → step.status 'pending',    not current
+  #   current               → step.status 'pending',    matches currentStep
+  #   completed             → step.status 'completed',  not current
+  #   current + completed   → step.status 'completed',  matches currentStep
+  #   error (inactive)      → step.status 'error',      not current
+  #   current + error       → step.status 'error',      matches currentStep
+  dataStates:
+    - pending
+    - completed
+    - error
+    - disabled
+  realEstate:
+    - responsive
+    - overflow
+    - truncation
+
+accessibility:
+  keyboard:
+    - key: Tab / Shift+Tab
+      action: Moves focus into and out of the Stepper; within the Stepper, focus is managed by roving tabindex.
+    - key: Arrow Right / Arrow Down
+      action: Moves focus to the next step (Right in horizontal, Down in vertical). Skips disabled steps.
+    - key: Arrow Left / Arrow Up
+      action: Moves focus to the previous step (Left in horizontal, Up in vertical). Skips disabled steps.
+    - key: Home
+      action: Moves focus to the first enabled step.
+    - key: End
+      action: Moves focus to the last enabled step.
+    - key: Enter / Space
+      action: Activates the focused step if it is clickable and not disabled. Fires onStepClick.
+  aria:
+    - attribute: role
+      value: list (ol or ul)
+      condition: applied to the Stepper container to expose ordered step semantics
+    - attribute: aria-current
+      value: step
+      condition: applied to the list item or control representing the active step
+    - attribute: aria-label
+      value: 'Step {n} of {total}: {title}'
+      condition: applied to each step control to provide position and title to screen readers
+    - attribute: disabled
+      value: present (boolean attribute)
+      condition: >-
+        applied to native <button> step controls whose status is 'disabled'.
+        Removes the element from the tab order and suppresses all pointer and
+        keyboard events. Prefer native disabled over aria-disabled for button
+        elements so that disabled steps are unreachable via Tab without
+        additional tabindex management.
+    - attribute: aria-describedby
+      value: id referencing error message element
+      condition: applied to a step control when status is 'error' and errorMessage is present
+    - attribute: aria-hidden
+      value: 'true'
+      condition: applied to all connector elements, which are purely decorative
+  announcements:
+    - trigger: Step activated
+      message: 'Navigated to step {n} of {total}: {title}.'
+  wcag:
+    - criterion: 1.4.3 Contrast (Minimum)
+      status: pass
+    - criterion: 2.1.1 Keyboard
+      status: pass
+    - criterion: 2.4.3 Focus Order
+      status: pass
+    - criterion: 2.4.7 Focus Visible
+      status: pass
+    - criterion: 2.5.3 Label in Name
+      status: pass
+    - criterion: 2.5.8 Target Size (Minimum)
+      status: pass
+    - criterion: 4.1.2 Name, Role, Value
+      status: pass
+
+relatedComponents:
+  - wizard
+  - tabs
+  - nav
+  - button
