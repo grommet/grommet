@@ -61,7 +61,6 @@ export interface WizardContextValue<TFormValue = unknown> {
   currentStep: string | undefined;
   currentStepIndex: number;
   steps: StepDefinition<TFormValue>[];
-  hasOnCancel: boolean;
   isValidating: boolean;
   isBlocked: boolean;
   isCompleted: boolean;
