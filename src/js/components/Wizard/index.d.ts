@@ -13,6 +13,7 @@ export interface StepDefinition<TFormValue = unknown> {
   skippable?: boolean;
   validation?: (formValue: TFormValue) => Promise<void> | void;
   nextStep?: (formValue: TFormValue) => string;
+  children?: Omit<StepDefinition<TFormValue>, 'children'>[];
 }
 
 export type NavigationStepChangeEvent = {
@@ -57,10 +58,14 @@ export interface WizardNavigationAPI {
   cancel: () => void;
 }
 
+export type RenderStepContext<TFormValue = unknown> =
+  WizardContextValue<TFormValue>;
+
 export interface WizardContextValue<TFormValue = unknown> {
   currentStep: string | undefined;
   currentStepIndex: number;
   steps: StepDefinition<TFormValue>[];
+  linearSteps?: StepDefinition<TFormValue>[];
   isValidating: boolean;
   isBlocked: boolean;
   isCompleted: boolean;
@@ -86,6 +91,10 @@ export interface WizardProps<TFormValue = unknown>
   onCancel?: (reason: 'user') => void;
   showProgress?: false | 'horizontal' | 'vertical';
   scrollToTop?: boolean;
+  renderStep?: (
+    step: StepDefinition<TFormValue>,
+    context: RenderStepContext<TFormValue>,
+  ) => React.ReactNode;
   width?: WidthType;
   gap?: GapType;
   id?: string;

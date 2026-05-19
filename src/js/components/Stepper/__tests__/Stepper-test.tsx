@@ -16,6 +16,36 @@ const basicSteps = [
   { id: 'step3', title: 'Review', status: 'pending' as const },
 ];
 
+const nestedSteps = [
+  {
+    id: 'parent',
+    title: 'Parent',
+    children: [
+      { id: 'child-1', title: 'Child One', status: 'pending' as const },
+      { id: 'child-2', title: 'Child Two', status: 'pending' as const },
+    ],
+  },
+  { id: 'final', title: 'Final', status: 'pending' as const },
+];
+
+const deepNestedSteps = [
+  {
+    id: 'parent',
+    title: 'Parent',
+    children: [
+      {
+        id: 'child',
+        title: 'Child',
+        status: 'pending' as const,
+        children: [
+          { id: 'grandchild', title: 'Grandchild', status: 'pending' as const },
+        ],
+      },
+    ],
+  },
+  { id: 'final', title: 'Final', status: 'pending' as const },
+];
+
 describe('Stepper', () => {
   test('should have no accessibility violations', async () => {
     const { container, asFragment } = render(
@@ -388,5 +418,78 @@ describe('Stepper', () => {
     );
     const list = container.querySelector('ol');
     expect(list).toHaveAttribute('aria-label', 'Checkout steps');
+  });
+
+  test('renders parent and child sub-steps inline in rendered order', () => {
+    render(
+      <Grommet>
+        <Stepper steps={nestedSteps} currentStep="parent" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: /Step 1 of 4: Parent/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 2 of 4: Child One/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 3 of 4: Child Two/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 4 of 4: Final/ }),
+    ).toBeInTheDocument();
+  });
+
+  test('horizontal keyboard traversal includes child sub-steps', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Stepper steps={nestedSteps} currentStep="parent" />
+      </Grommet>,
+    );
+
+    const parentButton = screen.getByRole('button', { name: /Step 1 of 4/ });
+    await act(async () => {
+      parentButton.focus();
+    });
+
+    await user.keyboard('{ArrowRight}');
+    expect(
+      screen.getByRole('button', { name: /Step 2 of 4: Child One/ }),
+    ).toHaveFocus();
+
+    await user.keyboard('{ArrowRight}');
+    expect(
+      screen.getByRole('button', { name: /Step 3 of 4: Child Two/ }),
+    ).toHaveFocus();
+  });
+
+  test('warns and ignores descendants beyond child level', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    render(
+      <Grommet>
+        <Stepper steps={deepNestedSteps} currentStep="parent" />
+      </Grommet>,
+    );
+
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('at most two step levels'),
+    );
+    expect(
+      screen.getByRole('button', { name: /Step 1 of 3: Parent/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 2 of 3: Child/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 3 of 3: Final/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: /Grandchild/ }),
+    ).not.toBeInTheDocument();
+
+    warnSpy.mockRestore();
   });
 });

@@ -12,7 +12,9 @@ props:
     type: >-
       { id: string, title: string, description?: string, status?: 'pending' |
       'completed' | 'error' | 'disabled', disabledReason?: string,
-      errorMessage?: string }[]
+      errorMessage?: string, children?: { id: string, title: string,
+      description?: string, status?: 'pending' | 'completed' | 'error' |
+      'disabled', disabledReason?: string, errorMessage?: string }[] }[]
     required: true
     description: >-
       Ordered array of step descriptors. Each step supplies its own id, display
@@ -21,8 +23,9 @@ props:
       (successfully finished), 'error' (has a validation or processing error),
       or 'disabled' (unreachable). 'current' is intentionally absent from the
       status enum — which step is active is determined solely by the currentStep
-      prop, not by a status value. The parent owns all state; Stepper is purely
-      presentational.
+      prop, not by a status value. Steps may include optional child sub-steps.
+      V1 supports a two-level hierarchy (parent + child). The parent owns all
+      state; Stepper is purely presentational.
 
   - name: currentStep
     type: string

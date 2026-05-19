@@ -20,6 +20,28 @@ import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
 import { WizardPropTypes } from './propTypes';
 
+const MAX_SUPPORTED_STEP_LEVEL = 1;
+
+const hasUnsupportedDepth = (steps, level = 0) =>
+  steps.some((step) => {
+    const children = Array.isArray(step.children) ? step.children : [];
+    if (!children.length) return false;
+    if (level >= MAX_SUPPORTED_STEP_LEVEL) return true;
+    return hasUnsupportedDepth(children, level + 1);
+  });
+
+const flattenStepHierarchy = (steps, level = 0) =>
+  steps.flatMap((step) => {
+    const children =
+      level < MAX_SUPPORTED_STEP_LEVEL && Array.isArray(step.children)
+        ? step.children
+        : [];
+    return [step, ...flattenStepHierarchy(children, level + 1)];
+  });
+
+const stepIdSet = (steps) =>
+  new Set(flattenStepHierarchy(steps).map((step) => step.id));
+
 const Wizard = forwardRef(
   (
     {
@@ -36,6 +58,8 @@ const Wizard = forwardRef(
       showProgress = false,
       // Behavior
       scrollToTop = true,
+      // Content injection
+      renderStep,
       // Layout
       id,
       a11yTitle,
@@ -46,12 +70,15 @@ const Wizard = forwardRef(
   ) => {
     const { theme } = useThemeValue();
     const wizardTheme = theme.wizard || {};
+    const warnedUnsupportedDepthRef = useRef(false);
 
     const isControlled = currentStepProp !== undefined;
+    const linearSteps = useMemo(() => flattenStepHierarchy(steps), [steps]);
+    const validStepIds = useMemo(() => stepIdSet(steps), [steps]);
 
     // Internal state used when currentStep is uncontrolled.
     const [internalStep, setInternalStep] = useState(
-      defaultStep || steps[0]?.id,
+      defaultStep || linearSteps[0]?.id,
     );
     const [isValidating, setIsValidating] = useState(false);
     const [isBlocked, setIsBlocked] = useState(false);
@@ -60,10 +87,24 @@ const Wizard = forwardRef(
     const [formValue, setFormValue] = useState(undefined);
 
     const requestedStepId = isControlled ? currentStepProp : internalStep;
-    const hasValidRequestedStep = steps.some((s) => s.id === requestedStepId);
+    const hasValidRequestedStep = validStepIds.has(requestedStepId);
     const effectiveStepId = hasValidRequestedStep
       ? requestedStepId
-      : steps[0]?.id;
+      : linearSteps[0]?.id;
+
+    useEffect(() => {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        !warnedUnsupportedDepthRef.current &&
+        hasUnsupportedDepth(steps)
+      ) {
+        console.warn(
+          'Wizard: v1 supports at most two step levels (parent + child). ' +
+            'Descendants beyond child level are ignored.',
+        );
+        warnedUnsupportedDepthRef.current = true;
+      }
+    }, [steps]);
 
     useEffect(() => {
       if (
@@ -71,14 +112,14 @@ const Wizard = forwardRef(
         requestedStepId !== undefined &&
         requestedStepId !== null &&
         !hasValidRequestedStep &&
-        steps.length
+        linearSteps.length
       ) {
         console.warn(
           `Wizard: invalid step id "${requestedStepId}".` +
-            ` Falling back to first step "${steps[0].id}".`,
+            ` Falling back to first step "${linearSteps[0].id}".`,
         );
       }
-    }, [requestedStepId, hasValidRequestedStep, steps]);
+    }, [requestedStepId, hasValidRequestedStep, linearSteps]);
 
     useEffect(() => {
       if (
@@ -91,7 +132,7 @@ const Wizard = forwardRef(
     }, [isControlled, effectiveStepId, internalStep]);
 
     const activeStepId = effectiveStepId;
-    const activeStepIndex = steps.findIndex((s) => s.id === activeStepId);
+    const activeStepIndex = linearSteps.findIndex((s) => s.id === activeStepId);
 
     // Keep history of step ids visited (for "previous" navigation)
     const historyRef = useRef(activeStepId ? [activeStepId] : []);
@@ -202,12 +243,12 @@ const Wizard = forwardRef(
 
     // Validate current step and advance if valid
     const next = useCallback(async () => {
-      const currentStep = steps[activeStepIndex];
+      const currentStep = linearSteps[activeStepIndex];
       if (!currentStep) return;
 
       emitStepChange({
         fromStepId: currentStep.id,
-        toStepId: steps[activeStepIndex + 1]?.id,
+        toStepId: linearSteps[activeStepIndex + 1]?.id,
         trigger: 'next',
         phase: 'attempted',
       });
@@ -224,7 +265,7 @@ const Wizard = forwardRef(
         let toStepId;
         if (currentStep.nextStep) {
           toStepId = currentStep.nextStep(formValue);
-          if (!steps.find((s) => s.id === toStepId)) {
+          if (!validStepIds.has(toStepId)) {
             const message =
               `Wizard: nextStep() returned unknown step id ` +
               `"${toStepId}". Staying on current step.`;
@@ -245,7 +286,7 @@ const Wizard = forwardRef(
             return;
           }
         } else {
-          toStepId = steps[activeStepIndex + 1]?.id;
+          toStepId = linearSteps[activeStepIndex + 1]?.id;
         }
 
         if (!toStepId) {
@@ -273,7 +314,7 @@ const Wizard = forwardRef(
         setIsValidating(false);
         emitStepChange({
           fromStepId: currentStep.id,
-          toStepId: steps[activeStepIndex + 1]?.id,
+          toStepId: linearSteps[activeStepIndex + 1]?.id,
           trigger: 'next',
           phase: 'blocked',
           blocked: true,
@@ -281,23 +322,24 @@ const Wizard = forwardRef(
         });
       }
     }, [
-      steps,
+      linearSteps,
       activeStepIndex,
       formValue,
       emitStepChange,
       performTransition,
       markError,
       focusErrorSummary,
+      validStepIds,
     ]);
 
     // Navigate to previous step (no validation)
     const previous = useCallback(() => {
-      const currentStep = steps[activeStepIndex];
+      const currentStep = linearSteps[activeStepIndex];
       if (!currentStep || activeStepIndex === 0) return; // first step
 
       emitStepChange({
         fromStepId: currentStep.id,
-        toStepId: steps[activeStepIndex - 1]?.id,
+        toStepId: linearSteps[activeStepIndex - 1]?.id,
         trigger: 'previous',
         phase: 'attempted',
       });
@@ -309,7 +351,7 @@ const Wizard = forwardRef(
         historyRef.current = prevHistory.slice(0, -1);
       } else {
         // No navigation history: fall back to linear previous
-        toStepId = steps[activeStepIndex - 1]?.id;
+        toStepId = linearSteps[activeStepIndex - 1]?.id;
       }
 
       if (!toStepId) return;
@@ -324,7 +366,7 @@ const Wizard = forwardRef(
       doScrollToTop();
       focusStepHeader(toStepId);
     }, [
-      steps,
+      linearSteps,
       activeStepIndex,
       emitStepChange,
       isControlled,
@@ -335,10 +377,9 @@ const Wizard = forwardRef(
     // Jump to a specific step
     const goTo = useCallback(
       async (toStepId) => {
-        const currentStep = steps[activeStepIndex];
+        const currentStep = linearSteps[activeStepIndex];
         if (!currentStep) return;
-
-        const toIndex = steps.findIndex((s) => s.id === toStepId);
+        const toIndex = linearSteps.findIndex((s) => s.id === toStepId);
 
         // Same-step goTo is a no-op.
         if (toIndex === activeStepIndex) return;
@@ -362,7 +403,7 @@ const Wizard = forwardRef(
           return;
         }
 
-        const targetStep = steps[toIndex];
+        const targetStep = linearSteps[toIndex];
         if (
           stepStates[toStepId]?.disabled ||
           targetStep?.status === 'disabled'
@@ -410,7 +451,7 @@ const Wizard = forwardRef(
         }
       },
       [
-        steps,
+        linearSteps,
         activeStepIndex,
         stepStates,
         formValue,
@@ -423,9 +464,9 @@ const Wizard = forwardRef(
 
     // Skip without validation (only if step is skippable)
     const skip = useCallback(() => {
-      const currentStep = steps[activeStepIndex];
+      const currentStep = linearSteps[activeStepIndex];
       if (!currentStep?.skippable) return;
-      const toStepId = steps[activeStepIndex + 1]?.id;
+      const toStepId = linearSteps[activeStepIndex + 1]?.id;
       if (!toStepId) return;
 
       emitStepChange({
@@ -435,11 +476,11 @@ const Wizard = forwardRef(
         phase: 'attempted',
       });
       performTransition(currentStep.id, toStepId, 'skip');
-    }, [steps, activeStepIndex, emitStepChange, performTransition]);
+    }, [linearSteps, activeStepIndex, emitStepChange, performTransition]);
 
     // Complete the workflow
     const complete = useCallback(() => {
-      const currentStep = steps[activeStepIndex];
+      const currentStep = linearSteps[activeStepIndex];
       if (!currentStep) return;
 
       emitStepChange({
@@ -448,12 +489,12 @@ const Wizard = forwardRef(
         phase: 'attempted',
       });
 
-      const completedSteps = steps
+      const completedSteps = linearSteps
         .filter(
-          (s) =>
-            stepStates[s.id]?.completed || steps.indexOf(s) < activeStepIndex,
+          (step, index) =>
+            stepStates[step.id]?.completed || index < activeStepIndex,
         )
-        .map((s) => s.id);
+        .map((step) => step.id);
 
       setIsCompleted(true);
       emitStepChange({
@@ -466,7 +507,7 @@ const Wizard = forwardRef(
         onComplete({ completedSteps, formValue });
       }
     }, [
-      steps,
+      linearSteps,
       activeStepIndex,
       stepStates,
       formValue,
@@ -476,7 +517,7 @@ const Wizard = forwardRef(
 
     // Cancel the workflow
     const cancel = useCallback(() => {
-      const currentStep = steps[activeStepIndex];
+      const currentStep = linearSteps[activeStepIndex];
       if (!currentStep) return;
 
       emitStepChange({
@@ -492,7 +533,7 @@ const Wizard = forwardRef(
       });
 
       if (onCancel) onCancel('user');
-    }, [steps, activeStepIndex, emitStepChange, onCancel]);
+    }, [linearSteps, activeStepIndex, emitStepChange, onCancel]);
 
     const navigation = useMemo(
       () => ({ next, previous, goTo, skip, complete, cancel }),
@@ -504,6 +545,7 @@ const Wizard = forwardRef(
         currentStep: activeStepId,
         currentStepIndex: activeStepIndex,
         steps,
+        linearSteps,
         hasOnCancel: Boolean(onCancel),
         isValidating,
         isBlocked,
@@ -517,6 +559,7 @@ const Wizard = forwardRef(
         activeStepId,
         activeStepIndex,
         steps,
+        linearSteps,
         onCancel,
         isValidating,
         isBlocked,
@@ -536,6 +579,8 @@ const Wizard = forwardRef(
         </WizardHeader>
       </Box>
     );
+
+    const currentStepDef = linearSteps[activeStepIndex];
 
     const defaultStepRegion = (
       <Box gridArea="step">
@@ -557,6 +602,9 @@ const Wizard = forwardRef(
                 'Please fix the error before continuing.'}
             </Box>
           )}
+          {renderStep && currentStepDef
+            ? renderStep(currentStepDef, contextValue)
+            : null}
         </WizardContent>
       </Box>
     );

@@ -96,6 +96,7 @@ Multi-step workflow orchestrator with smart defaults for linear flows and compos
 - [x] Meet WCAG 2.2 AA accessibility standards
 - [x] Provide themeable design tokens for all regions and states
 - [x] Optional progress display via Stepper integration
+- [x] Support parent steps with child sub-steps (v1 scope: parent-and-child levels)
 
 **Non-Goals (v1)**
 
@@ -104,6 +105,7 @@ Multi-step workflow orchestrator with smart defaults for linear flows and compos
 - Domain-specific content primitives (accept any JSX/components)
 - Multi-user collaboration or audit trails
 - Detailed completion view slot (onComplete callback only in v1)
+- Arbitrary recursive step depth beyond parent-and-child levels
 
 ---
 
@@ -133,6 +135,12 @@ interface WizardProps<TFormValue = unknown> {
   // Behavior
   scrollToTop?: boolean; // default: true; scroll on successful step transitions
 
+  // Step content injection (default layout mode)
+  renderStep?: (
+    step: StepDefinition<TFormValue>,
+    context: RenderStepContext<TFormValue>,
+  ) => React.ReactNode;
+
   // Layout
   width?: string | ResponsiveValue;
   gap?: string | ResponsiveValue;
@@ -146,12 +154,13 @@ interface WizardProps<TFormValue = unknown> {
 }
 
 interface StepDefinition<TFormValue = unknown> {
-  id: string; // Unique identifier
+  id: string; // Unique identifier across the full parent-and-child graph
   title: string; // Display title
   description?: string | React.ReactNode; // Optional secondary text
   skippable?: boolean; // Allow skip without validation
   validation?: (formValue: TFormValue) => Promise<void> | void; // Validation hook
   nextStep?: (formValue: TFormValue) => string; // Branching resolver
+  children?: Omit<StepDefinition<TFormValue>, 'children'>[]; // Optional child sub-steps
 }
 
 type NavigationStepChangeEvent = {
@@ -177,6 +186,8 @@ interface WizardCompletionData<TFormValue = unknown> {
   completedSteps: string[]; // All completed step ids
   formValue?: TFormValue; // Optional form value payload
 }
+
+type RenderStepContext<TFormValue = unknown> = WizardContextValue<TFormValue>;
 ```
 
 ### Step Definition Model
@@ -189,12 +200,13 @@ type StepDefinition<TFormValue = unknown> = {
   skippable?: boolean;
   validation?: (data: TFormValue) => Promise<void> | void;
   nextStep?: (data: TFormValue) => string;
+  children?: Omit<StepDefinition<TFormValue>, 'children'>[];
 };
 ```
 
 **Properties**
 
-- **`id`** — Unique identifier; used in `currentStep` and `onStepChange` events
+- **`id`** — Unique identifier across all parent-and-child steps; used in `currentStep` and `onStepChange` events
 - **`title`** — Display label; used in Step Header and progress indication
 - **`description`** — Optional secondary text; shown below title in Step Header
 - **`skippable`** — When true, `skip()` button is shown; advances without validation
@@ -203,7 +215,13 @@ type StepDefinition<TFormValue = unknown> = {
   - Asynchronous: return Promise; resolves on success, rejects on error
 - **`nextStep`** — Optional branching resolver; called with current form data
   - Must return a valid step id (deterministic)
-  - If omitted, advances to next step in array order
+  - If omitted, advances to the next step in the rendered child-first hierarchy order
+- **`children`** — Optional child sub-steps (v1 supports one child level)
+  - Wizard traverses in child-first order when a parent contains children
+  - Parent completion defaults to all child steps completed
+  - Descendants beyond the child level are unsupported in v1.
+  - In development builds, Wizard warns when deeper nesting is authored.
+  - Descendants beyond the child level are ignored for navigation, progress, and counters.
 
 ### Event Model
 
@@ -283,6 +301,77 @@ const wizard = useWizard<TFormValue>()
 // }
 ```
 
+### Step Content Coordination (Recommended)
+
+Wizard provides a first-class `renderStep` prop for injecting step content into
+the default layout without requiring manual composition of subcomponents.
+
+`renderStep` is called on every render with two arguments:
+
+1. **`step: StepDefinition`** — the currently active step's definition object
+   (id, title, skippable, etc.).
+2. **`context: RenderStepContext`** — a snapshot of the full `WizardContextValue`
+   at the time of rendering (stepStates, formValue, navigation, etc.).
+
+Because `renderStep` is called at render time, content can react to live state,
+API data, user roles, and accumulated form values without re-creating the `steps`
+array.
+
+Recommended pattern — external content map:
+
+```tsx
+const steps: StepDefinition[] = [
+  { id: 'account', title: 'Account' },
+  { id: 'billing', title: 'Billing' },
+  { id: 'review', title: 'Review' },
+];
+
+const stepContentById: Record<string, React.ReactNode> = {
+  account: <AccountStep />,
+  billing: <BillingStep />,
+  review: <ReviewStep />,
+};
+
+export const MyWizard = () => (
+  <Wizard
+    steps={steps}
+    showProgress="horizontal"
+    onComplete={handleComplete}
+    renderStep={(step) => stepContentById[step.id] ?? null}
+  />
+);
+```
+
+For content that depends on runtime state, use the second `context` argument:
+
+```tsx
+renderStep={(step, context) => (
+  context.stepStates[step.id]?.hasError
+    ? <ErrorSummary error={context.stepStates[step.id].error} />
+    : stepContentById[step.id]
+)}
+```
+
+For content that depends on accumulated form values:
+
+```tsx
+renderStep={(step, { formValue }) => (
+  step.id === 'review'
+    ? <ReviewSummary data={formValue} />
+    : stepContentById[step.id]
+)}
+```
+
+This keeps `StepDefinition` focused on orchestration metadata (`id`, `title`,
+`validation`, `nextStep`, `children`) while rendering concerns remain in a
+separate, easily testable function.
+
+**Advanced composition** — When full control over Wizard's layout is required
+(custom grid, additional slots, etc.), pass `children` instead of `renderStep`.
+Passing `children` bypasses the default layout; all subcomponents
+(`WizardProgress`, `WizardStepHeader`, `WizardContent`, `WizardFooter`) must be
+explicitly placed. See the "Custom Composition" story for an example.
+
 ### Default Render Contract (No `children`)
 
 When `children` is not provided, Wizard renders a default built-in layout in this order:
@@ -292,7 +381,8 @@ When `children` is not provided, Wizard renders a default built-in layout in thi
   <WizardHeader />
   <WizardProgress /> // only when showProgress is 'horizontal' or 'vertical'
   <WizardStepHeader />
-  <WizardContent />
+  <WizardContent /> // renders validation error and renderStep(step, context) output
+  when provided
   <WizardFooter />
 </Wizard>
 ```
@@ -323,6 +413,7 @@ declare module 'grommet' {
     skippable?: boolean;
     validation?: (data: TFormValue) => Promise<void> | void;
     nextStep?: (data: TFormValue) => string;
+    children?: Omit<StepDefinition<TFormValue>, 'children'>[];
   }
 
   type NavigationStepChangeEvent = {
@@ -359,12 +450,18 @@ declare module 'grommet' {
     onCancel?: (reason: 'user') => void;
     showProgress?: 'horizontal' | 'vertical' | false;
     scrollToTop?: boolean;
+    renderStep?: (
+      step: StepDefinition<TFormValue>,
+      context: RenderStepContext<TFormValue>,
+    ) => React.ReactNode;
     width?: string | ResponsiveValue;
     gap?: string | ResponsiveValue;
     id?: string;
     a11yTitle?: string;
     children?: React.ReactNode;
   }
+
+  type RenderStepContext<TFormValue = unknown> = WizardContextValue<TFormValue>;
 
   interface WizardContextValue<TFormValue = unknown> {
     currentStep: string;
@@ -616,6 +713,17 @@ V1 policy is fixed and non-configurable. Wizard does not expose a `navigationPol
 - **`complete()`** — Mark workflow complete; emit `onComplete`
 - **`cancel()`** — Trigger cancellation flow
 
+**Nested Steps (v1 two-level scope)**
+
+- When a parent step has children, `next()` advances into the first incomplete child before moving to the next parent.
+- `previous()` walks backward through child steps before moving to the prior parent.
+- `goTo(stepId)` remains id-based and can target parent or child ids.
+- `skip()` advances one step in rendered child-first order (for a parent with children, this advances to the first child).
+- Parent completion is derived by child completion (all child steps completed).
+- Descendants beyond the child level are unsupported in v1.
+- In development builds, Wizard warns when deeper nesting is authored.
+- Descendants beyond the child level are ignored for navigation, progress, and step counters.
+
 **Gating Rules**
 
 - Cannot navigate to unknown, disabled, or blocked steps
@@ -656,6 +764,11 @@ const steps = [
 | **Enter/Space**   | Focused button                             | Activate button (Next, Previous, Skip, Cancel, Complete) |
 | **Escape**        | Consumer-provided confirmation dialog open | Dismiss dialog and return to editing                     |
 | **Arrow keys**    | Focus on Stepper                           | Delegate to Stepper (navigate between steps)             |
+
+For parent-and-child sub-steps (v1):
+
+- Stepper keyboard traversal remains the source of truth for parent-and-child focus movement.
+- Wizard consumes selected parent-and-child ids through `goTo(stepId)` and applies the same validation policy.
 
 ### Focus Management
 
@@ -1123,6 +1236,18 @@ export const CustomComposition = () => {
 
 **Purpose**: Advanced layout control via subcomponents.
 
+### Story: Nested Sub-Steps
+
+**Path**: `Wizard/Nested Sub-Steps`
+
+**Purpose**: Demonstrate child-first navigation with parent-and-child steps, including next/previous traversal, `goTo(stepId)` targeting child nodes, and progress/header counters using flattened rendered order.
+
+**Verification**:
+
+- Parent-and-child steps render and navigate in v1 child-first order
+- Step counter and progress labels reflect flattened rendered hierarchy order
+- Parent progress status is derived from child statuses before passing to Stepper
+
 ### Story: Keyboard Navigation
 
 **Path**: `Wizard/Keyboard Navigation`
@@ -1194,6 +1319,13 @@ Wizard derives each step's Stepper status based on navigation state, validation,
 | Step comes after current step AND no `disabledReason`             | `pending`      | Future reachable step; not yet visited.                                                |
 | Step comes after current step AND `disabledReason` is defined     | `disabled`     | Future step is blocked (e.g., missing prerequisites); reason shown via tooltip/inline. |
 | Step comes before current step                                    | `completed`    | Past step is considered completed (implicit); visual closed state.                     |
+
+For parent steps with children, Wizard derives parent status from children before passing data to Stepper:
+
+- Any child in `error` -> parent `error`
+- All children `completed` -> parent `completed`
+- All children `disabled` -> parent `disabled`
+- Otherwise -> parent `pending`
 
 ### Stepper Props Passed by Wizard
 
@@ -1606,6 +1738,10 @@ Terminal states: **Canceled**, **Completed**
 ### Story: **Custom Composition Layout**
 
 **Purpose:** Demonstrate custom header/content/footer composition with `useWizard()`.
+
+### Story: **Nested Sub-Steps**
+
+**Purpose:** Demonstrate parent-and-child step traversal and flattened progress ordering in the v1 two-level hierarchy.
 
 ### Story: **Consumer-managed Cancel Confirmation**
 

@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 
@@ -10,6 +11,55 @@ import { Box } from '../Box';
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
+
+const MAX_SUPPORTED_STEP_LEVEL = 1;
+
+const hasUnsupportedDepth = (steps, level = 0) =>
+  steps.some((step) => {
+    const children = Array.isArray(step.children) ? step.children : [];
+    if (!children.length) return false;
+    if (level >= MAX_SUPPORTED_STEP_LEVEL) return true;
+    return hasUnsupportedDepth(children, level + 1);
+  });
+
+const normalizeStepHierarchy = (step, level = 0) => {
+  const children =
+    level < MAX_SUPPORTED_STEP_LEVEL && Array.isArray(step.children)
+      ? step.children.map((child) => normalizeStepHierarchy(child, level + 1))
+      : undefined;
+
+  let { status } = step;
+  if (children?.length) {
+    const childStatuses = children.map((child) => child.status || 'pending');
+    if (childStatuses.every((childStatus) => childStatus === 'completed')) {
+      status = 'completed';
+    } else if (childStatuses.some((childStatus) => childStatus === 'error')) {
+      status = 'error';
+    } else if (
+      childStatuses.every((childStatus) => childStatus === 'disabled')
+    ) {
+      status = 'disabled';
+    } else {
+      status = 'pending';
+    }
+  }
+
+  return {
+    ...step,
+    status,
+    children,
+  };
+};
+
+const flattenHierarchy = (steps, level = 0) =>
+  steps.flatMap((step) => {
+    const normalized = normalizeStepHierarchy(step, level);
+    const currentNode = { ...normalized, level };
+    const childNodes = normalized.children?.length
+      ? flattenHierarchy(normalized.children, level + 1)
+      : [];
+    return [currentNode, ...childNodes];
+  });
 
 const Stepper = forwardRef(
   (
@@ -25,10 +75,27 @@ const Stepper = forwardRef(
     },
     ref,
   ) => {
+    const warnedUnsupportedDepthRef = useRef(false);
+    const flattenedSteps = useMemo(() => flattenHierarchy(steps), [steps]);
+
+    useEffect(() => {
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        !warnedUnsupportedDepthRef.current &&
+        hasUnsupportedDepth(steps)
+      ) {
+        console.warn(
+          'Stepper: v1 supports at most two step levels (parent + child). ' +
+            'Descendants beyond child level are ignored.',
+        );
+        warnedUnsupportedDepthRef.current = true;
+      }
+    }, [steps]);
+
     // Dev-mode warnings for invalid authored state
     if (process.env.NODE_ENV !== 'production') {
       if (currentStep) {
-        const matched = steps.find((s) => s.id === currentStep);
+        const matched = flattenedSteps.find((s) => s.id === currentStep);
         if (!matched) {
           console.warn(
             `Stepper: currentStep "${currentStep}" does not ` +
@@ -45,38 +112,44 @@ const Stepper = forwardRef(
 
     // Resolve effective current step: skip disabled/invalid targets
     const effectiveCurrentStep = useMemo(() => {
-      if (!currentStep) return steps.find((s) => s.status !== 'disabled')?.id;
-      const matched = steps.find((s) => s.id === currentStep);
+      if (!currentStep)
+        return flattenedSteps.find((s) => s.status !== 'disabled')?.id;
+      const matched = flattenedSteps.find((s) => s.id === currentStep);
       if (!matched || matched.status === 'disabled') {
-        return steps.find((s) => s.status !== 'disabled')?.id || steps[0]?.id;
+        return (
+          flattenedSteps.find((s) => s.status !== 'disabled')?.id ||
+          flattenedSteps[0]?.id
+        );
       }
       return currentStep;
-    }, [currentStep, steps]);
+    }, [currentStep, flattenedSteps]);
 
     // Roving tabindex: one step holds tabIndex=0 at a time
     const initialFocusIndex = Math.max(
       0,
-      steps.findIndex((s) => s.id === effectiveCurrentStep),
+      flattenedSteps.findIndex((s) => s.id === effectiveCurrentStep),
     );
     const [focusIndex, setFocusIndex] = useState(initialFocusIndex);
 
     // Sync focusIndex when currentStep changes (e.g. Wizard advances)
     useEffect(() => {
-      const idx = steps.findIndex((s) => s.id === effectiveCurrentStep);
+      const idx = flattenedSteps.findIndex(
+        (s) => s.id === effectiveCurrentStep,
+      );
       if (idx >= 0) setFocusIndex(idx);
-    }, [effectiveCurrentStep, steps]);
+    }, [effectiveCurrentStep, flattenedSteps]);
 
     // Stable refs for each step button (for programmatic focus)
     const stepRefs = useMemo(
-      () => steps.map(() => React.createRef()),
+      () => flattenedSteps.map(() => React.createRef()),
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      [steps.length],
+      [flattenedSteps.length],
     );
 
     // Context helpers
     const stepIndex = useCallback(
-      (id) => steps.findIndex((s) => s.id === id),
-      [steps],
+      (id) => flattenedSteps.findIndex((s) => s.id === id),
+      [flattenedSteps],
     );
     const isCurrentStep = useCallback(
       (id) => id === effectiveCurrentStep,
@@ -84,30 +157,30 @@ const Stepper = forwardRef(
     );
     const isPriorStep = useCallback(
       (id) => {
-        const idx = steps.findIndex((s) => s.id === id);
-        const currentIdx = steps.findIndex(
+        const idx = flattenedSteps.findIndex((s) => s.id === id);
+        const currentIdx = flattenedSteps.findIndex(
           (s) => s.id === effectiveCurrentStep,
         );
         return idx < currentIdx;
       },
-      [steps, effectiveCurrentStep],
+      [flattenedSteps, effectiveCurrentStep],
     );
     const isAfterStep = useCallback(
       (id) => {
-        const idx = steps.findIndex((s) => s.id === id);
-        const currentIdx = steps.findIndex(
+        const idx = flattenedSteps.findIndex((s) => s.id === id);
+        const currentIdx = flattenedSteps.findIndex(
           (s) => s.id === effectiveCurrentStep,
         );
         return idx > currentIdx;
       },
-      [steps, effectiveCurrentStep],
+      [flattenedSteps, effectiveCurrentStep],
     );
     const canNavigateTo = useCallback(
       (id) => {
-        const step = steps.find((s) => s.id === id);
+        const step = flattenedSteps.find((s) => s.id === id);
         return clickableSteps && step?.status !== 'disabled';
       },
-      [steps, clickableSteps],
+      [flattenedSteps, clickableSteps],
     );
 
     // Keyboard navigation: arrow keys, Home, End
@@ -121,7 +194,7 @@ const Stepper = forwardRef(
           (isHorizontal && key === 'ArrowRight') ||
           (!isHorizontal && key === 'ArrowDown')
         ) {
-          nextIndex = Math.min(focusIndex + 1, steps.length - 1);
+          nextIndex = Math.min(focusIndex + 1, flattenedSteps.length - 1);
         } else if (
           (isHorizontal && key === 'ArrowLeft') ||
           (!isHorizontal && key === 'ArrowUp')
@@ -130,7 +203,7 @@ const Stepper = forwardRef(
         } else if (key === 'Home') {
           nextIndex = 0;
         } else if (key === 'End') {
-          nextIndex = steps.length - 1;
+          nextIndex = flattenedSteps.length - 1;
         } else {
           return;
         }
@@ -141,13 +214,13 @@ const Stepper = forwardRef(
           stepRefs[nextIndex]?.current?.focus();
         }
       },
-      [direction, focusIndex, steps.length, stepRefs],
+      [direction, focusIndex, flattenedSteps.length, stepRefs],
     );
 
     const contextValue = useMemo(
       () => ({
         currentStep: effectiveCurrentStep,
-        steps,
+        steps: flattenedSteps,
         direction,
         clickableSteps,
         onStepClick,
@@ -162,7 +235,7 @@ const Stepper = forwardRef(
       }),
       [
         effectiveCurrentStep,
-        steps,
+        flattenedSteps,
         direction,
         clickableSteps,
         onStepClick,
@@ -189,7 +262,7 @@ const Stepper = forwardRef(
           {...rest}
         >
           {children ||
-            steps.map((step, index) => (
+            flattenedSteps.map((step, index) => (
               <StepperStep key={step.id} stepId={step.id} index={index} />
             ))}
         </Box>

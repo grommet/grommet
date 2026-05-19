@@ -11,12 +11,17 @@ const WizardFooter = () => {
   const footerTheme = wizardTheme.footer || {};
   const actionsTheme = wizardTheme.actions || {};
 
-  const { currentStepIndex, steps, isValidating, hasOnCancel, navigation } =
-    useWizard();
+  const {
+    currentStepIndex,
+    linearSteps = [],
+    isValidating,
+    hasOnCancel,
+    navigation,
+  } = useWizard();
 
   const isFirstStep = currentStepIndex === 0;
-  const isLastStep = currentStepIndex === steps.length - 1;
-  const currentStepDef = steps[currentStepIndex];
+  const isLastStep = currentStepIndex === linearSteps.length - 1;
+  const currentStepDef = linearSteps[currentStepIndex];
   const isSkippable = currentStepDef?.skippable;
 
   return (

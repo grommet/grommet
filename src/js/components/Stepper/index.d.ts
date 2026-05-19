@@ -19,6 +19,7 @@ export interface StepType {
   status?: StepStatus;
   disabledReason?: string;
   errorMessage?: string;
+  children?: Omit<StepType, 'children'>[];
 }
 
 export interface StepperContextValue {

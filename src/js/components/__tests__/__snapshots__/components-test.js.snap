@@ -1221,6 +1221,7 @@ exports[`Components loads 1`] = `
       "onCancel": [Function],
       "onComplete": [Function],
       "onStepChange": [Function],
+      "renderStep": [Function],
       "scrollToTop": [Function],
       "showProgress": [Function],
       "steps": [Function],

@@ -25,6 +25,7 @@ These components follow a **loosely coupled integration model**: Wizard is a com
 - [x] Complete TypeScript support with strict type definitions
 - [x] Theme-driven styling with design tokens for all states
 - [x] Horizontal and vertical layout support with responsive adaptation
+- [x] Support parent steps composed of child sub-steps (v1: two-level hierarchy)
 
 ---
 
@@ -71,6 +72,17 @@ This produces **effective visual states** (e.g., `current + completed` when retu
 - `useStepper()` and `useWizard()` hooks provide access to state and helper methods
 - Enables advanced customization (timeline views, card-based layouts, etc.) without component library changes
 
+### 7. **Sub-Step Scope (v1)**
+
+- Stepper and Wizard accept hierarchical step definitions where a parent step may include child steps.
+- V1 scope is intentionally constrained to two levels (parent-and-child) to keep navigation and accessibility deterministic.
+- Descendants beyond the child level are unsupported in v1.
+- In development builds, both components warn when deeper nesting is authored.
+- Descendants beyond the child level are ignored by default rendering and navigation behavior.
+- Wizard navigation is child-first: when a parent has children, progression moves through children before advancing to the next parent step.
+- Parent completion defaults to all child steps completed; richer completion policies remain future scope.
+- Existing flat step arrays remain fully supported for backward compatibility.
+
 ---
 
 ## API Highlights
@@ -87,6 +99,14 @@ This produces **effective visual states** (e.g., `current + completed` when retu
       status?: 'pending' | 'completed' | 'error' | 'disabled'
       disabledReason?: string
       errorMessage?: string
+      children?: {
+        id: string
+        title: string
+        description?: string
+        status?: 'pending' | 'completed' | 'error' | 'disabled'
+        disabledReason?: string
+        errorMessage?: string
+      }[]
     }
   ]}
   currentStep={string}
@@ -103,6 +123,7 @@ This produces **effective visual states** (e.g., `current + completed` when retu
 - Semantic `<ol>` list structure for accessibility
 - Roving tabindex keyboard navigation (arrow keys, Home/End, Tab)
 - Automatic connector rendering between steps
+- Parent-and-child nested step rendering (v1: two-level hierarchy)
 - Subcomponents: `StepperStep`, `StepperIndicator`, `StepperLabel`, `StepperDescription`
 - Hook: `useStepper()` for advanced composition
 
@@ -120,6 +141,13 @@ This produces **effective visual states** (e.g., `current + completed` when retu
       skippable?: boolean
       validation?: (data: unknown) => Promise<void> | void
       nextStep?: (data: unknown) => string  // For branching logic
+      children?: {
+        id: string
+        title: string
+        description?: string
+        skippable?: boolean
+        validation?: (data: unknown) => Promise<void> | void
+      }[]
     }
   ]}
 
@@ -146,6 +174,7 @@ This produces **effective visual states** (e.g., `current + completed` when retu
 - Step-level validation with async support
 - Branching logic support (nextStep resolver)
 - Skippable steps
+- Parent-and-child sub-step orchestration (v1 two-level hierarchy)
 - Stepper integration for progress display
 - Navigation API: `next()`, `previous()`, `goTo(stepId)`, `skip()`, `complete()`, `cancel()`
 - Subcomponents: `WizardHeader`, `WizardProgress`, `WizardContent`, `WizardFooter`
@@ -200,6 +229,7 @@ This produces **effective visual states** (e.g., `current + completed` when retu
 - [ ] Custom rendering with context hooks
 - [ ] Branching logic (nextStep resolver)
 - [ ] Skippable steps
+- [ ] Parent-and-child sub-step navigation and completion rollup
 - [ ] Keyboard navigation stories and tests
 - [ ] Accessibility audit and refinement
 
@@ -287,6 +317,8 @@ This produces **effective visual states** (e.g., `current + completed` when retu
 5. **Priority & Timeline** — Does this fit Grommet's roadmap? Any timeline constraints or other dependencies to be aware of?
 
 6. **Maintainer Support** — Would you prefer I implement these components initially, or would you like to assign them to maintainers after RFC approval?
+
+7. **Sub-Step Scope** — Is v1 two-level nesting (parent-and-child) the right initial scope, with deeper recursive nesting deferred?
 
 ---
 

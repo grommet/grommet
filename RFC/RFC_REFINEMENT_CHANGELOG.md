@@ -30,6 +30,9 @@ This document captures all refinements made to the Stepper and Wizard RFCs follo
 | 16  | Navigation    | Declared v1 policy fixed/non-configurable                                   | Removed policy ambiguity without expanding API scope             | ✓      |
 | 17  | Type Safety   | Added end-to-end generic typing (`TFormValue`) across Wizard surfaces       | Stronger compile-time safety with backward-compatible defaults   | ✓      |
 | 18  | Events        | Upgraded `StepChangeEvent` to discriminated union model                     | Safer event handling for transition vs terminal triggers         | ✓      |
+| 19  | Rendering/API | Added and normalized `renderStep(step, context)` documentation              | Clear default-layout content injection contract                  | ✓      |
+| 20  | Scope         | Formalized v1 parent-and-child depth contract (Option A)                    | Prevents accidental deep-nesting dependency and drift            | ✓      |
+| 21  | Consistency   | Editorially normalized parent-and-child terminology across RFCs             | Improves readability and cross-document consistency              | ✓      |
 
 ---
 
@@ -98,6 +101,29 @@ This document captures all refinements made to the Stepper and Wizard RFCs follo
 **Files Modified:**
 
 - RFC/stepper/REQUIREMENTS.md (Horizontal/Vertical responsive adaptation sections)
+
+---
+
+#### 1.4 — Scope: Parent-and-Child Depth Contract (Option A)
+
+**Rationale:** Implementation and RFC language had drift around nesting depth support. We needed a deterministic v1 contract to avoid consumers relying on accidental deeper nesting behavior.
+
+**Change:**
+
+- Added explicit v1 scope contract: only parent-and-child levels are supported.
+- Added normative behavior for unsupported depth:
+  - In development builds, Stepper warns when deeper nesting is authored.
+  - Descendants beyond the child level are ignored for default rendering, keyboard traversal, and status rollups.
+
+**Rationale:**
+
+- Prevents accidental API surface expansion.
+- Keeps accessibility and keyboard behavior deterministic.
+- Aligns documentation with enforced runtime behavior.
+
+**Files Modified:**
+
+- RFC/stepper/REQUIREMENTS.md (Nested Step Scope section)
 
 ---
 
@@ -424,6 +450,52 @@ Default render (no children):
 
 ---
 
+#### 2.15 — Rendering/API: Documented `renderStep(step, context)` Contract
+
+**Rationale:** `renderStep` was implemented and referenced in detailed sections but was not consistently represented in the top-level Props Interface, which is the first API surface most readers use.
+
+**Change:**
+
+- Added `renderStep?: (step, context) => ReactNode` to the primary `WizardProps` interface block.
+- Added `RenderStepContext<TFormValue>` alias in the top API block for signature clarity.
+- Clarified default render contract: `WizardContent` renders validation feedback and `renderStep(step, context)` output when provided.
+
+**Rationale:**
+
+- Eliminates ambiguity in the canonical API definition.
+- Aligns top-level props docs, Step Content Coordination guidance, and Type Definitions.
+
+**Files Modified:**
+
+- RFC/wizard/REQUIREMENTS.md (Props Interface, Type alias, Default Render Contract)
+
+---
+
+#### 2.16 — Scope & Navigation: Parent-and-Child Contract + Nested `skip()` Clarification
+
+**Rationale:** Scope language and nested `skip()` wording were inconsistent with current behavior and with the newly adopted Option A depth contract.
+
+**Change:**
+
+- Added explicit v1 scope contract: descendants beyond child level are unsupported.
+- Added normative unsupported-depth behavior:
+  - In development builds, Wizard warns when deeper nesting is authored.
+  - Descendants beyond the child level are ignored for navigation, progress, and counters.
+- Clarified nested `skip()` semantics to match implementation:
+  - `skip()` advances one step in rendered child-first order.
+
+**Rationale:**
+
+- Keeps behavior contract explicit and stable.
+- Prevents downstream dependency on unsupported deep nesting behavior.
+- Aligns docs with tested runtime behavior.
+
+**Files Modified:**
+
+- RFC/wizard/REQUIREMENTS.md (Step Definition Model, Nested Steps policy)
+
+---
+
 ### 3. Implementation Retrospective (`RFC/IMPLEMENTATION_RETROSPECTIVE.md`)
 
 #### 3.1 — Updated Ambiguity Resolution Table
@@ -466,12 +538,32 @@ Default render (no children):
 
 ---
 
+### 5. Cross-RFC Editorial Consistency
+
+#### 5.1 — Terminology Normalization: Parent-and-Child Wording
+
+**Rationale:** Remaining mixed wording (`parent/child`, `parent + child`, `parent and child`) reduced readability and made cross-RFC comparisons harder.
+
+**Change:**
+
+- Standardized terminology to `parent-and-child` phrasing across Wizard, Stepper, and combined proposal RFCs.
+- Applied normalization in scope statements, story descriptions, and behavior notes.
+
+**Files Modified:**
+
+- RFC/wizard/REQUIREMENTS.md
+- RFC/stepper/REQUIREMENTS.md
+- RFC/STEPPER_WIZARD_PROPOSAL.md
+
+---
+
 ## Files Modified Summary
 
 | File                                | Changes                                                                                                 | Lines Affected                            |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| RFC/stepper/REQUIREMENTS.md         | Added `StepperError` spec + `disabledReason` rendering & accessibility                                  | ~583–660, Subcomponents section           |
-| RFC/wizard/REQUIREMENTS.md          | 14 distinct refinements: props, events, integration, terminology, rendering, typing, and policy clarity | Multiple sections                         |
+| RFC/stepper/REQUIREMENTS.md         | Added `StepperError` spec + `disabledReason` spec + parent-and-child scope contract updates             | Multiple sections                         |
+| RFC/wizard/REQUIREMENTS.md          | 16+ refinements including `renderStep` contract documentation and parent-and-child scope clarifications | Multiple sections                         |
+| RFC/STEPPER_WIZARD_PROPOSAL.md      | Added Option A parent-and-child depth contract language + editorial normalization                       | Sub-step scope and summary sections       |
 | RFC/IMPLEMENTATION_RETROSPECTIVE.md | Updated ambiguity resolution table                                                                      | Ambiguous Design Details section          |
 | RFC/RFC_FEEDBACK.md                 | Finalized resolution status for all original feedback items                                             | Evaluation summary, follow-up, conclusion |
 
@@ -514,6 +606,8 @@ These refinements improve implementation guidance in the following ways:
 9. **API Consistency** — Form state terminology and prop naming aligned across components
 10. **Rendering Defaults** — Default component tree documented, eliminating implementation guesswork
 11. **Integration Contract** — Wizard -> Stepper mapping explicit and testable
+12. **Step Content Injection** — `renderStep(step, context)` is now explicitly documented in the canonical props contract
+13. **Scope Guardrails** — Parent-and-child depth limits and unsupported-depth behavior are explicitly defined and normalized
 
 ---
 

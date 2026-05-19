@@ -10,6 +10,16 @@ if (process.env.NODE_ENV !== 'production') {
     skippable: PropTypes.bool,
     validation: PropTypes.func,
     nextStep: PropTypes.func,
+    children: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+        skippable: PropTypes.bool,
+        validation: PropTypes.func,
+        nextStep: PropTypes.func,
+      }),
+    ),
   });
 
   PropType = {
@@ -27,6 +37,8 @@ if (process.env.NODE_ENV !== 'production') {
     showProgress: PropTypes.oneOf([false, 'horizontal', 'vertical']),
     // Behavior
     scrollToTop: PropTypes.bool,
+    // Content injection
+    renderStep: PropTypes.func,
     // HTML
     id: PropTypes.string,
     a11yTitle: PropTypes.string,

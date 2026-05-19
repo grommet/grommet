@@ -87,6 +87,7 @@ A reusable progress indicator component that visualizes multi-step workflows. St
 - [x] Work standalone or integrate seamlessly with Wizard component
 - [x] Meet WCAG 2.2 AA accessibility standards with full keyboard support
 - [x] Themeable with design tokens for all states and regions
+- [x] Support parent steps with child sub-steps (v1 scope: parent-and-child levels)
 
 ---
 
@@ -124,6 +125,7 @@ interface StepType {
   status?: StepStatus; // Progress state ('pending' | 'completed' | 'error' | 'disabled')
   disabledReason?: string; // Tooltip/inline text explaining why step is disabled
   errorMessage?: string; // Tooltip/inline text explaining validation error
+  children?: Omit<StepType, 'children'>[]; // Optional child sub-steps (v1 supports one child level)
 }
 
 type StepStatus = 'pending' | 'completed' | 'error' | 'disabled';
@@ -180,6 +182,7 @@ declare module 'grommet' {
     status?: 'pending' | 'completed' | 'error' | 'disabled';
     disabledReason?: string;
     errorMessage?: string;
+    children?: Omit<StepType, 'children'>[];
   }
 
   interface StepperProps extends React.HTMLAttributes<HTMLOListElement> {
@@ -256,6 +259,24 @@ This produces an **effective visual state**:
 - `currentStep="invalid-id"` -> warn in development and render the first non-disabled step as current fallback.
 - `disabled` + matches `currentStep` -> invalid authored state; render as disabled and do not treat as current.
 
+#### Nested Step Scope (v1)
+
+- V1 supports parent steps with one level of child sub-steps.
+- Flat step arrays remain fully supported and unchanged.
+- V1 does not include expand/collapse controls; when `children` are provided,
+  child steps are rendered inline as part of the default hierarchy.
+- Parent-and-child visibility is therefore deterministic in v1: all provided child
+  steps are visible in rendered order.
+- Descendants beyond the child level are unsupported in v1.
+- In development builds, Stepper warns when deeper nesting is authored.
+- Descendants beyond the child level are ignored in default rendering, keyboard traversal, and status rollups.
+- When a parent step has children, parent status is a rollup:
+  - Parent is `completed` when all children are `completed`.
+  - Parent is `error` when any child is `error`.
+  - Parent is `disabled` when all children are `disabled`.
+  - Otherwise parent is `pending`.
+- `currentStep` always identifies a concrete active node id (parent or child).
+
 ### Content Guidelines
 
 **Step Titles**
@@ -287,11 +308,20 @@ This produces an **effective visual state**:
 <Stepper>                          // Root: <ol>
   [StepperContext.Provider]
   {steps.map((step) => (
-    <StepperStep key={step.id} stepId={step.id}>    // <li>
-      <StepperIndicator />         // Circular badge
-      <StepperLabel />             // Step title
-      {step.description && <StepperDescription />}
-    </StepperStep>
+    <React.Fragment key={step.id}>
+      <StepperStep stepId={step.id}>                // parent <li>
+        <StepperIndicator />
+        <StepperLabel />
+        {step.description && <StepperDescription />}
+      </StepperStep>
+      {step.children?.map((child) => (
+        <StepperStep key={child.id} stepId={child.id}>   // child <li>
+          <StepperIndicator />
+          <StepperLabel />
+          {child.description && <StepperDescription />}
+        </StepperStep>
+      ))}
+    </React.Fragment>
   ))}
   [Horizontal connectors between indicators]
   [or vertical connectors between indicators]
@@ -353,7 +383,7 @@ The diagrams below label each anatomical region. Part numbers are consistent acr
 | Label  | Region          | Purpose                                                                                          | Required | Notes                                                                                                                                                         |
 | :----: | --------------- | ------------------------------------------------------------------------------------------------ | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **1**  | **Stepper**     | Container that arranges steps and connectors in the chosen direction.                            |    ✓     | Width is determined by parent layout, not Stepper itself.                                                                                                     |
-| **2**  | **Step**        | A single node in the workflow sequence. Contains the indicator, label, and optional description. |    ✓     | Repeats once per entry in the `steps` array.                                                                                                                  |
+| **2**  | **Step**        | A single node in the workflow sequence. Contains the indicator, label, and optional description. |    ✓     | Repeats once per rendered node in the hierarchy (parents and any inline child sub-steps).                                                                     |
 | **2a** | **Indicator**   | Circular badge displaying the step number, a checkmark, or a status icon.                        |    ✓     | Content and visual treatment reflect the effective state. Minimum touch target 44x44px regardless of visual size.                                             |
 | **2b** | **Label**       | Text identifying the step.                                                                       |    ✓     | Truncates to one line as horizontal real estate becomes constrained; may wrap in vertical layouts when space allows.                                          |
 | **2c** | **Description** | Secondary text providing additional context for the step.                                        | Optional | When present, renders with the label block. In constrained horizontal layouts it may be visually truncated or hidden by parent-managed CSS treatment.         |
@@ -464,6 +494,12 @@ All keyboard interactions follow arrow key and focus patterns from native `<sele
 | **Home**                     | Move focus to first step                                   |
 | **End**                      | Move focus to last step                                    |
 | **Enter/Space**              | Activate focused step (fire `onStepClick` if not disabled) |
+
+For parent-and-child sub-steps (v1):
+
+- Arrow navigation follows rendered order (parent then its inline child steps).
+- Parent-and-child nodes use the same activation rules (`clickableSteps`, `disabled` checks).
+- Home/End move to the first/last rendered node in the current hierarchy.
 
 **Disabled steps remain arrow-focusable** for discoverability, but they are not activatable.
 
@@ -1052,6 +1088,18 @@ export const CustomComposition = () => {
 **Purpose**: Advanced composition with context and subcomponents.  
 **Hook usage**: `useStepper()` available within children.
 
+### Story: Nested Sub-Steps
+
+**Path**: `Stepper/Nested Sub-Steps`
+
+**Purpose**: Demonstrate parent-and-child rendering, child-first keyboard traversal, and parent status rollup behavior in the v1 two-level hierarchy.
+
+**Verification**:
+
+- Parent-and-child nodes render in deterministic hierarchy order
+- Arrow keys traverse parent-and-child nodes in rendered order
+- Parent visual state reflects child rollup rules (`completed`, `error`, `disabled`, otherwise `pending`)
+
 ### Story: Keyboard Navigation
 
 **Path**: `Stepper/Keyboard Navigation`
@@ -1289,6 +1337,7 @@ When Wizard's `showProgress` is set to `'horizontal'` or `'vertical'`:
 - Wizard is responsible for shaping each step object's `status`, `errorMessage`, and `disabledReason` before passing `steps` into Stepper
 - Stepper `onStepClick` is wired to Wizard navigation (respects validation)
 - Wizard manages all state; Stepper is presentational
+- For parent steps with children, Wizard supplies child-first rendered order and rolled-up parent status
 
 For Stepper used standalone (without Wizard), all state and navigation are managed by parent component.
 
@@ -1310,6 +1359,9 @@ For Stepper used standalone (without Wizard), all state and navigation are manag
 - [ ] Stepper with custom renderer compiles without private APIs
 - [ ] Conflicting state inputs produce deterministic behavior and development warnings
 - [ ] Connector color is derived from the preceding step's status rather than the next step's status
+- [ ] Parent steps with child steps render deterministically in documented order
+- [ ] Parent status rollup follows the v1 nested-state rules
+- [ ] `onStepClick` supports interactive parent-and-child step ids
 
 ### Responsive Behavior
 

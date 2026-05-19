@@ -36,6 +36,7 @@ const StepperStep = forwardRef(
     const isLast = index === steps.length - 1;
     const isCurrent = isCurrentStep(stepId);
     const isInteractive = clickableSteps && step?.status !== 'disabled';
+    const childIndent = step?.level ? 'medium' : undefined;
 
     const stepItemValue = useMemo(
       () => ({
@@ -209,6 +210,7 @@ const StepperStep = forwardRef(
           as="li"
           aria-current={isCurrent ? 'step' : undefined}
           flex={direction === 'horizontal' ? true : undefined}
+          margin={direction === 'vertical' ? { left: childIndent } : undefined}
           style={{ listStyle: 'none' }}
           {...rest}
         >

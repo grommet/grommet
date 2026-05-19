@@ -31,6 +31,33 @@ const basicSteps = [
   { id: 'step3', title: 'Step 3' },
 ];
 
+const nestedSteps = [
+  {
+    id: 'account',
+    title: 'Account',
+    children: [
+      { id: 'profile', title: 'Profile' },
+      { id: 'security', title: 'Security' },
+    ],
+  },
+  { id: 'review', title: 'Review' },
+];
+
+const deepNestedSteps = [
+  {
+    id: 'parent',
+    title: 'Parent',
+    children: [
+      {
+        id: 'child',
+        title: 'Child',
+        children: [{ id: 'grandchild', title: 'Grandchild' }],
+      },
+    ],
+  },
+  { id: 'final', title: 'Final' },
+];
+
 const GoToButton = ({ targetId }: { targetId: string }) => {
   const { navigation } = useWizard();
   return (
@@ -755,6 +782,119 @@ describe('Wizard', () => {
         phase: 'completed',
         fromStepId: 'step1',
         toStepId: 'step2',
+      });
+    });
+  });
+
+  test('nested steps: next moves from parent to first child', async () => {
+    const user = userEvent.setup();
+    const onStepChange = jest.fn();
+
+    render(
+      <Grommet>
+        <Wizard steps={nestedSteps} onStepChange={onStepChange} />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Next' }));
+
+    await waitFor(() => {
+      expect(onStepChange).toHaveBeenCalledWith(
+        expect.objectContaining({
+          fromStepId: 'account',
+          toStepId: 'profile',
+          trigger: 'next',
+          phase: 'completed',
+        }),
+      );
+    });
+  });
+
+  test('nested steps: progress and header use flattened rendered order', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Wizard steps={nestedSteps} showProgress="horizontal" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: /Step 2 of 4: Profile/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 3 of 4: Security/ }),
+    ).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Next' }));
+    expect(screen.getByText('Step 2 of 4')).toBeInTheDocument();
+  });
+
+  test('nested steps: warns and ignores descendants beyond child level', () => {
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    render(
+      <Grommet>
+        <Wizard steps={deepNestedSteps} showProgress="horizontal" />
+      </Grommet>,
+    );
+
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('at most two step levels'),
+    );
+    expect(
+      screen.getByRole('button', { name: /Step 1 of 3: Parent/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 2 of 3: Child/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 3 of 3: Final/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: /Grandchild/ }),
+    ).not.toBeInTheDocument();
+
+    warnSpy.mockRestore();
+  });
+
+  describe('renderStep', () => {
+    test('renders content returned by renderStep', () => {
+      const renderStep = jest.fn((step) => <p>Content for {step.id}</p>);
+
+      render(
+        <Grommet>
+          <Wizard steps={basicSteps} renderStep={renderStep} />
+        </Grommet>,
+      );
+
+      expect(screen.getByText('Content for step1')).toBeInTheDocument();
+    });
+
+    test('passes step definition and context as arguments to renderStep', async () => {
+      const user = userEvent.setup();
+      const renderStep = jest.fn(() => null);
+
+      render(
+        <Grommet>
+          <Wizard steps={basicSteps} renderStep={renderStep} />
+        </Grommet>,
+      );
+
+      // First call: step1
+      expect(renderStep).toHaveBeenCalledWith(
+        expect.objectContaining({ id: 'step1', title: 'Step 1' }),
+        expect.objectContaining({ currentStep: 'step1' }),
+      );
+
+      renderStep.mockClear();
+      await user.click(screen.getByRole('button', { name: 'Next' }));
+
+      await waitFor(() => {
+        expect(renderStep).toHaveBeenCalledWith(
+          expect.objectContaining({ id: 'step2', title: 'Step 2' }),
+          expect.objectContaining({ currentStep: 'step2' }),
+        );
       });
     });
   });

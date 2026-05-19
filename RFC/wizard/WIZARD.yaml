@@ -11,15 +11,18 @@ props:
     type: >-
       { id: string, title: string, description?: string | ReactNode,
       skippable?: boolean, validation?: (data: unknown) => Promise<void> | void,
-      nextStep?: (data: unknown) => string }[]
+      nextStep?: (data: unknown) => string, children?: { id: string,
+      title: string, description?: string | ReactNode, skippable?: boolean,
+      validation?: (data: unknown) => Promise<void> | void }[] }[]
     required: true
     description: >-
       Ordered step definitions. Each step includes a unique id, title, optional
       description, optional skippable behavior, optional validation hook, and
-      optional branching resolver via nextStep. Wizard treats this as the
-      canonical workflow definition.
+      optional branching resolver via nextStep. Steps may include optional child
+      sub-steps; v1 supports a two-level hierarchy (parent + child). Wizard
+      treats this as the canonical workflow definition.
 
-  - name: initialStep
+  - name: defaultStep
     type: string
     required: false
     description: >-
@@ -49,20 +52,19 @@ props:
       form data payload supplied by parent or integration layer.
 
   - name: onCancel
-    type: "(reason: 'user' | 'timeout') => void"
+    type: "(reason: 'user') => void"
     required: false
     description: >-
-      Called when cancellation is confirmed or timeout-driven cancellation is
-      triggered by parent orchestration.
+      Called when cancellation is confirmed by the user.
 
   - name: showProgress
-    type: "boolean | 'horizontal' | 'vertical'"
+    type: "'horizontal' | 'vertical' | false"
     required: false
-    defaultValue: "'horizontal'"
+    defaultValue: false
     description: >-
       Controls whether progress is displayed and where it is placed.
-      false hides Stepper, true maps to horizontal, 'horizontal' places Stepper
-      above content, and 'vertical' places Stepper in a sidebar region.
+      false hides Stepper, 'horizontal' places Stepper above content, and
+      'vertical' places Stepper in a sidebar region.
 
   - name: width
     type: 'string | ResponsiveValue'
@@ -78,21 +80,6 @@ props:
     description: >-
       When true, Wizard scrolls to top of the step container on successful
       transition.
-
-  - name: confirmOnCancel
-    type: boolean
-    required: false
-    defaultValue: true
-    description: >-
-      When true, cancellation requires explicit user confirmation via modal
-      dialog before exiting workflow.
-
-  - name: cancelTimeoutMs
-    type: number
-    required: false
-    description: >-
-      Optional auto-cancel timeout in milliseconds. When configured and the
-      timeout elapses, Wizard exits through onCancel with reason 'timeout'.
 
   - name: id
     type: string
@@ -281,12 +268,8 @@ dosAndDonts:
     reason: Deterministic focus management improves keyboard and screen-reader usability.
 
   - do: Require confirmation for destructive cancellation in high-stakes flows.
-    dont: Exit workflows without warning when confirmOnCancel is enabled.
+    dont: Exit workflows without warning when cancellation is destructive.
     reason: Prevents accidental data loss.
-
-  - do: Configure cancelTimeoutMs only when timeout-driven exits are a product requirement.
-    dont: Emit timeout cancellation without an explicit timeout configuration.
-    reason: Keeps timeout semantics predictable and avoids accidental workflow termination.
 
 behaviors:
   interactiveStates:

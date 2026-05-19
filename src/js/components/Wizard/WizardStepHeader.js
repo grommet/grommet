@@ -16,8 +16,8 @@ const WizardStepHeader = () => {
       ? normalizeColor(focusColorToken, theme)
       : undefined;
 
-  const { currentStepIndex, steps } = useWizard();
-  const currentStep = steps[currentStepIndex];
+  const { currentStepIndex, linearSteps = [] } = useWizard();
+  const currentStep = linearSteps[currentStepIndex];
 
   if (!currentStep) return null;
 
@@ -28,7 +28,7 @@ const WizardStepHeader = () => {
         color={stepHeaderTheme.counter?.color || 'text-weak'}
         margin={{ bottom: 'xsmall' }}
       >
-        {`Step ${currentStepIndex + 1} of ${steps.length}`}
+        {`Step ${currentStepIndex + 1} of ${linearSteps.length}`}
       </Text>
       <Text
         as="h2"
