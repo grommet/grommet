@@ -1523,7 +1523,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #01a982;
-  color: #ffffff;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1534,7 +1534,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: rgba(0, 0, 0, 0.04);
-  color: #555555;
+  color: #3e4550;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1545,7 +1545,7 @@ exports[`Grommet hpe theme 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: #ffffff;
-  color: #555555;
+  color: #3e4550;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1555,8 +1555,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #008567;
-  color: #ffffff;
+  background-color: #068667;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1566,8 +1566,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #3c3aa1;
-  color: #ffffff;
+  background-color: #0070f8;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1577,8 +1577,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #b0840d;
-  color: #555555;
+  background-color: #009a71;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1588,8 +1588,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #a95589;
-  color: #ffffff;
+  background-color: #7764fc;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1599,8 +1599,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #2053d9;
-  color: #ffffff;
+  background-color: #003cae;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1610,8 +1610,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #a78972;
-  color: #555555;
+  background-color: #cc54a4;
+  color: #3e4550;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1621,8 +1621,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #004233;
-  color: #ffffff;
+  background-color: #292d3a;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1632,8 +1632,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #ec3331;
-  color: #ffffff;
+  background-color: #cc1f1a;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1643,8 +1643,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #CCCCCC;
-  color: #555555;
+  background-color: #606a70;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1654,8 +1654,8 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #009a71;
-  color: #ffffff;
+  background-color: #d36d00;
+  color: #3e4550;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
@@ -1665,47 +1665,25 @@ exports[`Grommet hpe theme 1`] = `
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  background-color: #757575;
-  color: #ffffff;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c16 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #d36d00;
-  color: #555555;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c17 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  background-color: #555555;
-  color: #ffffff;
+  background-color: #3e4550;
+  color: #e6e8e9;
   min-width: 0;
   min-height: 0;
   flex-direction: column;
 }
 
 .c2 {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5rem;
   font-weight: undefined;
 }
 
 .c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 1.125rem;
+  font-family: 'HPE Graphik',Arial,sans-serif;
+  font-size: 1rem;
   line-height: 1.5rem;
   background-color: #ffffff;
-  color: #555555;
+  color: #3e4550;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1758,7 +1736,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       class="c2"
     >
-      graph-0
+      dataVis-categorical-10
     </span>
   </div>
   <div
@@ -1767,7 +1745,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       class="c2"
     >
-      graph-1
+      dataVis-categorical-20
     </span>
   </div>
   <div
@@ -1776,7 +1754,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       class="c2"
     >
-      graph-2
+      dataVis-categorical-30
     </span>
   </div>
   <div
@@ -1785,7 +1763,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       class="c2"
     >
-      graph-3
+      dataVis-categorical-40
     </span>
   </div>
   <div
@@ -1794,7 +1772,7 @@ exports[`Grommet hpe theme 1`] = `
     <span
       class="c2"
     >
-      graph-4
+      dataVis-categorical-50
     </span>
   </div>
   <div
@@ -1821,11 +1799,11 @@ exports[`Grommet hpe theme 1`] = `
     <span
       class="c2"
     >
-      status-disabled
+      text-weak
     </span>
   </div>
   <div
-    class="c14"
+    class="c7"
   >
     <span
       class="c2"
@@ -1834,7 +1812,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c15"
+    class="c13"
   >
     <span
       class="c2"
@@ -1843,7 +1821,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c16"
+    class="c14"
   >
     <span
       class="c2"
@@ -1852,7 +1830,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    class="c17"
+    class="c15"
   >
     <span
       class="c2"

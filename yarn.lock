@@ -3824,6 +3824,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hpe-design/icons-grommet@npm:^1.1.0":
+  version: 1.2.0
+  resolution: "@hpe-design/icons-grommet@npm:1.2.0"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    styled-components: ^6.0.0
+  checksum: 10c0/2caf21c4a8c3d937d5c7be9155e8baf16bed3f6ce2785cb1f8b1573fb39bc0d4d8796a1bb8aafb988a74a97fad948ca53b6db47e1796070170a033f77ecb6392
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -10713,17 +10723,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet-theme-hpe@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "grommet-theme-hpe@npm:7.0.2"
+"grommet-theme-hpe@npm:^8.1.4":
+  version: 8.1.4
+  resolution: "grommet-theme-hpe@npm:8.1.4"
   dependencies:
-    hpe-design-tokens: "npm:~1.4.0"
+    "@hpe-design/icons-grommet": "npm:^1.1.0"
+    hpe-design-tokens: "npm:^2.2.3"
   peerDependencies:
-    grommet: ^2.49.0
-    grommet-icons: ^4.12.4
+    grommet: ^2.50.0
     react: ^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0
-    styled-components: ^5.0.0 || ^6.0.0
-  checksum: 10c0/e7f9ec197180109167b93b13912d523dd46a0fb0ba2e25fb0746bc8248da799068eeb2eb90dff99811239c9ccd580a3449a1dea4f3acb419c181ce9a8f110b27
+    styled-components: ^6.0.0
+  checksum: 10c0/f55f5ecd463cf771ebdda64bbcda75ffe51973c144d5b18180789d04050199a5629d12261aae880545382252faa9fe77273cc3aa2ab194ec82f3eb8fe8ed0712
   languageName: node
   linkType: hard
 
@@ -10795,7 +10805,7 @@ __metadata:
     fs-extra: "npm:^11.3.4"
     globals: "npm:^17.5.0"
     grommet-icons: "npm:^4.14.0"
-    grommet-theme-hpe: "npm:^7.0.2"
+    grommet-theme-hpe: "npm:^8.1.4"
     jest: "npm:^30.3.0"
     jest-axe: "npm:^10.0.0"
     jest-cli: "npm:^30.3.0"
@@ -11008,10 +11018,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hpe-design-tokens@npm:~1.4.0":
-  version: 1.4.1
-  resolution: "hpe-design-tokens@npm:1.4.1"
-  checksum: 10c0/d5dc274fc5b4f99cfc908ddcc64ef860ba3a8b9bb99effdb4677824d1cff6dd2dac8f1196e5bb0bd3ad04c8d9cebccfb769492d8ccc1aed01bc83cf18a4506e9
+"hpe-design-tokens@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "hpe-design-tokens@npm:2.2.3"
+  checksum: 10c0/3348e864d7a43e30e529730f208bd3bf09e5c9685e8d0a792e7c7d9f20fad9955bec9e6422e9ea83cb89abd6076be6b12106ae0e635efbba0fbeb5e84764ca26
   languageName: node
   linkType: hard
 

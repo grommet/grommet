@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 
 import { Box } from '../Box';
+import { Grid } from '../Grid';
 import { Text } from '../Text';
 import { useForwardedRef } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -527,15 +528,17 @@ const Wizard = forwardRef(
     );
 
     const defaultHeader = (
-      <WizardHeader>
-        <Text as="h1" margin="none" weight="bold">
-          {a11yTitle || 'Multi-step workflow'}
-        </Text>
-      </WizardHeader>
+      <Box gridArea="header">
+        <WizardHeader>
+          <Text as="h1" margin="none" weight="bold">
+            {a11yTitle || 'Multi-step workflow'}
+          </Text>
+        </WizardHeader>
+      </Box>
     );
 
-    const defaultBody = (
-      <>
+    const defaultStepRegion = (
+      <Box gridArea="step">
         <WizardStepHeader />
         <WizardContent>
           {/* Validation error */}
@@ -555,53 +558,77 @@ const Wizard = forwardRef(
             </Box>
           )}
         </WizardContent>
+      </Box>
+    );
+
+    const defaultFooter = (
+      <Box gridArea="footer">
         <WizardFooter />
-      </>
+      </Box>
     );
 
     const renderDefaultContract = () => {
+      const baseGap = wizardTheme.container?.gap;
+
       if (!showProgress) {
         return (
-          <>
+          <Grid
+            areas={[['header'], ['step'], ['footer']]}
+            columns={['flex']}
+            rows={['auto', 'flex', 'auto']}
+            gap={baseGap}
+          >
             {defaultHeader}
-            {defaultBody}
-          </>
+            {defaultStepRegion}
+            {defaultFooter}
+          </Grid>
         );
       }
 
       const progress = (
-        <WizardProgress
-          direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
-        />
+        <Box gridArea="progress">
+          <WizardProgress
+            direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
+          />
+        </Box>
       );
 
       if (showProgress === 'vertical') {
         return (
-          <>
+          <Grid
+            areas={[
+              ['header', 'header'],
+              ['progress', 'step'],
+              ['footer', 'footer'],
+            ]}
+            columns={[wizardTheme.vertical?.progress?.width || 'small', 'flex']}
+            rows={['auto', 'flex', 'auto']}
+            gap={{
+              row: baseGap,
+              column: wizardTheme.vertical?.body?.gap || 'medium',
+            }}
+            align="start"
+          >
             {defaultHeader}
-            <Box
-              direction="row"
-              gap={wizardTheme.vertical?.body?.gap || 'medium'}
-              align="start"
-            >
-              <Box
-                width={wizardTheme.vertical?.progress?.width || 'small'}
-                flex={{ shrink: 0 }}
-              >
-                {progress}
-              </Box>
-              <Box flex>{defaultBody}</Box>
-            </Box>
-          </>
+            {progress}
+            {defaultStepRegion}
+            {defaultFooter}
+          </Grid>
         );
       }
 
       return (
-        <>
+        <Grid
+          areas={[['header'], ['progress'], ['step'], ['footer']]}
+          columns={['flex']}
+          rows={['auto', 'auto', 'flex', 'auto']}
+          gap={baseGap}
+        >
           {defaultHeader}
           {progress}
-          {defaultBody}
-        </>
+          {defaultStepRegion}
+          {defaultFooter}
+        </Grid>
       );
     };
 

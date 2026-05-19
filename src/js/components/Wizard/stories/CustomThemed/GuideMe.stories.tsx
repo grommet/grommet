@@ -10,8 +10,10 @@ import {
   WizardStepHeader,
   type StepDefinition,
 } from 'grommet';
+import { deepMerge } from 'grommet/utils';
+import { hpe } from 'grommet-theme-hpe';
 
-const customTheme = {
+const customTheme = deepMerge(hpe, {
   wizard: {
     container: {
       background: 'background-back',
@@ -19,10 +21,14 @@ const customTheme = {
     },
     header: {
       background: 'background-front',
-      pad: { horizontal: 'medium', vertical: 'small' },
+      pad: { horizontal: 'large', vertical: 'xsmall' },
+    },
+    footer: {
+      background: 'background-front',
+      pad: { horizontal: 'large', vertical: 'xsmall' },
     },
   },
-};
+});
 
 const steps: StepDefinition[] = [
   { id: 'subscriptions', title: 'Add subscriptions' },
@@ -38,8 +44,9 @@ export const GuideMe: StoryFn<typeof Wizard> = () => {
 
   return (
     <Grommet full theme={customTheme}>
-      <Box pad="large" width="large" margin="auto">
+      <Box width="xlarge" margin="auto" border>
         <Wizard
+          a11yTitle="Guide me: Add devices and subscriptions"
           steps={steps}
           onStepChange={onStepChange}
           onComplete={(data) =>

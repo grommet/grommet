@@ -331,14 +331,26 @@ describe('Wizard', () => {
     const rootRegion = container.querySelector('[role="region"]');
     expect(rootRegion).toBeInTheDocument();
 
-    const firstChild = rootRegion?.firstElementChild;
-    expect(firstChild?.querySelector('h1')).toBeInTheDocument();
+    const title = rootRegion?.querySelector('h1');
+    const progress = rootRegion?.querySelector('ol');
+    const stepHeading = rootRegion?.querySelector('h2');
 
-    const secondChild = firstChild?.nextElementSibling;
-    expect(secondChild?.querySelector('ol')).toBeInTheDocument();
+    expect(title).toBeInTheDocument();
+    expect(progress).toBeInTheDocument();
+    expect(stepHeading).toBeInTheDocument();
 
-    const thirdChild = secondChild?.nextElementSibling;
-    expect(thirdChild?.querySelector('h2')).toBeInTheDocument();
+    if (!title || !progress || !stepHeading) {
+      throw new Error('Expected title, progress, and step heading to render');
+    }
+
+    expect(
+      title.compareDocumentPosition(progress) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      progress.compareDocumentPosition(stepHeading) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
   });
 
   test('footer consumes wizard action color tokens', () => {
