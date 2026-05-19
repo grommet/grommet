@@ -2609,7 +2609,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { bottom: 'medium' },
       },
       stepHeader: {
-        margin: { bottom: 'small' },
+        // margin: { bottom: 'small' },
         counter: {
           color: 'text-weak',
           size: 'small',

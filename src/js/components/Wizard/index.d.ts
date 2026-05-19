@@ -96,7 +96,7 @@ export interface WizardProps<TFormValue = unknown>
 
 declare const Wizard: <TFormValue = unknown>(
   props: WizardProps<TFormValue> & React.RefAttributes<HTMLDivElement>,
-) => JSX.Element;
+) => React.JSX.Element;
 
 declare const WizardHeader: React.FC<{ children?: React.ReactNode }>;
 
