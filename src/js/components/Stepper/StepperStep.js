@@ -111,8 +111,6 @@ const StepperStep = forwardRef(
           minWidth: '44px',
           minHeight: '44px',
           borderRadius: '50%',
-          outline: 'none',
-          // Focus ring via :focus-visible in theme/browser defaults
         }}
       >
         <StepperIndicator />

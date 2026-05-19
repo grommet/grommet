@@ -4,6 +4,7 @@ export const WizardContext = createContext({
   currentStep: undefined,
   currentStepIndex: 0,
   steps: [],
+  hasOnCancel: false,
   isValidating: false,
   isBlocked: false,
   isCompleted: false,

@@ -503,6 +503,7 @@ const Wizard = forwardRef(
         currentStep: activeStepId,
         currentStepIndex: activeStepIndex,
         steps,
+        hasOnCancel: Boolean(onCancel),
         isValidating,
         isBlocked,
         isCompleted,
@@ -515,6 +516,7 @@ const Wizard = forwardRef(
         activeStepId,
         activeStepIndex,
         steps,
+        onCancel,
         isValidating,
         isBlocked,
         isCompleted,
@@ -553,7 +555,7 @@ const Wizard = forwardRef(
             </Box>
           )}
         </WizardContent>
-        <WizardFooter onCancel={onCancel} />
+        <WizardFooter />
       </>
     );
 

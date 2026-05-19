@@ -5,13 +5,14 @@ import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
 
 // WizardFooter: Previous / Next / Skip / Complete / Cancel navigation bar
-const WizardFooter = ({ onCancel }) => {
+const WizardFooter = () => {
   const { theme } = useThemeValue();
   const wizardTheme = theme.wizard || {};
   const footerTheme = wizardTheme.footer || {};
   const actionsTheme = wizardTheme.actions || {};
 
-  const { currentStepIndex, steps, isValidating, navigation } = useWizard();
+  const { currentStepIndex, steps, isValidating, hasOnCancel, navigation } =
+    useWizard();
 
   const isFirstStep = currentStepIndex === 0;
   const isLastStep = currentStepIndex === steps.length - 1;
@@ -44,7 +45,7 @@ const WizardFooter = ({ onCancel }) => {
         )}
       </Box>
       <Box direction="row" gap="small">
-        {onCancel && (
+        {hasOnCancel && (
           <Button
             label="Cancel"
             onClick={navigation.cancel}

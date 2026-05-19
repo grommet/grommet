@@ -362,7 +362,7 @@ describe('Wizard', () => {
     render(
       <Grommet theme={customTheme as any}>
         <Wizard steps={steps} defaultStep="step2" onCancel={() => {}}>
-          <WizardFooter onCancel={() => {}} />
+          <WizardFooter />
         </Wizard>
       </Grommet>,
     );

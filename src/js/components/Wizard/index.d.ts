@@ -61,6 +61,7 @@ export interface WizardContextValue<TFormValue = unknown> {
   currentStep: string | undefined;
   currentStepIndex: number;
   steps: StepDefinition<TFormValue>[];
+  hasOnCancel: boolean;
   isValidating: boolean;
   isBlocked: boolean;
   isCompleted: boolean;
@@ -108,7 +109,7 @@ declare const WizardStepHeader: React.FC;
 
 declare const WizardContent: React.FC<{ children?: React.ReactNode }>;
 
-declare const WizardFooter: React.FC<{ onCancel?: () => void }>;
+declare const WizardFooter: React.FC;
 
 declare const WizardContext: React.Context<WizardContextValue>;
 
