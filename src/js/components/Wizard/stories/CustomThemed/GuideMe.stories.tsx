@@ -1,15 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import {
-  Box,
-  Grommet,
-  Paragraph,
-  Wizard,
-  WizardContent,
-  WizardFooter,
-  WizardStepHeader,
-  type StepDefinition,
-} from 'grommet';
+import { Box, Grommet, Wizard, type StepDefinition } from 'grommet';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
 
@@ -38,7 +29,7 @@ const steps: StepDefinition[] = [
 ];
 
 export const GuideMe: StoryFn<typeof Wizard> = () => {
-  const onStepChange = (event) => {
+  const onStepChange = (event: any) => {
     console.log(event);
   };
 
