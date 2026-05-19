@@ -406,6 +406,109 @@ describe('Drop', () => {
     { bottom: 'bottom', right: 'left' },
   ];
 
+  describe('responsive placement when neither side fully fits', () => {
+    const mockRect = (
+      element: Element,
+      rect: Partial<DOMRect> & { top: number; bottom: number; height: number },
+    ) => {
+      const full: DOMRect = {
+        x: rect.left ?? 0,
+        y: rect.top,
+        left: rect.left ?? 0,
+        right: rect.right ?? 100,
+        width: rect.width ?? 100,
+        toJSON: () => ({}),
+        ...rect,
+      } as DOMRect;
+      jest.spyOn(element, 'getBoundingClientRect').mockReturnValue(full);
+    };
+
+    const setWindowHeight = (value: number) => {
+      Object.defineProperty(window, 'innerHeight', {
+        writable: true,
+        configurable: true,
+        value,
+      });
+    };
+
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
+
+    test('flips above when more room above and align opens below', () => {
+      setWindowHeight(1000);
+      render(<TestInput align={{ top: 'bottom', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      // target sits near the bottom of the viewport
+      mockRect(inputEl, { top: 800, bottom: 840, height: 40 });
+      // drop content is too tall for either side (above = 800, below = 160)
+      mockRect(dropEl, { top: 0, bottom: 900, height: 900 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      // Should flip above: bottom of drop pinned to top of target (800),
+      // CSS bottom = windowHeight (1000) - 800 = 200, and maxHeight clamped
+      // to the larger available side (800), not the smaller below side (160).
+      expect(dropEl.style.bottom).toBe('200px');
+      expect(dropEl.style.top).toBe('');
+      expect(dropEl.style.maxHeight).toBe('800px');
+    });
+
+    test('flips below when more room below and align opens above', () => {
+      setWindowHeight(1000);
+      render(<TestInput align={{ bottom: 'top', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      // target sits near the top of the viewport
+      mockRect(inputEl, { top: 50, bottom: 90, height: 40 });
+      // drop content is too tall for either side (above = 50, below = 910)
+      mockRect(dropEl, { top: 0, bottom: 950, height: 950 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      // Should flip below: top of drop pinned to bottom of target (90),
+      // and maxHeight clamped to the larger available side (910).
+      expect(dropEl.style.top).toBe('90px');
+      expect(dropEl.style.bottom).toBe('');
+      expect(dropEl.style.maxHeight).toBe('910px');
+    });
+
+    test('keeps requested side when it already has more room', () => {
+      setWindowHeight(1000);
+      render(<TestInput align={{ top: 'bottom', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      // target sits near the top — requested side (below) has more room
+      mockRect(inputEl, { top: 100, bottom: 140, height: 40 });
+      // drop content too tall for either side, but below (860) > above (100)
+      mockRect(dropEl, { top: 0, bottom: 900, height: 900 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      // Stays below: top pinned to target.bottom (140), maxHeight clamped
+      // to the (already larger) below space (860).
+      expect(dropEl.style.top).toBe('140px');
+      expect(dropEl.style.bottom).toBe('');
+      expect(dropEl.style.maxHeight).toBe('860px');
+    });
+  });
+
   alignPositions.forEach((alignPosition) => {
     const customMarginTheme = {
       global: {

@@ -43,7 +43,7 @@ exports[`Drop align left left 1`] = `
   class="c0 c1"
   data-g-portal-id="0"
   id="drop-node"
-  style="left: 0px; width: 0.1px; bottom: 768px; max-height: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -1533,7 +1533,7 @@ exports[`Drop should render correct margin depending on value of align: \\n    {
   class="c0 c1"
   data-g-portal-id="0"
   id="margin-drop-test"
-  style="left: 0px; width: 0.1px; bottom: 1000px; max-height: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
 >
   this is a test
@@ -1603,7 +1603,7 @@ exports[`Drop should render correct margin depending on value of align: \\n    {
   class="c0 c1"
   data-g-portal-id="0"
   id="margin-drop-test"
-  style="left: 0px; width: 0.1px; bottom: 1000px; max-height: 0px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
 >
   this is a test

@@ -205,9 +205,10 @@ const DropContainer = forwardRef(
 
           /* If responsive is true and the Drop doesn't have enough room
             to be fully visible and there is more room in the other
-            direction, change the Drop to display above/below. If there is
-            less room in the other direction leave the Drop in its current
-            position. */
+            direction, change the Drop to display above/below. If neither
+            direction has enough room for the full Drop, prefer the side
+            with more available space rather than clamping to the side
+            originally requested. */
           if (
             responsive &&
             // drop is above target
@@ -260,6 +261,56 @@ const DropContainer = forwardRef(
             // top of drop is aligned to top of target
             top = targetRect.top;
             maxHeight = bottom;
+          } else if (
+            responsive &&
+            // top of drop is aligned to bottom of target (open below)
+            align.top === 'bottom' &&
+            // drop is overflowing below window
+            targetRect.bottom + containerRect.height >= windowHeight &&
+            // there is more room above the target than below it — neither
+            // side fits the full drop, so prefer the larger side rather
+            // than clamping to the smaller requested side.
+            targetRect.top > windowHeight - targetRect.bottom
+          ) {
+            // bottom of drop is aligned to top of target
+            bottom = targetRect.top;
+            maxHeight = bottom;
+          } else if (
+            responsive &&
+            // top of drop is aligned to top of target (open below)
+            align.top === 'top' &&
+            // drop is overflowing below window
+            targetRect.top + containerRect.height >= windowHeight &&
+            // there is more room above the target than below it
+            targetRect.bottom > windowHeight - targetRect.top
+          ) {
+            // bottom of drop is aligned to bottom of target
+            bottom = targetRect.bottom;
+            maxHeight = bottom;
+          } else if (
+            responsive &&
+            // bottom of drop is aligned to top of target (open above)
+            align.bottom === 'top' &&
+            // drop is overflowing above window
+            targetRect.top - containerRect.height <= 0 &&
+            // there is more room below the target than above it
+            windowHeight - targetRect.bottom > targetRect.top
+          ) {
+            // top of drop is aligned to bottom of target
+            top = targetRect.bottom;
+            maxHeight = windowHeight - top;
+          } else if (
+            responsive &&
+            // bottom of drop is aligned to bottom of target (open above)
+            align.bottom === 'bottom' &&
+            // drop is overflowing above window
+            targetRect.bottom - containerRect.height <= 0 &&
+            // there is more room below the target than above it
+            windowHeight - targetRect.top > targetRect.bottom
+          ) {
+            // top of drop is aligned to top of target
+            top = targetRect.top;
+            maxHeight = windowHeight - top;
           } else if (align.top === 'top') {
             top = targetRect.top;
             maxHeight = windowHeight - top;
