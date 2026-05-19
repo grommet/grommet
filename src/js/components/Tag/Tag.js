@@ -11,7 +11,16 @@ import { MessageContext } from '../../contexts/MessageContext';
 
 const Tag = forwardRef(
   (
-    { name, value, size = 'medium', onRemove, onClick, messages, ...rest },
+    {
+      children,
+      name,
+      value,
+      size = 'medium',
+      onRemove,
+      onClick,
+      messages,
+      ...rest
+    },
     ref,
   ) => {
     const { format } = useContext(MessageContext);
@@ -36,7 +45,7 @@ const Tag = forwardRef(
       round: theme.tag.size?.[size]?.round || theme.tag.round,
       ...rest,
     };
-    const contents = (
+    const contents = children || (
       <Box
         width={{ min: 'min-content' }}
         pad={theme.tag.size?.[size]?.pad || theme.tag.pad}
