@@ -533,6 +533,108 @@ describe('Drop', () => {
       expect(dropEl.style.maxHeight).toBe('950px');
     });
 
+    test('does not flip when target is taller than drop (align.top "top", target.bottom past viewport)', () => {
+      // jcfilben's repro: with align.top === 'top' and a target that's
+      // bigger than the drop, scrolling so that the drop pokes past the
+      // viewport bottom must not flip the drop to bottom = target.bottom
+      // — that would pin its bottom off-screen and hide it entirely.
+      setWindowHeight(800);
+      render(<TestInput align={{ top: 'top', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      // target is taller than the drop AND its bottom is below the
+      // viewport — the flip anchor (target.bottom = 1300) would be off-screen.
+      mockRect(inputEl, { top: 700, bottom: 1300, height: 600 });
+      mockRect(dropEl, { top: 0, bottom: 200, height: 200 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      // Stays in place — drop opens at target.top and clamps to the
+      // remaining 100px below.
+      expect(dropEl.style.top).toBe('700px');
+      expect(dropEl.style.bottom).toBe('');
+      expect(dropEl.style.maxHeight).toBe('100px');
+    });
+
+    test('does not flip when target is taller than drop (align.bottom "bottom", target.top above viewport)', () => {
+      // Mirror of the previous test.
+      setWindowHeight(800);
+      render(<TestInput align={{ bottom: 'bottom', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      // target is taller than the drop AND its top is above the
+      // viewport — the flip anchor (target.top = -500) would be off-screen.
+      mockRect(inputEl, { top: -500, bottom: 100, height: 600 });
+      mockRect(dropEl, { top: 0, bottom: 200, height: 200 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      // Stays in place — drop opens at target.bottom and clamps upward.
+      expect(dropEl.style.top).toBe('');
+      expect(dropEl.style.bottom).toBe('700px');
+      expect(dropEl.style.maxHeight).toBe('100px');
+    });
+
+    test('does not flip when target.top is off-screen (align.top "bottom")', () => {
+      // align.top === 'bottom' opens below the target. If the target's
+      // top has been scrolled above the viewport, the flip anchor
+      // (target.top) is off-screen and the new branch must not fire.
+      setWindowHeight(800);
+      render(<TestInput align={{ top: 'bottom', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      mockRect(inputEl, { top: -50, bottom: 900, height: 950 });
+      mockRect(dropEl, { top: 0, bottom: 1000, height: 1000 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      // Falls through to the clamp branch — top pinned to target.bottom.
+      // The drop is off-screen anyway in this degenerate scenario, but
+      // the guard prevents the new branch from making it worse by
+      // pinning bottom to the off-screen target.top.
+      expect(dropEl.style.top).toBe('900px');
+      expect(dropEl.style.bottom).toBe('');
+    });
+
+    test('does not flip when target.bottom is off-screen (align.bottom "top")', () => {
+      // Mirror: align.bottom === 'top' opens above the target. If the
+      // target's bottom has been scrolled below the viewport, the flip
+      // anchor (target.bottom) is off-screen and the new branch must
+      // not fire.
+      setWindowHeight(800);
+      render(<TestInput align={{ bottom: 'top', left: 'left' }} />);
+
+      const inputEl = screen.getByLabelText('test');
+      const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+      mockRect(inputEl, { top: -100, bottom: 850, height: 950 });
+      mockRect(dropEl, { top: 0, bottom: 1000, height: 1000 });
+
+      fireEvent(
+        window,
+        new Event('resize', { bubbles: true, cancelable: true }),
+      );
+
+      // Falls through to the clamp branch — bottom pinned to target.top.
+      expect(dropEl.style.top).toBe('');
+      expect(dropEl.style.bottom).toBe('900px');
+    });
+
     test('keeps requested side when it already has more room', () => {
       setWindowHeight(1000);
       render(<TestInput align={{ top: 'bottom', left: 'left' }} />);

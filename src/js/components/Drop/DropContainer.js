@@ -267,6 +267,9 @@ const DropContainer = forwardRef(
             align.top === 'bottom' &&
             // drop is overflowing below window
             targetRect.bottom + containerRect.height >= windowHeight &&
+            // the flip anchor (target's top) is on-screen — otherwise
+            // flipping pins the drop's bottom off-screen
+            targetRect.top > 0 &&
             // there is more room above the target than below it — neither
             // side fits the full drop, so prefer the larger side rather
             // than clamping to the smaller requested side.
@@ -281,6 +284,11 @@ const DropContainer = forwardRef(
             align.top === 'top' &&
             // drop is overflowing below window
             targetRect.top + containerRect.height >= windowHeight &&
+            // height of the drop is larger than the target — otherwise the
+            // drop already fits inside the target's vertical span and a
+            // flip would pin its bottom to a potentially off-screen
+            // target.bottom (mirrors the safety in branch #2 above).
+            targetRect.top + containerRect.height > targetRect.bottom &&
             // there is more room above the target than below it
             targetRect.bottom > windowHeight - targetRect.top
           ) {
@@ -293,6 +301,8 @@ const DropContainer = forwardRef(
             align.bottom === 'top' &&
             // drop is overflowing above window
             targetRect.top - containerRect.height <= 0 &&
+            // the flip anchor (target's bottom) is on-screen
+            targetRect.bottom < windowHeight &&
             // there is more room below the target than above it
             windowHeight - targetRect.bottom > targetRect.top
           ) {
@@ -305,6 +315,9 @@ const DropContainer = forwardRef(
             align.bottom === 'bottom' &&
             // drop is overflowing above window
             targetRect.bottom - containerRect.height <= 0 &&
+            // height of the drop is larger than the target (mirrors the
+            // safety in branch #4 above)
+            targetRect.bottom - containerRect.height < targetRect.top &&
             // there is more room below the target than above it
             windowHeight - targetRect.top > targetRect.bottom
           ) {

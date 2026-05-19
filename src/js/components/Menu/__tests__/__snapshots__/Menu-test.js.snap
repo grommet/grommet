@@ -6061,7 +6061,7 @@ exports[`Menu with dropAlign bottom renders 1`] = `
 `;
 
 exports[`Menu with dropAlign bottom renders 2`] = `
-.c6 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6093,7 +6093,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c4 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6103,7 +6103,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   overflow: auto;
 }
 
-.c4 {
+.c5 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6113,7 +6113,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c7 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6124,13 +6124,13 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   padding: 12px;
 }
 
-.c8 {
+.c10 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
 }
 
-.c9 {
+.c11 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6139,25 +6139,25 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   stroke: #7D4CDB;
 }
 
-.c9 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c9 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c9 *[stroke*='#'],
-.c9 *[STROKE*='#'] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*='#'],
-.c9 *[FILL*='#'] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6182,12 +6182,12 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   animation-delay: 0.01s;
 }
 
-.c7 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c5 {
+.c6 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6204,28 +6204,28 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   text-align: inherit;
 }
 
-.c5:hover {
+.c6:hover {
   background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
-.c5:focus:not(:focus-visible) {
+.c6:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
+.c6:focus:not(:focus-visible) >circle,
+.c6:focus:not(:focus-visible) >ellipse,
+.c6:focus:not(:focus-visible) >line,
+.c6:focus:not(:focus-visible) >path,
+.c6:focus:not(:focus-visible) >polygon,
+.c6:focus:not(:focus-visible) >polyline,
+.c6:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+.c6:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6238,19 +6238,19 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c6 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c11 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c8 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
     width: 6px;
   }
 }
@@ -6272,7 +6272,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   class="c0 c1"
   data-g-portal-id="0"
   id="test-menu__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; width: 0.1px; bottom: 768px; max-height: 0px;"
   tabindex="-1"
 >
   <div
@@ -6281,27 +6281,64 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   >
     <div
       class="c4"
+      role="menu"
+    >
+      <div
+        class="c5"
+        role="none"
+      >
+        <button
+          class="c6"
+          role="menuitem"
+          type="button"
+        >
+          <div
+            class="c7"
+          >
+            Item 1
+          </div>
+        </button>
+      </div>
+      <div
+        class="c5"
+        role="none"
+      >
+        <button
+          class="c6"
+          role="menuitem"
+          type="button"
+        >
+          <div
+            class="c7"
+          >
+            Item 2
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="c5"
     >
       <button
         aria-label="Close Menu"
-        class="c5"
+        class="c6"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c6"
+          class="c8"
         >
           <span
-            class="c7"
+            class="c9"
           >
             Test
           </span>
           <div
-            class="c8"
+            class="c10"
           />
           <svg
             aria-label="FormDown"
-            class="c9"
+            class="c11"
             viewBox="0 0 24 24"
           >
             <path
@@ -6313,43 +6350,6 @@ exports[`Menu with dropAlign bottom renders 2`] = `
           </svg>
         </div>
       </button>
-    </div>
-    <div
-      class="c10"
-      role="menu"
-    >
-      <div
-        class="c4"
-        role="none"
-      >
-        <button
-          class="c5"
-          role="menuitem"
-          type="button"
-        >
-          <div
-            class="c11"
-          >
-            Item 1
-          </div>
-        </button>
-      </div>
-      <div
-        class="c4"
-        role="none"
-      >
-        <button
-          class="c5"
-          role="menuitem"
-          type="button"
-        >
-          <div
-            class="c11"
-          >
-            Item 2
-          </div>
-        </button>
-      </div>
     </div>
   </div>
 </div>
