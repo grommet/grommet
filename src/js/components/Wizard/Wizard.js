@@ -85,6 +85,70 @@ const Wizard = forwardRef(
     const [isCompleted, setIsCompleted] = useState(false);
     const [stepStates, setStepStates] = useState({});
     const [formValue, setFormValue] = useState(undefined);
+    const [revealedParentIds, setRevealedParentIds] = useState(new Set());
+
+    // Helper function: Find parent step of a given step ID
+    const findParentOfStep = useCallback(
+      (stepId, stepsArray = steps, level = 0) => {
+        for (let i = 0; i < stepsArray.length; i += 1) {
+          const step = stepsArray[i];
+          if (step.id === stepId) return null; // Top-level step has no parent
+          const childSteps = Array.isArray(step.children) ? step.children : [];
+          if (level < MAX_SUPPORTED_STEP_LEVEL && childSteps.length) {
+            const childParent = findParentOfStep(stepId, childSteps, level + 1);
+            if (childParent !== undefined) {
+              // Found or found in subtree
+              return childParent || step;
+            }
+          }
+        }
+        return undefined;
+      },
+      [steps],
+    );
+
+    // Helper function: Get first child of a parent step
+    const getFirstChildOfParent = useCallback(
+      (parentId, stepsArray = steps) => {
+        const parent = stepsArray.find((s) => s.id === parentId);
+        if (!parent || !Array.isArray(parent.children)) return null;
+        return parent.children[0] || null;
+      },
+      [steps],
+    );
+
+    // Helper function: Check if a step is a parent (has children)
+    const isParentStep = useCallback(
+      (step) => Array.isArray(step?.children) && step.children.length > 0,
+      [],
+    );
+
+    // Helper function: Find step object by ID in the hierarchy
+    const findStepById = useCallback(
+      (stepId, stepsArray = steps) => {
+        for (let i = 0; i < stepsArray.length; i += 1) {
+          const step = stepsArray[i];
+          if (step.id === stepId) return step;
+          const childSteps = Array.isArray(step.children) ? step.children : [];
+          const found = findStepById(stepId, childSteps);
+          if (found) return found;
+        }
+        return null;
+      },
+      [steps],
+    );
+
+    const revealParentForStepId = useCallback(
+      (stepId) => {
+        const parent = findParentOfStep(stepId);
+        if (!parent?.id) return;
+        setRevealedParentIds((prev) => {
+          if (prev.has(parent.id)) return prev;
+          return new Set([...prev, parent.id]);
+        });
+      },
+      [findParentOfStep],
+    );
 
     const requestedStepId = isControlled ? currentStepProp : internalStep;
     const hasValidRequestedStep = validStepIds.has(requestedStepId);
@@ -242,6 +306,7 @@ const Wizard = forwardRef(
     );
 
     // Validate current step and advance if valid
+    // With nested steps: auto-expand next parent if crossing boundary
     const next = useCallback(async () => {
       const currentStep = linearSteps[activeStepIndex];
       if (!currentStep) return;
@@ -303,6 +368,18 @@ const Wizard = forwardRef(
           return;
         }
 
+        // If next step is a parent, auto-expand it and navigate to first child
+        const nextStep = linearSteps.find((s) => s.id === toStepId);
+        if (nextStep && isParentStep(nextStep)) {
+          const firstChild = getFirstChildOfParent(nextStep.id);
+          if (firstChild) {
+            setRevealedParentIds((prev) => new Set([...prev, nextStep.id]));
+            toStepId = firstChild.id;
+          }
+        }
+
+        revealParentForStepId(toStepId);
+
         setIsValidating(false);
         performTransition(currentStep.id, toStepId, 'next');
       } catch (error) {
@@ -330,9 +407,13 @@ const Wizard = forwardRef(
       markError,
       focusErrorSummary,
       validStepIds,
+      isParentStep,
+      getFirstChildOfParent,
+      revealParentForStepId,
     ]);
 
     // Navigate to previous step (no validation)
+    // Parents are containers and are skipped as navigation waypoints.
     const previous = useCallback(() => {
       const currentStep = linearSteps[activeStepIndex];
       if (!currentStep || activeStepIndex === 0) return; // first step
@@ -345,13 +426,25 @@ const Wizard = forwardRef(
       });
 
       let toStepId;
-      const prevHistory = historyRef.current;
-      if (prevHistory.length >= 2) {
-        toStepId = prevHistory[prevHistory.length - 2];
-        historyRef.current = prevHistory.slice(0, -1);
+
+      // Check if current step is a child; if so, check if it's the first child
+      const currentParent = findParentOfStep(currentStep.id);
+      const isFirstChild =
+        currentParent && currentParent.children?.[0]?.id === currentStep.id;
+
+      if (currentParent && isFirstChild) {
+        // On first child: go to the step before the parent
+        const parentIndex = linearSteps.findIndex(
+          (s) => s.id === currentParent.id,
+        );
+        toStepId = linearSteps[parentIndex - 1]?.id;
       } else {
-        // No navigation history: fall back to linear previous
+        // Otherwise move to previous rendered step.
         toStepId = linearSteps[activeStepIndex - 1]?.id;
+      }
+
+      if (historyRef.current.length >= 2) {
+        historyRef.current = historyRef.current.slice(0, -1);
       }
 
       if (!toStepId) return;
@@ -372,21 +465,41 @@ const Wizard = forwardRef(
       isControlled,
       doScrollToTop,
       focusStepHeader,
+      findParentOfStep,
     ]);
 
     // Jump to a specific step
+    // With nested steps: auto-expand parent if target is a parent
     const goTo = useCallback(
       async (toStepId) => {
         const currentStep = linearSteps[activeStepIndex];
         if (!currentStep) return;
-        const toIndex = linearSteps.findIndex((s) => s.id === toStepId);
+
+        // Check if target is a parent step
+        let effectiveToStepId = toStepId;
+        const targetStep = findStepById(toStepId);
+        if (targetStep && isParentStep(targetStep)) {
+          // Auto-expand parent: mark as revealed and navigate to first child
+          const firstChild = getFirstChildOfParent(toStepId);
+          if (firstChild) {
+            setRevealedParentIds((prev) => new Set([...prev, toStepId]));
+            effectiveToStepId = firstChild.id;
+          }
+        }
+
+        // Target is a child: ensure its parent is marked revealed.
+        revealParentForStepId(effectiveToStepId);
+
+        const toIndex = linearSteps.findIndex(
+          (s) => s.id === effectiveToStepId,
+        );
 
         // Same-step goTo is a no-op.
         if (toIndex === activeStepIndex) return;
 
         emitStepChange({
           fromStepId: currentStep.id,
-          toStepId,
+          toStepId: effectiveToStepId,
           trigger: 'goTo',
           phase: 'attempted',
         });
@@ -394,23 +507,23 @@ const Wizard = forwardRef(
         if (toIndex === -1) {
           emitStepChange({
             fromStepId: currentStep.id,
-            toStepId,
+            toStepId: effectiveToStepId,
             trigger: 'goTo',
             phase: 'blocked',
             blocked: true,
-            error: `Step "${toStepId}" not found`,
+            error: `Step "${effectiveToStepId}" not found`,
           });
           return;
         }
 
-        const targetStep = linearSteps[toIndex];
+        const targetStepAtIndex = linearSteps[toIndex];
         if (
-          stepStates[toStepId]?.disabled ||
-          targetStep?.status === 'disabled'
+          stepStates[effectiveToStepId]?.disabled ||
+          targetStepAtIndex?.status === 'disabled'
         ) {
           emitStepChange({
             fromStepId: currentStep.id,
-            toStepId,
+            toStepId: effectiveToStepId,
             trigger: 'goTo',
             phase: 'blocked',
             blocked: true,
@@ -428,7 +541,7 @@ const Wizard = forwardRef(
               await currentStep.validation(formValue);
             }
             setIsValidating(false);
-            performTransition(currentStep.id, toStepId, 'goTo');
+            performTransition(currentStep.id, effectiveToStepId, 'goTo');
           } catch (error) {
             const normalizedError =
               error instanceof Error ? error.message : String(error);
@@ -438,7 +551,7 @@ const Wizard = forwardRef(
             setIsValidating(false);
             emitStepChange({
               fromStepId: currentStep.id,
-              toStepId,
+              toStepId: effectiveToStepId,
               trigger: 'goTo',
               phase: 'blocked',
               blocked: true,
@@ -447,7 +560,7 @@ const Wizard = forwardRef(
           }
         } else {
           // Backward navigation: no validation
-          performTransition(currentStep.id, toStepId, 'goTo');
+          performTransition(currentStep.id, effectiveToStepId, 'goTo');
         }
       },
       [
@@ -459,15 +572,44 @@ const Wizard = forwardRef(
         performTransition,
         markError,
         focusErrorSummary,
+        findStepById,
+        isParentStep,
+        getFirstChildOfParent,
+        revealParentForStepId,
       ],
     );
 
     // Skip without validation (only if step is skippable)
+    // With nested steps: auto-expand next parent if skipping to a parent
     const skip = useCallback(() => {
       const currentStep = linearSteps[activeStepIndex];
       if (!currentStep?.skippable) return;
-      const toStepId = linearSteps[activeStepIndex + 1]?.id;
+
+      // Skip should not apply to parent steps directly
+      if (isParentStep(currentStep)) {
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn(
+            'Wizard: skip() should not be applied to parent steps. ' +
+              'Parents are organizational only.',
+          );
+        }
+        return;
+      }
+
+      let toStepId = linearSteps[activeStepIndex + 1]?.id;
       if (!toStepId) return;
+
+      // If next step is a parent, auto-expand it
+      const nextStep = linearSteps[activeStepIndex + 1];
+      if (nextStep && isParentStep(nextStep)) {
+        const firstChild = getFirstChildOfParent(nextStep.id);
+        if (firstChild) {
+          setRevealedParentIds((prev) => new Set([...prev, nextStep.id]));
+          toStepId = firstChild.id;
+        }
+      }
+
+      revealParentForStepId(toStepId);
 
       emitStepChange({
         fromStepId: currentStep.id,
@@ -476,7 +618,15 @@ const Wizard = forwardRef(
         phase: 'attempted',
       });
       performTransition(currentStep.id, toStepId, 'skip');
-    }, [linearSteps, activeStepIndex, emitStepChange, performTransition]);
+    }, [
+      linearSteps,
+      activeStepIndex,
+      emitStepChange,
+      performTransition,
+      isParentStep,
+      getFirstChildOfParent,
+      revealParentForStepId,
+    ]);
 
     // Complete the workflow
     const complete = useCallback(() => {
@@ -554,6 +704,8 @@ const Wizard = forwardRef(
         formValue,
         setFormValue,
         navigation,
+        revealedParentIds,
+        setRevealedParentIds,
       }),
       [
         activeStepId,
@@ -567,6 +719,7 @@ const Wizard = forwardRef(
         stepStates,
         formValue,
         navigation,
+        revealedParentIds,
       ],
     );
 

@@ -38,6 +38,29 @@ const StepperStep = forwardRef(
     const isInteractive = clickableSteps && step?.status !== 'disabled';
     const childIndent = step?.level ? 'medium' : undefined;
 
+    // Calculate parent-level step number and total parent count for aria-label
+    const parentSteps = steps.filter((s) => s.level === 0);
+    const parentCount = parentSteps.length;
+    let stepDisplayNumber = index + 1;
+    let totalDisplay = steps.length;
+
+    // If this is a parent step, use parent-only counting
+    if (step && step.level === 0) {
+      stepDisplayNumber = parentSteps.findIndex((s) => s.id === stepId) + 1;
+      totalDisplay = parentCount;
+    } else if (step && step.level > 0) {
+      // For child steps, find which parent this belongs to
+      const parentStep = steps
+        .slice(0, index)
+        .reverse()
+        .find((s) => s.level === step.level - 1);
+      if (parentStep) {
+        stepDisplayNumber =
+          parentSteps.findIndex((s) => s.id === parentStep.id) + 1;
+        totalDisplay = parentCount;
+      }
+    }
+
     const stepItemValue = useMemo(
       () => ({
         step,
@@ -94,7 +117,8 @@ const StepperStep = forwardRef(
         ref={stepRefs[index]}
         type="button"
         tabIndex={focusIndex === index ? 0 : -1}
-        aria-label={`Step ${index + 1} of ${steps.length}: ${step.title}`}
+        aria-label={`Step ${stepDisplayNumber} of 
+        ${totalDisplay}: ${step.title}`}
         aria-current={isCurrent ? 'step' : undefined}
         aria-disabled={step.status === 'disabled' ? 'true' : undefined}
         aria-describedby={ariaDescribedBy}

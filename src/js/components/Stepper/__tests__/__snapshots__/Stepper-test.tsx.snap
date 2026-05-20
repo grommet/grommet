@@ -306,7 +306,8 @@ exports[`Stepper renders all step states 1`] = `
             />
             <button
               aria-current="step"
-              aria-label="Step 1 of 4: Pending"
+              aria-label="Step 1 of 
+        4: Pending"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="0"
               type="button"
@@ -354,7 +355,8 @@ exports[`Stepper renders all step states 1`] = `
               class="c8"
             />
             <button
-              aria-label="Step 2 of 4: Completed"
+              aria-label="Step 2 of 
+        4: Completed"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="-1"
               type="button"
@@ -410,7 +412,8 @@ exports[`Stepper renders all step states 1`] = `
             />
             <button
               aria-describedby="stepper-error-s3"
-              aria-label="Step 3 of 4: Error"
+              aria-label="Step 3 of 
+        4: Error"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="-1"
               type="button"
@@ -474,7 +477,8 @@ exports[`Stepper renders all step states 1`] = `
             <button
               aria-describedby="stepper-reason-s4"
               aria-disabled="true"
-              aria-label="Step 4 of 4: Disabled"
+              aria-label="Step 4 of 
+        4: Disabled"
               style="background: none; padding: 0px; margin: 0px; cursor: default; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="-1"
               type="button"
@@ -742,7 +746,8 @@ exports[`Stepper renders in vertical direction 1`] = `
             />
             <button
               aria-current="step"
-              aria-label="Step 1 of 3: Account"
+              aria-label="Step 1 of 
+        3: Account"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="0"
               type="button"
@@ -802,7 +807,8 @@ exports[`Stepper renders in vertical direction 1`] = `
               style="min-height: 16px;"
             />
             <button
-              aria-label="Step 2 of 3: Profile"
+              aria-label="Step 2 of 
+        3: Profile"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="-1"
               type="button"
@@ -855,7 +861,8 @@ exports[`Stepper renders in vertical direction 1`] = `
               style="min-height: 16px;"
             />
             <button
-              aria-label="Step 3 of 3: Review"
+              aria-label="Step 3 of 
+        3: Review"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="-1"
               type="button"
@@ -1109,7 +1116,8 @@ exports[`Stepper renders without Grommet wrapper 1`] = `
           />
           <button
             aria-current="step"
-            aria-label="Step 1 of 3: Account"
+            aria-label="Step 1 of 
+        3: Account"
             style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
             tabindex="0"
             type="button"
@@ -1164,7 +1172,8 @@ exports[`Stepper renders without Grommet wrapper 1`] = `
             class="c7"
           />
           <button
-            aria-label="Step 2 of 3: Profile"
+            aria-label="Step 2 of 
+        3: Profile"
             style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
             tabindex="-1"
             type="button"
@@ -1212,7 +1221,8 @@ exports[`Stepper renders without Grommet wrapper 1`] = `
             class="c12"
           />
           <button
-            aria-label="Step 3 of 3: Review"
+            aria-label="Step 3 of 
+        3: Review"
             style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
             tabindex="-1"
             type="button"
@@ -1507,7 +1517,8 @@ exports[`Stepper should have no accessibility violations 1`] = `
               class="c5"
             />
             <button
-              aria-label="Step 1 of 3: Account"
+              aria-label="Step 1 of 
+        3: Account"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="-1"
               type="button"
@@ -1564,7 +1575,8 @@ exports[`Stepper should have no accessibility violations 1`] = `
             />
             <button
               aria-current="step"
-              aria-label="Step 2 of 3: Profile"
+              aria-label="Step 2 of 
+        3: Profile"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="0"
               type="button"
@@ -1612,7 +1624,8 @@ exports[`Stepper should have no accessibility violations 1`] = `
               class="c13"
             />
             <button
-              aria-label="Step 3 of 3: Review"
+              aria-label="Step 3 of 
+        3: Review"
               style="background: none; padding: 0px; margin: 0px; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border-radius: 50%;"
               tabindex="-1"
               type="button"

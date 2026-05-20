@@ -33,6 +33,12 @@ This document captures all refinements made to the Stepper and Wizard RFCs follo
 | 19  | Rendering/API | Added and normalized `renderStep(step, context)` documentation              | Clear default-layout content injection contract                  | ✓      |
 | 20  | Scope         | Formalized v1 parent-and-child depth contract (Option A)                    | Prevents accidental deep-nesting dependency and drift            | ✓      |
 | 21  | Consistency   | Editorially normalized parent-and-child terminology across RFCs             | Improves readability and cross-document consistency              | ✓      |
+| 22  | Navigation    | Clarified parent-as-container model (parents are not navigation waypoints)  | Removes ambiguity in nested navigation semantics                 | ✓      |
+| 23  | Navigation    | Specified `goTo(parentId)` auto-expand and first-child landing              | Deterministic jump behavior for nested steps                     | ✓      |
+| 24  | Navigation    | Specified multi-parent `next()` auto-expand and child-first landing         | Consistent forward traversal across parent boundaries            | ✓      |
+| 25  | Visibility    | Added lazy-reveal + persistence contract for child step visibility          | Predictable nested Stepper rendering over repeated entry         | ✓      |
+| 26  | Progress      | Clarified parent-only step counting in progress and aria labeling           | Aligns UX and a11y with parent-as-container semantics            | ✓      |
+| 27  | Status Rollup | Reaffirmed parent completion rule: all children completed                   | Deterministic parent status derivation                           | ✓      |
 
 ---
 

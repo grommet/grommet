@@ -130,6 +130,30 @@ const Stepper = forwardRef(
       flattenedSteps.findIndex((s) => s.id === effectiveCurrentStep),
     );
     const [focusIndex, setFocusIndex] = useState(initialFocusIndex);
+    const [revealedParentIds, setRevealedParentIds] = useState(new Set());
+
+    // Auto-reveal parent when child becomes current step
+    useEffect(() => {
+      const currentStepNode = flattenedSteps.find(
+        (s) => s.id === effectiveCurrentStep,
+      );
+      if (currentStepNode && currentStepNode.level > 0) {
+        // Find parent step (last step at previous level before current)
+        const parentStep = flattenedSteps
+          .slice(0, flattenedSteps.indexOf(currentStepNode))
+          .reverse()
+          .find((s) => s.level === currentStepNode.level - 1);
+
+        if (parentStep) {
+          setRevealedParentIds((prev) => {
+            if (!prev.has(parentStep.id)) {
+              return new Set([...prev, parentStep.id]);
+            }
+            return prev;
+          });
+        }
+      }
+    }, [effectiveCurrentStep, flattenedSteps]);
 
     // Sync focusIndex when currentStep changes (e.g. Wizard advances)
     useEffect(() => {
@@ -232,6 +256,8 @@ const Stepper = forwardRef(
         isAfterStep,
         isCurrentStep,
         canNavigateTo,
+        revealedParentIds,
+        setRevealedParentIds,
       }),
       [
         effectiveCurrentStep,
@@ -247,6 +273,7 @@ const Stepper = forwardRef(
         isAfterStep,
         isCurrentStep,
         canNavigateTo,
+        revealedParentIds,
       ],
     );
 
@@ -262,9 +289,27 @@ const Stepper = forwardRef(
           {...rest}
         >
           {children ||
-            flattenedSteps.map((step, index) => (
-              <StepperStep key={step.id} stepId={step.id} index={index} />
-            ))}
+            flattenedSteps
+              .map((step, index) => {
+                // Determine if child step should be rendered
+                if (step.level > 0) {
+                  // Find parent step (last step at previous level)
+                  const parentStep = flattenedSteps
+                    .slice(0, index)
+                    .reverse()
+                    .find((s) => s.level === step.level - 1);
+
+                  // Only render child if parent is revealed
+                  if (parentStep && !revealedParentIds.has(parentStep.id)) {
+                    return null;
+                  }
+                }
+
+                return (
+                  <StepperStep key={step.id} stepId={step.id} index={index} />
+                );
+              })
+              .filter(Boolean)}
         </Box>
       </StepperContext.Provider>
     );

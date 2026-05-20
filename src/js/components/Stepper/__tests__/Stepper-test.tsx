@@ -420,24 +420,37 @@ describe('Stepper', () => {
     expect(list).toHaveAttribute('aria-label', 'Checkout steps');
   });
 
-  test('renders parent and child sub-steps inline in rendered order', () => {
-    render(
+  test('shows only parents until first child entry, then reveals nested children', () => {
+    const { rerender } = render(
       <Grommet>
         <Stepper steps={nestedSteps} currentStep="parent" />
       </Grommet>,
     );
 
     expect(
-      screen.getByRole('button', { name: /Step 1 of 4: Parent/ }),
+      screen.getByRole('button', { name: /Step 1 of 2: Parent/ }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /Step 2 of 4: Child One/ }),
+      screen.queryByRole('button', { name: /Child One/ }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: /Child Two/ }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 2 of 2: Final/ }),
+    ).toBeInTheDocument();
+
+    rerender(
+      <Grommet>
+        <Stepper steps={nestedSteps} currentStep="child-1" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: /Step 1 of 2: Child One/ }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /Step 3 of 4: Child Two/ }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: /Step 4 of 4: Final/ }),
+      screen.getByRole('button', { name: /Step 1 of 2: Child Two/ }),
     ).toBeInTheDocument();
   });
 
@@ -445,23 +458,25 @@ describe('Stepper', () => {
     const user = userEvent.setup();
     render(
       <Grommet>
-        <Stepper steps={nestedSteps} currentStep="parent" />
+        <Stepper steps={nestedSteps} currentStep="child-1" />
       </Grommet>,
     );
 
-    const parentButton = screen.getByRole('button', { name: /Step 1 of 4/ });
+    const parentButton = screen.getByRole('button', {
+      name: /Step 1 of 2: Parent/,
+    });
     await act(async () => {
       parentButton.focus();
     });
 
     await user.keyboard('{ArrowRight}');
     expect(
-      screen.getByRole('button', { name: /Step 2 of 4: Child One/ }),
+      screen.getByRole('button', { name: /Step 1 of 2: Child One/ }),
     ).toHaveFocus();
 
     await user.keyboard('{ArrowRight}');
     expect(
-      screen.getByRole('button', { name: /Step 3 of 4: Child Two/ }),
+      screen.getByRole('button', { name: /Step 1 of 2: Child Two/ }),
     ).toHaveFocus();
   });
 
@@ -478,13 +493,13 @@ describe('Stepper', () => {
       expect.stringContaining('at most two step levels'),
     );
     expect(
-      screen.getByRole('button', { name: /Step 1 of 3: Parent/ }),
+      screen.getByRole('button', { name: /Step 1 of 2: Parent/ }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /Step 2 of 3: Child/ }),
-    ).toBeInTheDocument();
+      screen.queryByRole('button', { name: /Child/ }),
+    ).not.toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /Step 3 of 3: Final/ }),
+      screen.getByRole('button', { name: /Step 2 of 2: Final/ }),
     ).toBeInTheDocument();
     expect(
       screen.queryByRole('button', { name: /Grandchild/ }),

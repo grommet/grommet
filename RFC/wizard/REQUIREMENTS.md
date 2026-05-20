@@ -715,14 +715,89 @@ V1 policy is fixed and non-configurable. Wizard does not expose a `navigationPol
 
 **Nested Steps (v1 two-level scope)**
 
-- When a parent step has children, `next()` advances into the first incomplete child before moving to the next parent.
-- `previous()` walks backward through child steps before moving to the prior parent.
-- `goTo(stepId)` remains id-based and can target parent or child ids.
-- `skip()` advances one step in rendered child-first order (for a parent with children, this advances to the first child).
-- Parent completion is derived by child completion (all child steps completed).
-- Descendants beyond the child level are unsupported in v1.
-- In development builds, Wizard warns when deeper nesting is authored.
-- Descendants beyond the child level are ignored for navigation, progress, and step counters.
+Wizard supports an optional parent-and-child (two-level) step hierarchy where parents are organizational containers, not navigation waypoints. Parents should never be landed on directly; navigation always lands on children.
+
+**Navigation Behavior with Nested Steps**
+
+1. **Parents are organizational only**: Parents are visual/logical grouping containers and should not be treated as actual navigation stops. All navigation methods (`next()`, `previous()`, `goTo()`, `skip()`) skip over parents automatically.
+
+2. **Forward navigation (`next()`)**:
+
+   - On a child step within a parent: advance to next child within same parent
+   - On last child of a parent: auto-expand next parent and land on its first child
+   - Parents encountered during traversal are auto-expanded and skipped to their first child
+
+3. **Backward navigation (`previous()`)**:
+
+   - On non-first child: go to previous child within same parent
+   - On first child: go to the step immediately before the parent (skipping the parent)
+   - Walk backward through children before exiting to prior parent
+
+4. **Jump navigation (`goTo(stepId)`)**:
+
+   - **`goTo(parentId)`** (if parentId has children): auto-expand parent, land on first child; mark all children as revealed
+   - **`goTo(childId)`**: auto-expand parent (if not already revealed), land on childId
+   - Both forward and backward jumps trigger auto-expansion of target parent
+
+5. **Skip navigation (`skip()`)**:
+
+   - Not applicable to parent steps directly; skip should not be called on parent-only steps
+   - Skipping from a child step advances to next child or (if last child) auto-expands next parent and lands on its first child
+   - Skipping from a step before a parent auto-expands that parent and lands on its first child
+
+6. **Stepper rendering and visibility**:
+   - Parents are always visible in Stepper
+   - Children are hidden until first reveal (lazy-reveal pattern)
+   - Once a parent's children are revealed (first navigation to any child), they persist as visible
+   - Step counter only counts parent-level steps ("Step 2 of 3" for 3 parents, regardless of total children)
+
+**Parent Completion Rollup**
+
+- Parent step is marked `completed` when all its children are `completed`
+- Parent step inherits error status if any child has `error` status
+- Parent step is `disabled` only if all children are `disabled`
+- Otherwise, parent inherits pending status from children
+
+**Technical Implementation**
+
+- Descendants beyond the child level (grandchildren) are unsupported in v1
+- In development builds, Wizard warns when deeper nesting is authored
+- Descendants beyond the child level are ignored for navigation, progress, and step counters
+- `linearSteps` flattens the hierarchy (parents first, then their children) for indexing, but navigation respects parent boundaries
+- `revealedParentIds` tracks which parents have been visited; used for persistent visibility
+
+**Example: Multi-parent flow with lazy reveal**
+
+```typescript
+const steps = [
+  {
+    id: 'accountSetup',
+    title: 'Account Setup', // Parent
+    children: [
+      { id: 'email', title: 'Email Address' },
+      { id: 'password', title: 'Set Password' },
+    ],
+  },
+  {
+    id: 'profileSetup',
+    title: 'Profile Setup', // Parent
+    children: [
+      { id: 'name', title: 'Full Name' },
+      { id: 'photo', title: 'Profile Photo' },
+    ],
+  },
+  { id: 'review', title: 'Review & Submit' }, // Flat step
+];
+
+// Navigation flow:
+// 1. next() on first visit → Account Setup parent auto-expands → lands on 'email' child
+// 2. next() on 'email' → lands on 'password' (next sibling child)
+// 3. next() on 'password' → Profile Setup parent auto-expands → lands on 'name' (first child)
+// 4. previous() on 'name' → lands on 'password' (step before parent)
+// 5. goTo('profileSetup') → auto-expands and lands on 'name' (first child)
+// 6. In Stepper: only 2 top-level parents visible initially; children hidden until entry
+// 7. Aria-labels: "Step 2 of 3" (counting parents only, not all 5 flattened steps)
+```
 
 **Gating Rules**
 

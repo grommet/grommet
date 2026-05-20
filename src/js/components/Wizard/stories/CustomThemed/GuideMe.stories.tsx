@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import {
   Box,
@@ -8,6 +8,7 @@ import {
   Paragraph,
   Text,
   Wizard,
+  useWizard,
   type StepDefinition,
   type RenderStepContext,
 } from 'grommet';
@@ -38,8 +39,8 @@ const steps: StepDefinition[] = [
     id: 'recommendations',
     title: 'Recommended actions',
     children: [
-      { id: 'rec1', title: 'Recommendation 1' },
-      { id: 'rec2', title: 'Recommendation 2' },
+      { id: 'rec1', title: 'Recommendation 1', skippable: true },
+      { id: 'rec2', title: 'Recommendation 2', skippable: true },
     ],
   },
   { id: 'review', title: 'Wrap up' },
@@ -68,16 +69,6 @@ const stepContentById: Record<string, React.ReactNode> = {
       <Button label="Import devices" secondary />
     </Box>
   ),
-  recommendations: (
-    <Box gap="small">
-      <Heading level={3} margin="none">
-        Recommended actions
-      </Heading>
-      <Paragraph margin="none">
-        Review generated recommendations before processing sub-steps.
-      </Paragraph>
-    </Box>
-  ),
   rec1: (
     <Box gap="small">
       <Heading level={3} margin="none">
@@ -86,6 +77,10 @@ const stepContentById: Record<string, React.ReactNode> = {
       <Paragraph margin="none">
         Enable baseline security policy for new devices.
       </Paragraph>
+      <Text size="small" color="text-weak">
+        Parent "Recommended actions" is a grouping container. Entering this
+        section lands on the first child step.
+      </Text>
       <Button label="Apply baseline" primary />
     </Box>
   ),
@@ -97,6 +92,9 @@ const stepContentById: Record<string, React.ReactNode> = {
       <Paragraph margin="none">
         Configure monitoring alerts and escalation routing.
       </Paragraph>
+      <Text size="small" color="text-weak">
+        Child steps remain visible in the Stepper after first reveal.
+      </Text>
       <Button label="Configure alerts" primary />
     </Box>
   ),
@@ -112,10 +110,19 @@ const stepContentById: Record<string, React.ReactNode> = {
   ),
 };
 
-const renderGuideStep = (step: StepDefinition, _context: RenderStepContext) => (
-  <Box gap="small">
+const renderGuideStep = (step: StepDefinition, context: RenderStepContext) => (
+  <Box gap="medium">
+    <Box pad="small" background="background-contrast" round="xsmall">
+      <Text size="small" color="text-weak">
+        Current step: {context.currentStep}
+      </Text>
+      <Text size="small" color="text-weak">
+        Parents are grouping-only. Navigating to a parent id lands on its first
+        child.
+      </Text>
+    </Box>
     <Text size="small" color="text-weak">
-      Content rendered from an external stepId map
+      Story content rendered from an external stepId map
     </Text>
     {stepContentById[step.id] ?? (
       <Paragraph margin="none">No content registered for this step.</Paragraph>
@@ -123,8 +130,97 @@ const renderGuideStep = (step: StepDefinition, _context: RenderStepContext) => (
   </Box>
 );
 
+type StepChangeDebugEvent = {
+  fromStepId?: string;
+  toStepId?: string;
+  trigger?: string;
+  phase?: string;
+  blocked?: boolean;
+  error?: string;
+};
+
+const GuideMeDebugPanel = ({
+  lastEvent,
+}: {
+  lastEvent?: StepChangeDebugEvent;
+}) => {
+  const { currentStep, navigation } = useWizard();
+
+  return (
+    <Box
+      pad="small"
+      gap="small"
+      border={{ color: 'border-weak', side: 'all' }}
+      round="xsmall"
+      background="background-front"
+    >
+      <Text weight="bold" size="small">
+        Debug Panel: goTo(parentId)
+      </Text>
+      <Text size="small" color="text-weak">
+        Current step: {currentStep}
+      </Text>
+      <Box direction="row" gap="xsmall" wrap>
+        <Button
+          size="small"
+          label="goTo('recommendations')"
+          onClick={() => navigation.goTo('recommendations')}
+        />
+        <Button
+          size="small"
+          label="goTo('rec1')"
+          onClick={() => navigation.goTo('rec1')}
+        />
+        <Button
+          size="small"
+          label="goTo('rec2')"
+          onClick={() => navigation.goTo('rec2')}
+        />
+      </Box>
+      <Box direction="row" gap="xsmall" wrap>
+        <Button size="small" label="Previous" onClick={navigation.previous} />
+        <Button size="small" label="Next" onClick={navigation.next} />
+        <Button size="small" label="Skip" onClick={navigation.skip} />
+      </Box>
+      <Text size="xsmall" color="text-weak">
+        Expected: goTo('recommendations') lands on 'rec1' (first child), not the
+        parent.
+      </Text>
+      <Text size="xsmall" color="text-weak">
+        Last event:{' '}
+        {lastEvent
+          ? `${lastEvent.trigger || 'n/a'} / ${lastEvent.phase || 'n/a'} / ${
+              lastEvent.fromStepId || 'n/a'
+            } -> ${lastEvent.toStepId || 'n/a'}`
+          : 'none'}
+      </Text>
+    </Box>
+  );
+};
+
+const renderGuideDebugStep = (
+  step: StepDefinition,
+  context: RenderStepContext,
+  lastEvent?: StepChangeDebugEvent,
+) => (
+  <Box gap="medium">
+    <GuideMeDebugPanel lastEvent={lastEvent} />
+    <Box pad="small" background="background-contrast" round="xsmall">
+      <Text size="small" color="text-weak">
+        Current step: {context.currentStep}
+      </Text>
+      <Text size="small" color="text-weak">
+        Parent ids are accepted by goTo(), and Wizard redirects to first child.
+      </Text>
+    </Box>
+    {stepContentById[step.id] ?? (
+      <Paragraph margin="none">No content registered for this step.</Paragraph>
+    )}
+  </Box>
+);
+
 export const GuideMe: StoryFn<typeof Wizard> = () => {
-  const onStepChange = (event: any) => {
+  const onStepChange = (event: unknown) => {
     console.log(event);
   };
 
@@ -147,9 +243,43 @@ export const GuideMe: StoryFn<typeof Wizard> = () => {
   );
 };
 
+export const GuideMeGoToParentDebug: StoryFn<typeof Wizard> = () => {
+  const [lastEvent, setLastEvent] = useState<StepChangeDebugEvent>();
+
+  const onStepChange = (event: unknown) => {
+    if (event && typeof event === 'object') {
+      const debugEvent = event as StepChangeDebugEvent;
+      setLastEvent(debugEvent);
+    }
+    console.log(event);
+  };
+
+  return (
+    <Grommet full theme={customTheme}>
+      <Box width="xlarge" margin="auto" border>
+        <Wizard
+          a11yTitle="Guide me debug: goTo parent id behavior"
+          steps={steps}
+          defaultStep="devices"
+          onStepChange={onStepChange}
+          onCancel={() => {}}
+          onComplete={(data) =>
+            alert(`Complete! ${JSON.stringify(data.completedSteps)}`)
+          }
+          showProgress="vertical"
+          renderStep={(step, context) =>
+            renderGuideDebugStep(step, context, lastEvent)
+          }
+        />
+      </Box>
+    </Grommet>
+  );
+};
+
 export default {
   title: 'Controls/Wizard/Guide Me',
   component: Wizard,
 } as Meta<typeof Wizard>;
 
 GuideMe.storyName = 'Guide Me';
+GuideMeGoToParentDebug.storyName = 'Guide Me goTo(parentId) Debug';

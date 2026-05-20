@@ -43,6 +43,38 @@ const nestedSteps = [
   { id: 'review', title: 'Review' },
 ];
 
+const nestedStepsWithLead = [
+  { id: 'intro', title: 'Intro', skippable: true },
+  {
+    id: 'account',
+    title: 'Account',
+    children: [
+      { id: 'profile', title: 'Profile' },
+      { id: 'security', title: 'Security' },
+    ],
+  },
+  { id: 'review', title: 'Review' },
+];
+
+const multiParentNestedSteps = [
+  {
+    id: 'parentA',
+    title: 'Parent A',
+    children: [
+      { id: 'a1', title: 'A1' },
+      { id: 'a2', title: 'A2' },
+    ],
+  },
+  {
+    id: 'parentB',
+    title: 'Parent B',
+    children: [
+      { id: 'b1', title: 'B1' },
+      { id: 'b2', title: 'B2' },
+    ],
+  },
+];
+
 const deepNestedSteps = [
   {
     id: 'parent',
@@ -820,14 +852,20 @@ describe('Wizard', () => {
     );
 
     expect(
-      screen.getByRole('button', { name: /Step 2 of 4: Profile/ }),
-    ).toBeInTheDocument();
+      screen.queryByRole('button', { name: /Step 1 of 2: Profile/ }),
+    ).not.toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /Step 3 of 4: Security/ }),
-    ).toBeInTheDocument();
+      screen.queryByRole('button', { name: /Step 1 of 2: Security/ }),
+    ).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Next' }));
-    expect(screen.getByText('Step 2 of 4')).toBeInTheDocument();
+    expect(screen.getByText('Step 1 of 2')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 1 of 2: Profile/ }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /Step 1 of 2: Security/ }),
+    ).toBeInTheDocument();
   });
 
   test('nested steps: warns and ignores descendants beyond child level', () => {
@@ -843,19 +881,104 @@ describe('Wizard', () => {
       expect.stringContaining('at most two step levels'),
     );
     expect(
-      screen.getByRole('button', { name: /Step 1 of 3: Parent/ }),
+      screen.getByRole('button', { name: /Step 1 of 2: Parent/ }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /Step 2 of 3: Child/ }),
-    ).toBeInTheDocument();
+      screen.queryByRole('button', { name: /Step 1 of 2: Child/ }),
+    ).not.toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /Step 3 of 3: Final/ }),
+      screen.getByRole('button', { name: /Step 2 of 2: Final/ }),
     ).toBeInTheDocument();
     expect(
       screen.queryByRole('button', { name: /Grandchild/ }),
     ).not.toBeInTheDocument();
 
     warnSpy.mockRestore();
+  });
+
+  test('nested steps: goTo(parentId) auto-expands and lands on first child', async () => {
+    const user = userEvent.setup();
+    const onStepChange = jest.fn();
+
+    render(
+      <Grommet>
+        <Wizard
+          steps={nestedStepsWithLead}
+          defaultStep="review"
+          onStepChange={onStepChange}
+        >
+          <WizardContent>
+            <GoToButton targetId="account" />
+          </WizardContent>
+          <WizardFooter />
+        </Wizard>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Go To' }));
+
+    await waitFor(() => {
+      const goToCompletedEvents = onStepChange.mock.calls
+        .map((call) => call[0])
+        .filter(
+          (event) => event.trigger === 'goTo' && event.phase === 'completed',
+        );
+
+      expect(goToCompletedEvents[goToCompletedEvents.length - 1]).toEqual(
+        expect.objectContaining({
+          fromStepId: 'review',
+          toStepId: 'profile',
+        }),
+      );
+    });
+  });
+
+  test('nested steps: previous on first child goes to step before parent', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Wizard steps={nestedStepsWithLead} defaultStep="profile" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Previous' }));
+
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Intro' }),
+    ).toBeInTheDocument();
+  });
+
+  test('nested steps: next on last child auto-expands next parent and lands on first child', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Wizard steps={multiParentNestedSteps} defaultStep="a2" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Next' }));
+
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'B1' }),
+    ).toBeInTheDocument();
+  });
+
+  test('nested steps: skip from step before parent auto-expands and lands on first child', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Wizard steps={nestedStepsWithLead} defaultStep="intro" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Skip' }));
+
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Profile' }),
+    ).toBeInTheDocument();
   });
 
   describe('renderStep', () => {

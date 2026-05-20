@@ -16,10 +16,32 @@ const WizardStepHeader = () => {
       ? normalizeColor(focusColorToken, theme)
       : undefined;
 
-  const { currentStepIndex, linearSteps = [] } = useWizard();
+  const { currentStepIndex, linearSteps = [], steps = [] } = useWizard();
   const currentStep = linearSteps[currentStepIndex];
 
   if (!currentStep) return null;
+
+  const parentSteps = steps;
+  const parentCount = parentSteps.length;
+
+  let displayStepNumber = currentStepIndex + 1;
+  if (currentStep && Array.isArray(parentSteps) && parentSteps.length) {
+    const directParentIndex = parentSteps.findIndex(
+      (step) => step.id === currentStep.id,
+    );
+    if (directParentIndex >= 0) {
+      displayStepNumber = directParentIndex + 1;
+    } else {
+      const parentIndex = parentSteps.findIndex((step) =>
+        Array.isArray(step.children)
+          ? step.children.some((child) => child.id === currentStep.id)
+          : false,
+      );
+      if (parentIndex >= 0) {
+        displayStepNumber = parentIndex + 1;
+      }
+    }
+  }
 
   return (
     <Box margin={stepHeaderTheme.margin} pad={{ bottom: 'small' }}>
@@ -28,7 +50,7 @@ const WizardStepHeader = () => {
         color={stepHeaderTheme.counter?.color || 'text-weak'}
         margin={{ bottom: 'xsmall' }}
       >
-        {`Step ${currentStepIndex + 1} of ${linearSteps.length}`}
+        {`Step ${displayStepNumber} of ${parentCount}`}
       </Text>
       <Text
         as="h2"

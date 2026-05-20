@@ -261,21 +261,71 @@ This produces an **effective visual state**:
 
 #### Nested Step Scope (v1)
 
-- V1 supports parent steps with one level of child sub-steps.
+V1 supports parent steps with one level of child sub-steps using a lazy-reveal and persistent visibility pattern.
+
+**Two-Level Hierarchy**
+
+- V1 supports parent steps with one level of child sub-steps (no grandchildren).
 - Flat step arrays remain fully supported and unchanged.
-- V1 does not include expand/collapse controls; when `children` are provided,
-  child steps are rendered inline as part of the default hierarchy.
-- Parent-and-child visibility is therefore deterministic in v1: all provided child
-  steps are visible in rendered order.
 - Descendants beyond the child level are unsupported in v1.
 - In development builds, Stepper warns when deeper nesting is authored.
 - Descendants beyond the child level are ignored in default rendering, keyboard traversal, and status rollups.
+
+**Visibility & Lazy Reveal Pattern**
+
+- **Initial state**: Parent steps are always visible; child steps are hidden until first reveal
+- **Lazy reveal**: When Wizard navigates to any child step (via `next()`, `goTo()`, or `skip()`), that parent's entire child list is revealed in Stepper
+- **Persistence**: Once revealed, children remain visible even if Wizard navigates away to other parents and back
+- **Rendering**: Parent steps nest children below them (children don't replace parents); rendering order is linear child-first
+- **Step counting**: Only parent steps are counted for progress indicators ("Step 2 of 3" where 3 = parent count)
+
+**Coordination with Wizard Navigation**
+
+Stepper's visibility automatically updates via context synchronization with Wizard's `revealedParentIds` state:
+
+- Wizard marks parent as revealed on first navigation to any child
+- Stepper receives `revealedParentIds` Set and renders children conditionally
+- No expand/collapse UI controls in v1; visibility is purely driven by Wizard navigation
+
+**Status Rollup & Child Semantics**
+
 - When a parent step has children, parent status is a rollup:
   - Parent is `completed` when all children are `completed`.
   - Parent is `error` when any child is `error`.
   - Parent is `disabled` when all children are `disabled`.
   - Otherwise parent is `pending`.
-- `currentStep` always identifies a concrete active node id (parent or child).
+- Parent never receives keyboard focus or direct navigation; Wizard skips parents automatically
+- `currentStep` always identifies a concrete node id (parent or child), but presentation focuses on currently active step without highlighting the parent
+
+**Example: Nested steps with lazy reveal**
+
+```typescript
+// Steps provided to Stepper
+const steps = [
+  {
+    id: 'account',
+    title: 'Account Setup', // Parent - always visible
+    children: [
+      { id: 'email', title: 'Email', status: 'pending' },
+      { id: 'password', title: 'Password', status: 'pending' },
+    ],
+  },
+  {
+    id: 'profile',
+    title: 'Profile Setup', // Parent - always visible
+    children: [
+      { id: 'name', title: 'Name', status: 'pending' },
+      { id: 'photo', title: 'Photo', status: 'pending' },
+    ],
+  },
+];
+
+// Rendering progression:
+// 1. Initial: Shows only "Account Setup", "Profile Setup" (children hidden)
+// 2. After Wizard navigates to 'email': "Account Setup" + children visible, "Profile Setup" (children hidden)
+// 3. After Wizard navigates to 'name': "Account Setup" + children visible, "Profile Setup" + children visible
+// 4. After Wizard navigates to 'email' again: Both parents and all children remain visible (persistence)
+```
 
 ### Content Guidelines
 
