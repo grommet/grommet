@@ -23,10 +23,10 @@ Multi-step workflow orchestrator with smart defaults for linear flows and compos
 
 2. [API Specification](#api-specification)
    - [Props Interface](#props-interface)
-   - [Step Definition Model](#step-definition-model)
-   - [Event Model](#event-model)
-   - [Navigation API](#navigation-api)
-   - [Subcomponents & Hooks](#subcomponents--hooks)
+
+- [Step Definition Semantics](#step-definition-semantics)
+- [Navigation Events & API](#navigation-events--api)
+- [Subcomponents & Hooks](#subcomponents--hooks)
 
 - [Default Render Contract (No `children`)](#default-render-contract-no-children)
 - [Type Definitions](#type-definitions)
@@ -40,9 +40,8 @@ Multi-step workflow orchestrator with smart defaults for linear flows and compos
 4. [Anatomy & Rendering](#anatomy--rendering)
 
    - [Component Hierarchy](#component-hierarchy)
-   - [Horizontal Layout](#horizontal-layout)
-   - [Vertical Layout](#vertical-layout)
-   - [No-Progress Layout](#no-progress-layout)
+
+- [Layout Modes](#layout-modes)
 
 5. [Behavior & Interaction](#behavior--interaction)
 
@@ -175,42 +174,28 @@ interface StepDefinition<TFormValue = unknown> {
 }
 ```
 
-### Step Definition Model
+### Step Definition Semantics
 
-```typescript
-type StepDefinition<TFormValue = unknown> = {
-  id: string;
-  title: string;
-  description?: string | ReactNode;
-  skippable?: boolean;
-  validation?: (data: TFormValue) => Promise<void> | void;
-  nextStep?: (data: TFormValue) => string;
-  children?: Omit<StepDefinition<TFormValue>, 'children'>[];
-};
-```
+`StepDefinition` is declared in Props Interface and Type Definitions; this section
+captures normative behavior only:
 
-**Properties**
+- `id`: unique across full parent-and-child graph; used by `currentStep`,
+  navigation APIs, and emitted events.
+- `title`: primary display label for step header and progress UI.
+- `description`: optional secondary text shown in step header.
+- `skippable`: enables `skip()` for the step.
+- `validation`: optional sync/async guard executed before forward movement.
+- `nextStep`: optional deterministic branch resolver; must return a valid step id.
+- `children`: optional one-level child steps (v1).
+  - Child-first traversal when a parent contains children.
+  - Parent completion defaults to all children completed.
+  - Descendants beyond one child level are unsupported in v1.
+  - In development builds, deeper nesting warns and extra descendants are ignored
+    for navigation, progress, and counters.
 
-- **`id`** — Unique identifier across all parent-and-child steps; used in `currentStep` and `onStepChange` events
-- **`title`** — Display label; used in Step Header and progress indication
-- **`description`** — Optional secondary text; shown below title in Step Header
-- **`skippable`** — When true, `skip()` button is shown; advances without validation
-- **`validation`** — Optional validation function; run before advancing to next step
-  - Synchronous: return void or throw to indicate error
-  - Asynchronous: return Promise; resolves on success, rejects on error
-- **`nextStep`** — Optional branching resolver; called with current form data
-  - Must return a valid step id (deterministic)
-  - If omitted, advances to the next step in the rendered child-first hierarchy order
-- **`children`** — Optional child sub-steps (v1 supports one child level)
-  - Wizard traverses in child-first order when a parent contains children
-  - Parent completion defaults to all child steps completed
-  - Descendants beyond the child level are unsupported in v1.
-  - In development builds, Wizard warns when deeper nesting is authored.
-  - Descendants beyond the child level are ignored for navigation, progress, and counters.
+### Navigation Events & API
 
-### Event Model
-
-The `StepChangeEvent` emitted via `onStepChange` callback provides detailed context for each navigation attempt:
+`onStepChange` emits `StepChangeEvent` for navigation and terminal actions:
 
 ```typescript
 type NavigationStepChangeEvent = {
@@ -233,18 +218,15 @@ type TerminalStepChangeEvent = {
 type StepChangeEvent = NavigationStepChangeEvent | TerminalStepChangeEvent;
 ```
 
-**Event Flow**
+Event lifecycle:
 
-1. User triggers navigation (click Next, keyboard Enter, etc.)
-2. Wizard emits `{ phase: 'attempted', trigger, ... }`
-3. Validation runs (if configured)
-4. If validation fails: emit `{ phase: 'blocked', blocked: true, error, ... }`
-5. If validation passes: emit `{ phase: 'completed', ... }` and transition
-6. Parent updates state (in controlled mode)
+| Phase       | When emitted                             | Notes                                         |
+| ----------- | ---------------------------------------- | --------------------------------------------- |
+| `attempted` | User triggers navigation action          | Always emitted first                          |
+| `blocked`   | Validation or gating prevents transition | Includes `blocked: true` and optional `error` |
+| `completed` | Transition or terminal action succeeds   | For controlled mode, parent updates state     |
 
-### Navigation API
-
-Methods accessible via `useWizard()` hook (within WizardContent or custom composition):
+Navigation methods are exposed via `useWizard()`:
 
 ```typescript
 const wizard = useWizard();
@@ -427,6 +409,8 @@ declare module 'grommet' {
 
   interface WizardProps<TFormValue = unknown>
     extends React.HTMLAttributes<HTMLDivElement> {
+    'aria-label'?: string;
+    title?: string;
     steps: StepDefinition<TFormValue>[];
     defaultStep?: string;
     currentStep?: string;
@@ -442,7 +426,6 @@ declare module 'grommet' {
     width?: string | ResponsiveValue;
     gap?: string | ResponsiveValue;
     id?: string;
-    a11yTitle?: string;
     children?: React.ReactNode;
   }
 
@@ -623,38 +606,13 @@ const stepStates = {
 </Wizard>
 ```
 
-### Horizontal Layout
+### Layout Modes
 
-Default layout when `showProgress='horizontal'`:
-
-- Modal Header at top
-- Stepper (horizontal) below header
-- Step Header and Content in main area
-- Footer with navigation buttons at bottom
-
-**Use when**: Compact space, < 5 steps, minimal step descriptions needed
-
-### Vertical Layout
-
-Used when `showProgress='vertical'`:
-
-- Modal Header at top
-- Body splits into sidebar (Stepper, vertical) and main column (content)
-- Step Header and Content in main column
-- Footer at bottom
-
-**Use when**: > 5 steps, descriptions important, sidebar space available
-
-### No-Progress Layout
-
-Used when `showProgress=false`:
-
-- Header at top
-- Step Header and Content in main area
-- Footer at bottom
-- No Stepper displayed
-
-**Use when**: Progress already shown elsewhere, constrained space, system-driven workflow
+| `showProgress` value | Layout behavior                                                            | Recommended use                                  |
+| -------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ |
+| `'horizontal'`       | Header -> horizontal Stepper -> step header/content -> footer              | Compact flows, typically < 5 steps               |
+| `'vertical'`         | Header -> body split (vertical Stepper sidebar + content column) -> footer | Longer flows where step context is important     |
+| `false`              | Header -> step header/content -> footer (no Stepper)                       | Progress shown elsewhere or intentionally hidden |
 
 ---
 
@@ -702,39 +660,21 @@ V1 policy is fixed and non-configurable. Wizard does not expose a `navigationPol
 
 Wizard supports an optional parent-and-child (two-level) step hierarchy where parents are organizational containers, not navigation waypoints. Parents should never be landed on directly; navigation always lands on children.
 
-**Navigation Behavior with Nested Steps**
+**Nested navigation rules**
 
-1. **Parents are organizational only**: Parents are visual/logical grouping containers and should not be treated as actual navigation stops. All navigation methods (`next()`, `previous()`, `goTo()`, `skip()`) skip over parents automatically.
+| Method         | Required behavior                                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `next()`       | Move through sibling children first; when leaving a parent, auto-expand next parent and land on its first child.                |
+| `previous()`   | Move to previous sibling child; from first child, move to step immediately before the parent (never land on parent).            |
+| `goTo(stepId)` | `goTo(parentId)` lands on first child and reveals children; `goTo(childId)` auto-expands parent if needed, then lands on child. |
+| `skip()`       | Valid only for `skippable` current step; advances like `next()` without validation and still skips parents as landing targets.  |
 
-2. **Forward navigation (`next()`)**:
+Nested rendering/progress rules:
 
-   - On a child step within a parent: advance to next child within same parent
-   - On last child of a parent: auto-expand next parent and land on its first child
-   - Parents encountered during traversal are auto-expanded and skipped to their first child
-
-3. **Backward navigation (`previous()`)**:
-
-   - On non-first child: go to previous child within same parent
-   - On first child: go to the step immediately before the parent (skipping the parent)
-   - Walk backward through children before exiting to prior parent
-
-4. **Jump navigation (`goTo(stepId)`)**:
-
-   - **`goTo(parentId)`** (if parentId has children): auto-expand parent, land on first child; mark all children as revealed
-   - **`goTo(childId)`**: auto-expand parent (if not already revealed), land on childId
-   - Both forward and backward jumps trigger auto-expansion of target parent
-
-5. **Skip navigation (`skip()`)**:
-
-   - Not applicable to parent steps directly; skip should not be called on parent-only steps
-   - Skipping from a child step advances to next child or (if last child) auto-expands next parent and lands on its first child
-   - Skipping from a step before a parent auto-expands that parent and lands on its first child
-
-6. **Stepper rendering and visibility**:
-   - Parents are always visible in Stepper
-   - Children are hidden until first reveal (lazy-reveal pattern)
-   - Once a parent's children are revealed (first navigation to any child), they persist as visible
-   - Step counter only counts parent-level steps ("Step 2 of 3" for 3 parents, regardless of total children)
+- Parents are always visible in Stepper.
+- Children are lazy-revealed on first entry to any child and remain visible.
+- Counters use parent count only (for example, "Step 2 of 3").
+- All navigation methods skip parents as direct destinations.
 
 **Parent Completion Rollup**
 
@@ -750,39 +690,6 @@ Wizard supports an optional parent-and-child (two-level) step hierarchy where pa
 - Descendants beyond the child level are ignored for navigation, progress, and step counters
 - `linearSteps` flattens the hierarchy (parents first, then their children) for indexing, but navigation respects parent boundaries
 - `revealedParentIds` tracks which parents have been visited; used for persistent visibility
-
-**Example: Multi-parent flow with lazy reveal**
-
-```typescript
-const steps = [
-  {
-    id: 'accountSetup',
-    title: 'Account Setup', // Parent
-    children: [
-      { id: 'email', title: 'Email Address' },
-      { id: 'password', title: 'Set Password' },
-    ],
-  },
-  {
-    id: 'profileSetup',
-    title: 'Profile Setup', // Parent
-    children: [
-      { id: 'name', title: 'Full Name' },
-      { id: 'photo', title: 'Profile Photo' },
-    ],
-  },
-  { id: 'review', title: 'Review & Submit' }, // Flat step
-];
-
-// Navigation flow:
-// 1. next() on first visit → Account Setup parent auto-expands → lands on 'email' child
-// 2. next() on 'email' → lands on 'password' (next sibling child)
-// 3. next() on 'password' → Profile Setup parent auto-expands → lands on 'name' (first child)
-// 4. previous() on 'name' → lands on 'password' (step before parent)
-// 5. goTo('profileSetup') → auto-expands and lands on 'name' (first child)
-// 6. In Stepper: only 2 top-level parents visible initially; children hidden until entry
-// 7. Aria-labels: "Step 2 of 3" (counting parents only, not all 5 flattened steps)
-```
 
 **Gating Rules**
 
