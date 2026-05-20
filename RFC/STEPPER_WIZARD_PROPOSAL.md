@@ -97,19 +97,11 @@ This produces **effective visual states** (e.g., `current + completed` when retu
       title: string
       description?: string
       status?: 'pending' | 'completed' | 'error' | 'disabled'
-      disabledReason?: string
-      errorMessage?: string
-      children?: {
-        id: string
-        title: string
-        description?: string
-        status?: 'pending' | 'completed' | 'error' | 'disabled'
-        disabledReason?: string
-        errorMessage?: string
-      }[]
+      disabledReason?: string;
+      'aria-label'?: string; // Added for accessibility
     }
   ]}
-  currentStep={string}
+  'aria-label'="Progress indicator" // Replaces `a11yTitle`
   direction="horizontal" | "vertical"  // default: 'horizontal'
   clickableSteps?: boolean  // default: true
   onStepClick?: (stepId: string) => void
@@ -139,15 +131,9 @@ This produces **effective visual states** (e.g., `current + completed` when retu
       title: string
       description?: string
       skippable?: boolean
-      validation?: (data: unknown) => Promise<void> | void
-      nextStep?: (data: unknown) => string  // For branching logic
-      children?: {
-        id: string
-        title: string
-        description?: string
-        skippable?: boolean
-        validation?: (data: unknown) => Promise<void> | void
-      }[]
+      validation?: (data: TFormValue) => Promise<void> | void
+      nextStep?: (data: TFormValue) => string
+      children?: Omit<StepDefinition<TFormValue>, 'children'>[];
     }
   ]}
 
@@ -159,6 +145,8 @@ This produces **effective visual states** (e.g., `current + completed` when retu
   defaultStep?: string
 
   // Features
+  'aria-label'="Workflow wizard" // Replaces `a11yTitle`
+  title="Wizard Title" // Added for visual title
   showProgress?: false | 'horizontal' | 'vertical'  // Stepper integration
   onComplete?: (data: WizardCompletionData<unknown>) => void
   onCancel?: (reason: 'user') => void

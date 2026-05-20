@@ -115,6 +115,18 @@ Multi-step workflow orchestrator with smart defaults for linear flows and compos
 
 ```typescript
 interface WizardProps<TFormValue = unknown> {
+  /**
+   * Provides an accessible label for the Wizard container.
+   * Replaces the deprecated `a11yTitle` prop.
+   */
+  'aria-label'?: string;
+
+  /**
+   * Title of the Wizard, displayed visually.
+   * Added to separate visual title from accessibility label.
+   */
+  title?: string;
+
   // Step definitions (required)
   steps: StepDefinition<TFormValue>[];
 
@@ -147,7 +159,6 @@ interface WizardProps<TFormValue = unknown> {
 
   // HTML attributes
   id?: string;
-  a11yTitle?: string;
 
   // Custom composition
   children?: React.ReactNode;
@@ -162,32 +173,6 @@ interface StepDefinition<TFormValue = unknown> {
   nextStep?: (formValue: TFormValue) => string; // Branching resolver
   children?: Omit<StepDefinition<TFormValue>, 'children'>[]; // Optional child sub-steps
 }
-
-type NavigationStepChangeEvent = {
-  fromStepId: string; // Source step
-  toStepId: string; // Required for step transitions
-  trigger: 'next' | 'previous' | 'goTo' | 'skip';
-  phase: 'attempted' | 'completed' | 'blocked';
-  blocked?: boolean; // true if transition was prevented
-  error?: Error | string; // Validation error details
-};
-
-type TerminalStepChangeEvent = {
-  fromStepId: string; // Source step
-  toStepId?: never; // Terminal events do not transition to a step
-  trigger: 'complete' | 'cancel';
-  phase: 'attempted' | 'completed';
-  reason?: 'user'; // Present when trigger === 'cancel'
-};
-
-type StepChangeEvent = NavigationStepChangeEvent | TerminalStepChangeEvent;
-
-interface WizardCompletionData<TFormValue = unknown> {
-  completedSteps: string[]; // All completed step ids
-  formValue?: TFormValue; // Optional form value payload
-}
-
-type RenderStepContext<TFormValue = unknown> = WizardContextValue<TFormValue>;
 ```
 
 ### Step Definition Model
@@ -239,7 +224,7 @@ type NavigationStepChangeEvent = {
 
 type TerminalStepChangeEvent = {
   fromStepId: string; // Source step
-  toStepId?: never; // Not present for complete/cancel
+  toStepId?: never; // Terminal events do not transition to a step
   trigger: 'complete' | 'cancel';
   phase: 'attempted' | 'completed';
   reason?: 'user'; // Cancel reason (only when trigger === 'cancel')

@@ -97,6 +97,12 @@ A reusable progress indicator component that visualizes multi-step workflows. St
 
 ```typescript
 interface StepperProps {
+  /**
+   * Provides an accessible label for the Stepper container.
+   * Replaces the deprecated `a11yTitle` prop.
+   */
+  'aria-label'?: string;
+
   // Step definitions
   steps: StepType[];
 
@@ -112,13 +118,17 @@ interface StepperProps {
 
   // HTML attributes
   id?: string;
-  a11yTitle?: string;
 
   // Custom rendering
   children?: React.ReactNode;
 }
 
 interface StepType {
+  /**
+   * Provides an accessible label for individual steps.
+   */
+  'aria-label'?: string;
+
   id: string; // Unique identifier
   title: string; // Display label (≤ 50 chars recommended)
   description?: string; // Optional secondary text (≤ 150 chars recommended)
