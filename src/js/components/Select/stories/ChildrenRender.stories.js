@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import { FormClose } from 'grommet-icons';
-import { Box, Button, Select, Text } from 'grommet';
+import { Box, Select, Tag, Text } from 'grommet';
 
 const allSeasons = [
   'S01',
@@ -23,37 +22,16 @@ export const Children = () => {
     setSelected(selected.filter((selectedSeason) => selectedSeason !== season));
   };
 
-  const renderSeason = (season) => (
-    <Button
-      key={`season_tag_${season}`}
-      href="#"
-      onClick={(event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        onRemoveSeason(season);
-      }}
-      onFocus={(event) => event.stopPropagation()}
+  const renderOption = (option, index, options, state) => (
+    <Box
+      pad="small"
+      background={
+        state.selected ? 'brand' : undefined
+      }
     >
-      <Box
-        align="center"
-        direction="row"
-        gap="xsmall"
-        pad={{ vertical: 'xsmall', horizontal: 'small' }}
-        margin="xsmall"
-        background="brand"
-        round="large"
-      >
-        <Text size="small">{season}</Text>
-        <Box round="full" margin={{ left: 'xsmall' }}>
-          <FormClose size="small" style={{ width: '12px', height: '12px' }} />
-        </Box>
-      </Box>
-    </Button>
-  );
-
-  const renderOption = (option, state) => (
-    <Box pad="small" background={state.active ? 'active' : undefined}>
-      {option}
+      <Text color={state.disabled ? 'text-disabled' : 'text-strong'}>
+        {option}
+      </Text>
     </Box>
   );
 
@@ -64,20 +42,33 @@ export const Children = () => {
       <Select
         closeOnChange={false}
         multiple
-        valueLabel={
-          <Box wrap direction="row" width="small">
-            {selected && selected.length ? (
-              selected.map((value) => renderSeason(value))
-            ) : (
-              <Box
-                pad={{ vertical: 'xsmall', horizontal: 'small' }}
-                margin="xsmall"
-              >
-                Select Season
-              </Box>
-            )}
+        placeholder="Select Season"
+        valueLabel={(options) => (
+          <Box
+            wrap
+            direction="row"
+            pad="xsmall"
+            gap="xsmall"
+            cssGap
+            width="small"
+          >
+            {options && options.length ?
+              options.map((season) => (
+                <Tag
+                  key={`season_tag_${season}`}
+                  value={season}
+                  onRemove={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    onRemoveSeason(season);
+                  }}
+                />
+              )) : (
+              <Text color="text-weak">Select Season</Text>
+             )
+            }
           </Box>
-        }
+        )}
         options={allSeasons}
         value={selected}
         disabled={[2, 6]}
