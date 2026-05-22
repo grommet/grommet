@@ -179,11 +179,53 @@ describe('DateInput', () => {
     const input = screen.getByRole('textbox');
 
     await user.type(input, '09/09/2022');
-    expect(input).not.toHaveValue();
+    expect(input).toHaveAttribute('aria-invalid', 'true');
 
     await user.clear(input);
     await user.type(input, '11/15/2022');
     expect(input).toHaveValue('11/15/2022');
+  });
+
+  test('shows FormField out-of-bounds error message from Grommet messages', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        messages={{
+          messages: {
+            dateInput: {
+              outOfBounds:
+                'Fecha fuera de rango. Ingresa una fecha entre {start} y {end}.',
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField name="date" htmlFor="date-input">
+            <DateInput
+              id="date-input"
+              name="date"
+              format="mm/dd/yyyy"
+              calendarProps={{
+                bounds: ['2022-11-10', '2022-11-20'],
+              }}
+            />
+          </FormField>
+          <Button label="Submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '09/09/2022');
+    await user.click(screen.getByRole('button', { name: 'Submit' }));
+
+    expect(
+      await screen.findByText(
+        'Fecha fuera de rango. Ingresa una fecha entre 2022-11-10 y 2022-11-20.',
+      ),
+    ).toBeInTheDocument();
   });
 
   test('reverse calendar icon', () => {
@@ -378,11 +420,12 @@ describe('DateInput', () => {
     const input = screen.getByRole('textbox');
 
     await user.type(input, '09/09/2022-09/09/2022');
-    expect(input).not.toHaveValue();
+    expect(input).toHaveAttribute('aria-invalid', 'true');
 
     await user.clear(input);
     await user.type(input, '11/15/2022-11/15/2022');
     expect(input).toHaveValue('11/15/2022-11/15/2022');
+    expect(input).toHaveAttribute('aria-invalid', 'false');
   });
 
   test('dates initialized with empty array', async () => {

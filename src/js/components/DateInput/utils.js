@@ -135,7 +135,7 @@ export const validateBounds = (dateBounds, selectedDate) => {
       (isoSelectedDate >= startDate && isoSelectedDate <= endDate),
   );
 
-  return validSelection ? selectedDate : undefined;
+  return validSelection;
 };
 
 export const textToValue = (text, schema, range, reference, outputFormat) => {
