@@ -179,6 +179,7 @@ describe('DateInput', () => {
     const input = screen.getByRole('textbox');
 
     await user.type(input, '09/09/2022');
+    expect(input).toHaveValue('09/09/2022');
     expect(input).toHaveAttribute('aria-invalid', 'true');
 
     await user.clear(input);
@@ -420,6 +421,7 @@ describe('DateInput', () => {
     const input = screen.getByRole('textbox');
 
     await user.type(input, '09/09/2022-09/09/2022');
+    expect(input).toHaveValue('09/09/2022-09/09/2022');
     expect(input).toHaveAttribute('aria-invalid', 'true');
 
     await user.clear(input);

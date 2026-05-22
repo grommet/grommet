@@ -119,7 +119,7 @@ const pullDigits = (text, index) => {
 };
 
 export const validateBounds = (dateBounds, selectedDate) => {
-  if (!dateBounds || !selectedDate) return selectedDate;
+  if (!dateBounds || !selectedDate) return true;
 
   const [startDate, endDate] = dateBounds.map((date) =>
     setHoursWithOffset(date).toISOString(),

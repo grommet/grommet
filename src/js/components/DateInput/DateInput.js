@@ -390,10 +390,6 @@ Use the icon prop instead.`,
                 );
                 setValidValue(validNextValue);
 
-                if (!nextValue && nextValue) {
-                  setTextValue('');
-                }
-
                 if (nextValue !== undefined)
                   setReference(getReference(nextValue));
                 // update value even when undefined
