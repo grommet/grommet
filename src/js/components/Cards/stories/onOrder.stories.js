@@ -3,14 +3,14 @@ import { Box, Card, CardBody, CardFooter, Heading } from 'grommet';
 import { Cards } from '../Cards';
 
 const data = [
-  { city: 'Boise', state: 'Idaho' },
-  { city: 'Fort Collins', state: 'Colorado' },
-  { city: 'Bay Area', state: 'California' },
-  { city: 'San Diego', state: 'California' },
-  { city: 'San Francisco', state: 'California' },
-  { city: 'Los Angeles', state: 'California' },
-  { city: 'Portland', state: 'Oregon' },
-  { city: 'Seattle', state: 'Washington' },
+  { id: 'bo', city: 'Boise', state: 'Idaho' },
+  { id: 'fc', city: 'Fort Collins', state: 'Colorado' },
+  { id: 'ba', city: 'Bay Area', state: 'California' },
+  { id: 'sd', city: 'San Diego', state: 'California' },
+  { id: 'sf', city: 'San Francisco', state: 'California' },
+  { id: 'la', city: 'Los Angeles', state: 'California' },
+  { id: 'pt', city: 'Portland', state: 'Oregon' },
+  { id: 'se', city: 'Seattle', state: 'Washington' },
 ];
 
 export const OnOrder = () => {

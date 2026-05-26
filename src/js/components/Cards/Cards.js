@@ -98,7 +98,7 @@ const Cards = React.forwardRef(
 
       const onOrderProps = onOrder
         ? {
-            key: item?.id || index,
+            key: `_container_${item?.id || index}`,
             draggable: true,
             onDragStart: (event) => {
               event.dataTransfer.setData('text/plain', '');
@@ -161,7 +161,10 @@ const Cards = React.forwardRef(
       let content = children ? (
         children(item, index)
       ) : (
-        <Card key={index.toString()} as={as === 'ul' ? 'li' : undefined}>
+        <Card
+          key={item.id || index.toString()}
+          as={as === 'ul' ? 'li' : undefined}
+        >
           <CardBody>
             {(typeof item === 'string' && item) ??
               (typeof item === 'object' && Object.values(item)[0]) ??
@@ -185,7 +188,7 @@ const Cards = React.forwardRef(
       }
 
       return keyboard ? (
-        <Keyboard key={index} {...keyboard}>
+        <Keyboard key={`_keyboard_${item?.id || index}`} {...keyboard}>
           {content}
         </Keyboard>
       ) : (
