@@ -18,10 +18,12 @@ export interface CardsProps<CardType = any> {
   gridArea?: GridAreaType;
   margin?: MarginType;
   onMore?: () => void;
+  onOrder?: () => void;
   pad?: PadType;
   paginate?: boolean | PaginationType;
   show?: number | { page?: number };
   size?: GridSizeType;
+  sizeKey?: string;
   step?: number;
 }
 
