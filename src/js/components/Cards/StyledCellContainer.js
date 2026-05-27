@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { styledComponentsConfig } from '../../utils';
 
 const sizeStyles = (size) =>
   size && typeof size === 'object'
@@ -9,7 +10,9 @@ const sizeStyles = (size) =>
     : '';
 
 // display: grid makes the single child fill the wrapper (stretch in both axes)
-export const StyledCellContainer = styled.div`
+export const StyledCellContainer = styled.div.withConfig(
+  styledComponentsConfig,
+)`
   display: grid;
   ${(props) => (props.size ? sizeStyles(props.size) : undefined)}
   ${(props) => (props.draggable ? 'cursor: move;' : undefined)}

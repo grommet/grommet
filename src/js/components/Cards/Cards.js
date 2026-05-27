@@ -145,7 +145,7 @@ const Cards = React.forwardRef(
       ) : (
         <Card
           key={item.id || index.toString()}
-          as={as === 'ul' ? 'li' : undefined}
+          as={!(onOrder || sizeKey) && as === 'ul' ? 'li' : undefined}
         >
           <CardBody>
             {(typeof item === 'string' && item) ??
@@ -156,12 +156,13 @@ const Cards = React.forwardRef(
       );
 
       // If the items are orderable or sized by a property, wrap them in a
-      // StyledDraggableCell to apply the drag and drop handlers and/or
+      // StyledCellContainer to apply the drag and drop handlers and/or
       // size styles
       if (onOrder || sizeKey) {
         content = (
           <StyledCellContainer
             key={`_container_${item?.id || index}`}
+            as={as === 'ul' ? 'li' : undefined}
             {...wrapperProps}
             size={sizeKey ? item[sizeKey] : undefined}
           >

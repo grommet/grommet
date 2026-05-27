@@ -24,7 +24,7 @@ export const Sizable = () => (
       sizeKey="size"
     >
       {(datum) => (
-        <Card key={datum.city} pad="small" elevation="medium" as="li">
+        <Card key={datum.city} pad="small" elevation="medium">
           <CardBody>
             <Heading level={2} size="small" margin="none">
               {datum.city}
