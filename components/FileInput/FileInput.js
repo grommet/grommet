@@ -293,6 +293,9 @@ var FileInput = exports.FileInput = /*#__PURE__*/(0, _react.forwardRef)(function
     onChange: function onChange(event) {
       event.persist();
       var fileList = event.target.files;
+      // If the user cancelled the file picker, fileList will be empty
+      // and we should not clear any previously selected files.
+      if (!fileList.length && files.length) return;
       var nextFiles = multiple ? [].concat(files) : [];
       var _loop = function _loop(i) {
         // avoid duplicates
