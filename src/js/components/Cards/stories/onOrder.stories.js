@@ -25,7 +25,7 @@ export const OnOrder = () => {
         onOrder={setOrderedData}
       >
         {(datum) => (
-          <Card key={datum.city} elevation="medium" as="li">
+          <Card key={datum.city} pad="medium" elevation="medium" as="li">
             <CardBody>
               <Heading level={2} size="small" margin="none">
                 {datum.city}

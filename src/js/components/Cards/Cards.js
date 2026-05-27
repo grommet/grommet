@@ -1,5 +1,4 @@
 import React, { Fragment, useContext, useState } from 'react';
-import styled from 'styled-components';
 
 import { DataContext } from '../../contexts/DataContext';
 import { Box } from '../Box';
@@ -14,12 +13,9 @@ import { normalizeShow, usePagination } from '../../utils';
 import { CardsPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-const emptyData = [];
+import { StyledCellContainer } from './StyledCellContainer';
 
-// display: grid makes the single child fill the wrapper (stretch in both axes)
-const StyledDraggableCell = styled.div`
-  display: grid;
-`;
+const emptyData = [];
 
 const reorder = (array, source, target) => {
   const result = array.slice(0);
@@ -28,19 +24,6 @@ const reorder = (array, source, target) => {
     for (let i = source; i < target; i += 1) result[i] = result[i + 1];
   else for (let i = source; i > target; i -= 1) result[i] = result[i - 1];
   result[target] = tmp;
-  return result;
-};
-
-const sizeStyles = (size) => {
-  const result = {};
-  if (typeof size === 'object') {
-    if (size.columns) {
-      result.gridColumn = `span ${size.columns}`;
-    }
-    if (size.rows) {
-      result.gridRow = `span ${size.rows}`;
-    }
-  }
   return result;
 };
 
@@ -98,7 +81,6 @@ const Cards = React.forwardRef(
 
       const onOrderProps = onOrder
         ? {
-            key: `_container_${item?.id || index}`,
             draggable: true,
             onDragStart: (event) => {
               event.dataTransfer.setData('text/plain', '');
@@ -178,15 +160,17 @@ const Cards = React.forwardRef(
       // size styles
       if (onOrder || sizeKey) {
         content = (
-          <StyledDraggableCell
+          <StyledCellContainer
+            key={`_container_${item?.id || index}`}
             {...wrapperProps}
-            style={sizeKey ? sizeStyles(item[sizeKey]) : undefined}
+            size={sizeKey ? item[sizeKey] : undefined}
           >
             {content}
-          </StyledDraggableCell>
+          </StyledCellContainer>
         );
       }
 
+      // Keyboard is only applied if onOrder is provided
       return keyboard ? (
         <Keyboard key={`_keyboard_${item?.id || index}`} {...keyboard}>
           {content}
