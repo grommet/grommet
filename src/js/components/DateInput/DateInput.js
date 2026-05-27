@@ -125,7 +125,7 @@ const DateInput = forwardRef(
     });
     const usingKeyboard = useKeyboard();
     const CalendarIcon = theme.dateInput.icon?.calendar || GrommetCalendarIcon;
-    const [validValue, setValidValue] = useState(true);
+    const [withinBounds, setWithinBounds] = useState(true);
 
     const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
     useEffect(() => {
@@ -137,6 +137,15 @@ const DateInput = forwardRef(
         return previousFormat !== nextFormat ? previousFormat : nextFormat;
       });
     }, [value]);
+
+    useEffect(() => {
+      if (value === undefined || bounds === undefined) {
+        setWithinBounds(true);
+      } else {
+        const validNextValue = validateBounds(bounds, value);
+        setWithinBounds(validNextValue);
+      }
+    }, [value, bounds]);
 
     // keep track of timestamp from original date(s)
     const [reference, setReference] = useState(getReference(value));
@@ -361,7 +370,7 @@ Use the icon prop instead.`,
           >
             {reverse && (!readOnly || readOnlyCopy) && DateInputButton}
             <MaskedInput
-              aria-invalid={!validValue}
+              aria-invalid={bounds && !withinBounds ? true : undefined}
               readOnly={readOnly}
               ref={ref}
               id={id}
@@ -384,11 +393,8 @@ Use the icon prop instead.`,
                   outputFormat,
                 );
 
-                const validNextValue = validateBounds(
-                  calendarProps?.bounds,
-                  nextValue,
-                );
-                setValidValue(validNextValue);
+                const validNextValue = validateBounds(bounds, nextValue);
+                setWithinBounds(validNextValue);
 
                 if (nextValue !== undefined)
                   setReference(getReference(nextValue));

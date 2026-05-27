@@ -844,7 +844,6 @@ exports[`DateInput controlled format inline 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -1799,7 +1798,6 @@ exports[`DateInput controlled format inline 2`] = `
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
           id="item"
@@ -3329,7 +3327,6 @@ exports[`DateInput controlled format inline without timezone 1`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -4860,7 +4857,6 @@ exports[`DateInput controlled format inline without timezone 2`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -6009,7 +6005,6 @@ exports[`DateInput custom theme 1`] = `
         class="c2"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c3"
           placeholder="mm/dd/yyyy"
@@ -6370,7 +6365,6 @@ exports[`DateInput dropProps should pass props to Drop\\n  when not inline 1`] =
       class="c2"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c3"
         placeholder="mm/dd/yyyy"
@@ -6604,7 +6598,6 @@ exports[`DateInput focus 1`] = `
       class="c2"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c3"
         id="item"
@@ -6840,7 +6833,6 @@ exports[`DateInput format 1`] = `
       class="c2"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c3"
         id="item"
@@ -7085,7 +7077,6 @@ exports[`DateInput format disabled 1`] = `
       class="c3"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c4"
         disabled=""
@@ -7640,7 +7631,6 @@ exports[`DateInput format inline 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -8814,7 +8804,6 @@ exports[`DateInput handle focus in FormField 1`] = `
               class="c5"
             >
               <input
-                aria-invalid="false"
                 autocomplete="off"
                 class="c6"
                 placeholder="mm/dd/yyyy"
@@ -9065,7 +9054,6 @@ exports[`DateInput handle focus in FormField 2`] = `
               class="c4"
             >
               <input
-                aria-invalid="false"
                 autocomplete="off"
                 class="c5"
                 placeholder="mm/dd/yyyy"
@@ -10698,7 +10686,6 @@ exports[`DateInput input props reverse as false 1`] = `
       class="c2"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c3"
         id="item"
@@ -10934,7 +10921,6 @@ exports[`DateInput input props reverse as false with icon 1`] = `
       class="c2"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c3"
         id="item"
@@ -11191,7 +11177,6 @@ exports[`DateInput input props reverse as true 1`] = `
       class="c4"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c5"
         id="item"
@@ -11431,7 +11416,6 @@ exports[`DateInput input props reverse as true with icon 1`] = `
       class="c4"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c5"
         id="item"
@@ -11847,7 +11831,6 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
         class="c2"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c3"
           placeholder="mm/dd/yyyy"
@@ -11879,7 +11862,6 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
         class="c2"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c6"
           placeholder="mm/dd/yyyy"
@@ -11911,7 +11893,6 @@ exports[`DateInput matches icon size to size prop when theme.icon.matchSize is t
         class="c2"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c8"
           placeholder="mm/dd/yyyy"
@@ -12273,7 +12254,6 @@ exports[`DateInput range format 1`] = `
       class="c2"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c3"
         id="item"
@@ -12846,7 +12826,6 @@ exports[`DateInput range format inline 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -15185,7 +15164,6 @@ exports[`DateInput read only 1`] = `
         class="c2"
       >
         <input
-          aria-invalid="false"
           aria-readonly="true"
           autocomplete="off"
           class="c3"
@@ -15437,7 +15415,6 @@ exports[`DateInput read only copy 1`] = `
         class="c2"
       >
         <input
-          aria-invalid="false"
           aria-readonly="true"
           autocomplete="off"
           class="c3"
@@ -16167,7 +16144,6 @@ exports[`DateInput reverse calendar icon 1`] = `
       class="c4"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c5"
         id="item"
@@ -16386,7 +16362,6 @@ exports[`DateInput select format 1`] = `
       class="c2"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="c3"
         id="item"
@@ -16427,7 +16402,6 @@ exports[`DateInput select format 2`] = `
       class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
     >
       <input
-        aria-invalid="false"
         autocomplete="off"
         class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
         id="item"
@@ -18421,7 +18395,6 @@ exports[`DateInput select format inline 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -19370,7 +19343,6 @@ exports[`DateInput select format inline 2`] = `
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
           id="item"
@@ -20829,7 +20801,6 @@ exports[`DateInput select format inline 3`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -22289,7 +22260,6 @@ exports[`DateInput select format inline 4`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -23768,7 +23738,6 @@ exports[`DateInput select format inline range 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -24717,7 +24686,6 @@ exports[`DateInput select format inline range 2`] = `
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
           id="item"
@@ -26196,7 +26164,6 @@ exports[`DateInput select format inline range without timezone 1`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -27660,7 +27627,6 @@ exports[`DateInput select format inline range without timezone 2`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -28803,7 +28769,6 @@ exports[`DateInput select format no timezone 1`] = `
         class="c2"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c3"
           id="item"
@@ -29041,7 +29006,6 @@ exports[`DateInput select format no timezone 2`] = `
         class="c2"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c3"
           id="item"
@@ -33288,7 +33252,6 @@ exports[`DateInput theme button margin and icon size 1`] = `
         class="c2"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c3"
           placeholder="mm/dd/yyyy"
@@ -33320,7 +33283,6 @@ exports[`DateInput theme button margin and icon size 1`] = `
         class="c2"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c3"
           placeholder="mm/dd/yyyy"
@@ -33872,7 +33834,6 @@ exports[`DateInput type format inline 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -34821,7 +34782,6 @@ exports[`DateInput type format inline 2`] = `
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
           id="item"
@@ -36279,7 +36239,6 @@ exports[`DateInput type format inline partial 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -37738,7 +37697,6 @@ exports[`DateInput type format inline partial without timezone 1`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -39217,7 +39175,6 @@ exports[`DateInput type format inline range 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -40166,7 +40123,6 @@ exports[`DateInput type format inline range 2`] = `
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
           id="item"
@@ -41644,7 +41600,6 @@ exports[`DateInput type format inline range partial 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -42593,7 +42548,6 @@ exports[`DateInput type format inline range partial 2`] = `
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
           id="item"
@@ -43542,7 +43496,6 @@ exports[`DateInput type format inline range partial 3`] = `
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
           id="item"
@@ -45021,7 +44974,6 @@ exports[`DateInput type format inline range partial without timezone 1`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -46485,7 +46437,6 @@ exports[`DateInput type format inline range partial without timezone 2`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -47949,7 +47900,6 @@ exports[`DateInput type format inline range partial without timezone 3`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -49429,7 +49379,6 @@ exports[`DateInput type format inline range without timezone 1`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -50909,7 +50858,6 @@ exports[`DateInput type format inline range without timezone 2`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -52368,7 +52316,6 @@ exports[`DateInput type format inline short 1`] = `
         class="c3"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="c4"
           id="item"
@@ -53317,7 +53264,6 @@ exports[`DateInput type format inline short 2`] = `
         class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 dbLMzq"
       >
         <input
-          aria-invalid="false"
           autocomplete="off"
           class="StyledMaskedInput-sc-99vkfa-0 hPFakU"
           id="item"
@@ -54776,7 +54722,6 @@ exports[`DateInput type format inline short without timezone 1`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -56236,7 +56181,6 @@ exports[`DateInput type format inline short without timezone 2`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -57696,7 +57640,6 @@ exports[`DateInput type format inline without timezone 1`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"
@@ -59156,7 +59099,6 @@ exports[`DateInput type format inline without timezone 2`] = `
           class="c3"
         >
           <input
-            aria-invalid="false"
             autocomplete="off"
             class="c4"
             id="item"

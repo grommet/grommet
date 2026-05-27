@@ -427,7 +427,7 @@ describe('DateInput', () => {
     await user.clear(input);
     await user.type(input, '11/15/2022-11/15/2022');
     expect(input).toHaveValue('11/15/2022-11/15/2022');
-    expect(input).toHaveAttribute('aria-invalid', 'false');
+    expect(input).not.toHaveAttribute('aria-invalid', 'true');
   });
 
   test('dates initialized with empty array', async () => {
