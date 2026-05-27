@@ -328,6 +328,9 @@ const FileInput = forwardRef(
             onChange={(event) => {
               event.persist();
               const fileList = event.target.files;
+              // If the user cancelled the file picker, fileList will be empty
+              // and we should not clear any previously selected files.
+              if (!fileList.length && files.length) return;
               const nextFiles = multiple ? [...files] : [];
               for (let i = 0; i < fileList.length; i += 1) {
                 // avoid duplicates
