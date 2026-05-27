@@ -12,4 +12,5 @@ const sizeStyles = (size) =>
 export const StyledCellContainer = styled.div`
   display: grid;
   ${(props) => (props.size ? sizeStyles(props.size) : undefined)}
+  ${(props) => (props.draggable ? 'cursor: move;' : undefined)}
 `;
