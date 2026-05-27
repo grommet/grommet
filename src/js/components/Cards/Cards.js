@@ -116,7 +116,9 @@ const Cards = React.forwardRef(
                 onOrder(orderedData);
               }
             },
-            tabIndex: 0,
+            child: {
+              tabIndex: 0,
+            },
             keyboard: {
               onUp: (event) => {
                 event.preventDefault();
@@ -138,22 +140,28 @@ const Cards = React.forwardRef(
           }
         : {};
 
-      const { keyboard, ...wrapperProps } = onOrderProps;
+      const { keyboard, child, ...wrapperProps } = onOrderProps;
 
-      let content = children ? (
-        children(item, index)
-      ) : (
-        <Card
-          key={item.id || index.toString()}
-          as={!(onOrder || sizeKey) && as === 'ul' ? 'li' : undefined}
-        >
-          <CardBody>
-            {(typeof item === 'string' && item) ??
-              (typeof item === 'object' && Object.values(item)[0]) ??
-              index}
-          </CardBody>
-        </Card>
-      );
+      let content;
+      if (children) {
+        content = child
+          ? React.cloneElement(children(item, index), child)
+          : children(item, index);
+      } else {
+        content = (
+          <Card
+            key={item.id || index.toString()}
+            as={!(onOrder || sizeKey) && as === 'ul' ? 'li' : undefined}
+            {...child}
+          >
+            <CardBody>
+              {(typeof item === 'string' && item) ??
+                (typeof item === 'object' && Object.values(item)[0]) ??
+                index}
+            </CardBody>
+          </Card>
+        );
+      }
 
       // If the items are orderable or sized by a property, wrap them in a
       // StyledCellContainer to apply the drag and drop handlers and/or
