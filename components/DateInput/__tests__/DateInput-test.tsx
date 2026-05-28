@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -179,11 +179,54 @@ describe('DateInput', () => {
     const input = screen.getByRole('textbox');
 
     await user.type(input, '09/09/2022');
-    expect(input).not.toHaveValue();
+    expect(input).toHaveValue('09/09/2022');
+    expect(input).toHaveAttribute('aria-invalid', 'true');
 
     await user.clear(input);
     await user.type(input, '11/15/2022');
     expect(input).toHaveValue('11/15/2022');
+  });
+
+  test('shows FormField out-of-bounds error message from Grommet messages', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        messages={{
+          messages: {
+            dateInput: {
+              outOfBounds:
+                'Fecha fuera de rango. Ingresa una fecha entre {start} y {end}.',
+            },
+          },
+        }}
+      >
+        <Form>
+          <FormField name="date" htmlFor="date-input">
+            <DateInput
+              id="date-input"
+              name="date"
+              format="mm/dd/yyyy"
+              calendarProps={{
+                bounds: ['2022-11-10', '2022-11-20'],
+              }}
+            />
+          </FormField>
+          <Button label="Submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+
+    await user.type(input, '09/09/2022');
+    await user.click(screen.getByRole('button', { name: 'Submit' }));
+
+    expect(
+      await screen.findByText(
+        /Fecha fuera de rango\. Ingresa una fecha entre/i,
+      ),
+    ).toBeInTheDocument();
   });
 
   test('reverse calendar icon', () => {
@@ -378,11 +421,13 @@ describe('DateInput', () => {
     const input = screen.getByRole('textbox');
 
     await user.type(input, '09/09/2022-09/09/2022');
-    expect(input).not.toHaveValue();
+    expect(input).toHaveValue('09/09/2022-09/09/2022');
+    expect(input).toHaveAttribute('aria-invalid', 'true');
 
     await user.clear(input);
     await user.type(input, '11/15/2022-11/15/2022');
     expect(input).toHaveValue('11/15/2022-11/15/2022');
+    expect(input).not.toHaveAttribute('aria-invalid', 'true');
   });
 
   test('dates initialized with empty array', async () => {
@@ -1247,5 +1292,92 @@ describe('DateInput', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('out-of-bounds date outside a Form should set aria-invalid without an error message', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateInput
+          id="date"
+          name="date"
+          format="mm/dd/yyyy"
+          calendarProps={{ bounds: ['2022-11-10', '2022-11-20'] }}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    await user.type(input, '09/09/2022');
+
+    expect(input).toHaveAttribute('aria-invalid', 'true');
+    expect(screen.queryByRole('alert')).toBeNull();
+  });
+
+  test('onChange fires with the raw out-of-bounds value', async () => {
+    const onChange = jest.fn((event) => event.value);
+
+    render(
+      <Grommet>
+        <DateInput
+          id="date"
+          name="date"
+          format="mm/dd/yyyy"
+          calendarProps={{ bounds: ['2022-11-10', '2022-11-20'] }}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    fireEvent.change(input, { target: { value: '09/09/2022' } });
+
+    expect(onChange).toHaveBeenCalled();
+    // onChange should receive the raw value even when out of bounds
+    // (previously it would receive undefined)
+    const lastResult = onChange.mock.results[onChange.mock.results.length - 1];
+    expect(lastResult.value).toBeDefined();
+  });
+
+  test('form reset should clear aria-invalid on out-of-bounds date', async () => {
+    const user = userEvent.setup();
+    const Test = () => {
+      const [value, setValue] = React.useState({ value: '' });
+      const onChange = (nextValue: { value: string }) => {
+        setValue(nextValue);
+      };
+      return (
+        <Grommet>
+          <Form value={value} onChange={onChange} validate="blur">
+            <FormField name="date" htmlFor="date">
+              <DateInput
+                id="date"
+                name="date"
+                format="mm/dd/yyyy"
+                calendarProps={{ bounds: ['2022-11-10', '2022-11-20'] }}
+              />
+            </FormField>
+            <Button
+              label="Reset"
+              type="reset"
+              onClick={() => setValue({ value: '' })}
+            />
+          </Form>
+        </Grommet>
+      );
+    };
+    render(<Test />);
+
+    const input = screen.getByRole('textbox');
+    await user.type(input, '09/09/2022');
+    await user.tab();
+    expect(input).toHaveAttribute('aria-invalid', 'true');
+
+    await user.click(screen.getByRole('button', { name: 'Reset' }));
+    expect(input).toHaveValue('');
+    await waitFor(() =>
+      expect(input).not.toHaveAttribute('aria-invalid', 'true'),
+    );
   });
 });

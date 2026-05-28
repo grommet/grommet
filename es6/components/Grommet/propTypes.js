@@ -41,7 +41,8 @@ if (process.env.NODE_ENV !== 'production') {
         dateInput: PropTypes.shape({
           openCalendar: PropTypes.string,
           enterCalendar: PropTypes.string,
-          exitCalendar: PropTypes.string
+          exitCalendar: PropTypes.string,
+          outOfBounds: PropTypes.string
         }),
         dataChart: PropTypes.shape({
           detailTitle: PropTypes.string,

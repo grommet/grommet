@@ -122,7 +122,7 @@ var pullDigits = function pullDigits(text, index) {
   return text.slice(index, end);
 };
 var validateBounds = exports.validateBounds = function validateBounds(dateBounds, selectedDate) {
-  if (!dateBounds || !selectedDate) return selectedDate;
+  if (!dateBounds || !selectedDate) return true;
   var _dateBounds$map = dateBounds.map(function (date) {
       return (0, _utils.setHoursWithOffset)(date).toISOString();
     }),
@@ -134,7 +134,7 @@ var validateBounds = exports.validateBounds = function validateBounds(dateBounds
   var validSelection = isoSelectedDates.every(function (isoSelectedDate) {
     return !endDate && startDate === isoSelectedDate || isoSelectedDate >= startDate && isoSelectedDate <= endDate;
   });
-  return validSelection ? selectedDate : undefined;
+  return validSelection;
 };
 var textToValue = exports.textToValue = function textToValue(text, schema, range, reference, outputFormat) {
   if (!text) return range ? [] : undefined;

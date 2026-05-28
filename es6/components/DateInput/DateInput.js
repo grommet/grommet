@@ -84,18 +84,45 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var ref = useForwardedRef(refArg);
   var containerRef = useRef();
   var readOnly = readOnlyProp || readOnlyCopy;
+  var bounds = calendarProps == null ? void 0 : calendarProps.bounds;
+  var validateBoundsForForm = useCallback(function (fieldValue) {
+    if (!bounds || !fieldValue) return undefined;
+    var isValid = validateBounds(bounds, fieldValue);
+    if (!isValid) {
+      var _bounds$map = bounds.map(function (date) {
+          return setHoursWithOffset(date).toISOString();
+        }),
+        startBound = _bounds$map[0],
+        endBound = _bounds$map[1];
+      if (startBound && endBound) {
+        return formatMessage({
+          id: 'dateInput.outOfBounds',
+          messages: messages,
+          values: {
+            start: new Date(startBound).toLocaleDateString(),
+            end: new Date(endBound).toLocaleDateString()
+          }
+        });
+      }
+    }
+    return undefined;
+  }, [bounds, formatMessage, messages]);
   var _useFormInput = useFormInput({
       name: name,
       value: valueArg,
-      initialValue: defaultValue
+      initialValue: defaultValue,
+      validate: bounds ? validateBoundsForForm : undefined
     }),
     value = _useFormInput[0],
     setValue = _useFormInput[1];
   var usingKeyboard = useKeyboard();
   var CalendarIcon = ((_theme$dateInput$icon2 = theme.dateInput.icon) == null ? void 0 : _theme$dateInput$icon2.calendar) || GrommetCalendarIcon;
-  var _useState = useState(getOutputFormat(value)),
-    outputFormat = _useState[0],
-    setOutputFormat = _useState[1];
+  var _useState = useState(true),
+    withinBounds = _useState[0],
+    setWithinBounds = _useState[1];
+  var _useState2 = useState(getOutputFormat(value)),
+    outputFormat = _useState2[0],
+    setOutputFormat = _useState2[1];
   useEffect(function () {
     setOutputFormat(function (previousFormat) {
       var nextFormat = getOutputFormat(value);
@@ -105,11 +132,19 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       return previousFormat !== nextFormat ? previousFormat : nextFormat;
     });
   }, [value]);
+  useEffect(function () {
+    if (value === undefined || bounds === undefined) {
+      setWithinBounds(true);
+    } else {
+      var validNextValue = validateBounds(bounds, value);
+      setWithinBounds(validNextValue);
+    }
+  }, [value, bounds]);
 
   // keep track of timestamp from original date(s)
-  var _useState2 = useState(getReference(value)),
-    reference = _useState2[0],
-    setReference = _useState2[1];
+  var _useState3 = useState(getReference(value)),
+    reference = _useState3[0],
+    setReference = _useState3[1];
 
   // do we expect multiple dates?
   var range = Array.isArray(value) || format && format.includes('-');
@@ -125,9 +160,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, [schema]);
 
   // textValue is only used when a format is provided
-  var _useState3 = useState(schema ? valueToText(value, schema) : undefined),
-    textValue = _useState3[0],
-    setTextValue = _useState3[1];
+  var _useState4 = useState(schema ? valueToText(value, schema) : undefined),
+    textValue = _useState4[0],
+    setTextValue = _useState4[1];
   var readOnlyCopyValidation = formatMessage({
     id: 'input.readOnlyCopy.validation',
     messages: messages
@@ -136,9 +171,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     id: 'input.readOnlyCopy.prompt',
     messages: messages
   });
-  var _useState4 = useState(readOnlyCopyPrompt),
-    tip = _useState4[0],
-    setTip = _useState4[1];
+  var _useState5 = useState(readOnlyCopyPrompt),
+    tip = _useState5[0],
+    setTip = _useState5[1];
 
   // Setting the icon through `inputProps` is deprecated.
   // The `icon` prop should be used instead.
@@ -190,9 +225,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, [schema, ref]);
 
   // when format and not inline, whether to show the Calendar in a Drop
-  var _useState5 = useState(),
-    open = _useState5[0],
-    setOpen = _useState5[1];
+  var _useState6 = useState(),
+    open = _useState6[0],
+    setOpen = _useState6[1];
   var openCalendar = useCallback(function () {
     setOpen(true);
     announce(formatMessage({
@@ -322,6 +357,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     readOnlyProp: readOnly,
     fill: true
   }, passThemeFlag), reverse && (!readOnly || readOnlyCopy) && DateInputButton, /*#__PURE__*/React.createElement(MaskedInput, _extends({
+    "aria-invalid": bounds && !withinBounds ? true : undefined,
     readOnly: readOnly,
     ref: ref,
     id: id,
@@ -336,17 +372,15 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       var nextTextValue = event.target.value;
       setTextValue(nextTextValue);
       var nextValue = textToValue(nextTextValue, schema, range, reference, outputFormat);
-      var validatedNextValue = validateBounds(calendarProps == null ? void 0 : calendarProps.bounds, nextValue);
-      if (!validatedNextValue && nextValue) {
-        setTextValue('');
-      }
-      if (validatedNextValue !== undefined) setReference(getReference(validatedNextValue));
+      var validNextValue = validateBounds(bounds, nextValue);
+      setWithinBounds(validNextValue);
+      if (nextValue !== undefined) setReference(getReference(nextValue));
       // update value even when undefined
-      setValue(validatedNextValue);
+      setValue(nextValue);
       if (_onChange) {
         event.persist(); // extract from React synthetic event pool
         var adjustedEvent = event;
-        adjustedEvent.value = validatedNextValue;
+        adjustedEvent.value = nextValue;
         _onChange(adjustedEvent);
       }
     },
