@@ -103,12 +103,17 @@ const DateInput = forwardRef(
         if (!bounds || !fieldValue) return undefined;
         const isValid = validateBounds(bounds, fieldValue);
         if (!isValid) {
-          const [startBound, endBound] = bounds;
+          const [startBound, endBound] = bounds.map((date) =>
+            setHoursWithOffset(date).toISOString(),
+          );
           if (startBound && endBound) {
             return formatMessage({
               id: 'dateInput.outOfBounds',
               messages,
-              values: { start: startBound, end: endBound },
+              values: {
+                start: new Date(startBound).toDateString(),
+                end: new Date(endBound).toDateString(),
+              },
             });
           }
         }
