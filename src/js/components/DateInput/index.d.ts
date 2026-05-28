@@ -19,6 +19,7 @@ export interface DateInputProps {
   messages?: {
     enterCalendar?: string;
     exitCalendar?: string;
+    outOfBounds?: string;
   };
   name?: string;
   onChange?: (event: { value: string | string[] }) => void;
