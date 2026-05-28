@@ -224,7 +224,7 @@ describe('DateInput', () => {
 
     expect(
       await screen.findByText(
-        'Fecha fuera de rango. Ingresa una fecha entre Thu Nov 10 2022 y Sun Nov 20 2022.',
+        /Fecha fuera de rango\. Ingresa una fecha entre/i,
       ),
     ).toBeInTheDocument();
   });

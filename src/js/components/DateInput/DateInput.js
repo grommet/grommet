@@ -111,8 +111,8 @@ const DateInput = forwardRef(
               id: 'dateInput.outOfBounds',
               messages,
               values: {
-                start: new Date(startBound).toDateString(),
-                end: new Date(endBound).toDateString(),
+                start: new Date(startBound).toLocaleDateString(),
+                end: new Date(endBound).toLocaleDateString(),
               },
             });
           }
