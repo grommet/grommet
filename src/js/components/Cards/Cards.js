@@ -17,6 +17,17 @@ import { StyledCellContainer } from './StyledCellContainer';
 
 const emptyData = [];
 
+const indexForItem = (data, item) => {
+  const index = data.indexOf(item);
+  if (index === -1) {
+    // If the item isn't in the data, try to find it by id. This allows for
+    // reordering to work when the items provided to Cards are different objects
+    // than those in the data array, as long as they share an id.
+    return data.findIndex((d) => d.id === item.id);
+  }
+  return index;
+};
+
 const reorder = (array, source, target) => {
   const result = array.slice(0);
   const tmp = result[source];
@@ -47,8 +58,9 @@ const Cards = React.forwardRef(
     ref,
   ) => {
     const { theme } = useThemeValue();
-    const { data: contextData } = useContext(DataContext);
+    const { data: contextData, unfilteredData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
+    const unfiltered = unfilteredData || data;
 
     const [items, paginationProps] = usePagination({
       data,
@@ -65,6 +77,8 @@ const Cards = React.forwardRef(
 
     const [dragging, setDragging] = useState();
     const [orderedData, setOrderedData] = useState();
+    const [unfilteredOrder, setUnfilteredOrder] = useState();
+
     const currentItems = orderedData || (!paginate ? data : items);
 
     const renderItem = (item, index) => {
@@ -72,9 +86,14 @@ const Cards = React.forwardRef(
         const newIndex = index + count;
         onOrder(
           reorder(
-            currentItems,
-            index,
-            Math.max(0, Math.min(newIndex, currentItems.length - 1)),
+            unfiltered,
+            indexForItem(unfiltered, item),
+            indexForItem(
+              unfiltered,
+              currentItems[
+                Math.max(0, Math.min(newIndex, currentItems.length - 1))
+              ],
+            ),
           ),
         );
       };
@@ -93,6 +112,7 @@ const Cards = React.forwardRef(
             onDragEnd: () => {
               setDragging(undefined);
               setOrderedData(undefined);
+              setUnfilteredOrder(undefined);
             },
             onDragEnter: (event) => {
               if (dragging !== undefined && dragging !== index) {
@@ -101,6 +121,13 @@ const Cards = React.forwardRef(
                 if (event.currentTarget.contains(event.relatedTarget)) return;
                 // eslint-disable-next-line no-param-reassign
                 event.dataTransfer.dropEffect = 'move';
+                setUnfilteredOrder(
+                  reorder(
+                    unfiltered,
+                    indexForItem(unfiltered, currentItems[dragging]),
+                    indexForItem(unfiltered, item),
+                  ),
+                );
                 setOrderedData(reorder(currentItems, dragging, index));
                 setDragging(index);
               }
@@ -112,8 +139,8 @@ const Cards = React.forwardRef(
               }
             },
             onDrop: () => {
-              if (orderedData) {
-                onOrder(orderedData);
+              if (unfilteredOrder) {
+                onOrder(unfilteredOrder);
               }
             },
             child: {
@@ -214,10 +241,7 @@ const Cards = React.forwardRef(
             {(item, index) => renderItem(item, index)}
           </InfiniteScroll>
         </Grid>
-        {paginate &&
-        data.length > step &&
-        currentItems &&
-        currentItems.length ? (
+        {paginate && data.length > step && items && items.length ? (
           <Pagination alignSelf="end" {...paginationProps} />
         ) : null}
       </Container>
