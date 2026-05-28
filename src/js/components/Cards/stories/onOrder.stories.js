@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, CardBody, CardFooter, Heading } from 'grommet';
+import { Box, Card, CardBody, Heading, Text } from 'grommet';
 import { Cards } from '../Cards';
 
 const data = [
@@ -30,8 +30,8 @@ export const OnOrder = () => {
               <Heading level={2} size="small" margin="none">
                 {datum.city}
               </Heading>
+              <Text>{datum.state}</Text>
             </CardBody>
-            <CardFooter>{datum.state}</CardFooter>
           </Card>
         )}
       </Cards>
