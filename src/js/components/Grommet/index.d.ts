@@ -31,6 +31,10 @@ export interface GrommetProps {
         nextMove?: string;
         next?: string;
       };
+      cards?: {
+        moved?: string;
+        reorderHint?: string;
+      };
       carousel?: {
         previous?: string;
         next?: string;

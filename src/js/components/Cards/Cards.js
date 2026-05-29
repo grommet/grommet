@@ -1,6 +1,9 @@
 import React, { Fragment, useContext, useState } from 'react';
+import styled from 'styled-components';
 
+import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { DataContext } from '../../contexts/DataContext';
+import { MessageContext } from '../../contexts/MessageContext';
 import { Box } from '../Box';
 import { Card } from '../Card';
 import { CardBody } from '../CardBody';
@@ -8,7 +11,7 @@ import { Grid } from '../Grid';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Pagination } from '../Pagination';
-import { normalizeShow, usePagination } from '../../utils';
+import { normalizeShow, useId, usePagination } from '../../utils';
 
 import { CardsPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -16,6 +19,18 @@ import { useThemeValue } from '../../utils/useThemeValue';
 import { StyledCellContainer } from './StyledCellContainer';
 
 const emptyData = [];
+
+const HiddenText = styled.span`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+`;
 
 const indexForItem = (data, item) => {
   const index = data.indexOf(item);
@@ -58,6 +73,9 @@ const Cards = React.forwardRef(
     ref,
   ) => {
     const { theme } = useThemeValue();
+    const announce = useContext(AnnounceContext);
+    const { format } = useContext(MessageContext);
+
     const { data: contextData, unfilteredData } = useContext(DataContext);
     const data = dataProp || contextData || emptyData;
     const unfiltered = unfilteredData || data;
@@ -78,23 +96,31 @@ const Cards = React.forwardRef(
     const [dragging, setDragging] = useState();
     const [orderedData, setOrderedData] = useState();
     const [unfilteredOrder, setUnfilteredOrder] = useState();
+    const hintId = useId();
 
     const currentItems = orderedData || (!paginate ? data : items);
 
     const renderItem = (item, index) => {
       const move = (count) => {
-        const newIndex = index + count;
+        const newIndex = Math.max(
+          0,
+          Math.min(index + count, currentItems.length - 1),
+        );
         onOrder(
           reorder(
             unfiltered,
             indexForItem(unfiltered, item),
-            indexForItem(
-              unfiltered,
-              currentItems[
-                Math.max(0, Math.min(newIndex, currentItems.length - 1))
-              ],
-            ),
+            indexForItem(unfiltered, currentItems[newIndex]),
           ),
+        );
+        announce(
+          format({
+            id: 'cards.moved',
+            values: {
+              source: newIndex + 1,
+              target: currentItems.length,
+            },
+          }),
         );
       };
 
@@ -145,6 +171,8 @@ const Cards = React.forwardRef(
             },
             child: {
               tabIndex: 0,
+              'aria-roledescription': 'sortable card',
+              'aria-describedby': hintId,
             },
             keyboard: {
               onUp: (event) => {
@@ -218,6 +246,11 @@ const Cards = React.forwardRef(
 
     return (
       <Container {...containerProps}>
+        {onOrder && (
+          <HiddenText id={hintId}>
+            {format({ id: 'cards.reorderHint' })}
+          </HiddenText>
+        )}
         <Grid
           ref={ref}
           as={as}

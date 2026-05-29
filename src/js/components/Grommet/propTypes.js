@@ -30,6 +30,10 @@ if (process.env.NODE_ENV !== 'production') {
           nextMove: PropTypes.string,
           next: PropTypes.string,
         }),
+        cards: PropTypes.shape({
+          moved: PropTypes.string,
+          reorderHint: PropTypes.string,
+        }),
         carousel: PropTypes.shape({
           previous: PropTypes.string,
           next: PropTypes.string,
