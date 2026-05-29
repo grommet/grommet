@@ -406,7 +406,6 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
   if (open && !readOnly) {
     return [input, /*#__PURE__*/_react["default"].createElement(_Drop.Drop, _extends({
       key: "drop",
-      overflow: "visible",
       id: id ? id + "__drop" : undefined,
       target: containerRef.current,
       align: _extends({}, calendarDropdownAlign, dropProps),

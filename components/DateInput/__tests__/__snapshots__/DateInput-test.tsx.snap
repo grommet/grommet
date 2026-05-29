@@ -16471,7 +16471,7 @@ exports[`DateInput select format 3`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  overflow: visible;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -29076,7 +29076,7 @@ exports[`DateInput select format no timezone 3`] = `
   min-width: 0;
   min-height: 0;
   flex-direction: column;
-  overflow: visible;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 

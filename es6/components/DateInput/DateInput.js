@@ -400,7 +400,6 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   if (open && !readOnly) {
     return [input, /*#__PURE__*/React.createElement(Drop, _extends({
       key: "drop",
-      overflow: "visible",
       id: id ? id + "__drop" : undefined,
       target: containerRef.current,
       align: _extends({}, calendarDropdownAlign, dropProps),
