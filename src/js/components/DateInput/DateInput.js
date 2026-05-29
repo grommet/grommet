@@ -441,7 +441,6 @@ Use the icon prop instead.`,
         input,
         <Drop
           key="drop"
-          overflow="visible"
           id={id ? `${id}__drop` : undefined}
           target={containerRef.current}
           align={{ ...calendarDropdownAlign, ...dropProps }}
