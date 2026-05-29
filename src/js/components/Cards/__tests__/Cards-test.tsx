@@ -148,4 +148,42 @@ describe('Cards', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('onOrder', () => {
+    const { container } = render(
+      <Grommet>
+        <Cards
+          data={[
+            { id: '1', name: 'one' },
+            { id: '2', name: 'two' },
+            { id: '3', name: 'three' },
+          ]}
+          onOrder={jest.fn()}
+        >
+          {(item) => <Card key={item.id}>{item.name}</Card>}
+        </Cards>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sizeKey', () => {
+    const { container } = render(
+      <Grommet>
+        <Cards
+          data={[
+            { id: '1', name: 'one', size: { columns: 2, rows: 1 } },
+            { id: '2', name: 'two' },
+            { id: '3', name: 'three', size: { columns: 1, rows: 2 } },
+          ]}
+          sizeKey="size"
+          columns={['flex', 'flex', 'flex']}
+          rows="xsmall"
+        >
+          {(item) => <Card key={item.id}>{item.name}</Card>}
+        </Cards>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });

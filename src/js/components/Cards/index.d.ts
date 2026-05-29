@@ -6,7 +6,7 @@ import {
   MarginType,
   PadType,
 } from '../../utils';
-import { GridSizeType } from '../Grid';
+import { GridProps, GridSizeType } from '../Grid';
 import { PaginationType } from '../Pagination';
 
 export interface CardsProps<CardType = any> {
@@ -37,6 +37,7 @@ type ulProps = Omit<
 
 export interface CardsExtendedProps<CardType>
   extends CardsProps<CardType>,
+    Omit<GridProps, keyof CardsProps<CardType>>,
     ulProps {}
 
 declare class Cards<CardType = any> extends React.Component<
