@@ -44,7 +44,22 @@ declare const Stepper: React.ForwardRefExoticComponent<
 
 declare const StepperContext: React.Context<StepperContextValue>;
 declare const useStepper: () => StepperContextValue;
-declare const StepperStep: React.FC<{ stepId: string }>;
+
+export interface StepperStepProps {
+  step: StepType;
+  stepNumber: number;
+  isLast: boolean;
+  showConnector?: boolean;
+  direction: 'horizontal' | 'vertical';
+  focusedIndex: number;
+  index: number;
+  isSubStep?: boolean;
+  onKeyDown?: (event: React.KeyboardEvent, index: number) => void;
+  stepsRef: React.MutableRefObject<StepType[] | null>;
+  stepRefs?: React.MutableRefObject<Map<number, HTMLButtonElement>>;
+}
+
+declare const StepperStep: React.FC<StepperStepProps>;
 declare const StepperIndicator: React.FC<{
   stepId?: string;
   stepNumber?: number;

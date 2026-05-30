@@ -6,6 +6,7 @@ const StyledStepper = styled.ol.withConfig(styledComponentsConfig)`
   padding: 0;
   margin: 0;
   display: flex;
+  overflow: hidden;
   ${(props) =>
     props.direction === 'vertical'
       ? css`
@@ -23,19 +24,32 @@ const StyledStepper = styled.ol.withConfig(styledComponentsConfig)`
 const StyledStepItem = styled.li.withConfig(styledComponentsConfig)`
   display: flex;
   position: relative;
-  ${(props) =>
-    props.direction === 'vertical'
-      ? css`
-          flex-direction: column;
-          align-items: flex-start;
-          padding-bottom: ${props.isSubStep ? '8px' : '16px'};
-        `
-      : css`
-          flex-direction: column;
-          align-items: center;
-          flex: 1;
-          min-width: 0;
-        `}
+  ${(props) => {
+    if (props.direction === 'vertical') {
+      return css`
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: ${props.isSubStep ? '4px' : '4px'};
+      `;
+    }
+    if (props.isSubStep) {
+      return css`
+        flex-direction: row;
+        align-items: center;
+        flex: none;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      `;
+    }
+    return css`
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    `;
+  }}
 `;
 
 const StyledStepButton = styled.button.withConfig(styledComponentsConfig)`
@@ -49,14 +63,14 @@ const StyledStepButton = styled.button.withConfig(styledComponentsConfig)`
     props.direction === 'vertical'
       ? css`
           flex-direction: row;
-          align-items: center;
+          align-items: flex-start;
           gap: 12px;
           text-align: left;
         `
       : css`
           flex-direction: column;
           align-items: center;
-          gap: 8px;
+          gap: 4px;
           text-align: center;
           width: 100%;
         `}
@@ -107,18 +121,17 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
     props.isSubStep
       ? css`
           width: 12px;
-          height: 12px;
+          height: 14px;
           min-width: 12px;
-          min-height: 12px;
+          min-height: 14px;
           border: none;
+          background: transparent;
         `
       : css`
-          width: 32px;
-          height: 32px;
-          min-width: 32px;
-          min-height: 32px;
-          font-size: 14px;
-          font-weight: 600;
+          width: 24px;
+          height: 24px;
+          min-width: 24px;
+          min-height: 24px;
           border: 2px solid;
         `}
 
@@ -126,30 +139,21 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
     const { theme } = props;
     if (props.isSubStep) {
       switch (props.effectiveState) {
-        case 'current':
-        case 'current-completed':
-        case 'completed':
-          return css`
-            background: ${normalizeColor('status-ok', theme)};
-          `;
-        case 'error':
-        case 'current-error':
-          return css`
-            background: ${normalizeColor('status-error', theme)};
-          `;
         case 'disabled':
           return css`
-            background: ${normalizeColor('border', theme)};
             opacity: 0.6;
           `;
         default:
-          return css`
-            background: ${normalizeColor('border', theme)};
-          `;
+          return css``;
       }
     }
     switch (props.effectiveState) {
       case 'current':
+        return css`
+          background: ${normalizeColor('brand', theme)};
+          color: #ffffff;
+          border-color: ${normalizeColor('brand', theme)};
+        `;
       case 'current-completed':
         return css`
           background: ${normalizeColor('brand', theme)};
@@ -158,9 +162,9 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
         `;
       case 'completed':
         return css`
-          background: ${normalizeColor('status-ok', theme)};
-          color: #ffffff;
-          border-color: ${normalizeColor('status-ok', theme)};
+          background: transparent;
+          color: ${normalizeColor('brand', theme)};
+          border-color: ${normalizeColor('brand', theme)};
         `;
       case 'error':
       case 'current-error':
@@ -171,15 +175,15 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
         `;
       case 'disabled':
         return css`
-          background: ${normalizeColor('background-contrast', theme)};
+          background: transparent;
           color: ${normalizeColor('text-weak', theme)};
           border-color: ${normalizeColor('border', theme)};
           opacity: 0.6;
         `;
       default:
         return css`
-          background: ${normalizeColor('background-front', theme)};
-          color: ${normalizeColor('text-strong', theme)};
+          background: transparent;
+          color: ${normalizeColor('text-weak', theme)};
           border-color: ${normalizeColor('border', theme)};
         `;
     }
@@ -187,15 +191,15 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
 `;
 
 const StyledLabelText = styled.span.withConfig(styledComponentsConfig)`
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: ${(props) => (props.isSubStep ? '12px' : '16px')};
+  line-height: ${(props) => (props.isSubStep ? '16px' : '24px')};
   ${(props) => {
     const { theme } = props;
     switch (props.effectiveState) {
       case 'current':
       case 'current-completed':
         return css`
-          font-weight: bold;
+          font-weight: 500;
           color: ${normalizeColor('brand', theme)};
         `;
       case 'error':
@@ -254,23 +258,22 @@ const StyledHelperText = styled.span.withConfig(styledComponentsConfig)`
 `;
 
 const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
+  position: absolute;
+  background: ${(props) => props.connectorColor};
+  border-radius: 4px;
   ${(props) =>
     props.direction === 'horizontal'
       ? css`
-          position: absolute;
-          top: 20px;
-          left: calc(50% + 20px);
-          right: calc(-50% + 20px);
+          top: 16px;
+          left: calc(50% + 16px);
+          right: calc(-50% + 16px);
           height: 2px;
-          background: ${props.connectorColor};
         `
       : css`
-          position: absolute;
-          left: 19px;
-          top: 40px;
+          left: 15px;
+          top: 36px;
           bottom: 0;
           width: 2px;
-          background: ${props.connectorColor};
         `}
 `;
 

@@ -5,8 +5,7 @@ import { Stepper } from '../Stepper';
 import { grommet } from '../../../themes';
 
 const NestedSubSteps = () => {
-  const [horizontalCurrentStep, setHorizontalCurrentStep] = useState('email');
-  const [verticalCurrentStep, setVerticalCurrentStep] = useState('email');
+  const [currentStep, setCurrentStep] = useState('email');
   const steps = [
     {
       id: 'account',
@@ -35,19 +34,11 @@ const NestedSubSteps = () => {
       <Box pad="large" gap="medium">
         <Stepper
           steps={steps}
-          currentStep={horizontalCurrentStep}
-          onStepClick={(id) => setHorizontalCurrentStep(id)}
-        />
-        <Text>Active: {horizontalCurrentStep}</Text>
-      </Box>
-      <Box pad="large" gap="medium">
-        <Stepper
-          steps={steps}
-          currentStep={verticalCurrentStep}
+          currentStep={currentStep}
           direction="vertical"
-          onStepClick={(id) => setVerticalCurrentStep(id)}
+          onStepClick={(id) => setCurrentStep(id)}
         />
-        <Text>Active: {verticalCurrentStep}</Text>
+        <Text>Active: {currentStep}</Text>
       </Box>
     </Grommet>
   );

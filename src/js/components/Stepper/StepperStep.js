@@ -16,7 +16,7 @@ import {
 const getConnectorColor = (stepStatus, theme) => {
   switch (stepStatus) {
     case 'completed':
-      return normalizeColor('status-ok', theme);
+      return normalizeColor('brand', theme);
     case 'error':
       return normalizeColor('status-error', theme);
     default:
@@ -35,7 +35,7 @@ export const StepperStep = ({
   isSubStep,
   onKeyDown,
   stepsRef,
-  childSteps,
+  stepRefs,
 }) => {
   const { currentStep, clickableSteps, onStepClick } =
     useContext(StepperContext);
@@ -79,6 +79,12 @@ export const StepperStep = ({
   return (
     <StyledStepItem direction={direction} isSubStep={isSubStep} theme={theme}>
       <StyledStepButton
+        ref={(el) => {
+          if (stepRefs) {
+            if (el) stepRefs.current.set(index, el);
+            else stepRefs.current.delete(index);
+          }
+        }}
         data-stepper-step
         aria-current={isCurrent ? 'step' : undefined}
         aria-disabled={isDisabled || undefined}
@@ -104,6 +110,7 @@ export const StepperStep = ({
           <StyledLabelText
             effectiveState={effectiveState}
             direction={direction}
+            isSubStep={isSubStep}
             theme={theme}
           >
             {step.title}
@@ -142,12 +149,6 @@ export const StepperStep = ({
           theme={theme}
         />
       )}
-      {childSteps && direction === 'vertical' && (
-        <ol style={{ listStyle: 'none', padding: '0 0 0 44px', margin: 0 }}>
-          {childSteps}
-        </ol>
-      )}
-      {childSteps && direction === 'horizontal' && childSteps}
     </StyledStepItem>
   );
 };

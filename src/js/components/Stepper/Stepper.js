@@ -6,6 +6,7 @@ import React, {
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
+import { normalizeColor } from '../../utils';
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StyledStepper } from './StyledStepper';
@@ -51,12 +52,27 @@ const Stepper = forwardRef(
     ref,
   ) => {
     const { theme } = useThemeValue();
+    const stepRefs = useRef(new Map());
     const flatSteps = useMemo(() => flattenSteps(steps), [steps]);
     const stepsRef = useRef(flatSteps);
     stepsRef.current = flatSteps;
 
+    // Force vertical if steps have children
+    // (horizontal substeps not supported)
+    const hasSubSteps = steps.some(
+      (step) => step.children && step.children.length > 0,
+    );
+    const effectiveDirection =
+      hasSubSteps && direction === 'horizontal' ? 'vertical' : direction;
+
     // Warn in dev about invalid state
     if (process.env.NODE_ENV !== 'production') {
+      if (hasSubSteps && direction === 'horizontal') {
+        console.warn(
+          'Stepper: horizontal direction with sub-steps is not supported. ' +
+            'Falling back to vertical.',
+        );
+      }
       if (currentStep) {
         const currentStepObj = flatSteps.find((s) => s.id === currentStep);
         if (!currentStepObj) {
@@ -131,7 +147,7 @@ const Stepper = forwardRef(
       () => ({
         currentStep: effectiveCurrentStep,
         steps: flatSteps,
-        direction,
+        direction: effectiveDirection,
         clickableSteps,
         onStepClick,
         stepIndex,
@@ -143,7 +159,7 @@ const Stepper = forwardRef(
       [
         effectiveCurrentStep,
         flatSteps,
-        direction,
+        effectiveDirection,
         clickableSteps,
         onStepClick,
         stepIndex,
@@ -157,7 +173,7 @@ const Stepper = forwardRef(
     const handleKeyDown = useCallback(
       (e, index) => {
         let nextIndex;
-        const isHorizontal = direction === 'horizontal';
+        const isHorizontal = effectiveDirection === 'horizontal';
 
         switch (e.key) {
           case 'ArrowRight':
@@ -198,24 +214,20 @@ const Stepper = forwardRef(
 
         if (nextIndex !== undefined) {
           setFocusedIndex(nextIndex);
-          // Focus the button at the next index
-          const stepperEl = ref?.current || e.currentTarget.closest('ol');
-          if (stepperEl) {
-            const buttons = stepperEl.querySelectorAll(
-              'button[data-stepper-step]',
-            );
-            if (buttons[nextIndex]) {
-              buttons[nextIndex].focus();
-            }
+          // Focus the button at the next index via refs
+          const nextButton = stepRefs.current.get(nextIndex);
+          if (nextButton) {
+            nextButton.focus();
           }
         }
       },
-      [direction, flatSteps.length, ref],
+      [effectiveDirection, flatSteps.length],
     );
 
     const renderDefaultSteps = () => {
       let flatIndex = 0;
-      return steps.map((step, parentIdx) => {
+      const elements = [];
+      steps.forEach((step, parentIdx) => {
         const parentFlatIndex = flatIndex;
         flatIndex += 1;
         const childElements = step.children
@@ -229,34 +241,138 @@ const Stepper = forwardRef(
                   stepNumber={childFlatIndex + 1}
                   isLast={false}
                   showConnector={false}
-                  direction={direction}
+                  direction={effectiveDirection}
                   focusedIndex={focusedIndex}
                   index={childFlatIndex}
                   isSubStep
                   onKeyDown={handleKeyDown}
                   stepsRef={stepsRef}
+                  stepRefs={stepRefs}
                 />
               );
             })
           : null;
         const isLastParent = parentIdx === steps.length - 1;
-        return (
+        elements.push(
           <StepperStep
             key={step.id}
             step={step}
             stepNumber={parentFlatIndex + 1}
             isLast={isLastParent}
-            showConnector={!isLastParent}
-            direction={direction}
+            showConnector={
+              effectiveDirection === 'horizontal'
+                ? false
+                : !isLastParent || !!childElements
+            }
+            direction={effectiveDirection}
             focusedIndex={focusedIndex}
             index={parentFlatIndex}
             isSubStep={false}
             onKeyDown={handleKeyDown}
             stepsRef={stepsRef}
-            childSteps={childElements}
-          />
+            stepRefs={stepRefs}
+          />,
         );
+        if (effectiveDirection === 'horizontal' && !isLastParent) {
+          elements.push(
+            <li
+              key={`${step.id}-connector`}
+              aria-hidden="true"
+              style={{
+                listStyle: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                flex: 1,
+                position: 'relative',
+                minWidth: '16px',
+                overflow: 'visible',
+              }}
+            >
+              <span
+                style={{
+                  position: 'absolute',
+                  top: '16px',
+                  left: 'calc(-50% + 16px)',
+                  right: 'calc(-50% + 16px)',
+                  height: '2px',
+                  background: normalizeColor('border', theme),
+                }}
+              />
+              {childElements && (
+                <span
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: '8px',
+                    paddingTop: '24px',
+                    maxWidth: '100%',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                  }}
+                >
+                  {childElements}
+                </span>
+              )}
+            </li>,
+          );
+        }
+        if (
+          effectiveDirection === 'vertical' &&
+          (!isLastParent || childElements)
+        ) {
+          const connectorColor = (() => {
+            switch (step.status) {
+              case 'completed':
+                return normalizeColor('brand', theme);
+              case 'error':
+                return normalizeColor('status-error', theme);
+              default:
+                return normalizeColor('border', theme);
+            }
+          })();
+          elements.push(
+            <li
+              key={`${step.id}-connector`}
+              aria-hidden="true"
+              style={{
+                listStyle: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                position: 'relative',
+                minHeight: '16px',
+                overflow: 'visible',
+              }}
+            >
+              <span
+                style={{
+                  position: 'absolute',
+                  left: '15px',
+                  top: '0',
+                  bottom: '0',
+                  width: '2px',
+                  background: connectorColor,
+                  borderRadius: '4px',
+                }}
+              />
+              {childElements && (
+                <ol
+                  style={{
+                    listStyle: 'none',
+                    padding: '0 0 0 36px',
+                    margin: 0,
+                  }}
+                >
+                  {childElements}
+                </ol>
+              )}
+            </li>,
+          );
+        }
       });
+      return elements;
     };
 
     return (
@@ -266,7 +382,7 @@ const Stepper = forwardRef(
             <StyledStepper
               ref={ref}
               aria-label={ariaLabel || 'Progress'}
-              direction={direction}
+              direction={effectiveDirection}
               id={id}
               theme={theme}
               {...rest}

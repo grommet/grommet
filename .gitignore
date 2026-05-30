@@ -41,4 +41,5 @@ grommet-*-src-with-dependecies.tgz
 .tmp
 .eslintcache
 .DS_Store
+.*
 

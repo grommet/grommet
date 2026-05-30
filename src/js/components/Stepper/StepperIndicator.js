@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { normalizeColor } from '../../utils';
 import { base } from '../../themes/base';
 import { StepperContext } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
 
-const CheckIcon = () => (
+const CheckIcon = ({ size = 12, color = 'currentColor', strokeWidth = 3 }) => (
   <svg
-    width="14"
-    height="14"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
-    stroke="currentColor"
-    strokeWidth="3"
+    stroke={color}
+    strokeWidth={strokeWidth}
     strokeLinecap="round"
     strokeLinejoin="round"
     aria-hidden="true"
@@ -22,8 +23,8 @@ const CheckIcon = () => (
 
 const WarningIcon = () => (
   <svg
-    width="14"
-    height="14"
+    width="12"
+    height="12"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -35,6 +36,49 @@ const WarningIcon = () => (
     <line x1="12" y1="9" x2="12" y2="13" />
     <line x1="12" y1="17" x2="12.01" y2="17" />
   </svg>
+);
+
+const SubStepDot = ({ color, size = 10 }) => (
+  <span
+    aria-hidden="true"
+    style={{
+      width: `${size}px`,
+      height: `${size}px`,
+      borderRadius: '50%',
+      background: color,
+    }}
+  />
+);
+
+const SubStepRing = ({ color, size = 8, strokeWidth = 1.5 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox={`0 0 ${size} ${size}`}
+    fill="none"
+    aria-hidden="true"
+  >
+    <circle
+      cx={size / 2}
+      cy={size / 2}
+      r={size / 2 - strokeWidth / 2}
+      stroke={color}
+      strokeWidth={strokeWidth}
+      fill="none"
+    />
+  </svg>
+);
+
+const RadioDot = () => (
+  <span
+    aria-hidden="true"
+    style={{
+      width: '8px',
+      height: '8px',
+      borderRadius: '50%',
+      background: '#ffffff',
+    }}
+  />
 );
 
 function getEffectiveState(status, isCurrent) {
@@ -49,7 +93,7 @@ function getEffectiveState(status, isCurrent) {
   return 'pending';
 }
 
-export const StepperIndicator = ({ stepId, stepNumber, isSubStep }) => {
+export const StepperIndicator = ({ stepId, isSubStep }) => {
   const { currentStep } = useContext(StepperContext);
   const theme = useContext(ThemeContext) || base;
   const { steps } = useContext(StepperContext);
@@ -61,17 +105,45 @@ export const StepperIndicator = ({ stepId, stepNumber, isSubStep }) => {
   const effectiveState = getEffectiveState(step.status, isCurrent);
 
   const renderContent = () => {
-    if (isSubStep) return null;
-    if (
-      effectiveState === 'completed' ||
-      effectiveState === 'current-completed'
-    ) {
-      return <CheckIcon />;
+    if (isSubStep) {
+      switch (effectiveState) {
+        case 'current':
+          return <SubStepDot color={normalizeColor('brand', theme)} />;
+        case 'current-completed':
+          return (
+            <CheckIcon
+              size={10}
+              color={normalizeColor('brand', theme)}
+              strokeWidth={4}
+            />
+          );
+        case 'completed':
+          return <CheckIcon size={10} color={normalizeColor('brand', theme)} />;
+        case 'error':
+        case 'current-error':
+          return <SubStepDot color={normalizeColor('status-error', theme)} />;
+        case 'disabled':
+          return <SubStepRing color={normalizeColor('border', theme)} />;
+        default:
+          // pending - small hollow ring
+          return <SubStepRing color={normalizeColor('border', theme)} />;
+      }
+    }
+    // Parent step indicator - icon-based, no step numbers
+    if (effectiveState === 'current-completed') {
+      return <CheckIcon size={12} />;
+    }
+    if (effectiveState === 'completed') {
+      return <CheckIcon size={12} />;
+    }
+    if (effectiveState === 'current') {
+      return <RadioDot />;
     }
     if (effectiveState === 'error' || effectiveState === 'current-error') {
       return <WarningIcon />;
     }
-    return <span aria-hidden="true">{stepNumber}</span>;
+    // pending: empty hollow ring
+    return null;
   };
 
   return (

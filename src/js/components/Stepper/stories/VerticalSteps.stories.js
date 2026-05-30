@@ -16,7 +16,6 @@ const VerticalSteps = () => {
     {
       id: 'deploy',
       title: 'Deploy',
-      description: 'Push your application to production.',
       status: 'pending',
     },
     {
