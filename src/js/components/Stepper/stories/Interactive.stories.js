@@ -4,7 +4,7 @@ import { Box, Text, Button, Grommet } from 'grommet';
 import { Stepper } from '../Stepper';
 import { grommet } from '../../../themes';
 
-const Compound = () => {
+const Interactive = () => {
   const [currentStep, setCurrentStep] = useState('step1');
   const steps = [
     { id: 'step1', title: 'Step 1', status: 'completed' },
@@ -19,12 +19,14 @@ const Compound = () => {
   return (
     <Grommet theme={grommet}>
       <Box pad="large" gap="medium">
-        <Text>Current step: {currentStep}</Text>
-        <Stepper
-          steps={steps}
-          currentStep={currentStep}
-          onStepClick={(id) => setCurrentStep(id)}
-        />
+        <Text>Current : {currentStep}</Text>
+        <Box width="xlarge">
+          <Stepper
+            steps={steps}
+            currentStep={currentStep}
+            onStepClick={(id) => setCurrentStep(id)}
+          />
+        </Box>
         <Box direction="row" gap="small">
           {steps.map((step) => (
             <Button
@@ -41,7 +43,7 @@ const Compound = () => {
 };
 
 export default {
-  title: 'Visualizations/Stepper/Compound',
+  title: 'Visualizations/Stepper/Interactive',
 };
 
-export { Compound };
+export { Interactive };

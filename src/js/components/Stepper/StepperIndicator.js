@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { normalizeColor } from '../../utils';
 import { base } from '../../themes/base';
 import { StepperContext } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
@@ -38,19 +37,19 @@ const WarningIcon = () => (
   </svg>
 );
 
-const SubStepDot = ({ color, size = 10 }) => (
+const SubStepDot = ({ size = 10 }) => (
   <span
     aria-hidden="true"
     style={{
       width: `${size}px`,
       height: `${size}px`,
       borderRadius: '50%',
-      background: color,
+      background: 'currentColor',
     }}
   />
 );
 
-const SubStepRing = ({ color, size = 8, strokeWidth = 1.5 }) => (
+const SubStepRing = ({ size = 8, strokeWidth = 1.5 }) => (
   <svg
     width={size}
     height={size}
@@ -62,7 +61,7 @@ const SubStepRing = ({ color, size = 8, strokeWidth = 1.5 }) => (
       cx={size / 2}
       cy={size / 2}
       r={size / 2 - strokeWidth / 2}
-      stroke={color}
+      stroke="currentColor"
       strokeWidth={strokeWidth}
       fill="none"
     />
@@ -102,31 +101,31 @@ export const StepperIndicator = ({ stepId, isSubStep }) => {
   if (!step) return null;
 
   const isCurrent = currentStep === stepId;
-  const effectiveState = getEffectiveState(step.status, isCurrent);
+  const hasCurrentChild =
+    !isSubStep &&
+    step.childIds &&
+    step.childIds.length > 0 &&
+    step.childIds.includes(currentStep);
+  const isHighlighted = isCurrent || hasCurrentChild;
+  const effectiveState = getEffectiveState(step.status, isHighlighted);
 
   const renderContent = () => {
     if (isSubStep) {
       switch (effectiveState) {
         case 'current':
-          return <SubStepDot color={normalizeColor('brand', theme)} />;
+          return <SubStepDot />;
         case 'current-completed':
-          return (
-            <CheckIcon
-              size={10}
-              color={normalizeColor('brand', theme)}
-              strokeWidth={4}
-            />
-          );
+          return <CheckIcon size={10} strokeWidth={4} />;
         case 'completed':
-          return <CheckIcon size={10} color={normalizeColor('brand', theme)} />;
+          return <CheckIcon size={10} />;
         case 'error':
         case 'current-error':
-          return <SubStepDot color={normalizeColor('status-error', theme)} />;
+          return <SubStepDot />;
         case 'disabled':
-          return <SubStepRing color={normalizeColor('border', theme)} />;
+          return <SubStepRing />;
         default:
           // pending - small hollow ring
-          return <SubStepRing color={normalizeColor('border', theme)} />;
+          return <SubStepRing />;
       }
     }
     // Parent step indicator - icon-based, no step numbers

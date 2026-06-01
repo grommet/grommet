@@ -11,6 +11,7 @@ const StyledStepper = styled.ol.withConfig(styledComponentsConfig)`
     props.direction === 'vertical'
       ? css`
           flex-direction: column;
+          height: 100%;
           gap: ${props.theme.stepper?.vertical?.gap || '0'};
         `
       : css`
@@ -77,25 +78,12 @@ const StyledStepButton = styled.button.withConfig(styledComponentsConfig)`
 
   &:focus-visible {
     .stepper-indicator {
-      outline: 2px solid
-        ${(props) =>
-          props.theme.stepper?.focus?.ring?.color ||
-          props.theme.global?.colors?.focus ||
-          '#6FFFB0'};
-      outline-offset: ${(props) =>
-        props.theme.stepper?.focus?.ring?.offset || '2px'};
+      outline: none;
+      box-shadow: 0 0 0 2px
+          ${(props) => props.theme.stepper?.focus?.innerColor || '#ffffff'},
+        0 0 0 4px
+          ${(props) => props.theme.stepper?.focus?.outerColor || '#292d3a'};
     }
-  }
-
-  &:hover {
-    ${(props) =>
-      props.isClickable &&
-      !props.isDisabled &&
-      css`
-        .stepper-indicator {
-          opacity: 0.85;
-        }
-      `}
   }
 
   &:active {
@@ -115,14 +103,15 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: transform 0.1s ease, opacity 0.15s ease;
+  transition: transform 0.1s ease, background-color 0.15s ease,
+    border-color 0.15s ease, color 0.15s ease;
 
   ${(props) =>
     props.isSubStep
       ? css`
-          width: 12px;
+          width: 14px;
           height: 14px;
-          min-width: 12px;
+          min-width: 14px;
           min-height: 14px;
           border: none;
           background: transparent;
@@ -139,12 +128,26 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
     const { theme } = props;
     if (props.isSubStep) {
       switch (props.effectiveState) {
+        case 'current':
+        case 'current-completed':
+        case 'completed':
+          return css`
+            color: ${normalizeColor('brand', theme)};
+          `;
+        case 'error':
+        case 'current-error':
+          return css`
+            color: ${normalizeColor('status-error', theme)};
+          `;
         case 'disabled':
           return css`
+            color: ${normalizeColor('border', theme)};
             opacity: 0.6;
           `;
         default:
-          return css``;
+          return css`
+            color: ${normalizeColor('border', theme)};
+          `;
       }
     }
     switch (props.effectiveState) {
@@ -188,6 +191,70 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
         `;
     }
   }}
+
+  ${StyledStepButton}:not([aria-disabled]):hover & {
+    ${(props) => {
+      const { theme } = props;
+      if (props.effectiveState === 'disabled') return '';
+
+      const brandColor = normalizeColor('brand', theme);
+      const errorColor = normalizeColor('status-error', theme);
+      const brandHover = theme.stepper?.hover?.brand
+        ? normalizeColor(theme.stepper.hover.brand, theme)
+        : `color-mix(in srgb, ${brandColor} 80%, black)`;
+      const errorHover = theme.stepper?.hover?.error
+        ? normalizeColor(theme.stepper.hover.error, theme)
+        : `color-mix(in srgb, ${errorColor} 80%, black)`;
+      const borderHover =
+        normalizeColor(theme.stepper?.hover?.border || 'text', theme) ||
+        '#444444';
+
+      if (props.isSubStep) {
+        switch (props.effectiveState) {
+          case 'current':
+          case 'current-completed':
+          case 'completed':
+            return css`
+              color: ${brandHover};
+            `;
+          case 'error':
+          case 'current-error':
+            return css`
+              color: ${errorHover};
+            `;
+          default:
+            return css`
+              color: ${borderHover};
+            `;
+        }
+      }
+
+      switch (props.effectiveState) {
+        case 'current':
+        case 'current-completed':
+          return css`
+            background: ${brandHover};
+            border-color: ${brandHover};
+          `;
+        case 'completed':
+          return css`
+            color: ${brandHover};
+            border-color: ${brandHover};
+          `;
+        case 'error':
+        case 'current-error':
+          return css`
+            background: ${errorHover};
+            border-color: ${errorHover};
+          `;
+        default:
+          return css`
+            border-color: ${borderHover};
+            color: ${borderHover};
+          `;
+      }
+    }}
+  }
 `;
 
 const StyledLabelText = styled.span.withConfig(styledComponentsConfig)`

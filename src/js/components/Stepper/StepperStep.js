@@ -33,7 +33,7 @@ export const StepperStep = ({
   focusedIndex,
   index,
   isSubStep,
-  onKeyDown,
+  onFocusStep,
   stepsRef,
   stepRefs,
 }) => {
@@ -42,8 +42,14 @@ export const StepperStep = ({
   const theme = useContext(ThemeContext) || base;
 
   const isCurrent = currentStep === step.id;
+  const hasCurrentChild =
+    !isSubStep &&
+    step.children &&
+    step.children.length > 0 &&
+    step.children.some((c) => c.id === currentStep);
+  const isHighlighted = isCurrent || hasCurrentChild;
   const isDisabled = step.status === 'disabled';
-  const effectiveState = getEffectiveState(step.status, isCurrent);
+  const effectiveState = getEffectiveState(step.status, isHighlighted);
   const isClickable = clickableSteps && !isDisabled;
 
   const handleClick = () => {
@@ -58,9 +64,6 @@ export const StepperStep = ({
       if (isClickable && onStepClick) {
         onStepClick(step.id);
       }
-    }
-    if (onKeyDown) {
-      onKeyDown(e, index);
     }
   };
 
@@ -86,7 +89,7 @@ export const StepperStep = ({
           }
         }}
         data-stepper-step
-        aria-current={isCurrent ? 'step' : undefined}
+        aria-current={isHighlighted ? 'step' : undefined}
         aria-disabled={isDisabled || undefined}
         aria-label={ariaLabel}
         aria-describedby={
@@ -95,6 +98,9 @@ export const StepperStep = ({
         tabIndex={focusedIndex === index ? 0 : -1}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
+        onFocus={() => {
+          if (onFocusStep) onFocusStep(index);
+        }}
         isClickable={isClickable}
         isDisabled={isDisabled}
         direction={direction}

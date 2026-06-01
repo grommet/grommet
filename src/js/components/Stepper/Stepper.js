@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { normalizeColor } from '../../utils';
+import { Keyboard } from '../Keyboard';
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StyledStepper } from './StyledStepper';
@@ -18,10 +19,12 @@ const flattenSteps = (steps) => {
   steps.forEach((step, parentIdx) => {
     const hasChildren = step.children && step.children.length > 0;
     const isLastParent = parentIdx === steps.length - 1;
+    const childIds = hasChildren ? step.children.map((c) => c.id) : [];
     flat.push({
       ...step,
       isSubStep: false,
       showConnector: !isLastParent,
+      childIds,
     });
     if (hasChildren) {
       step.children.forEach((child) => {
@@ -29,6 +32,8 @@ const flattenSteps = (steps) => {
           ...child,
           isSubStep: true,
           showConnector: false,
+          parentId: step.id,
+          childIds: [],
         });
       });
     }
@@ -106,6 +111,12 @@ const Stepper = forwardRef(
     const [focusedIndex, setFocusedIndex] = useState(
       currentIndex >= 0 ? currentIndex : 0,
     );
+    const focusedIndexRef = useRef(focusedIndex);
+
+    const updateFocusedIndex = useCallback((idx) => {
+      focusedIndexRef.current = idx;
+      setFocusedIndex(idx);
+    }, []);
 
     const stepIndex = useCallback(
       (stepId) => flatSteps.findIndex((s) => s.id === stepId),
@@ -170,58 +181,102 @@ const Stepper = forwardRef(
       ],
     );
 
-    const handleKeyDown = useCallback(
-      (e, index) => {
-        let nextIndex;
-        const isHorizontal = effectiveDirection === 'horizontal';
-
-        switch (e.key) {
-          case 'ArrowRight':
-            if (isHorizontal) {
-              e.preventDefault();
-              nextIndex = (index + 1) % flatSteps.length;
-            }
-            break;
-          case 'ArrowLeft':
-            if (isHorizontal) {
-              e.preventDefault();
-              nextIndex = (index - 1 + flatSteps.length) % flatSteps.length;
-            }
-            break;
-          case 'ArrowDown':
-            if (!isHorizontal) {
-              e.preventDefault();
-              nextIndex = (index + 1) % flatSteps.length;
-            }
-            break;
-          case 'ArrowUp':
-            if (!isHorizontal) {
-              e.preventDefault();
-              nextIndex = (index - 1 + flatSteps.length) % flatSteps.length;
-            }
-            break;
-          case 'Home':
-            e.preventDefault();
-            nextIndex = 0;
-            break;
-          case 'End':
-            e.preventDefault();
-            nextIndex = flatSteps.length - 1;
-            break;
-          default:
-            break;
+    const findNextEnabledIndex = useCallback(
+      (startIndex, delta) => {
+        const len = flatSteps.length;
+        let idx = startIndex;
+        for (let i = 0; i < len; i += 1) {
+          idx = (idx + delta + len) % len;
+          if (flatSteps[idx].status !== 'disabled') {
+            return idx;
+          }
         }
+        return startIndex; // all disabled, stay put
+      },
+      [flatSteps],
+    );
 
-        if (nextIndex !== undefined) {
-          setFocusedIndex(nextIndex);
-          // Focus the button at the next index via refs
+    const findFirstEnabledIndex = useCallback(
+      () => flatSteps.findIndex((s) => s.status !== 'disabled'),
+      [flatSteps],
+    );
+
+    const findLastEnabledIndex = useCallback(() => {
+      for (let i = flatSteps.length - 1; i >= 0; i -= 1) {
+        if (flatSteps[i].status !== 'disabled') return i;
+      }
+      return flatSteps.length - 1;
+    }, [flatSteps]);
+
+    const moveFocus = useCallback(
+      (nextIndex) => {
+        if (nextIndex !== undefined && nextIndex !== focusedIndexRef.current) {
+          updateFocusedIndex(nextIndex);
           const nextButton = stepRefs.current.get(nextIndex);
           if (nextButton) {
             nextButton.focus();
           }
         }
       },
-      [effectiveDirection, flatSteps.length],
+      [updateFocusedIndex],
+    );
+
+    const onNext = useCallback(() => {
+      moveFocus(findNextEnabledIndex(focusedIndexRef.current, 1));
+    }, [findNextEnabledIndex, moveFocus]);
+
+    const onPrevious = useCallback(() => {
+      moveFocus(findNextEnabledIndex(focusedIndexRef.current, -1));
+    }, [findNextEnabledIndex, moveFocus]);
+
+    const handleKeyDown = useCallback(
+      (event) => {
+        const isHorizontal = effectiveDirection === 'horizontal';
+        switch (event.key) {
+          case 'ArrowRight':
+            if (isHorizontal) {
+              event.preventDefault();
+              onNext();
+            }
+            break;
+          case 'ArrowLeft':
+            if (isHorizontal) {
+              event.preventDefault();
+              onPrevious();
+            }
+            break;
+          case 'ArrowDown':
+            if (!isHorizontal) {
+              event.preventDefault();
+              onNext();
+            }
+            break;
+          case 'ArrowUp':
+            if (!isHorizontal) {
+              event.preventDefault();
+              onPrevious();
+            }
+            break;
+          case 'Home':
+            event.preventDefault();
+            moveFocus(findFirstEnabledIndex());
+            break;
+          case 'End':
+            event.preventDefault();
+            moveFocus(findLastEnabledIndex());
+            break;
+          default:
+            break;
+        }
+      },
+      [
+        effectiveDirection,
+        onNext,
+        onPrevious,
+        findFirstEnabledIndex,
+        findLastEnabledIndex,
+        moveFocus,
+      ],
     );
 
     const renderDefaultSteps = () => {
@@ -245,7 +300,7 @@ const Stepper = forwardRef(
                   focusedIndex={focusedIndex}
                   index={childFlatIndex}
                   isSubStep
-                  onKeyDown={handleKeyDown}
+                  onFocusStep={updateFocusedIndex}
                   stepsRef={stepsRef}
                   stepRefs={stepRefs}
                 />
@@ -268,7 +323,7 @@ const Stepper = forwardRef(
             focusedIndex={focusedIndex}
             index={parentFlatIndex}
             isSubStep={false}
-            onKeyDown={handleKeyDown}
+            onFocusStep={updateFocusedIndex}
             stepsRef={stepsRef}
             stepRefs={stepRefs}
           />,
@@ -342,6 +397,7 @@ const Stepper = forwardRef(
                 flexDirection: 'column',
                 justifyContent: 'center',
                 position: 'relative',
+                flex: 1,
                 minHeight: '16px',
                 overflow: 'visible',
               }}
@@ -379,16 +435,18 @@ const Stepper = forwardRef(
       <StepperContext.Provider value={contextValue}>
         <ThemeContext.Consumer>
           {() => (
-            <StyledStepper
-              ref={ref}
-              aria-label={ariaLabel || 'Progress'}
-              direction={effectiveDirection}
-              id={id}
-              theme={theme}
-              {...rest}
-            >
-              {children || renderDefaultSteps()}
-            </StyledStepper>
+            <Keyboard onKeyDown={handleKeyDown}>
+              <StyledStepper
+                ref={ref}
+                aria-label={ariaLabel || 'Progress'}
+                direction={effectiveDirection}
+                id={id}
+                theme={theme}
+                {...rest}
+              >
+                {children || renderDefaultSteps()}
+              </StyledStepper>
+            </Keyboard>
           )}
         </ThemeContext.Consumer>
       </StepperContext.Provider>

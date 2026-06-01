@@ -38,7 +38,12 @@ const NestedSubSteps = () => {
           direction="vertical"
           onStepClick={(id) => setCurrentStep(id)}
         />
-        <Text>Active: {currentStep}</Text>
+        <Text>
+          Parent:{' '}
+          {steps.find((s) => s.children?.some((c) => c.id === currentStep))
+            ?.title || 'None'}
+        </Text>
+        <Text>Current Step: {currentStep}</Text>
       </Box>
     </Grommet>
   );
