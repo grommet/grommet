@@ -27,21 +27,20 @@ const VerticalSteps = () => {
   ];
   return (
     <Grommet theme={grommet}>
-      <Box direction="row" gap="large" pad="medium">
-        <Box height="small">
-          <Stepper
-            steps={steps}
-            currentStep={currentStep}
-            direction="vertical"
-            onStepClick={(id) => setCurrentStep(id)}
-          />
-        </Box>
+      <Box direction="row" gap="medium" pad="medium">
+        <Stepper
+          steps={steps}
+          currentStep={currentStep}
+          direction="vertical"
+          onStepClick={(id) => setCurrentStep(id)}
+        />
+
         <Box
+          flex
           pad="medium"
           background="background-contrast"
           round="small"
-          width="xxlarge"
-          height="large"
+          height={{ min: 'medium' }}
           gap="none"
         >
           <Heading level={2}>

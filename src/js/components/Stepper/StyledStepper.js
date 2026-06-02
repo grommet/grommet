@@ -30,7 +30,7 @@ const StyledStepItem = styled.li.withConfig(styledComponentsConfig)`
       return css`
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: ${props.isSubStep ? '4px' : '4px'};
+        padding-bottom: 4px;
       `;
     }
     if (props.isSubStep) {
@@ -40,7 +40,6 @@ const StyledStepItem = styled.li.withConfig(styledComponentsConfig)`
         flex: none;
         min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
       `;
     }
     return css`
@@ -152,11 +151,6 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
     }
     switch (props.effectiveState) {
       case 'current':
-        return css`
-          background: ${normalizeColor('brand', theme)};
-          color: #ffffff;
-          border-color: ${normalizeColor('brand', theme)};
-        `;
       case 'current-completed':
         return css`
           background: ${normalizeColor('brand', theme)};
@@ -192,7 +186,11 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
     }
   }}
 
-  ${StyledStepButton}:not([aria-disabled]):hover & {
+  /* Hover: darkens state-specific colors via color-mix.
+     Uses the parent button selector so sub-step children (which rely on
+     currentColor) inherit the hover color automatically.
+     Only applies to clickable (interactive) steps. */
+  ${StyledStepButton}[data-clickable]:not([aria-disabled]):hover & {
     ${(props) => {
       const { theme } = props;
       if (props.effectiveState === 'disabled') return '';
@@ -278,9 +276,6 @@ const StyledLabelText = styled.span.withConfig(styledComponentsConfig)`
         `;
       }
       case 'disabled':
-        return css`
-          color: ${normalizeColor('text-weak', theme)};
-        `;
       case 'completed':
         return css`
           color: ${normalizeColor('text-weak', theme)};

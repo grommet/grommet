@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+
 import { normalizeColor } from '../../utils';
 import { base } from '../../themes/base';
+
 import { StepperContext } from './StepperContext';
 import { StepperIndicator, getEffectiveState } from './StepperIndicator';
 import {
@@ -95,6 +97,7 @@ export const StepperStep = ({
         aria-describedby={
           describedBy.length > 0 ? describedBy.join(' ') : undefined
         }
+        data-clickable={isClickable || undefined}
         tabIndex={focusedIndex === index ? 0 : -1}
         onClick={handleClick}
         onKeyDown={handleKeyDown}

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+
 import { base } from '../../themes/base';
+
 import { StepperContext } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
 
@@ -80,6 +82,8 @@ const RadioDot = () => (
   />
 );
 
+// Maps step status + current position to a visual state
+// used by both the indicator and label components.
 function getEffectiveState(status, isCurrent) {
   if (status === 'disabled') return 'disabled';
   if (isCurrent) {
@@ -93,9 +97,8 @@ function getEffectiveState(status, isCurrent) {
 }
 
 export const StepperIndicator = ({ stepId, isSubStep }) => {
-  const { currentStep } = useContext(StepperContext);
+  const { currentStep, steps } = useContext(StepperContext);
   const theme = useContext(ThemeContext) || base;
-  const { steps } = useContext(StepperContext);
 
   const step = steps.find((s) => s.id === stepId);
   if (!step) return null;
@@ -128,21 +131,19 @@ export const StepperIndicator = ({ stepId, isSubStep }) => {
           return <SubStepRing />;
       }
     }
-    // Parent step indicator - icon-based, no step numbers
-    if (effectiveState === 'current-completed') {
-      return <CheckIcon size={12} />;
+    // Parent step indicator
+    switch (effectiveState) {
+      case 'current-completed':
+      case 'completed':
+        return <CheckIcon size={12} />;
+      case 'current':
+        return <RadioDot />;
+      case 'error':
+      case 'current-error':
+        return <WarningIcon />;
+      default:
+        return null;
     }
-    if (effectiveState === 'completed') {
-      return <CheckIcon size={12} />;
-    }
-    if (effectiveState === 'current') {
-      return <RadioDot />;
-    }
-    if (effectiveState === 'error' || effectiveState === 'current-error') {
-      return <WarningIcon />;
-    }
-    // pending: empty hollow ring
-    return null;
   };
 
   return (

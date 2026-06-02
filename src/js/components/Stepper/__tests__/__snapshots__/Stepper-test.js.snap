@@ -71,7 +71,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   border-color: #7D4CDB;
 }
 
-.c3:not([aria-disabled]):hover .c5 {
+.c3[data-clickable]:not([aria-disabled]):hover .c5 {
   background: color-mix(in srgb, #7D4CDB 80%, black);
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
 }
@@ -92,7 +92,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   border-color: rgba(0, 0, 0, 0.33);
 }
 
-.c3:not([aria-disabled]):hover .c7 {
+.c3[data-clickable]:not([aria-disabled]):hover .c7 {
   border-color: #444444;
   color: #444444;
 }
@@ -134,6 +134,7 @@ exports[`Stepper renders horizontal steps 1`] = `
         aria-current="step"
         aria-label="Step 1 of 3: Step 1"
         class="c3 c4"
+        data-clickable="true"
         data-stepper-step="true"
         direction="horizontal"
         tabindex="0"
@@ -175,6 +176,7 @@ exports[`Stepper renders horizontal steps 1`] = `
       <button
         aria-label="Step 2 of 3: Step 2"
         class="c3 c4"
+        data-clickable="true"
         data-stepper-step="true"
         direction="horizontal"
         tabindex="-1"
@@ -211,6 +213,7 @@ exports[`Stepper renders horizontal steps 1`] = `
       <button
         aria-label="Step 3 of 3: Step 3"
         class="c3 c4"
+        data-clickable="true"
         data-stepper-step="true"
         direction="horizontal"
         tabindex="-1"
@@ -297,7 +300,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   border-color: #7D4CDB;
 }
 
-.c2:not([aria-disabled]):hover .c4 {
+.c2[data-clickable]:not([aria-disabled]):hover .c4 {
   background: color-mix(in srgb, #7D4CDB 80%, black);
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
 }
@@ -318,7 +321,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   border-color: rgba(0, 0, 0, 0.33);
 }
 
-.c2:not([aria-disabled]):hover .c6 {
+.c2[data-clickable]:not([aria-disabled]):hover .c6 {
   border-color: #444444;
   color: #444444;
 }
@@ -357,6 +360,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
       aria-current="step"
       aria-label="Step 1 of 3: Step 1"
       class="c2 c3"
+      data-clickable="true"
       data-stepper-step="true"
       direction="horizontal"
       tabindex="0"
@@ -398,6 +402,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
     <button
       aria-label="Step 2 of 3: Step 2"
       class="c2 c3"
+      data-clickable="true"
       data-stepper-step="true"
       direction="horizontal"
       tabindex="-1"
@@ -434,6 +439,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
     <button
       aria-label="Step 3 of 3: Step 3"
       class="c2 c3"
+      data-clickable="true"
       data-stepper-step="true"
       direction="horizontal"
       tabindex="-1"
@@ -526,7 +532,7 @@ exports[`Stepper renders vertical steps 1`] = `
   border-color: rgba(0, 0, 0, 0.33);
 }
 
-.c3:not([aria-disabled]):hover .c5 {
+.c3[data-clickable]:not([aria-disabled]):hover .c5 {
   border-color: #444444;
   color: #444444;
 }
@@ -547,7 +553,7 @@ exports[`Stepper renders vertical steps 1`] = `
   border-color: #7D4CDB;
 }
 
-.c3:not([aria-disabled]):hover .c8 {
+.c3[data-clickable]:not([aria-disabled]):hover .c8 {
   background: color-mix(in srgb, #7D4CDB 80%, black);
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
 }
@@ -590,6 +596,7 @@ exports[`Stepper renders vertical steps 1`] = `
       <button
         aria-label="Step 1 of 3: Step 1"
         class="c3 c4"
+        data-clickable="true"
         data-stepper-step="true"
         direction="vertical"
         tabindex="-1"
@@ -632,6 +639,7 @@ exports[`Stepper renders vertical steps 1`] = `
         aria-current="step"
         aria-label="Step 2 of 3: Step 2"
         class="c3 c4"
+        data-clickable="true"
         data-stepper-step="true"
         direction="vertical"
         tabindex="0"
@@ -678,6 +686,7 @@ exports[`Stepper renders vertical steps 1`] = `
       <button
         aria-label="Step 3 of 3: Step 3"
         class="c3 c4"
+        data-clickable="true"
         data-stepper-step="true"
         direction="vertical"
         tabindex="-1"

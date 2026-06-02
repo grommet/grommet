@@ -5,26 +5,29 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { ThemeContext } from 'styled-components';
+
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
+
 import { Keyboard } from '../Keyboard';
+
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StyledStepper } from './StyledStepper';
-import { useThemeValue } from '../../utils/useThemeValue';
 import { StepperPropTypes } from './propTypes';
 
+// Flattens steps with parent/child relationships into a linear list
+// for keyboard navigation and index-based tracking.
 const flattenSteps = (steps) => {
   const flat = [];
   steps.forEach((step, parentIdx) => {
     const hasChildren = step.children && step.children.length > 0;
     const isLastParent = parentIdx === steps.length - 1;
-    const childIds = hasChildren ? step.children.map((c) => c.id) : [];
     flat.push({
       ...step,
       isSubStep: false,
       showConnector: !isLastParent,
-      childIds,
+      childIds: hasChildren ? step.children.map((c) => c.id) : [],
     });
     if (hasChildren) {
       step.children.forEach((child) => {
@@ -104,7 +107,9 @@ const Stepper = forwardRef(
       return fallback ? fallback.id : flatSteps[0]?.id || '';
     }, [currentStep, flatSteps]);
 
-    // Roving tabindex state
+    // Roving tabindex: only the focused step has tabIndex=0,
+    // all others have tabIndex=-1. A ref keeps the index synchronous
+    // for keyboard handlers that fire before React re-renders.
     const currentIndex = flatSteps.findIndex(
       (s) => s.id === effectiveCurrentStep,
     );
@@ -181,6 +186,8 @@ const Stepper = forwardRef(
       ],
     );
 
+    // Wraps around the step list to find the next non-disabled step
+    // in the given direction (+1 forward, -1 backward).
     const findNextEnabledIndex = useCallback(
       (startIndex, delta) => {
         const len = flatSteps.length;
@@ -191,7 +198,7 @@ const Stepper = forwardRef(
             return idx;
           }
         }
-        return startIndex; // all disabled, stay put
+        return startIndex;
       },
       [flatSteps],
     );
@@ -433,22 +440,18 @@ const Stepper = forwardRef(
 
     return (
       <StepperContext.Provider value={contextValue}>
-        <ThemeContext.Consumer>
-          {() => (
-            <Keyboard onKeyDown={handleKeyDown}>
-              <StyledStepper
-                ref={ref}
-                aria-label={ariaLabel || 'Progress'}
-                direction={effectiveDirection}
-                id={id}
-                theme={theme}
-                {...rest}
-              >
-                {children || renderDefaultSteps()}
-              </StyledStepper>
-            </Keyboard>
-          )}
-        </ThemeContext.Consumer>
+        <Keyboard onKeyDown={handleKeyDown}>
+          <StyledStepper
+            ref={ref}
+            aria-label={ariaLabel || 'Progress'}
+            direction={effectiveDirection}
+            id={id}
+            theme={theme}
+            {...rest}
+          >
+            {children || renderDefaultSteps()}
+          </StyledStepper>
+        </Keyboard>
       </StepperContext.Provider>
     );
   },
