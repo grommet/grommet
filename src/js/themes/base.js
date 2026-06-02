@@ -2325,6 +2325,102 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         large: 3,
       },
     },
+    stepper: {
+      container: {
+        // background: undefined,
+        // extend: undefined,
+      },
+      indicator: {
+        size: 'medium', // 'small' | 'medium' | 'large'
+        border: {
+          color: 'text-weak',
+          width: '2px',
+        },
+        colors: {
+          pending: {
+            background: 'background-front',
+            text: 'text-strong',
+            border: 'text-weak',
+          },
+          current: {
+            background: 'brand',
+            text: 'white',
+            border: 'brand',
+          },
+          completed: {
+            background: 'status-ok',
+            text: 'white',
+            border: 'status-ok',
+          },
+          error: {
+            background: 'status-error',
+            text: 'white',
+            border: 'status-error',
+          },
+          disabled: {
+            background: 'background-contrast',
+            text: 'text-weak',
+            border: 'text-weak',
+          },
+        },
+      },
+      label: {
+        color: {
+          default: 'text',
+          current: 'brand',
+          completed: 'text-weak',
+          error: 'status-error',
+          disabled: 'text-weak',
+        },
+        weight: {
+          default: 'normal',
+          current: 'bold',
+        },
+      },
+      description: {
+        font: { size: 'small' },
+        color: 'text-weak',
+        margin: { top: 'xsmall' },
+      },
+      helperText: {
+        font: { size: 'xsmall' },
+        color: {
+          error: 'status-error',
+          disabled: 'text-weak',
+        },
+        margin: { top: 'xsmall' },
+      },
+      connector: {
+        stroke: {
+          width: '2px',
+          color: {
+            pending: 'border',
+            completed: 'status-ok',
+            error: 'status-error',
+            disabled: 'border',
+          },
+        },
+      },
+      horizontal: {
+        gap: 'medium',
+      },
+      vertical: {
+        gap: 'medium',
+      },
+      focus: {
+        ring: {
+          color: 'focus',
+          width: '2px',
+          offset: '2px',
+        },
+      },
+      hover: {
+        background: 'background-contrast',
+      },
+      active: {
+        transform: 'scale(0.95)',
+      },
+    },
     table: {
       caption: {
         margin: { bottom: 'xxsmall' },

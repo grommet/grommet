@@ -1,0 +1,713 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Stepper renders horizontal steps 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: medium;
+}
+
+.c2 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.c4 {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  outline: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  width: 100%;
+}
+
+.c4:focus-visible .stepper-indicator {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff,0 0 0 4px #292d3a;
+}
+
+.c4:active .stepper-indicator {
+  transform: scale(0.95);
+}
+
+.c5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.1s ease,background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  border: 2px solid;
+  background: #7D4CDB;
+  color: #ffffff;
+  border-color: #7D4CDB;
+}
+
+.c3[data-clickable]:not([aria-disabled]):hover .c5 {
+  background: color-mix(in srgb, #7D4CDB 80%, black);
+  border-color: color-mix(in srgb, #7D4CDB 80%, black);
+}
+
+.c7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.1s ease,background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  border: 2px solid;
+  background: transparent;
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0.33);
+}
+
+.c3[data-clickable]:not([aria-disabled]):hover .c7 {
+  border-color: #444444;
+  color: #444444;
+}
+
+.c6 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #7D4CDB;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.c8 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #444444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <ol
+    aria-label="Progress"
+    class="c1"
+    direction="horizontal"
+  >
+    <li
+      class="c2"
+      direction="horizontal"
+    >
+      <button
+        aria-current="step"
+        aria-label="Step 1 of 3: Step 1"
+        class="c3 c4"
+        data-clickable="true"
+        data-stepper-step="true"
+        direction="horizontal"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="c5 stepper-indicator"
+        >
+          <span
+            aria-hidden="true"
+            style="width: 8px; height: 8px; border-radius: 50%; background: rgb(255, 255, 255);"
+          />
+        </span>
+        <span
+          style="display: flex; flex-direction: column;"
+        >
+          <span
+            class="c6"
+            direction="horizontal"
+          >
+            Step 1
+          </span>
+        </span>
+      </button>
+    </li>
+    <li
+      aria-hidden="true"
+      style="list-style: none; display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 16px; overflow: visible;"
+    >
+      <span
+        style="position: absolute; top: 16px; left: calc(-50% + 16px); right: calc(-50% + 16px); height: 2px; background: rgba(0, 0, 0, 0.33);"
+      />
+    </li>
+    <li
+      class="c2"
+      direction="horizontal"
+    >
+      <button
+        aria-label="Step 2 of 3: Step 2"
+        class="c3 c4"
+        data-clickable="true"
+        data-stepper-step="true"
+        direction="horizontal"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="c7 stepper-indicator"
+        />
+        <span
+          style="display: flex; flex-direction: column;"
+        >
+          <span
+            class="c8"
+            direction="horizontal"
+          >
+            Step 2
+          </span>
+        </span>
+      </button>
+    </li>
+    <li
+      aria-hidden="true"
+      style="list-style: none; display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 16px; overflow: visible;"
+    >
+      <span
+        style="position: absolute; top: 16px; left: calc(-50% + 16px); right: calc(-50% + 16px); height: 2px; background: rgba(0, 0, 0, 0.33);"
+      />
+    </li>
+    <li
+      class="c2"
+      direction="horizontal"
+    >
+      <button
+        aria-label="Step 3 of 3: Step 3"
+        class="c3 c4"
+        data-clickable="true"
+        data-stepper-step="true"
+        direction="horizontal"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="c7 stepper-indicator"
+        />
+        <span
+          style="display: flex; flex-direction: column;"
+        >
+          <span
+            class="c8"
+            direction="horizontal"
+          >
+            Step 3
+          </span>
+        </span>
+      </button>
+    </li>
+  </ol>
+</div>
+`;
+
+exports[`Stepper renders outside Grommet wrapper 1`] = `
+.c0 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: medium;
+}
+
+.c1 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.c3 {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  outline: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  width: 100%;
+}
+
+.c3:focus-visible .stepper-indicator {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff,0 0 0 4px #292d3a;
+}
+
+.c3:active .stepper-indicator {
+  transform: scale(0.95);
+}
+
+.c4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.1s ease,background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  border: 2px solid;
+  background: #7D4CDB;
+  color: #ffffff;
+  border-color: #7D4CDB;
+}
+
+.c2[data-clickable]:not([aria-disabled]):hover .c4 {
+  background: color-mix(in srgb, #7D4CDB 80%, black);
+  border-color: color-mix(in srgb, #7D4CDB 80%, black);
+}
+
+.c6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.1s ease,background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  border: 2px solid;
+  background: transparent;
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0.33);
+}
+
+.c2[data-clickable]:not([aria-disabled]):hover .c6 {
+  border-color: #444444;
+  color: #444444;
+}
+
+.c5 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #7D4CDB;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.c7 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #444444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+<ol
+  aria-label="Progress"
+  class="c0"
+  direction="horizontal"
+>
+  <li
+    class="c1"
+    direction="horizontal"
+  >
+    <button
+      aria-current="step"
+      aria-label="Step 1 of 3: Step 1"
+      class="c2 c3"
+      data-clickable="true"
+      data-stepper-step="true"
+      direction="horizontal"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="c4 stepper-indicator"
+      >
+        <span
+          aria-hidden="true"
+          style="width: 8px; height: 8px; border-radius: 50%; background: rgb(255, 255, 255);"
+        />
+      </span>
+      <span
+        style="display: flex; flex-direction: column;"
+      >
+        <span
+          class="c5"
+          direction="horizontal"
+        >
+          Step 1
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    aria-hidden="true"
+    style="list-style: none; display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 16px; overflow: visible;"
+  >
+    <span
+      style="position: absolute; top: 16px; left: calc(-50% + 16px); right: calc(-50% + 16px); height: 2px; background: rgba(0, 0, 0, 0.33);"
+    />
+  </li>
+  <li
+    class="c1"
+    direction="horizontal"
+  >
+    <button
+      aria-label="Step 2 of 3: Step 2"
+      class="c2 c3"
+      data-clickable="true"
+      data-stepper-step="true"
+      direction="horizontal"
+      tabindex="-1"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="c6 stepper-indicator"
+      />
+      <span
+        style="display: flex; flex-direction: column;"
+      >
+        <span
+          class="c7"
+          direction="horizontal"
+        >
+          Step 2
+        </span>
+      </span>
+    </button>
+  </li>
+  <li
+    aria-hidden="true"
+    style="list-style: none; display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 16px; overflow: visible;"
+  >
+    <span
+      style="position: absolute; top: 16px; left: calc(-50% + 16px); right: calc(-50% + 16px); height: 2px; background: rgba(0, 0, 0, 0.33);"
+    />
+  </li>
+  <li
+    class="c1"
+    direction="horizontal"
+  >
+    <button
+      aria-label="Step 3 of 3: Step 3"
+      class="c2 c3"
+      data-clickable="true"
+      data-stepper-step="true"
+      direction="horizontal"
+      tabindex="-1"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="c6 stepper-indicator"
+      />
+      <span
+        style="display: flex; flex-direction: column;"
+      >
+        <span
+          class="c7"
+          direction="horizontal"
+        >
+          Step 3
+        </span>
+      </span>
+    </button>
+  </li>
+</ol>
+`;
+
+exports[`Stepper renders vertical steps 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  height: 100%;
+  gap: medium;
+}
+
+.c2 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 4px;
+}
+
+.c4 {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  outline: none;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.c4:focus-visible .stepper-indicator {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff,0 0 0 4px #292d3a;
+}
+
+.c4:active .stepper-indicator {
+  transform: scale(0.95);
+}
+
+.c5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.1s ease,background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  border: 2px solid;
+  background: transparent;
+  color: #555555;
+  border-color: rgba(0, 0, 0, 0.33);
+}
+
+.c3[data-clickable]:not([aria-disabled]):hover .c5 {
+  border-color: #444444;
+  color: #444444;
+}
+
+.c8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.1s ease,background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  border: 2px solid;
+  background: #7D4CDB;
+  color: #ffffff;
+  border-color: #7D4CDB;
+}
+
+.c3[data-clickable]:not([aria-disabled]):hover .c8 {
+  background: color-mix(in srgb, #7D4CDB 80%, black);
+  border-color: color-mix(in srgb, #7D4CDB 80%, black);
+}
+
+.c6 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c9 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #7D4CDB;
+}
+
+.c7 {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.33);
+  border-radius: 4px;
+  left: 15px;
+  top: 36px;
+  bottom: 0;
+  width: 2px;
+}
+
+<div
+  class="c0"
+>
+  <ol
+    aria-label="Progress"
+    class="c1"
+    direction="vertical"
+  >
+    <li
+      class="c2"
+      direction="vertical"
+    >
+      <button
+        aria-label="Step 1 of 3: Step 1"
+        class="c3 c4"
+        data-clickable="true"
+        data-stepper-step="true"
+        direction="vertical"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="c5 stepper-indicator"
+        />
+        <span
+          style="display: flex; flex-direction: column;"
+        >
+          <span
+            class="c6"
+            direction="vertical"
+          >
+            Step 1
+          </span>
+        </span>
+      </button>
+      <span
+        aria-hidden="true"
+        class="c7"
+        direction="vertical"
+      />
+    </li>
+    <li
+      aria-hidden="true"
+      style="list-style: none; display: flex; flex-direction: column; justify-content: center; position: relative; flex: 1; min-height: 16px; overflow: visible;"
+    >
+      <span
+        style="position: absolute; left: 15px; top: 0px; bottom: 0px; width: 2px; background: rgba(0, 0, 0, 0.33); border-radius: 4px;"
+      />
+    </li>
+    <li
+      class="c2"
+      direction="vertical"
+    >
+      <button
+        aria-current="step"
+        aria-label="Step 2 of 3: Step 2"
+        class="c3 c4"
+        data-clickable="true"
+        data-stepper-step="true"
+        direction="vertical"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="c8 stepper-indicator"
+        >
+          <span
+            aria-hidden="true"
+            style="width: 8px; height: 8px; border-radius: 50%; background: rgb(255, 255, 255);"
+          />
+        </span>
+        <span
+          style="display: flex; flex-direction: column;"
+        >
+          <span
+            class="c9"
+            direction="vertical"
+          >
+            Step 2
+          </span>
+        </span>
+      </button>
+      <span
+        aria-hidden="true"
+        class="c7"
+        direction="vertical"
+      />
+    </li>
+    <li
+      aria-hidden="true"
+      style="list-style: none; display: flex; flex-direction: column; justify-content: center; position: relative; flex: 1; min-height: 16px; overflow: visible;"
+    >
+      <span
+        style="position: absolute; left: 15px; top: 0px; bottom: 0px; width: 2px; background: rgba(0, 0, 0, 0.33); border-radius: 4px;"
+      />
+    </li>
+    <li
+      class="c2"
+      direction="vertical"
+    >
+      <button
+        aria-label="Step 3 of 3: Step 3"
+        class="c3 c4"
+        data-clickable="true"
+        data-stepper-step="true"
+        direction="vertical"
+        tabindex="-1"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="c5 stepper-indicator"
+        />
+        <span
+          style="display: flex; flex-direction: column;"
+        >
+          <span
+            class="c6"
+            direction="vertical"
+          >
+            Step 3
+          </span>
+        </span>
+      </button>
+    </li>
+  </ol>
+</div>
+`;
