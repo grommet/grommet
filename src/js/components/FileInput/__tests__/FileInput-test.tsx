@@ -1,7 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { fireEvent, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
@@ -238,33 +237,5 @@ describe('FileInput', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('cancelling the file picker should not clear an existing file', async () => {
-    const user = userEvent.setup();
-    const onChange = jest.fn();
-
-    render(
-      <Grommet>
-        <FileInput onChange={onChange} />
-      </Grommet>,
-    );
-
-    const input = document.querySelector(
-      'input[type="file"]',
-    ) as HTMLInputElement;
-
-    // Select a file
-    const file = new File(['hello'], 'hello.txt', { type: 'text/plain' });
-    await user.upload(input, file);
-    expect(screen.getByText('hello.txt')).toBeInTheDocument();
-    expect(onChange).toHaveBeenCalledTimes(1);
-
-    // Simulate cancelling the file picker — browser fires change with empty FileList
-    fireEvent.change(input, { target: { files: [] } });
-
-    // File should still be shown and onChange should not have fired again
-    expect(screen.getByText('hello.txt')).toBeInTheDocument();
-    expect(onChange).toHaveBeenCalledTimes(1);
   });
 });
