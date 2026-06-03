@@ -4,7 +4,7 @@ import { Box, Calendar, Main, Text } from 'grommet';
 
 // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).
-export const DSTCalendar = () => (
+const DSTCalendarExample = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Main align="center" pad="large" direction="row" justify="center">
@@ -42,7 +42,10 @@ export const DSTCalendar = () => (
   // </Grommet>
 );
 
-DSTCalendar.storyName = 'Daylight savings time';
+export const DSTCalendar = {
+  name: 'Daylight savings time',
+  render: DSTCalendarExample,
+};
 
 export default {
   title: 'Visualizations/Calendar/Daylight savings time',

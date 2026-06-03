@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, TextInput } from 'grommet';
 
-export const Uncontrolled = () => (
+const UncontrolledExample = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box fill align="center" justify="start" pad="large">
@@ -16,8 +16,11 @@ export const Uncontrolled = () => (
   // </Grommet>
 );
 
-Uncontrolled.parameters = {
-  chromatic: { disable: true },
+export const Uncontrolled = {
+  render: UncontrolledExample,
+  parameters: {
+    chromatic: { disable: true },
+  },
 };
 
 export default {

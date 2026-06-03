@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 
 import { Box, Button, Calendar, Text } from 'grommet';
 
-export const ActiveDate = () => {
+const ActiveDateExample = () => {
   const [datesD, setDatesD] = useState();
   const [activeDate, setActiveDate] = useState(undefined);
 
@@ -59,7 +59,10 @@ export const ActiveDate = () => {
   );
 };
 
-ActiveDate.storyName = 'Active date';
+export const ActiveDate = {
+  name: 'Active date',
+  render: ActiveDateExample,
+};
 
 export default {
   title: 'Visualizations/Calendar/Active date',

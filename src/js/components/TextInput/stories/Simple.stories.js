@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Box, TextInput } from 'grommet';
 
-export const Simple = () => {
+const SimpleExample = () => {
   const [value, setValue] = React.useState('');
 
   const onChange = (event) => setValue(event.target.value);
@@ -19,8 +19,11 @@ export const Simple = () => {
   );
 };
 
-Simple.parameters = {
-  chromatic: { disable: true },
+export const Simple = {
+  render: SimpleExample,
+  parameters: {
+    chromatic: { disable: true },
+  },
 };
 
 export default {

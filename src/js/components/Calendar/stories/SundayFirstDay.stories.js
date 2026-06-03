@@ -4,7 +4,7 @@ import { Box, Calendar } from 'grommet';
 
 // When the first day of the month is Sunday, and the request of firstDayOfWeek
 // is Monday, we are verifing we are not missing a week, issue 3253.
-export const SundayFirstDayCalendar = () => (
+const SundayFirstDayCalendarExample = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
   <Box align="center" pad="large">
@@ -13,7 +13,10 @@ export const SundayFirstDayCalendar = () => (
   // </Grommet>
 );
 
-SundayFirstDayCalendar.storyName = '1st on Sunday';
+export const SundayFirstDayCalendar = {
+  name: '1st on Sunday',
+  render: SundayFirstDayCalendarExample,
+};
 
 export default {
   title: 'Visualizations/Calendar/1st on Sunday',

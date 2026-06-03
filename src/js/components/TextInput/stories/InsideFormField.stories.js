@@ -6,7 +6,7 @@ const allSuggestions = Array(100)
   .fill()
   .map((_, i) => `suggestion ${i + 1}`);
 
-export const InsideFormField = (props) => {
+const InsideFormFieldExample = (props) => {
   const [state, setState] = useState({
     value: '',
     suggestions: allSuggestions,
@@ -57,7 +57,10 @@ export const InsideFormField = (props) => {
   );
 };
 
-InsideFormField.storyName = 'Inside a FormField';
+export const InsideFormField = {
+  name: 'Inside a FormField',
+  render: (args) => <InsideFormFieldExample {...args} />,
+};
 
 export default {
   title: 'Input/TextInput/Inside a FormField',
