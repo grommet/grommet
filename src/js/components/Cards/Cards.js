@@ -126,6 +126,9 @@ const Cards = React.forwardRef(
 
       const onOrderProps = onOrder
         ? {
+            tabIndex: 0,
+            'aria-roledescription': format({ id: 'cards.description' }),
+            'aria-describedby': hintId,
             draggable: true,
             onDragStart: (event) => {
               event.dataTransfer.setData('text/plain', '');
@@ -169,11 +172,6 @@ const Cards = React.forwardRef(
                 onOrder(unfilteredOrder);
               }
             },
-            child: {
-              tabIndex: 0,
-              'aria-roledescription': 'sortable card',
-              'aria-describedby': hintId,
-            },
             keyboard: {
               onUp: (event) => {
                 event.preventDefault();
@@ -195,19 +193,16 @@ const Cards = React.forwardRef(
           }
         : {};
 
-      const { keyboard, child, ...wrapperProps } = onOrderProps;
+      const { keyboard, ...wrapperProps } = onOrderProps;
 
       let content;
       if (children) {
-        content = child
-          ? React.cloneElement(children(item, index), child)
-          : children(item, index);
+        content = children(item, index);
       } else {
         content = (
           <Card
             key={item.id || index.toString()}
             as={!(onOrder || sizeKey) && as === 'ul' ? 'li' : undefined}
-            {...child}
           >
             <CardBody>
               {(typeof item === 'string' && item) ??
@@ -222,12 +217,14 @@ const Cards = React.forwardRef(
       // StyledCellContainer to apply the drag and drop handlers and/or
       // size styles
       if (onOrder || sizeKey) {
+        const { round } = theme.card.container;
         content = (
           <StyledCellContainer
             key={`_container_${item?.id || index}`}
             as={as === 'ul' ? 'li' : undefined}
             {...wrapperProps}
             size={sizeKey ? item[sizeKey] : undefined}
+            round={round}
           >
             {content}
           </StyledCellContainer>

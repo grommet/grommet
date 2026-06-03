@@ -11,7 +11,8 @@
   },
   "cards": {
     "moved": "Card moved to position {source} of {target}",
-    "reorderHint": "Use arrow keys to reorder cards. Changes are applied immediately."
+    "reorderHint": "Use arrow keys to reorder cards. Changes are applied immediately.",
+    "description": "sortable card"
   },
   "carousel": {
     "previous": "Go to slide {slide}",

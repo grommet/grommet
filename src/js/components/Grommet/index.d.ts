@@ -34,6 +34,7 @@ export interface GrommetProps {
       cards?: {
         moved?: string;
         reorderHint?: string;
+        description?: string;
       };
       carousel?: {
         previous?: string;
