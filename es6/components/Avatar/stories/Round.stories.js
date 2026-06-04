@@ -14,32 +14,26 @@ export var Round = function Round() {
     }, /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: src,
-      round: false,
-      "aria-label": "Shimi"
+      round: false
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: src,
-      round: "xsmall",
-      "aria-label": "Shimi"
+      round: "xsmall"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: src,
-      round: "small",
-      "aria-label": "Shimi"
+      round: "small"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: src,
-      round: "medium",
-      "aria-label": "Shimi"
+      round: "medium"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
       src: src,
-      round: "large",
-      "aria-label": "Shimi"
+      round: "large"
     }), /*#__PURE__*/React.createElement(Avatar, {
       size: "large",
-      src: src,
-      "aria-label": "Shimi"
+      src: src
     }))
     // </Grommet>
   );
