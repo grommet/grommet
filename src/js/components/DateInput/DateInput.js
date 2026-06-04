@@ -96,13 +96,41 @@ const DateInput = forwardRef(
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
     const readOnly = readOnlyProp || readOnlyCopy;
+
+    const bounds = calendarProps?.bounds;
+    const validateBoundsForForm = useCallback(
+      (fieldValue) => {
+        if (!bounds || !fieldValue) return undefined;
+        const isValid = validateBounds(bounds, fieldValue);
+        if (!isValid) {
+          const [startBound, endBound] = bounds.map((date) =>
+            setHoursWithOffset(date).toISOString(),
+          );
+          if (startBound && endBound) {
+            return formatMessage({
+              id: 'dateInput.outOfBounds',
+              messages,
+              values: {
+                start: new Date(startBound).toLocaleDateString(),
+                end: new Date(endBound).toLocaleDateString(),
+              },
+            });
+          }
+        }
+        return undefined;
+      },
+      [bounds, formatMessage, messages],
+    );
+
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
       initialValue: defaultValue,
+      validate: bounds ? validateBoundsForForm : undefined,
     });
     const usingKeyboard = useKeyboard();
     const CalendarIcon = theme.dateInput.icon?.calendar || GrommetCalendarIcon;
+    const [withinBounds, setWithinBounds] = useState(true);
 
     const [outputFormat, setOutputFormat] = useState(getOutputFormat(value));
     useEffect(() => {
@@ -114,6 +142,15 @@ const DateInput = forwardRef(
         return previousFormat !== nextFormat ? previousFormat : nextFormat;
       });
     }, [value]);
+
+    useEffect(() => {
+      if (value === undefined || bounds === undefined) {
+        setWithinBounds(true);
+      } else {
+        const validNextValue = validateBounds(bounds, value);
+        setWithinBounds(validNextValue);
+      }
+    }, [value, bounds]);
 
     // keep track of timestamp from original date(s)
     const [reference, setReference] = useState(getReference(value));
@@ -338,6 +375,7 @@ Use the icon prop instead.`,
           >
             {reverse && (!readOnly || readOnlyCopy) && DateInputButton}
             <MaskedInput
+              aria-invalid={bounds && !withinBounds ? true : undefined}
               readOnly={readOnly}
               ref={ref}
               id={id}
@@ -360,23 +398,17 @@ Use the icon prop instead.`,
                   outputFormat,
                 );
 
-                const validatedNextValue = validateBounds(
-                  calendarProps?.bounds,
-                  nextValue,
-                );
+                const validNextValue = validateBounds(bounds, nextValue);
+                setWithinBounds(validNextValue);
 
-                if (!validatedNextValue && nextValue) {
-                  setTextValue('');
-                }
-
-                if (validatedNextValue !== undefined)
-                  setReference(getReference(validatedNextValue));
+                if (nextValue !== undefined)
+                  setReference(getReference(nextValue));
                 // update value even when undefined
-                setValue(validatedNextValue);
+                setValue(nextValue);
                 if (onChange) {
                   event.persist(); // extract from React synthetic event pool
                   const adjustedEvent = event;
-                  adjustedEvent.value = validatedNextValue;
+                  adjustedEvent.value = nextValue;
                   onChange(adjustedEvent);
                 }
               }}
@@ -409,7 +441,6 @@ Use the icon prop instead.`,
         input,
         <Drop
           key="drop"
-          overflow="visible"
           id={id ? `${id}__drop` : undefined}
           target={containerRef.current}
           align={{ ...calendarDropdownAlign, ...dropProps }}

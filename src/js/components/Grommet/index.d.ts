@@ -45,6 +45,7 @@ export interface GrommetProps {
         openCalendar?: string;
         enterCalendar?: string;
         exitCalendar?: string;
+        outOfBounds?: string;
       };
       dataChart?: {
         detailTitle?: string;

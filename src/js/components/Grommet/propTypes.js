@@ -44,6 +44,7 @@ if (process.env.NODE_ENV !== 'production') {
           openCalendar: PropTypes.string,
           enterCalendar: PropTypes.string,
           exitCalendar: PropTypes.string,
+          outOfBounds: PropTypes.string,
         }),
         dataChart: PropTypes.shape({
           detailTitle: PropTypes.string,
