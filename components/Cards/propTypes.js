@@ -13,10 +13,12 @@ if (process.env.NODE_ENV !== 'production') {
     data: _propTypes["default"].arrayOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].shape({})])),
     children: _propTypes["default"].func,
     onMore: _propTypes["default"].func,
+    onOrder: _propTypes["default"].func,
     paginate: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].object]),
     show: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].shape({
       page: _propTypes["default"].number
     })]),
+    sizeKey: _propTypes["default"].string,
     step: _propTypes["default"].number
   });
 }

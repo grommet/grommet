@@ -8,10 +8,12 @@ if (process.env.NODE_ENV !== 'production') {
     data: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.shape({})])),
     children: PropTypes.func,
     onMore: PropTypes.func,
+    onOrder: PropTypes.func,
     paginate: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
     show: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({
       page: PropTypes.number
     })]),
+    sizeKey: PropTypes.string,
     step: PropTypes.number
   });
 }

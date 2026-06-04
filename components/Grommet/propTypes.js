@@ -38,6 +38,11 @@ if (process.env.NODE_ENV !== 'production') {
           nextMove: _propTypes["default"].string,
           next: _propTypes["default"].string
         }),
+        cards: _propTypes["default"].shape({
+          moved: _propTypes["default"].string,
+          reorderHint: _propTypes["default"].string,
+          description: _propTypes["default"].string
+        }),
         carousel: _propTypes["default"].shape({
           previous: _propTypes["default"].string,
           next: _propTypes["default"].string,

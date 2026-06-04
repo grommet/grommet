@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
@@ -146,6 +146,70 @@ describe('Cards', () => {
       </Grommet>,
     );
 
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onOrder', () => {
+    const { container } = render(
+      <Grommet>
+        <Cards
+          data={[
+            { id: '1', name: 'one' },
+            { id: '2', name: 'two' },
+            { id: '3', name: 'three' },
+          ]}
+          onOrder={jest.fn()}
+        >
+          {(item) => <Card key={item.id}>{item.name}</Card>}
+        </Cards>
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onOrder keyboard ArrowDown reorders items', () => {
+    const onOrder = jest.fn();
+    const data = [
+      { id: '1', name: 'one' },
+      { id: '2', name: 'two' },
+      { id: '3', name: 'three' },
+    ];
+    const { container } = render(
+      <Grommet>
+        <Cards data={data} onOrder={onOrder}>
+          {(item) => <Card key={item.id}>{item.name}</Card>}
+        </Cards>
+      </Grommet>,
+    );
+    const firstCard = container.querySelectorAll(
+      '[aria-roledescription="sortable card"]',
+    )[0];
+    fireEvent.keyDown(firstCard, { keyCode: 40 }); // ArrowDown
+    expect(onOrder).toHaveBeenCalledTimes(1);
+    expect(onOrder).toHaveBeenCalledWith([
+      { id: '2', name: 'two' },
+      { id: '1', name: 'one' },
+      { id: '3', name: 'three' },
+    ]);
+  });
+
+  test('sizeKey', () => {
+    const { container } = render(
+      <Grommet>
+        <Cards
+          data={[
+            { id: '1', name: 'one', size: { columns: 2, rows: 1 } },
+            { id: '2', name: 'two' },
+            { id: '3', name: 'three', size: { columns: 1, rows: 2 } },
+          ]}
+          sizeKey="size"
+          columns={['flex', 'flex', 'flex']}
+          rows="xsmall"
+        >
+          {(item) => <Card key={item.id}>{item.name}</Card>}
+        </Cards>
+      </Grommet>,
+    );
     expect(container.firstChild).toMatchSnapshot();
   });
 });

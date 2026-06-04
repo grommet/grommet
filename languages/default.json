@@ -9,6 +9,11 @@
     "nextMove": "Moved to {date}",
     "next": "Go to {date}"
   },
+  "cards": {
+    "moved": "Card moved to position {source} of {target}",
+    "reorderHint": "Use arrow keys to reorder cards. Changes are applied immediately.",
+    "description": "sortable card"
+  },
   "carousel": {
     "previous": "Go to slide {slide}",
     "next": "Go to slide {slide}",
