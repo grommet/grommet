@@ -28,9 +28,7 @@ export const StyledCellContainer = styled.div.withConfig({
   ${(props) =>
     props.round && roundStyle(props.round, props.responsive, props.theme)}
   &:focus {
-    ${(props) =>
-      (!props.plain || props.focusIndicator) &&
-      focusStyle({ inset: props.focusIndicator === 'inset' })}
+    ${focusStyle()}
   }
 
   &:focus:not(:focus-visible) {
