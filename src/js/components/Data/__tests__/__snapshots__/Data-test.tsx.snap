@@ -545,30 +545,30 @@ exports[`Data controlled search 1`] = `
 
 exports[`Data controlled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 jhJvIT"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kBbldi"
+    class="StyledBox-sc-13pk1d4-0 kvqQSo"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 QCNbM"
+      class="StyledBox-sc-13pk1d4-0 eKeiDC"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eIRnch"
+        class="StyledBox-sc-13pk1d4-0 gBunyL"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eLlRsv"
+          class="StyledBox-sc-13pk1d4-0 RYmEp"
         >
           <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 eKBSwM"
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kJJhJg"
           >
             <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 fAKsax"
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cNYpzV"
             >
               <svg
                 aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+                class="StyledIcon-sc-ofa7kd-0 blUuJr"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -582,7 +582,7 @@ exports[`Data controlled search 2`] = `
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kqPLeO"
+              class="StyledTextInput-sc-1x30a0s-0 lgvkRS"
               id="data--search"
               name="_search"
               type="search"
@@ -591,17 +591,17 @@ exports[`Data controlled search 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 kIHeMW"
+          class="StyledBox-sc-13pk1d4-0 byOUMQ"
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 emHfGN"
+            class="StyledButton-sc-323bzc-0 kVEyuL"
             id="data--filters-control"
             type="button"
           >
             <svg
               aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+              class="StyledIcon-sc-ofa7kd-0 blUuJr"
               viewBox="0 0 24 24"
             >
               <path
@@ -616,45 +616,45 @@ exports[`Data controlled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 kWrfLj"
+      class="StyledText-sc-1sadyjn-0 kJwXAJ"
     >
       4 results of undefined items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 hItFIU StyledDataTable-sc-xrlyjm-0 bhJXnf"
+      class="StyledTable-sc-1m3u5g-6 gfvJtN StyledDataTable-sc-xrlyjm-0 iySlWL"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 hGRSSL"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 jabPpn StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksVeQF StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             id="grommet-data-table-header-name"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 faLdcD"
+              class="StyledBox-sc-13pk1d4-0 kTYaFZ"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 dRPopI"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 buut"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 joJGOz"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cWapjt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 eLlRsv"
+              class="StyledBox-sc-13pk1d4-0 RYmEp"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 gIpquo"
               >
                 aa
               </span>
@@ -662,17 +662,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 joJGOz"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cWapjt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 eLlRsv"
+              class="StyledBox-sc-13pk1d4-0 RYmEp"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 gIpquo"
               >
                 bb
               </span>
@@ -680,17 +680,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 joJGOz"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cWapjt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 eLlRsv"
+              class="StyledBox-sc-13pk1d4-0 RYmEp"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 gIpquo"
               >
                 cc
               </span>
@@ -698,17 +698,17 @@ exports[`Data controlled search 2`] = `
           </th>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 joJGOz"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cWapjt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 eLlRsv"
+              class="StyledBox-sc-13pk1d4-0 RYmEp"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 gIpquo"
               >
                 dd
               </span>
@@ -6775,30 +6775,30 @@ exports[`Data uncontrolled search 1`] = `
 
 exports[`Data uncontrolled search 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 jhJvIT"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kBbldi"
+    class="StyledBox-sc-13pk1d4-0 kvqQSo"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 QCNbM"
+      class="StyledBox-sc-13pk1d4-0 eKeiDC"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eIRnch"
+        class="StyledBox-sc-13pk1d4-0 gBunyL"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eLlRsv"
+          class="StyledBox-sc-13pk1d4-0 RYmEp"
         >
           <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 eKBSwM"
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kJJhJg"
           >
             <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 fAKsax"
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cNYpzV"
             >
               <svg
                 aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+                class="StyledIcon-sc-ofa7kd-0 blUuJr"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -6812,7 +6812,7 @@ exports[`Data uncontrolled search 2`] = `
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kqPLeO"
+              class="StyledTextInput-sc-1x30a0s-0 lgvkRS"
               id="data--search"
               name="_search"
               type="search"
@@ -6821,17 +6821,17 @@ exports[`Data uncontrolled search 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 kIHeMW"
+          class="StyledBox-sc-13pk1d4-0 byOUMQ"
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 emHfGN"
+            class="StyledButton-sc-323bzc-0 kVEyuL"
             id="data--filters-control"
             type="button"
           >
             <svg
               aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+              class="StyledIcon-sc-ofa7kd-0 blUuJr"
               viewBox="0 0 24 24"
             >
               <path
@@ -6846,45 +6846,45 @@ exports[`Data uncontrolled search 2`] = `
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 kWrfLj"
+      class="StyledText-sc-1sadyjn-0 kJwXAJ"
     >
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 hItFIU StyledDataTable-sc-xrlyjm-0 bhJXnf"
+      class="StyledTable-sc-1m3u5g-6 gfvJtN StyledDataTable-sc-xrlyjm-0 iySlWL"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 hGRSSL"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 jabPpn StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 ksVeQF StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             id="grommet-data-table-header-name"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 faLdcD"
+              class="StyledBox-sc-13pk1d4-0 kTYaFZ"
             />
           </th>
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 dRPopI"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 buut"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 joJGOz"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cWapjt StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 eLlRsv"
+              class="StyledBox-sc-13pk1d4-0 RYmEp"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 gIpquo"
               >
                 aa
               </span>
@@ -7878,30 +7878,30 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 1`] =
 
 exports[`Data uncontrolled, when paginated, search should return to page 1 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 jhJvIT"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kBbldi"
+    class="StyledBox-sc-13pk1d4-0 kvqQSo"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 QCNbM"
+      class="StyledBox-sc-13pk1d4-0 eKeiDC"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eIRnch"
+        class="StyledBox-sc-13pk1d4-0 gBunyL"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eLlRsv"
+          class="StyledBox-sc-13pk1d4-0 RYmEp"
         >
           <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 eKBSwM"
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kJJhJg"
           >
             <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 fAKsax"
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cNYpzV"
             >
               <svg
                 aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+                class="StyledIcon-sc-ofa7kd-0 blUuJr"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -7915,7 +7915,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kqPLeO"
+              class="StyledTextInput-sc-1x30a0s-0 lgvkRS"
               id="data--search"
               name="_search"
               type="search"
@@ -7924,17 +7924,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 kIHeMW"
+          class="StyledBox-sc-13pk1d4-0 byOUMQ"
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 emHfGN"
+            class="StyledButton-sc-323bzc-0 kVEyuL"
             id="data--filters-control"
             type="button"
           >
             <svg
               aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+              class="StyledIcon-sc-ofa7kd-0 blUuJr"
               viewBox="0 0 24 24"
             >
               <path
@@ -7949,29 +7949,29 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 kWrfLj"
+      class="StyledText-sc-1sadyjn-0 kJwXAJ"
     >
       1 result of 4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 hItFIU StyledDataTable-sc-xrlyjm-0 bhJXnf"
+      class="StyledTable-sc-1m3u5g-6 gfvJtN StyledDataTable-sc-xrlyjm-0 iySlWL"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 hGRSSL"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cgvDcp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 DOZAr StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             id="grommet-data-table-header-name"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 faLdcD"
+              class="StyledBox-sc-13pk1d4-0 kTYaFZ"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 cejToA"
+                class="StyledText-sc-1sadyjn-0 iuKlFO"
               >
                 Name
               </span>
@@ -7980,7 +7980,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 dRPopI"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 buut"
       >
         .c2 {
   display: flex;
@@ -8101,28 +8101,28 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 kBbldi Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 kvqQSo Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 kBbldi"
+        class="StyledBox-sc-13pk1d4-0 kvqQSo"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 bPPvCJ"
+          class="StyledBox-sc-13pk1d4-0 fLmLVT"
         >
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 coAhHy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+              class="StyledButtonKind-sc-1vhfpnt-0 kTFFQa StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+                class="StyledIcon-sc-ofa7kd-0 blUuJr"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -8135,24 +8135,24 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
             </button>
           </li>
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 kgFhFU StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+              class="StyledButtonKind-sc-1vhfpnt-0 ecJohc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
               type="button"
             >
               1
             </button>
           </li>
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 coAhHy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+              class="StyledButtonKind-sc-1vhfpnt-0 kTFFQa StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
               disabled=""
               type="button"
             >
@@ -8239,30 +8239,30 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 2`] =
 
 exports[`Data uncontrolled, when paginated, search should return to page 1 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 jhJvIT"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kBbldi"
+    class="StyledBox-sc-13pk1d4-0 kvqQSo"
     id="data"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 QCNbM"
+      class="StyledBox-sc-13pk1d4-0 eKeiDC"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eIRnch"
+        class="StyledBox-sc-13pk1d4-0 gBunyL"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eLlRsv"
+          class="StyledBox-sc-13pk1d4-0 RYmEp"
         >
           <div
-            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 eKBSwM"
+            class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 kJJhJg"
           >
             <div
-              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 fAKsax"
+              class="StyledTextInput__StyledIcon-sc-1x30a0s-3 cNYpzV"
             >
               <svg
                 aria-label="Search"
-                class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+                class="StyledIcon-sc-ofa7kd-0 blUuJr"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -8276,7 +8276,7 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             <input
               aria-label="Search"
               autocomplete="off"
-              class="StyledTextInput-sc-1x30a0s-0 kqPLeO"
+              class="StyledTextInput-sc-1x30a0s-0 lgvkRS"
               id="data--search"
               name="_search"
               type="search"
@@ -8285,17 +8285,17 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 kIHeMW"
+          class="StyledBox-sc-13pk1d4-0 byOUMQ"
         >
           <button
             aria-label="Open filters"
-            class="StyledButton-sc-323bzc-0 emHfGN"
+            class="StyledButton-sc-323bzc-0 kVEyuL"
             id="data--filters-control"
             type="button"
           >
             <svg
               aria-label="Filter"
-              class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+              class="StyledIcon-sc-ofa7kd-0 blUuJr"
               viewBox="0 0 24 24"
             >
               <path
@@ -8310,29 +8310,29 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       </div>
     </div>
     <span
-      class="StyledText-sc-1sadyjn-0 kWrfLj"
+      class="StyledText-sc-1sadyjn-0 kJwXAJ"
     >
       4 items
     </span>
     <table
-      class="StyledTable-sc-1m3u5g-6 hItFIU StyledDataTable-sc-xrlyjm-0 bhJXnf"
+      class="StyledTable-sc-1m3u5g-6 gfvJtN StyledDataTable-sc-xrlyjm-0 iySlWL"
     >
       <thead
         class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 hGRSSL"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 cgvDcp StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 DOZAr StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             id="grommet-data-table-header-name"
             scope="col"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 faLdcD"
+              class="StyledBox-sc-13pk1d4-0 kTYaFZ"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 cejToA"
+                class="StyledText-sc-1sadyjn-0 iuKlFO"
               >
                 Name
               </span>
@@ -8341,20 +8341,20 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 dRPopI"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 buut"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 joJGOz"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
         >
           <th
-            class="StyledTable__StyledTableCell-sc-1m3u5g-0 bCJUlD StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 gokxaP"
+            class="StyledTable__StyledTableCell-sc-1m3u5g-0 iNeHfd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
             scope="row"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 eLlRsv"
+              class="StyledBox-sc-13pk1d4-0 RYmEp"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 bAcCYq"
+                class="StyledText-sc-1sadyjn-0 gIpquo"
               >
                 aa
               </span>
@@ -8480,28 +8480,28 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
       </tbody>
     </table>
     <div
-      class="StyledBox-sc-13pk1d4-0 kBbldi Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 kvqQSo Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 kBbldi"
+        class="StyledBox-sc-13pk1d4-0 kvqQSo"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 bPPvCJ"
+          class="StyledBox-sc-13pk1d4-0 fLmLVT"
         >
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
           >
             <button
               aria-disabled="true"
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 coAhHy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+              class="StyledButtonKind-sc-1vhfpnt-0 kTFFQa StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 fmAnVC"
+                class="StyledIcon-sc-ofa7kd-0 blUuJr"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -8514,23 +8514,23 @@ exports[`Data uncontrolled, when paginated, search should return to page 1 3`] =
             </button>
           </li>
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
           >
             <button
               aria-current="page"
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 kgFhFU StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+              class="StyledButtonKind-sc-1vhfpnt-0 ecJohc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
               type="button"
             >
               1
             </button>
           </li>
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
           >
             <button
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+              class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
               type="button"
             >
               2
