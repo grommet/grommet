@@ -15424,6 +15424,7 @@ exports[`DateInput read only copy 1`] = `
         />
       </div>
       <button
+        aria-description="Copied"
         aria-label="Copy to clipboard 01/01/2024"
         class="c4 c5"
         type="button"

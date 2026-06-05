@@ -210,7 +210,7 @@ const Button = forwardRef(
       tip,
       type = 'button',
       // can't alphabetize a11yTitle before tip is defined
-      a11yTitle = typeof tip === 'string' ? tip : undefined,
+      a11yTitle,
       as,
       ...rest
     },

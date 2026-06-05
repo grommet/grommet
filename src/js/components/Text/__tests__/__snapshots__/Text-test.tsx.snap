@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`accepts ref 1`] = `
+exports[`Text accepts ref 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -27,7 +27,7 @@ exports[`accepts ref 1`] = `
 </div>
 `;
 
-exports[`renders 1`] = `
+exports[`Text renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -54,7 +54,7 @@ exports[`renders 1`] = `
 </div>
 `;
 
-exports[`renders color 1`] = `
+exports[`Text renders color 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -80,7 +80,7 @@ exports[`renders color 1`] = `
 </div>
 `;
 
-exports[`renders margin 1`] = `
+exports[`Text renders margin 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -189,7 +189,7 @@ exports[`renders margin 1`] = `
 </div>
 `;
 
-exports[`renders outside grommet wrapper 1`] = `
+exports[`Text renders outside grommet wrapper 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -202,7 +202,7 @@ exports[`renders outside grommet wrapper 1`] = `
 </span>
 `;
 
-exports[`renders size 1`] = `
+exports[`Text renders size 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -302,7 +302,7 @@ exports[`renders size 1`] = `
 </div>
 `;
 
-exports[`renders tag 1`] = `
+exports[`Text renders tag 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -327,7 +327,7 @@ exports[`renders tag 1`] = `
 </div>
 `;
 
-exports[`renders textAlign 1`] = `
+exports[`Text renders textAlign 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -380,7 +380,7 @@ exports[`renders textAlign 1`] = `
 </div>
 `;
 
-exports[`renders tip 1`] = `
+exports[`Text renders tip on hover 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -394,6 +394,46 @@ exports[`renders tip 1`] = `
 .c1 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -424,15 +464,16 @@ exports[`renders tip 1`] = `
   class="c0"
 >
   <span
-    aria-label="tooltip"
+    aria-description="tooltip"
     class="c1"
+    tabindex="0"
   >
     Default Tip
   </span>
 </div>
 `;
 
-exports[`renders truncate 1`] = `
+exports[`Text renders truncate 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -457,6 +498,46 @@ exports[`renders truncate 1`] = `
   text-overflow: ellipsis;
 }
 
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) >circle,
+.c2:focus:not(:focus-visible) >ellipse,
+.c2:focus:not(:focus-visible) >line,
+.c2:focus:not(:focus-visible) >path,
+.c2:focus:not(:focus-visible) >polygon,
+.c2:focus:not(:focus-visible) >polyline,
+.c2:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 <div
   class="c0"
 >
@@ -473,7 +554,7 @@ exports[`renders truncate 1`] = `
 </div>
 `;
 
-exports[`renders weight 1`] = `
+exports[`Text renders weight 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -508,7 +589,7 @@ exports[`renders weight 1`] = `
 </div>
 `;
 
-exports[`should apply a11yTitle or aria-label 1`] = `
+exports[`Text should apply aria-describedby to tooltip and preserve id on element when tip is React node content 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -524,25 +605,239 @@ exports[`should apply a11yTitle or aria-label 1`] = `
   line-height: 24px;
 }
 
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
 <div
   class="c0"
 >
   <span
-    aria-label="test"
+    aria-describedby="_r_5_"
     class="c1"
+    id="tip-id"
+    tabindex="0"
   >
-     Example
-  </span>
-  <span
-    aria-label="test-2"
-    class="c1"
-  >
-    Example
+    Example with tip that is not a string with id prop
   </span>
 </div>
 `;
 
-exports[`should have no accessibility violations 1`] = `
+exports[`Text should apply aria-describedby when tip is React node content 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-describedby="_r_4_"
+    class="c1"
+    tabindex="0"
+  >
+    Example with tip that is not a string
+  </span>
+</div>
+`;
+
+exports[`Text should apply aria-description when tip is a string 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c1:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) >circle,
+.c1:focus:not(:focus-visible) >ellipse,
+.c1:focus:not(:focus-visible) >line,
+.c1:focus:not(:focus-visible) >path,
+.c1:focus:not(:focus-visible) >polygon,
+.c1:focus:not(:focus-visible) >polyline,
+.c1:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c1:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+<div
+  class="c0"
+>
+  <span
+    aria-description="tooltip description"
+    class="c1"
+    tabindex="0"
+  >
+    Example with tip as a string
+  </span>
+</div>
+`;
+
+exports[`Text should have no accessibility violations 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -565,7 +860,7 @@ exports[`should have no accessibility violations 1`] = `
     aria-label="test"
     class="c1"
   >
-     Example
+    Example
   </span>
 </div>
 `;
