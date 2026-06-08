@@ -3,9 +3,11 @@ import styled, { css } from 'styled-components';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
+import '@testing-library/jest-dom';
 
 import { axe } from 'jest-axe';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Grommet, Tab, Tabs } from '../..';
 import { ThemeType } from '../../../themes';
@@ -142,6 +144,108 @@ describe('Tabs', () => {
     expect(onActive).toHaveBeenCalledWith(1);
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('supports arrow key navigation between tabs', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
+          <Tab title="Tab 3">Tab body 3</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    const firstTab = screen.getByRole('tab', { name: 'Tab 1' });
+    const secondTab = screen.getByRole('tab', { name: 'Tab 2' });
+
+    await user.tab();
+    expect(firstTab).toHaveFocus();
+    expect(firstTab).toHaveAttribute('aria-selected', 'true');
+
+    await user.keyboard('{ArrowRight}');
+
+    expect(secondTab).toHaveFocus();
+    expect(secondTab).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tabpanel')).toHaveTextContent('Tab body 2');
+  });
+
+  test('supports Home and End keys within the tablist', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
+          <Tab title="Tab 3">Tab body 3</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    const firstTab = screen.getByRole('tab', { name: 'Tab 1' });
+    const thirdTab = screen.getByRole('tab', { name: 'Tab 3' });
+
+    await user.tab();
+    await user.keyboard('{End}');
+
+    expect(thirdTab).toHaveFocus();
+    expect(thirdTab).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tabpanel')).toHaveTextContent('Tab body 3');
+
+    await user.keyboard('{Home}');
+
+    expect(firstTab).toHaveFocus();
+    expect(firstTab).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tabpanel')).toHaveTextContent('Tab body 1');
+  });
+
+  test('skips disabled tabs during keyboard navigation', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2" disabled>
+            Tab body 2
+          </Tab>
+          <Tab title="Tab 3">Tab body 3</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    const firstTab = screen.getByRole('tab', { name: 'Tab 1' });
+    const thirdTab = screen.getByRole('tab', { name: 'Tab 3' });
+
+    await user.tab();
+    expect(firstTab).toHaveFocus();
+
+    await user.keyboard('{ArrowRight}');
+
+    expect(thirdTab).toHaveFocus();
+    expect(thirdTab).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('tabpanel')).toHaveTextContent('Tab body 3');
+  });
+
+  test('associates the active tab with its tabpanel', () => {
+    render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    const firstTab = screen.getByRole('tab', { name: 'Tab 1' });
+    const panel = screen.getByRole('tabpanel');
+
+    expect(firstTab).toHaveAttribute('aria-controls', panel.id);
+    expect(panel).toHaveAttribute('aria-labelledby', firstTab.id);
   });
 
   test('set on hover', () => {

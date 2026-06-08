@@ -6,6 +6,7 @@ import React, {
   useEffect,
   useRef,
   useMemo,
+  useId,
 } from 'react';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { Next } from 'grommet-icons/icons/Next';
@@ -46,6 +47,7 @@ const Tabs = forwardRef(
     const [overflow, setOverflow] = useState();
     const [focusIndex, setFocusIndex] = useState(-1);
     const headerRef = useRef();
+    const tabsId = useId();
     const size = useContext(ResponsiveContext);
     const PreviousIcon = theme.tabs.header?.previousButton?.icon || Previous;
     const NextIcon = theme.tabs.header?.nextButton?.icon || Next;
@@ -73,6 +75,99 @@ const Tabs = forwardRef(
     const tabRefs = useMemo(
       () => React.Children.map(children, () => React.createRef()),
       [children],
+    );
+    const disabledIndexes = useMemo(
+      () =>
+        React.Children.map(children, (child) => {
+          if (!React.isValidElement(child)) return true;
+          return !!child.props.disabled;
+        }) || [],
+      [children],
+    );
+
+    const getTabId = useCallback(
+      (index) => `tabs-tab-${tabsId}-${index}`,
+      [tabsId],
+    );
+
+    const getPanelId = useCallback(
+      (index) => `tabs-panel-${tabsId}-${index}`,
+      [tabsId],
+    );
+
+    const focusTab = useCallback(
+      (index) => {
+        if (index >= 0 && tabRefs[index]?.current) {
+          tabRefs[index].current.focus();
+        }
+      },
+      [tabRefs],
+    );
+
+    const findEnabledIndex = useCallback(
+      (startIndex, direction) => {
+        if (!tabRefs.length) return undefined;
+
+        const normalizeIndex = (index) => {
+          if (index < 0) return tabRefs.length - 1;
+          if (index >= tabRefs.length) return 0;
+          return index;
+        };
+
+        let nextIndex = normalizeIndex(startIndex);
+        let attempts = 0;
+
+        while (attempts < tabRefs.length) {
+          if (!disabledIndexes[nextIndex] && tabRefs[nextIndex]?.current) {
+            return nextIndex;
+          }
+          nextIndex = normalizeIndex(nextIndex + direction);
+          attempts += 1;
+        }
+
+        return undefined;
+      },
+      [disabledIndexes, tabRefs],
+    );
+
+    const activateTab = useCallback(
+      (nextIndex) => {
+        sendAnalytics({
+          type: 'activateTab',
+          element: tabRefs[nextIndex].current,
+        });
+        if (propsActiveIndex === undefined) {
+          setActiveIndex(nextIndex);
+        }
+        if (onActive) {
+          onActive(nextIndex);
+        }
+      },
+      [onActive, propsActiveIndex, sendAnalytics, tabRefs],
+    );
+
+    const moveFocus = useCallback(
+      (targetIndex) => {
+        if (targetIndex === undefined) return;
+        focusTab(targetIndex);
+        activateTab(targetIndex);
+      },
+      [activateTab, focusTab],
+    );
+
+    const moveFocusByKey = useCallback(
+      (currentIndex, direction) => {
+        moveFocus(findEnabledIndex(currentIndex + direction, direction));
+      },
+      [findEnabledIndex, moveFocus],
+    );
+
+    const moveFocusToEdge = useCallback(
+      (direction) => {
+        const startIndex = direction > 0 ? 0 : tabRefs.length - 1;
+        moveFocus(findEnabledIndex(startIndex, direction));
+      },
+      [findEnabledIndex, moveFocus, tabRefs.length],
     );
 
     // check if tab is in view
@@ -261,32 +356,31 @@ const Tabs = forwardRef(
     ]);
 
     const getTabsContext = useCallback(
-      (index) => {
-        const activateTab = (nextIndex) => {
-          sendAnalytics({
-            type: 'activateTab',
-            element: tabRefs[nextIndex].current,
-          });
-          if (propsActiveIndex === undefined) {
-            setActiveIndex(nextIndex);
-          }
-          if (onActive) {
-            onActive(nextIndex);
-          }
-        };
-
-        return {
-          activeIndex,
-          active: activeIndex === index,
-          index,
-          ref: tabRefs[index],
-          onActivate: () => activateTab(index),
-          setActiveContent,
-          setActiveTitle,
-          setFocusIndex,
-        };
-      },
-      [activeIndex, onActive, propsActiveIndex, sendAnalytics, tabRefs],
+      (index) => ({
+        activeIndex,
+        active: activeIndex === index,
+        index,
+        panelId: getPanelId(index),
+        ref: tabRefs[index],
+        tabId: getTabId(index),
+        onActivate: () => activateTab(index),
+        onNext: () => moveFocusByKey(index, 1),
+        onPrevious: () => moveFocusByKey(index, -1),
+        onFirst: () => moveFocusToEdge(1),
+        onLast: () => moveFocusToEdge(-1),
+        setActiveContent,
+        setActiveTitle,
+        setFocusIndex,
+      }),
+      [
+        activeIndex,
+        activateTab,
+        getPanelId,
+        getTabId,
+        moveFocusByKey,
+        moveFocusToEdge,
+        tabRefs,
+      ],
     );
 
     const tabs = React.Children.map(children, (child, index) => (
@@ -338,7 +432,10 @@ const Tabs = forwardRef(
         >
           {overflow && (
             <Button
-              a11yTitle="Previous Tab"
+              a11yTitle={format({
+                id: 'tabs.previousTab',
+                messages,
+              })}
               disabled={disableLeftArrow}
               // removed from tabIndex, button is redundant for keyboard users
               tabIndex={-1}
@@ -373,7 +470,10 @@ const Tabs = forwardRef(
           </StyledTabsHeader>
           {overflow && (
             <Button
-              a11yTitle="Next Tab"
+              a11yTitle={format({
+                id: 'tabs.nextTab',
+                messages,
+              })}
               disabled={disableRightArrow}
               // removed from tabIndex, button is redundant for keyboard users
               tabIndex={-1}
@@ -393,8 +493,10 @@ const Tabs = forwardRef(
         </Box>
 
         <StyledTabPanel
+          id={getPanelId(activeIndex)}
           flex={flex}
           aria-label={tabContentTitle}
+          aria-labelledby={getTabId(activeIndex)}
           role="tabpanel"
           {...passThemeFlag}
         >

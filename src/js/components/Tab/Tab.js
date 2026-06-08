@@ -33,8 +33,14 @@ const Tab = forwardRef(
       active,
       activeIndex,
       index,
+      panelId,
       ref: tabsContextRef,
+      tabId,
       onActivate,
+      onNext,
+      onPrevious,
+      onFirst,
+      onLast,
       setActiveContent,
       setActiveTitle,
       setFocusIndex,
@@ -103,6 +109,30 @@ const Tab = forwardRef(
       onActivate();
       if (onClick) {
         onClick(event);
+      }
+    };
+
+    const onKeyDownTab = (event) => {
+      if (disabled) return;
+
+      switch (event.key) {
+        case 'ArrowRight':
+          event.preventDefault();
+          onNext();
+          break;
+        case 'ArrowLeft':
+          event.preventDefault();
+          onPrevious();
+          break;
+        case 'Home':
+          event.preventDefault();
+          onFirst();
+          break;
+        case 'End':
+          event.preventDefault();
+          onLast();
+          break;
+        default:
       }
     };
 
@@ -191,20 +221,23 @@ const Tab = forwardRef(
       <Button
         ref={tabRef}
         plain
+        id={tabId}
         role="tab"
+        tabIndex={active ? 0 : -1}
+        aria-controls={panelId}
         aria-selected={active}
-        aria-expanded={active}
         disabled={disabled}
         {...rest}
         onClick={onClickTab}
+        onKeyDown={onKeyDownTab}
         onMouseOver={onMouseOverTab}
         onMouseOut={onMouseOutTab}
-        onFocus={() => {
-          if (onFocus) onFocus();
+        onFocus={(event) => {
+          if (onFocus) onFocus(event);
           setFocusIndex(index);
         }}
-        onBlur={() => {
-          if (onBlur) onBlur();
+        onBlur={(event) => {
+          if (onBlur) onBlur(event);
           setFocusIndex(-1);
         }}
       >
