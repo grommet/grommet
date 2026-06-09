@@ -6,7 +6,6 @@ import React, {
   useEffect,
   useRef,
   useMemo,
-  useId,
 } from 'react';
 import { Previous } from 'grommet-icons/icons/Previous';
 import { Next } from 'grommet-icons/icons/Next';
@@ -17,7 +16,7 @@ import { Button } from '../Button';
 import { TabsContext } from './TabsContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
-import { normalizeColor } from '../../utils';
+import { normalizeColor, useId } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
