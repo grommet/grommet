@@ -245,7 +245,27 @@ describe('Tabs', () => {
     const panel = screen.getByRole('tabpanel');
 
     expect(firstTab).toHaveAttribute('aria-controls', panel.id);
-    expect(panel).toHaveAttribute('aria-labelledby', firstTab.id);
+    expect(panel).toHaveAttribute('aria-label', 'Tab 1 Tab Contents');
+  });
+
+  test('uses fallback panel label for icon-only tabs', () => {
+    render(
+      <Grommet>
+        <Tabs>
+          <Tab a11yTitle="First tab" icon={<svg />}>
+            Tab body 1
+          </Tab>
+          <Tab a11yTitle="Second tab" icon={<svg />}>
+            Tab body 2
+          </Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('tabpanel')).toHaveAttribute(
+      'aria-label',
+      '1 Tab Contents',
+    );
   });
 
   test('set on hover', () => {

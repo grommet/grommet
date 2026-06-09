@@ -496,7 +496,6 @@ const Tabs = forwardRef(
           id={getPanelId(activeIndex)}
           flex={flex}
           aria-label={tabContentTitle}
-          aria-labelledby={getTabId(activeIndex)}
           role="tabpanel"
           {...passThemeFlag}
         >

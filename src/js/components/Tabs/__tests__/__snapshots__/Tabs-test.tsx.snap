@@ -268,7 +268,6 @@ exports[`Tabs Custom Tab component 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_7_-0"
       class="c10"
       id="tabs-panel-_r_7_-0"
       role="tabpanel"
@@ -547,7 +546,6 @@ exports[`Tabs Tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_2_-0"
       class="c10"
       id="tabs-panel-_r_2_-0"
       role="tabpanel"
@@ -830,7 +828,6 @@ exports[`Tabs alignControls 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_6_-0"
       class="c10"
       id="tabs-panel-_r_6_-0"
       role="tabpanel"
@@ -1109,7 +1106,6 @@ exports[`Tabs change to second tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_8_-0"
       class="c10"
       id="tabs-panel-_r_8_-0"
       role="tabpanel"
@@ -1176,7 +1172,6 @@ exports[`Tabs change to second tab 2`] = `
     </div>
     <div
       aria-label="Tab 2 Tab Contents"
-      aria-labelledby="tabs-tab-_r_8_-1"
       class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
       id="tabs-panel-_r_8_-1"
       role="tabpanel"
@@ -1439,7 +1434,6 @@ exports[`Tabs complex title 1`] = `
     </div>
     <div
       aria-label="1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_4_-0"
       class="c8"
       id="tabs-panel-_r_4_-0"
       role="tabpanel"
@@ -1640,7 +1634,6 @@ exports[`Tabs no Tab 1`] = `
     </div>
     <div
       aria-label="1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_1_-0"
       class="c7"
       id="tabs-panel-_r_1_-0"
       role="tabpanel"
@@ -2017,10 +2010,10 @@ exports[`Tabs onClick 1`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_k_-0"
+          aria-controls="tabs-panel-_r_l_-0"
           aria-selected="true"
           class="c4"
-          id="tabs-tab-_r_k_-0"
+          id="tabs-tab-_r_l_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -2036,10 +2029,10 @@ exports[`Tabs onClick 1`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_k_-1"
+          aria-controls="tabs-panel-_r_l_-1"
           aria-selected="false"
           class="c4"
-          id="tabs-tab-_r_k_-1"
+          id="tabs-tab-_r_l_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -2058,9 +2051,8 @@ exports[`Tabs onClick 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_k_-0"
       class="c10"
-      id="tabs-panel-_r_k_-0"
+      id="tabs-panel-_r_l_-0"
       role="tabpanel"
     >
       Tab body 1
@@ -2324,7 +2316,6 @@ exports[`Tabs renders outside grommet wrapper 1`] = `
   </div>
   <div
     aria-label="Tab 1 Tab Contents"
-    aria-labelledby="tabs-tab-_r_3_-0"
     class="c9"
     id="tabs-panel-_r_3_-0"
     role="tabpanel"
@@ -2561,10 +2552,10 @@ exports[`Tabs set on hover 1`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_d_-0"
+          aria-controls="tabs-panel-_r_e_-0"
           aria-selected="true"
           class="c4"
-          id="tabs-tab-_r_d_-0"
+          id="tabs-tab-_r_e_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -2580,10 +2571,10 @@ exports[`Tabs set on hover 1`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_d_-1"
+          aria-controls="tabs-panel-_r_e_-1"
           aria-selected="false"
           class="c4"
-          id="tabs-tab-_r_d_-1"
+          id="tabs-tab-_r_e_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -2602,9 +2593,8 @@ exports[`Tabs set on hover 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_d_-0"
       class="c10"
-      id="tabs-panel-_r_d_-0"
+      id="tabs-panel-_r_e_-0"
       role="tabpanel"
     >
       Tab body 1
@@ -2628,10 +2618,10 @@ exports[`Tabs set on hover 2`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_d_-0"
+          aria-controls="tabs-panel-_r_e_-0"
           aria-selected="true"
           class="StyledButton-sc-323bzc-0 idJamt"
-          id="tabs-tab-_r_d_-0"
+          id="tabs-tab-_r_e_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -2647,10 +2637,10 @@ exports[`Tabs set on hover 2`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_d_-1"
+          aria-controls="tabs-panel-_r_e_-1"
           aria-selected="false"
           class="StyledButton-sc-323bzc-0 idJamt"
-          id="tabs-tab-_r_d_-1"
+          id="tabs-tab-_r_e_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -2669,9 +2659,8 @@ exports[`Tabs set on hover 2`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_d_-0"
       class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
-      id="tabs-panel-_r_d_-0"
+      id="tabs-panel-_r_e_-0"
       role="tabpanel"
     >
       Tab body 1
@@ -2695,10 +2684,10 @@ exports[`Tabs set on hover 3`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_d_-0"
+          aria-controls="tabs-panel-_r_e_-0"
           aria-selected="true"
           class="StyledButton-sc-323bzc-0 idJamt"
-          id="tabs-tab-_r_d_-0"
+          id="tabs-tab-_r_e_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -2714,10 +2703,10 @@ exports[`Tabs set on hover 3`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_d_-1"
+          aria-controls="tabs-panel-_r_e_-1"
           aria-selected="false"
           class="StyledButton-sc-323bzc-0 idJamt"
-          id="tabs-tab-_r_d_-1"
+          id="tabs-tab-_r_e_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -2736,9 +2725,8 @@ exports[`Tabs set on hover 3`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_d_-0"
       class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
-      id="tabs-panel-_r_d_-0"
+      id="tabs-panel-_r_e_-0"
       role="tabpanel"
     >
       Tab body 1
@@ -2762,10 +2750,10 @@ exports[`Tabs set on hover 4`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_d_-0"
+          aria-controls="tabs-panel-_r_e_-0"
           aria-selected="true"
           class="StyledButton-sc-323bzc-0 idJamt"
-          id="tabs-tab-_r_d_-0"
+          id="tabs-tab-_r_e_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -2781,10 +2769,10 @@ exports[`Tabs set on hover 4`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_d_-1"
+          aria-controls="tabs-panel-_r_e_-1"
           aria-selected="false"
           class="StyledButton-sc-323bzc-0 idJamt"
-          id="tabs-tab-_r_d_-1"
+          id="tabs-tab-_r_e_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -2803,9 +2791,8 @@ exports[`Tabs set on hover 4`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_d_-0"
       class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
-      id="tabs-panel-_r_d_-0"
+      id="tabs-panel-_r_e_-0"
       role="tabpanel"
     >
       Tab body 1
@@ -2829,10 +2816,10 @@ exports[`Tabs set on hover 5`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_d_-0"
+          aria-controls="tabs-panel-_r_e_-0"
           aria-selected="true"
           class="StyledButton-sc-323bzc-0 idJamt"
-          id="tabs-tab-_r_d_-0"
+          id="tabs-tab-_r_e_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -2848,10 +2835,10 @@ exports[`Tabs set on hover 5`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_d_-1"
+          aria-controls="tabs-panel-_r_e_-1"
           aria-selected="false"
           class="StyledButton-sc-323bzc-0 idJamt"
-          id="tabs-tab-_r_d_-1"
+          id="tabs-tab-_r_e_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -2870,9 +2857,8 @@ exports[`Tabs set on hover 5`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_d_-0"
       class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
-      id="tabs-panel-_r_d_-0"
+      id="tabs-panel-_r_e_-0"
       role="tabpanel"
     >
       Tab body 1
@@ -3073,10 +3059,10 @@ exports[`Tabs should allow to extend tab styles 1`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_j_-0"
+          aria-controls="tabs-panel-_r_k_-0"
           aria-selected="true"
           class="c4"
-          id="tabs-tab-_r_j_-0"
+          id="tabs-tab-_r_k_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -3088,10 +3074,10 @@ exports[`Tabs should allow to extend tab styles 1`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_j_-1"
+          aria-controls="tabs-panel-_r_k_-1"
           aria-selected="false"
           class="c4"
-          id="tabs-tab-_r_j_-1"
+          id="tabs-tab-_r_k_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -3110,9 +3096,8 @@ exports[`Tabs should allow to extend tab styles 1`] = `
     </div>
     <div
       aria-label="Title 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_j_-0"
       class="c9"
-      id="tabs-panel-_r_j_-0"
+      id="tabs-panel-_r_k_-0"
       role="tabpanel"
     >
       Some content
@@ -3416,10 +3401,10 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_f_-0"
+          aria-controls="tabs-panel-_r_g_-0"
           aria-selected="true"
           class="c4"
-          id="tabs-tab-_r_f_-0"
+          id="tabs-tab-_r_g_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -3435,11 +3420,11 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_f_-1"
+          aria-controls="tabs-panel-_r_g_-1"
           aria-selected="false"
           class="c8"
           disabled=""
-          id="tabs-tab-_r_f_-1"
+          id="tabs-tab-_r_g_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -3459,9 +3444,8 @@ exports[`Tabs should apply custom theme disabled style 1`] = `
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      aria-labelledby="tabs-tab-_r_f_-0"
       class="c12"
-      id="tabs-panel-_r_f_-0"
+      id="tabs-panel-_r_g_-0"
       role="tabpanel"
     >
       This tab is enabled
@@ -3765,10 +3749,10 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_g_-0"
+          aria-controls="tabs-panel-_r_h_-0"
           aria-selected="true"
           class="c4"
-          id="tabs-tab-_r_g_-0"
+          id="tabs-tab-_r_h_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -3784,11 +3768,11 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_g_-1"
+          aria-controls="tabs-panel-_r_h_-1"
           aria-selected="false"
           class="c8"
           disabled=""
-          id="tabs-tab-_r_g_-1"
+          id="tabs-tab-_r_h_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -3808,9 +3792,8 @@ exports[`Tabs should apply custom theme disabled style when theme.button.default
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      aria-labelledby="tabs-tab-_r_g_-0"
       class="c12"
-      id="tabs-panel-_r_g_-0"
+      id="tabs-panel-_r_h_-0"
       role="tabpanel"
     >
       This tab is enabled
@@ -4048,10 +4031,10 @@ exports[`Tabs should apply theme alignSelf to tab controls 1`] = `
           role="tablist"
         >
           <button
-            aria-controls="tabs-panel-_r_l_-0"
+            aria-controls="tabs-panel-_r_m_-0"
             aria-selected="true"
             class="c4"
-            id="tabs-tab-_r_l_-0"
+            id="tabs-tab-_r_m_-0"
             role="tab"
             tabindex="0"
             type="button"
@@ -4067,10 +4050,10 @@ exports[`Tabs should apply theme alignSelf to tab controls 1`] = `
             </div>
           </button>
           <button
-            aria-controls="tabs-panel-_r_l_-1"
+            aria-controls="tabs-panel-_r_m_-1"
             aria-selected="false"
             class="c4"
-            id="tabs-tab-_r_l_-1"
+            id="tabs-tab-_r_m_-1"
             role="tab"
             tabindex="-1"
             type="button"
@@ -4089,9 +4072,8 @@ exports[`Tabs should apply theme alignSelf to tab controls 1`] = `
       </div>
       <div
         aria-label="Tab 1 Tab Contents"
-        aria-labelledby="tabs-tab-_r_l_-0"
         class="c10"
-        id="tabs-panel-_r_l_-0"
+        id="tabs-panel-_r_m_-0"
         role="tabpanel"
       >
         This tab is first
@@ -4293,7 +4275,6 @@ exports[`Tabs should have no accessibility violations 1`] = `
       </div>
       <div
         aria-label="1 Tab Contents"
-        aria-labelledby="tabs-tab-_r_0_-0"
         class="c7"
         id="tabs-panel-_r_0_-0"
         role="tabpanel"
@@ -4424,10 +4405,10 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_i_-0"
+          aria-controls="tabs-panel-_r_j_-0"
           aria-selected="true"
           class="c4"
-          id="tabs-tab-_r_i_-0"
+          id="tabs-tab-_r_j_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -4442,9 +4423,8 @@ exports[`Tabs should have no default styles with plain prop 1`] = `
     </div>
     <div
       aria-label="Title 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_i_-0"
       class="c6"
-      id="tabs-panel-_r_i_-0"
+      id="tabs-panel-_r_j_-0"
       role="tabpanel"
     />
   </div>
@@ -4745,10 +4725,10 @@ exports[`Tabs should style as disabled 1`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_e_-0"
+          aria-controls="tabs-panel-_r_f_-0"
           aria-selected="true"
           class="c4"
-          id="tabs-tab-_r_e_-0"
+          id="tabs-tab-_r_f_-0"
           role="tab"
           tabindex="0"
           type="button"
@@ -4764,11 +4744,11 @@ exports[`Tabs should style as disabled 1`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_e_-1"
+          aria-controls="tabs-panel-_r_f_-1"
           aria-selected="false"
           class="c8"
           disabled=""
-          id="tabs-tab-_r_e_-1"
+          id="tabs-tab-_r_f_-1"
           role="tab"
           tabindex="-1"
           type="button"
@@ -4788,9 +4768,8 @@ exports[`Tabs should style as disabled 1`] = `
     </div>
     <div
       aria-label="Enabled Tab Tab Contents"
-      aria-labelledby="tabs-tab-_r_e_-0"
       class="c12"
-      id="tabs-panel-_r_e_-0"
+      id="tabs-panel-_r_f_-0"
       role="tabpanel"
     >
       This tab is enabled
@@ -5034,10 +5013,10 @@ exports[`Tabs styled component should change tab color when active 1`] = `
         role="tablist"
       >
         <button
-          aria-controls="tabs-panel-_r_h_-0"
+          aria-controls="tabs-panel-_r_i_-0"
           aria-selected="false"
           class="c4 c5"
-          id="tabs-tab-_r_h_-0"
+          id="tabs-tab-_r_i_-0"
           role="tab"
           tabindex="-1"
           type="button"
@@ -5053,10 +5032,10 @@ exports[`Tabs styled component should change tab color when active 1`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_h_-1"
+          aria-controls="tabs-panel-_r_i_-1"
           aria-selected="true"
           class="c4 c9"
-          id="tabs-tab-_r_h_-1"
+          id="tabs-tab-_r_i_-1"
           role="tab"
           tabindex="0"
           type="button"
@@ -5072,10 +5051,10 @@ exports[`Tabs styled component should change tab color when active 1`] = `
           </div>
         </button>
         <button
-          aria-controls="tabs-panel-_r_h_-2"
+          aria-controls="tabs-panel-_r_i_-2"
           aria-selected="false"
           class="c4 c5"
-          id="tabs-tab-_r_h_-2"
+          id="tabs-tab-_r_i_-2"
           role="tab"
           tabindex="-1"
           type="button"
@@ -5094,9 +5073,8 @@ exports[`Tabs styled component should change tab color when active 1`] = `
     </div>
     <div
       aria-label="Activity Tab Contents"
-      aria-labelledby="tabs-tab-_r_h_-1"
       class="c12"
-      id="tabs-panel-_r_h_-1"
+      id="tabs-panel-_r_i_-1"
       role="tabpanel"
     />
   </div>
@@ -5347,10 +5325,10 @@ exports[`Tabs theme tab gap 1`] = `
           role="tablist"
         >
           <button
-            aria-controls="tabs-panel-_r_m_-0"
+            aria-controls="tabs-panel-_r_n_-0"
             aria-selected="true"
             class="c4"
-            id="tabs-tab-_r_m_-0"
+            id="tabs-tab-_r_n_-0"
             role="tab"
             tabindex="0"
             type="button"
@@ -5372,10 +5350,10 @@ exports[`Tabs theme tab gap 1`] = `
             </div>
           </button>
           <button
-            aria-controls="tabs-panel-_r_m_-1"
+            aria-controls="tabs-panel-_r_n_-1"
             aria-selected="false"
             class="c4"
-            id="tabs-tab-_r_m_-1"
+            id="tabs-tab-_r_n_-1"
             role="tab"
             tabindex="-1"
             type="button"
@@ -5400,9 +5378,8 @@ exports[`Tabs theme tab gap 1`] = `
       </div>
       <div
         aria-label="Tab 1 Tab Contents"
-        aria-labelledby="tabs-tab-_r_m_-0"
         class="c11"
-        id="tabs-panel-_r_m_-0"
+        id="tabs-panel-_r_n_-0"
         role="tabpanel"
       >
         Tab body 1
@@ -5708,7 +5685,6 @@ exports[`Tabs with icon + reverse 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      aria-labelledby="tabs-tab-_r_5_-0"
       class="c11"
       id="tabs-panel-_r_5_-0"
       role="tabpanel"
