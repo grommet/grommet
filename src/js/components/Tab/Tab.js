@@ -25,6 +25,7 @@ const Tab = forwardRef(
       onMouseOut,
       reverse,
       onClick,
+      onKeyDown,
       ...rest
     },
     ref,
@@ -133,6 +134,10 @@ const Tab = forwardRef(
           onLast();
           break;
         default:
+      }
+
+      if (onKeyDown) {
+        onKeyDown(event);
       }
     };
 

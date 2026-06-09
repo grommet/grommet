@@ -496,4 +496,24 @@ describe('Tabs', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('onKeyDown', () => {
+    const onKeyDown = jest.fn();
+
+    render(
+      <Grommet>
+        <Tabs>
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2" onKeyDown={onKeyDown}>
+            Tab body 2
+          </Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    const secondTab = screen.getByRole('tab', { name: 'Tab 2' });
+    fireEvent.keyDown(secondTab, { key: 'ArrowLeft' });
+
+    expect(onKeyDown).toHaveBeenCalled();
+  });
 });
