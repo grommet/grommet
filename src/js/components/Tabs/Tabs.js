@@ -149,9 +149,8 @@ const Tabs = forwardRef(
       (targetIndex) => {
         if (targetIndex === undefined) return;
         focusTab(targetIndex);
-        activateTab(targetIndex);
       },
-      [activateTab, focusTab],
+      [focusTab],
     );
 
     const moveFocusByKey = useCallback(
@@ -358,6 +357,8 @@ const Tabs = forwardRef(
       (index) => ({
         activeIndex,
         active: activeIndex === index,
+        focusable:
+          focusIndex === -1 ? activeIndex === index : focusIndex === index,
         index,
         panelId: getPanelId(index),
         ref: tabRefs[index],
@@ -373,6 +374,7 @@ const Tabs = forwardRef(
       }),
       [
         activeIndex,
+        focusIndex,
         activateTab,
         getPanelId,
         getTabId,

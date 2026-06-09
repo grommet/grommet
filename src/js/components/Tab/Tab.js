@@ -33,6 +33,7 @@ const Tab = forwardRef(
     const {
       active,
       activeIndex,
+      focusable,
       index,
       panelId,
       ref: tabsContextRef,
@@ -133,6 +134,12 @@ const Tab = forwardRef(
           event.preventDefault();
           onLast();
           break;
+        case 'Enter':
+        case ' ':
+        case 'Spacebar':
+          event.preventDefault();
+          onActivate();
+          break;
         default:
       }
 
@@ -228,7 +235,7 @@ const Tab = forwardRef(
         plain
         id={tabId}
         role="tab"
-        tabIndex={active ? 0 : -1}
+        tabIndex={focusable ? 0 : -1}
         aria-controls={panelId}
         aria-selected={active}
         disabled={disabled}
