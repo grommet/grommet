@@ -168,6 +168,37 @@ const Tabs = forwardRef(
       [findEnabledIndex, moveFocus, tabRefs.length],
     );
 
+    const handleTabKeyDown = useCallback(
+      (index, event) => {
+        switch (event.key) {
+          case 'ArrowRight':
+            event.preventDefault();
+            moveFocusByKey(index, 1);
+            break;
+          case 'ArrowLeft':
+            event.preventDefault();
+            moveFocusByKey(index, -1);
+            break;
+          case 'Home':
+            event.preventDefault();
+            moveFocusToEdge(1);
+            break;
+          case 'End':
+            event.preventDefault();
+            moveFocusToEdge(-1);
+            break;
+          case 'Enter':
+          case ' ':
+          case 'Spacebar':
+            event.preventDefault();
+            activateTab(index);
+            break;
+          default:
+        }
+      },
+      [activateTab, moveFocusByKey, moveFocusToEdge],
+    );
+
     // check if tab is in view
     const isVisible = useCallback(
       (index) => {
@@ -364,6 +395,7 @@ const Tabs = forwardRef(
         ref: tabRefs[index],
         tabId: getTabId(index),
         onActivate: () => activateTab(index),
+        onKeyDown: (event) => handleTabKeyDown(index, event),
         onNext: () => moveFocusByKey(index, 1),
         onPrevious: () => moveFocusByKey(index, -1),
         onFirst: () => moveFocusToEdge(1),
@@ -378,6 +410,7 @@ const Tabs = forwardRef(
         activateTab,
         getPanelId,
         getTabId,
+        handleTabKeyDown,
         moveFocusByKey,
         moveFocusToEdge,
         tabRefs,

@@ -39,10 +39,7 @@ const Tab = forwardRef(
       ref: tabsContextRef,
       tabId,
       onActivate,
-      onNext,
-      onPrevious,
-      onFirst,
-      onLast,
+      onKeyDown: onTabsKeyDown,
       setActiveContent,
       setActiveTitle,
       setFocusIndex,
@@ -117,31 +114,7 @@ const Tab = forwardRef(
     const onKeyDownTab = (event) => {
       if (disabled) return;
 
-      switch (event.key) {
-        case 'ArrowRight':
-          event.preventDefault();
-          onNext();
-          break;
-        case 'ArrowLeft':
-          event.preventDefault();
-          onPrevious();
-          break;
-        case 'Home':
-          event.preventDefault();
-          onFirst();
-          break;
-        case 'End':
-          event.preventDefault();
-          onLast();
-          break;
-        case 'Enter':
-        case ' ':
-        case 'Spacebar':
-          event.preventDefault();
-          onActivate();
-          break;
-        default:
-      }
+      onTabsKeyDown(event);
 
       if (onKeyDown) {
         onKeyDown(event);
