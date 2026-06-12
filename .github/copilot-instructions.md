@@ -23,7 +23,7 @@ When authoring a new component or substantially modifying an existing one, you *
 
 | ❌ Never Generate                                                        | ✅ Correct Pattern                                          |
 | ------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| `import { useFormInput } from '../../hooks'`                             | `const { useFormInput } = useContext(FormContext)`          |
+| `import { useFormInput } from '../../hooks'`                             | `const formContext = useContext(FormContext); const [value, setValue] = formContext.useFormInput({ ... })` |
 | `import { ThemeContext } from 'grommet'` then `useContext(ThemeContext)` | `const { theme } = useThemeValue()`                         |
 | `import styled from 'styled-components/macro'`                           | `import styled from 'styled-components'`                    |
 | `onChange(value)`                                                        | `onChange({ value })`                                       |
