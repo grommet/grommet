@@ -20,8 +20,4 @@ When styling components, AI tools must adhere to Grommet's visual constraints an
 ### 3. Component Usage
 
 - **Leverage Existing Atoms:** Always compose UI using existing Grommet primitives (`Box`, `Text`, `Button`, etc.).
-- **Icons:** Use the `grommet-icons` package for iconography by default. Do not manually generate custom, raw `<svg>` elements. Additionally, always provide a way to override which icon is used via the component's theme tokens.
-
----
-
-_See the **Anti-Patterns (Never Generate)** table in `.github/copilot-instructions.md` for the full list of forbidden patterns._
+- **Icons:** Use the `grommet-icons` package for iconography by default. Do not manually generate custom, raw `<svg>` elements. Additionally, always provide a way to override which icon is used via the base theme.
