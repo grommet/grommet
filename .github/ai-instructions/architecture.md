@@ -37,7 +37,7 @@ Component-specific context files live in the component directory; shared/global 
 
 - **Dual-State / Draft Pattern:** For complex inputs, keep a committed value plus a display/draft value. Use `const [committedValue, setCommittedValue] = useFormInput({ name, value, initialValue })`, alongside `const [textValue, setTextValue] = useState(formatForDisplay(committedValue))`.
 - **Drop / Picker Draft Pattern:** Keep a draft selection separate from the committed value. `const [open, setOpen] = useState(false); const [draftSelection, setDraftSelection] = useState(null)`.
-- **FormContext Integration:** `useFormInput` should be explicitly read from `FormContext` (`const { useFormInput } = useContext(FormContext)`). Do not silently discard invalid user input.
+- **FormContext Integration:** Read `FormContext` via `const formContext = useContext(FormContext)` and call `formContext.useFormInput(...)`. Do not silently discard invalid user input.
 
 ### 4. Props API / Archetype Guidelines
 
