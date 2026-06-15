@@ -2,6 +2,14 @@
 
 When scaffolding new components or modifying the architecture of Grommet components, AI tools must adhere to these rules:
 
+### 0. Core Grommet Principles
+
+Before writing any code, keep these foundational Grommet principles in mind:
+
+- **Start Simple:** Build the minimum viable API first. Introduce new props, variants, and behaviors only when driven by real, demonstrated requirements. Avoid speculative generalization.
+- **Backwards Compatibility:** Never remove or rename a public prop without a deprecation strategy. Changing default behavior is a breaking change. Always introduce new features in a non-breaking way.
+- **Composition over Configuration:** Prefer composing small, focused components over building large monolithic ones with many configuration props.
+
 ### 1. File & Directory Structure
 
 When a new component is generated, construct it following Grommet's standard layout. Child and subcomponents must be implemented as peers in their own directories, not nested (e.g., `CardBody` is a sibling of `Card`). Typical file structure:
@@ -25,17 +33,18 @@ Component-specific context files live in the component directory; shared/global 
 
 ### 2. General Implementation Rules
 
-- **Flexibility through Composition:** Grommet focuses on extreme flexibility through composition and customizable "escape hatch" props. Always forward the DOM ref with `React.forwardRef`. When the component needs internal access to the node (e.g., to manage focus), wrap the forwarded ref with `useForwardedRef(ref)` and attach that wrapped ref to the DOM element; otherwise the forwarded `ref` may be passed straight through. Ensure `Component.displayName` is assigned.
-- **Context & Hooks:** Context files belong inside the parent component's directory. For components with programmatic APIs, expose a custom hook (e.g., `useAccordion()`) as the primary access point that calls `React.useContext` internally.
+- **Flexibility through Composition:** Grommet focuses on extreme flexibility through composition and customizable "escape hatch" props. Always forward the DOM ref with `React.forwardRef`. When the component needs internal access to the node (e.g., to manage focus), wrap the forwarded ref with `useForwardedRef(ref)` and attach that wrapped ref to the DOM element; otherwise the forwarded `ref` may be passed straight through.
+- **Component Display Name:** Always assign `Component.displayName`. This ensures the component is identifiable in React DevTools, error stack traces, and `styled-components` class names — making debugging significantly easier.
+- **Context & Hooks:** For components with programmatic APIs, expose a custom hook (e.g., `useAccordion()`) as the primary access point that calls `React.useContext` internally. (See Section 1 for where context files live.)
 - **Exports:** Each component's `index.js` must export only its public API by name. Also ensure you add the export to `src/js/components/index.js` in alphabetical order, update `index.d.ts`, and update `src/js/languages/default.json` for i18n keys.
 - **Controlled vs Uncontrolled:** If a component handles user input or state, you **MUST** support the controlled/uncontrolled pattern. Accept both a value prop (controlled) and a default value prop (uncontrolled). Use `useFormInput` (see Section 3) to manage this state and integrate with `Form`. When state changes, call the `onChange` callback using the `{ value }` payload shape.
-- **Prop Spreading:** Ensure you spread `...rest` onto the root DOM element so standard HTML attributes pass through natively.
-- **TypeScript & PropTypes:** TypeScript support is provided strictly via `index.d.ts` files to preserve backwards compatibility. Ensure `PropTypes` are defined in a separate `propTypes.js` file, guarded by `process.env.NODE_ENV !== 'production'`.
-- **Component Escape Hatches:** Expose `{underlying}Props` (e.g., `buttonProps`, `dropProps`) to safely pass configuration downwards.
+- **Prop Spreading:** Spread `...rest` onto the appropriate DOM element so standard HTML attributes pass through natively. In most components this is the root element, but in some (e.g., a wrapper that renders an inner `<input>`) `...rest` lands on the nested interactive element instead.
+- **TypeScript:** Types are managed through `index.d.ts` declaration files rather than inline TypeScript source. This keeps the codebase in JavaScript and avoids a full migration while still providing type safety for consumers.
+- **PropTypes:** Even though `PropTypes` are deprecated in React 19+, Grommet still maintains them for the benefit of JavaScript users who rely on runtime prop validation in development. Define them in a separate `propTypes.js` file, guarded by `process.env.NODE_ENV !== 'production'` so they are stripped from production bundles.
+- **Component Escape Hatches:** Consider exposing `{underlying}Props` (e.g., `buttonProps`, `dropProps`) to pass configuration to underlying elements. Use this pattern judiciously — add escape hatch props only where there is a clear, demonstrated need, not speculatively.
 
 ### 3. State & Form Integration
 
-- **Dual-State / Draft Pattern:** For complex inputs, keep a committed value plus a display/draft value. Use `const [committedValue, setCommittedValue] = useFormInput({ name, value, initialValue })`, alongside `const [textValue, setTextValue] = useState(formatForDisplay(committedValue))`.
 - **Drop / Picker Draft Pattern:** Keep a draft selection separate from the committed value. `const [open, setOpen] = useState(false); const [draftSelection, setDraftSelection] = useState(null)`.
 - **FormContext Integration:** Read `FormContext` via `const formContext = useContext(FormContext)` and call `formContext.useFormInput(...)`. Do not silently discard invalid user input.
 
@@ -43,14 +52,14 @@ Component-specific context files live in the component directory; shared/global 
 
 Do not apply input defaults to non-input components.
 
-- **Universal props:** `a11yTitle`, `id`, `disabled`, `...rest`. (Defer `margin`, `alignSelf`, `gridArea` via `genericProps`).
+- **Common props:** `id` and `...rest` apply to almost all components. Layout props (`margin`, `alignSelf`, `gridArea`) are available via the shared `genericProps` helper — spread `genericProps` to opt a component into these. Only include `disabled` when the component has interactive behavior that can be turned off. Do not add `a11yTitle` to new component APIs; use `aria-label` via `...rest` instead.
 - **Input components:** `value`, `defaultValue`, `onChange`, `name`.
-- **Picker/overlay:** internal open state + trigger.
-- **Formatted display:** Derive from `Intl` or locale. Prefer `Intl.DateTimeFormat`, `Intl.NumberFormat` over custom parsing patterns.
+- **Picker/overlay components** (e.g., `Select`, `DateInput`, `DropButton`, `Menu`)**:** internal open state + trigger ref.
+- **Localized formatting:** When a component renders dates, numbers, or other locale-sensitive values, derive the display string using `Intl.DateTimeFormat`, `Intl.NumberFormat`, etc. rather than custom string-manipulation patterns.
 
 ### 5. Internal Utils
 
-When building features, aim to reuse internal `/src/js/utils/` functions. Prefer core native browser APIs over custom logic wherever possible before relying on external libraries.
+When building features, aim to reuse internal `/src/js/utils/` functions. Prefer core native browser APIs over custom implementations wherever possible.
 
 ### 6. Component Archetypes & Examples
 
@@ -63,15 +72,7 @@ Use when the component edits one committed value with little or no draft state (
 ```js
 const MyInput = forwardRef(
   (
-    {
-      value: valueProp,
-      defaultValue,
-      onChange,
-      name,
-      disabled,
-      a11yTitle,
-      ...rest
-    },
+    { value: valueProp, defaultValue, onChange, name, disabled, ...rest },
     ref,
   ) => {
     const inputRef = useForwardedRef(ref);
@@ -87,7 +88,6 @@ const MyInput = forwardRef(
         ref={inputRef}
         name={name}
         disabled={disabled}
-        aria-label={a11yTitle}
         value={value}
         onChange={(event) => {
           setValue(event.target.value);
@@ -143,10 +143,10 @@ const MyPicker = forwardRef(
 Use when the component renders content but does not own a value (e.g., `Button`, `Text`, `Heading`, `Anchor`).
 
 ```js
-const MyDisplay = forwardRef(({ a11yTitle, children, ...rest }, ref) => {
+const MyDisplay = forwardRef(({ children, ...rest }, ref) => {
   const containerRef = useForwardedRef(ref);
   return (
-    <div ref={containerRef} aria-label={a11yTitle} {...rest}>
+    <div ref={containerRef} {...rest}>
       {children}
     </div>
   );

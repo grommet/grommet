@@ -6,9 +6,8 @@ We encourage both internal maintainers and external contributors to update and r
 
 ## Critical Focus Areas (Always Apply)
 
-- **Semantic HTML & Forms:** Always use native elements correctly (e.g., `<button>` for clickables). Hook into the `FormField` context for state and validation. `a11yTitle` is still supported (and maps to `aria-label`), but prefer `aria-label` directly for new props.
+- **Semantic HTML & Forms:** Prefer semantic elements where practical. Grommet uses `onClick` on `<div>` elements in many places — when doing so, always pair with the appropriate ARIA role and keyboard support. Use the Grommet `<Button />` component for standalone interactive controls. Hook into the `FormField` context for state and validation. `a11yTitle` is still supported in existing components (maps to `aria-label`), but do not add it to new component APIs.
 - **Non-Destructive UX:** Never erase or revert a user's work abruptly when it fails validation. Expose errors explicitly through `FormField`.
-- **Escape Hatches & Spreading:** Keep the API surface clean; spread `...rest` onto root elements and expose underlying props (e.g., `buttonProps`).
 
 ## Domain-Specific Instructions
 
@@ -21,16 +20,16 @@ When authoring a new component or substantially modifying an existing one, you *
 
 ## Anti-Patterns (Never Generate)
 
-| ❌ Never Generate                                                        | ✅ Correct Pattern                                          |
-| ------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| `import { useFormInput } from '../../hooks'`                             | `const formContext = useContext(FormContext); const [value, setValue] = formContext.useFormInput({ ... })` |
-| `import { ThemeContext } from 'grommet'` then `useContext(ThemeContext)` | `const { theme } = useThemeValue()`                         |
-| `import styled from 'styled-components/macro'`                           | `import styled from 'styled-components'`                    |
-| `onChange(value)`                                                        | `onChange({ value })`                                       |
-| `<MyComponent isDisabled />`                                             | `<MyComponent disabled />`                                  |
-| `fireEvent.click(element)`                                               | `const user = userEvent.setup(); await user.click(element)` |
-| `theme.global.myComponent`                                               | `theme.myComponent`                                         |
-| Custom CSS for disabled/readOnly                                         | `disabledStyle()` / `readOnlyStyle()`                       |
-| `useEffect` to sync controlled value                                     | `useFormInput({ value, initialValue })`                     |
-| `React.createContext` in `src/js/contexts/` (for component-specific context) | Put component-specific contexts in the component directory; reserve `src/js/contexts/` for shared/global contexts |
-| `onValueChange` / `onSelect` / `onUpdate`                                | Always `onChange` for the primary callback                  |
+| ❌ Never Generate                                                        | ✅ Correct Pattern                                          | Why                                                                                                                                |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `import { useFormInput } from '../../hooks'`                             | `const { useFormInput } = useContext(FormContext)`          | `useFormInput` is consumed from `FormContext`, not imported directly                                                               |
+| `import { ThemeContext } from 'grommet'` then `useContext(ThemeContext)` | `const { theme } = useThemeValue()`                         | `useThemeValue()` is the established internal hook and avoids a direct context import                                              |
+| `import styled from 'styled-components/macro'`                           | `import styled from 'styled-components'`                    | Grommet does not use the `/macro` transform                                                                                        |
+| `onChange(value)`                                                        | `onChange({ value })`                                       | Grommet's change callbacks use an object payload for extensibility                                                                 |
+| `<MyComponent isDisabled />`                                             | `<MyComponent disabled />`                                  | Matches the standard HTML attribute name                                                                                           |
+| `fireEvent.click(element)` in most interaction tests                     | `const user = userEvent.setup(); await user.click(element)` | `userEvent` simulates full browser event sequences; use `fireEvent` only for low-level synthetic events `userEvent` cannot produce |
+| `theme.global.myComponent`                                               | `theme.myComponent`                                         | Component theme tokens live at the top level, not under `global`                                                                   |
+| Custom CSS for disabled/readOnly                                         | `disabledStyle()` / `readOnlyStyle()`                       | Keeps disabled/readOnly styling consistent and centrally managed                                                                   |
+| `useEffect` to sync controlled value                                     | `useFormInput({ value, initialValue })`                     | `useFormInput` handles controlled/uncontrolled sync without side effects                                                           |
+| `React.createContext` in `src/js/contexts/`                              | Context files live in the component directory               | Collocating context with its component keeps the codebase navigable                                                                |
+| `onValueChange` / `onSelect` / `onUpdate`                                | Always `onChange` for the primary callback                  | Consistent callback naming across all Grommet components                                                                           |

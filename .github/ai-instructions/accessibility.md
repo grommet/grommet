@@ -1,28 +1,30 @@
-# Grommet Accessibility & i18n Guidelines
+# Grommet Accessibility Guidelines
 
-When generating code, AI tools must adhere to the highest standard of Web Accessibility (a11y) and Internationalization (i18n).
+When generating code, AI tools must follow Grommet's accessibility practices. Note that Grommet intentionally makes pragmatic trade-offs in some areas (e.g., click-target sizes and color contrast are occasionally chosen outside strict WCAG minimums), so apply these guidelines rather than assuming the strictest possible standard.
 
 ### 1. Semantic Correctness & a11y
 
-- **HTML Semantics:** Use semantically correct HTML elements. Specifically, do not use `<div>` or `<span>` tags with `onClick` handlers as interactive controls; use the native `<button>` element or the Grommet `<Button />` component.
-- **ARIA Labels:** `a11yTitle` is still supported and maps directly to `aria-label` (e.g., `aria-label={a11yTitle}`). For new props, prefer using the standard `aria-label` directly.
-- **Forms:** Ensure form inputs are properly structured and rely on the standard `FormField` context for state and validation.
+- **HTML Semantics:** Prefer semantic HTML elements where practical. Grommet frequently uses `onClick` on `<div>` elements for layout and composition reasons — when doing so, ensure the element carries the appropriate ARIA role and keyboard support (e.g., `role="button"` paired with `onKeyDown` handling). Use the Grommet `<Button />` component when building a standalone interactive control.
+- **ARIA Labels:** Use `aria-label` directly in new components, tests, and examples. `a11yTitle` is still supported in existing components for backwards compatibility and maps directly to `aria-label` (e.g., `aria-label={a11yTitle}`), but do not add `a11yTitle` to new component APIs.
+- **Forms:** Ensure form inputs integrate with `FormContext`. Use `formContext.useFormInput(...)` to manage value state (see Architecture guidelines, Section 3). Expose validation errors through `FormField`'s error state — never discard or silently suppress invalid user input.
 
 ### 2. Declarative Keyboard & Interaction
 
-- **Keyboard Handling:** Use the `<Keyboard>` component for declarative key handling. For hook-level detection (e.g., deciding if focus should be restored when closing a drop), use `useKeyboard()`.
-- **Focus Return:** When closing a `Drop`, ensure focus returns to the triggering element using `requestAnimationFrame(() => ref?.current?.focus())`.
-- **Drops:** Open drop components using Space/Enter, not just focus.
+- **Keyboard Handling:** Use the `<Keyboard>` component for declarative key handling. For hook-level detection (e.g., deciding whether focus should be restored when closing a drop), use `useKeyboard()`.
+- **Focus Return:** When closing a `Drop` or `Layer` that moved focus into itself, restore focus to the triggering element using `requestAnimationFrame(() => ref?.current?.focus())`. Do not restore focus if the drop or layer was closed without focus ever entering it.
+- **Opening Drops & Layers:** Open drop and layer components via Space or Enter. Do not open a drop or layer on focus alone.
+- **Escape Key:** Always handle `Escape` to close open drops, layers, selects, and other overlay components.
 
 ### 3. Validation & Error Handling
 
-- **Non-Destructive UX:** Do not erase or revert user work abruptly when it fails validation (e.g., reverting invalid text on blur).
-- **FormField Integration:** Validation should mirror current Grommet `FormField` patterns. Do not use local React state (like `useState`) to hide or destroy invalid user input on blur. Rely completely on exposing the error state explicitly through the `FormField` context, allowing the user to correct their own draft.
+- **Non-Destructive UX:** Do not erase or revert user work abruptly when it fails validation (e.g., reverting invalid text on blur). Rely on exposing the error state explicitly through `FormField`, allowing the user to correct their own draft.
 
-### 4. Internationalization (i18n) & Screen Readers
+### 4. Internationalization (i18n)
 
-- **Message Objects/Context:** To support internationalized strings, use `MessageContext` with namespaced keys and keep defaults in `src/js/languages/default.json`. Do not hardcode raw English text deeply into components when standard messages apply.
-- **Live Regions:** Use `AnnounceContext` for pushing announcements to screen readers.
+i18n is a distinct concern from accessibility but is documented here for convenience.
+
+- **Message Objects/Context:** To support internationalized strings, use `MessageContext` with namespaced keys and keep defaults in `src/js/languages/default.json`. Do not hardcode raw English text in components for any user-visible string that may need to be translated.
+- **Live Regions:** Use `AnnounceContext` for pushing announcements to screen readers. Prefer `polite` for non-urgent updates (e.g., "results loaded"). Use `assertive` only for critical, time-sensitive announcements that require immediate attention (e.g., a sudden form error). Default to `polite` when in doubt.
 
 ---
 

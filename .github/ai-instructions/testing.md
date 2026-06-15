@@ -3,8 +3,8 @@
 ### 1. Testing Rules
 
 - **Stack:** The test stack is `@testing-library/react`, `jest-axe`, and `jest-styled-components`.
-- **File Extensions:** Match the neighboring test files in the component folder (e.g., if the folder uses `.js`, the test should be `.js`; if `.tsx`, test uses `.tsx`).
-- **Setup:** Prefer `userEvent.setup()` for user interactions; use `fireEvent` only for low-level events not supported by user-event.
+- **File Extensions:** Use `.tsx` for new test files. The codebase is incrementally migrating all tests to TypeScript.
+- **Setup:** Prefer `userEvent.setup()` for interaction tests — it simulates full browser event sequences including focus, hover, and keyboard. Use `fireEvent` only for low-level events that `userEvent` does not support (e.g., dispatching custom or synthetic events directly on a node).
 - **DOM Queries:** Query the DOM using `screen`. **Priority:** Prefer `getByRole`, then `getByLabelText`, then `getByText`.
 - **Snapshots:** Use `asFragment()` for setting up component snapshots.
 - **A11y Checks:** Every component test file must include at least one `axe` accessibility check as the very first test.
@@ -13,8 +13,8 @@
 
 ### 2. Storybook Rules
 
-- **File Extensions:** Match the neighboring story files in the component folder (`.js` or `.tsx`).
-- **Format:** Strictly one story per file; match the neighboring story file format (CSF-2 style is most common in this repo today).
+- **File Extensions:** Use `.tsx` for new story files.
+- **Format:** Strictly one story per file, using CSF-3 format regardless of the format used by neighboring story files.
 - **Titling:** The story title should follow `'ComponentCategory/ComponentName/StoryName'`.
 - **Required Stories:**
   - Include a basic uncontrolled and/or controlled usage story when the component has a value contract.
