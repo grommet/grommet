@@ -19,13 +19,6 @@ When generating code, AI tools must follow Grommet's accessibility practices. No
 
 - **Non-Destructive UX:** Do not erase or revert user work abruptly when it fails validation (e.g., reverting invalid text on blur). Rely on exposing the error state explicitly through `FormField`, allowing the user to correct their own draft.
 
-### 4. Internationalization (i18n)
-
-i18n is a distinct concern from accessibility but is documented here for convenience.
-
-- **Message Objects/Context:** To support internationalized strings, use `MessageContext` with namespaced keys and keep defaults in `src/js/languages/default.json`. Do not hardcode raw English text in components for any user-visible string that may need to be translated.
-- **Live Regions:** Use `AnnounceContext` for pushing announcements to screen readers. Prefer `polite` for non-urgent updates (e.g., "results loaded"). Use `assertive` only for critical, time-sensitive announcements that require immediate attention (e.g., a sudden form error). Default to `polite` when in doubt.
-
 ---
 
 _See the **Anti-Patterns (Never Generate)** table in `.github/copilot-instructions.md` for the full list of forbidden patterns._
