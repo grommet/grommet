@@ -32,5 +32,5 @@ When authoring a new component or substantially modifying an existing one, you *
 | `theme.global.myComponent`                                               | `theme.myComponent`                                         |
 | Custom CSS for disabled/readOnly                                         | `disabledStyle()` / `readOnlyStyle()`                       |
 | `useEffect` to sync controlled value                                     | `useFormInput({ value, initialValue })`                     |
-| `React.createContext` in `src/js/contexts/`                              | Context files live in the component directory               |
+| `React.createContext` in `src/js/contexts/` (for component-specific context) | Put component-specific contexts in the component directory; reserve `src/js/contexts/` for shared/global contexts |
 | `onValueChange` / `onSelect` / `onUpdate`                                | Always `onChange` for the primary callback                  |
