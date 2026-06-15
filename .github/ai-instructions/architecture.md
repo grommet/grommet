@@ -21,7 +21,7 @@ ComponentName/
     └── FeatureName.stories.tsx # One story per file (CSF-3 format)
 ```
 
-Context files live in the component directory, not in `src/js/contexts/`.
+Component-specific context files live in the component directory; shared/global contexts live in `src/js/contexts/`.
 
 ### 2. General Implementation Rules
 
