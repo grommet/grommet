@@ -4,7 +4,7 @@
 
 - **Stack:** The test stack is `@testing-library/react`, `jest-axe`, and `jest-styled-components`.
 - **File Extensions:** Match the neighboring test files in the component folder (e.g., if the folder uses `.js`, the test should be `.js`; if `.tsx`, test uses `.tsx`).
-- **Setup:** Always call `userEvent.setup()` at the start of interactions (never use `fireEvent`).
+- **Setup:** Prefer `userEvent.setup()` for user interactions; use `fireEvent` only for low-level events not supported by user-event.
 - **DOM Queries:** Query the DOM using `screen`. **Priority:** Prefer `getByRole`, then `getByLabelText`, then `getByText`.
 - **Snapshots:** Use `asFragment()` for setting up component snapshots.
 - **A11y Checks:** Every component test file must include at least one `axe` accessibility check as the very first test.
