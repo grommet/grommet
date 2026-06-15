@@ -8,7 +8,7 @@
 - **DOM Queries:** Query the DOM using `screen`. **Priority:** Prefer `getByRole`, then `getByLabelText`, then `getByText`.
 - **Snapshots:** Use `asFragment()` for setting up component snapshots.
 - **A11y Checks:** Every component test file must include at least one `axe` accessibility check as the very first test.
-- **Wrappers:** Always wrap renders in `<Grommet>` so theme tokens and contexts evaluate correctly during tests.
+- **Wrappers:** Wrap renders in `<Grommet>` by default so theme tokens and contexts evaluate correctly; omit only when explicitly testing unwrapped behavior.
 - **Coverage:** Target ≥85% unit test coverage for state logic, prop handling, and keyboard navigation.
 
 ### 2. Storybook Rules
