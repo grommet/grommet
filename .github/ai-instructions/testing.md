@@ -14,7 +14,7 @@
 ### 2. Storybook Rules
 
 - **File Extensions:** Match the neighboring story files in the component folder (`.js` or `.tsx`).
-- **Format:** Strictly one story per file, using CSF-3 format.
+- **Format:** Strictly one story per file; match the neighboring story file format (CSF-2 style is most common in this repo today).
 - **Titling:** The story title should follow `'ComponentCategory/ComponentName/StoryName'`.
 - **Required Stories:**
   - Include a basic uncontrolled and/or controlled usage story when the component has a value contract.
