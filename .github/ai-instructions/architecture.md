@@ -33,8 +33,8 @@ Component-specific context files live in the component directory; shared/global 
 
 ### 2. General Implementation Rules
 
-- **Flexibility through Composition:** Grommet focuses on extreme flexibility through composition and customizable "escape hatch" props. Always forward the DOM ref with `React.forwardRef`. When the component needs internal access to the node (e.g., to manage focus), wrap the forwarded ref with `useForwardedRef(ref)` and attach that wrapped ref to the DOM element; otherwise the forwarded `ref` may be passed straight through.
-- **Component Display Name:** Always assign `Component.displayName`. This ensures the component is identifiable in React DevTools, error stack traces, and `styled-components` class names — making debugging significantly easier.
+- **Flexibility through Composition:** Grommet focuses on flexibility through composition and customizable "escape hatch" props. Always forward the DOM ref with `React.forwardRef`. When the component needs internal access to the node (e.g., to manage focus), wrap the forwarded ref with `useForwardedRef(ref)` and attach that wrapped ref to the DOM element; otherwise the forwarded `ref` may be passed straight through.
+- **Component Display Name:** Always assign `Component.displayName`. This ensures the component is identifiable in React DevTools, error stack traces, and `styled-components` class names — making debugging significantly easier. `FormField` also uses `displayName` to identify which child components it wraps, so omitting it can break `FormField` integration.
 - **Context & Hooks:** For components with programmatic APIs, expose a custom hook (e.g., `useAccordion()`) as the primary access point that calls `React.useContext` internally. (See Section 1 for where context files live.)
 - **Exports:** Each component's `index.js` must export only its public API by name. Also ensure you add the export to `src/js/components/index.js` in alphabetical order, update `index.d.ts`, and update `src/js/languages/default.json` for i18n keys.
 - **Controlled vs Uncontrolled:** If a component handles user input or state, you **MUST** support the controlled/uncontrolled pattern. Accept both a value prop (controlled) and a default value prop (uncontrolled). Use `useFormInput` (see Section 3) to manage this state and integrate with `Form`. When state changes, call the `onChange` callback using the `{ value }` payload shape.
@@ -45,16 +45,16 @@ Component-specific context files live in the component directory; shared/global 
 
 ### 3. State & Form Integration
 
-- **Drop / Picker Draft Pattern:** Keep a draft selection separate from the committed value. `const [open, setOpen] = useState(false); const [draftSelection, setDraftSelection] = useState(null)`.
+- **Drop / Layer Draft Pattern:** Keep a draft selection separate from the committed value. `const [open, setOpen] = useState(false); const [draftSelection, setDraftSelection] = useState(null)`.
 - **FormContext Integration:** Read `FormContext` via `const formContext = useContext(FormContext)` and call `formContext.useFormInput(...)`. Do not silently discard invalid user input.
 
 ### 4. Props API / Archetype Guidelines
 
 Do not apply input defaults to non-input components.
 
-- **Common props:** `id` and `...rest` apply to almost all components. Layout props (`margin`, `alignSelf`, `gridArea`) are available via the shared `genericProps` helper — spread `genericProps` to opt a component into these. Only include `disabled` when the component has interactive behavior that can be turned off. Do not add `a11yTitle` to new component APIs; use `aria-label` via `...rest` instead.
+- **Common props:** `id` and `...rest` apply to almost all components. Layout props (`margin`, `alignSelf`, `gridArea`) are available via the shared `genericProps` helper — spread `genericProps` to opt a component into these. Only include `disabled` when the component has interactive behavior that can be turned off. Do not add `a11yTitle` to new component APIs; use `aria-label` instead.
 - **Input components:** `value`, `defaultValue`, `onChange`, `name`.
-- **Picker/overlay components** (e.g., `Select`, `DateInput`, `DropButton`, `Menu`)**:** internal open state + trigger ref.
+- **Drop/Layer components** (e.g., `Select`, `DateInput`, `DropButton`, `Menu`)**:** internal open state + trigger ref.
 - **Localized formatting:** When a component renders dates, numbers, or other locale-sensitive values, derive the display string using `Intl.DateTimeFormat`, `Intl.NumberFormat`, etc. rather than custom string-manipulation patterns.
 
 ### 5. Internal Utils
@@ -104,9 +104,9 @@ const MyInput = forwardRef(
 - Emit `onChange({ value })` when the component contract expects the Grommet shape.
 - Add draft state only when formatting or validation requires it.
 
-#### 6.2 Picker or Overlay
+#### 6.2 Drop or Layer
 
-Use when the component opens a drop, popup, calendar, or selection surface (e.g., `Select`, `DateInput`, `DropButton`).
+Use when the component opens a drop, layer, calendar, or selection surface (e.g., `Select`, `DateInput`, `DropButton`).
 
 ```js
 const MyPicker = forwardRef(

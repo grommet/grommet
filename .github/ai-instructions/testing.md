@@ -14,7 +14,7 @@
 ### 2. Storybook Rules
 
 - **File Extensions:** Use `.tsx` for new story files.
-- **Format:** Strictly one story per file, using CSF-3 format regardless of the format used by neighboring story files.
+- **Format:** Strictly one story per file.
 - **Titling:** The story title should follow `'ComponentCategory/ComponentName/StoryName'`.
 - **Required Stories:**
   - Include a basic uncontrolled and/or controlled usage story when the component has a value contract.
