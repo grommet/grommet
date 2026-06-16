@@ -15,7 +15,8 @@ When authoring a new component or substantially modifying an existing one, you *
 
 - 🏗️ **Architecture & Scaffolding:** Read `.github/ai-instructions/architecture.md` for directory layout, prop conventions, context/hooks, controlled vs. uncontrolled state patterns, and component archetype code examples (Simple Input, Picker, Display, Layout).
 - 💅 **Theming & Styling:** Read `.github/ai-instructions/styling.md` for styled-components rules, t-shirt sizing, theme tokens, global focus styling, `disabledStyle()` / `readOnlyStyle()` helpers, and component primitives (`grommet-icons`).
-- ♿ **Accessibility:** Read `.github/ai-instructions/accessibility.md` for deeper semantic rules, handling error states, and declarative keyboard handling.
+- ♿ **Accessibility:** Read `.github/ai-instructions/accessibility.md` for deeper semantic rules and declarative keyboard handling.
+- 📋 **Forms:** Read `.github/ai-instructions/forms.md` for `FormContext` integration, `FormField` error handling, and non-destructive UX patterns.
 - 🌐 **Internationalization (i18n):** Read `.github/ai-instructions/i18n.md` for `MessageContext` string keys, `AnnounceContext` live regions, and `polite` vs `assertive` guidance.
 - 🧪 **Testing & Storybook:** Read `.github/ai-instructions/testing.md` for the `@testing-library/react` stack, `axe` rules, and CSF-3 Storybook formatting.
 
