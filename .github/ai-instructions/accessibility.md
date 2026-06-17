@@ -4,8 +4,8 @@ When generating code, AI tools must follow Grommet's accessibility practices. No
 
 ### 1. Semantic Correctness & a11y
 
-- **HTML Semantics:** Use the Grommet `<Button />` component for standalone interactive controls — it gives you semantic behavior, keyboard support, and styling in one. When a layout or composition need requires placing `onClick` on a `<div>`, pair it with the appropriate ARIA role and keyboard handling (e.g., `role="button"` with `onKeyDown`) to preserve the same semantic contract a native element would provide.
-- **ARIA Labels:** Use `aria-label` directly in new components, tests, and examples. `a11yTitle` is still supported in existing components for backwards compatibility and maps directly to `aria-label` (e.g., `aria-label={a11yTitle}`), but do not add `a11yTitle` to new component APIs.
+- **HTML Semantics:** Use the appropriate Grommet component for interactive controls — `<Button />` for actions, `<Anchor />` for navigation. When a layout or composition need requires placing `onClick` on a `<div>`, pair it with the appropriate ARIA role and keyboard handling (e.g., `role="button"` with `onKeyDown`) to preserve the same semantic contract a native element would provide.
+- **ARIA Labels:** Use `aria-label` directly in new components, tests, and examples — it aligns with the native HTML attribute namespace and is immediately recognizable to developers familiar with the web platform. `a11yTitle` is still supported in existing components for backwards compatibility and maps directly to `aria-label` (e.g., `aria-label={a11yTitle}`), but do not add `a11yTitle` to new component APIs.
 
 ### 2. Declarative Keyboard & Interaction
 
