@@ -566,4 +566,70 @@ describe('Tabs', () => {
     expect(secondTab).toHaveAttribute('aria-selected', 'true');
     expect(screen.getByRole('tabpanel')).toHaveTextContent('Tab body 2');
   });
+
+  test('restores focus to the nearest surviving tab when the focused tab is removed', async () => {
+    const user = userEvent.setup();
+    const { rerender } = render(
+      <Grommet>
+        <Tabs>
+          <Tab title="General">General Information</Tab>
+          <Tab title="Account">Account Information</Tab>
+          <Tab title="Billing">Billing Information</Tab>
+          <Tab title="Notifications">Notifications Information</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    await user.tab();
+    await user.keyboard('{ArrowRight}{ArrowRight}{ArrowRight}');
+
+    const notificationsTab = screen.getByRole('tab', { name: 'Notifications' });
+    expect(notificationsTab).toHaveFocus();
+
+    rerender(
+      <Grommet>
+        <Tabs>
+          <Tab title="General">General Information</Tab>
+          <Tab title="Account">Account Information</Tab>
+          <Tab title="Billing">Billing Information</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('tab', { name: 'Billing' })).toHaveFocus();
+  });
+
+  test('uses the nearest surviving tab when a controlled active index no longer maps', () => {
+    const { rerender } = render(
+      <Grommet>
+        <Tabs activeIndex={3} onActive={() => {}}>
+          <Tab title="General">General Information</Tab>
+          <Tab title="Account">Account Information</Tab>
+          <Tab title="Billing">Billing Information</Tab>
+          <Tab title="Notifications">Notifications Information</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('tabpanel')).toHaveTextContent(
+      'Notifications Information',
+    );
+
+    rerender(
+      <Grommet>
+        <Tabs activeIndex={3} onActive={() => {}}>
+          <Tab title="General">General Information</Tab>
+          <Tab title="Account">Account Information</Tab>
+          <Tab title="Billing">Billing Information</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    const billingTab = screen.getByRole('tab', { name: 'Billing' });
+    expect(billingTab).toHaveAttribute('aria-selected', 'true');
+    expect(billingTab).toHaveAttribute('tabindex', '0');
+    expect(screen.getByRole('tabpanel')).toHaveTextContent(
+      'Billing Information',
+    );
+  });
 });

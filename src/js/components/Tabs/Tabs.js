@@ -105,19 +105,19 @@ const Tabs = forwardRef(
 
     const findEnabledIndex = useCallback(
       (startIndex, direction) => {
-        if (!tabRefs.length) return undefined;
+        if (!disabledIndexes.length) return undefined;
 
         const normalizeIndex = (index) => {
-          if (index < 0) return tabRefs.length - 1;
-          if (index >= tabRefs.length) return 0;
+          if (index < 0) return disabledIndexes.length - 1;
+          if (index >= disabledIndexes.length) return 0;
           return index;
         };
 
         let nextIndex = normalizeIndex(startIndex);
         let attempts = 0;
 
-        while (attempts < tabRefs.length) {
-          if (!disabledIndexes[nextIndex] && tabRefs[nextIndex]?.current) {
+        while (attempts < disabledIndexes.length) {
+          if (!disabledIndexes[nextIndex]) {
             return nextIndex;
           }
           nextIndex = normalizeIndex(nextIndex + direction);
@@ -126,8 +126,55 @@ const Tabs = forwardRef(
 
         return undefined;
       },
-      [disabledIndexes, tabRefs],
+      [disabledIndexes],
     );
+
+    const getClosestEnabledIndex = useCallback(
+      (preferredIndex) => {
+        if (!disabledIndexes.length) return undefined;
+
+        const clampedIndex = Math.min(
+          Math.max(preferredIndex, 0),
+          disabledIndexes.length - 1,
+        );
+
+        if (!disabledIndexes[clampedIndex]) {
+          return clampedIndex;
+        }
+
+        for (let offset = 1; offset < disabledIndexes.length; offset += 1) {
+          const nextIndex = clampedIndex + offset;
+          if (
+            nextIndex < disabledIndexes.length &&
+            !disabledIndexes[nextIndex]
+          ) {
+            return nextIndex;
+          }
+
+          const previousIndex = clampedIndex - offset;
+          if (previousIndex >= 0 && !disabledIndexes[previousIndex]) {
+            return previousIndex;
+          }
+        }
+
+        return undefined;
+      },
+      [disabledIndexes],
+    );
+
+    const resolvedActiveIndex = useMemo(() => {
+      if (!disabledIndexes.length) return undefined;
+
+      if (activeIndex < 0 || activeIndex >= disabledIndexes.length) {
+        return getClosestEnabledIndex(activeIndex);
+      }
+
+      if (disabledIndexes[activeIndex]) {
+        return getClosestEnabledIndex(activeIndex);
+      }
+
+      return activeIndex;
+    }, [activeIndex, disabledIndexes, getClosestEnabledIndex]);
 
     const activateTab = useCallback(
       (nextIndex) => {
@@ -328,11 +375,12 @@ const Tabs = forwardRef(
       if (
         overflow &&
         tabRefs &&
-        tabRefs[activeIndex]?.current &&
-        !isVisible(activeIndex)
+        resolvedActiveIndex !== undefined &&
+        tabRefs[resolvedActiveIndex]?.current &&
+        !isVisible(resolvedActiveIndex)
       )
-        scrollTo(activeIndex, true);
-    }, [overflow, activeIndex, tabRefs, isVisible, scrollTo]);
+        scrollTo(resolvedActiveIndex, true);
+    }, [overflow, resolvedActiveIndex, tabRefs, isVisible, scrollTo]);
 
     useEffect(() => {
       // scroll focus item into view if it is not already visible
@@ -384,12 +432,30 @@ const Tabs = forwardRef(
       updateArrowState,
     ]);
 
+    useLayoutEffect(() => {
+      if (focusIndex === -1 || !headerRef.current) return;
+
+      const { activeElement } = document;
+      if (headerRef.current.contains(activeElement)) return;
+
+      const nextFocusIndex = getClosestEnabledIndex(focusIndex);
+      if (nextFocusIndex === undefined) {
+        setFocusIndex(-1);
+        return;
+      }
+
+      setFocusIndex(nextFocusIndex);
+      focusTab(nextFocusIndex);
+    }, [children, focusIndex, focusTab, getClosestEnabledIndex]);
+
     const getTabsContext = useCallback(
       (index) => ({
-        activeIndex,
-        active: activeIndex === index,
+        activeIndex: resolvedActiveIndex,
+        active: resolvedActiveIndex === index,
         focusable:
-          focusIndex === -1 ? activeIndex === index : focusIndex === index,
+          focusIndex === -1
+            ? resolvedActiveIndex === index
+            : focusIndex === index,
         index,
         panelId: getPanelId(index),
         ref: tabRefs[index],
@@ -405,7 +471,6 @@ const Tabs = forwardRef(
         setFocusIndex,
       }),
       [
-        activeIndex,
         focusIndex,
         activateTab,
         getPanelId,
@@ -413,6 +478,7 @@ const Tabs = forwardRef(
         handleTabKeyDown,
         moveFocusByKey,
         moveFocusToEdge,
+        resolvedActiveIndex,
         tabRefs,
       ],
     );
@@ -425,7 +491,7 @@ const Tabs = forwardRef(
           ? // cloneElement is needed for backward compatibility with custom
             // styled components that rely on props.active. We should reassess
             // if it is still necessary in our next major release.
-            React.cloneElement(child, { active: activeIndex === index })
+            React.cloneElement(child, { active: resolvedActiveIndex === index })
           : child}
       </TabsContext.Provider>
     ));
@@ -527,7 +593,7 @@ const Tabs = forwardRef(
         </Box>
 
         <StyledTabPanel
-          id={getPanelId(activeIndex)}
+          id={getPanelId(resolvedActiveIndex)}
           flex={flex}
           aria-label={tabContentTitle}
           role="tabpanel"
