@@ -632,4 +632,22 @@ describe('Tabs', () => {
       'Billing Information',
     );
   });
+
+  test('uses a developer-provided tab id', () => {
+    render(
+      <Grommet>
+        <Tabs>
+          <Tab id="custom-tab-id" title="Tab 1">
+            Tab body 1
+          </Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
+        </Tabs>
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('tab', { name: 'Tab 1' })).toHaveAttribute(
+      'id',
+      'custom-tab-id',
+    );
+  });
 });

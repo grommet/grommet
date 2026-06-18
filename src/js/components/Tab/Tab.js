@@ -16,6 +16,7 @@ const Tab = forwardRef(
       active: activeProp, // don't pass with rest
       disabled,
       children,
+      id: idProp,
       icon,
       plain,
       title,

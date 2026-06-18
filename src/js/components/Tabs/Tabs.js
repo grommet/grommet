@@ -75,6 +75,17 @@ const Tabs = forwardRef(
       () => React.Children.map(children, () => React.createRef()),
       [children],
     );
+    const tabIds = useMemo(
+      () =>
+        React.Children.map(children, (child, index) => {
+          if (React.isValidElement(child) && child.props.id) {
+            return child.props.id;
+          }
+
+          return `tabs-tab-${tabsId}-${index}`;
+        }) || [],
+      [children, tabsId],
+    );
     const disabledIndexes = useMemo(
       () =>
         React.Children.map(children, (child) => {
@@ -84,10 +95,7 @@ const Tabs = forwardRef(
       [children],
     );
 
-    const getTabId = useCallback(
-      (index) => `tabs-tab-${tabsId}-${index}`,
-      [tabsId],
-    );
+    const getTabId = useCallback((index) => tabIds[index], [tabIds]);
 
     const getPanelId = useCallback(
       (index) => `tabs-panel-${tabsId}-${index}`,
