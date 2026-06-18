@@ -10,7 +10,7 @@ import { Button } from '../Button';
 import { TabsContext } from './TabsContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
-import { normalizeColor } from '../../utils';
+import { normalizeColor, useId } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TabsPropTypes } from './propTypes';
 import { useAnalytics } from '../../contexts/AnalyticsContext/AnalyticsContext';
@@ -55,6 +55,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     focusIndex = _useState7[0],
     setFocusIndex = _useState7[1];
   var headerRef = useRef();
+  var panelId = useId();
   var size = useContext(ResponsiveContext);
   var PreviousIcon = ((_theme$tabs$header = theme.tabs.header) == null || (_theme$tabs$header = _theme$tabs$header.previousButton) == null ? void 0 : _theme$tabs$header.icon) || Previous;
   var NextIcon = ((_theme$tabs$header2 = theme.tabs.header) == null || (_theme$tabs$header2 = _theme$tabs$header2.nextButton) == null ? void 0 : _theme$tabs$header2.icon) || Next;
@@ -79,6 +80,114 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return /*#__PURE__*/React.createRef();
     });
   }, [children]);
+  var disabledIndexes = useMemo(function () {
+    return React.Children.map(children, function (child) {
+      if (! /*#__PURE__*/React.isValidElement(child)) return true;
+      return !!child.props.disabled;
+    }) || [];
+  }, [children]);
+  var focusTab = useCallback(function (index) {
+    var _tabRefs$index;
+    if (index >= 0 && (_tabRefs$index = tabRefs[index]) != null && _tabRefs$index.current) {
+      tabRefs[index].current.focus();
+    }
+  }, [tabRefs]);
+  var findEnabledIndex = useCallback(function (startIndex, direction) {
+    if (!disabledIndexes.length) return undefined;
+    var normalizeIndex = function normalizeIndex(index) {
+      if (index < 0) return disabledIndexes.length - 1;
+      if (index >= disabledIndexes.length) return 0;
+      return index;
+    };
+    var nextIndex = normalizeIndex(startIndex);
+    var attempts = 0;
+    while (attempts < disabledIndexes.length) {
+      if (!disabledIndexes[nextIndex]) {
+        return nextIndex;
+      }
+      nextIndex = normalizeIndex(nextIndex + direction);
+      attempts += 1;
+    }
+    return undefined;
+  }, [disabledIndexes]);
+  var getClosestEnabledIndex = useCallback(function (preferredIndex) {
+    if (!disabledIndexes.length) return undefined;
+    var clampedIndex = Math.min(Math.max(preferredIndex, 0), disabledIndexes.length - 1);
+    if (!disabledIndexes[clampedIndex]) {
+      return clampedIndex;
+    }
+    for (var offset = 1; offset < disabledIndexes.length; offset += 1) {
+      var nextIndex = clampedIndex + offset;
+      if (nextIndex < disabledIndexes.length && !disabledIndexes[nextIndex]) {
+        return nextIndex;
+      }
+      var previousIndex = clampedIndex - offset;
+      if (previousIndex >= 0 && !disabledIndexes[previousIndex]) {
+        return previousIndex;
+      }
+    }
+    return undefined;
+  }, [disabledIndexes]);
+  var resolvedActiveIndex = useMemo(function () {
+    if (!disabledIndexes.length) return undefined;
+    if (activeIndex < 0 || activeIndex >= disabledIndexes.length) {
+      return getClosestEnabledIndex(activeIndex);
+    }
+    if (disabledIndexes[activeIndex]) {
+      return getClosestEnabledIndex(activeIndex);
+    }
+    return activeIndex;
+  }, [activeIndex, disabledIndexes, getClosestEnabledIndex]);
+  var activateTab = useCallback(function (nextIndex) {
+    sendAnalytics({
+      type: 'activateTab',
+      element: tabRefs[nextIndex].current
+    });
+    if (propsActiveIndex === undefined) {
+      setActiveIndex(nextIndex);
+    }
+    if (onActive) {
+      onActive(nextIndex);
+    }
+  }, [onActive, propsActiveIndex, sendAnalytics, tabRefs]);
+  var moveFocus = useCallback(function (targetIndex) {
+    if (targetIndex === undefined) return;
+    focusTab(targetIndex);
+  }, [focusTab]);
+  var moveFocusByKey = useCallback(function (currentIndex, direction) {
+    moveFocus(findEnabledIndex(currentIndex + direction, direction));
+  }, [findEnabledIndex, moveFocus]);
+  var moveFocusToEdge = useCallback(function (direction) {
+    var startIndex = direction > 0 ? 0 : tabRefs.length - 1;
+    moveFocus(findEnabledIndex(startIndex, direction));
+  }, [findEnabledIndex, moveFocus, tabRefs.length]);
+  var handleTabKeyDown = useCallback(function (index, event) {
+    switch (event.key) {
+      case 'ArrowRight':
+        event.preventDefault();
+        moveFocusByKey(index, 1);
+        break;
+      case 'ArrowLeft':
+        event.preventDefault();
+        moveFocusByKey(index, -1);
+        break;
+      case 'Home':
+        event.preventDefault();
+        moveFocusToEdge(1);
+        break;
+      case 'End':
+        event.preventDefault();
+        moveFocusToEdge(-1);
+        break;
+      case 'Enter':
+      case ' ':
+      case 'Spacebar':
+        event.preventDefault();
+        activateTab(index);
+        break;
+      default:
+    }
+  }, [activateTab, moveFocusByKey, moveFocusToEdge]);
 
   // check if tab is in view
   var isVisible = useCallback(function (index) {
@@ -179,10 +288,10 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }
   };
   useEffect(function () {
-    var _tabRefs$activeIndex;
+    var _tabRefs$resolvedActi;
     // if the active tab isn't visible scroll to it
-    if (overflow && tabRefs && (_tabRefs$activeIndex = tabRefs[activeIndex]) != null && _tabRefs$activeIndex.current && !isVisible(activeIndex)) scrollTo(activeIndex, true);
-  }, [overflow, activeIndex, tabRefs, isVisible, scrollTo]);
+    if (overflow && tabRefs && resolvedActiveIndex !== undefined && (_tabRefs$resolvedActi = tabRefs[resolvedActiveIndex]) != null && _tabRefs$resolvedActi.current && !isVisible(resolvedActiveIndex)) scrollTo(resolvedActiveIndex, true);
+  }, [overflow, resolvedActiveIndex, tabRefs, isVisible, scrollTo]);
   useEffect(function () {
     // scroll focus item into view if it is not already visible
     if (overflow && focusIndex !== -1 && !isVisible(focusIndex)) scrollTo(focusIndex, true);else if (overflow && focusIndex !== -1) {
@@ -212,32 +321,50 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return window.removeEventListener('resize', onResize);
     };
   }, [tabRefs, disableLeftArrow, disableRightArrow, activeIndex, headerRef, overflow, updateArrowState]);
+  useLayoutEffect(function () {
+    if (focusIndex === -1 || !headerRef.current) return;
+    var _document = document,
+      activeElement = _document.activeElement;
+    if (headerRef.current.contains(activeElement)) return;
+    var nextFocusIndex = getClosestEnabledIndex(focusIndex);
+    if (nextFocusIndex === undefined) {
+      setFocusIndex(-1);
+      return;
+    }
+    setFocusIndex(nextFocusIndex);
+    focusTab(nextFocusIndex);
+  }, [children, focusIndex, focusTab, getClosestEnabledIndex]);
   var getTabsContext = useCallback(function (index) {
-    var activateTab = function activateTab(nextIndex) {
-      sendAnalytics({
-        type: 'activateTab',
-        element: tabRefs[nextIndex].current
-      });
-      if (propsActiveIndex === undefined) {
-        setActiveIndex(nextIndex);
-      }
-      if (onActive) {
-        onActive(nextIndex);
-      }
-    };
     return {
-      activeIndex: activeIndex,
-      active: activeIndex === index,
+      activeIndex: resolvedActiveIndex,
+      active: resolvedActiveIndex === index,
+      focusable: focusIndex === -1 ? resolvedActiveIndex === index : focusIndex === index,
       index: index,
+      panelId: panelId,
       ref: tabRefs[index],
       onActivate: function onActivate() {
         return activateTab(index);
+      },
+      onKeyDown: function onKeyDown(event) {
+        return handleTabKeyDown(index, event);
+      },
+      onNext: function onNext() {
+        return moveFocusByKey(index, 1);
+      },
+      onPrevious: function onPrevious() {
+        return moveFocusByKey(index, -1);
+      },
+      onFirst: function onFirst() {
+        return moveFocusToEdge(1);
+      },
+      onLast: function onLast() {
+        return moveFocusToEdge(-1);
       },
       setActiveContent: setActiveContent,
       setActiveTitle: setActiveTitle,
       setFocusIndex: setFocusIndex
     };
-  }, [activeIndex, onActive, propsActiveIndex, sendAnalytics, tabRefs]);
+  }, [focusIndex, activateTab, handleTabKeyDown, moveFocusByKey, moveFocusToEdge, panelId, resolvedActiveIndex, tabRefs]);
   var tabs = React.Children.map(children, function (child, index) {
     return /*#__PURE__*/React.createElement(TabsContext.Provider, {
       value: getTabsContext(index)
@@ -247,7 +374,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     // styled components that rely on props.active. We should reassess
     // if it is still necessary in our next major release.
     React.cloneElement(child, {
-      active: activeIndex === index
+      active: resolvedActiveIndex === index
     }) : child);
   });
   var tabsHeaderStyles = {};
@@ -276,7 +403,10 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     flex: false,
     direction: overflow ? 'row' : 'column'
   }, tabsHeaderStyles), overflow && /*#__PURE__*/React.createElement(Button, {
-    a11yTitle: "Previous Tab",
+    a11yTitle: format({
+      id: 'tabs.previousTab',
+      messages: messages
+    }),
     disabled: disableLeftArrow
     // removed from tabIndex, button is redundant for keyboard users
     ,
@@ -301,7 +431,10 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     pad: overflow ? '2px' : undefined,
     margin: overflow ? '-2px' : undefined
   }, passThemeFlag), tabs), overflow && /*#__PURE__*/React.createElement(Button, {
-    a11yTitle: "Next Tab",
+    a11yTitle: format({
+      id: 'tabs.nextTab',
+      messages: messages
+    }),
     disabled: disableRightArrow
     // removed from tabIndex, button is redundant for keyboard users
     ,
@@ -314,6 +447,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, /*#__PURE__*/React.createElement(NextIcon, {
     color: disableRightArrow ? theme.button.disabled.color : theme.global.colors.text
   })))), /*#__PURE__*/React.createElement(StyledTabPanel, _extends({
+    id: panelId,
     flex: flex,
     "aria-label": tabContentTitle,
     role: "tabpanel"

@@ -11,7 +11,7 @@ var _StyledTab = require("./StyledTab");
 var _propTypes = require("./propTypes");
 var _useIsomorphicLayoutEffect = require("../../utils/use-isomorphic-layout-effect");
 var _useThemeValue2 = require("../../utils/useThemeValue");
-var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onBlur", "onFocus", "onMouseOver", "onMouseOut", "reverse", "onClick"];
+var _excluded = ["active", "disabled", "children", "icon", "plain", "title", "onBlur", "onFocus", "onMouseOver", "onMouseOut", "reverse", "onClick", "onKeyDown"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -28,13 +28,17 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     onMouseOut = _ref.onMouseOut,
     reverse = _ref.reverse,
     onClick = _ref.onClick,
+    onKeyDown = _ref.onKeyDown,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_TabsContext.TabsContext),
     active = _useContext.active,
     activeIndex = _useContext.activeIndex,
+    focusable = _useContext.focusable,
     index = _useContext.index,
+    panelId = _useContext.panelId,
     tabsContextRef = _useContext.ref,
     onActivate = _useContext.onActivate,
+    onTabsKeyDown = _useContext.onKeyDown,
     setActiveContent = _useContext.setActiveContent,
     setActiveTitle = _useContext.setActiveTitle,
     setFocusIndex = _useContext.setFocusIndex;
@@ -91,6 +95,13 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     onActivate();
     if (onClick) {
       onClick(event);
+    }
+  };
+  var onKeyDownTab = function onKeyDownTab(event) {
+    if (disabled) return;
+    onTabsKeyDown(event);
+    if (onKeyDown) {
+      onKeyDown(event);
     }
   };
   if (active && disabled) {
@@ -162,19 +173,21 @@ var Tab = exports.Tab = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref)
     ref: tabRef,
     plain: true,
     role: "tab",
+    tabIndex: focusable ? 0 : -1,
+    "aria-controls": panelId,
     "aria-selected": active,
-    "aria-expanded": active,
     disabled: disabled
   }, rest, {
     onClick: onClickTab,
+    onKeyDown: onKeyDownTab,
     onMouseOver: onMouseOverTab,
     onMouseOut: onMouseOutTab,
-    onFocus: function onFocus() {
-      if (_onFocus) _onFocus();
+    onFocus: function onFocus(event) {
+      if (_onFocus) _onFocus(event);
       setFocusIndex(index);
     },
-    onBlur: function onBlur() {
-      if (_onBlur) _onBlur();
+    onBlur: function onBlur(event) {
+      if (_onBlur) _onBlur(event);
       setFocusIndex(-1);
     }
   }), /*#__PURE__*/_react["default"].createElement(_StyledTab.StyledTab, _extends({
