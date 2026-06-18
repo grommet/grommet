@@ -46,7 +46,7 @@ const Tabs = forwardRef(
     const [overflow, setOverflow] = useState();
     const [focusIndex, setFocusIndex] = useState(-1);
     const headerRef = useRef();
-    const tabsId = useId();
+    const panelId = useId();
     const size = useContext(ResponsiveContext);
     const PreviousIcon = theme.tabs.header?.previousButton?.icon || Previous;
     const NextIcon = theme.tabs.header?.nextButton?.icon || Next;
@@ -75,17 +75,6 @@ const Tabs = forwardRef(
       () => React.Children.map(children, () => React.createRef()),
       [children],
     );
-    const tabIds = useMemo(
-      () =>
-        React.Children.map(children, (child, index) => {
-          if (React.isValidElement(child) && child.props.id) {
-            return child.props.id;
-          }
-
-          return `tabs-tab-${tabsId}-${index}`;
-        }) || [],
-      [children, tabsId],
-    );
     const disabledIndexes = useMemo(
       () =>
         React.Children.map(children, (child) => {
@@ -93,13 +82,6 @@ const Tabs = forwardRef(
           return !!child.props.disabled;
         }) || [],
       [children],
-    );
-
-    const getTabId = useCallback((index) => tabIds[index], [tabIds]);
-
-    const getPanelId = useCallback(
-      (index) => `tabs-panel-${tabsId}-${index}`,
-      [tabsId],
     );
 
     const focusTab = useCallback(
@@ -465,9 +447,8 @@ const Tabs = forwardRef(
             ? resolvedActiveIndex === index
             : focusIndex === index,
         index,
-        panelId: getPanelId(index),
+        panelId,
         ref: tabRefs[index],
-        tabId: getTabId(index),
         onActivate: () => activateTab(index),
         onKeyDown: (event) => handleTabKeyDown(index, event),
         onNext: () => moveFocusByKey(index, 1),
@@ -481,11 +462,10 @@ const Tabs = forwardRef(
       [
         focusIndex,
         activateTab,
-        getPanelId,
-        getTabId,
         handleTabKeyDown,
         moveFocusByKey,
         moveFocusToEdge,
+        panelId,
         resolvedActiveIndex,
         tabRefs,
       ],
@@ -601,7 +581,7 @@ const Tabs = forwardRef(
         </Box>
 
         <StyledTabPanel
-          id={getPanelId(resolvedActiveIndex)}
+          id={panelId}
           flex={flex}
           aria-label={tabContentTitle}
           role="tabpanel"

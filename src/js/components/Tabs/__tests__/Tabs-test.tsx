@@ -633,7 +633,7 @@ describe('Tabs', () => {
     );
   });
 
-  test('uses a developer-provided tab id', () => {
+  test('applies a developer-provided tab id', () => {
     render(
       <Grommet>
         <Tabs>

@@ -16,7 +16,6 @@ const Tab = forwardRef(
       active: activeProp, // don't pass with rest
       disabled,
       children,
-      id: idProp,
       icon,
       plain,
       title,
@@ -38,7 +37,6 @@ const Tab = forwardRef(
       index,
       panelId,
       ref: tabsContextRef,
-      tabId,
       onActivate,
       onKeyDown: onTabsKeyDown,
       setActiveContent,
@@ -207,7 +205,6 @@ const Tab = forwardRef(
       <Button
         ref={tabRef}
         plain
-        id={tabId}
         role="tab"
         tabIndex={focusable ? 0 : -1}
         aria-controls={panelId}
