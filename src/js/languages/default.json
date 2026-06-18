@@ -198,6 +198,8 @@
     "skipTo": "Skip To:"
   },
   "tabs": {
+    "nextTab": "Next Tab",
+    "previousTab": "Previous Tab",
     "tabContents": "Tab Contents"
   },
   "tag": {

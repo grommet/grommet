@@ -436,6 +436,7 @@ exports[`DataTableColumns pinned 1`] = `
 <div
   aria-label="Order columns Tab Contents"
   class="c0"
+  id="_r_4_"
   role="tabpanel"
 >
   <div
@@ -1326,6 +1327,7 @@ exports[`DataTableColumns remove column 2`] = `
 <div
   aria-label="Select columns Tab Contents"
   class="c0"
+  id="_r_2_"
   role="tabpanel"
 >
   <div
@@ -2267,6 +2269,7 @@ exports[`DataTableColumns renders 2`] = `
 <div
   aria-label="Select columns Tab Contents"
   class="c0"
+  id="_r_0_"
   role="tabpanel"
 >
   <div
@@ -2380,6 +2383,7 @@ exports[`DataTableColumns renders 3`] = `
 <div
   aria-label="Order columns Tab Contents"
   class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
+  id="_r_0_"
   role="tabpanel"
 >
   <div
@@ -3516,6 +3520,7 @@ exports[`DataTableColumns search 2`] = `
 <div
   aria-label="Select columns Tab Contents"
   class="c0"
+  id="_r_3_"
   role="tabpanel"
 >
   <div
@@ -4172,6 +4177,7 @@ exports[`DataTableColumns should use theme icons 1`] = `
 <div
   aria-label="Order columns Tab Contents"
   class="c0"
+  id="_r_1_"
   role="tabpanel"
 >
   <div
@@ -4588,6 +4594,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 <div
   aria-label="Select columns Tab Contents"
   class="c0"
+  id="_r_5_"
   role="tabpanel"
 >
   <div
@@ -4734,6 +4741,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 <div
   aria-label="Order columns Tab Contents"
   class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
+  id="_r_5_"
   role="tabpanel"
 >
   <div
