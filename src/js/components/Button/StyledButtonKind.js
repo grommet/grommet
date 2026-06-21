@@ -152,7 +152,8 @@ const kindStyle = ({
   // not the background. Check the button's overall kind so that
   // state paths like 'active' and 'disabled' also respect this.
   const isDefaultKind =
-    kind === 'default' || (typeof kind === 'string' && kind.endsWith('.default'));
+    kind === 'default' ||
+    (typeof kind === 'string' && kind.endsWith('.default'));
   themePaths.base.forEach((themePath) => {
     const obj = getPath(themeObj, themePath);
     if (obj) {
