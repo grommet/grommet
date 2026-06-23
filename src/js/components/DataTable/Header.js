@@ -315,6 +315,7 @@ const Header = forwardRef(
               size,
               units,
             }) => {
+              const headerText = typeof header === 'string' ? header : property;
               let content;
               const unitsContent = units ? (
                 <Text {...textProps} {...theme.dataTable.header.units}>
@@ -357,9 +358,11 @@ const Header = forwardRef(
               }
 
               let ariaSort;
+              let buttonA11yTitle;
               if (onSort && sortable !== false) {
                 let Icon;
-                let iconAriaLabel;
+                let sortStatusId = 'dataTable.sortable';
+                let sortActionId = 'dataTable.sortAscending';
                 if (onSort && sortable !== false) {
                   if (sort && sort.property === property) {
                     Icon =
@@ -368,24 +371,31 @@ const Header = forwardRef(
                       ];
                     if (sort.direction === 'asc') {
                       ariaSort = 'ascending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.ascending',
-                        messages,
-                      });
+                      sortStatusId = 'dataTable.sortedAscending';
+                      sortActionId = 'dataTable.sortDescending';
                     } else if (sort.direction === 'desc') {
                       ariaSort = 'descending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.descending',
-                        messages,
-                      });
+                      sortStatusId = 'dataTable.sortedDescending';
+                      sortActionId = 'dataTable.sortAscending';
                     }
                   } else if (theme.dataTable.icons.sortable) {
                     Icon = theme.dataTable.icons.sortable;
                   }
                 }
 
+                buttonA11yTitle = format({
+                  id: 'dataTable.sortButton',
+                  messages,
+                  values: {
+                    label: headerText,
+                    status: format({ id: sortStatusId, messages }),
+                    action: format({ id: sortActionId, messages }),
+                  },
+                });
+
                 content = (
                   <StyledHeaderCellButton
+                    a11yTitle={buttonA11yTitle}
                     plain
                     column={property}
                     fill="vertical"
@@ -404,7 +414,7 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon aria-label={iconAriaLabel} />}
+                      {Icon && <Icon aria-hidden />}
                     </Box>
                   </StyledHeaderCellButton>
                 );
@@ -519,9 +529,7 @@ const Header = forwardRef(
                         onResize(prop, width);
                         updateWidths(prop, width);
                       }}
-                      headerText={
-                        typeof header === 'string' ? header : property
-                      }
+                      headerText={headerText}
                       messages={messages}
                       headerId={headerId}
                     />

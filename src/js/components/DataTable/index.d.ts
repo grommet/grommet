@@ -96,6 +96,12 @@ export interface DataTableProps<TRowType = any> {
     expand?: string;
     expandAll?: string;
     resizerAria?: string;
+    sortAscending?: string;
+    sortButton?: string;
+    sortDescending?: string;
+    sortable?: string;
+    sortedAscending?: string;
+    sortedDescending?: string;
     rows?: string;
     rowsChanged?: string;
     rowsSingle?: string;
