@@ -315,7 +315,24 @@ const Header = forwardRef(
               size,
               units,
             }) => {
-              const headerText = typeof header === 'string' ? header : property;
+              const headerText =
+                typeof header === 'string'
+                  ? header
+                  : (() => {
+                      const textFromNode = (node) => {
+                        if (node === null || node === undefined || typeof node === 'boolean')
+                          return '';
+                        if (typeof node === 'string' || typeof node === 'number')
+                          return String(node);
+                        if (Array.isArray(node)) return node.map(textFromNode).join('');
+                        if (React.isValidElement(node))
+                          return textFromNode(node.props.children);
+                        return '';
+                      };
+
+                      const text = textFromNode(header).trim();
+                      return text || property;
+                    })();
               let content;
               const unitsContent = units ? (
                 <Text {...textProps} {...theme.dataTable.header.units}>
