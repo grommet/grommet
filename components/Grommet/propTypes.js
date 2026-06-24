@@ -221,6 +221,8 @@ if (process.env.NODE_ENV !== 'production') {
           skipTo: _propTypes["default"].string
         }),
         tabs: _propTypes["default"].shape({
+          nextTab: _propTypes["default"].string,
+          previousTab: _propTypes["default"].string,
           tabContents: _propTypes["default"].string
         }),
         tag: _propTypes["default"].shape({
