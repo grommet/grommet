@@ -357,37 +357,36 @@ const Header = forwardRef(
                 );
               }
 
-              let ariaSort;
+              let ariaSort = onSort && sortable !== false ? 'none' : undefined;
               let buttonA11yTitle;
               if (onSort && sortable !== false) {
                 let Icon;
                 let sortStatusId = 'dataTable.sortable';
                 let sortActionId = 'dataTable.sortAscending';
-                if (onSort && sortable !== false) {
-                  if (sort && sort.property === property) {
-                    Icon =
-                      theme.dataTable.icons[
-                        sort.direction !== 'asc' ? 'ascending' : 'descending'
-                      ];
-                    if (sort.direction === 'asc') {
-                      ariaSort = 'ascending';
-                      sortStatusId = 'dataTable.sortedAscending';
-                      sortActionId = 'dataTable.sortDescending';
-                    } else if (sort.direction === 'desc') {
-                      ariaSort = 'descending';
-                      sortStatusId = 'dataTable.sortedDescending';
-                      sortActionId = 'dataTable.sortAscending';
-                    }
-                  } else if (theme.dataTable.icons.sortable) {
-                    Icon = theme.dataTable.icons.sortable;
+
+                if (sort && sort.property === property) {
+                  Icon =
+                    theme.dataTable.icons[
+                      sort.direction !== 'asc' ? 'ascending' : 'descending'
+                    ];
+                  if (sort.direction === 'asc') {
+                    ariaSort = 'ascending';
+                    sortStatusId = 'dataTable.sortedAscending';
+                    sortActionId = 'dataTable.sortDescending';
+                  } else if (sort.direction === 'desc') {
+                    ariaSort = 'descending';
+                    sortStatusId = 'dataTable.sortedDescending';
+                    sortActionId = 'dataTable.sortAscending';
                   }
+                } else if (theme.dataTable.icons.sortable) {
+                  Icon = theme.dataTable.icons.sortable;
                 }
 
                 buttonA11yTitle = format({
                   id: 'dataTable.sortButton',
                   messages,
                   values: {
-                    label: headerText,
+                    label: units ? `${headerText} ${units}` : headerText,
                     status: format({ id: sortStatusId, messages }),
                     action: format({ id: sortActionId, messages }),
                   },

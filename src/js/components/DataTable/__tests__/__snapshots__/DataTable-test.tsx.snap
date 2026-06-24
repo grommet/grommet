@@ -3894,6 +3894,7 @@ exports[`DataTable custom theme 1`] = `
           scope="col"
         />
         <th
+          aria-sort="none"
           class="c4 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -4074,6 +4075,7 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         />
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hdohsq StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -17224,6 +17226,7 @@ exports[`DataTable onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -17249,6 +17252,7 @@ exports[`DataTable onSort 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -17480,6 +17484,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -17902,6 +17907,7 @@ exports[`DataTable onSort external 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -18121,6 +18127,7 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -52206,6 +52213,7 @@ exports[`DataTable sort 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -52700,6 +52708,7 @@ exports[`DataTable sort controlled 1`] = `
             </div>
           </th>
           <th
+            aria-sort="none"
             class="c4 "
             id="grommet-data-table-header-b"
             scope="col"
@@ -53195,6 +53204,7 @@ exports[`DataTable sort controlled 2`] = `
             </div>
           </th>
           <th
+            aria-sort="none"
             class="c4 "
             id="grommet-data-table-header-b"
             scope="col"
@@ -53618,6 +53628,7 @@ exports[`DataTable sort external 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -53998,6 +54009,7 @@ exports[`DataTable sort nested object 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -54420,6 +54432,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -54798,6 +54811,7 @@ exports[`DataTable sort null data 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -54823,6 +54837,7 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -54848,6 +54863,7 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-c"
           scope="col"
@@ -54873,6 +54889,7 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-d"
           scope="col"
@@ -55203,6 +55220,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -55228,6 +55246,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-c"
           scope="col"
@@ -55253,6 +55272,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-d"
           scope="col"
@@ -55563,6 +55583,7 @@ exports[`DataTable sort null data 3`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
       >
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -55588,6 +55609,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -55703,6 +55725,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-d"
           scope="col"
@@ -56013,6 +56036,7 @@ exports[`DataTable sort null data 4`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
       >
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -56038,6 +56062,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -56063,6 +56088,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-c"
           scope="col"
@@ -56658,6 +56684,7 @@ exports[`DataTable sortable 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -56683,6 +56710,7 @@ exports[`DataTable sortable 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -56914,6 +56942,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -57576,6 +57605,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           class="c8"
         />
         <th
+          aria-sort="none"
           class="c9 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -57623,6 +57653,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c9 "
           id="grommet-data-table-header-b"
           scope="col"
