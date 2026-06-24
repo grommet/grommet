@@ -320,11 +320,19 @@ const Header = forwardRef(
                   ? header
                   : (() => {
                       const textFromNode = (node) => {
-                        if (node === null || node === undefined || typeof node === 'boolean')
+                        if (
+                          node === null ||
+                          node === undefined ||
+                          typeof node === 'boolean'
+                        )
                           return '';
-                        if (typeof node === 'string' || typeof node === 'number')
+                        if (
+                          typeof node === 'string' ||
+                          typeof node === 'number'
+                        )
                           return String(node);
-                        if (Array.isArray(node)) return node.map(textFromNode).join('');
+                        if (Array.isArray(node))
+                          return node.map(textFromNode).join('');
                         if (React.isValidElement(node))
                           return textFromNode(node.props.children);
                         return '';
