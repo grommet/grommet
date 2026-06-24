@@ -213,6 +213,8 @@ if (process.env.NODE_ENV !== 'production') {
           skipTo: PropTypes.string,
         }),
         tabs: PropTypes.shape({
+          nextTab: PropTypes.string,
+          previousTab: PropTypes.string,
           tabContents: PropTypes.string,
         }),
         tag: PropTypes.shape({
