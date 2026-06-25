@@ -1,0 +1,20 @@
+name: License Compliance
+
+on:
+  pull_request:
+    branches: [master, stable]
+  push:
+    branches: [master, stable]
+
+jobs:
+  license-check:
+    name: SPDX header check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # run license header check script
+      - name: Verify SPDX license headers
+        run: node tools/license-header.js --check
