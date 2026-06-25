@@ -32,6 +32,8 @@
     "release-styled-components-beta-stable": "babel-node ./tools/release-styled-components-beta-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
+    "license": "node ./tools/license-header.js",
+    "license-check": "node ./tools/license-header.js --check",
     "test": "jest --runInBand && yarn test-timezones",
     "test-simple": "jest --runInBand",
     "test-update": "jest --updateSnapshot && yarn test-timezones",
@@ -203,6 +205,7 @@
     ]
   },
   "pre-commit": [
+    "license",
     "lint-fix",
     "prettier",
     "test"
