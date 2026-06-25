@@ -420,7 +420,7 @@ describe('Button kind', () => {
 
   test(`disabled state cursor should indicate the button cannot be
   clicked`, () => {
-    const { getByText } = render(
+    const { getByRole } = render(
       <Grommet
         theme={{
           button: { default: {} },
@@ -430,7 +430,7 @@ describe('Button kind', () => {
       </Grommet>,
     );
 
-    const button = getByText('Button');
+    const button = getByRole('button', { name: 'Button' });
     // eslint-disable-next-line no-underscore-dangle
     const cursorStyle = window.getComputedStyle(button)._values.cursor;
     expect(cursorStyle).not.toBe('pointer');
