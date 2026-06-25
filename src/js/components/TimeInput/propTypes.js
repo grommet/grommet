@@ -12,7 +12,6 @@ if (process.env.NODE_ENV !== 'production') {
     ]),
     disabled: PropTypes.bool,
     dropProps: PropTypes.shape({}),
-    format: PropTypes.oneOf(['12hr', '24hr']),
     icon: PropTypes.node,
     id: PropTypes.string,
     inputProps: PropTypes.shape({}),

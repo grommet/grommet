@@ -77,8 +77,7 @@ import { Form, FormField, TimeInput } from 'grommet';
 | `value` | `string \| Date` | - | Controlled value |
 | `defaultValue` | `string \| Date` | - | Uncontrolled initial value |
 | `onChange` | `({ value: string }) => void` | - | Emits normalized time string |
-| `timeFormat` | `'12hr' \| '24hr'` | locale-derived | Display and parsing format |
-| `format` | `'12hr' \| '24hr'` | - | Alias for `timeFormat`; takes precedence if both are provided |
+| `timeFormat` | `'12hr' \| '24hr'` | browser locale-derived | Display and parsing format |
 | `showSeconds` | `boolean` | `false` | Adds seconds segment |
 | `minuteStep` | `number` | - | Minute increment validation |
 | `secondStep` | `number` | - | Seconds increment validation |

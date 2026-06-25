@@ -306,7 +306,6 @@ const TimeInput = forwardRef(
       defaultValue,
       disabled,
       dropProps,
-      format,
       id,
       icon,
       inputProps,
@@ -351,21 +350,9 @@ const TimeInput = forwardRef(
     const ClockIcon = theme.timeInput?.icon?.clock || GrommetClockIcon;
 
     const resolvedTimeFormat = useMemo(
-      () => format || timeFormat || getDefaultTimeFormat(),
-      [format, timeFormat],
+      () => timeFormat || getDefaultTimeFormat(),
+      [timeFormat],
     );
-
-    if (
-      process.env.NODE_ENV !== 'production' &&
-      format &&
-      timeFormat &&
-      format !== timeFormat
-    ) {
-      console.warn(
-        `TimeInput: both 'format' and 'timeFormat' are set but conflict. ` +
-          `'format' (${format}) takes precedence. Use one or the other.`,
-      );
-    }
 
     const resolvedMinuteStep = minuteStep ?? step;
 

@@ -18,7 +18,6 @@ export interface TimeInputProps {
   margin?: MarginType;
   defaultValue?: Date | string;
   disabled?: boolean;
-  format?: '12hr' | '24hr';
   id?: string;
   inputProps?: MaskedInputType;
   messages?: {
