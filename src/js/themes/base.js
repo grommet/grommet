@@ -1051,6 +1051,53 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'medium',
       },
     },
+    timeInput: {
+      container: {
+        round: 'xxsmall',
+        focus: {
+          border: {
+            color: 'text-strong',
+          },
+        },
+      },
+      segment: {
+        background: {
+          color: 'active-background',
+          inset: {
+            horizontal: '0.35ch',
+          },
+          top: '4px',
+          bottom: '7px',
+          radius: '4px',
+        },
+        underline: {
+          color: 'text-strong',
+          inset: {
+            horizontal: '0ch',
+          },
+          bottom: '3px',
+          height: '2px',
+          radius: '999px',
+        },
+      },
+      drop: {
+        height: '256px',
+        option: {
+          pad: {
+            horizontal: 'small',
+            vertical: '5px',
+          },
+          width: '46px',
+        },
+        options: {
+          gap: 'none',
+        },
+      },
+      icon: {
+        // clock: undefined,
+        size: 'medium',
+      },
+    },
     dataSearch: {
       // icons: {
       //   search: undefined,
