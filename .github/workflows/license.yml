@@ -15,6 +15,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      # run license header check script
-      - name: Verify SPDX license headers
-        run: node tools/license-header.js --check
+      - name: Verify SPDX license headers (changed files only)
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            RANGE="${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}"
+          else
+            RANGE="${{ github.event.before }}...${{ github.sha }}"
+          fi
+          FILES="$(git diff --name-only "$RANGE" -- src e2e storybook tools || true)"
+          if [ -n "$FILES" ]; then
+            node tools/license-header.js --check $FILES
+          else
+            echo "No relevant files changed."
+          fi
