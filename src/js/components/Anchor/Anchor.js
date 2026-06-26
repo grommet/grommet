@@ -66,16 +66,29 @@ const Anchor = forwardRef(
     }, [children, icon, label]);
 
     let coloredIcon = icon;
-    if (icon && !icon.props.color) {
-      coloredIcon = cloneElement(icon, {
-        color: normalizeColor(
-          color ||
-            theme.anchor?.icon?.color ||
-            theme.anchor?.size?.[sizeProp || size]?.color ||
-            theme.anchor.color,
-          theme,
-        ),
-      });
+
+    if (icon) {
+      // Apply color only if icon doesn't already have a color prop
+      if (!icon.props.color) {
+        coloredIcon = cloneElement(icon, {
+          color: normalizeColor(
+            color ||
+              theme.anchor?.icon?.color ||
+              theme.anchor?.size?.[sizeProp || size]?.color ||
+              theme.anchor.color,
+            theme,
+          ),
+        });
+      }
+
+      // Apply size if icon doesn't already have a size prop
+      // (regardless of color)
+      if (!icon.props.size) {
+        const scaledSize = sizeProp || size || 'medium';
+        coloredIcon = cloneElement(coloredIcon, {
+          size: theme.anchor?.size?.[scaledSize]?.iconSize || scaledSize,
+        });
+      }
     }
 
     const anchorIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
