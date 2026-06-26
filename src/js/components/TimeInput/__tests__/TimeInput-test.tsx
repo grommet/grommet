@@ -88,4 +88,34 @@ describe('TimeInput', () => {
 
     expect(onChange).not.toHaveBeenCalled();
   });
+
+  test('does not open picker on focus by default', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput timeFormat="24hr" />
+      </Grommet>,
+    );
+
+    const input = screen.getByPlaceholderText('hh:mm');
+    await user.click(input);
+
+    expect(screen.queryByRole('listbox', { name: 'Hours' })).toBeNull();
+  });
+
+  test('opens picker on focus when openOnFocus is true', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput timeFormat="24hr" openOnFocus />
+      </Grommet>,
+    );
+
+    const input = screen.getByPlaceholderText('hh:mm');
+    await user.click(input);
+
+    expect(screen.getByRole('listbox', { name: 'Hours' })).toBeInTheDocument();
+  });
 });

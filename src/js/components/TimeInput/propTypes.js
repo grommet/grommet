@@ -30,7 +30,6 @@ if (process.env.NODE_ENV !== 'production') {
     openOnFocus: PropTypes.bool,
     plain: PropTypes.bool,
     readOnly: PropTypes.bool,
-    reverse: PropTypes.bool,
     secondStep: PropTypes.number,
     showSeconds: PropTypes.bool,
     step: PropTypes.number,

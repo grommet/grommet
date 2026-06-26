@@ -313,11 +313,10 @@ const TimeInput = forwardRef(
       onBlur,
       onChange,
       onFocus,
-      openOnFocus = true,
+      openOnFocus = false,
       plain,
       placeholder,
       readOnly,
-      reverse: reverseProp = false,
       secondStep,
       showSeconds = false,
       step,
@@ -760,7 +759,6 @@ const TimeInput = forwardRef(
       onKeyDown: inputOnKeyDown,
       ...restOfInputProps
     } = rest;
-    const reverse = reverseProp;
     const pickerOptionWidth = theme.timeInput?.drop?.option?.width || '46px';
     const pickerDropHeight = theme.timeInput?.drop?.height || '256px';
     const pickerOptionPad = theme.timeInput?.drop?.option?.pad || {
@@ -795,7 +793,7 @@ const TimeInput = forwardRef(
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={id ? `${id}__drop` : undefined}
-        margin={reverse ? { left: 'small' } : { right: 'small' }}
+        margin={{ right: 'small' }}
       />
     );
 
@@ -812,7 +810,6 @@ const TimeInput = forwardRef(
             readOnlyProp={readOnly}
             {...passThemeFlag}
           >
-            {reverse && !readOnly && toggleButton}
             <Box style={{ position: 'relative' }} fill>
               <TextInput
                 aria-invalid={fieldError ? true : undefined}
@@ -826,7 +823,6 @@ const TimeInput = forwardRef(
                 name={name}
                 disabled={disabled}
                 plain
-                reverse={reverse}
                 placeholder={resolvedPlaceholder}
                 {...restOfInputProps}
                 {...rest}
@@ -924,7 +920,7 @@ const TimeInput = forwardRef(
                 }}
               />
             </Box>
-            {!reverse && !readOnly && toggleButton}
+            {!readOnly && toggleButton}
           </StyledTimeInputContainer>
         </Keyboard>
       </FormContext.Provider>
