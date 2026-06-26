@@ -1,6 +1,12 @@
 import React from 'react';
 import 'jest-styled-components';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -346,5 +352,33 @@ describe('TimeInput', () => {
       expect(input.selectionStart).toBe(4);
       expect(input.selectionEnd).toBe(8);
     });
+  });
+
+  test('tabs to the next picker section instead of the next option', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput timeFormat="24hr" value="02:02" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByLabelText('Open time picker'));
+
+    const hoursList = screen.getByRole('listbox', { name: 'Hours' });
+    const minutesList = screen.getByRole('listbox', { name: 'Minutes' });
+    const selectedHourOption = within(hoursList).getByRole('option', {
+      name: '02',
+    });
+    const selectedMinuteOption = within(minutesList).getByRole('option', {
+      name: '02',
+    });
+
+    await user.click(selectedHourOption);
+    expect(selectedHourOption).toHaveFocus();
+
+    await user.tab();
+
+    expect(selectedMinuteOption).toHaveFocus();
   });
 });

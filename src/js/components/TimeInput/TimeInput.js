@@ -481,8 +481,12 @@ const PickerColumn = ({
             kind="option"
             selected={isSelectedOption}
             focusIndicator="inset"
+            tabIndex={isSelectedOption ? 0 : -1}
             role="option"
             aria-selected={isSelectedOption}
+            onFocus={() => {
+              onActivate(segment);
+            }}
             onClick={() => {
               onActivate(segment);
               onSelect(option);
