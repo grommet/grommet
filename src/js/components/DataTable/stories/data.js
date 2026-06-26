@@ -14,6 +14,7 @@ export const columns = [
     header: <Text>Name with extra</Text>,
     primary: true,
     footer: 'Total',
+    pin: true,
   },
   {
     property: 'location',

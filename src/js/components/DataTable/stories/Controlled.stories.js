@@ -14,6 +14,7 @@ delete controlledColumns[4].aggregate;
 
 export const ControlledDataTable = () => {
   const [checked, setChecked] = React.useState([]);
+  const [selectedRow, setSelectedRow] = React.useState();
 
   const onCheck = (event, value) => {
     if (event.target.checked) {
@@ -27,10 +28,11 @@ export const ControlledDataTable = () => {
     setChecked(event.target.checked ? DATA.map((datum) => datum.name) : []);
 
   return (
-    // Uncomment <Grommet> lines when using outside of storybook
-    // <Grommet theme={grommet}>
     <Box align="center" pad="medium">
       <DataTable
+        primaryKey="name"
+        onClickRow={(event) => setSelectedRow(event.datum.name)}
+        rowProps={selectedRow ? { [selectedRow]: { background: 'blue' } } : {}}
         columns={[
           {
             property: 'checkbox',
@@ -61,7 +63,6 @@ export const ControlledDataTable = () => {
         size="medium"
       />
     </Box>
-    // </Grommet>
   );
 };
 

@@ -43,177 +43,191 @@ const Row = memo(
     primaryProperty,
     verticalAlign,
     onRowRefChange,
-  }) => (
-    <>
-      <StyledDataTableRow
-        ref={(element) => {
-          // Store the row element in the parent's ref map
-          if (onRowRefChange) {
-            onRowRefChange(index, element);
-          }
-          // Also call the original rowRef if it exists
-          if (rowRef) {
-            if (typeof rowRef === 'function') {
-              rowRef(element);
-            } else if (
-              rowRef &&
-              typeof rowRef === 'object' &&
-              'current' in rowRef
-            ) {
-              const refObj = rowRef;
-              refObj.current = element;
+  }) => {
+    const { theme } = useThemeValue();
+    return (
+      <>
+        <StyledDataTableRow
+          ref={(element) => {
+            // Store the row element in the parent's ref map
+            if (onRowRefChange) {
+              onRowRefChange(index, element);
             }
-          }
-        }}
-        size={size}
-        active={active}
-        aria-disabled={(onClickRow && isDisabled) || undefined}
-        onClick={
-          onClickRow
-            ? (event) => {
-                if (onClickRow && !isDisabled) {
-                  setFocused(index);
-                  setActive(index);
-                  if (typeof onClickRow === 'function') {
-                    // extract from React's synthetic event pool
-                    event.persist();
-                    const adjustedEvent = event;
-                    adjustedEvent.datum = datum;
-                    adjustedEvent.index = index;
-                    onClickRow(adjustedEvent);
-                  } else if (onClickRow === 'select') {
-                    if (isSelected) {
-                      onSelect(
-                        selected.filter((s) => s !== primaryValue),
-                        datum,
-                      );
-                    } else onSelect([...selected, primaryValue], datum);
+            // Also call the original rowRef if it exists
+            if (rowRef) {
+              if (typeof rowRef === 'function') {
+                rowRef(element);
+              } else if (
+                rowRef &&
+                typeof rowRef === 'object' &&
+                'current' in rowRef
+              ) {
+                const refObj = rowRef;
+                refObj.current = element;
+              }
+            }
+          }}
+          size={size}
+          active={active}
+          aria-disabled={(onClickRow && isDisabled) || undefined}
+          onClick={
+            onClickRow
+              ? (event) => {
+                  if (onClickRow && !isDisabled) {
+                    setFocused(index);
+                    setActive(index);
+                    if (typeof onClickRow === 'function') {
+                      // extract from React's synthetic event pool
+                      event.persist();
+                      const adjustedEvent = event;
+                      adjustedEvent.datum = datum;
+                      adjustedEvent.index = index;
+                      onClickRow(adjustedEvent);
+                    } else if (onClickRow === 'select') {
+                      if (isSelected) {
+                        onSelect(
+                          selected.filter((s) => s !== primaryValue),
+                          datum,
+                        );
+                      } else onSelect([...selected, primaryValue], datum);
+                    }
                   }
                 }
-              }
-            : undefined
-        }
-        onFocus={() => {
-          if (onClickRow && !isDisabled) {
-            setFocused(index);
-            setActive(index);
+              : undefined
           }
-        }}
-        onMouseOver={
-          onClickRow && !isDisabled ? () => setActive(index) : undefined
-        }
-        tabIndex={
-          // eslint-disable-next-line no-nested-ternary
-          !onClickRow
-            ? undefined
-            : // If this row is focused, it should be focusable
-            // If no row is focused and this is the first row, make it focusable
-            (focused !== undefined && focused === index) ||
-              (focused === undefined && lastFocused === index) ||
-              (focused === undefined && index === 0)
-            ? 0
-            : // Otherwise, not in tab order
-              -1
-        }
-        {...passThemeFlag}
-      >
-        {(selected || onSelect) && (
-          <Cell
-            background={
-              (isSelected && cellProps.selected.background) ||
-              (pinnedOffset?._grommetDataTableSelect &&
-                cellProps.pinned.background) ||
-              cellProps.background
+          onFocus={() => {
+            if (onClickRow && !isDisabled) {
+              setFocused(index);
+              setActive(index);
             }
-            border={cellProps.pinned.border || cellProps.border}
-            pinnedOffset={pinnedOffset?._grommetDataTableSelect}
-            aria-disabled={isDisabled || !onSelect || undefined}
-            column={{
-              pin: Boolean(pinnedOffset?._grommetDataTableSelect),
-              plain: 'noPad',
-              size: 'auto',
-              render: () => (
-                <CheckBox
-                  tabIndex={onClickRow === 'select' ? -1 : undefined}
-                  a11yTitle={`${
-                    isSelected ? 'unselect' : 'select'
-                  } ${primaryValue}`}
-                  checked={isSelected}
-                  disabled={isDisabled || !onSelect}
-                  onChange={() => {
-                    if (isSelected) {
-                      onSelect(
-                        selected.filter((s) => s !== primaryValue),
-                        datum,
-                      );
-                    } else onSelect([...selected, primaryValue], datum);
-                  }}
-                  pad={cellProps.pad}
-                />
-              ),
-            }}
-            verticalAlign={verticalAlign}
-          />
-        )}
-        {rowDetails && (
-          <ExpanderCell
-            background={isSelected && cellProps.selected.background}
-            context={isRowExpanded ? 'groupHeader' : 'body'}
-            expanded={isRowExpanded}
-            expandLabel={expandLabel}
-            onToggle={() => {
-              let nextRowExpand;
-              const rowKey = primaryValue || index;
-              if (isRowExpanded) {
-                nextRowExpand = rowExpand.filter((s) => s !== rowKey);
-              } else {
-                nextRowExpand = [...rowExpand, rowKey];
+          }}
+          onMouseOver={
+            onClickRow && !isDisabled ? () => setActive(index) : undefined
+          }
+          tabIndex={
+            // eslint-disable-next-line no-nested-ternary
+            !onClickRow
+              ? undefined
+              : // If this row is focused, it should be focusable
+              // If no row is focused and this is the first row,
+              // make it focusable
+              (focused !== undefined && focused === index) ||
+                (focused === undefined && lastFocused === index) ||
+                (focused === undefined && index === 0)
+              ? 0
+              : // Otherwise, not in tab order
+                -1
+          }
+          {...passThemeFlag}
+        >
+          {(selected || onSelect) && (
+            <Cell
+              background={
+                (isSelected && cellProps.selected.background) ||
+                (focused === index && cellProps.background) ||
+                cellProps.background ||
+                (pinnedOffset?._grommetDataTableSelect &&
+                  cellProps.pinned.background)
               }
-              if (rowDetails.onExpand) {
-                rowDetails.onExpand(nextRowExpand, datum);
-              } else {
-                setRowExpand(nextRowExpand);
-              }
-            }}
-            pad={cellProps.pad}
-            verticalAlign={verticalAlign}
-          />
-        )}
-        {columns.map((column) => (
-          <Cell
-            key={column.property}
-            background={
+              border={cellProps.pinned.border || cellProps.border}
+              pinnedOffset={pinnedOffset?._grommetDataTableSelect}
+              aria-disabled={isDisabled || !onSelect || undefined}
+              column={{
+                pin: Boolean(pinnedOffset?._grommetDataTableSelect),
+                plain: 'noPad',
+                size: 'auto',
+                render: () => (
+                  <CheckBox
+                    tabIndex={onClickRow === 'select' ? -1 : undefined}
+                    a11yTitle={`${
+                      isSelected ? 'unselect' : 'select'
+                    } ${primaryValue}`}
+                    checked={isSelected}
+                    disabled={isDisabled || !onSelect}
+                    onChange={() => {
+                      if (isSelected) {
+                        onSelect(
+                          selected.filter((s) => s !== primaryValue),
+                          datum,
+                        );
+                      } else onSelect([...selected, primaryValue], datum);
+                    }}
+                    pad={cellProps.pad}
+                  />
+                ),
+              }}
+              verticalAlign={verticalAlign}
+            />
+          )}
+          {rowDetails && (
+            <ExpanderCell
+              background={isSelected && cellProps.selected.background}
+              context={isRowExpanded ? 'groupHeader' : 'body'}
+              expanded={isRowExpanded}
+              expandLabel={expandLabel}
+              onToggle={() => {
+                let nextRowExpand;
+                const rowKey = primaryValue || index;
+                if (isRowExpanded) {
+                  nextRowExpand = rowExpand.filter((s) => s !== rowKey);
+                } else {
+                  nextRowExpand = [...rowExpand, rowKey];
+                }
+                if (rowDetails.onExpand) {
+                  rowDetails.onExpand(nextRowExpand, datum);
+                } else {
+                  setRowExpand(nextRowExpand);
+                }
+              }}
+              pad={cellProps.pad}
+              verticalAlign={verticalAlign}
+            />
+          )}
+          {columns.map((column) => {
+            const cellBackground =
               (isSelected && cellProps.selected.background) ||
+              (isSelected && cellProps.background) ||
+              (active &&
+                column.pin &&
+                theme.dataTable.pinned?.body?.hover?.background) ||
+              (focused === index && cellProps.background) ||
               (column.pin && cellProps.pinned.background) ||
-              cellProps.background
-            }
-            border={(column.pin && cellProps.pinned.border) || cellProps.border}
-            context="body"
-            column={column}
-            datum={datum}
-            isSelected={isSelected}
-            pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
-            pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
-            primaryProperty={primaryProperty}
-            scope={
-              column.primary || column.property === primaryProperty
-                ? 'row'
-                : undefined
-            }
-            verticalAlign={verticalAlign}
-          />
-        ))}
-      </StyledDataTableRow>
-      {rowDetails && isRowExpanded && (
-        <StyledDataTableRow key={`${index.toString()}_expand`}>
-          {(selected || onSelect) && <TableCell />}
-          <TableCell colSpan={columns.length + 1}>
-            {rowDetails.render ? rowDetails.render(datum) : rowDetails(datum)}
-          </TableCell>
+              cellProps.background;
+            return (
+              <Cell
+                key={column.property}
+                background={cellBackground}
+                border={
+                  (column.pin && cellProps.pinned.border) || cellProps.border
+                }
+                context="body"
+                column={column}
+                datum={datum}
+                isSelected={isSelected}
+                pad={(column.pin && cellProps.pinned.pad) || cellProps.pad}
+                pinnedOffset={pinnedOffset && pinnedOffset[column.property]}
+                primaryProperty={primaryProperty}
+                scope={
+                  column.primary || column.property === primaryProperty
+                    ? 'row'
+                    : undefined
+                }
+                verticalAlign={verticalAlign}
+              />
+            );
+          })}
         </StyledDataTableRow>
-      )}
-    </>
-  ),
+        {rowDetails && isRowExpanded && (
+          <StyledDataTableRow key={`${index.toString()}_expand`}>
+            {(selected || onSelect) && <TableCell />}
+            <TableCell colSpan={columns.length + 1}>
+              {rowDetails.render ? rowDetails.render(datum) : rowDetails(datum)}
+            </TableCell>
+          </StyledDataTableRow>
+        )}
+      </>
+    );
+  },
 );
 
 const Body = forwardRef(
