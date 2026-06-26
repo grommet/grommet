@@ -315,6 +315,32 @@ const Header = forwardRef(
               size,
               units,
             }) => {
+              const headerText =
+                typeof header === 'string'
+                  ? header
+                  : (() => {
+                      const textFromNode = (node) => {
+                        if (
+                          node === null ||
+                          node === undefined ||
+                          typeof node === 'boolean'
+                        )
+                          return '';
+                        if (
+                          typeof node === 'string' ||
+                          typeof node === 'number'
+                        )
+                          return String(node);
+                        if (Array.isArray(node))
+                          return node.map(textFromNode).join('');
+                        if (React.isValidElement(node))
+                          return textFromNode(node.props.children);
+                        return '';
+                      };
+
+                      const text = textFromNode(header).trim();
+                      return text || property;
+                    })();
               let content;
               const unitsContent = units ? (
                 <Text {...textProps} {...theme.dataTable.header.units}>
@@ -356,36 +382,44 @@ const Header = forwardRef(
                 );
               }
 
-              let ariaSort;
+              let ariaSort = onSort && sortable !== false ? 'none' : undefined;
+              let buttonA11yTitle;
               if (onSort && sortable !== false) {
                 let Icon;
-                let iconAriaLabel;
-                if (onSort && sortable !== false) {
-                  if (sort && sort.property === property) {
-                    Icon =
-                      theme.dataTable.icons[
-                        sort.direction !== 'asc' ? 'ascending' : 'descending'
-                      ];
-                    if (sort.direction === 'asc') {
-                      ariaSort = 'ascending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.ascending',
-                        messages,
-                      });
-                    } else if (sort.direction === 'desc') {
-                      ariaSort = 'descending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.descending',
-                        messages,
-                      });
-                    }
-                  } else if (theme.dataTable.icons.sortable) {
-                    Icon = theme.dataTable.icons.sortable;
+                let sortStatusId = 'dataTable.sortable';
+                let sortActionId = 'dataTable.sortAscending';
+
+                if (sort && sort.property === property) {
+                  Icon =
+                    theme.dataTable.icons[
+                      sort.direction !== 'asc' ? 'ascending' : 'descending'
+                    ];
+                  if (sort.direction === 'asc') {
+                    ariaSort = 'ascending';
+                    sortStatusId = 'dataTable.sortedAscending';
+                    sortActionId = 'dataTable.sortDescending';
+                  } else if (sort.direction === 'desc') {
+                    ariaSort = 'descending';
+                    sortStatusId = 'dataTable.sortedDescending';
+                    sortActionId = 'dataTable.sortAscending';
                   }
+                } else if (theme.dataTable.icons.sortable) {
+                  Icon = theme.dataTable.icons.sortable;
                 }
+
+                buttonA11yTitle = format({
+                  id: 'dataTable.sortButton',
+                  messages,
+                  values: {
+                    label: units ? `${headerText} ${units}` : headerText,
+                    status: format({ id: sortStatusId, messages }),
+                    action: format({ id: sortActionId, messages }),
+                  },
+                });
 
                 content = (
                   <StyledHeaderCellButton
+                    a11yTitle={buttonA11yTitle}
                     plain
                     column={property}
                     fill="vertical"
@@ -404,7 +438,7 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon aria-label={iconAriaLabel} />}
+                      {Icon && <Icon aria-hidden />}
                     </Box>
                   </StyledHeaderCellButton>
                 );
@@ -519,9 +553,7 @@ const Header = forwardRef(
                         onResize(prop, width);
                         updateWidths(prop, width);
                       }}
-                      headerText={
-                        typeof header === 'string' ? header : property
-                      }
+                      headerText={headerText}
                       messages={messages}
                       headerId={headerId}
                     />
