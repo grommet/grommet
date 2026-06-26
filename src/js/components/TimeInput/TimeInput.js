@@ -169,6 +169,29 @@ const getSegmentFromCursorPosition = ({ cursor, timeFormat, showSeconds }) => {
   return showSeconds ? 'second' : 'minute';
 };
 
+const getFormattedCursorPosition = ({
+  rawValue,
+  formattedValue,
+  rawCursor,
+}) => {
+  if (rawValue === formattedValue) return rawCursor;
+
+  const rawBeforeCursor = (rawValue || '').slice(0, rawCursor);
+  const digitsBeforeCursor = rawBeforeCursor.replace(/\D/g, '').length;
+
+  if (!digitsBeforeCursor) return rawCursor;
+
+  let seenDigits = 0;
+  for (let index = 0; index < (formattedValue || '').length; index += 1) {
+    if (/\d/.test(formattedValue[index])) {
+      seenDigits += 1;
+      if (seenDigits >= digitsBeforeCursor) return index + 1;
+    }
+  }
+
+  return (formattedValue || '').length;
+};
+
 const parseToPickerParts = ({ value, timeFormat, showSeconds }) => {
   const parsed = parseTimeText({ value, timeFormat, showSeconds });
   if (!parsed) {
@@ -731,6 +754,7 @@ const TimeInput = forwardRef(
 
         setPickerParts(nextParts);
         commitFromPicker(nextParts);
+        requestAnimationFrame(() => selectInputSegment(activeSegment));
       },
       [
         activeSegment,
@@ -738,6 +762,7 @@ const TimeInput = forwardRef(
         committedValue,
         pickerParts,
         resolvedTimeFormat,
+        selectInputSegment,
         segmentOptions,
         showSeconds,
         textValue,
@@ -829,6 +854,8 @@ const TimeInput = forwardRef(
                 value={textValue}
                 onChange={(event) => {
                   const nextTextValue = event.target.value;
+                  const rawCursorPosition =
+                    event.target.selectionStart ?? nextTextValue.length;
                   const formattedInput = formatTypedTimeInput({
                     value: nextTextValue,
                     timeFormat: resolvedTimeFormat,
@@ -837,6 +864,13 @@ const TimeInput = forwardRef(
 
                   setHasDraft(true);
                   setTextValue(formattedInput);
+
+                  const nextCursorPosition = getFormattedCursorPosition({
+                    rawValue: nextTextValue,
+                    formattedValue: formattedInput,
+                    rawCursor: rawCursorPosition,
+                  });
+                  queueInputSelection(nextCursorPosition, nextCursorPosition);
 
                   if (!formattedInput) {
                     setDraftError(undefined);
@@ -882,8 +916,10 @@ const TimeInput = forwardRef(
                   if (onBlur) onBlur(event);
                 }}
                 onFocus={(event) => {
-                  if (openOnFocus) openPicker();
-                  selectInputSegment('hour');
+                  if (openOnFocus) {
+                    openPicker();
+                    selectInputSegment('hour');
+                  }
                   if (onFocus) onFocus(event);
                 }}
                 onClick={(event) => {

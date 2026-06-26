@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -109,7 +109,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput timeFormat="24hr" openOnFocus />
+        <TimeInput timeFormat="24hr" defaultValue="12:00" openOnFocus />
       </Grommet>,
     );
 
@@ -117,5 +117,49 @@ describe('TimeInput', () => {
     await user.click(input);
 
     expect(screen.getByRole('listbox', { name: 'Hours' })).toBeInTheDocument();
+  });
+
+  test('preserves caret when formatting typed value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput timeFormat="24hr" />
+      </Grommet>,
+    );
+
+    const input = screen.getByPlaceholderText('hh:mm') as HTMLInputElement;
+
+    await user.click(input);
+    await user.type(input, '1');
+
+    expect(input.selectionStart).toBe(1);
+    expect(input.selectionEnd).toBe(1);
+  });
+
+  test('keeps active segment selection when using arrow keys', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput timeFormat="24hr" />
+      </Grommet>,
+    );
+
+    const input = screen.getByPlaceholderText('hh:mm') as HTMLInputElement;
+    const toggleButton = screen.getByLabelText('Open time picker');
+
+    await user.click(input);
+    await user.type(input, '12:00');
+    await user.click(toggleButton);
+    await user.click(input);
+    input.setSelectionRange(0, 2);
+
+    await user.keyboard('{ArrowUp}');
+
+    await waitFor(() => {
+      expect(input.selectionStart).toBe(0);
+      expect(input.selectionEnd).toBe(2);
+    });
   });
 });
