@@ -5,7 +5,6 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
-    buttonProps: PropTypes.shape({}),
     defaultValue: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.instanceOf(Date),

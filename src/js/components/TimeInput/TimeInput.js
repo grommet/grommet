@@ -302,7 +302,6 @@ const PickerColumn = ({
 const TimeInput = forwardRef(
   (
     {
-      buttonProps,
       defaultValue,
       disabled,
       dropProps,
@@ -805,7 +804,6 @@ const TimeInput = forwardRef(
         aria-expanded={open}
         aria-controls={id ? `${id}__drop` : undefined}
         margin={reverse ? { left: 'small' } : { right: 'small' }}
-        {...buttonProps}
       />
     );
 

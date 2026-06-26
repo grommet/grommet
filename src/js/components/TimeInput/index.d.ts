@@ -1,18 +1,10 @@
 import * as React from 'react';
 
 import { MaskedInputType } from '../MaskedInput';
-import {
-  A11yTitleType,
-  AlignSelfType,
-  GridAreaType,
-  MarginType,
-} from '../../utils';
-import { ButtonType } from '../Button';
+import { AlignSelfType, GridAreaType, MarginType } from '../../utils';
 import { DropType } from '../Drop';
 
 export interface TimeInputProps {
-  buttonProps?: ButtonType;
-  a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
