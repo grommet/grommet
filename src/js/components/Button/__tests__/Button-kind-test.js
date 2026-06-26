@@ -79,6 +79,34 @@ describe('Button kind', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('default button color prop sets text color, not background', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: {
+                color: '#666666',
+              },
+              border: {
+                color: '#666666',
+              },
+            },
+          },
+        }}
+      >
+        <Button label="Test" color="#FF0000" />
+      </Grommet>,
+    );
+    const button = container.querySelector('button');
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('#FF0000'),
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test(`mouseOver and mouseOut events`, async () => {
     const { container, getByText } = render(
       <Grommet
@@ -955,6 +983,72 @@ describe('Button kind', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('default button color prop sets text color with buttonKindTheme', () => {
+    const { container } = render(
+      <Grommet theme={buttonKindTheme}>
+        <Button label="Default" color="#FF0000" />
+      </Grommet>,
+    );
+    const button = container.querySelector('button');
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('#FF0000'),
+    );
+  });
+
+  test('default button color prop in active state sets text color', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: { color: '#666666' },
+              border: { color: '#666666' },
+            },
+            active: {
+              background: { color: '#333333' },
+            },
+          },
+        }}
+      >
+        <Button label="Active" color="#FF0000" active />
+      </Grommet>,
+    );
+    const button = container.querySelector('button');
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('#FF0000'),
+    );
+  });
+
+  test('default button color prop when disabled sets text color', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          button: {
+            default: {
+              background: { color: '#666666' },
+              border: { color: '#666666' },
+            },
+            disabled: {
+              opacity: 0.5,
+            },
+          },
+        }}
+      >
+        <Button label="Disabled" color="#FF0000" disabled />
+      </Grommet>,
+    );
+    const button = container.querySelector('button');
+    expect(button).toHaveStyleRule('color', expect.stringContaining('#FF0000'));
+    expect(button).not.toHaveStyleRule(
+      'background-color',
+      expect.stringContaining('#FF0000'),
+    );
   });
 
   test('theme busy gap', () => {
