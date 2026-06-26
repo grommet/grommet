@@ -12,8 +12,6 @@ if (process.env.NODE_ENV !== 'production') {
     disabled: PropTypes.bool,
     dropProps: PropTypes.shape({}),
     icon: PropTypes.node,
-    id: PropTypes.string,
-    inputProps: PropTypes.shape({}),
     max: PropTypes.string,
     messages: PropTypes.shape({
       closeTimePicker: PropTypes.string,

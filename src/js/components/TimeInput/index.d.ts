@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { MaskedInputType } from '../MaskedInput';
 import { AlignSelfType, GridAreaType, MarginType } from '../../utils';
 import { DropType } from '../Drop';
 
@@ -10,8 +9,6 @@ export interface TimeInputProps {
   margin?: MarginType;
   defaultValue?: Date | string;
   disabled?: boolean;
-  id?: string;
-  inputProps?: MaskedInputType;
   messages?: {
     closeTimePicker?: string;
     hoursLabel?: string;

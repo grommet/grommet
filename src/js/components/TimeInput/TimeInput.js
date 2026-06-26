@@ -307,7 +307,6 @@ const TimeInput = forwardRef(
       dropProps,
       id,
       icon,
-      inputProps,
       messages,
       max,
       min,
@@ -759,16 +758,13 @@ const TimeInput = forwardRef(
     }
 
     const {
-      icon: inputIcon,
       onClick: inputOnClick,
       onKeyDown: inputOnKeyDown,
       ...restOfInputProps
-    } = inputProps || {};
+    } = rest;
     const resolvedInputIcon =
-      inputIcon === null
-        ? undefined
-        : inputIcon || icon || <ClockIcon size={iconSize} />;
-    const reverse = reverseProp || restOfInputProps.reverse;
+      icon === null ? undefined : icon || <ClockIcon size={iconSize} />;
+    const reverse = reverseProp;
     const pickerOptionWidth = theme.timeInput?.drop?.option?.width || '46px';
     const pickerDropHeight = theme.timeInput?.drop?.height || '256px';
     const pickerOptionPad = theme.timeInput?.drop?.option?.pad || {

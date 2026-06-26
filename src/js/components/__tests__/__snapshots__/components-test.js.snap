@@ -1117,8 +1117,6 @@ exports[`Components loads 1`] = `
       "dropProps": [Function],
       "gridArea": [Function],
       "icon": [Function],
-      "id": [Function],
-      "inputProps": [Function],
       "margin": [Function],
       "max": [Function],
       "messages": [Function],
