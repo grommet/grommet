@@ -304,7 +304,6 @@ const TimeInput = forwardRef(
     {
       defaultValue,
       disabled,
-      dropProps,
       id,
       icon,
       messages,
@@ -939,11 +938,10 @@ const TimeInput = forwardRef(
         <Drop
           id={id ? `${id}__drop` : undefined}
           target={containerRef.current}
-          align={{ ...defaultDropAlign, ...dropProps?.align }}
+          align={defaultDropAlign}
           stretch={false}
           onEsc={() => closePicker({ restoreFocus: true })}
           onClickOutside={() => closePicker({ restoreFocus: false })}
-          {...dropProps}
         >
           <StyledPickerDropContent
             dropHeight={pickerDropHeight}

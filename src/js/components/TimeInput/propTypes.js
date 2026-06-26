@@ -10,7 +10,6 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.instanceOf(Date),
     ]),
     disabled: PropTypes.bool,
-    dropProps: PropTypes.shape({}),
     icon: PropTypes.node,
     max: PropTypes.string,
     messages: PropTypes.shape({

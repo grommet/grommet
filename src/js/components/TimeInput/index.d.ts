@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { AlignSelfType, GridAreaType, MarginType } from '../../utils';
-import { DropType } from '../Drop';
 
 export interface TimeInputProps {
   alignSelf?: AlignSelfType;
@@ -33,7 +32,6 @@ export interface TimeInputProps {
   showSeconds?: boolean;
   timeFormat?: '12hr' | '24hr';
   value?: Date | string;
-  dropProps?: DropType;
   icon?: React.ReactNode;
   openOnFocus?: boolean;
   reverse?: boolean;
