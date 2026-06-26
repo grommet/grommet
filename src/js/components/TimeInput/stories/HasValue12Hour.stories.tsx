@@ -4,13 +4,13 @@ import type { Meta } from '@storybook/react';
 import { Box, TimeInput } from 'grommet';
 
 export const PresetTime = () => {
-  const [value, setValue] = React.useState('00:00');
+  const [value, setValue] = React.useState('09:30 AM');
 
   return (
     <Box align="center" justify="center" pad="large">
       <Box width="medium">
         <TimeInput
-          timeFormat="24hr"
+          timeFormat="12hr"
           value={value}
           onChange={({ value: nextValue }: { value: string }) =>
             setValue(nextValue)
@@ -21,7 +21,7 @@ export const PresetTime = () => {
   );
 };
 
-PresetTime.storyName = 'Preset Time';
+PresetTime.storyName = 'Preset Value';
 
 PresetTime.parameters = {
   chromatic: { disable: true },

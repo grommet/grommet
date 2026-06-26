@@ -11,7 +11,7 @@ import { Clock as GrommetClockIcon } from 'grommet-icons/icons/Clock';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
-import { useForwardedRef } from '../../utils';
+import { useForwardedRef, useKeyboard } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -22,6 +22,8 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import {
   StyledTimeInputContainer,
+  StyledTimeInputInputWrapper,
+  StyledTimeInputToggleButton,
   StyledPickerList,
   StyledPickerOptionBox,
   StyledPickerDropContent,
@@ -38,6 +40,159 @@ import {
 } from './utils';
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
+
+const toCanonicalDisplayValue = (value = '') =>
+  value
+    .replace(/\s*:\s*/g, ':')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const toSpacedDisplayValue = ({ value = '', timeFormat }) => {
+  if (!value) return '';
+
+  const canonical = toCanonicalDisplayValue(value);
+  let spaced = canonical.replace(/:/g, ' : ');
+
+  if (timeFormat === '12hr') {
+    spaced = spaced.replace(/\s*([aApP][mM])$/, ' $1');
+  }
+
+  return spaced;
+};
+
+const getDefaultSpacedValue = ({ timeFormat, showSeconds }) => {
+  if (timeFormat === '24hr') {
+    return showSeconds ? 'hh : mm : ss' : 'hh : mm';
+  }
+  return showSeconds ? 'hh : mm : ss am' : 'hh : mm am';
+};
+
+const getTrimmedBounds = ({ value, start, end }) => {
+  let trimmedStart = Math.max(start, 0);
+  let trimmedEnd = Math.min(end, value.length);
+
+  while (trimmedStart < trimmedEnd && value[trimmedStart] === ' ') {
+    trimmedStart += 1;
+  }
+
+  while (trimmedEnd > trimmedStart && value[trimmedEnd - 1] === ' ') {
+    trimmedEnd -= 1;
+  }
+
+  return { start: trimmedStart, end: trimmedEnd };
+};
+
+const addSegmentPadding = ({ value, start, end, left, right }) => {
+  let paddedStart = start;
+  let paddedEnd = end;
+
+  if (left && paddedStart > 0 && value[paddedStart - 1] === ' ') {
+    paddedStart -= 1;
+  }
+
+  if (right && paddedEnd < value.length && value[paddedEnd] === ' ') {
+    paddedEnd += 1;
+  }
+
+  return { start: paddedStart, end: paddedEnd };
+};
+
+const getTrailingTokenBounds = (value) => {
+  let end = value.length;
+  while (end > 0 && value[end - 1] === ' ') end -= 1;
+
+  let start = end;
+  while (start > 0 && value[start - 1] !== ' ') start -= 1;
+
+  return { start, end };
+};
+
+const getSegmentRanges = ({ value, timeFormat, showSeconds }) => {
+  const spacedValue =
+    toSpacedDisplayValue({ value, timeFormat }) ||
+    getDefaultSpacedValue({ timeFormat, showSeconds });
+
+  const firstColon = spacedValue.indexOf(':');
+  const secondColon = showSeconds
+    ? spacedValue.indexOf(':', firstColon + 1)
+    : -1;
+
+  if (firstColon === -1 || (showSeconds && secondColon === -1)) {
+    return {
+      hour: { start: 0, end: 3 },
+      minute: { start: 4, end: 8 },
+      second: { start: 9, end: 13 },
+      period: {
+        start: showSeconds ? 13 : 8,
+        end: showSeconds ? 15 : 10,
+      },
+    };
+  }
+
+  let periodCore;
+  if (timeFormat === '12hr') {
+    periodCore = getTrailingTokenBounds(spacedValue);
+  }
+
+  const hourCore = getTrimmedBounds({
+    value: spacedValue,
+    start: 0,
+    end: firstColon,
+  });
+
+  const minuteCore = getTrimmedBounds({
+    value: spacedValue,
+    start: firstColon + 1,
+    end:
+      secondColon !== -1
+        ? secondColon
+        : periodCore?.start ?? spacedValue.length,
+  });
+
+  let secondCore;
+  if (showSeconds) {
+    secondCore = getTrimmedBounds({
+      value: spacedValue,
+      start: secondColon + 1,
+      end: periodCore?.start ?? spacedValue.length,
+    });
+  }
+
+  return {
+    hour: addSegmentPadding({
+      value: spacedValue,
+      start: hourCore.start,
+      end: hourCore.end,
+      left: false,
+      right: true,
+    }),
+    minute: addSegmentPadding({
+      value: spacedValue,
+      start: minuteCore.start,
+      end: minuteCore.end,
+      left: true,
+      right: true,
+    }),
+    second: secondCore
+      ? addSegmentPadding({
+          value: spacedValue,
+          start: secondCore.start,
+          end: secondCore.end,
+          left: true,
+          right: true,
+        })
+      : undefined,
+    period: periodCore
+      ? addSegmentPadding({
+          value: spacedValue,
+          start: periodCore.start,
+          end: periodCore.end,
+          left: true,
+          right: false,
+        })
+      : undefined,
+  };
+};
 
 const toTimeInputString = ({ value, timeFormat, showSeconds }) => {
   if (value instanceof Date && !Number.isNaN(value.getTime())) {
@@ -148,25 +303,48 @@ const formatTypedTimeInput = ({ value, timeFormat, showSeconds }) => {
   return formatted;
 };
 
-const getSegmentSelectionRange = ({ segment, timeFormat, showSeconds }) => {
-  if (segment === 'hour') return { start: 0, end: 2 };
-  if (segment === 'minute') return { start: 3, end: 5 };
-  if (segment === 'second') return { start: 6, end: 8 };
-
-  if (timeFormat === '12hr') {
-    const start = showSeconds ? 9 : 6;
-    return { start, end: start + 2 };
-  }
-
-  return { start: 0, end: 2 };
+const getSegmentSelectionRange = ({
+  segment,
+  value,
+  timeFormat,
+  showSeconds,
+}) => {
+  const ranges = getSegmentRanges({ value, timeFormat, showSeconds });
+  return ranges[segment] || ranges.hour;
 };
 
-const getSegmentFromCursorPosition = ({ cursor, timeFormat, showSeconds }) => {
-  if (cursor <= 2) return 'hour';
-  if (cursor <= 5) return 'minute';
-  if (showSeconds && cursor <= 8) return 'second';
+const getSegmentFromCursorPosition = ({
+  cursor,
+  value,
+  timeFormat,
+  showSeconds,
+}) => {
+  const ranges = getSegmentRanges({ value, timeFormat, showSeconds });
+
+  if (cursor <= ranges.hour.end) return 'hour';
+  if (cursor <= ranges.minute.end) return 'minute';
+  if (showSeconds && ranges.second && cursor <= ranges.second.end) {
+    return 'second';
+  }
   if (timeFormat === '12hr') return 'period';
   return showSeconds ? 'second' : 'minute';
+};
+
+const getSegmentDetectionCursor = ({
+  selectionStart,
+  selectionEnd,
+  fallbackCursor,
+}) => {
+  if (
+    typeof selectionStart === 'number' &&
+    typeof selectionEnd === 'number' &&
+    selectionEnd > selectionStart
+  ) {
+    return Math.max(selectionStart, selectionEnd - 1);
+  }
+
+  if (typeof selectionStart === 'number') return selectionStart;
+  return fallbackCursor;
 };
 
 const getFormattedCursorPosition = ({
@@ -353,9 +531,12 @@ const TimeInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const { useFormInput } = useContext(FormContext);
+    const usingKeyboard = useKeyboard();
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
     const pendingSelectionRef = useRef();
+    const inputPointerDownRef = useRef(false);
+    const pendingFocusSelectionFrameRef = useRef();
     // Tracks whether focus entered the drop so we only restore focus
     // when the drop actually owned it, not when the user clicked elsewhere.
     const dropFocusedRef = useRef(false);
@@ -449,13 +630,17 @@ const TimeInput = forwardRef(
     );
 
     const [textValue, setTextValue] = useState(
-      normalizeTimeText({
-        value: committedValue,
+      toSpacedDisplayValue({
+        value:
+          normalizeTimeText({
+            value: committedValue,
+            timeFormat: resolvedTimeFormat,
+            showSeconds,
+          }) ||
+          committedValue ||
+          '',
         timeFormat: resolvedTimeFormat,
-        showSeconds,
-      }) ||
-        committedValue ||
-        '',
+      }),
     );
 
     const formContextValue = useMemo(
@@ -475,7 +660,12 @@ const TimeInput = forwardRef(
           }) ||
           committedValue ||
           '';
-        setTextValue(normalized);
+        setTextValue(
+          toSpacedDisplayValue({
+            value: normalized,
+            timeFormat: resolvedTimeFormat,
+          }),
+        );
         setPickerParts(
           parseToPickerParts({
             value: normalized,
@@ -580,7 +770,12 @@ const TimeInput = forwardRef(
         setDraftError(undefined);
         setHasDraft(false);
         emitChange(normalizedValue);
-        setTextValue(normalizedValue);
+        setTextValue(
+          toSpacedDisplayValue({
+            value: normalizedValue,
+            timeFormat: resolvedTimeFormat,
+          }),
+        );
         setPickerParts(
           parseToPickerParts({
             value: normalizedValue,
@@ -608,7 +803,12 @@ const TimeInput = forwardRef(
         setDraftError(undefined);
         setHasDraft(false);
         emitChange(normalizedValue);
-        setTextValue(normalizedValue);
+        setTextValue(
+          toSpacedDisplayValue({
+            value: normalizedValue,
+            timeFormat: resolvedTimeFormat,
+          }),
+        );
         setPickerParts(
           parseToPickerParts({
             value: normalizedValue,
@@ -620,9 +820,19 @@ const TimeInput = forwardRef(
       [emitChange, resolvedTimeFormat, showSeconds, validateParsedTime],
     );
 
+    const applyPickerParts = useCallback(
+      (nextParts, { segment } = {}) => {
+        if (segment) setActiveSegment(segment);
+        setPickerParts(nextParts);
+        commitFromPicker(nextParts);
+      },
+      [commitFromPicker],
+    );
+
     const openPicker = useCallback(() => {
       if (disabled || readOnly) return;
-      const seedValue = textValue || committedValue || '';
+      const seedValue =
+        toCanonicalDisplayValue(textValue) || committedValue || '';
       setPickerParts(
         parseToPickerParts({
           value: seedValue,
@@ -664,14 +874,22 @@ const TimeInput = forwardRef(
 
     const queueInputSelection = useCallback(
       (start, end = start) => {
+        pendingSelectionRef.current = { start, end };
         if (ref?.current?.setSelectionRange) {
           ref.current.setSelectionRange(start, end);
-          pendingSelectionRef.current = undefined;
-          return;
         }
-        pendingSelectionRef.current = { start, end };
       },
       [ref],
+    );
+
+    useEffect(
+      () => () => {
+        if (pendingFocusSelectionFrameRef.current) {
+          window.cancelAnimationFrame(pendingFocusSelectionFrameRef.current);
+          pendingFocusSelectionFrameRef.current = undefined;
+        }
+      },
+      [],
     );
 
     useEffect(() => {
@@ -699,8 +917,8 @@ const TimeInput = forwardRef(
     );
 
     const getAdjacentSegment = useCallback(
-      (direction) => {
-        const currentIndex = segmentOrder.indexOf(activeSegment);
+      (direction, fromSegment = activeSegment) => {
+        const currentIndex = segmentOrder.indexOf(fromSegment);
         if (currentIndex === -1) return segmentOrder[0];
         const wrappedIndex =
           (currentIndex + direction + segmentOrder.length) %
@@ -710,37 +928,100 @@ const TimeInput = forwardRef(
       [activeSegment, segmentOrder],
     );
 
+    const getCurrentKeyboardSegment = useCallback(
+      ({ selectionStart, selectionEnd, cursor, value }) => {
+        const detectedSegment = getSegmentFromCursorPosition({
+          cursor,
+          value,
+          timeFormat: resolvedTimeFormat,
+          showSeconds,
+        });
+
+        const hasSelectionPoint = typeof selectionStart === 'number';
+        const hasSelectionRange =
+          typeof selectionStart === 'number' &&
+          typeof selectionEnd === 'number' &&
+          selectionEnd > selectionStart;
+
+        if (hasSelectionRange || hasSelectionPoint) return detectedSegment;
+        if (segmentOrder.includes(activeSegment)) return activeSegment;
+        return detectedSegment;
+      },
+      [activeSegment, resolvedTimeFormat, segmentOrder, showSeconds],
+    );
+
+    const getCurrentInputSelection = useCallback(
+      (fallbackCursor = textValue.length) => ({
+        selectionStart: ref?.current?.selectionStart,
+        selectionEnd: ref?.current?.selectionEnd,
+        cursor: getSegmentDetectionCursor({
+          selectionStart: ref?.current?.selectionStart,
+          selectionEnd: ref?.current?.selectionEnd,
+          fallbackCursor,
+        }),
+      }),
+      [ref, textValue.length],
+    );
+
+    const getCurrentInputSegment = useCallback(() => {
+      const { selectionStart, selectionEnd, cursor } = getCurrentInputSelection(
+        textValue.length,
+      );
+
+      return getCurrentKeyboardSegment({
+        selectionStart,
+        selectionEnd,
+        cursor,
+        value: ref?.current?.value || textValue,
+      });
+    }, [getCurrentInputSelection, getCurrentKeyboardSegment, ref, textValue]);
+
     const selectInputSegment = useCallback(
       (segment) => {
         setActiveSegment(segment);
+        const selectionValue =
+          ref?.current?.value ||
+          textValue ||
+          getDefaultSpacedValue({
+            timeFormat: resolvedTimeFormat,
+            showSeconds,
+          });
         const range = getSegmentSelectionRange({
           segment,
+          value: selectionValue,
           timeFormat: resolvedTimeFormat,
           showSeconds,
         });
         queueInputSelection(range.start, range.end);
       },
-      [queueInputSelection, resolvedTimeFormat, showSeconds],
+      [queueInputSelection, ref, resolvedTimeFormat, showSeconds, textValue],
     );
 
-    const adjustActiveSegmentValue = useCallback(
-      (direction) => {
-        const options = segmentOptions[activeSegment] || [];
+    const adjustSegmentValue = useCallback(
+      ({ segment, direction }) => {
+        const options = segmentOptions[segment] || [];
         if (!options.length) return;
+
+        const displayedInputValue = ref?.current?.value || '';
+        const seededValue =
+          toCanonicalDisplayValue(displayedInputValue) ||
+          toCanonicalDisplayValue(textValue) ||
+          committedValue ||
+          '';
 
         // Sync parts from current text so arrow keys adjust from what
         // the user actually sees, not from a stale default baseline.
         const syncedParts =
           parseToPickerParts({
-            value: textValue || committedValue || '',
+            value: seededValue,
             timeFormat: resolvedTimeFormat,
             showSeconds,
           }) || pickerParts;
 
         const currentValue =
-          activeSegment === 'period'
+          segment === 'period'
             ? syncedParts.period || 'am'
-            : syncedParts[activeSegment];
+            : syncedParts[segment];
         let currentIndex = options.indexOf(currentValue);
         if (currentIndex === -1) currentIndex = 0;
 
@@ -748,19 +1029,18 @@ const TimeInput = forwardRef(
           (currentIndex + direction + options.length) % options.length;
         const nextValue = options[nextIndex];
         const nextParts =
-          activeSegment === 'period'
+          segment === 'period'
             ? { ...syncedParts, period: nextValue }
-            : { ...syncedParts, [activeSegment]: nextValue };
+            : { ...syncedParts, [segment]: nextValue };
 
-        setPickerParts(nextParts);
-        commitFromPicker(nextParts);
-        requestAnimationFrame(() => selectInputSegment(activeSegment));
+        applyPickerParts(nextParts, { segment });
+        selectInputSegment(segment);
       },
       [
-        activeSegment,
-        commitFromPicker,
+        applyPickerParts,
         committedValue,
         pickerParts,
+        ref,
         resolvedTimeFormat,
         selectInputSegment,
         segmentOptions,
@@ -784,24 +1064,28 @@ const TimeInput = forwardRef(
       onKeyDown: inputOnKeyDown,
       ...restOfInputProps
     } = rest;
-    const pickerOptionWidth = theme.timeInput?.drop?.option?.width || '46px';
-    const pickerDropHeight = theme.timeInput?.drop?.height || '256px';
+    const pickerOptionWidth =
+      theme.timeInput?.drop?.option?.width ||
+      'var(--timeinput-drop-option-width, 46px)';
+    const pickerDropHeight =
+      theme.timeInput?.drop?.height ||
+      'var(--timeinput-drop-height, 256px)';
     const pickerOptionPad = theme.timeInput?.drop?.option?.pad || {
       horizontal: 'small',
-      vertical: '5px',
+      vertical: 'var(--timeinput-drop-option-pad-vertical, 5px)',
     };
     const pickerListGap = theme.timeInput?.drop?.options?.gap || 'none';
     let defaultPlaceholder;
     if (resolvedTimeFormat === '24hr') {
-      defaultPlaceholder = showSeconds ? 'hh:mm:ss' : 'hh:mm';
+      defaultPlaceholder = showSeconds ? 'hh : mm : ss' : 'hh : mm';
     } else {
-      defaultPlaceholder = showSeconds ? 'hh:mm:ss am' : 'hh:mm am';
+      defaultPlaceholder = showSeconds ? 'hh : mm : ss am' : 'hh : mm am';
     }
     const resolvedPlaceholder = placeholder || defaultPlaceholder;
 
     const toggleButton = (
-      <Button
-        plain
+      <StyledTimeInputToggleButton
+        plain={false}
         disabled={disabled}
         focusIndicator="inset"
         icon={<ClockIcon size={iconSize} />}
@@ -818,7 +1102,6 @@ const TimeInput = forwardRef(
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={id ? `${id}__drop` : undefined}
-        margin={{ right: 'small' }}
       />
     );
 
@@ -827,21 +1110,22 @@ const TimeInput = forwardRef(
         <Keyboard onEsc={open ? closePicker : undefined}>
           <StyledTimeInputContainer
             ref={containerRef}
-            border={!plain}
-            round={theme.timeInput?.container?.round || 'xxsmall'}
+            border={false}
+            round={theme.timeInput?.container?.round || 'xsmall'}
             direction="row"
             fill
             disabled={disabled}
             readOnlyProp={readOnly}
+            hasError={!!fieldError}
             {...passThemeFlag}
           >
-            <Box style={{ position: 'relative' }} fill>
+            <StyledTimeInputInputWrapper fill>
               <TextInput
                 aria-invalid={fieldError ? true : undefined}
                 aria-describedby={
                   fieldError ? `${id || 'timeinput'}-error` : undefined
                 }
-                focusIndicator={open ? false : 'inset'}
+                focusIndicator={false}
                 readOnly={readOnly}
                 ref={ref}
                 id={id}
@@ -850,24 +1134,28 @@ const TimeInput = forwardRef(
                 plain
                 placeholder={resolvedPlaceholder}
                 {...restOfInputProps}
-                {...rest}
                 value={textValue}
                 onChange={(event) => {
                   const nextTextValue = event.target.value;
                   const rawCursorPosition =
                     event.target.selectionStart ?? nextTextValue.length;
+                  const canonicalInput = toCanonicalDisplayValue(nextTextValue);
                   const formattedInput = formatTypedTimeInput({
-                    value: nextTextValue,
+                    value: canonicalInput,
                     timeFormat: resolvedTimeFormat,
                     showSeconds,
                   });
+                  const formattedDisplayInput = toSpacedDisplayValue({
+                    value: formattedInput,
+                    timeFormat: resolvedTimeFormat,
+                  });
 
                   setHasDraft(true);
-                  setTextValue(formattedInput);
+                  setTextValue(formattedDisplayInput);
 
                   const nextCursorPosition = getFormattedCursorPosition({
                     rawValue: nextTextValue,
-                    formattedValue: formattedInput,
+                    formattedValue: formattedDisplayInput,
                     rawCursor: rawCursorPosition,
                   });
                   queueInputSelection(nextCursorPosition, nextCursorPosition);
@@ -880,9 +1168,14 @@ const TimeInput = forwardRef(
                   }
 
                   const digitCount = formattedInput.replace(/\D/g, '').length;
+                  const segmentCursor = getSegmentDetectionCursor({
+                    selectionStart: event.target.selectionStart,
+                    selectionEnd: event.target.selectionEnd,
+                    fallbackCursor: formattedDisplayInput.length,
+                  });
                   const nextSegment = getSegmentFromCursorPosition({
-                    cursor:
-                      event.target.selectionStart || formattedInput.length,
+                    cursor: segmentCursor,
+                    value: formattedDisplayInput,
                     timeFormat: resolvedTimeFormat,
                     showSeconds,
                   });
@@ -892,22 +1185,33 @@ const TimeInput = forwardRef(
                   commitFromText(formattedInput, { surfaceErrors: false });
                 }}
                 onBlur={(event) => {
+                  if (pendingFocusSelectionFrameRef.current) {
+                    window.cancelAnimationFrame(
+                      pendingFocusSelectionFrameRef.current,
+                    );
+                    pendingFocusSelectionFrameRef.current = undefined;
+                  }
+
                   // Do not revert when the toggle button is being pressed —
                   // user clicked the clock icon to open the picker and will
                   // complete the time via am/pm selection.
                   const draftCanRevert =
                     !togglePressingRef.current &&
                     hasDraft &&
-                    !commitFromText(textValue);
+                    !commitFromText(toCanonicalDisplayValue(textValue));
                   if (draftCanRevert) {
                     setTextValue(
-                      normalizeTimeText({
-                        value: committedValue,
+                      toSpacedDisplayValue({
+                        value:
+                          normalizeTimeText({
+                            value: committedValue,
+                            timeFormat: resolvedTimeFormat,
+                            showSeconds,
+                          }) ||
+                          committedValue ||
+                          '',
                         timeFormat: resolvedTimeFormat,
-                        showSeconds,
-                      }) ||
-                        committedValue ||
-                        '',
+                      }),
                     );
                     setHasDraft(false);
                     setDraftError(undefined);
@@ -918,36 +1222,84 @@ const TimeInput = forwardRef(
                 onFocus={(event) => {
                   if (openOnFocus) {
                     openPicker();
-                    selectInputSegment('hour');
+                    if (!readOnly && !disabled) selectInputSegment('hour');
+                  } else if (
+                    usingKeyboard &&
+                    !inputPointerDownRef.current &&
+                    !readOnly &&
+                    !disabled
+                  ) {
+                    pendingFocusSelectionFrameRef.current =
+                      window.requestAnimationFrame(() => {
+                        pendingFocusSelectionFrameRef.current = undefined;
+                        // If mouse interaction started before this frame runs,
+                        // preserve mouse-selected segment instead of resetting.
+                        if (inputPointerDownRef.current) return;
+                        selectInputSegment('hour');
+                      });
                   }
+
+                  inputPointerDownRef.current = false;
                   if (onFocus) onFocus(event);
                 }}
                 onClick={(event) => {
+                  if (readOnly || disabled) {
+                    if (inputOnClick) inputOnClick(event);
+                    return;
+                  }
+
+                  const cursor = getSegmentDetectionCursor({
+                    selectionStart: event.target.selectionStart,
+                    selectionEnd: event.target.selectionEnd,
+                    fallbackCursor: textValue.length,
+                  });
+                  const segment = getSegmentFromCursorPosition({
+                    cursor,
+                    value: event.target.value,
+                    timeFormat: resolvedTimeFormat,
+                    showSeconds,
+                  });
+                  selectInputSegment(segment);
+
                   if (inputOnClick) inputOnClick(event);
                 }}
+                onMouseDown={() => {
+                  if (pendingFocusSelectionFrameRef.current) {
+                    window.cancelAnimationFrame(
+                      pendingFocusSelectionFrameRef.current,
+                    );
+                    pendingFocusSelectionFrameRef.current = undefined;
+                  }
+                  inputPointerDownRef.current = true;
+                }}
                 onKeyDown={(event) => {
-                  if (open && event.key === 'ArrowDown') {
+                  if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+                    if (readOnly || disabled) {
+                      if (inputOnKeyDown) inputOnKeyDown(event);
+                      return;
+                    }
+
                     event.preventDefault();
-                    adjustActiveSegmentValue(1);
+                    const segment = getCurrentInputSegment();
+                    adjustSegmentValue({
+                      segment,
+                      direction: event.key === 'ArrowUp' ? 1 : -1,
+                    });
                     return;
                   }
 
-                  if (open && event.key === 'ArrowUp') {
+                  if (event.key === 'ArrowLeft') {
                     event.preventDefault();
-                    adjustActiveSegmentValue(-1);
-                    return;
-                  }
-
-                  if (open && event.key === 'ArrowLeft') {
-                    event.preventDefault();
-                    const nextSegment = getAdjacentSegment(-1);
+                    const currentSegment = getCurrentInputSegment();
+                    const nextSegment = getAdjacentSegment(-1, currentSegment);
                     selectInputSegment(nextSegment);
                     return;
                   }
 
-                  if (open && event.key === 'ArrowRight') {
+                  if (event.key === 'ArrowRight') {
                     event.preventDefault();
-                    const nextSegment = getAdjacentSegment(1);
+                    const currentSegment = getCurrentInputSegment();
+                    const nextSegment = getAdjacentSegment(1, currentSegment);
                     selectInputSegment(nextSegment);
                     return;
                   }
@@ -955,7 +1307,7 @@ const TimeInput = forwardRef(
                   if (inputOnKeyDown) inputOnKeyDown(event);
                 }}
               />
-            </Box>
+            </StyledTimeInputInputWrapper>
             {!readOnly && toggleButton}
           </StyledTimeInputContainer>
         </Keyboard>
@@ -975,11 +1327,11 @@ const TimeInput = forwardRef(
           <StyledPickerDropContent
             dropHeight={pickerDropHeight}
             direction="row"
-            gap="xxsmall"
+            gap={theme.timeInput?.drop?.gap || '3xsmall'}
             pad="xsmall"
-            background="background-front"
-            round="xsmall"
-            elevation="small"
+            background={theme.timeInput?.drop?.background || 'background-front'}
+            round={theme.timeInput?.drop?.round || 'xsmall'}
+            elevation={theme.timeInput?.drop?.elevation || 'none'}
             align="start"
             onFocus={() => {
               dropFocusedRef.current = true;
@@ -993,8 +1345,7 @@ const TimeInput = forwardRef(
               onActivate={setActiveSegment}
               onSelect={(nextHour) => {
                 const nextParts = { ...pickerParts, hour: nextHour };
-                setPickerParts(nextParts);
-                commitFromPicker(nextParts);
+                applyPickerParts(nextParts);
               }}
               optionWidth={pickerOptionWidth}
               optionPad={pickerOptionPad}
@@ -1009,8 +1360,7 @@ const TimeInput = forwardRef(
               onActivate={setActiveSegment}
               onSelect={(nextMinute) => {
                 const nextParts = { ...pickerParts, minute: nextMinute };
-                setPickerParts(nextParts);
-                commitFromPicker(nextParts);
+                applyPickerParts(nextParts);
               }}
               optionWidth={pickerOptionWidth}
               optionPad={pickerOptionPad}
@@ -1026,8 +1376,7 @@ const TimeInput = forwardRef(
                 onActivate={setActiveSegment}
                 onSelect={(nextSecond) => {
                   const nextParts = { ...pickerParts, second: nextSecond };
-                  setPickerParts(nextParts);
-                  commitFromPicker(nextParts);
+                  applyPickerParts(nextParts);
                 }}
                 optionWidth={pickerOptionWidth}
                 optionPad={pickerOptionPad}
@@ -1044,8 +1393,7 @@ const TimeInput = forwardRef(
                 onActivate={setActiveSegment}
                 onSelect={(nextPeriod) => {
                   const nextParts = { ...pickerParts, period: nextPeriod };
-                  setPickerParts(nextParts);
-                  commitFromPicker(nextParts);
+                  applyPickerParts(nextParts);
                 }}
                 optionWidth={pickerOptionWidth}
                 optionPad={pickerOptionPad}

@@ -6,7 +6,7 @@ import { Box, TimeInput } from 'grommet';
 export const ReadOnly = () => (
   <Box align="center" justify="center" pad="large">
     <Box width="medium">
-      <TimeInput value="08:30 am" readOnly />
+      <TimeInput value="09:30 am" readOnly />
     </Box>
   </Box>
 );
