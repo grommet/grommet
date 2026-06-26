@@ -32,7 +32,6 @@ export interface TimeInputProps {
   showSeconds?: boolean;
   timeFormat?: '12hr' | '24hr';
   value?: Date | string;
-  icon?: React.ReactNode;
   openOnFocus?: boolean;
   reverse?: boolean;
 }

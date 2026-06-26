@@ -305,7 +305,6 @@ const TimeInput = forwardRef(
       defaultValue,
       disabled,
       id,
-      icon,
       messages,
       max,
       min,
@@ -761,8 +760,6 @@ const TimeInput = forwardRef(
       onKeyDown: inputOnKeyDown,
       ...restOfInputProps
     } = rest;
-    const resolvedInputIcon =
-      icon === null ? undefined : icon || <ClockIcon size={iconSize} />;
     const reverse = reverseProp;
     const pickerOptionWidth = theme.timeInput?.drop?.option?.width || '46px';
     const pickerDropHeight = theme.timeInput?.drop?.height || '256px';
@@ -784,7 +781,7 @@ const TimeInput = forwardRef(
         plain
         disabled={disabled}
         focusIndicator="inset"
-        icon={resolvedInputIcon}
+        icon={<ClockIcon size={iconSize} />}
         onMouseDown={() => {
           togglePressingRef.current = true;
         }}

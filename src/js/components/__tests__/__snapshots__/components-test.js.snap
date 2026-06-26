@@ -1115,7 +1115,6 @@ exports[`Components loads 1`] = `
       "defaultValue": [Function],
       "disabled": [Function],
       "gridArea": [Function],
-      "icon": [Function],
       "margin": [Function],
       "max": [Function],
       "messages": [Function],
