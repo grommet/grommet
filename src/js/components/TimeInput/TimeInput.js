@@ -569,11 +569,13 @@ const TimeInput = forwardRef(
 
     const resolvedValueArg = useMemo(
       () =>
-        toTimeInputString({
-          value: valueArg,
-          timeFormat: resolvedTimeFormat,
-          showSeconds,
-        }),
+        valueArg === undefined
+          ? undefined
+          : toTimeInputString({
+              value: valueArg,
+              timeFormat: resolvedTimeFormat,
+              showSeconds,
+            }),
       [resolvedTimeFormat, showSeconds, valueArg],
     );
 

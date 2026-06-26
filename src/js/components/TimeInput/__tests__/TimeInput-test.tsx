@@ -77,6 +77,16 @@ describe('TimeInput', () => {
     expect(input).toBeInTheDocument();
   });
 
+  test('renders defaultValue for uncontrolled usage', () => {
+    render(
+      <Grommet>
+        <TimeInput timeFormat="12hr" defaultValue="09:00 AM" />
+      </Grommet>,
+    );
+
+    expect(screen.getByDisplayValue('09 : 00 AM')).toBeInTheDocument();
+  });
+
   test('respects minuteStep for typed values', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
