@@ -381,4 +381,36 @@ describe('TimeInput', () => {
 
     expect(selectedMinuteOption).toHaveFocus();
   });
+
+  test('ArrowDown in the picker selects the next option in the active section', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput timeFormat="24hr" value="02:02" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByLabelText('Open time picker'));
+
+    const hoursList = screen.getByRole('listbox', { name: 'Hours' });
+    const selectedHourOption = within(hoursList).getByRole('option', {
+      name: '02',
+    });
+
+    await user.click(selectedHourOption);
+    expect(selectedHourOption).toHaveFocus();
+
+    await user.keyboard('{ArrowDown}');
+
+    await waitFor(() => {
+      expect(screen.getByDisplayValue('03 : 02')).toBeInTheDocument();
+      expect(
+        within(screen.getByRole('listbox', { name: 'Hours' })).getByRole(
+          'option',
+          { name: '03' },
+        ),
+      ).toHaveFocus();
+    });
+  });
 });

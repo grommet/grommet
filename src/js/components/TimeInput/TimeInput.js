@@ -457,6 +457,8 @@ const PickerColumn = ({
   selected,
   onSelect,
   onActivate,
+  onOptionKeyDown,
+  setOptionRef,
   testId,
   optionWidth,
   optionPad,
@@ -478,6 +480,7 @@ const PickerColumn = ({
         return (
           <Button
             key={option}
+            ref={(node) => setOptionRef?.(segment, option, node)}
             kind="option"
             selected={isSelectedOption}
             focusIndicator="inset"
@@ -486,6 +489,9 @@ const PickerColumn = ({
             aria-selected={isSelectedOption}
             onFocus={() => {
               onActivate(segment);
+            }}
+            onKeyDown={(event) => {
+              onOptionKeyDown?.(event, { segment, option });
             }}
             onClick={() => {
               onActivate(segment);
@@ -541,6 +547,8 @@ const TimeInput = forwardRef(
     const pendingSelectionRef = useRef();
     const inputPointerDownRef = useRef(false);
     const pendingFocusSelectionFrameRef = useRef();
+    const pendingPickerFocusFrameRef = useRef();
+    const pickerOptionRefs = useRef({});
     // Tracks whether focus entered the drop so we only restore focus
     // when the drop actually owned it, not when the user clicked elsewhere.
     const dropFocusedRef = useRef(false);
@@ -892,9 +900,33 @@ const TimeInput = forwardRef(
           window.cancelAnimationFrame(pendingFocusSelectionFrameRef.current);
           pendingFocusSelectionFrameRef.current = undefined;
         }
+        if (pendingPickerFocusFrameRef.current) {
+          window.cancelAnimationFrame(pendingPickerFocusFrameRef.current);
+          pendingPickerFocusFrameRef.current = undefined;
+        }
       },
       [],
     );
+
+    const setPickerOptionRef = useCallback((segment, option, node) => {
+      if (!pickerOptionRefs.current[segment]) {
+        pickerOptionRefs.current[segment] = {};
+      }
+
+      if (node) pickerOptionRefs.current[segment][option] = node;
+      else delete pickerOptionRefs.current[segment][option];
+    }, []);
+
+    const focusPickerOption = useCallback((segment, option) => {
+      if (pendingPickerFocusFrameRef.current) {
+        window.cancelAnimationFrame(pendingPickerFocusFrameRef.current);
+      }
+
+      pendingPickerFocusFrameRef.current = window.requestAnimationFrame(() => {
+        pendingPickerFocusFrameRef.current = undefined;
+        pickerOptionRefs.current[segment]?.[option]?.focus();
+      });
+    }, []);
 
     useEffect(() => {
       const selection = pendingSelectionRef.current;
@@ -1050,6 +1082,53 @@ const TimeInput = forwardRef(
         segmentOptions,
         showSeconds,
         textValue,
+      ],
+    );
+
+    const handlePickerOptionKeyDown = useCallback(
+      (event, { segment, option }) => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          const nextSegment = getAdjacentSegment(
+            event.key === 'ArrowRight' ? 1 : -1,
+            segment,
+          );
+          const nextSegmentOptions = segmentOptions[nextSegment] || [];
+          const nextOption =
+            pickerParts[nextSegment] || nextSegmentOptions[0] || option;
+          focusPickerOption(nextSegment, nextOption);
+          return;
+        }
+
+        if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+
+        event.preventDefault();
+
+        const options = segmentOptions[segment] || [];
+        if (!options.length) return;
+
+        let currentIndex = options.indexOf(option);
+        if (currentIndex === -1) currentIndex = options.indexOf(pickerParts[segment]);
+        if (currentIndex === -1) currentIndex = 0;
+
+        const direction = event.key === 'ArrowDown' ? 1 : -1;
+        const nextIndex =
+          (currentIndex + direction + options.length) % options.length;
+        const nextOption = options[nextIndex];
+        const nextParts =
+          segment === 'period'
+            ? { ...pickerParts, period: nextOption }
+            : { ...pickerParts, [segment]: nextOption };
+
+        applyPickerParts(nextParts, { segment });
+        focusPickerOption(segment, nextOption);
+      },
+      [
+        applyPickerParts,
+        focusPickerOption,
+        getAdjacentSegment,
+        pickerParts,
+        segmentOptions,
       ],
     );
 
@@ -1347,10 +1426,12 @@ const TimeInput = forwardRef(
               options={hourOptions}
               selected={pickerParts.hour}
               onActivate={setActiveSegment}
+              onOptionKeyDown={handlePickerOptionKeyDown}
               onSelect={(nextHour) => {
                 const nextParts = { ...pickerParts, hour: nextHour };
                 applyPickerParts(nextParts);
               }}
+              setOptionRef={setPickerOptionRef}
               optionWidth={pickerOptionWidth}
               optionPad={pickerOptionPad}
               listGap={pickerListGap}
@@ -1362,10 +1443,12 @@ const TimeInput = forwardRef(
               options={minuteOptions}
               selected={pickerParts.minute}
               onActivate={setActiveSegment}
+              onOptionKeyDown={handlePickerOptionKeyDown}
               onSelect={(nextMinute) => {
                 const nextParts = { ...pickerParts, minute: nextMinute };
                 applyPickerParts(nextParts);
               }}
+              setOptionRef={setPickerOptionRef}
               optionWidth={pickerOptionWidth}
               optionPad={pickerOptionPad}
               listGap={pickerListGap}
@@ -1378,10 +1461,12 @@ const TimeInput = forwardRef(
                 options={secondOptions}
                 selected={pickerParts.second}
                 onActivate={setActiveSegment}
+                onOptionKeyDown={handlePickerOptionKeyDown}
                 onSelect={(nextSecond) => {
                   const nextParts = { ...pickerParts, second: nextSecond };
                   applyPickerParts(nextParts);
                 }}
+                setOptionRef={setPickerOptionRef}
                 optionWidth={pickerOptionWidth}
                 optionPad={pickerOptionPad}
                 listGap={pickerListGap}
@@ -1395,10 +1480,12 @@ const TimeInput = forwardRef(
                 options={['am', 'pm']}
                 selected={pickerParts.period}
                 onActivate={setActiveSegment}
+                onOptionKeyDown={handlePickerOptionKeyDown}
                 onSelect={(nextPeriod) => {
                   const nextParts = { ...pickerParts, period: nextPeriod };
                   applyPickerParts(nextParts);
                 }}
+                setOptionRef={setPickerOptionRef}
                 optionWidth={pickerOptionWidth}
                 optionPad={pickerOptionPad}
                 listGap={pickerListGap}
