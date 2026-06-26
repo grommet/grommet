@@ -117,6 +117,21 @@ export const parameters = {
       const isSecondCustom = second.title.split('/')[2] === CUSTOM_THEMED;
       if (isFirstCustom) return 1;
       if (isSecondCustom) return 0;
+
+      if (
+        first.title === 'Input/TimeInput' &&
+        second.title === 'Input/TimeInput'
+      ) {
+        return (first.name || first.id).localeCompare(
+          second.name || second.id,
+          undefined,
+          {
+            numeric: true,
+            sensitivity: 'base',
+          },
+        );
+      }
+
       return first.title === second.title
         ? 0
         : first.id.localeCompare(second.id, undefined, { numeric: true });
