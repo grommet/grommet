@@ -1,0 +1,323 @@
+/**
+ * Button Component Styles - CSS Module Version
+ * Migrated from StyledButtonKind.js (styled-components)
+ * 
+ * This demonstrates how Button styles can be written using CSS Modules
+ * with CSS custom properties for theming instead of runtime CSS-in-JS
+ */
+
+/* Base button styles - applies to all buttons */
+.button {
+  /* Reset and base styles */
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: none;
+
+  /* Border and radius from theme */
+  border-width: var(--button-border-width);
+  border-radius: var(--button-border-radius);
+
+  /* Padding from theme */
+  padding: var(--button-padding-vertical) var(--button-padding-horizontal);
+
+  /* Font sizing from theme */
+  font-size: var(--text-medium-size);
+  line-height: var(--text-medium-height);
+
+  /* Transitions */
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: calc(var(--button-transition-duration) * 1s);
+  transition-timing-function: var(--button-transition-timing);
+}
+
+/* Icon alignment */
+.button > svg {
+  display: flex;
+  align-self: center;
+  vertical-align: middle;
+}
+
+/* Icon-only buttons have special line-height for Safari */
+.iconOnly {
+  line-height: 0;
+}
+
+/* Plain button style - minimal styling */
+.plain {
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+  transition: none;
+}
+
+.plain.iconOnly {
+  line-height: 0;
+}
+
+/* Size variants */
+.sizeSmall {
+  border-radius: var(--button-size-small-border-radius);
+  padding: var(--button-size-small-pad-vertical)
+    var(--button-size-small-pad-horizontal);
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-height);
+}
+
+.sizeSmall.iconOnly {
+  padding: var(
+    --button-size-small-icononly-pad,
+    var(--button-size-small-pad-vertical)
+  );
+  line-height: 0;
+}
+
+.sizeMedium {
+  border-radius: var(--button-size-medium-border-radius);
+  padding: var(--button-size-medium-pad-vertical)
+    var(--button-size-medium-pad-horizontal);
+  font-size: var(--text-medium-size);
+  line-height: var(--text-medium-height);
+}
+
+.sizeMedium.iconOnly {
+  padding: var(
+    --button-size-medium-icononly-pad,
+    var(--button-size-medium-pad-vertical)
+  );
+  line-height: 0;
+}
+
+.sizeLarge {
+  border-radius: var(--button-size-large-border-radius);
+  padding: var(--button-size-large-pad-vertical)
+    var(--button-size-large-pad-horizontal);
+  font-size: var(--text-large-size);
+  line-height: var(--text-large-height);
+}
+
+.sizeLarge.iconOnly {
+  padding: var(
+    --button-size-large-icononly-pad,
+    var(--button-size-large-pad-vertical)
+  );
+  line-height: 0;
+}
+
+/* Kind variants - default, primary, secondary */
+.kindDefault {
+  background: var(--button-default-background, transparent);
+  border-color: var(--button-default-border-color, var(--border-dark));
+  border-style: var(--button-default-border-style, solid);
+  color: var(--button-default-color, var(--text-dark));
+}
+
+.kindDefault:hover:not(:disabled):not(.busy):not(.success) {
+  background: var(
+    --button-hover-default-background,
+    var(--button-default-background, transparent)
+  );
+  border-color: var(
+    --button-hover-default-border-color,
+    var(--button-default-border-color)
+  );
+  color: var(--button-hover-default-color, var(--button-default-color));
+}
+
+.kindPrimary {
+  background: var(--button-primary-background, var(--brand));
+  border-color: var(--button-primary-border-color, var(--brand));
+  border-style: var(--button-primary-border-style, solid);
+  color: var(--button-primary-color, var(--text-strong-light));
+  font-weight: var(--button-primary-font-weight, bold);
+}
+
+.kindPrimary:hover:not(:disabled):not(.busy):not(.success) {
+  background: var(
+    --button-hover-primary-background,
+    var(--button-primary-background)
+  );
+  border-color: var(
+    --button-hover-primary-border-color,
+    var(--button-primary-border-color)
+  );
+  color: var(--button-hover-primary-color, var(--button-primary-color));
+}
+
+.kindSecondary {
+  background: var(--button-secondary-background, transparent);
+  border-color: var(--button-secondary-border-color, var(--brand));
+  border-style: var(--button-secondary-border-style, solid);
+  color: var(--button-secondary-color, var(--brand));
+}
+
+.kindSecondary:hover:not(:disabled):not(.busy):not(.success) {
+  background: var(
+    --button-hover-secondary-background,
+    var(--button-secondary-background)
+  );
+  border-color: var(
+    --button-hover-secondary-border-color,
+    var(--button-secondary-border-color)
+  );
+  color: var(--button-hover-secondary-color, var(--button-secondary-color));
+}
+
+/* Active state */
+.active:not(:disabled) {
+  background: var(--button-active-background, var(--active-background));
+  color: var(--button-active-color, var(--active-text));
+}
+
+.active.kindDefault:not(:disabled) {
+  background: var(
+    --button-active-default-background,
+    var(--button-active-background)
+  );
+  color: var(--button-active-default-color, var(--button-active-color));
+}
+
+.active.kindPrimary:not(:disabled) {
+  background: var(
+    --button-active-primary-background,
+    var(--button-active-background)
+  );
+  color: var(--button-active-primary-color, var(--button-active-color));
+}
+
+.active.kindSecondary:not(:disabled) {
+  background: var(
+    --button-active-secondary-background,
+    var(--button-active-background)
+  );
+  color: var(--button-active-secondary-color, var(--button-active-color));
+}
+
+/* Disabled state */
+.button:disabled {
+  opacity: var(--button-disabled-opacity, 0.3);
+  cursor: default;
+}
+
+/* Busy and Success states */
+.busy,
+.success {
+  cursor: default;
+}
+
+/* Focus styles */
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-shadow-size, 2px) var(--focus, var(--accent-1));
+}
+
+.button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+/* Focus indicator inset variant */
+.focusInset:focus {
+  box-shadow: inset 0 0 0 var(--focus-shadow-size, 2px)
+    var(--focus, var(--accent-1));
+}
+
+/* Plain buttons can have focus indicator */
+.plain:focus {
+  box-shadow: none;
+}
+
+.plain.withFocusIndicator:focus {
+  box-shadow: 0 0 0 var(--focus-shadow-size, 2px) var(--focus, var(--accent-1));
+}
+
+/* Hover indicator (when hoverIndicator prop is used) */
+.hoverIndicator:hover:not(:disabled):not(.busy):not(.success) {
+  background: var(--global-hover-background, rgba(0, 0, 0, 0.05));
+}
+
+/* Fill container variants */
+.fillHorizontal {
+  width: 100%;
+}
+
+.fillVertical {
+  height: 100%;
+}
+
+.fillBoth {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  flex: 1 0 auto;
+}
+
+/* Text alignment */
+.alignStart {
+  text-align: start;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignEnd {
+  text-align: end;
+}
+
+/* Gap between icon and label */
+.withGap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--button-gap, var(--edgeSize-small));
+}
+
+/* Reverse direction (icon after label) */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/**
+ * Custom color variants
+ * When a custom color is passed, we can use data attributes
+ * to apply the color dynamically via inline styles or
+ * use additional className composition
+ */
+
+/* 
+ * Notes on migration:
+ * 
+ * 1. Dynamic color values (from color prop) need to be handled differently:
+ *    - Option A: Inline styles for truly dynamic colors
+ *    - Option B: Generate CSS vars on the fly and inject
+ *    - Option C: Pre-define common color variants
+ * 
+ * 2. Theme extend property:
+ *    - Can be handled by allowing custom className override
+ *    - Or by supporting a `css` prop that injects additional styles
+ * 
+ * 3. Intelligent padding:
+ *    - The border-width adjustment logic can use CSS calc()
+ *    - Or be handled in the component logic
+ * 
+ * 4. Media queries for responsive:
+ *    - Can be added directly in CSS Module
+ *    - Theme breakpoints become CSS vars
+ */
+
+/* Responsive styles can be added here */
+/* Example:
+@media (max-width: 768px) {
+  .button {
+    padding: var(--button-size-small-pad-vertical) var(--button-size-small-pad-horizontal);
+  }
+}
+*/
