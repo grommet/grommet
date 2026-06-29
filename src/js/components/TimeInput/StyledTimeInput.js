@@ -124,7 +124,7 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
       );
     }};
     font-family: ${(props) =>
-      props.theme.global?.font?.family || 'HPE Graphik'};
+      props.theme.global?.font?.family || 'inherit'};
     font-size: ${(props) =>
       props.theme.timeInput?.value?.size ||
       'var(--formfield-default-medium-value-fontSize, 16px)'};

@@ -466,6 +466,7 @@ const PickerColumn = ({
   optionWidth,
   optionPad,
   listGap,
+  listOptionSize,
   maxHeight = '232px',
 }) => (
   <Box width={optionWidth} data-testid={testId}>
@@ -502,7 +503,7 @@ const PickerColumn = ({
             }}
           >
             <StyledPickerOptionBox optionWidth={optionWidth} pad={optionPad}>
-              <Text size="medium" textAlign="center">
+              <Text size={listOptionSize || 'medium'} textAlign="center">
                 {option}
               </Text>
             </StyledPickerOptionBox>
@@ -1155,10 +1156,17 @@ const TimeInput = forwardRef(
     const pickerDropHeight =
       theme.timeInput?.drop?.height || 'var(--timeinput-drop-height, 256px)';
     const pickerOptionPad = theme.timeInput?.drop?.option?.pad || {
-      horizontal: 'small',
+      horizontal:
+        theme.global?.edgeSize?.small ||
+        'var(--timeinput-drop-option-pad-horizontal, 12px)',
       vertical: 'var(--timeinput-drop-option-pad-vertical, 5px)',
     };
     const pickerListGap = theme.timeInput?.drop?.options?.gap || 'none';
+    const pickerOptionMaxHeight =
+      theme.timeInput?.drop?.option?.maxHeight ||
+      'var(--timeinput-drop-option-maxHeight, 232px)';
+    const pickerOptionSize =
+      theme.timeInput?.drop?.option?.size || 'medium';
     let defaultPlaceholder;
     if (resolvedTimeFormat === '24hr') {
       defaultPlaceholder = showSeconds ? 'hh : mm : ss' : 'hh : mm';
@@ -1434,6 +1442,8 @@ const TimeInput = forwardRef(
               optionWidth={pickerOptionWidth}
               optionPad={pickerOptionPad}
               listGap={pickerListGap}
+              maxHeight={pickerOptionMaxHeight}
+              listOptionSize={pickerOptionSize}
               testId="timeinput-picker-hours"
             />
             <PickerColumn
@@ -1451,6 +1461,8 @@ const TimeInput = forwardRef(
               optionWidth={pickerOptionWidth}
               optionPad={pickerOptionPad}
               listGap={pickerListGap}
+              maxHeight={pickerOptionMaxHeight}
+              listOptionSize={pickerOptionSize}
               testId="timeinput-picker-minutes"
             />
             {showSeconds && (
@@ -1469,6 +1481,8 @@ const TimeInput = forwardRef(
                 optionWidth={pickerOptionWidth}
                 optionPad={pickerOptionPad}
                 listGap={pickerListGap}
+                maxHeight={pickerOptionMaxHeight}
+                listOptionSize={pickerOptionSize}
                 testId="timeinput-picker-seconds"
               />
             )}
@@ -1488,6 +1502,8 @@ const TimeInput = forwardRef(
                 optionWidth={pickerOptionWidth}
                 optionPad={pickerOptionPad}
                 listGap={pickerListGap}
+                maxHeight={pickerOptionMaxHeight}
+                listOptionSize={pickerOptionSize}
                 testId="timeinput-picker-period"
               />
             )}
