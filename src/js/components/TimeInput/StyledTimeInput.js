@@ -169,7 +169,35 @@ export const StyledTimeInputInputWrapper = styled(Box)`
   position: relative;
 `;
 
-export const StyledPickerList = styled(Box)``;
+export const StyledPickerList = styled(Box)`
+  button[role='option'] {
+    width: 100%;
+    border-radius: ${(props) =>
+      props.theme.timeInput?.drop?.option?.borderRadius ||
+      'var(--timeinput-option-borderRadius, 6px)'};
+  }
+
+  button[role='option']:hover {
+    background: ${(props) =>
+      props.theme.timeInput?.drop?.option?.hover?.background ||
+      normalizeColor('active-background', props.theme)};
+  }
+
+  button[aria-selected='true'] {
+    background: ${(props) =>
+      props.theme.timeInput?.drop?.option?.selected?.background ||
+      normalizeColor('selected-background', props.theme)};
+    color: ${(props) =>
+      props.theme.timeInput?.drop?.option?.selected?.color ||
+      normalizeColor('selected-text', props.theme)};
+  }
+
+  button[aria-selected='true']:hover {
+    background: ${(props) =>
+      props.theme.timeInput?.drop?.option?.selectedHover?.background ||
+      normalizeColor('active-background', props.theme)};
+  }
+`;
 
 export const StyledTimeInputToggleButton = styled(Button)`
   color: ${(props) =>
