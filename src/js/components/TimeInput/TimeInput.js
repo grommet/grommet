@@ -520,8 +520,7 @@ const TimeInput = forwardRef(
       disabled,
       id,
       messages,
-      max,
-      min,
+      bounds,
       minuteStep,
       name,
       onBlur,
@@ -608,21 +607,21 @@ const TimeInput = forwardRef(
         if (
           !isWithinBounds({
             value: normalizedFieldValue,
-            min,
-            max,
+            min: bounds?.[0],
+            max: bounds?.[1],
             timeFormat: resolvedTimeFormat,
             showSeconds,
           })
         ) {
           return getMessage('outOfBounds', {
-            start: min || '',
-            end: max || '',
+            start: bounds?.[0] || '',
+            end: bounds?.[1] || '',
           });
         }
 
         return undefined;
       },
-      [getMessage, max, min, resolvedTimeFormat, showSeconds],
+      [getMessage, bounds, resolvedTimeFormat, showSeconds],
     );
 
     const [committedValue, setCommittedValue] = useFormInput({
@@ -743,8 +742,8 @@ const TimeInput = forwardRef(
         if (
           !isWithinBounds({
             value: normalizedValue,
-            min,
-            max,
+            min: bounds?.[0],
+            max: bounds?.[1],
             timeFormat: resolvedTimeFormat,
             showSeconds,
           })
@@ -756,8 +755,7 @@ const TimeInput = forwardRef(
         return normalizedValue;
       },
       [
-        max,
-        min,
+        bounds,
         resolvedMinuteStep,
         resolvedTimeFormat,
         secondStep,

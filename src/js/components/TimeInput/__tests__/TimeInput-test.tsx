@@ -103,6 +103,46 @@ describe('TimeInput', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
+  test('does not emit onChange when value is outside bounds', async () => {
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput
+          timeFormat="24hr"
+          bounds={['09:00', '17:00']}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByPlaceholderText('hh : mm');
+    fireEvent.change(input, { target: { value: '08:00' } });
+
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  test('emits onChange when value is within bounds', async () => {
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput
+          timeFormat="24hr"
+          bounds={['09:00', '17:00']}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByPlaceholderText('hh : mm');
+    fireEvent.change(input, { target: { value: '12:00' } });
+
+    expect(onChange).toHaveBeenCalled();
+    const [{ value }] = onChange.mock.calls[onChange.mock.calls.length - 1];
+    expect(value).toBe('12:00');
+  });
+
   test('does not open picker on focus by default', async () => {
     const user = userEvent.setup();
 

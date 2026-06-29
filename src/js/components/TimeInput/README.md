@@ -63,8 +63,7 @@ import { Form, FormField, TimeInput } from 'grommet';
 ```jsx
 <TimeInput 
   timeFormat="24hr"
-  min="08:00"
-  max="18:00"
+  bounds={['08:00', '18:00']}
   minuteStep={15}
   onChange={({ value }) => console.log(value)} 
 />
@@ -81,7 +80,7 @@ import { Form, FormField, TimeInput } from 'grommet';
 | `showSeconds` | `boolean` | `false` | Adds seconds segment |
 | `minuteStep` | `number` | - | Minute increment validation |
 | `secondStep` | `number` | - | Seconds increment validation |
-| `min`, `max` | `string` | - | Boundaries in selected format |
+| `bounds` | `[string, string]` | - | `[min, max]` boundaries in selected format |
 | `readOnly`, `disabled` | `boolean` | `false` | Interaction restrictions |
 
 ### Theme Keys Used

@@ -5,12 +5,12 @@ let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     ...genericProps,
+    bounds: PropTypes.arrayOf(PropTypes.string),
     defaultValue: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.instanceOf(Date),
     ]),
     disabled: PropTypes.bool,
-    max: PropTypes.string,
     messages: PropTypes.shape({
       closeTimePicker: PropTypes.string,
       hoursLabel: PropTypes.string,
@@ -21,7 +21,6 @@ if (process.env.NODE_ENV !== 'production') {
       periodLabel: PropTypes.string,
       secondsLabel: PropTypes.string,
     }),
-    min: PropTypes.string,
     minuteStep: PropTypes.number,
     name: PropTypes.string,
     onBlur: PropTypes.func,

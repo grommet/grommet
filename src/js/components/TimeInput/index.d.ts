@@ -6,6 +6,7 @@ export interface TimeInputProps {
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;
   margin?: MarginType;
+  bounds?: [string, string];
   defaultValue?: Date | string;
   disabled?: boolean;
   messages?: {
@@ -18,8 +19,6 @@ export interface TimeInputProps {
     periodLabel?: string;
     secondsLabel?: string;
   };
-  min?: string;
-  max?: string;
   minuteStep?: number;
   name?: string;
   onChange?: (event: { value: string }) => void;
