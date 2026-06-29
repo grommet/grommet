@@ -3894,6 +3894,7 @@ exports[`DataTable custom theme 1`] = `
           scope="col"
         />
         <th
+          aria-sort="none"
           class="c4 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -3903,6 +3904,7 @@ exports[`DataTable custom theme 1`] = `
             class="c5"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="c6 c7"
               type="button"
             >
@@ -4073,6 +4075,7 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         />
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hdohsq StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -4082,6 +4085,7 @@ exports[`DataTable custom theme 2`] = `
             class="StyledBox-sc-13pk1d4-0 cyLFae"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 ksMNO"
               type="button"
             >
@@ -17222,6 +17226,7 @@ exports[`DataTable onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -17230,6 +17235,7 @@ exports[`DataTable onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -17246,6 +17252,7 @@ exports[`DataTable onSort 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -17254,6 +17261,7 @@ exports[`DataTable onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -17395,6 +17403,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="A, sorted ascending, activate to sort descending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -17458,7 +17467,8 @@ exports[`DataTable onSort 2`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -17474,6 +17484,7 @@ exports[`DataTable onSort 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -17482,6 +17493,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -17862,6 +17874,7 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sorted ascending, activate to sort descending"
               class="c5 c6"
               type="button"
             >
@@ -17877,7 +17890,8 @@ exports[`DataTable onSort external 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -17893,6 +17907,7 @@ exports[`DataTable onSort external 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -17901,6 +17916,7 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -18042,6 +18058,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="A, sorted descending, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -18093,7 +18110,8 @@ exports[`DataTable onSort external 2`] = `
 }
 
 <svg
-                  aria-label="descending"
+                  aria-hidden="true"
+                  aria-label="FormDown"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -18109,6 +18127,7 @@ exports[`DataTable onSort external 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -18117,6 +18136,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -52160,6 +52180,7 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sorted ascending, activate to sort descending"
               class="c5 c6"
               type="button"
             >
@@ -52175,7 +52196,8 @@ exports[`DataTable sort 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -52191,6 +52213,7 @@ exports[`DataTable sort 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -52199,6 +52222,7 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -52651,6 +52675,7 @@ exports[`DataTable sort controlled 1`] = `
               class="c5"
             >
               <button
+                aria-label="A, sorted ascending, activate to sort descending"
                 class="c6 c7"
                 type="button"
               >
@@ -52666,7 +52691,8 @@ exports[`DataTable sort controlled 1`] = `
                     class="c10"
                   />
                   <svg
-                    aria-label="ascending"
+                    aria-hidden="true"
+                    aria-label="FormUp"
                     class="c11"
                     viewBox="0 0 24 24"
                   >
@@ -52682,6 +52708,7 @@ exports[`DataTable sort controlled 1`] = `
             </div>
           </th>
           <th
+            aria-sort="none"
             class="c4 "
             id="grommet-data-table-header-b"
             scope="col"
@@ -52690,6 +52717,7 @@ exports[`DataTable sort controlled 1`] = `
               class="c5"
             >
               <button
+                aria-label="B, sortable, activate to sort ascending"
                 class="c6 c7"
                 type="button"
               >
@@ -53143,6 +53171,7 @@ exports[`DataTable sort controlled 2`] = `
               class="c5"
             >
               <button
+                aria-label="A, sorted descending, activate to sort ascending"
                 class="c6 c7"
                 type="button"
               >
@@ -53158,7 +53187,8 @@ exports[`DataTable sort controlled 2`] = `
                     class="c10"
                   />
                   <svg
-                    aria-label="descending"
+                    aria-hidden="true"
+                    aria-label="FormDown"
                     class="c11"
                     viewBox="0 0 24 24"
                   >
@@ -53174,6 +53204,7 @@ exports[`DataTable sort controlled 2`] = `
             </div>
           </th>
           <th
+            aria-sort="none"
             class="c4 "
             id="grommet-data-table-header-b"
             scope="col"
@@ -53182,6 +53213,7 @@ exports[`DataTable sort controlled 2`] = `
               class="c5"
             >
               <button
+                aria-label="B, sortable, activate to sort ascending"
                 class="c6 c7"
                 type="button"
               >
@@ -53563,6 +53595,7 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sorted ascending, activate to sort descending"
               class="c5 c6"
               type="button"
             >
@@ -53578,7 +53611,8 @@ exports[`DataTable sort external 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -53594,6 +53628,7 @@ exports[`DataTable sort external 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -53602,6 +53637,7 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -53973,6 +54009,7 @@ exports[`DataTable sort nested object 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -53981,6 +54018,7 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -54006,6 +54044,7 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
+              aria-label="Value, sorted descending, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -54021,7 +54060,8 @@ exports[`DataTable sort nested object 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="descending"
+                  aria-hidden="true"
+                  aria-label="FormDown"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -54392,6 +54432,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -54400,6 +54441,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -54425,6 +54467,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label="Value, sorted descending, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -54440,7 +54483,8 @@ exports[`DataTable sort nested object with onSort 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="descending"
+                  aria-hidden="true"
+                  aria-label="FormDown"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -54767,6 +54811,7 @@ exports[`DataTable sort null data 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -54775,6 +54820,7 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -54791,6 +54837,7 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -54799,6 +54846,7 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -54815,6 +54863,7 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-c"
           scope="col"
@@ -54823,6 +54872,7 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-label="C, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -54839,6 +54889,7 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-d"
           scope="col"
@@ -54847,6 +54898,7 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-label="D, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -55087,6 +55139,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="A, sorted ascending, activate to sort descending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55150,7 +55203,8 @@ exports[`DataTable sort null data 2`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -55166,6 +55220,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -55174,6 +55229,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55190,6 +55246,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-c"
           scope="col"
@@ -55198,6 +55255,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="C, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55214,6 +55272,7 @@ exports[`DataTable sort null data 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-d"
           scope="col"
@@ -55222,6 +55281,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="D, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55523,6 +55583,7 @@ exports[`DataTable sort null data 3`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
       >
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -55531,6 +55592,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55547,6 +55609,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -55555,6 +55618,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55580,6 +55644,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="C, sorted ascending, activate to sort descending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55643,7 +55708,8 @@ exports[`DataTable sort null data 3`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -55659,6 +55725,7 @@ exports[`DataTable sort null data 3`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-d"
           scope="col"
@@ -55667,6 +55734,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="D, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55968,6 +56036,7 @@ exports[`DataTable sort null data 4`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
       >
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -55976,6 +56045,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -55992,6 +56062,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -56000,6 +56071,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -56016,6 +56088,7 @@ exports[`DataTable sort null data 4`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-c"
           scope="col"
@@ -56024,6 +56097,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="C, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -56049,6 +56123,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="D, sorted ascending, activate to sort descending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -56112,7 +56187,8 @@ exports[`DataTable sort null data 4`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -56608,6 +56684,7 @@ exports[`DataTable sortable 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -56616,6 +56693,7 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -56632,6 +56710,7 @@ exports[`DataTable sortable 1`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -56640,6 +56719,7 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="c5 c6"
               type="button"
             >
@@ -56781,6 +56861,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="A, sorted ascending, activate to sort descending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -56844,7 +56925,8 @@ exports[`DataTable sortable 2`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -56860,6 +56942,7 @@ exports[`DataTable sortable 2`] = `
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -56868,6 +56951,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
@@ -57521,6 +57605,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           class="c8"
         />
         <th
+          aria-sort="none"
           class="c9 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -57532,6 +57617,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
               class="c11"
             >
               <button
+                aria-label="A, sortable, activate to sort ascending"
                 class="c12 c13"
                 type="button"
               >
@@ -57567,6 +57653,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c9 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -57575,6 +57662,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
             class="c20"
           >
             <button
+              aria-label="B, sortable, activate to sort ascending"
               class="c12 c13"
               type="button"
             >
