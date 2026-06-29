@@ -58,12 +58,6 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
   border-color: ${getBorderColor(props)};
   `}
   background: ${(props) => {
-    if (props.readOnlyProp) {
-      return (
-        props.theme.timeInput?.container?.readOnly?.background ||
-        getRGBA(normalizeColor('black', props.theme), 0.04)
-      );
-    }
     if (props.disabled) {
       return (
         props.theme.timeInput?.container?.disabled?.background || 'transparent'
