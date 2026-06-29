@@ -1137,8 +1137,8 @@ const TimeInput = forwardRef(
     let fieldError;
     if (draftError === 'outOfBounds') {
       fieldError = getMessage('outOfBounds', {
-        start: min || '',
-        end: max || '',
+        start: bounds?.[0] || '',
+        end: bounds?.[1] || '',
       });
     } else if (draftError) {
       fieldError = getMessage(draftError);
