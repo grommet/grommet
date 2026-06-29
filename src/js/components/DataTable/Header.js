@@ -419,7 +419,7 @@ const Header = forwardRef(
 
                 content = (
                   <StyledHeaderCellButton
-                    a11yTitle={buttonA11yTitle}
+                    aria-label={buttonA11yTitle}
                     plain
                     column={property}
                     fill="vertical"

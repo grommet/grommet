@@ -2413,4 +2413,75 @@ describe('DataTable', () => {
     // column SHOULD have position: relative (for resizer positioning)
     expect(nonPinnedHeaderStyles.position).toBe('relative');
   });
+
+  test('sortable column button has descriptive aria-label', () => {
+    render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A, sortable, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
+  });
+
+  test('non-sortable column has no aria-sort', () => {
+    render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', sortable: false },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[{ a: 'one', b: 1 }]}
+          onSort={jest.fn()}
+          sortable
+        />
+      </Grommet>,
+    );
+    expect(screen.getByRole('columnheader', { name: 'A' })).not.toHaveAttribute(
+      'aria-sort',
+    );
+  });
+
+  test('sortable column button aria-label updates when sorted', async () => {
+    const { rerender } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sort={{ property: 'a', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A, sorted ascending, activate to sort descending',
+      }),
+    ).toBeInTheDocument();
+
+    rerender(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sort={{ property: 'a', direction: 'desc' }}
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A, sorted descending, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
+  });
 });
