@@ -32,7 +32,6 @@ export interface TimeInputProps {
   showSeconds?: boolean;
   timeFormat?: '12hr' | '24hr';
   value?: Date | string;
-  openOnFocus?: boolean;
 }
 
 export interface TimeInputExtendedProps

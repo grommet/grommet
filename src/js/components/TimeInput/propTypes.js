@@ -27,7 +27,6 @@ if (process.env.NODE_ENV !== 'production') {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
-    openOnFocus: PropTypes.bool,
     plain: PropTypes.bool,
     readOnly: PropTypes.bool,
     secondStep: PropTypes.number,

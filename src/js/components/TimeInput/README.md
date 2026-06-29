@@ -82,7 +82,6 @@ import { Form, FormField, TimeInput } from 'grommet';
 | `minuteStep` | `number` | - | Minute increment validation |
 | `secondStep` | `number` | - | Seconds increment validation |
 | `min`, `max` | `string` | - | Boundaries in selected format |
-| `openOnFocus` | `boolean` | `false` | Opens picker when input receives focus |
 | `readOnly`, `disabled` | `boolean` | `false` | Interaction restrictions |
 
 ### Theme Keys Used

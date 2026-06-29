@@ -57,6 +57,7 @@ const grommetInputNames = [
   'RangeSelector',
   'StarRating',
   'ThumbsRating',
+  'TimeInput',
 ];
 const grommetInputPadNames = [
   'CheckBox',

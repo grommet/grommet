@@ -54,7 +54,10 @@ const toSpacedDisplayValue = ({ value = '', timeFormat }) => {
   let spaced = canonical.replace(/:/g, ' : ');
 
   if (timeFormat === '12hr') {
-    spaced = spaced.replace(/\s*([aApP][mM])$/, ' $1');
+    spaced = spaced.replace(
+      /\s*([aApP][mM])$/,
+      (_, p) => ` ${p.toLowerCase()}`,
+    );
   }
 
   return spaced;
@@ -524,7 +527,6 @@ const TimeInput = forwardRef(
       onBlur,
       onChange,
       onFocus,
-      openOnFocus = false,
       plain,
       placeholder,
       readOnly,
@@ -1110,7 +1112,8 @@ const TimeInput = forwardRef(
         if (!options.length) return;
 
         let currentIndex = options.indexOf(option);
-        if (currentIndex === -1) currentIndex = options.indexOf(pickerParts[segment]);
+        if (currentIndex === -1)
+          currentIndex = options.indexOf(pickerParts[segment]);
         if (currentIndex === -1) currentIndex = 0;
 
         const direction = event.key === 'ArrowDown' ? 1 : -1;
@@ -1153,8 +1156,7 @@ const TimeInput = forwardRef(
       theme.timeInput?.drop?.option?.width ||
       'var(--timeinput-drop-option-width, 46px)';
     const pickerDropHeight =
-      theme.timeInput?.drop?.height ||
-      'var(--timeinput-drop-height, 256px)';
+      theme.timeInput?.drop?.height || 'var(--timeinput-drop-height, 256px)';
     const pickerOptionPad = theme.timeInput?.drop?.option?.pad || {
       horizontal: 'small',
       vertical: 'var(--timeinput-drop-option-pad-vertical, 5px)',
@@ -1199,6 +1201,7 @@ const TimeInput = forwardRef(
             round={theme.timeInput?.container?.round || 'xsmall'}
             direction="row"
             fill
+            plain={plain}
             disabled={disabled}
             readOnlyProp={readOnly}
             hasError={!!fieldError}
@@ -1305,10 +1308,7 @@ const TimeInput = forwardRef(
                   if (onBlur) onBlur(event);
                 }}
                 onFocus={(event) => {
-                  if (openOnFocus) {
-                    openPicker();
-                    if (!readOnly && !disabled) selectInputSegment('hour');
-                  } else if (
+                  if (
                     usingKeyboard &&
                     !inputPointerDownRef.current &&
                     !readOnly &&

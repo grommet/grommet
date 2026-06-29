@@ -147,7 +147,7 @@ export const formatTimeText = ({ dateTime, timeFormat, showSeconds }) => {
       : `${hourText}:${minuteText}`;
   }
 
-  const period = dateTime.hour >= 12 ? 'PM' : 'AM';
+  const period = dateTime.hour >= 12 ? 'pm' : 'am';
   const hour12 = dateTime.hour % 12 || 12;
   const hourText = `${hour12}`.padStart(2, '0');
 

@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react';
 import { Box, TimeInput } from 'grommet';
 
 export const PresetTime = () => {
-  const [value, setValue] = React.useState('09:30 AM');
+  const [value, setValue] = React.useState('09:30 am');
 
   return (
     <Box align="center" justify="center" pad="large">

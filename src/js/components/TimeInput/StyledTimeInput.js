@@ -1,52 +1,62 @@
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { getRGBA, normalizeColor } from '../../utils';
+import { disabledStyle, getRGBA, normalizeColor } from '../../utils';
+import { readOnlyStyle } from '../../utils/readOnly';
 
 const getThemeElevation = (props) => {
   const mode = props.theme.dark ? 'dark' : 'light';
   return props.theme.global?.elevation?.[mode]?.small;
 };
 
+const getBorderColor = (props) => {
+  if (props.hasError) {
+    return (
+      props.theme.timeInput?.container?.error?.borderColor ||
+      props.theme.global?.colors?.['status-critical'] ||
+      normalizeColor('status-critical', props.theme)
+    );
+  }
+  if (props.disabled) {
+    return (
+      props.theme.timeInput?.container?.disabled?.borderColor ||
+      getRGBA(normalizeColor('black', props.theme), 0.12)
+    );
+  }
+  if (props.readOnlyProp) {
+    return (
+      props.theme.timeInput?.container?.readOnly?.borderColor ||
+      normalizeColor('border', props.theme)
+    );
+  }
+  return (
+    props.theme.timeInput?.container?.borderColor ||
+    normalizeColor('border', props.theme)
+  );
+};
+
 export const StyledTimeInputContainer = styled(Box).withConfig({
   shouldForwardProp: (prop) =>
-    !['disabled', 'readOnlyProp', 'hasError'].includes(prop),
+    !['disabled', 'readOnlyProp', 'hasError', 'plain'].includes(prop),
 })`
+  ${(props) => props.disabled && disabledStyle()}
+  ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
   border-radius: ${(props) =>
     props.theme.timeInput?.container?.borderRadius ||
     'var(--formfield-default-medium-input-container-borderRadius, 8px)'};
   min-height: ${(props) =>
     props.theme.timeInput?.container?.minHeight ||
     'var(--formfield-default-medium-input-container-minHeight, 36px)'};
-  border-width: ${(props) =>
+  ${(props) =>
+    !props.plain &&
+    `
+  border-width: ${
     props.theme.timeInput?.container?.borderWidth ||
-    'var(--formfield-default-medium-input-container-borderWidth, 1px)'};
+    'var(--formfield-default-medium-input-container-borderWidth, 1px)'
+  };
   border-style: solid;
-  border-color: ${(props) => {
-    if (props.hasError) {
-      return (
-        props.theme.timeInput?.container?.error?.borderColor ||
-        props.theme.global?.colors?.['status-critical'] ||
-        normalizeColor('status-critical', props.theme)
-      );
-    }
-    if (props.disabled) {
-      return (
-        props.theme.timeInput?.container?.disabled?.borderColor ||
-        getRGBA(normalizeColor('black', props.theme), 0.12)
-      );
-    }
-    if (props.readOnlyProp) {
-      return (
-        props.theme.timeInput?.container?.readOnly?.borderColor ||
-        normalizeColor('border', props.theme)
-      );
-    }
-    return (
-      props.theme.timeInput?.container?.borderColor ||
-      normalizeColor('border', props.theme)
-    );
-  }};
+  border-color: ${getBorderColor(props)};
+  `}
   background: ${(props) => {
     if (props.readOnlyProp) {
       return (
@@ -66,15 +76,14 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
     'var(--formfield-default-medium-input-container-textToElementX, 12px)'};
 
   &:hover {
-    border-color: ${(props) => {
-      if (props.disabled || props.readOnlyProp || props.hasError) {
-        return 'inherit';
-      }
-      return (
-        props.theme.timeInput?.container?.hover?.borderColor ||
-        normalizeColor('border', props.theme)
-      );
-    }};
+    ${(props) =>
+      !props.plain &&
+      `border-color: ${
+        props.disabled || props.readOnlyProp || props.hasError
+          ? 'inherit'
+          : props.theme.timeInput?.container?.hover?.borderColor ||
+            normalizeColor('border', props.theme)
+      };`}
     background: ${(props) => {
       if (props.disabled || props.readOnlyProp) return 'inherit';
       return (
@@ -84,20 +93,27 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
   }
 
   &:focus-within {
-    border-color: ${(props) =>
-      props.theme.timeInput?.container?.focus?.borderColor ||
-      normalizeColor('focus', props.theme)};
-    box-shadow: ${(props) => {
-      const bgColor = normalizeColor('background-front', props.theme);
-      const innerRing = `0 0 0 2px ${bgColor}`;
-      const focusColor = normalizeColor('focus', props.theme);
-      const outerRing = `0 0 0 4px ${focusColor}`;
-      return (
+    ${(props) =>
+      !props.plain &&
+      `border-color: ${
+        props.theme.timeInput?.container?.focus?.borderColor ||
+        normalizeColor('focus', props.theme)
+      };`}
+    ${(props) =>
+      !props.plain &&
+      `box-shadow: ${
         props.theme.timeInput?.container?.focus?.boxShadow ||
-        `var(--timeinput-focus-ring-inner, ${innerRing}),
-         var(--timeinput-focus-ring-outer, ${outerRing})`
-      );
-    }};
+        (() => {
+          const bgColor = normalizeColor('background-front', props.theme);
+          const innerRing = `0 0 0 2px ${bgColor}`;
+          const focusColor = normalizeColor('focus', props.theme);
+          const outerRing = `0 0 0 4px ${focusColor}`;
+          return (
+            `var(--timeinput-focus-ring-inner, ${innerRing}),` +
+            ` var(--timeinput-focus-ring-outer, ${outerRing})`
+          );
+        })()
+      };`}
   }
 
   input {
@@ -176,12 +192,9 @@ export const StyledTimeInputToggleButton = styled(Button)`
   min-width: ${(props) =>
     props.theme.timeInput?.toggle?.minWidth ||
     'var(--button-toolbar-medium-iconOnly-minWidth, 36px)'};
-  min-height: ${(props) =>
-    props.theme.timeInput?.toggle?.minHeight ||
-    'var(--button-toolbar-medium-iconOnly-minHeight, 36px)'};
   padding: ${(props) =>
     props.theme.timeInput?.toggle?.pad ||
-    `var(--button-toolbar-medium-iconOnly-paddingY, 9px)
+    `var(--timeinput-toggle-paddingY, 8px)
     var(--button-toolbar-medium-iconOnly-paddingX, 9px)`};
 
   &:disabled {

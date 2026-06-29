@@ -59,7 +59,7 @@ describe('TimeInput', () => {
 
     expect(onChange).toHaveBeenCalled();
     const [{ value }] = onChange.mock.calls[onChange.mock.calls.length - 1];
-    expect(value).toBe('09:05 PM');
+    expect(value).toBe('09:05 pm');
   });
 
   test('renders TimeInput with Form integration', () => {
@@ -80,11 +80,11 @@ describe('TimeInput', () => {
   test('renders defaultValue for uncontrolled usage', () => {
     render(
       <Grommet>
-        <TimeInput timeFormat="12hr" defaultValue="09:00 AM" />
+        <TimeInput timeFormat="12hr" defaultValue="09:00 am" />
       </Grommet>,
     );
 
-    expect(screen.getByDisplayValue('09 : 00 AM')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('09 : 00 am')).toBeInTheDocument();
   });
 
   test('respects minuteStep for typed values', async () => {
@@ -116,21 +116,6 @@ describe('TimeInput', () => {
     await user.click(input);
 
     expect(screen.queryByRole('listbox', { name: 'Hours' })).toBeNull();
-  });
-
-  test('opens picker on focus when openOnFocus is true', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Grommet>
-        <TimeInput timeFormat="24hr" defaultValue="12:00" openOnFocus />
-      </Grommet>,
-    );
-
-    const input = screen.getByPlaceholderText('hh : mm');
-    await user.click(input);
-
-    expect(screen.getByRole('listbox', { name: 'Hours' })).toBeInTheDocument();
   });
 
   test('preserves caret when formatting typed value', async () => {
@@ -267,7 +252,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByDisplayValue('03 : 30 PM') as HTMLInputElement;
+    const input = screen.getByDisplayValue('03 : 30 pm') as HTMLInputElement;
 
     // Simulate initial click landing inside minute segment.
     fireEvent.focus(input);
@@ -298,7 +283,7 @@ describe('TimeInput', () => {
     await user.keyboard('{ArrowUp}');
 
     await waitFor(() => {
-      expect(input.value).toBe('12 : 34 AM');
+      expect(input.value).toBe('12 : 34 am');
       expect(input.selectionStart).toBe(7);
       expect(input.selectionEnd).toBe(10);
     });
@@ -358,7 +343,7 @@ describe('TimeInput', () => {
     await user.keyboard('{ArrowUp}');
 
     await waitFor(() => {
-      expect(input.value).toBe('12 : 35 PM');
+      expect(input.value).toBe('12 : 35 pm');
       expect(input.selectionStart).toBe(4);
       expect(input.selectionEnd).toBe(8);
     });
