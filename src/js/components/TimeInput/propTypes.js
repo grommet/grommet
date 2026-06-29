@@ -30,7 +30,6 @@ if (process.env.NODE_ENV !== 'production') {
     readOnly: PropTypes.bool,
     secondStep: PropTypes.number,
     showSeconds: PropTypes.bool,
-    step: PropTypes.number,
     timeFormat: PropTypes.oneOf(['12hr', '24hr']),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
     size: PropTypes.oneOfType([

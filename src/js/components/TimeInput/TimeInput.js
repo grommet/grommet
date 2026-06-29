@@ -531,7 +531,6 @@ const TimeInput = forwardRef(
       readOnly,
       secondStep,
       showSeconds = false,
-      step,
       timeFormat,
       value: valueArg,
       ...rest
@@ -566,7 +565,7 @@ const TimeInput = forwardRef(
       [timeFormat],
     );
 
-    const resolvedMinuteStep = minuteStep ?? step;
+    const resolvedMinuteStep = minuteStep;
 
     const resolvedValueArg = useMemo(
       () =>

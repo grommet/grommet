@@ -26,7 +26,6 @@ export interface TimeInputProps {
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
   plain?: boolean;
   readOnly?: boolean;
-  step?: number;
   secondStep?: number;
   showSeconds?: boolean;
   timeFormat?: '12hr' | '24hr';
