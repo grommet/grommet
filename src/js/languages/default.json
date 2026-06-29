@@ -214,6 +214,16 @@
     "suggestionsExist": "This input has suggestions use arrow keys to navigate",
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
   },
+  "timeInput": {
+    "closeTimePicker": "Close time picker",
+    "hoursLabel": "Hours",
+    "invalidTime": "Invalid time",
+    "minutesLabel": "Minutes",
+    "openTimePicker": "Open time picker",
+    "outOfBounds": "Time is out of the allowed range. Enter a time between {start} and {end}.",
+    "periodLabel": "AM/PM",
+    "secondsLabel": "Seconds"
+  },
   "video": {
     "audioDescriptions": "video audio description",
     "captions": "closed captions",
