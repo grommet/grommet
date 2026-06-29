@@ -21,9 +21,6 @@ export interface TimeInputProps {
   };
   minuteStep?: number;
   onChange?: (event: { value: string }) => void;
-  onBlur?: React.FocusEventHandler<HTMLInputElement>;
-  onFocus?: React.FocusEventHandler<HTMLInputElement>;
-  plain?: boolean;
   readOnly?: boolean;
   secondStep?: number;
   showSeconds?: boolean;
