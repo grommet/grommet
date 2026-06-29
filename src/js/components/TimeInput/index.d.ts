@@ -20,7 +20,6 @@ export interface TimeInputProps {
     secondsLabel?: string;
   };
   minuteStep?: number;
-  name?: string;
   onChange?: (event: { value: string }) => void;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;

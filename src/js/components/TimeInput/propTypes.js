@@ -22,7 +22,6 @@ if (process.env.NODE_ENV !== 'production') {
       secondsLabel: PropTypes.string,
     }),
     minuteStep: PropTypes.number,
-    name: PropTypes.string,
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
