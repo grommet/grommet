@@ -123,8 +123,7 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
         normalizeColor('text', props.theme)
       );
     }};
-    font-family: ${(props) =>
-      props.theme.global?.font?.family || 'inherit'};
+    font-family: ${(props) => props.theme.global?.font?.family || 'inherit'};
     font-size: ${(props) =>
       props.theme.timeInput?.value?.size ||
       'var(--formfield-default-medium-value-fontSize, 16px)'};
@@ -227,10 +226,31 @@ export const StyledTimeInputToggleButton = styled(Button)`
 `;
 
 export const StyledPickerOptionBox = styled(Box).withConfig({
-  shouldForwardProp: (prop) => prop !== 'optionWidth',
+  shouldForwardProp: (prop) => !['optionWidth', 'isSelected'].includes(prop),
 })`
   width: ${(props) => props.optionWidth};
   opacity: 1;
+
+  /* Apply selected text color using theme token, matching Calendar pattern */
+  ${(props) => {
+    if (props.isSelected) {
+      let textColor;
+      // Get color from timeInput drop option selected theme
+      if (props.theme.timeInput?.drop?.option?.selected?.color) {
+        textColor = props.theme.timeInput.drop.option.selected.color;
+      } else {
+        // Fallback to white for high contrast on selected background
+        textColor = normalizeColor('text', props.theme) || '#FFF';
+      }
+      return `
+        color: ${textColor} !important;
+        * {
+          color: ${textColor} !important;
+        }
+      `;
+    }
+    return '';
+  }}
 `;
 
 export const StyledPickerDropContent = styled(Box).withConfig({

@@ -11,7 +11,7 @@ import { Clock as GrommetClockIcon } from 'grommet-icons/icons/Clock';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
-import { useForwardedRef, useKeyboard } from '../../utils';
+import { useForwardedRef } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -502,7 +502,11 @@ const PickerColumn = ({
               onSelect(option);
             }}
           >
-            <StyledPickerOptionBox optionWidth={optionWidth} pad={optionPad}>
+            <StyledPickerOptionBox
+              optionWidth={optionWidth}
+              pad={optionPad}
+              isSelected={isSelectedOption}
+            >
               <Text size={listOptionSize || 'medium'} textAlign="center">
                 {option}
               </Text>
@@ -542,7 +546,6 @@ const TimeInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const { useFormInput } = useContext(FormContext);
-    const usingKeyboard = useKeyboard();
     const ref = useForwardedRef(refArg);
     const containerRef = useRef();
     const pendingSelectionRef = useRef();
@@ -754,13 +757,7 @@ const TimeInput = forwardRef(
 
         return normalizedValue;
       },
-      [
-        bounds,
-        resolvedMinuteStep,
-        resolvedTimeFormat,
-        secondStep,
-        showSeconds,
-      ],
+      [bounds, resolvedMinuteStep, resolvedTimeFormat, secondStep, showSeconds],
     );
 
     const commitFromText = useCallback(
@@ -894,6 +891,32 @@ const TimeInput = forwardRef(
         }
       },
       [ref],
+    );
+
+    const handleTextInputFocus = useCallback(
+      (event) => {
+        // Auto-select hour segment on focus for keyboard input.
+        setActiveSegment('hour');
+
+        // If field has a value, select the hour segment for visual feedback
+        if (ref?.current?.value) {
+          const ranges = getSegmentRanges({
+            value: ref.current.value,
+            timeFormat: resolvedTimeFormat,
+            showSeconds,
+          });
+          const hourRange = ranges.hour;
+          if (hourRange) {
+            queueInputSelection(hourRange.start, hourRange.end);
+          }
+        }
+
+        // Call user's onFocus if provided
+        if (onFocus) {
+          onFocus(event);
+        }
+      },
+      [onFocus, resolvedTimeFormat, showSeconds, queueInputSelection, ref],
     );
 
     useEffect(
@@ -1165,8 +1188,7 @@ const TimeInput = forwardRef(
     const pickerOptionMaxHeight =
       theme.timeInput?.drop?.option?.maxHeight ||
       'var(--timeinput-drop-option-maxHeight, 232px)';
-    const pickerOptionSize =
-      theme.timeInput?.drop?.option?.size || 'medium';
+    const pickerOptionSize = theme.timeInput?.drop?.option?.size || 'medium';
     let defaultPlaceholder;
     if (resolvedTimeFormat === '24hr') {
       defaultPlaceholder = showSeconds ? 'hh : mm : ss' : 'hh : mm';
@@ -1228,6 +1250,7 @@ const TimeInput = forwardRef(
                 placeholder={resolvedPlaceholder}
                 {...restOfInputProps}
                 value={textValue}
+                onFocus={handleTextInputFocus}
                 onChange={(event) => {
                   const nextTextValue = event.target.value;
                   const rawCursorPosition =
@@ -1311,26 +1334,6 @@ const TimeInput = forwardRef(
                   }
                   togglePressingRef.current = false;
                   if (onBlur) onBlur(event);
-                }}
-                onFocus={(event) => {
-                  if (
-                    usingKeyboard &&
-                    !inputPointerDownRef.current &&
-                    !readOnly &&
-                    !disabled
-                  ) {
-                    pendingFocusSelectionFrameRef.current =
-                      window.requestAnimationFrame(() => {
-                        pendingFocusSelectionFrameRef.current = undefined;
-                        // If mouse interaction started before this frame runs,
-                        // preserve mouse-selected segment instead of resetting.
-                        if (inputPointerDownRef.current) return;
-                        selectInputSegment('hour');
-                      });
-                  }
-
-                  inputPointerDownRef.current = false;
-                  if (onFocus) onFocus(event);
                 }}
                 onClick={(event) => {
                   if (readOnly || disabled) {
