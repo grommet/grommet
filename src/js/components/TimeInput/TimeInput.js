@@ -893,6 +893,26 @@ const TimeInput = forwardRef(
       [ref],
     );
 
+    // Use requestAnimationFrame for focus selection to avoid browser
+    // overriding with select-all after focus
+    const queueFocusSelection = useCallback(
+      (start, end = start) => {
+        pendingSelectionRef.current = { start, end };
+        if (pendingFocusSelectionFrameRef.current) {
+          window.cancelAnimationFrame(pendingFocusSelectionFrameRef.current);
+        }
+        pendingFocusSelectionFrameRef.current = window.requestAnimationFrame(
+          () => {
+            if (ref?.current?.setSelectionRange) {
+              ref.current.setSelectionRange(start, end);
+            }
+            pendingFocusSelectionFrameRef.current = undefined;
+          },
+        );
+      },
+      [ref],
+    );
+
     const handleTextInputFocus = useCallback(
       (event) => {
         // Auto-select hour segment on focus for keyboard input.
@@ -907,7 +927,7 @@ const TimeInput = forwardRef(
           });
           const hourRange = ranges.hour;
           if (hourRange) {
-            queueInputSelection(hourRange.start, hourRange.end);
+            queueFocusSelection(hourRange.start, hourRange.end);
           }
         }
 
@@ -916,7 +936,7 @@ const TimeInput = forwardRef(
           onFocus(event);
         }
       },
-      [onFocus, resolvedTimeFormat, showSeconds, queueInputSelection, ref],
+      [onFocus, resolvedTimeFormat, showSeconds, queueFocusSelection, ref],
     );
 
     useEffect(
@@ -1256,11 +1276,30 @@ const TimeInput = forwardRef(
                   const rawCursorPosition =
                     event.target.selectionStart ?? nextTextValue.length;
                   const canonicalInput = toCanonicalDisplayValue(nextTextValue);
-                  const formattedInput = formatTypedTimeInput({
-                    value: canonicalInput,
-                    timeFormat: resolvedTimeFormat,
-                    showSeconds,
-                  });
+
+                  // Detect fresh entry: when user deletes and replaces
+                  // text, only use new digits, not old segment values
+                  const prevCanonical = toCanonicalDisplayValue(textValue);
+                  const newDigits = canonicalInput.replace(/\D/g, '');
+                  const prevDigits = prevCanonical.replace(/\D/g, '');
+                  const isFreshEntry = newDigits.length < prevDigits.length;
+
+                  // Use fresh entry logic only if digits decreased
+                  let formattedInput;
+                  if (isFreshEntry && newDigits.length > 0) {
+                    formattedInput = formatTypedTimeInput({
+                      value: newDigits,
+                      timeFormat: resolvedTimeFormat,
+                      showSeconds,
+                    });
+                  } else {
+                    formattedInput = formatTypedTimeInput({
+                      value: canonicalInput,
+                      timeFormat: resolvedTimeFormat,
+                      showSeconds,
+                    });
+                  }
+
                   const formattedDisplayInput = toSpacedDisplayValue({
                     value: formattedInput,
                     timeFormat: resolvedTimeFormat,
