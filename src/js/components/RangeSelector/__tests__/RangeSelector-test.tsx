@@ -369,4 +369,42 @@ describe('RangeSelector', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('should not trigger onClick after drag', () => {
+    const handleChange = jest.fn();
+
+    const { container } = render(
+      <Grommet>
+        <RangeSelector values={[20, 30]} onChange={handleChange} />
+      </Grommet>,
+    );
+
+    const range = container.querySelector('[tabindex="-1"]');
+    if (!range) {
+      throw new Error('RangeSelector container not found');
+    }
+
+    Object.defineProperty(range, 'getBoundingClientRect', {
+      value: () => ({
+        left: 0,
+        width: 200,
+        top: 0,
+        height: 20,
+      }),
+    });
+
+    const upperControl = screen.getByRole('slider', {
+      name: 'Upper Bounds',
+    });
+
+    // drag
+    fireEvent.mouseDown(upperControl);
+    fireEvent.mouseMove(window, { clientX: 100 });
+    fireEvent.mouseUp(window);
+
+    // click after drag should be ignored
+    fireEvent.click(range, { clientX: 120 });
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
