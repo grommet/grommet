@@ -1,0 +1,31 @@
+name: License Compliance
+
+on:
+  pull_request:
+    branches: [master, stable]
+  push:
+    branches: [master, stable]
+
+jobs:
+  license-check:
+    name: SPDX header check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Verify SPDX license headers (changed files only)
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            RANGE="${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}"
+          else
+            RANGE="${{ github.event.before }}...${{ github.sha }}"
+          fi
+          FILES="$(git diff --name-only "$RANGE" -- src e2e storybook tools || true)"
+          if [ -n "$FILES" ]; then
+            node tools/license-header.js --check $FILES
+          else
+            echo "No relevant files changed."
+          fi
