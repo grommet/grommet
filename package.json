@@ -119,7 +119,7 @@
     "eslint-plugin-testing-library": "^7.16.2",
     "fs-extra": "^11.3.5",
     "globals": "^17.6.0",
-    "grommet-theme-hpe": "^7.0.2",
+    "grommet-theme-hpe": "^8.1.4",
     "jest": "^30.4.2",
     "jest-axe": "^10.0.0",
     "jest-cli": "^30.3.0",

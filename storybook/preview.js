@@ -1,13 +1,31 @@
 import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line import/no-unresolved
+import { addons } from 'storybook/internal/preview-api';
 import Root from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
-import { hpe } from 'grommet-theme-hpe';
+import { hpe as hpeTheme } from 'grommet-theme-hpe';
 import isChromatic from 'chromatic/isChromatic';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
+import sizeMapper from './sizeMapper';
 
 const CUSTOM_THEMED = 'Custom Themed';
+const { createHpeCompatTheme } = sizeMapper;
+const SNIPPET_RENDERED_EVENT = 'storybook/docs/snippet-rendered';
+
+const getThemeAwareSourceCode = (source, storyContext) => {
+  if (!storyContext) return source;
+
+  const original =
+    storyContext.parameters?.sizeMapping?.originalSourceCode || source;
+  const mapped = storyContext.parameters?.sizeMapping?.hpeSourceCode;
+  const theme = storyContext.globals?.theme;
+
+  if (theme === 'hpe' && mapped) return mapped;
+  return original || source;
+};
+
 const THEMES = {
-  hpe,
+  hpe: createHpeCompatTheme(hpeTheme),
   grommet,
   hacktoberfest2022,
   base: {},
@@ -16,32 +34,73 @@ const THEMES = {
 export const decorators = [
   (Story, context) => {
     const [rootRef, setRootRef] = useState(null);
-    const [state, setState] = useState('grommet');
-    const [root, setRoot] = useState('document');
+    const activeTheme = context.globals.theme || 'grommet';
+    const root = context.globals.root || 'document';
     const full = context.allArgs?.full || 'min';
     const dir = context.allArgs?.dir;
     const options = context.allArgs?.options;
 
     useEffect(() => {
-      setState(context.globals.theme);
-    }, [context.globals.theme]);
-    useEffect(() => {
-      setRoot(context.globals.root);
-    }, [context.globals.root]);
+      let cleanup = () => {};
+      const sizeMapping = context.parameters?.sizeMapping;
+      const docsSource = context.parameters?.docs?.source;
+
+      const mappedSource =
+        activeTheme === 'hpe'
+          ? sizeMapping?.hpeSourceCode || sizeMapping?.originalSourceCode
+          : sizeMapping?.originalSourceCode || sizeMapping?.hpeSourceCode;
+
+      const fallbackSource =
+        docsSource?.originalSource || docsSource?.code || docsSource?.source;
+
+      const source = mappedSource || fallbackSource;
+
+      if (!source) return cleanup;
+
+      const channel = addons.getChannel();
+      if (!channel) return cleanup;
+
+      const emitSnippet = () => {
+        channel.emit(SNIPPET_RENDERED_EVENT, {
+          id: context.id,
+          source,
+        });
+      };
+
+      // Re-emit to avoid races with code panel reset on story navigation.
+      emitSnippet();
+      const immediateRetry = setTimeout(emitSnippet, 0);
+      const delayedRetry = setTimeout(emitSnippet, 50);
+
+      cleanup = () => {
+        clearTimeout(immediateRetry);
+        clearTimeout(delayedRetry);
+      };
+
+      return cleanup;
+    }, [
+      context.id,
+      context.parameters?.sizeMapping,
+      context.parameters?.docs?.source,
+      activeTheme,
+    ]);
+
+    const renderStory = (themeName = activeTheme) => (
+      <Story state={THEMES[themeName]} />
+    );
 
     /**
      * This demonstrates that custom themed stories are driven off the "base"
      * theme. Custom themed stories will live under a "CustomThemed" directory.
      */
-    if (context.kind.split('/')[2] === CUSTOM_THEMED && state !== 'base') {
+    if (
+      context.kind.split('/')[2] === CUSTOM_THEMED &&
+      activeTheme !== 'base'
+    ) {
       // if we are running the story in chromatic we want the chromatic snapshot
       // to be taken in the base theme for custom theme stories
       if (isChromatic()) {
-        return (
-          <Grommet theme={THEMES.base}>
-            <Story state={THEMES.base} />
-          </Grommet>
-        );
+        return <Grommet theme={THEMES.base}>{renderStory('base')}</Grommet>;
       }
       return (
         <Box align="center" pad="large">
@@ -50,9 +109,7 @@ export const decorators = [
                 "base" theme mode. To enable, select "base" from the
                 Theme menu above.`}
           </Text>
-          <div hidden>
-            <Story state={THEMES[state]} />
-          </div>
+          <div hidden>{renderStory()}</div>
         </Box>
       );
     }
@@ -64,13 +121,13 @@ export const decorators = [
           {rootRef && (
             <StyleSheetManager target={rootRef.shadowRoot}>
               <Grommet
-                theme={THEMES[state]}
+                theme={THEMES[activeTheme]}
                 full={full}
                 dir={dir}
                 options={options}
                 containerTarget={rootRef.shadowRoot}
               >
-                <Story state={THEMES[state]} />
+                {renderStory()}
               </Grommet>
             </StyleSheetManager>
           )}
@@ -79,8 +136,13 @@ export const decorators = [
     }
 
     return (
-      <Grommet theme={THEMES[state]} full={full} dir={dir} options={options}>
-        <Story state={THEMES[state]} />
+      <Grommet
+        theme={THEMES[activeTheme]}
+        full={full}
+        dir={dir}
+        options={options}
+      >
+        {renderStory()}
       </Grommet>
     );
   },
@@ -96,6 +158,13 @@ export const parameters = {
   },
   docs: {
     codePanel: true,
+    source: {
+      type: 'code',
+      transform: getThemeAwareSourceCode,
+    },
+  },
+  sizeMapping: {
+    enabled: true,
   },
   options: {
     storySort: (first, second) => {
@@ -112,7 +181,6 @@ export const parameters = {
        * A return value of 0 results in sorting the "first" story BEFORE the
        * secondary story, based on the titles.
        */
-      const CUSTOM_THEMED = 'Custom Themed';
       const isFirstCustom = first.title.split('/')[2] === CUSTOM_THEMED;
       const isSecondCustom = second.title.split('/')[2] === CUSTOM_THEMED;
       if (isFirstCustom) return 1;
