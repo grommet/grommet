@@ -1,0 +1,30 @@
+[11:46:55.094] [INFO] storybook v10.4.2
+[11:46:55.177] [DEBUG] Getting package.json info for /Users/srinivaspadma/Documents/GitHub/GrommetNew/grommet/package.json...
+[11:46:56.159] [DEBUG] Serving static files from [36mnode_modules/@chromatic-com/storybook/assets[39m at [36m/addon-visual-tests-assets[39m
+[11:46:56.159] [DEBUG] Serving static files from [36mstorybook/public[39m at [36m/[39m
+[11:46:56.159] [INFO] Starting...
+[11:46:57.859] [DEBUG] Starting preview..
+[11:46:57.869] [INFO] Addon-docs: using MDX3
+[11:46:57.871] [INFO] Using implicit CSS loaders
+[11:46:58.012] [INFO] Loading custom Webpack config (full-control mode).
+[11:46:58.587] [DEBUG] Using tsconfig paths for react-docgen
+[11:47:11.848] [DEBUG] Change detection enabled.
+[11:47:12.334] [WARN] Force closed preview build
+[11:47:12.336] [ERROR] [38;2;241;97;97mError: listen EADDRINUSE: address already in use :::9001[39m
+    at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+    at listenInCluster (node:net:2005:12)
+    at Server.listen (node:net:2110:7)
+    at _Polka.listen (file://./node_modules/storybook/dist/core-server/index.js:17345:110)
+    at file://./node_modules/storybook/dist/core-server/index.js:18938:39
+    at new Promise (<anonymous>)
+    at storybookDevServer (file://./node_modules/storybook/dist/core-server/index.js:18937:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async buildOrThrow (file://./node_modules/storybook/dist/core-server/index.js:8205:12)
+    at async buildDevStandalone (file://./node_modules/storybook/dist/core-server/index.js:19478:41)
+    at async withTelemetry (file://./node_modules/storybook/dist/_node-chunks/chunk-PU4IASEN.js:655:12)
+    at async dev (file://./node_modules/storybook/dist/bin/core.js:2735:3)
+    at async _Command.<anonymous> (file://./node_modules/storybook/dist/bin/core.js:2805:92)
+[11:47:12.337] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
+[11:47:14.604] [DEBUG] Change detection graph built: 533 stories, 698 deps tracked, 2224ms
+[12:27:16.826] [PROMPT] Would you like to send anonymous crash reports to improve Storybook and fix bugs faster? {"choice":true}

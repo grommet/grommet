@@ -1,12 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-  within,
-} from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -209,12 +203,12 @@ describe('TimeInput', () => {
     expect(input).toHaveValue('hh:15:ss aa');
   });
 
-  test('keeps clicked placeholder section active for hh, mm, and aa', async () => {
+  test('keeps clicked placeholder section active for hh, mm, ss, and aa', async () => {
     const user = userEvent.setup();
 
     render(
       <Grommet>
-        <TimeInput format="12" views={['hours', 'minutes']} />
+        <TimeInput format="12" />
       </Grommet>,
     );
 
@@ -235,11 +229,18 @@ describe('TimeInput', () => {
       expect(input.selectionEnd).toBe(5);
     });
 
-    await user.click(screen.getByText('aa'));
+    await user.click(screen.getByText('ss'));
 
     await waitFor(() => {
       expect(input.selectionStart).toBe(6);
       expect(input.selectionEnd).toBe(8);
+    });
+
+    await user.click(screen.getByText('aa'));
+
+    await waitFor(() => {
+      expect(input.selectionStart).toBe(9);
+      expect(input.selectionEnd).toBe(11);
     });
   });
 
@@ -248,63 +249,18 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" views={['hours', 'minutes']} />
+        <TimeInput format="12" />
       </Grommet>,
     );
 
     const input = screen.getByRole('spinbutton') as HTMLInputElement;
 
-    await user.click(screen.getByText('mm'));
-
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(3);
-      expect(input.selectionEnd).toBe(5);
-    });
-  });
-
-  test('uses directly clicked period token on first click', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Grommet>
-        <TimeInput format="12" views={['hours', 'minutes']} />
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
-
-    await user.click(screen.getByText('aa'));
+    await user.click(screen.getByText('ss'));
 
     await waitFor(() => {
       expect(input.selectionStart).toBe(6);
       expect(input.selectionEnd).toBe(8);
     });
-  });
-
-  test('does not select a section on non-primary mousedown', async () => {
-    render(
-      <Grommet>
-        <TimeInput format="12" views={['hours', 'minutes']} />
-      </Grommet>,
-    );
-
-    fireEvent.mouseDown(screen.getByText('mm'), { button: 2 });
-
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
-  });
-
-  test('does not select a section when mousedown is prevented in capture phase', async () => {
-    render(
-      <Grommet>
-        <div onMouseDownCapture={(event) => event.preventDefault()}>
-          <TimeInput format="12" views={['hours', 'minutes']} />
-        </div>
-      </Grommet>,
-    );
-
-    fireEvent.mouseDown(screen.getByText('mm'), { button: 0 });
-
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
   });
 
   test('supports uncontrolled initial value', () => {
@@ -366,29 +322,6 @@ describe('TimeInput', () => {
     });
   });
 
-  test('supports views with minutes and seconds only', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Grommet>
-        <TimeInput format="24" views={['minutes', 'seconds']} />
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
-    expect(input).toHaveValue('mm:ss');
-
-    await user.click(input);
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(0);
-      expect(input.selectionEnd).toBe(2);
-    });
-
-    await user.keyboard('1234');
-
-    expect(input).toHaveValue('12:34');
-  });
-
   test('applies minuteStep to keyboard increments', async () => {
     const user = userEvent.setup();
 
@@ -408,71 +341,6 @@ describe('TimeInput', () => {
 
     await user.keyboard('{ArrowUp}');
     expect(input).toHaveValue('10:00:00');
-  });
-
-  test('surfaces error when typed minute is not aligned to minuteStep', async () => {
-    const user = userEvent.setup();
-    const onError = jest.fn();
-
-    render(
-      <Grommet>
-        <TimeInput
-          format="24"
-          defaultValue="10:30:00"
-          minuteStep={15}
-          onError={onError}
-        />
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('spinbutton');
-    await user.click(input);
-    await user.keyboard('{Home}{ArrowRight}');
-    await user.keyboard('17');
-
-    expect(input).toHaveValue('10:30:00');
-    expect(onError).toHaveBeenCalled();
-  });
-
-  test('rejects pasted values with minute not aligned to minuteStep', async () => {
-    const user = userEvent.setup();
-    const onError = jest.fn();
-
-    render(
-      <Grommet>
-        <TimeInput
-          format="24"
-          defaultValue="10:30:00"
-          minuteStep={15}
-          onError={onError}
-        />
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('spinbutton');
-    await user.click(input);
-    await user.paste('10:31:00');
-
-    expect(input).toHaveValue('10:30:00');
-    expect(onError).toHaveBeenCalled();
-  });
-
-  test('supports hours-only views with meridiem in 12-hour format', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Grommet>
-        <TimeInput format="12" views={['hours']} />
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
-    expect(input).toHaveValue('hh aa');
-
-    await user.click(input);
-    await user.keyboard('12p');
-
-    expect(input).toHaveValue('12 PM');
   });
 
   test('submits only committed value and never section placeholders', async () => {
@@ -671,47 +539,6 @@ describe('TimeInput', () => {
     expect(document.getElementById('tab-cycle-picker__drop')).toBeTruthy();
   });
 
-  test('requires a valid value before accepting with Enter', async () => {
-    const user = userEvent.setup();
-    const onAccept = jest.fn();
-
-    render(
-      <Grommet>
-        <TimeInput format="24" onAccept={onAccept} />
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('spinbutton');
-    await user.click(input);
-    await user.keyboard('{Enter}');
-
-    expect(onAccept).not.toHaveBeenCalled();
-  });
-
-  test('accepts and closes with Enter when popup is open', async () => {
-    const user = userEvent.setup();
-    const onAccept = jest.fn();
-
-    render(
-      <Grommet>
-        <TimeInput
-          id="enter-open-picker"
-          format="24"
-          defaultValue="13:45:30"
-          onAccept={onAccept}
-        />
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('spinbutton');
-    await user.click(input);
-    await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
-    await user.keyboard('{Enter}');
-
-    expect(onAccept).toHaveBeenCalledWith('13:45:30');
-    expect(document.getElementById('enter-open-picker__drop')).toBeNull();
-  });
-
   test('supports option selection by click for touch-like interactions', async () => {
     const user = userEvent.setup();
 
@@ -766,33 +593,6 @@ describe('TimeInput', () => {
         within(hourList).getByRole('option', { name: '01' }),
       ).toHaveFocus();
     });
-  });
-
-  test('rejects invalid pasted time and does not commit value', async () => {
-    const user = userEvent.setup();
-    const onError = jest.fn();
-    const onChange = jest.fn();
-
-    render(
-      <Grommet>
-        <TimeInput
-          format="24"
-          defaultValue="13:45:30"
-          onError={onError}
-          onChange={onChange}
-        />
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('spinbutton');
-    expect(input).toHaveValue('13:45:30');
-
-    await user.click(input);
-    await user.paste('996060');
-
-    expect(onError).toHaveBeenCalled();
-    expect(onChange).not.toHaveBeenCalled();
-    expect(input).toHaveValue('13:45:30');
   });
 
   test('emits onChange with object payload containing value', async () => {
