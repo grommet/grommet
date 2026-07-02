@@ -123,8 +123,11 @@ export const useSectionedTimeField = ({
     section: SECTION_HOUR,
     digits: 0,
     previousValue: undefined,
+    firstDigit: undefined,
   });
   const preserveIncompleteSectionsRef = useRef(false);
+  // Track pending single digit for display without committing
+  const [pendingDigits, setPendingDigits] = useState({});
   const parsedValue = useMemo(
     () => parseSectionsValue(value, format, sectionOrder),
     [format, sectionOrder, value],
@@ -155,12 +158,19 @@ export const useSectionedTimeField = ({
   const displayValue = useMemo(() => {
     if (!hasAnyValue(sections)) return '';
 
+    // Create a copy of sections with pending digits overlaid for display
+    const displaySections = { ...sections };
+    const pendingSection = Object.keys(pendingDigits)[0];
+    if (pendingSection && pendingDigits[pendingSection] !== undefined) {
+      displaySections[pendingSection] = pendingDigits[pendingSection];
+    }
+
     return formatSectionsValue({
-      sections,
+      sections: displaySections,
       sectionOrder,
       includeTokens: true,
     });
-  }, [sectionOrder, sections]);
+  }, [sectionOrder, sections, pendingDigits]);
 
   const commitSections = useCallback(
     (nextSections, shouldAccept = false) => {
@@ -170,8 +180,18 @@ export const useSectionedTimeField = ({
         (section) => nextSections[sectionKey(section)] !== undefined,
       );
 
+      // Check if all numeric sections are valid
+      const allValid = sectionOrder.every((section) => {
+        if (!isNumericSection(section)) return true; // skip period
+        const key = sectionKey(section);
+        const sectionValue = nextSections[key];
+        const min = sectionMin(section, format);
+        const max = sectionMax(section, format);
+        return sectionValue >= min && sectionValue <= max;
+      });
+
       const nextValue =
-        complete && sectionOrder.length
+        complete && sectionOrder.length && allValid
           ? formatSectionsValue({
               sections: nextSections,
               sectionOrder,
@@ -179,11 +199,13 @@ export const useSectionedTimeField = ({
             })
           : undefined;
 
+      // Mark as incomplete if: sections incomplete OR some invalid
+      const hasIncompleteSections = !complete || !allValid;
       preserveIncompleteSectionsRef.current =
-        !complete && hasAnyValue(nextSections);
+        hasIncompleteSections && hasAnyValue(nextSections);
       onCommit(nextSections, nextValue, shouldAccept);
     },
-    [onCommit, sectionOrder],
+    [onCommit, sectionOrder, format],
   );
 
   const setSectionValue = useCallback(
@@ -280,23 +302,62 @@ export const useSectionedTimeField = ({
 
       let nextValue;
       if (isSecondDigit) {
-        nextValue = (currentRaw % 10) * 10 + digit;
+        // Use the stored first digit from editState
+        const firstDigit = editStateRef.current.firstDigit ?? currentRaw % 10;
+        nextValue = firstDigit * 10 + digit;
         editStateRef.current = {
           section: activeSection,
           digits: 0,
           previousValue: editStateRef.current.previousValue,
+          firstDigit: undefined,
         };
+        // Clear pending digits since we're committing now
+        setPendingDigits({});
       } else {
+        // First digit: store in pending for display only
         nextValue = digit;
         editStateRef.current = {
           section: activeSection,
           digits: 1,
           previousValue: sections[key],
+          firstDigit: digit,
         };
+        // Show the first digit in pending state
+        setPendingDigits({ [key]: digit });
       }
 
-      if (nextValue < minValue || nextValue > maxValue) {
+      // For 2nd digit: validate combined value, but allow invalid 1st digit
+      // (allows "0X" patterns in formats where single "0" is invalid)
+      if (isSecondDigit && (nextValue < minValue || nextValue > maxValue)) {
+        // Combined value invalid. Try to use first digit for current section
+        // and apply second digit to next section (MUI behavior)
+        const firstDigit = editStateRef.current.firstDigit ?? currentRaw % 10;
+        if (firstDigit >= minValue && firstDigit <= maxValue) {
+          setSectionValue(activeSection, firstDigit);
+
+          // Get next section and check if second digit is valid there
+          const currentSectionIndex = sectionOrder.indexOf(activeSection);
+          const nextSection = sectionOrder[currentSectionIndex + 1];
+
+          if (nextSection && isNumericSection(nextSection)) {
+            const nextMinValue = sectionMin(nextSection, format);
+            const nextMaxValue = sectionMax(nextSection, format);
+
+            // If second digit is valid for next section, apply it there
+            if (digit >= nextMinValue && digit <= nextMaxValue) {
+              setSectionValue(nextSection, digit);
+              // Now move to section after that
+              return moveSection(2);
+            }
+          }
+
+          // If second digit not valid for next section, just move to next
+          return moveSection(1);
+        }
+
+        // If even first digit alone is invalid, reject the entry
         onInvalid?.();
+        setPendingDigits({});
         return undefined;
       }
 
@@ -314,11 +375,13 @@ export const useSectionedTimeField = ({
         if (rollbackValue !== undefined) {
           setSectionValue(activeSection, rollbackValue);
         }
+        setPendingDigits({});
         onInvalid?.();
         return activeSection;
       }
 
       setSectionValue(activeSection, nextValue);
+
       if (isSecondDigit) return moveSection(1);
       return activeSection;
     },
@@ -330,6 +393,8 @@ export const useSectionedTimeField = ({
       onInvalid,
       sections,
       setSectionValue,
+      setPendingDigits,
+      sectionOrder,
     ],
   );
 
@@ -413,5 +478,6 @@ export const useSectionedTimeField = ({
     setSectionValue,
     applyDigit,
     commitSections,
+    pendingDigits,
   };
 };

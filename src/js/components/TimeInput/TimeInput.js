@@ -242,6 +242,7 @@ const TimeInput = forwardRef(
       sections,
       setActiveSection,
       setSectionValue,
+      pendingDigits,
     } = useSectionedTimeField({
       format,
       sectionOrder,
@@ -273,21 +274,30 @@ const TimeInput = forwardRef(
     );
     const inputValue = displayValue || placeholder;
     const hasDisplayValue = !!displayValue;
-    const displaySections = useMemo(
-      () =>
-        sectionOrder.map((section, index) => {
-          const key = getDisplaySectionKey(section);
+    const displaySections = useMemo(() => {
+      // Merge sections with pending digits for display
+      const displaySectionsData = { ...sections };
+      const pendingSection = Object.keys(pendingDigits)[0];
+      if (pendingSection && pendingDigits[pendingSection] !== undefined) {
+        displaySectionsData[pendingSection] = pendingDigits[pendingSection];
+      }
 
-          return {
+      return sectionOrder.map((section, index) => {
+        const key = getDisplaySectionKey(section);
+
+        return {
+          section,
+          prefix: getDisplaySectionPrefix(section, index),
+          prefixKind: getDisplaySectionPrefixKind(section, index),
+          text: getDisplaySectionText({
+            key,
             section,
-            prefix: getDisplaySectionPrefix(section, index),
-            prefixKind: getDisplaySectionPrefixKind(section, index),
-            text: getDisplaySectionText({ key, section, sections }),
-            filled: sections[key] !== undefined,
-          };
-        }),
-      [sectionOrder, sections],
-    );
+            sections: displaySectionsData,
+          }),
+          filled: displaySectionsData[key] !== undefined,
+        };
+      });
+    }, [sectionOrder, sections, pendingDigits]);
 
     const getSectionValueAnnouncement = useCallback(
       (section) =>

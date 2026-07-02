@@ -595,6 +595,24 @@ describe('TimeInput', () => {
     });
   });
 
+  test('allows replacing hour with leading zero in 12-hour format', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="07:30:00 AM" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    await user.keyboard('{Home}05');
+
+    await waitFor(() => {
+      expect(input).toHaveValue('05:30:00 AM');
+    });
+  });
+
   test('emits onChange with object payload containing value', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
