@@ -1,14 +1,9 @@
 import * as React from 'react';
-import type { JSX } from 'react';
-
-import { DropType } from '../Drop';
 
 export interface TimeInputProps {
   defaultValue?: string;
   disabled?: boolean;
-  dropProps?: DropType;
   format?: '12' | '24';
-  icon?: JSX.Element;
   id?: string;
   messages?: {
     activePeriodValue?: string;
