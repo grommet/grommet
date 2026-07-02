@@ -1,5 +1,7 @@
 ---
-description: "Use when creating, modifying, reviewing, styling, or testing Grommet React components. Routes to the grommet-component-contribution skill for full component workflows, grommet-component-styling for theme and styled-components work, or grommet-component-testing for tests and Storybook stories. Covers forwardRef, displayName, useThemeValue, FormContext, onChange shape, accessibility, i18n, and the full component directory structure."
+description: 'Use when creating, modifying, reviewing, styling, testing, or auditing Grommet React components. Routes to specialized skills for architecture, accessibility, styling, testing, review, or full contribution workflows. Covers forwardRef, displayName, useThemeValue, FormContext, onChange shape, accessibility, i18n, theming, and the full component directory structure.'
+name: 'Grommet Component'
+model: GPT-5.4
 tools: [read, edit, search]
 ---
 
@@ -26,13 +28,16 @@ src/js/components/<ComponentName>/
 
 ## Routing — Which Skill to Load
 
-| Task | Load skill |
-|------|-----------|
-| New component from scratch, full contribution workflow, PR prep | `/grommet-component-contribution` |
-| Adding or modifying `StyledComponent.js`, theme tokens in `base.js`/`base.d.ts`, styling patterns | `/grommet-component-styling` |
-| Writing `__tests__/*.tsx`, Storybook stories, axe checks | `/grommet-component-testing` |
+| Task                                                                                                                                               | Load skill                         |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| Scaffolding a component, reshaping component structure, defining prop APIs, controlled vs uncontrolled behavior, or wiring FormContext and exports | `/grommet-component-architecture`  |
+| Fixing keyboard behavior, focus management, overlays, semantics, labels, announcements, or other accessibility regressions                         | `/grommet-component-accessibility` |
+| New component from scratch, full contribution workflow, PR prep                                                                                    | `/grommet-component-contribution`  |
+| Reviewing a component PR or diff for API, accessibility, theming, forms, i18n, tests, types, exports, or regression risk                           | `/grommet-component-review`        |
+| Adding or modifying `StyledComponent.js`, theme tokens in `base.js`/`base.d.ts`, styling patterns                                                  | `/grommet-component-styling`       |
+| Writing `__tests__/*.tsx`, Storybook stories, axe checks                                                                                           | `/grommet-component-testing`       |
 
-When the task spans multiple areas (e.g., implementing a new component end-to-end), load `/grommet-component-contribution` — it links to the specialized references for styling, accessibility, forms, and i18n.
+When the task spans multiple areas, use the narrowest matching skill if one concern is dominant. When the work is end-to-end or crosses architecture, accessibility, styling, testing, and docs, load `/grommet-component-contribution`.
 
 ## Always Apply
 
