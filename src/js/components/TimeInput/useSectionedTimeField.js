@@ -380,9 +380,25 @@ export const useSectionedTimeField = ({
         return activeSection;
       }
 
+      // MUI Pattern: Determine if we should commit and move to next section
+      // shouldGoToNextSection = nextValue * 10 > max || digitCount === 2
+      const shouldMoveToNextSection =
+        nextValue * 10 > maxValue || isSecondDigit;
+
       setSectionValue(activeSection, nextValue);
 
-      if (isSecondDigit) return moveSection(1);
+      if (shouldMoveToNextSection) {
+        // Don't move past the last section during digit entry
+        // (Tab navigation can still wrap, but digit entry stops at last
+        // section)
+        const currentIndex = sectionOrder.indexOf(activeSection);
+        const isLastSection = currentIndex === sectionOrder.length - 1;
+
+        if (!isLastSection) {
+          return moveSection(1);
+        }
+      }
+
       return activeSection;
     },
     [

@@ -632,4 +632,133 @@ describe('TimeInput', () => {
     expect(firstCallArg).toHaveProperty('value');
     expect(typeof firstCallArg.value).toBe('string');
   });
+
+  test('applies fallback logic when typing invalid 2-digit combination in hour section', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="07:30:00 AM" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    // Type "22" in HH section
+    // Expected: 2 is pending, second 2 makes 22 invalid for 12h (max 12)
+    // Fallback: use first digit (2) for HH, apply second digit (2) to MM
+    // Result: 02:02:00 AM
+    await user.keyboard('{Home}22');
+
+    await waitFor(() => {
+      expect(input).toHaveValue('02:02:00 AM');
+    });
+  });
+
+  test('applies fallback logic when typing invalid 2-digit combination in minute section', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="02:30:00 AM" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    // Navigate to MM section: {Home} to go to HH, then {ArrowRight} to move to MM
+    await user.keyboard('{Home}{ArrowRight}');
+    // Type "66" in MM section
+    // Expected: 6 is pending, second 6 makes 66 invalid (max 59)
+    // Fallback: use first digit (6) for MM, apply second digit (6) to SS
+    // Result: 02:06:06 AM
+    await user.keyboard('66');
+
+    await waitFor(() => {
+      expect(input).toHaveValue('02:06:06 AM');
+    });
+  });
+
+  test('handles 222 digit sequence in 24-hour format', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="07:30:00" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    // Type 222 starting at HH
+    // Digit 1: "2" → HH=02, stay on HH
+    // Digit 2: "2" combined with first → HH=22, move to MM
+    // Digit 3: "2" → MM=02, stay on MM
+    await user.keyboard('{Home}222');
+
+    await waitFor(() => {
+      expect(input).toHaveValue('22:02:00');
+    });
+  });
+
+  test('handles 2222 digit sequence in 24-hour format', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="07:30:00" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    // Type 2222 starting at HH
+    // Digit 1: "2" → HH=02, stay on HH
+    // Digit 2: "2" → HH=22, move to MM
+    // Digit 3: "2" → MM=02, stay on MM
+    // Digit 4: "2" → MM=22, move to SS
+    await user.keyboard('{Home}2222');
+
+    await waitFor(() => {
+      expect(input).toHaveValue('22:22:00');
+    });
+  });
+
+  test('does not wrap focus back to HH after completing full time entry', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    // Type 12:34:56 complete time
+    // After entering 56 in SS, focus should stay on SS
+    await user.keyboard('{Home}123456');
+
+    // Should be 12:34:56
+    await waitFor(() => {
+      expect(input).toHaveValue('12:34:56');
+    });
+
+    // Verify typing another digit stays on SS (doesn't wrap to HH)
+    // When typing 4 on SS with value 56, it becomes the first digit buffer
+    // So 56 becomes 04 (4 is first digit, 0 is pending display)
+    await user.keyboard('4');
+    await waitFor(() => {
+      // Focus stays on SS, 4 becomes first digit (SS = 04)
+      expect(input).toHaveValue('12:34:04');
+    });
+
+    // Type another digit to complete the second digit in SS
+    // 4 + 5 = 45 (valid)
+    await user.keyboard('5');
+    await waitFor(() => {
+      // 4 + 5 = 45, and focus stays on SS (not wrapping back to HH)
+      expect(input).toHaveValue('12:34:45');
+    });
+  });
 });
