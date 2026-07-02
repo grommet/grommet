@@ -1051,6 +1051,87 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'medium',
       },
     },
+    timeInput: {
+      button: {
+        margin: '4px',
+      },
+      toggle: {
+        size: '36px',
+        round: '12px',
+        pad: '8px',
+        focus: {
+          outerColor: '#292d3a',
+          outerSize: '2px',
+          innerColor: '#d9dcde',
+          innerSize: '2px',
+        },
+      },
+      color: 'text',
+      container: {
+        round: '8px',
+      },
+      active: {
+        background: 'active-background',
+        border: {
+          color: 'focus',
+          size: '2px',
+        },
+        round: '2px 2px 0 0',
+      },
+      fontSize: '16px',
+      lineHeight: '24px',
+      placeholder: {
+        color: 'placeholder',
+      },
+      separator: {
+        gap: '4px',
+        periodGap: '4px',
+      },
+      popup: {
+        width: 'fit-content',
+        minHeight: '256px',
+        columnWidth: '56px',
+        columnHeight: '232px',
+        optionWidth: '46px',
+        optionMinHeight: '34px',
+        option: {
+          background: 'transparent',
+          hover: {
+            background: 'rgba(0, 0, 0, 0.04)',
+          },
+          focus: {
+            background: 'rgba(0, 0, 0, 0.04)',
+            outerColor: 'focus',
+            outerSize: '2px',
+            radius: '6px',
+          },
+          selected: {
+            background: '#068667',
+            color: 'white',
+            hover: {
+              background: '#006750',
+            },
+          },
+          disabled: {
+            background: 'rgba(0, 0, 0, 0.04)',
+            color: 'rgba(0, 0, 0, 0.24)',
+          },
+        },
+        scrollbar: {
+          gutter: 'stable',
+          width: 'thin',
+          trackColor: 'transparent',
+          thumbColor: 'rgba(0, 0, 0, 0.35)',
+          thumbBorder: '2px solid transparent',
+          thumbRadius: '999px',
+          webkitSize: '8px',
+        },
+      },
+      icon: {
+        // clock: undefined,
+        size: 'medium',
+      },
+    },
     dataSearch: {
       // icons: {
       //   search: undefined,

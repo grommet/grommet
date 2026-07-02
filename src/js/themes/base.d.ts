@@ -988,6 +988,89 @@ export interface ThemeType {
       size?: string;
     };
   };
+  timeInput?: {
+    button?: {
+      margin?: string;
+    };
+    toggle?: {
+      size?: string;
+      round?: RoundType;
+      pad?: string;
+      focus?: {
+        outerColor?: ColorType;
+        outerSize?: string;
+        innerColor?: ColorType;
+        innerSize?: string;
+      };
+    };
+    color?: ColorType;
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      border?: {
+        color?: ColorType;
+        size?: string;
+      };
+      round?: RoundType;
+    };
+    fontSize?: string;
+    lineHeight?: string;
+    placeholder?: {
+      color?: ColorType;
+    };
+    separator?: {
+      gap?: string;
+      periodGap?: string;
+    };
+    popup?: {
+      width?: string;
+      minHeight?: string;
+      columnWidth?: string;
+      columnHeight?: string;
+      optionWidth?: string;
+      optionMinHeight?: string;
+      option?: {
+        background?: ColorType;
+        hover?: {
+          background?: ColorType;
+        };
+        focus?: {
+          background?: ColorType;
+          innerColor?: ColorType;
+          outerColor?: ColorType;
+          innerSize?: string;
+          outerSize?: string;
+          radius?: string;
+        };
+        selected?: {
+          background?: ColorType;
+          color?: ColorType;
+          hover?: {
+            background?: ColorType;
+          };
+        };
+        disabled?: {
+          background?: ColorType;
+          color?: ColorType;
+        };
+      };
+      scrollbar?: {
+        gutter?: string;
+        width?: string;
+        trackColor?: ColorType;
+        thumbColor?: ColorType;
+        thumbBorder?: string;
+        thumbRadius?: string;
+        webkitSize?: string;
+      };
+    };
+    icon?: {
+      clock?: React.ReactNode | Icon;
+      size?: string;
+    };
+  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
@@ -1221,6 +1304,7 @@ export interface ThemeType {
     maskedInput?: ContainerExtend;
     selectMultiple?: ContainerExtend;
     dateInput?: ContainerExtend;
+    timeInput?: ContainerExtend;
     fileInput?: ContainerExtend;
     radioButton?: ContainerExtend;
     radioButtonGroup?: ContainerExtend;

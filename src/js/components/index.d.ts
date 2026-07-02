@@ -87,6 +87,7 @@ export * from './Tag';
 export * from './Text';
 export * from './TextArea';
 export * from './TextInput';
+export * from './TimeInput';
 export * from './ThumbsRating';
 export * from './Tip';
 export * from './ToggleGroup';
