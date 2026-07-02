@@ -156,6 +156,36 @@ describe('TimeInput', () => {
     });
   });
 
+  test('moves between placeholder sections with ArrowRight in empty state', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    await user.click(input);
+
+    await waitFor(() => {
+      expect(input.selectionStart).toBe(0);
+      expect(input.selectionEnd).toBe(2);
+    });
+
+    await user.keyboard('{ArrowRight}');
+    await waitFor(() => {
+      expect(input.selectionStart).toBe(3);
+      expect(input.selectionEnd).toBe(5);
+    });
+
+    await user.keyboard('{ArrowRight}');
+    await waitFor(() => {
+      expect(input.selectionStart).toBe(6);
+      expect(input.selectionEnd).toBe(8);
+    });
+  });
+
   test('selects minute section when clicking minute token in empty state', async () => {
     const user = userEvent.setup();
 

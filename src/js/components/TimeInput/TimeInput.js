@@ -396,8 +396,6 @@ const TimeInput = forwardRef(
 
     const resolveSectionFromSelection = useCallback(
       (selectionStart, selectionEnd) => {
-        if (!displayValue) return firstSection;
-
         if (selectionStart === null || selectionStart === undefined) {
           return firstSection;
         }
