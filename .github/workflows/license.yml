@@ -2,9 +2,9 @@ name: License Compliance
 
 on:
   pull_request:
-    branches: [master, stable]
+    branches: [master]
   push:
-    branches: [master, stable]
+    branches: [master]
 
 jobs:
   license-check:
