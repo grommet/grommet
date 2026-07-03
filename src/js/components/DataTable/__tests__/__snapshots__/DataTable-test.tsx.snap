@@ -3904,6 +3904,7 @@ exports[`DataTable custom theme 1`] = `
             class="c5"
           >
             <button
+              aria-label="A, sortable"
               class="c6 c7"
               type="button"
             >
@@ -4084,6 +4085,7 @@ exports[`DataTable custom theme 2`] = `
             class="StyledBox-sc-13pk1d4-0 eeJSdc"
           >
             <button
+              aria-label="A, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 dudWar"
               type="button"
             >
@@ -17233,6 +17235,7 @@ exports[`DataTable onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable"
               class="c5 c6"
               type="button"
             >
@@ -17258,6 +17261,7 @@ exports[`DataTable onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable"
               class="c5 c6"
               type="button"
             >
@@ -17487,6 +17491,7 @@ exports[`DataTable onSort 2`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="B, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -17907,6 +17912,7 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable"
               class="c5 c6"
               type="button"
             >
@@ -18124,6 +18130,7 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="B, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -52207,6 +52214,7 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable"
               class="c5 c6"
               type="button"
             >
@@ -52699,6 +52707,7 @@ exports[`DataTable sort controlled 1`] = `
               class="c5"
             >
               <button
+                aria-label="B, sortable"
                 class="c6 c7"
                 type="button"
               >
@@ -53192,6 +53201,7 @@ exports[`DataTable sort controlled 2`] = `
               class="c5"
             >
               <button
+                aria-label="B, sortable"
                 class="c6 c7"
                 type="button"
               >
@@ -53613,6 +53623,7 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable"
               class="c5 c6"
               type="button"
             >
@@ -53993,6 +54004,7 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable"
               class="c5 c6"
               type="button"
             >
@@ -54413,6 +54425,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable"
               class="c5 c6"
               type="button"
             >
@@ -54789,6 +54802,7 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable"
               class="c5 c6"
               type="button"
             >
@@ -54814,6 +54828,7 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable"
               class="c5 c6"
               type="button"
             >
@@ -54839,6 +54854,7 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-label="C, sortable"
               class="c5 c6"
               type="button"
             >
@@ -54864,6 +54880,7 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-label="D, sortable"
               class="c5 c6"
               type="button"
             >
@@ -55192,6 +55209,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="B, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -55217,6 +55235,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="C, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -55242,6 +55261,7 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="D, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -55552,6 +55572,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="A, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -55577,6 +55598,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="B, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -55690,6 +55712,7 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="D, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -56000,6 +56023,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="A, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -56025,6 +56049,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="B, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -56050,6 +56075,7 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="C, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -56643,6 +56669,7 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
+              aria-label="A, sortable"
               class="c5 c6"
               type="button"
             >
@@ -56668,6 +56695,7 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
+              aria-label="B, sortable"
               class="c5 c6"
               type="button"
             >
@@ -56897,6 +56925,7 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 faLdcD"
           >
             <button
+              aria-label="B, sortable"
               class="StyledButton-sc-323bzc-0 efbshF Header__StyledHeaderCellButton-sc-1baku5q-0 gRxSZx"
               type="button"
             >
@@ -57562,6 +57591,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
               class="c11"
             >
               <button
+                aria-label="A, sortable"
                 class="c12 c13"
                 type="button"
               >
@@ -57606,6 +57636,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
             class="c20"
           >
             <button
+              aria-label="B, sortable"
               class="c12 c13"
               type="button"
             >

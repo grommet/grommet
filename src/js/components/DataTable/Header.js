@@ -316,6 +316,8 @@ const Header = forwardRef(
               units,
             }) => {
               let content;
+              const headerLabel =
+                typeof header === 'string' ? header : property;
               const unitsContent = units ? (
                 <Text {...textProps} {...theme.dataTable.header.units}>
                   {units}
@@ -390,6 +392,15 @@ const Header = forwardRef(
                 content = (
                   <StyledHeaderCellButton
                     plain
+                    a11yTitle={
+                      ariaSort === 'none'
+                        ? format({
+                            id: 'dataTable.sortable',
+                            messages,
+                            values: { label: headerLabel },
+                          })
+                        : undefined
+                    }
                     column={property}
                     fill="vertical"
                     focusIndicator={size ? 'inset' : undefined}
@@ -527,9 +538,7 @@ const Header = forwardRef(
                         onResize(prop, width);
                         updateWidths(prop, width);
                       }}
-                      headerText={
-                        typeof header === 'string' ? header : property
-                      }
+                      headerText={headerLabel}
                       messages={messages}
                       headerId={headerId}
                     />

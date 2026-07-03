@@ -199,10 +199,19 @@ describe('DataTable', () => {
     const headerB = getByText('B').closest('th');
     expect(headerA).toHaveAttribute('aria-sort', 'none');
     expect(headerB).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', { name: 'A, sortable' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'B, sortable' }),
+    ).toBeInTheDocument();
 
     fireEvent.click(getByText('A'));
     expect(headerA).toHaveAttribute('aria-sort', 'ascending');
     expect(headerB).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', { name: 'B, sortable' }),
+    ).toBeInTheDocument();
   });
 
   test('sort null data', () => {
