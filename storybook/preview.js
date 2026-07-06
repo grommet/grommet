@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line import/no-unresolved
 import { addons } from 'storybook/internal/preview-api';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Root from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import isChromatic from 'chromatic/isChromatic';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
 import sizeMapper from './sizeMapper';
@@ -80,12 +83,9 @@ export const decorators = [
       return cleanup;
     }, [
       context.id,
+      context.parameters?.sizeMapping,
+      context.parameters?.docs?.source,
       activeTheme,
-      context.parameters?.sizeMapping?.originalSourceCode,
-      context.parameters?.sizeMapping?.hpeSourceCode,
-      context.parameters?.docs?.source?.originalSource,
-      context.parameters?.docs?.source?.code,
-      context.parameters?.docs?.source?.source,
     ]);
 
     const renderStory = (themeName = activeTheme) => (
