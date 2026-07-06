@@ -45,16 +45,18 @@ export const decorators = [
 
     useEffect(() => {
       let cleanup = () => {};
-      const sizeMapping = context.parameters?.sizeMapping;
-      const docsSource = context.parameters?.docs?.source;
 
       const mappedSource =
         activeTheme === 'hpe'
-          ? sizeMapping?.hpeSourceCode || sizeMapping?.originalSourceCode
-          : sizeMapping?.originalSourceCode || sizeMapping?.hpeSourceCode;
+          ? context.parameters?.sizeMapping?.hpeSourceCode ||
+            context.parameters?.sizeMapping?.originalSourceCode
+          : context.parameters?.sizeMapping?.originalSourceCode ||
+            context.parameters?.sizeMapping?.hpeSourceCode;
 
       const fallbackSource =
-        docsSource?.originalSource || docsSource?.code || docsSource?.source;
+        context.parameters?.docs?.source?.originalSource ||
+        context.parameters?.docs?.source?.code ||
+        context.parameters?.docs?.source?.source;
 
       const source = mappedSource || fallbackSource;
 
@@ -83,9 +85,12 @@ export const decorators = [
       return cleanup;
     }, [
       context.id,
-      context.parameters?.sizeMapping,
-      context.parameters?.docs?.source,
       activeTheme,
+      context.parameters?.sizeMapping.originalSourceCode,
+      context.parameters?.sizeMapping.hpeSourceCode,
+      context.parameters?.docs?.source.originalSource,
+      context.parameters?.docs?.source.code,
+      context.parameters?.docs?.source.source,
     ]);
 
     const renderStory = (themeName = activeTheme) => (
@@ -171,6 +176,7 @@ export const parameters = {
   },
   options: {
     storySort: (first, second) => {
+      const customThemedTitle = 'Custom Themed';
       /**
        * The story sort algorithm will only ever compare two stories
        * a single time. This means that every story will only ever be either
@@ -184,8 +190,8 @@ export const parameters = {
        * A return value of 0 results in sorting the "first" story BEFORE the
        * secondary story, based on the titles.
        */
-      const isFirstCustom = first.title.split('/')[2] === CUSTOM_THEMED;
-      const isSecondCustom = second.title.split('/')[2] === CUSTOM_THEMED;
+      const isFirstCustom = first.title.split('/')[2] === customThemedTitle;
+      const isSecondCustom = second.title.split('/')[2] === customThemedTitle;
       if (isFirstCustom) return 1;
       if (isSecondCustom) return 0;
       return first.title === second.title
