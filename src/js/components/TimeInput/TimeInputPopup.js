@@ -351,6 +351,12 @@ const TimeInputPopup = ({
           if (event.key === 'Escape') {
             event.preventDefault();
             onClose();
+          } else if (event.key === ' ' || event.key === 'Spacebar') {
+            event.preventDefault();
+            const focusedOption =
+              event.target?.closest?.('[role="option"]') ||
+              document.activeElement?.closest?.('[role="option"]');
+            focusedOption?.click?.();
           } else if (event.key === 'Tab') {
             event.preventDefault();
             setActiveSection(moveSection(event.shiftKey ? -1 : 1));
