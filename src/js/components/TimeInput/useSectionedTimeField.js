@@ -31,12 +31,6 @@ const sectionPattern = (section) => {
 
 const isNumericSection = (section) => section !== SECTION_PERIOD;
 
-const isStepMisaligned = ({ section, value, minuteStep }) =>
-  section === SECTION_MINUTE &&
-  minuteStep > 1 &&
-  value !== undefined &&
-  value % minuteStep !== 0;
-
 const parseSectionsValue = (value, format, sectionOrder) => {
   if (!value || typeof value !== 'string') return undefined;
 
@@ -361,25 +355,6 @@ export const useSectionedTimeField = ({
         return undefined;
       }
 
-      // For minute section, enforce minuteStep once two digits are entered.
-      // If invalid, rollback to the last committed minute value.
-      if (
-        isSecondDigit &&
-        isStepMisaligned({
-          section: activeSection,
-          value: nextValue,
-          minuteStep,
-        })
-      ) {
-        const rollbackValue = editStateRef.current.previousValue;
-        if (rollbackValue !== undefined) {
-          setSectionValue(activeSection, rollbackValue);
-        }
-        setPendingDigits({});
-        onInvalid?.();
-        return activeSection;
-      }
-
       // MUI Pattern: Determine if we should commit and move to next section
       // shouldGoToNextSection = nextValue * 10 > max || digitCount === 2
       const shouldMoveToNextSection =
@@ -404,7 +379,6 @@ export const useSectionedTimeField = ({
     [
       activeSection,
       format,
-      minuteStep,
       moveSection,
       onInvalid,
       sections,
@@ -422,15 +396,6 @@ export const useSectionedTimeField = ({
     (pasted) => {
       const parsed = parseSectionsValue(pasted, format, sectionOrder);
       if (parsed) {
-        if (
-          isStepMisaligned({
-            section: SECTION_MINUTE,
-            value: parsed.minute,
-            minuteStep,
-          })
-        ) {
-          return undefined;
-        }
         return parsed;
       }
 
@@ -458,16 +423,6 @@ export const useSectionedTimeField = ({
           }
 
           next[sectionKey(section)] = parsedNumber;
-
-          if (
-            isStepMisaligned({
-              section,
-              value: parsedNumber,
-              minuteStep,
-            })
-          ) {
-            return undefined;
-          }
         }
 
         if (sectionOrder.includes(SECTION_PERIOD)) {
@@ -479,7 +434,7 @@ export const useSectionedTimeField = ({
 
       return undefined;
     },
-    [format, minuteStep, sectionOrder, sections],
+    [format, sectionOrder, sections],
   );
 
   return {

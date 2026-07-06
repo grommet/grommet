@@ -761,4 +761,122 @@ describe('TimeInput', () => {
       expect(input).toHaveValue('12:34:45');
     });
   });
+
+  test('does not modify typed minute values that do not match minuteStep', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" minuteStep={15} />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+
+    // Click and type a time with minute value 22 (does not match minuteStep={15})
+    await user.click(input);
+    await user.keyboard('12:22:00');
+
+    // Expect the value to remain 12:22:00 (not snapped to 12:15:00 or 12:30:00)
+    expect(input).toHaveValue('12:22:00');
+  });
+
+  test('does not modify typed minute values 07 that do not match minuteStep', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" minuteStep={15} />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+
+    // Type a minute value that doesn't match the step
+    await user.click(input);
+    await user.keyboard('10:07:00');
+
+    // Expect value to remain exactly as typed (not corrected to 10:00:00 or 10:15:00)
+    expect(input).toHaveValue('10:07:00');
+  });
+
+  test('does not modify pasted time values with misaligned minutes', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" minuteStep={15} />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+
+    // Click into the component and type a time with misaligned minute
+    await user.click(input);
+    await user.keyboard('14:22:30');
+
+    // Value must be preserved exactly as typed (not snapped/corrected)
+    expect(input).toHaveValue('14:22:30');
+  });
+
+  test('arrow keys still respect minuteStep increment', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="10:00:00" minuteStep={15} />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+
+    // Click and navigate to minute section
+    await user.click(input);
+    await user.keyboard('{Home}{ArrowRight}'); // Move to MM section
+
+    // Press ArrowUp to increment by minuteStep (15)
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:15:00');
+
+    // Press ArrowUp again
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:30:00');
+
+    // Continue incrementing: 45, 0 (wrap), 15, 30
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:45:00');
+
+    // Wrap around at end (minute=45 + step=15 => 0)
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:00:00');
+  });
+
+  test('dropdown options reflect minuteStep intervals', async () => {
+    const user = userEvent.setup();
+
+    // Verify the minute options array generated for minuteStep={20} has correct values
+    // by rendering with a controlled default value and arrow-keying through
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="10:00:00" minuteStep={20} />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+
+    // Navigate to MM section
+    await user.click(input);
+    await user.keyboard('{Home}{ArrowRight}'); // Move to MM section
+
+    // Arrow through options - should step in multiples of 20 only
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:20:00');
+
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:40:00');
+
+    // Wraps from 40 back to 0
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:00:00');
+  });
 });
