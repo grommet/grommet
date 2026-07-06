@@ -362,31 +362,27 @@ const Header = forwardRef(
               if (onSort && sortable !== false) {
                 let Icon;
                 let iconAriaLabel;
-                if (onSort && sortable !== false) {
-                  if (sort && sort.property === property) {
-                    Icon =
-                      theme.dataTable.icons[
-                        sort.direction !== 'asc' ? 'ascending' : 'descending'
-                      ];
-                    if (sort.direction === 'asc') {
-                      ariaSort = 'ascending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.ascending',
-                        messages,
-                      });
-                    } else if (sort.direction === 'desc') {
-                      ariaSort = 'descending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.descending',
-                        messages,
-                      });
-                    }
-                  } else {
-                    if (theme.dataTable.icons.sortable) {
-                      Icon = theme.dataTable.icons.sortable;
-                    }
-                    ariaSort = 'none';
+                ariaSort = 'none';
+                if (sort && sort.property === property) {
+                  Icon =
+                    theme.dataTable.icons[
+                      sort.direction !== 'asc' ? 'ascending' : 'descending'
+                    ];
+                  if (sort.direction === 'asc') {
+                    ariaSort = 'ascending';
+                    iconAriaLabel = format({
+                      id: 'dataTable.ascending',
+                      messages,
+                    });
+                  } else if (sort.direction === 'desc') {
+                    ariaSort = 'descending';
+                    iconAriaLabel = format({
+                      id: 'dataTable.descending',
+                      messages,
+                    });
                   }
+                } else if (theme.dataTable.icons.sortable) {
+                  Icon = theme.dataTable.icons.sortable;
                 }
 
                 content = (

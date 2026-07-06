@@ -214,6 +214,23 @@ describe('DataTable', () => {
     ).toBeInTheDocument();
   });
 
+  test('sortable columns have aria-sort when sortable icon is not rendered', () => {
+    const { getByText } = render(
+      <Grommet theme={{ dataTable: { icons: { sortable: undefined } } }}>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'zero' }, { a: 'one' }]}
+          sortable
+        />
+      </Grommet>,
+    );
+
+    expect(getByText('A').closest('th')).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', { name: 'A, sortable' }),
+    ).toBeInTheDocument();
+  });
+
   test('sort null data', () => {
     const { container, getByText } = render(
       <Grommet>
