@@ -14,6 +14,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import {
@@ -23,7 +24,6 @@ import {
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
   StyledTimeInput,
-  StyledTimeInputToggleButton,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
@@ -975,17 +975,17 @@ const TimeInput = forwardRef(
               />
             )}
             {!readOnly && (
-              <StyledTimeInputToggleButton
+              <Button
                 icon={icon || <ClockIcon size={iconSize} />}
                 plain
                 disabled={disabled}
+                margin={{ right: theme.timeInput?.button?.margin }}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
                   messages,
                 })}
                 aria-haspopup="dialog"
                 aria-expanded={open}
-                focusIndicator={false}
                 onFocus={(event) => {
                   setIconFocused(true);
                   setInputFocused(false);
@@ -996,13 +996,6 @@ const TimeInput = forwardRef(
                   onButtonBlur?.(event);
                 }}
                 onClick={open ? closePicker : openPicker}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    if (open) closePicker();
-                    else openPicker();
-                  }
-                }}
                 {...restButtonProps}
               />
             )}

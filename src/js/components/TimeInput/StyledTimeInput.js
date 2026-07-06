@@ -12,7 +12,6 @@ import {
   styledComponentsConfig,
 } from '../../utils';
 import { Box } from '../Box';
-import { Button } from '../Button';
 
 export const StyledTimeInputContainer = styled(Box).withConfig({
   // Keep Box styling props like border and round flowing into Box.
@@ -150,38 +149,4 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   }};
   border-radius: ${(props) =>
     props.theme.timeInput?.active?.round || '2px 2px 0 0'};
-`;
-
-export const StyledTimeInputToggleButton = styled(Button)`
-  align-self: center;
-  flex: 0 0 auto;
-  background: transparent;
-  border: 0;
-  min-width: ${(props) => props.theme.timeInput?.toggle?.size || '36px'};
-  min-height: ${(props) => props.theme.timeInput?.toggle?.size || '36px'};
-  border-radius: ${(props) => props.theme.timeInput?.toggle?.round || '12px'};
-  padding: ${(props) => props.theme.timeInput?.toggle?.pad || '8px'};
-
-  &:hover,
-  &:focus,
-  &:focus-visible,
-  &:active {
-    background: transparent;
-  }
-
-  &:focus-visible {
-    box-shadow: ${(props) =>
-      `0 0 0 ${
-        props.theme.timeInput?.toggle?.focus?.outerSize || '2px'
-      } ${normalizeColor(
-        props.theme.timeInput?.toggle?.focus?.outerColor || '#292d3a',
-        props.theme,
-      )}, inset 0 0 0 ${
-        props.theme.timeInput?.toggle?.focus?.innerSize || '2px'
-      } ${normalizeColor(
-        props.theme.timeInput?.toggle?.focus?.innerColor || '#d9dcde',
-        props.theme,
-      )}`};
-    outline: none;
-  }
 `;

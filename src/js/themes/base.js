@@ -1053,18 +1053,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     timeInput: {
       button: {
-        margin: '4px',
-      },
-      toggle: {
-        size: '36px',
-        round: '12px',
-        pad: '8px',
-        focus: {
-          outerColor: '#292d3a',
-          outerSize: '2px',
-          innerColor: '#d9dcde',
-          innerSize: '2px',
-        },
+        margin: 'xsmall',
       },
       color: 'text',
       container: {
