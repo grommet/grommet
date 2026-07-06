@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { normalizeColor } from '../../utils';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
@@ -14,12 +15,6 @@ import {
   SECTION_PERIOD,
   SECTION_SECOND,
 } from './utils';
-
-const PopupContent = styled(Box)`
-  width: ${(props) => props.theme.timeInput?.popup?.width};
-  max-width: 100%;
-  min-height: ${(props) => props.theme.timeInput?.popup?.minHeight};
-`;
 
 const PopupColumnBox = styled(Box)`
   width: ${(props) => props.theme.timeInput?.popup?.columnWidth};
@@ -233,6 +228,7 @@ const TimeInputPopup = ({
   dropProps,
   label,
 }) => {
+  const { theme } = useThemeValue();
   const dialogRef = useRef();
 
   const popupSections = [
@@ -336,11 +332,13 @@ const TimeInputPopup = ({
       onClickOutside={onClose}
       {...dropProps}
     >
-      <PopupContent
+      <Box
         ref={dialogRef}
         role="dialog"
         aria-label={label}
         direction="row"
+        width={{ width: theme.timeInput?.popup?.width, max: '100%' }}
+        minHeight={theme.timeInput?.popup?.minHeight}
         gap="xsmall"
         pad="small"
         onBlurCapture={(event) => {
@@ -389,7 +387,7 @@ const TimeInputPopup = ({
             />
           ),
         )}
-      </PopupContent>
+      </Box>
     </Drop>
   );
 };
