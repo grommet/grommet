@@ -22,9 +22,7 @@ const KeyboardNavigation = () => {
 
   useEffect(() => {
     // Auto-focus the first step button so the focus ring is visible immediately
-    const firstButton = stepperRef.current?.querySelector(
-      '[data-stepper-step]',
-    );
+    const firstButton = stepperRef.current?.querySelector('button');
     if (firstButton) firstButton.focus();
   }, []);
 

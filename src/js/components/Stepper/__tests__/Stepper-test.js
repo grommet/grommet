@@ -94,6 +94,33 @@ describe('Stepper', () => {
     expect(getByText('Card invalid')).toBeTruthy();
   });
 
+  test('uses theme-provided Stepper icons', () => {
+    const CompletedIcon = () => <svg data-testid="custom-completed-icon" />;
+    const ErrorIcon = () => <svg data-testid="custom-error-icon" />;
+    const steps = [
+      { id: 'step1', title: 'Step 1', status: 'completed' },
+      { id: 'step2', title: 'Step 2', status: 'error' },
+    ];
+
+    const { getByTestId } = render(
+      <Grommet
+        theme={{
+          stepper: {
+            icons: {
+              completed: CompletedIcon,
+              error: ErrorIcon,
+            },
+          },
+        }}
+      >
+        <Stepper steps={steps} currentStep="step2" />
+      </Grommet>,
+    );
+
+    expect(getByTestId('custom-completed-icon')).toBeTruthy();
+    expect(getByTestId('custom-error-icon')).toBeTruthy();
+  });
+
   test('renders disabled step with reason', () => {
     const steps = [
       { id: 'step1', title: 'Step 1', status: 'pending' },
@@ -104,13 +131,15 @@ describe('Stepper', () => {
         disabledReason: 'Complete step 1 first',
       },
     ];
-    const { getByText } = render(
+    const { getByText, getByLabelText } = render(
       <Grommet>
         <Stepper steps={steps} currentStep="step1" />
       </Grommet>,
     );
 
     expect(getByText('Complete step 1 first')).toBeTruthy();
+    const step2 = getByLabelText(/Step 2 of 2/);
+    expect(step2.getAttribute('aria-describedby')).toBe('stepper-reason-step2');
   });
 
   test('fires onStepClick when clicking enabled step', () => {
@@ -160,6 +189,20 @@ describe('Stepper', () => {
 
     fireEvent.click(getByLabelText(/Step 2 of 3/));
     expect(onStepClick).not.toHaveBeenCalled();
+  });
+
+  test('renders readOnly stepper without buttons', () => {
+    const { queryByRole } = render(
+      <Grommet>
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          clickableSteps={false}
+        />
+      </Grommet>,
+    );
+
+    expect(queryByRole('button')).toBeNull();
   });
 
   test('keyboard navigation - arrow right moves focus', () => {
@@ -369,7 +412,7 @@ describe('Stepper', () => {
     expect(document.activeElement).toBe(step2);
   });
 
-  test('keyboard navigation skips disabled steps', () => {
+  test('keyboard navigation reaches disabled steps', () => {
     const steps = [
       { id: 'step1', title: 'Step 1', status: 'completed' },
       { id: 'step2', title: 'Step 2', status: 'disabled' },
@@ -385,12 +428,11 @@ describe('Stepper', () => {
     act(() => step1.focus());
     fireEvent.keyDown(step1, { key: 'ArrowRight' });
 
-    // Should skip disabled step2 and land on step3
-    const step3 = getByLabelText(/Step 3 of 3/);
-    expect(document.activeElement).toBe(step3);
+    const step2 = getByLabelText(/Step 2 of 3/);
+    expect(document.activeElement).toBe(step2);
   });
 
-  test('Home and End skip disabled steps', () => {
+  test('Home and End include disabled steps', () => {
     const steps = [
       { id: 'step1', title: 'Step 1', status: 'disabled' },
       { id: 'step2', title: 'Step 2', status: 'pending' },
@@ -406,17 +448,18 @@ describe('Stepper', () => {
     const step2 = getByLabelText(/Step 2 of 4/);
     act(() => step2.focus());
 
-    // End should skip disabled step4 and land on step3
+    // End should land on the last step, even if it is disabled.
     fireEvent.keyDown(step2, { key: 'End' });
-    const step3 = getByLabelText(/Step 3 of 4/);
-    expect(document.activeElement).toBe(step3);
+    const step4 = getByLabelText(/Step 4 of 4/);
+    expect(document.activeElement).toBe(step4);
 
-    // Home should skip disabled step1 and land on step2
-    fireEvent.keyDown(step3, { key: 'Home' });
-    expect(document.activeElement).toBe(step2);
+    // Home should land on the first step, even if it is disabled.
+    fireEvent.keyDown(step4, { key: 'Home' });
+    const step1 = getByLabelText(/Step 1 of 4/);
+    expect(document.activeElement).toBe(step1);
   });
 
-  test('keyboard navigation wraps around skipping disabled steps', () => {
+  test('keyboard navigation wraps around including disabled steps', () => {
     const steps = [
       { id: 'step1', title: 'Step 1', status: 'pending' },
       { id: 'step2', title: 'Step 2', status: 'disabled' },
@@ -430,7 +473,7 @@ describe('Stepper', () => {
 
     const step3 = getByLabelText(/Step 3 of 3/);
     act(() => step3.focus());
-    // ArrowRight from last enabled should wrap to step1 (skip disabled step2)
+    // ArrowRight from the last step should wrap to step1.
     fireEvent.keyDown(step3, { key: 'ArrowRight' });
 
     const step1 = getByLabelText(/Step 1 of 3/);

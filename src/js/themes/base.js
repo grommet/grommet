@@ -3,6 +3,7 @@ import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
+import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 import { FormDown } from 'grommet-icons/icons/FormDown';
 import { FormNext } from 'grommet-icons/icons/FormNext';
@@ -2333,73 +2334,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       indicator: {
         size: 'medium', // 'small' | 'medium' | 'large'
         border: {
-          color: 'text-weak',
           width: '2px',
         },
-        colors: {
-          pending: {
-            background: 'background-front',
-            text: 'text-strong',
-            border: 'text-weak',
-          },
-          current: {
-            background: 'brand',
-            text: 'white',
-            border: 'brand',
-          },
-          completed: {
-            background: 'status-ok',
-            text: 'white',
-            border: 'status-ok',
-          },
-          error: {
-            background: 'status-error',
-            text: 'white',
-            border: 'status-error',
-          },
-          disabled: {
-            background: 'background-contrast',
-            text: 'text-weak',
-            border: 'text-weak',
-          },
-        },
       },
-      label: {
-        color: {
-          default: 'text',
-          current: 'brand',
-          completed: 'text-weak',
-          error: 'status-error',
-          disabled: 'text-weak',
-        },
-        weight: {
-          default: 'normal',
-          current: 'bold',
-        },
+      connector: {
+        stroke: { width: '2px' },
       },
       description: {
         font: { size: 'small' },
         color: 'text-weak',
-        margin: { top: 'xsmall' },
+        margin: { top: 'hair' },
       },
       helperText: {
         font: { size: 'xsmall' },
-        color: {
-          error: 'status-error',
-          disabled: 'text-weak',
-        },
         margin: { top: 'xsmall' },
-      },
-      connector: {
-        stroke: {
-          width: '2px',
-          color: {
-            pending: 'border',
-            completed: 'status-ok',
-            error: 'status-error',
-            disabled: 'border',
-          },
-        },
       },
       horizontal: {
         gap: 'medium',
@@ -2407,18 +2355,77 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       vertical: {
         gap: 'medium',
       },
-      focus: {
-        ring: {
-          color: 'focus',
-          width: '2px',
-          offset: '2px',
-        },
+      icons: {
+        completed: FormCheckmark,
+        error: StatusCriticalSmall,
       },
       hover: {
         background: 'background-contrast',
+        border: 'text-strong',
       },
       active: {
         transform: 'scale(0.95)',
+      },
+      // States: [component].[state].[element].[property]
+      pending: {
+        indicator: {
+          background: 'background-front',
+          color: 'text-strong',
+          border: 'text-xweak',
+        },
+        label: { color: 'text', weight: 'normal' },
+        connector: { color: 'border' },
+      },
+      current: {
+        indicator: {
+          background: 'brand',
+          color: 'white',
+          border: 'brand',
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+          weight: 'normal',
+        },
+      },
+      completed: {
+        indicator: {
+          background: 'background-front',
+          color: 'brand',
+          border: 'brand',
+        },
+        label: { color: 'text-weak', weight: 'normal' },
+        connector: { color: 'brand' },
+      },
+      error: {
+        indicator: {
+          background: 'background-front',
+          color: 'status-error',
+          border: 'status-error',
+        },
+        label: { color: 'text', weight: 'normal' },
+        connector: { color: 'status-error' },
+        helperText: { color: 'status-error' },
+      },
+      currentError: {
+        indicator: {
+          background: 'status-error',
+          color: 'white',
+          border: 'status-error',
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+          weight: 'normal',
+        },
+      },
+      disabled: {
+        indicator: {
+          background: 'background-contrast',
+          color: 'text-weak',
+          border: 'border',
+        },
+        label: { color: 'text-weak', weight: 'normal' },
+        connector: { color: 'border' },
+        helperText: { color: 'text-weak' },
       },
     },
     table: {

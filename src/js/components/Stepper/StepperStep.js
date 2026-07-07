@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 
 import { normalizeColor } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 import { base } from '../../themes/base';
 
 import { StepperContext } from './StepperContext';
@@ -9,6 +10,7 @@ import { StepperIndicator, getEffectiveState } from './StepperIndicator';
 import {
   StyledStepItem,
   StyledStepButton,
+  StyledStepContent,
   StyledLabelText,
   StyledDescription,
   StyledHelperText,
@@ -18,11 +20,20 @@ import {
 const getConnectorColor = (stepStatus, theme) => {
   switch (stepStatus) {
     case 'completed':
-      return normalizeColor('brand', theme);
+      return normalizeColor(
+        theme.stepper?.completed?.connector?.color || 'brand',
+        theme,
+      );
     case 'error':
-      return normalizeColor('status-error', theme);
+      return normalizeColor(
+        theme.stepper?.error?.connector?.color || 'status-error',
+        theme,
+      );
     default:
-      return normalizeColor('border', theme);
+      return normalizeColor(
+        theme.stepper?.pending?.connector?.color || 'border',
+        theme,
+      );
   }
 };
 
@@ -41,6 +52,7 @@ export const StepperStep = ({
 }) => {
   const { currentStep, clickableSteps, onStepClick } =
     useContext(StepperContext);
+  const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext) || base;
 
   const isCurrent = currentStep === step.id;
@@ -53,6 +65,7 @@ export const StepperStep = ({
   const isDisabled = step.status === 'disabled';
   const effectiveState = getEffectiveState(step.status, isHighlighted);
   const isClickable = clickableSteps && !isDisabled;
+  const isReadOnly = !clickableSteps;
 
   const handleClick = () => {
     if (isClickable && onStepClick) {
@@ -71,7 +84,15 @@ export const StepperStep = ({
 
   const totalSteps = stepsRef.current?.length || stepNumber;
   const ariaLabel =
-    step['aria-label'] || `Step ${stepNumber} of ${totalSteps}: ${step.title}`;
+    step['aria-label'] ||
+    format({
+      id: 'stepper.step',
+      values: {
+        step: stepNumber,
+        total: totalSteps,
+        title: step.title,
+      },
+    });
 
   const describedBy = [];
   if (step.errorMessage && step.status === 'error') {
@@ -81,60 +102,66 @@ export const StepperStep = ({
     describedBy.push(`stepper-reason-${step.id}`);
   }
 
+  const focusableProps = isReadOnly
+    ? {}
+    : {
+        tabIndex: focusedIndex === index ? 0 : -1,
+        onClick: handleClick,
+        onKeyDown: handleKeyDown,
+        onFocus: () => {
+          if (onFocusStep) onFocusStep(index);
+        },
+        type: 'button',
+      };
+
   return (
-    <StyledStepItem direction={direction} isSubStep={isSubStep} theme={theme}>
+    <StyledStepItem direction={direction} isSubStep={isSubStep}>
       <StyledStepButton
+        as={isReadOnly ? 'div' : 'button'}
+        role={isReadOnly ? 'group' : undefined}
         ref={(el) => {
           if (stepRefs) {
             if (el) stepRefs.current.set(index, el);
             else stepRefs.current.delete(index);
           }
         }}
-        data-stepper-step
         aria-current={isHighlighted ? 'step' : undefined}
         aria-disabled={isDisabled || undefined}
         aria-label={ariaLabel}
         aria-describedby={
           describedBy.length > 0 ? describedBy.join(' ') : undefined
         }
-        data-clickable={isClickable || undefined}
-        tabIndex={focusedIndex === index ? 0 : -1}
-        onClick={handleClick}
-        onKeyDown={handleKeyDown}
-        onFocus={() => {
-          if (onFocusStep) onFocusStep(index);
-        }}
         isClickable={isClickable}
         isDisabled={isDisabled}
+        isSubStep={isSubStep}
         direction={direction}
-        theme={theme}
-        type="button"
+        {...focusableProps}
       >
         <StepperIndicator
           stepId={step.id}
           stepNumber={stepNumber}
           isSubStep={isSubStep}
+          isClickable={isClickable}
         />
-        <span style={{ display: 'flex', flexDirection: 'column' }}>
+        <StyledStepContent
+          direction={direction}
+          isSubStep={isSubStep}
+          hasDescription={!!step.description}
+        >
           <StyledLabelText
             effectiveState={effectiveState}
             direction={direction}
             isSubStep={isSubStep}
-            theme={theme}
           >
             {step.title}
           </StyledLabelText>
           {step.description && (
-            <StyledDescription direction={direction} theme={theme}>
+            <StyledDescription direction={direction}>
               {step.description}
             </StyledDescription>
           )}
           {step.status === 'error' && step.errorMessage && (
-            <StyledHelperText
-              id={`stepper-error-${step.id}`}
-              variant="error"
-              theme={theme}
-            >
+            <StyledHelperText id={`stepper-error-${step.id}`} variant="error">
               {step.errorMessage}
             </StyledHelperText>
           )}
@@ -142,12 +169,11 @@ export const StepperStep = ({
             <StyledHelperText
               id={`stepper-reason-${step.id}`}
               variant="disabled"
-              theme={theme}
             >
               {step.disabledReason}
             </StyledHelperText>
           )}
-        </span>
+        </StyledStepContent>
       </StyledStepButton>
       {(showConnector !== undefined ? showConnector : !isLast) && (
         <StyledConnector
@@ -155,7 +181,6 @@ export const StepperStep = ({
           connectorColor={getConnectorColor(step.status, theme)}
           isSubStep={isSubStep}
           aria-hidden="true"
-          theme={theme}
         />
       )}
     </StyledStepItem>

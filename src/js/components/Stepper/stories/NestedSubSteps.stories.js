@@ -36,6 +36,7 @@ const NestedSubSteps = () => {
           steps={steps}
           currentStep={currentStep}
           direction="vertical"
+          aria-label="Account setup progress"
           onStepClick={(id) => setCurrentStep(id)}
         />
         <Text>

@@ -2100,6 +2100,112 @@ export interface ThemeType {
       large?: number;
     };
   };
+  stepper?: {
+    container?: {
+      background?: BackgroundType;
+      extend?: ExtendType;
+    };
+    indicator?: {
+      size?: string;
+      border?: {
+        color?: ColorType;
+        width?: string;
+      };
+      colors?: {
+        pending?: {
+          background?: BackgroundType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+        current?: {
+          background?: BackgroundType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+        completed?: {
+          background?: BackgroundType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+        error?: {
+          background?: BackgroundType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+        disabled?: {
+          background?: BackgroundType;
+          text?: ColorType;
+          border?: ColorType;
+        };
+      };
+    };
+    label?: {
+      color?: {
+        default?: ColorType;
+        current?: ColorType;
+        completed?: ColorType;
+        error?: ColorType;
+        disabled?: ColorType;
+      };
+      weight?: {
+        default?: string;
+        current?: string;
+      };
+    };
+    description?: {
+      font?: {
+        size?: string;
+      };
+      color?: ColorType;
+      margin?: MarginType;
+    };
+    helperText?: {
+      font?: {
+        size?: string;
+      };
+      color?: {
+        error?: ColorType;
+        disabled?: ColorType;
+      };
+      margin?: MarginType;
+    };
+    connector?: {
+      stroke?: {
+        width?: string;
+        color?: {
+          pending?: ColorType;
+          completed?: ColorType;
+          error?: ColorType;
+          disabled?: ColorType;
+        };
+      };
+    };
+    horizontal?: {
+      gap?: GapType;
+    };
+    vertical?: {
+      gap?: GapType;
+    };
+    icons?: {
+      completed?: React.ReactNode | Icon;
+      error?: React.ReactNode | Icon;
+      current?: React.ReactNode | Icon;
+      substepCurrent?: React.ReactNode | Icon;
+      substepCompleted?: React.ReactNode | Icon;
+      substepError?: React.ReactNode | Icon;
+      substepPending?: React.ReactNode | Icon;
+      substepDisabled?: React.ReactNode | Icon;
+    };
+    hover?: {
+      background?: BackgroundType;
+      brand?: ColorType;
+      error?: ColorType;
+      border?: ColorType;
+    };
+    active?: {
+      transform?: string;
+    };
+  };
   table?: {
     caption?: {
       margin?: MarginType;

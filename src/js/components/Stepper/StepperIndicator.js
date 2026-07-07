@@ -1,86 +1,39 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from 'styled-components';
+import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
+import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
+import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
+import { Radial } from 'grommet-icons/icons/Radial';
 
-import { base } from '../../themes/base';
+import { useThemeValue } from '../../utils/useThemeValue';
 
 import { StepperContext } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
 
-const CheckIcon = ({ size = 12, color = 'currentColor', strokeWidth = 3 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke={color}
-    strokeWidth={strokeWidth}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <polyline points="20 6 9 17 4 12" />
-  </svg>
-);
+const getIconMetric = (theme, sizeToken, fallback) =>
+  theme.global?.edgeSize?.[sizeToken] ||
+  theme.global?.size?.[sizeToken] ||
+  fallback;
 
-const WarningIcon = () => (
-  <svg
-    width="12"
-    height="12"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="3"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <line x1="12" y1="9" x2="12" y2="13" />
-    <line x1="12" y1="17" x2="12.01" y2="17" />
-  </svg>
-);
+const withMinPixelSize = (value, minPx) => {
+  const parsed = Number.parseFloat(value);
+  if (Number.isNaN(parsed)) return value;
+  return `${Math.max(parsed, minPx)}px`;
+};
 
-const SubStepDot = ({ size = 10 }) => (
-  <span
-    aria-hidden="true"
-    style={{
-      width: `${size}px`,
-      height: `${size}px`,
-      borderRadius: '50%',
-      background: 'currentColor',
-    }}
-  />
-);
-
-const SubStepRing = ({ size = 8, strokeWidth = 1.5 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox={`0 0 ${size} ${size}`}
-    fill="none"
-    aria-hidden="true"
-  >
-    <circle
-      cx={size / 2}
-      cy={size / 2}
-      r={size / 2 - strokeWidth / 2}
-      stroke="currentColor"
-      strokeWidth={strokeWidth}
-      fill="none"
-    />
-  </svg>
-);
-
-const RadioDot = () => (
-  <span
-    aria-hidden="true"
-    style={{
-      width: '8px',
-      height: '8px',
-      borderRadius: '50%',
-      background: '#ffffff',
-    }}
-  />
-);
+const renderIcon = (Icon, props) => {
+  if (!Icon) return null;
+  const iconProps = {
+    color: 'currentColor',
+    ...props,
+  };
+  if (React.isValidElement(Icon)) {
+    return React.cloneElement(Icon, {
+      ...iconProps,
+      'aria-hidden': true,
+    });
+  }
+  return <Icon {...iconProps} aria-hidden />;
+};
 
 // Maps step status + current position to a visual state
 // used by both the indicator and label components.
@@ -96,9 +49,9 @@ function getEffectiveState(status, isCurrent) {
   return 'pending';
 }
 
-export const StepperIndicator = ({ stepId, isSubStep }) => {
+export const StepperIndicator = ({ stepId, isSubStep, isClickable }) => {
   const { currentStep, steps } = useContext(StepperContext);
-  const theme = useContext(ThemeContext) || base;
+  const { theme } = useThemeValue();
 
   const step = steps.find((s) => s.id === stepId);
   if (!step) return null;
@@ -111,36 +64,66 @@ export const StepperIndicator = ({ stepId, isSubStep }) => {
     step.childIds.includes(currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
   const effectiveState = getEffectiveState(step.status, isHighlighted);
+  const stepperIcons = theme.stepper?.icons || {};
+  const completedIcon = stepperIcons.completed || FormCheckmark;
+  const errorIcon = stepperIcons.error || StatusCriticalSmall;
+  const currentErrorIcon = stepperIcons.currentError || errorIcon;
+  const currentIcon = stepperIcons.current || StatusGoodSmall;
+  const subStepCurrentIcon = stepperIcons.substepCurrent || StatusGoodSmall;
+  const subStepCompletedIcon = stepperIcons.substepCompleted || completedIcon;
+  const subStepErrorIcon = stepperIcons.substepError || StatusGoodSmall;
+  const subStepPendingIcon = stepperIcons.substepPending || Radial;
+  const subStepDisabledIcon = stepperIcons.substepDisabled || Radial;
+  const subStepIconSize = withMinPixelSize(
+    getIconMetric(theme, 'small', '10px'),
+    10,
+  );
+  const subStepSmallIconSize = withMinPixelSize(
+    getIconMetric(theme, 'xsmall', '8px'),
+    8,
+  );
+  const parentIconSize = withMinPixelSize(
+    getIconMetric(theme, 'small', '12px'),
+    12,
+  );
 
   const renderContent = () => {
     if (isSubStep) {
       switch (effectiveState) {
         case 'current':
-          return <SubStepDot />;
+          return renderIcon(subStepCurrentIcon, { size: subStepIconSize });
         case 'current-completed':
-          return <CheckIcon size={10} strokeWidth={4} />;
+          return renderIcon(subStepCompletedIcon, { size: subStepIconSize });
         case 'completed':
-          return <CheckIcon size={10} />;
+          return renderIcon(subStepCompletedIcon, { size: subStepIconSize });
         case 'error':
+          return renderIcon(subStepErrorIcon, { size: subStepIconSize });
         case 'current-error':
-          return <SubStepDot />;
+          return renderIcon(subStepErrorIcon, {
+            size: subStepIconSize,
+          });
         case 'disabled':
-          return <SubStepRing />;
+          return renderIcon(subStepDisabledIcon, {
+            size: subStepSmallIconSize,
+          });
         default:
           // pending - small hollow ring
-          return <SubStepRing />;
+          return renderIcon(subStepPendingIcon, { size: subStepSmallIconSize });
       }
     }
     // Parent step indicator
     switch (effectiveState) {
       case 'current-completed':
       case 'completed':
-        return <CheckIcon size={12} />;
+        return renderIcon(completedIcon, { size: 'medium' });
       case 'current':
-        return <RadioDot />;
+        return renderIcon(currentIcon, { size: 'medium' });
       case 'error':
+        return renderIcon(errorIcon, { size: parentIconSize });
       case 'current-error':
-        return <WarningIcon />;
+        return renderIcon(currentErrorIcon, {
+          size: parentIconSize,
+        });
       default:
         return null;
     }
@@ -148,11 +131,9 @@ export const StepperIndicator = ({ stepId, isSubStep }) => {
 
   return (
     <StyledIndicator
-      className="stepper-indicator"
       effectiveState={effectiveState}
       isSubStep={isSubStep}
-      theme={theme}
-      aria-hidden="true"
+      isClickable={isClickable}
     >
       {renderContent()}
     </StyledIndicator>

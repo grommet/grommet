@@ -1,12 +1,14 @@
 import React, {
   forwardRef,
   useCallback,
+  useContext,
   useMemo,
   useRef,
   useState,
 } from 'react';
 
 import { normalizeColor } from '../../utils';
+import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Keyboard } from '../Keyboard';
@@ -60,6 +62,7 @@ const Stepper = forwardRef(
     ref,
   ) => {
     const { theme } = useThemeValue();
+    const { format } = useContext(MessageContext);
     const stepRefs = useRef(new Map());
     const flatSteps = useMemo(() => flattenSteps(steps), [steps]);
     const stepsRef = useRef(flatSteps);
@@ -113,6 +116,7 @@ const Stepper = forwardRef(
     const currentIndex = flatSteps.findIndex(
       (s) => s.id === effectiveCurrentStep,
     );
+    const flatStepsLength = flatSteps.length;
     const [focusedIndex, setFocusedIndex] = useState(
       currentIndex >= 0 ? currentIndex : 0,
     );
@@ -186,34 +190,20 @@ const Stepper = forwardRef(
       ],
     );
 
-    // Wraps around the step list to find the next non-disabled step
+    // Wraps around the step list to find the next step
     // in the given direction (+1 forward, -1 backward).
     const findNextEnabledIndex = useCallback(
-      (startIndex, delta) => {
-        const len = flatSteps.length;
-        let idx = startIndex;
-        for (let i = 0; i < len; i += 1) {
-          idx = (idx + delta + len) % len;
-          if (flatSteps[idx].status !== 'disabled') {
-            return idx;
-          }
-        }
-        return startIndex;
-      },
-      [flatSteps],
+      (startIndex, delta) =>
+        (startIndex + delta + flatStepsLength) % flatStepsLength,
+      [flatStepsLength],
     );
 
-    const findFirstEnabledIndex = useCallback(
-      () => flatSteps.findIndex((s) => s.status !== 'disabled'),
-      [flatSteps],
-    );
+    const findFirstEnabledIndex = useCallback(() => 0, []);
 
-    const findLastEnabledIndex = useCallback(() => {
-      for (let i = flatSteps.length - 1; i >= 0; i -= 1) {
-        if (flatSteps[i].status !== 'disabled') return i;
-      }
-      return flatSteps.length - 1;
-    }, [flatSteps]);
+    const findLastEnabledIndex = useCallback(
+      () => flatStepsLength - 1,
+      [flatStepsLength],
+    );
 
     const moveFocus = useCallback(
       (nextIndex) => {
@@ -287,6 +277,25 @@ const Stepper = forwardRef(
     );
 
     const renderDefaultSteps = () => {
+      const indicatorSize =
+        theme.stepper?.indicator?.size &&
+        theme.global?.edgeSize?.[theme.stepper.indicator.size]
+          ? theme.global.edgeSize[theme.stepper.indicator.size]
+          : theme.global?.edgeSize?.medium || '24px';
+      const buttonPad = theme.global?.edgeSize?.xxsmall || '4px';
+      const connectorThickness =
+        theme.stepper?.connector?.stroke?.width ||
+        theme.global?.borderSize?.small ||
+        '2px';
+      const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
+      const connectorOffset = `calc(${indicatorSize} / 2 + ${buttonPad})`;
+      const childGap = theme.global?.edgeSize?.xsmall || '8px';
+      const childPadTop = theme.global?.edgeSize?.medium || '24px';
+      const childIndent = `calc(${indicatorSize} + ${
+        theme.global?.edgeSize?.small || '12px'
+      })`;
+      const minConnectorInlineSize = theme.global?.edgeSize?.small || '12px';
+
       let flatIndex = 0;
       const elements = [];
       steps.forEach((step, parentIdx) => {
@@ -339,7 +348,7 @@ const Stepper = forwardRef(
           elements.push(
             <li
               key={`${step.id}-connector`}
-              aria-hidden="true"
+              aria-hidden={childElements ? undefined : 'true'}
               style={{
                 listStyle: 'none',
                 display: 'flex',
@@ -347,17 +356,18 @@ const Stepper = forwardRef(
                 alignItems: 'center',
                 flex: 1,
                 position: 'relative',
-                minWidth: '16px',
+                minWidth: minConnectorInlineSize,
                 overflow: 'visible',
               }}
             >
               <span
+                aria-hidden="true"
                 style={{
                   position: 'absolute',
-                  top: '16px',
-                  left: 'calc(-50% + 16px)',
-                  right: 'calc(-50% + 16px)',
-                  height: '2px',
+                  top: connectorOffset,
+                  left: `calc(-50% + ${connectorOffset})`,
+                  right: `calc(-50% + ${connectorOffset})`,
+                  height: connectorThickness,
                   background: normalizeColor('border', theme),
                 }}
               />
@@ -367,8 +377,8 @@ const Stepper = forwardRef(
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
-                    gap: '8px',
-                    paddingTop: '24px',
+                    gap: childGap,
+                    paddingTop: childPadTop,
                     maxWidth: '100%',
                     flexWrap: 'wrap',
                     justifyContent: 'center',
@@ -397,34 +407,35 @@ const Stepper = forwardRef(
           elements.push(
             <li
               key={`${step.id}-connector`}
-              aria-hidden="true"
+              aria-hidden={childElements ? undefined : 'true'}
               style={{
                 listStyle: 'none',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
                 position: 'relative',
                 flex: 1,
-                minHeight: '16px',
+                minHeight: minConnectorInlineSize,
                 overflow: 'visible',
               }}
             >
               <span
+                aria-hidden="true"
                 style={{
                   position: 'absolute',
-                  left: '15px',
+                  left: `calc(${connectorOffset} - ${connectorThickness} / 2)`,
                   top: '0',
                   bottom: '0',
-                  width: '2px',
+                  width: connectorThickness,
                   background: connectorColor,
-                  borderRadius: '4px',
+                  borderRadius: connectorRadius,
                 }}
               />
               {childElements && (
                 <ol
                   style={{
                     listStyle: 'none',
-                    padding: '0 0 0 36px',
+                    padding: `0 0 0 ${childIndent}`,
                     margin: 0,
                   }}
                 >
@@ -438,20 +449,31 @@ const Stepper = forwardRef(
       return elements;
     };
 
+    const stepperContent = (
+      <StyledStepper
+        ref={ref}
+        aria-label={
+          ariaLabel ||
+          format({
+            id: 'stepper.progress',
+          })
+        }
+        direction={effectiveDirection}
+        id={id}
+        theme={theme}
+        {...rest}
+      >
+        {children || renderDefaultSteps()}
+      </StyledStepper>
+    );
+
     return (
       <StepperContext.Provider value={contextValue}>
-        <Keyboard onKeyDown={handleKeyDown}>
-          <StyledStepper
-            ref={ref}
-            aria-label={ariaLabel || 'Progress'}
-            direction={effectiveDirection}
-            id={id}
-            theme={theme}
-            {...rest}
-          >
-            {children || renderDefaultSteps()}
-          </StyledStepper>
-        </Keyboard>
+        {clickableSteps ? (
+          <Keyboard onKeyDown={handleKeyDown}>{stepperContent}</Keyboard>
+        ) : (
+          stepperContent
+        )}
       </StepperContext.Provider>
     );
   },
