@@ -21,29 +21,23 @@ const PopupColumnBox = styled(Box)`
   max-height: ${(props) => props.theme.timeInput?.popup?.columnHeight};
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-gutter: ${(props) =>
-    props.theme.timeInput?.popup?.scrollbar?.gutter};
-  scrollbar-width: ${(props) => props.theme.timeInput?.popup?.scrollbar?.width};
-  scrollbar-color: ${(props) =>
-    `${props.theme.timeInput?.popup?.scrollbar?.thumbColor} ${props.theme.timeInput?.popup?.scrollbar?.trackColor}`};
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.28) transparent;
   flex: 0 0 ${(props) => props.theme.timeInput?.popup?.columnWidth};
 
   &::-webkit-scrollbar {
-    width: ${(props) => props.theme.timeInput?.popup?.scrollbar?.webkitSize};
-    height: ${(props) => props.theme.timeInput?.popup?.scrollbar?.webkitSize};
+    width: 8px;
+    height: 8px;
   }
 
   &::-webkit-scrollbar-track {
-    background: ${(props) =>
-      props.theme.timeInput?.popup?.scrollbar?.trackColor};
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: ${(props) =>
-      props.theme.timeInput?.popup?.scrollbar?.thumbColor};
-    border: ${(props) => props.theme.timeInput?.popup?.scrollbar?.thumbBorder};
-    border-radius: ${(props) =>
-      props.theme.timeInput?.popup?.scrollbar?.thumbRadius};
+    background-color: rgba(0, 0, 0, 0.28);
+    border: 2px solid transparent;
+    border-radius: 999px;
     background-clip: content-box;
   }
 `;

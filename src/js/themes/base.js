@@ -1106,15 +1106,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             color: 'rgba(0, 0, 0, 0.24)',
           },
         },
-        scrollbar: {
-          gutter: 'stable',
-          width: 'thin',
-          trackColor: 'transparent',
-          thumbColor: 'rgba(0, 0, 0, 0.35)',
-          thumbBorder: '2px solid transparent',
-          thumbRadius: '999px',
-          webkitSize: '8px',
-        },
       },
       icon: {
         // clock: undefined,
