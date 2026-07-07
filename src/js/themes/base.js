@@ -1088,12 +1088,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           hover: {
             background: 'rgba(0, 0, 0, 0.04)',
           },
-          focus: {
-            background: 'rgba(0, 0, 0, 0.04)',
-            outerColor: 'focus',
-            outerSize: '2px',
-            radius: '6px',
-          },
           selected: {
             background: '#068667',
             color: 'white',

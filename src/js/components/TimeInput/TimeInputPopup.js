@@ -3,7 +3,7 @@ import React, { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { normalizeColor } from '../../utils';
+import { focusStyle, normalizeColor } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
@@ -20,26 +20,9 @@ const PopupColumnBox = styled(Box)`
   width: ${(props) => props.theme.timeInput?.popup?.columnWidth};
   max-height: ${(props) => props.theme.timeInput?.popup?.columnHeight};
   overflow-y: auto;
-  overflow-x: hidden;
+  scrollbar-gutter: stable;
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.28) transparent;
   flex: 0 0 ${(props) => props.theme.timeInput?.popup?.columnWidth};
-
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.28);
-    border: 2px solid transparent;
-    border-radius: 999px;
-    background-clip: content-box;
-  }
 `;
 
 const PopupOption = styled.div`
@@ -98,8 +81,7 @@ const PopupOption = styled.div`
 
     if (props.$active) {
       return normalizeColor(
-        props.theme.timeInput?.popup?.option?.focus?.background ||
-          props.theme.timeInput?.popup?.option?.hover?.background ||
+        props.theme.timeInput?.popup?.option?.hover?.background ||
           'transparent',
         props.theme,
       );
@@ -144,17 +126,7 @@ const PopupOption = styled.div`
    */
   &:focus-visible,
   &[data-active='true'] {
-    box-shadow: ${(props) =>
-      `inset 0 0 0 ${
-        props.theme.timeInput?.popup?.option?.focus?.outerSize || '2px'
-      } ${normalizeColor(
-        props.theme.timeInput?.popup?.option?.focus?.outerColor || 'focus',
-        props.theme,
-      )}`};
-    border-radius: ${(props) =>
-      props.theme.timeInput?.popup?.option?.focus?.radius ||
-      props.theme.global.control?.border?.radius};
-    outline: none;
+    ${focusStyle({ inset: true })}
   }
 `;
 
@@ -224,6 +196,7 @@ const TimeInputPopup = ({
 }) => {
   const { theme } = useThemeValue();
   const dialogRef = useRef();
+  const pointerDownInsideRef = useRef(false);
 
   const popupSections = [
     {
@@ -335,8 +308,20 @@ const TimeInputPopup = ({
         minHeight={theme.timeInput?.popup?.minHeight}
         gap="xsmall"
         pad="small"
+        onMouseDownCapture={() => {
+          pointerDownInsideRef.current = true;
+          const onMouseUp = () => {
+            pointerDownInsideRef.current = false;
+            window.removeEventListener('mouseup', onMouseUp, true);
+          };
+          window.addEventListener('mouseup', onMouseUp, true);
+        }}
         onBlurCapture={(event) => {
+          if (pointerDownInsideRef.current) return;
           const nextFocusTarget = event.relatedTarget;
+          // Clicking the scrollbar can blur the focused option with
+          // relatedTarget = null. Keep the popup open for that interaction.
+          if (!nextFocusTarget) return;
           if (!event.currentTarget.contains(nextFocusTarget)) {
             onFocusLeave?.();
           }
