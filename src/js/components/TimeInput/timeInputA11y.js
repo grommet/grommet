@@ -64,8 +64,10 @@ export const getActiveSectionAriaMeta = ({
     max = format === '12' ? 12 : 23;
   }
 
+  const now = sections[sectionKey] ?? min;
+
   return {
-    now: sections[sectionKey],
+    now,
     min,
     max,
   };

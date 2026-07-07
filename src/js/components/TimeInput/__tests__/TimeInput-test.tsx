@@ -43,6 +43,27 @@ describe('TimeInput', () => {
     expect(document.getElementById('time-picker__drop')).toBeNull();
   });
 
+  test('links trigger aria-controls to popup id when id is provided', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput id="time-a11y" format="24" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: 'Choose time' });
+    expect(trigger).toHaveAttribute('aria-controls', 'time-a11y__drop');
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+    await user.click(trigger);
+
+    const popup = document.getElementById('time-a11y__drop');
+    expect(popup).toBeTruthy();
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    expect(trigger).toHaveAttribute('aria-controls', 'time-a11y__drop');
+  });
+
   test('does not show an active section before focus', () => {
     render(
       <Grommet>
@@ -148,6 +169,10 @@ describe('TimeInput', () => {
       expect(input.selectionStart).toBe(0);
       expect(input.selectionEnd).toBe(2);
     });
+
+    expect(input).toHaveAttribute('aria-valuenow', '1');
+    expect(input).toHaveAttribute('aria-valuemin', '1');
+    expect(input).toHaveAttribute('aria-valuemax', '12');
   });
 
   test('moves between placeholder sections with ArrowRight in empty state', async () => {

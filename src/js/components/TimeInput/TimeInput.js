@@ -986,6 +986,7 @@ const TimeInput = forwardRef(
                 })}
                 aria-haspopup="dialog"
                 aria-expanded={open}
+                aria-controls={id ? `${id}__drop` : undefined}
                 onFocus={(event) => {
                   setIconFocused(true);
                   setInputFocused(false);
