@@ -1067,8 +1067,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         round: '2px 2px 0 0',
       },
-      fontSize: '16px',
-      lineHeight: '24px',
       placeholder: {
         color: 'placeholder',
       },
@@ -1103,7 +1101,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       icon: {
         // clock: undefined,
-        size: 'medium',
       },
     },
     dataSearch: {

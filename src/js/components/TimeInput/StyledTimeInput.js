@@ -22,15 +22,11 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
   &:focus-within {
     ${(props) => props.focusIndicator && focusStyle({ justBorder: true })}
   }
-  ${(props) =>
-    props.theme.timeInput &&
-    props.theme.timeInput.container &&
-    props.theme.timeInput.container.extend}
 `;
 
 export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
-  ${(props) => props.plain && plainInputStyle}
+  ${plainInputStyle}
   position: relative;
   z-index: 1;
   color: transparent;
@@ -53,8 +49,6 @@ export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
   &:-ms-input-placeholder {
     color: transparent;
   }
-
-  ${(props) => props.theme.timeInput && props.theme.timeInput.extend}
 `;
 
 export const StyledTimeInputField = styled.div.withConfig(
@@ -85,10 +79,16 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
   white-space: pre;
   overflow: hidden;
   font-family: inherit;
-  font-size: ${(props) => props.theme.timeInput?.fontSize};
+  font-size: ${(props) =>
+    `${
+      props.theme.global.input.font.size
+        ? props.theme.text[props.theme.global.input.font.size]?.size ||
+          props.theme.global.input.font.size
+        : 'inherit'
+    }`};
   font-weight: ${(props) =>
     props.theme.global.input?.font?.weight || props.theme.global.font.weight};
-  line-height: ${(props) => props.theme.timeInput?.lineHeight};
+  line-height: ${(props) => props.theme.global.input.font.height || 'inherit'};
 `;
 
 export const StyledTimeInputSeparator = styled.span.withConfig(
