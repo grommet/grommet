@@ -33,7 +33,6 @@ export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
   ${(props) => props.plain && plainInputStyle}
   position: relative;
   z-index: 1;
-  width: 100%;
   color: transparent;
   caret-color: transparent;
   text-shadow: none;
