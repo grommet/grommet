@@ -85,7 +85,7 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
   pointer-events: auto;
   white-space: pre;
   overflow: hidden;
-  font-family: ${(props) => props.theme.global.font.family};
+  font-family: inherit;
   font-size: ${(props) => props.theme.timeInput?.fontSize};
   font-weight: ${(props) =>
     props.theme.global.input?.font?.weight || props.theme.global.font.weight};
