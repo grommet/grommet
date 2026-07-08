@@ -36,8 +36,6 @@ export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
   width: 100%;
   color: transparent;
   caret-color: transparent;
-  font-size: ${(props) => props.theme.timeInput?.fontSize};
-  line-height: ${(props) => props.theme.timeInput?.lineHeight};
   text-shadow: none;
 
   &::selection {
