@@ -2484,6 +2484,88 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         connector: { color: 'border' },
       },
     },
+    wizard: {
+      container: {
+        gap: 'none',
+        background: 'background-back',
+      },
+      body: {
+        pad: { horizontal: 'large', vertical: 'large' },
+        gap: 'medium',
+      },
+      header: {
+        pad: { horizontal: 'large', vertical: 'small' },
+        background: 'background-front',
+        title: {
+          level: 3,
+          size: 'medium',
+        },
+      },
+      progress: {
+        horizontal: {
+          pad: { horizontal: 'none', vertical: 'none' },
+        },
+        vertical: {
+          // Fixed rail width so the progress column does not collapse
+          // to hug its own label text. Consumers can override via
+          // theme.wizard.progress.vertical.width (any Grommet size
+          // token or CSS length) to widen or narrow the rail.
+          width: 'small',
+          pad: { horizontal: 'xsmall', vertical: 'none' },
+        },
+      },
+      stepCounter: {
+        size: 'small',
+        color: 'text-strong',
+        weight: 'bold',
+        margin: { bottom: 'xsmall' },
+      },
+      stepHeader: {
+        pad: { horizontal: 'none', vertical: 'none' },
+        title: {
+          level: 2,
+          size: 'medium',
+        },
+        description: {
+          size: 'medium',
+          color: 'text-weak',
+          margin: { top: 'xsmall', bottom: 'none' },
+        },
+      },
+      content: {
+        pad: 'medium',
+        background: 'background-front',
+        round: 'medium',
+      },
+      footer: {
+        pad: { horizontal: 'large', vertical: 'none' },
+        gap: 'small',
+        background: 'background-front',
+        justify: 'end',
+        height: 'xxsmall',
+        button: {
+          primary: 'next',
+          previous: { kind: 'secondary' },
+          cancel: { plain: true },
+          skip: { kind: 'secondary' },
+        },
+      },
+      error: {
+        icon: undefined,
+        helperText: {
+          color: 'status-error',
+          size: 'small',
+          margin: { top: 'xsmall' },
+        },
+      },
+      icons: {
+        next: undefined,
+        previous: undefined,
+        complete: undefined,
+        cancel: undefined,
+        skip: undefined,
+      },
+    },
     table: {
       caption: {
         margin: { bottom: 'xxsmall' },

@@ -1,0 +1,71 @@
+import React, { useState } from 'react';
+
+import { Box, Grommet, Paragraph, Text } from 'grommet';
+import { Wizard } from '../Wizard';
+import { grommet } from '../../../themes';
+
+// Nested wizard with sub-steps under a parent group. Parent is never a
+// navigation target; child steps are visited in order.
+const steps = [
+  {
+    id: 'setup',
+    title: 'Setup',
+    children: [
+      {
+        id: 'setup-account',
+        title: 'Account',
+        description: 'Create an account.',
+        render: () => <Paragraph>Account form here.</Paragraph>,
+      },
+      {
+        id: 'setup-profile',
+        title: 'Profile',
+        description: 'Fill in your profile.',
+        render: () => <Paragraph>Profile form here.</Paragraph>,
+      },
+    ],
+  },
+  {
+    id: 'billing',
+    title: 'Billing',
+    description: 'Set up billing.',
+    render: () => <Paragraph>Billing form here.</Paragraph>,
+  },
+  {
+    id: 'review',
+    title: 'Review',
+    description: 'Review and submit.',
+    render: () => <Paragraph>Review summary here.</Paragraph>,
+  },
+];
+
+const NestedSubSteps = () => {
+  const [result, setResult] = useState(null);
+  const [resetKey, setResetKey] = useState(0);
+  const handleCancel = () => {
+    setResult(null);
+    setResetKey((key) => key + 1);
+  };
+  return (
+    <Grommet theme={grommet} full>
+      <Box fill>
+        <Wizard
+          key={resetKey}
+          aria-label="Nested wizard"
+          header={{ title: 'Set up your organization' }}
+          direction="vertical"
+          steps={steps}
+          onComplete={(value) => setResult({ status: 'complete', value })}
+          onCancel={handleCancel}
+        />
+        {result && <Text>{`Completed: ${JSON.stringify(result.value)}`}</Text>}
+      </Box>
+    </Grommet>
+  );
+};
+
+export default {
+  title: 'Layout/Wizard/Nested Sub-Steps',
+};
+
+export { NestedSubSteps };

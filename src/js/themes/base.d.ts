@@ -2179,6 +2179,85 @@ export interface ThemeType {
     currentError?: StepperStateType;
     disabled?: StepperStateType;
   };
+  wizard?: {
+    container?: {
+      gap?: GapType;
+      extend?: ExtendType;
+    };
+    header?: {
+      pad?: PadType;
+      border?: BorderType;
+      title?: {
+        level?: 1 | 2 | 3 | 4 | 5 | 6;
+        size?: string;
+      };
+      extend?: ExtendType;
+    };
+    progress?: {
+      horizontal?: {
+        pad?: PadType;
+        border?: BorderType;
+        extend?: ExtendType;
+      };
+      vertical?: {
+        width?: string;
+        pad?: PadType;
+        border?: BorderType;
+        extend?: ExtendType;
+      };
+    };
+    stepCounter?: {
+      size?: string;
+      color?: ColorType;
+      weight?: 'normal' | 'bold' | 'bolder' | 'lighter' | number | string;
+      margin?: MarginType;
+    };
+    stepHeader?: {
+      pad?: PadType;
+      title?: {
+        level?: 1 | 2 | 3 | 4 | 5 | 6;
+        size?: string;
+      };
+      description?: {
+        size?: string;
+        color?: ColorType;
+        margin?: MarginType;
+      };
+      extend?: ExtendType;
+    };
+    content?: {
+      pad?: PadType;
+      extend?: ExtendType;
+    };
+    footer?: {
+      pad?: PadType;
+      gap?: GapType;
+      border?: BorderType;
+      justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
+      button?: {
+        primary?: 'next' | 'complete';
+        previous?: { kind?: string };
+        cancel?: { kind?: string };
+        skip?: { kind?: string };
+      };
+      extend?: ExtendType;
+    };
+    error?: {
+      icon?: React.ReactNode | Icon;
+      helperText?: {
+        color?: ColorType;
+        size?: string;
+        margin?: MarginType;
+      };
+    };
+    icons?: {
+      next?: React.ReactNode | Icon;
+      previous?: React.ReactNode | Icon;
+      complete?: React.ReactNode | Icon;
+      cancel?: React.ReactNode | Icon;
+      skip?: React.ReactNode | Icon;
+    };
+  };
   table?: {
     caption?: {
       margin?: MarginType;
