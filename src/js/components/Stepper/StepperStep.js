@@ -8,11 +8,11 @@ import { StepperContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
 import { StepperDescription } from './StepperDescription';
+import { StepperHelperText } from './StepperHelperText';
 import {
   StyledStepItem,
   StyledStepButton,
   StyledStepContent,
-  StyledHelperText,
   StyledConnector,
 } from './StyledStepper';
 
@@ -157,17 +157,17 @@ export const StepperStep = ({
           <StepperLabel stepId={step.id} isSubStep={isSubStep} />
           {step.description && <StepperDescription stepId={step.id} />}
           {step.status === 'error' && step.errorMessage && (
-            <StyledHelperText id={`stepper-error-${step.id}`} variant="error">
+            <StepperHelperText id={`stepper-error-${step.id}`} variant="error">
               {step.errorMessage}
-            </StyledHelperText>
+            </StepperHelperText>
           )}
           {step.status === 'disabled' && step.disabledReason && (
-            <StyledHelperText
+            <StepperHelperText
               id={`stepper-reason-${step.id}`}
               variant="disabled"
             >
               {step.disabledReason}
-            </StyledHelperText>
+            </StepperHelperText>
           )}
         </StyledStepContent>
       </StyledStepButton>

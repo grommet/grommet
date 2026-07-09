@@ -3,7 +3,7 @@ import { Text } from '../Text';
 import { useStepper } from './StepperContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 
-export const StepperDescription = ({ stepId }) => {
+export const StepperDescription = ({ stepId, ...rest }) => {
   const { direction, steps } = useStepper();
   const { theme } = useThemeValue();
 
@@ -22,6 +22,7 @@ export const StepperDescription = ({ stepId }) => {
       color={color}
       margin={margin}
       truncate={direction === 'horizontal'}
+      {...rest}
     >
       {step.description}
     </Text>

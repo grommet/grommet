@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import { normalizeColor, styledComponentsConfig } from '../../utils';
 import { base } from '../../themes/base';
-import { Text } from '../Text';
 
 const getStepperTheme = (theme) => (theme && theme.global ? theme : base);
 
@@ -478,52 +477,6 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
   }
 `;
 
-const StyledDescription = styled(Text).withConfig(styledComponentsConfig)`
-  ${(props) => {
-    const theme = getStepperTheme(props.theme);
-    const size = theme.stepper?.description?.font?.size || 'xsmall';
-    return css`
-      font-size: ${getTextMetric(theme, size, 'size')};
-      line-height: ${getTextMetric(theme, size, 'height')};
-    `;
-  }}
-  color: ${(props) =>
-    normalizeColor('text-weak', getStepperTheme(props.theme))};
-  margin-top: ${(props) =>
-    getMetricSize(
-      getStepperTheme(props.theme),
-      getStepperTheme(props.theme)?.stepper?.description?.margin?.top ||
-        'xxsmall',
-    )};
-  ${(props) =>
-    props.direction === 'horizontal' &&
-    css`
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 100%;
-    `}
-`;
-
-const StyledHelperText = styled(Text).withConfig(styledComponentsConfig)`
-  ${(props) => {
-    const theme = getStepperTheme(props.theme);
-    const size = theme.stepper?.helperText?.font?.size || 'xsmall';
-    return css`
-      font-size: ${getTextMetric(theme, size, 'size')};
-      line-height: ${getTextMetric(theme, size, 'height')};
-    `;
-  }}
-  margin-top: ${(props) =>
-    getMetricSize(
-      getStepperTheme(props.theme),
-      getStepperTheme(props.theme)?.stepper?.helperText?.margin?.top ||
-        'xxsmall',
-    )};
-  color: ${(props) =>
-    normalizeColor('text-weak', getStepperTheme(props.theme))};
-`;
-
 const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
     const theme = getStepperTheme(props.theme);
@@ -564,7 +517,5 @@ export {
   StyledStepButton,
   StyledStepContent,
   StyledIndicator,
-  StyledDescription,
-  StyledHelperText,
   StyledConnector,
 };
