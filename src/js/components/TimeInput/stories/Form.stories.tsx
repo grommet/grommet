@@ -13,8 +13,7 @@ export const TimeForm = () => {
       <Form
         value={value}
         onChange={onChange}
-        onSubmit={({ value: nextValue }) => {
-          console.log(nextValue);
+        onSubmit={() => {
           setValue({ value: '' });
         }}
       >
