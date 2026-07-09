@@ -35,14 +35,6 @@ const PopupOption = styled.div`
     `${props.theme.global.edgeSize.xxsmall} ${props.theme.global.edgeSize.xsmall}`};
   border-radius: ${(props) => props.theme.global.control?.border?.radius};
   background: ${(props) => {
-    if (props.$disabled) {
-      return normalizeColor(
-        props.theme.timeInput?.popup?.option?.disabled?.background ||
-          'transparent',
-        props.theme,
-      );
-    }
-
     if (props.$selected) {
       return normalizeColor(
         props.theme.timeInput?.popup?.option?.selected?.background ||
@@ -67,14 +59,6 @@ const PopupOption = styled.div`
 
   &:hover {
     background: ${(props) => {
-      if (props.$disabled) {
-        return normalizeColor(
-          props.theme.timeInput?.popup?.option?.disabled?.background ||
-            'transparent',
-          props.theme,
-        );
-      }
-
       if (props.$selected) {
         return normalizeColor(
           props.theme.timeInput?.popup?.option?.selected?.hover?.background ||
@@ -153,7 +137,6 @@ const PopupColumn = ({
           tabIndex={selected && activeSection === section ? 0 : -1}
           $active={selected && activeSection === section}
           $selected={selected}
-          $disabled={false}
           onClick={() => {
             onSetSection(section);
             setSectionValue(section, option);

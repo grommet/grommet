@@ -123,6 +123,12 @@ const buildPlaceholder = (sectionOrder) =>
     })
     .join('');
 
+const normalizeStep = (step) => {
+  const parsed = Number(step);
+  if (!Number.isFinite(parsed) || parsed <= 0) return 1;
+  return Math.max(1, Math.floor(parsed));
+};
+
 const TimeInput = forwardRef(
   (
     {
@@ -172,6 +178,15 @@ const TimeInput = forwardRef(
     const [open, setOpen] = useState(false);
     const [iconFocused, setIconFocused] = useState(false);
     const [inputFocused, setInputFocused] = useState(false);
+
+    const normalizedMinuteStep = useMemo(
+      () => normalizeStep(minuteStep),
+      [minuteStep],
+    );
+    const normalizedSecondStep = useMemo(
+      () => normalizeStep(secondStep),
+      [secondStep],
+    );
 
     const handleInvalid = useCallback(() => {
       const error = formatMessage({ id: 'timeInput.invalidTime', messages });
@@ -246,8 +261,8 @@ const TimeInput = forwardRef(
     } = useSectionedTimeField({
       format,
       sectionOrder,
-      minuteStep,
-      secondStep,
+      minuteStep: normalizedMinuteStep,
+      secondStep: normalizedSecondStep,
       value,
       onCommit: (_nextSections, nextValue, shouldAccept) => {
         if (!nextValue) {
@@ -859,19 +874,19 @@ const TimeInput = forwardRef(
     const minuteOptions = useMemo(
       () =>
         Array.from(
-          { length: Math.ceil(60 / minuteStep) },
-          (_, index) => index * minuteStep,
+          { length: Math.ceil(60 / normalizedMinuteStep) },
+          (_, index) => index * normalizedMinuteStep,
         ).filter((valueAtIndex) => valueAtIndex < 60),
-      [minuteStep],
+      [normalizedMinuteStep],
     );
 
     const secondOptions = useMemo(
       () =>
         Array.from(
-          { length: Math.ceil(60 / secondStep) },
-          (_, index) => index * secondStep,
+          { length: Math.ceil(60 / normalizedSecondStep) },
+          (_, index) => index * normalizedSecondStep,
         ).filter((valueAtIndex) => valueAtIndex < 60),
-      [secondStep],
+      [normalizedSecondStep],
     );
 
     const ClockIcon = theme.timeInput?.icon?.clock || GrommetClockIcon;

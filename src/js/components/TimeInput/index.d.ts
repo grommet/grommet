@@ -1,9 +1,16 @@
 import * as React from 'react';
 
+import { ButtonType } from '../Button';
+import { DropType } from '../Drop';
+
 export interface TimeInputProps {
+  buttonProps?: ButtonType;
   defaultValue?: string;
   disabled?: boolean;
+  dropProps?: DropType;
   format?: '12' | '24';
+  focusIndicator?: boolean;
+  icon?: JSX.Element;
   id?: string;
   messages?: {
     activePeriodValue?: string;
@@ -20,9 +27,15 @@ export interface TimeInputProps {
   };
   minuteStep?: number;
   name?: string;
+  onAccept?: (value: string) => void;
   onChange?: (event: { value?: string }) => void;
   onClose?: () => void;
+  onError?: (error: string) => void;
+  onOpen?: () => void;
+  plain?: boolean;
   readOnly?: boolean;
+  secondStep?: number;
+  views?: Array<'hours' | 'minutes' | 'seconds' | 'meridiem'>;
   value?: string;
 }
 

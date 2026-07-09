@@ -904,4 +904,30 @@ describe('TimeInput', () => {
     await user.keyboard('{ArrowUp}');
     expect(input).toHaveValue('10:00:00');
   });
+
+  test('normalizes invalid step values to avoid crashes', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput
+          format="24"
+          defaultValue="10:00:00"
+          minuteStep={0}
+          secondStep={0}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+
+    await user.click(input);
+    await user.keyboard('{Home}{ArrowRight}');
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:01:00');
+
+    await user.keyboard('{ArrowRight}');
+    await user.keyboard('{ArrowUp}');
+    expect(input).toHaveValue('10:01:01');
+  });
 });
