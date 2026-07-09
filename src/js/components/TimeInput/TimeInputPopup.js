@@ -8,6 +8,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
+import { Text } from '../Text';
 import {
   pad,
   SECTION_HOUR,
@@ -17,12 +18,8 @@ import {
 } from './utils';
 
 const PopupColumnBox = styled(Box)`
-  width: ${(props) => props.theme.timeInput?.popup?.columnWidth};
-  max-height: ${(props) => props.theme.timeInput?.popup?.columnHeight};
-  overflow-y: auto;
   scrollbar-gutter: stable;
   scrollbar-width: thin;
-  flex: 0 0 ${(props) => props.theme.timeInput?.popup?.columnWidth};
 `;
 
 const PopupOption = styled.div`
@@ -32,37 +29,6 @@ const PopupOption = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${(props) => {
-    if (props.$disabled) {
-      return normalizeColor(
-        props.theme.timeInput?.popup?.option?.disabled?.color || 'text',
-        props.theme,
-      );
-    }
-
-    if (props.$selected) {
-      return normalizeColor(
-        props.theme.timeInput?.popup?.option?.selected?.color ||
-          props.theme.timeInput?.color ||
-          'text',
-        props.theme,
-      );
-    }
-
-    return normalizeColor(props.theme.timeInput?.color || 'text', props.theme);
-  }};
-  font-size: ${(props) =>
-    `${
-      props.theme.global.input.font.size
-        ? props.theme.text[props.theme.global.input.font.size]?.size ||
-          props.theme.global.input.font.size
-        : 'inherit'
-    }`};
-  line-height: ${(props) => props.theme.global.input.font.height || 'inherit'};
-  font-weight: ${(props) =>
-    props.$selected
-      ? props.theme.global.font?.weight?.medium
-      : props.theme.global.font?.weight?.normal};
   width: ${(props) => props.theme.timeInput?.popup?.optionWidth};
   min-height: ${(props) => props.theme.timeInput?.popup?.optionMinHeight};
   padding: ${(props) =>
@@ -146,8 +112,17 @@ const PopupColumn = ({
   section,
   sections,
   setSectionValue,
+  theme,
 }) => (
-  <PopupColumnBox role="listbox" aria-label={label} gap="xxsmall">
+  <PopupColumnBox
+    role="listbox"
+    aria-label={label}
+    gap="xxsmall"
+    width={theme.timeInput?.popup?.columnWidth}
+    height={theme.timeInput?.popup?.columnHeight}
+    overflow="auto"
+    flex="0 0 auto"
+  >
     {options.map((option) => {
       const key = optionKey(label, option);
       const selected =
@@ -155,6 +130,18 @@ const PopupColumn = ({
         (section === SECTION_MINUTE && sections.minute === option) ||
         (section === SECTION_SECOND && sections.second === option) ||
         (section === SECTION_PERIOD && sections.period === option);
+
+      const optionColor = (() => {
+        if (!selected) {
+          return theme.timeInput?.color || theme.global.colors.text || 'text';
+        }
+        return (
+          theme.timeInput?.popup?.option?.selected?.color ||
+          theme.timeInput?.color ||
+          theme.global.colors.text ||
+          'text'
+        );
+      })();
 
       return (
         <PopupOption
@@ -173,7 +160,13 @@ const PopupColumn = ({
           }}
           onFocus={() => onSetSection(section)}
         >
-          {section === SECTION_PERIOD ? option : pad(option)}
+          <Text
+            size={theme.global.input.font.size || 'small'}
+            weight={selected ? 'medium' : 'normal'}
+            color={optionColor}
+          >
+            {section === SECTION_PERIOD ? option : pad(option)}
+          </Text>
         </PopupOption>
       );
     })}
@@ -375,6 +368,7 @@ const TimeInputPopup = ({
               section={section}
               sections={sections}
               setSectionValue={setSectionValue}
+              theme={theme}
             />
           ),
         )}

@@ -75,10 +75,8 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
       props,
       'left',
     )}`};
-  pointer-events: auto;
   white-space: pre;
   overflow: hidden;
-  font-family: inherit;
   font-size: ${(props) =>
     `${
       props.theme.global.input.font.size
@@ -96,7 +94,6 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
 )`
   display: inline-flex;
   align-items: center;
-  pointer-events: auto;
   line-height: inherit;
   margin-inline: ${(props) =>
     props.$kind === 'colon'
