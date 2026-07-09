@@ -140,13 +140,6 @@ export const StepperIndicator = ({ stepId, isSubStep, isClickable }) => {
   );
 };
 
-export const StepperLabel = ({ stepId }) => {
-  const { steps } = useContext(StepperContext);
-  const step = steps.find((s) => s.id === stepId);
-  if (!step) return null;
-  return <span>{step.title}</span>;
-};
-
 export const StepperDescription = ({ stepId }) => {
   const { steps } = useContext(StepperContext);
   const step = steps.find((s) => s.id === stepId);

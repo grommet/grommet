@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { base } from '../../themes/base';
 
 import { StepperContext } from './StepperContext';
-import { StepperIndicator, getEffectiveState } from './StepperIndicator';
+import { StepperIndicator } from './StepperIndicator';
+import { StepperLabel } from './StepperLabel';
 import {
   StyledStepItem,
   StyledStepButton,
   StyledStepContent,
-  StyledLabelText,
   StyledDescription,
   StyledHelperText,
   StyledConnector,
@@ -63,7 +62,6 @@ export const StepperStep = ({
     step.children.some((c) => c.id === currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
   const isDisabled = step.status === 'disabled';
-  const effectiveState = getEffectiveState(step.status, isHighlighted);
   const isClickable = clickableSteps && !isDisabled;
   const isReadOnly = !clickableSteps;
 
@@ -148,13 +146,15 @@ export const StepperStep = ({
           isSubStep={isSubStep}
           hasDescription={!!step.description}
         >
-          <StyledLabelText
+          {/* <StyledLabelText
             effectiveState={effectiveState}
             direction={direction}
             isSubStep={isSubStep}
+            size={isSubStep ? 'xsmall' : 'small'}
           >
             {step.title}
-          </StyledLabelText>
+          </StyledLabelText> */}
+          <StepperLabel stepId={step.id} isSubStep={isSubStep} />
           {step.description && (
             <StyledDescription direction={direction}>
               {step.description}

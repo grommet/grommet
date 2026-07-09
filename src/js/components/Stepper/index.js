@@ -2,8 +2,8 @@ export { Stepper } from './Stepper';
 export { StepperContext, useStepper } from './StepperContext';
 export {
   StepperIndicator,
-  StepperLabel,
   StepperDescription,
   StepperError,
 } from './StepperIndicator';
+export { StepperLabel } from './StepperLabel';
 export { StepperStep } from './StepperStep';

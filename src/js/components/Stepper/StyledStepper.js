@@ -478,80 +478,6 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
   }
 `;
 
-const StyledLabelText = styled(Text).withConfig(styledComponentsConfig)`
-  ${(props) => {
-    const theme = getStepperTheme(props.theme);
-    const size = props.isSubStep ? 'xsmall' : 'small';
-    return css`
-      font-size: ${getTextMetric(theme, size, 'size')};
-      line-height: ${getTextMetric(theme, size, 'height')};
-    `;
-  }}
-  ${(props) => {
-    const theme = getStepperTheme(props.theme);
-    const { stepper } = theme;
-    switch (props.effectiveState) {
-      case 'current':
-      case 'current-completed':
-        return css`
-          font-weight: ${stepper?.current?.label?.weight || 'bold'};
-          color: ${normalizeColor(
-            stepper?.current?.label?.color || 'brand',
-            theme,
-          )};
-        `;
-      case 'error':
-        return css`
-          font-weight: ${stepper?.error?.label?.weight || 'normal'};
-          color: ${normalizeColor(
-            stepper?.error?.label?.color || 'text',
-            theme,
-          )};
-        `;
-      case 'current-error':
-        return css`
-          font-weight: ${stepper?.currentError?.label?.weight || 'bold'};
-          color: ${normalizeColor(
-            stepper?.currentError?.label?.color || 'brand',
-            theme,
-          )};
-        `;
-      case 'completed':
-        return css`
-          font-weight: ${stepper?.completed?.label?.weight || 'normal'};
-          color: ${normalizeColor(
-            stepper?.completed?.label?.color || 'text-weak',
-            theme,
-          )};
-        `;
-      case 'disabled':
-        return css`
-          font-weight: ${stepper?.disabled?.label?.weight || 'normal'};
-          color: ${normalizeColor(
-            stepper?.disabled?.label?.color || 'text-weak',
-            theme,
-          )};
-        `;
-      default:
-        return css`
-          font-weight: ${stepper?.pending?.label?.weight || 'normal'};
-          color: ${normalizeColor(
-            stepper?.pending?.label?.color || 'text',
-            theme,
-          )};
-        `;
-    }
-  }}
-  ${(props) =>
-    props.direction === 'horizontal' &&
-    css`
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 100%;
-    `}
-`;
-
 const StyledDescription = styled(Text).withConfig(styledComponentsConfig)`
   ${(props) => {
     const theme = getStepperTheme(props.theme);
@@ -638,7 +564,6 @@ export {
   StyledStepButton,
   StyledStepContent,
   StyledIndicator,
-  StyledLabelText,
   StyledDescription,
   StyledHelperText,
   StyledConnector,

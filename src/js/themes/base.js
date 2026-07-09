@@ -2387,6 +2387,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           weight: 'normal',
         },
       },
+      currentCompleted: {
+        indicator: {
+          background: 'brand',
+          color: 'white',
+          border: 'brand',
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+          weight: 'normal',
+        },
+      },
       completed: {
         indicator: {
           background: 'background-front',
