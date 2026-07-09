@@ -7,11 +7,11 @@ import { base } from '../../themes/base';
 import { StepperContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
+import { StepperDescription } from './StepperDescription';
 import {
   StyledStepItem,
   StyledStepButton,
   StyledStepContent,
-  StyledDescription,
   StyledHelperText,
   StyledConnector,
 } from './StyledStepper';
@@ -155,11 +155,7 @@ export const StepperStep = ({
             {step.title}
           </StyledLabelText> */}
           <StepperLabel stepId={step.id} isSubStep={isSubStep} />
-          {step.description && (
-            <StyledDescription direction={direction}>
-              {step.description}
-            </StyledDescription>
-          )}
+          {step.description && <StepperDescription stepId={step.id} />}
           {step.status === 'error' && step.errorMessage && (
             <StyledHelperText id={`stepper-error-${step.id}`} variant="error">
               {step.errorMessage}
