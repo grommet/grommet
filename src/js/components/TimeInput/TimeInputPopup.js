@@ -51,8 +51,14 @@ const PopupOption = styled.div`
 
     return normalizeColor(props.theme.timeInput?.color || 'text', props.theme);
   }};
-  font-size: ${(props) => props.theme.timeInput?.fontSize};
-  line-height: ${(props) => props.theme.timeInput?.lineHeight};
+  font-size: ${(props) =>
+    `${
+      props.theme.global.input.font.size
+        ? props.theme.text[props.theme.global.input.font.size]?.size ||
+          props.theme.global.input.font.size
+        : 'inherit'
+    }`};
+  line-height: ${(props) => props.theme.global.input.font.height || 'inherit'};
   font-weight: ${(props) =>
     props.$selected
       ? props.theme.global.font?.weight?.medium

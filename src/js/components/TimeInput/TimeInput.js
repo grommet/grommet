@@ -874,7 +874,6 @@ const TimeInput = forwardRef(
       [secondStep],
     );
 
-    const iconSize = theme.timeInput?.icon?.size;
     const ClockIcon = theme.timeInput?.icon?.clock || GrommetClockIcon;
     const {
       onFocus: onButtonFocus,
@@ -976,7 +975,7 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                icon={icon || <ClockIcon size={iconSize} />}
+                icon={icon || <ClockIcon />}
                 plain
                 disabled={disabled}
                 margin={{ right: theme.timeInput?.button?.margin }}
