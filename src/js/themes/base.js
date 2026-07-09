@@ -1093,10 +1093,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
               background: '#006750',
             },
           },
-          disabled: {
-            background: 'rgba(0, 0, 0, 0.04)',
-            color: 'rgba(0, 0, 0, 0.24)',
-          },
         },
       },
       icon: {
