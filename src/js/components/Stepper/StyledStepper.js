@@ -113,27 +113,6 @@ const getGlobalFocusStyles = (theme) => {
   `;
 };
 
-const StyledStepper = styled.ol.withConfig(styledComponentsConfig)`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  overflow: hidden;
-  ${(props) =>
-    props.direction === 'vertical'
-      ? css`
-          flex-direction: column;
-          height: 100%;
-          gap: ${getStepperTheme(props.theme)?.stepper?.vertical?.gap || '0'};
-        `
-      : css`
-          flex-direction: row;
-          align-items: flex-start;
-          gap: ${getStepperTheme(props.theme)?.stepper?.horizontal?.gap || '0'};
-        `}
-  ${(props) => getStepperTheme(props.theme)?.stepper?.container?.extend};
-`;
-
 const StyledStepItem = styled.li.withConfig(styledComponentsConfig)`
   display: flex;
   position: relative;
@@ -512,7 +491,6 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
 `;
 
 export {
-  StyledStepper,
   StyledStepItem,
   StyledStepButton,
   StyledStepContent,

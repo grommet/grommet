@@ -1005,6 +1005,7 @@ exports[`Components loads 1`] = `
     "_threadCount": 0,
   },
   "StepperDescription": [Function],
+  "StepperDisabledReason": [Function],
   "StepperError": [Function],
   "StepperIndicator": [Function],
   "StepperLabel": [Function],

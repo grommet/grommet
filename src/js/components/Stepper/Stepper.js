@@ -7,6 +7,7 @@ import React, {
   useState,
 } from 'react';
 
+import { Box } from '../Box';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -15,7 +16,6 @@ import { Keyboard } from '../Keyboard';
 
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
-import { StyledStepper } from './StyledStepper';
 import { StepperPropTypes } from './propTypes';
 
 // Flattens steps with parent/child relationships into a linear list
@@ -51,7 +51,7 @@ const Stepper = forwardRef(
     {
       steps = [],
       currentStep,
-      direction = 'horizontal',
+      direction: directionProp = 'horizontal',
       clickableSteps = true,
       onStepClick,
       'aria-label': ariaLabel,
@@ -73,12 +73,14 @@ const Stepper = forwardRef(
     const hasSubSteps = steps.some(
       (step) => step.children && step.children.length > 0,
     );
-    const effectiveDirection =
-      hasSubSteps && direction === 'horizontal' ? 'vertical' : direction;
+    const direction =
+      hasSubSteps && directionProp === 'horizontal'
+        ? 'vertical'
+        : directionProp;
 
     // Warn in dev about invalid state
     if (process.env.NODE_ENV !== 'production') {
-      if (hasSubSteps && direction === 'horizontal') {
+      if (hasSubSteps && directionProp === 'horizontal') {
         console.warn(
           'Stepper: horizontal direction with sub-steps is not supported. ' +
             'Falling back to vertical.',
@@ -167,7 +169,7 @@ const Stepper = forwardRef(
       () => ({
         currentStep: effectiveCurrentStep,
         steps: flatSteps,
-        direction: effectiveDirection,
+        direction,
         clickableSteps,
         onStepClick,
         stepIndex,
@@ -179,7 +181,7 @@ const Stepper = forwardRef(
       [
         effectiveCurrentStep,
         flatSteps,
-        effectiveDirection,
+        direction,
         clickableSteps,
         onStepClick,
         stepIndex,
@@ -228,7 +230,7 @@ const Stepper = forwardRef(
 
     const handleKeyDown = useCallback(
       (event) => {
-        const isHorizontal = effectiveDirection === 'horizontal';
+        const isHorizontal = direction === 'horizontal';
         switch (event.key) {
           case 'ArrowRight':
             if (isHorizontal) {
@@ -267,7 +269,7 @@ const Stepper = forwardRef(
         }
       },
       [
-        effectiveDirection,
+        direction,
         onNext,
         onPrevious,
         findFirstEnabledIndex,
@@ -312,7 +314,7 @@ const Stepper = forwardRef(
                   stepNumber={childFlatIndex + 1}
                   isLast={false}
                   showConnector={false}
-                  direction={effectiveDirection}
+                  direction={direction}
                   focusedIndex={focusedIndex}
                   index={childFlatIndex}
                   isSubStep
@@ -331,11 +333,11 @@ const Stepper = forwardRef(
             stepNumber={parentFlatIndex + 1}
             isLast={isLastParent}
             showConnector={
-              effectiveDirection === 'horizontal'
+              direction === 'horizontal'
                 ? false
                 : !isLastParent || !!childElements
             }
-            direction={effectiveDirection}
+            direction={direction}
             focusedIndex={focusedIndex}
             index={parentFlatIndex}
             isSubStep={false}
@@ -344,7 +346,7 @@ const Stepper = forwardRef(
             stepRefs={stepRefs}
           />,
         );
-        if (effectiveDirection === 'horizontal' && !isLastParent) {
+        if (direction === 'horizontal' && !isLastParent) {
           elements.push(
             <li
               key={`${step.id}-connector`}
@@ -390,10 +392,7 @@ const Stepper = forwardRef(
             </li>,
           );
         }
-        if (
-          effectiveDirection === 'vertical' &&
-          (!isLastParent || childElements)
-        ) {
+        if (direction === 'vertical' && (!isLastParent || childElements)) {
           const connectorColor = (() => {
             switch (step.status) {
               case 'completed':
@@ -450,21 +449,30 @@ const Stepper = forwardRef(
     };
 
     const stepperContent = (
-      <StyledStepper
+      <Box
         ref={ref}
+        as="ol"
         aria-label={
           ariaLabel ||
           format({
             id: 'stepper.progress',
           })
         }
-        direction={effectiveDirection}
+        direction={direction === 'horizontal' ? 'row' : 'column'}
+        fill={direction}
         id={id}
-        theme={theme}
+        overflow="hidden"
+        gap={{
+          row: theme.stepper?.horizontal?.gap,
+          column: theme.stepper?.vertical?.gap,
+        }}
+        pad="none"
+        margin="none"
+        style={{ listStyle: 'none' }}
         {...rest}
       >
         {children || renderDefaultSteps()}
-      </StyledStepper>
+      </Box>
     );
 
     return (

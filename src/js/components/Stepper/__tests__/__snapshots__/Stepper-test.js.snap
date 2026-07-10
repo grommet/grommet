@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Stepper renders horizontal steps 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  padding: 0px;
+  overflow: hidden;
+  gap: 0 0;
+}
+
 .c6 {
   display: inline-block;
   flex: 0 0 auto;
@@ -63,17 +77,6 @@ exports[`Stepper renders horizontal steps 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  overflow: hidden;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: medium;
 }
 
 .c2 {
@@ -165,13 +168,25 @@ exports[`Stepper renders horizontal steps 1`] = `
   color: #000000;
 }
 
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
 <div
   class="c0"
 >
   <ol
     aria-label="Progress"
     class="c1"
-    direction="horizontal"
+    style="list-style: none;"
   >
     <li
       class="c2"
@@ -290,6 +305,20 @@ exports[`Stepper renders horizontal steps 1`] = `
 `;
 
 exports[`Stepper renders outside Grommet wrapper 1`] = `
+.c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  padding: 0px;
+  overflow: hidden;
+  gap: 0 0;
+}
+
 .c5 {
   display: inline-block;
   flex: 0 0 auto;
@@ -342,17 +371,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   text-overflow: ellipsis;
   color: #444444;
   font-weight: normal;
-}
-
-.c0 {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  overflow: hidden;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: medium;
 }
 
 .c1 {
@@ -444,10 +462,22 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   color: #000000;
 }
 
+@media only screen and (max-width: 768px) {
+  .c0 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    padding: 0px;
+  }
+}
+
 <ol
   aria-label="Progress"
   class="c0"
-  direction="horizontal"
+  style="list-style: none;"
 >
   <li
     class="c1"
@@ -565,6 +595,20 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 `;
 
 exports[`Stepper renders vertical steps 1`] = `
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+  padding: 0px;
+  overflow: hidden;
+  gap: 0 0;
+}
+
 .c10 {
   display: inline-block;
   flex: 0 0 auto;
@@ -619,17 +663,6 @@ exports[`Stepper renders vertical steps 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
-  height: 100%;
-  gap: medium;
 }
 
 .c2 {
@@ -729,13 +762,25 @@ exports[`Stepper renders vertical steps 1`] = `
   background: rgba(0, 0, 0, 0.33);
 }
 
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
 <div
   class="c0"
 >
   <ol
     aria-label="Progress"
     class="c1"
-    direction="vertical"
+    style="list-style: none;"
   >
     <li
       class="c2"

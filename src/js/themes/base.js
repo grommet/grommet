@@ -2350,10 +2350,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { top: 'xsmall' },
       },
       horizontal: {
-        gap: 'medium',
+        gap: 0,
       },
       vertical: {
-        gap: 'medium',
+        gap: 0,
       },
       icons: {
         completed: FormCheckmark,
