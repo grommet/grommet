@@ -1057,7 +1057,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       color: 'text',
       container: {
-        round: 'xxsmall',
+        round: '2px',
       },
       active: {
         background: 'active-background',
@@ -1065,14 +1065,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'black',
           size: 'small',
         },
-        round: 'xxsmall',
+        round: 'small',
       },
       placeholder: {
         color: 'placeholder',
       },
       separator: {
-        gap: '4px',
-        periodGap: '4px',
+        gap: 'medium',
+        periodGap: 'medium',
       },
       popup: {
         width: 'fit-content',

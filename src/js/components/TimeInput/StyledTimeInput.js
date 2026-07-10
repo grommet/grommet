@@ -1,9 +1,7 @@
-/* eslint-disable max-len */
 import styled from 'styled-components';
 
 import {
   disabledStyle,
-  focusStyle,
   getInputPadBySide,
   inputStyle,
   normalizeColor,
@@ -19,9 +17,6 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
 })`
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
-  &:focus-within {
-    ${(props) => props.focusIndicator && focusStyle({ justBorder: true })}
-  }
 `;
 
 export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
@@ -95,11 +90,21 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
   display: inline-flex;
   align-items: center;
   line-height: inherit;
-  margin-inline: ${(props) =>
-    props.$kind === 'colon'
-      ? props.theme.timeInput?.separator?.gap ||
-        props.theme.global.edgeSize.xxsmall
-      : props.theme.timeInput?.separator?.periodGap || '0'};
+  margin-inline: ${(props) => {
+    const gapToken =
+      props.$kind === 'colon'
+        ? props.theme.timeInput?.separator?.gap
+        : props.theme.timeInput?.separator?.periodGap;
+
+    return (
+      props.theme.global.borderSize?.[gapToken] ||
+      props.theme.global.edgeSize?.[gapToken] ||
+      gapToken ||
+      (props.$kind === 'colon'
+        ? props.theme.global.edgeSize.xxsmall
+        : props.theme.global.edgeSize.none)
+    );
+  }};
   color: ${(props) =>
     normalizeColor(
       props.$filled
@@ -115,6 +120,7 @@ export const StyledTimeInputSegment = styled.span.withConfig(
 )`
   display: inline-flex;
   align-items: center;
+  position: relative;
   pointer-events: auto;
   line-height: inherit;
   color: ${(props) =>
@@ -125,22 +131,58 @@ export const StyledTimeInputSegment = styled.span.withConfig(
             props.theme.global.colors.placeholder,
       props.theme,
     )};
-  background: ${(props) => {
-    if (!props.$active) return 'transparent';
+  background-color: transparent;
+  box-shadow: none;
 
-    const activeBackground = normalizeColor(
-      props.theme.timeInput?.active?.background || 'active-background',
-      props.theme,
-    );
-    const activeBorderColor = normalizeColor(
-      props.theme.timeInput?.active?.border?.color || 'focus',
-      props.theme,
-    );
-    const activeBorderSize =
-      props.theme.timeInput?.active?.border?.size || '2px';
+  ${(props) =>
+    props.$active &&
+    `
+      ${(() => {
+        const activeRoundToken = props.theme.timeInput?.active?.round;
+        const activeRound =
+          props.theme.global.borderSize?.[activeRoundToken] ||
+          props.theme.global.radius?.[activeRoundToken] ||
+          props.theme.global.edgeSize?.[activeRoundToken] ||
+          activeRoundToken ||
+          props.theme.global.borderSize.small;
 
-    return `linear-gradient(${activeBorderColor}, ${activeBorderColor}) bottom / 100% ${activeBorderSize} no-repeat, ${activeBackground}`;
-  }};
-  border-radius: ${(props) =>
-    props.theme.timeInput?.active?.round || '2px 2px 0 0'};
+        const activeBorderToken = props.theme.timeInput?.active?.border?.size;
+        const activeBorderSize =
+          props.theme.global.borderSize?.[activeBorderToken] ||
+          props.theme.global.edgeSize?.[activeBorderToken] ||
+          activeBorderToken ||
+          props.theme.global.borderSize.small;
+
+        return `
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: ${normalizeColor(
+          props.theme.timeInput?.active?.background || 'active-background',
+          props.theme,
+        )};
+        border-top-left-radius: ${activeRound};
+        border-top-right-radius: ${activeRound};
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: ${activeBorderSize};
+        background-color: ${normalizeColor(
+          props.theme.timeInput?.active?.border?.color || 'focus',
+          props.theme,
+        )};
+        border-bottom-left-radius: ${activeRound};
+        border-bottom-right-radius: ${activeRound};
+      }
+        `;
+      })()}
+    `};
 `;
