@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
   disabledStyle,
+  focusStyle,
   getInputPadBySide,
   inputStyle,
   normalizeColor,
@@ -17,6 +18,13 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
 })`
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
+  ${(props) =>
+    props.focusIndicator !== false &&
+    css`
+      &:focus-within {
+        ${focusStyle()}
+      }
+    `}
 `;
 
 export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`

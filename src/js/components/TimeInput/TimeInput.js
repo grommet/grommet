@@ -132,26 +132,15 @@ const normalizeStep = (step) => {
 const TimeInput = forwardRef(
   (
     {
-      buttonProps,
       defaultValue,
       disabled,
-      dropProps,
       format = '24',
-      focusIndicator = true,
-      icon,
       id,
       messages,
       minuteStep = 1,
       name,
-      onAccept,
       onChange,
-      onClose,
-      onError,
-      onOpen,
-      plain,
       readOnly = false,
-      secondStep = 1,
-      views,
       value: valueArg,
       ...rest
     },
@@ -179,20 +168,23 @@ const TimeInput = forwardRef(
     const [iconFocused, setIconFocused] = useState(false);
     const [inputFocused, setInputFocused] = useState(false);
 
+    const {
+      // Keep internal visual parity with TextInput/Form behavior while
+      // maintaining the agreed external TimeInput API surface.
+      plain: plainProp,
+      focusIndicator: focusIndicatorProp,
+      ...inputRest
+    } = rest;
+
     const normalizedMinuteStep = useMemo(
       () => normalizeStep(minuteStep),
       [minuteStep],
     );
-    const normalizedSecondStep = useMemo(
-      () => normalizeStep(secondStep),
-      [secondStep],
-    );
 
     const handleInvalid = useCallback(() => {
       const error = formatMessage({ id: 'timeInput.invalidTime', messages });
-      onError?.(error);
       announce(error, 'assertive');
-    }, [announce, formatMessage, messages, onError]);
+    }, [announce, formatMessage, messages]);
 
     const announceCurrentValue = useCallback(
       (nextSections) => {
@@ -237,10 +229,7 @@ const TimeInput = forwardRef(
       [announce, format, formatMessage, messages],
     );
 
-    const sectionOrder = useMemo(
-      () => getSectionOrder(format, views),
-      [format, views],
-    );
+    const sectionOrder = useMemo(() => getSectionOrder(format), [format]);
 
     const firstSection = sectionOrder[0] || SECTION_HOUR;
     const lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_HOUR;
@@ -262,9 +251,8 @@ const TimeInput = forwardRef(
       format,
       sectionOrder,
       minuteStep: normalizedMinuteStep,
-      secondStep: normalizedSecondStep,
       value,
-      onCommit: (_nextSections, nextValue, shouldAccept) => {
+      onCommit: (_nextSections, nextValue) => {
         if (!nextValue) {
           setValue('');
           onChange?.({ value: undefined });
@@ -274,7 +262,6 @@ const TimeInput = forwardRef(
         setValue(nextValue);
         onChange?.({ value: nextValue });
         announceCurrentValue(_nextSections);
-        if (shouldAccept) onAccept?.(nextValue);
       },
       onInvalid: handleInvalid,
     });
@@ -577,7 +564,6 @@ const TimeInput = forwardRef(
       if (disabled || readOnly) return;
       setActiveSection(firstSection);
       setOpen(true);
-      onOpen?.();
       announce(formatMessage({ id: 'timeInput.enterPicker', messages }));
       announceActiveSection(firstSection);
     }, [
@@ -587,22 +573,20 @@ const TimeInput = forwardRef(
       firstSection,
       formatMessage,
       messages,
-      onOpen,
       readOnly,
       setActiveSection,
     ]);
 
     const closePicker = useCallback(() => {
       setOpen(false);
-      onClose?.();
       requestAnimationFrame(() => inputRef.current?.focus());
       announce(formatMessage({ id: 'timeInput.exitPicker', messages }));
-    }, [announce, formatMessage, messages, onClose, inputRef]);
+    }, [announce, formatMessage, messages, inputRef]);
 
     const onInputFocus = (event) => {
       setInputFocused(true);
       if (readOnly) {
-        if (rest.onFocus) rest.onFocus(event);
+        if (inputRest.onFocus) inputRest.onFocus(event);
         return;
       }
 
@@ -615,21 +599,21 @@ const TimeInput = forwardRef(
             : activeSection;
         setActiveSection(clickedSection);
         selectSectionText(clickedSection);
-        if (rest.onFocus) rest.onFocus(event);
+        if (inputRest.onFocus) inputRest.onFocus(event);
         return;
       }
 
       setActiveSection(firstSection);
       selectSectionText(firstSection);
       announce(formatMessage({ id: 'timeInput.openPicker', messages }));
-      if (rest.onFocus) rest.onFocus(event);
+      if (inputRest.onFocus) inputRest.onFocus(event);
       announceActiveSection(firstSection);
     };
 
     const onInputBlur = (event) => {
       clearDisplayMouseDownSession();
       setInputFocused(false);
-      if (rest.onBlur) rest.onBlur(event);
+      if (inputRest.onBlur) inputRest.onBlur(event);
     };
 
     const onInputClick = (event) => {
@@ -818,10 +802,7 @@ const TimeInput = forwardRef(
       if (key === 'Enter') {
         event.preventDefault();
         if (open) {
-          if (value) onAccept?.(value);
           closePicker();
-        } else if (value) {
-          onAccept?.(value);
         }
         return;
       }
@@ -881,20 +862,10 @@ const TimeInput = forwardRef(
     );
 
     const secondOptions = useMemo(
-      () =>
-        Array.from(
-          { length: Math.ceil(60 / normalizedSecondStep) },
-          (_, index) => index * normalizedSecondStep,
-        ).filter((valueAtIndex) => valueAtIndex < 60),
-      [normalizedSecondStep],
+      () => Array.from({ length: 60 }, (_, index) => index),
+      [],
     );
 
-    const ClockIcon = theme.timeInput?.icon?.clock || GrommetClockIcon;
-    const {
-      onFocus: onButtonFocus,
-      onBlur: onButtonBlur,
-      ...restButtonProps
-    } = buttonProps || {};
     const showActiveSection = (inputFocused || open) && !readOnly && !disabled;
 
     return (
@@ -903,12 +874,15 @@ const TimeInput = forwardRef(
           <StyledTimeInputContainer
             ref={containerRef}
             direction="row"
-            border={!plain}
+            border={!plainProp}
             fill
-            round={theme.timeInput?.container?.round}
+            round={
+              theme.global?.control?.border?.radius ||
+              theme.timeInput?.container?.round
+            }
             disabled={disabled}
             readOnlyProp={readOnly}
-            focusIndicator={focusIndicator && !iconFocused}
+            focusIndicator={(focusIndicatorProp ?? true) && !iconFocused}
             {...passThemeFlag}
           >
             <StyledTimeInputField {...passThemeFlag}>
@@ -950,7 +924,7 @@ const TimeInput = forwardRef(
                 )}
               </StyledTimeInputDisplay>
               <StyledTimeInput
-                {...rest}
+                {...inputRest}
                 id={id}
                 ref={inputRef}
                 value={inputValue}
@@ -990,7 +964,7 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                icon={icon || <ClockIcon />}
+                icon={<GrommetClockIcon />}
                 plain
                 disabled={disabled}
                 margin={{ right: theme.timeInput?.button?.margin }}
@@ -1001,17 +975,14 @@ const TimeInput = forwardRef(
                 aria-haspopup="dialog"
                 aria-expanded={open}
                 aria-controls={id ? `${id}__drop` : undefined}
-                onFocus={(event) => {
+                onFocus={() => {
                   setIconFocused(true);
                   setInputFocused(false);
-                  onButtonFocus?.(event);
                 }}
-                onBlur={(event) => {
+                onBlur={() => {
                   setIconFocused(false);
-                  onButtonBlur?.(event);
                 }}
                 onClick={open ? closePicker : openPicker}
-                {...restButtonProps}
               />
             )}
           </StyledTimeInputContainer>
@@ -1019,7 +990,7 @@ const TimeInput = forwardRef(
             <TimeInputPopup
               activeSection={activeSection}
               align={{ top: 'bottom', left: 'left' }}
-              dropProps={{ stretch: false, ...dropProps }}
+              dropProps={{ stretch: false }}
               format={format}
               hoursOptions={hoursOptions}
               id={id}
@@ -1028,9 +999,6 @@ const TimeInput = forwardRef(
               minuteOptions={minuteOptions}
               moveSection={moveSection}
               sectionOrder={sectionOrder}
-              onAccept={() => {
-                if (value) onAccept?.(value);
-              }}
               onClose={closePicker}
               onFocusLeave={closePicker}
               secondOptions={secondOptions}

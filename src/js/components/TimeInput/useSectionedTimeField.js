@@ -108,7 +108,6 @@ export const useSectionedTimeField = ({
   format,
   sectionOrder,
   minuteStep = 1,
-  secondStep = 1,
   value,
   onCommit,
   onInvalid,
@@ -167,7 +166,7 @@ export const useSectionedTimeField = ({
   }, [sectionOrder, sections, pendingDigits]);
 
   const commitSections = useCallback(
-    (nextSections, shouldAccept = false) => {
+    (nextSections) => {
       setSections(nextSections);
 
       const complete = sectionOrder.every(
@@ -197,16 +196,16 @@ export const useSectionedTimeField = ({
       const hasIncompleteSections = !complete || !allValid;
       preserveIncompleteSectionsRef.current =
         hasIncompleteSections && hasAnyValue(nextSections);
-      onCommit(nextSections, nextValue, shouldAccept);
+      onCommit(nextSections, nextValue);
     },
     [onCommit, sectionOrder, format],
   );
 
   const setSectionValue = useCallback(
-    (section, rawValue, shouldAccept = false) => {
+    (section, rawValue) => {
       const key = sectionKey(section);
       const next = { ...sections, [key]: rawValue };
-      commitSections(next, shouldAccept);
+      commitSections(next);
     },
     [commitSections, sections],
   );
@@ -241,7 +240,7 @@ export const useSectionedTimeField = ({
         section === SECTION_MINUTE
           ? minuteStep
           : section === SECTION_SECOND
-          ? secondStep
+          ? 1
           : 1;
 
       let next;
@@ -280,7 +279,7 @@ export const useSectionedTimeField = ({
 
       setSectionValue(section, next);
     },
-    [format, minuteStep, secondStep, sections, setSectionValue],
+    [format, minuteStep, sections, setSectionValue],
   );
 
   const applyDigit = useCallback(
