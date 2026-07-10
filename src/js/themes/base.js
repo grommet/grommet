@@ -28,6 +28,8 @@ import { parseMetricToNum } from '../utils/mixins';
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
+const selectedPrimaryStrongColor = '#068667';
+const selectedPrimaryStrongHoverColor = '#006750';
 const statusColors = {
   critical: '#EB0000',
   error: '#B30000',
@@ -110,6 +112,8 @@ const colors = {
   },
   'selected-background': 'brand',
   'selected-text': 'text-strong',
+  'selected-primary-strong': selectedPrimaryStrongColor,
+  'selected-primary-strong-hover': selectedPrimaryStrongHoverColor,
   white: '#FFFFFF',
 };
 
@@ -1080,15 +1084,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         optionWidth: '46px',
         optionMinHeight: '34px',
         option: {
-          background: 'transparent',
           hover: {
-            background: 'rgba(0, 0, 0, 0.04)',
+            background: 'active-background',
           },
           selected: {
-            background: '#068667',
+            background: 'selected-primary-strong',
             color: 'white',
             hover: {
-              background: '#006750',
+              background: 'selected-primary-strong-hover',
             },
           },
         },
