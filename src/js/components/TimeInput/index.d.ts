@@ -21,7 +21,6 @@ export interface TimeInputProps {
   minuteStep?: number;
   name?: string;
   onChange?: (event: { value?: string }) => void;
-  onClose?: () => void;
   readOnly?: boolean;
   value?: string;
 }
