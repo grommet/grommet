@@ -1062,10 +1062,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       active: {
         background: 'active-background',
         border: {
-          color: 'focus',
-          size: '2px',
+          color: 'black',
+          size: 'small',
         },
-        round: '2px 2px 0 0',
+        round: 'xxsmall',
       },
       placeholder: {
         color: 'placeholder',
