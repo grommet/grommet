@@ -93,10 +93,6 @@ export const decorators = [
       context.parameters?.docs?.source?.source,
     ]);
 
-    const renderStory = (themeName = activeTheme) => (
-      <Story state={THEMES[themeName]} />
-    );
-
     /**
      * This demonstrates that custom themed stories are driven off the "base"
      * theme. Custom themed stories will live under a "CustomThemed" directory.
@@ -108,7 +104,11 @@ export const decorators = [
       // if we are running the story in chromatic we want the chromatic snapshot
       // to be taken in the base theme for custom theme stories
       if (isChromatic()) {
-        return <Grommet theme={THEMES.base}>{renderStory('base')}</Grommet>;
+        return (
+          <Grommet theme={THEMES.base}>
+            <Story />
+          </Grommet>
+        );
       }
       return (
         <Box align="center" pad="large">
@@ -117,7 +117,9 @@ export const decorators = [
                 "base" theme mode. To enable, select "base" from the
                 Theme menu above.`}
           </Text>
-          <div hidden>{renderStory()}</div>
+          <div hidden>
+            <Story />
+          </div>
         </Box>
       );
     }
@@ -135,7 +137,7 @@ export const decorators = [
                 options={options}
                 containerTarget={rootRef.shadowRoot}
               >
-                {renderStory()}
+                <Story />
               </Grommet>
             </StyleSheetManager>
           )}
@@ -150,7 +152,7 @@ export const decorators = [
         dir={dir}
         options={options}
       >
-        {renderStory()}
+        <Story />
       </Grommet>
     );
   },
