@@ -1,16 +1,16 @@
 import React from 'react';
 import { Text } from '../Text';
-import { useStepper } from './StepperContext';
+import { useStepper, useStepItem } from './StepperContext';
 import { getEffectiveState } from './StepperIndicator';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const getStateProps = (theme, effectiveState) =>
   theme.stepper?.[effectiveState]?.label || {};
 
-export const StepperLabel = ({ stepId, isSubStep, ...rest }) => {
-  const { currentStep, direction, steps } = useStepper();
+export const StepperLabel = ({ ...rest }) => {
+  const { currentStep, direction } = useStepper();
   const { theme } = useThemeValue();
-  const step = steps.find((s) => s.id === stepId);
+  const { step, isSubStep } = useStepItem();
   if (!step) return null;
 
   const isCurrent = currentStep === step.id;

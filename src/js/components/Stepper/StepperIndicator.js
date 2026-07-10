@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
@@ -6,7 +6,7 @@ import { Radial } from 'grommet-icons/icons/Radial';
 
 import { useThemeValue } from '../../utils/useThemeValue';
 
-import { StepperContext } from './StepperContext';
+import { useStepper, useStepItem } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
 
 const getIconMetric = (theme, sizeToken, fallback) =>
@@ -49,14 +49,14 @@ function getEffectiveState(status, isCurrent) {
   return 'pending';
 }
 
-export const StepperIndicator = ({ stepId, isSubStep, isClickable }) => {
-  const { currentStep, steps } = useContext(StepperContext);
+export const StepperIndicator = ({ isClickable }) => {
+  const { currentStep } = useStepper();
   const { theme } = useThemeValue();
 
-  const step = steps.find((s) => s.id === stepId);
+  const { step, isSubStep } = useStepItem();
   if (!step) return null;
 
-  const isCurrent = currentStep === stepId;
+  const isCurrent = currentStep === step.id;
   const hasCurrentChild =
     !isSubStep &&
     step.childIds &&
@@ -137,17 +137,6 @@ export const StepperIndicator = ({ stepId, isSubStep, isClickable }) => {
     >
       {renderContent()}
     </StyledIndicator>
-  );
-};
-
-export const StepperError = ({ stepId }) => {
-  const { steps } = useContext(StepperContext);
-  const step = steps.find((s) => s.id === stepId);
-  if (!step || step.status !== 'error' || !step.errorMessage) return null;
-  return (
-    <span id={`stepper-error-${stepId}`} role="alert">
-      {step.errorMessage}
-    </span>
   );
 };
 

@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { ThemeContext } from 'styled-components';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { base } from '../../themes/base';
 
-import { StepperContext } from './StepperContext';
+import { useStepper, StepItemContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
 import { StepperDescription } from './StepperDescription';
-import { StepperHelperText } from './StepperHelperText';
+import { StepperError, StepperDisabledReason } from './StepperHelperText';
 import {
   StyledStepItem,
   StyledStepButton,
@@ -43,17 +43,20 @@ export const StepperStep = ({
   showConnector,
   direction,
   focusedIndex,
-  index,
+  index: indexProp,
   isSubStep,
   onFocusStep,
   stepsRef,
   stepRefs,
 }) => {
-  const { currentStep, clickableSteps, onStepClick } =
-    useContext(StepperContext);
+  const { currentStep, clickableSteps, onStepClick, steps } = useStepper();
   const { format } = useContext(MessageContext);
   const theme = useContext(ThemeContext) || base;
 
+  const index =
+    indexProp !== undefined
+      ? indexProp
+      : steps.findIndex((s) => s.id === step.id);
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
     !isSubStep &&
@@ -64,6 +67,17 @@ export const StepperStep = ({
   const isDisabled = step.status === 'disabled';
   const isClickable = clickableSteps && !isDisabled;
   const isReadOnly = !clickableSteps;
+
+  const stepItemValue = useMemo(
+    () => ({
+      step,
+      index,
+      isLast,
+      isLabelRevealed: direction === 'vertical' || focusedIndex === index,
+      isSubStep,
+    }),
+    [step, index, isLast, direction, focusedIndex, isSubStep],
+  );
 
   const handleClick = () => {
     if (isClickable && onStepClick) {
@@ -113,72 +127,50 @@ export const StepperStep = ({
       };
 
   return (
-    <StyledStepItem direction={direction} isSubStep={isSubStep}>
-      <StyledStepButton
-        as={isReadOnly ? 'div' : 'button'}
-        role={isReadOnly ? 'group' : undefined}
-        ref={(el) => {
-          if (stepRefs) {
-            if (el) stepRefs.current.set(index, el);
-            else stepRefs.current.delete(index);
+    <StepItemContext.Provider value={stepItemValue}>
+      <StyledStepItem direction={direction} isSubStep={isSubStep}>
+        <StyledStepButton
+          as={isReadOnly ? 'div' : 'button'}
+          role={isReadOnly ? 'group' : undefined}
+          ref={(el) => {
+            if (stepRefs) {
+              if (el) stepRefs.current.set(index, el);
+              else stepRefs.current.delete(index);
+            }
+          }}
+          aria-current={isHighlighted ? 'step' : undefined}
+          aria-disabled={isDisabled || undefined}
+          aria-label={ariaLabel}
+          aria-describedby={
+            describedBy.length > 0 ? describedBy.join(' ') : undefined
           }
-        }}
-        aria-current={isHighlighted ? 'step' : undefined}
-        aria-disabled={isDisabled || undefined}
-        aria-label={ariaLabel}
-        aria-describedby={
-          describedBy.length > 0 ? describedBy.join(' ') : undefined
-        }
-        isClickable={isClickable}
-        isDisabled={isDisabled}
-        isSubStep={isSubStep}
-        direction={direction}
-        {...focusableProps}
-      >
-        <StepperIndicator
-          stepId={step.id}
-          stepNumber={stepNumber}
-          isSubStep={isSubStep}
           isClickable={isClickable}
-        />
-        <StyledStepContent
-          direction={direction}
+          isDisabled={isDisabled}
           isSubStep={isSubStep}
-          hasDescription={!!step.description}
+          direction={direction}
+          {...focusableProps}
         >
-          {/* <StyledLabelText
-            effectiveState={effectiveState}
+          <StepperIndicator stepNumber={stepNumber} isClickable={isClickable} />
+          <StyledStepContent
             direction={direction}
             isSubStep={isSubStep}
-            size={isSubStep ? 'xsmall' : 'small'}
+            hasDescription={!!step.description}
           >
-            {step.title}
-          </StyledLabelText> */}
-          <StepperLabel stepId={step.id} isSubStep={isSubStep} />
-          {step.description && <StepperDescription stepId={step.id} />}
-          {step.status === 'error' && step.errorMessage && (
-            <StepperHelperText id={`stepper-error-${step.id}`} variant="error">
-              {step.errorMessage}
-            </StepperHelperText>
-          )}
-          {step.status === 'disabled' && step.disabledReason && (
-            <StepperHelperText
-              id={`stepper-reason-${step.id}`}
-              variant="disabled"
-            >
-              {step.disabledReason}
-            </StepperHelperText>
-          )}
-        </StyledStepContent>
-      </StyledStepButton>
-      {(showConnector !== undefined ? showConnector : !isLast) && (
-        <StyledConnector
-          direction={direction}
-          connectorColor={getConnectorColor(step.status, theme)}
-          isSubStep={isSubStep}
-          aria-hidden="true"
-        />
-      )}
-    </StyledStepItem>
+            <StepperLabel />
+            <StepperDescription />
+            <StepperError />
+            <StepperDisabledReason />
+          </StyledStepContent>
+        </StyledStepButton>
+        {(showConnector !== undefined ? showConnector : !isLast) && (
+          <StyledConnector
+            direction={direction}
+            connectorColor={getConnectorColor(step.status, theme)}
+            isSubStep={isSubStep}
+            aria-hidden="true"
+          />
+        )}
+      </StyledStepItem>
+    </StepItemContext.Provider>
   );
 };
