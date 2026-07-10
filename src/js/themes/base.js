@@ -1075,8 +1075,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         periodGap: 'medium',
       },
       popup: {
-        width: 'fit-content',
-        minHeight: '256px',
         columnWidth: '56px',
         columnHeight: '232px',
         optionWidth: '46px',
