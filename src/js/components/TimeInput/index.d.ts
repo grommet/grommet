@@ -12,11 +12,11 @@ export interface TimeInputProps {
     chooseTime?: string;
     currentValue12?: string;
     currentValue24?: string;
-    enterPicker?: string;
-    exitPicker?: string;
+    enterDrop?: string;
+    exitDrop?: string;
     inputLabel?: string;
     invalidTime?: string;
-    openPicker?: string;
+    open?: string;
   };
   minuteStep?: number;
   name?: string;

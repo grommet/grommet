@@ -564,7 +564,7 @@ const TimeInput = forwardRef(
       if (disabled || readOnly) return;
       setActiveSection(firstSection);
       setOpen(true);
-      announce(formatMessage({ id: 'timeInput.enterPicker', messages }));
+      announce(formatMessage({ id: 'timeInput.enterDrop', messages }));
       announceActiveSection(firstSection);
     }, [
       announce,
@@ -580,7 +580,7 @@ const TimeInput = forwardRef(
     const closePicker = useCallback(() => {
       setOpen(false);
       requestAnimationFrame(() => inputRef.current?.focus());
-      announce(formatMessage({ id: 'timeInput.exitPicker', messages }));
+      announce(formatMessage({ id: 'timeInput.exitDrop', messages }));
     }, [announce, formatMessage, messages, inputRef]);
 
     const onInputFocus = (event) => {
@@ -605,7 +605,7 @@ const TimeInput = forwardRef(
 
       setActiveSection(firstSection);
       selectSectionText(firstSection);
-      announce(formatMessage({ id: 'timeInput.openPicker', messages }));
+      announce(formatMessage({ id: 'timeInput.open', messages }));
       if (inputRest.onFocus) inputRest.onFocus(event);
       announceActiveSection(firstSection);
     };

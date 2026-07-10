@@ -222,9 +222,9 @@
     "chooseTime": "Choose time",
     "currentValue12": "Current time {hour}:{minute}:{second} {period}",
     "currentValue24": "Current time {hour}:{minute}:{second}",
-    "openPicker": "Press space or Alt+ArrowDown to open time input",
-    "enterPicker": "Time input is open",
-    "exitPicker": "Time input closed",
+    "open": "Press space or Alt+ArrowDown to open time input",
+    "enterDrop": "Time input is open",
+    "exitDrop": "Time input closed",
     "invalidTime": "Invalid time value"
   },
   "video": {
