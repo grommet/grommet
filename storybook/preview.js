@@ -86,11 +86,11 @@ export const decorators = [
     }, [
       context.id,
       activeTheme,
-      context.parameters?.sizeMapping.originalSourceCode,
-      context.parameters?.sizeMapping.hpeSourceCode,
-      context.parameters?.docs?.source.originalSource,
-      context.parameters?.docs?.source.code,
-      context.parameters?.docs?.source.source,
+      context.parameters?.sizeMapping?.originalSourceCode,
+      context.parameters?.sizeMapping?.hpeSourceCode,
+      context.parameters?.docs?.source?.originalSource,
+      context.parameters?.docs?.source?.code,
+      context.parameters?.docs?.source?.source,
     ]);
 
     const renderStory = (themeName = activeTheme) => (

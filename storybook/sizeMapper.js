@@ -3,14 +3,6 @@ const BORDER_PROPS = new Set(['border']);
 const CONTAINER_PROPS = new Set(['height', 'width', 'columns', 'rows']);
 const RADIUS_PROPS = new Set(['round']);
 
-const CONTAINER_SIZE_COMPONENTS = new Set([
-  'Meter',
-  'TableCell',
-  'Cards',
-  'DataChart',
-  'Chart',
-]);
-
 const SPACING_SIZE_COMPONENTS = new Set(['RangeSelector']);
 
 const TSHIRT_TOKENS = new Set([
@@ -65,9 +57,6 @@ const getMapForProp = (prop, context = {}) => {
   if (prop === 'size') {
     if (context.parentProp === 'border') return MAPS.border;
     if (SPACING_SIZE_COMPONENTS.has(context.componentName)) return MAPS.spacing;
-    if (CONTAINER_SIZE_COMPONENTS.has(context.componentName)) {
-      return MAPS.container;
-    }
     return MAPS.container;
   }
 
@@ -123,4 +112,5 @@ const createHpeCompatTheme = (hpeTheme = {}) => {
 module.exports = {
   createHpeCompatTheme,
   mapSizeToken,
+  SPACING_PROPS,
 };

@@ -1,13 +1,12 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { transformSync } = require('@babel/core');
-const { mapSizeToken } = require('./sizeMapper');
+const { mapSizeToken, SPACING_PROPS } = require('./sizeMapper');
 
 const PLUGIN_NAME = 'grommet-story-source-injector';
 const SOURCE_VAR = '__STORYBOOK_SOURCE_CODE__';
 const SOURCE_HPE_VAR = '__STORYBOOK_SOURCE_CODE_HPE__';
 const MERGE_VAR = '__withStorySource__';
 
-const SPACING_PROPS = new Set(['gap', 'margin', 'pad', 'thickness']);
 const STYLE_PROPS = new Set([
   'gap',
   'margin',
