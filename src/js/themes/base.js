@@ -14,6 +14,7 @@ import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
+import { Radial } from 'grommet-icons/icons/Radial';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
 import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
@@ -2355,10 +2356,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       vertical: {
         gap: 0,
       },
-      icons: {
-        completed: FormCheckmark,
-        error: StatusCriticalSmall,
-      },
       hover: {
         background: 'background-contrast',
         border: 'text-strong',
@@ -2372,15 +2369,24 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           background: 'background-front',
           color: 'text-strong',
           border: 'text-xweak',
+          substep: {
+            icon: Radial,
+            iconSize: 'xsmall',
+          },
         },
         label: { color: 'text', weight: 'normal' },
         connector: { color: 'border' },
       },
       current: {
         indicator: {
+          icon: StatusGoodSmall,
+          iconSize: 'medium',
           background: 'brand',
           color: 'white',
           border: 'brand',
+          substep: {
+            iconSize: 'xsmall',
+          },
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
@@ -2389,9 +2395,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       currentCompleted: {
         indicator: {
+          icon: FormCheckmark,
+          iconSize: 'medium',
           background: 'brand',
           color: 'white',
           border: 'brand',
+          substep: {
+            iconSize: 'xsmall',
+          },
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
@@ -2400,18 +2411,27 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       completed: {
         indicator: {
+          icon: FormCheckmark,
+          iconSize: 'medium',
           background: 'background-front',
           color: 'brand',
           border: 'brand',
+          substep: {
+            iconSize: 'xsmall',
+          },
         },
         label: { color: 'text-weak', weight: 'normal' },
         connector: { color: 'brand' },
       },
       error: {
         indicator: {
+          icon: StatusCriticalSmall,
           background: 'background-front',
           color: 'status-error',
           border: 'status-error',
+          substep: {
+            iconSize: 'xsmall',
+          },
         },
         label: { color: 'text', weight: 'normal' },
         connector: { color: 'status-error' },
@@ -2419,9 +2439,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       currentError: {
         indicator: {
+          icon: StatusCriticalSmall,
           background: 'status-error',
           color: 'white',
           border: 'status-error',
+          substep: {
+            iconSize: 'xsmall',
+          },
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
@@ -2433,6 +2457,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           background: 'background-contrast',
           color: 'text-weak',
           border: 'border',
+          substep: {
+            iconSize: 'xsmall',
+          },
         },
         label: { color: 'text-weak', weight: 'normal' },
         connector: { color: 'border' },

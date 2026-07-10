@@ -239,7 +239,7 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
     if (props.isSubStep) {
       switch (props.effectiveState) {
         case 'current':
-        case 'current-completed':
+        case 'currentCompleted':
         case 'completed':
           return css`
             color: ${normalizeColor(
@@ -248,7 +248,7 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
             )};
           `;
         case 'error':
-        case 'current-error':
+        case 'currentError':
           return css`
             color: ${normalizeColor(
               getIndicatorToken('error', 'border', 'status-error'),
@@ -272,100 +272,15 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
           `;
       }
     }
-    switch (props.effectiveState) {
-      case 'current':
-      case 'current-completed':
-        return css`
-          background: ${normalizeColor(
-            getIndicatorToken('current', 'background', 'brand'),
-            theme,
-          )};
-          color: ${normalizeColor(
-            getIndicatorToken('current', 'color', 'white'),
-            theme,
-          )};
-          border-color: ${normalizeColor(
-            getIndicatorToken('current', 'border', 'brand'),
-            theme,
-          )};
-        `;
-      case 'current-error':
-        return css`
-          background: ${normalizeColor(
-            getIndicatorToken('currentError', 'background', 'status-error'),
-            theme,
-          )};
-          color: ${normalizeColor(
-            getIndicatorToken('currentError', 'color', 'white'),
-            theme,
-          )};
-          border-color: ${normalizeColor(
-            getIndicatorToken('currentError', 'border', 'status-error'),
-            theme,
-          )};
-        `;
-      case 'completed':
-        return css`
-          background: ${normalizeColor(
-            getIndicatorToken('completed', 'background', 'transparent'),
-            theme,
-          )};
-          color: ${normalizeColor(
-            getIndicatorToken('completed', 'color', 'brand'),
-            theme,
-          )};
-          border-color: ${normalizeColor(
-            getIndicatorToken('completed', 'border', 'brand'),
-            theme,
-          )};
-        `;
-      case 'error':
-        return css`
-          background: ${normalizeColor(
-            getIndicatorToken('error', 'background', 'transparent'),
-            theme,
-          )};
-          color: ${normalizeColor(
-            getIndicatorToken('error', 'color', 'status-error'),
-            theme,
-          )};
-          border-color: ${normalizeColor(
-            getIndicatorToken('error', 'border', 'status-error'),
-            theme,
-          )};
-        `;
-      case 'disabled':
-        return css`
-          background: ${normalizeColor(
-            getIndicatorToken('disabled', 'background', 'transparent'),
-            theme,
-          )};
-          color: ${normalizeColor(
-            getIndicatorToken('disabled', 'color', 'text-weak'),
-            theme,
-          )};
-          border-color: ${normalizeColor(
-            getIndicatorToken('disabled', 'border', 'border'),
-            theme,
-          )};
-          opacity: 0.6;
-        `;
-      default:
-        return css`
-          background: ${normalizeColor(
-            getIndicatorToken('pending', 'background', 'transparent'),
-            theme,
-          )};
-          color: ${normalizeColor(
-            getIndicatorToken('pending', 'color', 'text-weak'),
-            theme,
-          )};
-          border-color: ${normalizeColor(
-            getIndicatorToken('pending', 'border', 'border'),
-            theme,
-          )};
-        `;
-    }
+    const stateTheme = theme.stepper?.[props.effectiveState]?.indicator || {};
+    return css`
+      background: ${normalizeColor(
+        stateTheme?.background || 'transparent',
+        theme,
+      )};
+      color: ${normalizeColor(stateTheme?.color || 'text-weak', theme)};
+      border-color: ${normalizeColor(stateTheme?.border || 'border', theme)};
+    `;
   }}
 
   ${StyledStepButton}:focus-visible & {
@@ -392,13 +307,13 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
       ? (() => {
           switch (props.effectiveState) {
             case 'current':
-            case 'current-completed':
+            case 'currentCompleted':
             case 'completed':
               return css`
                 color: ${brandHover};
               `;
             case 'error':
-            case 'current-error':
+            case 'currentError':
               return css`
                 color: ${errorHover};
               `;
@@ -411,7 +326,7 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
       : (() => {
           switch (props.effectiveState) {
             case 'current':
-            case 'current-completed':
+            case 'currentCompleted':
               return css`
                 background: ${brandHover};
                 border-color: ${brandHover};
@@ -426,7 +341,7 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
                 color: ${errorHover};
                 border-color: ${errorHover};
               `;
-            case 'current-error':
+            case 'currentError':
               return css`
                 background: ${errorHover};
                 border-color: ${errorHover};

@@ -106,9 +106,15 @@ describe('Stepper', () => {
       <Grommet
         theme={{
           stepper: {
-            icons: {
-              completed: CompletedIcon,
-              error: ErrorIcon,
+            completed: {
+              indicator: {
+                icon: CompletedIcon,
+              },
+            },
+            currentError: {
+              indicator: {
+                icon: ErrorIcon,
+              },
             },
           },
         }}
