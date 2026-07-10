@@ -11,11 +11,16 @@
  *   node tools/license-header.js            Insert/correct headers (fix mode).
  *   node tools/license-header.js --check    Report non-compliant files and exit
  *                                            non-zero. Used for CI gating.
+ *   node tools/license-header.js --staged   Fix only files staged for commit
+ *                                            (progressive migration) and
+ *                                            re-stage anything it corrects.
  *   node tools/license-header.js [paths...] Limit to the given files/dirs.
+ *                                            usable with --check or --staged.
  */
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 // Canonical header. Edit these two lines to change it everywhere.
 const HEADER =
@@ -39,6 +44,24 @@ function isIncluded(filePath) {
   return EXTENSIONS.has(path.extname(filePath));
 }
 
+// This is meant for progressive migration: only touch
+// files that are staged for commit and live under a managed
+// root and are eligible for a header licence text.
+function collectStagedFiles() {
+  const output = execSync('git diff --cached --name-only --diff-filter=ACM', {
+    encoding: 'utf8',
+  });
+  return output
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .filter((file) =>
+      ROOTS.some((root) => file === root || file.startsWith(`${root}/`)),
+    )
+    .filter((file) => isIncluded(file))
+    .filter((file) => fs.existsSync(file));
+}
+
 function collectFiles(target, out) {
   if (!fs.existsSync(target)) return;
   const stat = fs.statSync(target);
@@ -52,9 +75,8 @@ function collectFiles(target, out) {
   }
 }
 
-// Build the canonical content for a file: shebang (if any), header, then the
-// body with any existing SPDX header lines stripped. Rebuilding (rather than
-// only inserting) is what corrects drift such as a wrong identifier or spacing.
+// Build the canonical content for a file: shebang # (if any),
+// header, then the body with any existing SPDX header lines stripped.
 function buildExpected(content) {
   let shebang = '';
   let body = content;
@@ -70,7 +92,7 @@ function buildExpected(content) {
   const rest = lines.slice(i);
   // A directive prologue ('use client' / 'use strict') must have a blank line
   // before it when comments precede it (ESLint lines-around-directive).
-  // We keep one here, so the tool and ESLint agree on the canonical form.
+  // Keeping one here, so the tool and ESLint agree on the canonical form.
   const needsBlank = /^\s*(['"])use [\w-]+\1;?\s*$/.test(rest[0] ?? '');
   return `${shebang}${HEADER}${needsBlank ? '\n' : ''}${rest.join('\n')}`;
 }
@@ -78,11 +100,17 @@ function buildExpected(content) {
 function main() {
   const args = process.argv.slice(2);
   const checkOnly = args.includes('--check');
+  const stagedOnly = args.includes('--staged');
   const targets = args.filter((arg) => !arg.startsWith('--'));
-  const roots = targets.length > 0 ? targets : ROOTS;
 
-  const files = [];
-  roots.forEach((root) => collectFiles(root, files));
+  let files;
+  if (stagedOnly) {
+    files = collectStagedFiles();
+  } else {
+    const roots = targets.length > 0 ? targets : ROOTS;
+    files = [];
+    roots.forEach((root) => collectFiles(root, files));
+  }
 
   const nonCompliant = [];
   files.forEach((file) => {
@@ -92,6 +120,11 @@ function main() {
     nonCompliant.push(file);
     if (!checkOnly) fs.writeFileSync(file, expected);
   });
+
+  // Re-stage anything corrected so the fix lands in the same commit.
+  if (stagedOnly && !checkOnly && nonCompliant.length > 0) {
+    execSync(`git add ${nonCompliant.map((f) => JSON.stringify(f)).join(' ')}`);
+  }
 
   if (checkOnly) {
     if (nonCompliant.length > 0) {
