@@ -1057,7 +1057,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       color: 'text',
       container: {
-        round: '2px',
+        round: '8px',
       },
       active: {
         background: 'active-background',
