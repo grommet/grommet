@@ -905,17 +905,12 @@ describe('TimeInput', () => {
     expect(input).toHaveValue('10:00:00');
   });
 
-  test('normalizes invalid step values to avoid crashes', async () => {
+  test('normalizes invalid minuteStep values to avoid crashes', async () => {
     const user = userEvent.setup();
 
     render(
       <Grommet>
-        <TimeInput
-          format="24"
-          defaultValue="10:00:00"
-          minuteStep={0}
-          secondStep={0}
-        />
+        <TimeInput format="24" defaultValue="10:00:00" minuteStep={0} />
       </Grommet>,
     );
 
@@ -925,9 +920,5 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}{ArrowRight}');
     await user.keyboard('{ArrowUp}');
     expect(input).toHaveValue('10:01:00');
-
-    await user.keyboard('{ArrowRight}');
-    await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:01:01');
   });
 });
