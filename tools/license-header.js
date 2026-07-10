@@ -20,7 +20,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 
 // Canonical header. Edit these two lines to change it everywhere.
 const HEADER =
@@ -48,9 +48,11 @@ function isIncluded(filePath) {
 // files that are staged for commit and live under a managed
 // root and are eligible for a header licence text.
 function collectStagedFiles() {
-  const output = execSync('git diff --cached --name-only --diff-filter=ACM', {
-    encoding: 'utf8',
-  });
+  const output = execFileSync(
+    'git',
+    ['diff', '--cached', '--name-only', '--diff-filter=ACM'],
+    { encoding: 'utf8' },
+  );
   return output
     .split('\n')
     .map((line) => line.trim())
@@ -123,7 +125,7 @@ function main() {
 
   // Re-stage anything corrected so the fix lands in the same commit.
   if (stagedOnly && !checkOnly && nonCompliant.length > 0) {
-    execSync(`git add ${nonCompliant.map((f) => JSON.stringify(f)).join(' ')}`);
+    execFileSync('git', ['add', '--', ...nonCompliant]);
   }
 
   if (checkOnly) {
