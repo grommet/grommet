@@ -113,6 +113,12 @@ const getGlobalFocusStyles = (theme) => {
   `;
 };
 
+const getConnectorColor = (stepStatus, theme) =>
+  normalizeColor(
+    theme.stepper?.[stepStatus]?.connector?.color || 'border',
+    theme,
+  );
+
 const StyledStepItem = styled.li.withConfig(styledComponentsConfig)`
   display: flex;
   position: relative;
@@ -376,6 +382,10 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     const theme = getStepperTheme(props.theme);
     const indicatorSizeToken = theme.stepper?.indicator?.size || 'medium';
     const parentSize = getMetricSize(theme, indicatorSizeToken);
+    const indicatiorBorderWidth = getMetricSize(
+      theme,
+      theme.stepper?.indicator?.border?.width || '2px',
+    );
     const buttonPad = theme.global?.edgeSize?.xxsmall || '4px';
     const connectorThickness =
       theme.stepper?.connector?.stroke?.width ||
@@ -389,20 +399,26 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       ${props.direction === 'horizontal'
         ? css`
             top: ${connectorOffset};
-            left: calc(50% + ${connectorOffset});
+            left: calc(${props.isBetween ? '-' : ''}50% + ${connectorOffset});
             right: calc(-50% + ${connectorOffset});
             height: ${connectorThickness};
           `
         : css`
-            left: calc(${connectorOffset} - ${connectorThickness} / 2);
-            top: calc(${parentSize} + ${buttonPad} * 3);
+            left: calc(
+              ${connectorOffset} + ${indicatiorBorderWidth} -
+                ${connectorThickness} / 2
+            );
+            top: ${props.isBetween
+              ? 0
+              : `calc(${parentSize} + ${buttonPad} * 3)`};
             bottom: 0;
             width: ${connectorThickness};
           `}
     `;
   }}
   position: absolute;
-  background: ${(props) => props.connectorColor};
+  background: ${(props) =>
+    getConnectorColor(props.status, getStepperTheme(props.theme))};
 `;
 
 export {

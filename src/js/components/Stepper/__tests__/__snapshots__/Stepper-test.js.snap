@@ -58,7 +58,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   font-weight: normal;
 }
 
-.c10 {
+.c11 {
   font-size: 14px;
   line-height: 20px;
   white-space: nowrap;
@@ -138,7 +138,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
 }
 
-.c9 {
+.c10 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,18 +154,28 @@ exports[`Stepper renders horizontal steps 1`] = `
   border-color: #666666;
 }
 
-.c3:focus-visible .c9 {
+.c3:focus-visible .c10 {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:not([aria-disabled]):active .c9 {
+.c3:not([aria-disabled]):active .c10 {
   transform: scale(0.95);
 }
 
-.c3:not([aria-disabled]):hover .c9 {
+.c3:not([aria-disabled]):hover .c10 {
   border-color: #000000;
   color: #000000;
+}
+
+.c9 {
+  border-radius: 6px;
+  top: calc(24px / 2 + 3px);
+  left: calc(-50% + calc(24px / 2 + 3px));
+  right: calc(-50% + calc(24px / 2 + 3px));
+  height: 2px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.33);
 }
 
 @media only screen and (max-width: 768px) {
@@ -232,11 +242,12 @@ exports[`Stepper renders horizontal steps 1`] = `
     </li>
     <li
       aria-hidden="true"
-      style="list-style: none; display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 12px; overflow: visible;"
+      style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
     >
       <span
         aria-hidden="true"
-        style="position: absolute; top: calc(15px); left: calc(-50% + 15px); right: calc(-50% + 15px); height: 2px; background: rgba(0, 0, 0, 0.33);"
+        class="c9"
+        direction="horizontal"
       />
     </li>
     <li
@@ -251,14 +262,14 @@ exports[`Stepper renders horizontal steps 1`] = `
         type="button"
       >
         <span
-          class="c9"
+          class="c10"
         />
         <span
           class="c7"
           direction="horizontal"
         >
           <span
-            class="c10"
+            class="c11"
           >
             Step 2
           </span>
@@ -267,11 +278,12 @@ exports[`Stepper renders horizontal steps 1`] = `
     </li>
     <li
       aria-hidden="true"
-      style="list-style: none; display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 12px; overflow: visible;"
+      style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
     >
       <span
         aria-hidden="true"
-        style="position: absolute; top: calc(15px); left: calc(-50% + 15px); right: calc(-50% + 15px); height: 2px; background: rgba(0, 0, 0, 0.33);"
+        class="c9"
+        direction="horizontal"
       />
     </li>
     <li
@@ -286,14 +298,14 @@ exports[`Stepper renders horizontal steps 1`] = `
         type="button"
       >
         <span
-          class="c9"
+          class="c10"
         />
         <span
           class="c7"
           direction="horizontal"
         >
           <span
-            class="c10"
+            class="c11"
           >
             Step 3
           </span>
@@ -362,7 +374,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   font-weight: normal;
 }
 
-.c9 {
+.c10 {
   font-size: 14px;
   line-height: 20px;
   white-space: nowrap;
@@ -432,7 +444,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
 }
 
-.c8 {
+.c9 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -448,18 +460,28 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   border-color: #666666;
 }
 
-.c2:focus-visible .c8 {
+.c2:focus-visible .c9 {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c2:not([aria-disabled]):active .c8 {
+.c2:not([aria-disabled]):active .c9 {
   transform: scale(0.95);
 }
 
-.c2:not([aria-disabled]):hover .c8 {
+.c2:not([aria-disabled]):hover .c9 {
   border-color: #000000;
   color: #000000;
+}
+
+.c8 {
+  border-radius: 6px;
+  top: calc(24px / 2 + 3px);
+  left: calc(-50% + calc(24px / 2 + 3px));
+  right: calc(-50% + calc(24px / 2 + 3px));
+  height: 2px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.33);
 }
 
 @media only screen and (max-width: 768px) {
@@ -523,11 +545,12 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   </li>
   <li
     aria-hidden="true"
-    style="list-style: none; display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 12px; overflow: visible;"
+    style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
   >
     <span
       aria-hidden="true"
-      style="position: absolute; top: calc(15px); left: calc(-50% + 15px); right: calc(-50% + 15px); height: 2px; background: rgba(0, 0, 0, 0.33);"
+      class="c8"
+      direction="horizontal"
     />
   </li>
   <li
@@ -542,14 +565,14 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
       type="button"
     >
       <span
-        class="c8"
+        class="c9"
       />
       <span
         class="c6"
         direction="horizontal"
       >
         <span
-          class="c9"
+          class="c10"
         >
           Step 2
         </span>
@@ -558,11 +581,12 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   </li>
   <li
     aria-hidden="true"
-    style="list-style: none; display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; min-width: 12px; overflow: visible;"
+    style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
   >
     <span
       aria-hidden="true"
-      style="position: absolute; top: calc(15px); left: calc(-50% + 15px); right: calc(-50% + 15px); height: 2px; background: rgba(0, 0, 0, 0.33);"
+      class="c8"
+      direction="horizontal"
     />
   </li>
   <li
@@ -577,14 +601,14 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
       type="button"
     >
       <span
-        class="c8"
+        class="c9"
       />
       <span
         class="c6"
         direction="horizontal"
       >
         <span
-          class="c9"
+          class="c10"
         >
           Step 3
         </span>
@@ -609,7 +633,7 @@ exports[`Stepper renders vertical steps 1`] = `
   gap: 0 0;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -618,25 +642,25 @@ exports[`Stepper renders vertical steps 1`] = `
   stroke: currentColor;
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -648,7 +672,7 @@ exports[`Stepper renders vertical steps 1`] = `
   font-weight: normal;
 }
 
-.c11 {
+.c12 {
   font-size: 14px;
   line-height: 20px;
   color: #7D4CDB;
@@ -722,7 +746,7 @@ exports[`Stepper renders vertical steps 1`] = `
   color: #000000;
 }
 
-.c9 {
+.c10 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -738,24 +762,34 @@ exports[`Stepper renders vertical steps 1`] = `
   border-color: #7D4CDB;
 }
 
-.c3:focus-visible .c9 {
+.c3:focus-visible .c10 {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:not([aria-disabled]):active .c9 {
+.c3:not([aria-disabled]):active .c10 {
   transform: scale(0.95);
 }
 
-.c3:not([aria-disabled]):hover .c9 {
+.c3:not([aria-disabled]):hover .c10 {
   background: color-mix(in srgb, #7D4CDB 80%, black);
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
 }
 
 .c8 {
   border-radius: 6px;
-  left: calc(calc(24px / 2 + 3px) - 2px / 2);
+  left: calc( calc(24px / 2 + 3px) + 2px - 2px / 2 );
   top: calc(24px + 3px * 3);
+  bottom: 0;
+  width: 2px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c9 {
+  border-radius: 6px;
+  left: calc( calc(24px / 2 + 3px) + 2px - 2px / 2 );
+  top: 0;
   bottom: 0;
   width: 2px;
   position: absolute;
@@ -815,11 +849,12 @@ exports[`Stepper renders vertical steps 1`] = `
     </li>
     <li
       aria-hidden="true"
-      style="list-style: none; display: flex; flex-direction: column; justify-content: flex-start; position: relative; flex: 1; min-height: 12px; overflow: visible;"
+      style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; justify-content: flex-start; min-height: 12px;"
     >
       <span
         aria-hidden="true"
-        style="position: absolute; left: calc(14px); top: 0px; bottom: 0px; width: 2px; background: rgba(0, 0, 0, 0.33); border-radius: 6px;"
+        class="c9"
+        direction="vertical"
       />
     </li>
     <li
@@ -835,12 +870,12 @@ exports[`Stepper renders vertical steps 1`] = `
         type="button"
       >
         <span
-          class="c9"
+          class="c10"
         >
           <svg
             aria-hidden="true"
             aria-label="Status is okay"
-            class="c10"
+            class="c11"
             viewBox="0 0 12 12"
           >
             <circle
@@ -857,7 +892,7 @@ exports[`Stepper renders vertical steps 1`] = `
           direction="vertical"
         >
           <span
-            class="c11"
+            class="c12"
           >
             Step 2
           </span>
@@ -871,11 +906,12 @@ exports[`Stepper renders vertical steps 1`] = `
     </li>
     <li
       aria-hidden="true"
-      style="list-style: none; display: flex; flex-direction: column; justify-content: flex-start; position: relative; flex: 1; min-height: 12px; overflow: visible;"
+      style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; justify-content: flex-start; min-height: 12px;"
     >
       <span
         aria-hidden="true"
-        style="position: absolute; left: calc(14px); top: 0px; bottom: 0px; width: 2px; background: rgba(0, 0, 0, 0.33); border-radius: 6px;"
+        class="c9"
+        direction="vertical"
       />
     </li>
     <li

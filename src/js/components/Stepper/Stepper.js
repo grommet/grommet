@@ -8,12 +8,12 @@ import React, {
 } from 'react';
 
 import { Box } from '../Box';
-import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Keyboard } from '../Keyboard';
 
+import { StepConnector } from './StepConnector';
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
@@ -279,25 +279,6 @@ const Stepper = forwardRef(
     );
 
     const renderDefaultSteps = () => {
-      const indicatorSize =
-        theme.stepper?.indicator?.size &&
-        theme.global?.edgeSize?.[theme.stepper.indicator.size]
-          ? theme.global.edgeSize[theme.stepper.indicator.size]
-          : theme.global?.edgeSize?.medium || '24px';
-      const buttonPad = theme.global?.edgeSize?.xxsmall || '4px';
-      const connectorThickness =
-        theme.stepper?.connector?.stroke?.width ||
-        theme.global?.borderSize?.small ||
-        '2px';
-      const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
-      const connectorOffset = `calc(${indicatorSize} / 2 + ${buttonPad})`;
-      const childGap = theme.global?.edgeSize?.xsmall || '8px';
-      const childPadTop = theme.global?.edgeSize?.medium || '24px';
-      const childIndent = `calc(${indicatorSize} + ${
-        theme.global?.edgeSize?.small || '12px'
-      })`;
-      const minConnectorInlineSize = theme.global?.edgeSize?.small || '12px';
-
       let flatIndex = 0;
       const elements = [];
       steps.forEach((step, parentIdx) => {
@@ -346,102 +327,15 @@ const Stepper = forwardRef(
             stepRefs={stepRefs}
           />,
         );
-        if (direction === 'horizontal' && !isLastParent) {
+        if (!isLastParent || (childElements && direction === 'vertical')) {
           elements.push(
-            <li
+            <StepConnector
               key={`${step.id}-connector`}
-              aria-hidden={childElements ? undefined : 'true'}
-              style={{
-                listStyle: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                flex: 1,
-                position: 'relative',
-                minWidth: minConnectorInlineSize,
-                overflow: 'visible',
-              }}
+              step={step}
+              direction={direction}
             >
-              <span
-                aria-hidden="true"
-                style={{
-                  position: 'absolute',
-                  top: connectorOffset,
-                  left: `calc(-50% + ${connectorOffset})`,
-                  right: `calc(-50% + ${connectorOffset})`,
-                  height: connectorThickness,
-                  background: normalizeColor('border', theme),
-                }}
-              />
-              {childElements && (
-                <span
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    gap: childGap,
-                    paddingTop: childPadTop,
-                    maxWidth: '100%',
-                    flexWrap: 'wrap',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {childElements}
-                </span>
-              )}
-            </li>,
-          );
-        }
-        if (direction === 'vertical' && (!isLastParent || childElements)) {
-          const connectorColor = (() => {
-            switch (step.status) {
-              case 'completed':
-                return normalizeColor('brand', theme);
-              case 'error':
-                return normalizeColor('status-error', theme);
-              default:
-                return normalizeColor('border', theme);
-            }
-          })();
-          elements.push(
-            <li
-              key={`${step.id}-connector`}
-              aria-hidden={childElements ? undefined : 'true'}
-              style={{
-                listStyle: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-start',
-                position: 'relative',
-                flex: 1,
-                minHeight: minConnectorInlineSize,
-                overflow: 'visible',
-              }}
-            >
-              <span
-                aria-hidden="true"
-                style={{
-                  position: 'absolute',
-                  left: `calc(${connectorOffset} - ${connectorThickness} / 2)`,
-                  top: '0',
-                  bottom: '0',
-                  width: connectorThickness,
-                  background: connectorColor,
-                  borderRadius: connectorRadius,
-                }}
-              />
-              {childElements && (
-                <ol
-                  style={{
-                    listStyle: 'none',
-                    padding: `0 0 0 ${childIndent}`,
-                    margin: 0,
-                  }}
-                >
-                  {childElements}
-                </ol>
-              )}
-            </li>,
+              {childElements}
+            </StepConnector>,
           );
         }
       });

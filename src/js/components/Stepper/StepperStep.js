@@ -1,8 +1,5 @@
 import React, { useContext, useMemo } from 'react';
-import { ThemeContext } from 'styled-components';
-import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';
-import { base } from '../../themes/base';
 
 import { useStepper, StepItemContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
@@ -15,26 +12,6 @@ import {
   StyledStepContent,
   StyledConnector,
 } from './StyledStepper';
-
-const getConnectorColor = (stepStatus, theme) => {
-  switch (stepStatus) {
-    case 'completed':
-      return normalizeColor(
-        theme.stepper?.completed?.connector?.color || 'brand',
-        theme,
-      );
-    case 'error':
-      return normalizeColor(
-        theme.stepper?.error?.connector?.color || 'status-error',
-        theme,
-      );
-    default:
-      return normalizeColor(
-        theme.stepper?.pending?.connector?.color || 'border',
-        theme,
-      );
-  }
-};
 
 export const StepperStep = ({
   step,
@@ -51,7 +28,6 @@ export const StepperStep = ({
 }) => {
   const { currentStep, clickableSteps, onStepClick, steps } = useStepper();
   const { format } = useContext(MessageContext);
-  const theme = useContext(ThemeContext) || base;
 
   const index =
     indexProp !== undefined
@@ -165,8 +141,7 @@ export const StepperStep = ({
         {(showConnector !== undefined ? showConnector : !isLast) && (
           <StyledConnector
             direction={direction}
-            connectorColor={getConnectorColor(step.status, theme)}
-            isSubStep={isSubStep}
+            status={step.status}
             aria-hidden="true"
           />
         )}
