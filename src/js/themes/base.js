@@ -2328,10 +2328,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     stepper: {
-      container: {
-        // background: undefined,
-        // extend: undefined,
-      },
       indicator: {
         size: 'medium', // 'small' | 'medium' | 'large'
         border: {
@@ -2340,7 +2336,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       label: {
         size: 'medium',
-        subtep: {
+        substep: {
           size: 'small',
         },
       },

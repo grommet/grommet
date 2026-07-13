@@ -2108,48 +2108,56 @@ export interface ThemeType {
     indicator?: {
       size?: string;
       border?: {
-        color?: ColorType;
         width?: string;
       };
-      colors?: {
-        pending?: {
-          background?: BackgroundType;
-          text?: ColorType;
-          border?: ColorType;
-        };
-        current?: {
-          background?: BackgroundType;
-          text?: ColorType;
-          border?: ColorType;
-        };
-        completed?: {
-          background?: BackgroundType;
-          text?: ColorType;
-          border?: ColorType;
-        };
-        error?: {
-          background?: BackgroundType;
-          text?: ColorType;
-          border?: ColorType;
-        };
-        disabled?: {
-          background?: BackgroundType;
-          text?: ColorType;
-          border?: ColorType;
-        };
-      };
+      // colors?: {
+      //   pending?: {
+      //     background?: BackgroundType;
+      //     text?: ColorType;
+      //     border?: ColorType;
+      //   };
+      //   current?: {
+      //     background?: BackgroundType;
+      //     text?: ColorType;
+      //     border?: ColorType;
+      //   };
+      //   completed?: {
+      //     background?: BackgroundType;
+      //     text?: ColorType;
+      //     border?: ColorType;
+      //   };
+      //   error?: {
+      //     background?: BackgroundType;
+      //     text?: ColorType;
+      //     border?: ColorType;
+      //   };
+      //   disabled?: {
+      //     background?: BackgroundType;
+      //     text?: ColorType;
+      //     border?: ColorType;
+      //   };
+      // };
     };
     label?: {
-      color?: {
-        default?: ColorType;
-        current?: ColorType;
-        completed?: ColorType;
-        error?: ColorType;
-        disabled?: ColorType;
+      size?: string;
+      substep?: {
+        size?: string;
       };
-      weight?: {
-        default?: string;
-        current?: string;
+      // color?: {
+      //   default?: ColorType;
+      //   current?: ColorType;
+      //   completed?: ColorType;
+      //   error?: ColorType;
+      //   disabled?: ColorType;
+      // };
+      // weight?: {
+      //   default?: string;
+      //   current?: string;
+      // };
+    };
+    connector?: {
+      stroke?: {
+        width?: string;
       };
     };
     description?: {
@@ -2163,22 +2171,7 @@ export interface ThemeType {
       font?: {
         size?: string;
       };
-      color?: {
-        error?: ColorType;
-        disabled?: ColorType;
-      };
       margin?: MarginType;
-    };
-    connector?: {
-      stroke?: {
-        width?: string;
-        color?: {
-          pending?: ColorType;
-          completed?: ColorType;
-          error?: ColorType;
-          disabled?: ColorType;
-        };
-      };
     };
     horizontal?: {
       gap?: GapType;
@@ -2186,24 +2179,178 @@ export interface ThemeType {
     vertical?: {
       gap?: GapType;
     };
-    icons?: {
-      completed?: React.ReactNode | Icon;
-      error?: React.ReactNode | Icon;
-      current?: React.ReactNode | Icon;
-      substepCurrent?: React.ReactNode | Icon;
-      substepCompleted?: React.ReactNode | Icon;
-      substepError?: React.ReactNode | Icon;
-      substepPending?: React.ReactNode | Icon;
-      substepDisabled?: React.ReactNode | Icon;
-    };
     hover?: {
       background?: BackgroundType;
-      brand?: ColorType;
-      error?: ColorType;
       border?: ColorType;
     };
+    // icons?: {
+    //   completed?: React.ReactNode | Icon;
+    //   error?: React.ReactNode | Icon;
+    //   current?: React.ReactNode | Icon;
+    //   substepCurrent?: React.ReactNode | Icon;
+    //   substepCompleted?: React.ReactNode | Icon;
+    //   substepError?: React.ReactNode | Icon;
+    //   substepPending?: React.ReactNode | Icon;
+    //   substepDisabled?: React.ReactNode | Icon;
+    // };
+
     active?: {
       transform?: string;
+    };
+    // States: [component].[state].[element].[property]
+    pending?: {
+      indicator?: {
+        icon?: React.ReactNode | Icon;
+        iconSize?: string;
+        background?: BackgroundType;
+        color?: ColorType;
+        border?: ColorType;
+        substep?: {
+          iconSize?: string;
+        };
+      };
+      label?: {
+        color?: ColorType;
+        weight?: string;
+      };
+      connector?: {
+        color?: ColorType;
+      };
+      helperText?: {
+        color?: ColorType;
+      };
+    };
+    current?: {
+      indicator?: {
+        icon?: React.ReactNode | Icon;
+        iconSize?: string;
+        background?: BackgroundType;
+        color?: ColorType;
+        border?: ColorType;
+        substep?: {
+          iconSize?: string;
+        };
+      };
+      label?: {
+        color?: ColorType;
+        weight?: string;
+      };
+      connector?: {
+        color?: ColorType;
+      };
+      helperText?: {
+        color?: ColorType;
+      };
+    };
+    currentCompleted?: {
+      indicator?: {
+        icon?: React.ReactNode | Icon;
+        iconSize?: string;
+        background?: BackgroundType;
+        color?: ColorType;
+        border?: ColorType;
+        substep?: {
+          iconSize?: string;
+        };
+      };
+      label?: {
+        color?: ColorType;
+        weight?: string;
+      };
+      connector?: {
+        color?: ColorType;
+      };
+      helperText?: {
+        color?: ColorType;
+      };
+    };
+    completed?: {
+      indicator?: {
+        icon?: React.ReactNode | Icon;
+        iconSize?: string;
+        background?: BackgroundType;
+        color?: ColorType;
+        border?: ColorType;
+        substep?: {
+          iconSize?: string;
+        };
+      };
+      label?: {
+        color?: ColorType;
+        weight?: string;
+      };
+      connector?: {
+        color?: ColorType;
+      };
+      helperText?: {
+        color?: ColorType;
+      };
+    };
+    error?: {
+      indicator?: {
+        icon?: React.ReactNode | Icon;
+        iconSize?: string;
+        background?: BackgroundType;
+        color?: ColorType;
+        border?: ColorType;
+        substep?: {
+          iconSize?: string;
+        };
+      };
+      label?: {
+        color?: ColorType;
+        weight?: string;
+      };
+      connector?: {
+        color?: ColorType;
+      };
+      helperText?: {
+        color?: ColorType;
+      };
+    };
+    currentError?: {
+      indicator?: {
+        icon?: React.ReactNode | Icon;
+        iconSize?: string;
+        background?: BackgroundType;
+        color?: ColorType;
+        border?: ColorType;
+        substep?: {
+          iconSize?: string;
+        };
+      };
+      label?: {
+        color?: ColorType;
+        weight?: string;
+      };
+      connector?: {
+        color?: ColorType;
+      };
+      helperText?: {
+        color?: ColorType;
+      };
+    };
+    disabled?: {
+      indicator?: {
+        icon?: React.ReactNode | Icon;
+        iconSize?: string;
+        background?: BackgroundType;
+        color?: ColorType;
+        border?: ColorType;
+        substep?: {
+          iconSize?: string;
+        };
+      };
+      label?: {
+        color?: ColorType;
+        weight?: string;
+      };
+      connector?: {
+        color?: ColorType;
+      };
+      helperText?: {
+        color?: ColorType;
+      };
     };
   };
   table?: {

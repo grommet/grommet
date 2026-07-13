@@ -60,13 +60,11 @@ export interface StepperStepProps {
 }
 
 declare const StepperStep: React.FC<StepperStepProps>;
-declare const StepperIndicator: React.FC<{
-  stepId?: string;
-  stepNumber?: number;
-}>;
-declare const StepperLabel: React.FC<{ stepId?: string }>;
-declare const StepperDescription: React.FC<{ stepId?: string }>;
-declare const StepperError: React.FC<{ stepId?: string }>;
+declare const StepperIndicator: React.FC<{ isClickable?: boolean }>;
+declare const StepperLabel: React.FC<{}>;
+declare const StepperDescription: React.FC<{}>;
+declare const StepperError: React.FC<{}>;
+declare const StepperDisabledReason: React.FC<{}>;
 
 export {
   Stepper,
@@ -77,4 +75,5 @@ export {
   StepperLabel,
   StepperDescription,
   StepperError,
+  StepperDisabledReason,
 };
