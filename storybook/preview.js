@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line import/no-unresolved
-import { addons } from 'storybook/internal/preview-api';
+import { addons } from 'storybook/preview-api';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Root from 'react-shadow';
 import { StyleSheetManager } from 'styled-components';
