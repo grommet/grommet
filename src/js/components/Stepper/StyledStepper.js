@@ -132,6 +132,7 @@ const StyledStepItem = styled.li.withConfig(styledComponentsConfig)`
       `;
     }
     if (props.isSubStep) {
+      // horizontal and sub-steps isn't supported
       return css`
         flex-direction: row;
         align-items: center;
@@ -162,7 +163,7 @@ const StyledStepButton = styled.button.withConfig(styledComponentsConfig)`
     props.direction === 'vertical'
       ? css`
           flex-direction: row;
-          align-items: ${props.isSubStep ? 'center' : 'flex-start'};
+          align-items: 'flex-start';
           gap: ${getStepperTheme(props.theme)?.global?.edgeSize?.small};
           text-align: left;
         `
@@ -213,71 +214,24 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
         theme,
         getSubStepSizeToken(indicatorSizeToken),
       );
+      const size = props.isSubStep ? subStepSize : parentSize;
       const borderWidth =
         theme.stepper?.indicator?.border?.width ||
         theme.global?.borderSize?.small ||
         '2px';
 
-      return props.isSubStep
-        ? css`
-            width: ${subStepSize};
-            height: ${subStepSize};
-            min-width: ${subStepSize};
-            min-height: ${subStepSize};
-            border: none;
-            background: transparent;
-          `
-        : css`
-            width: ${parentSize};
-            height: ${parentSize};
-            min-width: ${parentSize};
-            min-height: ${parentSize};
-            border: ${borderWidth} solid;
-          `;
+      return css`
+        width: ${size};
+        height: ${size};
+        min-width: ${size};
+        min-height: ${size};
+        border: ${borderWidth} solid;
+      `;
     })()}
 
   ${(props) => {
     const theme = getStepperTheme(props.theme);
 
-    const getIndicatorToken = (state, prop, fallback) =>
-      theme.stepper?.[state]?.indicator?.[prop] || fallback;
-
-    if (props.isSubStep) {
-      switch (props.effectiveState) {
-        case 'current':
-        case 'currentCompleted':
-        case 'completed':
-          return css`
-            color: ${normalizeColor(
-              getIndicatorToken('completed', 'border', 'brand'),
-              theme,
-            )};
-          `;
-        case 'error':
-        case 'currentError':
-          return css`
-            color: ${normalizeColor(
-              getIndicatorToken('error', 'border', 'status-error'),
-              theme,
-            )};
-          `;
-        case 'disabled':
-          return css`
-            color: ${normalizeColor(
-              getIndicatorToken('disabled', 'border', 'border'),
-              theme,
-            )};
-            opacity: 0.6;
-          `;
-        default:
-          return css`
-            color: ${normalizeColor(
-              getIndicatorToken('pending', 'border', 'border'),
-              theme,
-            )};
-          `;
-      }
-    }
     const stateTheme = theme.stepper?.[props.effectiveState]?.indicator || {};
     return css`
       background: ${normalizeColor(

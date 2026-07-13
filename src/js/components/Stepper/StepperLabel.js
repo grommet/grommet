@@ -22,10 +22,12 @@ export const StepperLabel = ({ ...rest }) => {
   const isHighlighted = isCurrent || hasCurrentChild;
   const effectiveState = getEffectiveState(step.status, isHighlighted);
   const stateProps = getStateProps(theme, effectiveState);
-
+  const size = isSubStep
+    ? theme.stepper?.label?.substep?.size || 'small'
+    : theme.stepper?.label?.size || 'medium';
   return (
     <Text
-      size={isSubStep ? 'xsmall' : 'small'}
+      size={size}
       truncate={direction === 'horizontal'}
       {...stateProps}
       {...rest}

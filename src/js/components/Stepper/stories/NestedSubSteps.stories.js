@@ -24,7 +24,12 @@ const NestedSubSteps = () => {
       title: 'Profile Setup',
       children: [
         { id: 'name', title: 'Name', status: 'pending' },
-        { id: 'photo', title: 'Photo', status: 'pending' },
+        {
+          id: 'photo',
+          title: 'Photo',
+          status: 'error',
+          errorMessage: 'Please upload a valid photo.',
+        },
       ],
     },
     { id: 'confirm', title: 'Confirm', status: 'pending' },

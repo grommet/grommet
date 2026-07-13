@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Box, Heading, Grommet } from 'grommet';
 import { Stepper } from '../Stepper';
 import { grommet } from '../../../themes';
 
 const ThemingLightDark = () => {
+  const [currentStep, setCurrentStep] = useState('billing');
+
   const steps = [
     { id: 'step1', title: 'Account', status: 'completed' },
     { id: 'step2', title: 'Profile', status: 'pending' },
@@ -15,13 +17,21 @@ const ThemingLightDark = () => {
       <Grommet theme={grommet} themeMode="light">
         <Box pad="large" background="background-front">
           <Heading level={3}>Light Theme</Heading>
-          <Stepper steps={steps} currentStep="step2" clickableSteps={false} />
+          <Stepper
+            steps={steps}
+            currentStep={currentStep}
+            onStepClick={(id) => setCurrentStep(id)}
+          />
         </Box>
       </Grommet>
       <Grommet theme={grommet} themeMode="dark">
         <Box pad="large" background="background-front">
           <Heading level={3}>Dark Theme</Heading>
-          <Stepper steps={steps} currentStep="step2" clickableSteps={false} />
+          <Stepper
+            steps={steps}
+            currentStep={currentStep}
+            onStepClick={(id) => setCurrentStep(id)}
+          />
         </Box>
       </Grommet>
     </Box>

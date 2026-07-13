@@ -2338,6 +2338,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           width: '2px',
         },
       },
+      label: {
+        size: 'medium',
+        subtep: {
+          size: 'small',
+        },
+      },
       connector: {
         stroke: { width: '2px' },
       },
@@ -2371,7 +2377,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: 'text-xweak',
           substep: {
             icon: Radial,
-            iconSize: 'xsmall',
+            iconSize: 'small',
           },
         },
         label: { color: 'text', weight: 'normal' },
@@ -2385,7 +2391,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'white',
           border: 'brand',
           substep: {
-            iconSize: 'xsmall',
+            iconSize: 'small',
           },
         },
         label: {
@@ -2401,7 +2407,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'white',
           border: 'brand',
           substep: {
-            iconSize: 'xsmall',
+            iconSize: 'small',
           },
         },
         label: {
@@ -2417,7 +2423,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'brand',
           border: 'brand',
           substep: {
-            iconSize: 'xsmall',
+            iconSize: 'small',
           },
         },
         label: { color: 'text-weak', weight: 'normal' },
@@ -2430,7 +2436,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'status-error',
           border: 'status-error',
           substep: {
-            iconSize: 'xsmall',
+            iconSize: 'small',
           },
         },
         label: { color: 'text', weight: 'normal' },
@@ -2444,11 +2450,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'white',
           border: 'status-error',
           substep: {
-            iconSize: 'xsmall',
+            iconSize: 'small',
           },
         },
         label: {
-          color: { dark: 'text-strong', light: 'brand' },
+          color: 'status-error',
           weight: 'normal',
         },
       },
@@ -2458,7 +2464,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'text-weak',
           border: 'border',
           substep: {
-            iconSize: 'xsmall',
+            iconSize: 'small',
           },
         },
         label: { color: 'text-weak', weight: 'normal' },

@@ -48,8 +48,8 @@ exports[`Stepper renders horizontal steps 1`] = `
 }
 
 .c8 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 24px;
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
@@ -59,8 +59,8 @@ exports[`Stepper renders horizontal steps 1`] = `
 }
 
 .c11 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 24px;
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
@@ -364,8 +364,8 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 }
 
 .c7 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 24px;
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
@@ -375,8 +375,8 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 }
 
 .c10 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 24px;
   white-space: nowrap;
   max-width: 100%;
   overflow: hidden;
@@ -666,15 +666,15 @@ exports[`Stepper renders vertical steps 1`] = `
 }
 
 .c7 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   font-weight: normal;
 }
 
 .c12 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 24px;
   color: #7D4CDB;
   font-weight: normal;
 }
@@ -705,7 +705,7 @@ exports[`Stepper renders vertical steps 1`] = `
   cursor: pointer;
   outline: none;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: 'flex-start';
   gap: 12px;
   text-align: left;
 }
