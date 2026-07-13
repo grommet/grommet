@@ -300,6 +300,40 @@ describe('DataTable', () => {
     ).toBeInTheDocument();
   });
 
+  test('sortable column accessible name updates when sorted', () => {
+    const { rerender } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sort={{ property: 'a', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A sorted ascending, activate to sort descending',
+      }),
+    ).toBeInTheDocument();
+
+    rerender(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sort={{ property: 'a', direction: 'desc' }}
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A sorted descending, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
+  });
+
   test('sort null data', () => {
     const { container, getByText } = render(
       <Grommet>
