@@ -10,7 +10,11 @@ import { useWizard } from './WizardContext';
 // WizardStepHeader renders the "Step X of Y" counter, the step title, and
 // the step description. All typography goes through Text / Heading /
 // Paragraph with theme-driven props (no custom font-size CSS).
-export const WizardStepHeader = () => {
+//
+// Sub-component follows the composition-primitive pattern: theme values
+// drive default props on the primitives, and callers can override any
+// outer Box prop by passing it directly (spread as {...rest} last).
+export const WizardStepHeader = ({ ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const { currentStepObj, currentStepIndex, totalSteps, messages } =
@@ -29,7 +33,13 @@ export const WizardStepHeader = () => {
     });
 
   return (
-    <Box pad={stepHeaderTheme?.pad} flex={false} {...passThemeFlag}>
+    <Box
+      pad={stepHeaderTheme?.pad}
+      gap={stepHeaderTheme?.gap}
+      flex={false}
+      {...passThemeFlag}
+      {...rest}
+    >
       <Text
         size={counterTheme?.size}
         color={counterTheme?.color}
@@ -41,7 +51,9 @@ export const WizardStepHeader = () => {
       <Heading
         level={stepHeaderTheme?.title?.level}
         size={stepHeaderTheme?.title?.size}
-        margin="none"
+        color={stepHeaderTheme?.title?.color}
+        weight={stepHeaderTheme?.title?.weight}
+        margin={stepHeaderTheme?.title?.margin || 'none'}
       >
         {currentStepObj.title}
       </Heading>
@@ -49,6 +61,7 @@ export const WizardStepHeader = () => {
         <Paragraph
           size={stepHeaderTheme?.description?.size}
           color={stepHeaderTheme?.description?.color}
+          weight={stepHeaderTheme?.description?.weight}
           margin={stepHeaderTheme?.description?.margin}
           fill
         >

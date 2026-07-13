@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { BoxExtendedProps } from '../Box';
 
 export type WizardDirection = 'horizontal' | 'vertical';
 
@@ -155,7 +156,7 @@ export function useWizard<
   TValue = Record<string, any>,
 >(): WizardContextValue<TValue>;
 
-export interface WizardHeaderProps {
+export interface WizardHeaderProps extends BoxExtendedProps {
   header?:
     | React.ReactNode
     | {
@@ -166,15 +167,18 @@ export interface WizardHeaderProps {
 
 export const WizardHeader: React.FC<WizardHeaderProps>;
 
-export interface WizardProgressProps {
+export interface WizardProgressProps extends BoxExtendedProps {
   ariaLabel?: string;
 }
 
 export const WizardProgress: React.FC<WizardProgressProps>;
 
-export const WizardStepHeader: React.FC;
+export interface WizardStepHeaderProps extends BoxExtendedProps {}
 
-export interface WizardContentProps<TValue = Record<string, any>> {
+export const WizardStepHeader: React.FC<WizardStepHeaderProps>;
+
+export interface WizardContentProps<TValue = Record<string, any>>
+  extends BoxExtendedProps {
   renderStep?: (
     step: WizardStep<TValue>,
     api: WizardApi<TValue>,
@@ -185,4 +189,6 @@ export const WizardContent: <TValue = Record<string, any>>(
   props: WizardContentProps<TValue>,
 ) => React.ReactElement;
 
-export const WizardFooter: React.FC;
+export interface WizardFooterProps extends BoxExtendedProps {}
+
+export const WizardFooter: React.FC<WizardFooterProps>;

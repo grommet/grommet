@@ -2496,6 +2496,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       header: {
         pad: { horizontal: 'large', vertical: 'small' },
         background: 'background-front',
+        height: 'xxsmall',
         title: {
           level: 3,
           size: 'medium',
@@ -2516,15 +2517,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       stepCounter: {
         size: 'small',
-        color: 'text-strong',
-        weight: 'bold',
+        color: 'text',
+        weight: 'normal',
         margin: { bottom: 'xsmall' },
       },
       stepHeader: {
         pad: { horizontal: 'none', vertical: 'none' },
         title: {
           level: 2,
-          size: 'medium',
+          size: 'large',
         },
         description: {
           size: 'medium',
@@ -2535,7 +2536,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       content: {
         pad: 'medium',
         background: 'background-front',
-        round: 'medium',
+        round: 'small',
+
+        margin: { top: 'medium' },
+        // Consumers can override the content box size via theme tokens
+        // (any Grommet size token or CSS length). Left unset by default
+        // so the content column fills the wizard body.
+        // width: undefined,
+        // height: undefined,
+        // align: undefined,
       },
       footer: {
         pad: { horizontal: 'large', vertical: 'none' },

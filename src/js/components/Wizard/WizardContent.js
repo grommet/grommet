@@ -7,7 +7,11 @@ import { useWizard } from './WizardContext';
 // WizardContent renders the current step's body via renderStep(). It also
 // hosts the wizard-level validation error region so any error message
 // shares its color with the error icon defined in the theme.
-export const WizardContent = ({ renderStep }) => {
+//
+// Sub-component follows the composition-primitive pattern: theme values
+// drive default Box props, but callers can override any Box prop by
+// passing it directly (spread as {...rest} last).
+export const WizardContent = ({ renderStep, ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const {
     currentStepObj,
@@ -48,8 +52,13 @@ export const WizardContent = ({ renderStep }) => {
       background={contentTheme?.background}
       round={contentTheme?.round}
       elevation={contentTheme?.elevation}
+      margin={contentTheme?.margin}
+      width={contentTheme?.width}
+      height={contentTheme?.height}
+      align={contentTheme?.align}
       flex="grow"
       {...passThemeFlag}
+      {...rest}
     >
       {body}
       {validationError && (

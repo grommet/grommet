@@ -8,7 +8,11 @@ import { useWizard } from './WizardContext';
 // WizardFooter renders navigation buttons. Labels come from MessageContext
 // (with optional message override). Primary action changes on the last step
 // (Complete) vs intermediate steps (Next). Icons come from theme.wizard.icons.
-export const WizardFooter = () => {
+//
+// Sub-component follows the composition-primitive pattern: theme values
+// drive default Box props, and callers can override any outer Box prop
+// by passing it directly (spread as {...rest} last).
+export const WizardFooter = ({ ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const {
@@ -50,52 +54,49 @@ export const WizardFooter = () => {
       align="center"
       flex={false}
       {...passThemeFlag}
+      {...rest}
     >
-      <Box direction="row" gap={footerTheme?.gap} align="center">
+      <Button
+        label={label('cancel', messages?.cancel)}
+        kind={footerTheme?.button?.cancel?.kind}
+        plain={footerTheme?.button?.cancel?.plain}
+        icon={CancelIcon ? <CancelIcon /> : undefined}
+        onClick={cancel}
+      />
+      {currentStepObj.skippable && !isLastStep && (
         <Button
-          label={label('cancel', messages?.cancel)}
-          kind={footerTheme?.button?.cancel?.kind}
-          plain={footerTheme?.button?.cancel?.plain}
-          icon={CancelIcon ? <CancelIcon /> : undefined}
-          onClick={cancel}
+          label={label('skip', messages?.skip)}
+          kind={footerTheme?.button?.skip?.kind}
+          icon={SkipIcon ? <SkipIcon /> : undefined}
+          onClick={skip}
         />
-      </Box>
-      <Box direction="row" gap={footerTheme?.gap} align="center">
-        {currentStepObj.skippable && !isLastStep && (
-          <Button
-            label={label('skip', messages?.skip)}
-            kind={footerTheme?.button?.skip?.kind}
-            icon={SkipIcon ? <SkipIcon /> : undefined}
-            onClick={skip}
-          />
-        )}
-        {!isFirstStep && (
-          <Button
-            label={label('previous', messages?.previous)}
-            kind={footerTheme?.button?.previous?.kind}
-            icon={PreviousIcon ? <PreviousIcon /> : undefined}
-            disabled={!canGoPrevious}
-            onClick={previous}
-          />
-        )}
-        {isLastStep ? (
-          <Button
-            label={label('complete', messages?.complete)}
-            primary
-            icon={CompleteIcon ? <CompleteIcon /> : undefined}
-            disabled={!canGoNext}
-            onClick={complete}
-          />
-        ) : (
-          <Button
-            label={label('next', messages?.next)}
-            primary
-            icon={NextIcon ? <NextIcon /> : undefined}
-            disabled={!canGoNext}
-            onClick={next}
-          />
-        )}
-      </Box>
+      )}
+      {!isFirstStep && (
+        <Button
+          label={label('previous', messages?.previous)}
+          kind={footerTheme?.button?.previous?.kind}
+          icon={PreviousIcon ? <PreviousIcon /> : undefined}
+          disabled={!canGoPrevious}
+          onClick={previous}
+        />
+      )}
+      {isLastStep ? (
+        <Button
+          label={label('complete', messages?.complete)}
+          primary
+          icon={CompleteIcon ? <CompleteIcon /> : undefined}
+          disabled={!canGoNext}
+          onClick={complete}
+        />
+      ) : (
+        <Button
+          label={label('next', messages?.next)}
+          primary
+          icon={NextIcon ? <NextIcon /> : undefined}
+          disabled={!canGoNext}
+          onClick={next}
+        />
+      )}
     </Box>
   );
 };

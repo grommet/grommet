@@ -42,6 +42,9 @@ export const WizardHeader = ({ header, ...rest }) => {
       pad={headerTheme?.pad}
       background={headerTheme?.background}
       border={headerTheme?.border}
+      height={headerTheme?.height}
+      direction="row"
+      align="center"
       flex={false}
       {...passThemeFlag}
       {...rest}
