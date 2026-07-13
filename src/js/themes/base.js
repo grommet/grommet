@@ -1079,10 +1079,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         periodGap: 'medium',
       },
       popup: {
-        columnWidth: '56px',
-        columnHeight: '232px',
-        optionWidth: '46px',
-        optionMinHeight: '34px',
         option: {
           hover: {
             background: 'active-background',

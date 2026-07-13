@@ -29,8 +29,9 @@ const PopupOption = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${(props) => props.theme.timeInput?.popup?.optionWidth};
-  min-height: ${(props) => props.theme.timeInput?.popup?.optionMinHeight};
+  min-height: ${(props) =>
+    props.theme.timeInput?.popup?.option?.minHeight ||
+    props.theme.global.control?.height};
   padding: ${(props) =>
     `${props.theme.global.edgeSize.xxsmall} ${props.theme.global.edgeSize.xsmall}`};
   border-radius: ${(props) => props.theme.global.control?.border?.radius};
@@ -102,8 +103,10 @@ const PopupColumn = ({
     role="listbox"
     aria-label={label}
     gap="xxsmall"
-    width={theme.timeInput?.popup?.columnWidth}
-    height={theme.timeInput?.popup?.columnHeight}
+    width={theme.timeInput?.popup?.column?.width}
+    height={{
+      max: theme.timeInput?.popup?.column?.maxHeight || theme.global.size.small,
+    }}
     overflow="auto"
     flex="0 0 auto"
   >
