@@ -7,8 +7,7 @@ export interface TimeInputProps {
   id?: string;
   messages?: {
     chooseTime?: string;
-    currentValue12?: string;
-    currentValue24?: string;
+    currentValue?: string;
     enterDrop?: string;
     exitDrop?: string;
     inputLabel?: string;

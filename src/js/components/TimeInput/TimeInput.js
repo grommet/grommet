@@ -193,31 +193,17 @@ const TimeInput = forwardRef(
           return;
         }
 
-        if (format === '12') {
-          announce(
-            formatMessage({
-              id: 'timeInput.currentValue12',
-              messages,
-              values: {
-                hour: nextSections.hour,
-                minute: nextSections.minute,
-                second: nextSections.second,
-                period: nextSections.period || 'AM',
-              },
-            }),
-            'polite',
-          );
-          return;
-        }
+        const period = format === '12' ? ` ${nextSections.period || 'AM'}` : '';
 
         announce(
           formatMessage({
-            id: 'timeInput.currentValue24',
+            id: 'timeInput.currentValue',
             messages,
             values: {
               hour: nextSections.hour,
               minute: nextSections.minute,
               second: nextSections.second,
+              period,
             },
           }),
           'polite',

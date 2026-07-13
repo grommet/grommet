@@ -6,6 +6,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import '@testing-library/jest-dom';
 
+import { AnnounceContext } from '../../../contexts/AnnounceContext';
 import { createPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { TimeInput } from '..';
@@ -115,6 +116,39 @@ describe('TimeInput', () => {
     await user.keyboard('{ArrowRight}');
     await waitFor(() => {
       expect(input).toHaveAttribute('aria-valuetext', '35 minutes');
+    });
+  });
+
+  test('uses currentValue message key for current value announcements', async () => {
+    const user = userEvent.setup();
+    const announceSpy = jest.fn();
+
+    render(
+      <AnnounceContext.Provider value={announceSpy}>
+        <Grommet>
+          <TimeInput
+            format="12"
+            defaultValue="12:34:56 PM"
+            messages={{
+              currentValue: 'Now {hour}:{minute}:{second}{period}',
+            }}
+          />
+        </Grommet>
+      </AnnounceContext.Provider>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    await user.keyboard('{ArrowUp}');
+
+    await waitFor(() => {
+      expect(
+        announceSpy.mock.calls.some(
+          ([message, mode]) =>
+            mode === 'polite' &&
+            /^Now \d{1,2}:34:56\s(AM|PM)$/.test(String(message)),
+        ),
+      ).toBe(true);
     });
   });
 

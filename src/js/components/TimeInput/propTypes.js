@@ -9,8 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
     id: PropTypes.string,
     messages: PropTypes.shape({
       chooseTime: PropTypes.string,
-      currentValue12: PropTypes.string,
-      currentValue24: PropTypes.string,
+      currentValue: PropTypes.string,
       enterDrop: PropTypes.string,
       exitDrop: PropTypes.string,
       inputLabel: PropTypes.string,
