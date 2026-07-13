@@ -3493,7 +3493,7 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3505,7 +3505,7 @@ exports[`DataTable custom theme 1`] = `
   height: 100%;
 }
 
-.c16 {
+.c18 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3515,7 +3515,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c18 {
+.c20 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3526,7 +3526,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c21 {
+.c23 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3541,7 +3541,7 @@ exports[`DataTable custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c24 {
+.c26 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3550,7 +3550,7 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: column;
 }
 
-.c25 {
+.c27 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3563,6 +3563,12 @@ exports[`DataTable custom theme 1`] = `
   width: 24px;
   justify-content: center;
   border-radius: 4px;
+}
+
+.c10 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
 }
 
 .c9 {
@@ -3629,7 +3635,7 @@ exports[`DataTable custom theme 1`] = `
   border: 0;
 }
 
-.c10 {
+.c12 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3646,47 +3652,47 @@ exports[`DataTable custom theme 1`] = `
   text-align: inherit;
 }
 
-.c10:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus ::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c22 {
+.c24 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -3694,7 +3700,7 @@ exports[`DataTable custom theme 1`] = `
   height: 24px;
 }
 
-.c17 {
+.c19 {
   display: flex;
   flex-direction: row;
   user-select: none;
@@ -3708,12 +3714,12 @@ exports[`DataTable custom theme 1`] = `
   cursor: default;
 }
 
-.c17:hover input:not([disabled])+div,
-.c17:hover input:not([disabled])+span {
+.c19:hover input:not([disabled])+div,
+.c19:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
-.c20 {
+.c22 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -3721,12 +3727,12 @@ exports[`DataTable custom theme 1`] = `
   margin: 0;
 }
 
-.c20:checked+span>span {
+.c22:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c19 {
+.c21 {
   flex-shrink: 0;
 }
 
@@ -3753,7 +3759,7 @@ exports[`DataTable custom theme 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c17 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3763,7 +3769,7 @@ exports[`DataTable custom theme 1`] = `
   text-align: start;
 }
 
-.c23 {
+.c25 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3781,7 +3787,7 @@ exports[`DataTable custom theme 1`] = `
   width: inherit;
 }
 
-.c11 {
+.c13 {
   display: flex;
   justify-content: center;
   padding-top: 7px;
@@ -3802,51 +3808,51 @@ exports[`DataTable custom theme 1`] = `
   border-collapse: separate;
 }
 
-.c14:focus {
+.c16:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
+.c16:focus >circle,
+.c16:focus >ellipse,
+.c16:focus >line,
+.c16:focus >path,
+.c16:focus >polygon,
+.c16:focus >polyline,
+.c16:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c14:focus ::-moz-focus-inner {
+.c16:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c14:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
+.c16:focus:not(:focus-visible) >circle,
+.c16:focus:not(:focus-visible) >ellipse,
+.c16:focus:not(:focus-visible) >line,
+.c16:focus:not(:focus-visible) >path,
+.c16:focus:not(:focus-visible) >polygon,
+.c16:focus:not(:focus-visible) >polyline,
+.c16:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+.c16:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c13:focus {
+.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c13:focus:not(:focus-visible) {
+.c15:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -3859,21 +3865,39 @@ exports[`DataTable custom theme 1`] = `
   color: #444444;
 }
 
+.c11 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
 @media only screen and (max-width: 768px) {
-  .c12 {
+  .c14 {
     border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c21 {
+  .c23 {
     border: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c25 {
+  .c27 {
     border: solid 2px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
+    width: 3px;
   }
 }
 
@@ -3894,6 +3918,7 @@ exports[`DataTable custom theme 1`] = `
           scope="col"
         />
         <th
+          aria-sort="none"
           class="c4 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -3914,6 +3939,14 @@ exports[`DataTable custom theme 1`] = `
                 >
                   A
                 </span>
+                <div
+                  class="c10"
+                />
+                <span
+                  class="c11"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -3923,52 +3956,52 @@ exports[`DataTable custom theme 1`] = `
             aria-orientation="vertical"
             aria-valuenow="0"
             aria-valuetext="Resize A column"
-            class="c10 c11"
+            class="c12 c13"
             role="separator"
             type="button"
           >
             <div
-              class="c12"
+              class="c14"
             />
           </button>
         </th>
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
       >
         <td
           aria-disabled="true"
-          class="c15 "
+          class="c17 "
         >
           <div
-            class="c16"
+            class="c18"
             style="height: 0px;"
           >
             <label
-              class="c17"
+              class="c19"
               disabled=""
             >
               <div
-                class="c18 c19"
+                class="c20 c21"
                 disabled=""
               >
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="c20"
+                  class="c22"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="c21 "
+                  class="c23 "
                   disabled=""
                 >
                   <svg
-                    class="c22"
+                    class="c24"
                     disabled=""
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -3988,11 +4021,11 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </td>
         <th
-          class="c23 "
+          class="c25 "
           scope="row"
         >
           <div
-            class="c24"
+            class="c26"
           >
             <span
               class="c9"
@@ -4003,32 +4036,32 @@ exports[`DataTable custom theme 1`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
       >
         <td
           aria-disabled="true"
-          class="c15 "
+          class="c17 "
         >
           <div
-            class="c16"
+            class="c18"
             style="height: 0px;"
           >
             <label
-              class="c17"
+              class="c19"
               disabled=""
             >
               <div
-                class="c18 c19"
+                class="c20 c21"
                 disabled=""
               >
                 <input
                   aria-label="select beta"
-                  class="c20"
+                  class="c22"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="c25 "
+                  class="c27 "
                   disabled=""
                 />
               </div>
@@ -4036,11 +4069,11 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </td>
         <th
-          class="c23 "
+          class="c25 "
           scope="row"
         >
           <div
-            class="c24"
+            class="c26"
           >
             <span
               class="c9"
@@ -4073,6 +4106,7 @@ exports[`DataTable custom theme 2`] = `
           scope="col"
         />
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hdohsq StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -4092,6 +4126,14 @@ exports[`DataTable custom theme 2`] = `
                   class="StyledText-sc-1sadyjn-0 gIpquo"
                 >
                   A
+                </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -17045,7 +17087,7 @@ exports[`DataTable onSort 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -17054,12 +17096,18 @@ exports[`DataTable onSort 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
+}
+
 .c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c15 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -17133,7 +17181,7 @@ exports[`DataTable onSort 1`] = `
   padding: 0px;
 }
 
-.c11 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -17157,56 +17205,74 @@ exports[`DataTable onSort 1`] = `
   border-collapse: separate;
 }
 
-.c10:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus ::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c9:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c9:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
+}
+
+.c10 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 3px;
+  }
 }
 
 <div
@@ -17222,6 +17288,7 @@ exports[`DataTable onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -17241,11 +17308,20 @@ exports[`DataTable onSort 1`] = `
                 >
                   A
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -17265,6 +17341,14 @@ exports[`DataTable onSort 1`] = `
                 >
                   B
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -17272,30 +17356,30 @@ exports[`DataTable onSort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c9"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
-              class="c13"
+              class="c15"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -17306,27 +17390,27 @@ exports[`DataTable onSort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
-              class="c13"
+              class="c15"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -17337,27 +17421,27 @@ exports[`DataTable onSort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
-              class="c13"
+              class="c15"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -17458,7 +17542,8 @@ exports[`DataTable onSort 2`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -17469,11 +17554,36 @@ exports[`DataTable onSort 2`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                .c0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<span
+                  class="c0"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -17492,6 +17602,14 @@ exports[`DataTable onSort 2`] = `
                   class="StyledText-sc-1sadyjn-0 iuKlFO"
                 >
                   B
+                </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -17664,7 +17782,7 @@ exports[`DataTable onSort external 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -17684,7 +17802,7 @@ exports[`DataTable onSort external 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -17758,7 +17876,7 @@ exports[`DataTable onSort external 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -17782,56 +17900,68 @@ exports[`DataTable onSort external 1`] = `
   border-collapse: separate;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
+}
+
+.c11 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -17877,7 +18007,8 @@ exports[`DataTable onSort external 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -17888,11 +18019,20 @@ exports[`DataTable onSort external 1`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c11"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -17912,6 +18052,14 @@ exports[`DataTable onSort external 1`] = `
                 >
                   B
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c11"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -17919,30 +18067,30 @@ exports[`DataTable onSort external 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -17953,27 +18101,27 @@ exports[`DataTable onSort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -17984,27 +18132,27 @@ exports[`DataTable onSort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -18093,7 +18241,8 @@ exports[`DataTable onSort external 2`] = `
 }
 
 <svg
-                  aria-label="descending"
+                  aria-hidden="true"
+                  aria-label="FormDown"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -18104,11 +18253,20 @@ exports[`DataTable onSort external 2`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sorted descending, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -18127,6 +18285,14 @@ exports[`DataTable onSort external 2`] = `
                   class="StyledText-sc-1sadyjn-0 iuKlFO"
                 >
                   B
+                </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -51962,7 +52128,7 @@ exports[`DataTable sort 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -51982,7 +52148,7 @@ exports[`DataTable sort 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -52056,7 +52222,7 @@ exports[`DataTable sort 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -52080,56 +52246,68 @@ exports[`DataTable sort 1`] = `
   border-collapse: separate;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
+}
+
+.c11 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -52175,7 +52353,8 @@ exports[`DataTable sort 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -52186,11 +52365,20 @@ exports[`DataTable sort 1`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c11"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -52210,6 +52398,14 @@ exports[`DataTable sort 1`] = `
                 >
                   B
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c11"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -52217,30 +52413,30 @@ exports[`DataTable sort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -52251,27 +52447,27 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -52282,27 +52478,27 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -52382,7 +52578,7 @@ exports[`DataTable sort controlled 1`] = `
   flex-direction: row;
 }
 
-.c15 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -52402,7 +52598,7 @@ exports[`DataTable sort controlled 1`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -52541,7 +52737,7 @@ exports[`DataTable sort controlled 1`] = `
   padding: 0px;
 }
 
-.c14 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -52565,56 +52761,68 @@ exports[`DataTable sort controlled 1`] = `
   border-collapse: separate;
 }
 
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c7 {
   padding: 6px 12px;
+}
+
+.c12 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -52666,7 +52874,8 @@ exports[`DataTable sort controlled 1`] = `
                     class="c10"
                   />
                   <svg
-                    aria-label="ascending"
+                    aria-hidden="true"
+                    aria-label="FormUp"
                     class="c11"
                     viewBox="0 0 24 24"
                   >
@@ -52677,11 +52886,20 @@ exports[`DataTable sort controlled 1`] = `
                       stroke-width="2"
                     />
                   </svg>
+                  <div
+                    class="c10"
+                  />
+                  <span
+                    class="c12"
+                  >
+                    sorted ascending, activate to sort descending
+                  </span>
                 </div>
               </button>
             </div>
           </th>
           <th
+            aria-sort="none"
             class="c4 "
             id="grommet-data-table-header-b"
             scope="col"
@@ -52701,6 +52919,14 @@ exports[`DataTable sort controlled 1`] = `
                   >
                     B
                   </span>
+                  <div
+                    class="c10"
+                  />
+                  <span
+                    class="c12"
+                  >
+                    sortable, activate to sort ascending
+                  </span>
                 </div>
               </button>
             </div>
@@ -52708,30 +52934,30 @@ exports[`DataTable sort controlled 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
         >
           <th
-            class="c14 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 one
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c15 "
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
                 class="c9"
@@ -52742,27 +52968,27 @@ exports[`DataTable sort controlled 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
         >
           <th
-            class="c14 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 two
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c15 "
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
                 class="c9"
@@ -52773,27 +52999,27 @@ exports[`DataTable sort controlled 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
         >
           <th
-            class="c14 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 zero
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c15 "
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
                 class="c9"
@@ -52874,7 +53100,7 @@ exports[`DataTable sort controlled 2`] = `
   flex-direction: row;
 }
 
-.c15 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -52894,7 +53120,7 @@ exports[`DataTable sort controlled 2`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -53033,7 +53259,7 @@ exports[`DataTable sort controlled 2`] = `
   padding: 0px;
 }
 
-.c14 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -53057,56 +53283,68 @@ exports[`DataTable sort controlled 2`] = `
   border-collapse: separate;
 }
 
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c7 {
   padding: 6px 12px;
+}
+
+.c12 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -53158,7 +53396,8 @@ exports[`DataTable sort controlled 2`] = `
                     class="c10"
                   />
                   <svg
-                    aria-label="descending"
+                    aria-hidden="true"
+                    aria-label="FormDown"
                     class="c11"
                     viewBox="0 0 24 24"
                   >
@@ -53169,11 +53408,20 @@ exports[`DataTable sort controlled 2`] = `
                       stroke-width="2"
                     />
                   </svg>
+                  <div
+                    class="c10"
+                  />
+                  <span
+                    class="c12"
+                  >
+                    sorted descending, activate to sort ascending
+                  </span>
                 </div>
               </button>
             </div>
           </th>
           <th
+            aria-sort="none"
             class="c4 "
             id="grommet-data-table-header-b"
             scope="col"
@@ -53193,6 +53441,14 @@ exports[`DataTable sort controlled 2`] = `
                   >
                     B
                   </span>
+                  <div
+                    class="c10"
+                  />
+                  <span
+                    class="c12"
+                  >
+                    sortable, activate to sort ascending
+                  </span>
                 </div>
               </button>
             </div>
@@ -53200,30 +53456,30 @@ exports[`DataTable sort controlled 2`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
         >
           <th
-            class="c14 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 zero
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c15 "
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
                 class="c9"
@@ -53234,27 +53490,27 @@ exports[`DataTable sort controlled 2`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
         >
           <th
-            class="c14 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 two
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c15 "
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
                 class="c9"
@@ -53265,27 +53521,27 @@ exports[`DataTable sort controlled 2`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
         >
           <th
-            class="c14 "
+            class="c15 "
             scope="row"
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
-                class="c16"
+                class="c17"
               >
                 one
               </span>
             </div>
           </th>
           <td
-            class="c14 "
+            class="c15 "
           >
             <div
-              class="c15"
+              class="c16"
             >
               <span
                 class="c9"
@@ -53365,7 +53621,7 @@ exports[`DataTable sort external 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -53385,7 +53641,7 @@ exports[`DataTable sort external 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -53459,7 +53715,7 @@ exports[`DataTable sort external 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -53483,56 +53739,68 @@ exports[`DataTable sort external 1`] = `
   border-collapse: separate;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
+}
+
+.c11 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -53578,7 +53846,8 @@ exports[`DataTable sort external 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c10"
                   viewBox="0 0 24 24"
                 >
@@ -53589,11 +53858,20 @@ exports[`DataTable sort external 1`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c11"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -53613,6 +53891,14 @@ exports[`DataTable sort external 1`] = `
                 >
                   B
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c11"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -53620,30 +53906,30 @@ exports[`DataTable sort external 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -53654,27 +53940,27 @@ exports[`DataTable sort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -53685,27 +53971,27 @@ exports[`DataTable sort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -53721,7 +54007,7 @@ exports[`DataTable sort external 1`] = `
 `;
 
 exports[`DataTable sort nested object 1`] = `
-.c10 {
+.c11 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -53730,25 +54016,25 @@ exports[`DataTable sort nested object 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -53784,7 +54070,7 @@ exports[`DataTable sort nested object 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -53804,7 +54090,7 @@ exports[`DataTable sort nested object 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -53878,7 +54164,7 @@ exports[`DataTable sort nested object 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -53902,56 +54188,68 @@ exports[`DataTable sort nested object 1`] = `
   border-collapse: separate;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
+}
+
+.c10 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -53973,6 +54271,7 @@ exports[`DataTable sort nested object 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -53991,6 +54290,14 @@ exports[`DataTable sort nested object 1`] = `
                   class="c8"
                 >
                   A
+                </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -54021,8 +54328,9 @@ exports[`DataTable sort nested object 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="descending"
-                  class="c10"
+                  aria-hidden="true"
+                  aria-label="FormDown"
+                  class="c11"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -54032,6 +54340,14 @@ exports[`DataTable sort nested object 1`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sorted descending, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -54039,30 +54355,30 @@ exports[`DataTable sort nested object 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -54073,27 +54389,27 @@ exports[`DataTable sort nested object 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -54104,27 +54420,27 @@ exports[`DataTable sort nested object 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -54140,7 +54456,7 @@ exports[`DataTable sort nested object 1`] = `
 `;
 
 exports[`DataTable sort nested object with onSort 1`] = `
-.c10 {
+.c11 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -54149,25 +54465,25 @@ exports[`DataTable sort nested object with onSort 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -54203,7 +54519,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54223,7 +54539,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -54297,7 +54613,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -54321,56 +54637,68 @@ exports[`DataTable sort nested object with onSort 1`] = `
   border-collapse: separate;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
+}
+
+.c10 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -54392,6 +54720,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -54410,6 +54739,14 @@ exports[`DataTable sort nested object with onSort 1`] = `
                   class="c8"
                 >
                   A
+                </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -54440,8 +54777,9 @@ exports[`DataTable sort nested object with onSort 1`] = `
                   class="c9"
                 />
                 <svg
-                  aria-label="descending"
-                  class="c10"
+                  aria-hidden="true"
+                  aria-label="FormDown"
+                  class="c11"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -54451,6 +54789,14 @@ exports[`DataTable sort nested object with onSort 1`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sorted descending, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -54458,30 +54804,30 @@ exports[`DataTable sort nested object with onSort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -54492,27 +54838,27 @@ exports[`DataTable sort nested object with onSort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -54523,27 +54869,27 @@ exports[`DataTable sort nested object with onSort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c15"
           >
             <span
               class="c8"
@@ -54590,7 +54936,7 @@ exports[`DataTable sort null data 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54599,12 +54945,18 @@ exports[`DataTable sort null data 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
+}
+
 .c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c15 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -54678,7 +55030,7 @@ exports[`DataTable sort null data 1`] = `
   padding: 0px;
 }
 
-.c11 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -54702,56 +55054,74 @@ exports[`DataTable sort null data 1`] = `
   border-collapse: separate;
 }
 
-.c10:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus ::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c9:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c9:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
+}
+
+.c10 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 3px;
+  }
 }
 
 <div
@@ -54767,6 +55137,7 @@ exports[`DataTable sort null data 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -54786,11 +55157,20 @@ exports[`DataTable sort null data 1`] = `
                 >
                   A
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -54810,11 +55190,20 @@ exports[`DataTable sort null data 1`] = `
                 >
                   B
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-c"
           scope="col"
@@ -54834,11 +55223,20 @@ exports[`DataTable sort null data 1`] = `
                 >
                   C
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-d"
           scope="col"
@@ -54858,6 +55256,14 @@ exports[`DataTable sort null data 1`] = `
                 >
                   D
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -54865,24 +55271,24 @@ exports[`DataTable sort null data 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c9"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           />
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -54892,10 +55298,10 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </td>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -54905,10 +55311,10 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </td>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -54919,27 +55325,27 @@ exports[`DataTable sort null data 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
-              class="c13"
+              class="c15"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -54949,42 +55355,42 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </td>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           />
         </td>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
-              class="c13"
+              class="c15"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -54994,10 +55400,10 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </td>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -55007,29 +55413,29 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </td>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           />
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -55039,17 +55445,17 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </td>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           />
         </td>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -55150,7 +55556,8 @@ exports[`DataTable sort null data 2`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -55161,11 +55568,36 @@ exports[`DataTable sort null data 2`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                .c0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<span
+                  class="c0"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -55185,11 +55617,20 @@ exports[`DataTable sort null data 2`] = `
                 >
                   B
                 </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-c"
           scope="col"
@@ -55209,11 +55650,20 @@ exports[`DataTable sort null data 2`] = `
                 >
                   C
                 </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-d"
           scope="col"
@@ -55232,6 +55682,14 @@ exports[`DataTable sort null data 2`] = `
                   class="StyledText-sc-1sadyjn-0 iuKlFO"
                 >
                   D
+                </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -55523,6 +55981,7 @@ exports[`DataTable sort null data 3`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
       >
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -55542,11 +56001,36 @@ exports[`DataTable sort null data 3`] = `
                 >
                   A
                 </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                .c0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<span
+                  class="c0"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -55565,6 +56049,14 @@ exports[`DataTable sort null data 3`] = `
                   class="StyledText-sc-1sadyjn-0 iuKlFO"
                 >
                   B
+                </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -55643,7 +56135,8 @@ exports[`DataTable sort null data 3`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -55654,11 +56147,36 @@ exports[`DataTable sort null data 3`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                .c0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<span
+                  class="c0"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-d"
           scope="col"
@@ -55677,6 +56195,14 @@ exports[`DataTable sort null data 3`] = `
                   class="StyledText-sc-1sadyjn-0 iuKlFO"
                 >
                   D
+                </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -55968,6 +56494,7 @@ exports[`DataTable sort null data 4`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
       >
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-a"
           scope="col"
@@ -55987,11 +56514,20 @@ exports[`DataTable sort null data 4`] = `
                 >
                   A
                 </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -56011,11 +56547,20 @@ exports[`DataTable sort null data 4`] = `
                 >
                   B
                 </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-c"
           scope="col"
@@ -56034,6 +56579,30 @@ exports[`DataTable sort null data 4`] = `
                   class="StyledText-sc-1sadyjn-0 iuKlFO"
                 >
                   C
+                </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                .c0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<span
+                  class="c0"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -56112,7 +56681,8 @@ exports[`DataTable sort null data 4`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -56123,6 +56693,30 @@ exports[`DataTable sort null data 4`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                .c0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<span
+                  class="c0"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
               </div>
             </button>
           </div>
@@ -56431,7 +57025,7 @@ exports[`DataTable sortable 1`] = `
   flex-direction: row;
 }
 
-.c12 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -56440,12 +57034,18 @@ exports[`DataTable sortable 1`] = `
   flex-direction: column;
 }
 
+.c9 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
+}
+
 .c8 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c13 {
+.c15 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -56519,7 +57119,7 @@ exports[`DataTable sortable 1`] = `
   padding: 0px;
 }
 
-.c11 {
+.c13 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -56543,56 +57143,74 @@ exports[`DataTable sortable 1`] = `
   border-collapse: separate;
 }
 
-.c10:focus {
+.c12:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus >circle,
-.c10:focus >ellipse,
-.c10:focus >line,
-.c10:focus >path,
-.c10:focus >polygon,
-.c10:focus >polyline,
-.c10:focus >rect {
+.c12:focus >circle,
+.c12:focus >ellipse,
+.c12:focus >line,
+.c12:focus >path,
+.c12:focus >polygon,
+.c12:focus >polyline,
+.c12:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c10:focus ::-moz-focus-inner {
+.c12:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c10:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) >circle,
-.c10:focus:not(:focus-visible) >ellipse,
-.c10:focus:not(:focus-visible) >line,
-.c10:focus:not(:focus-visible) >path,
-.c10:focus:not(:focus-visible) >polygon,
-.c10:focus:not(:focus-visible) >polyline,
-.c10:focus:not(:focus-visible) >rect {
+.c12:focus:not(:focus-visible) >circle,
+.c12:focus:not(:focus-visible) >ellipse,
+.c12:focus:not(:focus-visible) >line,
+.c12:focus:not(:focus-visible) >path,
+.c12:focus:not(:focus-visible) >polygon,
+.c12:focus:not(:focus-visible) >polyline,
+.c12:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c10:focus:not(:focus-visible) ::-moz-focus-inner {
+.c12:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c9:focus {
+.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c9:focus:not(:focus-visible) {
+.c11:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c6 {
   padding: 6px 12px;
+}
+
+.c10 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    width: 3px;
+  }
 }
 
 <div
@@ -56608,6 +57226,7 @@ exports[`DataTable sortable 1`] = `
         class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
       >
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -56627,11 +57246,20 @@ exports[`DataTable sortable 1`] = `
                 >
                   A
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c3 "
           id="grommet-data-table-header-b"
           scope="col"
@@ -56651,6 +57279,14 @@ exports[`DataTable sortable 1`] = `
                 >
                   B
                 </span>
+                <div
+                  class="c9"
+                />
+                <span
+                  class="c10"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -56658,30 +57294,30 @@ exports[`DataTable sortable 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c9"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
-              class="c13"
+              class="c15"
             >
               zero
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -56692,27 +57328,27 @@ exports[`DataTable sortable 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
-              class="c13"
+              class="c15"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -56723,27 +57359,27 @@ exports[`DataTable sortable 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c10"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
       >
         <th
-          class="c11 "
+          class="c13 "
           scope="row"
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
-              class="c13"
+              class="c15"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c11 "
+          class="c13 "
         >
           <div
-            class="c12"
+            class="c14"
           >
             <span
               class="c8"
@@ -56844,7 +57480,8 @@ exports[`DataTable sortable 2`] = `
 }
 
 <svg
-                  aria-label="ascending"
+                  aria-hidden="true"
+                  aria-label="FormUp"
                   class="c0"
                   viewBox="0 0 24 24"
                 >
@@ -56855,11 +57492,36 @@ exports[`DataTable sortable 2`] = `
                     stroke-width="2"
                   />
                 </svg>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                .c0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<span
+                  class="c0"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
               </div>
             </button>
           </div>
         </th>
         <th
+          aria-sort="none"
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
           id="grommet-data-table-header-b"
           scope="col"
@@ -56878,6 +57540,14 @@ exports[`DataTable sortable 2`] = `
                   class="StyledText-sc-1sadyjn-0 iuKlFO"
                 >
                   B
+                </span>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                >
+                  sortable, activate to sort ascending
                 </span>
               </div>
             </button>
@@ -57089,7 +57759,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   flex-direction: row;
 }
 
-.c20 {
+.c22 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -57100,7 +57770,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   justify-content: center;
 }
 
-.c25 {
+.c27 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -57109,7 +57779,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   flex-direction: column;
 }
 
-.c17 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -57122,6 +57792,12 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
 }
 
 .c16 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 48px;
+}
+
+.c18 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
@@ -57256,7 +57932,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   border: 0;
 }
 
-.c19 {
+.c21 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -57272,53 +57948,53 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   border-radius: 4px;
 }
 
-.c19:focus {
+.c21:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus >circle,
-.c19:focus >ellipse,
-.c19:focus >line,
-.c19:focus >path,
-.c19:focus >polygon,
-.c19:focus >polyline,
-.c19:focus >rect {
+.c21:focus >circle,
+.c21:focus >ellipse,
+.c21:focus >line,
+.c21:focus >path,
+.c21:focus >polygon,
+.c21:focus >polyline,
+.c21:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c19:focus ::-moz-focus-inner {
+.c21:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c19::-webkit-input-placeholder {
+.c21::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c19::-moz-placeholder {
+.c21::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c19:-ms-input-placeholder {
+.c21:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c19 ::-webkit-search-decoration {
+.c21 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c19::-moz-focus-inner {
+.c21::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c19:-moz-placeholder,
-.c19::-moz-placeholder {
+.c21:-moz-placeholder,
+.c21::-moz-placeholder {
   opacity: 1;
 }
 
-.c18 {
+.c20 {
   position: relative;
   width: 100%;
 }
@@ -57359,7 +58035,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   padding: 0px;
 }
 
-.c23 {
+.c25 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -57371,7 +58047,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   text-align: start;
 }
 
-.c24 {
+.c26 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -57395,56 +58071,68 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   border-collapse: separate;
 }
 
-.c22:focus {
+.c24:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus >circle,
-.c22:focus >ellipse,
-.c22:focus >line,
-.c22:focus >path,
-.c22:focus >polygon,
-.c22:focus >polyline,
-.c22:focus >rect {
+.c24:focus >circle,
+.c24:focus >ellipse,
+.c24:focus >line,
+.c24:focus >path,
+.c24:focus >polygon,
+.c24:focus >polyline,
+.c24:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c22:focus ::-moz-focus-inner {
+.c24:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c22:focus:not(:focus-visible) {
+.c24:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible) >circle,
-.c22:focus:not(:focus-visible) >ellipse,
-.c22:focus:not(:focus-visible) >line,
-.c22:focus:not(:focus-visible) >path,
-.c22:focus:not(:focus-visible) >polygon,
-.c22:focus:not(:focus-visible) >polyline,
-.c22:focus:not(:focus-visible) >rect {
+.c24:focus:not(:focus-visible) >circle,
+.c24:focus:not(:focus-visible) >ellipse,
+.c24:focus:not(:focus-visible) >line,
+.c24:focus:not(:focus-visible) >path,
+.c24:focus:not(:focus-visible) >polygon,
+.c24:focus:not(:focus-visible) >polyline,
+.c24:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c22:focus:not(:focus-visible) ::-moz-focus-inner {
+.c24:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c21:focus {
+.c23:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c21:focus:not(:focus-visible) {
+.c23:focus:not(:focus-visible) {
   outline: none;
 }
 
 .c13 {
   padding: 6px 12px;
+}
+
+.c17 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media only screen and (max-width: 768px) {
@@ -57462,13 +58150,19 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
 }
 
 @media only screen and (max-width: 768px) {
-  .c17 {
+  .c19 {
     padding-left: 24px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .c16 {
+    width: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c18 {
     width: 6px;
   }
 }
@@ -57521,6 +58215,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           class="c8"
         />
         <th
+          aria-sort="none"
           class="c9 "
           id="grommet-data-table-header-a"
           scope="col"
@@ -57543,22 +58238,30 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
                   >
                     A
                   </span>
+                  <div
+                    class="c16"
+                  />
+                  <span
+                    class="c17"
+                  >
+                    sortable, activate to sort ascending
+                  </span>
                 </div>
               </button>
             </div>
             <div
-              class="c16"
+              class="c18"
             />
             <div
-              class="c17"
+              class="c19"
             >
               <div
-                class="c18"
+                class="c20"
               >
                 <input
                   aria-label="Open search by a"
                   autocomplete="off"
-                  class="c19"
+                  class="c21"
                   name="search-a"
                   value=""
                 />
@@ -57567,12 +58270,13 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </th>
         <th
+          aria-sort="none"
           class="c9 "
           id="grommet-data-table-header-b"
           scope="col"
         >
           <div
-            class="c20"
+            class="c22"
           >
             <button
               class="c12 c13"
@@ -57586,6 +58290,14 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
                 >
                   B
                 </span>
+                <div
+                  class="c16"
+                />
+                <span
+                  class="c17"
+                >
+                  sortable, activate to sort ascending
+                </span>
               </div>
             </button>
           </div>
@@ -57593,13 +58305,13 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c21"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c23"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c22"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c24"
       >
         <td
-          class="c23"
+          class="c25"
         >
           <div
             class="c4"
@@ -57631,11 +58343,11 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </td>
         <th
-          class="c24 "
+          class="c26 "
           scope="row"
         >
           <div
-            class="c25"
+            class="c27"
           >
             <span
               class="c15"
@@ -57645,18 +58357,18 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </th>
         <td
-          class="c24 "
+          class="c26 "
         >
           <div
-            class="c25"
+            class="c27"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c22"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c24"
       >
         <td
-          class="c23"
+          class="c25"
         >
           <div
             class="c4"
@@ -57688,11 +58400,11 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </td>
         <th
-          class="c24 "
+          class="c26 "
           scope="row"
         >
           <div
-            class="c25"
+            class="c27"
           >
             <span
               class="c15"
@@ -57702,10 +58414,10 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </th>
         <td
-          class="c24 "
+          class="c26 "
         >
           <div
-            class="c25"
+            class="c27"
           />
         </td>
       </tr>

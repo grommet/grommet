@@ -113,6 +113,21 @@ const StyledContentBox = styled(Box)`
   ${(props) => props.extend}
 `;
 
+// Similar pattern used in Card.js. visually hidden but exposed to AT.
+// Used to add sort status + alternate action context to the sortable
+// header button's accessible name (computed from content).
+const HiddenText = styled.span`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+`;
+
 const Header = forwardRef(
   (
     {
@@ -315,6 +330,36 @@ const Header = forwardRef(
               size,
               units,
             }) => {
+              // Extract a plain-text label for the column, used for
+              // accessible names (e.g. resizer, sortable button a11yTitle).
+              // Falls back to the column property when no text can be
+              // derived from a non-string / node header.
+              const headerText =
+                typeof header === 'string'
+                  ? header
+                  : (() => {
+                      const textFromNode = (node) => {
+                        if (
+                          node === null ||
+                          node === undefined ||
+                          typeof node === 'boolean'
+                        )
+                          return '';
+                        if (
+                          typeof node === 'string' ||
+                          typeof node === 'number'
+                        )
+                          return String(node);
+                        if (Array.isArray(node))
+                          return node.map(textFromNode).join('');
+                        if (React.isValidElement(node))
+                          return textFromNode(node.props.children);
+                        return '';
+                      };
+
+                      const text = textFromNode(header).trim();
+                      return text || property;
+                    })();
               let content;
               const unitsContent = units ? (
                 <Text {...textProps} {...theme.dataTable.header.units}>
@@ -359,29 +404,33 @@ const Header = forwardRef(
               let ariaSort;
               if (onSort && sortable !== false) {
                 let Icon;
-                let iconAriaLabel;
-                if (onSort && sortable !== false) {
-                  if (sort && sort.property === property) {
-                    Icon =
-                      theme.dataTable.icons[
-                        sort.direction !== 'asc' ? 'ascending' : 'descending'
-                      ];
-                    if (sort.direction === 'asc') {
-                      ariaSort = 'ascending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.ascending',
-                        messages,
-                      });
-                    } else if (sort.direction === 'desc') {
-                      ariaSort = 'descending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.descending',
-                        messages,
-                      });
-                    }
-                  } else if (theme.dataTable.icons.sortable) {
-                    Icon = theme.dataTable.icons.sortable;
-                  }
+                // default to 'none' so AT users can discover a column is
+                // sortable before interacting with it. Overridden below
+                // when the column is the active sort.
+                ariaSort = 'none';
+                if (sort && sort.property === property) {
+                  Icon =
+                    theme.dataTable.icons[
+                      sort.direction !== 'asc' ? 'ascending' : 'descending'
+                    ];
+                  ariaSort =
+                    sort.direction === 'asc' ? 'ascending' : 'descending';
+                } else if (theme.dataTable.icons.sortable) {
+                  Icon = theme.dataTable.icons.sortable;
+                }
+
+                // sort status + alternate action text, exposed via a
+                // visually hidden span rather than an aria-label override on
+                // the button. This keeps the button's accessible name
+                // content-derived (visible header text + this hidden text),
+                // which is the same mechanism that already reliably
+                // announces sort changes in real time on activation -
+                // unlike a static aria-label override, which does not.
+                let hiddenTextId = 'dataTable.sortable';
+                if (ariaSort === 'ascending') {
+                  hiddenTextId = 'dataTable.sortedAscending';
+                } else if (ariaSort === 'descending') {
+                  hiddenTextId = 'dataTable.sortedDescending';
                 }
 
                 content = (
@@ -404,7 +453,10 @@ const Header = forwardRef(
                       justify={align}
                     >
                       {content}
-                      {Icon && <Icon aria-label={iconAriaLabel} />}
+                      {Icon && <Icon aria-hidden />}
+                      <HiddenText>
+                        {format({ id: hiddenTextId, messages })}
+                      </HiddenText>
                     </Box>
                   </StyledHeaderCellButton>
                 );
@@ -519,9 +571,7 @@ const Header = forwardRef(
                         onResize(prop, width);
                         updateWidths(prop, width);
                       }}
-                      headerText={
-                        typeof header === 'string' ? header : property
-                      }
+                      headerText={headerText}
                       messages={messages}
                       headerId={headerId}
                     />
