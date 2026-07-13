@@ -8,9 +8,6 @@ if (process.env.NODE_ENV !== 'production') {
     format: PropTypes.oneOf(['12', '24']),
     id: PropTypes.string,
     messages: PropTypes.shape({
-      activePeriodValue: PropTypes.string,
-      activeSection: PropTypes.string,
-      activeSectionValue: PropTypes.string,
       chooseTime: PropTypes.string,
       currentValue12: PropTypes.string,
       currentValue24: PropTypes.string,

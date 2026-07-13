@@ -215,9 +215,6 @@
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
   },
   "timeInput": {
-    "activeSection": "{section} selected",
-    "activeSectionValue": "{value} {section}",
-    "activePeriodValue": "{period} period",
     "inputLabel": "Time input",
     "chooseTime": "Choose time",
     "currentValue12": "Current time {hour}:{minute}:{second} {period}",

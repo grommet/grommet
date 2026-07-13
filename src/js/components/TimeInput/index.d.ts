@@ -6,9 +6,6 @@ export interface TimeInputProps {
   format?: '12' | '24';
   id?: string;
   messages?: {
-    activePeriodValue?: string;
-    activeSection?: string;
-    activeSectionValue?: string;
     chooseTime?: string;
     currentValue12?: string;
     currentValue24?: string;
