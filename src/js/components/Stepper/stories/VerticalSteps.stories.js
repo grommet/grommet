@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, Text, Heading, Paragraph, Grommet } from 'grommet';
+import { Box, Text, Heading, Paragraph } from 'grommet';
 import { Stepper } from '../Stepper';
-import { grommet } from '../../../themes';
 
 const VerticalSteps = () => {
   const [currentStep, setCurrentStep] = useState('deploy');
@@ -26,33 +25,34 @@ const VerticalSteps = () => {
     },
   ];
   return (
-    <Grommet theme={grommet}>
-      <Box direction="row" gap="medium" pad="medium">
-        <Stepper
-          steps={steps}
-          currentStep={currentStep}
-          direction="vertical"
-          onStepClick={(id) => setCurrentStep(id)}
-        />
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box direction="row" gap="medium" pad="medium">
+      <Stepper
+        steps={steps}
+        currentStep={currentStep}
+        direction="vertical"
+        onStepClick={(id) => setCurrentStep(id)}
+      />
 
-        <Box
-          flex
-          pad="medium"
-          background="background-contrast"
-          round="small"
-          height={{ min: 'medium' }}
-          gap="none"
-        >
-          <Heading level={2}>
-            {steps.find((s) => s.id === currentStep)?.title}
-          </Heading>
-          <Text color="text-strong">
-            {steps.find((s) => s.id === currentStep)?.description}
-          </Text>
-          <Paragraph>Step content</Paragraph>
-        </Box>
+      <Box
+        flex
+        pad="medium"
+        background="background-contrast"
+        round="small"
+        height={{ min: 'medium' }}
+        gap="none"
+      >
+        <Heading level={2}>
+          {steps.find((s) => s.id === currentStep)?.title}
+        </Heading>
+        <Text color="text-strong">
+          {steps.find((s) => s.id === currentStep)?.description}
+        </Text>
+        <Paragraph>Step content</Paragraph>
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 

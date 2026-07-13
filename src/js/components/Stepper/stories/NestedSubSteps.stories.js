@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, Text, Grommet } from 'grommet';
+import { Box, Text } from 'grommet';
 import { Stepper } from '../Stepper';
-import { grommet } from '../../../themes';
 
 const NestedSubSteps = () => {
   const [currentStep, setCurrentStep] = useState('email');
@@ -35,23 +34,24 @@ const NestedSubSteps = () => {
     { id: 'confirm', title: 'Confirm', status: 'pending' },
   ];
   return (
-    <Grommet theme={grommet}>
-      <Box pad="large" gap="medium">
-        <Stepper
-          steps={steps}
-          currentStep={currentStep}
-          direction="vertical"
-          aria-label="Account setup progress"
-          onStepClick={(id) => setCurrentStep(id)}
-        />
-        <Text>
-          Parent:{' '}
-          {steps.find((s) => s.children?.some((c) => c.id === currentStep))
-            ?.title || 'None'}
-        </Text>
-        <Text>Current Step: {currentStep}</Text>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="large" gap="medium">
+      <Stepper
+        steps={steps}
+        currentStep={currentStep}
+        direction="vertical"
+        aria-label="Account setup progress"
+        onStepClick={(id) => setCurrentStep(id)}
+      />
+      <Text>
+        Parent:{' '}
+        {steps.find((s) => s.children?.some((c) => c.id === currentStep))
+          ?.title || 'None'}
+      </Text>
+      <Text>Current Step: {currentStep}</Text>
+    </Box>
+    // </Grommet>
   );
 };
 

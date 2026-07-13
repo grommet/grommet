@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Box, Grommet } from 'grommet';
+import { Box } from 'grommet';
 import { Stepper } from '../Stepper';
-import { grommet } from '../../../themes';
 
 const ReadOnly = () => {
   const steps = [
@@ -12,11 +11,12 @@ const ReadOnly = () => {
     { id: 'step4', title: 'Step 4', status: 'pending' },
   ];
   return (
-    <Grommet theme={grommet}>
-      <Box pad="large">
-        <Stepper steps={steps} currentStep="step3" clickableSteps={false} />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="large">
+      <Stepper steps={steps} currentStep="step3" clickableSteps={false} />
+    </Box>
+    // </Grommet>
   );
 };
 

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet } from 'grommet';
+import { Box } from 'grommet';
 import { Stepper } from '../Stepper';
-import { grommet } from '../../../themes';
 
 const ErrorStates = () => {
   const [currentStep, setCurrentStep] = useState('billing');
@@ -17,15 +16,16 @@ const ErrorStates = () => {
     { id: 'review', title: 'Review', status: 'pending' },
   ];
   return (
-    <Grommet theme={grommet}>
-      <Box pad="large">
-        <Stepper
-          steps={steps}
-          currentStep={currentStep}
-          onStepClick={(id) => setCurrentStep(id)}
-        />
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="large">
+      <Stepper
+        steps={steps}
+        currentStep={currentStep}
+        onStepClick={(id) => setCurrentStep(id)}
+      />
+    </Box>
+    //  </Grommet>
   );
 };
 

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, Text, Button, Grommet } from 'grommet';
+import { Box, Text, Button } from 'grommet';
 import { Stepper } from '../Stepper';
-import { grommet } from '../../../themes';
 
 const Interactive = () => {
   const [currentStep, setCurrentStep] = useState('step1');
@@ -17,28 +16,29 @@ const Interactive = () => {
     { id: 'step3', title: 'Step 3', status: 'pending' },
   ];
   return (
-    <Grommet theme={grommet}>
-      <Box pad="large" gap="medium">
-        <Text>Current : {currentStep}</Text>
-        <Box width="xlarge">
-          <Stepper
-            steps={steps}
-            currentStep={currentStep}
-            onStepClick={(id) => setCurrentStep(id)}
-          />
-        </Box>
-        <Box direction="row" gap="small">
-          {steps.map((step) => (
-            <Button
-              key={step.id}
-              label={`Go to ${step.id}`}
-              onClick={() => setCurrentStep(step.id)}
-              disabled={step.status === 'disabled'}
-            />
-          ))}
-        </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="large" gap="medium">
+      <Text>Current : {currentStep}</Text>
+      <Box width="xlarge">
+        <Stepper
+          steps={steps}
+          currentStep={currentStep}
+          onStepClick={(id) => setCurrentStep(id)}
+        />
       </Box>
-    </Grommet>
+      <Box direction="row" gap="small">
+        {steps.map((step) => (
+          <Button
+            key={step.id}
+            label={`Go to ${step.id}`}
+            onClick={() => setCurrentStep(step.id)}
+            disabled={step.status === 'disabled'}
+          />
+        ))}
+      </Box>
+    </Box>
+    // </Grommet>
   );
 };
 

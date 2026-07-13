@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, Paragraph, Grommet } from 'grommet';
+import { Box, Paragraph } from 'grommet';
 import { Stepper } from '../Stepper';
-import { grommet } from '../../../themes';
 
 const HorizontalSteps = () => {
   const [currentStep, setCurrentStep] = useState('profile');
@@ -12,19 +11,20 @@ const HorizontalSteps = () => {
     { id: 'review', title: 'Review', status: 'pending' },
   ];
   return (
-    <Grommet theme={grommet}>
-      <Box gap="medium" pad="large">
-        <Stepper
-          steps={steps}
-          currentStep={currentStep}
-          direction="horizontal"
-          onStepClick={(id) => setCurrentStep(id)}
-        />
-        <Box pad="medium" background="background-contrast" round="small">
-          <Paragraph>Step content for &quot;{currentStep}&quot;</Paragraph>
-        </Box>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box gap="medium" pad="large">
+      <Stepper
+        steps={steps}
+        currentStep={currentStep}
+        direction="horizontal"
+        onStepClick={(id) => setCurrentStep(id)}
+      />
+      <Box pad="medium" background="background-contrast" round="small">
+        <Paragraph>Step content for &quot;{currentStep}&quot;</Paragraph>
       </Box>
-    </Grommet>
+    </Box>
+    // </Grommet>
   );
 };
 

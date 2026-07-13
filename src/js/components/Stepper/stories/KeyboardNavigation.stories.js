@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { Box, Text, Grommet } from 'grommet';
+import { Box, Text } from 'grommet';
 import { Stepper } from '../Stepper';
-import { grommet } from '../../../themes';
 
 const KeyboardNavigation = () => {
   const [currentStep, setCurrentStep] = useState('step1');
@@ -27,22 +26,23 @@ const KeyboardNavigation = () => {
   }, []);
 
   return (
-    <Grommet theme={grommet}>
-      <Box pad="large" gap="medium">
-        <Text weight="bold">
-          Use Arrow keys to navigate and Enter/Space to select.
-        </Text>
-        <Stepper
-          ref={stepperRef}
-          steps={steps}
-          currentStep={currentStep}
-          onStepClick={(id) => {
-            setCurrentStep(id);
-          }}
-        />
-        <Text>Selected : {currentStep}</Text>
-      </Box>
-    </Grommet>
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    <Box pad="large" gap="medium">
+      <Text weight="bold">
+        Use Arrow keys to navigate and Enter/Space to select.
+      </Text>
+      <Stepper
+        ref={stepperRef}
+        steps={steps}
+        currentStep={currentStep}
+        onStepClick={(id) => {
+          setCurrentStep(id);
+        }}
+      />
+      <Text>Selected : {currentStep}</Text>
+    </Box>
+    // </Grommet>
   );
 };
 
