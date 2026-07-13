@@ -2433,28 +2433,28 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         indicator: {
           icon: StatusCriticalSmall,
           background: 'background-front',
-          color: 'status-error',
-          border: 'status-error',
+          color: 'status-critical',
+          border: 'status-critical',
           substep: {
             iconSize: 'small',
           },
         },
         label: { color: 'text', weight: 'normal' },
-        connector: { color: 'status-error' },
-        helperText: { color: 'status-error' },
+        connector: { color: 'status-critical' },
+        helperText: { color: 'status-critical' },
       },
       currentError: {
         indicator: {
           icon: StatusCriticalSmall,
-          background: 'status-error',
+          background: 'status-critical',
           color: 'white',
-          border: 'status-error',
+          border: 'status-critical',
           substep: {
             iconSize: 'small',
           },
         },
         label: {
-          color: 'status-error',
+          color: 'status-critical',
           weight: 'normal',
         },
       },
