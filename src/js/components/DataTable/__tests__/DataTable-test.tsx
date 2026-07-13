@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'jest-styled-components';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -201,8 +202,9 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('sortable columns have aria-sort="none" when unsorted and announce sortability', () => {
-    const { getByText } = render(
+  test('sortable columns have aria-sort="none" when unsorted and announce sortability', async () => {
+    const user = userEvent.setup();
+    render(
       <Grommet>
         <DataTable
           columns={[
@@ -218,8 +220,8 @@ describe('DataTable', () => {
       </Grommet>,
     );
 
-    const headerA = getByText('A').closest('th');
-    const headerB = getByText('B').closest('th');
+    const headerA = screen.getByRole('columnheader', { name: /^A\b/ });
+    const headerB = screen.getByRole('columnheader', { name: /^B\b/ });
     expect(headerA).toHaveAttribute('aria-sort', 'none');
     expect(headerB).toHaveAttribute('aria-sort', 'none');
     expect(
@@ -238,7 +240,11 @@ describe('DataTable', () => {
     // header text + a visually hidden status/action span) updates to
     // match, preserving the existing real-time sort announcement behavior
     // since nothing is overridden via a static aria-label.
-    fireEvent.click(getByText('A'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'A sortable, activate to sort ascending',
+      }),
+    );
     expect(headerA).toHaveAttribute('aria-sort', 'ascending');
     expect(headerB).toHaveAttribute('aria-sort', 'none');
     expect(
@@ -252,7 +258,11 @@ describe('DataTable', () => {
       }),
     ).toBeInTheDocument();
 
-    fireEvent.click(getByText('A'));
+    await user.click(
+      screen.getByRole('button', {
+        name: 'A sorted ascending, activate to sort descending',
+      }),
+    );
     expect(headerA).toHaveAttribute('aria-sort', 'descending');
     expect(
       screen.getByRole('button', {

@@ -331,9 +331,10 @@ const Header = forwardRef(
               units,
             }) => {
               // Extract a plain-text label for the column, used for
-              // accessible names (e.g. resizer, sortable button a11yTitle).
-              // Falls back to the column property when no text can be
-              // derived from a non-string / node header.
+              // accessible names (e.g. resizer aria-label, and the sortable
+              // button's hidden sort-status text). Falls back to the column
+              // property when no text can be derived from a non-string /
+              // node header.
               const headerText =
                 typeof header === 'string'
                   ? header
@@ -351,7 +352,7 @@ const Header = forwardRef(
                         )
                           return String(node);
                         if (Array.isArray(node))
-                          return node.map(textFromNode).join('');
+                          return node.map(textFromNode).join(' ');
                         if (React.isValidElement(node))
                           return textFromNode(node.props.children);
                         return '';
