@@ -152,6 +152,38 @@ describe('TimeInput', () => {
     });
   });
 
+  test('uses currentValue message key without period in 24h format', async () => {
+    const user = userEvent.setup();
+    const announceSpy = jest.fn();
+
+    render(
+      <AnnounceContext.Provider value={announceSpy}>
+        <Grommet>
+          <TimeInput
+            format="24"
+            defaultValue="12:34:56"
+            messages={{
+              currentValue: 'Now {hour}:{minute}:{second}{period}',
+            }}
+          />
+        </Grommet>
+      </AnnounceContext.Provider>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    await user.keyboard('{ArrowUp}');
+
+    await waitFor(() => {
+      expect(
+        announceSpy.mock.calls.some(([message, mode]) => {
+          const text = String(message);
+          return mode === 'polite' && /^Now \d{1,2}:\d{2}:\d{2}$/.test(text);
+        }),
+      ).toBe(true);
+    });
+  });
+
   test('updates spinbutton range metadata for the active section', async () => {
     const user = userEvent.setup();
 
