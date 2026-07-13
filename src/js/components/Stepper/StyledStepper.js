@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
-import { normalizeColor, styledComponentsConfig } from '../../utils';
+import {
+  focusStyle,
+  normalizeColor,
+  styledComponentsConfig,
+} from '../../utils';
 import { base } from '../../themes/base';
 
 const getStepperTheme = (theme) => (theme && theme.global ? theme : base);
@@ -19,98 +23,6 @@ const getSubStepSizeToken = (indicatorSize) => {
     default:
       return 'small';
   }
-};
-
-const getGlobalFocusStyles = (theme) => {
-  const focus = theme.global?.focus;
-
-  if (!focus) {
-    const color = normalizeColor('focus', theme);
-    return css`
-      outline: ${theme.global?.borderSize?.small || '2px'} solid ${color};
-    `;
-  }
-
-  if (typeof focus !== 'object') {
-    return css`
-      outline: ${focus};
-    `;
-  }
-
-  const getOutlineStyles = () => {
-    if (!focus.outline) return '';
-
-    if (typeof focus.outline === 'object') {
-      const color = normalizeColor(focus.outline.color || 'focus', theme);
-      const size = focus.outline.size || theme.global?.borderSize?.small;
-      const offset = focus.outline.offset || theme.global?.edgeSize?.none;
-      return `
-        outline-offset: ${offset};
-        outline: ${size} solid ${color};
-      `;
-    }
-
-    return `outline: ${focus.outline};`;
-  };
-
-  const getShadowStyles = () => {
-    if (!focus.shadow) return '';
-
-    if (typeof focus.shadow === 'object') {
-      const color = normalizeColor(
-        (focus.border && focus.border.color) || focus.shadow.color || 'focus',
-        theme,
-      );
-      const size = focus.shadow.size || theme.global?.borderSize?.small;
-      const blur = focus.shadow.blur || size;
-      const inset = focus.shadow.inset ? ' inset' : '';
-      return `box-shadow: 0 0 ${blur} ${size} ${color}${inset};`;
-    }
-
-    return `box-shadow: ${focus.shadow};`;
-  };
-
-  const getBorderStyles = () => {
-    if (!focus.border) return '';
-    const color = normalizeColor(focus.border.color || 'focus', theme);
-    return `border-color: ${color};`;
-  };
-
-  const outlineStyles = getOutlineStyles();
-  if (outlineStyles && !focus.twoColor) {
-    return css`
-      ${outlineStyles}
-    `;
-  }
-
-  const shadowStyles = getShadowStyles();
-  if (shadowStyles && !focus.twoColor) {
-    return css`
-      outline: none;
-      ${shadowStyles}
-    `;
-  }
-
-  const borderStyles = getBorderStyles();
-  if (borderStyles && !focus.twoColor) {
-    return css`
-      outline: none;
-      ${borderStyles}
-    `;
-  }
-
-  if (focus.twoColor) {
-    return css`
-      ${outlineStyles}
-      ${shadowStyles}
-      ${borderStyles}
-    `;
-  }
-
-  const color = normalizeColor('focus', theme);
-  return css`
-    outline: ${theme.global?.borderSize?.small || '2px'} solid ${color};
-  `;
 };
 
 const getConnectorColor = (stepStatus, theme) =>
@@ -244,7 +156,7 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
   }}
 
   ${StyledStepButton}:focus-visible & {
-    ${(props) => getGlobalFocusStyles(getStepperTheme(props.theme))}
+    ${focusStyle()}
   }
 
   ${(props) => {

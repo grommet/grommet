@@ -129,6 +129,21 @@ exports[`Stepper renders horizontal steps 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
+.c3:focus-visible .c5 >circle,
+.c3:focus-visible .c5 >ellipse,
+.c3:focus-visible .c5 >line,
+.c3:focus-visible .c5 >path,
+.c3:focus-visible .c5 >polygon,
+.c3:focus-visible .c5 >polyline,
+.c3:focus-visible .c5 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus-visible .c5 ::-moz-focus-inner {
+  border: 0;
+}
+
 .c3:not([aria-disabled]):active .c5 {
   transform: scale(0.95);
 }
@@ -157,6 +172,21 @@ exports[`Stepper renders horizontal steps 1`] = `
 .c3:focus-visible .c10 {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus-visible .c10 >circle,
+.c3:focus-visible .c10 >ellipse,
+.c3:focus-visible .c10 >line,
+.c3:focus-visible .c10 >path,
+.c3:focus-visible .c10 >polygon,
+.c3:focus-visible .c10 >polyline,
+.c3:focus-visible .c10 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus-visible .c10 ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3:not([aria-disabled]):active .c10 {
@@ -435,6 +465,21 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
+.c2:focus-visible .c4 >circle,
+.c2:focus-visible .c4 >ellipse,
+.c2:focus-visible .c4 >line,
+.c2:focus-visible .c4 >path,
+.c2:focus-visible .c4 >polygon,
+.c2:focus-visible .c4 >polyline,
+.c2:focus-visible .c4 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus-visible .c4 ::-moz-focus-inner {
+  border: 0;
+}
+
 .c2:not([aria-disabled]):active .c4 {
   transform: scale(0.95);
 }
@@ -463,6 +508,21 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 .c2:focus-visible .c9 {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus-visible .c9 >circle,
+.c2:focus-visible .c9 >ellipse,
+.c2:focus-visible .c9 >line,
+.c2:focus-visible .c9 >path,
+.c2:focus-visible .c9 >polygon,
+.c2:focus-visible .c9 >polyline,
+.c2:focus-visible .c9 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus-visible .c9 ::-moz-focus-inner {
+  border: 0;
 }
 
 .c2:not([aria-disabled]):active .c9 {
@@ -737,6 +797,21 @@ exports[`Stepper renders vertical steps 1`] = `
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
+.c3:focus-visible .c5 >circle,
+.c3:focus-visible .c5 >ellipse,
+.c3:focus-visible .c5 >line,
+.c3:focus-visible .c5 >path,
+.c3:focus-visible .c5 >polygon,
+.c3:focus-visible .c5 >polyline,
+.c3:focus-visible .c5 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus-visible .c5 ::-moz-focus-inner {
+  border: 0;
+}
+
 .c3:not([aria-disabled]):active .c5 {
   transform: scale(0.95);
 }
@@ -765,6 +840,21 @@ exports[`Stepper renders vertical steps 1`] = `
 .c3:focus-visible .c10 {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus-visible .c10 >circle,
+.c3:focus-visible .c10 >ellipse,
+.c3:focus-visible .c10 >line,
+.c3:focus-visible .c10 >path,
+.c3:focus-visible .c10 >polygon,
+.c3:focus-visible .c10 >polyline,
+.c3:focus-visible .c10 >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus-visible .c10 ::-moz-focus-inner {
+  border: 0;
 }
 
 .c3:not([aria-disabled]):active .c10 {
