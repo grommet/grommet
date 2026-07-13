@@ -35,10 +35,7 @@ export const StepperStep = ({
       : steps.findIndex((s) => s.id === step.id);
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
-    !isSubStep &&
-    step.children &&
-    step.children.length > 0 &&
-    step.children.some((c) => c.id === currentStep);
+    !isSubStep && step.children?.some((c) => c.id === currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
   const isDisabled = step.status === 'disabled';
   const isClickable = clickableSteps && !isDisabled;

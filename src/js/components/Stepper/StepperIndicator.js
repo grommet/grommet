@@ -43,10 +43,7 @@ export const StepperIndicator = ({ isClickable }) => {
 
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
-    !isSubStep &&
-    step.childIds &&
-    step.childIds.length > 0 &&
-    step.childIds.includes(currentStep);
+    !isSubStep && step.children?.some((c) => c.id === currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
   const effectiveState = getEffectiveState(step.status, isHighlighted);
   let stateTheme = theme.stepper?.[effectiveState]?.indicator || {};

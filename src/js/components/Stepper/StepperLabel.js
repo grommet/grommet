@@ -15,10 +15,7 @@ export const StepperLabel = ({ ...rest }) => {
 
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
-    !isSubStep &&
-    step.children &&
-    step.children.length > 0 &&
-    step.children.some((c) => c.id === currentStep);
+    !isSubStep && step.children?.some((c) => c.id === currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
   const effectiveState = getEffectiveState(step.status, isHighlighted);
   const stateProps = getStateProps(theme, effectiveState);
