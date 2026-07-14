@@ -31,6 +31,11 @@ export interface GrommetProps {
         nextMove?: string;
         next?: string;
       };
+      cards?: {
+        moved?: string;
+        reorderHint?: string;
+        description?: string;
+      };
       carousel?: {
         previous?: string;
         next?: string;
@@ -40,6 +45,7 @@ export interface GrommetProps {
         openCalendar?: string;
         enterCalendar?: string;
         exitCalendar?: string;
+        outOfBounds?: string;
       };
       dataChart?: {
         detailTitle?: string;
@@ -214,6 +220,8 @@ export interface GrommetProps {
         skipTo?: string;
       };
       tabs?: {
+        nextTab?: string;
+        previousTab?: string;
         tabContents?: string;
       };
       textInput?: {

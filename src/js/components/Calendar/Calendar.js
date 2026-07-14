@@ -126,9 +126,12 @@ const normalizeRange = (value, activeDate) => {
   return range;
 };
 
-const getReference = (reference, value, activeDate) => {
+const getReference = (reference, onReference, value, activeDate) => {
   let nextReference;
-  if (value) {
+  if (reference && onReference) {
+    // controlled component, so use the reference provided
+    nextReference = reference;
+  } else if (value) {
     if (Array.isArray(value)) {
       if (value[0] instanceof Date) {
         // if we just selected an end date, active date will be 'start'
@@ -364,15 +367,22 @@ const Calendar = forwardRef(
     }, [dateProp, datesProp]);
 
     const [reference, setReference] = useState(
-      getReference(normalizeInput(referenceProp), value, activeDate),
+      getReference(
+        normalizeInput(referenceProp),
+        onReference,
+        value,
+        activeDate,
+      ),
     );
     useEffect(() => {
-      if (value) {
-        setReference(
-          getReference(normalizeInput(referenceProp), value, activeDate),
-        );
-      }
-    }, [referenceProp, value, activeDate]);
+      setReference(
+        getReference(
+          normalizeInput(referenceProp),
+          onReference,
+          value,
+          activeDate),
+      );
+    }, [referenceProp, onReference, value, activeDate]);
 
     const [outputFormat, setOutputFormat] = useState(
       getOutputFormat(dateProp || datesProp),
@@ -571,14 +581,15 @@ const Calendar = forwardRef(
     const handleRange = useCallback(
       (selectedDate) => {
         let result;
+        let nextActiveDate = activeDate;
         const priorRange = normalizeRange(value, activeDate);
         // deselect when date clicked was the start/end of the range
         if (selectedDate.getTime() === priorRange?.[0]?.[0]?.getTime()) {
           result = [[undefined, priorRange[0][1]]];
-          setActiveDate('start');
+          nextActiveDate = 'start';
         } else if (selectedDate.getTime() === priorRange?.[0]?.[1]?.getTime()) {
           result = [[priorRange[0][0], undefined]];
-          setActiveDate('end');
+          nextActiveDate = 'end';
         }
         // selecting start date
         else if (activeDate === 'start') {
@@ -591,18 +602,18 @@ const Calendar = forwardRef(
           } else if (selectedDate.getTime() > priorRange[0][1].getTime()) {
             result = [[selectedDate, undefined]];
           }
-          setActiveDate('end');
+          nextActiveDate = 'end';
         }
         // selecting end date
         else if (!priorRange) {
           result = [[undefined, selectedDate]];
-          setActiveDate('start');
+          nextActiveDate = 'start';
         } else if (selectedDate.getTime() < priorRange[0][0].getTime()) {
           result = [[selectedDate, undefined]];
-          setActiveDate('end');
+          nextActiveDate = 'end';
         } else if (selectedDate.getTime() > priorRange[0][0].getTime()) {
           result = [[priorRange[0][0], selectedDate]];
-          setActiveDate('start');
+          nextActiveDate = 'start';
         }
 
         // If no dates selected, always return undefined; else format
@@ -614,8 +625,9 @@ const Calendar = forwardRef(
             result = result[0].find((d) => d !== undefined);
           }
         }
+        setActiveDate(nextActiveDate);
         setValue(result);
-        return result;
+        return [ result, nextActiveDate ];
       },
       [activeDate, value, range],
     );
@@ -626,16 +638,18 @@ const Calendar = forwardRef(
         if (!onSelect) return;
 
         let nextValue;
-
+        let nextActiveDate;
+        const details = {};
         if (range || Array.isArray(value?.[0])) {
-          nextValue = handleRange(selectedDate);
+          [nextValue, nextActiveDate] = handleRange(selectedDate);
+          details.activeDate = nextActiveDate;
         } else {
           nextValue = selectedDate;
         }
 
         if (onSelect) {
           nextValue = normalizeOutput(nextValue, outputFormat);
-          onSelect(nextValue);
+          onSelect(nextValue, details);
         }
       },
       [handleRange, onSelect, outputFormat, range, value],

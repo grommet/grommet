@@ -401,6 +401,7 @@ export interface ThemeType {
       large?: string;
       xlarge?: string;
       responsiveBreakpoint?: string;
+      [x: string]: string | undefined;
     };
     elevation?: {
       light?: {

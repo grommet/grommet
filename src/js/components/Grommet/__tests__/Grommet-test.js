@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
@@ -102,6 +102,22 @@ describe('Grommet', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('onResize does not crash when document.body is null', () => {
+    render(<Grommet>Grommet App</Grommet>);
+
+    const bodySpy = jest.spyOn(document, 'body', 'get').mockReturnValue(null);
+    try {
+      expect(() => {
+        fireEvent(
+          window,
+          new Event('resize', { bubbles: true, cancelable: true }),
+        );
+      }).not.toThrow();
+    } finally {
+      bodySpy.mockRestore();
+    }
   });
 
   test('message format function', () => {

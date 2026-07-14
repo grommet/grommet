@@ -549,6 +549,169 @@ exports[`Cards margin string 1`] = `
 </div>
 `;
 
+exports[`Cards onOrder 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: repeat( auto-fill,minmax(min(192px, 100%), 1fr) );
+  grid-gap: 24px 24px;
+  padding: 0px;
+}
+
+.c3 {
+  display: grid;
+  cursor: move;
+  border-radius: 12px;
+}
+
+.c3:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus >circle,
+.c3:focus >ellipse,
+.c3:focus >line,
+.c3:focus >path,
+.c3:focus >polygon,
+.c3:focus >polyline,
+.c3:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c3:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) >circle,
+.c3:focus:not(:focus-visible) >ellipse,
+.c3:focus:not(:focus-visible) >line,
+.c3:focus:not(:focus-visible) >path,
+.c3:focus:not(:focus-visible) >polygon,
+.c3:focus:not(:focus-visible) >polyline,
+.c3:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <span
+    class="c1"
+    id="_r_d_"
+  >
+    Use arrow keys to reorder cards. Changes are applied immediately.
+  </span>
+  <ul
+    class="c2"
+  >
+    <li
+      aria-describedby="_r_d_"
+      aria-roledescription="sortable card"
+      class="c3"
+      draggable="true"
+      tabindex="0"
+    >
+      <div
+        class="c4"
+      >
+        one
+      </div>
+    </li>
+    <li
+      aria-describedby="_r_d_"
+      aria-roledescription="sortable card"
+      class="c3"
+      draggable="true"
+      tabindex="0"
+    >
+      <div
+        class="c4"
+      >
+        two
+      </div>
+    </li>
+    <li
+      aria-describedby="_r_d_"
+      aria-roledescription="sortable card"
+      class="c3"
+      draggable="true"
+      tabindex="0"
+    >
+      <div
+        class="c4"
+      >
+        three
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Cards pad object 1`] = `
 .c0 {
   font-size: 18px;
@@ -830,6 +993,233 @@ exports[`Cards renders a11yTitle and aria-label 1`] = `
       </li>
     </ul>
   </div>
+</div>
+`;
+
+exports[`Cards sizeKey 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  margin: 0px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px 24px;
+  padding: 0px;
+  grid-auto-rows: 96px;
+}
+
+.c2 {
+  display: grid;
+  grid-column: span 2;
+  grid-row: span 1;
+  border-radius: 12px;
+}
+
+.c2:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus >circle,
+.c2:focus >ellipse,
+.c2:focus >line,
+.c2:focus >path,
+.c2:focus >polygon,
+.c2:focus >polyline,
+.c2:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c2:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c2:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) >circle,
+.c2:focus:not(:focus-visible) >ellipse,
+.c2:focus:not(:focus-visible) >line,
+.c2:focus:not(:focus-visible) >path,
+.c2:focus:not(:focus-visible) >polygon,
+.c2:focus:not(:focus-visible) >polyline,
+.c2:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c2:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4 {
+  display: grid;
+  border-radius: 12px;
+}
+
+.c4:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c4:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c4:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) >circle,
+.c4:focus:not(:focus-visible) >ellipse,
+.c4:focus:not(:focus-visible) >line,
+.c4:focus:not(:focus-visible) >path,
+.c4:focus:not(:focus-visible) >polygon,
+.c4:focus:not(:focus-visible) >polyline,
+.c4:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c4:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5 {
+  display: grid;
+  grid-column: span 1;
+  grid-row: span 2;
+  border-radius: 12px;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c3 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <ul
+    class="c1"
+  >
+    <li
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        one
+      </div>
+    </li>
+    <li
+      class="c4"
+    >
+      <div
+        class="c3"
+      >
+        two
+      </div>
+    </li>
+    <li
+      class="c5"
+    >
+      <div
+        class="c3"
+      >
+        three
+      </div>
+    </li>
+  </ul>
 </div>
 `;
 

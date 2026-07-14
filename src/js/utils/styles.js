@@ -47,17 +47,19 @@ export const edgeStyle = (
   responsiveBreakpoint,
   theme,
 ) => {
-  const breakpoint =
-    responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
+  const breakpoint = getBreakpointStyle(theme, responsiveBreakpoint);
 
   if (typeof data === 'string') {
+    const value = theme.global.edgeSize[data] || data;
+    const responsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[data];
     return css`
-      ${kind}: ${theme.global.edgeSize[data] || data};
-      ${responsive && breakpoint
+      ${kind}: ${value};
+      ${responsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}: ${breakpoint.edgeSize[data] || data};
+        ${kind}: ${responsiveValue};
       `,
             responsive,
           )
@@ -79,14 +81,16 @@ export const edgeStyle = (
   if (horizontalVerticalEqual || allSidesEqual) {
     // since the values will be the same between vertical & horizontal OR
     // left, right, top, & bottom, we can just choose one
-    const value = horizontalVerticalEqual ? horizontal : top;
+    const allSidesValue = horizontalVerticalEqual ? horizontal : top;
+    const allSidesResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[allSidesValue];
     return css`
-      ${kind}: ${theme.global.edgeSize[value] || value};
-      ${responsive && breakpoint
+      ${kind}: ${theme.global.edgeSize[allSidesValue] || allSidesValue};
+      ${allSidesResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}: ${breakpoint.edgeSize[value] || value};
+        ${kind}: ${allSidesResponsiveValue};
       `,
             responsive,
           )
@@ -95,15 +99,17 @@ export const edgeStyle = (
   }
 
   if (horizontal) {
+    const horizontalResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[horizontal];
     result.push(css`
       ${kind}-left: ${theme.global.edgeSize[horizontal] || horizontal};
       ${kind}-right: ${theme.global.edgeSize[horizontal] || horizontal};
-      ${responsive && breakpoint
+      ${horizontalResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-left: ${breakpoint.edgeSize[horizontal] || horizontal};
-          ${kind}-right: ${breakpoint.edgeSize[horizontal] || horizontal};
+          ${kind}-left: ${horizontalResponsiveValue};
+          ${kind}-right: ${horizontalResponsiveValue};
         `,
             responsive,
           )
@@ -111,15 +117,17 @@ export const edgeStyle = (
     `);
   }
   if (vertical) {
+    const verticalResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[vertical];
     result.push(css`
       ${kind}-top: ${theme.global.edgeSize[vertical] || vertical};
       ${kind}-bottom: ${theme.global.edgeSize[vertical] || vertical};
-      ${responsive && breakpoint
+      ${verticalResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-top: ${breakpoint.edgeSize[vertical] || vertical};
-          ${kind}-bottom: ${breakpoint.edgeSize[vertical] || vertical};
+          ${kind}-top: ${verticalResponsiveValue};
+          ${kind}-bottom: ${verticalResponsiveValue};
         `,
             responsive,
           )
@@ -127,13 +135,15 @@ export const edgeStyle = (
     `);
   }
   if (top) {
+    const topResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[top];
     result.push(css`
       ${kind}-top: ${theme.global.edgeSize[top] || top};
-      ${responsive && breakpoint
+      ${topResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-top: ${breakpoint.edgeSize[top] || top};
+          ${kind}-top: ${topResponsiveValue};
         `,
             responsive,
           )
@@ -141,13 +151,15 @@ export const edgeStyle = (
     `);
   }
   if (bottom) {
+    const bottomResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[bottom];
     result.push(css`
       ${kind}-bottom: ${theme.global.edgeSize[bottom] || bottom};
-      ${responsive && breakpoint
+      ${bottomResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-bottom: ${breakpoint.edgeSize[bottom] || bottom};
+          ${kind}-bottom: ${bottomResponsiveValue};
         `,
             responsive,
           )
@@ -155,13 +167,15 @@ export const edgeStyle = (
     `);
   }
   if (left) {
+    const leftResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[left];
     result.push(css`
       ${kind}-left: ${theme.global.edgeSize[left] || left};
-      ${responsive && breakpoint
+      ${leftResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-left: ${breakpoint.edgeSize[left] || left};
+          ${kind}-left: ${leftResponsiveValue};
         `,
             responsive,
           )
@@ -169,13 +183,15 @@ export const edgeStyle = (
     `);
   }
   if (right) {
+    const rightResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[right];
     result.push(css`
       ${kind}-right: ${theme.global.edgeSize[right] || right};
-      ${responsive && breakpoint
+      ${rightResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-right: ${breakpoint.edgeSize[right] || right};
+          ${kind}-right: ${rightResponsiveValue};
         `,
             responsive,
           )
@@ -183,15 +199,15 @@ export const edgeStyle = (
     `);
   }
   if (data.start) {
+    const startResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[data.start];
     result.push(css`
       ${kind}-inline-start: ${theme.global.edgeSize[data.start] || data.start};
-      ${responsive && breakpoint
+      ${startResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-inline-start: ${
-              breakpoint.edgeSize[data.start] || data.start
-            };
+          ${kind}-inline-start: ${startResponsiveValue};
         `,
             responsive,
           )
@@ -199,13 +215,15 @@ export const edgeStyle = (
     `);
   }
   if (data.end) {
+    const endResponsiveValue =
+      responsive && breakpoint && breakpoint.edgeSize[data.end];
     result.push(css`
       ${kind}-inline-end: ${theme.global.edgeSize[data.end] || data.end};
-      ${responsive && breakpoint
+      ${endResponsiveValue
         ? breakpointStyle(
             breakpoint,
             `
-          ${kind}-inline-end: ${breakpoint.edgeSize[data.end] || data.end};
+          ${kind}-inline-end: ${endResponsiveValue};
         `,
             responsive,
           )

@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { BoxProps } from '../Box';
+import { BoxExtendedProps } from '../Box';
 
 export interface TagProps {
-  name?: string;
+  children?: React.ReactNode;
+  name?: string | React.ReactNode;
   onClick?: (...args: any[]) => any;
   onRemove?: (...args: any[]) => any;
   messages?: {
@@ -19,10 +20,10 @@ export interface TagProps {
     | 'xlarge'
     | 'xxlarge'
     | string;
-  value: string | number;
+  value?: string | number | React.ReactNode;
 }
 
-export interface TagExtendedProps extends BoxProps, TagProps {}
+export interface TagExtendedProps extends Omit<BoxExtendedProps, keyof TagProps>, TagProps {}
 
 // Keep type alias for backwards compatibility.
 export type TagType = TagProps;

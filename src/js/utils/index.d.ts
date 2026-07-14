@@ -280,6 +280,7 @@ declare const breakpointEdgeSize: {
   medium?: string;
   large?: string;
   xlarge?: string;
+  [x: string]: string | undefined;
 };
 export type BreakpointEdgeSize = typeof breakpointEdgeSize;
 
