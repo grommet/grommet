@@ -769,7 +769,7 @@ exports[`Stepper renders vertical steps 1`] = `
   cursor: pointer;
   outline: none;
   flex-direction: row;
-  align-items: 'flex-start';
+  align-items: flex-start;
   gap: 12px;
   text-align: left;
 }

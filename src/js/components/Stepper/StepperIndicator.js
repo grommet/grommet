@@ -36,7 +36,7 @@ function getEffectiveState(status, isCurrent) {
 
 export const StepperIndicator = ({ ...rest }) => {
   const { currentStep, clickableSteps } = useStepper();
-  const { theme } = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
 
   const { step, isSubStep } = useStepItem();
   if (!step) return null;
@@ -61,6 +61,7 @@ export const StepperIndicator = ({ ...rest }) => {
       effectiveState={effectiveState}
       isSubStep={isSubStep}
       isClickable={isClickable}
+      {...passThemeFlag}
       {...rest}
     >
       {renderIcon(stateTheme?.icon, { size: iconSize })}

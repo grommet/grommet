@@ -3,5 +3,4 @@ export { StepperContext, useStepper } from './StepperContext';
 export { StepperIndicator } from './StepperIndicator';
 export { StepperDescription } from './StepperDescription';
 export { StepperLabel } from './StepperLabel';
-export { StepperStep } from './StepperStep';
 export { StepperError, StepperDisabledReason } from './StepperHelperText';

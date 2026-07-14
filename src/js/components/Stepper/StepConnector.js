@@ -4,7 +4,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 import { StyledConnector } from './StyledStepper';
 
 export const StepConnector = ({ step, direction, children }) => {
-  const { theme } = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
 
   const indicatorSize =
     theme.stepper?.indicator?.size &&
@@ -79,6 +79,7 @@ export const StepConnector = ({ step, direction, children }) => {
         status={step.status}
         aria-hidden="true"
         isBetween
+        {...passThemeFlag}
       />
       {renderChildren()}
     </li>

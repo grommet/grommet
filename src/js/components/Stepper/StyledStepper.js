@@ -4,9 +4,6 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { base } from '../../themes/base';
-
-const getStepperTheme = (theme) => (theme && theme.global ? theme : base);
 
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
@@ -39,8 +36,7 @@ const StyledStepItem = styled.li.withConfig(styledComponentsConfig)`
       return css`
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: ${getStepperTheme(props.theme)?.global?.edgeSize
-          ?.xxsmall || '4px'};
+        padding-bottom: ${props.theme.global?.edgeSize?.xxsmall || '4px'};
       `;
     }
     if (props.isSubStep) {
@@ -67,22 +63,21 @@ const StyledStepButton = styled.button.withConfig(styledComponentsConfig)`
   display: flex;
   background: none;
   border: none;
-  padding: ${(props) =>
-    getStepperTheme(props.theme)?.global?.edgeSize?.xxsmall || '4px'};
+  padding: ${(props) => props.theme.global?.edgeSize?.xxsmall || '4px'};
   cursor: ${(props) => (props.isClickable ? 'pointer' : 'default')};
   outline: none;
   ${(props) =>
     props.direction === 'vertical'
       ? css`
           flex-direction: row;
-          align-items: 'flex-start';
-          gap: ${getStepperTheme(props.theme)?.global?.edgeSize?.small};
+          align-items: flex-start;
+          gap: ${props.theme.global?.edgeSize?.small};
           text-align: left;
         `
       : css`
           flex-direction: column;
           align-items: center;
-          gap: ${getStepperTheme(props.theme)?.global?.edgeSize?.xxsmall};
+          gap: ${props.theme.global?.edgeSize?.xxsmall};
           text-align: center;
           width: 100%;
         `}
@@ -97,10 +92,10 @@ const StyledStepContent = styled.span.withConfig(styledComponentsConfig)`
       !props.isSubStep &&
       !props.hasDescription
     ) {
-      const theme = getStepperTheme(props.theme);
-      const indicatorSizeToken = theme.stepper?.indicator?.size || 'medium';
-      const indicatorSize = getMetricSize(theme, indicatorSizeToken);
-      const lineHeight = getTextMetric(theme, 'small', 'height');
+      const indicatorSizeToken =
+        props.theme.stepper?.indicator?.size || 'medium';
+      const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
+      const lineHeight = getTextMetric(props.theme, 'small', 'height');
       return css`
         padding-top: calc((${indicatorSize} - ${lineHeight}) / 2);
       `;
@@ -119,17 +114,17 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
 
   ${(props) =>
     (() => {
-      const theme = getStepperTheme(props.theme);
-      const indicatorSizeToken = theme.stepper?.indicator?.size || 'medium';
-      const parentSize = getMetricSize(theme, indicatorSizeToken);
+      const indicatorSizeToken =
+        props.theme.stepper?.indicator?.size || 'medium';
+      const parentSize = getMetricSize(props.theme, indicatorSizeToken);
       const subStepSize = getMetricSize(
-        theme,
+        props.theme,
         getSubStepSizeToken(indicatorSizeToken),
       );
       const size = props.isSubStep ? subStepSize : parentSize;
       const borderWidth =
-        theme.stepper?.indicator?.border?.width ||
-        theme.global?.borderSize?.small ||
+        props.theme.stepper?.indicator?.border?.width ||
+        props.theme.global?.borderSize?.small ||
         '2px';
 
       return css`
@@ -142,8 +137,7 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
     })()}
 
   ${(props) => {
-    const theme = getStepperTheme(props.theme);
-
+    const { theme } = props;
     const stateTheme = theme.stepper?.[props.effectiveState]?.indicator || {};
     return css`
       background: ${normalizeColor(
@@ -162,7 +156,7 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
     if (!props.isClickable) return '';
 
-    const theme = getStepperTheme(props.theme);
+    const { theme } = props;
     const stateTheme = theme.stepper?.[props.effectiveState]?.indicator || {};
     const backgroundColor = stateTheme?.background
       ? normalizeColor(stateTheme.background, theme)
@@ -222,15 +216,14 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
       }
     `;
   }}
-  }
 `;
 
 const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
-    const theme = getStepperTheme(props.theme);
+    const { theme } = props;
     const indicatorSizeToken = theme.stepper?.indicator?.size || 'medium';
     const parentSize = getMetricSize(theme, indicatorSizeToken);
-    const indicatiorBorderWidth = getMetricSize(
+    const indicatorBorderWidth = getMetricSize(
       theme,
       theme.stepper?.indicator?.border?.width || '2px',
     );
@@ -253,7 +246,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
           `
         : css`
             left: calc(
-              ${connectorOffset} + ${indicatiorBorderWidth} -
+              ${connectorOffset} + ${indicatorBorderWidth} -
                 ${connectorThickness} / 2
             );
             top: ${props.isBetween
@@ -265,8 +258,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     `;
   }}
   position: absolute;
-  background: ${(props) =>
-    getConnectorColor(props.status, getStepperTheme(props.theme))};
+  background: ${(props) => getConnectorColor(props.status, props.theme)};
 `;
 
 export {

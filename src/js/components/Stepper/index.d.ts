@@ -72,7 +72,6 @@ export {
   Stepper,
   StepperContext,
   useStepper,
-  StepperStep,
   StepperIndicator,
   StepperLabel,
   StepperDescription,

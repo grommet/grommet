@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
-
+import { useThemeValue } from '../../utils/useThemeValue';
 import { useStepper, StepItemContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
@@ -29,7 +29,7 @@ export const StepperStep = ({
   const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
     useStepper();
   const { format } = useContext(MessageContext);
-
+  const { passThemeFlag } = useThemeValue();
   const index =
     indexProp !== undefined
       ? indexProp
@@ -102,7 +102,11 @@ export const StepperStep = ({
 
   return (
     <StepItemContext.Provider value={stepItemValue}>
-      <StyledStepItem direction={direction} isSubStep={isSubStep}>
+      <StyledStepItem
+        direction={direction}
+        isSubStep={isSubStep}
+        {...passThemeFlag}
+      >
         <StyledStepButton
           as={isReadOnly ? 'div' : 'button'}
           role={isReadOnly ? 'group' : undefined}
@@ -123,12 +127,14 @@ export const StepperStep = ({
           isSubStep={isSubStep}
           direction={direction}
           {...focusableProps}
+          {...passThemeFlag}
         >
           <StepperIndicator />
           <StyledStepContent
             direction={direction}
             isSubStep={isSubStep}
             hasDescription={!!step.description}
+            {...passThemeFlag}
           >
             <StepperLabel />
             {showDescription && <StepperDescription />}
@@ -141,6 +147,7 @@ export const StepperStep = ({
             direction={direction}
             status={step.status}
             aria-hidden="true"
+            {...passThemeFlag}
           />
         )}
       </StyledStepItem>

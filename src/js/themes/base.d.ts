@@ -2110,14 +2110,6 @@ export interface ThemeType {
       border?: {
         width?: string;
       };
-      // colors?: {
-      //   pending?: {
-      //     background?: BackgroundType;
-      //     text?: ColorType;
-      //     border?: ColorType;
-      //   };
-      //   current?: {
-      //     background?: BackgroundType;
     };
     label?: {
       size?: string;
