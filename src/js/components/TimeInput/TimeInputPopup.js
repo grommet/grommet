@@ -109,10 +109,9 @@ const PopupColumn = ({
         (section === SECTION_SECOND && sections.second === option) ||
         (section === SECTION_PERIOD && sections.period === option);
 
-      const baseColor = 'text';
       const optionColor = selected
-        ? theme.timeInput?.drop?.option?.selected?.color || baseColor
-        : baseColor;
+        ? theme.timeInput?.drop?.option?.selected?.color || 'text'
+        : 'text';
       const isActive = selected && activeSection === section;
 
       return (

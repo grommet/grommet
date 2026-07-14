@@ -1062,12 +1062,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'small',
       },
-      // separator: {
-      //   gap: undefined,
-      // },
+      separator: {
+        gap: 'xxsmall',
+      },
       active: {
-        // background: undefined,
-        // round: undefined,
+        background: 'active-background',
+        round: 'xsmall',
         indicator: {
           color: 'black',
           size: 'small',
@@ -1075,7 +1075,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       drop: {
         option: {
-          background: 'transparent',
           hover: {
             background: 'active-background',
           },

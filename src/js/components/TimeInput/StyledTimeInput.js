@@ -91,11 +91,7 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
   margin-inline: ${(props) => {
     const gapToken = props.theme.timeInput?.separator?.gap;
 
-    return (
-      props.theme.global.edgeSize?.[gapToken] ||
-      gapToken ||
-      props.theme.global.edgeSize.xxsmall
-    );
+    return props.theme.global.edgeSize?.[gapToken] || gapToken;
   }};
   color: ${(props) =>
     normalizeColor(
@@ -124,8 +120,7 @@ export const StyledTimeInputSegment = styled.span.withConfig(
     const activeRound =
       props.theme.global.radius?.[activeRoundToken] ||
       props.theme.global.edgeSize?.[activeRoundToken] ||
-      activeRoundToken ||
-      props.theme.global.borderSize.small;
+      activeRoundToken;
 
     const activeBorderToken = props.theme.timeInput?.active?.indicator?.size;
     const activeBorderSize =
@@ -140,7 +135,7 @@ export const StyledTimeInputSegment = styled.span.withConfig(
         position: absolute;
         inset: 0;
         background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.background || 'active-background',
+          props.theme.timeInput?.active?.background,
           props.theme,
         )};
         border-top-left-radius: ${activeRound};
