@@ -64,11 +64,6 @@ const getDisplaySectionPrefix = (section, index) => {
   return section === SECTION_PERIOD ? ' ' : ':';
 };
 
-const getDisplaySectionPrefixKind = (section, index) => {
-  if (index === 0) return undefined;
-  return section === SECTION_PERIOD ? 'period' : 'colon';
-};
-
 const getDisplaySectionText = ({ key, section, sections }) => {
   if (sections[key] === undefined) return getSectionToken(section);
   if (section === SECTION_PERIOD) return sections[key];
@@ -273,7 +268,6 @@ const TimeInput = forwardRef(
         return {
           section,
           prefix: getDisplaySectionPrefix(section, index),
-          prefixKind: getDisplaySectionPrefixKind(section, index),
           text: getDisplaySectionText({
             key,
             section,
@@ -840,37 +834,34 @@ const TimeInput = forwardRef(
                 onMouseDown={onDisplayMouseDown}
                 {...passThemeFlag}
               >
-                {displaySections.map(
-                  ({ section, prefix, prefixKind, text, filled }) => (
-                    <React.Fragment key={section}>
-                      {!!prefix && (
-                        <StyledTimeInputSeparator
-                          $filled={hasDisplayValue}
-                          $kind={prefixKind}
-                          {...passThemeFlag}
-                        >
-                          {prefix}
-                        </StyledTimeInputSeparator>
-                      )}
-                      <StyledTimeInputSegment
-                        $active={showActiveSection && activeSection === section}
-                        $filled={filled}
-                        data-active={
-                          showActiveSection && activeSection === section
-                        }
-                        data-testid={
-                          showActiveSection && activeSection === section
-                            ? 'time-input-active-section'
-                            : undefined
-                        }
-                        data-section={section}
+                {displaySections.map(({ section, prefix, text, filled }) => (
+                  <React.Fragment key={section}>
+                    {!!prefix && (
+                      <StyledTimeInputSeparator
+                        $filled={hasDisplayValue}
                         {...passThemeFlag}
                       >
-                        {text}
-                      </StyledTimeInputSegment>
-                    </React.Fragment>
-                  ),
-                )}
+                        {prefix}
+                      </StyledTimeInputSeparator>
+                    )}
+                    <StyledTimeInputSegment
+                      $active={showActiveSection && activeSection === section}
+                      $filled={filled}
+                      data-active={
+                        showActiveSection && activeSection === section
+                      }
+                      data-testid={
+                        showActiveSection && activeSection === section
+                          ? 'time-input-active-section'
+                          : undefined
+                      }
+                      data-section={section}
+                      {...passThemeFlag}
+                    >
+                      {text}
+                    </StyledTimeInputSegment>
+                  </React.Fragment>
+                ))}
               </StyledTimeInputDisplay>
               <StyledTimeInput
                 {...inputRest}

@@ -25,35 +25,27 @@ const PopupColumnBox = styled(Box)`
 const PopupOption = styled.div`
   box-sizing: border-box;
   cursor: pointer;
-  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: ${(props) =>
-    props.theme.timeInput?.popup?.option?.minHeight ||
-    props.theme.global.control?.height};
   padding: ${(props) =>
     `${props.theme.global.edgeSize.xxsmall} ${props.theme.global.edgeSize.xsmall}`};
   border-radius: ${(props) => props.theme.global.control?.border?.radius};
   background: ${(props) => {
     if (props.$selected) {
       return normalizeColor(
-        props.theme.timeInput?.popup?.option?.selected?.background ||
-          'transparent',
+        props.theme.timeInput?.drop?.option?.selected?.background,
         props.theme,
       );
     }
 
     if (props.$active) {
       return normalizeColor(
-        props.theme.timeInput?.popup?.option?.hover?.background ||
-          'transparent',
+        props.theme.timeInput?.drop?.option?.hover?.background,
         props.theme,
       );
     }
 
     return normalizeColor(
-      props.theme.timeInput?.popup?.option?.background || 'transparent',
+      props.theme.timeInput?.drop?.option?.background,
       props.theme,
     );
   }};
@@ -62,16 +54,14 @@ const PopupOption = styled.div`
     background: ${(props) => {
       if (props.$selected) {
         return normalizeColor(
-          props.theme.timeInput?.popup?.option?.selected?.hover?.background ||
-            props.theme.timeInput?.popup?.option?.selected?.background ||
-            'transparent',
+          props.theme.timeInput?.drop?.option?.selected?.hover?.background ||
+            props.theme.timeInput?.drop?.option?.selected?.background,
           props.theme,
         );
       }
 
       return normalizeColor(
-        props.theme.timeInput?.popup?.option?.hover?.background ||
-          'transparent',
+        props.theme.timeInput?.drop?.option?.hover?.background,
         props.theme,
       );
     }};
@@ -81,10 +71,12 @@ const PopupOption = styled.div`
    * Keep the focus indicator inset so it doesn't get clipped by the
    * scrollable listbox overflow container.
    */
-  &:focus-visible,
-  &[data-active='true'] {
+  &:focus-visible {
     ${focusStyle({ inset: true })}
   }
+
+  ${(props) =>
+    props.$selected && props.theme.timeInput?.drop?.option?.selected?.extend}
 `;
 
 const optionKey = (label, option) => `${label.toLowerCase()}-${option}`;
@@ -103,12 +95,11 @@ const PopupColumn = ({
     role="listbox"
     aria-label={label}
     gap="xxsmall"
-    width={theme.timeInput?.popup?.column?.width}
     height={{
-      max: theme.timeInput?.popup?.column?.maxHeight || theme.global.size.small,
+      max: theme.timeInput?.drop?.column?.maxHeight || theme.global.size.small,
     }}
     overflow="auto"
-    flex="0 0 auto"
+    flex={{ grow: 0, shrink: 0 }}
   >
     {options.map((option) => {
       const key = optionKey(label, option);
@@ -118,27 +109,20 @@ const PopupColumn = ({
         (section === SECTION_SECOND && sections.second === option) ||
         (section === SECTION_PERIOD && sections.period === option);
 
-      const optionColor = (() => {
-        if (!selected) {
-          return theme.timeInput?.color || theme.global.colors.text || 'text';
-        }
-        return (
-          theme.timeInput?.popup?.option?.selected?.color ||
-          theme.timeInput?.color ||
-          theme.global.colors.text ||
-          'text'
-        );
-      })();
+      const baseColor = 'text';
+      const optionColor = selected
+        ? theme.timeInput?.drop?.option?.selected?.color || baseColor
+        : baseColor;
+      const isActive = selected && activeSection === section;
 
       return (
         <PopupOption
           key={key}
           data-option-key={key}
-          data-active={selected && activeSection === section}
           role="option"
           aria-selected={selected}
-          tabIndex={selected && activeSection === section ? 0 : -1}
-          $active={selected && activeSection === section}
+          tabIndex={isActive ? 0 : -1}
+          $active={isActive}
           $selected={selected}
           onClick={() => {
             onSetSection(section);
@@ -181,7 +165,6 @@ const TimeInputPopup = ({
 }) => {
   const { theme } = useThemeValue();
   const dialogRef = useRef();
-  const pointerDownInsideRef = useRef(false);
 
   const popupSections = [
     {
@@ -289,28 +272,10 @@ const TimeInputPopup = ({
         role="dialog"
         aria-label={label}
         direction="row"
-        width={{ width: theme.timeInput?.popup?.width, max: '100%' }}
-        minHeight={theme.timeInput?.popup?.minHeight}
+        width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
+        minHeight={theme.timeInput?.drop?.minHeight}
         gap="xsmall"
         pad="small"
-        onMouseDownCapture={() => {
-          pointerDownInsideRef.current = true;
-          const onMouseUp = () => {
-            pointerDownInsideRef.current = false;
-            window.removeEventListener('mouseup', onMouseUp, true);
-          };
-          window.addEventListener('mouseup', onMouseUp, true);
-        }}
-        onBlurCapture={(event) => {
-          if (pointerDownInsideRef.current) return;
-          const nextFocusTarget = event.relatedTarget;
-          // Clicking the scrollbar can blur the focused option with
-          // relatedTarget = null. Keep the popup open for that interaction.
-          if (!nextFocusTarget) return;
-          if (!event.currentTarget.contains(nextFocusTarget)) {
-            onFocusLeave?.();
-          }
-        }}
         onKeyDown={(event) => {
           if (event.key === 'Escape') {
             event.preventDefault();
@@ -340,6 +305,15 @@ const TimeInputPopup = ({
             event.preventDefault();
             onAccept?.();
             onClose();
+          }
+        }}
+        onBlurCapture={(event) => {
+          const nextFocusTarget = event.relatedTarget;
+          // Clicking the scrollbar blurs the focused option with
+          // relatedTarget = null. Keep the popup open for that interaction.
+          if (!nextFocusTarget) return;
+          if (!event.currentTarget.contains(nextFocusTarget)) {
+            onFocusLeave?.();
           }
         }}
       >
