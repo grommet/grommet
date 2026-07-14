@@ -26,7 +26,8 @@ export const StepperStep = ({
   stepsRef,
   stepRefs,
 }) => {
-  const { currentStep, clickableSteps, onStepClick, steps } = useStepper();
+  const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
+    useStepper();
   const { format } = useContext(MessageContext);
 
   const index =
@@ -123,14 +124,14 @@ export const StepperStep = ({
           direction={direction}
           {...focusableProps}
         >
-          <StepperIndicator stepNumber={stepNumber} isClickable={isClickable} />
+          <StepperIndicator />
           <StyledStepContent
             direction={direction}
             isSubStep={isSubStep}
             hasDescription={!!step.description}
           >
             <StepperLabel />
-            <StepperDescription />
+            {showDescription && <StepperDescription />}
             <StepperError />
             <StepperDisabledReason />
           </StyledStepContent>

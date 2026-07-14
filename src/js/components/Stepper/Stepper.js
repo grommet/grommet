@@ -22,6 +22,8 @@ import { StepperPropTypes } from './propTypes';
 // for keyboard navigation and index-based tracking.
 const flattenSteps = (steps) => {
   const flat = [];
+  let hasSubSubSteps = false;
+
   steps.forEach((step, parentIdx) => {
     const hasChildren = step.children && step.children.length > 0;
     const isLastParent = parentIdx === steps.length - 1;
@@ -40,9 +42,17 @@ const flattenSteps = (steps) => {
           parentId: step.id,
           childIds: [],
         });
+        if (child.children && child.children.length > 0) {
+          hasSubSubSteps = true;
+        }
       });
     }
   });
+  if (process.env.NODE_ENV !== 'production' && hasSubSubSteps) {
+    console.warn(
+      'Stepper: sub-steps with their own children are not supported.',
+    );
+  }
   return flat;
 };
 
@@ -53,6 +63,7 @@ const Stepper = forwardRef(
       currentStep,
       direction: directionProp = 'horizontal',
       clickableSteps = true,
+      showDescription = true,
       onStepClick,
       'aria-label': ariaLabel,
       children,
@@ -172,6 +183,7 @@ const Stepper = forwardRef(
         direction,
         clickableSteps,
         onStepClick,
+        showDescription,
         stepIndex,
         isPriorStep,
         isAfterStep,
@@ -184,6 +196,7 @@ const Stepper = forwardRef(
         direction,
         clickableSteps,
         onStepClick,
+        showDescription,
         stepIndex,
         isPriorStep,
         isAfterStep,

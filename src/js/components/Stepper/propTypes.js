@@ -31,6 +31,7 @@ if (process.env.NODE_ENV !== 'production') {
     currentStep: PropTypes.string.isRequired,
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     clickableSteps: PropTypes.bool,
+    showDescription: PropTypes.bool,
     onStepClick: PropTypes.func,
     id: PropTypes.string,
     children: PropTypes.node,

@@ -34,8 +34,8 @@ function getEffectiveState(status, isCurrent) {
   return 'pending';
 }
 
-export const StepperIndicator = ({ isClickable }) => {
-  const { currentStep } = useStepper();
+export const StepperIndicator = ({ ...rest }) => {
+  const { currentStep, clickableSteps } = useStepper();
   const { theme } = useThemeValue();
 
   const { step, isSubStep } = useStepItem();
@@ -51,6 +51,9 @@ export const StepperIndicator = ({ isClickable }) => {
     stateTheme = { ...stateTheme, ...stateTheme.substep };
   }
 
+  const isDisabled = step.status === 'disabled';
+  const isClickable = clickableSteps && !isDisabled;
+
   const iconSize = stateTheme?.iconSize || (isSubStep ? 'xsmall' : 'small');
 
   return (
@@ -58,6 +61,7 @@ export const StepperIndicator = ({ isClickable }) => {
       effectiveState={effectiveState}
       isSubStep={isSubStep}
       isClickable={isClickable}
+      {...rest}
     >
       {renderIcon(stateTheme?.icon, { size: iconSize })}
     </StyledIndicator>

@@ -19,6 +19,7 @@ export interface StepperProps
   currentStep: string;
   direction?: 'horizontal' | 'vertical';
   clickableSteps?: boolean;
+  showDescription?: boolean;
   onStepClick?: (stepId: string) => void;
   id?: string;
   'aria-label'?: string;
@@ -30,6 +31,7 @@ export interface StepperContextValue {
   steps: StepType[];
   direction: 'horizontal' | 'vertical';
   clickableSteps: boolean;
+  showDescription: boolean;
   onStepClick?: (stepId: string) => void;
   stepIndex: (stepId: string) => number;
   isPriorStep: (stepId: string) => boolean;
@@ -60,7 +62,7 @@ export interface StepperStepProps {
 }
 
 declare const StepperStep: React.FC<StepperStepProps>;
-declare const StepperIndicator: React.FC<{ isClickable?: boolean }>;
+declare const StepperIndicator: React.FC<{}>;
 declare const StepperLabel: React.FC<{}>;
 declare const StepperDescription: React.FC<{}>;
 declare const StepperError: React.FC<{}>;

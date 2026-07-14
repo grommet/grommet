@@ -6,6 +6,7 @@ export const StepperContext = createContext({
   direction: 'horizontal',
   clickableSteps: true,
   onStepClick: undefined,
+  showDescription: true,
   stepIndex: () => -1,
   isPriorStep: () => false,
   isAfterStep: () => false,

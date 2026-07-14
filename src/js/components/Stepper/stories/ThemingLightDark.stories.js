@@ -4,7 +4,7 @@ import { Box, Heading, ThemeContext } from 'grommet';
 import { Stepper } from '../Stepper';
 
 const ThemingLightDark = () => {
-  const [currentStep, setCurrentStep] = useState('billing');
+  const [currentStep, setCurrentStep] = useState('step1');
 
   const steps = [
     { id: 'step1', title: 'Account', status: 'completed' },
