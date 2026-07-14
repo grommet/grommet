@@ -103,8 +103,6 @@ exports[`Grommet cssVars 1`] = `
   --selected: brand;
   --selected-background: brand;
   --selected-text: text-strong;
-  --selected-primary-strong: #068667;
-  --selected-primary-strong-hover: #006750;
   --white: #FFFFFF;
   --accent-1: #6FFFB0;
   --accent-2: #FD6FFF;

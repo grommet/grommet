@@ -28,8 +28,7 @@ import { parseMetricToNum } from '../utils/mixins';
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
-const selectedPrimaryStrongColor = '#068667';
-const selectedPrimaryStrongHoverColor = '#006750';
+
 const statusColors = {
   critical: '#EB0000',
   error: '#B30000',
@@ -112,8 +111,6 @@ const colors = {
   },
   'selected-background': 'brand',
   'selected-text': 'text-strong',
-  'selected-primary-strong': selectedPrimaryStrongColor,
-  'selected-primary-strong-hover': selectedPrimaryStrongHoverColor,
   white: '#FFFFFF',
 };
 
