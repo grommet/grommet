@@ -987,4 +987,40 @@ describe('TimeInput', () => {
     await user.keyboard('{ArrowUp}');
     expect(input).toHaveValue('10:01:00');
   });
+
+  test('auto-scrolls selected minute and second options on open', async () => {
+    const user = userEvent.setup();
+    const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
+    const scrollIntoViewSpy = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = scrollIntoViewSpy;
+
+    try {
+      render(
+        <Grommet>
+          <TimeInput format="12" defaultValue="12:30:20 AM" />
+        </Grommet>,
+      );
+
+      await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+      const minuteList = screen.getByRole('listbox', { name: 'minute' });
+      const secondList = screen.getByRole('listbox', { name: 'second' });
+
+      const selectedMinuteOption = within(minuteList).getByRole('option', {
+        name: '30',
+      });
+      const selectedSecondOption = within(secondList).getByRole('option', {
+        name: '20',
+      });
+
+      await waitFor(() => {
+        expect(scrollIntoViewSpy).toHaveBeenCalled();
+      });
+
+      expect(scrollIntoViewSpy.mock.contexts).toContain(selectedMinuteOption);
+      expect(scrollIntoViewSpy.mock.contexts).toContain(selectedSecondOption);
+    } finally {
+      window.HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
+    }
+  });
 });

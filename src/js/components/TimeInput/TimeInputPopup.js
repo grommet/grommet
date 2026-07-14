@@ -239,13 +239,46 @@ const TimeInputPopup = ({
     return false;
   }, [activeSection, hoursOptions, minuteOptions, secondOptions, sections]);
 
+  const scrollSelectedOptionsIntoView = useCallback(() => {
+    const optionBySection = {
+      [SECTION_HOUR]: sections.hour !== undefined ? sections.hour : hoursOptions[0],
+      [SECTION_MINUTE]:
+        sections.minute !== undefined ? sections.minute : minuteOptions[0],
+      [SECTION_SECOND]:
+        sections.second !== undefined ? sections.second : secondOptions[0],
+      [SECTION_PERIOD]: sections.period || 'AM',
+    };
+
+    visiblePopupSections.forEach(({ section, label: sectionLabel, options }) => {
+      const selectedValue = optionBySection[section] ?? options?.[0];
+      const selectedNode = dialogRef.current?.querySelector(
+        `[data-option-key="${optionKey(sectionLabel, selectedValue)}"]`,
+      );
+
+      if (selectedNode?.scrollIntoView) {
+        selectedNode.scrollIntoView({ block: 'nearest' });
+      }
+    });
+  }, [
+    hoursOptions,
+    minuteOptions,
+    secondOptions,
+    sections.hour,
+    sections.minute,
+    sections.period,
+    sections.second,
+    visiblePopupSections,
+  ]);
+
   useLayoutEffect(() => {
     let rafB;
     const rafA = requestAnimationFrame(() => {
+      scrollSelectedOptionsIntoView();
       const focused = focusCurrentPopupOption();
       // Retry one more frame to handle occasional mount timing races.
       if (!focused) {
         rafB = requestAnimationFrame(() => {
+          scrollSelectedOptionsIntoView();
           focusCurrentPopupOption();
         });
       }
@@ -255,7 +288,7 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption]);
+  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
 
   return (
     <Drop
