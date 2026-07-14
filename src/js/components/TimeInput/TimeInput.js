@@ -997,6 +997,32 @@ const TimeInput = forwardRef(
       [hourOptions, minuteOptions, secondOptions],
     );
 
+    useEffect(() => {
+      if (!open) return undefined;
+
+      const resolveSelectedOption = (segment) => {
+        if (segment === 'period') return pickerParts.period || 'am';
+        return pickerParts[segment] || segmentOptions[segment]?.[0];
+      };
+
+      const frame = window.requestAnimationFrame(() => {
+        segmentOrder.forEach((segment) => {
+          const selectedOption = resolveSelectedOption(segment);
+          const selectedNode =
+            pickerOptionRefs.current[segment]?.[selectedOption] ||
+            pickerOptionRefs.current[segment]?.[segmentOptions[segment]?.[0]];
+
+          if (selectedNode?.scrollIntoView) {
+            selectedNode.scrollIntoView({ block: 'nearest' });
+          }
+        });
+      });
+
+      return () => {
+        window.cancelAnimationFrame(frame);
+      };
+    }, [open, pickerParts, segmentOptions, segmentOrder]);
+
     const getAdjacentSegment = useCallback(
       (direction, fromSegment = activeSegment) => {
         const currentIndex = segmentOrder.indexOf(fromSegment);

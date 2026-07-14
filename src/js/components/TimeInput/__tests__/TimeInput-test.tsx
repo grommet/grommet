@@ -448,4 +448,40 @@ describe('TimeInput', () => {
       ).toHaveFocus();
     });
   });
+
+  test('auto-scrolls selected minute and second options on open', async () => {
+    const user = userEvent.setup();
+    const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
+    const scrollIntoViewSpy = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = scrollIntoViewSpy;
+
+    try {
+      render(
+        <Grommet>
+          <TimeInput timeFormat="12hr" defaultValue="12:30:20 am" showSeconds />
+        </Grommet>,
+      );
+
+      await user.click(screen.getByLabelText('Open time picker'));
+
+      const minutesList = screen.getByRole('listbox', { name: 'Minutes' });
+      const secondsList = screen.getByRole('listbox', { name: 'Seconds' });
+
+      const selectedMinuteOption = within(minutesList).getByRole('option', {
+        name: '30',
+      });
+      const selectedSecondOption = within(secondsList).getByRole('option', {
+        name: '20',
+      });
+
+      await waitFor(() => {
+        expect(scrollIntoViewSpy).toHaveBeenCalled();
+      });
+
+      expect(scrollIntoViewSpy.mock.contexts).toContain(selectedMinuteOption);
+      expect(scrollIntoViewSpy.mock.contexts).toContain(selectedSecondOption);
+    } finally {
+      window.HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
+    }
+  });
 });
