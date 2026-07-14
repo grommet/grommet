@@ -12,7 +12,7 @@ export interface TimeInputProps {
     exitDrop?: string;
     inputLabel?: string;
     invalidTime?: string;
-    open?: string;
+    openDrop?: string;
   };
   minuteStep?: number;
   name?: string;

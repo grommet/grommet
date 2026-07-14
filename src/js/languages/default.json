@@ -218,7 +218,7 @@
     "inputLabel": "Time input",
     "chooseTime": "Choose time",
     "currentValue": "Current time {hour}:{minute}:{second}{period}",
-    "open": "Press space or Alt+ArrowDown to open time input",
+    "openDrop": "Press space to open time picker",
     "enterDrop": "Time input is open",
     "exitDrop": "Time input closed",
     "invalidTime": "Invalid time value"

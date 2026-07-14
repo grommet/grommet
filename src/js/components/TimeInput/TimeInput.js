@@ -564,7 +564,7 @@ const TimeInput = forwardRef(
 
       setActiveSection(firstSection);
       selectSectionText(firstSection);
-      announce(formatMessage({ id: 'timeInput.open', messages }));
+      announce(formatMessage({ id: 'timeInput.openDrop', messages }));
       if (inputRest.onFocus) inputRest.onFocus(event);
     };
 

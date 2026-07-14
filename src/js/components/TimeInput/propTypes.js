@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
       exitDrop: PropTypes.string,
       inputLabel: PropTypes.string,
       invalidTime: PropTypes.string,
-      open: PropTypes.string,
+      openDrop: PropTypes.string,
     }),
     minuteStep: PropTypes.number,
     name: PropTypes.string,
