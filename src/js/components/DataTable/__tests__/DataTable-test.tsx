@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import 'jest-styled-components';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import {
+  render,
+  fireEvent,
+  screen,
+  waitFor,
+  act,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { axe } from 'jest-axe';
@@ -33,6 +39,9 @@ for (let i = 0; i < 95; i += 1) {
 
 describe('DataTable', () => {
   test('should have no accessibility violations for sortable columns', async () => {
+    // flush the 100ms column-width debounce timer (Header.js's
+    // WIDTH_UPDATE_DELAY) safely under act(), avoiding an "act()" warning.
+    jest.useFakeTimers();
     const { container } = render(
       <Grommet>
         <DataTable
@@ -49,6 +58,11 @@ describe('DataTable', () => {
         />
       </Grommet>,
     );
+    act(() => {
+      jest.runAllTimers();
+    });
+    jest.useRealTimers();
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
