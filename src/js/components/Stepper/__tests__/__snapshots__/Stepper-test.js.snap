@@ -274,7 +274,8 @@ exports[`Stepper renders horizontal steps 1`] = `
     </li>
     <li
       aria-hidden="true"
-      style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
+      role="presentation"
+      style="display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
     >
       <span
         aria-hidden="true"
@@ -310,7 +311,8 @@ exports[`Stepper renders horizontal steps 1`] = `
     </li>
     <li
       aria-hidden="true"
-      style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
+      role="presentation"
+      style="display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
     >
       <span
         aria-hidden="true"
@@ -609,7 +611,8 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   </li>
   <li
     aria-hidden="true"
-    style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
+    role="presentation"
+    style="display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
   >
     <span
       aria-hidden="true"
@@ -645,7 +648,8 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   </li>
   <li
     aria-hidden="true"
-    style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
+    role="presentation"
+    style="display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; align-items: center; min-width: 12px;"
   >
     <span
       aria-hidden="true"
@@ -945,7 +949,8 @@ exports[`Stepper renders vertical steps 1`] = `
     </li>
     <li
       aria-hidden="true"
-      style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; justify-content: flex-start; min-height: 12px;"
+      role="presentation"
+      style="display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; justify-content: flex-start; min-height: 12px;"
     >
       <span
         aria-hidden="true"
@@ -1002,7 +1007,8 @@ exports[`Stepper renders vertical steps 1`] = `
     </li>
     <li
       aria-hidden="true"
-      style="list-style: none; display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; justify-content: flex-start; min-height: 12px;"
+      role="presentation"
+      style="display: flex; flex-direction: column; position: relative; flex: 1; overflow: visible; justify-content: flex-start; min-height: 12px;"
     >
       <span
         aria-hidden="true"
