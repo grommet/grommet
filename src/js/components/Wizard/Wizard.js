@@ -9,6 +9,7 @@ import React, {
 
 import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
+import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { useForwardedRef } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -23,8 +24,10 @@ import { WizardFooter } from './WizardFooter';
 import {
   StyledWizard,
   StyledWizardBody,
+  StyledWizardCenter,
   StyledWizardContentColumn,
   StyledWizardFocusAnchor,
+  StyledWizardMiddle,
 } from './StyledWizard';
 import { WizardPropTypes } from './propTypes';
 
@@ -80,6 +83,7 @@ const Wizard = forwardRef(
       currentStep: currentStepProp,
       defaultStep,
       direction = 'horizontal',
+      kind = 'full',
       onStepChange,
       onComplete,
       onCancel,
@@ -101,6 +105,7 @@ const Wizard = forwardRef(
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
     const { format } = React.useContext(MessageContext);
+    const responsiveSize = React.useContext(ResponsiveContext);
     const sendAnalytics = useAnalytics();
 
     // Fallback horizontal direction when the caller asks for horizontal but
@@ -636,26 +641,49 @@ const Wizard = forwardRef(
 
     const containerTheme = theme.wizard?.container;
     const bodyTheme = theme.wizard?.body;
+    const kindTheme = theme.wizard?.kind?.[kind];
 
+    // Default composition. Header and footer are direct children of the
+    // wizard column so they naturally stay pinned at the top and bottom
+    // of a bounded parent. The middle region is a non-scrolling flex
+    // container; scrolling happens inside <WizardContent> (the white
+    // card) so the stepper and step title also stay in place while
+    // just the card's body scrolls. The `kind` max-width is applied to
+    // `StyledWizardCenter` inside the middle so header and footer
+    // always span the full wizard width even when the content column
+    // is narrowed.
     const defaultLayout = (
       <>
         {header && <WizardHeader header={header} />}
-        <Box pad={bodyTheme?.pad} gap={bodyTheme?.gap} flex="grow">
-          {effectiveDirection === 'horizontal' && <WizardProgress />}
-          <StyledWizardBody direction={effectiveDirection}>
-            {effectiveDirection === 'vertical' && <WizardProgress />}
-            <StyledWizardContentColumn>
-              <StyledWizardFocusAnchor
-                ref={focusAnchorRef}
-                tabIndex={-1}
-                aria-live="polite"
-              >
-                <WizardStepHeader />
-              </StyledWizardFocusAnchor>
-              <WizardContent renderStep={renderStep} />
-            </StyledWizardContentColumn>
-          </StyledWizardBody>
-        </Box>
+        <StyledWizardMiddle {...passThemeFlag}>
+          <StyledWizardCenter maxWidth={kindTheme?.maxWidth} {...passThemeFlag}>
+            <Box
+              pad={bodyTheme?.pad}
+              gap={bodyTheme?.gap}
+              // `flex` (1 1 auto) so this wrapper shrinks and lets
+              // <WizardContent>'s `overflow: auto` engage.
+              flex
+              style={{ minHeight: 0 }}
+            >
+              {effectiveDirection === 'horizontal' &&
+                responsiveSize !== 'small' && <WizardProgress />}
+              <StyledWizardBody direction={effectiveDirection}>
+                {effectiveDirection === 'vertical' &&
+                  responsiveSize !== 'small' && <WizardProgress />}
+                <StyledWizardContentColumn>
+                  <StyledWizardFocusAnchor
+                    ref={focusAnchorRef}
+                    tabIndex={-1}
+                    aria-live="polite"
+                  >
+                    <WizardStepHeader />
+                  </StyledWizardFocusAnchor>
+                  <WizardContent renderStep={renderStep} />
+                </StyledWizardContentColumn>
+              </StyledWizardBody>
+            </Box>
+          </StyledWizardCenter>
+        </StyledWizardMiddle>
         {footerNode}
       </>
     );
@@ -677,7 +705,10 @@ const Wizard = forwardRef(
               gap={containerTheme?.gap}
               round={containerTheme?.round}
               elevation={containerTheme?.elevation}
-              flex="grow"
+              // `flex` (1 1 auto) + `minHeight: 0` so the middle region
+              // shrinks and <WizardContent> scrolls internally.
+              flex
+              style={{ minHeight: 0 }}
             >
               {defaultLayout}
             </Box>

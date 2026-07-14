@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, Paragraph, Text } from 'grommet';
+import { Box, Grommet, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';
 import { grommet } from '../../../themes';
 
@@ -58,7 +58,19 @@ const NestedSubSteps = () => {
           onComplete={(value) => setResult({ status: 'complete', value })}
           onCancel={handleCancel}
         />
-        {result && <Text>{`Completed: ${JSON.stringify(result.value)}`}</Text>}
+        {result && (
+          <Notification
+            toast={{ position: 'top' }}
+            status="normal"
+            title="Wizard complete"
+            message={
+              result.value && Object.keys(result.value).length > 0
+                ? `Completed: ${JSON.stringify(result.value)}`
+                : undefined
+            }
+            onClose={() => setResult(null)}
+          />
+        )}
       </Box>
     </Grommet>
   );

@@ -26,6 +26,7 @@ if (process.env.NODE_ENV !== 'production') {
     currentStep: PropTypes.string,
     defaultStep: PropTypes.string,
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
+    kind: PropTypes.oneOf(['full', 'narrow', 'wide']),
     onStepChange: PropTypes.func,
     onComplete: PropTypes.func,
     onCancel: PropTypes.func,

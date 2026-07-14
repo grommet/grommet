@@ -2489,6 +2489,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'none',
         background: 'background-back',
       },
+      // Per-`kind` max-width applied to the centered content column inside
+      // the scroll region. Header and footer always span the full wizard
+      // width; only the middle column is constrained. Values may be any
+      // Grommet size token (e.g. 'large', 'xlarge') or a CSS length.
+      // `full` intentionally has no maxWidth (content stretches).
+      kind: {
+        full: {
+          maxWidth: undefined,
+        },
+        narrow: {
+          maxWidth: 'large', // 768px
+        },
+        wide: {
+          maxWidth: 'xlarge', // 1152px
+        },
+      },
       body: {
         pad: { horizontal: 'large', vertical: 'large' },
         gap: 'medium',

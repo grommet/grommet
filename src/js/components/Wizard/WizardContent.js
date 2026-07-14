@@ -56,11 +56,19 @@ export const WizardContent = ({ renderStep, ...rest }) => {
       width={contentTheme?.width}
       height={contentTheme?.height}
       align={contentTheme?.align}
-      flex="grow"
+      // Scrolling region for the step body. `flex` (1 1 auto) + `minHeight: 0`
+      // lets this Box shrink below its content so `overflow: auto` engages;
+      // `flex="grow"` (1 0 auto) would refuse to shrink.
+      flex
+      overflow="auto"
+      style={{ minHeight: 0 }}
       {...passThemeFlag}
       {...rest}
     >
-      {body}
+      {/* Non-shrinking wrapper: keeps the step body at its natural
+          height so the parent's `overflow: auto` scrolls instead of
+          the body collapsing on top of itself. */}
+      <Box flex={false}>{body}</Box>
       {validationError && (
         <Text
           role="alert"

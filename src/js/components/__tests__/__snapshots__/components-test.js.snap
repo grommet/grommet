@@ -1205,6 +1205,7 @@ exports[`Components loads 1`] = `
       "footer": [Function],
       "header": [Function],
       "id": [Function],
+      "kind": [Function],
       "messages": [Function],
       "onCancel": [Function],
       "onComplete": [Function],

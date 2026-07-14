@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Grommet, Paragraph, Text } from 'grommet';
+import {
+  Box,
+  Button,
+  Grommet,
+  Notification,
+  Paragraph,
+  ResponsiveContext,
+} from 'grommet';
 import { Wizard } from '../Wizard';
 import { grommet } from '../../../themes';
 
@@ -46,31 +53,42 @@ const Controlled = () => {
     isLastStep,
     currentStepObj,
   }) => (
-    <Box
-      background="background-front"
-      pad={{ horizontal: 'large', vertical: 'none' }}
-      height="xxsmall"
-      direction="row"
-      justify="end"
-      align="center"
-      gap="small"
-      flex={false}
-    >
-      <Box direction="row" gap="small" align="center" flex="grow">
-        <Button label="Cancel" plain onClick={cancel} />
-      </Box>
-      <Box direction="row" gap="small" align="center">
-        {currentStepObj?.id !== 'three' && (
-          <Button label="Go to Three" onClick={() => goTo('three')} />
-        )}
-        {!isFirstStep && <Button label="Previous" onClick={previous} />}
-        {isLastStep ? (
-          <Button label="Complete" primary onClick={complete} />
-        ) : (
-          <Button label="Next" primary onClick={next} />
-        )}
-      </Box>
-    </Box>
+    <ResponsiveContext.Consumer>
+      {(size) => {
+        const isSmall = size === 'small';
+        return (
+          <Box
+            background="background-front"
+            pad={{
+              horizontal: isSmall ? 'small' : 'large',
+              vertical: isSmall ? 'small' : 'none',
+            }}
+            height={isSmall ? undefined : 'xxsmall'}
+            direction="row"
+            justify="end"
+            align="center"
+            gap="small"
+            wrap={isSmall}
+            flex={false}
+          >
+            <Box direction="row" gap="small" align="center" flex="grow">
+              <Button label="Cancel" plain onClick={cancel} />
+            </Box>
+            <Box direction="row" gap="small" align="center" wrap={isSmall}>
+              {currentStepObj?.id !== 'three' && (
+                <Button label="Go to Three" onClick={() => goTo('three')} />
+              )}
+              {!isFirstStep && <Button label="Previous" onClick={previous} />}
+              {isLastStep ? (
+                <Button label="Complete" primary onClick={complete} />
+              ) : (
+                <Button label="Next" primary onClick={next} />
+              )}
+            </Box>
+          </Box>
+        );
+      }}
+    </ResponsiveContext.Consumer>
   );
 
   return (
@@ -91,7 +109,19 @@ const Controlled = () => {
           onComplete={(value) => setResult({ status: 'complete', value })}
           onCancel={handleCancel}
         />
-        {result && <Text>{`Completed: ${JSON.stringify(result.value)}`}</Text>}
+        {result && (
+          <Notification
+            toast={{ position: 'top' }}
+            status="normal"
+            title="Wizard complete"
+            message={
+              result.value && Object.keys(result.value).length > 0
+                ? `Completed: ${JSON.stringify(result.value)}`
+                : undefined
+            }
+            onClose={() => setResult(null)}
+          />
+        )}
       </Box>
     </Grommet>
   );
