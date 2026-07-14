@@ -2,10 +2,11 @@ import styled, { css } from 'styled-components';
 
 import {
   disabledStyle,
+  edgeStyle,
   focusStyle,
-  getInputPadBySide,
   inputStyle,
   normalizeColor,
+  parseMetricToNum,
   plainInputStyle,
   readOnlyStyle,
   styledComponentsConfig,
@@ -41,15 +42,7 @@ export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
     color: transparent;
   }
 
-  &::-webkit-input-placeholder {
-    color: transparent;
-  }
-
-  &::-moz-placeholder {
-    color: transparent;
-  }
-
-  &:-ms-input-placeholder {
+  &::placeholder {
     color: transparent;
   }
 `;
@@ -70,26 +63,23 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
   z-index: 2;
   display: flex;
   align-items: center;
-  padding: ${(props) =>
-    `${getInputPadBySide(props, 'top')} ${getInputPadBySide(
-      props,
-      'right',
-    )} ${getInputPadBySide(props, 'bottom')} ${getInputPadBySide(
-      props,
-      'left',
-    )}`};
-  white-space: pre;
   overflow: hidden;
-  font-size: ${(props) =>
-    `${
-      props.theme.global.input.font.size
-        ? props.theme.text[props.theme.global.input.font.size]?.size ||
-          props.theme.global.input.font.size
-        : 'inherit'
-    }`};
-  font-weight: ${(props) =>
-    props.theme.global.input?.font?.weight || props.theme.global.font.weight};
-  line-height: ${(props) => props.theme.global.input.font.height || 'inherit'};
+  ${(props) =>
+    props.theme.global.input.padding &&
+    (typeof props.theme.global.input.padding !== 'object'
+      ? `padding: ${
+          parseMetricToNum(
+            props.theme.global.edgeSize[props.theme.global.input.padding] ||
+              props.theme.global.input.padding,
+          ) - parseMetricToNum(props.theme.global.control.border.width)
+        }px;`
+      : edgeStyle(
+          'padding',
+          props.theme.global.input.padding,
+          props.responsive,
+          props.theme.box.responsiveBreakpoint,
+          props.theme,
+        ))}
 `;
 
 export const StyledTimeInputSeparator = styled.span.withConfig(
@@ -99,26 +89,17 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
   align-items: center;
   line-height: inherit;
   margin-inline: ${(props) => {
-    const gapToken =
-      props.$kind === 'colon'
-        ? props.theme.timeInput?.separator?.gap
-        : props.theme.timeInput?.separator?.periodGap;
+    const gapToken = props.theme.timeInput?.separator?.gap;
 
     return (
-      props.theme.global.borderSize?.[gapToken] ||
       props.theme.global.edgeSize?.[gapToken] ||
       gapToken ||
-      (props.$kind === 'colon'
-        ? props.theme.global.edgeSize.xxsmall
-        : props.theme.global.edgeSize.none)
+      props.theme.global.edgeSize.xxsmall
     );
   }};
   color: ${(props) =>
     normalizeColor(
-      props.$filled
-        ? props.theme.timeInput?.color || 'text'
-        : props.theme.timeInput?.placeholder?.color ||
-            props.theme.global.colors.placeholder,
+      props.$filled ? 'text' : props.theme.global.colors.placeholder,
       props.theme,
     )};
 `;
@@ -129,46 +110,35 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   display: inline-flex;
   align-items: center;
   position: relative;
-  pointer-events: auto;
   line-height: inherit;
   color: ${(props) =>
     normalizeColor(
-      props.$filled
-        ? props.theme.timeInput?.color || 'text'
-        : props.theme.timeInput?.placeholder?.color ||
-            props.theme.global.colors.placeholder,
+      props.$filled ? 'text' : props.theme.global.colors.placeholder,
       props.theme,
     )};
-  background-color: transparent;
-  box-shadow: none;
 
-  ${(props) =>
-    props.$active &&
-    `
-      ${(() => {
-        const activeRoundToken = props.theme.timeInput?.active?.round;
-        const activeRound =
-          props.theme.global.borderSize?.[activeRoundToken] ||
-          props.theme.global.radius?.[activeRoundToken] ||
-          props.theme.global.edgeSize?.[activeRoundToken] ||
-          activeRoundToken ||
-          props.theme.global.borderSize.small;
+  ${(props) => {
+    if (!props.$active) return '';
 
-        const activeBorderToken = props.theme.timeInput?.active?.border?.size;
-        const activeBorderSize =
-          props.theme.global.borderSize?.[activeBorderToken] ||
-          props.theme.global.edgeSize?.[activeBorderToken] ||
-          activeBorderToken ||
-          props.theme.global.borderSize.small;
+    const activeRoundToken = props.theme.timeInput?.active?.round;
+    const activeRound =
+      props.theme.global.radius?.[activeRoundToken] ||
+      props.theme.global.edgeSize?.[activeRoundToken] ||
+      activeRoundToken ||
+      props.theme.global.borderSize.small;
 
-        return `
+    const activeBorderToken = props.theme.timeInput?.active?.indicator?.size;
+    const activeBorderSize =
+      props.theme.global.borderSize?.[activeBorderToken] ||
+      props.theme.global.edgeSize?.[activeBorderToken] ||
+      activeBorderToken ||
+      props.theme.global.borderSize.small;
+
+    return css`
       &::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         background-color: ${normalizeColor(
           props.theme.timeInput?.active?.background || 'active-background',
           props.theme,
@@ -184,13 +154,12 @@ export const StyledTimeInputSegment = styled.span.withConfig(
         bottom: 0;
         height: ${activeBorderSize};
         background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.border?.color || 'focus',
+          props.theme.timeInput?.active?.indicator?.color || 'black',
           props.theme,
         )};
         border-bottom-left-radius: ${activeRound};
         border-bottom-right-radius: ${activeRound};
       }
-        `;
-      })()}
-    `};
+    `;
+  }}
 `;

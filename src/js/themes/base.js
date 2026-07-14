@@ -1059,36 +1059,33 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       button: {
         margin: 'xsmall',
       },
-      color: 'text',
       container: {
         round: 'small',
       },
+      // separator: {
+      //   gap: undefined,
+      // },
       active: {
-        background: 'active-background',
-        border: {
+        // background: undefined,
+        // round: undefined,
+        indicator: {
           color: 'black',
           size: 'small',
         },
-        round: 'small',
       },
-      placeholder: {
-        color: 'placeholder',
-      },
-      separator: {
-        gap: 'medium',
-        periodGap: 'medium',
-      },
-      popup: {
+      drop: {
         option: {
+          background: 'transparent',
           hover: {
             background: 'active-background',
           },
           selected: {
-            background: 'selected-primary-strong',
+            background: 'selected',
             color: 'white',
             hover: {
-              background: 'selected-primary-strong-hover',
+              // background: undefined,
             },
+            // extend: undefined,
           },
         },
       },
