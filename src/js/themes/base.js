@@ -2375,6 +2375,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             icon: Radial,
             iconSize: 'small',
           },
+          hover: {
+            background: 'background-front',
+            border: 'text-strong',
+          },
         },
         label: { color: 'text', weight: 'normal' },
         connector: { color: 'border' },
@@ -2388,6 +2392,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: 'brand',
           substep: {
             iconSize: 'small',
+          },
+          hover: {
+            color: 'white',
           },
         },
         label: {
@@ -2405,6 +2412,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           substep: {
             iconSize: 'small',
           },
+          hover: {
+            color: 'white',
+          },
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
@@ -2421,6 +2431,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           substep: {
             iconSize: 'small',
           },
+          hover: {
+            background: 'background-front',
+          },
         },
         label: { color: 'text-weak', weight: 'normal' },
         connector: { color: 'brand' },
@@ -2433,6 +2446,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: 'status-critical',
           substep: {
             iconSize: 'small',
+          },
+          hover: {
+            background: 'background-front',
           },
         },
         label: { color: 'text', weight: 'normal' },
@@ -2447,6 +2463,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: 'status-critical',
           substep: {
             iconSize: 'small',
+          },
+          hover: {
+            color: 'white',
           },
         },
         label: {

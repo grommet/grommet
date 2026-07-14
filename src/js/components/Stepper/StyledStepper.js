@@ -163,68 +163,50 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
     if (!props.isClickable) return '';
 
     const theme = getStepperTheme(props.theme);
-    const brandColor = normalizeColor('brand', theme);
-    const errorColor = normalizeColor('status-error', theme);
-    const brandHover = theme.stepper?.hover?.brand
-      ? normalizeColor(theme.stepper.hover.brand, theme)
-      : `color-mix(in srgb, ${brandColor} 80%, black)`;
-    const errorHover = theme.stepper?.hover?.error
-      ? normalizeColor(theme.stepper.hover.error, theme)
-      : `color-mix(in srgb, ${errorColor} 80%, black)`;
-    const borderHover =
-      normalizeColor(theme.stepper?.hover?.border || 'text', theme) ||
-      '#444444';
+    const stateTheme = theme.stepper?.[props.effectiveState]?.indicator || {};
+    const backgroundColor = stateTheme?.background
+      ? normalizeColor(stateTheme.background, theme)
+      : undefined;
+    const borderColor = stateTheme?.border
+      ? normalizeColor(stateTheme.border, theme)
+      : undefined;
+    const color = stateTheme?.color
+      ? normalizeColor(stateTheme.color, theme)
+      : undefined;
 
-    const hoverStyles = props.isSubStep
-      ? (() => {
-          switch (props.effectiveState) {
-            case 'current':
-            case 'currentCompleted':
-            case 'completed':
-              return css`
-                color: ${brandHover};
-              `;
-            case 'error':
-            case 'currentError':
-              return css`
-                color: ${errorHover};
-              `;
-            default:
-              return css`
-                color: ${borderHover};
-              `;
-          }
-        })()
-      : (() => {
-          switch (props.effectiveState) {
-            case 'current':
-            case 'currentCompleted':
-              return css`
-                background: ${brandHover};
-                border-color: ${brandHover};
-              `;
-            case 'completed':
-              return css`
-                color: ${brandHover};
-                border-color: ${brandHover};
-              `;
-            case 'error':
-              return css`
-                color: ${errorHover};
-                border-color: ${errorHover};
-              `;
-            case 'currentError':
-              return css`
-                background: ${errorHover};
-                border-color: ${errorHover};
-              `;
-            default:
-              return css`
-                border-color: ${borderHover};
-                color: ${borderHover};
-              `;
-          }
-        })();
+    const stateBackgroundHoverColor = stateTheme?.hover?.background
+      ? normalizeColor(stateTheme.hover.background, theme)
+      : undefined;
+    const stateBorderHoverColor = stateTheme?.hover?.border
+      ? normalizeColor(stateTheme.hover.border, theme)
+      : undefined;
+    const stateColorHoverColor = stateTheme?.hover?.color
+      ? normalizeColor(stateTheme.hover.color, theme)
+      : undefined;
+
+    const defaultBackgroundHoverColor = backgroundColor
+      ? `color-mix(in srgb, ${backgroundColor} 80%, black)`
+      : normalizeColor(
+          theme.stepper?.hover?.background || 'background-contrast',
+          theme,
+        );
+    const defaultBorderHoverColor = borderColor
+      ? `color-mix(in srgb, ${borderColor} 80%, black)`
+      : normalizeColor(theme.stepper?.hover?.border || 'text', theme);
+    const defaultColorHoverColor = color
+      ? `color-mix(in srgb, ${color} 80%, black)`
+      : normalizeColor(theme.stepper?.hover?.color || 'text-strong', theme);
+
+    const hoverBackgroundColor =
+      stateBackgroundHoverColor || defaultBackgroundHoverColor;
+    const hoverBorderColor = stateBorderHoverColor || defaultBorderHoverColor;
+    const hoverColor = stateColorHoverColor || defaultColorHoverColor;
+
+    const hoverStyles = (() => css`
+      background: ${hoverBackgroundColor};
+      border-color: ${hoverBorderColor};
+      color: ${hoverColor};
+    `)();
 
     return css`
       ${StyledStepButton}:not([aria-disabled]):active & {

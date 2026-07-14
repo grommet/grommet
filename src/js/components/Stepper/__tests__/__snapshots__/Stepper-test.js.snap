@@ -151,6 +151,7 @@ exports[`Stepper renders horizontal steps 1`] = `
 .c3:not([aria-disabled]):hover .c5 {
   background: color-mix(in srgb, #7D4CDB 80%, black);
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
+  color: #FFFFFF;
 }
 
 .c10 {
@@ -194,8 +195,9 @@ exports[`Stepper renders horizontal steps 1`] = `
 }
 
 .c3:not([aria-disabled]):hover .c10 {
+  background: #FFFFFF;
   border-color: #000000;
-  color: #000000;
+  color: color-mix(in srgb, #000000 80%, black);
 }
 
 .c9 {
@@ -487,6 +489,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 .c2:not([aria-disabled]):hover .c4 {
   background: color-mix(in srgb, #7D4CDB 80%, black);
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
+  color: #FFFFFF;
 }
 
 .c9 {
@@ -530,8 +533,9 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 }
 
 .c2:not([aria-disabled]):hover .c9 {
+  background: #FFFFFF;
   border-color: #000000;
-  color: #000000;
+  color: color-mix(in srgb, #000000 80%, black);
 }
 
 .c8 {
@@ -817,8 +821,9 @@ exports[`Stepper renders vertical steps 1`] = `
 }
 
 .c3:not([aria-disabled]):hover .c5 {
+  background: #FFFFFF;
   border-color: #000000;
-  color: #000000;
+  color: color-mix(in srgb, #000000 80%, black);
 }
 
 .c10 {
@@ -864,6 +869,7 @@ exports[`Stepper renders vertical steps 1`] = `
 .c3:not([aria-disabled]):hover .c10 {
   background: color-mix(in srgb, #7D4CDB 80%, black);
   border-color: color-mix(in srgb, #7D4CDB 80%, black);
+  color: #FFFFFF;
 }
 
 .c8 {

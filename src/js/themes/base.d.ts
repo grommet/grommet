@@ -2118,42 +2118,12 @@ export interface ThemeType {
       //   };
       //   current?: {
       //     background?: BackgroundType;
-      //     text?: ColorType;
-      //     border?: ColorType;
-      //   };
-      //   completed?: {
-      //     background?: BackgroundType;
-      //     text?: ColorType;
-      //     border?: ColorType;
-      //   };
-      //   error?: {
-      //     background?: BackgroundType;
-      //     text?: ColorType;
-      //     border?: ColorType;
-      //   };
-      //   disabled?: {
-      //     background?: BackgroundType;
-      //     text?: ColorType;
-      //     border?: ColorType;
-      //   };
-      // };
     };
     label?: {
       size?: string;
       substep?: {
         size?: string;
       };
-      // color?: {
-      //   default?: ColorType;
-      //   current?: ColorType;
-      //   completed?: ColorType;
-      //   error?: ColorType;
-      //   disabled?: ColorType;
-      // };
-      // weight?: {
-      //   default?: string;
-      //   current?: string;
-      // };
     };
     connector?: {
       stroke?: {
@@ -2183,17 +2153,6 @@ export interface ThemeType {
       background?: BackgroundType;
       border?: ColorType;
     };
-    // icons?: {
-    //   completed?: React.ReactNode | Icon;
-    //   error?: React.ReactNode | Icon;
-    //   current?: React.ReactNode | Icon;
-    //   substepCurrent?: React.ReactNode | Icon;
-    //   substepCompleted?: React.ReactNode | Icon;
-    //   substepError?: React.ReactNode | Icon;
-    //   substepPending?: React.ReactNode | Icon;
-    //   substepDisabled?: React.ReactNode | Icon;
-    // };
-
     active?: {
       transform?: string;
     };
@@ -2207,6 +2166,11 @@ export interface ThemeType {
         border?: ColorType;
         substep?: {
           iconSize?: string;
+        };
+        hover?: {
+          background?: BackgroundType;
+          border?: ColorType;
+          color?: ColorType;
         };
       };
       label?: {
@@ -2230,6 +2194,11 @@ export interface ThemeType {
         substep?: {
           iconSize?: string;
         };
+        hover?: {
+          background?: BackgroundType;
+          border?: ColorType;
+          color?: ColorType;
+        };
       };
       label?: {
         color?: ColorType;
@@ -2251,6 +2220,11 @@ export interface ThemeType {
         border?: ColorType;
         substep?: {
           iconSize?: string;
+        };
+        hover?: {
+          background?: BackgroundType;
+          border?: ColorType;
+          color?: ColorType;
         };
       };
       label?: {
@@ -2274,6 +2248,11 @@ export interface ThemeType {
         substep?: {
           iconSize?: string;
         };
+        hover?: {
+          background?: BackgroundType;
+          border?: ColorType;
+          color?: ColorType;
+        };
       };
       label?: {
         color?: ColorType;
@@ -2295,6 +2274,11 @@ export interface ThemeType {
         border?: ColorType;
         substep?: {
           iconSize?: string;
+        };
+        hover?: {
+          background?: BackgroundType;
+          border?: ColorType;
+          color?: ColorType;
         };
       };
       label?: {
@@ -2318,6 +2302,11 @@ export interface ThemeType {
         substep?: {
           iconSize?: string;
         };
+        hover?: {
+          background?: BackgroundType;
+          border?: ColorType;
+          color?: ColorType;
+        };
       };
       label?: {
         color?: ColorType;
@@ -2339,6 +2328,11 @@ export interface ThemeType {
         border?: ColorType;
         substep?: {
           iconSize?: string;
+        };
+        hover?: {
+          background?: BackgroundType;
+          border?: ColorType;
+          color?: ColorType;
         };
       };
       label?: {
