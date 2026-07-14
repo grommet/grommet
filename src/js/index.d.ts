@@ -75,6 +75,7 @@ export * from './components/SkipLinkTarget';
 export * from './components/Spinner';
 export * from './components/Stack';
 export * from './components/StarRating';
+export * from './components/Stepper';
 export * from './components/Table';
 export * from './components/TableBody';
 export * from './components/TableCell';

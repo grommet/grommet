@@ -2362,9 +2362,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         background: 'background-contrast',
         border: 'text-strong',
       },
-      active: {
-        transform: 'scale(0.95)',
-      },
       // States: [component].[state].[element].[property]
       pending: {
         indicator: {

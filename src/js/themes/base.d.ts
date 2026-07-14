@@ -297,6 +297,34 @@ type ContainerExtend = {
   };
 };
 
+interface StepperStateType {
+  indicator?: {
+    icon?: React.ReactNode | Icon;
+    iconSize?: string;
+    background?: BackgroundType;
+    color?: ColorType;
+    border?: ColorType;
+    substep?: {
+      iconSize?: string;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: ColorType;
+      color?: ColorType;
+    };
+  };
+  label?: {
+    color?: ColorType;
+    weight?: string;
+  };
+  connector?: {
+    color?: ColorType;
+  };
+  helperText?: {
+    color?: ColorType;
+  };
+}
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -2145,199 +2173,14 @@ export interface ThemeType {
       background?: BackgroundType;
       border?: ColorType;
     };
-    active?: {
-      transform?: string;
-    };
     // States: [component].[state].[element].[property]
-    pending?: {
-      indicator?: {
-        icon?: React.ReactNode | Icon;
-        iconSize?: string;
-        background?: BackgroundType;
-        color?: ColorType;
-        border?: ColorType;
-        substep?: {
-          iconSize?: string;
-        };
-        hover?: {
-          background?: BackgroundType;
-          border?: ColorType;
-          color?: ColorType;
-        };
-      };
-      label?: {
-        color?: ColorType;
-        weight?: string;
-      };
-      connector?: {
-        color?: ColorType;
-      };
-      helperText?: {
-        color?: ColorType;
-      };
-    };
-    current?: {
-      indicator?: {
-        icon?: React.ReactNode | Icon;
-        iconSize?: string;
-        background?: BackgroundType;
-        color?: ColorType;
-        border?: ColorType;
-        substep?: {
-          iconSize?: string;
-        };
-        hover?: {
-          background?: BackgroundType;
-          border?: ColorType;
-          color?: ColorType;
-        };
-      };
-      label?: {
-        color?: ColorType;
-        weight?: string;
-      };
-      connector?: {
-        color?: ColorType;
-      };
-      helperText?: {
-        color?: ColorType;
-      };
-    };
-    currentCompleted?: {
-      indicator?: {
-        icon?: React.ReactNode | Icon;
-        iconSize?: string;
-        background?: BackgroundType;
-        color?: ColorType;
-        border?: ColorType;
-        substep?: {
-          iconSize?: string;
-        };
-        hover?: {
-          background?: BackgroundType;
-          border?: ColorType;
-          color?: ColorType;
-        };
-      };
-      label?: {
-        color?: ColorType;
-        weight?: string;
-      };
-      connector?: {
-        color?: ColorType;
-      };
-      helperText?: {
-        color?: ColorType;
-      };
-    };
-    completed?: {
-      indicator?: {
-        icon?: React.ReactNode | Icon;
-        iconSize?: string;
-        background?: BackgroundType;
-        color?: ColorType;
-        border?: ColorType;
-        substep?: {
-          iconSize?: string;
-        };
-        hover?: {
-          background?: BackgroundType;
-          border?: ColorType;
-          color?: ColorType;
-        };
-      };
-      label?: {
-        color?: ColorType;
-        weight?: string;
-      };
-      connector?: {
-        color?: ColorType;
-      };
-      helperText?: {
-        color?: ColorType;
-      };
-    };
-    error?: {
-      indicator?: {
-        icon?: React.ReactNode | Icon;
-        iconSize?: string;
-        background?: BackgroundType;
-        color?: ColorType;
-        border?: ColorType;
-        substep?: {
-          iconSize?: string;
-        };
-        hover?: {
-          background?: BackgroundType;
-          border?: ColorType;
-          color?: ColorType;
-        };
-      };
-      label?: {
-        color?: ColorType;
-        weight?: string;
-      };
-      connector?: {
-        color?: ColorType;
-      };
-      helperText?: {
-        color?: ColorType;
-      };
-    };
-    currentError?: {
-      indicator?: {
-        icon?: React.ReactNode | Icon;
-        iconSize?: string;
-        background?: BackgroundType;
-        color?: ColorType;
-        border?: ColorType;
-        substep?: {
-          iconSize?: string;
-        };
-        hover?: {
-          background?: BackgroundType;
-          border?: ColorType;
-          color?: ColorType;
-        };
-      };
-      label?: {
-        color?: ColorType;
-        weight?: string;
-      };
-      connector?: {
-        color?: ColorType;
-      };
-      helperText?: {
-        color?: ColorType;
-      };
-    };
-    disabled?: {
-      indicator?: {
-        icon?: React.ReactNode | Icon;
-        iconSize?: string;
-        background?: BackgroundType;
-        color?: ColorType;
-        border?: ColorType;
-        substep?: {
-          iconSize?: string;
-        };
-        hover?: {
-          background?: BackgroundType;
-          border?: ColorType;
-          color?: ColorType;
-        };
-      };
-      label?: {
-        color?: ColorType;
-        weight?: string;
-      };
-      connector?: {
-        color?: ColorType;
-      };
-      helperText?: {
-        color?: ColorType;
-      };
-    };
+    pending?: StepperStateType;
+    current?: StepperStateType;
+    currentCompleted?: StepperStateType;
+    completed?: StepperStateType;
+    error?: StepperStateType;
+    currentError?: StepperStateType;
+    disabled?: StepperStateType;
   };
   table?: {
     caption?: {

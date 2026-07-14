@@ -1012,7 +1012,6 @@ exports[`Components loads 1`] = `
   "StepperError": [Function],
   "StepperIndicator": [Function],
   "StepperLabel": [Function],
-  "StepperStep": [Function],
   "Tab": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
