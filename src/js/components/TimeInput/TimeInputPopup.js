@@ -131,7 +131,7 @@ const PopupColumn = ({
         >
           <Text
             size={theme.global.input.font.size || 'small'}
-            weight={selected ? 'medium' : 'normal'}
+            weight={selected ? 'bold' : 'normal'}
             color={optionColor}
           >
             {section === SECTION_PERIOD ? option : pad(option)}
