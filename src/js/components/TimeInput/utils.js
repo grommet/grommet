@@ -129,3 +129,24 @@ export const sectionKey = (section) => {
   if (section === SECTION_SECOND) return 'second';
   return 'period';
 };
+
+export const getActiveSectionAriaMeta = ({
+  activeSection,
+  format,
+  sections,
+}) => {
+  if (activeSection === SECTION_PERIOD) {
+    return {
+      now: sections.period === 'PM' ? 1 : 0,
+      min: 0,
+      max: 1,
+    };
+  }
+
+  const key = sectionKey(activeSection);
+  const min = sectionMin(activeSection, format);
+  const max = sectionMax(activeSection, format);
+  const now = sections[key] ?? min;
+
+  return { now, min, max };
+};

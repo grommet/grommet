@@ -28,8 +28,8 @@ import {
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
 import { useSectionedTimeField } from './useSectionedTimeField';
-import { getActiveSectionAriaMeta } from './timeInputA11y';
 import {
+  getActiveSectionAriaMeta,
   getSectionName,
   pad,
   SECTION_HOUR,
