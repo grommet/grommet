@@ -148,10 +148,10 @@ const Message = ({ error, info, message, type, ...rest }) => {
       return (
         <StyledMessageContainer
           direction="row"
-          id={id}
           messageType={type}
           {...containerProps}
           {...passThemeFlag}
+          id={id}
         >
           {icon && <Box flex={false}>{icon}</Box>}
           {messageContent}
@@ -160,9 +160,13 @@ const Message = ({ error, info, message, type, ...rest }) => {
     }
     if (id) {
       return typeof message === 'string' ? (
-        <Text id={id} {...contentRest}>{message}</Text>
+        <Text id={id} {...contentRest}>
+          {message}
+        </Text>
       ) : (
-        <Box id={id} {...contentRest}>{message}</Box>
+        <Box id={id} {...contentRest}>
+          {message}
+        </Box>
       );
     }
     return messageContent;
@@ -308,10 +312,66 @@ const FormField = forwardRef(
         component === CheckBoxGroup ||
         component === RadioButtonGroup);
 
+    // Check if child is Select or SelectMultiple and modify htmlFor if needed
+    let adjustedHtmlFor = htmlFor;
+    if (htmlFor) {
+      let isSelectComponent = false;
+
+      // Check if children contain Select or SelectMultiple
+      if (children) {
+        Children.forEach(children, (child) => {
+          if (
+            child &&
+            child.type &&
+            (child.type.displayName === 'Select' ||
+              child.type.displayName === 'SelectMultiple') &&
+            child.props.id === htmlFor
+          ) {
+            isSelectComponent = true;
+          }
+        });
+      }
+
+      // If it's a Select component and htmlFor doesn't end with __input, add it
+      if (isSelectComponent && !htmlFor.endsWith('__input')) {
+        adjustedHtmlFor = `${htmlFor}__input`;
+      }
+    }
+
+    // id of the error Message, used to link it to its input via
+    // aria-describedby. Computed independent of theme border config and
+    // independent of whether the child already has plain/focusIndicator set,
+    // so the accessibility link is always applied when there is an error.
+    const errorId =
+      error && htmlFor ? `grommet-${adjustedHtmlFor}__error` : undefined;
+
+    // Link the error message to its input via aria-describedby. This runs
+    // regardless of themeBorder and regardless of any plain/focusIndicator
+    // props already set on the child, and merges with (rather than
+    // overwrites) any aria-describedby the consumer already provided.
+    const describedChildren = errorId
+      ? Children.map(children, (child) => {
+          if (!child || !child.type) return child;
+
+          const isRecognizedInput =
+            grommetInputNames.indexOf(child.type.displayName) !== -1;
+          const matchesHtmlFor = child.props.id === htmlFor;
+
+          if (!isRecognizedInput && !matchesHtmlFor) return child;
+
+          const existingDescribedBy = child.props['aria-describedby'];
+          return cloneElement(child, {
+            'aria-describedby': existingDescribedBy
+              ? `${existingDescribedBy} ${errorId}`
+              : errorId,
+          });
+        })
+      : children;
+
     let contents =
       (themeBorder &&
-        children &&
-        Children.map(children, (child) => {
+        describedChildren &&
+        Children.map(describedChildren, (child) => {
           if (
             child &&
             child.type &&
@@ -341,40 +401,18 @@ const FormField = forwardRef(
           }
           return child;
         })) ||
-      children;
-
-    // Check if child is Select or SelectMultiple and modify htmlFor if needed
-    let adjustedHtmlFor = htmlFor;
-    if (htmlFor) {
-      let isSelectComponent = false;
-
-      // Check if children contain Select or SelectMultiple
-      if (children) {
-        Children.forEach(children, (child) => {
-          if (
-            child &&
-            child.type &&
-            (child.type.displayName === 'Select' ||
-              child.type.displayName === 'SelectMultiple') &&
-            child.props.id === htmlFor
-          ) {
-            isSelectComponent = true;
-          }
-        });
-      }
-
-      // If it's a Select component and htmlFor doesn't end with __input, add it
-      if (isSelectComponent && !htmlFor.endsWith('__input')) {
-        adjustedHtmlFor = `${htmlFor}__input`;
-      }
-    }
+      describedChildren;
 
     // put rest on container, unless we use internal Input
     let containerRest = rest;
     if (inForm) {
       if (!contents) containerRest = {};
-      // Destructure aria-describedby out of rest so the error id always wins
+      // Destructure aria-describedby out of rest so we can merge it with the
+      // error id rather than letting either one silently win
       const { 'aria-describedby': ariaDescribedBy, ...restWithoutAria } = rest;
+      const combinedAriaDescribedBy = errorId
+        ? [ariaDescribedBy, errorId].filter(Boolean).join(' ')
+        : ariaDescribedBy;
       contents = contents || (
         <Input
           component={component}
@@ -383,11 +421,7 @@ const FormField = forwardRef(
           name={name}
           label={component === CheckBox ? label : undefined}
           {...restWithoutAria}
-          aria-describedby={
-            error && htmlFor
-              ? `grommet-${adjustedHtmlFor}__error`
-              : ariaDescribedBy
-          }
+          aria-describedby={combinedAriaDescribedBy || undefined}
         />
       );
     }
@@ -709,12 +743,8 @@ const FormField = forwardRef(
         <Message
           type="error"
           message={error}
-          id={
-            error && htmlFor
-              ? `grommet-${adjustedHtmlFor}__error`
-              : undefined
-          }
           {...formFieldTheme.error}
+          id={errorId}
         />
         <Message type="info" message={info} {...themeInfoProps} />
       </FormFieldBox>
