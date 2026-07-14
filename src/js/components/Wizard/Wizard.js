@@ -176,6 +176,9 @@ const Wizard = forwardRef(
     const [completedSteps, setCompletedSteps] = useState(() => new Set());
     const [validationError, setValidationError] = useState(undefined);
     const [isValidating, setIsValidating] = useState(false);
+    // When no `onCancel` is provided, cancel self-closes the wizard.
+    const [isOpen, setIsOpen] = useState(true);
+    const hasCancelHandler = onCancel !== undefined;
 
     // Keep visited history synced when the current step is externally set.
     useEffect(() => {
@@ -533,7 +536,12 @@ const Wizard = forwardRef(
         phase: 'cancelled',
         from: currentStep,
       });
-      if (onCancel) onCancel(formValue);
+      if (onCancel) {
+        onCancel(formValue);
+      } else {
+        // Self-close; remount requires the parent to change `key`.
+        setIsOpen(false);
+      }
       if (sendAnalytics)
         sendAnalytics({ type: 'wizardCancel', element: 'Wizard' });
     }, [sendAnalytics, currentStep, emitStepChange, formValue, onCancel]);
@@ -586,6 +594,7 @@ const Wizard = forwardRef(
         skip,
         complete,
         cancel,
+        hasCancelHandler,
         getStepStatus,
         direction: effectiveDirection,
         messages,
@@ -612,6 +621,7 @@ const Wizard = forwardRef(
         skip,
         complete,
         cancel,
+        hasCancelHandler,
         getStepStatus,
         effectiveDirection,
         messages,
@@ -651,10 +661,10 @@ const Wizard = forwardRef(
     // just the card's body scrolls. The `kind` max-width is applied to
     // `StyledWizardCenter` inside the middle so header and footer
     // always span the full wizard width even when the content column
-    // is narrowed.
+    // is narrowed. Header always renders to host the close (X) button.
     const defaultLayout = (
       <>
-        {header && <WizardHeader header={header} />}
+        <WizardHeader header={header} />
         <StyledWizardMiddle {...passThemeFlag}>
           <StyledWizardCenter maxWidth={kindTheme?.maxWidth} {...passThemeFlag}>
             <Box
@@ -687,6 +697,8 @@ const Wizard = forwardRef(
         {footerNode}
       </>
     );
+
+    if (!isOpen) return null;
 
     return (
       <WizardContext.Provider value={contextValue}>

@@ -237,6 +237,7 @@
     "next": "Next",
     "skip": "Skip",
     "cancel": "Cancel",
+    "close": "Close",
     "complete": "Complete",
     "stepCounter": "Step {step} of {total}",
     "progress": "Wizard progress",

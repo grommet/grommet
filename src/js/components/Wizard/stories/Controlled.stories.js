@@ -4,9 +4,10 @@ import {
   Box,
   Button,
   Grommet,
+  Heading,
+  Layer,
   Notification,
   Paragraph,
-  ResponsiveContext,
 } from 'grommet';
 import { Wizard } from '../Wizard';
 import { grommet } from '../../../themes';
@@ -21,6 +22,7 @@ const steps = [
   {
     id: 'two',
     title: 'Two',
+    skippable: true,
     render: () => <Paragraph>Step two.</Paragraph>,
   },
   {
@@ -34,81 +36,74 @@ const Controlled = () => {
   const [currentStep, setCurrentStep] = useState('one');
   const [result, setResult] = useState(null);
   const [resetKey, setResetKey] = useState(0);
+  const [confirmCancel, setConfirmCancel] = useState(false);
+  const [wizardOpen, setWizardOpen] = useState(true);
   const handleCancel = () => {
+    setConfirmCancel(true);
+  };
+  const confirmCancelYes = () => {
+    setConfirmCancel(false);
     setResult(null);
     setCurrentStep('one');
     setResetKey((key) => key + 1);
+    setWizardOpen(false);
   };
-
-  // Custom footer that adds a "Go to Three" jump using the wizard's
-  // `goTo` API. Navigation emits an onStepChange event with
-  // `trigger: 'goTo'` which the parent handles below.
-  const renderFooter = ({
-    goTo,
-    previous,
-    next,
-    complete,
-    cancel,
-    isFirstStep,
-    isLastStep,
-    currentStepObj,
-  }) => (
-    <ResponsiveContext.Consumer>
-      {(size) => {
-        const isSmall = size === 'small';
-        return (
-          <Box
-            background="background-front"
-            pad={{
-              horizontal: isSmall ? 'small' : 'large',
-              vertical: isSmall ? 'small' : 'none',
-            }}
-            height={isSmall ? undefined : 'xxsmall'}
-            direction="row"
-            justify="end"
-            align="center"
-            gap="small"
-            wrap={isSmall}
-            flex={false}
-          >
-            <Box direction="row" gap="small" align="center" flex="grow">
-              <Button label="Cancel" plain onClick={cancel} />
-            </Box>
-            <Box direction="row" gap="small" align="center" wrap={isSmall}>
-              {currentStepObj?.id !== 'three' && (
-                <Button label="Go to Three" onClick={() => goTo('three')} />
-              )}
-              {!isFirstStep && <Button label="Previous" onClick={previous} />}
-              {isLastStep ? (
-                <Button label="Complete" primary onClick={complete} />
-              ) : (
-                <Button label="Next" primary onClick={next} />
-              )}
-            </Box>
-          </Box>
-        );
-      }}
-    </ResponsiveContext.Consumer>
-  );
+  const confirmCancelNo = () => {
+    setConfirmCancel(false);
+  };
+  const reopenWizard = () => {
+    setWizardOpen(true);
+  };
 
   return (
     <Grommet theme={grommet} full>
       <Box fill>
-        <Wizard
-          key={resetKey}
-          aria-label="Controlled wizard"
-          header={{ title: 'Configure workspace' }}
-          steps={steps}
-          currentStep={currentStep}
-          footer={renderFooter}
-          onStepChange={(event) => {
-            if (event.phase === 'navigated' && event.to) {
-              setCurrentStep(event.to);
-            }
-          }}
-          onComplete={(value) => setResult({ status: 'complete', value })}
-          onCancel={handleCancel}
-        />
+        {wizardOpen ? (
+          <Wizard
+            key={resetKey}
+            aria-label="Controlled wizard"
+            header={{ title: 'Configure workspace' }}
+            steps={steps}
+            currentStep={currentStep}
+            onStepChange={(event) => {
+              if (event.phase === 'navigated' && event.to) {
+                setCurrentStep(event.to);
+              }
+            }}
+            onComplete={(value) => setResult({ status: 'complete', value })}
+            onCancel={handleCancel}
+          />
+        ) : (
+          <Box pad="medium" align="start">
+            <Button primary label="Reopen wizard" onClick={reopenWizard} />
+          </Box>
+        )}
+        {confirmCancel && (
+          <Layer
+            modal
+            position="center"
+            onEsc={confirmCancelNo}
+            onClickOutside={confirmCancelNo}
+          >
+            <Box pad="medium" gap="medium" width="medium">
+              <Heading level={3} margin="none">
+                Cancel wizard?
+              </Heading>
+              <Paragraph margin="none">
+                Are you sure you want to cancel? Your progress will be lost.
+              </Paragraph>
+              <Box direction="row" justify="end" gap="small">
+                <Button label="Keep editing" onClick={confirmCancelNo} />
+                <Button
+                  label="Yes, cancel"
+                  primary
+                  color="status-critical"
+                  onClick={confirmCancelYes}
+                />
+              </Box>
+            </Box>
+          </Layer>
+        )}
         {result && (
           <Notification
             toast={{ position: 'top' }}

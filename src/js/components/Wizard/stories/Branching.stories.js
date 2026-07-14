@@ -40,12 +40,6 @@ const deployStep = {
 const Branching = () => {
   const [value, setValue] = useState({ review: false });
   const [result, setResult] = useState(null);
-  const [resetKey, setResetKey] = useState(0);
-  const handleCancel = () => {
-    setResult(null);
-    setValue({ review: false });
-    setResetKey((key) => key + 1);
-  };
   const steps = useMemo(
     () =>
       value.review
@@ -57,7 +51,6 @@ const Branching = () => {
     <Grommet theme={grommet} full>
       <Box fill>
         <Wizard
-          key={resetKey}
           aria-label="Deployment"
           header={{ title: 'Deploy an application' }}
           steps={steps}
@@ -66,7 +59,6 @@ const Branching = () => {
           onComplete={(nextValue) =>
             setResult({ status: 'complete', value: nextValue })
           }
-          onCancel={handleCancel}
         />
         {result && (
           <Notification

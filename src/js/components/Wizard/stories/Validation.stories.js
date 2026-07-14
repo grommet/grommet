@@ -6,11 +6,6 @@ import { grommet } from '../../../themes';
 
 const Validation = () => {
   const [result, setResult] = useState(null);
-  const [resetKey, setResetKey] = useState(0);
-  const handleCancel = () => {
-    setResult(null);
-    setResetKey((key) => key + 1);
-  };
   const steps = [
     {
       id: 'email',
@@ -64,13 +59,11 @@ const Validation = () => {
     <Grommet theme={grommet} full>
       <Box fill>
         <Wizard
-          key={resetKey}
           aria-label="Sign up"
           header={{ title: 'Create your account' }}
           steps={steps}
           defaultValue={{ email: '', password: '' }}
           onComplete={(value) => setResult({ status: 'complete', value })}
-          onCancel={handleCancel}
         />
         {result && (
           <Notification

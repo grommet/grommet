@@ -24,6 +24,8 @@ export const WizardContext = React.createContext({
   skip: () => {},
   complete: () => {},
   cancel: () => {},
+  // True when Wizard was given `onCancel`; drives the footer Cancel button.
+  hasCancelHandler: false,
   getStepStatus: () => 'pending',
   direction: 'horizontal',
   messages: undefined,

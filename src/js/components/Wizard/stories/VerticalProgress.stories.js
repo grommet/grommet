@@ -27,22 +27,15 @@ const steps = [
 
 const VerticalProgress = () => {
   const [result, setResult] = useState(null);
-  const [resetKey, setResetKey] = useState(0);
-  const handleCancel = () => {
-    setResult(null);
-    setResetKey((key) => key + 1);
-  };
   return (
     <Grommet theme={grommet} full>
       <Box fill>
         <Wizard
-          key={resetKey}
           aria-label="Deployment wizard"
           header={{ title: 'Deploy an application' }}
           direction="vertical"
           steps={steps}
           onComplete={(value) => setResult({ status: 'complete', value })}
-          onCancel={handleCancel}
         />
         {result && (
           <Notification

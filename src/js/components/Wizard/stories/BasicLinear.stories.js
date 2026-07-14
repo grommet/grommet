@@ -44,22 +44,15 @@ const steps = [
 
 const BasicLinear = () => {
   const [result, setResult] = useState(null);
-  const [resetKey, setResetKey] = useState(0);
-  const handleCancel = () => {
-    setResult(null);
-    setResetKey((key) => key + 1);
-  };
   return (
     <Grommet theme={grommet} full>
       <Box fill>
         <Wizard
-          key={resetKey}
           aria-label="Onboarding"
           header={{ title: 'Set up your account' }}
           steps={steps}
           defaultValue={{ email: '' }}
           onComplete={(value) => setResult({ status: 'complete', value })}
-          onCancel={handleCancel}
         />
         {result && (
           <Notification

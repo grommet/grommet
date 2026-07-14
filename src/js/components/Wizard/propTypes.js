@@ -52,6 +52,7 @@ if (process.env.NODE_ENV !== 'production') {
       next: PropTypes.string,
       skip: PropTypes.string,
       cancel: PropTypes.string,
+      close: PropTypes.string,
       complete: PropTypes.string,
       stepCounter: PropTypes.string,
       progress: PropTypes.string,

@@ -276,6 +276,9 @@ describe('Wizard', () => {
         <Wizard
           steps={basicSteps}
           renderStep={renderStep}
+          // Provide onCancel so the footer Cancel button renders
+          // (it is conditional on hasCancelHandler in context).
+          onCancel={() => {}}
           messages={{ next: 'Continue', cancel: 'Abort' }}
           aria-label="Test wizard"
         />
@@ -377,5 +380,80 @@ describe('Wizard', () => {
     expect(screen.getByTestId('custom')).toBeTruthy();
     // Default step header is NOT rendered when children override composition.
     expect(screen.queryByRole('heading', { name: 'Step 1' })).toBeNull();
+  });
+
+  test('header X close button is always rendered', () => {
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    expect(screen.getByRole('button', { name: /close/i })).toBeTruthy();
+  });
+
+  test('X click without onCancel unmounts the wizard', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: /close/i }));
+    expect(screen.queryByRole('heading', { name: 'Step 1' })).toBeNull();
+    // No footer Cancel button when onCancel is not provided.
+    expect(screen.queryByRole('button', { name: /cancel/i })).toBeNull();
+  });
+
+  test('X click calls onCancel when provided', async () => {
+    const user = userEvent.setup();
+    const onCancel = jest.fn();
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          defaultValue={{ hello: 'world' }}
+          renderStep={renderStep}
+          onCancel={onCancel}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    await user.click(screen.getByRole('button', { name: /close/i }));
+    expect(onCancel).toHaveBeenCalledWith({ hello: 'world' });
+    // Wizard stays mounted; caller is expected to unmount.
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+  });
+
+  test('footer Cancel button renders only when onCancel is provided', () => {
+    const { rerender } = render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    expect(screen.queryByRole('button', { name: /^cancel$/i })).toBeNull();
+    rerender(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          onCancel={() => {}}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    expect(screen.getByRole('button', { name: /^cancel$/i })).toBeTruthy();
   });
 });

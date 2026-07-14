@@ -41,22 +41,15 @@ const steps = [
 
 const NestedSubSteps = () => {
   const [result, setResult] = useState(null);
-  const [resetKey, setResetKey] = useState(0);
-  const handleCancel = () => {
-    setResult(null);
-    setResetKey((key) => key + 1);
-  };
   return (
     <Grommet theme={grommet} full>
       <Box fill>
         <Wizard
-          key={resetKey}
           aria-label="Nested wizard"
           header={{ title: 'Set up your organization' }}
           direction="vertical"
           steps={steps}
           onComplete={(value) => setResult({ status: 'complete', value })}
-          onCancel={handleCancel}
         />
         {result && (
           <Notification

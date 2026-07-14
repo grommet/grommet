@@ -78,18 +78,10 @@ const steps = [
 const LongContent = () => {
   const [kind, setKind] = useState('full');
   const [result, setResult] = useState(null);
-  const [resetKey, setResetKey] = useState(0);
-  const handleCancel = () => {
-    setResult(null);
-    setResetKey((key) => key + 1);
-  };
 
-  // Custom footer that inlines the story's `kind` selector on the
-  // left while preserving the standard Cancel / Previous / Next
-  // buttons on the right. Padding/height/background match
-  // theme.wizard.footer so it visually matches the default footer.
+  // Custom footer inlines the story's `kind` selector on the left and
+  // Previous / Next on the right; styling matches theme.wizard.footer.
   const renderFooter = ({
-    cancel,
     previous,
     next,
     complete,
@@ -125,7 +117,6 @@ const LongContent = () => {
         }
       </ResponsiveContext.Consumer>
       <Box direction="row" align="center" gap="small">
-        <Button label="Cancel" plain onClick={cancel} />
         {!isFirstStep && <Button label="Previous" onClick={previous} />}
         {isLastStep ? (
           <Button label="Complete" primary onClick={complete} />
@@ -140,14 +131,12 @@ const LongContent = () => {
     <Grommet theme={grommet} full>
       <Box fill>
         <Wizard
-          key={resetKey}
           aria-label="Long content wizard"
           kind={kind}
           header={{ title: 'Create resource' }}
           steps={steps}
           footer={renderFooter}
           onComplete={(value) => setResult({ status: 'complete', value })}
-          onCancel={handleCancel}
         />
         {result && (
           <Notification

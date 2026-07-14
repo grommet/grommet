@@ -1,16 +1,20 @@
 import React from 'react';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
+import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
 
-// Optional header region above the progress track. Rendered when the caller
-// supplies a `header` prop OR a `header` node child. Uses only theme tokens
-// and Heading/Text components (no custom font-size CSS).
+// Header region above the progress track. Always renders so the close
+// (X) button is present; X invokes `cancel` from context (caller's
+// `onCancel` or, if unset, self-close).
 export const WizardHeader = ({ header, ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
-  const { header: headerTheme } = theme.wizard || {};
+  const { format } = React.useContext(MessageContext);
+  const { cancel, messages } = useWizard();
+  const { header: headerTheme, icons: iconTheme } = theme.wizard || {};
 
   const resolved =
     header && typeof header === 'object' && !React.isValidElement(header)
@@ -37,6 +41,10 @@ export const WizardHeader = ({ header, ...rest }) => {
     header
   );
 
+  const CloseIcon = iconTheme?.close;
+  const closeLabel =
+    messages?.close || format({ id: 'wizard.close' }) || 'Close';
+
   return (
     <Box
       pad={headerTheme?.pad}
@@ -45,11 +53,20 @@ export const WizardHeader = ({ header, ...rest }) => {
       height={headerTheme?.height}
       direction="row"
       align="center"
+      justify="between"
       flex={false}
       {...passThemeFlag}
       {...rest}
     >
-      {content}
+      <Box direction="row" align="center" flex>
+        {content}
+      </Box>
+      <Button
+        a11yTitle={closeLabel}
+        icon={CloseIcon ? <CloseIcon aria-hidden="true" /> : undefined}
+        plain
+        onClick={cancel}
+      />
     </Box>
   );
 };

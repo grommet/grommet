@@ -11,13 +11,56 @@ import {
   ResponsiveContext,
   Text,
 } from 'grommet';
+import { FormNext, FormPrevious } from 'grommet-icons';
 import { Wizard } from '../Wizard';
+import { WizardFooter } from '../WizardFooter';
+import { useWizard } from '../WizardContext';
 import { grommet } from '../../../themes';
 
-// Wizard inside a modal Layer. The trigger button opens the modal; the
-// wizard fills the layer and closes itself on complete or cancel. A
-// `kind` selector alongside the trigger lets the user preview how the
-// wizard's content column width changes.
+// Wizard inside a modal Layer. `onCancel` wires the header X to the
+// parent-owned close handler. A custom footer composed via <WizardFooter>
+// children preserves the themed shell while omitting the Cancel button.
+const NoCancelFooter = () => {
+  const {
+    isFirstStep,
+    isLastStep,
+    canGoNext,
+    canGoPrevious,
+    previous,
+    next,
+    complete,
+  } = useWizard();
+  return (
+    <WizardFooter>
+      {!isFirstStep && (
+        <Button
+          label="Previous"
+          icon={<FormPrevious aria-hidden="true" />}
+          disabled={!canGoPrevious}
+          onClick={previous}
+        />
+      )}
+      {isLastStep ? (
+        <Button
+          label="Complete"
+          primary
+          disabled={!canGoNext}
+          onClick={complete}
+        />
+      ) : (
+        <Button
+          label="Next"
+          primary
+          reverse
+          icon={<FormNext aria-hidden="true" />}
+          disabled={!canGoNext}
+          onClick={next}
+        />
+      )}
+    </WizardFooter>
+  );
+};
+
 const steps = [
   {
     id: 'details',
@@ -92,6 +135,7 @@ const Modal = () => {
                 kind={kind}
                 header={{ title: 'Create resource' }}
                 steps={steps}
+                footer={<NoCancelFooter />}
                 onComplete={(value) => {
                   setResult({ status: 'complete', value });
                   close();

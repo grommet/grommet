@@ -2499,10 +2499,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           maxWidth: undefined,
         },
         narrow: {
-          maxWidth: 'large', // 768px
+          maxWidth: 'large',
         },
         wide: {
-          maxWidth: 'xlarge', // 1152px
+          maxWidth: 'xlarge',
         },
       },
       body: {
@@ -2584,11 +2584,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       icons: {
-        next: undefined,
-        previous: undefined,
+        next: FormNext,
+        previous: FormPrevious,
         complete: undefined,
         cancel: undefined,
-        skip: undefined,
+        skip: FormNext,
+        close: FormClose,
       },
     },
     table: {
