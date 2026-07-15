@@ -164,6 +164,7 @@ const TimeInputPopup = ({
 }) => {
   const { theme } = useThemeValue();
   const dialogRef = useRef();
+  const pointerDownInsideRef = useRef(false);
 
   const popupSections = [
     {
@@ -228,6 +229,10 @@ const TimeInputPopup = ({
         ) || listboxNode.querySelector('[role="option"][aria-selected="true"]');
 
       if (selectedNode) {
+        if (selectedNode.scrollIntoView) {
+          selectedNode.scrollIntoView({ block: 'nearest' });
+        }
+
         // Center selected value in each listbox so all sections (hh/mm/ss)
         // are consistently aligned on open, not just the focused section.
         const selectedOffsetTop = selectedNode.offsetTop;
@@ -293,37 +298,6 @@ const TimeInputPopup = ({
 
     return false;
   }, [activeSection, hoursOptions, minuteOptions, secondOptions, sections]);
-
-  const scrollSelectedOptionsIntoView = useCallback(() => {
-    const optionBySection = {
-      [SECTION_HOUR]: sections.hour !== undefined ? sections.hour : hoursOptions[0],
-      [SECTION_MINUTE]:
-        sections.minute !== undefined ? sections.minute : minuteOptions[0],
-      [SECTION_SECOND]:
-        sections.second !== undefined ? sections.second : secondOptions[0],
-      [SECTION_PERIOD]: sections.period || 'AM',
-    };
-
-    visiblePopupSections.forEach(({ section, label: sectionLabel, options }) => {
-      const selectedValue = optionBySection[section] ?? options?.[0];
-      const selectedNode = dialogRef.current?.querySelector(
-        `[data-option-key="${optionKey(sectionLabel, selectedValue)}"]`,
-      );
-
-      if (selectedNode?.scrollIntoView) {
-        selectedNode.scrollIntoView({ block: 'nearest' });
-      }
-    });
-  }, [
-    hoursOptions,
-    minuteOptions,
-    secondOptions,
-    sections.hour,
-    sections.minute,
-    sections.period,
-    sections.second,
-    visiblePopupSections,
-  ]);
 
   useLayoutEffect(() => {
     const scrollRaf = requestAnimationFrame(() => {
