@@ -2344,12 +2344,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         stroke: { width: '2px' },
       },
       description: {
-        font: { size: 'small' },
+        size: 'small',
         color: 'text-weak',
         margin: { top: 'hair' },
       },
       helperText: {
-        font: { size: 'xsmall' },
+        size: 'xsmall',
+        color: 'text-weak',
         margin: { top: 'xsmall' },
       },
       horizontal: {
@@ -2481,7 +2482,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: { color: 'text-weak', weight: 'normal' },
         connector: { color: 'border' },
-        helperText: { color: 'text-weak' },
       },
     },
     table: {

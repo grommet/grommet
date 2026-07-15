@@ -2151,16 +2151,13 @@ export interface ThemeType {
       };
     };
     description?: {
-      font?: {
-        size?: string;
-      };
+      size?: string;
       color?: ColorType;
       margin?: MarginType;
     };
     helperText?: {
-      font?: {
-        size?: string;
-      };
+      size?: string;
+      color?: ColorType;
       margin?: MarginType;
     };
     horizontal?: {

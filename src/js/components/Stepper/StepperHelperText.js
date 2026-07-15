@@ -6,17 +6,16 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const StepperHelperText = ({ variant, ...rest }) => {
   const { theme } = useThemeValue();
 
-  const helperTextTheme = theme.stepper?.helperText || {};
+  const helperTextProps = theme.stepper?.helperText || {
+    size: 'xsmall',
+    color: 'text-weak',
+    margin: { top: 'xsmall' },
+  };
+  const variantProps = variant
+    ? theme.stepper?.[variant]?.helperText || {}
+    : {};
 
-  const size = helperTextTheme?.font?.size || 'xsmall';
-  const color = variant
-    ? theme.stepper?.[variant]?.helperText?.color
-    : helperTextTheme?.color;
-  const margin = helperTextTheme?.margin || { top: 'xsmall' };
-
-  return (
-    <Text size={size} color={color || 'text-weak'} margin={margin} {...rest} />
-  );
+  return <Text {...helperTextProps} {...variantProps} {...rest} />;
 };
 
 export const StepperError = ({ ...rest }) => {
