@@ -1,7 +1,6 @@
 ---
 description: 'Use when creating, modifying, reviewing, styling, testing, or auditing Grommet React components. Routes to specialized skills for architecture, accessibility, styling, testing, review, or full contribution workflows. Covers forwardRef, displayName, useThemeValue, FormContext, onChange shape, accessibility, i18n, theming, and the full component directory structure.'
 name: 'Grommet Component'
-model: GPT-5.4
 tools: [read, edit, search]
 ---
 

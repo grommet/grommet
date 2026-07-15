@@ -1,7 +1,6 @@
 ---
 description: 'Expert assistant for web accessibility in Grommet development, covering WCAG 2.1/2.2, Grommet component patterns, inclusive UX, and a11y testing'
 name: 'Accessibility Agent'
-model: GPT-5.4
 user-invocable: true
 tools: [execute, read, edit, search, web, agent, todo]
 ---
@@ -174,7 +173,7 @@ When working in Grommet, you scope that guidance to the library's actual compone
 ### Grommet Announcement Pattern
 
 ```tsx
-const { announce } = useContext(AnnounceContext);
+const announce = useContext(AnnounceContext);
 
 announce('Results loaded', 'polite');
 ```
