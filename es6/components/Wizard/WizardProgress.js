@@ -74,6 +74,7 @@ export var WizardProgress = function WizardProgress(_ref) {
     currentStep: currentStep,
     direction: direction,
     clickableSteps: false,
+    showDescription: false,
     "aria-label": ariaLabel
   }));
 };

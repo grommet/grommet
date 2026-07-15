@@ -78,6 +78,7 @@ var WizardProgress = exports.WizardProgress = function WizardProgress(_ref) {
     currentStep: currentStep,
     direction: direction,
     clickableSteps: false,
+    showDescription: false,
     "aria-label": ariaLabel
   }));
 };
