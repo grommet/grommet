@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
@@ -123,6 +123,14 @@ const PopupColumn = ({
           tabIndex={isActive ? 0 : -1}
           $active={isActive}
           $selected={selected}
+          onMouseDown={(event) => {
+            if (event.button !== 0) return;
+            // Commit on pointer press so momentum scroll does not swallow
+            // the first click commit on some trackpad/mouse flows.
+            event.preventDefault();
+            onSetSection(section);
+            setSectionValue(section, option);
+          }}
           onClick={() => {
             onSetSection(section);
             setSectionValue(section, option);
@@ -165,6 +173,61 @@ const TimeInputPopup = ({
   const { theme } = useThemeValue();
   const dialogRef = useRef();
   const pointerDownInsideRef = useRef(false);
+  const wheelInteractionTimeoutRef = useRef();
+  const pointerReleaseTimeoutRef = useRef();
+
+  const clearPointerReleaseTimeout = useCallback(() => {
+    if (pointerReleaseTimeoutRef.current) {
+      window.clearTimeout(pointerReleaseTimeoutRef.current);
+      pointerReleaseTimeoutRef.current = undefined;
+    }
+  }, []);
+
+  const clearInteractionInProgress = useCallback(() => {
+    clearPointerReleaseTimeout();
+    pointerDownInsideRef.current = false;
+    if (wheelInteractionTimeoutRef.current) {
+      window.clearTimeout(wheelInteractionTimeoutRef.current);
+      wheelInteractionTimeoutRef.current = undefined;
+    }
+  }, [clearPointerReleaseTimeout]);
+
+  const releaseInteractionAfterClick = useCallback(() => {
+    clearPointerReleaseTimeout();
+    // Keep lock through click handler + resulting render/effect cycle.
+    pointerReleaseTimeoutRef.current = window.setTimeout(() => {
+      pointerDownInsideRef.current = false;
+      pointerReleaseTimeoutRef.current = undefined;
+    }, 0);
+  }, [clearPointerReleaseTimeout]);
+
+  const markInteractionInProgress = useCallback(() => {
+    pointerDownInsideRef.current = true;
+  }, []);
+
+  const onPopupWheelCapture = useCallback(() => {
+    pointerDownInsideRef.current = true;
+    if (wheelInteractionTimeoutRef.current) {
+      window.clearTimeout(wheelInteractionTimeoutRef.current);
+    }
+
+    // Trackpad and wheel events can continue after the pointer sequence.
+    // Keep interaction lock briefly so refocus does not steal first selection.
+    wheelInteractionTimeoutRef.current = window.setTimeout(() => {
+      pointerDownInsideRef.current = false;
+      wheelInteractionTimeoutRef.current = undefined;
+    }, 120);
+  }, []);
+
+  useEffect(
+    () => () => {
+      clearPointerReleaseTimeout();
+      if (wheelInteractionTimeoutRef.current) {
+        window.clearTimeout(wheelInteractionTimeoutRef.current);
+      }
+    },
+    [clearPointerReleaseTimeout],
+  );
 
   const popupSections = [
     {
@@ -346,6 +409,10 @@ const TimeInputPopup = ({
         minHeight={theme.timeInput?.drop?.minHeight}
         gap="xsmall"
         pad="small"
+        onPointerDownCapture={markInteractionInProgress}
+        onPointerUpCapture={releaseInteractionAfterClick}
+        onPointerCancelCapture={clearInteractionInProgress}
+        onWheelCapture={onPopupWheelCapture}
         onKeyDown={(event) => {
           if (event.key === 'Escape') {
             event.preventDefault();

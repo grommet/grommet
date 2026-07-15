@@ -1,6 +1,12 @@
 import React from 'react';
 import 'jest-styled-components';
-import { render, screen, waitFor, within } from '@testing-library/react';
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -673,6 +679,42 @@ describe('TimeInput', () => {
     await user.click(within(secondList).getByRole('option', { name: '08' }));
     await waitFor(() => {
       expect(input).toHaveValue('01:10:08');
+    });
+  });
+
+  test('persists first option click after wheel scrolling in hour, minute, and second lists', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="05:55:55" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+
+    fireEvent.wheel(minuteList, { deltaY: 120 });
+    await user.click(within(minuteList).getByRole('option', { name: '22' }));
+    await waitFor(() => {
+      expect(input).toHaveValue('05:22:55');
+    });
+
+    fireEvent.wheel(secondList, { deltaY: -120 });
+    await user.click(within(secondList).getByRole('option', { name: '11' }));
+    await waitFor(() => {
+      expect(input).toHaveValue('05:22:11');
+    });
+
+    fireEvent.wheel(hourList, { deltaY: 120 });
+    await user.click(within(hourList).getByRole('option', { name: '08' }));
+    await waitFor(() => {
+      expect(input).toHaveValue('08:22:11');
     });
   });
 
