@@ -84,11 +84,12 @@ const optionKey = (label, option) => `${label.toLowerCase()}-${option}`;
 const PopupColumn = ({
   activeSection,
   label,
+  onClickCommitOption,
+  onPointerCommitOption,
   onSetSection,
   options,
   section,
   sections,
-  setSectionValue,
   theme,
 }) => (
   <PopupColumnBox
@@ -128,13 +129,9 @@ const PopupColumn = ({
             // Commit on pointer press so momentum scroll does not swallow
             // the first click commit on some trackpad/mouse flows.
             event.preventDefault();
-            onSetSection(section);
-            setSectionValue(section, option);
+            onPointerCommitOption(section, option);
           }}
-          onClick={() => {
-            onSetSection(section);
-            setSectionValue(section, option);
-          }}
+          onClick={() => onClickCommitOption(section, option)}
           onFocus={() => onSetSection(section)}
         >
           <Text
@@ -173,6 +170,8 @@ const TimeInputPopup = ({
   const { theme } = useThemeValue();
   const dialogRef = useRef();
   const pointerDownInsideRef = useRef(false);
+  const pointerSelectionCommittedRef = useRef(false);
+  const suppressNextAutoScrollRef = useRef(false);
   const wheelInteractionTimeoutRef = useRef();
   const pointerReleaseTimeoutRef = useRef();
 
@@ -204,6 +203,39 @@ const TimeInputPopup = ({
   const markInteractionInProgress = useCallback(() => {
     pointerDownInsideRef.current = true;
   }, []);
+
+  const suppressNextAutoScroll = useCallback(() => {
+    suppressNextAutoScrollRef.current = true;
+  }, []);
+
+  const commitOptionSelection = useCallback(
+    (section, option) => {
+      setActiveSection(section);
+      setSectionValue(section, option);
+    },
+    [setActiveSection, setSectionValue],
+  );
+
+  const commitPointerOptionSelection = useCallback(
+    (section, option) => {
+      pointerSelectionCommittedRef.current = true;
+      suppressNextAutoScroll();
+      commitOptionSelection(section, option);
+    },
+    [commitOptionSelection, suppressNextAutoScroll],
+  );
+
+  const commitClickOptionSelection = useCallback(
+    (section, option) => {
+      if (pointerSelectionCommittedRef.current) {
+        pointerSelectionCommittedRef.current = false;
+        return;
+      }
+
+      commitOptionSelection(section, option);
+    },
+    [commitOptionSelection],
+  );
 
   const onPopupWheelCapture = useCallback(() => {
     pointerDownInsideRef.current = true;
@@ -257,6 +289,12 @@ const TimeInputPopup = ({
   );
 
   const scrollSelectedOptionsIntoView = useCallback(() => {
+    if (pointerDownInsideRef.current) return;
+    if (suppressNextAutoScrollRef.current) {
+      suppressNextAutoScrollRef.current = false;
+      return;
+    }
+
     const popupNode = dialogRef.current;
     if (!popupNode) return;
 
@@ -363,13 +401,13 @@ const TimeInputPopup = ({
   }, [activeSection, hoursOptions, minuteOptions, secondOptions, sections]);
 
   useLayoutEffect(() => {
-    const scrollRaf = requestAnimationFrame(() => {
-      scrollSelectedOptionsIntoView();
-    });
-
     // Avoid stealing pointer interactions: while the user is actively
     // clicking inside the popup, let that click settle before refocusing.
     if (pointerDownInsideRef.current) return undefined;
+
+    const scrollRaf = requestAnimationFrame(() => {
+      scrollSelectedOptionsIntoView();
+    });
 
     let rafB;
     const rafA = requestAnimationFrame(() => {
@@ -460,11 +498,12 @@ const TimeInputPopup = ({
               key={sectionLabel}
               activeSection={activeSection}
               label={sectionLabel}
+              onClickCommitOption={commitClickOptionSelection}
+              onPointerCommitOption={commitPointerOptionSelection}
               onSetSection={setActiveSection}
               options={options}
               section={section}
               sections={sections}
-              setSectionValue={setSectionValue}
               theme={theme}
             />
           ),

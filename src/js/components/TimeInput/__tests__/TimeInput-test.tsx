@@ -1288,4 +1288,97 @@ describe('TimeInput', () => {
       window.HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
     }
   });
+
+  test('does not scroll popup options after clicking to select one', async () => {
+    const user = userEvent.setup();
+    const offsetHeightDescriptor = Object.getOwnPropertyDescriptor(
+      window.HTMLElement.prototype,
+      'offsetHeight',
+    );
+    const clientHeightDescriptor = Object.getOwnPropertyDescriptor(
+      window.HTMLElement.prototype,
+      'clientHeight',
+    );
+    const offsetTopDescriptor = Object.getOwnPropertyDescriptor(
+      window.HTMLElement.prototype,
+      'offsetTop',
+    );
+
+    Object.defineProperty(window.HTMLElement.prototype, 'offsetHeight', {
+      configurable: true,
+      get() {
+        return 40;
+      },
+    });
+
+    Object.defineProperty(window.HTMLElement.prototype, 'clientHeight', {
+      configurable: true,
+      get() {
+        return this.getAttribute?.('role') === 'listbox' ? 200 : 40;
+      },
+    });
+
+    Object.defineProperty(window.HTMLElement.prototype, 'offsetTop', {
+      configurable: true,
+      get() {
+        const optionKey = this.getAttribute?.('data-option-key');
+        if (!optionKey) return 0;
+
+        const [, rawValue] = optionKey.split('-');
+        const numericValue = Number(rawValue);
+        return Number.isFinite(numericValue) ? numericValue * 40 : 0;
+      },
+    });
+
+    try {
+      render(
+        <Grommet>
+          <TimeInput format="12" defaultValue="12:30:20 AM" />
+        </Grommet>,
+      );
+
+      const input = screen.getByRole('spinbutton');
+
+      await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+      const minuteList = screen.getByRole('listbox', { name: 'minute' });
+      await waitFor(() => {
+        expect(minuteList.scrollTop).toBeGreaterThan(0);
+      });
+
+      const initialMinuteScrollTop = minuteList.scrollTop;
+      const nextMinuteOption = within(minuteList).getByRole('option', {
+        name: '31',
+      });
+
+      await user.click(nextMinuteOption);
+
+      expect(input).toHaveValue('12:31:20 AM');
+      expect(minuteList.scrollTop).toBe(initialMinuteScrollTop);
+    } finally {
+      if (offsetHeightDescriptor) {
+        Object.defineProperty(
+          window.HTMLElement.prototype,
+          'offsetHeight',
+          offsetHeightDescriptor,
+        );
+      }
+
+      if (clientHeightDescriptor) {
+        Object.defineProperty(
+          window.HTMLElement.prototype,
+          'clientHeight',
+          clientHeightDescriptor,
+        );
+      }
+
+      if (offsetTopDescriptor) {
+        Object.defineProperty(
+          window.HTMLElement.prototype,
+          'offsetTop',
+          offsetTopDescriptor,
+        );
+      }
+    }
+  });
 });
