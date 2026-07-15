@@ -192,6 +192,61 @@ const TimeInputPopup = ({
     sectionOrder.includes(section),
   );
 
+  const scrollSelectedOptionsIntoView = useCallback(() => {
+    const popupNode = dialogRef.current;
+    if (!popupNode) return;
+
+    const sectionLabel = {
+      [SECTION_HOUR]: 'hour',
+      [SECTION_MINUTE]: 'minute',
+      [SECTION_SECOND]: 'second',
+      [SECTION_PERIOD]: 'period',
+    };
+
+    const sectionValue = {
+      [SECTION_HOUR]:
+        sections.hour !== undefined ? sections.hour : hoursOptions[0],
+      [SECTION_MINUTE]:
+        sections.minute !== undefined ? sections.minute : minuteOptions[0],
+      [SECTION_SECOND]:
+        sections.second !== undefined ? sections.second : secondOptions[0],
+      [SECTION_PERIOD]: sections.period || 'AM',
+    };
+
+    visiblePopupSections.forEach(({ section }) => {
+      const labelValue = sectionLabel[section];
+      if (!labelValue) return;
+
+      const listboxNode = popupNode.querySelector(
+        `[role="listbox"][aria-label="${labelValue}"]`,
+      );
+      if (!listboxNode) return;
+
+      const selectedNode =
+        popupNode.querySelector(
+          `[data-option-key="${optionKey(labelValue, sectionValue[section])}"]`,
+        ) || listboxNode.querySelector('[role="option"][aria-selected="true"]');
+
+      if (selectedNode) {
+        // Center selected value in each listbox so all sections (hh/mm/ss)
+        // are consistently aligned on open, not just the focused section.
+        const selectedOffsetTop = selectedNode.offsetTop;
+        const selectedHeight = selectedNode.offsetHeight;
+        const targetScrollTop =
+          selectedOffsetTop -
+          (listboxNode.clientHeight / 2 - selectedHeight / 2);
+
+        listboxNode.scrollTop = Math.max(0, targetScrollTop);
+      }
+    });
+  }, [
+    hoursOptions,
+    minuteOptions,
+    secondOptions,
+    sections,
+    visiblePopupSections,
+  ]);
+
   const focusCurrentPopupOption = useCallback(() => {
     const labelMap = {
       [SECTION_HOUR]: 'hour',
@@ -271,6 +326,14 @@ const TimeInputPopup = ({
   ]);
 
   useLayoutEffect(() => {
+    const scrollRaf = requestAnimationFrame(() => {
+      scrollSelectedOptionsIntoView();
+    });
+
+    // Avoid stealing pointer interactions: while the user is actively
+    // clicking inside the popup, let that click settle before refocusing.
+    if (pointerDownInsideRef.current) return undefined;
+
     let rafB;
     const rafA = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
@@ -285,6 +348,7 @@ const TimeInputPopup = ({
     });
 
     return () => {
+      window.cancelAnimationFrame(scrollRaf);
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };

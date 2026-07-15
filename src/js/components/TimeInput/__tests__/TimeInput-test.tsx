@@ -649,6 +649,117 @@ describe('TimeInput', () => {
     expect(input).toHaveValue('07:00:00');
   });
 
+  test('updates minute and second on first click when selected values are deep in list', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="01:45:50" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton');
+    await user.click(input);
+    await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
+
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+
+    await user.click(within(minuteList).getByRole('option', { name: '10' }));
+    await waitFor(() => {
+      expect(input).toHaveValue('01:10:50');
+    });
+
+    await user.click(within(secondList).getByRole('option', { name: '08' }));
+    await waitFor(() => {
+      expect(input).toHaveValue('01:10:08');
+    });
+  });
+
+  test('auto-scrolls minute and second columns to selected values on open', async () => {
+    const user = userEvent.setup();
+    const offsetHeightDescriptor = Object.getOwnPropertyDescriptor(
+      window.HTMLElement.prototype,
+      'offsetHeight',
+    );
+    const clientHeightDescriptor = Object.getOwnPropertyDescriptor(
+      window.HTMLElement.prototype,
+      'clientHeight',
+    );
+    const offsetTopDescriptor = Object.getOwnPropertyDescriptor(
+      window.HTMLElement.prototype,
+      'offsetTop',
+    );
+
+    Object.defineProperty(window.HTMLElement.prototype, 'offsetHeight', {
+      configurable: true,
+      get() {
+        return 40;
+      },
+    });
+
+    Object.defineProperty(window.HTMLElement.prototype, 'clientHeight', {
+      configurable: true,
+      get() {
+        return this.getAttribute?.('role') === 'listbox' ? 200 : 40;
+      },
+    });
+
+    Object.defineProperty(window.HTMLElement.prototype, 'offsetTop', {
+      configurable: true,
+      get() {
+        const optionKey = this.getAttribute?.('data-option-key');
+        if (!optionKey) return 0;
+
+        const [, rawValue] = optionKey.split('-');
+        const numericValue = Number(rawValue);
+        return Number.isFinite(numericValue) ? numericValue * 40 : 0;
+      },
+    });
+
+    try {
+      render(
+        <Grommet>
+          <TimeInput format="12" defaultValue="12:30:20 AM" />
+        </Grommet>,
+      );
+
+      await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+      const minuteList = screen.getByRole('listbox', { name: 'minute' });
+      const secondList = screen.getByRole('listbox', { name: 'second' });
+
+      await waitFor(() => {
+        expect(minuteList.scrollTop).toBeGreaterThan(0);
+        expect(secondList.scrollTop).toBeGreaterThan(0);
+      });
+    } finally {
+      if (offsetHeightDescriptor) {
+        Object.defineProperty(
+          window.HTMLElement.prototype,
+          'offsetHeight',
+          offsetHeightDescriptor,
+        );
+      }
+
+      if (clientHeightDescriptor) {
+        Object.defineProperty(
+          window.HTMLElement.prototype,
+          'clientHeight',
+          clientHeightDescriptor,
+        );
+      }
+
+      if (offsetTopDescriptor) {
+        Object.defineProperty(
+          window.HTMLElement.prototype,
+          'offsetTop',
+          offsetTopDescriptor,
+        );
+      }
+    }
+  });
+
   test('does not leak Box pad prop onto popup option DOM nodes', async () => {
     const user = userEvent.setup();
 
