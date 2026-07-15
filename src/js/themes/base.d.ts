@@ -297,6 +297,34 @@ type ContainerExtend = {
   };
 };
 
+interface StepperStateType {
+  indicator?: {
+    icon?: React.ReactNode | Icon;
+    iconSize?: string;
+    background?: BackgroundType;
+    color?: ColorType;
+    border?: ColorType;
+    substep?: {
+      iconSize?: string;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: ColorType;
+      color?: ColorType;
+    };
+  };
+  label?: {
+    color?: ColorType;
+    weight?: string;
+  };
+  connector?: {
+    color?: ColorType;
+  };
+  helperText?: {
+    color?: ColorType;
+  };
+}
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -2099,6 +2127,57 @@ export interface ThemeType {
       medium?: number;
       large?: number;
     };
+  };
+  stepper?: {
+    container?: {
+      background?: BackgroundType;
+      extend?: ExtendType;
+    };
+    indicator?: {
+      size?: string;
+      border?: {
+        width?: string;
+      };
+    };
+    label?: {
+      size?: string;
+      substep?: {
+        size?: string;
+      };
+    };
+    connector?: {
+      stroke?: {
+        width?: string;
+      };
+    };
+    description?: {
+      size?: string;
+      color?: ColorType;
+      margin?: MarginType;
+    };
+    helperText?: {
+      size?: string;
+      color?: ColorType;
+      margin?: MarginType;
+    };
+    horizontal?: {
+      gap?: GapType;
+    };
+    vertical?: {
+      gap?: GapType;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: ColorType;
+    };
+    // States: [component].[state].[element].[property]
+    pending?: StepperStateType;
+    current?: StepperStateType;
+    currentCompleted?: StepperStateType;
+    completed?: StepperStateType;
+    error?: StepperStateType;
+    currentError?: StepperStateType;
+    disabled?: StepperStateType;
   };
   table?: {
     caption?: {
