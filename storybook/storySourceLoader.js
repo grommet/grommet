@@ -1,9 +1,183 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { transformSync } = require('@babel/core');
+const { mapSizeToken, SPACING_PROPS } = require('./sizeMapper');
 
 const PLUGIN_NAME = 'grommet-story-source-injector';
 const SOURCE_VAR = '__STORYBOOK_SOURCE_CODE__';
+const SOURCE_HPE_VAR = '__STORYBOOK_SOURCE_CODE_HPE__';
 const MERGE_VAR = '__withStorySource__';
+
+const STYLE_PROPS = new Set([
+  'gap',
+  'margin',
+  'pad',
+  'thickness',
+  'border',
+  'height',
+  'width',
+  'columns',
+  'rows',
+  'size',
+  'round',
+  'nameProps',
+  'valueProps',
+  'dropProps',
+  'defaultItemProps',
+  'boxProp',
+  'buttonProps',
+  'paginate',
+  'contentProps',
+  'chart',
+]);
+
+const getComponentName = (openingElement) => {
+  if (!openingElement || !openingElement.name) return undefined;
+  if (openingElement.name.type === 'JSXIdentifier') {
+    return openingElement.name.name;
+  }
+  return undefined;
+};
+
+const getPropName = (propertyNode) => {
+  if (!propertyNode || !propertyNode.key) return undefined;
+  if (propertyNode.key.type === 'Identifier') return propertyNode.key.name;
+  if (propertyNode.key.type === 'StringLiteral') return propertyNode.key.value;
+  return undefined;
+};
+
+const mapNodeByProp = (node, prop, componentName, t, parentProp) => {
+  if (!node) return;
+
+  if (t.isStringLiteral(node)) {
+    // eslint-disable-next-line no-param-reassign
+    node.value = mapSizeToken(prop, node.value, { componentName, parentProp });
+    return;
+  }
+
+  if (t.isTemplateLiteral(node)) return;
+
+  if (t.isArrayExpression(node)) {
+    node.elements.forEach((element) => {
+      mapNodeByProp(element, prop, componentName, t, parentProp);
+    });
+    return;
+  }
+
+  if (t.isConditionalExpression(node) || t.isLogicalExpression(node)) {
+    mapNodeByProp(node.left, prop, componentName, t, parentProp);
+    mapNodeByProp(node.right, prop, componentName, t, parentProp);
+    mapNodeByProp(node.consequent, prop, componentName, t, parentProp);
+    mapNodeByProp(node.alternate, prop, componentName, t, parentProp);
+    return;
+  }
+
+  if (t.isCallExpression(node)) {
+    if (
+      t.isMemberExpression(node.callee) &&
+      t.isIdentifier(node.callee.property, { name: 'includes' })
+    ) {
+      return;
+    }
+
+    node.arguments.forEach((arg) => {
+      mapNodeByProp(arg, prop, componentName, t, parentProp);
+    });
+    return;
+  }
+
+  if (t.isObjectExpression(node)) {
+    node.properties.forEach((propertyNode) => {
+      if (!t.isObjectProperty(propertyNode)) return;
+
+      const keyName = getPropName(propertyNode);
+      if (!keyName) return;
+
+      let nextProp = prop;
+      let nextParentProp = prop;
+
+      if (keyName === 'size' && prop === 'border') {
+        nextProp = 'size';
+        nextParentProp = 'border';
+      } else if (
+        STYLE_PROPS.has(keyName) ||
+        ['top', 'bottom', 'left', 'right', 'horizontal', 'vertical'].includes(
+          keyName,
+        )
+      ) {
+        if (
+          ['top', 'bottom', 'left', 'right', 'horizontal', 'vertical'].includes(
+            keyName,
+          )
+        ) {
+          nextProp = SPACING_PROPS.has(prop) ? prop : 'pad';
+        } else {
+          nextProp = keyName;
+        }
+      }
+
+      mapNodeByProp(
+        propertyNode.value,
+        nextProp,
+        componentName,
+        t,
+        nextParentProp,
+      );
+    });
+  }
+};
+
+const hpeSourceTransformPlugin = ({ types: t }) => ({
+  name: 'grommet-story-size-hpe-transform',
+  visitor: {
+    JSXAttribute(path) {
+      if (!t.isJSXIdentifier(path.node.name)) return;
+
+      const propName = path.node.name.name;
+      if (!STYLE_PROPS.has(propName)) return;
+
+      const componentName = getComponentName(path.parentPath.node);
+      const { value } = path.node;
+
+      if (t.isStringLiteral(value)) {
+        value.value = mapSizeToken(propName, value.value, { componentName });
+        return;
+      }
+
+      if (t.isJSXExpressionContainer(value)) {
+        mapNodeByProp(value.expression, propName, componentName, t);
+      }
+    },
+    VariableDeclarator(path) {
+      if (!t.isIdentifier(path.node.id)) return;
+      const propName = path.node.id.name;
+      if (!STYLE_PROPS.has(propName)) return;
+
+      mapNodeByProp(path.node.init, propName, undefined, t);
+    },
+  },
+});
+
+const transformSourceForHpe = (source, resourcePath) => {
+  const result = transformSync(source, {
+    filename: resourcePath,
+    babelrc: false,
+    configFile: false,
+    retainLines: true,
+    generatorOpts: {
+      compact: false,
+      comments: true,
+      retainLines: true,
+    },
+    parserOpts: {
+      sourceType: 'module',
+      allowReturnOutsideFunction: true,
+      plugins: ['jsx', 'typescript'],
+    },
+    plugins: [hpeSourceTransformPlugin],
+  });
+
+  return result && result.code ? result.code : source;
+};
 
 const getRuntimeExportNames = (declaration, t) => {
   if (!declaration) return [];
@@ -62,15 +236,31 @@ const storySourceInjectionPlugin = ({ types: t, template }) => ({
         ),
       ]);
 
+      const hpeSourceDeclaration = t.variableDeclaration('const', [
+        t.variableDeclarator(
+          t.identifier(SOURCE_HPE_VAR),
+          t.stringLiteral(state.opts.hpeSourceCode || state.file.code),
+        ),
+      ]);
+
       const mergeDeclaration = template.statement.ast`
         const ${t.identifier(MERGE_VAR)} = (parameters) => ({
           ...parameters,
+          sizeMapping: {
+            ...parameters?.sizeMapping,
+            originalSourceCode:
+              parameters?.sizeMapping?.originalSourceCode ??
+              ${t.identifier(SOURCE_VAR)},
+            hpeSourceCode:
+              parameters?.sizeMapping?.hpeSourceCode ??
+              ${t.identifier(SOURCE_HPE_VAR)},
+          },
           docs: {
             ...parameters?.docs,
             source: {
               ...parameters?.docs?.source,
-              code:
-                parameters?.docs?.source?.code ??
+              originalSource:
+                parameters?.docs?.source?.originalSource ??
                 ${t.identifier(SOURCE_VAR)},
             },
           },
@@ -78,6 +268,7 @@ const storySourceInjectionPlugin = ({ types: t, template }) => ({
       `;
 
       programPath.pushContainer('body', sourceDeclaration);
+      programPath.pushContainer('body', hpeSourceDeclaration);
       programPath.pushContainer('body', mergeDeclaration);
 
       uniqueStoryExports.forEach((exportName) => {
@@ -124,7 +315,14 @@ module.exports = function storySourceLoader(source, inputSourceMap) {
         allowReturnOutsideFunction: true,
         plugins: ['jsx', 'typescript'],
       },
-      plugins: [storySourceInjectionPlugin],
+      plugins: [
+        [
+          storySourceInjectionPlugin,
+          {
+            hpeSourceCode: transformSourceForHpe(source, this.resourcePath),
+          },
+        ],
+      ],
     });
 
     if (isDebug) {

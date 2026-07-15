@@ -220,6 +220,8 @@ export interface GrommetProps {
         skipTo?: string;
       };
       tabs?: {
+        nextTab?: string;
+        previousTab?: string;
         tabContents?: string;
       };
       textInput?: {
