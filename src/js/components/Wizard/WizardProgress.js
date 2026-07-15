@@ -67,6 +67,7 @@ export const WizardProgress = ({ ariaLabel: ariaLabelProp, ...rest }) => {
         currentStep={currentStep}
         direction={direction}
         clickableSteps={false}
+        showDescription={false}
         aria-label={ariaLabel}
       />
     </Box>
