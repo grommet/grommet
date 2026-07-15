@@ -402,6 +402,11 @@ export const useSectionedTimeField = ({
       const numericSections = sectionOrder.filter(
         (section) => section !== SECTION_PERIOD,
       );
+      const hasExplicitPeriod = /\b(AM|PM)\b/i.test(pasted);
+      const shouldInferPeriod =
+        format === '12' &&
+        sectionOrder.includes(SECTION_PERIOD) &&
+        !hasExplicitPeriod;
 
       if (
         digits.length >= numericSections.length * 2 &&
@@ -412,11 +417,19 @@ export const useSectionedTimeField = ({
         for (let i = 0; i < numericSections.length; i += 1) {
           const section = numericSections[i];
           const parsedNumber = Number(digits.slice(i * 2, i * 2 + 2));
+          const minValue =
+            section === SECTION_HOUR && shouldInferPeriod
+              ? 0
+              : sectionMin(section, format);
+          const maxValue =
+            section === SECTION_HOUR && shouldInferPeriod
+              ? 23
+              : sectionMax(section, format);
 
           if (
             Number.isNaN(parsedNumber) ||
-            parsedNumber < sectionMin(section, format) ||
-            parsedNumber > sectionMax(section, format)
+            parsedNumber < minValue ||
+            parsedNumber > maxValue
           ) {
             return undefined;
           }
@@ -425,7 +438,23 @@ export const useSectionedTimeField = ({
         }
 
         if (sectionOrder.includes(SECTION_PERIOD)) {
-          next.period = /PM/i.test(pasted) ? 'PM' : 'AM';
+          if (hasExplicitPeriod) {
+            next.period = /\bPM\b/i.test(pasted) ? 'PM' : 'AM';
+          } else if (shouldInferPeriod) {
+            const normalizedHour = next.hour;
+
+            if (normalizedHour === 0) {
+              next.hour = 12;
+              next.period = 'AM';
+            } else if (normalizedHour === 12) {
+              next.period = 'PM';
+            } else if (normalizedHour > 12) {
+              next.hour = normalizedHour - 12;
+              next.period = 'PM';
+            } else {
+              next.period = 'AM';
+            }
+          }
         }
 
         return next;

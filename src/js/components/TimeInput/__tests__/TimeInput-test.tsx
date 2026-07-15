@@ -1063,6 +1063,118 @@ describe('TimeInput', () => {
     expect(input).toHaveValue('14:22:30');
   });
 
+  test('applies compact HHMMSS paste contract in 24-hour format', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+
+    await user.click(input);
+
+    const cases = [
+      { pasted: '123456', expected: '12:34:56' },
+      { pasted: '234559', expected: '23:45:59' },
+      { pasted: '004559', expected: '00:45:59' },
+    ];
+
+    cases.forEach(({ pasted, expected }) => {
+      fireEvent.paste(input, {
+        clipboardData: {
+          getData: () => pasted,
+        },
+      });
+
+      expect(input).toHaveValue(expected);
+    });
+  });
+
+  test('applies compact HHMMSS paste contract in 12-hour format', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+
+    await user.click(input);
+
+    const cases = [
+      { pasted: '123456', expected: '12:34:56 PM' },
+      { pasted: '234559', expected: '11:45:59 PM' },
+      { pasted: '004559', expected: '12:45:59 AM' },
+    ];
+
+    cases.forEach(({ pasted, expected }) => {
+      fireEvent.paste(input, {
+        clipboardData: {
+          getData: () => pasted,
+        },
+      });
+
+      expect(input).toHaveValue(expected);
+    });
+  });
+
+  test('rejects incomplete compact paste values', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="09:30:00 AM" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+
+    await user.click(input);
+
+    fireEvent.paste(input, {
+      clipboardData: {
+        getData: () => '2345',
+      },
+    });
+
+    expect(input).toHaveValue('09:30:00 AM');
+  });
+
+  test('uses explicit meridiem token only when AM or PM is a full token', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="09:30:00 AM" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+
+    await user.click(input);
+
+    fireEvent.paste(input, {
+      clipboardData: {
+        getData: () => '11:22:33 PM',
+      },
+    });
+
+    expect(input).toHaveValue('11:22:33 PM');
+
+    fireEvent.paste(input, {
+      clipboardData: {
+        getData: () => '112233 spam',
+      },
+    });
+
+    expect(input).toHaveValue('11:22:33 AM');
+  });
+
   test('arrow keys still respect minuteStep increment', async () => {
     const user = userEvent.setup();
 
