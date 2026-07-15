@@ -1,0 +1,419 @@
+var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "icon", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "readOnly", "readOnlyCopy", "reverse", "value", "messages"],
+  _excluded2 = ["icon"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+import React, { useRef, forwardRef, useContext, useEffect, useMemo, useState, useCallback } from 'react';
+import styled from 'styled-components';
+import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
+import { AnnounceContext } from '../../contexts/AnnounceContext';
+import { MessageContext } from '../../contexts/MessageContext';
+import { Box } from '../Box';
+import { Button } from '../Button';
+import { Calendar } from '../Calendar';
+import { Drop } from '../Drop';
+import { DropButton } from '../DropButton';
+import { FormContext } from '../Form';
+import { Keyboard } from '../Keyboard';
+import { MaskedInput } from '../MaskedInput';
+import { useForwardedRef, setHoursWithOffset, disabledStyle, useKeyboard } from '../../utils';
+import { readOnlyStyle } from '../../utils/readOnly';
+import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue, validateBounds } from './utils';
+import { DateInputPropTypes } from './propTypes';
+import { getOutputFormat } from '../Calendar/Calendar';
+import { CopyButton } from '../TextInput/CopyButton';
+import { useThemeValue } from '../../utils/useThemeValue';
+var StyledDateInputContainer = styled(Box).withConfig({
+  // to not pass props on dom through Box
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return prop !== 'disabled';
+  }
+}).withConfig({
+  displayName: "DateInput__StyledDateInputContainer",
+  componentId: "sc-1jfta23-0"
+})(["", " ", "}"], function (props) {
+  return props.disabled && disabledStyle();
+}, function (props) {
+  return props.readOnlyProp && readOnlyStyle(props.theme);
+});
+var getReference = function getReference(value) {
+  var adjustedDate;
+  var res;
+  if (typeof value === 'string') res = value;else if (Array.isArray(value) && Array.isArray(value[0])) res = value[0].find(function (date) {
+    return date;
+  });else if (Array.isArray(value) && value.length) {
+    res = value[0];
+  }
+  if (res) {
+    adjustedDate = setHoursWithOffset(res);
+  }
+  return adjustedDate;
+};
+var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
+  var _theme$icon, _theme$dateInput$icon, _theme$dateInput$icon2, _theme$dateInput$butt, _theme$dateInput$butt2;
+  var buttonProps = _ref.buttonProps,
+    calendarProps = _ref.calendarProps,
+    defaultValue = _ref.defaultValue,
+    disabled = _ref.disabled,
+    dropProps = _ref.dropProps,
+    format = _ref.format,
+    id = _ref.id,
+    icon = _ref.icon,
+    _ref$inline = _ref.inline,
+    inline = _ref$inline === void 0 ? false : _ref$inline,
+    inputProps = _ref.inputProps,
+    name = _ref.name,
+    _onChange = _ref.onChange,
+    _onFocus = _ref.onFocus,
+    plain = _ref.plain,
+    readOnlyProp = _ref.readOnly,
+    readOnlyCopy = _ref.readOnlyCopy,
+    _ref$reverse = _ref.reverse,
+    reverseProp = _ref$reverse === void 0 ? false : _ref$reverse,
+    valueArg = _ref.value,
+    messages = _ref.messages,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
+  var announce = useContext(AnnounceContext);
+  var _useContext = useContext(MessageContext),
+    formatMessage = _useContext.format;
+  var iconSize = ((_theme$icon = theme.icon) == null ? void 0 : _theme$icon.matchSize) && rest.size || ((_theme$dateInput$icon = theme.dateInput.icon) == null ? void 0 : _theme$dateInput$icon.size);
+  var _useContext2 = useContext(FormContext),
+    useFormInput = _useContext2.useFormInput;
+  var ref = useForwardedRef(refArg);
+  var containerRef = useRef();
+  var readOnly = readOnlyProp || readOnlyCopy;
+  var bounds = calendarProps == null ? void 0 : calendarProps.bounds;
+  var validateBoundsForForm = useCallback(function (fieldValue) {
+    if (!bounds || !fieldValue) return undefined;
+    var isValid = validateBounds(bounds, fieldValue);
+    if (!isValid) {
+      var _bounds$map = bounds.map(function (date) {
+          return setHoursWithOffset(date).toISOString();
+        }),
+        startBound = _bounds$map[0],
+        endBound = _bounds$map[1];
+      if (startBound && endBound) {
+        return formatMessage({
+          id: 'dateInput.outOfBounds',
+          messages: messages,
+          values: {
+            start: new Date(startBound).toLocaleDateString(),
+            end: new Date(endBound).toLocaleDateString()
+          }
+        });
+      }
+    }
+    return undefined;
+  }, [bounds, formatMessage, messages]);
+  var _useFormInput = useFormInput({
+      name: name,
+      value: valueArg,
+      initialValue: defaultValue,
+      validate: bounds ? validateBoundsForForm : undefined
+    }),
+    value = _useFormInput[0],
+    setValue = _useFormInput[1];
+  var usingKeyboard = useKeyboard();
+  var CalendarIcon = ((_theme$dateInput$icon2 = theme.dateInput.icon) == null ? void 0 : _theme$dateInput$icon2.calendar) || GrommetCalendarIcon;
+  var _useState = useState(true),
+    withinBounds = _useState[0],
+    setWithinBounds = _useState[1];
+  var _useState2 = useState(getOutputFormat(value)),
+    outputFormat = _useState2[0],
+    setOutputFormat = _useState2[1];
+  useEffect(function () {
+    setOutputFormat(function (previousFormat) {
+      var nextFormat = getOutputFormat(value);
+      // when user types, date could become something like 07//2020
+      // and value becomes undefined. don't lose the format from the
+      // previous valid date
+      return previousFormat !== nextFormat ? previousFormat : nextFormat;
+    });
+  }, [value]);
+  useEffect(function () {
+    if (value === undefined || bounds === undefined) {
+      setWithinBounds(true);
+    } else {
+      var validNextValue = validateBounds(bounds, value);
+      setWithinBounds(validNextValue);
+    }
+  }, [value, bounds]);
+
+  // keep track of timestamp from original date(s)
+  var _useState3 = useState(getReference(value)),
+    reference = _useState3[0],
+    setReference = _useState3[1];
+
+  // do we expect multiple dates?
+  var range = Array.isArray(value) || format && format.includes('-');
+
+  // parse format and build a formal schema we can use elsewhere
+  var schema = useMemo(function () {
+    return formatToSchema(format);
+  }, [format]);
+
+  // mask is only used when a format is provided
+  var mask = useMemo(function () {
+    return schemaToMask(schema);
+  }, [schema]);
+
+  // textValue is only used when a format is provided
+  var _useState4 = useState(schema ? valueToText(value, schema) : undefined),
+    textValue = _useState4[0],
+    setTextValue = _useState4[1];
+  var readOnlyCopyValidation = formatMessage({
+    id: 'input.readOnlyCopy.validation',
+    messages: messages
+  });
+  var readOnlyCopyPrompt = formatMessage({
+    id: 'input.readOnlyCopy.prompt',
+    messages: messages
+  });
+  var _useState5 = useState(readOnlyCopyPrompt),
+    tip = _useState5[0],
+    setTip = _useState5[1];
+
+  // Setting the icon through `inputProps` is deprecated.
+  // The `icon` prop should be used instead.
+  var _ref2 = inputProps || {},
+    MaskedInputIcon = _ref2.icon,
+    restOfInputProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
+  if (MaskedInputIcon) {
+    console.warn("Customizing the DateInput icon through inputProps is deprecated.\nUse the icon prop instead.");
+  }
+  var reverse = reverseProp || restOfInputProps.reverse;
+  var calendarDropdownAlign = {
+    top: 'bottom',
+    left: 'left'
+  };
+
+  // We need to distinguish between the caller changing a Form value
+  // and the user typing a date that he isn't finished with yet.
+  // To handle this, we see if we have a value and the text value
+  // associated with it doesn't align to it, then we update the text value.
+  // We compare using textToValue to avoid "06/01/2021" not
+  // matching "06/1/2021".
+  useEffect(function () {
+    if (schema && value !== undefined) {
+      var nextTextValue = valueToText(value, schema);
+      if (!valuesAreEqual(textToValue(textValue, schema, range, reference), textToValue(nextTextValue, schema, range, reference)) || textValue === '' && nextTextValue !== '') {
+        setTextValue(nextTextValue);
+      }
+    }
+  }, [range, schema, textValue, reference, value]);
+
+  // textValue of MaskedInput is controlled.
+  // for uncontrolled forms, ensure the reset event
+  // resets the textValue
+  useEffect(function () {
+    var _ref$current;
+    var form = ref == null || (_ref$current = ref.current) == null ? void 0 : _ref$current.form;
+    var handleFormReset = function handleFormReset(e) {
+      if (schema && ref.current && e.target.contains(ref.current)) {
+        setTextValue('');
+      }
+    };
+    // place the listener on the form directly. if listener is on window,
+    // the event could get blocked if caller has e.stopPropagation(), etc. in
+    // their form onReset
+    form == null || form.addEventListener('reset', handleFormReset);
+    return function () {
+      return form == null ? void 0 : form.removeEventListener('reset', handleFormReset);
+    };
+  }, [schema, ref]);
+
+  // when format and not inline, whether to show the Calendar in a Drop
+  var _useState6 = useState(),
+    open = _useState6[0],
+    setOpen = _useState6[1];
+  var openCalendar = useCallback(function () {
+    setOpen(true);
+    announce(formatMessage({
+      id: 'dateInput.enterCalendar',
+      messages: messages
+    }));
+  }, [announce, formatMessage, messages]);
+  var closeCalendar = useCallback(function () {
+    if (usingKeyboard && !inline && ref != null && ref.current) {
+      setTimeout(function () {
+        var _ref$current2;
+        ref == null || (_ref$current2 = ref.current) == null || _ref$current2.focus();
+      }, 0);
+    }
+    setOpen(false);
+    announce(formatMessage({
+      id: 'dateInput.exitCalendar',
+      messages: messages
+    }));
+  }, [announce, formatMessage, messages, usingKeyboard, ref, inline]);
+  var dates = useMemo(function () {
+    return range && value != null && value.length ? [value] : undefined;
+  }, [range, value]);
+  var calendar = /*#__PURE__*/React.createElement(Calendar, _extends({
+    ref: inline ? ref : undefined,
+    id: inline && !format ? id : undefined,
+    range: range,
+    date: range ? undefined : value
+    // when caller initializes with empty array, dates should be undefined
+    // allowing the user to select both begin and end of the range
+    ,
+    dates: dates
+    // places focus on days grid when Calendar opens
+    ,
+    initialFocus: open ? 'days' : undefined,
+    onSelect: disabled ? undefined : function (nextValue) {
+      var normalizedValue;
+      if (range && Array.isArray(nextValue)) {
+        normalizedValue = nextValue[0];
+      } // clicking an edge date removes it
+      else if (range && nextValue) normalizedValue = [nextValue, nextValue];else normalizedValue = nextValue;
+      if (schema) setTextValue(valueToText(normalizedValue, schema));
+      setValue(normalizedValue);
+      setReference(getReference(nextValue));
+      if (_onChange) _onChange({
+        value: normalizedValue
+      });
+      if (open && !range) {
+        closeCalendar();
+      }
+    }
+  }, calendarProps));
+  var formContextValue = useMemo(function () {
+    return {
+      useFormInput: function useFormInput(_ref3) {
+        var valueProp = _ref3.value;
+        return [valueProp, function () {}];
+      }
+    };
+  }, []);
+  if (!format) {
+    // When no format is specified, we don't give the user a way to type
+    if (inline) return calendar;
+    return /*#__PURE__*/React.createElement(DropButton, _extends({
+      ref: ref,
+      id: id,
+      dropProps: _extends({
+        align: calendarDropdownAlign
+      }, dropProps),
+      dropContent: calendar,
+      icon: icon || MaskedInputIcon || /*#__PURE__*/React.createElement(CalendarIcon, {
+        size: iconSize
+      })
+    }, buttonProps));
+  }
+  var onClickCopy = function onClickCopy() {
+    navigator.clipboard.writeText(textValue);
+    announce(readOnlyCopyValidation, 'assertive');
+    setTip(readOnlyCopyValidation);
+  };
+  var onBlurCopy = function onBlurCopy() {
+    if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+  };
+  var DateInputButton = readOnlyCopy ? /*#__PURE__*/React.createElement(CopyButton, {
+    disabled: disabled,
+    onBlurCopy: onBlurCopy,
+    onClickCopy: onClickCopy,
+    readOnlyCopyPrompt: readOnlyCopyPrompt,
+    tip: tip,
+    value: value
+  }) : /*#__PURE__*/React.createElement(Button, {
+    onClick: open ? closeCalendar : openCalendar,
+    disabled: disabled,
+    plain: true,
+    icon: icon || MaskedInputIcon || /*#__PURE__*/React.createElement(CalendarIcon, {
+      size: iconSize
+    }),
+    margin: reverse ? {
+      left: (_theme$dateInput$butt = theme.dateInput.button) == null ? void 0 : _theme$dateInput$butt.margin
+    } : {
+      right: (_theme$dateInput$butt2 = theme.dateInput.button) == null ? void 0 : _theme$dateInput$butt2.margin
+    }
+  });
+  var input = /*#__PURE__*/React.createElement(FormContext.Provider, {
+    key: "input"
+    // don't let MaskedInput drive the Form
+    ,
+    value: formContextValue
+  }, /*#__PURE__*/React.createElement(Keyboard, {
+    onEsc: open ? function () {
+      return closeCalendar();
+    } : undefined,
+    onSpace: function onSpace(event) {
+      if (!readOnlyCopy) {
+        event.preventDefault();
+        if (!readOnly) openCalendar();
+      }
+    }
+  }, /*#__PURE__*/React.createElement(StyledDateInputContainer, _extends({
+    ref: containerRef,
+    border: !plain,
+    round: theme.dateInput.container.round,
+    direction: "row",
+    disabled: disabled
+    // readOnly prop shouldn't get passed to the dom here
+    ,
+    readOnlyProp: readOnly,
+    fill: true
+  }, passThemeFlag), reverse && (!readOnly || readOnlyCopy) && DateInputButton, /*#__PURE__*/React.createElement(MaskedInput, _extends({
+    "aria-invalid": bounds && !withinBounds ? true : undefined,
+    readOnly: readOnly,
+    ref: ref,
+    id: id,
+    name: name,
+    reverse: true,
+    disabled: disabled,
+    mask: mask,
+    plain: true
+  }, restOfInputProps, rest, {
+    value: textValue,
+    onChange: function onChange(event) {
+      var nextTextValue = event.target.value;
+      setTextValue(nextTextValue);
+      var nextValue = textToValue(nextTextValue, schema, range, reference, outputFormat);
+      var validNextValue = validateBounds(bounds, nextValue);
+      setWithinBounds(validNextValue);
+      if (nextValue !== undefined) setReference(getReference(nextValue));
+      // update value even when undefined
+      setValue(nextValue);
+      if (_onChange) {
+        event.persist(); // extract from React synthetic event pool
+        var adjustedEvent = event;
+        adjustedEvent.value = nextValue;
+        _onChange(adjustedEvent);
+      }
+    },
+    onFocus: function onFocus(event) {
+      if (!readOnly) {
+        announce(formatMessage({
+          id: 'dateInput.openCalendar',
+          messages: messages
+        }));
+      }
+      if (_onFocus) _onFocus(event);
+    }
+  })), !reverse && (!readOnly || readOnlyCopy) && DateInputButton)));
+  if (inline) {
+    return /*#__PURE__*/React.createElement(Box, null, input, calendar);
+  }
+  if (open && !readOnly) {
+    return [input, /*#__PURE__*/React.createElement(Drop, _extends({
+      key: "drop",
+      id: id ? id + "__drop" : undefined,
+      target: containerRef.current,
+      align: _extends({}, calendarDropdownAlign, dropProps),
+      onEsc: closeCalendar,
+      onClickOutside: function onClickOutside(_ref4) {
+        var target = _ref4.target;
+        if (target !== containerRef.current && !containerRef.current.contains(target)) {
+          closeCalendar();
+        }
+      }
+    }, dropProps), calendar)];
+  }
+  return input;
+});
+DateInput.displayName = 'DateInput';
+DateInput.propTypes = DateInputPropTypes;
+export { DateInput };

@@ -1,0 +1,3088 @@
+"use strict";
+
+exports.__esModule = true;
+exports.generate = exports.base = void 0;
+var _Actions = require("grommet-icons/icons/Actions");
+var _AssistListening = require("grommet-icons/icons/AssistListening");
+var _CircleInformation = require("grommet-icons/icons/CircleInformation");
+var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
+var _Expand = require("grommet-icons/icons/Expand");
+var _FormCheckmark = require("grommet-icons/icons/FormCheckmark");
+var _FormClose = require("grommet-icons/icons/FormClose");
+var _FormDown = require("grommet-icons/icons/FormDown");
+var _FormNext = require("grommet-icons/icons/FormNext");
+var _FormPrevious = require("grommet-icons/icons/FormPrevious");
+var _FormUp = require("grommet-icons/icons/FormUp");
+var _Next = require("grommet-icons/icons/Next");
+var _Pause = require("grommet-icons/icons/Pause");
+var _Play = require("grommet-icons/icons/Play");
+var _FormPin = require("grommet-icons/icons/FormPin");
+var _Previous = require("grommet-icons/icons/Previous");
+var _Radial = require("grommet-icons/icons/Radial");
+var _StatusCriticalSmall = require("grommet-icons/icons/StatusCriticalSmall");
+var _StatusGoodSmall = require("grommet-icons/icons/StatusGoodSmall");
+var _StatusWarningSmall = require("grommet-icons/icons/StatusWarningSmall");
+var _StatusUnknownSmall = require("grommet-icons/icons/StatusUnknownSmall");
+var _Subtract = require("grommet-icons/icons/Subtract");
+var _Volume = require("grommet-icons/icons/Volume");
+var _VolumeLow = require("grommet-icons/icons/VolumeLow");
+var _base = require("grommet-icons/themes/base");
+var _object = require("../utils/object");
+var _mixins = require("../utils/mixins");
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+var brandColor = '#7D4CDB';
+var accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
+var neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
+var statusColors = {
+  critical: '#EB0000',
+  error: '#B30000',
+  warning: '#C27B00',
+  ok: '#009E67',
+  unknown: '#919191',
+  disabled: '#CCCCCC'
+};
+var darkColors = ['#333333', '#555555', '#777777', '#999999', '#999999', '#999999'];
+var lightColors = ['#F8F8F8', '#F2F2F2', '#EDEDED', '#DADADA', '#DADADA', '#DADADA'];
+var focusColor = accentColors[0];
+var colors = {
+  active: 'rgba(221, 221, 221, 0.5)',
+  'background-back': {
+    dark: '#33333308',
+    light: '#EDEDED'
+  },
+  'background-front': {
+    dark: '#444444',
+    light: '#FFFFFF'
+  },
+  'background-contrast': {
+    light: '#33333310',
+    dark: '#FFFFFF18'
+  },
+  'active-background': 'background-contrast',
+  'active-text': 'text-strong',
+  black: '#000000',
+  border: {
+    dark: 'rgba(255, 255, 255, 0.33)',
+    light: 'rgba(0, 0, 0, 0.33)'
+  },
+  brand: brandColor,
+  control: {
+    dark: 'accent-1',
+    light: 'brand'
+  },
+  focus: focusColor,
+  'graph-0': 'accent-1',
+  'graph-1': 'neutral-1',
+  'graph-2': 'neutral-2',
+  'graph-3': 'neutral-3',
+  'graph-4': 'neutral-4',
+  placeholder: '#AAAAAA',
+  selected: 'brand',
+  text: {
+    dark: '#f8f8f8',
+    light: '#444444'
+  },
+  'text-strong': {
+    dark: '#FFFFFF',
+    light: '#000000'
+  },
+  'text-weak': {
+    dark: '#CCCCCC',
+    light: '#555555'
+  },
+  'text-xweak': {
+    dark: '#BBBBBB',
+    light: '#666666'
+  },
+  icon: {
+    dark: '#f8f8f8',
+    light: '#666666'
+  },
+  'selected-background': 'brand',
+  'selected-text': 'text-strong',
+  white: '#FFFFFF'
+};
+var colorArray = function colorArray(array, prefix) {
+  return array.forEach(function (color, index) {
+    colors[prefix + "-" + (index + 1)] = color;
+  });
+};
+colorArray(accentColors, 'accent');
+colorArray(darkColors, 'dark');
+colorArray(lightColors, 'light');
+colorArray(neutralColors, 'neutral');
+Object.keys(statusColors).forEach(function (color) {
+  colors["status-" + color] = statusColors[color];
+});
+var generate = exports.generate = function generate(baseSpacing, scale) {
+  if (baseSpacing === void 0) {
+    baseSpacing = 24;
+  }
+  if (scale === void 0) {
+    scale = 6;
+  }
+  // 24
+  var baseFontSize = baseSpacing * 0.75; // 18
+  var fontScale = baseSpacing / scale; // 4
+
+  var fontSizing = function fontSizing(factor) {
+    return {
+      size: baseFontSize + factor * fontScale + "px",
+      height: baseSpacing + factor * fontScale + "px",
+      // maxWidth chosen to be ~50 characters wide
+      // see: https://ux.stackexchange.com/a/34125
+      maxWidth: baseSpacing * (baseFontSize + factor * fontScale) + "px"
+    };
+  };
+  var borderWidth = 2;
+  var controlBorderWidth = 1;
+  var result = (0, _object.deepMerge)(_base.base, {
+    global: {
+      active: {
+        background: {
+          color: 'active',
+          opacity: 'medium'
+        },
+        color: {
+          dark: 'white',
+          light: 'black'
+        }
+      },
+      animation: {
+        duration: '1s',
+        jiggle: {
+          duration: '0.1s'
+        }
+      },
+      // backgrounds: undefined,
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: baseSpacing / 6 + "px",
+        // 4
+        large: baseSpacing / 2 + "px",
+        // 12
+        xlarge: baseSpacing + "px" // 24
+      },
+      breakpoints: {
+        small: {
+          value: baseSpacing * 32,
+          // 768
+          borderSize: {
+            xsmall: '1px',
+            small: '2px',
+            medium: baseSpacing / 6 + "px",
+            // 4
+            large: baseSpacing / 4 + "px",
+            // 6
+            xlarge: baseSpacing / 2 + "px" // 12
+          },
+          edgeSize: {
+            none: '0px',
+            hair: '1px',
+            // for Chart
+            xxsmall: '2px',
+            xsmall: baseSpacing / 8 + "px",
+            // 3
+            small: baseSpacing / 4 + "px",
+            // 6
+            medium: baseSpacing / 2 + "px",
+            // 12
+            large: baseSpacing + "px",
+            // 24
+            xlarge: baseSpacing * 2 + "px" // 48
+          },
+          // radius: {},
+          size: {
+            xxsmall: baseSpacing + "px",
+            // 24
+            xsmall: baseSpacing * 2 + "px",
+            // 48
+            small: baseSpacing * 4 + "px",
+            // 96
+            medium: baseSpacing * 8 + "px",
+            // 192
+            large: baseSpacing * 16 + "px",
+            // 384
+            xlarge: baseSpacing * 32 + "px",
+            // 768
+            full: '100%'
+          }
+        },
+        medium: {
+          value: baseSpacing * 64 // 1536
+        },
+        large: {} // anything above 'medium'
+      },
+      // Breakpoints used at Server Side Rendering for the initial rendering
+      // These values correspond to the theme breakpoints
+      deviceBreakpoints: {
+        phone: 'small',
+        tablet: 'medium',
+        computer: 'large'
+      },
+      colors: colors,
+      control: {
+        border: {
+          width: controlBorderWidth + "px",
+          radius: '4px',
+          color: 'border'
+        },
+        disabled: {
+          opacity: 0.3
+        }
+      },
+      // The time to wait after the user stopped typing, measured in ms.
+      // A half second (500ms) debounce can be a helpful starting point.
+      // You want to give the user time to fill out a field, but capture
+      // their attention before they move on past it. 2 second (2000ms)
+      // might be too long depending on how fast people type, and 200ms
+      // would be an eye blink
+      debounceDelay: 500,
+      // deprecated: {
+      //   backgrounds: [
+      //     {
+      //       name: string,
+      //       message: string,
+      //     },
+      //   ],
+      //   colors: [
+      //     {
+      //       name: string,
+      //       message: string,
+      //     },
+      //   ],
+      //   button: {
+      //     kind: [
+      //       {
+      //         name: string,
+      //         message: string,
+      //       },
+      //     ],
+      //   },
+      // },
+      drop: {
+        // intelligentMargin: undefined,
+        background: {
+          dark: 'black',
+          light: 'white'
+        },
+        border: {
+          radius: '0px'
+        },
+        // margin: undefined
+        shadowSize: 'small',
+        // shadowSize is deprecated, use 'elevation'
+        zIndex: '20'
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        // for Chart
+        xxsmall: baseSpacing / 8 + "px",
+        // 3
+        xsmall: baseSpacing / 4 + "px",
+        // 6
+        small: baseSpacing / 2 + "px",
+        // 12
+        medium: baseSpacing + "px",
+        // 24
+        large: baseSpacing * 2 + "px",
+        // 48
+        xlarge: baseSpacing * 4 + "px",
+        // 96
+        responsiveBreakpoint: 'small'
+      },
+      elevation: {
+        light: {
+          none: 'none',
+          xsmall: '0px 1px 2px rgba(0, 0, 0, 0.20)',
+          small: '0px 2px 4px rgba(0, 0, 0, 0.20)',
+          medium: '0px 4px 8px rgba(0, 0, 0, 0.20)',
+          large: '0px 8px 16px rgba(0, 0, 0, 0.20)',
+          xlarge: '0px 12px 24px rgba(0, 0, 0, 0.20)'
+        },
+        dark: {
+          none: 'none',
+          xsmall: '0px 2px 2px rgba(255, 255, 255, 0.40)',
+          small: '0px 4px 4px rgba(255, 255, 255, 0.40)',
+          medium: '0px 6px 8px rgba(255, 255, 255, 0.40)',
+          large: '0px 8px 16px rgba(255, 255, 255, 0.40)',
+          xlarge: '0px 12px 24px rgba(255, 255, 255, 0.40)'
+        }
+      },
+      focus: {
+        // shadow or outline are required for accessibility
+        border: {
+          // remove to only have shadow
+          color: 'focus'
+        },
+        // outline: { color: undefined, size: undefined },
+        shadow: {
+          color: 'focus',
+          size: '2px'
+        },
+        twoColor: undefined,
+        inset: {
+          border: {
+            // remove to only have shadow
+            color: 'focus'
+          },
+          outline: {
+            color: 'focus',
+            size: '2px',
+            offset: '-2px'
+          },
+          shadow: undefined,
+          twoColor: undefined
+        }
+      },
+      font: _extends({}, fontSizing(0)),
+      hover: {
+        background: {
+          color: 'active',
+          opacity: 'medium'
+        },
+        color: {
+          dark: 'white',
+          light: 'black'
+        }
+      },
+      input: {
+        padding: {
+          horizontal: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px",
+          vertical: (0, _mixins.parseMetricToNum)(baseSpacing / 2 + "px") - (0, _mixins.parseMetricToNum)(controlBorderWidth + "px") + "px"
+        },
+        font: {
+          // size: undefined,
+          // height: undefined,
+          weight: 600
+        },
+        // deprecate in v3
+        // weight: undefined,
+        readOnly: {
+          // background: undefined,
+          // border: {
+          //  color: undefined,
+          // },
+        }
+      },
+      opacity: {
+        strong: 0.8,
+        medium: 0.4,
+        weak: 0.1
+      },
+      // radius: {},
+      selected: {
+        background: 'selected',
+        color: 'white'
+      },
+      spacing: baseSpacing + "px",
+      size: {
+        xxsmall: baseSpacing * 2 + "px",
+        // 48
+        xsmall: baseSpacing * 4 + "px",
+        // 96
+        small: baseSpacing * 8 + "px",
+        // 192
+        medium: baseSpacing * 16 + "px",
+        // 384
+        large: baseSpacing * 32 + "px",
+        // 768
+        xlarge: baseSpacing * 48 + "px",
+        // 1152
+        xxlarge: baseSpacing * 64 + "px",
+        // 1536
+        full: '100%'
+      }
+    },
+    // icon: {
+    //   extend: undefined,
+    //   matchSize: undefined,
+    //   size: undefined,
+    // },
+    accordion: {
+      icon: {
+        container: {
+          pad: {
+            horizontal: 'small'
+          }
+        }
+      },
+      label: {
+        container: {
+          pad: {
+            horizontal: 'xsmall'
+          }
+        }
+      },
+      panel: {
+        // border: {
+        //   side: 'bottom',
+        //   color: 'border',
+        // },
+      },
+      border: {
+        side: 'bottom',
+        color: 'border'
+      },
+      heading: {
+        level: '4' // level ranges from 1-6
+        // margin: undefined
+      },
+      hover: {
+        // background: undefined,
+        color: {
+          dark: 'light-4',
+          light: 'dark-3'
+        },
+        // deprecated
+        heading: {
+          color: {
+            dark: 'light-4',
+            light: 'dark-3'
+          }
+        }
+      },
+      icons: {
+        collapse: _FormUp.FormUp,
+        expand: _FormDown.FormDown
+        // color: { dark: undefined, light: undefined },
+      }
+    },
+    anchor: {
+      color: {
+        dark: 'accent-1',
+        light: 'brand'
+      },
+      gap: 'small',
+      hover: {
+        textDecoration: 'underline'
+        // fontWeight: undefined,
+        // extend: undefined,
+      },
+      // icon: {
+      //   color: undefined
+      // },
+      iconOnly: {
+        pad: 'small'
+      },
+      textDecoration: 'none',
+      fontWeight: 600
+      // size: {
+      //   medium: {
+      //     color: undefined,
+      //     fontWeight: undefined,
+      //     textDecoration: undefined,
+      //     gap: undefined,
+      //   },
+      // },
+      // extend: undefined,
+    },
+    avatar: {
+      // extend: undefined,
+      size: {
+        xsmall: baseSpacing * 0.75 + "px",
+        // 18px
+        small: baseSpacing + "px",
+        // 24px
+        medium: baseSpacing * 2 + "px",
+        // default 48px
+        large: baseSpacing * 3 + "px",
+        // 72px
+        xlarge: baseSpacing * 4 + "px",
+        // 96px
+        '2xl': baseSpacing * 5 + "px",
+        // 120px
+        '3xl': baseSpacing * 6 + "px",
+        // 144px
+        '4xl': baseSpacing * 7 + "px",
+        // 168px
+        '5xl': baseSpacing * 8 + "px" // 192px
+      },
+      text: {
+        size: {
+          xsmall: 'small',
+          // 14px
+          small: 'medium',
+          // 18px
+          medium: 'large',
+          // 22px
+          large: 'xlarge',
+          // 26px
+          xlarge: 'xxlarge',
+          // 34px
+          '2xl': '3xl',
+          // 42px
+          '3xl': '4xl',
+          // 54px
+          '4xl': '5xl',
+          // 70px
+          '5xl': '6xl' // 90px
+        }
+        // fontWeight: undefined,
+        // extend: undefined
+      }
+    },
+    box: {
+      border: {
+        offset: 'xsmall'
+      },
+      responsiveBreakpoint: 'small' // when we switch rows to columns
+      // extend: undefined,
+    },
+    button: {
+      intelligentPad: true,
+      // background: undefined,
+      badge: {
+        // align: undefined,,
+        container: {
+          background: 'brand'
+          // pad: undefined,
+          // extend: undefined,
+        },
+        size: {
+          medium: baseSpacing + "px" // 24px
+        },
+        text: {
+          size: {
+            medium: 'small' // 14px
+          }
+        }
+      },
+      busy: {
+        gap: 'small'
+        // icons: {
+        //   success: undefined,
+        // },
+      },
+      gap: 'small',
+      size: {
+        small: {
+          border: {
+            radius: baseSpacing * 0.75 + "px"
+          },
+          pad: {
+            vertical: baseSpacing / 4 - borderWidth + "px",
+            // 4px
+            horizontal: baseSpacing - borderWidth * 2 + "px" // 20px,
+          }
+          // iconOnly: {
+          //   pad: undefined,
+          // },
+        },
+        medium: {
+          border: {
+            radius: baseSpacing * 0.75 + "px" // 18px
+          },
+          pad: {
+            vertical: baseSpacing / 4 - borderWidth + "px",
+            // 4px
+            horizontal: baseSpacing - borderWidth + "px" // 22px
+          }
+          // iconOnly: {
+          //   pad: undefined,
+          // },
+        },
+        large: {
+          border: {
+            radius: baseSpacing + "px" // 24px
+          },
+          pad: {
+            vertical: baseSpacing / 4 + borderWidth + "px",
+            // 8px
+            horizontal: baseSpacing + borderWidth * 4 + "px" // 32px,
+          }
+          // iconOnly: {
+          //   pad: undefined,
+          // },
+        }
+      },
+      border: {
+        // color: { dark: undefined, light: undefined }
+        width: borderWidth + "px",
+        radius: baseSpacing * 0.75 + "px"
+      },
+      // color: { dark: undefined, light: undefined },
+      // elevation: undefined,
+      // default: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   direction: undefined,
+      //   elevation: undefined,
+      //   font: {
+      //     size: undefined,
+      //     weight: undefined,
+      //   },
+      //   icon: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   reverse: undefined,
+      //   extend: undefined,
+      // },
+      // primary: {
+      //   font: {
+      //     size: undefined,
+      //     weight: undefined,
+      //   },
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   direction: undefined,
+      //   elevation: undefined,
+      //   icon: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   reverse: undefined,
+      //   extend: undefined,
+      // },
+      // secondary: {
+      //   font: {
+      //     size: undefined,
+      //     weight: undefined,
+      //   },
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   direction: undefined,
+      //   elevation: undefined,
+      //   icon: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   reverse: undefined,
+      //   extend: undefined,
+      // },
+      // option: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   direction: undefined,
+      //   elevation: undefined,
+      //   icon: undefined,
+      //   padding: {
+      //     vertical: undefined,
+      //     horizontal: undefined,
+      //   },
+      //   reverse: undefined,
+      //   extend: undefined,
+      // },
+      active: {
+        background: 'active-background',
+        //   border: undefined,
+        color: 'active-text'
+        //   extend: undefined,
+        //   default: {},
+        //   primary: {},
+        //   secondary: {},
+      },
+      disabled: {
+        //   background: undefined,
+        //   border: undefined,
+        //   color: undefined,
+        opacity: 0.3
+        //   extend: undefined,
+        //   default: {},
+        //   primary: {},
+        //   secondary: {},
+      },
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      //   color: undefined,
+      //   extend: undefined,
+      //   default: {},
+      //   primary: {},
+      //   secondary: {},
+      // },
+      padding: {
+        vertical: baseSpacing / 4 - borderWidth + "px",
+        horizontal: baseSpacing - borderWidth + "px"
+      },
+      transition: {
+        timing: 'ease-in-out',
+        duration: 0.1,
+        properties: ['color', 'background-color', 'border-color', 'box-shadow']
+      },
+      skeleton: {
+        width: {
+          min: '100px'
+        }
+      }
+    },
+    calendar: {
+      day: {
+        // adjacent: {
+        //   color: undefined,
+        // },
+        hover: {
+          background: 'active-background'
+          // color: undefined,
+        },
+        selected: {
+          // background: undefined,
+          // color: undefined,
+          font: {
+            weight: 'bold'
+          }
+          // hover: {
+          //   background: undefined,
+          //   color: undefined,
+          // },
+        },
+        inRange: {
+          // color: undefined,
+          font: {
+            weight: 'bold'
+          }
+          // hover: {
+          //   background: undefined,
+          //   color: undefined,
+          // },
+        }
+        // extend: undefined,
+      },
+      // range: {
+      //   background: undefined,
+      // },
+      // daySize must align with global.size
+      small: {
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
+        // title: {},
+        fontSize: baseFontSize - fontScale + "px",
+        title: {
+          container: {
+            pad: {
+              horizontal: 'xsmall'
+            }
+          }
+        },
+        lineHeight: 1.375,
+        daySize: baseSpacing * 8 / 7 + "px",
+        slideDuration: '0.2s'
+      },
+      medium: {
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
+        // title: {},
+        fontSize: baseFontSize + "px",
+        title: {
+          container: {
+            pad: {
+              horizontal: 'small'
+            }
+          }
+        },
+        lineHeight: 1.45,
+        daySize: baseSpacing * 16 / 7 + "px",
+        slideDuration: '0.5s'
+      },
+      large: {
+        // day: {
+        //   round: undefined,
+        // },
+        // range: {
+        //   round: undefined,
+        //   start: {
+        //     round: undefined,
+        //   },
+        //   end: {
+        //     round: undefined,
+        //   },
+        // },
+        // title: {},
+        fontSize: baseFontSize + 3 * fontScale + "px",
+        title: {
+          container: {
+            pad: {
+              horizontal: 'medium'
+            }
+          }
+        },
+        lineHeight: 1.11,
+        daySize: baseSpacing * 32 / 7 + "px",
+        slideDuration: '0.8s'
+      },
+      icons: {
+        previous: _Previous.Previous,
+        next: _Next.Next,
+        small: {
+          previous: _FormPrevious.FormPrevious,
+          next: _FormNext.FormNext
+        }
+      },
+      heading: {
+        level: '4'
+      } // level ranges from 1-6
+    },
+    card: {
+      container: {
+        round: 'small',
+        elevation: 'small'
+        // extend: undefined,
+      },
+      // hover: {
+      //   container: {
+      //     elevation: undefined,
+      //   },
+      // },
+      header: {},
+      body: {},
+      footer: {}
+    },
+    cards: {
+      container: {
+        // any box props
+        gap: 'xsmall'
+        // extend: undefined,
+      },
+      grid: {
+        columns: 'small',
+        gap: 'medium'
+      }
+    },
+    carousel: {
+      icons: {
+        current: _Subtract.Subtract,
+        next: _Next.Next,
+        previous: _Previous.Previous
+        // color: { dark: undefined, light: undefined },
+      },
+      animation: {
+        duration: 1000
+      },
+      disabled: {
+        icons: {
+          // color: { dark: undefined, light: undefined },
+        }
+      }
+    },
+    chart: {
+      color: 'graph-0',
+      height: 'small',
+      thickness: 'medium',
+      width: 'medium'
+      // extend: undefined,
+    },
+    checkBox: {
+      border: {
+        color: {
+          dark: 'rgba(255, 255, 255, 0.5)',
+          light: 'rgba(0, 0, 0, 0.15)'
+        },
+        width: '2px'
+      },
+      check: {
+        // extend: undefined,
+        radius: '4px',
+        thickness: '4px'
+      },
+      label: {
+        align: 'center'
+      },
+      // color: { dark: undefined, light: undefined },
+      // extend: undefined,
+      gap: 'small',
+      hover: {
+        border: {
+          color: {
+            dark: 'white',
+            light: 'black'
+          }
+        }
+        // background: undefined,
+        // extend: undefined,
+      },
+      icon: {
+        // size: undefined,
+        // extend: undefined,
+      },
+      icons: {
+        // checked: undefined,
+        // indeterminate: undefined,
+      },
+      // pad: undefined,
+      size: baseSpacing + "px",
+      toggle: {
+        // background: undefined
+        color: {
+          dark: '#d9d9d9',
+          light: '#d9d9d9'
+        },
+        knob: {
+          // extend: undefined,
+        },
+        radius: baseSpacing + "px",
+        size: baseSpacing * 2 + "px"
+        // extend: undefined,
+      }
+    },
+    checkBoxGroup: {
+      container: {
+        //   // any box props
+        //   extend: undefined,
+        gap: 'small'
+      }
+    },
+    clock: {
+      analog: {
+        // extend: undefined,
+        hour: {
+          color: {
+            dark: 'light-2',
+            light: 'dark-3'
+          },
+          width: baseSpacing / 3 + "px",
+          size: baseSpacing + "px",
+          shape: 'round'
+        },
+        minute: {
+          color: {
+            dark: 'light-4',
+            light: 'dark-3'
+          },
+          width: baseSpacing / 6 + "px",
+          size: Math.round(baseSpacing / 2) + "px",
+          shape: 'round'
+        },
+        second: {
+          color: {
+            dark: 'accent-1',
+            light: 'accent-1'
+          },
+          width: baseSpacing / 8 + "px",
+          size: Math.round(baseSpacing / 2.666) + "px",
+          shape: 'round'
+        },
+        size: {
+          xsmall: baseSpacing * 2 + "px",
+          small: baseSpacing * 3 + "px",
+          medium: baseSpacing * 4 + "px",
+          large: baseSpacing * 6 + "px",
+          xlarge: baseSpacing * 9 + "px",
+          xxlarge: baseSpacing * 12 + "px",
+          huge: baseSpacing * 12 + "px" // kept for backwards compatibility
+        }
+      },
+      digital: {
+        text: {
+          xsmall: {
+            size: baseFontSize - 2 * fontScale + "px",
+            height: 1.5
+          },
+          small: {
+            size: baseFontSize - fontScale + "px",
+            height: 1.43
+          },
+          medium: {
+            size: baseFontSize + "px",
+            height: 1.375
+          },
+          large: {
+            size: baseFontSize + fontScale + "px",
+            height: 1.167
+          },
+          xlarge: {
+            size: baseFontSize + 2 * fontScale + "px",
+            height: 1.1875
+          },
+          xxlarge: {
+            size: baseFontSize + 4 * fontScale + "px",
+            height: 1.125
+          }
+        }
+      }
+    },
+    collapsible: {
+      minSpeed: 200,
+      baseline: 500
+    },
+    data: {
+      // button: {
+      //   kind: undefined,
+      // },
+      drop: {
+        pad: 'small'
+      },
+      toolbar: {
+        gap: 'medium'
+      }
+    },
+    dataChart: {
+      // colors: [],
+      gap: 'small',
+      // granularity: {
+      //   y: {},
+      // },
+      detail: {
+        gap: 'xsmall',
+        pad: 'small'
+      },
+      halfPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall'
+      },
+      legend: {
+        margin: {
+          top: 'small'
+        },
+        gap: 'small',
+        item: {
+          gap: 'xsmall',
+          pad: {
+            horizontal: 'small',
+            vertical: 'xsmall'
+          }
+        }
+      },
+      // orderedSizes: undefined,
+      size: {
+        height: 'small'
+      },
+      thickness: {
+        veryDense: 'hair',
+        dense: 'xsmall',
+        heavy: 'small',
+        moderate: 'medium',
+        light: 'large',
+        sparse: 'xlarge'
+      },
+      thicknessPad: {
+        xlarge: 'large',
+        large: 'medium',
+        medium: 'small',
+        small: 'xsmall',
+        xsmall: 'xxsmall'
+      }
+    },
+    dataFilter: {
+      rangeSelector: {
+        size: 'full',
+        round: 'small'
+      },
+      selectMultiple: {
+        dropHeight: 'medium'
+      }
+    },
+    dataFilters: {
+      // icons: {
+      //   close: undefined,
+      //   filter: undefined,
+      // }
+      footer: {
+        actions: {
+          margin: {
+            top: 'medium'
+          },
+          gap: 'small'
+        }
+      },
+      clearControl: {
+        margin: {
+          start: 'small'
+        }
+      },
+      pad: 'medium',
+      width: {
+        min: 'medium'
+      }
+    },
+    dateInput: {
+      button: {
+        margin: 'small'
+      },
+      container: {
+        round: 'xxsmall'
+      },
+      icon: {
+        // calendar: undefined,
+        size: 'medium'
+      }
+    },
+    dataSearch: {
+      // icons: {
+      //   search: undefined,
+      // },
+    },
+    dataSort: {
+      // icons: {
+      //   control: undefined,
+      // },
+    },
+    dataSummary: {
+      margin: {
+        vertical: 'xsmall'
+      },
+      separator: {
+        margin: {
+          horizontal: 'small'
+        }
+      }
+    },
+    dataTable: {
+      // body: {
+      //   extend: undefined,
+      //   row: {
+      //     extend: undefined,
+      //   }
+      //   selected: undefined,
+      // },
+      expand: {
+        size: 'xxsmall'
+      },
+      pinned: {
+        // body: {
+        //    background: undefined,
+        //    extend: undefined,
+        // },
+        header: {
+          background: {
+            opacity: 'strong'
+          }
+          //  extend: undefined,
+        },
+        footer: {
+          background: {
+            opacity: 'strong'
+          }
+          //  extend: undefined,
+        }
+      },
+      container: {
+        // any box props
+        gap: 'xsmall'
+        // extend: undefined,
+      },
+      groupHeader: {
+        // background: undefined,
+        // border: undefined,
+        // pad: undefined,
+      },
+      groupEnd: {
+        border: {
+          side: 'bottom',
+          size: 'xsmall'
+        }
+      },
+      header: {
+        // background: undefined,
+        // border: undefined,
+        // color: undefined,
+        // extend: undefined,
+        // font: {
+        //   weight: undefined,
+        //   size: undefined,
+        // },
+        gap: 'small',
+        // hover: {
+        //   background: undefined,
+        // },
+        // pad: undefined,
+        units: {
+          color: 'text-xweak',
+          margin: {
+            left: 'xsmall'
+          },
+          alignSelf: 'end'
+        }
+      },
+      icons: {
+        ascending: _FormDown.FormDown,
+        contract: _FormUp.FormUp,
+        descending: _FormUp.FormUp,
+        expand: _FormDown.FormDown
+        // resizeDecrease: undefined,
+        // resizeIncrease: undefined,
+        // search: undefined,
+        // sortable: undefined,
+      },
+      primary: {
+        weight: 'bold'
+      },
+      resize: {
+        border: {
+          color: 'border',
+          side: 'end'
+        },
+        // hover: {
+        //   border: {
+        //     color: undefined,
+        //     side: undefined,
+        //     size: undefined,
+        //   },
+        // },
+        padding: {
+          vertical: 'xsmall'
+        }
+      },
+      search: {
+        pad: {
+          left: 'small'
+        },
+        text: {
+          pad: {
+            horizontal: 'small'
+          }
+        }
+      },
+      sort: {
+        gap: 'xsmall'
+      }
+    },
+    dataTableColumns: {
+      // icons: {
+      //   control: undefined,
+      //   pinned: undefined,
+      //   search: undefined,
+      // }
+      tabs: {
+        pad: 'small'
+      },
+      selectColumns: {
+        pad: {
+          vertical: 'small'
+        },
+        gap: 'xsmall'
+      },
+      orderColumns: {
+        pad: {
+          top: 'small'
+        }
+      }
+    },
+    diagram: {
+      // extend: undefined,
+      line: {
+        color: 'graph-0'
+      }
+    },
+    distribution: {
+      gap: 'xsmall'
+    },
+    // drop: {
+    //   extend: undefined,
+    //   maxHeight: undefined,
+    // },
+    fileInput: {
+      anchor: {
+        margin: 'small'
+      },
+      // background: {},
+      border: {
+        // color: undefined,
+        side: 'all',
+        size: 'small',
+        style: 'dashed'
+      },
+      dragOver: {
+        border: {
+          color: 'control'
+        }
+        // extend: undefined,
+      },
+      hover: {
+        border: {
+          color: 'brand'
+        }
+        // extend: undefined,
+      },
+      icons: {
+        // error: undefined,
+        remove: _FormClose.FormClose
+      },
+      // pad: {},
+      label: {
+        gap: 'xsmall',
+        margin: 'small'
+        // extend: undefined,
+      },
+      message: {
+        margin: 'small'
+        // extend: undefined,
+      }
+      // extend: undefined,
+    },
+    footer: {
+      gap: 'medium'
+    },
+    formField: {
+      // [inputname]: {
+      //  container: {
+      //    extend: undefined,
+      //   }
+      // }
+      border: {
+        color: 'border',
+        error: {
+          color: {
+            dark: 'white',
+            light: 'status-critical'
+          }
+        },
+        position: 'inner',
+        side: 'bottom'
+      },
+      // checkBox: {
+      //   pad: undefined,
+      // },
+      content: {
+        // margin: undefined,
+        pad: 'small'
+      },
+      disabled: {
+        background: {
+          color: 'status-disabled',
+          opacity: 'medium'
+        }
+        // border: {
+        //   color: undefined,
+        // },
+        // label: {
+        //   color: undefined,
+        // },
+        // help: {
+        //   color: undefined,
+        // },
+        // info: {
+        //   color: undefined,
+        // },
+      },
+      focus: {
+        containerFocus: true
+        // background: {
+        //   color: undefined,
+        // },
+        // border: {
+        //   color: undefined,
+        // },
+      },
+      error: {
+        color: 'status-critical',
+        margin: {
+          vertical: 'xsmall',
+          horizontal: 'small'
+        }
+        // background: undefined,
+        // container: {}, // any Box props
+        // icon: undefined,
+      },
+      // extend: undefined,
+      help: {
+        color: 'dark-2',
+        margin: {
+          start: 'small'
+        }
+      },
+      info: {
+        color: 'text-xweak',
+        margin: {
+          vertical: 'xsmall',
+          horizontal: 'small'
+        }
+        // container: {}, // any Box props
+        // icon: undefined,
+      },
+      label: {
+        margin: {
+          vertical: 'xsmall',
+          horizontal: 'small'
+        }
+        // requiredIndicator: undefined,
+      },
+      margin: {
+        bottom: 'small'
+      },
+      // round: undefined,
+      survey: {
+        label: {
+          margin: {
+            bottom: 'xsmall'
+          },
+          size: 'medium',
+          weight: 400
+        }
+      }
+    },
+    grommet: {
+      // extend: undefined
+    },
+    header: {
+      sticky: {
+        zIndex: '20'
+      },
+      gap: 'medium'
+    },
+    heading: {
+      // color: undefined,
+      font: {
+        // family: undefined
+      },
+      level: {
+        1: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: _extends({}, fontSizing(4)),
+          medium: _extends({}, fontSizing(8)),
+          large: _extends({}, fontSizing(16)),
+          xlarge: _extends({}, fontSizing(24))
+        },
+        2: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: _extends({}, fontSizing(2)),
+          medium: _extends({}, fontSizing(4)),
+          large: _extends({}, fontSizing(8)),
+          xlarge: _extends({}, fontSizing(12))
+        },
+        3: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: _extends({}, fontSizing(1)),
+          medium: _extends({}, fontSizing(2)),
+          large: _extends({}, fontSizing(4)),
+          xlarge: _extends({}, fontSizing(6))
+        },
+        4: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: _extends({}, fontSizing(0)),
+          medium: _extends({}, fontSizing(0)),
+          large: _extends({}, fontSizing(0)),
+          xlarge: _extends({}, fontSizing(0))
+        },
+        5: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: _extends({}, fontSizing(-0.5)),
+          medium: _extends({}, fontSizing(-0.5)),
+          large: _extends({}, fontSizing(-0.5)),
+          xlarge: _extends({}, fontSizing(-0.5))
+        },
+        6: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: _extends({}, fontSizing(-1)),
+          medium: _extends({}, fontSizing(-1)),
+          large: _extends({}, fontSizing(-1)),
+          xlarge: _extends({}, fontSizing(-1))
+        }
+      },
+      responsiveBreakpoint: 'small',
+      // when we scale the font size down
+      weight: 600,
+      skeleton: {
+        width: {
+          min: '150px',
+          max: '200px'
+        }
+      }
+    },
+    layer: {
+      background: {
+        dark: 'black',
+        light: 'white'
+      },
+      border: {
+        radius: '4px'
+        // intelligentRounding: undefined,
+      },
+      container: {
+        // elevation: undefined,
+        zIndex: '20',
+        height: {
+          min: 'xxsmall'
+        }
+      },
+      // extend: undefined,
+      overlay: {
+        background: 'rgba(0, 0, 0, 0.5)'
+        // backdropFilter: undefined,
+      },
+      responsiveBreakpoint: 'small',
+      // when Layer takes over the full screen
+      zIndex: '20'
+    },
+    list: {
+      container: {
+        // any box props
+        gap: 'xsmall'
+        // extend: undefined,
+      },
+      item: {
+        // background: undefined,
+        border: 'horizontal',
+        disabled: {
+          color: 'status-disabled',
+          cursor: 'default'
+        },
+        gap: 'medium',
+        pinned: {
+          background: 'background-contrast',
+          icon: {
+            size: 'medium',
+            pad: 'small'
+          }
+        },
+        pad: {
+          horizontal: 'medium',
+          vertical: 'small'
+        }
+        // extend: undefined,
+      },
+      primaryKey: {
+        // any text props
+        weight: 'bold'
+      },
+      icons: {
+        down: _FormDown.FormDown,
+        up: _FormUp.FormUp,
+        pin: _FormPin.FormPin
+      }
+      // extend: undefined,
+    },
+    maskedInput: {
+      // container: {
+      //   extend: undefined,
+      // },
+      // extend: undefined,
+      // disabled: { opacity: undefined },
+    },
+    menu: {
+      // background: undefined,
+      // extend: undefined,
+      // item: undefined,
+      drop: {
+        align: {
+          top: 'top',
+          left: 'left'
+        }
+        // any drop props
+      },
+      // container: {
+      //   // any box props
+      // },
+      group: {
+        container: {
+          pad: {
+            vertical: 'xsmall'
+          }
+        },
+        separator: {
+          color: 'border',
+          size: 'xsmall',
+          pad: {
+            horizontal: 'small'
+          }
+        }
+      },
+      icons: {
+        down: _FormDown.FormDown
+        // up: undefined,
+        // color: { dark: undefined, light: undefined },
+      }
+      // disabled: {
+      //   icons: {
+      //     color: undefined,
+      //   },
+      // },
+    },
+    meter: {
+      background: {
+        color: 'light-2',
+        opacity: 'medium'
+      },
+      color: 'graph-0'
+      // colors: [] || colors: ['graph-0', 'graph-1', 'graph-2', 'graph-3'],
+      // extend: undefined,
+      // gap: undefined,
+    },
+    nameValueList: {
+      gap: {
+        column: 'large',
+        row: 'small'
+      },
+      pair: {
+        column: {
+          gap: {
+            column: 'large',
+            row: 'medium'
+          }
+        }
+      },
+      name: {
+        width: 'small'
+      },
+      value: {
+        width: 'medium'
+      }
+    },
+    nameValuePair: {
+      column: {
+        gap: 'xxsmall'
+      },
+      name: {
+        // any text props
+        color: 'text',
+        weight: 'bold'
+      },
+      value: {
+        // any text props
+        color: 'text'
+      }
+    },
+    nav: {
+      gap: 'medium'
+    },
+    notification: {
+      actions: {
+        // any anchor props
+        margin: {
+          right: 'xsmall'
+        }
+      },
+      direction: 'column',
+      container: {
+        // any box props
+        round: 'xsmall',
+        pad: {
+          horizontal: 'small',
+          vertical: 'xsmall'
+        },
+        background: {
+          color: 'background-front'
+        }
+      },
+      gap: 'small',
+      global: {
+        direction: 'row',
+        container: {
+          // any box props
+          round: 'none',
+          pad: {
+            horizontal: 'large',
+            vertical: 'xsmall'
+          }
+        }
+      },
+      toast: {
+        // direction: undefined,
+        container: {
+          // any box props
+          elevation: 'medium',
+          width: 'medium'
+        },
+        layer: {
+          position: 'top',
+          margin: 'medium'
+        },
+        time: 8000
+      },
+      iconContainer: {
+        // any box props
+        pad: {
+          right: 'small'
+        },
+        flex: false
+      },
+      textContainer: {
+        // any box props
+        gap: 'medium'
+      },
+      title: {
+        // any text props
+        weight: 'bold'
+      },
+      message: {
+        // any text props
+        margin: 'none',
+        // fill: undefined,
+        text: {
+          margin: {
+            right: 'xsmall'
+          }
+        }
+      },
+      close: {
+        icon: _FormClose.FormClose
+      },
+      critical: {
+        icon: _StatusCriticalSmall.StatusCriticalSmall,
+        background: {
+          color: 'status-critical',
+          opacity: 'weak'
+        },
+        color: 'status-critical',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
+        // global: {},
+        toast: {
+          background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
+        }
+      },
+      warning: {
+        icon: _StatusWarningSmall.StatusWarningSmall,
+        background: {
+          color: 'status-warning',
+          opacity: 'weak'
+        },
+        color: 'status-warning',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
+        // global: {},
+        toast: {
+          background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
+        }
+      },
+      normal: {
+        icon: _StatusGoodSmall.StatusGoodSmall,
+        background: {
+          color: 'status-ok',
+          opacity: 'weak'
+        },
+        color: 'status-ok',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
+        // global: {},
+        toast: {
+          background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
+        }
+      },
+      info: {
+        icon: _CircleInformation.CircleInformation,
+        background: 'background-contrast',
+        color: 'text-strong',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
+        // global: {},
+        toast: {
+          background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
+        }
+      },
+      unknown: {
+        icon: _StatusUnknownSmall.StatusUnknownSmall,
+        background: {
+          color: 'status-unknown',
+          opacity: 'weak'
+        },
+        color: 'status-unknown',
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
+        // global: {},
+        toast: {
+          background: 'background-front'
+          // message: {
+          //   color: undefined,
+          // },
+          // title: {
+          //   color: undefined,
+          // },
+        }
+      },
+      // deprecate "undefined" in v3
+      // and if undefined, no icon
+      undefined: {
+        icon: _StatusUnknownSmall.StatusUnknownSmall,
+        // background: undefined,
+        color: 'status-unknown'
+        // message: {
+        //   color: undefined,
+        // },
+        // title: {
+        //   color: undefined,
+        // },
+        // global: {},
+        // toast: {},
+      }
+    },
+    page: {
+      wide: {
+        alignSelf: 'center',
+        width: {
+          min: 'medium',
+          max: 'xxlarge'
+        },
+        small: {
+          pad: {
+            horizontal: 'large'
+          }
+        },
+        medium: {
+          pad: {
+            horizontal: 'medium'
+          }
+        },
+        large: {
+          pad: {
+            horizontal: 'large'
+          }
+        }
+      },
+      narrow: {
+        alignSelf: 'center',
+        width: {
+          min: 'medium',
+          max: 'large'
+        },
+        small: {
+          pad: {
+            horizontal: 'large'
+          }
+        },
+        medium: {
+          pad: {
+            horizontal: 'medium'
+          }
+        },
+        large: {
+          pad: {
+            horizontal: 'large'
+          }
+        }
+      },
+      full: {
+        alignSelf: 'start',
+        width: {
+          min: 'medium',
+          max: '100%'
+        },
+        small: {
+          pad: {
+            horizontal: 'large'
+          }
+        },
+        medium: {
+          pad: {
+            horizontal: 'medium'
+          }
+        },
+        large: {
+          pad: {
+            horizontal: 'large'
+          }
+        }
+      }
+    },
+    pageHeader: {
+      actions: {
+        // any box props
+        align: 'end'
+      },
+      pad: {
+        top: 'large',
+        bottom: 'medium'
+      },
+      parent: {
+        // any box props
+        align: 'start'
+      },
+      responsive: {
+        actions: {
+          // any box props
+          align: 'start',
+          pad: {
+            top: 'small'
+          }
+        },
+        areas: [['parent'], ['title'], ['subtitle'], ['actions']],
+        breakpoints: ['small'],
+        columns: ['auto'],
+        rows: ['auto']
+        // gap: undefined,
+      },
+      subtitle: {
+        // any paragraph props
+        margin: 'none'
+      },
+      title: {
+        // any heading props
+        margin: 'none',
+        fill: true
+      },
+      size: {
+        small: {
+          pad: {
+            top: 'medium',
+            bottom: 'small'
+          },
+          subtitle: {
+            size: 'small'
+          },
+          title: {
+            size: 'small'
+          }
+        },
+        // medium: {
+        //   // pad: undefined,
+        //   // subtitle: {},
+        //   // title: {},
+        // },
+        large: {
+          pad: {
+            top: 'xlarge',
+            bottom: 'large'
+          },
+          subtitle: {
+            size: 'large'
+          },
+          title: {
+            size: 'large'
+          }
+        }
+      },
+      small: {
+        areas: [['parent', 'parent'], ['title', 'actions'], ['subtitle', 'actions']],
+        columns: [['small', 'flex'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+        gap: {
+          row: 'xsmall',
+          column: 'large'
+        }
+      },
+      medium: {
+        areas: [['parent', 'parent'], ['title', 'actions'], ['subtitle', 'actions']],
+        columns: [['medium', 'flex'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+        gap: {
+          row: 'xsmall',
+          column: 'medium'
+        }
+      },
+      large: {
+        areas: [['parent', 'parent'], ['title', 'actions'], ['subtitle', 'actions']],
+        columns: [['medium', 'flex'], 'auto'],
+        rows: ['auto', 'auto', 'auto'],
+        gap: {
+          row: 'xsmall',
+          column: 'large'
+        }
+      }
+    },
+    pagination: {
+      button: {
+        active: {
+          background: {
+            color: 'active-background'
+          }
+        },
+        color: 'text-strong',
+        hover: {
+          background: {
+            color: 'background-contrast'
+          },
+          color: undefined
+        },
+        size: {
+          small: {
+            border: {
+              radius: baseSpacing / 8 + "px",
+              // 3
+              width: '2px'
+            },
+            pad: {
+              vertical: "4px",
+              horizontal: "4px"
+            },
+            font: _extends({}, fontSizing(-1)),
+            height: baseSpacing * 1.25 + "px",
+            width: baseSpacing * 1.25 + "px"
+          },
+          medium: {
+            border: {
+              radius: baseSpacing / 6 + "px",
+              // 4
+              width: '2px'
+            },
+            pad: {
+              vertical: "4px",
+              horizontal: "4px"
+            },
+            font: _extends({}, fontSizing(0)),
+            height: baseSpacing * 1.5 + "px",
+            width: baseSpacing * 1.5 + "px"
+          },
+          large: {
+            border: {
+              radius: baseSpacing / 4 + "px",
+              // 6
+              width: '2px'
+            },
+            pad: {
+              vertical: "4px",
+              horizontal: "4px"
+            },
+            font: _extends({}, fontSizing(1)),
+            height: baseSpacing * 2 + "px",
+            width: baseSpacing * 2 + "px"
+          }
+        }
+      },
+      container: {
+        gap: {
+          column: 'xsmall',
+          row: 'small'
+        }
+        // any box props,
+        // extend: undefined,
+      },
+      controls: {
+        align: 'center',
+        direction: 'row',
+        gap: 'xxsmall',
+        margin: 'none',
+        pad: 'none'
+      },
+      icons: {
+        // color: undefined,
+        next: _Next.Next,
+        previous: _Previous.Previous
+      },
+      step: {
+        container: {
+          gap: 'xsmall'
+        }
+      }
+    },
+    paragraph: {
+      font: {
+        // family: undefined
+      },
+      small: _extends({}, fontSizing(-1)),
+      medium: _extends({}, fontSizing(0)),
+      large: _extends({}, fontSizing(1)),
+      xlarge: _extends({}, fontSizing(2)),
+      xxlarge: _extends({}, fontSizing(4)),
+      skeleton: {
+        gap: 'xsmall'
+      }
+    },
+    thumbsRating: {
+      // dislike: {
+      //   color: undefined,
+      // },
+      // icons: {
+      //   dislike: undefined,
+      //   dislikeSelected: undefined,
+      //   like: undefined,
+      //   likeSelected: undefined,
+      // }
+      // like: {
+      //   color: undefined,
+      // },
+    },
+    spinner: {
+      container: {
+        animation: 'rotateRight',
+        color: 'brand',
+        pad: 'small',
+        round: 'full',
+        size: 'small'
+      },
+      // icon: undefined
+      responsive: true,
+      size: {
+        xsmall: baseSpacing * 0.75 + "px",
+        small: baseSpacing + "px",
+        // default 24
+        medium: baseSpacing * 2 + "px",
+        large: baseSpacing * 3 + "px",
+        xlarge: baseSpacing * 4 + "px"
+      }
+    },
+    radioButton: {
+      border: {
+        color: {
+          dark: 'rgba(255, 255, 255, 0.5)',
+          light: 'rgba(0, 0, 0, 0.15)'
+        },
+        width: '2px'
+      },
+      // background: {
+      //   color: undefined,
+      // },
+      check: {
+        radius: '100%'
+        // background: {
+        //  color: undefined,
+        // },
+        // color: { dark: undefined, light: undefined },
+        // extend: undefined,
+      },
+      // color: undefined,
+      hover: {
+        // background: {
+        //   color: undefined,
+        // },
+        border: {
+          color: {
+            dark: 'white',
+            light: 'black'
+          }
+        }
+      },
+      icon: {
+        // size: undefined,
+        // extend: undefined,
+      },
+      icons: {
+        // circle: undefined,
+      },
+      gap: 'small',
+      size: baseSpacing + "px",
+      font: {
+        // weight: undefined,
+      },
+      container: {
+        // extend: undefined
+      }
+    },
+    radioButtonGroup: {
+      // any box props
+      container: {
+        gap: 'small'
+      }
+    },
+    rangeInput: {
+      disabled: {
+        opacity: 0.3
+        //   thumb: {
+        //     color: undefined,
+        //   },
+        //   track: {
+        //     color: undefined,
+        //   },
+      },
+      // extend: undefined
+      track: {
+        height: '4px',
+        color: 'border'
+        // opacity: undefined,
+        // lower: {
+        //   color: 'undefined',
+        //   opacity: undefined,
+        // },
+        // upper: {
+        //   color: undefined,
+        //   opacity: undefined,
+        // },
+        // extend: undefined
+      },
+      thumb: {
+        // color: { dark: undefined, light: undefined },
+        // extend: undefined
+      }
+      // wheel: undefined
+    },
+    rangeSelector: {
+      background: {
+        invert: {
+          color: 'light-4'
+        }
+      },
+      edge: {
+        // type: undefined,
+        // size: undefined,
+      },
+      label: {
+        margin: {
+          horizontal: 'small'
+        }
+      }
+    },
+    select: {
+      // background: undefined,
+      clear: {
+        container: {
+          pad: 'small',
+          background: 'background-contrast'
+          // hover: {
+          //   // any box props
+          // },
+        },
+        // any box props
+        text: {
+          color: 'text-weak'
+        } // any text props
+      },
+      container: {
+        // extend: undefined,
+      },
+      control: {
+        // extend: undefined,
+        // open: undefined,
+      },
+      // emptySearchMessage: {
+      //   container: {}, // any box props
+      //   text: {}, // any text props
+      // },
+      icons: {
+        // color: { dark: undefined, light: undefined },
+        margin: {
+          horizontal: 'small'
+        },
+        down: _FormDown.FormDown
+        // up: undefined
+      },
+      // listbox: {
+      //   extend: undefined,
+      // },
+      options: {
+        container: {
+          align: 'start',
+          pad: 'small'
+        },
+        text: {
+          margin: 'none'
+        }
+      },
+      search: {
+        pad: 'xsmall'
+      },
+      // searchInput: undefined,
+      step: 20
+    },
+    selectMultiple: {
+      help: {
+        container: {
+          pad: 'xsmall'
+        }
+      },
+      maxInline: 5,
+      // listbox: {
+      //   extend: () => undefined,
+      // },
+      option: {
+        pad: 'xsmall'
+      },
+      search: {
+        pad: 'xsmall'
+      },
+      showMore: {
+        pad: {
+          horizontal: 'small',
+          bottom: 'small',
+          top: 'xsmall'
+        }
+      },
+      summary: {
+        gap: 'small',
+        height: {
+          min: 'xxsmall'
+        },
+        pad: 'xsmall',
+        showSelectedInline: {
+          pad: {
+            left: 'xsmall',
+            vertical: 'xsmall'
+          }
+        }
+      }
+    },
+    sidebar: {
+      gap: 'large',
+      pad: 'small'
+    },
+    skeleton: {
+      border: false,
+      colors: {
+        dark: ['background', 'background-front'],
+        light: ['background', 'background-back']
+      }
+      // extend: undefined,
+    },
+    skipLinks: {
+      position: 'top',
+      container: {
+        elevation: 'large',
+        round: 'small',
+        pad: 'medium'
+      },
+      label: {
+        margin: {
+          bottom: 'medium'
+        },
+        size: 'medium'
+      }
+    },
+    starRating: {
+      // color: undefined,
+      // icons: {
+      //   selected: undefined,
+      //   unselected: undefined,
+      // },
+    },
+    tab: {
+      active: {
+        color: 'text'
+        // background: undefined,
+      },
+      // background: undefined,
+      border: {
+        side: 'bottom',
+        size: 'small',
+        color: {
+          dark: 'accent-1',
+          light: 'brand'
+        },
+        active: {
+          color: {
+            dark: 'white',
+            light: 'black'
+          }
+        },
+        disabled: {
+          // color: undefined,
+        },
+        hover: {
+          color: {
+            dark: 'white',
+            light: 'black'
+          }
+          // extend: undefined,
+        }
+      },
+      color: 'control',
+      // disabled: {
+      //   color: undefined,
+      // },
+      // extend: undefined,
+      gap: 'small',
+      hover: {
+        // background: undefined,
+        // extend: undefined,
+        color: {
+          dark: 'white',
+          light: 'black'
+        }
+      },
+      margin: {
+        vertical: 'xxsmall',
+        horizontal: 'small'
+      },
+      pad: {
+        bottom: 'xsmall'
+      }
+    },
+    tabs: {
+      // background: undefined,
+      // extend: undefined,
+      // gap: undefined,
+      header: {
+        // alignSelf: undefined,
+        // background: undefined,
+        // border: {
+        //   side: undefined,
+        //   size: undefined,
+        //   style: undefined,
+        //   color: undefined,
+        // },
+        // extend: undefined,
+        nextButton: {
+          // icon: undefined,
+          pad: {
+            horizontal: 'small',
+            vertical: 'xsmall'
+          }
+        },
+        previousButton: {
+          // icon: undefined,
+          pad: {
+            horizontal: 'small',
+            vertical: 'xsmall'
+          }
+        }
+      },
+      panel: {
+        // extend: undefined,
+      },
+      step: {
+        small: 1,
+        medium: 3,
+        large: 3
+      }
+    },
+    stepper: {
+      indicator: {
+        size: 'medium',
+        // 'small' | 'medium' | 'large'
+        border: {
+          width: '2px'
+        }
+      },
+      label: {
+        size: 'medium',
+        substep: {
+          size: 'small'
+        }
+      },
+      connector: {
+        stroke: {
+          width: '2px'
+        }
+      },
+      description: {
+        size: 'small',
+        color: 'text-weak',
+        margin: {
+          top: 'hair'
+        }
+      },
+      helperText: {
+        size: 'xsmall',
+        color: 'text-weak',
+        margin: {
+          top: 'xsmall'
+        }
+      },
+      horizontal: {
+        gap: 0
+      },
+      vertical: {
+        gap: 0
+      },
+      hover: {
+        background: 'background-contrast',
+        border: 'text-strong'
+      },
+      // States: [component].[state].[element].[property]
+      pending: {
+        indicator: {
+          background: 'background-front',
+          color: 'text-strong',
+          border: 'text-xweak',
+          substep: {
+            icon: _Radial.Radial,
+            iconSize: 'small'
+          },
+          hover: {
+            background: 'background-front',
+            border: 'text-strong'
+          }
+        },
+        label: {
+          color: 'text',
+          weight: 'normal'
+        },
+        connector: {
+          color: 'border'
+        }
+      },
+      current: {
+        indicator: {
+          icon: _StatusGoodSmall.StatusGoodSmall,
+          iconSize: 'medium',
+          background: 'brand',
+          color: 'white',
+          border: 'brand',
+          substep: {
+            iconSize: 'small'
+          },
+          hover: {
+            color: 'white'
+          }
+        },
+        label: {
+          color: {
+            dark: 'text-strong',
+            light: 'brand'
+          },
+          weight: 'normal'
+        }
+      },
+      currentCompleted: {
+        indicator: {
+          icon: _FormCheckmark.FormCheckmark,
+          iconSize: 'medium',
+          background: 'brand',
+          color: 'white',
+          border: 'brand',
+          substep: {
+            iconSize: 'small'
+          },
+          hover: {
+            color: 'white'
+          }
+        },
+        label: {
+          color: {
+            dark: 'text-strong',
+            light: 'brand'
+          },
+          weight: 'normal'
+        }
+      },
+      completed: {
+        indicator: {
+          icon: _FormCheckmark.FormCheckmark,
+          iconSize: 'medium',
+          background: 'background-front',
+          color: 'brand',
+          border: 'brand',
+          substep: {
+            iconSize: 'small'
+          },
+          hover: {
+            background: 'background-front'
+          }
+        },
+        label: {
+          color: 'text-weak',
+          weight: 'normal'
+        },
+        connector: {
+          color: 'brand'
+        }
+      },
+      error: {
+        indicator: {
+          icon: _StatusCriticalSmall.StatusCriticalSmall,
+          background: 'background-front',
+          color: 'status-critical',
+          border: 'status-critical',
+          substep: {
+            iconSize: 'small'
+          },
+          hover: {
+            background: 'background-front'
+          }
+        },
+        label: {
+          color: 'text',
+          weight: 'normal'
+        },
+        connector: {
+          color: 'status-critical'
+        },
+        helperText: {
+          color: 'status-critical'
+        }
+      },
+      currentError: {
+        indicator: {
+          icon: _StatusCriticalSmall.StatusCriticalSmall,
+          background: 'status-critical',
+          color: 'white',
+          border: 'status-critical',
+          substep: {
+            iconSize: 'small'
+          },
+          hover: {
+            color: 'white'
+          }
+        },
+        label: {
+          color: 'status-critical',
+          weight: 'normal'
+        }
+      },
+      disabled: {
+        indicator: {
+          background: 'background-contrast',
+          color: 'text-weak',
+          border: 'border',
+          substep: {
+            iconSize: 'small'
+          }
+        },
+        label: {
+          color: 'text-weak',
+          weight: 'normal'
+        },
+        connector: {
+          color: 'border'
+        }
+      }
+    },
+    wizard: {
+      container: {
+        gap: 'none',
+        background: 'background-back'
+      },
+      // Per-`kind` max-width applied to the centered content column inside
+      // the scroll region. Header and footer always span the full wizard
+      // width; only the middle column is constrained. Values may be any
+      // Grommet size token (e.g. 'large', 'xlarge') or a CSS length.
+      // `full` intentionally has no maxWidth (content stretches).
+      kind: {
+        full: {
+          maxWidth: undefined
+        },
+        narrow: {
+          maxWidth: 'large'
+        },
+        wide: {
+          maxWidth: 'xlarge'
+        }
+      },
+      body: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'large'
+        },
+        gap: 'medium'
+      },
+      header: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'small'
+        },
+        background: 'background-front',
+        height: 'xxsmall',
+        title: {
+          level: 3,
+          size: 'medium'
+        }
+      },
+      progress: {
+        horizontal: {
+          pad: {
+            horizontal: 'none',
+            vertical: 'none'
+          }
+        },
+        vertical: {
+          // Fixed rail width so the progress column does not collapse
+          // to hug its own label text. Consumers can override via
+          // theme.wizard.progress.vertical.width (any Grommet size
+          // token or CSS length) to widen or narrow the rail.
+          width: 'small',
+          pad: {
+            horizontal: 'xsmall',
+            vertical: 'none'
+          }
+        }
+      },
+      stepCounter: {
+        size: 'small',
+        color: 'text',
+        weight: 'normal',
+        margin: {
+          bottom: 'xsmall'
+        }
+      },
+      stepHeader: {
+        pad: {
+          horizontal: 'none',
+          vertical: 'none'
+        },
+        title: {
+          level: 2,
+          size: 'large'
+        },
+        description: {
+          size: 'medium',
+          color: 'text-weak',
+          margin: {
+            top: 'xsmall',
+            bottom: 'none'
+          }
+        }
+      },
+      content: {
+        pad: 'medium',
+        background: 'background-front',
+        round: 'small',
+        margin: {
+          top: 'medium'
+        }
+        // Consumers can override the content box size via theme tokens
+        // (any Grommet size token or CSS length). Left unset by default
+        // so the content column fills the wizard body.
+        // width: undefined,
+        // height: undefined,
+        // align: undefined,
+      },
+      footer: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'none'
+        },
+        gap: 'small',
+        background: 'background-front',
+        justify: 'end',
+        height: 'xxsmall',
+        button: {
+          primary: 'next',
+          previous: {
+            kind: 'secondary'
+          },
+          cancel: {
+            plain: true
+          },
+          skip: {
+            kind: 'secondary'
+          }
+        }
+      },
+      error: {
+        icon: undefined,
+        helperText: {
+          color: 'status-error',
+          size: 'small',
+          margin: {
+            top: 'xsmall'
+          }
+        }
+      },
+      icons: {
+        next: _FormNext.FormNext,
+        previous: _FormPrevious.FormPrevious,
+        complete: undefined,
+        cancel: undefined,
+        skip: _FormNext.FormNext,
+        close: _FormClose.FormClose
+      }
+    },
+    table: {
+      caption: {
+        margin: {
+          bottom: 'xxsmall'
+        }
+      },
+      header: {
+        align: 'start',
+        pad: {
+          horizontal: 'small',
+          vertical: 'xsmall'
+        },
+        border: 'bottom'
+        // verticalAlign: undefined,
+        // background: undefined,
+        // extend: undefined,
+      },
+      body: {
+        align: 'start',
+        pad: {
+          horizontal: 'small',
+          vertical: 'xsmall'
+        }
+        // background: undefined,
+        // border: undefined,
+        // extend: undefined,
+      },
+      // row: {
+      //   hover: {
+      //     background: undefined,
+      //     color: undefined,
+      //   },
+      // },
+      footer: {
+        align: 'start',
+        pad: {
+          horizontal: 'small',
+          vertical: 'xsmall'
+        },
+        border: 'top'
+        // verticalAlign: undefined,
+        // background: undefined,
+        // extend: undefined,
+      }
+    },
+    tag: {
+      // background: undefined,
+      border: true,
+      // hover: {
+      //   background: undefined,
+      //   border: undefined,
+      // },
+      round: 'large',
+      // name: undefined,
+      pad: {
+        horizontal: 'small',
+        vertical: 'xsmall'
+      },
+      remove: {
+        margin: {
+          right: 'xsmall'
+        }
+        // kind: undefined,
+      },
+      separator: ' : ',
+      size: {
+        xsmall: {
+          pad: {
+            horizontal: baseSpacing / 3 + "px",
+            vertical: 'xxsmall'
+          },
+          icon: {
+            size: baseSpacing * 0.75 + "px"
+          }
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
+        },
+        small: {
+          pad: {
+            horizontal: baseSpacing * 0.4 + "px",
+            vertical: 'xxsmall'
+          },
+          icon: {
+            size: baseSpacing * 0.75 + "px"
+          }
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
+        },
+        large: {
+          pad: {
+            horizontal: baseSpacing / 3 * 2 + "px",
+            vertical: "xsmall"
+          },
+          icon: {
+            size: baseSpacing * 1.25 + "px"
+          }
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
+        },
+        xlarge: {
+          pad: {
+            horizontal: baseSpacing * 0.75 + "px",
+            vertical: 'xsmall'
+          },
+          icon: {
+            size: baseSpacing * 1.5 + "px"
+          }
+          // remove: {
+          //   margin: undefined,
+          //   size: undefined,
+          // },
+        }
+      },
+      value: {
+        weight: 600
+      },
+      icons: {
+        remove: _FormClose.FormClose
+      }
+    },
+    text: {
+      font: {
+        // family: undefined
+      },
+      xsmall: _extends({}, fontSizing(-1.5)),
+      small: _extends({}, fontSizing(-1)),
+      medium: _extends({}, fontSizing(0)),
+      // 18px
+      large: _extends({}, fontSizing(1)),
+      // 22px
+      xlarge: _extends({}, fontSizing(2)),
+      xxlarge: _extends({}, fontSizing(4)),
+      '2xl': _extends({}, fontSizing(4)),
+      '3xl': _extends({}, fontSizing(6)),
+      '4xl': _extends({}, fontSizing(9)),
+      '5xl': _extends({}, fontSizing(13)),
+      '6xl': _extends({}, fontSizing(18)),
+      skeleton: {
+        width: {
+          width: '100px',
+          min: '100px'
+        },
+        margin: {
+          vertical: 'xsmall'
+        },
+        colors: {
+          dark: ['border', 'border'],
+          light: ['background-front', 'background-back']
+        }
+      }
+    },
+    textArea: {
+      // extend: undefined,
+      // disabled: { opacity: undefined },
+    },
+    textInput: {
+      // extend: undefined,
+      // disabled: { opacity: undefined },
+      // icons: {
+      //   copy: undefined,
+      // },
+    },
+    tip: {
+      content: {
+        // any Box props
+        background: 'background-contrast',
+        elevation: 'small',
+        margin: 'xsmall',
+        pad: {
+          vertical: 'xsmall',
+          horizontal: 'small'
+        },
+        round: 'small'
+      },
+      drop: {
+        // any props for the drop
+        align: {
+          top: 'bottom'
+        },
+        // most common use case is Header with Buttons
+        background: 'none',
+        elevation: 'none',
+        margin: 'none'
+      }
+    },
+    toggleGroup: {
+      button: {
+        // border: {
+        //   radius: undefined,
+        // }
+        // iconOnly: {
+        //   pad: undefined,
+        // },
+        // kind: undefined,
+        pad: {
+          horizontal: '11px',
+          vertical: '11px'
+        }
+      },
+      container: {
+        round: 'xsmall',
+        border: true
+        // extend: undefined,
+      },
+      divider: {
+        color: 'border'
+      }
+    },
+    toolbar: {
+      small: {
+        gap: 'small'
+      },
+      gap: 'small'
+    },
+    video: {
+      captions: {
+        background: 'rgba(0, 0, 0, 0.7)'
+      },
+      // controls: { background: undefined },
+      icons: {
+        closedCaption: _ClosedCaption.ClosedCaption,
+        configure: _Actions.Actions,
+        fullScreen: _Expand.Expand,
+        pause: _Pause.Pause,
+        play: _Play.Play,
+        reduceVolume: _VolumeLow.VolumeLow,
+        volume: _Volume.Volume,
+        description: _AssistListening.AssistListening
+        // color: { dark: undefined, light: undefined },
+      },
+      scrubber: {
+        color: 'light-4',
+        interval: 10,
+        // track: { color: undefined }
+        thickness: 'small'
+      },
+      time: {
+        container: {
+          pad: {
+            horizontal: 'small'
+          }
+        }
+      }
+    },
+    worldMap: {
+      color: 'light-3',
+      continent: {
+        active: '8px',
+        base: '6px'
+      },
+      hover: {
+        color: 'light-4'
+      },
+      place: {
+        active: '20px',
+        base: '8px'
+      }
+    }
+  });
+  return (0, _object.deepFreeze)(result);
+};
+var base = exports.base = generate(24);

@@ -1,1 +1,0 @@
-export { AccordionPanel } from './AccordionPanel';

@@ -1,0 +1,38 @@
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = exports.Fit = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _grommet = require("grommet");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var Fit = exports.Fit = function Fit() {
+  return (
+    /*#__PURE__*/
+    // Uncomment <Grommet> lines when using outside of storybook
+    // <Grommet theme={...}>
+    _react["default"].createElement(_grommet.Box, {
+      align: "start",
+      gap: "medium"
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      height: "small",
+      width: "small",
+      border: true
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      fit: "contain",
+      alt: "fit contain image"
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+      height: "small",
+      width: "small",
+      border: true
+    }, /*#__PURE__*/_react["default"].createElement(_grommet.Image, {
+      src: "//v2.grommet.io/assets/IMG_4245.jpg",
+      fit: "cover",
+      alt: "fit cover image"
+    })))
+    // </Grommet>
+  );
+};
+var _default = exports["default"] = {
+  title: 'Media/Image/Fit'
+};

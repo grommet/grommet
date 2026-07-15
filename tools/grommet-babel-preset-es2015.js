@@ -1,12 +1,1 @@
-const ENV = process.env.BABEL_ENV;
-
-module.exports = function () {
-  return {
-    presets: [
-      ['@babel/preset-env', {
-        loose: true,
-        modules: ENV === 'es6' ? false : 'commonjs',
-      }],
-    ],
-  };
-};
+const ENV=process.env.BABEL_ENV;module.exports=function(){return{presets:[["@babel/preset-env",{loose:!0,modules:"es6"!==ENV&&"commonjs"}]]}};

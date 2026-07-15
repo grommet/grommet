@@ -1,1 +1,0 @@
-export { DataSearch } from './DataSearch';

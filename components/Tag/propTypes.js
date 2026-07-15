@@ -1,0 +1,24 @@
+"use strict";
+
+exports.__esModule = true;
+exports.TagPropTypes = void 0;
+var _propTypes = _interopRequireDefault(require("prop-types"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var PropType = {};
+if (process.env.NODE_ENV !== 'production') {
+  PropType = {
+    children: _propTypes["default"].node,
+    name: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].string]),
+    value: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].string]),
+    onClick: _propTypes["default"].func,
+    onRemove: _propTypes["default"].func,
+    messages: _propTypes["default"].shape({
+      removeLabel: _propTypes["default"].shape({
+        nameAndValue: _propTypes["default"].string,
+        valueOnly: _propTypes["default"].string
+      })
+    }),
+    size: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _propTypes["default"].string])
+  };
+}
+var TagPropTypes = exports.TagPropTypes = PropType;

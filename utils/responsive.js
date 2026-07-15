@@ -1,0 +1,74 @@
+"use strict";
+
+exports.__esModule = true;
+exports.supportsContainerQueries = exports.isSmall = exports.getDeviceBreakpoint = exports.getBreakpointStyle = exports.getBreakpoint = exports.deviceResponsive = void 0;
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var getBreakpoint = exports.getBreakpoint = function getBreakpoint(viewportWidth, theme) {
+  var sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(function (a, b) {
+    var first = theme.global.breakpoints[a];
+    var second = theme.global.breakpoints[b];
+    if (!first) return 1;
+    if (!second) return -1;
+    if (!first.value) return 1;
+    if (!second.value) return -1;
+    return first.value - second.value;
+  });
+
+  // the last breakpoint on the sorted array should have
+  // no windowWidth boundaries
+  var lastBreakpoint = sortedBreakpoints[sortedBreakpoints.length - 1];
+  var result = sortedBreakpoints.find(function (name) {
+    var breakpoint = theme.global.breakpoints[name];
+    return !breakpoint.value || breakpoint.value >= viewportWidth ? name : false;
+  });
+  return result || lastBreakpoint;
+};
+var getDeviceBreakpoint = exports.getDeviceBreakpoint = function getDeviceBreakpoint(type, theme) {
+  return theme.global.deviceBreakpoints[type];
+};
+var getBreakpointStyle = exports.getBreakpointStyle = function getBreakpointStyle(theme, breakpointSize) {
+  var breakpoint = breakpointSize && theme.global.breakpoints[breakpointSize] || {};
+  if (!breakpoint.edgeSize) breakpoint.edgeSize = theme.global.edgeSize;
+  if (!breakpoint.borderSize) breakpoint.borderSize = theme.global.borderSize;
+  if (!breakpoint.radius) breakpoint.radius = theme.global.radius;
+  if (!breakpoint.size) breakpoint.size = theme.global.size;
+  return breakpoint;
+};
+
+// for checks that look for a small screen size, flag for xsmall
+// as well since we use xsmall in the hpe theme
+var isSmall = exports.isSmall = function isSmall(size) {
+  return ['xsmall', 'small'].includes(size);
+};
+var deviceResponsive = exports.deviceResponsive = function deviceResponsive(userAgent, theme) {
+  // log('--deviceResponsive', userAgent, theme);
+  /*
+   * Regexes provided for mobile and tablet detection are meant to replace
+   * a full-featured specific library due to contributing a considerable size
+   * into the bundle.
+   *
+   * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
+   */
+  if (userAgent) {
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
+      return getDeviceBreakpoint('tablet', theme);
+    }
+    if (/Mobile|iPhone|Android/.test(userAgent)) {
+      return getDeviceBreakpoint('phone', theme);
+    }
+    return getDeviceBreakpoint('computer', theme);
+  }
+  return undefined;
+};
+
+// styled-components v6 and later do not have a withComponent
+// method. We need v6 or later to support container queries.
+var testComp = _styledComponents["default"].div.withConfig({
+  displayName: "responsive__testComp",
+  componentId: "sc-336m7y-0"
+})(["display:flex;"]);
+var supportsContainerQueries = exports.supportsContainerQueries = function supportsContainerQueries() {
+  var isPreV6 = typeof testComp.withComponent === 'function';
+  return !isPreV6;
+};
