@@ -8317,29 +8317,29 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
 
 exports[`Pagination should display next page of results when "next" is\\n  selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 jhJvIT"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kBbldi Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 kvqQSo Pagination__StyledPaginationContainer-sc-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 kBbldi"
+      class="StyledBox-sc-13pk1d4-0 kvqQSo"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 bPPvCJ"
+        class="StyledBox-sc-13pk1d4-0 fLmLVT"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 bKxNBy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 cyhaTC StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 cDZJSy"
+              class="StyledIcon-sc-ofa7kd-0 dQGxSn"
               viewBox="0 0 24 24"
             >
               <path
@@ -8352,92 +8352,92 @@ exports[`Pagination should display next page of results when "next" is\\n  selec
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             1
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 kgFhFU StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 ecJohc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             2
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             3
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             4
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             5
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 cejToA StyledPageControl__StyledSeparator-sc-1vlfaez-2 fyjSEJ"
+            class="StyledText-sc-1sadyjn-0 iuKlFO StyledPageControl__StyledSeparator-sc-1vlfaez-2 buAJMe"
           >
             …
           </span>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             24
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 bKxNBy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 cyhaTC StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 cDZJSy"
+              class="StyledIcon-sc-ofa7kd-0 dQGxSn"
               viewBox="0 0 24 24"
             >
               <path
@@ -9399,29 +9399,29 @@ exports[`Pagination should display previous page of results when "previous" is\\
 
 exports[`Pagination should display previous page of results when "previous" is\\n  selected 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 iQmOCy"
+  class="StyledGrommet-sc-19lkkz7-0 jhJvIT"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kBbldi Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+    class="StyledBox-sc-13pk1d4-0 kvqQSo Pagination__StyledPaginationContainer-sc-rnlw6m-0"
   >
     <nav
       aria-label="Pagination Navigation"
-      class="StyledBox-sc-13pk1d4-0 kBbldi"
+      class="StyledBox-sc-13pk1d4-0 kvqQSo"
     >
       <ul
-        class="StyledBox-sc-13pk1d4-0 bPPvCJ"
+        class="StyledBox-sc-13pk1d4-0 fLmLVT"
       >
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to previous page"
-            class="StyledButtonKind-sc-1vhfpnt-0 bKxNBy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 cyhaTC StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-sc-ofa7kd-0 cDZJSy"
+              class="StyledIcon-sc-ofa7kd-0 dQGxSn"
               viewBox="0 0 24 24"
             >
               <path
@@ -9434,92 +9434,92 @@ exports[`Pagination should display previous page of results when "previous" is\\
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 1"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             1
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-current="page"
             aria-label="Go to page 2"
-            class="StyledButtonKind-sc-1vhfpnt-0 kgFhFU StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 ecJohc StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             2
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 3"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             3
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 4"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             4
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 5"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             5
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 cejToA StyledPageControl__StyledSeparator-sc-1vlfaez-2 fyjSEJ"
+            class="StyledText-sc-1sadyjn-0 iuKlFO StyledPageControl__StyledSeparator-sc-1vlfaez-2 buAJMe"
           >
             …
           </span>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to page 24"
-            class="StyledButtonKind-sc-1vhfpnt-0 isArty StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 eQoSrm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             24
           </button>
         </li>
         <li
-          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 budBqk"
+          class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jLcxjj"
         >
           <button
             aria-label="Go to next page"
-            class="StyledButtonKind-sc-1vhfpnt-0 bKxNBy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 gHDXxA"
+            class="StyledButtonKind-sc-1vhfpnt-0 cyhaTC StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 iIrhyI"
             type="button"
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-sc-ofa7kd-0 cDZJSy"
+              class="StyledIcon-sc-ofa7kd-0 dQGxSn"
               viewBox="0 0 24 24"
             >
               <path

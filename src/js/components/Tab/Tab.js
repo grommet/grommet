@@ -25,6 +25,7 @@ const Tab = forwardRef(
       onMouseOut,
       reverse,
       onClick,
+      onKeyDown,
       ...rest
     },
     ref,
@@ -32,9 +33,12 @@ const Tab = forwardRef(
     const {
       active,
       activeIndex,
+      focusable,
       index,
+      panelId,
       ref: tabsContextRef,
       onActivate,
+      onKeyDown: onTabsKeyDown,
       setActiveContent,
       setActiveTitle,
       setFocusIndex,
@@ -103,6 +107,16 @@ const Tab = forwardRef(
       onActivate();
       if (onClick) {
         onClick(event);
+      }
+    };
+
+    const onKeyDownTab = (event) => {
+      if (disabled) return;
+
+      onTabsKeyDown(event);
+
+      if (onKeyDown) {
+        onKeyDown(event);
       }
     };
 
@@ -192,19 +206,21 @@ const Tab = forwardRef(
         ref={tabRef}
         plain
         role="tab"
+        tabIndex={focusable ? 0 : -1}
+        aria-controls={panelId}
         aria-selected={active}
-        aria-expanded={active}
         disabled={disabled}
         {...rest}
         onClick={onClickTab}
+        onKeyDown={onKeyDownTab}
         onMouseOver={onMouseOverTab}
         onMouseOut={onMouseOutTab}
-        onFocus={() => {
-          if (onFocus) onFocus();
+        onFocus={(event) => {
+          if (onFocus) onFocus(event);
           setFocusIndex(index);
         }}
-        onBlur={() => {
-          if (onBlur) onBlur();
+        onBlur={(event) => {
+          if (onBlur) onBlur(event);
           setFocusIndex(-1);
         }}
       >

@@ -30,6 +30,11 @@ if (process.env.NODE_ENV !== 'production') {
           nextMove: PropTypes.string,
           next: PropTypes.string,
         }),
+        cards: PropTypes.shape({
+          moved: PropTypes.string,
+          reorderHint: PropTypes.string,
+          description: PropTypes.string,
+        }),
         carousel: PropTypes.shape({
           previous: PropTypes.string,
           next: PropTypes.string,
@@ -39,6 +44,7 @@ if (process.env.NODE_ENV !== 'production') {
           openCalendar: PropTypes.string,
           enterCalendar: PropTypes.string,
           exitCalendar: PropTypes.string,
+          outOfBounds: PropTypes.string,
         }),
         dataChart: PropTypes.shape({
           detailTitle: PropTypes.string,
@@ -207,6 +213,8 @@ if (process.env.NODE_ENV !== 'production') {
           skipTo: PropTypes.string,
         }),
         tabs: PropTypes.shape({
+          nextTab: PropTypes.string,
+          previousTab: PropTypes.string,
           tabContents: PropTypes.string,
         }),
         tag: PropTypes.shape({
