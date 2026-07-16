@@ -1066,7 +1066,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         background: 'active-background',
         round: 'xsmall',
         indicator: {
-          color: 'black',
+          color: { dark: 'white', light: 'black' },
           size: 'small',
         },
       },

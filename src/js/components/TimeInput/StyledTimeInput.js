@@ -149,7 +149,10 @@ export const StyledTimeInputSegment = styled.span.withConfig(
         bottom: 0;
         height: ${activeBorderSize};
         background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.indicator?.color || 'black',
+          props.theme.timeInput?.active?.indicator?.color || {
+            dark: 'white',
+            light: 'black',
+          },
           props.theme,
         )};
         border-bottom-left-radius: ${activeRound};
