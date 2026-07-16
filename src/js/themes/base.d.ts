@@ -995,12 +995,9 @@ export interface ThemeType {
     container?: {
       round?: RoundType;
     };
-    segment?: {
-      gap?: string;
-    };
     active?: {
       background?: ColorType;
-      round?: RoundType;
+      pad?: string;
       indicator?: {
         color?: ColorType;
         size?: string;

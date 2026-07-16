@@ -1059,12 +1059,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'small',
       },
-      segment: {
-        gap: 'xxsmall',
-      },
       active: {
         background: 'active-background',
-        round: 'hair',
+        pad: 'xxsmall',
         indicator: {
           color: { dark: 'white', light: 'black' },
           size: 'small',

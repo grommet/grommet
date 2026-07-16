@@ -103,9 +103,9 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   position: relative;
   line-height: inherit;
   padding-inline: ${(props) => {
-    const gapToken = props.theme.timeInput?.segment?.gap;
+    const padToken = props.theme.timeInput?.active?.pad;
 
-    return props.theme.global.edgeSize?.[gapToken] || gapToken;
+    return props.theme.global.edgeSize?.[padToken] || padToken;
   }};
   color: ${(props) =>
     normalizeColor(
@@ -116,11 +116,10 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   ${(props) => {
     if (!props.$active) return '';
 
-    const activeRoundToken = props.theme.timeInput?.active?.round;
-    const activeRound =
-      props.theme.global.radius?.[activeRoundToken] ||
-      props.theme.global.edgeSize?.[activeRoundToken] ||
-      activeRoundToken;
+    // The active indicator's corner rounding is intentionally a fixed
+    // "hair" edge size rather than a theme-exposed value we can expose
+    // theme in future.
+    const activeRound = props.theme.global.edgeSize?.hair;
 
     const activeBorderToken = props.theme.timeInput?.active?.indicator?.size;
     const activeBorderSize =
