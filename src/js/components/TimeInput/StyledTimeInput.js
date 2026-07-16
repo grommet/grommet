@@ -88,11 +88,6 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
   display: inline-flex;
   align-items: center;
   line-height: inherit;
-  margin-inline: ${(props) => {
-    const gapToken = props.theme.timeInput?.separator?.gap;
-
-    return props.theme.global.edgeSize?.[gapToken] || gapToken;
-  }};
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
@@ -107,6 +102,11 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   align-items: center;
   position: relative;
   line-height: inherit;
+  padding-inline: ${(props) => {
+    const gapToken = props.theme.timeInput?.segment?.gap;
+
+    return props.theme.global.edgeSize?.[gapToken] || gapToken;
+  }};
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,

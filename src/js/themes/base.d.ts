@@ -990,12 +990,12 @@ export interface ThemeType {
   };
   timeInput?: {
     button?: {
-      margin?: MarginType;
+      margin?: string;
     };
     container?: {
       round?: RoundType;
     };
-    separator?: {
+    segment?: {
       gap?: string;
     };
     active?: {
