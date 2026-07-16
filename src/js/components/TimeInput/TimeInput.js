@@ -820,8 +820,8 @@ const TimeInput = forwardRef(
             border={!plainProp}
             fill
             round={
-              theme.global?.control?.border?.radius ||
-              theme.timeInput?.container?.round
+              theme.timeInput?.container?.round ||
+              theme.global?.control?.border?.radius
             }
             disabled={disabled}
             readOnlyProp={readOnly}
