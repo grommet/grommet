@@ -990,7 +990,7 @@ export interface ThemeType {
   };
   timeInput?: {
     button?: {
-      margin?: string;
+      margin?: MarginType;
     };
     container?: {
       round?: RoundType;
