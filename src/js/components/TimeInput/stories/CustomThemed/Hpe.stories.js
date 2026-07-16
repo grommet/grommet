@@ -4,6 +4,10 @@ import { hpe } from 'grommet-theme-hpe';
 import { Box, Grommet, TimeInput } from 'grommet';
 import { deepMerge, normalizeColor } from 'grommet/utils';
 
+// DELETE BEFORE MERGE: This story is a temporary visual
+//  reference for reviewers to validate the TimeInput
+//  component against the HPE theme.
+
 // Extend the HPE theme with TimeInput-specific overrides.
 // This story exists to validate what the TimeInput needs from the HPE theme
 // and to act as a visual reference for reviewers.
