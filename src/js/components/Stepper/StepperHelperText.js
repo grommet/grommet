@@ -6,11 +6,7 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const StepperHelperText = ({ variant, ...rest }) => {
   const { theme } = useThemeValue();
 
-  const helperTextProps = theme.stepper?.helperText || {
-    size: 'xsmall',
-    color: 'text-weak',
-    margin: { top: 'xsmall' },
-  };
+  const helperTextProps = theme.stepper?.helperText;
   const variantProps = variant
     ? theme.stepper?.[variant]?.helperText || {}
     : {};
