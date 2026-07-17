@@ -45,6 +45,13 @@ const sectionTypeToSection = {
   meridiem: SECTION_PERIOD,
 };
 
+const getSectionKey = (section) => {
+  if (section === SECTION_HOUR) return 'hour';
+  if (section === SECTION_MINUTE) return 'minute';
+  if (section === SECTION_SECOND) return 'second';
+  return 'period';
+};
+
 const getSectionToken = (section) => {
   if (section === SECTION_HOUR) return 'hh';
   if (section === SECTION_MINUTE) return 'mm';
@@ -244,6 +251,59 @@ const TimeInput = forwardRef(
       onInvalid: handleInvalid,
     });
 
+    // Builds the announcement text for a given section: its current value
+    // (e.g. "3 hours") if it has one, or just the section name (e.g. "hours
+    // selected") when it doesn't yet. Called explicitly on every navigation
+    // and edit interaction so screen readers hear meaningful feedback instead
+    // of the raw separator/placeholder characters in the native input value.
+    const getSectionValueAnnouncement = useCallback(
+      (section) => {
+        if (section === SECTION_PERIOD) {
+          if (sections.period === undefined) {
+            return formatMessage({
+              id: 'timeInput.activeSection',
+              messages,
+              values: { section: getSectionName(section, format) },
+            });
+          }
+
+          return formatMessage({
+            id: 'timeInput.activePeriodValue',
+            messages,
+            values: { period: sections.period },
+          });
+        }
+
+        const sectionKey = getSectionKey(section);
+        const sectionValue = sections[sectionKey];
+
+        if (sectionValue === undefined) {
+          return formatMessage({
+            id: 'timeInput.activeSection',
+            messages,
+            values: { section: getSectionName(section, format) },
+          });
+        }
+
+        return formatMessage({
+          id: 'timeInput.activeSectionValue',
+          messages,
+          values: {
+            value: sectionValue,
+            section: getSectionName(section, format),
+          },
+        });
+      },
+      [format, formatMessage, messages, sections],
+    );
+
+    const announceActiveSection = useCallback(
+      (section) => {
+        announce(getSectionValueAnnouncement(section));
+      },
+      [announce, getSectionValueAnnouncement],
+    );
+
     const ranges = useMemo(
       () => buildSectionRanges(sectionOrder),
       [sectionOrder],
@@ -421,9 +481,11 @@ const TimeInput = forwardRef(
         displaySectionRef.current = section;
         inputRef.current?.focus();
         setActiveSection(section);
+        announceActiveSection(section);
         selectSectionText(section);
       },
       [
+        announceActiveSection,
         inputRef,
         readOnly,
         selectSectionText,
@@ -509,9 +571,11 @@ const TimeInput = forwardRef(
         event.preventDefault();
         inputRef.current?.focus();
         setActiveSection(firstSection);
+        announceActiveSection(firstSection);
         selectSectionText(firstSection);
       },
       [
+        announceActiveSection,
         firstSection,
         inputRef,
         onDisplaySectionMouseDown,
@@ -526,8 +590,10 @@ const TimeInput = forwardRef(
       setActiveSection(firstSection);
       setOpen(true);
       announce(formatMessage({ id: 'timeInput.enterDrop', messages }));
+      announceActiveSection(firstSection);
     }, [
       announce,
+      announceActiveSection,
       disabled,
       firstSection,
       formatMessage,
@@ -566,6 +632,7 @@ const TimeInput = forwardRef(
       selectSectionText(firstSection);
       announce(formatMessage({ id: 'timeInput.openDrop', messages }));
       if (inputRest.onFocus) inputRest.onFocus(event);
+      announceActiveSection(firstSection);
     };
 
     const onInputBlur = (event) => {
@@ -593,6 +660,7 @@ const TimeInput = forwardRef(
         event.target.selectionEnd === inputValue.length
       ) {
         setActiveSection(firstSection);
+        announceActiveSection(firstSection);
         selectSectionText(firstSection);
         return;
       }
@@ -603,6 +671,7 @@ const TimeInput = forwardRef(
       );
       setActiveSection(nextSection);
       selectSectionText(nextSection);
+      announceActiveSection(nextSection);
     };
 
     const onInputSelect = (event) => {
@@ -624,6 +693,7 @@ const TimeInput = forwardRef(
         return;
       }
 
+      if (activeSection !== nextSection) announceActiveSection(nextSection);
       setActiveSection(nextSection);
       selectSectionText(nextSection);
     };
@@ -650,6 +720,7 @@ const TimeInput = forwardRef(
           return;
         }
 
+        if (activeSection !== nextSection) announceActiveSection(nextSection);
         setActiveSection(nextSection);
         selectSectionText(nextSection);
       };
@@ -660,6 +731,7 @@ const TimeInput = forwardRef(
       };
     }, [
       activeSection,
+      announceActiveSection,
       getSectionRange,
       inputRef,
       resolveSectionFromSelection,
@@ -700,6 +772,7 @@ const TimeInput = forwardRef(
         event.preventDefault();
         const next = moveSection(1);
         setActiveSection(next);
+        announceActiveSection(next);
         selectSectionText(next);
         return;
       }
@@ -707,24 +780,28 @@ const TimeInput = forwardRef(
         event.preventDefault();
         const next = moveSection(-1);
         setActiveSection(next);
+        announceActiveSection(next);
         selectSectionText(next);
         return;
       }
       if (key === 'Home') {
         event.preventDefault();
         setActiveSection(firstSection);
+        announceActiveSection(firstSection);
         selectSectionText(firstSection);
         return;
       }
       if (key === 'End') {
         event.preventDefault();
         setActiveSection(lastSection);
+        announceActiveSection(lastSection);
         selectSectionText(lastSection);
         return;
       }
       if (key === 'ArrowUp') {
         event.preventDefault();
         incrementSection(activeSection, open ? -1 : 1);
+        announceActiveSection(activeSection);
         selectSectionText(activeSection);
         return;
       }
@@ -736,12 +813,14 @@ const TimeInput = forwardRef(
         }
         event.preventDefault();
         incrementSection(activeSection, open ? 1 : -1);
+        announceActiveSection(activeSection);
         selectSectionText(activeSection);
         return;
       }
       if (key === 'Delete' || key === 'Backspace') {
         event.preventDefault();
         clearActiveSection();
+        announceActiveSection(activeSection);
         selectSectionText(activeSection);
         return;
       }
@@ -768,10 +847,12 @@ const TimeInput = forwardRef(
         if (lower === 'a') {
           event.preventDefault();
           setSectionValue(SECTION_PERIOD, 'AM');
+          announceActiveSection(SECTION_PERIOD);
           selectSectionText(SECTION_PERIOD);
         } else if (lower === 'p') {
           event.preventDefault();
           setSectionValue(SECTION_PERIOD, 'PM');
+          announceActiveSection(SECTION_PERIOD);
           selectSectionText(SECTION_PERIOD);
         }
         return;
@@ -782,6 +863,7 @@ const TimeInput = forwardRef(
         const next = applyDigit(Number(key));
         if (next !== undefined) {
           setActiveSection(next);
+          announceActiveSection(next);
           selectSectionText(next);
         }
       }

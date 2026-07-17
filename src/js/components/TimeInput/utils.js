@@ -8,7 +8,7 @@ export const pad = (value) => value.toString().padStart(2, '0');
 export const getSectionName = (section, format) => {
   const names =
     format === '12'
-      ? ['hours', 'minutes', 'seconds', 'AM PM']
+      ? ['hours', 'minutes', 'seconds', 'meridiem']
       : ['hours', 'minutes', 'seconds'];
   return names[section];
 };
