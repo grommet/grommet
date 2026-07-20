@@ -4,10 +4,8 @@ import {
   disabledStyle,
   edgeStyle,
   focusStyle,
-  inputStyle,
   normalizeColor,
   parseMetricToNum,
-  plainInputStyle,
   readOnlyStyle,
   styledComponentsConfig,
 } from '../../utils';
@@ -28,41 +26,13 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
     `}
 `;
 
-export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
-  ${inputStyle}
-  ${plainInputStyle}
-  position: relative;
-  z-index: 1;
-  color: transparent;
-  caret-color: transparent;
-  text-shadow: none;
-
-  &::selection {
-    background: transparent;
-    color: transparent;
-  }
-
-  &::placeholder {
-    color: transparent;
-  }
-`;
-
 export const StyledTimeInputField = styled.div.withConfig(
   styledComponentsConfig,
 )`
-  position: relative;
-  flex: 1 1 auto;
-  min-width: 0;
-`;
-
-export const StyledTimeInputDisplay = styled.div.withConfig(
-  styledComponentsConfig,
-)`
-  position: absolute;
-  inset: 0;
-  z-index: 2;
   display: flex;
   align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
   overflow: hidden;
   ${(props) =>
     props.theme.global.input.padding &&
@@ -88,6 +58,11 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
   display: inline-flex;
   align-items: center;
   line-height: inherit;
+  margin-inline: ${(props) => {
+    const gapToken = props.theme.timeInput?.separator?.gap;
+
+    return props.theme.global.edgeSize?.[gapToken] || gapToken;
+  }};
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
@@ -102,11 +77,13 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   align-items: center;
   position: relative;
   line-height: inherit;
-  padding-inline: ${(props) => {
-    const padToken = props.theme.timeInput?.active?.pad;
+  user-select: none;
+  cursor: default;
 
-    return props.theme.global.edgeSize?.[padToken] || padToken;
-  }};
+  &:focus {
+    outline: none;
+  }
+
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
@@ -116,10 +93,11 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   ${(props) => {
     if (!props.$active) return '';
 
-    // The active indicator's corner rounding is intentionally a fixed
-    // "hair" edge size rather than a theme-exposed value we can expose
-    // theme in future.
-    const activeRound = props.theme.global.edgeSize?.hair;
+    const activeRoundToken = props.theme.timeInput?.active?.round;
+    const activeRound =
+      props.theme.global.radius?.[activeRoundToken] ||
+      props.theme.global.edgeSize?.[activeRoundToken] ||
+      activeRoundToken;
 
     const activeBorderToken = props.theme.timeInput?.active?.indicator?.size;
     const activeBorderSize =

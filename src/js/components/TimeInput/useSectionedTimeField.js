@@ -113,14 +113,13 @@ export const useSectionedTimeField = ({
   onInvalid,
 }) => {
   const editStateRef = useRef({
-    section: SECTION_HOUR,
     digits: 0,
-    previousValue: undefined,
     firstDigit: undefined,
   });
+
   const preserveIncompleteSectionsRef = useRef(false);
-  // Track pending single digit for display without committing
   const [pendingDigits, setPendingDigits] = useState({});
+
   const parsedValue = useMemo(
     () => parseSectionsValue(value, format, sectionOrder),
     [format, sectionOrder, value],
@@ -132,6 +131,13 @@ export const useSectionedTimeField = ({
   const [activeSection, setActiveSection] = useState(
     sectionOrder[0] || SECTION_HOUR,
   );
+
+  // Clear pending edit state if active section
+  //  changes externally (e.g. user tabs away)
+  useEffect(() => {
+    editStateRef.current = { digits: 0, firstDigit: undefined };
+    setPendingDigits({});
+  }, [activeSection]);
 
   useEffect(() => {
     if (!sectionOrder.includes(activeSection)) {
@@ -151,7 +157,6 @@ export const useSectionedTimeField = ({
   const displayValue = useMemo(() => {
     if (!hasAnyValue(sections)) return '';
 
-    // Create a copy of sections with pending digits overlaid for display
     const displaySections = { ...sections };
     const pendingSection = Object.keys(pendingDigits)[0];
     if (pendingSection && pendingDigits[pendingSection] !== undefined) {
@@ -173,9 +178,8 @@ export const useSectionedTimeField = ({
         (section) => nextSections[sectionKey(section)] !== undefined,
       );
 
-      // Check if all numeric sections are valid
       const allValid = sectionOrder.every((section) => {
-        if (!isNumericSection(section)) return true; // skip period
+        if (!isNumericSection(section)) return true;
         const key = sectionKey(section);
         const sectionValue = nextSections[key];
         const min = sectionMin(section, format);
@@ -192,7 +196,6 @@ export const useSectionedTimeField = ({
             })
           : undefined;
 
-      // Mark as incomplete if: sections incomplete OR some invalid
       const hasIncompleteSections = !complete || !allValid;
       preserveIncompleteSectionsRef.current =
         hasIncompleteSections && hasAnyValue(nextSections);
@@ -227,8 +230,9 @@ export const useSectionedTimeField = ({
   const incrementSection = useCallback(
     (section, delta) => {
       if (section === SECTION_PERIOD) {
-        setSectionValue(section, sections.period === 'AM' ? 'PM' : 'AM');
-        return;
+        const nextPeriod = sections.period === 'AM' ? 'PM' : 'AM';
+        setSectionValue(section, nextPeriod);
+        return nextPeriod;
       }
 
       const minValue = sectionMin(section, format);
@@ -278,6 +282,7 @@ export const useSectionedTimeField = ({
       }
 
       setSectionValue(section, next);
+      return next;
     },
     [format, minuteStep, sections, setSectionValue],
   );
@@ -289,46 +294,53 @@ export const useSectionedTimeField = ({
       const minValue = sectionMin(activeSection, format);
       const maxValue = sectionMax(activeSection, format);
       const key = sectionKey(activeSection);
-      const isSameSection = editStateRef.current.section === activeSection;
-      const isSecondDigit = isSameSection && editStateRef.current.digits === 1;
+      const isSecondDigit = editStateRef.current.digits === 1;
       const currentRaw = sections[key] === undefined ? 0 : sections[key];
 
       let nextValue;
+      let shouldCommit = false;
+
       if (isSecondDigit) {
-        // Use the stored first digit from editState
         const firstDigit = editStateRef.current.firstDigit ?? currentRaw % 10;
         nextValue = firstDigit * 10 + digit;
+
         editStateRef.current = {
-          section: activeSection,
           digits: 0,
-          previousValue: editStateRef.current.previousValue,
           firstDigit: undefined,
         };
-        // Clear pending digits since we're committing now
         setPendingDigits({});
+        shouldCommit = true;
       } else {
-        // First digit: store in pending for display only
         nextValue = digit;
-        editStateRef.current = {
-          section: activeSection,
-          digits: 1,
-          previousValue: sections[key],
-          firstDigit: digit,
-        };
-        // Show the first digit in pending state
-        setPendingDigits({ [key]: digit });
+
+        // Auto-commit only if typing this digit leaves absolutely
+        //  no room for a second digit
+        // e.g., typing '3' in hours (max 12). 3 * 10 = 30 > 12.
+        const isUnambiguous = nextValue * 10 > maxValue;
+
+        if (isUnambiguous) {
+          editStateRef.current = {
+            digits: 0,
+            firstDigit: undefined,
+          };
+          setPendingDigits({});
+          shouldCommit = true;
+        } else {
+          editStateRef.current = {
+            digits: 1,
+            firstDigit: digit,
+          };
+          setPendingDigits({ [key]: digit });
+          shouldCommit = false;
+        }
       }
 
-      // For 2nd digit: validate combined value, but allow invalid 1st digit
-      // (allows "0X" patterns in formats where single "0" is invalid)
+      // Validation logic for 2nd digit fallback (MUI behavioral match)
       if (isSecondDigit && (nextValue < minValue || nextValue > maxValue)) {
-        // Combined value invalid. Try to use first digit for current section
-        // and apply second digit to next section (MUI behavior)
         const firstDigit = editStateRef.current.firstDigit ?? currentRaw % 10;
         if (firstDigit >= minValue && firstDigit <= maxValue) {
           setSectionValue(activeSection, firstDigit);
 
-          // Get next section and check if second digit is valid there
           const currentSectionIndex = sectionOrder.indexOf(activeSection);
           const nextSection = sectionOrder[currentSectionIndex + 1];
 
@@ -336,35 +348,28 @@ export const useSectionedTimeField = ({
             const nextMinValue = sectionMin(nextSection, format);
             const nextMaxValue = sectionMax(nextSection, format);
 
-            // If second digit is valid for next section, apply it there
             if (digit >= nextMinValue && digit <= nextMaxValue) {
               setSectionValue(nextSection, digit);
-              // Now move to section after that
               return moveSection(2);
             }
           }
-
-          // If second digit not valid for next section, just move to next
           return moveSection(1);
         }
 
-        // If even first digit alone is invalid, reject the entry
         onInvalid?.();
         setPendingDigits({});
         return undefined;
       }
 
-      // MUI Pattern: Determine if we should commit and move to next section
-      // shouldGoToNextSection = nextValue * 10 > max || digitCount === 2
+      // Determine focus advance path
       const shouldMoveToNextSection =
         nextValue * 10 > maxValue || isSecondDigit;
 
-      setSectionValue(activeSection, nextValue);
+      if (shouldCommit) {
+        setSectionValue(activeSection, nextValue);
+      }
 
       if (shouldMoveToNextSection) {
-        // Don't move past the last section during digit entry
-        // (Tab navigation can still wrap, but digit entry stops at last
-        // section)
         const currentIndex = sectionOrder.indexOf(activeSection);
         const isLastSection = currentIndex === sectionOrder.length - 1;
 
