@@ -197,6 +197,10 @@
   "skipLinks": {
     "skipTo": "Skip To:"
   },
+  "stepper": {
+    "progress": "Progress",
+    "step": "Step {step} of {total}: {title}"
+  },
   "tabs": {
     "nextTab": "Next Tab",
     "previousTab": "Previous Tab",

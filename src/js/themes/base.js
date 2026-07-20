@@ -3,6 +3,7 @@ import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
+import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 import { FormDown } from 'grommet-icons/icons/FormDown';
 import { FormNext } from 'grommet-icons/icons/FormNext';
@@ -13,6 +14,7 @@ import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
+import { Radial } from 'grommet-icons/icons/Radial';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
 import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
@@ -2323,6 +2325,163 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         small: 1,
         medium: 3,
         large: 3,
+      },
+    },
+    stepper: {
+      indicator: {
+        size: 'medium', // 'small' | 'medium' | 'large'
+        border: {
+          width: '2px',
+        },
+      },
+      label: {
+        size: 'medium',
+        substep: {
+          size: 'small',
+        },
+      },
+      connector: {
+        stroke: { width: '2px' },
+      },
+      description: {
+        size: 'small',
+        color: 'text-weak',
+        margin: { top: 'hair' },
+      },
+      helperText: {
+        size: 'xsmall',
+        color: 'text-weak',
+        margin: { top: 'xsmall' },
+      },
+      horizontal: {
+        gap: 0,
+      },
+      vertical: {
+        gap: 0,
+      },
+      hover: {
+        background: 'background-contrast',
+        border: 'text-strong',
+      },
+      // States: [component].[state].[element].[property]
+      pending: {
+        indicator: {
+          background: 'background-front',
+          color: 'text-strong',
+          border: 'text-xweak',
+          substep: {
+            icon: Radial,
+            iconSize: 'small',
+          },
+          hover: {
+            background: 'background-front',
+            border: 'text-strong',
+          },
+        },
+        label: { color: 'text', weight: 'normal' },
+        connector: { color: 'border' },
+      },
+      current: {
+        indicator: {
+          icon: StatusGoodSmall,
+          iconSize: 'medium',
+          background: 'brand',
+          color: 'white',
+          border: 'brand',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            color: 'white',
+          },
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+          weight: 'normal',
+        },
+      },
+      currentCompleted: {
+        indicator: {
+          icon: FormCheckmark,
+          iconSize: 'medium',
+          background: 'brand',
+          color: 'white',
+          border: 'brand',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            color: 'white',
+          },
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+          weight: 'normal',
+        },
+      },
+      completed: {
+        indicator: {
+          icon: FormCheckmark,
+          iconSize: 'medium',
+          background: 'background-front',
+          color: 'brand',
+          border: 'brand',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            background: 'background-front',
+          },
+        },
+        label: { color: 'text-weak', weight: 'normal' },
+        connector: { color: 'brand' },
+      },
+      error: {
+        indicator: {
+          icon: StatusCriticalSmall,
+          background: 'background-front',
+          color: 'status-critical',
+          border: 'status-critical',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            background: 'background-front',
+          },
+        },
+        label: { color: 'text', weight: 'normal' },
+        connector: { color: 'status-critical' },
+        helperText: { color: 'status-critical' },
+      },
+      currentError: {
+        indicator: {
+          icon: StatusCriticalSmall,
+          background: 'status-critical',
+          color: 'white',
+          border: 'status-critical',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            color: 'white',
+          },
+        },
+        label: {
+          color: 'status-critical',
+          weight: 'normal',
+        },
+      },
+      disabled: {
+        indicator: {
+          background: 'background-contrast',
+          color: 'text-weak',
+          border: 'border',
+          substep: {
+            iconSize: 'small',
+          },
+        },
+        label: { color: 'text-weak', weight: 'normal' },
+        connector: { color: 'border' },
       },
     },
     table: {
