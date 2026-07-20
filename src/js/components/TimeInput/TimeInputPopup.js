@@ -11,6 +11,7 @@ import { Drop } from '../Drop';
 import { Text } from '../Text';
 import {
   pad,
+  getSectionName,
   SECTION_HOUR,
   SECTION_MINUTE,
   SECTION_PERIOD,
@@ -83,6 +84,7 @@ const optionKey = (label, option) => `${label.toLowerCase()}-${option}`;
 
 const PopupColumn = ({
   activeSection,
+  format,
   label,
   onClickCommitOption,
   onPointerCommitOption,
@@ -122,6 +124,9 @@ const PopupColumn = ({
           role="option"
           aria-selected={selected}
           tabIndex={isActive ? 0 : -1}
+          aria-label={`${
+            section === SECTION_PERIOD ? option : pad(option)
+          } ${getSectionName(section, format)}`}
           $active={isActive}
           $selected={selected}
           onMouseDown={(event) => {
@@ -150,6 +155,7 @@ const PopupColumn = ({
 const TimeInputPopup = ({
   activeSection,
   align,
+  format,
   hoursOptions,
   id,
   incrementSection,
@@ -497,6 +503,7 @@ const TimeInputPopup = ({
             <PopupColumn
               key={sectionLabel}
               activeSection={activeSection}
+              format={format}
               label={sectionLabel}
               onClickCommitOption={commitClickOptionSelection}
               onPointerCommitOption={commitPointerOptionSelection}

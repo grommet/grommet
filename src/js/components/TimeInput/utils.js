@@ -130,12 +130,8 @@ export const sectionKey = (section) => {
   return 'period';
 };
 
-export const getActiveSectionAriaMeta = ({
-  activeSection,
-  format,
-  sections,
-}) => {
-  if (activeSection === SECTION_PERIOD) {
+export const getSectionAriaMeta = ({ section, format, sections }) => {
+  if (section === SECTION_PERIOD) {
     return {
       now: sections.period === 'PM' ? 1 : 0,
       min: 0,
@@ -143,10 +139,13 @@ export const getActiveSectionAriaMeta = ({
     };
   }
 
-  const key = sectionKey(activeSection);
-  const min = sectionMin(activeSection, format);
-  const max = sectionMax(activeSection, format);
+  const key = sectionKey(section);
+  const min = sectionMin(section, format);
+  const max = sectionMax(section, format);
   const now = sections[key] ?? min;
 
   return { now, min, max };
 };
+
+export const getActiveSectionAriaMeta = ({ activeSection, format, sections }) =>
+  getSectionAriaMeta({ section: activeSection, format, sections });

@@ -17,6 +17,14 @@ import { createPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { TimeInput } from '..';
 
+const getSegment = (name: 'hours' | 'minutes' | 'seconds' | 'meridiem') =>
+  screen.getByRole('spinbutton', { name });
+
+const getDisplayInput = () =>
+  document.querySelector(
+    'input[aria-hidden="true"]:not([type="hidden"])',
+  ) as HTMLInputElement;
+
 describe('TimeInput', () => {
   beforeEach(createPortal);
 
@@ -40,7 +48,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
@@ -81,6 +89,71 @@ describe('TimeInput', () => {
     expect(screen.queryByTestId('time-input-active-section')).toBeNull();
   });
 
+  test('keeps segment typing active for two-digit entry', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    await user.click(hourSegment);
+    expect(hourSegment).toHaveFocus();
+
+    await user.keyboard('12');
+
+    expect(screen.getByRole('spinbutton', { name: 'minutes' })).toHaveFocus();
+    expect(hourSegment).toHaveTextContent('12');
+  });
+
+  test('supports two-digit hour entry after tabbing to first segment', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    await user.tab();
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hourSegment).toHaveFocus();
+
+    await user.keyboard('12');
+
+    expect(hourSegment).toHaveTextContent('12');
+    expect(screen.getByRole('spinbutton', { name: 'minutes' })).toHaveFocus();
+  });
+
+  test('supports typing 11 in each segment while navigating by Tab', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    await user.tab();
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hourSegment).toHaveFocus();
+    await user.keyboard('11');
+    expect(hourSegment).toHaveTextContent('11');
+
+    const minuteSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    expect(minuteSegment).toHaveFocus();
+    await user.keyboard('11');
+    expect(minuteSegment).toHaveTextContent('11');
+
+    const secondSegment = screen.getByRole('spinbutton', { name: 'seconds' });
+    expect(secondSegment).toHaveFocus();
+    await user.keyboard('11');
+    expect(secondSegment).toHaveTextContent('11');
+    expect(secondSegment).toHaveFocus();
+  });
+
   test('updates active section via arrows and digits', async () => {
     const user = userEvent.setup();
 
@@ -90,7 +163,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Home}');
     await user.keyboard('1');
@@ -98,7 +171,7 @@ describe('TimeInput', () => {
     await user.keyboard('3');
     await user.keyboard('4');
 
-    expect(input).toHaveValue('12:34:00');
+    expect(getDisplayInput()).toHaveValue('12:34:00');
   });
 
   test('announces active section value through aria-valuetext', async () => {
@@ -110,7 +183,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     await user.click(input);
     await user.keyboard('{Home}');
@@ -121,7 +194,10 @@ describe('TimeInput', () => {
 
     await user.keyboard('{ArrowRight}');
     await waitFor(() => {
-      expect(input).toHaveAttribute('aria-valuetext', '35 minutes');
+      expect(getSegment('minutes')).toHaveAttribute(
+        'aria-valuetext',
+        '35 minutes',
+      );
     });
   });
 
@@ -143,7 +219,7 @@ describe('TimeInput', () => {
       </AnnounceContext.Provider>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{ArrowUp}');
 
@@ -176,7 +252,7 @@ describe('TimeInput', () => {
       </AnnounceContext.Provider>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{ArrowUp}');
 
@@ -199,7 +275,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Home}');
 
@@ -211,16 +287,16 @@ describe('TimeInput', () => {
 
     await user.keyboard('{ArrowRight}');
     await waitFor(() => {
-      expect(input).toHaveAttribute('aria-valuenow', '35');
-      expect(input).toHaveAttribute('aria-valuemin', '0');
-      expect(input).toHaveAttribute('aria-valuemax', '59');
+      expect(getSegment('minutes')).toHaveAttribute('aria-valuenow', '35');
+      expect(getSegment('minutes')).toHaveAttribute('aria-valuemin', '0');
+      expect(getSegment('minutes')).toHaveAttribute('aria-valuemax', '59');
     });
 
     await user.keyboard('{End}');
     await waitFor(() => {
-      expect(input).toHaveAttribute('aria-valuenow', '1');
-      expect(input).toHaveAttribute('aria-valuemin', '0');
-      expect(input).toHaveAttribute('aria-valuemax', '1');
+      expect(getSegment('meridiem')).toHaveAttribute('aria-valuenow', '1');
+      expect(getSegment('meridiem')).toHaveAttribute('aria-valuemin', '0');
+      expect(getSegment('meridiem')).toHaveAttribute('aria-valuemax', '1');
     });
   });
 
@@ -233,13 +309,12 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
     await user.click(input);
 
     await waitFor(() => {
-      expect(input).toHaveValue('hh:mm:ss aa');
-      expect(input.selectionStart).toBe(0);
-      expect(input.selectionEnd).toBe(2);
+      expect(getDisplayInput()).toHaveValue('hh:mm:ss aa');
+      expect(input).toHaveFocus();
     });
 
     expect(input).toHaveAttribute('aria-valuenow', '1');
@@ -256,25 +331,15 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
     await user.click(input);
-
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(0);
-      expect(input.selectionEnd).toBe(2);
-    });
+    expect(input).toHaveFocus();
 
     await user.keyboard('{ArrowRight}');
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(3);
-      expect(input.selectionEnd).toBe(5);
-    });
+    expect(getSegment('minutes')).toHaveFocus();
 
     await user.keyboard('{ArrowRight}');
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(6);
-      expect(input.selectionEnd).toBe(8);
-    });
+    expect(getSegment('seconds')).toHaveFocus();
   });
 
   test('selects minute section when clicking minute token in empty state', async () => {
@@ -286,18 +351,13 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
-
+    const input = getSegment('hours');
     await user.click(input);
     await user.click(screen.getByText('mm'));
-
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(3);
-      expect(input.selectionEnd).toBe(5);
-    });
+    expect(getSegment('minutes')).toHaveFocus();
 
     await user.keyboard('15');
-    expect(input).toHaveValue('hh:15:ss aa');
+    expect(getDisplayInput()).toHaveValue('hh:15:ss aa');
   });
 
   test('keeps clicked placeholder section active for hh, mm, ss, and aa', async () => {
@@ -309,36 +369,20 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
 
     await user.click(input);
     await user.click(screen.getByText('hh'));
-
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(0);
-      expect(input.selectionEnd).toBe(2);
-    });
+    expect(getSegment('hours')).toHaveFocus();
 
     await user.click(screen.getByText('mm'));
-
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(3);
-      expect(input.selectionEnd).toBe(5);
-    });
+    expect(getSegment('minutes')).toHaveFocus();
 
     await user.click(screen.getByText('ss'));
-
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(6);
-      expect(input.selectionEnd).toBe(8);
-    });
+    expect(getSegment('seconds')).toHaveFocus();
 
     await user.click(screen.getByText('aa'));
-
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(9);
-      expect(input.selectionEnd).toBe(11);
-    });
+    expect(getSegment('meridiem')).toHaveFocus();
   });
 
   test('uses directly clicked placeholder token on first click', async () => {
@@ -350,14 +394,8 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
-
     await user.click(screen.getByText('ss'));
-
-    await waitFor(() => {
-      expect(input.selectionStart).toBe(6);
-      expect(input.selectionEnd).toBe(8);
-    });
+    expect(getSegment('seconds')).toHaveFocus();
   });
 
   test('supports uncontrolled initial value', () => {
@@ -367,7 +405,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    expect(screen.getByRole('spinbutton')).toHaveValue('01:05:09 PM');
+    expect(getDisplayInput()).toHaveValue('01:05:09 PM');
   });
 
   test('clears only the active section when deleting from a complete value', async () => {
@@ -379,13 +417,13 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     await user.click(input);
     await user.keyboard('{Home}');
     await user.keyboard('{Backspace}');
 
-    expect(input).toHaveValue('hh:34:56 PM');
+    expect(getDisplayInput()).toHaveValue('hh:34:56 PM');
   });
 
   test('keeps selection on cleared middle sections after delete', async () => {
@@ -397,25 +435,23 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
 
     await user.click(input);
     await user.keyboard('{Home}{ArrowRight}');
     await user.keyboard('{Backspace}');
 
     await waitFor(() => {
-      expect(input).toHaveValue('12:mm:56 PM');
-      expect(input.selectionStart).toBe(3);
-      expect(input.selectionEnd).toBe(5);
+      expect(getDisplayInput()).toHaveValue('12:mm:56 PM');
+      expect(getSegment('minutes')).toHaveFocus();
     });
 
     await user.keyboard('{ArrowRight}');
     await user.keyboard('{Backspace}');
 
     await waitFor(() => {
-      expect(input).toHaveValue('12:mm:ss PM');
-      expect(input.selectionStart).toBe(6);
-      expect(input.selectionEnd).toBe(8);
+      expect(getDisplayInput()).toHaveValue('12:mm:ss PM');
+      expect(getSegment('seconds')).toHaveFocus();
     });
   });
 
@@ -428,16 +464,16 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     await user.click(input);
     await user.keyboard('{Home}{ArrowRight}');
 
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:45:00');
+    expect(getDisplayInput()).toHaveValue('10:45:00');
 
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:00:00');
+    expect(getDisplayInput()).toHaveValue('10:00:00');
   });
 
   test('submits only committed value and never section placeholders', async () => {
@@ -452,7 +488,7 @@ describe('TimeInput', () => {
     );
 
     const form = screen.getByRole('form', { name: 'native-form' });
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     await user.click(input);
     await user.keyboard('1');
@@ -473,7 +509,10 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    expect(screen.getByRole('spinbutton')).toBeDisabled();
+    expect(getSegment('hours')).toHaveAttribute('aria-disabled', 'true');
+    expect(getSegment('minutes')).toHaveAttribute('aria-disabled', 'true');
+    expect(getSegment('seconds')).toHaveAttribute('aria-disabled', 'true');
+    expect(getSegment('meridiem')).toHaveAttribute('aria-disabled', 'true');
     expect(screen.getByRole('button', { name: 'Choose time' })).toBeDisabled();
   });
 
@@ -491,7 +530,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     expect(screen.queryByRole('button', { name: 'Choose time' })).toBeNull();
 
     await user.click(input);
@@ -499,7 +538,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}99');
 
     expect(document.getElementById('read-only-picker__drop')).toBeNull();
-    expect(input).toHaveValue('12:00:00 AM');
+    expect(getDisplayInput()).toHaveValue('12:00:00 AM');
   });
 
   test('read-only mode does not show active section highlight on focus', async () => {
@@ -511,7 +550,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    await user.click(screen.getByRole('spinbutton'));
+    await user.click(getSegment('hours'));
 
     expect(screen.queryByTestId('time-input-active-section')).toBeNull();
   });
@@ -549,8 +588,8 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
-    expect(input).toHaveValue('09:10:11');
+    const input = getSegment('hours');
+    expect(getDisplayInput()).toHaveValue('09:10:11');
 
     await user.click(input);
     await user.keyboard('{Home}12');
@@ -560,7 +599,7 @@ describe('TimeInput', () => {
     await user.click(
       screen.getByRole('button', { name: 'set-controlled-value' }),
     );
-    expect(input).toHaveValue('10:20:30');
+    expect(getDisplayInput()).toHaveValue('10:20:30');
   });
 
   test('closes picker when focus leaves popup', async () => {
@@ -579,7 +618,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
@@ -605,13 +644,13 @@ describe('TimeInput', () => {
     const secondList = screen.getByRole('listbox', { name: 'second' });
 
     const selectedHourOption = within(hourList).getByRole('option', {
-      name: '13',
+      name: '13 hours',
     });
     const selectedMinuteOption = within(minuteList).getByRole('option', {
-      name: '45',
+      name: '45 minutes',
     });
     const selectedSecondOption = within(secondList).getByRole('option', {
-      name: '30',
+      name: '30 seconds',
     });
 
     await user.click(selectedHourOption);
@@ -645,14 +684,41 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
     const hourList = screen.getByRole('listbox', { name: 'hour' });
-    await user.click(within(hourList).getByRole('option', { name: '07' }));
+    await user.click(
+      within(hourList).getByRole('option', { name: '07 hours' }),
+    );
 
-    expect(input).toHaveValue('07:00:00');
+    expect(getDisplayInput()).toHaveValue('07:00:00');
+  });
+
+  test('announces popup option values with their section type', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="07:15:20 AM" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    expect(
+      screen.getByRole('option', { name: '07 hours' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('option', { name: '15 minutes' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('option', { name: '20 seconds' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('option', { name: 'AM meridiem' }),
+    ).toBeInTheDocument();
   });
 
   test('updates minute and second on first click when selected values are deep in list', async () => {
@@ -664,21 +730,25 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
     const minuteList = screen.getByRole('listbox', { name: 'minute' });
     const secondList = screen.getByRole('listbox', { name: 'second' });
 
-    await user.click(within(minuteList).getByRole('option', { name: '10' }));
+    await user.click(
+      within(minuteList).getByRole('option', { name: '10 minutes' }),
+    );
     await waitFor(() => {
-      expect(input).toHaveValue('01:10:50');
+      expect(getDisplayInput()).toHaveValue('01:10:50');
     });
 
-    await user.click(within(secondList).getByRole('option', { name: '08' }));
+    await user.click(
+      within(secondList).getByRole('option', { name: '08 seconds' }),
+    );
     await waitFor(() => {
-      expect(input).toHaveValue('01:10:08');
+      expect(getDisplayInput()).toHaveValue('01:10:08');
     });
   });
 
@@ -691,7 +761,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
@@ -700,21 +770,27 @@ describe('TimeInput', () => {
     const secondList = screen.getByRole('listbox', { name: 'second' });
 
     fireEvent.wheel(minuteList, { deltaY: 120 });
-    await user.click(within(minuteList).getByRole('option', { name: '22' }));
+    await user.click(
+      within(minuteList).getByRole('option', { name: '22 minutes' }),
+    );
     await waitFor(() => {
-      expect(input).toHaveValue('05:22:55');
+      expect(getDisplayInput()).toHaveValue('05:22:55');
     });
 
     fireEvent.wheel(secondList, { deltaY: -120 });
-    await user.click(within(secondList).getByRole('option', { name: '11' }));
+    await user.click(
+      within(secondList).getByRole('option', { name: '11 seconds' }),
+    );
     await waitFor(() => {
-      expect(input).toHaveValue('05:22:11');
+      expect(getDisplayInput()).toHaveValue('05:22:11');
     });
 
     fireEvent.wheel(hourList, { deltaY: 120 });
-    await user.click(within(hourList).getByRole('option', { name: '08' }));
+    await user.click(
+      within(hourList).getByRole('option', { name: '08 hours' }),
+    );
     await waitFor(() => {
-      expect(input).toHaveValue('08:22:11');
+      expect(getDisplayInput()).toHaveValue('08:22:11');
     });
   });
 
@@ -814,7 +890,7 @@ describe('TimeInput', () => {
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
     const hourList = screen.getByRole('listbox', { name: 'hour' });
-    const option = within(hourList).getByRole('option', { name: '01' });
+    const option = within(hourList).getByRole('option', { name: '01 hours' });
 
     expect(option).not.toHaveAttribute('pad');
   });
@@ -834,7 +910,7 @@ describe('TimeInput', () => {
 
     await waitFor(() => {
       expect(
-        within(hourList).getByRole('option', { name: '01' }),
+        within(hourList).getByRole('option', { name: '01 hours' }),
       ).toHaveFocus();
     });
   });
@@ -848,12 +924,12 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Home}05');
 
     await waitFor(() => {
-      expect(input).toHaveValue('05:30:00 AM');
+      expect(getDisplayInput()).toHaveValue('05:30:00 AM');
     });
   });
 
@@ -867,7 +943,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     await user.keyboard('{Home}1');
 
@@ -886,7 +962,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     // Type "22" in HH section
     // Expected: 2 is pending, second 2 makes 22 invalid for 12h (max 12)
@@ -895,7 +971,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}22');
 
     await waitFor(() => {
-      expect(input).toHaveValue('02:02:00 AM');
+      expect(getDisplayInput()).toHaveValue('02:02:00 AM');
     });
   });
 
@@ -908,7 +984,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     // Navigate to MM section: {Home} to go to HH, then {ArrowRight} to move to MM
     await user.keyboard('{Home}{ArrowRight}');
@@ -919,7 +995,7 @@ describe('TimeInput', () => {
     await user.keyboard('66');
 
     await waitFor(() => {
-      expect(input).toHaveValue('02:06:06 AM');
+      expect(getDisplayInput()).toHaveValue('02:06:06 AM');
     });
   });
 
@@ -932,7 +1008,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     // Type 222 starting at HH
     // Digit 1: "2" → HH=02, stay on HH
@@ -941,7 +1017,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}222');
 
     await waitFor(() => {
-      expect(input).toHaveValue('22:02:00');
+      expect(getDisplayInput()).toHaveValue('22:02:00');
     });
   });
 
@@ -954,7 +1030,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     // Type 2222 starting at HH
     // Digit 1: "2" → HH=02, stay on HH
@@ -964,7 +1040,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}2222');
 
     await waitFor(() => {
-      expect(input).toHaveValue('22:22:00');
+      expect(getDisplayInput()).toHaveValue('22:22:00');
     });
   });
 
@@ -977,7 +1053,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
     await user.click(input);
     // Type 12:34:56 complete time
     // After entering 56 in SS, focus should stay on SS
@@ -985,7 +1061,7 @@ describe('TimeInput', () => {
 
     // Should be 12:34:56
     await waitFor(() => {
-      expect(input).toHaveValue('12:34:56');
+      expect(getDisplayInput()).toHaveValue('12:34:56');
     });
 
     // Verify typing another digit stays on SS (doesn't wrap to HH)
@@ -994,7 +1070,7 @@ describe('TimeInput', () => {
     await user.keyboard('4');
     await waitFor(() => {
       // Focus stays on SS, 4 becomes first digit (SS = 04)
-      expect(input).toHaveValue('12:34:04');
+      expect(getDisplayInput()).toHaveValue('12:34:04');
     });
 
     // Type another digit to complete the second digit in SS
@@ -1002,7 +1078,7 @@ describe('TimeInput', () => {
     await user.keyboard('5');
     await waitFor(() => {
       // 4 + 5 = 45, and focus stays on SS (not wrapping back to HH)
-      expect(input).toHaveValue('12:34:45');
+      expect(getDisplayInput()).toHaveValue('12:34:45');
     });
   });
 
@@ -1015,14 +1091,14 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     // Click and type a time with minute value 22 (does not match minuteStep={15})
     await user.click(input);
     await user.keyboard('12:22:00');
 
     // Expect the value to remain 12:22:00 (not snapped to 12:15:00 or 12:30:00)
-    expect(input).toHaveValue('12:22:00');
+    expect(getDisplayInput()).toHaveValue('12:22:00');
   });
 
   test('does not modify typed minute values 07 that do not match minuteStep', async () => {
@@ -1034,14 +1110,14 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     // Type a minute value that doesn't match the step
     await user.click(input);
     await user.keyboard('10:07:00');
 
     // Expect value to remain exactly as typed (not corrected to 10:00:00 or 10:15:00)
-    expect(input).toHaveValue('10:07:00');
+    expect(getDisplayInput()).toHaveValue('10:07:00');
   });
 
   test('does not modify pasted time values with misaligned minutes', async () => {
@@ -1053,14 +1129,14 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
 
     // Click into the component and type a time with misaligned minute
     await user.click(input);
     await user.keyboard('14:22:30');
 
     // Value must be preserved exactly as typed (not snapped/corrected)
-    expect(input).toHaveValue('14:22:30');
+    expect(getDisplayInput()).toHaveValue('14:22:30');
   });
 
   test('applies compact HHMMSS paste contract in 24-hour format', async () => {
@@ -1072,7 +1148,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
 
     await user.click(input);
 
@@ -1089,7 +1165,7 @@ describe('TimeInput', () => {
         },
       });
 
-      expect(input).toHaveValue(expected);
+      expect(getDisplayInput()).toHaveValue(expected);
     });
   });
 
@@ -1102,7 +1178,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
 
     await user.click(input);
 
@@ -1119,7 +1195,7 @@ describe('TimeInput', () => {
         },
       });
 
-      expect(input).toHaveValue(expected);
+      expect(getDisplayInput()).toHaveValue(expected);
     });
   });
 
@@ -1132,7 +1208,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
 
     await user.click(input);
 
@@ -1142,7 +1218,7 @@ describe('TimeInput', () => {
       },
     });
 
-    expect(input).toHaveValue('09:30:00 AM');
+    expect(getDisplayInput()).toHaveValue('09:30:00 AM');
   });
 
   test('uses explicit meridiem token only when AM or PM is a full token', async () => {
@@ -1154,7 +1230,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton') as HTMLInputElement;
+    const input = getSegment('hours');
 
     await user.click(input);
 
@@ -1164,7 +1240,7 @@ describe('TimeInput', () => {
       },
     });
 
-    expect(input).toHaveValue('11:22:33 PM');
+    expect(getDisplayInput()).toHaveValue('11:22:33 PM');
 
     fireEvent.paste(input, {
       clipboardData: {
@@ -1172,7 +1248,7 @@ describe('TimeInput', () => {
       },
     });
 
-    expect(input).toHaveValue('11:22:33 AM');
+    expect(getDisplayInput()).toHaveValue('11:22:33 AM');
   });
 
   test('arrow keys still respect minuteStep increment', async () => {
@@ -1184,7 +1260,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     // Click and navigate to minute section
     await user.click(input);
@@ -1192,19 +1268,19 @@ describe('TimeInput', () => {
 
     // Press ArrowUp to increment by minuteStep (15)
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:15:00');
+    expect(getDisplayInput()).toHaveValue('10:15:00');
 
     // Press ArrowUp again
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:30:00');
+    expect(getDisplayInput()).toHaveValue('10:30:00');
 
     // Continue incrementing: 45, 0 (wrap), 15, 30
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:45:00');
+    expect(getDisplayInput()).toHaveValue('10:45:00');
 
     // Wrap around at end (minute=45 + step=15 => 0)
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:00:00');
+    expect(getDisplayInput()).toHaveValue('10:00:00');
   });
 
   test('dropdown options reflect minuteStep intervals', async () => {
@@ -1218,7 +1294,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     // Navigate to MM section
     await user.click(input);
@@ -1226,14 +1302,14 @@ describe('TimeInput', () => {
 
     // Arrow through options - should step in multiples of 20 only
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:20:00');
+    expect(getDisplayInput()).toHaveValue('10:20:00');
 
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:40:00');
+    expect(getDisplayInput()).toHaveValue('10:40:00');
 
     // Wraps from 40 back to 0
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:00:00');
+    expect(getDisplayInput()).toHaveValue('10:00:00');
   });
 
   test('normalizes invalid minuteStep values to avoid crashes', async () => {
@@ -1245,12 +1321,12 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = screen.getByRole('spinbutton');
+    const input = getSegment('hours');
 
     await user.click(input);
     await user.keyboard('{Home}{ArrowRight}');
     await user.keyboard('{ArrowUp}');
-    expect(input).toHaveValue('10:01:00');
+    expect(getDisplayInput()).toHaveValue('10:01:00');
   });
 
   test('auto-scrolls selected minute and second options on open', async () => {
@@ -1272,10 +1348,10 @@ describe('TimeInput', () => {
       const secondList = screen.getByRole('listbox', { name: 'second' });
 
       const selectedMinuteOption = within(minuteList).getByRole('option', {
-        name: '30',
+        name: '30 minutes',
       });
       const selectedSecondOption = within(secondList).getByRole('option', {
-        name: '20',
+        name: '20 seconds',
       });
 
       await waitFor(() => {
@@ -1337,8 +1413,6 @@ describe('TimeInput', () => {
         </Grommet>,
       );
 
-      const input = screen.getByRole('spinbutton');
-
       await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
       const minuteList = screen.getByRole('listbox', { name: 'minute' });
@@ -1348,12 +1422,12 @@ describe('TimeInput', () => {
 
       const initialMinuteScrollTop = minuteList.scrollTop;
       const nextMinuteOption = within(minuteList).getByRole('option', {
-        name: '31',
+        name: '31 minutes',
       });
 
       await user.click(nextMinuteOption);
 
-      expect(input).toHaveValue('12:31:20 AM');
+      expect(getDisplayInput()).toHaveValue('12:31:20 AM');
       expect(minuteList.scrollTop).toBe(initialMinuteScrollTop);
     } finally {
       if (offsetHeightDescriptor) {

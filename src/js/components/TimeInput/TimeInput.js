@@ -29,7 +29,7 @@ import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
 import { useSectionedTimeField } from './useSectionedTimeField';
 import {
-  getActiveSectionAriaMeta,
+  getSectionAriaMeta,
   getSectionName,
   pad,
   SECTION_HOUR,
@@ -97,22 +97,6 @@ const getSectionOrder = (format, views) => {
   return numericSections;
 };
 
-const buildSectionRanges = (sectionOrder) => {
-  let cursor = 0;
-  return sectionOrder.map((section, index) => {
-    const start = cursor;
-    const end = start + 2;
-
-    cursor = end;
-
-    if (index < sectionOrder.length - 1) {
-      cursor += 1;
-    }
-
-    return [start, end];
-  });
-};
-
 const buildPlaceholder = (sectionOrder) =>
   sectionOrder
     .map((section, index) => {
@@ -152,10 +136,6 @@ const TimeInput = forwardRef(
 
     const inputRef = useForwardedRef(refArg);
     const containerRef = useRef();
-    const internalSelectionRef = useRef(false);
-    const displayMouseDownRef = useRef(false);
-    const displaySectionRef = useRef();
-    const displayMouseDownCleanupRef = useRef();
 
     const [value, setValue] = useFormInput({
       name,
@@ -165,7 +145,8 @@ const TimeInput = forwardRef(
 
     const [open, setOpen] = useState(false);
     const [iconFocused, setIconFocused] = useState(false);
-    const [inputFocused, setInputFocused] = useState(false);
+    const [segmentFocused, setSegmentFocused] = useState(false);
+    const segmentRefs = useRef({});
 
     const {
       // Keep internal visual parity with TextInput/Form behavior while
@@ -191,9 +172,8 @@ const TimeInput = forwardRef(
           nextSections.hour === undefined ||
           nextSections.minute === undefined ||
           nextSections.second === undefined
-        ) {
+        )
           return;
-        }
 
         const period = format === '12' ? ` ${nextSections.period || 'AM'}` : '';
 
@@ -304,10 +284,17 @@ const TimeInput = forwardRef(
       [announce, getSectionValueAnnouncement],
     );
 
-    const ranges = useMemo(
-      () => buildSectionRanges(sectionOrder),
-      [sectionOrder],
-    );
+    const focusSection = useCallback((section) => {
+      const target = segmentRefs.current[section];
+      if (target) {
+        target.focus();
+      }
+
+      requestAnimationFrame(() => {
+        segmentRefs.current[section]?.focus();
+      });
+    }, []);
+
     const placeholder = useMemo(
       () => buildPlaceholder(sectionOrder),
       [sectionOrder],
@@ -338,159 +325,26 @@ const TimeInput = forwardRef(
       });
     }, [sectionOrder, sections, pendingDigits]);
 
-    const activeSectionValueText = useMemo(() => {
-      if (activeSection === SECTION_PERIOD) return sections.period || 'AM';
-
-      const sectionName = getSectionName(activeSection, format);
-      let sectionValue;
-      if (activeSection === SECTION_HOUR) sectionValue = sections.hour;
-      else if (activeSection === SECTION_MINUTE) sectionValue = sections.minute;
-      else sectionValue = sections.second;
-
-      if (sectionValue === undefined) return sectionName;
-      return `${sectionValue} ${sectionName}`;
-    }, [activeSection, format, sections]);
-
-    const activeSectionAriaMeta = useMemo(
-      () => getActiveSectionAriaMeta({ activeSection, format, sections }),
-      [activeSection, format, sections],
-    );
-
-    const resolveSectionFromCursor = useCallback(
-      (cursor) => {
-        if (cursor === null || cursor === undefined) return firstSection;
-
-        for (let i = 0; i < ranges.length; i += 1) {
-          const [start, end] = ranges[i];
-
-          if (cursor >= start && cursor < end) {
-            return sectionOrder[i] || firstSection;
-          }
-
-          // Cursor on a separator should move to the next editable section.
-          if (cursor === end) {
-            const nextIndex = Math.min(i + 1, ranges.length - 1);
-            return sectionOrder[nextIndex] || firstSection;
-          }
-
-          if (cursor < start) return sectionOrder[i] || firstSection;
-        }
-
-        return sectionOrder[ranges.length - 1] || firstSection;
-      },
-      [firstSection, ranges, sectionOrder],
-    );
-
-    const getSectionRange = useCallback(
-      (section) => {
-        const sectionIndex = sectionOrder.indexOf(section);
-        if (sectionIndex === -1) return ranges[0];
-        return ranges[sectionIndex] || ranges[0];
-      },
-      [ranges, sectionOrder],
-    );
-
-    const selectSectionText = useCallback(
-      (section) => {
-        const range = getSectionRange(section);
-        if (!inputRef.current) return;
-        internalSelectionRef.current = true;
-        requestAnimationFrame(() => {
-          if (inputRef.current) {
-            inputRef.current.setSelectionRange(range[0], range[1]);
-            requestAnimationFrame(() => {
-              internalSelectionRef.current = false;
-            });
-          }
-        });
-      },
-      [getSectionRange, inputRef],
-    );
-
-    const clearDisplayMouseDownSession = useCallback(() => {
-      displayMouseDownRef.current = false;
-      displaySectionRef.current = undefined;
-      if (displayMouseDownCleanupRef.current) {
-        displayMouseDownCleanupRef.current();
-        displayMouseDownCleanupRef.current = undefined;
-      }
-    }, []);
-
-    const startDisplayMouseDownSession = useCallback(() => {
-      clearDisplayMouseDownSession();
-      displayMouseDownRef.current = true;
-
-      const onPointerCancel = () => {
-        clearDisplayMouseDownSession();
-      };
-
-      window.addEventListener('pointercancel', onPointerCancel, true);
-
-      displayMouseDownCleanupRef.current = () => {
-        window.removeEventListener('pointercancel', onPointerCancel, true);
-      };
-    }, [clearDisplayMouseDownSession]);
-
-    const resolveSectionFromSelection = useCallback(
-      (selectionStart, selectionEnd) => {
-        if (selectionStart === null || selectionStart === undefined) {
-          return firstSection;
-        }
-
-        if (
-          selectionEnd !== null &&
-          selectionEnd !== undefined &&
-          selectionEnd - selectionStart > 1
-        ) {
-          const exactSection = ranges.findIndex(
-            ([start, end]) => selectionStart === start && selectionEnd === end,
-          );
-          if (exactSection >= 0)
-            return sectionOrder[exactSection] || firstSection;
-        }
-
-        if (
-          selectionEnd !== null &&
-          selectionEnd !== undefined &&
-          selectionEnd - selectionStart === 1 &&
-          displayValue?.[selectionStart] &&
-          /[^\dA-Za-z]/.test(displayValue[selectionStart])
-        ) {
-          return resolveSectionFromCursor(selectionStart);
-        }
-
-        return resolveSectionFromCursor(selectionStart);
-      },
-      [
-        displayValue,
-        firstSection,
-        ranges,
-        resolveSectionFromCursor,
-        sectionOrder,
-      ],
-    );
-
     const onDisplaySectionMouseDown = useCallback(
       (section, event) => {
         if (readOnly) return;
+        if (disabled) return;
         if (event.button !== 0) return;
         if (event.defaultPrevented) return;
         event.preventDefault();
         event.stopPropagation();
-        startDisplayMouseDownSession();
-        displaySectionRef.current = section;
-        inputRef.current?.focus();
+        setSegmentFocused(true);
         setActiveSection(section);
         announceActiveSection(section);
-        selectSectionText(section);
+        focusSection(section);
       },
       [
         announceActiveSection,
-        inputRef,
+        disabled,
+        focusSection,
         readOnly,
-        selectSectionText,
+        setSegmentFocused,
         setActiveSection,
-        startDisplayMouseDownSession,
       ],
     );
 
@@ -569,18 +423,18 @@ const TimeInput = forwardRef(
         }
 
         event.preventDefault();
-        inputRef.current?.focus();
+        setSegmentFocused(true);
         setActiveSection(firstSection);
         announceActiveSection(firstSection);
-        selectSectionText(firstSection);
+        focusSection(firstSection);
       },
       [
         announceActiveSection,
         firstSection,
-        inputRef,
+        focusSection,
         onDisplaySectionMouseDown,
         readOnly,
-        selectSectionText,
+        setSegmentFocused,
         setActiveSection,
       ],
     );
@@ -604,270 +458,185 @@ const TimeInput = forwardRef(
 
     const closePicker = useCallback(() => {
       setOpen(false);
-      requestAnimationFrame(() => inputRef.current?.focus());
+      focusSection(activeSection);
       announce(formatMessage({ id: 'timeInput.exitDrop', messages }));
-    }, [announce, formatMessage, messages, inputRef]);
+    }, [activeSection, announce, focusSection, formatMessage, messages]);
 
-    const onInputFocus = (event) => {
-      setInputFocused(true);
-      if (readOnly) {
-        if (inputRest.onFocus) inputRest.onFocus(event);
-        return;
-      }
-
-      // When focus is triggered from a display-section click, keep that section
-      // selection instead of forcing focus back to the first section.
-      if (displayMouseDownRef.current) {
-        const clickedSection =
-          displaySectionRef.current !== undefined
-            ? displaySectionRef.current
-            : activeSection;
-        setActiveSection(clickedSection);
-        selectSectionText(clickedSection);
-        if (inputRest.onFocus) inputRest.onFocus(event);
-        return;
-      }
-
-      setActiveSection(firstSection);
-      selectSectionText(firstSection);
-      announce(formatMessage({ id: 'timeInput.openDrop', messages }));
-      if (inputRest.onFocus) inputRest.onFocus(event);
-      announceActiveSection(firstSection);
-    };
-
-    const onInputBlur = (event) => {
-      clearDisplayMouseDownSession();
-      setInputFocused(false);
-      if (inputRest.onBlur) inputRest.onBlur(event);
-    };
-
-    const onInputClick = (event) => {
-      if (displayMouseDownRef.current) {
-        const clickedSection =
-          displaySectionRef.current !== undefined
-            ? displaySectionRef.current
-            : activeSection;
-        setActiveSection(clickedSection);
-        selectSectionText(clickedSection);
-        clearDisplayMouseDownSession();
-        return;
-      }
-      if (readOnly) return;
-
-      if (
-        !displayValue &&
-        event.target.selectionStart === inputValue.length &&
-        event.target.selectionEnd === inputValue.length
-      ) {
-        setActiveSection(firstSection);
-        announceActiveSection(firstSection);
-        selectSectionText(firstSection);
-        return;
-      }
-
-      const nextSection = resolveSectionFromSelection(
-        event.target.selectionStart,
-        event.target.selectionEnd,
-      );
-      setActiveSection(nextSection);
-      selectSectionText(nextSection);
-      announceActiveSection(nextSection);
-    };
-
-    const onInputSelect = (event) => {
-      if (readOnly) return;
-      if (displayMouseDownRef.current) return;
-      if (internalSelectionRef.current) return;
-
-      const nextSection = resolveSectionFromSelection(
-        event.target.selectionStart,
-        event.target.selectionEnd,
-      );
-      const [start, end] = getSectionRange(nextSection) || [];
-
-      if (
-        event.target.selectionStart === start &&
-        event.target.selectionEnd === end &&
-        activeSection === nextSection
-      ) {
-        return;
-      }
-
-      if (activeSection !== nextSection) announceActiveSection(nextSection);
-      setActiveSection(nextSection);
-      selectSectionText(nextSection);
-    };
-
-    useEffect(() => {
-      const onSelectionChange = () => {
-        if (readOnly) return;
-        if (displayMouseDownRef.current) return;
-        const inputElement = inputRef.current;
-        if (!inputElement || document.activeElement !== inputElement) return;
-        if (internalSelectionRef.current) return;
-
-        const nextSection = resolveSectionFromSelection(
-          inputElement.selectionStart,
-          inputElement.selectionEnd,
-        );
-        const [start, end] = getSectionRange(nextSection) || [];
-
-        if (
-          inputElement.selectionStart === start &&
-          inputElement.selectionEnd === end &&
-          activeSection === nextSection
-        ) {
-          return;
-        }
-
-        if (activeSection !== nextSection) announceActiveSection(nextSection);
-        setActiveSection(nextSection);
-        selectSectionText(nextSection);
-      };
-
-      document.addEventListener('selectionchange', onSelectionChange);
-      return () => {
-        document.removeEventListener('selectionchange', onSelectionChange);
-      };
-    }, [
-      activeSection,
-      announceActiveSection,
-      getSectionRange,
-      inputRef,
-      resolveSectionFromSelection,
-      readOnly,
-      selectSectionText,
-      setActiveSection,
-    ]);
-
-    useEffect(
-      () => () => {
-        clearDisplayMouseDownSession();
+    const onSegmentFocus = useCallback(
+      (section) => {
+        setSegmentFocused(true);
+        if (readOnly || disabled) return;
+        setActiveSection(section);
+        announceActiveSection(section);
       },
-      [clearDisplayMouseDownSession],
+      [announceActiveSection, disabled, readOnly, setActiveSection],
     );
 
-    const onInputPaste = (event) => {
-      if (readOnly) {
-        event.preventDefault();
-        return;
-      }
-      const pasted = event.clipboardData.getData('text');
-      const parsed = parsePasted(pasted);
-      if (!parsed) {
-        handleInvalid();
-        event.preventDefault();
-        return;
-      }
+    const onSegmentBlur = useCallback(() => {
+      requestAnimationFrame(() => {
+        const { activeElement } = document;
+        const isSegmentFocused = Object.values(segmentRefs.current).includes(
+          activeElement,
+        );
+        if (
+          !isSegmentFocused &&
+          activeElement === document.body &&
+          !readOnly &&
+          !disabled
+        ) {
+          focusSection(activeSection);
+          return;
+        }
+        if (!isSegmentFocused) {
+          setSegmentFocused(false);
+        }
+      });
+    }, [activeSection, disabled, focusSection, readOnly]);
 
-      commitSections(parsed);
-      event.preventDefault();
-    };
+    const onSegmentKeyDown = useCallback(
+      (section, event) => {
+        if (readOnly || disabled) return;
+        const { key } = event;
 
-    const onInputKeyDown = (event) => {
-      if (readOnly) return;
-      const { key } = event;
+        if (activeSection !== section) {
+          setActiveSection(section);
+        }
 
-      if (key === 'ArrowRight') {
-        event.preventDefault();
-        const next = moveSection(1);
-        setActiveSection(next);
-        announceActiveSection(next);
-        selectSectionText(next);
-        return;
-      }
-      if (key === 'ArrowLeft') {
-        event.preventDefault();
-        const next = moveSection(-1);
-        setActiveSection(next);
-        announceActiveSection(next);
-        selectSectionText(next);
-        return;
-      }
-      if (key === 'Home') {
-        event.preventDefault();
-        setActiveSection(firstSection);
-        announceActiveSection(firstSection);
-        selectSectionText(firstSection);
-        return;
-      }
-      if (key === 'End') {
-        event.preventDefault();
-        setActiveSection(lastSection);
-        announceActiveSection(lastSection);
-        selectSectionText(lastSection);
-        return;
-      }
-      if (key === 'ArrowUp') {
-        event.preventDefault();
-        incrementSection(activeSection, open ? -1 : 1);
-        announceActiveSection(activeSection);
-        selectSectionText(activeSection);
-        return;
-      }
-      if (key === 'ArrowDown') {
-        if (event.altKey) {
+        if (key === 'ArrowRight') {
+          event.preventDefault();
+          const next = moveSection(1);
+          setActiveSection(next);
+          focusSection(next);
+          return;
+        }
+        if (key === 'ArrowLeft') {
+          event.preventDefault();
+          const next = moveSection(-1);
+          setActiveSection(next);
+          focusSection(next);
+          return;
+        }
+        if (key === 'Home') {
+          event.preventDefault();
+          setActiveSection(firstSection);
+          focusSection(firstSection);
+          return;
+        }
+        if (key === 'End') {
+          event.preventDefault();
+          setActiveSection(lastSection);
+          focusSection(lastSection);
+          return;
+        }
+        if (key === 'ArrowUp') {
+          event.preventDefault();
+          incrementSection(section, open ? -1 : 1);
+          return;
+        }
+        if (key === 'ArrowDown') {
+          if (event.altKey) {
+            event.preventDefault();
+            openPicker();
+            return;
+          }
+          event.preventDefault();
+          incrementSection(section, open ? 1 : -1);
+          return;
+        }
+        if (key === 'Delete' || key === 'Backspace') {
+          event.preventDefault();
+          clearActiveSection();
+          return;
+        }
+        if (key === 'Enter') {
+          event.preventDefault();
+          if (open) closePicker();
+          return;
+        }
+        if (key === 'Escape' && open) {
+          event.preventDefault();
+          closePicker();
+          return;
+        }
+        if (key === ' ' || key === 'Spacebar') {
           event.preventDefault();
           openPicker();
           return;
         }
-        event.preventDefault();
-        incrementSection(activeSection, open ? 1 : -1);
-        announceActiveSection(activeSection);
-        selectSectionText(activeSection);
-        return;
-      }
-      if (key === 'Delete' || key === 'Backspace') {
-        event.preventDefault();
-        clearActiveSection();
-        announceActiveSection(activeSection);
-        selectSectionText(activeSection);
-        return;
-      }
-      if (key === 'Enter') {
-        event.preventDefault();
-        if (open) {
-          closePicker();
-        }
-        return;
-      }
-      if (key === 'Escape' && open) {
-        event.preventDefault();
-        closePicker();
-        return;
-      }
-      if (key === ' ' || key === 'Spacebar') {
-        event.preventDefault();
-        openPicker();
-        return;
-      }
 
-      if (format === '12' && activeSection === SECTION_PERIOD) {
-        const lower = key.toLowerCase();
-        if (lower === 'a') {
-          event.preventDefault();
-          setSectionValue(SECTION_PERIOD, 'AM');
-          announceActiveSection(SECTION_PERIOD);
-          selectSectionText(SECTION_PERIOD);
-        } else if (lower === 'p') {
-          event.preventDefault();
-          setSectionValue(SECTION_PERIOD, 'PM');
-          announceActiveSection(SECTION_PERIOD);
-          selectSectionText(SECTION_PERIOD);
+        if (format === '12' && section === SECTION_PERIOD) {
+          const lower = key.toLowerCase();
+          if (lower === 'a') {
+            event.preventDefault();
+            setSectionValue(SECTION_PERIOD, 'AM');
+          } else if (lower === 'p') {
+            event.preventDefault();
+            setSectionValue(SECTION_PERIOD, 'PM');
+          }
+          return;
         }
-        return;
-      }
 
-      if (/^\d$/.test(key)) {
-        event.preventDefault();
-        const next = applyDigit(Number(key));
-        if (next !== undefined) {
-          setActiveSection(next);
-          announceActiveSection(next);
-          selectSectionText(next);
+        if (/^\d$/.test(key)) {
+          event.preventDefault();
+          const next = applyDigit(Number(key));
+          const targetSection = next ?? section;
+          setActiveSection(targetSection);
+          if (targetSection === section) {
+            event.currentTarget.focus();
+          } else {
+            focusSection(targetSection);
+          }
         }
+      },
+      [
+        activeSection,
+        applyDigit,
+        clearActiveSection,
+        closePicker,
+        disabled,
+        firstSection,
+        focusSection,
+        format,
+        incrementSection,
+        lastSection,
+        moveSection,
+        open,
+        openPicker,
+        readOnly,
+        setActiveSection,
+        setSectionValue,
+      ],
+    );
+
+    useEffect(() => {
+      if (!segmentFocused) return;
+      if (readOnly || disabled) return;
+
+      const activeSegment = segmentRefs.current[activeSection];
+      if (activeSegment && document.activeElement !== activeSegment) {
+        activeSegment.focus();
       }
-    };
+    }, [activeSection, disabled, readOnly, segmentFocused]);
+
+    const onSegmentPaste = useCallback(
+      (event) => {
+        if (readOnly) {
+          event.preventDefault();
+          return;
+        }
+        const pasted = event.clipboardData.getData('text');
+        const parsed = parsePasted(pasted);
+        if (!parsed) {
+          handleInvalid();
+          event.preventDefault();
+          return;
+        }
+
+        commitSections(parsed);
+        event.preventDefault();
+      },
+      [commitSections, handleInvalid, parsePasted, readOnly],
+    );
 
     const hoursOptions = useMemo(
       () =>
@@ -891,7 +660,8 @@ const TimeInput = forwardRef(
       [],
     );
 
-    const showActiveSection = (inputFocused || open) && !readOnly && !disabled;
+    const showActiveSection =
+      (segmentFocused || open) && !readOnly && !disabled;
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
@@ -912,7 +682,6 @@ const TimeInput = forwardRef(
           >
             <StyledTimeInputField {...passThemeFlag}>
               <StyledTimeInputDisplay
-                aria-hidden="true"
                 onMouseDown={onDisplayMouseDown}
                 {...passThemeFlag}
               >
@@ -927,8 +696,20 @@ const TimeInput = forwardRef(
                       </StyledTimeInputSeparator>
                     )}
                     <StyledTimeInputSegment
+                      ref={(segmentNode) => {
+                        segmentRefs.current[section] = segmentNode;
+                      }}
+                      tabIndex={
+                        !readOnly && !disabled && activeSection === section
+                          ? 0
+                          : -1
+                      }
                       $active={showActiveSection && activeSection === section}
                       $filled={filled}
+                      onFocus={() => onSegmentFocus(section)}
+                      onBlur={onSegmentBlur}
+                      onKeyDown={(event) => onSegmentKeyDown(section, event)}
+                      onPaste={onSegmentPaste}
                       data-active={
                         showActiveSection && activeSection === section
                       }
@@ -939,6 +720,20 @@ const TimeInput = forwardRef(
                       }
                       data-section={section}
                       {...passThemeFlag}
+                      aria-label={getSectionName(section, format)}
+                      role="spinbutton"
+                      aria-disabled={disabled || undefined}
+                      aria-readonly={readOnly || undefined}
+                      aria-valuenow={
+                        getSectionAriaMeta({ section, format, sections }).now
+                      }
+                      aria-valuemin={
+                        getSectionAriaMeta({ section, format, sections }).min
+                      }
+                      aria-valuemax={
+                        getSectionAriaMeta({ section, format, sections }).max
+                      }
+                      aria-valuetext={getSectionValueAnnouncement(section)}
                     >
                       {text}
                     </StyledTimeInputSegment>
@@ -946,28 +741,12 @@ const TimeInput = forwardRef(
                 ))}
               </StyledTimeInputDisplay>
               <StyledTimeInput
+                tabIndex={-1}
                 {...inputRest}
                 id={id}
                 ref={inputRef}
                 value={inputValue}
-                onFocus={onInputFocus}
-                onBlur={onInputBlur}
-                onClick={onInputClick}
-                onSelect={onInputSelect}
-                onKeyDown={onInputKeyDown}
-                onPaste={onInputPaste}
-                placeholder={placeholder}
-                role="spinbutton"
-                aria-label={formatMessage({
-                  id: 'timeInput.inputLabel',
-                  messages,
-                })}
-                aria-valuenow={activeSectionAriaMeta.now}
-                aria-valuemin={activeSectionAriaMeta.min}
-                aria-valuemax={activeSectionAriaMeta.max}
-                aria-valuetext={
-                  activeSectionValueText || displayValue || placeholder
-                }
+                aria-hidden="true"
                 disabled={disabled}
                 readOnly
                 focusIndicator={false}
@@ -999,7 +778,6 @@ const TimeInput = forwardRef(
                 aria-controls={id ? `${id}__drop` : undefined}
                 onFocus={() => {
                   setIconFocused(true);
-                  setInputFocused(false);
                 }}
                 onBlur={() => {
                   setIconFocused(false);

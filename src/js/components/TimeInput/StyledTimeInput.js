@@ -32,7 +32,6 @@ export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
   ${plainInputStyle}
   position: relative;
-  z-index: 1;
   color: transparent;
   caret-color: transparent;
   text-shadow: none;
@@ -60,7 +59,6 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
 )`
   position: absolute;
   inset: 0;
-  z-index: 2;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -93,11 +91,19 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
       props.theme,
     )};
+  ${(props) => {
+    const weight =
+      props.theme.global.input.weight || props.theme.global.input.font.weight;
+    return weight && `font-weight: ${weight};`;
+  }}
 `;
 
 export const StyledTimeInputSegment = styled.span.withConfig(
   styledComponentsConfig,
 )`
+  &:focus {
+    outline: none;
+  }
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -112,6 +118,11 @@ export const StyledTimeInputSegment = styled.span.withConfig(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
       props.theme,
     )};
+  ${(props) => {
+    const weight =
+      props.theme.global.input.weight || props.theme.global.input.font.weight;
+    return weight && `font-weight: ${weight};`;
+  }}
 
   ${(props) => {
     if (!props.$active) return '';
