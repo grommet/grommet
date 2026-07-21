@@ -313,9 +313,7 @@ interface StepperStateType {
       color?: ColorType;
     };
   };
-  label?: {
-    color?: ColorType;
-  };
+  label?: TextProps;
 }
 
 interface StepperHelperTextStateType extends StepperStateType {
@@ -2157,13 +2155,14 @@ export interface ThemeType {
         width?: string;
       };
     };
-    description?: {
-      size?: string;
-      color?: ColorType;
-    };
+    description?: TextProps;
     helperText?: {
       size?: string;
       color?: ColorType;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: ColorType;
     };
     // States: [component].[state].[element].[property]
     pending?: StepperStatusStateType;

@@ -180,10 +180,13 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
 
     const defaultBackgroundHoverColor = backgroundColor
       ? `color-mix(in srgb, ${backgroundColor} 80%, black)`
-      : normalizeColor('background-contrast', theme);
+      : normalizeColor(
+          theme.stepper?.hover?.background || 'background-contrast',
+          theme,
+        );
     const defaultBorderHoverColor = borderColor
       ? `color-mix(in srgb, ${borderColor} 80%, black)`
-      : normalizeColor('text', theme);
+      : normalizeColor(theme.stepper?.hover?.border || 'text', theme);
     const defaultColorHoverColor = color
       ? `color-mix(in srgb, ${color} 80%, black)`
       : normalizeColor('text-strong', theme);
