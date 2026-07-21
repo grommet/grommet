@@ -1059,7 +1059,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { right: 'xsmall' },
       },
       container: {
-        round: 'small',
+        round: 'xxsmall',
       },
       active: {
         background: 'active-background',

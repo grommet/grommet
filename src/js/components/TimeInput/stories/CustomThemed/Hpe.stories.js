@@ -13,8 +13,8 @@ import { deepMerge, normalizeColor } from 'grommet/utils';
 // and to act as a visual reference for reviewers.
 const hpeTimeInputTheme = deepMerge(hpe, {
   timeInput: {
-    separator: {
-      gap: '5xsmall',
+    active: {
+      pad: '5xsmall',
     },
     drop: {
       option: {
