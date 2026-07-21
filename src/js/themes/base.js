@@ -29,7 +29,6 @@ import { parseMetricToNum } from '../utils/mixins';
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
-
 const statusColors = {
   critical: '#EB0000',
   error: '#B30000',
@@ -1055,7 +1054,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     timeInput: {
       button: {
-        margin: { right: 'xsmall' },
+        margin: { right: 'small' },
       },
       container: {
         round: 'xxsmall',
