@@ -17,8 +17,13 @@ export const TimeForm = () => {
           setValue({ value: '' });
         }}
       >
-        <FormField name="value" label="value" required>
-          <TimeInput name="value" format="24" />
+        <FormField
+          htmlFor="appointment-time"
+          name="value"
+          label="Choose an appointment time"
+          required
+        >
+          <TimeInput id="appointment-time" name="value" format="24" />
         </FormField>
         <Button type="submit" label="submit" />
       </Form>

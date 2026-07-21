@@ -132,7 +132,8 @@ const TimeInput = forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
-    const { useFormInput } = useContext(FormContext);
+    const formContext = useContext(FormContext);
+    const { useFormInput } = formContext;
 
     const inputRef = useForwardedRef(refArg);
     const containerRef = useRef();
@@ -142,6 +143,12 @@ const TimeInput = forwardRef(
       value: valueArg,
       initialValue: defaultValue || '',
     });
+
+    const { inForm } = formContext.useFormField({});
+    const formFieldLabelId = inForm && id ? `grommet-${id}__label` : undefined;
+    const groupLabel = formFieldLabelId
+      ? undefined
+      : formatMessage({ id: 'timeInput.inputLabel', messages });
 
     const [open, setOpen] = useState(false);
     const [iconFocused, setIconFocused] = useState(false);
@@ -238,12 +245,19 @@ const TimeInput = forwardRef(
     // of the raw separator/placeholder characters in the native input value.
     const getSectionValueAnnouncement = useCallback(
       (section) => {
+        const sectionName = getSectionName(
+          section,
+          format,
+          formatMessage,
+          messages,
+        );
+
         if (section === SECTION_PERIOD) {
           if (sections.period === undefined) {
             return formatMessage({
               id: 'timeInput.activeSection',
               messages,
-              values: { section: getSectionName(section, format) },
+              values: { section: sectionName },
             });
           }
 
@@ -261,7 +275,7 @@ const TimeInput = forwardRef(
           return formatMessage({
             id: 'timeInput.activeSection',
             messages,
-            values: { section: getSectionName(section, format) },
+            values: { section: sectionName },
           });
         }
 
@@ -270,18 +284,11 @@ const TimeInput = forwardRef(
           messages,
           values: {
             value: sectionValue,
-            section: getSectionName(section, format),
+            section: sectionName,
           },
         });
       },
       [format, formatMessage, messages, sections],
-    );
-
-    const announceActiveSection = useCallback(
-      (section) => {
-        announce(getSectionValueAnnouncement(section));
-      },
-      [announce, getSectionValueAnnouncement],
     );
 
     const focusSection = useCallback((section) => {
@@ -289,10 +296,6 @@ const TimeInput = forwardRef(
       if (target) {
         target.focus();
       }
-
-      requestAnimationFrame(() => {
-        segmentRefs.current[section]?.focus();
-      });
     }, []);
 
     const placeholder = useMemo(
@@ -335,17 +338,9 @@ const TimeInput = forwardRef(
         event.stopPropagation();
         setSegmentFocused(true);
         setActiveSection(section);
-        announceActiveSection(section);
         focusSection(section);
       },
-      [
-        announceActiveSection,
-        disabled,
-        focusSection,
-        readOnly,
-        setSegmentFocused,
-        setActiveSection,
-      ],
+      [disabled, focusSection, readOnly, setSegmentFocused, setActiveSection],
     );
 
     const onDisplayMouseDown = useCallback(
@@ -425,11 +420,9 @@ const TimeInput = forwardRef(
         event.preventDefault();
         setSegmentFocused(true);
         setActiveSection(firstSection);
-        announceActiveSection(firstSection);
         focusSection(firstSection);
       },
       [
-        announceActiveSection,
         firstSection,
         focusSection,
         onDisplaySectionMouseDown,
@@ -443,33 +436,34 @@ const TimeInput = forwardRef(
       if (disabled || readOnly) return;
       setActiveSection(firstSection);
       setOpen(true);
-      announce(formatMessage({ id: 'timeInput.enterDrop', messages }));
-      announceActiveSection(firstSection);
-    }, [
-      announce,
-      announceActiveSection,
-      disabled,
-      firstSection,
-      formatMessage,
-      messages,
-      readOnly,
-      setActiveSection,
-    ]);
+    }, [disabled, firstSection, readOnly, setActiveSection]);
 
     const closePicker = useCallback(() => {
       setOpen(false);
-      focusSection(activeSection);
-      announce(formatMessage({ id: 'timeInput.exitDrop', messages }));
-    }, [activeSection, announce, focusSection, formatMessage, messages]);
+      setTimeout(() => {
+        focusSection(activeSection);
+      }, 0);
+    }, [activeSection, focusSection]);
 
     const onSegmentFocus = useCallback(
       (section) => {
+        if (!segmentFocused && !readOnly && !disabled && !open) {
+          announce(formatMessage({ id: 'timeInput.openDrop', messages }));
+        }
         setSegmentFocused(true);
         if (readOnly || disabled) return;
         setActiveSection(section);
-        announceActiveSection(section);
       },
-      [announceActiveSection, disabled, readOnly, setActiveSection],
+      [
+        announce,
+        disabled,
+        formatMessage,
+        messages,
+        open,
+        readOnly,
+        segmentFocused,
+        setActiveSection,
+      ],
     );
 
     const onSegmentBlur = useCallback(() => {
@@ -682,6 +676,9 @@ const TimeInput = forwardRef(
           >
             <StyledTimeInputField {...passThemeFlag}>
               <StyledTimeInputDisplay
+                role="group"
+                aria-label={groupLabel}
+                aria-labelledby={formFieldLabelId}
                 onMouseDown={onDisplayMouseDown}
                 {...passThemeFlag}
               >
@@ -720,7 +717,12 @@ const TimeInput = forwardRef(
                       }
                       data-section={section}
                       {...passThemeFlag}
-                      aria-label={getSectionName(section, format)}
+                      aria-label={getSectionName(
+                        section,
+                        format,
+                        formatMessage,
+                        messages,
+                      )}
                       role="spinbutton"
                       aria-disabled={disabled || undefined}
                       aria-readonly={readOnly || undefined}
@@ -792,10 +794,12 @@ const TimeInput = forwardRef(
               align={{ top: 'bottom', left: 'left' }}
               dropProps={{ stretch: false }}
               format={format}
+              formatMessage={formatMessage}
               hoursOptions={hoursOptions}
               id={id}
               incrementSection={incrementSection}
               label={formatMessage({ id: 'timeInput.chooseTime', messages })}
+              messages={messages}
               minuteOptions={minuteOptions}
               moveSection={moveSection}
               sectionOrder={sectionOrder}

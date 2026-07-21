@@ -226,9 +226,11 @@
     "activeSectionValue": "{value} {section}",
     "activePeriodValue": "{period} period",
     "openDrop": "Press space to open time picker",
-    "enterDrop": "Time input is open",
-    "exitDrop": "Time input closed",
-    "invalidTime": "Invalid time value"
+    "invalidTime": "Invalid time value",
+    "sectionHours": "hours",
+    "sectionMinutes": "minutes",
+    "sectionSeconds": "seconds",
+    "sectionMeridiem": "meridiem"
   },
   "video": {
     "audioDescriptions": "video audio description",

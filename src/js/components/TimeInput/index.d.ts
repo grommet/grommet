@@ -6,13 +6,18 @@ export interface TimeInputProps {
   format?: '12' | '24';
   id?: string;
   messages?: {
+    activePeriodValue?: string;
+    activeSection?: string;
+    activeSectionValue?: string;
     chooseTime?: string;
     currentValue?: string;
-    enterDrop?: string;
-    exitDrop?: string;
     inputLabel?: string;
     invalidTime?: string;
     openDrop?: string;
+    sectionHours?: string;
+    sectionMeridiem?: string;
+    sectionMinutes?: string;
+    sectionSeconds?: string;
   };
   minuteStep?: number;
   name?: string;

@@ -85,7 +85,9 @@ const optionKey = (label, option) => `${label.toLowerCase()}-${option}`;
 const PopupColumn = ({
   activeSection,
   format,
+  formatMessage,
   label,
+  messages,
   onClickCommitOption,
   onPointerCommitOption,
   onSetSection,
@@ -126,7 +128,7 @@ const PopupColumn = ({
           tabIndex={isActive ? 0 : -1}
           aria-label={`${
             section === SECTION_PERIOD ? option : pad(option)
-          } ${getSectionName(section, format)}`}
+          } ${getSectionName(section, format, formatMessage, messages)}`}
           $active={isActive}
           $selected={selected}
           onMouseDown={(event) => {
@@ -156,9 +158,11 @@ const TimeInputPopup = ({
   activeSection,
   align,
   format,
+  formatMessage,
   hoursOptions,
   id,
   incrementSection,
+  messages,
   minuteOptions,
   moveSection,
   onAccept,
@@ -504,7 +508,9 @@ const TimeInputPopup = ({
               key={sectionLabel}
               activeSection={activeSection}
               format={format}
+              formatMessage={formatMessage}
               label={sectionLabel}
+              messages={messages}
               onClickCommitOption={commitClickOptionSelection}
               onPointerCommitOption={commitPointerOptionSelection}
               onSetSection={setActiveSection}

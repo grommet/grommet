@@ -14,6 +14,8 @@ import '@testing-library/jest-dom';
 
 import { AnnounceContext } from '../../../contexts/AnnounceContext';
 import { createPortal } from '../../../utils/portal';
+import { Form } from '../../Form';
+import { FormField } from '../../FormField';
 import { Grommet } from '../../Grommet';
 import { TimeInput } from '..';
 
@@ -89,6 +91,21 @@ describe('TimeInput', () => {
     expect(screen.queryByTestId('time-input-active-section')).toBeNull();
   });
 
+  test('allows clicking directly on a non-first segment to focus it', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="12:34:56 PM" />
+      </Grommet>,
+    );
+
+    const meridiemSegment = getSegment('meridiem');
+    await user.click(meridiemSegment);
+
+    expect(meridiemSegment).toHaveFocus();
+  });
+
   test('keeps segment typing active for two-digit entry', async () => {
     const user = userEvent.setup();
 
@@ -154,6 +171,73 @@ describe('TimeInput', () => {
     expect(secondSegment).toHaveFocus();
   });
 
+  test('allows Tab to leave the component past the trigger button', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <div>
+          <TimeInput format="24" defaultValue="00:00:00" />
+          <button type="button">after</button>
+        </div>
+      </Grommet>,
+    );
+
+    const secondSegment = screen.getByRole('spinbutton', { name: 'seconds' });
+    await user.click(secondSegment);
+    expect(secondSegment).toHaveFocus();
+
+    // First hop lands on the "Choose time" trigger button, which is also
+    // part of the component's own tab order.
+    await user.tab();
+    expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+
+    // Second hop should fully leave the component.
+    await user.tab();
+    expect(screen.getByRole('button', { name: 'after' })).toHaveFocus();
+  });
+
+  test('allows Shift+Tab to leave the component before the first segment', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <div>
+          <button type="button">before</button>
+          <TimeInput format="24" defaultValue="00:00:00" />
+        </div>
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    await user.click(hourSegment);
+    expect(hourSegment).toHaveFocus();
+
+    await user.tab({ shift: true });
+
+    expect(screen.getByRole('button', { name: 'before' })).toHaveFocus();
+  });
+
+  test('does not trap focus back on the first segment when nothing precedes it', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    await user.click(hourSegment);
+    expect(hourSegment).toHaveFocus();
+
+    await user.tab({ shift: true });
+
+    // With no preceding focusable element on the page, focus falls through
+    // to document.body; onSegmentBlur must not yank it back onto the segment.
+    expect(document.body).toHaveFocus();
+  });
+
   test('updates active section via arrows and digits', async () => {
     const user = userEvent.setup();
 
@@ -199,6 +283,66 @@ describe('TimeInput', () => {
         '35 minutes',
       );
     });
+  });
+
+  test('does not push a live-region announcement when focusing a segment', async () => {
+    const user = userEvent.setup();
+    const announceSpy = jest.fn();
+
+    render(
+      <AnnounceContext.Provider value={announceSpy}>
+        <Grommet>
+          <TimeInput format="12" defaultValue="12:34:56 PM" />
+        </Grommet>
+      </AnnounceContext.Provider>,
+    );
+
+    await user.click(getSegment('hours'));
+    await user.keyboard('{ArrowRight}');
+    await user.keyboard('{ArrowRight}');
+
+    // the section name/value is already conveyed natively via
+    // aria-label/aria-valuetext when focus moves to a segment, so no
+    // manual announcement should accompany plain segment navigation
+    expect(
+      announceSpy.mock.calls.some(([message]) =>
+        /selected|hours|minutes|seconds/i.test(String(message)),
+      ),
+    ).toBe(false);
+  });
+
+  test('announces the openDrop hint once when the component first gains focus', async () => {
+    const user = userEvent.setup();
+    const announceSpy = jest.fn();
+
+    render(
+      <AnnounceContext.Provider value={announceSpy}>
+        <Grommet>
+          <TimeInput format="12" defaultValue="12:34:56 PM" />
+        </Grommet>
+      </AnnounceContext.Provider>,
+    );
+
+    await user.click(getSegment('hours'));
+
+    expect(
+      announceSpy.mock.calls.filter(
+        ([message]) => message === 'Press space to open time picker',
+      ),
+    ).toHaveLength(1);
+
+    announceSpy.mockClear();
+
+    await user.keyboard('{ArrowRight}');
+    await user.keyboard('{ArrowRight}');
+
+    // moving between segments within the already-focused component
+    // should not repeat the hint
+    expect(
+      announceSpy.mock.calls.some(
+        ([message]) => message === 'Press space to open time picker',
+      ),
+    ).toBe(false);
   });
 
   test('uses currentValue message key for current value announcements', async () => {
@@ -264,6 +408,79 @@ describe('TimeInput', () => {
         }),
       ).toBe(true);
     });
+  });
+
+  test('associates the FormField label once with the segment group via aria-labelledby', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+          >
+            <TimeInput id="appointment-time" name="value" format="24" />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    expect(screen.getByText('Choose an appointment time')).toHaveAttribute(
+      'id',
+      'grommet-appointment-time__label',
+    );
+
+    const group = screen.getByRole('group');
+    expect(group).toHaveAttribute(
+      'aria-labelledby',
+      'grommet-appointment-time__label',
+    );
+    expect(within(group).getByRole('spinbutton', { name: 'hours' })).toBe(
+      getSegment('hours'),
+    );
+    // segment labels stay focused on the section name, not repeated
+    // sentence text, since the group label is only announced once
+    expect(getSegment('hours')).not.toHaveAttribute('aria-describedby');
+    expect(getSegment('minutes')).not.toHaveAttribute('aria-describedby');
+
+    // the FormField label takes precedence, so no fallback aria-label
+    // should be set on the group
+    expect(group).not.toHaveAttribute('aria-label');
+  });
+
+  test('falls back to the inputLabel message when there is no FormField label', () => {
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('group')).toHaveAttribute(
+      'aria-label',
+      'Time input',
+    );
+  });
+
+  test('uses sectionHours/sectionMinutes message keys for segment labels', async () => {
+    render(
+      <Grommet>
+        <TimeInput
+          format="12"
+          defaultValue="12:34:56 PM"
+          messages={{
+            sectionHours: 'heures',
+            sectionMinutes: 'minutes-fr',
+          }}
+        />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'heures' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('spinbutton', { name: 'minutes-fr' }),
+    ).toBeInTheDocument();
   });
 
   test('updates spinbutton range metadata for the active section', async () => {

@@ -5,7 +5,18 @@ export const SECTION_PERIOD = 3;
 
 export const pad = (value) => value.toString().padStart(2, '0');
 
-export const getSectionName = (section, format) => {
+const sectionMessageId = (section) => {
+  if (section === SECTION_HOUR) return 'timeInput.sectionHours';
+  if (section === SECTION_MINUTE) return 'timeInput.sectionMinutes';
+  if (section === SECTION_SECOND) return 'timeInput.sectionSeconds';
+  return 'timeInput.sectionMeridiem';
+};
+
+export const getSectionName = (section, format, formatMessage, messages) => {
+  if (formatMessage) {
+    return formatMessage({ id: sectionMessageId(section), messages });
+  }
+
   const names =
     format === '12'
       ? ['hours', 'minutes', 'seconds', 'meridiem']
