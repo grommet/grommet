@@ -42,10 +42,10 @@ const hpeTimeInputTheme = deepMerge(hpe, {
 export const Hpe = () => (
   <Grommet theme={hpeTimeInputTheme}>
     <Box pad="large" gap="medium" width="medium">
-      <TimeInput format="12" defaultValue="09:30:00 AM" />
+      <TimeInput format="12" defaultValue="09:30:00" />
       <TimeInput format="24" defaultValue="14:45:00" />
-      <TimeInput format="12" disabled defaultValue="09:30:00 AM" />
-      <TimeInput format="12" readOnly defaultValue="09:30:00 AM" />
+      <TimeInput format="12" disabled defaultValue="09:30:00" />
+      <TimeInput format="12" readOnly defaultValue="09:30:00" />
     </Box>
   </Grommet>
 );

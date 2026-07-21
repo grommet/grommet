@@ -33,7 +33,7 @@ describe('TimeInput', () => {
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56 PM" />
+        <TimeInput format="12" defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -96,7 +96,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56 PM" />
+        <TimeInput format="12" defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -263,7 +263,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:35:10 PM" />
+        <TimeInput format="12" defaultValue="12:35:10" />
       </Grommet>,
     );
 
@@ -292,7 +292,7 @@ describe('TimeInput', () => {
     render(
       <AnnounceContext.Provider value={announceSpy}>
         <Grommet>
-          <TimeInput format="12" defaultValue="12:34:56 PM" />
+          <TimeInput format="12" defaultValue="12:34:56" />
         </Grommet>
       </AnnounceContext.Provider>,
     );
@@ -318,7 +318,7 @@ describe('TimeInput', () => {
     render(
       <AnnounceContext.Provider value={announceSpy}>
         <Grommet>
-          <TimeInput format="12" defaultValue="12:34:56 PM" />
+          <TimeInput format="12" defaultValue="12:34:56" />
         </Grommet>
       </AnnounceContext.Provider>,
     );
@@ -354,7 +354,7 @@ describe('TimeInput', () => {
         <Grommet>
           <TimeInput
             format="12"
-            defaultValue="12:34:56 PM"
+            defaultValue="12:34:56"
             messages={{
               currentValue: 'Now {hour}:{minute}:{second}{period}',
             }}
@@ -466,7 +466,7 @@ describe('TimeInput', () => {
       <Grommet>
         <TimeInput
           format="12"
-          defaultValue="12:34:56 PM"
+          defaultValue="12:34:56"
           messages={{
             sectionHours: 'heures',
             sectionMinutes: 'minutes-fr',
@@ -488,7 +488,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:35:10 PM" />
+        <TimeInput format="12" defaultValue="12:35:10" />
       </Grommet>,
     );
 
@@ -618,7 +618,7 @@ describe('TimeInput', () => {
   test('supports uncontrolled initial value', () => {
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="01:05:09 PM" />
+        <TimeInput format="12" defaultValue="13:05:09" />
       </Grommet>,
     );
 
@@ -630,7 +630,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56 PM" />
+        <TimeInput format="12" defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -648,7 +648,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56 PM" />
+        <TimeInput format="12" defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -716,13 +716,13 @@ describe('TimeInput', () => {
     await user.keyboard('23456p');
 
     const completeFormData = new FormData(form as HTMLFormElement);
-    expect(completeFormData.get('alarmTime')).toBe('12:34:56 PM');
+    expect(completeFormData.get('alarmTime')).toBe('12:34:56');
   });
 
   test('disables both spinbutton and trigger button when disabled', () => {
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:45:10 AM" disabled />
+        <TimeInput format="12" defaultValue="09:45:10" disabled />
       </Grommet>,
     );
 
@@ -741,7 +741,7 @@ describe('TimeInput', () => {
         <TimeInput
           id="read-only-picker"
           format="12"
-          defaultValue="12:00:00 AM"
+          defaultValue="00:00:00"
           readOnly
         />
       </Grommet>,
@@ -763,7 +763,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:00:00 AM" readOnly />
+        <TimeInput format="12" defaultValue="00:00:00" readOnly />
       </Grommet>,
     );
 
@@ -918,7 +918,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:15:20 AM" />
+        <TimeInput format="12" defaultValue="07:15:20" />
       </Grommet>,
     );
 
@@ -1055,7 +1055,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="12:30:20 AM" />
+          <TimeInput format="12" defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -1137,7 +1137,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:30:00 AM" />
+        <TimeInput format="12" defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1175,7 +1175,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:30:00 AM" />
+        <TimeInput format="12" defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1197,7 +1197,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="02:30:00 AM" />
+        <TimeInput format="12" defaultValue="02:30:00" />
       </Grommet>,
     );
 
@@ -1421,7 +1421,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:30:00 AM" />
+        <TimeInput format="12" defaultValue="09:30:00" />
       </Grommet>,
     );
 
@@ -1443,7 +1443,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:30:00 AM" />
+        <TimeInput format="12" defaultValue="09:30:00" />
       </Grommet>,
     );
 
@@ -1555,7 +1555,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="12:30:20 AM" />
+          <TimeInput format="12" defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -1626,7 +1626,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="12:30:20 AM" />
+          <TimeInput format="12" defaultValue="00:30:20" />
         </Grommet>,
       );
 

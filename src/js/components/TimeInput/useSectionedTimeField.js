@@ -4,10 +4,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   defaultSections,
   hasAnyValue,
+  isoTimeToSections,
+  normalizeToIsoTime,
   pad,
   sectionKey,
   sectionMax,
   sectionMin,
+  sectionsToIsoTime,
   SECTION_HOUR,
   SECTION_MINUTE,
   SECTION_PERIOD,
@@ -122,8 +125,8 @@ export const useSectionedTimeField = ({
   // Track pending single digit for display without committing
   const [pendingDigits, setPendingDigits] = useState({});
   const parsedValue = useMemo(
-    () => parseSectionsValue(value, format, sectionOrder),
-    [format, sectionOrder, value],
+    () => isoTimeToSections(normalizeToIsoTime(value), format),
+    [format, value],
   );
 
   const [sections, setSections] = useState(
@@ -185,11 +188,10 @@ export const useSectionedTimeField = ({
 
       const nextValue =
         complete && sectionOrder.length && allValid
-          ? formatSectionsValue({
-              sections: nextSections,
-              sectionOrder,
-              includeTokens: false,
-            })
+          ? sectionsToIsoTime(
+              { ...nextSections, second: nextSections.second ?? 0 },
+              format,
+            )
           : undefined;
 
       // Mark as incomplete if: sections incomplete OR some invalid

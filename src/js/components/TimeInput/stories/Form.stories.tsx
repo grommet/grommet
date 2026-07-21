@@ -4,7 +4,7 @@ import { Box, Button, Form, FormField, TimeInput } from 'grommet';
 
 export const TimeForm = () => {
   const [value, setValue] = React.useState({ value: '' });
-  const onChange = (nextValue) => {
+  const onChange = (nextValue: { value: string }) => {
     setValue(nextValue);
   };
 

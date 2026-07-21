@@ -112,12 +112,27 @@ const normalizeStep = (step) => {
   return Math.max(1, Math.floor(parsed));
 };
 
+// When `format` isn't explicitly provided, default to the 12/24-hour
+// convention the browser's default locale uses, rather than hardcoding one.
+const getDefaultFormat = () => {
+  try {
+    const { hour12 } = new Intl.DateTimeFormat(undefined, {
+      hour: 'numeric',
+    }).resolvedOptions();
+    return hour12 ? '12' : '24';
+  } catch {
+    return '24';
+  }
+};
+
+const DEFAULT_FORMAT = getDefaultFormat();
+
 const TimeInput = forwardRef(
   (
     {
       defaultValue,
       disabled,
-      format = '24',
+      format = DEFAULT_FORMAT,
       id,
       messages,
       minuteStep = 1,

@@ -40,6 +40,65 @@ export const getRanges = (format) => {
   ];
 };
 
+// TimeInput always transacts (value/defaultValue/onChange) in a canonical
+// 24-hour ISO time string ("HH:MM:SS"), regardless of the display `format`
+// prop.
+export const ISO_TIME_REGEX = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
+
+export const normalizeToIsoTime = (value) => {
+  if (typeof value !== 'string' || !value.trim()) return undefined;
+
+  const trimmed = value.trim();
+  if (ISO_TIME_REGEX.test(trimmed)) return trimmed;
+
+  const parsed = new Date(trimmed);
+  if (Number.isNaN(parsed.getTime())) return undefined;
+
+  return `${pad(parsed.getHours())}:${pad(parsed.getMinutes())}:${pad(
+    parsed.getSeconds(),
+  )}`;
+};
+
+// Converts a canonical 24-hour ISO time string into the section shape the
+// sectioned editor uses for display, deriving 12-hour + period fields when
+// needed.
+export const isoTimeToSections = (isoTime, format) => {
+  if (typeof isoTime !== 'string') return undefined;
+  const match = isoTime.match(ISO_TIME_REGEX);
+  if (!match) return undefined;
+
+  const hour24 = Number(match[1]);
+  const minute = Number(match[2]);
+  const second = Number(match[3]);
+
+  if (format === '12') {
+    const period = hour24 < 12 ? 'AM' : 'PM';
+    const hour = hour24 % 12 || 12;
+    return { hour, minute, second, period };
+  }
+
+  return { hour: hour24, minute, second };
+};
+
+export const sectionsToIsoTime = (sections, format) => {
+  if (
+    sections.hour === undefined ||
+    sections.minute === undefined ||
+    sections.second === undefined
+  ) {
+    return undefined;
+  }
+
+  let hour24 = sections.hour;
+  if (format === '12') {
+    const period = sections.period || 'AM';
+    hour24 = sections.hour % 12;
+    if (period === 'PM') hour24 += 12;
+  }
+
+  return `${pad(hour24)}:${pad(sections.minute)}:${pad(sections.second)}`;
+};
+
 export const parseTime = (value, format) => {
   if (!value || typeof value !== 'string') return undefined;
   const trimmed = value.trim().toUpperCase();
