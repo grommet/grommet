@@ -288,12 +288,12 @@ describe('Wizard', () => {
     expect(screen.getByRole('button', { name: 'Abort' })).toBeTruthy();
   });
 
-  test('renders vertical progress track when direction is vertical', () => {
+  test('renders vertical progress track when showProgress is vertical', () => {
     render(
       <Grommet>
         <Wizard
           steps={basicSteps}
-          direction="vertical"
+          showProgress="vertical"
           renderStep={renderStep}
           aria-label="Test wizard"
         />
@@ -321,7 +321,7 @@ describe('Wizard', () => {
         <Wizard
           steps={steps}
           renderStep={renderStep}
-          direction="horizontal"
+          showProgress="horizontal"
           aria-label="Test wizard"
         />
       </Grommet>,

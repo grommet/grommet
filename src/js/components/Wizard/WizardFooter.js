@@ -6,11 +6,8 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
 
-// WizardFooter renders navigation buttons. Labels come from MessageContext
-// (with optional message override). Primary action changes on the last step
-// (Complete) vs intermediate steps (Next). Icons come from theme.wizard.icons.
-// Passing `children` fully replaces the default button set; callers use
-// `useWizard()` for navigation callbacks while keeping the themed shell.
+// WizardFooter renders navigation buttons. Pass `children` to fully
+// replace the default set.
 export const WizardFooter = ({ children, ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const { format } = React.useContext(MessageContext);
@@ -32,26 +29,22 @@ export const WizardFooter = ({ children, ...rest }) => {
   if (!currentStepObj) return null;
 
   const footerTheme = theme.wizard?.footer;
-  const iconTheme = theme.wizard?.icons;
 
   const label = (id, override) => override || format({ id: `wizard.${id}` });
 
-  const NextIcon = iconTheme?.next;
-  const PreviousIcon = iconTheme?.previous;
-  const CompleteIcon = iconTheme?.complete;
-  const CancelIcon = iconTheme?.cancel;
-  const SkipIcon = iconTheme?.skip;
+  const NextIcon = footerTheme?.button?.next?.icon;
+  const PreviousIcon = footerTheme?.button?.previous?.icon;
+  const SkipIcon = footerTheme?.button?.skip?.icon;
+  const CompleteIcon = footerTheme?.button?.complete?.icon;
+  const CancelIcon = footerTheme?.button?.cancel?.icon;
 
-  // Array (not Fragment) so Box gap injection sees each button as a
-  // separate child. Cancel is rendered only when `onCancel` was provided;
-  // otherwise the header X button is the sole cancel affordance.
+  // Array (not Fragment) so Box gap injection sees each child.
   const defaultButtons = [
     hasCancelHandler && (
       <Button
         key="cancel"
         label={label('cancel', messages?.cancel)}
-        kind={footerTheme?.button?.cancel?.kind}
-        plain={footerTheme?.button?.cancel?.plain}
+        plain
         icon={CancelIcon ? <CancelIcon aria-hidden="true" /> : undefined}
         onClick={cancel}
       />
@@ -60,7 +53,7 @@ export const WizardFooter = ({ children, ...rest }) => {
       <Button
         key="previous"
         label={label('previous', messages?.previous)}
-        kind={footerTheme?.button?.previous?.kind}
+        secondary
         icon={PreviousIcon ? <PreviousIcon aria-hidden="true" /> : undefined}
         disabled={!canGoPrevious}
         onClick={previous}
@@ -70,7 +63,7 @@ export const WizardFooter = ({ children, ...rest }) => {
       <Button
         key="skip"
         label={label('skip', messages?.skip)}
-        kind={footerTheme?.button?.skip?.kind}
+        secondary
         icon={SkipIcon ? <SkipIcon aria-hidden="true" /> : undefined}
         reverse
         onClick={skip}
@@ -80,8 +73,8 @@ export const WizardFooter = ({ children, ...rest }) => {
       <Button
         key="complete"
         label={label('complete', messages?.complete)}
-        primary
         icon={CompleteIcon ? <CompleteIcon aria-hidden="true" /> : undefined}
+        primary
         disabled={!canGoNext}
         onClick={complete}
       />
@@ -116,7 +109,6 @@ export const WizardFooter = ({ children, ...rest }) => {
                 : footerTheme?.pad
             }
             gap={gapSize}
-            height={isSmall ? undefined : footerTheme?.height}
             direction="row"
             justify={footerTheme?.justify}
             align="center"

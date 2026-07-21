@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 import { focusStyle, styledComponentsConfig } from '../../utils';
 
-// Root wizard container. Flex column so header, middle, and footer
-// stack; `height: 100%` fills a bounded block parent, while
-// `flex: 1 1 auto` + `min-height: 0` let it shrink to fit a flex
-// parent's remaining space (e.g. next to a sibling toolbar) so the
-// internal scroll region can engage. If the parent has no bounded
-// height, `height: 100%` resolves to auto and long content just
-// grows the wizard instead of scrolling.
+// Root wizard container: flex column so header/middle/footer stack.
 export const StyledWizard = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   flex-direction: column;
@@ -19,11 +13,8 @@ export const StyledWizard = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.theme.wizard?.container?.extend}
 `;
 
-// Middle region between the sticky header and footer. Establishes a
-// bounded height (via `flex: 1 1 auto` + `min-height: 0`) so descendants
-// can compute their own scroll boundaries. It does not scroll itself —
-// scrolling happens inside `<WizardContent>` so the stepper and step
-// title remain visible above the scrolling content.
+// Middle region between header and footer. `overflow: hidden` clips
+// overflow exactly at the footer edge.
 export const StyledWizardMiddle = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   flex-direction: column;
@@ -31,13 +22,10 @@ export const StyledWizardMiddle = styled.div.withConfig(styledComponentsConfig)`
   flex: 1 1 auto;
   min-height: 0;
   width: 100%;
+  overflow: hidden;
 `;
 
-// Centered content column inside the scroll region. Carries the
-// `kind`-driven max-width so only the middle content is constrained;
-// header and footer remain full-width. `maxWidth` may be a Grommet
-// size token (e.g. 'large', 'xlarge') or a CSS length; unknown values
-// fall through as-is.
+// Centered column carrying the `kind`-driven max-width.
 export const StyledWizardCenter = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   flex-direction: column;
@@ -56,8 +44,7 @@ export const StyledWizardCenter = styled.div.withConfig(styledComponentsConfig)`
   }}
 `;
 
-// Body region holds either [Progress | Content] side-by-side (vertical
-// direction) or Content only (horizontal direction has Progress in a header).
+// [Progress | Content] (vertical) or Content only (horizontal).
 export const StyledWizardBody = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   flex-direction: ${(props) =>
@@ -66,9 +53,7 @@ export const StyledWizardBody = styled.div.withConfig(styledComponentsConfig)`
   min-height: 0;
 `;
 
-// Content column holds StepHeader + Content + Footer. `min-height: 0`
-// is required so <WizardContent> below can shrink and clip its own
-// overflow instead of pushing the whole column past its parent.
+// Content column holds StepHeader + WizardContent.
 export const StyledWizardContentColumn = styled.div.withConfig(
   styledComponentsConfig,
 )`
@@ -79,8 +64,7 @@ export const StyledWizardContentColumn = styled.div.withConfig(
   min-height: 0;
 `;
 
-// Focus anchor for step transitions. Not visible until it receives
-// keyboard focus, at which point the theme focus ring shows.
+// Focus target for step transitions; shows focus ring only when focused.
 export const StyledWizardFocusAnchor = styled.div.withConfig(
   styledComponentsConfig,
 )`

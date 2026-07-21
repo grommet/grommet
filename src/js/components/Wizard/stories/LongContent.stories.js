@@ -133,7 +133,8 @@ const LongContent = () => {
         <Wizard
           aria-label="Long content wizard"
           kind={kind}
-          header={{ title: 'Create resource' }}
+          title="Create resource"
+          showProgress="horizontal"
           steps={steps}
           footer={renderFooter}
           onComplete={(value) => setResult({ status: 'complete', value })}

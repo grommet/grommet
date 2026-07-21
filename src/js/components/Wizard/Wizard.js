@@ -31,9 +31,8 @@ import {
 } from './StyledWizard';
 import { WizardPropTypes } from './propTypes';
 
-// Flatten wizard step tree into an ordered list of leaves only. Parent
-// steps with children are never nav targets; they are used only for
-// aggregate status rendering in <WizardProgress>.
+// Flatten step tree into ordered leaves; parents with children are
+// aggregate-only, never nav targets.
 const flattenLeaves = (steps) => {
   const leaves = [];
   steps.forEach((step) => {
@@ -46,7 +45,7 @@ const flattenLeaves = (steps) => {
   return leaves;
 };
 
-// Resolve a step object by id from either the tree or the leaf list.
+// Find step by id in the tree or leaf list.
 const findStepById = (steps, id) => {
   // eslint-disable-next-line no-restricted-syntax
   for (const step of steps) {
@@ -59,8 +58,7 @@ const findStepById = (steps, id) => {
   return undefined;
 };
 
-// Find nearest scrollable ancestor. Used by scrollToTop when the wizard is
-// inside a scrolling container smaller than the viewport.
+// Nearest scrollable ancestor for scrollToTop.
 const findScrollableAncestor = (node) => {
   let element = node?.parentElement;
   while (element && element !== document.body) {
@@ -82,13 +80,13 @@ const Wizard = forwardRef(
       steps,
       currentStep: currentStepProp,
       defaultStep,
-      direction = 'horizontal',
+      showProgress = false,
       kind = 'full',
       onStepChange,
       onComplete,
       onCancel,
       renderStep,
-      header,
+      title,
       footer,
       scrollToTop = true,
       value: valueProp,
@@ -96,7 +94,6 @@ const Wizard = forwardRef(
       onValueChange,
       id,
       'aria-label': ariaLabel,
-      a11yTitle,
       messages,
       children,
       ...rest
@@ -108,17 +105,14 @@ const Wizard = forwardRef(
     const responsiveSize = React.useContext(ResponsiveContext);
     const sendAnalytics = useAnalytics();
 
-    // Fallback horizontal direction when the caller asks for horizontal but
-    // sub-steps are present. Stepper mirrors this rule; Wizard warns once.
+    // Horizontal progress + sub-steps: fall back to vertical.
     const hasSubSteps = steps.some(
       (step) => step.children && step.children.length > 0,
     );
-    const effectiveDirection =
-      hasSubSteps && direction === 'horizontal' ? 'vertical' : direction;
+    const effectiveShowProgress =
+      hasSubSteps && showProgress === 'horizontal' ? 'vertical' : showProgress;
 
-    // Wizard supports two levels only (step > child). Descendants beyond
-    // the child level are ignored by `flattenLeaves` and `findStepById`.
-    // Warn once in development so authors don't lose grandchildren silently.
+    // Only two levels supported (step > child); warn on deeper nesting.
     const hasDeepNesting = steps.some((step) =>
       step.children?.some(
         (child) => child.children && child.children.length > 0,
@@ -126,9 +120,9 @@ const Wizard = forwardRef(
     );
 
     if (process.env.NODE_ENV !== 'production') {
-      if (hasSubSteps && direction === 'horizontal') {
+      if (hasSubSteps && showProgress === 'horizontal') {
         console.warn(
-          'Wizard: horizontal direction with sub-steps is not supported. ' +
+          'Wizard: horizontal showProgress with sub-steps is not supported. ' +
             'Falling back to vertical.',
         );
       }
@@ -176,11 +170,11 @@ const Wizard = forwardRef(
     const [completedSteps, setCompletedSteps] = useState(() => new Set());
     const [validationError, setValidationError] = useState(undefined);
     const [isValidating, setIsValidating] = useState(false);
-    // When no `onCancel` is provided, cancel self-closes the wizard.
+    // Without `onCancel`, cancel self-closes the wizard.
     const [isOpen, setIsOpen] = useState(true);
     const hasCancelHandler = onCancel !== undefined;
 
-    // Keep visited history synced when the current step is externally set.
+    // Keep visited history in sync when currentStep is externally set.
     useEffect(() => {
       setVisitedSteps((prev) =>
         prev[prev.length - 1] === currentStep ? prev : [...prev, currentStep],
@@ -201,8 +195,7 @@ const Wizard = forwardRef(
     const isFirstStep = currentStepIndex <= 0;
     const isLastStep = currentStepIndex >= totalSteps - 1;
 
-    // getStepStatus derives status from wizard state. Parent steps aggregate
-    // from their children so <WizardProgress> renders the right visual.
+    // Derive step status; parents aggregate from their children.
     const getStepStatus = useCallback(
       (stepId) => {
         // Parent-with-children aggregate
@@ -234,8 +227,20 @@ const Wizard = forwardRef(
       [steps, currentStep, completedSteps, validationError],
     );
 
-    // Emit a structured step change event. Consumers may swap steps or read
-    // trigger/phase to drive analytics or logging without inspecting DOM.
+    // Record<id, status> for every step (top-level + children).
+    const stepStates = useMemo(() => {
+      const record = {};
+      const walk = (nodes) => {
+        nodes.forEach((node) => {
+          record[node.id] = getStepStatus(node.id);
+          if (node.children && node.children.length) walk(node.children);
+        });
+      };
+      walk(steps);
+      return record;
+    }, [steps, getStepStatus]);
+
+    // Emit a step change event to onStepChange.
     const emitStepChange = useCallback(
       (event) => {
         if (onStepChange) onStepChange(event);
@@ -243,8 +248,7 @@ const Wizard = forwardRef(
       [onStepChange],
     );
 
-    // Resolve the destination step id given the current step and a direction.
-    // Honors step.nextStep(formValue) branching when defined.
+    // Resolve next step id, honoring step.nextStep(formValue) branching.
     const resolveNextStepId = useCallback(() => {
       if (!currentStepObj) return undefined;
       if (typeof currentStepObj.nextStep === 'function') {
@@ -266,7 +270,7 @@ const Wizard = forwardRef(
       return flatSteps[nextIndex]?.id;
     }, [currentStepObj, currentStepIndex, flatSteps, formValue, steps]);
 
-    // Apply a navigation transition (id change + history + completion + focus).
+    // Apply a navigation transition (id, history, completion, focus).
     const applyTransition = useCallback(
       (nextId, { markCompleted } = {}) => {
         if (!nextId) return;
@@ -284,7 +288,7 @@ const Wizard = forwardRef(
       [currentStep, isControlled],
     );
 
-    // Execute step.validate (sync or async). Returns { ok, error }.
+    // Run step.validate (sync or async). Returns { ok, error }.
     const runValidation = useCallback(async () => {
       if (typeof currentStepObj?.validate !== 'function') {
         return { ok: true };
@@ -365,8 +369,7 @@ const Wizard = forwardRef(
     ]);
 
     const previous = useCallback(() => {
-      // Use visited stack for history-aware previous. Falls back to the
-      // linear predecessor when no history is available.
+      // History-aware; falls back to the linear predecessor.
       const historyDest =
         visitedSteps.length > 1
           ? visitedSteps[visitedSteps.length - 2]
@@ -457,7 +460,7 @@ const Wizard = forwardRef(
       if (!currentStepObj?.skippable) return;
       const nextId = resolveNextStepId();
       if (!nextId) return;
-      // Skip does NOT validate and does NOT mark completed.
+      // Skip: no validation, no completion.
       setValidationError(undefined);
       setVisitedSteps((prev) => [...prev, nextId]);
       if (!isControlled) setUncontrolledStep(nextId);
@@ -511,7 +514,7 @@ const Wizard = forwardRef(
         nextCompleted.add(currentStep);
         return nextCompleted;
       });
-      // Emit 'completed' synchronously BEFORE onComplete callback.
+      // Emit 'completed' before invoking onComplete.
       emitStepChange({
         trigger: 'complete',
         phase: 'completed',
@@ -539,18 +542,17 @@ const Wizard = forwardRef(
       if (onCancel) {
         onCancel(formValue);
       } else {
-        // Self-close; remount requires the parent to change `key`.
+        // Self-close; parent must change `key` to remount.
         setIsOpen(false);
       }
       if (sendAnalytics)
         sendAnalytics({ type: 'wizardCancel', element: 'Wizard' });
     }, [sendAnalytics, currentStep, emitStepChange, formValue, onCancel]);
 
-    // Scroll to top on step transition. Container-first: scroll the wizard
-    // container into view, then the nearest scrollable ancestor, then window.
+    // Scroll to top on step transition: container, then ancestor, then window.
     useLayoutEffect(() => {
       if (!scrollToTop) return;
-      // Focus the anchor first so screen readers announce the new step.
+      // Focus the anchor so SR announces the new step.
       if (focusAnchorRef.current) {
         focusAnchorRef.current.focus({ preventScroll: true });
       }
@@ -559,7 +561,7 @@ const Wizard = forwardRef(
         try {
           target.scrollTo({ top: 0, behavior: 'auto' });
         } catch {
-          // Some environments (jsdom) throw on scrollTo. Ignore.
+          // jsdom may throw on scrollTo; ignore.
         }
       };
       const container = wizardRef.current;
@@ -579,11 +581,11 @@ const Wizard = forwardRef(
         currentStepIndex,
         currentStepObj,
         totalSteps,
-        completedSteps,
-        visitedSteps,
+        stepStates,
         formValue,
         setFormValue,
         validationError,
+        isValidating,
         isFirstStep,
         isLastStep,
         canGoNext,
@@ -595,8 +597,7 @@ const Wizard = forwardRef(
         complete,
         cancel,
         hasCancelHandler,
-        getStepStatus,
-        direction: effectiveDirection,
+        showProgress: effectiveShowProgress,
         messages,
       }),
       [
@@ -606,11 +607,11 @@ const Wizard = forwardRef(
         currentStepIndex,
         currentStepObj,
         totalSteps,
-        completedSteps,
-        visitedSteps,
+        stepStates,
         formValue,
         setFormValue,
         validationError,
+        isValidating,
         isFirstStep,
         isLastStep,
         canGoNext,
@@ -622,13 +623,12 @@ const Wizard = forwardRef(
         complete,
         cancel,
         hasCancelHandler,
-        getStepStatus,
-        effectiveDirection,
+        effectiveShowProgress,
         messages,
       ],
     );
 
-    // Default composition when no children are provided.
+    // Resolve footer node (function, node, or default).
     let footerNode;
     if (typeof footer === 'function') {
       footerNode = footer({
@@ -653,32 +653,30 @@ const Wizard = forwardRef(
     const bodyTheme = theme.wizard?.body;
     const kindTheme = theme.wizard?.kind?.[kind];
 
-    // Default composition. Header and footer are direct children of the
-    // wizard column so they naturally stay pinned at the top and bottom
-    // of a bounded parent. The middle region is a non-scrolling flex
-    // container; scrolling happens inside <WizardContent> (the white
-    // card) so the stepper and step title also stay in place while
-    // just the card's body scrolls. The `kind` max-width is applied to
-    // `StyledWizardCenter` inside the middle so header and footer
-    // always span the full wizard width even when the content column
-    // is narrowed. Header always renders to host the close (X) button.
+    // Default layout: header + middle (progress + step body) + footer.
+    // Header/footer stay pinned; only WizardContent scrolls internally.
     const defaultLayout = (
       <>
-        <WizardHeader header={header} />
+        <WizardHeader title={title} />
         <StyledWizardMiddle {...passThemeFlag}>
           <StyledWizardCenter maxWidth={kindTheme?.maxWidth} {...passThemeFlag}>
             <Box
               pad={bodyTheme?.pad}
               gap={bodyTheme?.gap}
-              // `flex` (1 1 auto) so this wrapper shrinks and lets
-              // <WizardContent>'s `overflow: auto` engage.
+              // Shrink so <WizardContent>'s `overflow: auto` engages.
               flex
               style={{ minHeight: 0 }}
             >
-              {effectiveDirection === 'horizontal' &&
+              {effectiveShowProgress === 'horizontal' &&
                 responsiveSize !== 'small' && <WizardProgress />}
-              <StyledWizardBody direction={effectiveDirection}>
-                {effectiveDirection === 'vertical' &&
+              <StyledWizardBody
+                direction={
+                  effectiveShowProgress === 'vertical'
+                    ? 'vertical'
+                    : 'horizontal'
+                }
+              >
+                {effectiveShowProgress === 'vertical' &&
                   responsiveSize !== 'small' && <WizardProgress />}
                 <StyledWizardContentColumn>
                   <StyledWizardFocusAnchor
@@ -705,7 +703,7 @@ const Wizard = forwardRef(
         <StyledWizard
           ref={wizardRef}
           id={id}
-          aria-label={ariaLabel || a11yTitle}
+          aria-label={ariaLabel}
           role="region"
           {...passThemeFlag}
           {...rest}
@@ -717,8 +715,7 @@ const Wizard = forwardRef(
               gap={containerTheme?.gap}
               round={containerTheme?.round}
               elevation={containerTheme?.elevation}
-              // `flex` (1 1 auto) + `minHeight: 0` so the middle region
-              // shrinks and <WizardContent> scrolls internally.
+              // Shrink so the middle region can bound <WizardContent>.
               flex
               style={{ minHeight: 0 }}
             >

@@ -2188,8 +2188,10 @@ export interface ThemeType {
       pad?: PadType;
       border?: BorderType;
       title?: {
-        level?: 1 | 2 | 3 | 4 | 5 | 6;
         size?: string;
+      };
+      close?: {
+        icon?: React.ReactNode | Icon;
       };
       extend?: ExtendType;
     };
@@ -2206,16 +2208,13 @@ export interface ThemeType {
         extend?: ExtendType;
       };
     };
-    stepCounter?: {
-      size?: string;
-      color?: ColorType;
-      weight?: 'normal' | 'bold' | 'bolder' | 'lighter' | number | string;
-      margin?: MarginType;
-    };
     stepHeader?: {
       pad?: PadType;
+      counter?: {
+        size?: string;
+        color?: ColorType;
+      };
       title?: {
-        level?: 1 | 2 | 3 | 4 | 5 | 6;
         size?: string;
       };
       description?: {
@@ -2235,10 +2234,11 @@ export interface ThemeType {
       border?: BorderType;
       justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
       button?: {
-        primary?: 'next' | 'complete';
-        previous?: { kind?: string };
-        cancel?: { kind?: string };
-        skip?: { kind?: string };
+        next?: { icon?: React.ReactNode | Icon };
+        complete?: { icon?: React.ReactNode | Icon };
+        previous?: { icon?: React.ReactNode | Icon };
+        cancel?: { icon?: React.ReactNode | Icon };
+        skip?: { icon?: React.ReactNode | Icon };
       };
       extend?: ExtendType;
     };
@@ -2249,13 +2249,6 @@ export interface ThemeType {
         size?: string;
         margin?: MarginType;
       };
-    };
-    icons?: {
-      next?: React.ReactNode | Icon;
-      previous?: React.ReactNode | Icon;
-      complete?: React.ReactNode | Icon;
-      cancel?: React.ReactNode | Icon;
-      skip?: React.ReactNode | Icon;
     };
   };
   table?: {

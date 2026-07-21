@@ -25,19 +25,16 @@ if (process.env.NODE_ENV !== 'production') {
     steps: PropTypes.arrayOf(PropTypes.shape(nestedStepShape)).isRequired,
     currentStep: PropTypes.string,
     defaultStep: PropTypes.string,
-    direction: PropTypes.oneOf(['horizontal', 'vertical']),
+    showProgress: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]),
     kind: PropTypes.oneOf(['full', 'narrow', 'wide']),
     onStepChange: PropTypes.func,
     onComplete: PropTypes.func,
     onCancel: PropTypes.func,
     renderStep: PropTypes.func,
-    header: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.shape({
-        title: PropTypes.node,
-        description: PropTypes.node,
-      }),
-    ]),
+    title: PropTypes.string,
     footer: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
     scrollToTop: PropTypes.bool,
     value: PropTypes.object,
@@ -45,7 +42,6 @@ if (process.env.NODE_ENV !== 'production') {
     onValueChange: PropTypes.func,
     id: PropTypes.string,
     'aria-label': PropTypes.string,
-    a11yTitle: PropTypes.string,
     children: PropTypes.node,
     messages: PropTypes.shape({
       previous: PropTypes.string,
@@ -54,7 +50,9 @@ if (process.env.NODE_ENV !== 'production') {
       cancel: PropTypes.string,
       close: PropTypes.string,
       complete: PropTypes.string,
-      stepCounter: PropTypes.string,
+      stepHeader: PropTypes.shape({
+        counter: PropTypes.string,
+      }),
       progress: PropTypes.string,
       validationError: PropTypes.string,
     }),

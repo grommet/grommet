@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { BoxExtendedProps } from '../Box';
 
-export type WizardDirection = 'horizontal' | 'vertical';
+export type WizardShowProgress = 'horizontal' | 'vertical' | false;
 
 export type WizardKind = 'full' | 'narrow' | 'wide';
 
@@ -59,8 +59,7 @@ export interface WizardApi<TValue = Record<string, any>> {
   cancel: () => void;
 }
 
-// Discriminated union for onStepChange events. Consumers can narrow on
-// `trigger` + `phase` to reason about event flow without inspecting DOM.
+// Discriminated union for onStepChange events.
 export interface NavigationStepChangeEvent {
   trigger: Exclude<WizardTrigger, 'cancel'>;
   phase: Exclude<WizardPhase, 'cancelled'>;
@@ -85,7 +84,9 @@ export interface WizardMessages {
   skip?: string;
   cancel?: string;
   complete?: string;
-  stepCounter?: string;
+  stepHeader?: {
+    counter?: string;
+  };
   progress?: string;
   validationError?: string;
 }
@@ -94,7 +95,7 @@ export interface WizardProps<TValue = Record<string, any>> {
   steps: WizardStep<TValue>[];
   currentStep?: string;
   defaultStep?: string;
-  direction?: WizardDirection;
+  showProgress?: WizardShowProgress;
   kind?: WizardKind;
   onStepChange?: (event: StepChangeEvent) => void;
   onComplete?: (value: TValue) => void;
@@ -103,12 +104,7 @@ export interface WizardProps<TValue = Record<string, any>> {
     step: WizardStep<TValue>,
     api: WizardApi<TValue>,
   ) => React.ReactNode;
-  header?:
-    | React.ReactNode
-    | {
-        title?: React.ReactNode;
-        description?: React.ReactNode;
-      };
+  title?: string;
   footer?: React.ReactNode | ((api: WizardApi<TValue>) => React.ReactNode);
   scrollToTop?: boolean;
   value?: TValue;
@@ -116,7 +112,6 @@ export interface WizardProps<TValue = Record<string, any>> {
   onValueChange?: (value: TValue) => void;
   id?: string;
   'aria-label'?: string;
-  a11yTitle?: string;
   messages?: WizardMessages;
   children?: React.ReactNode;
 }
@@ -133,11 +128,11 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   currentStepIndex: number;
   currentStepObj?: WizardStep<TValue>;
   totalSteps: number;
-  completedSteps: Set<string>;
-  visitedSteps: string[];
+  stepStates: Record<string, WizardStepStatus>;
   formValue: TValue;
   setFormValue: (next: TValue | ((prev: TValue) => TValue)) => void;
   validationError?: string;
+  isValidating: boolean;
   isFirstStep: boolean;
   isLastStep: boolean;
   canGoNext: boolean;
@@ -148,8 +143,7 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   skip: () => void;
   complete: () => void;
   cancel: () => void;
-  getStepStatus: (stepId: string) => WizardStepStatus;
-  direction: WizardDirection;
+  showProgress: WizardShowProgress;
   messages?: WizardMessages;
 }
 
@@ -160,18 +154,15 @@ export function useWizard<
 >(): WizardContextValue<TValue>;
 
 export interface WizardHeaderProps extends BoxExtendedProps {
-  header?:
-    | React.ReactNode
-    | {
-        title?: React.ReactNode;
-        description?: React.ReactNode;
-      };
+  title?: string;
+  children?: React.ReactNode;
 }
 
 export const WizardHeader: React.FC<WizardHeaderProps>;
 
 export interface WizardProgressProps extends BoxExtendedProps {
   ariaLabel?: string;
+  showDescription?: boolean;
 }
 
 export const WizardProgress: React.FC<WizardProgressProps>;

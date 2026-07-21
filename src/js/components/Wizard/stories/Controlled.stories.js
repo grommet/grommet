@@ -62,7 +62,8 @@ const Controlled = () => {
           <Wizard
             key={resetKey}
             aria-label="Controlled wizard"
-            header={{ title: 'Configure workspace' }}
+            title="Configure workspace"
+            showProgress="horizontal"
             steps={steps}
             currentStep={currentStep}
             onStepChange={(event) => {

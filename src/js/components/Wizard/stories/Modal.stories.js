@@ -133,7 +133,8 @@ const Modal = () => {
                 key={resetKey}
                 aria-label="Modal wizard"
                 kind={kind}
-                header={{ title: 'Create resource' }}
+                title="Create resource"
+                showProgress="horizontal"
                 steps={steps}
                 footer={<NoCancelFooter />}
                 onComplete={(value) => {

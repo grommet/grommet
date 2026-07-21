@@ -60,7 +60,8 @@ const Validation = () => {
       <Box fill>
         <Wizard
           aria-label="Sign up"
-          header={{ title: 'Create your account' }}
+          title="Create your account"
+          showProgress="vertical"
           steps={steps}
           defaultValue={{ email: '', password: '' }}
           onComplete={(value) => setResult({ status: 'complete', value })}
@@ -70,11 +71,7 @@ const Validation = () => {
             toast={{ position: 'top' }}
             status="normal"
             title="Wizard complete"
-            message={
-              result.value && Object.keys(result.value).length > 0
-                ? `Completed: ${JSON.stringify(result.value)}`
-                : undefined
-            }
+            message={`Account created for ${result.value.email}.`}
             onClose={() => setResult(null)}
           />
         )}

@@ -7,13 +7,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
 
-// WizardStepHeader renders the "Step X of Y" counter, the step title, and
-// the step description. All typography goes through Text / Heading /
-// Paragraph with theme-driven props (no custom font-size CSS).
-//
-// Sub-component follows the composition-primitive pattern: theme values
-// drive default props on the primitives, and callers can override any
-// outer Box prop by passing it directly (spread as {...rest} last).
+// WizardStepHeader renders the "Step X of Y" counter, title, and description.
 export const WizardStepHeader = ({ ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const { format } = React.useContext(MessageContext);
@@ -23,12 +17,12 @@ export const WizardStepHeader = ({ ...rest }) => {
   if (!currentStepObj) return null;
 
   const stepHeaderTheme = theme.wizard?.stepHeader;
-  const counterTheme = theme.wizard?.stepCounter;
+  const counterTheme = theme.wizard?.stepHeader?.counter;
 
   const counterTemplate =
-    messages?.stepCounter ||
+    messages?.stepHeader?.counter ||
     format({
-      id: 'wizard.stepCounter',
+      id: 'wizard.stepHeader.counter',
       values: { step: currentStepIndex + 1, total: totalSteps },
     });
 
@@ -40,16 +34,11 @@ export const WizardStepHeader = ({ ...rest }) => {
       {...passThemeFlag}
       {...rest}
     >
-      <Text
-        size={counterTheme?.size}
-        color={counterTheme?.color}
-        weight={counterTheme?.weight}
-        margin={counterTheme?.margin}
-      >
+      <Text size={counterTheme?.size} color={counterTheme?.color}>
         {counterTemplate}
       </Text>
       <Heading
-        level={stepHeaderTheme?.title?.level}
+        level={2}
         size={stepHeaderTheme?.title?.size}
         color={stepHeaderTheme?.title?.color}
         weight={stepHeaderTheme?.title?.weight}
@@ -63,7 +52,6 @@ export const WizardStepHeader = ({ ...rest }) => {
           color={stepHeaderTheme?.description?.color}
           weight={stepHeaderTheme?.description?.weight}
           margin={stepHeaderTheme?.description?.margin}
-          fill
         >
           {currentStepObj.description}
         </Paragraph>

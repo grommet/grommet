@@ -4,8 +4,8 @@ import { Box, Grommet, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';
 import { grommet } from '../../../themes';
 
-// Nested wizard with sub-steps under a parent group. Parent is never a
-// navigation target; child steps are visited in order.
+// Nested wizard with sub-steps. Parent is not a nav target; children
+// are visited in order.
 const steps = [
   {
     id: 'setup',
@@ -46,8 +46,8 @@ const NestedSubSteps = () => {
       <Box fill>
         <Wizard
           aria-label="Nested wizard"
-          header={{ title: 'Set up your organization' }}
-          direction="vertical"
+          title="Set up your organization"
+          showProgress="vertical"
           steps={steps}
           onComplete={(value) => setResult({ status: 'complete', value })}
         />

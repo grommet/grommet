@@ -4,10 +4,8 @@ import { Box, CheckBox, Grommet, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';
 import { grommet } from '../../../themes';
 
-// Branching wizard: the Review step is added to the wizard only when the
-// user checks "Include a manual review step". The stepper reflects the
-// live shape of the flow — Review appears/disappears as the choice
-// changes.
+// Branching wizard: the Review step is added only when the user checks
+// "Include a manual review step"; the stepper updates live.
 const planStep = {
   id: 'plan',
   title: 'Plan',
@@ -52,7 +50,8 @@ const Branching = () => {
       <Box fill>
         <Wizard
           aria-label="Deployment"
-          header={{ title: 'Deploy an application' }}
+          title="Deploy an application"
+          showProgress="horizontal"
           steps={steps}
           value={value}
           onValueChange={setValue}

@@ -4,13 +4,8 @@ import { Text } from '../Text';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
 
-// WizardContent renders the current step's body via renderStep(). It also
-// hosts the wizard-level validation error region so any error message
-// shares its color with the error icon defined in the theme.
-//
-// Sub-component follows the composition-primitive pattern: theme values
-// drive default Box props, but callers can override any Box prop by
-// passing it directly (spread as {...rest} last).
+// WizardContent renders the current step body and any wizard-level
+// validation error message.
 export const WizardContent = ({ renderStep, ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const {
@@ -56,18 +51,16 @@ export const WizardContent = ({ renderStep, ...rest }) => {
       width={contentTheme?.width}
       height={contentTheme?.height}
       align={contentTheme?.align}
-      // Scrolling region for the step body. `flex` (1 1 auto) + `minHeight: 0`
-      // lets this Box shrink below its content so `overflow: auto` engages;
-      // `flex="grow"` (1 0 auto) would refuse to shrink.
+      // Scrollable region for the step body. `tabIndex={0}` satisfies
+      // the WCAG scrollable-region-focusable rule.
       flex
       overflow="auto"
       style={{ minHeight: 0 }}
+      tabIndex={0}
       {...passThemeFlag}
       {...rest}
     >
-      {/* Non-shrinking wrapper: keeps the step body at its natural
-          height so the parent's `overflow: auto` scrolls instead of
-          the body collapsing on top of itself. */}
+      {/* Keep the step body at natural height so the parent scrolls. */}
       <Box flex={false}>{body}</Box>
       {validationError && (
         <Text

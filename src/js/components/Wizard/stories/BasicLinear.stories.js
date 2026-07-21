@@ -43,28 +43,22 @@ const steps = [
 ];
 
 const BasicLinear = () => {
-  const [result, setResult] = useState(null);
+  const [complete, setComplete] = useState(false);
   return (
     <Grommet theme={grommet} full>
       <Box fill>
         <Wizard
           aria-label="Onboarding"
-          header={{ title: 'Set up your account' }}
+          title="Set up your account"
           steps={steps}
-          defaultValue={{ email: '' }}
-          onComplete={(value) => setResult({ status: 'complete', value })}
+          onComplete={() => setComplete(true)}
         />
-        {result && (
+        {complete && (
           <Notification
             toast={{ position: 'top' }}
             status="normal"
             title="Wizard complete"
-            message={
-              result.value && Object.keys(result.value).length > 0
-                ? `Completed: ${JSON.stringify(result.value)}`
-                : undefined
-            }
-            onClose={() => setResult(null)}
+            onClose={() => setComplete(false)}
           />
         )}
       </Box>

@@ -5,28 +5,33 @@ import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useWizard } from './WizardContext';
 
-// WizardProgress delegates ALL step indicator + connector rendering to the
-// existing Stepper component. It maps Wizard-derived state onto the
-// Stepper step model — no connectors, indicators, or icons of its own.
-export const WizardProgress = ({ ariaLabel: ariaLabelProp, ...rest }) => {
+// WizardProgress delegates step rendering to <Stepper>. Descriptions
+// are hidden by default (WizardStepHeader shows them in the body).
+export const WizardProgress = ({
+  ariaLabel: ariaLabelProp,
+  showDescription = false,
+  ...rest
+}) => {
   const { theme, passThemeFlag } = useThemeValue();
   const { format } = React.useContext(MessageContext);
-  const { steps, currentStep, direction, getStepStatus, messages } =
+  const { steps, currentStep, showProgress, stepStates, messages } =
     useWizard();
 
+  // Opt-in: render nothing when `showProgress` is false.
+  if (!showProgress) return null;
+
   const progressTheme =
-    direction === 'vertical'
+    showProgress === 'vertical'
       ? theme.wizard?.progress?.vertical
       : theme.wizard?.progress?.horizontal;
 
-  // Map wizard step tree into a Stepper-compatible step[] (with optional
-  // children for two-level nesting). Wizard-driven status → Stepper status.
+  // Map wizard steps (with optional children) into Stepper's step model.
   const stepperSteps = steps.map((step) => {
     const mapped = {
       id: step.id,
       title: step.title,
       description: step.description,
-      status: getStepStatus(step.id),
+      status: stepStates[step.id],
     };
     if (step.disabledReason) mapped.disabledReason = step.disabledReason;
     if (step['aria-label']) mapped['aria-label'] = step['aria-label'];
@@ -35,7 +40,7 @@ export const WizardProgress = ({ ariaLabel: ariaLabelProp, ...rest }) => {
         id: child.id,
         title: child.title,
         description: child.description,
-        status: getStepStatus(child.id),
+        status: stepStates[child.id],
         ...(child.disabledReason
           ? { disabledReason: child.disabledReason }
           : {}),
@@ -52,22 +57,19 @@ export const WizardProgress = ({ ariaLabel: ariaLabelProp, ...rest }) => {
     <Box
       pad={progressTheme?.pad}
       border={progressTheme?.border}
-      width={direction === 'vertical' ? progressTheme?.width : undefined}
+      width={showProgress === 'vertical' ? progressTheme?.width : undefined}
       flex={false}
-      // In vertical layout, don't let the flex row's default
-      // align-items:stretch grow this rail to the wizard body's
-      // full height — the Stepper should be tall enough for its
-      // steps only, not stretched to match the content column.
-      alignSelf={direction === 'vertical' ? 'start' : undefined}
+      // Vertical rail should hug its steps, not stretch to the body height.
+      alignSelf={showProgress === 'vertical' ? 'start' : undefined}
       {...passThemeFlag}
       {...rest}
     >
       <Stepper
         steps={stepperSteps}
         currentStep={currentStep}
-        direction={direction}
+        direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
         clickableSteps={false}
-        showDescription={false}
+        showDescription={showDescription}
         aria-label={ariaLabel}
       />
     </Box>
