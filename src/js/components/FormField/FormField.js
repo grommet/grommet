@@ -303,9 +303,9 @@ const FormField = forwardRef(
       return focusIndicatorFlag;
     }, [children, theme.formField?.focus?.containerFocus]);
 
-    // This is here for backwards compatibility. In case the child is a grommet
-    // input component, set plain and focusIndicator props, if they aren't
-    // already set.
+    // Whether the content area should get themed padding; defaults true
+    // when using the CheckBox/CheckBoxGroup/RadioButtonGroup `component`
+    // prop (also set true below if a pad-requiring input child is found).
     let wantContentPad =
       component &&
       (component === CheckBox ||
@@ -345,63 +345,64 @@ const FormField = forwardRef(
     const errorId =
       error && htmlFor ? `grommet-${adjustedHtmlFor}__error` : undefined;
 
-    // Link the error message to its input via aria-describedby. This runs
-    // regardless of themeBorder and regardless of any plain/focusIndicator
-    // props already set on the child, and merges with (rather than
-    // overwrites) any aria-describedby the consumer already provided.
-    const describedChildren = errorId
-      ? Children.map(children, (child) => {
-          if (!child || !child.type) return child;
+    // Combines aria-describedby linking and plain/focusIndicator/pad
+    // defaults into one Children.map pass, not two. The pass must always
+    // run the same way regardless of `error`, or the child's reconciliation
+    // key changes between renders - remounting it and losing state (e.g. a
+    // typed value) right when the error appears.
+    let contents;
+    if (children) {
+      contents = Children.map(children, (child) => {
+        if (!child || !child.type) return child;
 
-          const isRecognizedInput =
-            grommetInputNames.indexOf(child.type.displayName) !== -1;
-          const matchesHtmlFor = child.props.id === htmlFor;
+        if (
+          themeBorder &&
+          grommetInputPadNames.indexOf(child.type.displayName) !== -1
+        ) {
+          wantContentPad = true;
+        }
 
-          if (!isRecognizedInput && !matchesHtmlFor) return child;
+        const isInputComponent =
+          grommetInputNames.indexOf(child.type.displayName) !== -1;
 
+        const newProps = {};
+        let hasNewProps = false;
+
+        // Link the error message via aria-describedby, independent of
+        // themeBorder and any plain/focusIndicator already set on the
+        // child. Merges with (rather than overwrites) any aria-describedby
+        // the consumer already provided.
+        if (errorId && isInputComponent) {
           const existingDescribedBy = child.props['aria-describedby'];
-          return cloneElement(child, {
-            'aria-describedby': existingDescribedBy
-              ? `${existingDescribedBy} ${errorId}`
-              : errorId,
-          });
-        })
-      : children;
+          newProps['aria-describedby'] = existingDescribedBy
+            ? `${existingDescribedBy} ${errorId}`
+            : errorId;
+          hasNewProps = true;
+        }
 
-    let contents =
-      (themeBorder &&
-        describedChildren &&
-        Children.map(describedChildren, (child) => {
-          if (
-            child &&
-            child.type &&
-            grommetInputPadNames.indexOf(child.type.displayName) !== -1
-          ) {
-            wantContentPad = true;
-          }
+        // Backwards compatibility: default plain/focusIndicator/pad on a
+        // grommet input child, unless the consumer already set plain or
+        // focusIndicator.
+        if (
+          themeBorder &&
+          isInputComponent &&
+          child.props.plain === undefined &&
+          child.props.focusIndicator === undefined
+        ) {
+          newProps.plain = true;
+          newProps.focusIndicator = !containerFocus;
+          newProps.pad =
+            'CheckBox'.indexOf(child.type.displayName) !== -1
+              ? formFieldTheme?.checkBox?.pad
+              : undefined;
+          hasNewProps = true;
+        }
 
-          const isInputComponent =
-            child &&
-            child.type &&
-            grommetInputNames.indexOf(child.type.displayName) !== -1;
-
-          if (
-            isInputComponent &&
-            child.props.plain === undefined &&
-            child.props.focusIndicator === undefined
-          ) {
-            return cloneElement(child, {
-              plain: true,
-              focusIndicator: !containerFocus,
-              pad:
-                'CheckBox'.indexOf(child.type.displayName) !== -1
-                  ? formFieldTheme?.checkBox?.pad
-                  : undefined,
-            });
-          }
-          return child;
-        })) ||
-      describedChildren;
+        return hasNewProps ? cloneElement(child, newProps) : child;
+      });
+    } else {
+      contents = children;
+    }
 
     // put rest on container, unless we use internal Input
     let containerRest = rest;

@@ -1,4 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
@@ -9,6 +10,7 @@ import styled, { css } from 'styled-components';
 
 import { Alert, New, StatusInfo } from 'grommet-icons';
 import { FormField } from '..';
+import { Button } from '../../Button';
 import { CheckBox } from '../../CheckBox';
 import { RadioButtonGroup } from '../../RadioButtonGroup';
 import { RangeInput } from '../../RangeInput';
@@ -713,83 +715,6 @@ describe('FormField', () => {
     ).toHaveTextContent('Invalid email');
   });
 
-  test('links error message via aria-describedby inside a Form', () => {
-    render(
-      <Grommet>
-        <Form>
-          <FormField
-            htmlFor="issue-description"
-            name="issue-description"
-            error="Required field"
-          >
-            <TextInput id="issue-description" name="issue-description" />
-          </FormField>
-        </Form>
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('textbox');
-    expect(input).toHaveAttribute(
-      'aria-describedby',
-      'grommet-issue-description__error',
-    );
-    expect(
-      document.getElementById('grommet-issue-description__error'),
-    ).toHaveTextContent('Required field');
-  });
-
-  test('error id is not overridden by theme error container props', () => {
-    render(
-      <Grommet
-        theme={
-          {
-            formField: {
-              error: {
-                // a theme-provided id must never override the
-                // accessibility id generated for aria-describedby
-                id: 'should-not-win',
-                icon: <Alert />,
-              },
-            },
-          } as any
-        }
-      >
-        <FormField htmlFor="email-input" error="Invalid email">
-          <TextInput id="email-input" name="email" />
-        </FormField>
-      </Grommet>,
-    );
-
-    expect(document.getElementById('grommet-email-input__error')).toBeTruthy();
-    const input = screen.getByRole('textbox');
-    expect(input).toHaveAttribute(
-      'aria-describedby',
-      'grommet-email-input__error',
-    );
-  });
-
-  test(`links error via aria-describedby even when child sets plain/
-  focusIndicator explicitly`, () => {
-    render(
-      <Grommet>
-        <FormField htmlFor="email-input" error="Invalid email">
-          <TextInput
-            id="email-input"
-            name="email"
-            plain
-            focusIndicator={false}
-          />
-        </FormField>
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('textbox');
-    expect(input).toHaveAttribute(
-      'aria-describedby',
-      'grommet-email-input__error',
-    );
-  });
-
   test('merges aria-describedby with a pre-existing value on the child', () => {
     render(
       <Grommet>
@@ -811,25 +736,7 @@ describe('FormField', () => {
     );
   });
 
-  test(`links error via aria-describedby even when formField.border theme
-  is undefined`, () => {
-    render(
-      <Grommet theme={{ formField: { border: undefined } }}>
-        <FormField htmlFor="email-input" error="Invalid email">
-          <TextInput id="email-input" name="email" />
-        </FormField>
-      </Grommet>,
-    );
-
-    const input = screen.getByRole('textbox');
-    expect(input).toHaveAttribute(
-      'aria-describedby',
-      'grommet-email-input__error',
-    );
-  });
-
-  test(`links error via aria-describedby for a custom non-grommet input
-  when its id matches htmlFor`, () => {
+  test('does not link aria-describedby for a custom non-grommet input', () => {
     const CustomInput = (props: any) => <input {...props} />;
     render(
       <Grommet>
@@ -840,10 +747,7 @@ describe('FormField', () => {
     );
 
     const input = screen.getByRole('textbox');
-    expect(input).toHaveAttribute(
-      'aria-describedby',
-      'grommet-custom-input__error',
-    );
+    expect(input).not.toHaveAttribute('aria-describedby');
   });
 
   test(`merges aria-describedby with pre-existing value on internal Input
@@ -866,5 +770,33 @@ describe('FormField', () => {
       'aria-describedby',
       'custom-hint grommet-email__error',
     );
+  });
+
+  test('preserves the input value when an error appears after typing', async () => {
+    // guards against the field remounting (and losing its value) when the
+    // aria-describedby link is added once an error appears
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="Email"
+            name="email"
+            htmlFor="email-input"
+            validate={(value: string) => (value ? 'Invalid value' : undefined)}
+          >
+            <TextInput id="email-input" name="email" />
+          </FormField>
+          <Button label="Submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    await user.type(input, 'typed value');
+    await user.click(screen.getByRole('button', { name: 'Submit' }));
+
+    expect(await screen.findByText('Invalid value')).toBeInTheDocument();
+    expect(input).toHaveValue('typed value');
   });
 });
