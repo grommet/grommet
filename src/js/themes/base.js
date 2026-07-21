@@ -14,7 +14,6 @@ import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
-import { Radial } from 'grommet-icons/icons/Radial';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
 import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
@@ -2381,22 +2380,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       description: {
         size: 'small',
         color: 'text-weak',
-        margin: { top: 'hair' },
       },
       helperText: {
         size: 'xsmall',
         color: 'text-weak',
-        margin: { top: 'xsmall' },
-      },
-      horizontal: {
-        gap: 0,
-      },
-      vertical: {
-        gap: 0,
-      },
-      hover: {
-        background: 'background-contrast',
-        border: 'text-strong',
       },
       // States: [component].[state].[element].[property]
       pending: {
@@ -2405,7 +2392,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'text-strong',
           border: 'text-xweak',
           substep: {
-            icon: Radial,
             iconSize: 'small',
           },
           hover: {
@@ -2413,7 +2399,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             border: 'text-strong',
           },
         },
-        label: { color: 'text', weight: 'normal' },
+        label: { color: 'text' },
         connector: { color: 'border' },
       },
       current: {
@@ -2432,7 +2418,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
-          weight: 'normal',
         },
       },
       currentCompleted: {
@@ -2451,7 +2436,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
-          weight: 'normal',
         },
       },
       completed: {
@@ -2468,7 +2452,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             background: 'background-front',
           },
         },
-        label: { color: 'text-weak', weight: 'normal' },
+        label: { color: 'text-weak' },
         connector: { color: 'brand' },
       },
       error: {
@@ -2484,7 +2468,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             background: 'background-front',
           },
         },
-        label: { color: 'text', weight: 'normal' },
+        label: { color: 'text' },
         connector: { color: 'status-critical' },
         helperText: { color: 'status-critical' },
       },
@@ -2503,7 +2487,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: {
           color: 'status-critical',
-          weight: 'normal',
         },
       },
       disabled: {
@@ -2515,7 +2498,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             iconSize: 'small',
           },
         },
-        label: { color: 'text-weak', weight: 'normal' },
+        label: { color: 'text-weak' },
         connector: { color: 'border' },
       },
     },
