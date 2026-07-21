@@ -385,7 +385,7 @@ const Select = forwardRef(
                 <>
                   {selectValue || displayLabelKey}
                   <HiddenInput
-                    type="text"
+                    type="hidden"
                     name={name}
                     id={id ? selectInputId(id) : undefined}
                     inert={inertTrueValue}
