@@ -4006,7 +4006,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hpe-design/icons-grommet@npm:^1.1.0, @hpe-design/icons-grommet@npm:^1.2.0":
+"@hpe-design/icons-grommet@npm:^1.1.0":
   version: 1.2.0
   resolution: "@hpe-design/icons-grommet@npm:1.2.0"
   peerDependencies:
@@ -11357,7 +11357,6 @@ __metadata:
     "@eslint/compat": "npm:^2.1.0"
     "@eslint/eslintrc": "npm:^3.3.5"
     "@eslint/js": "npm:^10.0.1"
-    "@hpe-design/icons-grommet": "npm:^1.2.0"
     "@storybook/addon-a11y": "npm:^10.4.2"
     "@storybook/addon-docs": "npm:^10.4.2"
     "@storybook/addon-webpack5-compiler-babel": "npm:^4.0.1"

@@ -78,7 +78,6 @@
     "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
-    "@hpe-design/icons-grommet": "^1.2.0",
     "@storybook/addon-a11y": "^10.4.2",
     "@storybook/addon-docs": "^10.4.2",
     "@storybook/addon-webpack5-compiler-babel": "^4.0.1",
