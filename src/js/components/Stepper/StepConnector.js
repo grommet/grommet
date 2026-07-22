@@ -63,7 +63,6 @@ export const StepConnector = ({ step, direction, children }) => {
 
   return (
     <li
-      role="presentation"
       aria-hidden={children ? undefined : 'true'}
       style={{
         display: 'flex',
