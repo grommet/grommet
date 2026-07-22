@@ -571,7 +571,8 @@ const Wizard = forwardRef(
     }, [currentStep, scrollToTop, wizardRef]);
 
     const canGoNext = !currentStepObj?.disabled && !isValidating;
-    const canGoPrevious = !isFirstStep;
+    const isBlocked = !!validationError && !currentStepObj?.skippable;
+    const isCompleted = completedSteps.has(currentStep);
 
     const contextValue = useMemo(
       () => ({
@@ -586,10 +587,9 @@ const Wizard = forwardRef(
         setFormValue,
         validationError,
         isValidating,
-        isFirstStep,
-        isLastStep,
+        isBlocked,
+        isCompleted,
         canGoNext,
-        canGoPrevious,
         next,
         previous,
         goTo,
@@ -598,6 +598,9 @@ const Wizard = forwardRef(
         cancel,
         hasCancelHandler,
         showProgress: effectiveShowProgress,
+        // Internal only: `messages` is not part of the public
+        // WizardContextValue but is read by internal subcomponents
+        // (same pattern as `hasCancelHandler`).
         messages,
       }),
       [
@@ -612,10 +615,9 @@ const Wizard = forwardRef(
         setFormValue,
         validationError,
         isValidating,
-        isFirstStep,
-        isLastStep,
+        isBlocked,
+        isCompleted,
         canGoNext,
-        canGoPrevious,
         next,
         previous,
         goTo,

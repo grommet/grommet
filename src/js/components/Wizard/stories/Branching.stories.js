@@ -55,6 +55,7 @@ const Branching = () => {
           steps={steps}
           value={value}
           onValueChange={setValue}
+          messages={{ next: 'Continue', complete: 'Deploy' }}
           onComplete={(nextValue) =>
             setResult({ status: 'complete', value: nextValue })
           }

@@ -12,10 +12,9 @@ export const WizardContext = React.createContext({
   setFormValue: () => {},
   validationError: undefined,
   isValidating: false,
-  isFirstStep: true,
-  isLastStep: false,
+  isBlocked: false,
+  isCompleted: false,
   canGoNext: true,
-  canGoPrevious: false,
   next: () => {},
   previous: () => {},
   goTo: () => {},
@@ -25,7 +24,6 @@ export const WizardContext = React.createContext({
   // True when `onCancel` was provided; drives the footer Cancel button.
   hasCancelHandler: false,
   showProgress: false,
-  messages: undefined,
 });
 
 export const useWizard = () => useContext(WizardContext);

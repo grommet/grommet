@@ -13,10 +13,9 @@ export const WizardFooter = ({ children, ...rest }) => {
   const { format } = React.useContext(MessageContext);
   const {
     currentStepObj,
-    isFirstStep,
-    isLastStep,
+    currentStepIndex,
+    totalSteps,
     canGoNext,
-    canGoPrevious,
     next,
     previous,
     skip,
@@ -27,6 +26,10 @@ export const WizardFooter = ({ children, ...rest }) => {
   } = useWizard();
 
   if (!currentStepObj) return null;
+
+  const isFirstStep = currentStepIndex <= 0;
+  const isLastStep = currentStepIndex >= totalSteps - 1;
+  const canGoPrevious = !isFirstStep;
 
   const footerTheme = theme.wizard?.footer;
 

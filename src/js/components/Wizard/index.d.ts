@@ -59,7 +59,8 @@ export interface WizardApi<TValue = Record<string, any>> {
   cancel: () => void;
 }
 
-// Discriminated union for onStepChange events.
+// Discriminated union for onStepChange events. Consumers can narrow on
+// `trigger` + `phase` to reason about event flow without inspecting DOM.
 export interface NavigationStepChangeEvent {
   trigger: Exclude<WizardTrigger, 'cancel'>;
   phase: Exclude<WizardPhase, 'cancelled'>;
@@ -133,10 +134,9 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   setFormValue: (next: TValue | ((prev: TValue) => TValue)) => void;
   validationError?: string;
   isValidating: boolean;
-  isFirstStep: boolean;
-  isLastStep: boolean;
+  isBlocked: boolean;
+  isCompleted: boolean;
   canGoNext: boolean;
-  canGoPrevious: boolean;
   next: () => void;
   previous: () => void;
   goTo: (stepId: string) => void;
@@ -144,7 +144,6 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   complete: () => void;
   cancel: () => void;
   showProgress: WizardShowProgress;
-  messages?: WizardMessages;
 }
 
 export const WizardContext: React.Context<WizardContextValue>;
