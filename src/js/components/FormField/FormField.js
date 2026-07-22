@@ -50,6 +50,7 @@ const grommetInputNames = [
   'SelectMultiple',
   'TextArea',
   'DateInput',
+  'TimeInput',
   'FileInput',
   'RadioButton',
   'RadioButtonGroup',

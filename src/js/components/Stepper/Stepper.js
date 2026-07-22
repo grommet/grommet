@@ -9,7 +9,6 @@ import React, {
 
 import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
-import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Keyboard } from '../Keyboard';
 
@@ -72,7 +71,6 @@ const Stepper = forwardRef(
     },
     ref,
   ) => {
-    const { theme } = useThemeValue();
     const { format } = useContext(MessageContext);
     const stepRefs = useRef(new Map());
     const flatSteps = useMemo(() => flattenSteps(steps), [steps]);
@@ -369,10 +367,6 @@ const Stepper = forwardRef(
         fill={direction}
         id={id}
         overflow="hidden"
-        gap={{
-          row: theme.stepper?.horizontal?.gap,
-          column: theme.stepper?.vertical?.gap,
-        }}
         pad="none"
         margin="none"
         style={{ listStyle: 'none' }}

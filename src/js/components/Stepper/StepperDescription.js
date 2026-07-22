@@ -10,11 +10,7 @@ export const StepperDescription = ({ ...rest }) => {
   const { step } = useStepItem();
   if (!step || !step.description) return null;
 
-  const descriptionProps = theme.stepper?.description || {
-    size: 'small',
-    color: 'text-weak',
-    margin: { top: 'hair' },
-  };
+  const descriptionProps = theme.stepper?.description;
 
   return (
     <Text {...descriptionProps} truncate={direction === 'horizontal'} {...rest}>
