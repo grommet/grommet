@@ -1163,6 +1163,22 @@ exports[`Components loads 1`] = `
     "render": [Function],
   },
   "ThumbsRating": [Function],
+  "TimeInput": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "defaultValue": [Function],
+      "disabled": [Function],
+      "format": [Function],
+      "id": [Function],
+      "messages": [Function],
+      "minuteStep": [Function],
+      "name": [Function],
+      "onChange": [Function],
+      "readOnly": [Function],
+      "value": [Function],
+    },
+    "render": [Function],
+  },
   "Tip": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {

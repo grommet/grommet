@@ -88,6 +88,7 @@ export * from './components/Tag';
 export * from './components/Text';
 export * from './components/TextArea';
 export * from './components/TextInput';
+export * from './components/TimeInput';
 export * from './components/ThumbsRating';
 export * from './components/Tip';
 export * from './components/ToggleGroup';

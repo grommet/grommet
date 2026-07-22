@@ -313,13 +313,22 @@ interface StepperStateType {
       color?: ColorType;
     };
   };
-  label?: {
+  label?: TextProps;
+}
+
+interface StepperHelperTextStateType extends StepperStateType {
+  helperText?: {
     color?: ColorType;
-    weight?: string;
   };
+}
+
+interface StepperStatusStateType extends StepperStateType {
   connector?: {
     color?: ColorType;
   };
+}
+
+interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
   helperText?: {
     color?: ColorType;
   };
@@ -1016,6 +1025,41 @@ export interface ThemeType {
       size?: string;
     };
   };
+  timeInput?: {
+    button?: {
+      margin?: string;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    drop?: {
+      option?: {
+        background?: ColorType;
+        hover?: {
+          background?: ColorType;
+        };
+        selected?: {
+          background?: ColorType;
+          color?: ColorType;
+          hover?: {
+            background?: ColorType;
+          };
+          extend?: ExtendType;
+        };
+      };
+    };
+    icon?: {
+      clock?: React.ReactNode | Icon;
+    };
+  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
@@ -1249,6 +1293,7 @@ export interface ThemeType {
     maskedInput?: ContainerExtend;
     selectMultiple?: ContainerExtend;
     dateInput?: ContainerExtend;
+    timeInput?: ContainerExtend;
     fileInput?: ContainerExtend;
     radioButton?: ContainerExtend;
     radioButtonGroup?: ContainerExtend;
@@ -2129,10 +2174,6 @@ export interface ThemeType {
     };
   };
   stepper?: {
-    container?: {
-      background?: BackgroundType;
-      extend?: ExtendType;
-    };
     indicator?: {
       size?: string;
       border?: {
@@ -2150,34 +2191,23 @@ export interface ThemeType {
         width?: string;
       };
     };
-    description?: {
-      size?: string;
-      color?: ColorType;
-      margin?: MarginType;
-    };
+    description?: TextProps;
     helperText?: {
       size?: string;
       color?: ColorType;
-      margin?: MarginType;
-    };
-    horizontal?: {
-      gap?: GapType;
-    };
-    vertical?: {
-      gap?: GapType;
     };
     hover?: {
       background?: BackgroundType;
       border?: ColorType;
     };
     // States: [component].[state].[element].[property]
-    pending?: StepperStateType;
+    pending?: StepperStatusStateType;
     current?: StepperStateType;
     currentCompleted?: StepperStateType;
-    completed?: StepperStateType;
-    error?: StepperStateType;
-    currentError?: StepperStateType;
-    disabled?: StepperStateType;
+    completed?: StepperStatusStateType;
+    error?: StepperStatusWithHelperTextStateType;
+    currentError?: StepperHelperTextStateType;
+    disabled?: StepperStatusWithHelperTextStateType;
   };
   table?: {
     caption?: {
