@@ -748,6 +748,20 @@ describe('FormField', () => {
 
     const input = screen.getByRole('textbox');
     expect(input).not.toHaveAttribute('aria-describedby');
+    expect(input).not.toHaveAttribute('aria-invalid');
+  });
+
+  test('sets aria-invalid on grommet input children when there is an error', () => {
+    render(
+      <Grommet>
+        <FormField htmlFor="email-input" error="Invalid email">
+          <TextInput id="email-input" name="email" />
+        </FormField>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute('aria-invalid', 'true');
   });
 
   test(`merges aria-describedby with pre-existing value on internal Input

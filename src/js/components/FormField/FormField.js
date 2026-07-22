@@ -380,6 +380,13 @@ const FormField = forwardRef(
           hasNewProps = true;
         }
 
+        // Communicate the invalid state to AT, mirroring
+        // the same pattern for the internal Input fallback.
+        if (error && isInputComponent) {
+          newProps['aria-invalid'] = true;
+          hasNewProps = true;
+        }
+
         // Backwards compatibility: default plain/focusIndicator/pad on a
         // grommet input child, unless the consumer already set plain or
         // focusIndicator.
