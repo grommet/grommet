@@ -3,8 +3,6 @@ import { BoxExtendedProps } from '../Box';
 
 export type WizardShowProgress = 'horizontal' | 'vertical' | false;
 
-export type WizardKind = 'full' | 'narrow' | 'wide';
-
 export type WizardStepStatus = 'pending' | 'completed' | 'error' | 'disabled';
 
 export type WizardTrigger =
@@ -97,7 +95,6 @@ export interface WizardProps<TValue = Record<string, any>> {
   currentStep?: string;
   defaultStep?: string;
   showProgress?: WizardShowProgress;
-  kind?: WizardKind;
   onStepChange?: (event: StepChangeEvent) => void;
   onComplete?: (value: TValue) => void;
   onCancel?: (value: TValue) => void;

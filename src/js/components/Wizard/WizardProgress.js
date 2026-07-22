@@ -56,7 +56,6 @@ export const WizardProgress = ({
   return (
     <Box
       pad={progressTheme?.pad}
-      border={progressTheme?.border}
       width={showProgress === 'vertical' ? progressTheme?.width : undefined}
       flex={false}
       // Vertical rail should hug its steps, not stretch to the body height.

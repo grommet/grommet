@@ -81,7 +81,6 @@ const Wizard = forwardRef(
       currentStep: currentStepProp,
       defaultStep,
       showProgress = false,
-      kind = 'full',
       onStepChange,
       onComplete,
       onCancel,
@@ -653,7 +652,6 @@ const Wizard = forwardRef(
 
     const containerTheme = theme.wizard?.container;
     const bodyTheme = theme.wizard?.body;
-    const kindTheme = theme.wizard?.kind?.[kind];
 
     // Default layout: header + middle (progress + step body) + footer.
     // Header/footer stay pinned; only WizardContent scrolls internally.
@@ -661,7 +659,7 @@ const Wizard = forwardRef(
       <>
         <WizardHeader title={title} />
         <StyledWizardMiddle {...passThemeFlag}>
-          <StyledWizardCenter maxWidth={kindTheme?.maxWidth} {...passThemeFlag}>
+          <StyledWizardCenter {...passThemeFlag}>
             <Box
               pad={bodyTheme?.pad}
               gap={bodyTheme?.gap}

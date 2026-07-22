@@ -29,7 +29,6 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.oneOf(['horizontal', 'vertical']),
       PropTypes.bool,
     ]),
-    kind: PropTypes.oneOf(['full', 'narrow', 'wide']),
     onStepChange: PropTypes.func,
     onComplete: PropTypes.func,
     onCancel: PropTypes.func,

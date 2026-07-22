@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 
 import {
   Box,
-  Button,
   FormField,
   Grommet,
   Heading,
   Notification,
   Paragraph,
-  RadioButtonGroup,
-  ResponsiveContext,
-  Text,
   TextArea,
   TextInput,
 } from 'grommet';
@@ -28,9 +24,7 @@ const LongStepBody = ({ heading, count = 40 }) => (
     </Heading>
     <Paragraph fill>
       Scroll this content column. The wizard header at the top and the footer at
-      the bottom stay pinned — only the middle scrolls. When the `kind` prop is
-      set to `narrow` or `wide`, only this content column narrows; the header
-      and footer still span the full wizard width.
+      the bottom stay pinned — only the middle scrolls.
     </Paragraph>
     <FormField label="Name" htmlFor="long-content-name">
       <TextInput id="long-content-name" placeholder="Your name" />
@@ -76,67 +70,16 @@ const steps = [
 ];
 
 const LongContent = () => {
-  const [kind, setKind] = useState('full');
   const [result, setResult] = useState(null);
-
-  // Custom footer inlines the story's `kind` selector on the left and
-  // Previous / Next on the right; styling matches theme.wizard.footer.
-  const renderFooter = ({
-    previous,
-    next,
-    complete,
-    isFirstStep,
-    isLastStep,
-  }) => (
-    <Box
-      direction="row"
-      align="center"
-      gap="small"
-      pad={{ horizontal: 'large', vertical: 'none' }}
-      background="background-front"
-      height="xxsmall"
-      flex={false}
-    >
-      <ResponsiveContext.Consumer>
-        {(size) =>
-          size === 'small' ? (
-            <Box flex="grow" />
-          ) : (
-            <Box direction="row" align="center" gap="small" flex="grow">
-              <Text weight="bold">Wizard kind:</Text>
-              <RadioButtonGroup
-                name="wizard-kind"
-                direction="row"
-                gap="medium"
-                options={['full', 'narrow', 'wide']}
-                value={kind}
-                onChange={(event) => setKind(event.target.value)}
-              />
-            </Box>
-          )
-        }
-      </ResponsiveContext.Consumer>
-      <Box direction="row" align="center" gap="small">
-        {!isFirstStep && <Button label="Previous" onClick={previous} />}
-        {isLastStep ? (
-          <Button label="Complete" primary onClick={complete} />
-        ) : (
-          <Button label="Next" primary onClick={next} />
-        )}
-      </Box>
-    </Box>
-  );
 
   return (
     <Grommet theme={grommet} full>
       <Box fill>
         <Wizard
           aria-label="Long content wizard"
-          kind={kind}
           title="Create resource"
           showProgress="horizontal"
           steps={steps}
-          footer={renderFooter}
           onComplete={(value) => setResult({ status: 'complete', value })}
         />
         {result && (

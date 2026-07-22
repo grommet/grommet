@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 
-import {
-  Box,
-  Button,
-  Grommet,
-  Layer,
-  Notification,
-  Paragraph,
-  RadioButtonGroup,
-  ResponsiveContext,
-  Text,
-} from 'grommet';
+import { Box, Button, Grommet, Layer, Notification, Paragraph } from 'grommet';
 import { FormNext, FormPrevious } from 'grommet-icons';
 import { Wizard } from '../Wizard';
 import { WizardFooter } from '../WizardFooter';
@@ -21,22 +11,16 @@ import { grommet } from '../../../themes';
 // parent-owned close handler. A custom footer composed via <WizardFooter>
 // children preserves the themed shell while omitting the Cancel button.
 const NoCancelFooter = () => {
-  const {
-    isFirstStep,
-    isLastStep,
-    canGoNext,
-    canGoPrevious,
-    previous,
-    next,
-    complete,
-  } = useWizard();
+  const { currentStepIndex, totalSteps, canGoNext, previous, next, complete } =
+    useWizard();
+  const isFirstStep = currentStepIndex <= 0;
+  const isLastStep = currentStepIndex >= totalSteps - 1;
   return (
     <WizardFooter>
       {!isFirstStep && (
         <Button
           label="Previous"
           icon={<FormPrevious aria-hidden="true" />}
-          disabled={!canGoPrevious}
           onClick={previous}
         />
       )}
@@ -86,7 +70,6 @@ const steps = [
 
 const Modal = () => {
   const [open, setOpen] = useState(false);
-  const [kind, setKind] = useState('narrow');
   const [result, setResult] = useState(null);
   const [resetKey, setResetKey] = useState(0);
   const close = () => {
@@ -96,43 +79,18 @@ const Modal = () => {
   return (
     <Grommet theme={grommet} full>
       <Box fill pad="medium" gap="medium">
-        <ResponsiveContext.Consumer>
-          {(size) =>
-            size !== 'small' && (
-              <Box direction="row" align="center" gap="small">
-                <Text weight="bold">Wizard kind:</Text>
-                <RadioButtonGroup
-                  name="modal-wizard-kind"
-                  direction="row"
-                  gap="medium"
-                  options={['full', 'narrow', 'wide']}
-                  value={kind}
-                  onChange={(event) => setKind(event.target.value)}
-                />
-              </Box>
-            )
-          }
-        </ResponsiveContext.Consumer>
         <Box align="start">
           <Button primary label="Open wizard" onClick={() => setOpen(true)} />
         </Box>
         {open && (
-          <Layer
-            modal
-            full={kind === 'full'}
-            position="center"
-            onEsc={close}
-            onClickOutside={close}
-          >
-            <Box
-              fill={kind === 'full'}
-              width={kind === 'full' ? undefined : 'xlarge'}
-              height={kind === 'full' ? undefined : 'large'}
-            >
+          // Composed sizing: the wrapping Layer + Box choose the modal's
+          // dimensions. Swap these values to make the wizard narrower,
+          // wider, or full-screen — the Wizard fills whatever it's placed in.
+          <Layer modal position="center" onEsc={close} onClickOutside={close}>
+            <Box width="xlarge" height="large">
               <Wizard
                 key={resetKey}
                 aria-label="Modal wizard"
-                kind={kind}
                 title="Create resource"
                 showProgress="horizontal"
                 steps={steps}

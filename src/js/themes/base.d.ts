@@ -2198,13 +2198,11 @@ export interface ThemeType {
     progress?: {
       horizontal?: {
         pad?: PadType;
-        border?: BorderType;
         extend?: ExtendType;
       };
       vertical?: {
         width?: string;
         pad?: PadType;
-        border?: BorderType;
         extend?: ExtendType;
       };
     };

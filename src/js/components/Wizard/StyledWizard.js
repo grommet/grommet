@@ -25,23 +25,13 @@ export const StyledWizardMiddle = styled.div.withConfig(styledComponentsConfig)`
   overflow: hidden;
 `;
 
-// Centered column carrying the `kind`-driven max-width.
+// Centered column between header and footer that hosts the step body.
 export const StyledWizardCenter = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
   width: 100%;
-  ${(props) => {
-    if (!props.maxWidth) return '';
-    const resolved =
-      props.theme?.global?.size?.[props.maxWidth] || props.maxWidth;
-    return `
-      max-width: ${resolved};
-      margin-left: auto;
-      margin-right: auto;
-    `;
-  }}
 `;
 
 // [Progress | Content] (vertical) or Content only (horizontal).

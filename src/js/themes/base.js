@@ -2489,19 +2489,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'none',
         background: 'background-back',
       },
-      // Per-`kind` max-width for the centered content column.
-      // `full` has no max (content stretches).
-      kind: {
-        full: {
-          maxWidth: undefined,
-        },
-        narrow: {
-          maxWidth: 'large',
-        },
-        wide: {
-          maxWidth: 'xlarge',
-        },
-      },
       body: {
         pad: { horizontal: 'large', vertical: 'large' },
         gap: 'medium',
