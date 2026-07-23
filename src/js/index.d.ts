@@ -28,6 +28,7 @@ export * from './components/DataTableColumns';
 export * from './components/DataTableGroupBy';
 export * from './components/DataView';
 export * from './components/DateInput';
+export * from './components/DateTimeInput';
 export * from './components/Diagram';
 export * from './components/Distribution';
 export * from './components/Drop';

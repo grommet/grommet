@@ -30,6 +30,7 @@ export * from './DataTableColumns';
 export * from './DataTableGroupBy';
 export * from './DataView';
 export * from './DateInput';
+export * from './DateTimeInput';
 export * from './Diagram';
 export * from './Distribution';
 export * from './Drop';

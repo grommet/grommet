@@ -86,6 +86,7 @@ const PopupColumn = ({
   activeSection,
   format,
   formatMessage,
+  inline,
   label,
   messages,
   onClickCommitOption,
@@ -118,6 +119,12 @@ const PopupColumn = ({
         ? theme.timeInput?.drop?.option?.selected?.color || 'text'
         : 'text';
       const isActive = selected && activeSection === section;
+      let optionTabIndex = -1;
+      if (inline) {
+        optionTabIndex = selected ? 0 : -1;
+      } else if (isActive) {
+        optionTabIndex = 0;
+      }
 
       return (
         <PopupOption
@@ -125,7 +132,7 @@ const PopupColumn = ({
           data-option-key={key}
           role="option"
           aria-selected={selected}
-          tabIndex={isActive ? 0 : -1}
+          tabIndex={optionTabIndex}
           aria-label={`${
             section === SECTION_PERIOD ? option : pad(option)
           } ${getSectionName(section, format, formatMessage, messages)}`}
@@ -176,6 +183,8 @@ const TimeInputPopup = ({
   target,
   dropProps,
   label,
+  inline = false,
+  autoFocus = true,
 }) => {
   const { theme } = useThemeValue();
   const dialogRef = useRef();
@@ -419,6 +428,12 @@ const TimeInputPopup = ({
       scrollSelectedOptionsIntoView();
     });
 
+    if (!autoFocus) {
+      return () => {
+        window.cancelAnimationFrame(scrollRaf);
+      };
+    }
+
     let rafB;
     const rafA = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
@@ -437,7 +452,87 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [autoFocus, focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+
+  const popupContent = (
+    <Box
+      ref={dialogRef}
+      role="dialog"
+      aria-label={label}
+      direction="row"
+      width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
+      minHeight={theme.timeInput?.drop?.minHeight}
+      gap="xsmall"
+      pad="small"
+      onPointerDownCapture={markInteractionInProgress}
+      onPointerUpCapture={releaseInteractionAfterClick}
+      onPointerCancelCapture={clearInteractionInProgress}
+      onWheelCapture={onPopupWheelCapture}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          onClose?.();
+        } else if (event.key === ' ' || event.key === 'Spacebar') {
+          event.preventDefault();
+          const focusedOption =
+            event.target?.closest?.('[role="option"]') ||
+            document.activeElement?.closest?.('[role="option"]');
+          focusedOption?.click?.();
+        } else if (event.key === 'Tab') {
+          if (!inline) {
+            event.preventDefault();
+            setActiveSection(moveSection(event.shiftKey ? -1 : 1));
+          }
+        } else if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          setActiveSection(moveSection(-1));
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          setActiveSection(moveSection(1));
+        } else if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          incrementSection(activeSection, -1);
+        } else if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          incrementSection(activeSection, 1);
+        } else if (event.key === 'Enter') {
+          event.preventDefault();
+          onAccept?.();
+          onClose?.();
+        }
+      }}
+      onBlurCapture={(event) => {
+        const nextFocusTarget = event.relatedTarget;
+        // Clicking the scrollbar blurs the focused option with
+        // relatedTarget = null. Keep the popup open for that interaction.
+        if (!nextFocusTarget) return;
+        if (!event.currentTarget.contains(nextFocusTarget)) {
+          onFocusLeave?.();
+        }
+      }}
+    >
+      {visiblePopupSections.map(({ section, label: sectionLabel, options }) => (
+        <PopupColumn
+          key={sectionLabel}
+          activeSection={activeSection}
+          format={format}
+          formatMessage={formatMessage}
+          inline={inline}
+          label={sectionLabel}
+          messages={messages}
+          onClickCommitOption={commitClickOptionSelection}
+          onPointerCommitOption={commitPointerOptionSelection}
+          onSetSection={setActiveSection}
+          options={options}
+          section={section}
+          sections={sections}
+          theme={theme}
+        />
+      ))}
+    </Box>
+  );
+
+  if (inline) return popupContent;
 
   return (
     <Drop
@@ -448,80 +543,7 @@ const TimeInputPopup = ({
       onClickOutside={onClose}
       {...dropProps}
     >
-      <Box
-        ref={dialogRef}
-        role="dialog"
-        aria-label={label}
-        direction="row"
-        width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
-        minHeight={theme.timeInput?.drop?.minHeight}
-        gap="xsmall"
-        pad="small"
-        onPointerDownCapture={markInteractionInProgress}
-        onPointerUpCapture={releaseInteractionAfterClick}
-        onPointerCancelCapture={clearInteractionInProgress}
-        onWheelCapture={onPopupWheelCapture}
-        onKeyDown={(event) => {
-          if (event.key === 'Escape') {
-            event.preventDefault();
-            onClose();
-          } else if (event.key === ' ' || event.key === 'Spacebar') {
-            event.preventDefault();
-            const focusedOption =
-              event.target?.closest?.('[role="option"]') ||
-              document.activeElement?.closest?.('[role="option"]');
-            focusedOption?.click?.();
-          } else if (event.key === 'Tab') {
-            event.preventDefault();
-            setActiveSection(moveSection(event.shiftKey ? -1 : 1));
-          } else if (event.key === 'ArrowLeft') {
-            event.preventDefault();
-            setActiveSection(moveSection(-1));
-          } else if (event.key === 'ArrowRight') {
-            event.preventDefault();
-            setActiveSection(moveSection(1));
-          } else if (event.key === 'ArrowUp') {
-            event.preventDefault();
-            incrementSection(activeSection, -1);
-          } else if (event.key === 'ArrowDown') {
-            event.preventDefault();
-            incrementSection(activeSection, 1);
-          } else if (event.key === 'Enter') {
-            event.preventDefault();
-            onAccept?.();
-            onClose();
-          }
-        }}
-        onBlurCapture={(event) => {
-          const nextFocusTarget = event.relatedTarget;
-          // Clicking the scrollbar blurs the focused option with
-          // relatedTarget = null. Keep the popup open for that interaction.
-          if (!nextFocusTarget) return;
-          if (!event.currentTarget.contains(nextFocusTarget)) {
-            onFocusLeave?.();
-          }
-        }}
-      >
-        {visiblePopupSections.map(
-          ({ section, label: sectionLabel, options }) => (
-            <PopupColumn
-              key={sectionLabel}
-              activeSection={activeSection}
-              format={format}
-              formatMessage={formatMessage}
-              label={sectionLabel}
-              messages={messages}
-              onClickCommitOption={commitClickOptionSelection}
-              onPointerCommitOption={commitPointerOptionSelection}
-              onSetSection={setActiveSection}
-              options={options}
-              section={section}
-              sections={sections}
-              theme={theme}
-            />
-          ),
-        )}
-      </Box>
+      {popupContent}
     </Drop>
   );
 };
