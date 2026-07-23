@@ -284,6 +284,7 @@ const DateTimeInput = forwardRef(
       dropProps,
       format = '12',
       id,
+      inline = false,
       messages,
       minuteStep = 1,
       name,
@@ -616,10 +617,14 @@ const DateTimeInput = forwardRef(
       suppressSegmentFocusRef.current = true;
       setOpen(false);
 
-      setTimeout(() => {
+      requestAnimationFrame(() => {
+        if (inline) {
+          triggerRef.current?.focus();
+          return;
+        }
         focusSection(activeSectionRef.current);
-      }, 0);
-    }, [focusSection]);
+      });
+    }, [focusSection, inline]);
 
     const onDisplaySectionMouseDown = useCallback(
       (section, event) => {
@@ -964,121 +969,18 @@ const DateTimeInput = forwardRef(
     const groupLabel = formFieldLabelId
       ? undefined
       : formatMessage({ id: 'dateTimeInput.inputLabel', messages });
+    const dropTarget = inline ? triggerRef.current : containerRef.current;
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
         <Box>
-          <StyledTimeInputContainer
-            ref={containerRef}
-            direction="row"
-            border
-            fill
-            round={
-              theme.timeInput?.container?.round ||
-              theme.global?.control?.border?.radius
-            }
-            disabled={disabled}
-            readOnlyProp={readOnly}
-            focusIndicator={!iconFocused}
-            {...passThemeFlag}
-          >
-            <StyledTimeInputField {...passThemeFlag}>
-              <StyledTimeInputDisplay
-                role="group"
-                aria-label={groupLabel}
-                aria-labelledby={formFieldLabelId}
-                onMouseDown={onDisplayMouseDown}
-                {...passThemeFlag}
-              >
-                {displaySections.map(({ section, prefix, text, filled }) => {
-                  const sectionLimits = getSectionLimits(
-                    section,
-                    format,
-                    sections,
-                  );
-                  const key = sectionKey(section);
-                  let numericValue;
-                  if (section === SECTION_PERIOD) {
-                    numericValue = sections[key] === 'PM' ? 1 : 0;
-                  } else {
-                    numericValue = sections[key] ?? sectionLimits.min;
-                  }
-
-                  return (
-                    <React.Fragment key={section}>
-                      {!!prefix && (
-                        <StyledTimeInputSeparator
-                          $filled={hasDisplayValue}
-                          {...passThemeFlag}
-                        >
-                          {prefix}
-                        </StyledTimeInputSeparator>
-                      )}
-                      <StyledTimeInputSegment
-                        ref={(segmentNode) => {
-                          segmentRefs.current[section] = segmentNode;
-                        }}
-                        tabIndex={
-                          !readOnly && !disabled && activeSection === section
-                            ? 0
-                            : -1
-                        }
-                        $active={showActiveSection && activeSection === section}
-                        $filled={filled}
-                        onFocus={() => onSegmentFocus(section)}
-                        onBlur={onSegmentBlur}
-                        onKeyDown={(event) => onSegmentKeyDown(section, event)}
-                        data-section={section}
-                        role="spinbutton"
-                        aria-label={getSectionName(
-                          section,
-                          formatMessage,
-                          messages,
-                        )}
-                        aria-disabled={disabled || undefined}
-                        aria-readonly={readOnly || undefined}
-                        aria-valuenow={numericValue}
-                        aria-valuemin={sectionLimits.min}
-                        aria-valuemax={sectionLimits.max}
-                        aria-valuetext={sectionValueAnnouncement(section)}
-                        {...passThemeFlag}
-                      >
-                        {text}
-                      </StyledTimeInputSegment>
-                    </React.Fragment>
-                  );
-                })}
-              </StyledTimeInputDisplay>
-              <StyledTimeInput
-                tabIndex={-1}
-                {...rest}
-                id={id}
-                ref={inputRef}
-                value={inputValue}
-                aria-hidden="true"
-                disabled={disabled}
-                readOnly
-                focusIndicator={false}
-                plain
-              />
-            </StyledTimeInputField>
-            {name && (
-              <input
-                aria-hidden="true"
-                name={name}
-                readOnly
-                tabIndex={-1}
-                type="hidden"
-                value={value || ''}
-              />
-            )}
-            {!readOnly && (
+          {inline ? (
+            <Box direction="row" align="center">
               <Button
                 ref={triggerRef}
                 icon={<GrommetCalendarIcon />}
                 plain
-                disabled={disabled}
-                margin={theme.timeInput?.button?.margin}
+                disabled={disabled || readOnly}
                 aria-label={formatMessage({
                   id: 'dateTimeInput.chooseDateTime',
                   messages,
@@ -1086,23 +988,148 @@ const DateTimeInput = forwardRef(
                 aria-haspopup="dialog"
                 aria-expanded={open}
                 aria-controls={id ? `${id}__drop` : undefined}
-                onFocus={() => setIconFocused(true)}
-                onBlur={() => setIconFocused(false)}
                 onClick={open ? closePicker : openPicker}
               />
-            )}
-          </StyledTimeInputContainer>
+            </Box>
+          ) : (
+            <StyledTimeInputContainer
+              ref={containerRef}
+              direction="row"
+              border
+              fill
+              round={
+                theme.timeInput?.container?.round ||
+                theme.global?.control?.border?.radius
+              }
+              disabled={disabled}
+              readOnlyProp={readOnly}
+              focusIndicator={!iconFocused}
+              {...passThemeFlag}
+            >
+              <StyledTimeInputField {...passThemeFlag}>
+                <StyledTimeInputDisplay
+                  role="group"
+                  aria-label={groupLabel}
+                  aria-labelledby={formFieldLabelId}
+                  onMouseDown={onDisplayMouseDown}
+                  {...passThemeFlag}
+                >
+                  {displaySections.map(({ section, prefix, text, filled }) => {
+                    const sectionLimits = getSectionLimits(
+                      section,
+                      format,
+                      sections,
+                    );
+                    const key = sectionKey(section);
+                    let numericValue;
+                    if (section === SECTION_PERIOD) {
+                      numericValue = sections[key] === 'PM' ? 1 : 0;
+                    } else {
+                      numericValue = sections[key] ?? sectionLimits.min;
+                    }
+
+                    return (
+                      <React.Fragment key={section}>
+                        {!!prefix && (
+                          <StyledTimeInputSeparator
+                            $filled={hasDisplayValue}
+                            {...passThemeFlag}
+                          >
+                            {prefix}
+                          </StyledTimeInputSeparator>
+                        )}
+                        <StyledTimeInputSegment
+                          ref={(segmentNode) => {
+                            segmentRefs.current[section] = segmentNode;
+                          }}
+                          tabIndex={
+                            !readOnly && !disabled && activeSection === section
+                              ? 0
+                              : -1
+                          }
+                          $active={
+                            showActiveSection && activeSection === section
+                          }
+                          $filled={filled}
+                          onFocus={() => onSegmentFocus(section)}
+                          onBlur={onSegmentBlur}
+                          onKeyDown={(event) =>
+                            onSegmentKeyDown(section, event)
+                          }
+                          data-section={section}
+                          role="spinbutton"
+                          aria-label={getSectionName(
+                            section,
+                            formatMessage,
+                            messages,
+                          )}
+                          aria-disabled={disabled || undefined}
+                          aria-readonly={readOnly || undefined}
+                          aria-valuenow={numericValue}
+                          aria-valuemin={sectionLimits.min}
+                          aria-valuemax={sectionLimits.max}
+                          aria-valuetext={sectionValueAnnouncement(section)}
+                          {...passThemeFlag}
+                        >
+                          {text}
+                        </StyledTimeInputSegment>
+                      </React.Fragment>
+                    );
+                  })}
+                </StyledTimeInputDisplay>
+                <StyledTimeInput
+                  tabIndex={-1}
+                  {...rest}
+                  id={id}
+                  ref={inputRef}
+                  value={inputValue}
+                  aria-hidden="true"
+                  disabled={disabled}
+                  readOnly
+                  focusIndicator={false}
+                  plain
+                />
+              </StyledTimeInputField>
+              {!readOnly && (
+                <Button
+                  ref={triggerRef}
+                  icon={<GrommetCalendarIcon />}
+                  plain
+                  disabled={disabled}
+                  margin={theme.timeInput?.button?.margin}
+                  aria-label={formatMessage({
+                    id: 'dateTimeInput.chooseDateTime',
+                    messages,
+                  })}
+                  aria-haspopup="dialog"
+                  aria-expanded={open}
+                  aria-controls={id ? `${id}__drop` : undefined}
+                  onFocus={() => setIconFocused(true)}
+                  onBlur={() => setIconFocused(false)}
+                  onClick={open ? closePicker : openPicker}
+                />
+              )}
+            </StyledTimeInputContainer>
+          )}
+          {name && (
+            <input
+              aria-hidden="true"
+              name={name}
+              readOnly
+              tabIndex={-1}
+              type="hidden"
+              value={value || ''}
+            />
+          )}
           {open && (
             <Drop
               id={id ? `${id}__drop` : undefined}
-              target={containerRef.current}
+              target={dropTarget}
               align={{ top: 'bottom', left: 'left' }}
               onEsc={closePicker}
               onClickOutside={({ target }) => {
-                if (
-                  target !== containerRef.current &&
-                  !containerRef.current.contains(target)
-                ) {
+                const anchor = dropTarget;
+                if (anchor && target !== anchor && !anchor.contains(target)) {
                   closePicker();
                 }
               }}

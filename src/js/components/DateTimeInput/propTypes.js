@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
     dropProps: PropTypes.shape({}),
     format: PropTypes.oneOf(['12', '24']),
     id: PropTypes.string,
+    inline: PropTypes.bool,
     messages: PropTypes.shape({
       activeSection: PropTypes.string,
       activeSectionValue: PropTypes.string,

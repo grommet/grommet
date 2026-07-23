@@ -8,6 +8,7 @@ export interface DateTimeInputProps {
   dropProps?: DropType;
   format?: '12' | '24';
   id?: string;
+  inline?: boolean;
   messages?: {
     activeSection?: string;
     activeSectionValue?: string;

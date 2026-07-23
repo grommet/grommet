@@ -104,6 +104,56 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
   });
 
+  test('inline mode renders icon trigger and opens date-time drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-inline"
+          inline
+          format="12"
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    expect(
+      screen.queryByRole('spinbutton', { name: 'day' }),
+    ).not.toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole('button', { name: 'Choose date and time' }),
+    );
+
+    const drop = document.getElementById('dt-inline__drop');
+    expect(drop).toBeTruthy();
+
+    const scoped = within(drop as HTMLElement);
+    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
+  });
+
+  test('inline readOnly mode keeps icon visible and does not open drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput id="dt-inline-readonly" inline readOnly />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    expect(trigger).toBeDisabled();
+
+    await user.click(trigger);
+
+    expect(document.getElementById('dt-inline-readonly__drop')).toBeFalsy();
+  });
+
   test('increments minutes by minuteStep on keyboard arrow', async () => {
     const user = userEvent.setup();
 
