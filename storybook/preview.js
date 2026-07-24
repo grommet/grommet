@@ -8,6 +8,7 @@ import { StyleSheetManager } from 'styled-components';
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import isChromatic from 'chromatic/isChromatic';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useDarkMode } from 'storybook-dark-mode';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
 import sizeMapper from './sizeMapper';
