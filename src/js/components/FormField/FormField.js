@@ -263,8 +263,8 @@ const FormField = forwardRef(
             (child?.props?.readOnly === true ||
               child?.props?.readOnlyCopy === true) &&
             child.type &&
-            ('TextInput'.indexOf(child.type.displayName) !== -1 ||
-              'DateInput'.indexOf(child.type.displayName) !== -1)
+            (child.type.displayName === 'TextInput' ||
+              child.type.displayName === 'DateInput')
           ) {
             readOnly = true;
           }
@@ -323,7 +323,7 @@ const FormField = forwardRef(
               plain: true,
               focusIndicator: !containerFocus,
               pad:
-                'CheckBox'.indexOf(child.type.displayName) !== -1
+                child.type.displayName === 'CheckBox'
                   ? formFieldTheme?.checkBox?.pad
                   : undefined,
             });
@@ -373,7 +373,7 @@ const FormField = forwardRef(
         if (
           child &&
           child.type &&
-          'FileInput'.indexOf(child.type.displayName) !== -1
+          child.type.displayName === 'FileInput'
         )
           isFileInputComponent = true;
       })
