@@ -8,6 +8,8 @@ if (process.env.NODE_ENV !== 'production') {
     dir: PropTypes.oneOf(['rtl']),
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])]),
     options: PropTypes.shape({
+      box: PropTypes.shape({ cssGap: PropTypes.bool }),
+      button: PropTypes.shape({ childrenPlain: PropTypes.bool }),
       layer: PropTypes.shape({ singleId: PropTypes.bool }),
       drop: PropTypes.shape({ checkContainingBlock: PropTypes.bool }),
     }),
