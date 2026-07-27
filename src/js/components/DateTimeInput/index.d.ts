@@ -1,11 +1,8 @@
 import * as React from 'react';
 
-import { DropType } from '../Drop';
-
 export interface DateTimeInputProps {
   defaultValue?: string;
   disabled?: boolean;
-  dropProps?: DropType;
   format?: '12' | '24';
   id?: string;
   inline?: boolean;

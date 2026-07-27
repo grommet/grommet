@@ -281,7 +281,6 @@ const DateTimeInput = forwardRef(
     {
       defaultValue,
       disabled,
-      dropProps,
       format = '12',
       id,
       inline = false,
@@ -1133,7 +1132,6 @@ const DateTimeInput = forwardRef(
                   closePicker();
                 }
               }}
-              {...dropProps}
             >
               <Box
                 ref={dropContentRef}

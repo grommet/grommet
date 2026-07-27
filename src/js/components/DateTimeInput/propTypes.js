@@ -5,7 +5,6 @@ if (process.env.NODE_ENV !== 'production') {
   PropType = {
     defaultValue: PropTypes.string,
     disabled: PropTypes.bool,
-    dropProps: PropTypes.shape({}),
     format: PropTypes.oneOf(['12', '24']),
     id: PropTypes.string,
     inline: PropTypes.bool,
