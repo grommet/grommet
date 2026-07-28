@@ -3,6 +3,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useId,
   useMemo,
   useRef,
   useState,
@@ -973,6 +974,8 @@ const DateTimeInput = forwardRef(
     const CalendarIcon =
       theme.dateTimeInput?.icon?.calendar || GrommetCalendarIcon;
     const dropTarget = inline ? triggerRef.current : containerRef.current;
+    const generatedId = useId();
+    const dropId = `${id || generatedId}__drop`;
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
@@ -990,7 +993,7 @@ const DateTimeInput = forwardRef(
                 })}
                 aria-haspopup="dialog"
                 aria-expanded={open}
-                aria-controls={id ? `${id}__drop` : undefined}
+                aria-controls={dropId}
                 onClick={open ? closePicker : openPicker}
               />
             </Box>
@@ -1103,7 +1106,7 @@ const DateTimeInput = forwardRef(
                   })}
                   aria-haspopup="dialog"
                   aria-expanded={open}
-                  aria-controls={id ? `${id}__drop` : undefined}
+                  aria-controls={dropId}
                   onFocus={() => setIconFocused(true)}
                   onBlur={() => setIconFocused(false)}
                   onClick={open ? closePicker : openPicker}
@@ -1123,7 +1126,7 @@ const DateTimeInput = forwardRef(
           )}
           {open && (
             <Drop
-              id={id ? `${id}__drop` : undefined}
+              id={dropId}
               target={dropTarget}
               align={{ top: 'bottom', left: 'left' }}
               onEsc={closePicker}

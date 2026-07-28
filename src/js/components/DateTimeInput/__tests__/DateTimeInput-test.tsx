@@ -13,6 +13,16 @@ import { FormField } from '../../FormField';
 import { Grommet } from '../../Grommet';
 import { DateTimeInput } from '..';
 
+const getDropFromTrigger = (trigger: HTMLElement) => {
+  const controlsId = trigger.getAttribute('aria-controls');
+  expect(controlsId).toBeTruthy();
+
+  const drop = document.getElementById(controlsId as string);
+  expect(drop).toBeTruthy();
+
+  return drop as HTMLElement;
+};
+
 describe('DateTimeInput', () => {
   beforeEach(createPortal);
 
@@ -85,14 +95,14 @@ describe('DateTimeInput', () => {
       </Grommet>,
     );
 
-    await user.click(
-      screen.getByRole('button', { name: 'Choose date and time' }),
-    );
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    await user.click(trigger);
 
-    const drop = document.getElementById('dt-input__drop');
-    expect(drop).toBeTruthy();
+    const drop = getDropFromTrigger(trigger);
 
-    const scoped = within(drop as HTMLElement);
+    const scoped = within(drop);
     expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
     expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
     expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
@@ -122,14 +132,37 @@ describe('DateTimeInput', () => {
       screen.queryByRole('spinbutton', { name: 'day' }),
     ).not.toBeInTheDocument();
 
-    await user.click(
-      screen.getByRole('button', { name: 'Choose date and time' }),
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+
+    const scoped = within(drop);
+    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
+  });
+
+  test('uses generated drop id linkage when id prop is not provided', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="12" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
     );
 
-    const drop = document.getElementById('dt-inline__drop');
-    expect(drop).toBeTruthy();
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
 
-    const scoped = within(drop as HTMLElement);
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+
+    const scoped = within(drop);
     expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
     expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
     expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
@@ -151,7 +184,9 @@ describe('DateTimeInput', () => {
 
     await user.click(trigger);
 
-    expect(document.getElementById('dt-inline-readonly__drop')).toBeFalsy();
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    const controlsId = trigger.getAttribute('aria-controls');
+    expect(document.getElementById(controlsId as string)).toBeFalsy();
   });
 
   test('increments minutes by minuteStep on keyboard arrow', async () => {
