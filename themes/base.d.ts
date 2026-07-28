@@ -297,6 +297,43 @@ type ContainerExtend = {
   };
 };
 
+interface StepperStateType {
+  indicator?: {
+    icon?: React.ReactNode | Icon;
+    iconSize?: string;
+    background?: BackgroundType;
+    color?: ColorType;
+    border?: ColorType;
+    substep?: {
+      iconSize?: string;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: ColorType;
+      color?: ColorType;
+    };
+  };
+  label?: TextProps;
+}
+
+interface StepperHelperTextStateType extends StepperStateType {
+  helperText?: {
+    color?: ColorType;
+  };
+}
+
+interface StepperStatusStateType extends StepperStateType {
+  connector?: {
+    color?: ColorType;
+  };
+}
+
+interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
+  helperText?: {
+    color?: ColorType;
+  };
+}
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -988,6 +1025,41 @@ export interface ThemeType {
       size?: string;
     };
   };
+  timeInput?: {
+    button?: {
+      margin?: string;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    drop?: {
+      option?: {
+        background?: ColorType;
+        hover?: {
+          background?: ColorType;
+        };
+        selected?: {
+          background?: ColorType;
+          color?: ColorType;
+          hover?: {
+            background?: ColorType;
+          };
+          extend?: ExtendType;
+        };
+      };
+    };
+    icon?: {
+      clock?: React.ReactNode | Icon;
+    };
+  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
@@ -1221,6 +1293,7 @@ export interface ThemeType {
     maskedInput?: ContainerExtend;
     selectMultiple?: ContainerExtend;
     dateInput?: ContainerExtend;
+    timeInput?: ContainerExtend;
     fileInput?: ContainerExtend;
     radioButton?: ContainerExtend;
     radioButtonGroup?: ContainerExtend;
@@ -2099,6 +2172,42 @@ export interface ThemeType {
       medium?: number;
       large?: number;
     };
+  };
+  stepper?: {
+    indicator?: {
+      size?: string;
+      border?: {
+        width?: string;
+      };
+    };
+    label?: {
+      size?: string;
+      substep?: {
+        size?: string;
+      };
+    };
+    connector?: {
+      stroke?: {
+        width?: string;
+      };
+    };
+    description?: TextProps;
+    helperText?: {
+      size?: string;
+      color?: ColorType;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: ColorType;
+    };
+    // States: [component].[state].[element].[property]
+    pending?: StepperStatusStateType;
+    current?: StepperStateType;
+    currentCompleted?: StepperStateType;
+    completed?: StepperStatusStateType;
+    error?: StepperStatusWithHelperTextStateType;
+    currentError?: StepperHelperTextStateType;
+    disabled?: StepperStatusWithHelperTextStateType;
   };
   table?: {
     caption?: {

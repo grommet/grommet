@@ -320,7 +320,7 @@ var Tabs = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return function () {
       return window.removeEventListener('resize', onResize);
     };
-  }, [tabRefs, disableLeftArrow, disableRightArrow, activeIndex, headerRef, overflow, updateArrowState]);
+  }, [tabRefs, activeIndex, headerRef, updateArrowState]);
   useLayoutEffect(function () {
     if (focusIndex === -1 || !headerRef.current) return;
     var _document = document,

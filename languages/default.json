@@ -197,6 +197,10 @@
   "skipLinks": {
     "skipTo": "Skip To:"
   },
+  "stepper": {
+    "progress": "Progress",
+    "step": "Step {step} of {total}: {title}"
+  },
   "tabs": {
     "nextTab": "Next Tab",
     "previousTab": "Previous Tab",
@@ -213,6 +217,20 @@
     "suggestionsCount": "suggestions available",
     "suggestionsExist": "This input has suggestions use arrow keys to navigate",
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
+  },
+  "timeInput": {
+    "inputLabel": "Time input",
+    "chooseTime": "Choose time",
+    "currentValue": "Current time {hour}:{minute}:{second}{period}",
+    "activeSection": "{section} selected",
+    "activeSectionValue": "{value} {section}",
+    "activePeriodValue": "{period} period",
+    "openDrop": "Press space to open time picker",
+    "invalidTime": "Invalid time value",
+    "sectionHours": "hours",
+    "sectionMinutes": "minutes",
+    "sectionSeconds": "seconds",
+    "sectionMeridiem": "meridiem"
   },
   "video": {
     "audioDescriptions": "video audio description",
