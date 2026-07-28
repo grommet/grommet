@@ -1,7 +1,7 @@
 import {
   getSectionKeyFromType,
   getSectionNameFromType,
-} from '../utils/sectionHelpers';
+} from '../../utils/sectionHelpers';
 
 export const SECTION_HOUR = 0;
 export const SECTION_MINUTE = 1;

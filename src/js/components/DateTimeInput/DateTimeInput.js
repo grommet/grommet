@@ -25,7 +25,7 @@ import {
   getSectionKeyFromType,
   getSectionNameFromType,
   getSectionTokenFromType,
-} from '../utils/sectionHelpers';
+} from '../../utils/sectionHelpers';
 import {
   StyledTimeInput,
   StyledTimeInputContainer,
