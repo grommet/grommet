@@ -1025,6 +1025,18 @@ export interface ThemeType {
       size?: string;
     };
   };
+  dateTimeInput?: {
+    button?: {
+      margin?: string | object;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    icon?: {
+      calendar?: React.ReactNode | Icon;
+      size?: string;
+    };
+  };
   timeInput?: {
     button?: {
       margin?: string;

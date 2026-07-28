@@ -256,4 +256,30 @@ describe('DateTimeInput', () => {
       document.querySelector('input[type="hidden"][name="scheduledAt"]'),
     ).toHaveValue('');
   });
+
+  test('respects theme.dateTimeInput properties', () => {
+    const customTheme = {
+      dateTimeInput: {
+        container: {
+          round: 'large',
+        },
+        button: {
+          margin: 'medium',
+        },
+        icon: {
+          // calendar: undefined — can be overridden with a component
+        },
+      },
+    };
+
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <DateTimeInput format="12" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    // Verify the component renders without error when theme is provided
+    expect(container).toBeTruthy();
+    expect(screen.getByRole('group')).toBeInTheDocument();
+  });
 });

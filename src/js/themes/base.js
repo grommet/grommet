@@ -1052,6 +1052,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'medium',
       },
     },
+    dateTimeInput: {
+      button: {
+        margin: { right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+    },
     timeInput: {
       button: {
         margin: { right: 'small' },

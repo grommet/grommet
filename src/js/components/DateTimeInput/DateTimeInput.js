@@ -968,6 +968,11 @@ const DateTimeInput = forwardRef(
     const groupLabel = formFieldLabelId
       ? undefined
       : formatMessage({ id: 'dateTimeInput.inputLabel', messages });
+    const iconSize =
+      (theme.icon?.matchSize && rest.size) ||
+      theme.dateTimeInput?.icon?.size;
+    const CalendarIcon =
+      theme.dateTimeInput?.icon?.calendar || GrommetCalendarIcon;
     const dropTarget = inline ? triggerRef.current : containerRef.current;
 
     return (
@@ -977,7 +982,7 @@ const DateTimeInput = forwardRef(
             <Box direction="row" align="center">
               <Button
                 ref={triggerRef}
-                icon={<GrommetCalendarIcon />}
+                icon={<CalendarIcon size={iconSize} />}
                 plain
                 disabled={disabled || readOnly}
                 aria-label={formatMessage({
@@ -996,10 +1001,7 @@ const DateTimeInput = forwardRef(
               direction="row"
               border
               fill
-              round={
-                theme.timeInput?.container?.round ||
-                theme.global?.control?.border?.radius
-              }
+              round={theme.dateTimeInput.container.round}
               disabled={disabled}
               readOnlyProp={readOnly}
               focusIndicator={!iconFocused}
@@ -1092,10 +1094,10 @@ const DateTimeInput = forwardRef(
               {!readOnly && (
                 <Button
                   ref={triggerRef}
-                  icon={<GrommetCalendarIcon />}
+                  icon={<CalendarIcon size={iconSize} />}
                   plain
                   disabled={disabled}
-                  margin={theme.timeInput?.button?.margin}
+                  margin={theme.dateTimeInput?.button?.margin}
                   aria-label={formatMessage({
                     id: 'dateTimeInput.chooseDateTime',
                     messages,
