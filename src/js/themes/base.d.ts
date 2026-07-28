@@ -2360,7 +2360,6 @@ export interface ThemeType {
     };
     drop?: {
       option?: {
-        background?: ColorType;
         hover?: {
           background?: ColorType;
         };
