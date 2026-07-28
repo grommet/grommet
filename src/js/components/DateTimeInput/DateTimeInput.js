@@ -70,25 +70,22 @@ const tokenForSection = (section) => {
   return 'aa';
 };
 
-const defaultSections = (format) =>
-  format === '12'
-    ? {
-        day: undefined,
-        month: undefined,
-        year: undefined,
-        hour: undefined,
-        minute: undefined,
-        second: undefined,
-        period: undefined,
-      }
-    : {
-        day: undefined,
-        month: undefined,
-        year: undefined,
-        hour: undefined,
-        minute: undefined,
-        second: undefined,
-      };
+const defaultSections = (format, showSeconds) => {
+  const base = {
+    day: undefined,
+    month: undefined,
+    year: undefined,
+    hour: undefined,
+    minute: undefined,
+    ...(showSeconds ? { second: undefined } : {}),
+  };
+
+  if (format === '12') {
+    return { ...base, period: undefined };
+  }
+
+  return base;
+};
 
 const hasAnyValue = (sections) =>
   sections.day !== undefined ||
@@ -110,25 +107,23 @@ const sectionForPart = (partType) => {
   return undefined;
 };
 
-const getSectionOrder = (format) =>
-  format === '12'
-    ? [
-        SECTION_DAY,
-        SECTION_MONTH,
-        SECTION_YEAR,
-        SECTION_HOUR,
-        SECTION_MINUTE,
-        SECTION_SECOND,
-        SECTION_PERIOD,
-      ]
-    : [
-        SECTION_DAY,
-        SECTION_MONTH,
-        SECTION_YEAR,
-        SECTION_HOUR,
-        SECTION_MINUTE,
-        SECTION_SECOND,
-      ];
+const getSectionOrder = (format, showSeconds) => {
+  const timeSections = showSeconds
+    ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND]
+    : [SECTION_HOUR, SECTION_MINUTE];
+
+  if (format === '12') {
+    return [
+      SECTION_DAY,
+      SECTION_MONTH,
+      SECTION_YEAR,
+      ...timeSections,
+      SECTION_PERIOD,
+    ];
+  }
+
+  return [SECTION_DAY, SECTION_MONTH, SECTION_YEAR, ...timeSections];
+};
 
 const separatorBeforeSection = (section) => {
   if (section === SECTION_MONTH || section === SECTION_YEAR) return '/';
@@ -137,8 +132,8 @@ const separatorBeforeSection = (section) => {
   return ' ';
 };
 
-const getLocaleSectionLayout = (format) => {
-  const fallbackOrder = getSectionOrder(format);
+const getLocaleSectionLayout = (format, showSeconds) => {
+  const fallbackOrder = getSectionOrder(format, showSeconds);
   const fallbackPrefixes = {};
   fallbackOrder.forEach((section, index) => {
     fallbackPrefixes[section] =
@@ -152,7 +147,7 @@ const getLocaleSectionLayout = (format) => {
       day: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
-      second: '2-digit',
+      ...(showSeconds ? { second: '2-digit' } : {}),
       hour12: format === '12',
     });
 
@@ -171,6 +166,7 @@ const getLocaleSectionLayout = (format) => {
       const section = sectionForPart(part.type);
       if (section === undefined) return;
       if (section === SECTION_PERIOD && format !== '12') return;
+      if (section === SECTION_SECOND && !showSeconds) return;
 
       if (!seen.has(section)) {
         separatorMap[section] = sectionOrder.length === 0 ? '' : pendingLiteral;
@@ -226,7 +222,7 @@ const toLocalSections = (value, format) => {
   return { day, month, year, hour: hour24, minute, second };
 };
 
-const toUtcISOString = (sections, format) => {
+const toUtcISOString = (sections, format, showSeconds) => {
   const { day, month, year, hour, minute, second, period = 'AM' } = sections;
 
   if (
@@ -235,7 +231,7 @@ const toUtcISOString = (sections, format) => {
     year === undefined ||
     hour === undefined ||
     minute === undefined ||
-    second === undefined
+    (showSeconds && second === undefined)
   ) {
     return undefined;
   }
@@ -249,7 +245,17 @@ const toUtcISOString = (sections, format) => {
   const daysInMonth = getDaysInMonth(year, month);
   if (day < 1 || day > daysInMonth) return undefined;
 
-  const candidate = new Date(year, month - 1, day, hour24, minute, second, 0);
+  const resolvedSecond = showSeconds ? second : second ?? 0;
+
+  const candidate = new Date(
+    year,
+    month - 1,
+    day,
+    hour24,
+    minute,
+    resolvedSecond,
+    0,
+  );
   if (
     candidate.getFullYear() !== year ||
     candidate.getMonth() + 1 !== month ||
@@ -369,6 +375,7 @@ const DateTimeInput = forwardRef(
       name,
       onChange,
       readOnly = false,
+      showSeconds = false,
       value: valueArg,
       ...rest
     },
@@ -408,14 +415,14 @@ const DateTimeInput = forwardRef(
       [resolvedFormat, value],
     );
     const { sectionOrder, separatorMap } = useMemo(
-      () => getLocaleSectionLayout(resolvedFormat),
-      [resolvedFormat],
+      () => getLocaleSectionLayout(resolvedFormat, showSeconds),
+      [resolvedFormat, showSeconds],
     );
     const firstSection = sectionOrder[0] || SECTION_DAY;
     const lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_SECOND;
 
     const [sections, setSections] = useState(
-      parsedValue || defaultSections(resolvedFormat),
+      parsedValue || defaultSections(resolvedFormat, showSeconds),
     );
     const [pendingDigits, setPendingDigits] = useState({});
     const [activeSection, setActiveSection] = useState(firstSection);
@@ -442,8 +449,8 @@ const DateTimeInput = forwardRef(
         return;
       }
 
-      setSections(parsedValue || defaultSections(resolvedFormat));
-    }, [parsedValue, resolvedFormat]);
+      setSections(parsedValue || defaultSections(resolvedFormat, showSeconds));
+    }, [parsedValue, resolvedFormat, showSeconds]);
 
     const commitSections = useCallback(
       (nextSections) => {
@@ -453,7 +460,7 @@ const DateTimeInput = forwardRef(
         );
         const anyValue = hasAnyValue(nextSections);
         const nextValue = complete
-          ? toUtcISOString(nextSections, resolvedFormat)
+          ? toUtcISOString(nextSections, resolvedFormat, showSeconds)
           : undefined;
 
         preserveIncompleteSectionsRef.current =
@@ -472,7 +479,7 @@ const DateTimeInput = forwardRef(
           onChange?.({ value: undefined });
         }
       },
-      [onChange, resolvedFormat, sectionOrder, setValue],
+      [onChange, resolvedFormat, sectionOrder, setValue, showSeconds],
     );
 
     const setSectionValue = useCallback(
@@ -971,13 +978,15 @@ const DateTimeInput = forwardRef(
         return [
           TIME_SECTION_HOUR,
           TIME_SECTION_MINUTE,
-          TIME_SECTION_SECOND,
+          ...(showSeconds ? [TIME_SECTION_SECOND] : []),
           TIME_SECTION_PERIOD,
         ];
       }
 
-      return [TIME_SECTION_HOUR, TIME_SECTION_MINUTE, TIME_SECTION_SECOND];
-    }, [resolvedFormat]);
+      return showSeconds
+        ? [TIME_SECTION_HOUR, TIME_SECTION_MINUTE, TIME_SECTION_SECOND]
+        : [TIME_SECTION_HOUR, TIME_SECTION_MINUTE];
+    }, [resolvedFormat, showSeconds]);
 
     const hoursOptions = useMemo(
       () =>
@@ -1055,26 +1064,27 @@ const DateTimeInput = forwardRef(
     );
 
     const timeValue = useMemo(() => {
-      if (
-        sections.hour === undefined ||
-        sections.minute === undefined ||
-        sections.second === undefined
-      ) {
+      if (sections.hour === undefined || sections.minute === undefined) {
         return undefined;
       }
+
+      const resolvedSecond = showSeconds
+        ? sections.second
+        : sections.second ?? 0;
+      if (resolvedSecond === undefined) return undefined;
 
       if (resolvedFormat === '12') {
         let hour24 = sections.hour % 12;
         if ((sections.period || 'AM') === 'PM') hour24 += 12;
         return `${pad2(hour24)}:${pad2(sections.minute)}:${pad2(
-          sections.second,
+          resolvedSecond,
         )}`;
       }
 
       return `${pad2(sections.hour)}:${pad2(sections.minute)}:${pad2(
-        sections.second,
+        resolvedSecond,
       )}`;
-    }, [resolvedFormat, sections]);
+    }, [resolvedFormat, sections, showSeconds]);
 
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;

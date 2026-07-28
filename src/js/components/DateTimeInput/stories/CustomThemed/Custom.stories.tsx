@@ -1,13 +1,26 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeType } from 'grommet/themes';
 
 import { Box, Grommet } from 'grommet';
 import { Calendar } from 'grommet-icons';
 import { DateTimeInput } from '../../index';
 
-// Note: ThemeType annotation not used here because dateTimeInput is not yet in
-// the published grommet package types. Type will be available post-merge.
-const customTheme = {
+type DateTimeInputTheme = ThemeType & {
+  dateTimeInput: {
+    container: {
+      round: string;
+    };
+    button: {
+      margin: string;
+    };
+    icon: {
+      calendar: typeof Calendar;
+    };
+  };
+};
+
+const customTheme: DateTimeInputTheme = {
   dateTimeInput: {
     container: {
       round: 'xsmall',

@@ -99,6 +99,7 @@ describe('DateTimeInput', () => {
         <DateTimeInput
           id="dt-input"
           format="12"
+          showSeconds
           value="2026-07-22T18:30:00.000Z"
         />
       </Grommet>,
@@ -132,6 +133,7 @@ describe('DateTimeInput', () => {
           id="dt-inline"
           inline
           format="12"
+          showSeconds
           value="2026-07-22T18:30:00.000Z"
         />
       </Grommet>,
@@ -154,12 +156,105 @@ describe('DateTimeInput', () => {
     expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
   });
 
+  test('can hide seconds in field and popup via showSeconds=false', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-no-seconds"
+          format="12"
+          showSeconds={false}
+          value="2026-07-22T18:30:45.000Z"
+        />
+      </Grommet>,
+    );
+
+    expect(
+      screen.queryByRole('spinbutton', { name: 'seconds' }),
+    ).not.toBeInTheDocument();
+
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const scoped = within(drop);
+
+    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(
+      scoped.queryByRole('listbox', { name: 'second' }),
+    ).not.toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'period' })).toBeInTheDocument();
+  });
+
+  test('hides seconds in field and popup by default', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-default-no-seconds"
+          format="12"
+          value="2026-07-22T18:30:45.000Z"
+        />
+      </Grommet>,
+    );
+
+    expect(
+      screen.queryByRole('spinbutton', { name: 'seconds' }),
+    ).not.toBeInTheDocument();
+
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    expect(
+      within(drop).queryByRole('listbox', { name: 'second' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('preserves existing seconds when showSeconds=false', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          format="12"
+          showSeconds={false}
+          value="2026-07-22T18:30:45.000Z"
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    const minuteSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    await user.click(minuteSegment);
+    await user.keyboard('{ArrowUp}');
+
+    expect(onChange).toHaveBeenCalled();
+    expect(onChange).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        value: expect.stringMatching(/:\d{2}:45\.000Z$/),
+      }),
+    );
+  });
+
   test('uses generated drop id linkage when id prop is not provided', async () => {
     const user = userEvent.setup();
 
     render(
       <Grommet>
-        <DateTimeInput format="12" value="2026-07-22T18:30:00.000Z" />
+        <DateTimeInput
+          format="12"
+          showSeconds
+          value="2026-07-22T18:30:00.000Z"
+        />
       </Grommet>,
     );
 

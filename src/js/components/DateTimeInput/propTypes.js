@@ -27,6 +27,7 @@ if (process.env.NODE_ENV !== 'production') {
     name: PropTypes.string,
     onChange: PropTypes.func,
     readOnly: PropTypes.bool,
+    showSeconds: PropTypes.bool,
     value: PropTypes.string,
   };
 }

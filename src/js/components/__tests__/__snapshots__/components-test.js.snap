@@ -372,6 +372,7 @@ exports[`Components loads 1`] = `
       "name": [Function],
       "onChange": [Function],
       "readOnly": [Function],
+      "showSeconds": [Function],
       "value": [Function],
     },
     "render": [Function],
