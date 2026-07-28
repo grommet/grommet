@@ -39,8 +39,6 @@ for (let i = 0; i < 95; i += 1) {
 
 describe('DataTable', () => {
   test('should have no accessibility violations for sortable columns', async () => {
-    // flush the 100ms column-width debounce timer (Header.js's
-    // WIDTH_UPDATE_DELAY) safely under act(), avoiding an "act()" warning.
     jest.useFakeTimers();
     const { container } = render(
       <Grommet>

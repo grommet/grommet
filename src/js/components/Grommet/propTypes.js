@@ -83,10 +83,6 @@ if (process.env.NODE_ENV !== 'production') {
           totalSingle: PropTypes.string,
         }),
         dataTable: PropTypes.shape({
-          // `ascending`/`descending` carry the full sort-status + action
-          // sentence for sorted columns (e.g. "sorted ascending, activate
-          // to sort descending"), as of the #7924 accessibility fix.
-          // `sortable` covers the unsorted-but-sortable state.
           ascending: PropTypes.string,
           collapse: PropTypes.string,
           collapseAll: PropTypes.string,
