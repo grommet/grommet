@@ -134,12 +134,16 @@ const TimeInput = forwardRef(
       disabled,
       format = DEFAULT_FORMAT,
       id,
+      inline = false,
+      inlineLabel,
       messages,
       minuteStep = 1,
       name,
       onChange,
+      onInlineClose,
       readOnly = false,
       value: valueArg,
+      views,
       ...rest
     },
     refArg,
@@ -216,7 +220,10 @@ const TimeInput = forwardRef(
       [announce, format, formatMessage, messages],
     );
 
-    const sectionOrder = useMemo(() => getSectionOrder(format), [format]);
+    const sectionOrder = useMemo(
+      () => getSectionOrder(format, views),
+      [format, views],
+    );
 
     const firstSection = sectionOrder[0] || SECTION_HOUR;
     const lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_HOUR;
@@ -671,6 +678,33 @@ const TimeInput = forwardRef(
 
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
+
+    if (inline) {
+      return (
+        <TimeInputPopup
+          inline
+          activeSection={activeSection}
+          autoFocus
+          format={format}
+          formatMessage={formatMessage}
+          hoursOptions={hoursOptions}
+          incrementSection={incrementSection}
+          label={
+            inlineLabel ||
+            formatMessage({ id: 'timeInput.chooseTime', messages })
+          }
+          messages={messages}
+          minuteOptions={minuteOptions}
+          moveSection={moveSection}
+          sectionOrder={sectionOrder}
+          onClose={onInlineClose}
+          secondOptions={secondOptions}
+          sections={sections}
+          setActiveSection={setActiveSection}
+          setSectionValue={setSectionValue}
+        />
+      );
+    }
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>

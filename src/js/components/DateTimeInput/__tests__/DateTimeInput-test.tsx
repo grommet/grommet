@@ -156,6 +156,46 @@ describe('DateTimeInput', () => {
     expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
   });
 
+  test('icon click opens and stays open during in-popup interaction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-open-stable"
+          format="12"
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+    await user.click(trigger);
+
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+
+    const drop = getDropFromTrigger(trigger);
+    const scoped = within(drop);
+
+    const dialog = scoped.getByRole('dialog', { name: 'Choose date and time' });
+    expect(dialog).toBeInTheDocument();
+
+    const minuteList = scoped.getByRole('listbox', { name: 'minute' });
+    const firstMinute = within(minuteList).getAllByRole('option')[0];
+
+    await user.click(firstMinute);
+
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    expect(
+      scoped.getByRole('dialog', { name: 'Choose date and time' }),
+    ).toBeInTheDocument();
+  });
+
   test('can hide seconds in field and popup via showSeconds=false', async () => {
     const user = userEvent.setup();
 

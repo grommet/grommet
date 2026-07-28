@@ -20,7 +20,7 @@ import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
-import { TimeInputPopup } from '../TimeInput/TimeInputPopup';
+import { TimeInput } from '../TimeInput';
 import {
   getSectionKeyFromType,
   getSectionNameFromType,
@@ -34,12 +34,6 @@ import {
   StyledTimeInputSegment,
   StyledTimeInputSeparator,
 } from '../TimeInput/StyledTimeInput';
-import {
-  SECTION_HOUR as TIME_SECTION_HOUR,
-  SECTION_MINUTE as TIME_SECTION_MINUTE,
-  SECTION_SECOND as TIME_SECTION_SECOND,
-  SECTION_PERIOD as TIME_SECTION_PERIOD,
-} from '../TimeInput/utils';
 import { DateTimeInputPropTypes } from './propTypes';
 
 const SECTION_DAY = 0;
@@ -422,8 +416,6 @@ const DateTimeInput = forwardRef(
     const [segmentFocused, setSegmentFocused] = useState(false);
     const [open, setOpen] = useState(false);
     const [iconFocused, setIconFocused] = useState(false);
-    const [activeTimeSection, setActiveTimeSection] =
-      useState(TIME_SECTION_HOUR);
     const normalizedMinuteStep = useMemo(
       () => normalizeStep(minuteStep),
       [minuteStep],
@@ -713,7 +705,6 @@ const DateTimeInput = forwardRef(
         activeSectionRef.current = firstSection;
         setActiveSection(firstSection);
       }
-      setActiveTimeSection(TIME_SECTION_HOUR);
       setOpen(true);
       announce(formatMessage({ id: 'dateTimeInput.openDrop', messages }));
     }, [
@@ -966,95 +957,17 @@ const DateTimeInput = forwardRef(
       [commitSections, resolvedFormat, sections],
     );
 
-    const timeSectionOrder = useMemo(() => {
+    const timeViews = useMemo(() => {
+      const numericViews = showSeconds
+        ? ['hours', 'minutes', 'seconds']
+        : ['hours', 'minutes'];
+
       if (resolvedFormat === '12') {
-        return [
-          TIME_SECTION_HOUR,
-          TIME_SECTION_MINUTE,
-          ...(showSeconds ? [TIME_SECTION_SECOND] : []),
-          TIME_SECTION_PERIOD,
-        ];
+        return [...numericViews, 'meridiem'];
       }
 
-      return showSeconds
-        ? [TIME_SECTION_HOUR, TIME_SECTION_MINUTE, TIME_SECTION_SECOND]
-        : [TIME_SECTION_HOUR, TIME_SECTION_MINUTE];
+      return numericViews;
     }, [resolvedFormat, showSeconds]);
-
-    const hoursOptions = useMemo(
-      () =>
-        Array.from({ length: resolvedFormat === '12' ? 12 : 24 }, (_, index) =>
-          resolvedFormat === '12' ? index + 1 : index,
-        ),
-      [resolvedFormat],
-    );
-
-    const minuteOptions = useMemo(
-      () =>
-        Array.from(
-          { length: Math.ceil(60 / normalizedMinuteStep) },
-          (_, index) => index * normalizedMinuteStep,
-        ).filter((valueAtIndex) => valueAtIndex < 60),
-      [normalizedMinuteStep],
-    );
-
-    const secondOptions = useMemo(
-      () => Array.from({ length: 60 }, (_, index) => index),
-      [],
-    );
-
-    const timeSections = useMemo(
-      () => ({
-        hour: sections.hour,
-        minute: sections.minute,
-        second: sections.second,
-        period: sections.period,
-      }),
-      [sections.hour, sections.minute, sections.period, sections.second],
-    );
-
-    const toDateTimeSection = useCallback((timeSection) => {
-      if (timeSection === TIME_SECTION_HOUR) return SECTION_HOUR;
-      if (timeSection === TIME_SECTION_MINUTE) return SECTION_MINUTE;
-      if (timeSection === TIME_SECTION_SECOND) return SECTION_SECOND;
-      return SECTION_PERIOD;
-    }, []);
-
-    const setActiveTimeSectionAndField = useCallback(
-      (timeSection) => {
-        const nextFieldSection = toDateTimeSection(timeSection);
-        activeSectionRef.current = nextFieldSection;
-        setActiveTimeSection(timeSection);
-        setActiveSection(nextFieldSection);
-      },
-      [toDateTimeSection],
-    );
-
-    const moveTimeSection = useCallback(
-      (direction) => {
-        const index = Math.max(0, timeSectionOrder.indexOf(activeTimeSection));
-        const count = timeSectionOrder.length;
-        const nextIndex = (index + direction + count) % count;
-        const nextSection = timeSectionOrder[nextIndex];
-        setActiveTimeSectionAndField(nextSection);
-        return nextSection;
-      },
-      [activeTimeSection, setActiveTimeSectionAndField, timeSectionOrder],
-    );
-
-    const setTimeSectionValue = useCallback(
-      (timeSection, nextValue) => {
-        setSectionValue(toDateTimeSection(timeSection), nextValue);
-      },
-      [setSectionValue, toDateTimeSection],
-    );
-
-    const incrementTimeSection = useCallback(
-      (timeSection, delta) => {
-        incrementSection(toDateTimeSection(timeSection), delta);
-      },
-      [incrementSection, toDateTimeSection],
-    );
 
     const timeValue = useMemo(() => {
       if (sections.hour === undefined || sections.minute === undefined) {
@@ -1265,32 +1178,21 @@ const DateTimeInput = forwardRef(
                   initialFocus={open ? 'days' : undefined}
                   onSelect={handleCalendarSelect}
                 />
-                <TimeInputPopup
+                <TimeInput
                   inline
-                  activeSection={activeTimeSection}
-                  autoFocus={segmentFocused && activeSection >= SECTION_HOUR}
                   format={resolvedFormat}
-                  formatMessage={formatMessage}
-                  hoursOptions={hoursOptions}
-                  incrementSection={incrementTimeSection}
-                  label={formatMessage({
+                  value={timeValue}
+                  views={timeViews}
+                  inlineLabel={formatMessage({
                     id: 'dateTimeInput.chooseDateTime',
                     messages,
                   })}
                   messages={messages}
-                  minuteOptions={minuteOptions}
-                  moveSection={moveTimeSection}
-                  onAccept={() => {
-                    if (timeValue) {
-                      handleTimeSelect({ value: timeValue });
-                    }
-                  }}
-                  onClose={closePicker}
-                  secondOptions={secondOptions}
-                  sectionOrder={timeSectionOrder}
-                  sections={timeSections}
-                  setActiveSection={setActiveTimeSectionAndField}
-                  setSectionValue={setTimeSectionValue}
+                  minuteStep={normalizedMinuteStep}
+                  disabled={disabled}
+                  readOnly={readOnly}
+                  onChange={handleTimeSelect}
+                  onInlineClose={closePicker}
                 />
               </Box>
             </Drop>
