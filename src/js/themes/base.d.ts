@@ -2359,11 +2359,6 @@ export interface ThemeType {
       };
     };
     drop?: {
-      width?: string;
-      minHeight?: string;
-      column?: {
-        maxHeight?: string;
-      };
       option?: {
         background?: ColorType;
         hover?: {
