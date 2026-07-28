@@ -22,6 +22,11 @@ import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { TimeInputPopup } from '../TimeInput/TimeInputPopup';
 import {
+  getSectionKeyFromType,
+  getSectionNameFromType,
+  getSectionTokenFromType,
+} from '../utils/sectionHelpers';
+import {
   StyledTimeInput,
   StyledTimeInputContainer,
   StyledTimeInputDisplay,
@@ -50,24 +55,24 @@ const pad4 = (value) => String(value).padStart(4, '0');
 
 const getDaysInMonth = (year, month) => new Date(year, month, 0).getDate();
 
-const sectionKey = (section) => {
+const sectionTypeFromSection = (section) => {
   if (section === SECTION_DAY) return 'day';
   if (section === SECTION_MONTH) return 'month';
   if (section === SECTION_YEAR) return 'year';
-  if (section === SECTION_HOUR) return 'hour';
-  if (section === SECTION_MINUTE) return 'minute';
-  if (section === SECTION_SECOND) return 'second';
-  return 'period';
+  if (section === SECTION_HOUR) return 'hours';
+  if (section === SECTION_MINUTE) return 'minutes';
+  if (section === SECTION_SECOND) return 'seconds';
+  return 'meridiem';
+};
+
+const sectionKey = (section) => {
+  const sectionType = sectionTypeFromSection(section);
+  return getSectionKeyFromType(sectionType);
 };
 
 const tokenForSection = (section) => {
-  if (section === SECTION_DAY) return 'dd';
-  if (section === SECTION_MONTH) return 'mm';
-  if (section === SECTION_YEAR) return 'yyyy';
-  if (section === SECTION_HOUR) return 'hh';
-  if (section === SECTION_MINUTE) return 'mm';
-  if (section === SECTION_SECOND) return 'ss';
-  return 'aa';
+  const sectionType = sectionTypeFromSection(section);
+  return getSectionTokenFromType(sectionType);
 };
 
 const defaultSections = (format, showSeconds) => {
@@ -305,25 +310,13 @@ const parseCalendarSelection = (nextValue) => {
 };
 
 const getSectionName = (section, formatMessage, messages) => {
-  if (section === SECTION_DAY) {
-    return formatMessage({ id: 'dateTimeInput.sectionDay', messages });
-  }
-  if (section === SECTION_MONTH) {
-    return formatMessage({ id: 'dateTimeInput.sectionMonth', messages });
-  }
-  if (section === SECTION_YEAR) {
-    return formatMessage({ id: 'dateTimeInput.sectionYear', messages });
-  }
-  if (section === SECTION_HOUR) {
-    return formatMessage({ id: 'dateTimeInput.sectionHours', messages });
-  }
-  if (section === SECTION_MINUTE) {
-    return formatMessage({ id: 'dateTimeInput.sectionMinutes', messages });
-  }
-  if (section === SECTION_SECOND) {
-    return formatMessage({ id: 'dateTimeInput.sectionSeconds', messages });
-  }
-  return formatMessage({ id: 'dateTimeInput.sectionMeridiem', messages });
+  const sectionType = sectionTypeFromSection(section);
+  return getSectionNameFromType({
+    sectionType,
+    messagePrefix: 'dateTimeInput',
+    formatMessage,
+    messages,
+  });
 };
 
 const getSectionLimits = (section, format, sections) => {

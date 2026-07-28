@@ -1,3 +1,8 @@
+import {
+  getSectionKeyFromType,
+  getSectionNameFromType,
+} from '../utils/sectionHelpers';
+
 export const SECTION_HOUR = 0;
 export const SECTION_MINUTE = 1;
 export const SECTION_SECOND = 2;
@@ -5,23 +10,24 @@ export const SECTION_PERIOD = 3;
 
 export const pad = (value) => value.toString().padStart(2, '0');
 
-const sectionMessageId = (section) => {
-  if (section === SECTION_HOUR) return 'timeInput.sectionHours';
-  if (section === SECTION_MINUTE) return 'timeInput.sectionMinutes';
-  if (section === SECTION_SECOND) return 'timeInput.sectionSeconds';
-  return 'timeInput.sectionMeridiem';
+const sectionTypeFromSection = (section) => {
+  if (section === SECTION_HOUR) return 'hours';
+  if (section === SECTION_MINUTE) return 'minutes';
+  if (section === SECTION_SECOND) return 'seconds';
+  return 'meridiem';
 };
 
 export const getSectionName = (section, format, formatMessage, messages) => {
-  if (formatMessage) {
-    return formatMessage({ id: sectionMessageId(section), messages });
-  }
+  const sectionType = sectionTypeFromSection(section);
+  const sectionName = getSectionNameFromType({
+    sectionType,
+    messagePrefix: 'timeInput',
+    formatMessage,
+    messages,
+  });
 
-  const names =
-    format === '12'
-      ? ['hours', 'minutes', 'seconds', 'meridiem']
-      : ['hours', 'minutes', 'seconds'];
-  return names[section];
+  if (format !== '12' && sectionType === 'meridiem') return undefined;
+  return sectionName;
 };
 
 export const getRanges = (format) => {
@@ -194,10 +200,8 @@ export const sectionMin = (section, format) => {
 };
 
 export const sectionKey = (section) => {
-  if (section === SECTION_HOUR) return 'hour';
-  if (section === SECTION_MINUTE) return 'minute';
-  if (section === SECTION_SECOND) return 'second';
-  return 'period';
+  const sectionType = sectionTypeFromSection(section);
+  return getSectionKeyFromType(sectionType);
 };
 
 export const getSectionAriaMeta = ({ section, format, sections }) => {
