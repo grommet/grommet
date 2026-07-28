@@ -99,6 +99,17 @@ const hasAnyValue = (sections) =>
   sections.second !== undefined ||
   sections.period !== undefined;
 
+const sectionForPart = (partType) => {
+  if (partType === 'day') return SECTION_DAY;
+  if (partType === 'month') return SECTION_MONTH;
+  if (partType === 'year') return SECTION_YEAR;
+  if (partType === 'hour') return SECTION_HOUR;
+  if (partType === 'minute') return SECTION_MINUTE;
+  if (partType === 'second') return SECTION_SECOND;
+  if (partType === 'dayPeriod') return SECTION_PERIOD;
+  return undefined;
+};
+
 const getSectionOrder = (format) =>
   format === '12'
     ? [
@@ -124,6 +135,74 @@ const separatorBeforeSection = (section) => {
   if (section === SECTION_HOUR) return ' ';
   if (section === SECTION_MINUTE || section === SECTION_SECOND) return ':';
   return ' ';
+};
+
+const getLocaleSectionLayout = (format) => {
+  const fallbackOrder = getSectionOrder(format);
+  const fallbackPrefixes = {};
+  fallbackOrder.forEach((section, index) => {
+    fallbackPrefixes[section] =
+      index === 0 ? '' : separatorBeforeSection(section);
+  });
+
+  try {
+    const formatter = new Intl.DateTimeFormat(undefined, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: format === '12',
+    });
+
+    const parts = formatter.formatToParts(new Date());
+    const seen = new Set();
+    const sectionOrder = [];
+    const separatorMap = {};
+    let pendingLiteral = '';
+
+    parts.forEach((part) => {
+      if (part.type === 'literal') {
+        pendingLiteral += part.value;
+        return;
+      }
+
+      const section = sectionForPart(part.type);
+      if (section === undefined) return;
+      if (section === SECTION_PERIOD && format !== '12') return;
+
+      if (!seen.has(section)) {
+        separatorMap[section] = sectionOrder.length === 0 ? '' : pendingLiteral;
+        sectionOrder.push(section);
+        seen.add(section);
+      }
+
+      pendingLiteral = '';
+    });
+
+    fallbackOrder.forEach((section) => {
+      if (!seen.has(section)) {
+        separatorMap[section] =
+          sectionOrder.length === 0 ? '' : separatorBeforeSection(section);
+        sectionOrder.push(section);
+      }
+    });
+
+    return { sectionOrder, separatorMap };
+  } catch {
+    return { sectionOrder: fallbackOrder, separatorMap: fallbackPrefixes };
+  }
+};
+
+const getLocaleTimeFormat = () => {
+  try {
+    return new Intl.DateTimeFormat().resolvedOptions().hour12 === false
+      ? '24'
+      : '12';
+  } catch {
+    return '12';
+  }
 };
 
 const toLocalSections = (value, format) => {
@@ -282,7 +361,7 @@ const DateTimeInput = forwardRef(
     {
       defaultValue,
       disabled,
-      format = '12',
+      format,
       id,
       inline = false,
       messages,
@@ -300,6 +379,10 @@ const DateTimeInput = forwardRef(
     const { format: formatMessage } = useContext(MessageContext);
     const formContext = useContext(FormContext);
     const { useFormInput } = formContext;
+    const resolvedFormat = useMemo(
+      () => format || getLocaleTimeFormat(),
+      [format],
+    );
 
     const inputRef = useForwardedRef(refArg);
     const containerRef = useRef();
@@ -321,15 +404,18 @@ const DateTimeInput = forwardRef(
     });
 
     const parsedValue = useMemo(
-      () => toLocalSections(value, format),
-      [value, format],
+      () => toLocalSections(value, resolvedFormat),
+      [resolvedFormat, value],
     );
-    const sectionOrder = useMemo(() => getSectionOrder(format), [format]);
+    const { sectionOrder, separatorMap } = useMemo(
+      () => getLocaleSectionLayout(resolvedFormat),
+      [resolvedFormat],
+    );
     const firstSection = sectionOrder[0] || SECTION_DAY;
     const lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_SECOND;
 
     const [sections, setSections] = useState(
-      parsedValue || defaultSections(format),
+      parsedValue || defaultSections(resolvedFormat),
     );
     const [pendingDigits, setPendingDigits] = useState({});
     const [activeSection, setActiveSection] = useState(firstSection);
@@ -356,8 +442,8 @@ const DateTimeInput = forwardRef(
         return;
       }
 
-      setSections(parsedValue || defaultSections(format));
-    }, [parsedValue, format]);
+      setSections(parsedValue || defaultSections(resolvedFormat));
+    }, [parsedValue, resolvedFormat]);
 
     const commitSections = useCallback(
       (nextSections) => {
@@ -367,7 +453,7 @@ const DateTimeInput = forwardRef(
         );
         const anyValue = hasAnyValue(nextSections);
         const nextValue = complete
-          ? toUtcISOString(nextSections, format)
+          ? toUtcISOString(nextSections, resolvedFormat)
           : undefined;
 
         preserveIncompleteSectionsRef.current =
@@ -386,7 +472,7 @@ const DateTimeInput = forwardRef(
           onChange?.({ value: undefined });
         }
       },
-      [format, onChange, sectionOrder, setValue],
+      [onChange, resolvedFormat, sectionOrder, setValue],
     );
 
     const setSectionValue = useCallback(
@@ -397,7 +483,7 @@ const DateTimeInput = forwardRef(
         if (section === SECTION_MONTH || section === SECTION_YEAR) {
           const dayLimit = getSectionLimits(
             SECTION_DAY,
-            format,
+            resolvedFormat,
             nextSections,
           ).max;
           if (nextSections.day !== undefined && nextSections.day > dayLimit) {
@@ -407,7 +493,7 @@ const DateTimeInput = forwardRef(
 
         commitSections(nextSections);
       },
-      [commitSections, format, sections],
+      [commitSections, resolvedFormat, sections],
     );
 
     const moveSection = useCallback(
@@ -434,7 +520,18 @@ const DateTimeInput = forwardRef(
           return;
         }
 
-        const { min, max } = getSectionLimits(section, format, sections);
+        // When year is empty, seed it to the current year first to avoid
+        // wrapping to 0001/9999 on the initial arrow interaction.
+        if (section === SECTION_YEAR && sections.year === undefined) {
+          setSectionValue(SECTION_YEAR, new Date().getFullYear());
+          return;
+        }
+
+        const { min, max } = getSectionLimits(
+          section,
+          resolvedFormat,
+          sections,
+        );
         const key = sectionKey(section);
         const current = sections[key] === undefined ? min : sections[key];
         const step = section === SECTION_MINUTE ? normalizedMinuteStep : 1;
@@ -469,7 +566,7 @@ const DateTimeInput = forwardRef(
 
         setSectionValue(section, next);
       },
-      [format, normalizedMinuteStep, sections, setSectionValue],
+      [normalizedMinuteStep, resolvedFormat, sections, setSectionValue],
     );
 
     const applyDigit = useCallback(
@@ -492,7 +589,11 @@ const DateTimeInput = forwardRef(
         }
 
         const numeric = Number(nextBuffer);
-        const { min, max } = getSectionLimits(activeSection, format, sections);
+        const { min, max } = getSectionLimits(
+          activeSection,
+          resolvedFormat,
+          sections,
+        );
         if (Number.isNaN(numeric) || numeric < min || numeric > max) {
           announce(
             formatMessage({ id: 'dateTimeInput.invalidDateTime', messages }),
@@ -515,10 +616,10 @@ const DateTimeInput = forwardRef(
       [
         activeSection,
         announce,
-        format,
         formatMessage,
         messages,
         moveSection,
+        resolvedFormat,
         sectionOrder,
         sections,
         setSectionValue,
@@ -551,13 +652,16 @@ const DateTimeInput = forwardRef(
           const key = sectionKey(section);
           return {
             section,
-            prefix: index === 0 ? '' : separatorBeforeSection(section),
+            prefix:
+              index === 0
+                ? ''
+                : separatorMap[section] ?? separatorBeforeSection(section),
             text: getDisplayText(section),
             filled:
               sections[key] !== undefined || pendingDigits[key] !== undefined,
           };
         }),
-      [getDisplayText, pendingDigits, sectionOrder, sections],
+      [getDisplayText, pendingDigits, sectionOrder, sections, separatorMap],
     );
 
     const placeholder = useMemo(
@@ -566,10 +670,12 @@ const DateTimeInput = forwardRef(
           .map((section, index) => {
             const token = tokenForSection(section);
             if (index === 0) return token;
-            return `${separatorBeforeSection(section)}${token}`;
+            const prefix =
+              separatorMap[section] ?? separatorBeforeSection(section);
+            return `${prefix}${token}`;
           })
           .join(''),
-      [sectionOrder],
+      [sectionOrder, separatorMap],
     );
 
     const hasDisplayValue =
@@ -604,13 +710,21 @@ const DateTimeInput = forwardRef(
     const openPicker = useCallback(() => {
       if (disabled || readOnly) return;
       if (!segmentFocused) {
-        activeSectionRef.current = SECTION_DAY;
-        setActiveSection(SECTION_DAY);
+        activeSectionRef.current = firstSection;
+        setActiveSection(firstSection);
       }
       setActiveTimeSection(TIME_SECTION_HOUR);
       setOpen(true);
       announce(formatMessage({ id: 'dateTimeInput.openDrop', messages }));
-    }, [announce, disabled, formatMessage, messages, readOnly, segmentFocused]);
+    }, [
+      announce,
+      disabled,
+      firstSection,
+      formatMessage,
+      messages,
+      readOnly,
+      segmentFocused,
+    ]);
 
     const closePicker = useCallback(() => {
       setSegmentFocused(false);
@@ -749,7 +863,7 @@ const DateTimeInput = forwardRef(
           return;
         }
 
-        if (format === '12' && section === SECTION_PERIOD) {
+        if (resolvedFormat === '12' && section === SECTION_PERIOD) {
           const lower = key.toLowerCase();
           if (lower === 'a') {
             event.preventDefault();
@@ -775,13 +889,13 @@ const DateTimeInput = forwardRef(
         disabled,
         firstSection,
         focusSection,
-        format,
         incrementSection,
         lastSection,
         moveSection,
         open,
         openPicker,
         readOnly,
+        resolvedFormat,
         segmentFocused,
         setSectionValue,
       ],
@@ -820,7 +934,7 @@ const DateTimeInput = forwardRef(
             hour: undefined,
             minute: undefined,
             second: undefined,
-            period: format === '12' ? undefined : sections.period,
+            period: resolvedFormat === '12' ? undefined : sections.period,
           });
           return;
         }
@@ -833,7 +947,7 @@ const DateTimeInput = forwardRef(
 
         let nextHour;
         let nextPeriod;
-        if (format === '12') {
+        if (resolvedFormat === '12') {
           nextPeriod = hour24 < 12 ? 'AM' : 'PM';
           nextHour = hour24 % 12 || 12;
         } else {
@@ -849,11 +963,11 @@ const DateTimeInput = forwardRef(
           period: nextPeriod,
         });
       },
-      [commitSections, format, sections],
+      [commitSections, resolvedFormat, sections],
     );
 
     const timeSectionOrder = useMemo(() => {
-      if (format === '12') {
+      if (resolvedFormat === '12') {
         return [
           TIME_SECTION_HOUR,
           TIME_SECTION_MINUTE,
@@ -863,14 +977,14 @@ const DateTimeInput = forwardRef(
       }
 
       return [TIME_SECTION_HOUR, TIME_SECTION_MINUTE, TIME_SECTION_SECOND];
-    }, [format]);
+    }, [resolvedFormat]);
 
     const hoursOptions = useMemo(
       () =>
-        Array.from({ length: format === '12' ? 12 : 24 }, (_, index) =>
-          format === '12' ? index + 1 : index,
+        Array.from({ length: resolvedFormat === '12' ? 12 : 24 }, (_, index) =>
+          resolvedFormat === '12' ? index + 1 : index,
         ),
-      [format],
+      [resolvedFormat],
     );
 
     const minuteOptions = useMemo(
@@ -949,7 +1063,7 @@ const DateTimeInput = forwardRef(
         return undefined;
       }
 
-      if (format === '12') {
+      if (resolvedFormat === '12') {
         let hour24 = sections.hour % 12;
         if ((sections.period || 'AM') === 'PM') hour24 += 12;
         return `${pad2(hour24)}:${pad2(sections.minute)}:${pad2(
@@ -960,7 +1074,7 @@ const DateTimeInput = forwardRef(
       return `${pad2(sections.hour)}:${pad2(sections.minute)}:${pad2(
         sections.second,
       )}`;
-    }, [format, sections]);
+    }, [resolvedFormat, sections]);
 
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
@@ -1020,7 +1134,7 @@ const DateTimeInput = forwardRef(
                   {displaySections.map(({ section, prefix, text, filled }) => {
                     const sectionLimits = getSectionLimits(
                       section,
-                      format,
+                      resolvedFormat,
                       sections,
                     );
                     const key = sectionKey(section);
@@ -1152,7 +1266,7 @@ const DateTimeInput = forwardRef(
                   inline
                   activeSection={activeTimeSection}
                   autoFocus={segmentFocused && activeSection >= SECTION_HOUR}
-                  format={format}
+                  format={resolvedFormat}
                   formatMessage={formatMessage}
                   hoursOptions={hoursOptions}
                   incrementSection={incrementTimeSection}

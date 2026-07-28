@@ -1,6 +1,12 @@
 import React from 'react';
 import 'jest-styled-components';
-import { render, screen, within } from '@testing-library/react';
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -25,6 +31,9 @@ const getDropFromTrigger = (trigger: HTMLElement) => {
 
 describe('DateTimeInput', () => {
   beforeEach(createPortal);
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 
   test('should have no accessibility violations', async () => {
     const { container } = render(
@@ -207,6 +216,205 @@ describe('DateTimeInput', () => {
     await user.keyboard('{ArrowUp}');
 
     expect(minuteSegment).toHaveTextContent('45');
+  });
+
+  test('seeds empty year to current year on first arrow interaction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="12" />
+      </Grommet>,
+    );
+
+    const yearSegment = screen.getByRole('spinbutton', { name: 'year' });
+    await user.click(yearSegment);
+    await user.keyboard('{ArrowDown}');
+
+    expect(yearSegment).toHaveTextContent(
+      String(new Date().getFullYear()).padStart(4, '0'),
+    );
+  });
+
+  test('uses locale-driven DMY ordering for date sections', () => {
+    jest.spyOn(Intl, 'DateTimeFormat').mockImplementation(((_, options) => {
+      if (options && 'year' in options) {
+        return {
+          formatToParts: () => [
+            { type: 'day', value: '22' },
+            { type: 'literal', value: '/' },
+            { type: 'month', value: '07' },
+            { type: 'literal', value: '/' },
+            { type: 'year', value: '2026' },
+            { type: 'literal', value: ' ' },
+            { type: 'hour', value: '18' },
+            { type: 'literal', value: ':' },
+            { type: 'minute', value: '30' },
+            { type: 'literal', value: ':' },
+            { type: 'second', value: '00' },
+          ],
+        } as Intl.DateTimeFormat;
+      }
+
+      return {
+        resolvedOptions: () => ({ hour12: false }),
+      } as Intl.DateTimeFormat;
+    }) as typeof Intl.DateTimeFormat);
+
+    render(
+      <Grommet>
+        <DateTimeInput format="24" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    const sections = screen.getAllByRole('spinbutton');
+    expect(sections[0]).toHaveAttribute('aria-label', 'day');
+    expect(sections[1]).toHaveAttribute('aria-label', 'month');
+    expect(sections[2]).toHaveAttribute('aria-label', 'year');
+  });
+
+  test('uses locale-driven MDY ordering for date sections', () => {
+    jest.spyOn(Intl, 'DateTimeFormat').mockImplementation(((_, options) => {
+      if (options && 'year' in options) {
+        return {
+          formatToParts: () => [
+            { type: 'month', value: '07' },
+            { type: 'literal', value: '/' },
+            { type: 'day', value: '22' },
+            { type: 'literal', value: '/' },
+            { type: 'year', value: '2026' },
+            { type: 'literal', value: ' ' },
+            { type: 'hour', value: '18' },
+            { type: 'literal', value: ':' },
+            { type: 'minute', value: '30' },
+            { type: 'literal', value: ':' },
+            { type: 'second', value: '00' },
+          ],
+        } as Intl.DateTimeFormat;
+      }
+
+      return {
+        resolvedOptions: () => ({ hour12: false }),
+      } as Intl.DateTimeFormat;
+    }) as typeof Intl.DateTimeFormat);
+
+    render(
+      <Grommet>
+        <DateTimeInput format="24" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    const sections = screen.getAllByRole('spinbutton');
+    expect(sections[0]).toHaveAttribute('aria-label', 'month');
+    expect(sections[1]).toHaveAttribute('aria-label', 'day');
+    expect(sections[2]).toHaveAttribute('aria-label', 'year');
+  });
+
+  test('defaults to 24-hour mode when locale resolves to hour12=false', () => {
+    jest.spyOn(Intl, 'DateTimeFormat').mockImplementation(((_, options) => {
+      if (options && 'year' in options) {
+        return {
+          formatToParts: () => [
+            { type: 'day', value: '22' },
+            { type: 'literal', value: '/' },
+            { type: 'month', value: '07' },
+            { type: 'literal', value: '/' },
+            { type: 'year', value: '2026' },
+            { type: 'literal', value: ' ' },
+            { type: 'hour', value: '18' },
+            { type: 'literal', value: ':' },
+            { type: 'minute', value: '30' },
+            { type: 'literal', value: ':' },
+            { type: 'second', value: '00' },
+          ],
+        } as Intl.DateTimeFormat;
+      }
+
+      return {
+        resolvedOptions: () => ({ hour12: false }),
+      } as Intl.DateTimeFormat;
+    }) as typeof Intl.DateTimeFormat);
+
+    render(
+      <Grommet>
+        <DateTimeInput value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveAttribute(
+      'aria-valuemax',
+      '23',
+    );
+    expect(
+      screen.queryByRole('spinbutton', { name: 'meridiem' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('inline popup supports Tab, Arrow transitions, Enter, and Escape', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-inline-kbd"
+          inline
+          format="12"
+          value="2026-07-22T18:30:00.000Z"
+        />
+        <Button type="button" label="After inline picker" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const scoped = within(drop);
+    const dialog = scoped.getByRole('dialog', { name: 'Choose date and time' });
+
+    const hourList = scoped.getByRole('listbox', { name: 'hour' });
+    const minuteList = scoped.getByRole('listbox', { name: 'minute' });
+
+    const selectedHourOption = within(hourList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+    expect(selectedHourOption).toBeTruthy();
+
+    fireEvent.keyDown(dialog, { key: 'Tab' });
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+
+    const selectedMinuteOption = within(minuteList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+    expect(selectedMinuteOption).toBeTruthy();
+
+    fireEvent.keyDown(dialog, { key: 'ArrowRight' });
+    fireEvent.keyDown(dialog, { key: 'ArrowDown' });
+    const updatedMinuteOption = within(minuteList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+    expect(updatedMinuteOption).toBeTruthy();
+    expect(updatedMinuteOption).toHaveTextContent('31');
+
+    fireEvent.keyDown(dialog, { key: 'Enter' });
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    await user.click(trigger);
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+
+    const reopenedDrop = getDropFromTrigger(trigger);
+    const reopenedDialog = within(reopenedDrop).getByRole('dialog', {
+      name: 'Choose date and time',
+    });
+
+    fireEvent.keyDown(reopenedDialog, { key: 'Escape' });
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    });
   });
 
   test('associates the FormField label with the grouped segmented input', () => {
