@@ -427,11 +427,18 @@ const Header = forwardRef(
                 // which is the same mechanism that already reliably
                 // announces sort changes in real time on activation -
                 // unlike a static aria-label override, which does not.
+                //
+                // `ascending`/`descending` are repurposed here to carry the
+                // full sort-status + action sentence (previously just the
+                // bare word, used as the icon's aria-label). This keeps any
+                // existing consumer customization of these two keys applied
+                // on upgrade, rather than silently orphaning it in favor of
+                // new keys - see default.json for the expected shape.
                 let hiddenTextId = 'dataTable.sortable';
                 if (ariaSort === 'ascending') {
-                  hiddenTextId = 'dataTable.sortedAscending';
+                  hiddenTextId = 'dataTable.ascending';
                 } else if (ariaSort === 'descending') {
-                  hiddenTextId = 'dataTable.sortedDescending';
+                  hiddenTextId = 'dataTable.descending';
                 }
 
                 content = (

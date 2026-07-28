@@ -83,13 +83,10 @@ if (process.env.NODE_ENV !== 'production') {
           totalSingle: PropTypes.string,
         }),
         dataTable: PropTypes.shape({
-          // NOTE: `ascending`/`descending` are no longer read by
-          // DataTable's sort UI as of the #7924 accessibility fix (sort
-          // status is now communicated via `sortable`/`sortedAscending`/
-          // `sortedDescending` below). Kept here to avoid a breaking
-          // change for consumers who may have overridden them; raised
-          // for team discussion on a formal deprecation/removal in a
-          // future release.
+          // `ascending`/`descending` carry the full sort-status + action
+          // sentence for sorted columns (e.g. "sorted ascending, activate
+          // to sort descending"), as of the #7924 accessibility fix.
+          // `sortable` covers the unsorted-but-sortable state.
           ascending: PropTypes.string,
           collapse: PropTypes.string,
           collapseAll: PropTypes.string,
@@ -104,8 +101,6 @@ if (process.env.NODE_ENV !== 'production') {
           rowsSingle: PropTypes.string,
           searchBy: PropTypes.string,
           sortable: PropTypes.string,
-          sortedAscending: PropTypes.string,
-          sortedDescending: PropTypes.string,
           total: PropTypes.string,
           totalSingle: PropTypes.string,
         }),

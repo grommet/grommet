@@ -87,24 +87,10 @@ export interface DataTableProps<TRowType = any> {
   gridArea?: GridAreaType;
   margin?: MarginType;
   messages?: {
-    /**
-     * @deprecated no longer read by DataTable's sort UI as of the #7924
-     * accessibility fix - sort status is now communicated via `sortable`/
-     * `sortedAscending`/`sortedDescending` below. Kept to avoid a breaking
-     * change for existing consumers; pending team decision on formal
-     * removal in a future release.
-     */
     ascending?: string;
     collapse?: string;
     collapseAll?: string;
     decrease?: string;
-    /**
-     * @deprecated no longer read by DataTable's sort UI as of the #7924
-     * accessibility fix - sort status is now communicated via `sortable`/
-     * `sortedAscending`/`sortedDescending` below. Kept to avoid a breaking
-     * change for existing consumers; pending team decision on formal
-     * removal in a future release.
-     */
     descending?: string;
     increase?: string;
     expand?: string;
@@ -115,8 +101,6 @@ export interface DataTableProps<TRowType = any> {
     rowsSingle?: string;
     searchBy?: string;
     sortable?: string;
-    sortedAscending?: string;
-    sortedDescending?: string;
     total?: string;
     totalSingle?: string;
   };

@@ -85,22 +85,24 @@ export interface GrommetProps {
       };
       dataTable?: {
         /**
-         * @deprecated no longer read by DataTable's sort UI as of the
-         * #7924 accessibility fix - sort status is now communicated via
-         * `sortable`/`sortedAscending`/`sortedDescending` below. Kept to
-         * avoid a breaking change for existing consumers; pending team
-         * decision on formal removal in a future release.
+         * Used both as the sort icon's accessible label (legacy usage) and,
+         * as of the #7924 accessibility fix, as the full sort-status +
+         * available-action sentence exposed to assistive technology when
+         * this column is sorted ascending (e.g. "sorted ascending,
+         * activate to sort descending"). See `sortable` below for the
+         * unsorted state.
          */
         ascending?: string;
         collapse?: string;
         collapseAll?: string;
         decrease?: string;
         /**
-         * @deprecated no longer read by DataTable's sort UI as of the
-         * #7924 accessibility fix - sort status is now communicated via
-         * `sortable`/`sortedAscending`/`sortedDescending` below. Kept to
-         * avoid a breaking change for existing consumers; pending team
-         * decision on formal removal in a future release.
+         * Used both as the sort icon's accessible label (legacy usage) and,
+         * as of the #7924 accessibility fix, as the full sort-status +
+         * available-action sentence exposed to assistive technology when
+         * this column is sorted descending (e.g. "sorted descending,
+         * activate to sort ascending"). See `sortable` below for the
+         * unsorted state.
          */
         descending?: string;
         increase?: string;
@@ -112,8 +114,6 @@ export interface GrommetProps {
         rowsSingle?: string;
         searchBy?: string;
         sortable?: string;
-        sortedAscending?: string;
-        sortedDescending?: string;
         total?: string;
         totalSingle?: string;
       };

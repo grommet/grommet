@@ -358,6 +358,53 @@ describe('DataTable', () => {
     ).toBeInTheDocument();
   });
 
+  test('sortable column honors existing ascending/descending message customization', () => {
+    // dataTable.ascending/descending were historically read as the sort
+    // icon's short aria-label. They're now repurposed to carry the full
+    // sort-status + action sentence, so a consumer's pre-existing
+    // customization of these two keys keeps applying after upgrade,
+    // instead of being silently unread in favor of new message keys.
+    const { rerender } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sort={{ property: 'a', direction: 'asc' }}
+          messages={{
+            ascending: 'Trié par ordre croissant',
+            descending: 'Trié par ordre décroissant',
+          }}
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A Trié par ordre croissant',
+      }),
+    ).toBeInTheDocument();
+
+    rerender(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sort={{ property: 'a', direction: 'desc' }}
+          messages={{
+            ascending: 'Trié par ordre croissant',
+            descending: 'Trié par ordre décroissant',
+          }}
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A Trié par ordre décroissant',
+      }),
+    ).toBeInTheDocument();
+  });
+
   test('sort null data', () => {
     const { container, getByText } = render(
       <Grommet>
