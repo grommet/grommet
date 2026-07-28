@@ -8,6 +8,8 @@ import { StyleSheetManager } from 'styled-components';
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import isChromatic from 'chromatic/isChromatic';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useDarkMode } from 'storybook-dark-mode';
 import { Grommet, grommet, hacktoberfest2022, Box, Text } from '../src/js';
 import sizeMapper from './sizeMapper';
 
@@ -37,6 +39,8 @@ const THEMES = {
 export const decorators = [
   (Story, context) => {
     const [rootRef, setRootRef] = useState(null);
+    const isDark = useDarkMode();
+    const themeMode = isDark ? 'dark' : 'light';
     const activeTheme = context.globals.theme || 'grommet';
     const root = context.globals.root || 'document';
     const full = context.allArgs?.full || 'min';
@@ -132,6 +136,7 @@ export const decorators = [
             <StyleSheetManager target={rootRef.shadowRoot}>
               <Grommet
                 theme={THEMES[activeTheme]}
+                themeMode={themeMode}
                 full={full}
                 dir={dir}
                 options={options}
@@ -148,6 +153,7 @@ export const decorators = [
     return (
       <Grommet
         theme={THEMES[activeTheme]}
+        themeMode={themeMode}
         full={full}
         dir={dir}
         options={options}
@@ -159,6 +165,9 @@ export const decorators = [
 ];
 
 export const parameters = {
+  darkMode: {
+    current: 'light',
+  },
   layout: 'fullscreen',
   tags: {
     exclude:
