@@ -969,8 +969,7 @@ const DateTimeInput = forwardRef(
       ? undefined
       : formatMessage({ id: 'dateTimeInput.inputLabel', messages });
     const iconSize =
-      (theme.icon?.matchSize && rest.size) ||
-      theme.dateTimeInput?.icon?.size;
+      (theme.icon?.matchSize && rest.size) || theme.dateTimeInput?.icon?.size;
     const CalendarIcon =
       theme.dateTimeInput?.icon?.calendar || GrommetCalendarIcon;
     const dropTarget = inline ? triggerRef.current : containerRef.current;
@@ -1138,8 +1137,8 @@ const DateTimeInput = forwardRef(
               <Box
                 ref={dropContentRef}
                 direction="row"
-                pad="small"
-                gap="medium"
+                pad={theme.dateTimeInput?.drop?.pad}
+                gap={theme.dateTimeInput?.drop?.gap}
               >
                 <Calendar
                   date={getCalendarDate(sections)}

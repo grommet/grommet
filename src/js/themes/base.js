@@ -1059,6 +1059,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         round: 'xxsmall',
       },
+      drop: {
+        pad: 'small',
+        gap: 'medium',
+      },
     },
     timeInput: {
       button: {

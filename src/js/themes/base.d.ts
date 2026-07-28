@@ -1032,6 +1032,10 @@ export interface ThemeType {
     container?: {
       round?: RoundType;
     };
+    drop?: {
+      pad?: PadType;
+      gap?: GapType;
+    };
     icon?: {
       calendar?: React.ReactNode | Icon;
       size?: string;
