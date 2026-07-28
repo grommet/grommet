@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   addons: [
     '@storybook/addon-a11y',
+    'storybook-dark-mode',
     {
       name: '@storybook/addon-docs',
       options: {
