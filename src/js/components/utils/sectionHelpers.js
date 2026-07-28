@@ -44,6 +44,10 @@ export const getSectionKeyFromType = (sectionType) =>
 export const getSectionTokenFromType = (sectionType) =>
   sectionTokenByType[sectionType];
 
+export const getSectionKey = (sectionType) => sectionKeyByType[sectionType];
+
+export const getSectionToken = (sectionType) => sectionTokenByType[sectionType];
+
 export const getSectionNameFromType = ({
   sectionType,
   messagePrefix,

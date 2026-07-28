@@ -59,16 +59,6 @@ const sectionTypeFromSection = (section) => {
   return 'meridiem';
 };
 
-const sectionKey = (section) => {
-  const sectionType = sectionTypeFromSection(section);
-  return getSectionKeyFromType(sectionType);
-};
-
-const tokenForSection = (section) => {
-  const sectionType = sectionTypeFromSection(section);
-  return getSectionTokenFromType(sectionType);
-};
-
 const defaultSections = (format, showSeconds) => {
   const base = {
     day: undefined,
@@ -312,6 +302,12 @@ const getSectionName = (section, formatMessage, messages) => {
     messages,
   });
 };
+
+const sectionKey = (section) =>
+  getSectionKeyFromType(sectionTypeFromSection(section));
+
+const tokenForSection = (section) =>
+  getSectionTokenFromType(sectionTypeFromSection(section));
 
 const getSectionLimits = (section, format, sections) => {
   if (section === SECTION_DAY) {
