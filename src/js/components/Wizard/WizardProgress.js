@@ -8,11 +8,11 @@ import { useWizard } from './WizardContext';
 // WizardProgress delegates step rendering to <Stepper>. Descriptions
 // are hidden by default (WizardStepHeader shows them in the body).
 export const WizardProgress = ({
-  ariaLabel: ariaLabelProp,
+  'aria-label': ariaLabelProp,
   showDescription = false,
   ...rest
 }) => {
-  const { theme, passThemeFlag } = useThemeValue();
+  const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const { steps, currentStep, showProgress, stepStates, messages } =
     useWizard();
@@ -60,7 +60,6 @@ export const WizardProgress = ({
       flex={false}
       // Vertical rail should hug its steps, not stretch to the body height.
       alignSelf={showProgress === 'vertical' ? 'start' : undefined}
-      {...passThemeFlag}
       {...rest}
     >
       <Stepper

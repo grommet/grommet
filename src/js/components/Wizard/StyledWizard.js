@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { focusStyle, styledComponentsConfig } from '../../utils';
 
-// Root wizard container: flex column so header/middle/footer stack.
+// Kept as a styled component so consumers can theme the wizard root via
+// `theme.wizard.container.extend`. Grommet Box does not expose a
+// per-instance `extend` prop, so this escape hatch requires styled CSS.
 export const StyledWizard = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   flex-direction: column;
@@ -13,48 +15,9 @@ export const StyledWizard = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.theme.wizard?.container?.extend}
 `;
 
-// Middle region between header and footer. `overflow: hidden` clips
-// overflow exactly at the footer edge.
-export const StyledWizardMiddle = styled.div.withConfig(styledComponentsConfig)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 1 auto;
-  min-height: 0;
-  width: 100%;
-  overflow: hidden;
-`;
-
-// Centered column between header and footer that hosts the step body.
-export const StyledWizardCenter = styled.div.withConfig(styledComponentsConfig)`
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  min-height: 0;
-  width: 100%;
-`;
-
-// [Progress | Content] (vertical) or Content only (horizontal).
-export const StyledWizardBody = styled.div.withConfig(styledComponentsConfig)`
-  display: flex;
-  flex-direction: ${(props) =>
-    props.direction === 'vertical' ? 'row' : 'column'};
-  flex: 1 1 auto;
-  min-height: 0;
-`;
-
-// Content column holds StepHeader + WizardContent.
-export const StyledWizardContentColumn = styled.div.withConfig(
-  styledComponentsConfig,
-)`
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  min-width: 0;
-  min-height: 0;
-`;
-
-// Focus target for step transitions; shows focus ring only when focused.
+// Focus target for step transitions. Styled because Box only emits focus
+// styles when `onClick` is set, and this anchor needs the border-only
+// focus variant on a programmatic (`tabIndex={-1}`) target.
 export const StyledWizardFocusAnchor = styled.div.withConfig(
   styledComponentsConfig,
 )`

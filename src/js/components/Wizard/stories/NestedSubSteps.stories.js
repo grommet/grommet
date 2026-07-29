@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, Notification, Paragraph } from 'grommet';
+import { Box, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
-// Nested wizard with sub-steps. Parent is not a nav target; children
-// are visited in order.
+// Nested wizard with sub-steps under a parent group. Parent is never a
+// navigation target; child steps are visited in order.
 const steps = [
   {
     id: 'setup',
@@ -42,31 +41,33 @@ const steps = [
 const NestedSubSteps = () => {
   const [result, setResult] = useState(null);
   return (
-    <Grommet theme={grommet} full>
-      <Box fill>
-        <Wizard
-          aria-label="Nested wizard"
-          title="Set up your organization"
-          showProgress="vertical"
-          steps={steps}
-          onComplete={(value) => setResult({ status: 'complete', value })}
+    <Box fill>
+      <Wizard
+        aria-label="Nested wizard"
+        title="Set up your organization"
+        showProgress="vertical"
+        steps={steps}
+        onComplete={({ value }) => setResult({ status: 'complete', value })}
+      />
+      {result && (
+        <Notification
+          toast={{ position: 'top' }}
+          status="normal"
+          title="Wizard complete"
+          message={
+            result.value && Object.keys(result.value).length > 0
+              ? `Completed: ${JSON.stringify(result.value)}`
+              : undefined
+          }
+          onClose={() => setResult(null)}
         />
-        {result && (
-          <Notification
-            toast={{ position: 'top' }}
-            status="normal"
-            title="Wizard complete"
-            message={
-              result.value && Object.keys(result.value).length > 0
-                ? `Completed: ${JSON.stringify(result.value)}`
-                : undefined
-            }
-            onClose={() => setResult(null)}
-          />
-        )}
-      </Box>
-    </Grommet>
+      )}
+    </Box>
   );
+};
+
+NestedSubSteps.args = {
+  full: true,
 };
 
 export default {

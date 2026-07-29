@@ -1,8 +1,7 @@
 import React, { useMemo, useState } from 'react';
 
-import { Box, CheckBox, Grommet, Notification, Paragraph } from 'grommet';
+import { Box, CheckBox, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
 // Branching wizard: the Review step is added only when the user checks
 // "Include a manual review step"; the stepper updates live.
@@ -46,36 +45,38 @@ const Branching = () => {
     [value.review],
   );
   return (
-    <Grommet theme={grommet} full>
-      <Box fill>
-        <Wizard
-          aria-label="Deployment"
-          title="Deploy an application"
-          showProgress="horizontal"
-          steps={steps}
-          value={value}
-          onValueChange={setValue}
-          messages={{ next: 'Continue', complete: 'Deploy' }}
-          onComplete={(nextValue) =>
-            setResult({ status: 'complete', value: nextValue })
+    <Box fill>
+      <Wizard
+        aria-label="Deployment"
+        title="Deploy an application"
+        showProgress="horizontal"
+        steps={steps}
+        value={value}
+        onChange={({ value: nextValue }) => setValue(nextValue)}
+        messages={{ next: 'Continue', complete: 'Deploy' }}
+        onComplete={({ value: nextValue }) =>
+          setResult({ status: 'complete', value: nextValue })
+        }
+      />
+      {result && (
+        <Notification
+          toast={{ position: 'top' }}
+          status="normal"
+          title="Wizard complete"
+          message={
+            result.value && Object.keys(result.value).length > 0
+              ? `Completed: ${JSON.stringify(result.value)}`
+              : undefined
           }
+          onClose={() => setResult(null)}
         />
-        {result && (
-          <Notification
-            toast={{ position: 'top' }}
-            status="normal"
-            title="Wizard complete"
-            message={
-              result.value && Object.keys(result.value).length > 0
-                ? `Completed: ${JSON.stringify(result.value)}`
-                : undefined
-            }
-            onClose={() => setResult(null)}
-          />
-        )}
-      </Box>
-    </Grommet>
+      )}
+    </Box>
   );
+};
+
+Branching.args = {
+  full: true,
 };
 
 export default {

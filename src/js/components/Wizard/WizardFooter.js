@@ -9,7 +9,7 @@ import { useWizard } from './WizardContext';
 // WizardFooter renders navigation buttons. Pass `children` to fully
 // replace the default set.
 export const WizardFooter = ({ children, ...rest }) => {
-  const { theme, passThemeFlag } = useThemeValue();
+  const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const {
     currentStepObj,
@@ -99,9 +99,6 @@ export const WizardFooter = ({ children, ...rest }) => {
       {(size) => {
         const isSmall = size === 'small';
         const gapSize = footerTheme?.gap;
-        const rowGap = isSmall
-          ? theme.global?.edgeSize?.[gapSize] || gapSize
-          : undefined;
         return (
           <Box
             background={footerTheme?.background}
@@ -111,14 +108,12 @@ export const WizardFooter = ({ children, ...rest }) => {
                 ? { horizontal: 'small', vertical: 'small' }
                 : footerTheme?.pad
             }
-            gap={gapSize}
+            gap={{ row: gapSize, column: gapSize }}
             direction="row"
             justify={footerTheme?.justify}
             align="center"
             wrap={isSmall}
             flex={false}
-            style={rowGap ? { rowGap } : undefined}
-            {...passThemeFlag}
             {...rest}
           >
             {children ?? defaultButtons}

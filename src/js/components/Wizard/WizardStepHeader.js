@@ -6,10 +6,13 @@ import { Text } from '../Text';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
+import { StyledWizardFocusAnchor } from './StyledWizard';
 
-// WizardStepHeader renders the "Step X of Y" counter, title, and description.
+// Renders the "Step X of Y" counter, title, and description. Wrapped in an
+// `aria-live="polite"` focus anchor (located via `data-g-wizard-focus-anchor`)
+// so Wizard can move focus here on step transitions for screen readers.
 export const WizardStepHeader = ({ ...rest }) => {
-  const { theme, passThemeFlag } = useThemeValue();
+  const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const { currentStepObj, currentStepIndex, totalSteps, messages } =
     useWizard();
@@ -27,36 +30,28 @@ export const WizardStepHeader = ({ ...rest }) => {
     });
 
   return (
-    <Box
-      pad={stepHeaderTheme?.pad}
-      gap={stepHeaderTheme?.gap}
-      flex={false}
-      {...passThemeFlag}
-      {...rest}
+    <StyledWizardFocusAnchor
+      data-g-wizard-focus-anchor
+      tabIndex={-1}
+      aria-live="polite"
     >
-      <Text size={counterTheme?.size} color={counterTheme?.color}>
-        {counterTemplate}
-      </Text>
-      <Heading
-        level={2}
-        size={stepHeaderTheme?.title?.size}
-        color={stepHeaderTheme?.title?.color}
-        weight={stepHeaderTheme?.title?.weight}
-        margin={stepHeaderTheme?.title?.margin || 'none'}
+      <Box
+        pad={stepHeaderTheme?.pad}
+        gap={stepHeaderTheme?.gap}
+        flex={false}
+        {...rest}
       >
-        {currentStepObj.title}
-      </Heading>
-      {currentStepObj.description && (
-        <Paragraph
-          size={stepHeaderTheme?.description?.size}
-          color={stepHeaderTheme?.description?.color}
-          weight={stepHeaderTheme?.description?.weight}
-          margin={stepHeaderTheme?.description?.margin}
-        >
-          {currentStepObj.description}
-        </Paragraph>
-      )}
-    </Box>
+        <Text {...counterTheme}>{counterTemplate}</Text>
+        <Heading level={2} {...stepHeaderTheme?.title}>
+          {currentStepObj.title}
+        </Heading>
+        {currentStepObj.description && (
+          <Paragraph {...stepHeaderTheme?.description}>
+            {currentStepObj.description}
+          </Paragraph>
+        )}
+      </Box>
+    </StyledWizardFocusAnchor>
   );
 };
 

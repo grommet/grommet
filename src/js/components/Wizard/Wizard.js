@@ -3,7 +3,6 @@ import React, {
   useCallback,
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react';
 
@@ -21,14 +20,7 @@ import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
 import { WizardContent } from './WizardContent';
 import { WizardFooter } from './WizardFooter';
-import {
-  StyledWizard,
-  StyledWizardBody,
-  StyledWizardCenter,
-  StyledWizardContentColumn,
-  StyledWizardFocusAnchor,
-  StyledWizardMiddle,
-} from './StyledWizard';
+import { StyledWizard } from './StyledWizard';
 import { WizardPropTypes } from './propTypes';
 
 // Flatten step tree into ordered leaves; parents with children are
@@ -90,7 +82,7 @@ const Wizard = forwardRef(
       scrollToTop = true,
       value: valueProp,
       defaultValue,
-      onValueChange,
+      onChange,
       id,
       'aria-label': ariaLabel,
       messages,
@@ -135,7 +127,6 @@ const Wizard = forwardRef(
     }
 
     const wizardRef = useForwardedRef(ref);
-    const focusAnchorRef = useRef(null);
 
     const flatSteps = useMemo(() => flattenLeaves(steps), [steps]);
     const firstEnabled =
@@ -160,9 +151,9 @@ const Wizard = forwardRef(
             ? nextValueOrFn(formValue)
             : nextValueOrFn;
         if (!isValueControlled) setUncontrolledValue(resolved);
-        if (onValueChange) onValueChange(resolved);
+        if (onChange) onChange({ value: resolved });
       },
-      [formValue, isValueControlled, onValueChange],
+      [formValue, isValueControlled, onChange],
     );
 
     const [visitedSteps, setVisitedSteps] = useState([currentStep]);
@@ -519,11 +510,17 @@ const Wizard = forwardRef(
         phase: 'completed',
         from: currentStep,
       });
-      if (onComplete) onComplete(formValue);
+      if (onComplete) {
+        // setCompletedSteps above is async; include currentStep here so the
+        // payload reflects the just-completed final step.
+        const completedStepsList = [...completedSteps, currentStep];
+        onComplete({ value: formValue, completedSteps: completedStepsList });
+      }
       if (sendAnalytics)
         sendAnalytics({ type: 'wizardComplete', element: 'Wizard' });
     }, [
       sendAnalytics,
+      completedSteps,
       currentStep,
       emitStepChange,
       formValue,
@@ -539,7 +536,7 @@ const Wizard = forwardRef(
         from: currentStep,
       });
       if (onCancel) {
-        onCancel(formValue);
+        onCancel({ value: formValue, reason: 'user' });
       } else {
         // Self-close; parent must change `key` to remount.
         setIsOpen(false);
@@ -551,10 +548,12 @@ const Wizard = forwardRef(
     // Scroll to top on step transition: container, then ancestor, then window.
     useLayoutEffect(() => {
       if (!scrollToTop) return;
-      // Focus the anchor so SR announces the new step.
-      if (focusAnchorRef.current) {
-        focusAnchorRef.current.focus({ preventScroll: true });
-      }
+      // Focus the anchor rendered by WizardStepHeader so screen readers
+      // announce the new step. The anchor is located via a data attribute
+      // so composed layouts get the same behavior for free.
+      wizardRef.current
+        ?.querySelector('[data-g-wizard-focus-anchor]')
+        ?.focus({ preventScroll: true });
       const safeScrollTo = (target) => {
         if (!target || typeof target.scrollTo !== 'function') return;
         try {
@@ -597,6 +596,7 @@ const Wizard = forwardRef(
         cancel,
         hasCancelHandler,
         showProgress: effectiveShowProgress,
+        renderStep,
         // Internal only: `messages` is not part of the public
         // WizardContextValue but is read by internal subcomponents
         // (same pattern as `hasCancelHandler`).
@@ -625,6 +625,7 @@ const Wizard = forwardRef(
         cancel,
         hasCancelHandler,
         effectiveShowProgress,
+        renderStep,
         messages,
       ],
     );
@@ -658,40 +659,35 @@ const Wizard = forwardRef(
     const defaultLayout = (
       <>
         <WizardHeader title={title} />
-        <StyledWizardMiddle {...passThemeFlag}>
-          <StyledWizardCenter {...passThemeFlag}>
+        <Box
+          align="center"
+          flex={{ grow: 1, shrink: 1 }}
+          fill="horizontal"
+          overflow="auto"
+        >
+          <Box
+            pad={bodyTheme?.pad}
+            gap={bodyTheme?.gap}
+            flex={{ grow: 1, shrink: 1 }}
+            fill="horizontal"
+          >
+            {effectiveShowProgress === 'horizontal' &&
+              responsiveSize !== 'small' && <WizardProgress />}
             <Box
-              pad={bodyTheme?.pad}
-              gap={bodyTheme?.gap}
-              // Shrink so <WizardContent>'s `overflow: auto` engages.
-              flex
-              style={{ minHeight: 0 }}
+              direction={
+                effectiveShowProgress === 'vertical' ? 'row' : 'column'
+              }
+              flex={{ grow: 1, shrink: 1 }}
             >
-              {effectiveShowProgress === 'horizontal' &&
+              {effectiveShowProgress === 'vertical' &&
                 responsiveSize !== 'small' && <WizardProgress />}
-              <StyledWizardBody
-                direction={
-                  effectiveShowProgress === 'vertical'
-                    ? 'vertical'
-                    : 'horizontal'
-                }
-              >
-                {effectiveShowProgress === 'vertical' &&
-                  responsiveSize !== 'small' && <WizardProgress />}
-                <StyledWizardContentColumn>
-                  <StyledWizardFocusAnchor
-                    ref={focusAnchorRef}
-                    tabIndex={-1}
-                    aria-live="polite"
-                  >
-                    <WizardStepHeader />
-                  </StyledWizardFocusAnchor>
-                  <WizardContent renderStep={renderStep} />
-                </StyledWizardContentColumn>
-              </StyledWizardBody>
+              <Box flex={{ grow: 1, shrink: 1 }}>
+                <WizardStepHeader />
+                <WizardContent />
+              </Box>
             </Box>
-          </StyledWizardCenter>
-        </StyledWizardMiddle>
+          </Box>
+        </Box>
         {footerNode}
       </>
     );

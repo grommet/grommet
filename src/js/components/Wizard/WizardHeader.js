@@ -9,7 +9,7 @@ import { useWizard } from './WizardContext';
 // Header above the progress track. Hosts the close (X) button which
 // invokes `cancel` from context.
 export const WizardHeader = ({ title, children, ...rest }) => {
-  const { theme, passThemeFlag } = useThemeValue();
+  const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const { cancel, messages } = useWizard();
   const headerTheme = theme.wizard?.header;
@@ -37,7 +37,6 @@ export const WizardHeader = ({ title, children, ...rest }) => {
       align="center"
       justify="between"
       flex={false}
-      {...passThemeFlag}
       {...rest}
     >
       <Box direction="row" align="center" flex>
@@ -46,7 +45,6 @@ export const WizardHeader = ({ title, children, ...rest }) => {
       <Button
         a11yTitle={closeLabel}
         icon={CloseIcon ? <CloseIcon aria-hidden="true" /> : undefined}
-        plain
         onClick={cancel}
       />
     </Box>
@@ -54,12 +52,3 @@ export const WizardHeader = ({ title, children, ...rest }) => {
 };
 
 WizardHeader.displayName = 'WizardHeader';
-
-// Consumer variant that pulls the current step title from context.
-export const WizardHeaderConsumer = () => {
-  const { currentStepObj } = useWizard();
-  if (!currentStepObj) return null;
-  return <WizardHeader title={currentStepObj.title} />;
-};
-
-WizardHeaderConsumer.displayName = 'WizardHeaderConsumer';

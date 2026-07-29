@@ -38,7 +38,7 @@ if (process.env.NODE_ENV !== 'production') {
     scrollToTop: PropTypes.bool,
     value: PropTypes.object,
     defaultValue: PropTypes.object,
-    onValueChange: PropTypes.func,
+    onChange: PropTypes.func,
     id: PropTypes.string,
     'aria-label': PropTypes.string,
     children: PropTypes.node,

@@ -82,6 +82,7 @@ export interface WizardMessages {
   next?: string;
   skip?: string;
   cancel?: string;
+  close?: string;
   complete?: string;
   stepHeader?: {
     counter?: string;
@@ -96,8 +97,8 @@ export interface WizardProps<TValue = Record<string, any>> {
   defaultStep?: string;
   showProgress?: WizardShowProgress;
   onStepChange?: (event: StepChangeEvent) => void;
-  onComplete?: (value: TValue) => void;
-  onCancel?: (value: TValue) => void;
+  onComplete?: (event: { value: TValue; completedSteps: string[] }) => void;
+  onCancel?: (event: { value: TValue; reason: 'user' }) => void;
   renderStep?: (
     step: WizardStep<TValue>,
     api: WizardApi<TValue>,
@@ -107,7 +108,7 @@ export interface WizardProps<TValue = Record<string, any>> {
   scrollToTop?: boolean;
   value?: TValue;
   defaultValue?: TValue;
-  onValueChange?: (value: TValue) => void;
+  onChange?: (event: { value: TValue }) => void;
   id?: string;
   'aria-label'?: string;
   messages?: WizardMessages;
@@ -141,6 +142,10 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   complete: () => void;
   cancel: () => void;
   showProgress: WizardShowProgress;
+  renderStep?: (
+    step: WizardStep<TValue>,
+    api: WizardApi<TValue>,
+  ) => React.ReactNode;
 }
 
 export const WizardContext: React.Context<WizardContextValue>;
@@ -157,7 +162,7 @@ export interface WizardHeaderProps extends BoxExtendedProps {
 export const WizardHeader: React.FC<WizardHeaderProps>;
 
 export interface WizardProgressProps extends BoxExtendedProps {
-  ariaLabel?: string;
+  'aria-label'?: string;
   showDescription?: boolean;
 }
 
@@ -168,12 +173,7 @@ export interface WizardStepHeaderProps extends BoxExtendedProps {}
 export const WizardStepHeader: React.FC<WizardStepHeaderProps>;
 
 export interface WizardContentProps<TValue = Record<string, any>>
-  extends BoxExtendedProps {
-  renderStep?: (
-    step: WizardStep<TValue>,
-    api: WizardApi<TValue>,
-  ) => React.ReactNode;
-}
+  extends BoxExtendedProps {}
 
 export const WizardContent: <TValue = Record<string, any>>(
   props: WizardContentProps<TValue>,

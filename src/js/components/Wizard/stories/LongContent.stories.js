@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import {
   Box,
   FormField,
-  Grommet,
   Heading,
   Notification,
   Paragraph,
@@ -11,7 +10,6 @@ import {
   TextInput,
 } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
 // Long-content step demonstrating that the wizard header, stepper, and
 // footer remain in place while the content column scrolls internally.
@@ -73,31 +71,33 @@ const LongContent = () => {
   const [result, setResult] = useState(null);
 
   return (
-    <Grommet theme={grommet} full>
-      <Box fill>
-        <Wizard
-          aria-label="Long content wizard"
-          title="Create resource"
-          showProgress="horizontal"
-          steps={steps}
-          onComplete={(value) => setResult({ status: 'complete', value })}
+    <Box fill>
+      <Wizard
+        aria-label="Long content wizard"
+        title="Create resource"
+        showProgress="horizontal"
+        steps={steps}
+        onComplete={({ value }) => setResult({ status: 'complete', value })}
+      />
+      {result && (
+        <Notification
+          toast={{ position: 'top' }}
+          status="normal"
+          title="Wizard complete"
+          message={
+            result.value && Object.keys(result.value).length > 0
+              ? `Completed: ${JSON.stringify(result.value)}`
+              : undefined
+          }
+          onClose={() => setResult(null)}
         />
-        {result && (
-          <Notification
-            toast={{ position: 'top' }}
-            status="normal"
-            title="Wizard complete"
-            message={
-              result.value && Object.keys(result.value).length > 0
-                ? `Completed: ${JSON.stringify(result.value)}`
-                : undefined
-            }
-            onClose={() => setResult(null)}
-          />
-        )}
-      </Box>
-    </Grommet>
+      )}
+    </Box>
   );
+};
+
+LongContent.args = {
+  full: true,
 };
 
 export default {

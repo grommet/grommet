@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, Notification, Paragraph, TextInput } from 'grommet';
+import { Box, Notification, Paragraph, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
 const steps = [
   {
@@ -45,25 +44,27 @@ const steps = [
 const BasicLinear = () => {
   const [complete, setComplete] = useState(false);
   return (
-    <Grommet theme={grommet} full>
-      <Box fill>
-        <Wizard
-          aria-label="Onboarding"
-          title="Set up your account"
-          steps={steps}
-          onComplete={() => setComplete(true)}
+    <Box fill>
+      <Wizard
+        aria-label="Onboarding"
+        title="Set up your account"
+        steps={steps}
+        onComplete={() => setComplete(true)}
+      />
+      {complete && (
+        <Notification
+          toast={{ position: 'top' }}
+          status="normal"
+          title="Wizard complete"
+          onClose={() => setComplete(false)}
         />
-        {complete && (
-          <Notification
-            toast={{ position: 'top' }}
-            status="normal"
-            title="Wizard complete"
-            onClose={() => setComplete(false)}
-          />
-        )}
-      </Box>
-    </Grommet>
+      )}
+    </Box>
   );
+};
+
+BasicLinear.args = {
+  full: true,
 };
 
 export default {

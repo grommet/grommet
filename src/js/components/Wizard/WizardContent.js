@@ -6,8 +6,8 @@ import { useWizard } from './WizardContext';
 
 // WizardContent renders the current step body and any wizard-level
 // validation error message.
-export const WizardContent = ({ renderStep, ...rest }) => {
-  const { theme, passThemeFlag } = useThemeValue();
+export const WizardContent = ({ ...rest }) => {
+  const { theme } = useThemeValue();
   const {
     currentStepObj,
     formValue,
@@ -19,6 +19,7 @@ export const WizardContent = ({ renderStep, ...rest }) => {
     complete,
     cancel,
     validationError,
+    renderStep,
   } = useWizard();
 
   const contentTheme = theme.wizard?.content;
@@ -46,30 +47,15 @@ export const WizardContent = ({ renderStep, ...rest }) => {
       pad={contentTheme?.pad}
       background={contentTheme?.background}
       round={contentTheme?.round}
-      elevation={contentTheme?.elevation}
       margin={contentTheme?.margin}
-      width={contentTheme?.width}
-      height={contentTheme?.height}
-      align={contentTheme?.align}
-      // Scrollable region for the step body. `tabIndex={0}` satisfies
-      // the WCAG scrollable-region-focusable rule.
-      flex
-      overflow="auto"
-      style={{ minHeight: 0 }}
-      tabIndex={0}
-      {...passThemeFlag}
+      // Grow to fill the middle region without shrinking. The scroll
+      // region lives on the middle (StyledWizardMiddle), not here.
+      flex="grow"
       {...rest}
     >
-      {/* Keep the step body at natural height so the parent scrolls. */}
-      <Box flex={false}>{body}</Box>
+      {body}
       {validationError && (
-        <Text
-          role="alert"
-          aria-live="polite"
-          size={helperTheme?.size}
-          color={helperTheme?.color}
-          margin={helperTheme?.margin}
-        >
+        <Text role="alert" aria-live="polite" {...helperTheme}>
           {validationError}
         </Text>
       )}

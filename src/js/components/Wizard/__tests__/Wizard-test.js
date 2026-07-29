@@ -125,7 +125,10 @@ describe('Wizard', () => {
       </Grommet>,
     );
     await user.click(screen.getByRole('button', { name: /complete/i }));
-    expect(onComplete).toHaveBeenCalledWith({ email: 'a@b.com' });
+    expect(onComplete).toHaveBeenCalledWith({
+      value: { email: 'a@b.com' },
+      completedSteps: expect.any(Array),
+    });
   });
 
   test('blocks navigation when validate returns falsy', async () => {
@@ -242,7 +245,10 @@ describe('Wizard', () => {
       </Grommet>,
     );
     await user.click(screen.getByRole('button', { name: /cancel/i }));
-    expect(onCancel).toHaveBeenCalledWith({ hello: 'world' });
+    expect(onCancel).toHaveBeenCalledWith({
+      value: { hello: 'world' },
+      reason: 'user',
+    });
   });
 
   test('controlled currentStep respects external state', () => {
@@ -428,7 +434,10 @@ describe('Wizard', () => {
       </Grommet>,
     );
     await user.click(screen.getByRole('button', { name: /close/i }));
-    expect(onCancel).toHaveBeenCalledWith({ hello: 'world' });
+    expect(onCancel).toHaveBeenCalledWith({
+      value: { hello: 'world' },
+      reason: 'user',
+    });
     // Wizard stays mounted; caller is expected to unmount.
     expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
   });

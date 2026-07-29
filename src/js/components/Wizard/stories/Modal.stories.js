@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Grommet, Layer, Notification, Paragraph } from 'grommet';
+import { Box, Button, Layer, Notification, Paragraph } from 'grommet';
 import { FormNext, FormPrevious } from 'grommet-icons';
 import { Wizard } from '../Wizard';
 import { WizardFooter } from '../WizardFooter';
 import { useWizard } from '../WizardContext';
-import { grommet } from '../../../themes';
 
 // Wizard inside a modal Layer. `onCancel` wires the header X to the
 // parent-owned close handler. A custom footer composed via <WizardFooter>
@@ -77,49 +76,51 @@ const Modal = () => {
     setResetKey((key) => key + 1);
   };
   return (
-    <Grommet theme={grommet} full>
-      <Box fill pad="medium" gap="medium">
-        <Box align="start">
-          <Button primary label="Open wizard" onClick={() => setOpen(true)} />
-        </Box>
-        {open && (
-          // Composed sizing: the wrapping Layer + Box choose the modal's
-          // dimensions. Swap these values to make the wizard narrower,
-          // wider, or full-screen — the Wizard fills whatever it's placed in.
-          <Layer modal position="center" onEsc={close} onClickOutside={close}>
-            <Box width="xlarge" height="large">
-              <Wizard
-                key={resetKey}
-                aria-label="Modal wizard"
-                title="Create resource"
-                showProgress="horizontal"
-                steps={steps}
-                footer={<NoCancelFooter />}
-                onComplete={(value) => {
-                  setResult({ status: 'complete', value });
-                  close();
-                }}
-                onCancel={close}
-              />
-            </Box>
-          </Layer>
-        )}
-        {result && (
-          <Notification
-            toast={{ position: 'top' }}
-            status="normal"
-            title="Wizard complete"
-            message={
-              result.value && Object.keys(result.value).length > 0
-                ? `Completed: ${JSON.stringify(result.value)}`
-                : undefined
-            }
-            onClose={() => setResult(null)}
-          />
-        )}
+    <Box fill pad="medium" gap="medium">
+      <Box align="start">
+        <Button primary label="Open wizard" onClick={() => setOpen(true)} />
       </Box>
-    </Grommet>
+      {open && (
+        // Composed sizing: the wrapping Layer + Box choose the modal's
+        // dimensions. Swap these values to make the wizard narrower,
+        // wider, or full-screen — the Wizard fills whatever it's placed in.
+        <Layer modal position="center" onEsc={close} onClickOutside={close}>
+          <Box width="xlarge" height="large">
+            <Wizard
+              key={resetKey}
+              aria-label="Modal wizard"
+              title="Create resource"
+              showProgress="horizontal"
+              steps={steps}
+              footer={<NoCancelFooter />}
+              onComplete={({ value }) => {
+                setResult({ status: 'complete', value });
+                close();
+              }}
+              onCancel={close}
+            />
+          </Box>
+        </Layer>
+      )}
+      {result && (
+        <Notification
+          toast={{ position: 'top' }}
+          status="normal"
+          title="Wizard complete"
+          message={
+            result.value && Object.keys(result.value).length > 0
+              ? `Completed: ${JSON.stringify(result.value)}`
+              : undefined
+          }
+          onClose={() => setResult(null)}
+        />
+      )}
+    </Box>
   );
+};
+
+Modal.args = {
+  full: true,
 };
 
 export default {

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box, Grommet, Notification, Paragraph, TextInput } from 'grommet';
+import { Box, Notification, Paragraph, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
 const Validation = () => {
   const [result, setResult] = useState(null);
@@ -56,28 +55,30 @@ const Validation = () => {
   ];
 
   return (
-    <Grommet theme={grommet} full>
-      <Box fill>
-        <Wizard
-          aria-label="Sign up"
-          title="Create your account"
-          showProgress="vertical"
-          steps={steps}
-          defaultValue={{ email: '', password: '' }}
-          onComplete={(value) => setResult({ status: 'complete', value })}
+    <Box fill>
+      <Wizard
+        aria-label="Sign up"
+        title="Create your account"
+        showProgress="vertical"
+        steps={steps}
+        defaultValue={{ email: '', password: '' }}
+        onComplete={({ value }) => setResult({ status: 'complete', value })}
+      />
+      {result && (
+        <Notification
+          toast={{ position: 'top' }}
+          status="normal"
+          title="Wizard complete"
+          message={`Account created for ${result.value.email}.`}
+          onClose={() => setResult(null)}
         />
-        {result && (
-          <Notification
-            toast={{ position: 'top' }}
-            status="normal"
-            title="Wizard complete"
-            message={`Account created for ${result.value.email}.`}
-            onClose={() => setResult(null)}
-          />
-        )}
-      </Box>
-    </Grommet>
+      )}
+    </Box>
   );
+};
+
+Validation.args = {
+  full: true,
 };
 
 export default {
