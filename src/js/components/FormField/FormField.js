@@ -232,13 +232,12 @@ const getChildFocusProps = (
   containerFocus,
   formFieldTheme,
 ) => {
-  if (
+  return (
     !themeBorder ||
     child.props.plain !== undefined ||
     child.props.focusIndicator !== undefined
-  )
-    return {};
-  return {
+  )  ? {} :
+  {
     plain: true,
     focusIndicator: !containerFocus,
     pad:
