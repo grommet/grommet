@@ -9,6 +9,7 @@ export interface GrommetProps {
   dir?: 'rtl';
   full?: boolean | 'min';
   options?: {
+    button?: { childrenPlain?: boolean };
     box?: {
       cssGap?: boolean;
     };

@@ -980,4 +980,16 @@ describe('Button kind', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('options.button.childrenPlain false: children not forced plain', () => {
+    const { asFragment } = render(
+      <Grommet
+        theme={{ button: { default: {} } }}
+        options={{ button: { childrenPlain: false } }}
+      >
+        <Button>Styled children</Button>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
