@@ -12,6 +12,12 @@ if (process.env.NODE_ENV !== 'production') {
     dir: _propTypes["default"].oneOf(['rtl']),
     full: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['min'])]),
     options: _propTypes["default"].shape({
+      box: _propTypes["default"].shape({
+        cssGap: _propTypes["default"].bool
+      }),
+      button: _propTypes["default"].shape({
+        childrenPlain: _propTypes["default"].bool
+      }),
       layer: _propTypes["default"].shape({
         singleId: _propTypes["default"].bool
       }),

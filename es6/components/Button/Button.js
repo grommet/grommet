@@ -7,6 +7,7 @@ import { backgroundAndTextColors, colorIsDark, findButtonParent, useSizedIcon, n
 import { ButtonPropTypes } from './propTypes';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 import { Box } from '../Box';
 import { Tip } from '../Tip';
 import { Badge } from './Badge';
@@ -182,6 +183,8 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var _useContext = useContext(OptionsContext),
+    buttonOptions = _useContext.button;
   var _useState = useState(),
     focus = _useState[0],
     setFocus = _useState[1];
@@ -189,8 +192,8 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
     hover = _useState2[0],
     setHover = _useState2[1];
   var announce = useContext(AnnounceContext);
-  var _useContext = useContext(MessageContext),
-    format = _useContext.format;
+  var _useContext2 = useContext(MessageContext),
+    format = _useContext2.format;
   if (busy && success) {
     console.warn('Button cannot have both busy and success set to true.');
   }
@@ -435,7 +438,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onMouseOver: onMouseOverButton,
       onMouseOut: onMouseOutButton,
       pad: pad,
-      plain: plain || Children.count(children) > 0,
+      plain: plain || (buttonOptions == null ? void 0 : buttonOptions.childrenPlain) !== false && Children.count(children) > 0,
       primary: primary,
       selected: selected,
       sizeProp: size,
@@ -473,7 +476,7 @@ var Button = /*#__PURE__*/forwardRef(function (_ref, ref) {
       onMouseOver: onMouseOverButton,
       onMouseOut: onMouseOutButton,
       pad: pad || !plain,
-      plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
+      plain: typeof plain !== 'undefined' ? plain : (buttonOptions == null ? void 0 : buttonOptions.childrenPlain) !== false && Children.count(children) > 0 || icon && !label,
       primary: primary,
       sizeProp: size,
       success: success,

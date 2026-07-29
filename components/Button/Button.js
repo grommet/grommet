@@ -8,6 +8,7 @@ var _utils = require("../../utils");
 var _propTypes = require("./propTypes");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
+var _OptionsContext = require("../../contexts/OptionsContext");
 var _Box = require("../Box");
 var _Tip = require("../Tip");
 var _Badge = require("./Badge");
@@ -188,6 +189,8 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var _useContext = (0, _react.useContext)(_OptionsContext.OptionsContext),
+    buttonOptions = _useContext.button;
   var _useState = (0, _react.useState)(),
     focus = _useState[0],
     setFocus = _useState[1];
@@ -195,8 +198,8 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     hover = _useState2[0],
     setHover = _useState2[1];
   var announce = (0, _react.useContext)(_AnnounceContext.AnnounceContext);
-  var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
-    format = _useContext.format;
+  var _useContext2 = (0, _react.useContext)(_MessageContext.MessageContext),
+    format = _useContext2.format;
   if (busy && success) {
     console.warn('Button cannot have both busy and success set to true.');
   }
@@ -441,7 +444,7 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       onMouseOver: onMouseOverButton,
       onMouseOut: onMouseOutButton,
       pad: pad,
-      plain: plain || _react.Children.count(children) > 0,
+      plain: plain || (buttonOptions == null ? void 0 : buttonOptions.childrenPlain) !== false && _react.Children.count(children) > 0,
       primary: primary,
       selected: selected,
       sizeProp: size,
@@ -479,7 +482,7 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       onMouseOver: onMouseOverButton,
       onMouseOut: onMouseOutButton,
       pad: pad || !plain,
-      plain: typeof plain !== 'undefined' ? plain : _react.Children.count(children) > 0 || icon && !label,
+      plain: typeof plain !== 'undefined' ? plain : (buttonOptions == null ? void 0 : buttonOptions.childrenPlain) !== false && _react.Children.count(children) > 0 || icon && !label,
       primary: primary,
       sizeProp: size,
       success: success,
