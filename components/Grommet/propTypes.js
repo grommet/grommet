@@ -226,6 +226,10 @@ if (process.env.NODE_ENV !== 'production') {
         skipLinks: _propTypes["default"].shape({
           skipTo: _propTypes["default"].string
         }),
+        stepper: _propTypes["default"].shape({
+          progress: _propTypes["default"].string,
+          step: _propTypes["default"].string
+        }),
         tabs: _propTypes["default"].shape({
           nextTab: _propTypes["default"].string,
           previousTab: _propTypes["default"].string,
@@ -242,6 +246,20 @@ if (process.env.NODE_ENV !== 'production') {
           suggestionsCount: _propTypes["default"].string,
           suggestionsExist: _propTypes["default"].string,
           suggestionIsOpen: _propTypes["default"].string
+        }),
+        timeInput: _propTypes["default"].shape({
+          activePeriodValue: _propTypes["default"].string,
+          activeSection: _propTypes["default"].string,
+          activeSectionValue: _propTypes["default"].string,
+          chooseTime: _propTypes["default"].string,
+          currentValue: _propTypes["default"].string,
+          inputLabel: _propTypes["default"].string,
+          invalidTime: _propTypes["default"].string,
+          openDrop: _propTypes["default"].string,
+          sectionHours: _propTypes["default"].string,
+          sectionMeridiem: _propTypes["default"].string,
+          sectionMinutes: _propTypes["default"].string,
+          sectionSeconds: _propTypes["default"].string
         }),
         video: _propTypes["default"].shape({
           audioDescriptions: _propTypes["default"].string,
