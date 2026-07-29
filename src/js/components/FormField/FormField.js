@@ -390,7 +390,7 @@ const FormField = forwardRef(
     let contents;
     if (children) {
       contents = Children.map(children, (child) => {
-        if (!child || !child.type) return child;
+        if (!child || !child.type || !isGrommetInput(child.type)) return child;
 
         if (
           themeBorder &&
@@ -398,10 +398,6 @@ const FormField = forwardRef(
         ) {
           wantContentPad = true;
         }
-
-        const isInputComponent =
-          grommetInputNames.indexOf(child.type.displayName) !== -1;
-        if (!isInputComponent) return child;
 
         const newProps = {
           ...getChildErrorProps(child, errorId, error),
