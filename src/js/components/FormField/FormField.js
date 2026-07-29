@@ -231,21 +231,19 @@ const getChildFocusProps = (
   themeBorder,
   containerFocus,
   formFieldTheme,
-) => {
-  return (
-    !themeBorder ||
-    child.props.plain !== undefined ||
-    child.props.focusIndicator !== undefined
-  )  ? {} :
-  {
-    plain: true,
-    focusIndicator: !containerFocus,
-    pad:
-      'CheckBox'.indexOf(child.type.displayName) !== -1
-        ? formFieldTheme?.checkBox?.pad
-        : undefined,
-  };
-};
+) =>
+  !themeBorder ||
+  child.props.plain !== undefined ||
+  child.props.focusIndicator !== undefined
+    ? {}
+    : {
+        plain: true,
+        focusIndicator: !containerFocus,
+        pad:
+          'CheckBox'.indexOf(child.type.displayName) !== -1
+            ? formFieldTheme?.checkBox?.pad
+            : undefined,
+      };
 
 const FormField = forwardRef(
   (
