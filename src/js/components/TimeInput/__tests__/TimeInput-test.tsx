@@ -14,6 +14,7 @@ import '@testing-library/jest-dom';
 
 import { AnnounceContext } from '../../../contexts/AnnounceContext';
 import { createPortal } from '../../../utils/portal';
+import { ThemeType } from '../../../themes';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
 import { Grommet } from '../../Grommet';
@@ -1674,5 +1675,99 @@ describe('TimeInput', () => {
         );
       }
     }
+  });
+
+  test('applies timeInput theme tokens across container, active segment, and drop options', async () => {
+    const user = userEvent.setup();
+
+    const customTheme: ThemeType = {
+      timeInput: {
+        button: {
+          margin: { right: 'large' },
+        },
+        container: {
+          round: 'large',
+        },
+        active: {
+          background: '#FFD700',
+          pad: 'large',
+          indicator: {
+            color: '#FF0000',
+            size: 'large',
+          },
+        },
+        drop: {
+          option: {
+            background: '#EEEEEE',
+            hover: {
+              background: '#CCCCCC',
+            },
+            selected: {
+              background: '#0000FF',
+              color: '#FFFFFF',
+              hover: {
+                background: '#00FF00',
+              },
+            },
+          },
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <TimeInput format="24" defaultValue="10:15:20" />
+      </Grommet>,
+    );
+
+    // container.round
+    const container = screen.getByRole('group').parentElement
+      ?.parentElement as HTMLElement;
+    expect(container).toHaveStyleRule('border-radius', '48px');
+
+    // button.margin
+    const trigger = screen.getByRole('button', { name: 'Choose time' });
+    expect(trigger).toHaveStyleRule('margin-right', '48px');
+
+    // active.pad applies to every segment, active or not
+    const hourSegment = getSegment('hours');
+    expect(hourSegment).toHaveStyleRule('padding-inline', '48px');
+
+    // active.background and active.indicator only render on the
+    // currently focused/active segment
+    await user.click(hourSegment);
+    expect(hourSegment).toHaveStyleRule('background-color', '#FFD700', {
+      modifier: '::before',
+    });
+    expect(hourSegment).toHaveStyleRule('background-color', '#FF0000', {
+      modifier: '::after',
+    });
+    expect(hourSegment).toHaveStyleRule('height', '12px', {
+      modifier: '::after',
+    });
+
+    // open the drop to check drop.option theme tokens
+    await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const selectedOption = within(hourList).getByRole('option', {
+      name: '10 hours',
+    });
+    const unselectedOption = within(hourList).getByRole('option', {
+      name: '11 hours',
+    });
+
+    expect(unselectedOption).toHaveStyleRule('background', '#EEEEEE');
+    expect(selectedOption).toHaveStyleRule('background', '#0000FF');
+    expect(unselectedOption).toHaveStyleRule('background', '#CCCCCC', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('background', '#00FF00', {
+      modifier: ':hover',
+    });
+    expect(within(selectedOption).getByText('10')).toHaveStyleRule(
+      'color',
+      '#FFFFFF',
+    );
   });
 });
