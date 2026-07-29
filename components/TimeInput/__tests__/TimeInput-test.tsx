@@ -29,7 +29,10 @@ const getDisplayInput = () =>
   ) as HTMLInputElement;
 
 describe('TimeInput', () => {
-  beforeEach(createPortal);
+  beforeEach(() => {
+    createPortal();
+    console.warn = jest.fn();
+  });
 
   test('should have no accessibility violations', async () => {
     const { container } = render(

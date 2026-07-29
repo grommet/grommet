@@ -1,7 +1,7 @@
 var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "onStepClick", "aria-label", "children", "id"];
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-import React, { forwardRef, useCallback, useContext, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Keyboard } from '../Keyboard';
@@ -67,6 +67,11 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [steps]);
   var stepsRef = useRef(flatSteps);
   stepsRef.current = flatSteps;
+  useEffect(function () {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('Warning: Stepper is currently in beta. The API is subject ' + 'to change in future releases.');
+    }
+  }, []);
 
   // Force vertical if steps have children
   // (horizontal substeps not supported)

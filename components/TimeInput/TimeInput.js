@@ -133,6 +133,11 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     }),
     value = _useFormInput[0],
     setValue = _useFormInput[1];
+  (0, _react.useEffect)(function () {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('Warning: TimeInput is currently in beta. The API is subject ' + 'to change in future releases.');
+    }
+  }, []);
   var _formContext$useFormF = formContext.useFormField({}),
     inForm = _formContext$useFormF.inForm;
   var formFieldLabelId = inForm && id ? "grommet-" + id + "__label" : undefined;
