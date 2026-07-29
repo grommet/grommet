@@ -458,8 +458,7 @@ const FormField = forwardRef(
     // fileinput handle
     // use fileinput plain use formfield to drive the border
     let isFileInputComponent;
-    if (
-      children &&
+    if (children) {
       Children.forEach(children, (child) => {
         if (
           child &&
@@ -467,8 +466,8 @@ const FormField = forwardRef(
           'FileInput'.indexOf(child.type.displayName) !== -1
         )
           isFileInputComponent = true;
-      })
-    );
+      });
+    }
 
     if (
       component &&
@@ -539,10 +538,9 @@ const FormField = forwardRef(
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
 
-    let labelStyle;
-    if (formKind) {
-      labelStyle = { ...formFieldTheme[formKind].label };
-    } else labelStyle = { ...formFieldTheme.label };
+    const labelStyle = {
+      ...(formKind ? formFieldTheme[formKind].label : formFieldTheme.label),
+    };
 
     if (disabled) {
       labelStyle.color =
