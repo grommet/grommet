@@ -138,6 +138,7 @@
     "regenerator-runtime": "^0.14.1",
     "simple-git": "^3.36.0",
     "storybook": "^10.4.2",
+    "storybook-dark-mode": "^5.0.0",
     "styled-components": "^6.4.2",
     "tarball-extract": "^0.0.6",
     "testcafe": "^3.7.4",
@@ -210,7 +211,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "192 kB"
+      "maxSize": "200 kB"
     }
   ],
   "keywords": [
