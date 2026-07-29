@@ -26,24 +26,19 @@ if (process.env.NODE_ENV !== 'production') {
     steps: _propTypes["default"].arrayOf(_propTypes["default"].shape(nestedStepShape)).isRequired,
     currentStep: _propTypes["default"].string,
     defaultStep: _propTypes["default"].string,
-    direction: _propTypes["default"].oneOf(['horizontal', 'vertical']),
-    kind: _propTypes["default"].oneOf(['full', 'narrow', 'wide']),
+    showProgress: _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['horizontal', 'vertical']), _propTypes["default"].bool]),
     onStepChange: _propTypes["default"].func,
     onComplete: _propTypes["default"].func,
     onCancel: _propTypes["default"].func,
     renderStep: _propTypes["default"].func,
-    header: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].shape({
-      title: _propTypes["default"].node,
-      description: _propTypes["default"].node
-    })]),
+    title: _propTypes["default"].string,
     footer: _propTypes["default"].oneOfType([_propTypes["default"].node, _propTypes["default"].func]),
     scrollToTop: _propTypes["default"].bool,
     value: _propTypes["default"].object,
     defaultValue: _propTypes["default"].object,
-    onValueChange: _propTypes["default"].func,
+    onChange: _propTypes["default"].func,
     id: _propTypes["default"].string,
     'aria-label': _propTypes["default"].string,
-    a11yTitle: _propTypes["default"].string,
     children: _propTypes["default"].node,
     messages: _propTypes["default"].shape({
       previous: _propTypes["default"].string,
@@ -52,7 +47,9 @@ if (process.env.NODE_ENV !== 'production') {
       cancel: _propTypes["default"].string,
       close: _propTypes["default"].string,
       complete: _propTypes["default"].string,
-      stepCounter: _propTypes["default"].string,
+      stepHeader: _propTypes["default"].shape({
+        counter: _propTypes["default"].string
+      }),
       progress: _propTypes["default"].string,
       validationError: _propTypes["default"].string
     })

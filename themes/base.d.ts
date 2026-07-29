@@ -2182,41 +2182,47 @@ export interface ThemeType {
   wizard?: {
     container?: {
       gap?: GapType;
+      background?: BackgroundType;
+      extend?: ExtendType;
+    };
+    body?: {
+      pad?: PadType;
+      gap?: GapType;
       extend?: ExtendType;
     };
     header?: {
       pad?: PadType;
+      background?: BackgroundType;
       border?: BorderType;
       title?: {
-        level?: 1 | 2 | 3 | 4 | 5 | 6;
         size?: string;
+      };
+      close?: {
+        icon?: React.ReactNode | Icon;
       };
       extend?: ExtendType;
     };
     progress?: {
       horizontal?: {
         pad?: PadType;
-        border?: BorderType;
         extend?: ExtendType;
       };
       vertical?: {
         width?: string;
         pad?: PadType;
-        border?: BorderType;
         extend?: ExtendType;
       };
     };
-    stepCounter?: {
-      size?: string;
-      color?: ColorType;
-      weight?: 'normal' | 'bold' | 'bolder' | 'lighter' | number | string;
-      margin?: MarginType;
-    };
     stepHeader?: {
       pad?: PadType;
-      title?: {
-        level?: 1 | 2 | 3 | 4 | 5 | 6;
+      gap?: GapType;
+      counter?: {
         size?: string;
+        color?: ColorType;
+      };
+      title?: {
+        size?: string;
+        margin?: MarginType;
       };
       description?: {
         size?: string;
@@ -2227,18 +2233,23 @@ export interface ThemeType {
     };
     content?: {
       pad?: PadType;
+      background?: BackgroundType;
+      round?: RoundType;
+      margin?: MarginType;
       extend?: ExtendType;
     };
     footer?: {
       pad?: PadType;
       gap?: GapType;
+      background?: BackgroundType;
       border?: BorderType;
       justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
       button?: {
-        primary?: 'next' | 'complete';
-        previous?: { kind?: string };
-        cancel?: { kind?: string };
-        skip?: { kind?: string };
+        next?: { icon?: React.ReactNode | Icon };
+        complete?: { icon?: React.ReactNode | Icon };
+        previous?: { icon?: React.ReactNode | Icon };
+        cancel?: { icon?: React.ReactNode | Icon };
+        skip?: { icon?: React.ReactNode | Icon };
       };
       extend?: ExtendType;
     };
@@ -2249,13 +2260,6 @@ export interface ThemeType {
         size?: string;
         margin?: MarginType;
       };
-    };
-    icons?: {
-      next?: React.ReactNode | Icon;
-      previous?: React.ReactNode | Icon;
-      complete?: React.ReactNode | Icon;
-      cancel?: React.ReactNode | Icon;
-      skip?: React.ReactNode | Icon;
     };
   };
   table?: {

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Button, FormField, Grommet, Heading, Notification, Paragraph, RadioButtonGroup, ResponsiveContext, Text, TextArea, TextInput } from 'grommet';
+import { Box, FormField, Heading, Notification, Paragraph, TextArea, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
 // Long-content step demonstrating that the wizard header, stepper, and
 // footer remain in place while the content column scrolls internally.
@@ -20,7 +19,7 @@ var LongStepBody = function LongStepBody(_ref) {
     }
   }, heading), /*#__PURE__*/React.createElement(Paragraph, {
     fill: true
-  }, "Scroll this content column. The wizard header at the top and the footer at the bottom stay pinned \u2014 only the middle scrolls. When the `kind` prop is set to `narrow` or `wide`, only this content column narrows; the header and footer still span the full wizard width."), /*#__PURE__*/React.createElement(FormField, {
+  }, "Scroll this content column. The wizard header at the top and the footer at the bottom stay pinned \u2014 only the middle scrolls."), /*#__PURE__*/React.createElement(FormField, {
     label: "Name",
     htmlFor: "long-content-name"
   }, /*#__PURE__*/React.createElement(TextInput, {
@@ -78,83 +77,18 @@ var steps = [{
   }
 }];
 var LongContent = function LongContent() {
-  var _useState = useState('full'),
-    kind = _useState[0],
-    setKind = _useState[1];
-  var _useState2 = useState(null),
-    result = _useState2[0],
-    setResult = _useState2[1];
-
-  // Custom footer inlines the story's `kind` selector on the left and
-  // Previous / Next on the right; styling matches theme.wizard.footer.
-  var renderFooter = function renderFooter(_ref2) {
-    var previous = _ref2.previous,
-      next = _ref2.next,
-      complete = _ref2.complete,
-      isFirstStep = _ref2.isFirstStep,
-      isLastStep = _ref2.isLastStep;
-    return /*#__PURE__*/React.createElement(Box, {
-      direction: "row",
-      align: "center",
-      gap: "small",
-      pad: {
-        horizontal: 'large',
-        vertical: 'none'
-      },
-      background: "background-front",
-      height: "xxsmall",
-      flex: false
-    }, /*#__PURE__*/React.createElement(ResponsiveContext.Consumer, null, function (size) {
-      return size === 'small' ? /*#__PURE__*/React.createElement(Box, {
-        flex: "grow"
-      }) : /*#__PURE__*/React.createElement(Box, {
-        direction: "row",
-        align: "center",
-        gap: "small",
-        flex: "grow"
-      }, /*#__PURE__*/React.createElement(Text, {
-        weight: "bold"
-      }, "Wizard kind:"), /*#__PURE__*/React.createElement(RadioButtonGroup, {
-        name: "wizard-kind",
-        direction: "row",
-        gap: "medium",
-        options: ['full', 'narrow', 'wide'],
-        value: kind,
-        onChange: function onChange(event) {
-          return setKind(event.target.value);
-        }
-      }));
-    }), /*#__PURE__*/React.createElement(Box, {
-      direction: "row",
-      align: "center",
-      gap: "small"
-    }, !isFirstStep && /*#__PURE__*/React.createElement(Button, {
-      label: "Previous",
-      onClick: previous
-    }), isLastStep ? /*#__PURE__*/React.createElement(Button, {
-      label: "Complete",
-      primary: true,
-      onClick: complete
-    }) : /*#__PURE__*/React.createElement(Button, {
-      label: "Next",
-      primary: true,
-      onClick: next
-    })));
-  };
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  var _useState = useState(null),
+    result = _useState[0],
+    setResult = _useState[1];
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true
   }, /*#__PURE__*/React.createElement(Wizard, {
     "aria-label": "Long content wizard",
-    kind: kind,
-    header: {
-      title: 'Create resource'
-    },
+    title: "Create resource",
+    showProgress: "horizontal",
     steps: steps,
-    footer: renderFooter,
-    onComplete: function onComplete(value) {
+    onComplete: function onComplete(_ref2) {
+      var value = _ref2.value;
       return setResult({
         status: 'complete',
         value: value
@@ -170,7 +104,10 @@ var LongContent = function LongContent() {
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+LongContent.args = {
+  full: true
 };
 export default {
   title: 'Layout/Wizard/Long Content'

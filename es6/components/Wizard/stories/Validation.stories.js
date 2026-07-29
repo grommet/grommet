@@ -1,8 +1,7 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { useState } from 'react';
-import { Box, Grommet, Notification, Paragraph, TextInput } from 'grommet';
+import { Box, Notification, Paragraph, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 var Validation = function Validation() {
   var _useState = useState(null),
     result = _useState[0],
@@ -54,22 +53,19 @@ var Validation = function Validation() {
       return /*#__PURE__*/React.createElement(Paragraph, null, "Confirm sign-up for ", api.formValue.email, ".");
     }
   }];
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true
   }, /*#__PURE__*/React.createElement(Wizard, {
     "aria-label": "Sign up",
-    header: {
-      title: 'Create your account'
-    },
+    title: "Create your account",
+    showProgress: "vertical",
     steps: steps,
     defaultValue: {
       email: '',
       password: ''
     },
-    onComplete: function onComplete(value) {
+    onComplete: function onComplete(_ref) {
+      var value = _ref.value;
       return setResult({
         status: 'complete',
         value: value
@@ -81,11 +77,14 @@ var Validation = function Validation() {
     },
     status: "normal",
     title: "Wizard complete",
-    message: result.value && Object.keys(result.value).length > 0 ? "Completed: " + JSON.stringify(result.value) : undefined,
+    message: "Account created for " + result.value.email + ".",
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+Validation.args = {
+  full: true
 };
 export default {
   title: 'Layout/Wizard/Validation'

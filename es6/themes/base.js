@@ -2674,146 +2674,6 @@ export var generate = function generate(baseSpacing, scale) {
         }
       }
     },
-    wizard: {
-      container: {
-        gap: 'none',
-        background: 'background-back'
-      },
-      // Per-`kind` max-width applied to the centered content column inside
-      // the scroll region. Header and footer always span the full wizard
-      // width; only the middle column is constrained. Values may be any
-      // Grommet size token (e.g. 'large', 'xlarge') or a CSS length.
-      // `full` intentionally has no maxWidth (content stretches).
-      kind: {
-        full: {
-          maxWidth: undefined
-        },
-        narrow: {
-          maxWidth: 'large'
-        },
-        wide: {
-          maxWidth: 'xlarge'
-        }
-      },
-      body: {
-        pad: {
-          horizontal: 'large',
-          vertical: 'large'
-        },
-        gap: 'medium'
-      },
-      header: {
-        pad: {
-          horizontal: 'large',
-          vertical: 'small'
-        },
-        background: 'background-front',
-        height: 'xxsmall',
-        title: {
-          level: 3,
-          size: 'medium'
-        }
-      },
-      progress: {
-        horizontal: {
-          pad: {
-            horizontal: 'none',
-            vertical: 'none'
-          }
-        },
-        vertical: {
-          // Fixed rail width so the progress column does not collapse
-          // to hug its own label text. Consumers can override via
-          // theme.wizard.progress.vertical.width (any Grommet size
-          // token or CSS length) to widen or narrow the rail.
-          width: 'small',
-          pad: {
-            horizontal: 'xsmall',
-            vertical: 'none'
-          }
-        }
-      },
-      stepCounter: {
-        size: 'small',
-        color: 'text',
-        weight: 'normal',
-        margin: {
-          bottom: 'xsmall'
-        }
-      },
-      stepHeader: {
-        pad: {
-          horizontal: 'none',
-          vertical: 'none'
-        },
-        title: {
-          level: 2,
-          size: 'large'
-        },
-        description: {
-          size: 'medium',
-          color: 'text-weak',
-          margin: {
-            top: 'xsmall',
-            bottom: 'none'
-          }
-        }
-      },
-      content: {
-        pad: 'medium',
-        background: 'background-front',
-        round: 'small',
-        margin: {
-          top: 'medium'
-        }
-        // Consumers can override the content box size via theme tokens
-        // (any Grommet size token or CSS length). Left unset by default
-        // so the content column fills the wizard body.
-        // width: undefined,
-        // height: undefined,
-        // align: undefined,
-      },
-      footer: {
-        pad: {
-          horizontal: 'large',
-          vertical: 'none'
-        },
-        gap: 'small',
-        background: 'background-front',
-        justify: 'end',
-        height: 'xxsmall',
-        button: {
-          primary: 'next',
-          previous: {
-            kind: 'secondary'
-          },
-          cancel: {
-            plain: true
-          },
-          skip: {
-            kind: 'secondary'
-          }
-        }
-      },
-      error: {
-        icon: undefined,
-        helperText: {
-          color: 'status-error',
-          size: 'small',
-          margin: {
-            top: 'xsmall'
-          }
-        }
-      },
-      icons: {
-        next: FormNext,
-        previous: FormPrevious,
-        complete: undefined,
-        cancel: undefined,
-        skip: FormNext,
-        close: FormClose
-      }
-    },
     table: {
       caption: {
         margin: {
@@ -3060,6 +2920,114 @@ export var generate = function generate(baseSpacing, scale) {
         container: {
           pad: {
             horizontal: 'small'
+          }
+        }
+      }
+    },
+    wizard: {
+      container: {
+        gap: 'none',
+        background: 'background-back'
+      },
+      body: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'large'
+        },
+        gap: 'medium'
+      },
+      header: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'small'
+        },
+        background: 'background-front',
+        title: {
+          size: 'small'
+        },
+        close: {
+          icon: FormClose
+        }
+      },
+      progress: {
+        horizontal: {
+          pad: {
+            horizontal: 'none',
+            vertical: 'none'
+          }
+        },
+        vertical: {
+          // Fixed rail width so the column doesn't collapse to label text.
+          width: 'small',
+          pad: {
+            horizontal: 'xsmall',
+            vertical: 'none'
+          }
+        }
+      },
+      stepHeader: {
+        pad: {
+          horizontal: 'none',
+          vertical: 'none'
+        },
+        counter: {
+          size: 'small',
+          color: 'text'
+        },
+        title: {
+          size: 'large',
+          margin: 'none'
+        },
+        description: {
+          size: 'medium',
+          color: 'text-weak',
+          margin: {
+            top: 'xsmall',
+            bottom: 'none'
+          }
+        }
+      },
+      content: {
+        pad: 'medium',
+        background: 'background-front',
+        round: 'small',
+        margin: {
+          top: 'medium'
+        }
+      },
+      footer: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'small'
+        },
+        gap: 'small',
+        background: 'background-front',
+        justify: 'end',
+        button: {
+          next: {
+            icon: FormNext
+          },
+          complete: {
+            icon: undefined
+          },
+          previous: {
+            icon: FormPrevious
+          },
+          cancel: {
+            icon: undefined
+          },
+          skip: {
+            icon: FormNext
+          }
+        }
+      },
+      error: {
+        icon: undefined,
+        helperText: {
+          color: 'status-error',
+          size: 'small',
+          margin: {
+            top: 'xsmall'
           }
         }
       }

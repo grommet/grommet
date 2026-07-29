@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Button, Grommet, Heading, Layer, Notification, Paragraph } from 'grommet';
+import { Box, Button, Heading, Layer, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
 // Controlled Wizard: parent owns currentStep and reacts to onStepChange.
 var steps = [{
@@ -58,17 +57,13 @@ var Controlled = function Controlled() {
   var reopenWizard = function reopenWizard() {
     setWizardOpen(true);
   };
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true
   }, wizardOpen ? /*#__PURE__*/React.createElement(Wizard, {
     key: resetKey,
     "aria-label": "Controlled wizard",
-    header: {
-      title: 'Configure workspace'
-    },
+    title: "Configure workspace",
+    showProgress: "horizontal",
     steps: steps,
     currentStep: currentStep,
     onStepChange: function onStepChange(event) {
@@ -76,7 +71,8 @@ var Controlled = function Controlled() {
         setCurrentStep(event.to);
       }
     },
-    onComplete: function onComplete(value) {
+    onComplete: function onComplete(_ref) {
+      var value = _ref.value;
       return setResult({
         status: 'complete',
         value: value
@@ -126,7 +122,10 @@ var Controlled = function Controlled() {
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+Controlled.args = {
+  full: true
 };
 export default {
   title: 'Layout/Wizard/Controlled'

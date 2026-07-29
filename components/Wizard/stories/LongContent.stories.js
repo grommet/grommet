@@ -5,7 +5,6 @@ exports["default"] = exports.LongContent = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _grommet = require("grommet");
 var _Wizard = require("../Wizard");
-var _themes = require("../../../themes");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 // Long-content step demonstrating that the wizard header, stepper, and
 // footer remain in place while the content column scrolls internally.
@@ -24,7 +23,7 @@ var LongStepBody = function LongStepBody(_ref) {
     }
   }, heading), /*#__PURE__*/_react["default"].createElement(_grommet.Paragraph, {
     fill: true
-  }, "Scroll this content column. The wizard header at the top and the footer at the bottom stay pinned \u2014 only the middle scrolls. When the `kind` prop is set to `narrow` or `wide`, only this content column narrows; the header and footer still span the full wizard width."), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+  }, "Scroll this content column. The wizard header at the top and the footer at the bottom stay pinned \u2014 only the middle scrolls."), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
     label: "Name",
     htmlFor: "long-content-name"
   }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
@@ -82,83 +81,18 @@ var steps = [{
   }
 }];
 var LongContent = exports.LongContent = function LongContent() {
-  var _useState = (0, _react.useState)('full'),
-    kind = _useState[0],
-    setKind = _useState[1];
-  var _useState2 = (0, _react.useState)(null),
-    result = _useState2[0],
-    setResult = _useState2[1];
-
-  // Custom footer inlines the story's `kind` selector on the left and
-  // Previous / Next on the right; styling matches theme.wizard.footer.
-  var renderFooter = function renderFooter(_ref2) {
-    var previous = _ref2.previous,
-      next = _ref2.next,
-      complete = _ref2.complete,
-      isFirstStep = _ref2.isFirstStep,
-      isLastStep = _ref2.isLastStep;
-    return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      direction: "row",
-      align: "center",
-      gap: "small",
-      pad: {
-        horizontal: 'large',
-        vertical: 'none'
-      },
-      background: "background-front",
-      height: "xxsmall",
-      flex: false
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
-      return size === 'small' ? /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-        flex: "grow"
-      }) : /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-        direction: "row",
-        align: "center",
-        gap: "small",
-        flex: "grow"
-      }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-        weight: "bold"
-      }, "Wizard kind:"), /*#__PURE__*/_react["default"].createElement(_grommet.RadioButtonGroup, {
-        name: "wizard-kind",
-        direction: "row",
-        gap: "medium",
-        options: ['full', 'narrow', 'wide'],
-        value: kind,
-        onChange: function onChange(event) {
-          return setKind(event.target.value);
-        }
-      }));
-    }), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      direction: "row",
-      align: "center",
-      gap: "small"
-    }, !isFirstStep && /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-      label: "Previous",
-      onClick: previous
-    }), isLastStep ? /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-      label: "Complete",
-      primary: true,
-      onClick: complete
-    }) : /*#__PURE__*/_react["default"].createElement(_grommet.Button, {
-      label: "Next",
-      primary: true,
-      onClick: next
-    })));
-  };
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  var _useState = (0, _react.useState)(null),
+    result = _useState[0],
+    setResult = _useState[1];
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
   }, /*#__PURE__*/_react["default"].createElement(_Wizard.Wizard, {
     "aria-label": "Long content wizard",
-    kind: kind,
-    header: {
-      title: 'Create resource'
-    },
+    title: "Create resource",
+    showProgress: "horizontal",
     steps: steps,
-    footer: renderFooter,
-    onComplete: function onComplete(value) {
+    onComplete: function onComplete(_ref2) {
+      var value = _ref2.value;
       return setResult({
         status: 'complete',
         value: value
@@ -174,7 +108,10 @@ var LongContent = exports.LongContent = function LongContent() {
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+LongContent.args = {
+  full: true
 };
 var _default = exports["default"] = {
   title: 'Layout/Wizard/Long Content'

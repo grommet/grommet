@@ -5,7 +5,6 @@ exports["default"] = exports.BasicLinear = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _grommet = require("grommet");
 var _Wizard = require("../Wizard");
-var _themes = require("../../../themes");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 var steps = [{
@@ -41,40 +40,31 @@ var steps = [{
   }
 }];
 var BasicLinear = exports.BasicLinear = function BasicLinear() {
-  var _useState = (0, _react.useState)(null),
-    result = _useState[0],
-    setResult = _useState[1];
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  var _useState = (0, _react.useState)(false),
+    complete = _useState[0],
+    setComplete = _useState[1];
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
   }, /*#__PURE__*/_react["default"].createElement(_Wizard.Wizard, {
     "aria-label": "Onboarding",
-    header: {
-      title: 'Set up your account'
-    },
+    title: "Set up your account",
     steps: steps,
-    defaultValue: {
-      email: ''
-    },
-    onComplete: function onComplete(value) {
-      return setResult({
-        status: 'complete',
-        value: value
-      });
+    onComplete: function onComplete() {
+      return setComplete(true);
     }
-  }), result && /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
+  }), complete && /*#__PURE__*/_react["default"].createElement(_grommet.Notification, {
     toast: {
       position: 'top'
     },
     status: "normal",
     title: "Wizard complete",
-    message: result.value && Object.keys(result.value).length > 0 ? "Completed: " + JSON.stringify(result.value) : undefined,
     onClose: function onClose() {
-      return setResult(null);
+      return setComplete(false);
     }
-  })));
+  }));
+};
+BasicLinear.args = {
+  full: true
 };
 var _default = exports["default"] = {
   title: 'Layout/Wizard/Basic Linear'

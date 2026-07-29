@@ -9,26 +9,21 @@ import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
 
-// WizardFooter renders navigation buttons. Labels come from MessageContext
-// (with optional message override). Primary action changes on the last step
-// (Complete) vs intermediate steps (Next). Icons come from theme.wizard.icons.
-// Passing `children` fully replaces the default button set; callers use
-// `useWizard()` for navigation callbacks while keeping the themed shell.
+// WizardFooter renders navigation buttons. Pass `children` to fully
+// replace the default set.
 export var WizardFooter = function WizardFooter(_ref) {
-  var _theme$wizard, _theme$wizard2, _footerTheme$button, _footerTheme$button2, _footerTheme$button3, _footerTheme$button4;
+  var _theme$wizard, _footerTheme$button, _footerTheme$button2, _footerTheme$button3, _footerTheme$button4, _footerTheme$button5;
   var children = _ref.children,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = useThemeValue(),
-    theme = _useThemeValue.theme,
-    passThemeFlag = _useThemeValue.passThemeFlag;
+    theme = _useThemeValue.theme;
   var _React$useContext = React.useContext(MessageContext),
     format = _React$useContext.format;
   var _useWizard = useWizard(),
     currentStepObj = _useWizard.currentStepObj,
-    isFirstStep = _useWizard.isFirstStep,
-    isLastStep = _useWizard.isLastStep,
+    currentStepIndex = _useWizard.currentStepIndex,
+    totalSteps = _useWizard.totalSteps,
     canGoNext = _useWizard.canGoNext,
-    canGoPrevious = _useWizard.canGoPrevious,
     next = _useWizard.next,
     previous = _useWizard.previous,
     skip = _useWizard.skip,
@@ -37,27 +32,26 @@ export var WizardFooter = function WizardFooter(_ref) {
     hasCancelHandler = _useWizard.hasCancelHandler,
     messages = _useWizard.messages;
   if (!currentStepObj) return null;
+  var isFirstStep = currentStepIndex <= 0;
+  var isLastStep = currentStepIndex >= totalSteps - 1;
+  var canGoPrevious = !isFirstStep;
   var footerTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.footer;
-  var iconTheme = (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.icons;
   var label = function label(id, override) {
     return override || format({
       id: "wizard." + id
     });
   };
-  var NextIcon = iconTheme == null ? void 0 : iconTheme.next;
-  var PreviousIcon = iconTheme == null ? void 0 : iconTheme.previous;
-  var CompleteIcon = iconTheme == null ? void 0 : iconTheme.complete;
-  var CancelIcon = iconTheme == null ? void 0 : iconTheme.cancel;
-  var SkipIcon = iconTheme == null ? void 0 : iconTheme.skip;
+  var NextIcon = footerTheme == null || (_footerTheme$button = footerTheme.button) == null || (_footerTheme$button = _footerTheme$button.next) == null ? void 0 : _footerTheme$button.icon;
+  var PreviousIcon = footerTheme == null || (_footerTheme$button2 = footerTheme.button) == null || (_footerTheme$button2 = _footerTheme$button2.previous) == null ? void 0 : _footerTheme$button2.icon;
+  var SkipIcon = footerTheme == null || (_footerTheme$button3 = footerTheme.button) == null || (_footerTheme$button3 = _footerTheme$button3.skip) == null ? void 0 : _footerTheme$button3.icon;
+  var CompleteIcon = footerTheme == null || (_footerTheme$button4 = footerTheme.button) == null || (_footerTheme$button4 = _footerTheme$button4.complete) == null ? void 0 : _footerTheme$button4.icon;
+  var CancelIcon = footerTheme == null || (_footerTheme$button5 = footerTheme.button) == null || (_footerTheme$button5 = _footerTheme$button5.cancel) == null ? void 0 : _footerTheme$button5.icon;
 
-  // Array (not Fragment) so Box gap injection sees each button as a
-  // separate child. Cancel is rendered only when `onCancel` was provided;
-  // otherwise the header X button is the sole cancel affordance.
+  // Array (not Fragment) so Box gap injection sees each child.
   var defaultButtons = [hasCancelHandler && /*#__PURE__*/React.createElement(Button, {
     key: "cancel",
     label: label('cancel', messages == null ? void 0 : messages.cancel),
-    kind: footerTheme == null || (_footerTheme$button = footerTheme.button) == null || (_footerTheme$button = _footerTheme$button.cancel) == null ? void 0 : _footerTheme$button.kind,
-    plain: footerTheme == null || (_footerTheme$button2 = footerTheme.button) == null || (_footerTheme$button2 = _footerTheme$button2.cancel) == null ? void 0 : _footerTheme$button2.plain,
+    plain: true,
     icon: CancelIcon ? /*#__PURE__*/React.createElement(CancelIcon, {
       "aria-hidden": "true"
     }) : undefined,
@@ -65,7 +59,7 @@ export var WizardFooter = function WizardFooter(_ref) {
   }), !isFirstStep && /*#__PURE__*/React.createElement(Button, {
     key: "previous",
     label: label('previous', messages == null ? void 0 : messages.previous),
-    kind: footerTheme == null || (_footerTheme$button3 = footerTheme.button) == null || (_footerTheme$button3 = _footerTheme$button3.previous) == null ? void 0 : _footerTheme$button3.kind,
+    secondary: true,
     icon: PreviousIcon ? /*#__PURE__*/React.createElement(PreviousIcon, {
       "aria-hidden": "true"
     }) : undefined,
@@ -74,7 +68,7 @@ export var WizardFooter = function WizardFooter(_ref) {
   }), currentStepObj.skippable && !isLastStep && /*#__PURE__*/React.createElement(Button, {
     key: "skip",
     label: label('skip', messages == null ? void 0 : messages.skip),
-    kind: footerTheme == null || (_footerTheme$button4 = footerTheme.button) == null || (_footerTheme$button4 = _footerTheme$button4.skip) == null ? void 0 : _footerTheme$button4.kind,
+    secondary: true,
     icon: SkipIcon ? /*#__PURE__*/React.createElement(SkipIcon, {
       "aria-hidden": "true"
     }) : undefined,
@@ -83,10 +77,10 @@ export var WizardFooter = function WizardFooter(_ref) {
   }), isLastStep ? /*#__PURE__*/React.createElement(Button, {
     key: "complete",
     label: label('complete', messages == null ? void 0 : messages.complete),
-    primary: true,
     icon: CompleteIcon ? /*#__PURE__*/React.createElement(CompleteIcon, {
       "aria-hidden": "true"
     }) : undefined,
+    primary: true,
     disabled: !canGoNext,
     onClick: complete
   }) : /*#__PURE__*/React.createElement(Button, {
@@ -101,10 +95,8 @@ export var WizardFooter = function WizardFooter(_ref) {
     onClick: next
   })];
   return /*#__PURE__*/React.createElement(ResponsiveContext.Consumer, null, function (size) {
-    var _theme$global;
     var isSmall = size === 'small';
     var gapSize = footerTheme == null ? void 0 : footerTheme.gap;
-    var rowGap = isSmall ? ((_theme$global = theme.global) == null || (_theme$global = _theme$global.edgeSize) == null ? void 0 : _theme$global[gapSize]) || gapSize : undefined;
     return /*#__PURE__*/React.createElement(Box, _extends({
       background: footerTheme == null ? void 0 : footerTheme.background,
       border: footerTheme == null ? void 0 : footerTheme.border,
@@ -112,17 +104,16 @@ export var WizardFooter = function WizardFooter(_ref) {
         horizontal: 'small',
         vertical: 'small'
       } : footerTheme == null ? void 0 : footerTheme.pad,
-      gap: gapSize,
-      height: isSmall ? undefined : footerTheme == null ? void 0 : footerTheme.height,
+      gap: {
+        row: gapSize,
+        column: gapSize
+      },
       direction: "row",
       justify: footerTheme == null ? void 0 : footerTheme.justify,
       align: "center",
       wrap: isSmall,
-      flex: false,
-      style: rowGap ? {
-        rowGap: rowGap
-      } : undefined
-    }, passThemeFlag, rest), children != null ? children : defaultButtons);
+      flex: false
+    }, rest), children != null ? children : defaultButtons);
   });
 };
 WizardFooter.displayName = 'WizardFooter';

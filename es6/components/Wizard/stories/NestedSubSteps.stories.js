@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Grommet, Notification, Paragraph } from 'grommet';
+import { Box, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
 // Nested wizard with sub-steps under a parent group. Parent is never a
 // navigation target; child steps are visited in order.
@@ -42,19 +41,15 @@ var NestedSubSteps = function NestedSubSteps() {
   var _useState = useState(null),
     result = _useState[0],
     setResult = _useState[1];
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true
   }, /*#__PURE__*/React.createElement(Wizard, {
     "aria-label": "Nested wizard",
-    header: {
-      title: 'Set up your organization'
-    },
-    direction: "vertical",
+    title: "Set up your organization",
+    showProgress: "vertical",
     steps: steps,
-    onComplete: function onComplete(value) {
+    onComplete: function onComplete(_ref) {
+      var value = _ref.value;
       return setResult({
         status: 'complete',
         value: value
@@ -70,7 +65,10 @@ var NestedSubSteps = function NestedSubSteps() {
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+NestedSubSteps.args = {
+  full: true
 };
 export default {
   title: 'Layout/Wizard/Nested Sub-Steps'

@@ -5,13 +5,10 @@ exports["default"] = exports.Branching = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _grommet = require("grommet");
 var _Wizard = require("../Wizard");
-var _themes = require("../../../themes");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-// Branching wizard: the Review step is added to the wizard only when the
-// user checks "Include a manual review step". The stepper reflects the
-// live shape of the flow — Review appears/disappears as the choice
-// changes.
+// Branching wizard: the Review step is added only when the user checks
+// "Include a manual review step"; the stepper updates live.
 var planStep = {
   id: 'plan',
   title: 'Plan',
@@ -56,20 +53,24 @@ var Branching = exports.Branching = function Branching() {
   var steps = (0, _react.useMemo)(function () {
     return value.review ? [planStep, reviewStep, deployStep] : [planStep, deployStep];
   }, [value.review]);
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
   }, /*#__PURE__*/_react["default"].createElement(_Wizard.Wizard, {
     "aria-label": "Deployment",
-    header: {
-      title: 'Deploy an application'
-    },
+    title: "Deploy an application",
+    showProgress: "horizontal",
     steps: steps,
     value: value,
-    onValueChange: setValue,
-    onComplete: function onComplete(nextValue) {
+    onChange: function onChange(_ref) {
+      var nextValue = _ref.value;
+      return setValue(nextValue);
+    },
+    messages: {
+      next: 'Continue',
+      complete: 'Deploy'
+    },
+    onComplete: function onComplete(_ref2) {
+      var nextValue = _ref2.value;
       return setResult({
         status: 'complete',
         value: nextValue
@@ -85,7 +86,10 @@ var Branching = exports.Branching = function Branching() {
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+Branching.args = {
+  full: true
 };
 var _default = exports["default"] = {
   title: 'Layout/Wizard/Branching'

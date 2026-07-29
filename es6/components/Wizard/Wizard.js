@@ -1,4 +1,4 @@
-var _excluded = ["steps", "currentStep", "defaultStep", "direction", "kind", "onStepChange", "onComplete", "onCancel", "renderStep", "header", "footer", "scrollToTop", "value", "defaultValue", "onValueChange", "id", "aria-label", "a11yTitle", "messages", "children"];
+var _excluded = ["steps", "currentStep", "defaultStep", "showProgress", "onStepChange", "onComplete", "onCancel", "renderStep", "title", "footer", "scrollToTop", "value", "defaultValue", "onChange", "id", "aria-label", "messages", "children"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
@@ -8,7 +8,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 function _createForOfIteratorHelperLoose(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (t) return (t = t.call(r)).next.bind(t); if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var o = 0; return function () { return o >= r.length ? { done: !0 } : { done: !1, value: r[o++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-import React, { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
@@ -22,12 +22,11 @@ import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
 import { WizardContent } from './WizardContent';
 import { WizardFooter } from './WizardFooter';
-import { StyledWizard, StyledWizardBody, StyledWizardCenter, StyledWizardContentColumn, StyledWizardFocusAnchor, StyledWizardMiddle } from './StyledWizard';
+import { StyledWizard } from './StyledWizard';
 import { WizardPropTypes } from './propTypes';
 
-// Flatten wizard step tree into an ordered list of leaves only. Parent
-// steps with children are never nav targets; they are used only for
-// aggregate status rendering in <WizardProgress>.
+// Flatten step tree into ordered leaves; parents with children are
+// aggregate-only, never nav targets.
 var flattenLeaves = function flattenLeaves(steps) {
   var leaves = [];
   steps.forEach(function (step) {
@@ -42,7 +41,7 @@ var flattenLeaves = function flattenLeaves(steps) {
   return leaves;
 };
 
-// Resolve a step object by id from either the tree or the leaf list.
+// Find step by id in the tree or leaf list.
 var findStepById = function findStepById(steps, id) {
   // eslint-disable-next-line no-restricted-syntax
   for (var _iterator = _createForOfIteratorHelperLoose(steps), _step; !(_step = _iterator()).done;) {
@@ -58,8 +57,7 @@ var findStepById = function findStepById(steps, id) {
   return undefined;
 };
 
-// Find nearest scrollable ancestor. Used by scrollToTop when the wizard is
-// inside a scrolling container smaller than the viewport.
+// Nearest scrollable ancestor for scrollToTop.
 var findScrollableAncestor = function findScrollableAncestor(node) {
   var element = node == null ? void 0 : node.parentElement;
   while (element && element !== document.body) {
@@ -73,28 +71,25 @@ var findScrollableAncestor = function findScrollableAncestor(node) {
   return undefined;
 };
 var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$wizard, _theme$wizard2, _theme$wizard3;
+  var _theme$wizard, _theme$wizard2;
   var steps = _ref.steps,
     currentStepProp = _ref.currentStep,
     defaultStep = _ref.defaultStep,
-    _ref$direction = _ref.direction,
-    direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
-    _ref$kind = _ref.kind,
-    kind = _ref$kind === void 0 ? 'full' : _ref$kind,
+    _ref$showProgress = _ref.showProgress,
+    showProgress = _ref$showProgress === void 0 ? false : _ref$showProgress,
     onStepChange = _ref.onStepChange,
     onComplete = _ref.onComplete,
     onCancel = _ref.onCancel,
     renderStep = _ref.renderStep,
-    header = _ref.header,
+    title = _ref.title,
     footer = _ref.footer,
     _ref$scrollToTop = _ref.scrollToTop,
     scrollToTop = _ref$scrollToTop === void 0 ? true : _ref$scrollToTop,
     valueProp = _ref.value,
     defaultValue = _ref.defaultValue,
-    onValueChange = _ref.onValueChange,
+    onChange = _ref.onChange,
     id = _ref.id,
     ariaLabel = _ref['aria-label'],
-    a11yTitle = _ref.a11yTitle,
     messages = _ref.messages,
     children = _ref.children,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -106,16 +101,13 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var responsiveSize = React.useContext(ResponsiveContext);
   var sendAnalytics = useAnalytics();
 
-  // Fallback horizontal direction when the caller asks for horizontal but
-  // sub-steps are present. Stepper mirrors this rule; Wizard warns once.
+  // Horizontal progress + sub-steps: fall back to vertical.
   var hasSubSteps = steps.some(function (step) {
     return step.children && step.children.length > 0;
   });
-  var effectiveDirection = hasSubSteps && direction === 'horizontal' ? 'vertical' : direction;
+  var effectiveShowProgress = hasSubSteps && showProgress === 'horizontal' ? 'vertical' : showProgress;
 
-  // Wizard supports two levels only (step > child). Descendants beyond
-  // the child level are ignored by `flattenLeaves` and `findStepById`.
-  // Warn once in development so authors don't lose grandchildren silently.
+  // Only two levels supported (step > child); warn on deeper nesting.
   var hasDeepNesting = steps.some(function (step) {
     var _step$children;
     return (_step$children = step.children) == null ? void 0 : _step$children.some(function (child) {
@@ -123,15 +115,14 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   });
   if (process.env.NODE_ENV !== 'production') {
-    if (hasSubSteps && direction === 'horizontal') {
-      console.warn('Wizard: horizontal direction with sub-steps is not supported. ' + 'Falling back to vertical.');
+    if (hasSubSteps && showProgress === 'horizontal') {
+      console.warn('Wizard: horizontal showProgress with sub-steps is not supported. ' + 'Falling back to vertical.');
     }
     if (hasDeepNesting) {
       console.warn('Wizard: nesting deeper than one level (step > child) is not ' + 'supported. Descendants beyond the child level are ignored ' + 'by default.');
     }
   }
   var wizardRef = useForwardedRef(ref);
-  var focusAnchorRef = useRef(null);
   var flatSteps = useMemo(function () {
     return flattenLeaves(steps);
   }, [steps]);
@@ -151,8 +142,10 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var setFormValue = useCallback(function (nextValueOrFn) {
     var resolved = typeof nextValueOrFn === 'function' ? nextValueOrFn(formValue) : nextValueOrFn;
     if (!isValueControlled) setUncontrolledValue(resolved);
-    if (onValueChange) onValueChange(resolved);
-  }, [formValue, isValueControlled, onValueChange]);
+    if (onChange) onChange({
+      value: resolved
+    });
+  }, [formValue, isValueControlled, onChange]);
   var _useState3 = useState([currentStep]),
     visitedSteps = _useState3[0],
     setVisitedSteps = _useState3[1];
@@ -167,13 +160,13 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState6 = useState(false),
     isValidating = _useState6[0],
     setIsValidating = _useState6[1];
-  // When no `onCancel` is provided, cancel self-closes the wizard.
+  // Without `onCancel`, cancel self-closes the wizard.
   var _useState7 = useState(true),
     isOpen = _useState7[0],
     setIsOpen = _useState7[1];
   var hasCancelHandler = onCancel !== undefined;
 
-  // Keep visited history synced when the current step is externally set.
+  // Keep visited history in sync when currentStep is externally set.
   useEffect(function () {
     setVisitedSteps(function (prev) {
       return prev[prev.length - 1] === currentStep ? prev : [].concat(prev, [currentStep]);
@@ -191,8 +184,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var isFirstStep = currentStepIndex <= 0;
   var isLastStep = currentStepIndex >= totalSteps - 1;
 
-  // getStepStatus derives status from wizard state. Parent steps aggregate
-  // from their children so <WizardProgress> renders the right visual.
+  // Derive step status; parents aggregate from their children.
   var getStepStatus = useCallback(function (stepId) {
     // Parent-with-children aggregate
     var parent = steps.find(function (step) {
@@ -224,14 +216,25 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return 'pending';
   }, [steps, currentStep, completedSteps, validationError]);
 
-  // Emit a structured step change event. Consumers may swap steps or read
-  // trigger/phase to drive analytics or logging without inspecting DOM.
+  // Record<id, status> for every step (top-level + children).
+  var stepStates = useMemo(function () {
+    var record = {};
+    var _walk = function walk(nodes) {
+      nodes.forEach(function (node) {
+        record[node.id] = getStepStatus(node.id);
+        if (node.children && node.children.length) _walk(node.children);
+      });
+    };
+    _walk(steps);
+    return record;
+  }, [steps, getStepStatus]);
+
+  // Emit a step change event to onStepChange.
   var emitStepChange = useCallback(function (event) {
     if (onStepChange) onStepChange(event);
   }, [onStepChange]);
 
-  // Resolve the destination step id given the current step and a direction.
-  // Honors step.nextStep(formValue) branching when defined.
+  // Resolve next step id, honoring step.nextStep(formValue) branching.
   var resolveNextStepId = useCallback(function () {
     var _flatSteps$nextIndex;
     if (!currentStepObj) return undefined;
@@ -251,7 +254,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return (_flatSteps$nextIndex = flatSteps[nextIndex]) == null ? void 0 : _flatSteps$nextIndex.id;
   }, [currentStepObj, currentStepIndex, flatSteps, formValue, steps]);
 
-  // Apply a navigation transition (id change + history + completion + focus).
+  // Apply a navigation transition (id, history, completion, focus).
   var applyTransition = useCallback(function (nextId, _temp) {
     var _ref2 = _temp === void 0 ? {} : _temp,
       markCompleted = _ref2.markCompleted;
@@ -270,7 +273,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (!isControlled) setUncontrolledStep(nextId);
   }, [currentStep, isControlled]);
 
-  // Execute step.validate (sync or async). Returns { ok, error }.
+  // Run step.validate (sync or async). Returns { ok, error }.
   var runValidation = useCallback(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
     var result, _t;
     return _regenerator().w(function (_context) {
@@ -416,8 +419,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
   })), [sendAnalytics, applyTransition, currentStep, emitStepChange, isValidating, resolveNextStepId, runValidation]);
   var previous = useCallback(function () {
     var _flatSteps;
-    // Use visited stack for history-aware previous. Falls back to the
-    // linear predecessor when no history is available.
+    // History-aware; falls back to the linear predecessor.
     var historyDest = visitedSteps.length > 1 ? visitedSteps[visitedSteps.length - 2] : undefined;
     var fallbackDest = (_flatSteps = flatSteps[currentStepIndex - 1]) == null ? void 0 : _flatSteps.id;
     var dest = historyDest || fallbackDest;
@@ -526,7 +528,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (!(currentStepObj != null && currentStepObj.skippable)) return;
     var nextId = resolveNextStepId();
     if (!nextId) return;
-    // Skip does NOT validate and does NOT mark completed.
+    // Skip: no validation, no completion.
     setValidationError(undefined);
     setVisitedSteps(function (prev) {
       return [].concat(prev, [nextId]);
@@ -544,7 +546,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   }, [sendAnalytics, currentStep, currentStepObj, emitStepChange, isControlled, resolveNextStepId]);
   var complete = useCallback(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
-    var _yield$runValidation3, ok, error;
+    var _yield$runValidation3, ok, error, completedStepsList;
     return _regenerator().w(function (_context4) {
       while (1) switch (_context4.n) {
         case 0:
@@ -593,13 +595,21 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
             nextCompleted.add(currentStep);
             return nextCompleted;
           });
-          // Emit 'completed' synchronously BEFORE onComplete callback.
+          // Emit 'completed' before invoking onComplete.
           emitStepChange({
             trigger: 'complete',
             phase: 'completed',
             from: currentStep
           });
-          if (onComplete) onComplete(formValue);
+          if (onComplete) {
+            // setCompletedSteps above is async; include currentStep here so the
+            // payload reflects the just-completed final step.
+            completedStepsList = [].concat(completedSteps, [currentStep]);
+            onComplete({
+              value: formValue,
+              completedSteps: completedStepsList
+            });
+          }
           if (sendAnalytics) sendAnalytics({
             type: 'wizardComplete',
             element: 'Wizard'
@@ -608,7 +618,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
           return _context4.a(2);
       }
     }, _callee4);
-  })), [sendAnalytics, currentStep, emitStepChange, formValue, isValidating, onComplete, runValidation]);
+  })), [sendAnalytics, completedSteps, currentStep, emitStepChange, formValue, isValidating, onComplete, runValidation]);
   var cancel = useCallback(function () {
     emitStepChange({
       trigger: 'cancel',
@@ -616,9 +626,12 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
       from: currentStep
     });
     if (onCancel) {
-      onCancel(formValue);
+      onCancel({
+        value: formValue,
+        reason: 'user'
+      });
     } else {
-      // Self-close; remount requires the parent to change `key`.
+      // Self-close; parent must change `key` to remount.
       setIsOpen(false);
     }
     if (sendAnalytics) sendAnalytics({
@@ -627,16 +640,16 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   }, [sendAnalytics, currentStep, emitStepChange, formValue, onCancel]);
 
-  // Scroll to top on step transition. Container-first: scroll the wizard
-  // container into view, then the nearest scrollable ancestor, then window.
+  // Scroll to top on step transition: container, then ancestor, then window.
   useLayoutEffect(function () {
+    var _wizardRef$current;
     if (!scrollToTop) return;
-    // Focus the anchor first so screen readers announce the new step.
-    if (focusAnchorRef.current) {
-      focusAnchorRef.current.focus({
-        preventScroll: true
-      });
-    }
+    // Focus the anchor rendered by WizardStepHeader so screen readers
+    // announce the new step. The anchor is located via a data attribute
+    // so composed layouts get the same behavior for free.
+    (_wizardRef$current = wizardRef.current) == null || (_wizardRef$current = _wizardRef$current.querySelector('[data-g-wizard-focus-anchor]')) == null || _wizardRef$current.focus({
+      preventScroll: true
+    });
     var safeScrollTo = function safeScrollTo(target) {
       if (!target || typeof target.scrollTo !== 'function') return;
       try {
@@ -645,7 +658,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
           behavior: 'auto'
         });
       } catch (_unused) {
-        // Some environments (jsdom) throw on scrollTo. Ignore.
+        // jsdom may throw on scrollTo; ignore.
       }
     };
     var container = wizardRef.current;
@@ -654,7 +667,8 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (typeof window !== 'undefined') safeScrollTo(window);
   }, [currentStep, scrollToTop, wizardRef]);
   var canGoNext = !(currentStepObj != null && currentStepObj.disabled) && !isValidating;
-  var canGoPrevious = !isFirstStep;
+  var isBlocked = !!validationError && !(currentStepObj != null && currentStepObj.skippable);
+  var isCompleted = completedSteps.has(currentStep);
   var contextValue = useMemo(function () {
     return {
       steps: steps,
@@ -663,15 +677,14 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
       currentStepIndex: currentStepIndex,
       currentStepObj: currentStepObj,
       totalSteps: totalSteps,
-      completedSteps: completedSteps,
-      visitedSteps: visitedSteps,
+      stepStates: stepStates,
       formValue: formValue,
       setFormValue: setFormValue,
       validationError: validationError,
-      isFirstStep: isFirstStep,
-      isLastStep: isLastStep,
+      isValidating: isValidating,
+      isBlocked: isBlocked,
+      isCompleted: isCompleted,
       canGoNext: canGoNext,
-      canGoPrevious: canGoPrevious,
       next: next,
       previous: previous,
       goTo: goTo,
@@ -679,13 +692,16 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
       complete: complete,
       cancel: cancel,
       hasCancelHandler: hasCancelHandler,
-      getStepStatus: getStepStatus,
-      direction: effectiveDirection,
+      showProgress: effectiveShowProgress,
+      renderStep: renderStep,
+      // Internal only: `messages` is not part of the public
+      // WizardContextValue but is read by internal subcomponents
+      // (same pattern as `hasCancelHandler`).
       messages: messages
     };
-  }, [steps, flatSteps, currentStep, currentStepIndex, currentStepObj, totalSteps, completedSteps, visitedSteps, formValue, setFormValue, validationError, isFirstStep, isLastStep, canGoNext, canGoPrevious, next, previous, goTo, skip, complete, cancel, hasCancelHandler, getStepStatus, effectiveDirection, messages]);
+  }, [steps, flatSteps, currentStep, currentStepIndex, currentStepObj, totalSteps, stepStates, formValue, setFormValue, validationError, isValidating, isBlocked, isCompleted, canGoNext, next, previous, goTo, skip, complete, cancel, hasCancelHandler, effectiveShowProgress, renderStep, messages]);
 
-  // Default composition when no children are provided.
+  // Resolve footer node (function, node, or default).
   var footerNode;
   if (typeof footer === 'function') {
     footerNode = footer({
@@ -707,47 +723,46 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }
   var containerTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.container;
   var bodyTheme = (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.body;
-  var kindTheme = (_theme$wizard3 = theme.wizard) == null || (_theme$wizard3 = _theme$wizard3.kind) == null ? void 0 : _theme$wizard3[kind];
 
-  // Default composition. Header and footer are direct children of the
-  // wizard column so they naturally stay pinned at the top and bottom
-  // of a bounded parent. The middle region is a non-scrolling flex
-  // container; scrolling happens inside <WizardContent> (the white
-  // card) so the stepper and step title also stay in place while
-  // just the card's body scrolls. The `kind` max-width is applied to
-  // `StyledWizardCenter` inside the middle so header and footer
-  // always span the full wizard width even when the content column
-  // is narrowed. Header always renders to host the close (X) button.
+  // Default layout: header + middle (progress + step body) + footer.
+  // Header/footer stay pinned; only WizardContent scrolls internally.
   var defaultLayout = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WizardHeader, {
-    header: header
-  }), /*#__PURE__*/React.createElement(StyledWizardMiddle, passThemeFlag, /*#__PURE__*/React.createElement(StyledWizardCenter, _extends({
-    maxWidth: kindTheme == null ? void 0 : kindTheme.maxWidth
-  }, passThemeFlag), /*#__PURE__*/React.createElement(Box, {
+    title: title
+  }), /*#__PURE__*/React.createElement(Box, {
+    align: "center",
+    flex: {
+      grow: 1,
+      shrink: 1
+    },
+    fill: "horizontal",
+    overflow: "auto"
+  }, /*#__PURE__*/React.createElement(Box, {
     pad: bodyTheme == null ? void 0 : bodyTheme.pad,
-    gap: bodyTheme == null ? void 0 : bodyTheme.gap
-    // `flex` (1 1 auto) so this wrapper shrinks and lets
-    // <WizardContent>'s `overflow: auto` engage.
-    ,
-    flex: true,
-    style: {
-      minHeight: 0
+    gap: bodyTheme == null ? void 0 : bodyTheme.gap,
+    flex: {
+      grow: 1,
+      shrink: 1
+    },
+    fill: "horizontal"
+  }, effectiveShowProgress === 'horizontal' && responsiveSize !== 'small' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(Box, {
+    direction: effectiveShowProgress === 'vertical' ? 'row' : 'column',
+    flex: {
+      grow: 1,
+      shrink: 1
     }
-  }, effectiveDirection === 'horizontal' && responsiveSize !== 'small' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(StyledWizardBody, {
-    direction: effectiveDirection
-  }, effectiveDirection === 'vertical' && responsiveSize !== 'small' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(StyledWizardContentColumn, null, /*#__PURE__*/React.createElement(StyledWizardFocusAnchor, {
-    ref: focusAnchorRef,
-    tabIndex: -1,
-    "aria-live": "polite"
-  }, /*#__PURE__*/React.createElement(WizardStepHeader, null)), /*#__PURE__*/React.createElement(WizardContent, {
-    renderStep: renderStep
-  })))))), footerNode);
+  }, effectiveShowProgress === 'vertical' && responsiveSize !== 'small' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(Box, {
+    flex: {
+      grow: 1,
+      shrink: 1
+    }
+  }, /*#__PURE__*/React.createElement(WizardStepHeader, null), /*#__PURE__*/React.createElement(WizardContent, null))))), footerNode);
   if (!isOpen) return null;
   return /*#__PURE__*/React.createElement(WizardContext.Provider, {
     value: contextValue
   }, /*#__PURE__*/React.createElement(StyledWizard, _extends({
     ref: wizardRef,
     id: id,
-    "aria-label": ariaLabel || a11yTitle,
+    "aria-label": ariaLabel,
     role: "region"
   }, passThemeFlag, rest), children || /*#__PURE__*/React.createElement(Box, {
     background: containerTheme == null ? void 0 : containerTheme.background,
@@ -755,8 +770,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     gap: containerTheme == null ? void 0 : containerTheme.gap,
     round: containerTheme == null ? void 0 : containerTheme.round,
     elevation: containerTheme == null ? void 0 : containerTheme.elevation
-    // `flex` (1 1 auto) + `minHeight: 0` so the middle region
-    // shrinks and <WizardContent> scrolls internally.
+    // Shrink so the middle region can bound <WizardContent>.
     ,
     flex: true,
     style: {

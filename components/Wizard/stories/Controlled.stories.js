@@ -5,7 +5,6 @@ exports["default"] = exports.Controlled = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _grommet = require("grommet");
 var _Wizard = require("../Wizard");
-var _themes = require("../../../themes");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 // Controlled Wizard: parent owns currentStep and reacts to onStepChange.
 var steps = [{
@@ -62,17 +61,13 @@ var Controlled = exports.Controlled = function Controlled() {
   var reopenWizard = function reopenWizard() {
     setWizardOpen(true);
   };
-  return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
-    theme: _themes.grommet,
-    full: true
-  }, /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+  return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     fill: true
   }, wizardOpen ? /*#__PURE__*/_react["default"].createElement(_Wizard.Wizard, {
     key: resetKey,
     "aria-label": "Controlled wizard",
-    header: {
-      title: 'Configure workspace'
-    },
+    title: "Configure workspace",
+    showProgress: "horizontal",
     steps: steps,
     currentStep: currentStep,
     onStepChange: function onStepChange(event) {
@@ -80,7 +75,8 @@ var Controlled = exports.Controlled = function Controlled() {
         setCurrentStep(event.to);
       }
     },
-    onComplete: function onComplete(value) {
+    onComplete: function onComplete(_ref) {
+      var value = _ref.value;
       return setResult({
         status: 'complete',
         value: value
@@ -130,7 +126,10 @@ var Controlled = exports.Controlled = function Controlled() {
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+Controlled.args = {
+  full: true
 };
 var _default = exports["default"] = {
   title: 'Layout/Wizard/Controlled'

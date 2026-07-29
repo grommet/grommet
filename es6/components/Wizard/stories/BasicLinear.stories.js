@@ -1,8 +1,7 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { useState } from 'react';
-import { Box, Grommet, Notification, Paragraph, TextInput } from 'grommet';
+import { Box, Notification, Paragraph, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 var steps = [{
   id: 'account',
   title: 'Account',
@@ -36,40 +35,31 @@ var steps = [{
   }
 }];
 var BasicLinear = function BasicLinear() {
-  var _useState = useState(null),
-    result = _useState[0],
-    setResult = _useState[1];
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  var _useState = useState(false),
+    complete = _useState[0],
+    setComplete = _useState[1];
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true
   }, /*#__PURE__*/React.createElement(Wizard, {
     "aria-label": "Onboarding",
-    header: {
-      title: 'Set up your account'
-    },
+    title: "Set up your account",
     steps: steps,
-    defaultValue: {
-      email: ''
-    },
-    onComplete: function onComplete(value) {
-      return setResult({
-        status: 'complete',
-        value: value
-      });
+    onComplete: function onComplete() {
+      return setComplete(true);
     }
-  }), result && /*#__PURE__*/React.createElement(Notification, {
+  }), complete && /*#__PURE__*/React.createElement(Notification, {
     toast: {
       position: 'top'
     },
     status: "normal",
     title: "Wizard complete",
-    message: result.value && Object.keys(result.value).length > 0 ? "Completed: " + JSON.stringify(result.value) : undefined,
     onClose: function onClose() {
-      return setResult(null);
+      return setComplete(false);
     }
-  })));
+  }));
+};
+BasicLinear.args = {
+  full: true
 };
 export default {
   title: 'Layout/Wizard/Basic Linear'

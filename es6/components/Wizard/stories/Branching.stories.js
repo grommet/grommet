@@ -1,13 +1,10 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React, { useMemo, useState } from 'react';
-import { Box, CheckBox, Grommet, Notification, Paragraph } from 'grommet';
+import { Box, CheckBox, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';
-import { grommet } from '../../../themes';
 
-// Branching wizard: the Review step is added to the wizard only when the
-// user checks "Include a manual review step". The stepper reflects the
-// live shape of the flow — Review appears/disappears as the choice
-// changes.
+// Branching wizard: the Review step is added only when the user checks
+// "Include a manual review step"; the stepper updates live.
 var planStep = {
   id: 'plan',
   title: 'Plan',
@@ -52,20 +49,24 @@ var Branching = function Branching() {
   var steps = useMemo(function () {
     return value.review ? [planStep, reviewStep, deployStep] : [planStep, deployStep];
   }, [value.review]);
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true
   }, /*#__PURE__*/React.createElement(Wizard, {
     "aria-label": "Deployment",
-    header: {
-      title: 'Deploy an application'
-    },
+    title: "Deploy an application",
+    showProgress: "horizontal",
     steps: steps,
     value: value,
-    onValueChange: setValue,
-    onComplete: function onComplete(nextValue) {
+    onChange: function onChange(_ref) {
+      var nextValue = _ref.value;
+      return setValue(nextValue);
+    },
+    messages: {
+      next: 'Continue',
+      complete: 'Deploy'
+    },
+    onComplete: function onComplete(_ref2) {
+      var nextValue = _ref2.value;
       return setResult({
         status: 'complete',
         value: nextValue
@@ -81,7 +82,10 @@ var Branching = function Branching() {
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+Branching.args = {
+  full: true
 };
 export default {
   title: 'Layout/Wizard/Branching'

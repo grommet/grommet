@@ -1,30 +1,29 @@
 import React, { useState } from 'react';
-import { Box, Button, Grommet, Layer, Notification, Paragraph, RadioButtonGroup, ResponsiveContext, Text } from 'grommet';
+import { Box, Button, Layer, Notification, Paragraph } from 'grommet';
 import { FormNext } from "grommet-icons/es6/icons/FormNext";
 import { FormPrevious } from "grommet-icons/es6/icons/FormPrevious";
 import { Wizard } from '../Wizard';
 import { WizardFooter } from '../WizardFooter';
 import { useWizard } from '../WizardContext';
-import { grommet } from '../../../themes';
 
 // Wizard inside a modal Layer. `onCancel` wires the header X to the
 // parent-owned close handler. A custom footer composed via <WizardFooter>
 // children preserves the themed shell while omitting the Cancel button.
 var NoCancelFooter = function NoCancelFooter() {
   var _useWizard = useWizard(),
-    isFirstStep = _useWizard.isFirstStep,
-    isLastStep = _useWizard.isLastStep,
+    currentStepIndex = _useWizard.currentStepIndex,
+    totalSteps = _useWizard.totalSteps,
     canGoNext = _useWizard.canGoNext,
-    canGoPrevious = _useWizard.canGoPrevious,
     previous = _useWizard.previous,
     next = _useWizard.next,
     complete = _useWizard.complete;
+  var isFirstStep = currentStepIndex <= 0;
+  var isLastStep = currentStepIndex >= totalSteps - 1;
   return /*#__PURE__*/React.createElement(WizardFooter, null, !isFirstStep && /*#__PURE__*/React.createElement(Button, {
     label: "Previous",
     icon: /*#__PURE__*/React.createElement(FormPrevious, {
       "aria-hidden": "true"
     }),
-    disabled: !canGoPrevious,
     onClick: previous
   }), isLastStep ? /*#__PURE__*/React.createElement(Button, {
     label: "Complete",
@@ -68,46 +67,23 @@ var Modal = function Modal() {
   var _useState = useState(false),
     open = _useState[0],
     setOpen = _useState[1];
-  var _useState2 = useState('narrow'),
-    kind = _useState2[0],
-    setKind = _useState2[1];
-  var _useState3 = useState(null),
-    result = _useState3[0],
-    setResult = _useState3[1];
-  var _useState4 = useState(0),
-    resetKey = _useState4[0],
-    setResetKey = _useState4[1];
+  var _useState2 = useState(null),
+    result = _useState2[0],
+    setResult = _useState2[1];
+  var _useState3 = useState(0),
+    resetKey = _useState3[0],
+    setResetKey = _useState3[1];
   var close = function close() {
     setOpen(false);
     setResetKey(function (key) {
       return key + 1;
     });
   };
-  return /*#__PURE__*/React.createElement(Grommet, {
-    theme: grommet,
-    full: true
-  }, /*#__PURE__*/React.createElement(Box, {
+  return /*#__PURE__*/React.createElement(Box, {
     fill: true,
     pad: "medium",
     gap: "medium"
-  }, /*#__PURE__*/React.createElement(ResponsiveContext.Consumer, null, function (size) {
-    return size !== 'small' && /*#__PURE__*/React.createElement(Box, {
-      direction: "row",
-      align: "center",
-      gap: "small"
-    }, /*#__PURE__*/React.createElement(Text, {
-      weight: "bold"
-    }, "Wizard kind:"), /*#__PURE__*/React.createElement(RadioButtonGroup, {
-      name: "modal-wizard-kind",
-      direction: "row",
-      gap: "medium",
-      options: ['full', 'narrow', 'wide'],
-      value: kind,
-      onChange: function onChange(event) {
-        return setKind(event.target.value);
-      }
-    }));
-  }), /*#__PURE__*/React.createElement(Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     align: "start"
   }, /*#__PURE__*/React.createElement(Button, {
     primary: true,
@@ -115,26 +91,28 @@ var Modal = function Modal() {
     onClick: function onClick() {
       return setOpen(true);
     }
-  })), open && /*#__PURE__*/React.createElement(Layer, {
+  })), open &&
+  /*#__PURE__*/
+  // Composed sizing: the wrapping Layer + Box choose the modal's
+  // dimensions. Swap these values to make the wizard narrower,
+  // wider, or full-screen — the Wizard fills whatever it's placed in.
+  React.createElement(Layer, {
     modal: true,
-    full: kind === 'full',
     position: "center",
     onEsc: close,
     onClickOutside: close
   }, /*#__PURE__*/React.createElement(Box, {
-    fill: kind === 'full',
-    width: kind === 'full' ? undefined : 'xlarge',
-    height: kind === 'full' ? undefined : 'large'
+    width: "xlarge",
+    height: "large"
   }, /*#__PURE__*/React.createElement(Wizard, {
     key: resetKey,
     "aria-label": "Modal wizard",
-    kind: kind,
-    header: {
-      title: 'Create resource'
-    },
+    title: "Create resource",
+    showProgress: "horizontal",
     steps: steps,
     footer: /*#__PURE__*/React.createElement(NoCancelFooter, null),
-    onComplete: function onComplete(value) {
+    onComplete: function onComplete(_ref) {
+      var value = _ref.value;
       setResult({
         status: 'complete',
         value: value
@@ -152,7 +130,10 @@ var Modal = function Modal() {
     onClose: function onClose() {
       return setResult(null);
     }
-  })));
+  }));
+};
+Modal.args = {
+  full: true
 };
 export default {
   title: 'Layout/Wizard/Modal'
