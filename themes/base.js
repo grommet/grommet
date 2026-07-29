@@ -1128,45 +1128,6 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         size: 'medium'
       }
     },
-    timeInput: {
-      button: {
-        margin: {
-          right: 'small'
-        }
-      },
-      container: {
-        round: 'xxsmall'
-      },
-      active: {
-        background: 'active-background',
-        pad: 'xxsmall',
-        indicator: {
-          color: {
-            dark: 'white',
-            light: 'black'
-          },
-          size: 'small'
-        }
-      },
-      drop: {
-        option: {
-          hover: {
-            background: 'active-background'
-          },
-          selected: {
-            background: 'selected',
-            color: 'white',
-            hover: {
-              // background: undefined,
-            }
-            // extend: undefined,
-          }
-        }
-      },
-      icon: {
-        // clock: undefined,
-      }
-    },
     dataSearch: {
       // icons: {
       //   search: undefined,
@@ -2859,6 +2820,45 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       // icons: {
       //   copy: undefined,
       // },
+    },
+    timeInput: {
+      button: {
+        margin: {
+          right: 'small'
+        }
+      },
+      container: {
+        round: 'xxsmall'
+      },
+      active: {
+        background: 'active-background',
+        pad: 'xxsmall',
+        indicator: {
+          color: {
+            dark: 'white',
+            light: 'black'
+          },
+          size: 'small'
+        }
+      },
+      drop: {
+        option: {
+          // background: undefined,
+          hover: {
+            background: 'active-background'
+          },
+          selected: {
+            background: 'selected',
+            color: 'white',
+            hover: {
+              // background: undefined,
+            }
+          }
+        }
+      },
+      icon: {
+        // clock: undefined,
+      }
     },
     tip: {
       content: {

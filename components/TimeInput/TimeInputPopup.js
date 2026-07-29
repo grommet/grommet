@@ -21,7 +21,7 @@ var PopupColumnBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 var PopupOption = _styledComponents["default"].div.withConfig({
   displayName: "TimeInputPopup__PopupOption",
   componentId: "sc-r2j8uh-1"
-})(["box-sizing:border-box;cursor:pointer;display:flex;padding:", ";border-radius:", ";background:", ";&:hover{background:", ";}&:focus-visible{", "}", ""], function (props) {
+})(["box-sizing:border-box;cursor:pointer;display:flex;padding:", ";border-radius:", ";background:", ";&:hover{background:", ";}&:focus-visible{", "}"], function (props) {
   return props.theme.global.edgeSize.xxsmall + " " + props.theme.global.edgeSize.xsmall;
 }, function (props) {
   var _props$theme$global$c;
@@ -46,10 +46,7 @@ var PopupOption = _styledComponents["default"].div.withConfig({
   return (0, _utils.normalizeColor)((_props$theme$timeInpu6 = props.theme.timeInput) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.drop) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.option) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.hover) == null ? void 0 : _props$theme$timeInpu6.background, props.theme);
 }, (0, _utils.focusStyle)({
   inset: true
-}), function (props) {
-  var _props$theme$timeInpu7;
-  return props.$selected && ((_props$theme$timeInpu7 = props.theme.timeInput) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.drop) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.option) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.selected) == null ? void 0 : _props$theme$timeInpu7.extend);
-});
+}));
 var optionKey = function optionKey(label, option) {
   return label.toLowerCase() + "-" + option;
 };
