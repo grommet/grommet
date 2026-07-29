@@ -3,6 +3,7 @@ import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
+import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
 import { FormClose } from 'grommet-icons/icons/FormClose';
 import { FormDown } from 'grommet-icons/icons/FormDown';
 import { FormNext } from 'grommet-icons/icons/FormNext';
@@ -2325,6 +2326,147 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         large: 3,
       },
     },
+    stepper: {
+      indicator: {
+        size: 'medium', // 'small' | 'medium' | 'large'
+        border: {
+          width: '2px',
+        },
+      },
+      label: {
+        size: 'medium',
+        substep: {
+          size: 'small',
+        },
+      },
+      connector: {
+        stroke: { width: '2px' },
+      },
+      description: {
+        size: 'small',
+        color: 'text-weak',
+      },
+      helperText: {
+        size: 'xsmall',
+        color: 'text-weak',
+      },
+      // States: [component].[state].[element].[property]
+      pending: {
+        indicator: {
+          background: 'background-front',
+          color: 'text-strong',
+          border: 'text-xweak',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            background: 'background-front',
+            border: 'text-strong',
+          },
+        },
+        label: { color: 'text' },
+        connector: { color: 'border' },
+      },
+      current: {
+        indicator: {
+          icon: StatusGoodSmall,
+          iconSize: 'medium',
+          background: 'brand',
+          color: 'white',
+          border: 'brand',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            color: 'white',
+          },
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+        },
+      },
+      currentCompleted: {
+        indicator: {
+          icon: FormCheckmark,
+          iconSize: 'medium',
+          background: 'brand',
+          color: 'white',
+          border: 'brand',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            color: 'white',
+          },
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+        },
+      },
+      completed: {
+        indicator: {
+          icon: FormCheckmark,
+          iconSize: 'medium',
+          background: 'background-front',
+          color: 'brand',
+          border: 'brand',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            background: 'background-front',
+          },
+        },
+        label: { color: 'text-weak' },
+        connector: { color: 'brand' },
+      },
+      error: {
+        indicator: {
+          icon: StatusCriticalSmall,
+          background: 'background-front',
+          color: 'status-critical',
+          border: 'status-critical',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            background: 'background-front',
+          },
+        },
+        label: { color: 'text' },
+        connector: { color: 'status-critical' },
+        helperText: { color: 'status-critical' },
+      },
+      currentError: {
+        indicator: {
+          icon: StatusCriticalSmall,
+          background: 'status-critical',
+          color: 'white',
+          border: 'status-critical',
+          substep: {
+            iconSize: 'small',
+          },
+          hover: {
+            color: 'white',
+          },
+        },
+        label: {
+          color: 'status-critical',
+        },
+      },
+      disabled: {
+        indicator: {
+          background: 'background-contrast',
+          color: 'text-weak',
+          border: 'border',
+          substep: {
+            iconSize: 'small',
+          },
+        },
+        label: { color: 'text-weak' },
+        connector: { color: 'border' },
+      },
+    },
     table: {
       caption: {
         margin: { bottom: 'xxsmall' },
@@ -2452,6 +2594,40 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // icons: {
       //   copy: undefined,
       // },
+    },
+    timeInput: {
+      button: {
+        margin: { right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+      active: {
+        background: 'active-background',
+        pad: 'xxsmall',
+        indicator: {
+          color: { dark: 'white', light: 'black' },
+          size: 'small',
+        },
+      },
+      drop: {
+        option: {
+          // background: undefined,
+          hover: {
+            background: 'active-background',
+          },
+          selected: {
+            background: 'selected',
+            color: 'white',
+            hover: {
+              // background: undefined,
+            },
+          },
+        },
+      },
+      icon: {
+        // clock: undefined,
+      },
     },
     tip: {
       content: {

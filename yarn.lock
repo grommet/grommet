@@ -4006,6 +4006,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hpe-design/icons-grommet@npm:^1.1.0":
+  version: 1.2.0
+  resolution: "@hpe-design/icons-grommet@npm:1.2.0"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    styled-components: ^6.0.0
+  checksum: 10c0/2caf21c4a8c3d937d5c7be9155e8baf16bed3f6ce2785cb1f8b1573fb39bc0d4d8796a1bb8aafb988a74a97fad948ca53b6db47e1796070170a033f77ecb6392
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -5554,6 +5564,15 @@ __metadata:
   version: 5.0.0
   resolution: "@storybook/global@npm:5.0.0"
   checksum: 10c0/8f1b61dcdd3a89584540896e659af2ecc700bc740c16909a7be24ac19127ea213324de144a141f7caf8affaed017d064fea0618d453afbe027cf60f54b4a6d0b
+  languageName: node
+  linkType: hard
+
+"@storybook/icons@npm:^2.0.1":
+  version: 2.1.0
+  resolution: "@storybook/icons@npm:2.1.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/73614dbb3e9c4756a6838525a6c78f85b24a5a09782512a39f24fe5a435992d6af92591ce18ac7a9a08c14aec10c08b158f68126aa29125058e01169c827bed6
   languageName: node
   linkType: hard
 
@@ -11310,17 +11329,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet-theme-hpe@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "grommet-theme-hpe@npm:7.0.2"
+"grommet-theme-hpe@npm:^8.1.4":
+  version: 8.1.4
+  resolution: "grommet-theme-hpe@npm:8.1.4"
   dependencies:
-    hpe-design-tokens: "npm:~1.4.0"
+    "@hpe-design/icons-grommet": "npm:^1.1.0"
+    hpe-design-tokens: "npm:^2.2.3"
   peerDependencies:
-    grommet: ^2.49.0
-    grommet-icons: ^4.12.4
+    grommet: ^2.50.0
     react: ^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0
-    styled-components: ^5.0.0 || ^6.0.0
-  checksum: 10c0/e7f9ec197180109167b93b13912d523dd46a0fb0ba2e25fb0746bc8248da799068eeb2eb90dff99811239c9ccd580a3449a1dea4f3acb419c181ce9a8f110b27
+    styled-components: ^6.0.0
+  checksum: 10c0/f55f5ecd463cf771ebdda64bbcda75ffe51973c144d5b18180789d04050199a5629d12261aae880545382252faa9fe77273cc3aa2ab194ec82f3eb8fe8ed0712
   languageName: node
   linkType: hard
 
@@ -11389,7 +11408,7 @@ __metadata:
     fs-extra: "npm:^11.3.5"
     globals: "npm:^17.6.0"
     grommet-icons: "npm:^4.14.0"
-    grommet-theme-hpe: "npm:^7.0.2"
+    grommet-theme-hpe: "npm:^8.1.4"
     jest: "npm:^30.4.2"
     jest-axe: "npm:^10.0.0"
     jest-cli: "npm:^30.3.0"
@@ -11410,6 +11429,7 @@ __metadata:
     regenerator-runtime: "npm:^0.14.1"
     simple-git: "npm:^3.36.0"
     storybook: "npm:^10.4.2"
+    storybook-dark-mode: "npm:^5.0.0"
     styled-components: "npm:^6.4.2"
     tarball-extract: "npm:^0.0.6"
     testcafe: "npm:^3.7.4"
@@ -11602,10 +11622,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hpe-design-tokens@npm:~1.4.0":
-  version: 1.4.1
-  resolution: "hpe-design-tokens@npm:1.4.1"
-  checksum: 10c0/d5dc274fc5b4f99cfc908ddcc64ef860ba3a8b9bb99effdb4677824d1cff6dd2dac8f1196e5bb0bd3ad04c8d9cebccfb769492d8ccc1aed01bc83cf18a4506e9
+"hpe-design-tokens@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "hpe-design-tokens@npm:2.2.3"
+  checksum: 10c0/3348e864d7a43e30e529730f208bd3bf09e5c9685e8d0a792e7c7d9f20fad9955bec9e6422e9ea83cb89abd6076be6b12106ae0e635efbba0fbeb5e84764ca26
   languageName: node
   linkType: hard
 
@@ -14273,6 +14293,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"map-or-similar@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "map-or-similar@npm:1.5.0"
+  checksum: 10c0/33c6ccfdc272992e33e4e99a69541a3e7faed9de3ac5bc732feb2500a9ee71d3f9d098980a70b7746e7eeb7f859ff7dfb8aa9b5ecc4e34170a32ab78cfb18def
+  languageName: node
+  linkType: hard
+
 "markdown-to-jsx@npm:7.4.4":
   version: 7.4.4
   resolution: "markdown-to-jsx@npm:7.4.4"
@@ -14330,6 +14357,15 @@ __metadata:
     tree-dump: "npm:^1.0.1"
     tslib: "npm:^2.0.0"
   checksum: 10c0/2901f69e80e1fbefa8aafe994a253fff6f34eb176d8b80d57476311611e516a11ab4dd93f852c8739fe04f2b57d6a4ca7a1828fa0bd401ce631bcac214b3d58b
+  languageName: node
+  linkType: hard
+
+"memoizerific@npm:^1.11.3":
+  version: 1.11.3
+  resolution: "memoizerific@npm:1.11.3"
+  dependencies:
+    map-or-similar: "npm:^1.5.0"
+  checksum: 10c0/661bf69b7afbfad57f0208f0c63324f4c96087b480708115b78ee3f0237d86c7f91347f6db31528740b2776c2e34c709bcb034e1e910edee2270c9603a0a469e
   languageName: node
   linkType: hard
 
@@ -17416,6 +17452,19 @@ __metadata:
     es-errors: "npm:^1.3.0"
     internal-slot: "npm:^1.1.0"
   checksum: 10c0/de4e45706bb4c0354a4b1122a2b8cc45a639e86206807ce0baf390ee9218d3ef181923fa4d2b67443367c491aa255c5fbaa64bb74648e3c5b48299928af86c09
+  languageName: node
+  linkType: hard
+
+"storybook-dark-mode@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "storybook-dark-mode@npm:5.0.0"
+  dependencies:
+    "@storybook/icons": "npm:^2.0.1"
+    fast-deep-equal: "npm:^3.1.3"
+    memoizerific: "npm:^1.11.3"
+  peerDependencies:
+    storybook: ^10.0.0
+  checksum: 10c0/a098909b63fc6b7d5729c726b9220b4c52538dc99758b7669724bb0c2425a8e07f31889129ec530e2aa730438e4d3be3725c4e660ed6535b6ed03e8e474823ec
   languageName: node
   linkType: hard
 
