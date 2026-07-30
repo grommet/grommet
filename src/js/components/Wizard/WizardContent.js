@@ -8,39 +8,16 @@ import { useWizard } from './WizardContext';
 // validation error message.
 export const WizardContent = ({ ...rest }) => {
   const { theme } = useThemeValue();
-  const {
-    currentStepObj,
-    formValue,
-    setFormValue,
-    next,
-    previous,
-    goTo,
-    skip,
-    complete,
-    cancel,
-    validationError,
-    renderStep,
-  } = useWizard();
+  const wizard = useWizard();
+  const { currentStepObj, renderStep, validationError } = wizard;
 
   const contentTheme = theme.wizard?.content;
   const helperTheme = theme.wizard?.error?.helperText;
 
   if (!currentStepObj) return null;
 
-  // API exposed to renderStep callbacks.
-  const wizardApi = {
-    formValue,
-    setFormValue,
-    next,
-    previous,
-    goTo,
-    skip,
-    complete,
-    cancel,
-  };
-
   const stepRender = renderStep || currentStepObj.render;
-  const body = stepRender ? stepRender(currentStepObj, wizardApi) : null;
+  const body = stepRender ? stepRender(currentStepObj, wizard) : null;
 
   return (
     <Box

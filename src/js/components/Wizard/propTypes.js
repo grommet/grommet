@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-let PropType = {};
+let propType = {};
 
 if (process.env.NODE_ENV !== 'production') {
   const stepShape = {
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
     children: PropTypes.array,
   };
 
-  PropType = {
+  propType = {
     steps: PropTypes.arrayOf(PropTypes.shape(nestedStepShape)).isRequired,
     currentStep: PropTypes.string,
     defaultStep: PropTypes.string,
@@ -58,4 +58,4 @@ if (process.env.NODE_ENV !== 'production') {
   };
 }
 
-export const WizardPropTypes = PropType;
+export const WizardPropTypes = propType;

@@ -28,7 +28,7 @@ export interface WizardStep<TValue = Record<string, any>> {
   description?: React.ReactNode;
   render?: (
     step: WizardStep<TValue>,
-    api: WizardApi<TValue>,
+    api: WizardContextValue<TValue>,
   ) => React.ReactNode;
   validate?: (
     value: TValue,
@@ -44,17 +44,6 @@ export interface WizardStep<TValue = Record<string, any>> {
   disabledReason?: string;
   children?: WizardStep<TValue>[];
   'aria-label'?: string;
-}
-
-export interface WizardApi<TValue = Record<string, any>> {
-  formValue: TValue;
-  setFormValue: (next: TValue | ((prev: TValue) => TValue)) => void;
-  next: () => void;
-  previous: () => void;
-  goTo: (stepId: string) => void;
-  skip: () => void;
-  complete: () => void;
-  cancel: () => void;
 }
 
 // Discriminated union for onStepChange events. Consumers can narrow on
@@ -101,10 +90,12 @@ export interface WizardProps<TValue = Record<string, any>> {
   onCancel?: (event: { value: TValue; reason: 'user' }) => void;
   renderStep?: (
     step: WizardStep<TValue>,
-    api: WizardApi<TValue>,
+    api: WizardContextValue<TValue>,
   ) => React.ReactNode;
   title?: string;
-  footer?: React.ReactNode | ((api: WizardApi<TValue>) => React.ReactNode);
+  footer?:
+    | React.ReactNode
+    | ((api: WizardContextValue<TValue>) => React.ReactNode);
   scrollToTop?: boolean;
   value?: TValue;
   defaultValue?: TValue;
@@ -144,7 +135,7 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   showProgress: WizardShowProgress;
   renderStep?: (
     step: WizardStep<TValue>,
-    api: WizardApi<TValue>,
+    api: WizardContextValue<TValue>,
   ) => React.ReactNode;
 }
 

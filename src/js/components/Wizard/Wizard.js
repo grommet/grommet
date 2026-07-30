@@ -630,6 +630,28 @@ const Wizard = forwardRef(
       ],
     );
 
+    if (!isOpen) return null;
+
+    // Custom composition: consumers supply their own tree via `children`.
+    // Skip the default-layout work (footer resolution, theme lookups, JSX
+    // construction) since it would just be discarded.
+    if (children) {
+      return (
+        <WizardContext.Provider value={contextValue}>
+          <StyledWizard
+            ref={wizardRef}
+            id={id}
+            aria-label={ariaLabel}
+            role="region"
+            {...passThemeFlag}
+            {...rest}
+          >
+            {children}
+          </StyledWizard>
+        </WizardContext.Provider>
+      );
+    }
+
     // Resolve footer node (function, node, or default).
     let footerNode;
     if (typeof footer === 'function') {
@@ -667,32 +689,23 @@ const Wizard = forwardRef(
         >
           <Box
             pad={bodyTheme?.pad}
-            gap={bodyTheme?.gap}
-            flex={{ grow: 1, shrink: 1 }}
+            gap={{ row: 'none', column: 'medium' }}
+            flex="grow"
             fill="horizontal"
+            direction={effectiveShowProgress === 'vertical' ? 'row' : 'column'}
           >
-            {effectiveShowProgress === 'horizontal' &&
-              responsiveSize !== 'small' && <WizardProgress />}
-            <Box
-              direction={
-                effectiveShowProgress === 'vertical' ? 'row' : 'column'
-              }
-              flex={{ grow: 1, shrink: 1 }}
-            >
-              {effectiveShowProgress === 'vertical' &&
-                responsiveSize !== 'small' && <WizardProgress />}
-              <Box flex={{ grow: 1, shrink: 1 }}>
-                <WizardStepHeader />
-                <WizardContent />
-              </Box>
+            {effectiveShowProgress && responsiveSize !== 'small' && (
+              <WizardProgress />
+            )}
+            <Box flex="grow">
+              <WizardStepHeader />
+              <WizardContent />
             </Box>
           </Box>
         </Box>
         {footerNode}
       </>
     );
-
-    if (!isOpen) return null;
 
     return (
       <WizardContext.Provider value={contextValue}>
@@ -704,20 +717,17 @@ const Wizard = forwardRef(
           {...passThemeFlag}
           {...rest}
         >
-          {children || (
-            <Box
-              background={containerTheme?.background}
-              pad={containerTheme?.pad}
-              gap={containerTheme?.gap}
-              round={containerTheme?.round}
-              elevation={containerTheme?.elevation}
-              // Shrink so the middle region can bound <WizardContent>.
-              flex
-              style={{ minHeight: 0 }}
-            >
-              {defaultLayout}
-            </Box>
-          )}
+          <Box
+            background={containerTheme?.background}
+            pad={containerTheme?.pad}
+            gap={containerTheme?.gap}
+            round={containerTheme?.round}
+            elevation={containerTheme?.elevation}
+            flex
+            style={{ minHeight: 0 }}
+          >
+            {defaultLayout}
+          </Box>
         </StyledWizard>
       </WizardContext.Provider>
     );
