@@ -22,6 +22,7 @@ import { ButtonPropTypes } from './propTypes';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { OptionsContext } from '../../contexts/OptionsContext';
 import { Box } from '../Box';
 import { Tip } from '../Tip';
 
@@ -217,6 +218,7 @@ const Button = forwardRef(
     ref,
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
+    const { button: buttonOptions } = useContext(OptionsContext);
     const [focus, setFocus] = useState();
     const [hover, setHover] = useState(false);
     const announce = useContext(AnnounceContext);
@@ -533,7 +535,11 @@ const Button = forwardRef(
           onMouseOver={onMouseOverButton}
           onMouseOut={onMouseOutButton}
           pad={pad}
-          plain={plain || Children.count(children) > 0}
+          plain={
+            plain ||
+            (buttonOptions?.childrenPlain !== false &&
+              Children.count(children) > 0)
+          }
           primary={primary}
           selected={selected}
           sizeProp={size}
@@ -580,7 +586,9 @@ const Button = forwardRef(
           plain={
             typeof plain !== 'undefined'
               ? plain
-              : Children.count(children) > 0 || (icon && !label)
+              : (buttonOptions?.childrenPlain !== false &&
+                  Children.count(children) > 0) ||
+                (icon && !label)
           }
           primary={primary}
           sizeProp={size}

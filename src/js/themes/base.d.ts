@@ -1041,41 +1041,6 @@ export interface ThemeType {
       size?: string;
     };
   };
-  timeInput?: {
-    button?: {
-      margin?: string;
-    };
-    container?: {
-      round?: RoundType;
-    };
-    active?: {
-      background?: ColorType;
-      pad?: string;
-      indicator?: {
-        color?: ColorType;
-        size?: string;
-      };
-    };
-    drop?: {
-      option?: {
-        background?: ColorType;
-        hover?: {
-          background?: ColorType;
-        };
-        selected?: {
-          background?: ColorType;
-          color?: ColorType;
-          hover?: {
-            background?: ColorType;
-          };
-          extend?: ExtendType;
-        };
-      };
-    };
-    icon?: {
-      clock?: React.ReactNode | Icon;
-    };
-  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
@@ -2392,6 +2357,40 @@ export interface ThemeType {
     };
     suggestions?: {
       extend?: ExtendType;
+    };
+  };
+  timeInput?: {
+    button?: {
+      margin?: MarginType;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    drop?: {
+      option?: {
+        background?: ColorType;
+        hover?: {
+          background?: ColorType;
+        };
+        selected?: {
+          background?: ColorType;
+          color?: ColorType;
+          hover?: {
+            background?: ColorType;
+          };
+        };
+      };
+    };
+    icon?: {
+      clock?: React.ReactNode | Icon;
     };
   };
   tip?: {
