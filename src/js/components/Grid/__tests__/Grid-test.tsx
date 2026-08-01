@@ -87,29 +87,33 @@ describe('Grid', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('areas renders with warning and throws error', () => {
+  test('areas renders with warning when rows/columns are not arrays', () => {
+    // regression test: `columns`/`rows` may legitimately be a non-array
+    // value (e.g. a size keyword string, or a `{ count, size }` shape, per
+    // propTypes) while `areas` uses the named-area object form, which
+    // previously crashed with `props.columns.map is not a function`
+    // instead of just warning.
     console.error = jest.fn();
     console.warn = jest.fn();
     const warnSpy = jest.spyOn(console, 'warn');
-    expect(() => {
-      render(
-        <Grommet>
-          <Grid
-            rows={['xxsmall', 'medium', 'xsmall']}
-            columns="small"
-            areas={[
-              { name: 'header', start: [0, 0], end: [0, 1] },
-              { name: 'main', start: [1, 0], end: [1, 0] },
-              { name: 'sidebar', start: [1, 1], end: [1, 1] },
-              { name: 'footer', start: [2, 0], end: [2, 1] },
-            ]}
-          />
-        </Grommet>,
-      );
-    }).toThrow('props.columns.map is not a function');
+    const { container } = render(
+      <Grommet>
+        <Grid
+          rows={['xxsmall', 'medium', 'xsmall']}
+          columns="small"
+          areas={[
+            { name: 'header', start: [0, 0], end: [0, 1] },
+            { name: 'main', start: [1, 0], end: [1, 0] },
+            { name: 'sidebar', start: [1, 1], end: [1, 1] },
+            { name: 'footer', start: [2, 0], end: [2, 1] },
+          ]}
+        />
+      </Grommet>,
+    );
     expect(warnSpy).toHaveBeenCalledWith(
       'Grid `areas` requires `rows` and `columns` to be arrays.',
     );
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('areas renders when given an array of string arrays', () => {
