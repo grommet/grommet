@@ -43,7 +43,7 @@ export const WizardHeader = ({ title, children, ...rest }) => {
         {content}
       </Box>
       <Button
-        a11yTitle={closeLabel}
+        aria-label={closeLabel}
         icon={CloseIcon ? <CloseIcon aria-hidden="true" /> : undefined}
         onClick={cancel}
       />

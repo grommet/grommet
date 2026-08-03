@@ -12,7 +12,7 @@ export const WizardContent = ({ ...rest }) => {
   const { currentStepObj, renderStep, validationError } = wizard;
 
   const contentTheme = theme.wizard?.content;
-  const helperTheme = theme.wizard?.error?.helperText;
+  const errorTheme = theme.wizard?.error;
 
   if (!currentStepObj) return null;
 
@@ -32,7 +32,7 @@ export const WizardContent = ({ ...rest }) => {
     >
       {body}
       {validationError && (
-        <Text role="alert" aria-live="polite" {...helperTheme}>
+        <Text role="alert" aria-live="polite" {...errorTheme}>
           {validationError}
         </Text>
       )}

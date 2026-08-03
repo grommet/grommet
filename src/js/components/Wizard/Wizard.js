@@ -182,8 +182,6 @@ const Wizard = forwardRef(
     );
 
     const totalSteps = flatSteps.length;
-    const isFirstStep = currentStepIndex <= 0;
-    const isLastStep = currentStepIndex >= totalSteps - 1;
 
     // Derive step status; parents aggregate from their children.
     const getStepStatus = useCallback(
@@ -291,9 +289,7 @@ const Wizard = forwardRef(
         if (result === false) {
           return {
             ok: false,
-            error:
-              messages?.validationError ||
-              format({ id: 'wizard.validationError' }),
+            error: format({ id: 'wizard.validationError', messages }),
           };
         }
         if (typeof result === 'string') return { ok: false, error: result };
@@ -304,7 +300,8 @@ const Wizard = forwardRef(
         setIsValidating(false);
         return {
           ok: false,
-          error: err?.message || format({ id: 'wizard.validationError' }),
+          error:
+            err?.message || format({ id: 'wizard.validationError', messages }),
         };
       }
     }, [currentStepObj, formValue, format, messages]);
@@ -652,26 +649,7 @@ const Wizard = forwardRef(
       );
     }
 
-    // Resolve footer node (function, node, or default).
-    let footerNode;
-    if (typeof footer === 'function') {
-      footerNode = footer({
-        next,
-        previous,
-        goTo,
-        skip,
-        complete,
-        cancel,
-        currentStep,
-        currentStepObj,
-        isFirstStep,
-        isLastStep,
-      });
-    } else if (footer !== undefined) {
-      footerNode = footer;
-    } else {
-      footerNode = <WizardFooter />;
-    }
+    const footerNode = footer ?? <WizardFooter />;
 
     const containerTheme = theme.wizard?.container;
     const bodyTheme = theme.wizard?.body;
@@ -689,7 +667,7 @@ const Wizard = forwardRef(
         >
           <Box
             pad={bodyTheme?.pad}
-            gap={{ row: 'none', column: 'medium' }}
+            gap={bodyTheme?.gap}
             flex="grow"
             fill="horizontal"
             direction={effectiveShowProgress === 'vertical' ? 'row' : 'column'}
@@ -724,7 +702,6 @@ const Wizard = forwardRef(
             round={containerTheme?.round}
             elevation={containerTheme?.elevation}
             flex
-            style={{ minHeight: 0 }}
           >
             {defaultLayout}
           </Box>

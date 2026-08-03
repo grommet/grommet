@@ -2187,7 +2187,7 @@ export interface ThemeType {
     };
     body?: {
       pad?: PadType;
-      gap?: GapType;
+      gap?: GridGapType;
       extend?: ExtendType;
     };
     header?: {
@@ -2240,7 +2240,7 @@ export interface ThemeType {
     };
     footer?: {
       pad?: PadType;
-      gap?: GapType;
+      gap?: GridGapType;
       background?: BackgroundType;
       border?: BorderType;
       justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
@@ -2254,12 +2254,9 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     error?: {
-      icon?: React.ReactNode | Icon;
-      helperText?: {
-        color?: ColorType;
-        size?: string;
-        margin?: MarginType;
-      };
+      color?: ColorType;
+      size?: string;
+      margin?: MarginType;
     };
   };
   table?: {

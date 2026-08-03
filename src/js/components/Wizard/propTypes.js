@@ -34,7 +34,7 @@ if (process.env.NODE_ENV !== 'production') {
     onCancel: PropTypes.func,
     renderStep: PropTypes.func,
     title: PropTypes.string,
-    footer: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+    footer: PropTypes.node,
     scrollToTop: PropTypes.bool,
     value: PropTypes.object,
     defaultValue: PropTypes.object,

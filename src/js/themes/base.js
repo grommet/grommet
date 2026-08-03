@@ -2695,7 +2695,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       body: {
         pad: { horizontal: 'large', vertical: 'large' },
-        gap: 'medium',
+        gap: { row: 'none', column: 'medium' },
       },
       header: {
         pad: { horizontal: 'large', vertical: 'small' },
@@ -2741,7 +2741,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       footer: {
         pad: { horizontal: 'large', vertical: 'small' },
-        gap: 'small',
+        gap: { row: 'xsmall', column: 'small' },
         background: 'background-front',
         justify: 'end',
         button: {
@@ -2753,12 +2753,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       error: {
-        icon: undefined,
-        helperText: {
-          color: 'status-error',
-          size: 'small',
-          margin: { top: 'xsmall' },
-        },
+        color: 'status-error',
+        size: 'small',
+        margin: { top: 'xsmall' },
       },
     },
     worldMap: {

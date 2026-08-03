@@ -93,9 +93,7 @@ export interface WizardProps<TValue = Record<string, any>> {
     api: WizardContextValue<TValue>,
   ) => React.ReactNode;
   title?: string;
-  footer?:
-    | React.ReactNode
-    | ((api: WizardContextValue<TValue>) => React.ReactNode);
+  footer?: React.ReactNode;
   scrollToTop?: boolean;
   value?: TValue;
   defaultValue?: TValue;
