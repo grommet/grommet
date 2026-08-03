@@ -18,6 +18,10 @@ const basicSteps = [
 const renderStep = (step) => <p>{`Content for ${step.title}`}</p>;
 
 describe('Wizard', () => {
+  beforeEach(() => {
+    console.warn = jest.fn();
+  });
+
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>
@@ -310,7 +314,8 @@ describe('Wizard', () => {
   });
 
   test('falls back to vertical when horizontal has sub-steps', () => {
-    const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const warn = jest.fn();
+    console.warn = warn;
     const steps = [
       {
         id: 'parent',
@@ -335,11 +340,11 @@ describe('Wizard', () => {
     expect(warn).toHaveBeenCalledWith(
       expect.stringContaining('sub-steps is not supported'),
     );
-    warn.mockRestore();
   });
 
   test('warns in dev when nesting is deeper than one level', () => {
-    const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const warn = jest.fn();
+    console.warn = warn;
     const steps = [
       {
         id: 'parent',
@@ -368,7 +373,6 @@ describe('Wizard', () => {
     );
     // Grandchild must NOT be reachable as a nav target.
     expect(screen.queryByRole('heading', { name: 'Grandchild' })).toBeNull();
-    warn.mockRestore();
   });
 
   test('renders custom composition when children are provided', () => {
