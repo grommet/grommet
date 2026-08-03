@@ -177,11 +177,10 @@ var Cards = exports.Cards = /*#__PURE__*/_react["default"].forwardRef(function (
     if (children) {
       content = children(item, index);
     } else {
-      var _ref2, _ref3;
       content = /*#__PURE__*/_react["default"].createElement(_Card.Card, {
         key: item.id || index.toString(),
         as: !(onOrder || sizeKey) && as === 'ul' ? 'li' : undefined
-      }, /*#__PURE__*/_react["default"].createElement(_CardBody.CardBody, null, (_ref2 = (_ref3 = typeof item === 'string' && item) != null ? _ref3 : typeof item === 'object' && Object.values(item)[0]) != null ? _ref2 : index));
+      }, /*#__PURE__*/_react["default"].createElement(_CardBody.CardBody, null, typeof item === 'string' && item || typeof item === 'object' && Object.values(item)[0] || index));
     }
 
     // If the items are orderable or sized by a property, wrap them in a

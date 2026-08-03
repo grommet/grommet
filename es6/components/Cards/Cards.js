@@ -171,11 +171,10 @@ var Cards = /*#__PURE__*/React.forwardRef(function (_ref, ref) {
     if (children) {
       content = children(item, index);
     } else {
-      var _ref2, _ref3;
       content = /*#__PURE__*/React.createElement(Card, {
         key: item.id || index.toString(),
         as: !(onOrder || sizeKey) && as === 'ul' ? 'li' : undefined
-      }, /*#__PURE__*/React.createElement(CardBody, null, (_ref2 = (_ref3 = typeof item === 'string' && item) != null ? _ref3 : typeof item === 'object' && Object.values(item)[0]) != null ? _ref2 : index));
+      }, /*#__PURE__*/React.createElement(CardBody, null, typeof item === 'string' && item || typeof item === 'object' && Object.values(item)[0] || index));
     }
 
     // If the items are orderable or sized by a property, wrap them in a
