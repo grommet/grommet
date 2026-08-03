@@ -202,14 +202,18 @@ exports[`Cards data objects 1`] = `
     >
       <div
         class="c3"
-      />
+      >
+        one
+      </div>
     </li>
     <li
       class="c2"
     >
       <div
         class="c3"
-      />
+      >
+        two
+      </div>
     </li>
   </ul>
 </div>
@@ -963,14 +967,18 @@ exports[`Cards renders a11yTitle and aria-label 1`] = `
       >
         <div
           class="c3"
-        />
+        >
+          alpha
+        </div>
       </li>
       <li
         class="c2"
       >
         <div
           class="c3"
-        />
+        >
+          beta
+        </div>
       </li>
     </ul>
     <ul
@@ -982,14 +990,18 @@ exports[`Cards renders a11yTitle and aria-label 1`] = `
       >
         <div
           class="c3"
-        />
+        >
+          alpha
+        </div>
       </li>
       <li
         class="c2"
       >
         <div
           class="c3"
-        />
+        >
+          beta
+        </div>
       </li>
     </ul>
   </div>
