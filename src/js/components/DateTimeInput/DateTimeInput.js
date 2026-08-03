@@ -121,7 +121,7 @@ const separatorBeforeSection = (section) => {
   return ' ';
 };
 
-const getLocaleSectionLayout = (format, showSeconds) => {
+const getLocaleSectionLayout = (format, showSeconds, locale) => {
   const fallbackOrder = getSectionOrder(format, showSeconds);
   const fallbackPrefixes = {};
   fallbackOrder.forEach((section, index) => {
@@ -130,7 +130,7 @@ const getLocaleSectionLayout = (format, showSeconds) => {
   });
 
   try {
-    const formatter = new Intl.DateTimeFormat(undefined, {
+    const formatter = new Intl.DateTimeFormat(locale || undefined, {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
@@ -180,9 +180,10 @@ const getLocaleSectionLayout = (format, showSeconds) => {
   }
 };
 
-const getLocaleTimeFormat = () => {
+const getLocaleTimeFormat = (locale) => {
   try {
-    return new Intl.DateTimeFormat().resolvedOptions().hour12 === false
+    return new Intl.DateTimeFormat(locale || undefined).resolvedOptions()
+      .hour12 === false
       ? '24'
       : '12';
   } catch {
@@ -353,6 +354,7 @@ const DateTimeInput = forwardRef(
       format,
       id,
       inline = false,
+      locale,
       messages,
       minuteStep = 1,
       name,
@@ -370,8 +372,8 @@ const DateTimeInput = forwardRef(
     const formContext = useContext(FormContext);
     const { useFormInput } = formContext;
     const resolvedFormat = useMemo(
-      () => format || getLocaleTimeFormat(),
-      [format],
+      () => format || getLocaleTimeFormat(locale),
+      [format, locale],
     );
 
     const inputRef = useForwardedRef(refArg);
@@ -398,8 +400,8 @@ const DateTimeInput = forwardRef(
       [resolvedFormat, value],
     );
     const { sectionOrder, separatorMap } = useMemo(
-      () => getLocaleSectionLayout(resolvedFormat, showSeconds),
-      [resolvedFormat, showSeconds],
+      () => getLocaleSectionLayout(resolvedFormat, showSeconds, locale),
+      [resolvedFormat, showSeconds, locale],
     );
     const firstSection = sectionOrder[0] || SECTION_DAY;
     const lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_SECOND;

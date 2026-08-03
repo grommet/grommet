@@ -5,6 +5,7 @@ export interface DateTimeInputProps {
   disabled?: boolean;
   format?: '12' | '24';
   id?: string;
+  locale?: string;
   inline?: boolean;
   messages?: {
     activeSection?: string;
