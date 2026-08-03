@@ -711,6 +711,7 @@ const TimeInput = forwardRef(
           sections={sections}
           setActiveSection={setActiveSection}
           setSectionValue={setSectionValue}
+          {...inputRest}
         />
       );
     }
