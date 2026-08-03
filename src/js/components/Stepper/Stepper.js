@@ -2,6 +2,7 @@ import React, {
   forwardRef,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useRef,
   useState,
@@ -9,7 +10,6 @@ import React, {
 
 import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
-import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Keyboard } from '../Keyboard';
 
@@ -72,12 +72,20 @@ const Stepper = forwardRef(
     },
     ref,
   ) => {
-    const { theme } = useThemeValue();
     const { format } = useContext(MessageContext);
     const stepRefs = useRef(new Map());
     const flatSteps = useMemo(() => flattenSteps(steps), [steps]);
     const stepsRef = useRef(flatSteps);
     stepsRef.current = flatSteps;
+
+    useEffect(() => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(
+          'Warning: Stepper is currently in beta. The API is subject ' +
+            'to change in future releases.',
+        );
+      }
+    }, []);
 
     // Force vertical if steps have children
     // (horizontal substeps not supported)
@@ -369,10 +377,6 @@ const Stepper = forwardRef(
         fill={direction}
         id={id}
         overflow="hidden"
-        gap={{
-          row: theme.stepper?.horizontal?.gap,
-          column: theme.stepper?.vertical?.gap,
-        }}
         pad="none"
         margin="none"
         style={{ listStyle: 'none' }}
