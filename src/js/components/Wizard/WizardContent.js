@@ -16,7 +16,7 @@ export const WizardContent = ({ ...rest }) => {
 
   if (!currentStepObj) return null;
 
-  const stepRender = renderStep || currentStepObj.render;
+  const stepRender = currentStepObj.render || renderStep;
   const body = stepRender ? stepRender(currentStepObj, wizard) : null;
 
   return (
