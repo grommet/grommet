@@ -49,9 +49,7 @@ if (process.env.NODE_ENV !== 'production') {
       cancel: PropTypes.string,
       close: PropTypes.string,
       complete: PropTypes.string,
-      stepHeader: PropTypes.shape({
-        counter: PropTypes.string,
-      }),
+      counter: PropTypes.string,
       progress: PropTypes.string,
       validationError: PropTypes.string,
     }),

@@ -25,8 +25,7 @@ export const WizardHeader = ({ title, children, ...rest }) => {
         );
 
   const CloseIcon = headerTheme?.close?.icon;
-  const closeLabel =
-    messages?.close || format({ id: 'wizard.close' }) || 'Close';
+  const closeLabel = format({ id: 'wizard.close', messages });
 
   return (
     <Box

@@ -73,9 +73,7 @@ export interface WizardMessages {
   cancel?: string;
   close?: string;
   complete?: string;
-  stepHeader?: {
-    counter?: string;
-  };
+  counter?: string;
   progress?: string;
   validationError?: string;
 }

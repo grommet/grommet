@@ -105,11 +105,7 @@ export const WizardFooter = ({ children, ...rest }) => {
           <Box
             background={footerTheme?.background}
             border={footerTheme?.border}
-            pad={
-              isSmall
-                ? { horizontal: 'small', vertical: 'small' }
-                : footerTheme?.pad
-            }
+            pad={footerTheme?.pad}
             gap={footerTheme?.gap}
             direction="row"
             justify={footerTheme?.justify}

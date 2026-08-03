@@ -22,12 +22,11 @@ export const WizardStepHeader = ({ ...rest }) => {
   const stepHeaderTheme = theme.wizard?.stepHeader;
   const counterTheme = theme.wizard?.stepHeader?.counter;
 
-  const counterTemplate =
-    messages?.stepHeader?.counter ||
-    format({
-      id: 'wizard.stepHeader.counter',
-      values: { step: currentStepIndex + 1, total: totalSteps },
-    });
+  const counterTemplate = format({
+    id: 'wizard.stepHeader.counter',
+    values: { step: currentStepIndex + 1, total: totalSteps },
+    messages,
+  });
 
   return (
     <StyledWizardFocusAnchor
