@@ -182,10 +182,10 @@ const getLocaleSectionLayout = (format, showSeconds, locale) => {
 
 const getLocaleTimeFormat = (locale) => {
   try {
-    return new Intl.DateTimeFormat(locale || undefined).resolvedOptions()
-      .hour12 === false
-      ? '24'
-      : '12';
+    const { hour12 } = new Intl.DateTimeFormat(locale || undefined, {
+      hour: 'numeric',
+    }).resolvedOptions();
+    return hour12 === false ? '24' : '12';
   } catch {
     return '12';
   }
@@ -379,7 +379,6 @@ const DateTimeInput = forwardRef(
     const inputRef = useForwardedRef(refArg);
     const containerRef = useRef();
     const triggerRef = useRef();
-    const dropContentRef = useRef();
     const segmentRefs = useRef({});
     const activeSectionRef = useRef(SECTION_DAY);
     const suppressSegmentFocusRef = useRef(false);
@@ -559,12 +558,27 @@ const DateTimeInput = forwardRef(
       [normalizedMinuteStep, resolvedFormat, sections, setSectionValue],
     );
 
+    // Commit a partial (single-digit) pending buffer as a valid section value.
+    // Called when the user leaves a section before typing the second digit.
+    const commitPendingBuffer = useCallback(() => {
+      const { section, buffer } = editStateRef.current;
+      if (!buffer) return;
+      const numeric = Number(buffer);
+      const { min, max } = getSectionLimits(section, resolvedFormat, sections);
+      if (!Number.isNaN(numeric) && numeric >= min && numeric <= max) {
+        setSectionValue(section, numeric);
+      }
+      editStateRef.current = { section, buffer: '' };
+      setPendingDigits({});
+    }, [resolvedFormat, sections, setSectionValue]);
+
     const applyDigit = useCallback(
       (digit) => {
         if (activeSection === SECTION_PERIOD) return activeSection;
         const key = sectionKey(activeSection);
         const needed = digitsPerSection(activeSection);
         const sameSection = editStateRef.current.section === activeSection;
+        if (!sameSection) commitPendingBuffer();
         const currentBuffer = sameSection ? editStateRef.current.buffer : '';
         const nextBuffer = `${currentBuffer}${digit}`;
 
@@ -574,8 +588,16 @@ const DateTimeInput = forwardRef(
         };
 
         if (nextBuffer.length < needed) {
-          setPendingDigits({ [key]: nextBuffer });
-          return activeSection;
+          const { max } = getSectionLimits(
+            activeSection,
+            resolvedFormat,
+            sections,
+          );
+          if (Number(nextBuffer) * 10 <= max) {
+            setPendingDigits({ [key]: nextBuffer });
+            return activeSection;
+          }
+          // first digit * 10 exceeds max — commit it directly
         }
 
         const numeric = Number(nextBuffer);
@@ -606,6 +628,7 @@ const DateTimeInput = forwardRef(
       [
         activeSection,
         announce,
+        commitPendingBuffer,
         formatMessage,
         messages,
         moveSection,
@@ -629,7 +652,7 @@ const DateTimeInput = forwardRef(
         if (pending !== undefined) {
           if (section === SECTION_YEAR) return pending.padEnd(4, 'y');
           if (section === SECTION_PERIOD) return pending;
-          return pending.padEnd(2, tokenForSection(section)[1]);
+          return pending.padStart(2, '0');
         }
         return formatSectionText(section, sections[key]);
       },
@@ -735,11 +758,12 @@ const DateTimeInput = forwardRef(
         if (event.button !== 0 || event.defaultPrevented) return;
         event.preventDefault();
         event.stopPropagation();
+        commitPendingBuffer();
         setSegmentFocused(true);
         setActiveSection(section);
         focusSection(section);
       },
-      [disabled, focusSection, readOnly],
+      [commitPendingBuffer, disabled, focusSection, readOnly],
     );
 
     const onDisplayMouseDown = useCallback(
@@ -754,11 +778,18 @@ const DateTimeInput = forwardRef(
           }
         }
         event.preventDefault();
+        commitPendingBuffer();
         setSegmentFocused(true);
         setActiveSection(firstSection);
         focusSection(firstSection);
       },
-      [firstSection, focusSection, onDisplaySectionMouseDown, readOnly],
+      [
+        commitPendingBuffer,
+        firstSection,
+        focusSection,
+        onDisplaySectionMouseDown,
+        readOnly,
+      ],
     );
 
     const onSegmentFocus = useCallback(
@@ -780,9 +811,20 @@ const DateTimeInput = forwardRef(
         const isSegmentActive = Object.values(segmentRefs.current).includes(
           activeElement,
         );
-        if (!isSegmentActive) setSegmentFocused(false);
+        if (
+          !isSegmentActive &&
+          activeElement === document.body &&
+          !readOnly &&
+          !disabled
+        ) {
+          focusSection(activeSection);
+          return;
+        }
+        if (!isSegmentActive) {
+          setSegmentFocused(false);
+        }
       });
-    }, []);
+    }, [activeSection, disabled, focusSection, readOnly]);
 
     const onSegmentKeyDown = useCallback(
       (section, event) => {
@@ -794,24 +836,28 @@ const DateTimeInput = forwardRef(
 
         if (key === 'ArrowRight') {
           event.preventDefault();
+          commitPendingBuffer();
           const next = moveSection(1);
           focusSection(next);
           return;
         }
         if (key === 'ArrowLeft') {
           event.preventDefault();
+          commitPendingBuffer();
           const next = moveSection(-1);
           focusSection(next);
           return;
         }
         if (key === 'Home') {
           event.preventDefault();
+          commitPendingBuffer();
           setActiveSection(firstSection);
           focusSection(firstSection);
           return;
         }
         if (key === 'End') {
           event.preventDefault();
+          commitPendingBuffer();
           setActiveSection(lastSection);
           focusSection(lastSection);
           return;
@@ -867,7 +913,11 @@ const DateTimeInput = forwardRef(
         if (/^\d$/.test(key)) {
           event.preventDefault();
           const next = applyDigit(Number(key));
-          if (next !== section) focusSection(next);
+          if (next !== section) {
+            focusSection(next);
+          } else {
+            event.currentTarget.focus();
+          }
         }
       },
       [
@@ -875,6 +925,7 @@ const DateTimeInput = forwardRef(
         applyDigit,
         clearActiveSection,
         closePicker,
+        commitPendingBuffer,
         disabled,
         firstSection,
         focusSection,
@@ -902,8 +953,10 @@ const DateTimeInput = forwardRef(
       (nextDateValue) => {
         const parsed = parseCalendarSelection(nextDateValue);
         if (!parsed) return;
-        activeSectionRef.current = SECTION_DAY;
-        setActiveSection(SECTION_DAY);
+        setPendingDigits({});
+        editStateRef.current = { section: activeSection, buffer: '' };
+        activeSectionRef.current = SECTION_HOUR;
+        setActiveSection(SECTION_HOUR);
         const nextSections = {
           ...sections,
           day: parsed.day,
@@ -912,19 +965,15 @@ const DateTimeInput = forwardRef(
         };
         commitSections(nextSections);
       },
-      [commitSections, sections],
+      [activeSection, commitSections, sections],
     );
 
     const handleTimeSelect = useCallback(
       ({ value: nextTime }) => {
+        setPendingDigits({});
+        editStateRef.current = { section: activeSection, buffer: '' };
         if (!nextTime) {
-          commitSections({
-            ...sections,
-            hour: undefined,
-            minute: undefined,
-            second: undefined,
-            period: resolvedFormat === '12' ? undefined : sections.period,
-          });
+          // Incomplete picker selection — preserve existing sections.
           return;
         }
 
@@ -952,7 +1001,7 @@ const DateTimeInput = forwardRef(
           period: nextPeriod,
         });
       },
-      [commitSections, resolvedFormat, sections],
+      [activeSection, commitSections, resolvedFormat, sections],
     );
 
     const timeViews = useMemo(() => {
@@ -968,26 +1017,24 @@ const DateTimeInput = forwardRef(
     }, [resolvedFormat, showSeconds]);
 
     const timeValue = useMemo(() => {
-      if (sections.hour === undefined || sections.minute === undefined) {
+      if (sections.hour === undefined) {
         return undefined;
       }
-
+      // Default missing minute/second to 0 so the picker always starts with a
+      // complete value when at least hour is set.
+      const minute = sections.minute ?? 0;
       const resolvedSecond = showSeconds
-        ? sections.second
+        ? sections.second ?? 0
         : sections.second ?? 0;
-      if (resolvedSecond === undefined) return undefined;
+      if (showSeconds && sections.second === undefined) return undefined;
 
       if (resolvedFormat === '12') {
         let hour24 = sections.hour % 12;
         if ((sections.period || 'AM') === 'PM') hour24 += 12;
-        return `${pad2(hour24)}:${pad2(sections.minute)}:${pad2(
-          resolvedSecond,
-        )}`;
+        return `${pad2(hour24)}:${pad2(minute)}:${pad2(resolvedSecond)}`;
       }
 
-      return `${pad2(sections.hour)}:${pad2(sections.minute)}:${pad2(
-        resolvedSecond,
-      )}`;
+      return `${pad2(sections.hour)}:${pad2(minute)}:${pad2(resolvedSecond)}`;
     }, [resolvedFormat, sections, showSeconds]);
 
     const showActiveSection =
@@ -1166,14 +1213,13 @@ const DateTimeInput = forwardRef(
               }}
             >
               <Box
-                ref={dropContentRef}
                 direction="row"
                 pad={theme.dateTimeInput?.drop?.pad}
                 gap={theme.dateTimeInput?.drop?.gap}
               >
                 <Calendar
                   date={getCalendarDate(sections)}
-                  initialFocus={open ? 'days' : undefined}
+                  initialFocus="days"
                   onSelect={handleCalendarSelect}
                 />
                 <TimeInput
