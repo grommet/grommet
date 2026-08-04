@@ -1770,4 +1770,55 @@ describe('TimeInput', () => {
       '#FFFFFF',
     );
   });
+
+  test('updates displayed value when picking a new hour from the popup after a single-digit keystroke', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
+    // A single-digit keystroke commits immediately (e.g. hour "1" -> "01")
+    // without waiting for a second digit, since 1 * 10 is not > the max
+    // hour value. This used to leave a stale pending-digit overlay in
+    // place that masked any later update to the same section.
+    await user.keyboard('1');
+    expect(getDisplayInput()).toHaveValue('01:mm:ss');
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    await user.click(
+      within(hourList).getByRole('option', { name: '06 hours' }),
+    );
+
+    await waitFor(() => {
+      expect(getDisplayInput()).toHaveValue('06:mm:ss');
+    });
+    expect(hourSegment).toHaveTextContent('06');
+  });
+
+  test('updates displayed value on arrow-key increment after a single-digit keystroke', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
+    await user.keyboard('1');
+    expect(getDisplayInput()).toHaveValue('01:mm:ss');
+
+    await user.keyboard('{ArrowUp}');
+
+    expect(getDisplayInput()).toHaveValue('02:mm:ss');
+    expect(hourSegment).toHaveTextContent('02');
+  });
 });

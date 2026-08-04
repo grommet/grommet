@@ -208,6 +208,9 @@ export const useSectionedTimeField = ({
       const key = sectionKey(section);
       const next = { ...sections, [key]: rawValue };
       commitSections(next);
+      // Clear any pending first-digit overlay, since it's now stale
+      // relative to the section value we just committed.
+      setPendingDigits({});
     },
     [commitSections, sections],
   );
