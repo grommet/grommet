@@ -158,7 +158,11 @@ const getLocaleSectionLayout = (format, showSeconds, locale) => {
       if (section === SECTION_SECOND && !showSeconds) return;
 
       if (!seen.has(section)) {
-        separatorMap[section] = sectionOrder.length === 0 ? '' : pendingLiteral;
+        // Normalize the date/time boundary separator: strip commas (e.g. ", "
+        // from en-US) so the display matches the design spec (space only).
+        const raw = sectionOrder.length === 0 ? '' : pendingLiteral;
+        separatorMap[section] =
+          section === SECTION_HOUR ? raw.replace(/,/g, '').trimStart() || ' ' : raw;
         sectionOrder.push(section);
         seen.add(section);
       }
@@ -558,8 +562,6 @@ const DateTimeInput = forwardRef(
       [normalizedMinuteStep, resolvedFormat, sections, setSectionValue],
     );
 
-    // Commit a partial (single-digit) pending buffer as a valid section value.
-    // Called when the user leaves a section before typing the second digit.
     const commitPendingBuffer = useCallback(() => {
       const { section, buffer } = editStateRef.current;
       if (!buffer) return;
