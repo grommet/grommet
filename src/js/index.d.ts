@@ -94,6 +94,7 @@ export * from './components/Tip';
 export * from './components/ToggleGroup';
 export * from './components/Toolbar';
 export * from './components/Video';
+export * from './components/Wizard';
 export * from './components/WorldMap';
 export * from './contexts/AnnounceContext';
 export * from './contexts/ContainerTargetContext';
