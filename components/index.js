@@ -583,6 +583,12 @@ Object.keys(_Video).forEach(function (key) {
   if (key in exports && exports[key] === _Video[key]) return;
   exports[key] = _Video[key];
 });
+var _Wizard = require("./Wizard");
+Object.keys(_Wizard).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Wizard[key]) return;
+  exports[key] = _Wizard[key];
+});
 var _WorldMap = require("./WorldMap");
 Object.keys(_WorldMap).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

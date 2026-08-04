@@ -2942,6 +2942,117 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         }
       }
     },
+    wizard: {
+      container: {
+        gap: 'none',
+        background: 'background-back'
+      },
+      body: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'large'
+        },
+        gap: {
+          row: 'none',
+          column: 'medium'
+        }
+      },
+      header: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'small'
+        },
+        background: 'background-front',
+        title: {
+          size: 'small'
+        },
+        close: {
+          icon: _FormClose.FormClose
+        }
+      },
+      progress: {
+        horizontal: {
+          pad: {
+            horizontal: 'none',
+            vertical: 'none'
+          }
+        },
+        vertical: {
+          // Fixed rail width so the column doesn't collapse to label text.
+          width: 'small',
+          pad: {
+            horizontal: 'xsmall',
+            vertical: 'none'
+          }
+        }
+      },
+      stepHeader: {
+        pad: {
+          horizontal: 'none',
+          vertical: 'none'
+        },
+        counter: {
+          size: 'small',
+          color: 'text'
+        },
+        title: {
+          size: 'large',
+          margin: 'none'
+        },
+        description: {
+          size: 'medium',
+          color: 'text-weak',
+          margin: {
+            top: 'xsmall',
+            bottom: 'none'
+          }
+        }
+      },
+      content: {
+        pad: 'medium',
+        background: 'background-front',
+        round: 'small',
+        margin: {
+          top: 'medium'
+        }
+      },
+      footer: {
+        pad: {
+          horizontal: 'large',
+          vertical: 'small'
+        },
+        gap: {
+          row: 'xsmall',
+          column: 'small'
+        },
+        background: 'background-front',
+        justify: 'end',
+        button: {
+          next: {
+            icon: _FormNext.FormNext
+          },
+          complete: {
+            icon: undefined
+          },
+          previous: {
+            icon: _FormPrevious.FormPrevious
+          },
+          cancel: {
+            icon: undefined
+          },
+          skip: {
+            icon: _FormNext.FormNext
+          }
+        }
+      },
+      error: {
+        color: 'status-error',
+        size: 'small',
+        margin: {
+          top: 'xsmall'
+        }
+      }
+    },
     worldMap: {
       color: 'light-3',
       continent: {
