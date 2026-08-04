@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { focusStyle, styledComponentsConfig } from '../../utils';
+import { styledComponentsConfig } from '../../utils';
 
 // Kept as a styled component so consumers can theme the wizard root via
 // `theme.wizard.container.extend`. Grommet Box does not expose a
@@ -15,15 +15,10 @@ export const StyledWizard = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.theme.wizard?.container?.extend}
 `;
 
-// Focus target for step transitions. Styled because Box only emits focus
-// styles when `onClick` is set, and this anchor needs the border-only
-// focus variant on a programmatic (`tabIndex={-1}`) target.
+// Programmatic focus target for step transitions (tabIndex={-1}); no visible
+// focus indication — screen readers announce via aria-live on this element.
 export const StyledWizardFocusAnchor = styled.div.withConfig(
   styledComponentsConfig,
 )`
   outline: none;
-
-  &:focus {
-    ${focusStyle({ justBorder: true })}
-  }
 `;

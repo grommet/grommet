@@ -51,7 +51,7 @@ export const WizardProgress = ({
   });
 
   const ariaLabel =
-    ariaLabelProp || messages?.progress || format({ id: 'wizard.progress' });
+    ariaLabelProp || format({ id: 'wizard.progress', messages });
 
   return (
     <Box
