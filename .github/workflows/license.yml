@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: '24.15.0'
+          node-version: '22.15.0'
       - name: Verify SPDX license headers (changed files only)
         run: |
           set -e
