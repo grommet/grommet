@@ -12,7 +12,6 @@ exports[`Stepper renders horizontal steps 1`] = `
   width: 100%;
   padding: 0px;
   overflow: hidden;
-  gap: 0 0;
 }
 
 .c6 {
@@ -55,7 +54,6 @@ exports[`Stepper renders horizontal steps 1`] = `
   overflow: hidden;
   text-overflow: ellipsis;
   color: #7D4CDB;
-  font-weight: normal;
 }
 
 .c11 {
@@ -66,7 +64,6 @@ exports[`Stepper renders horizontal steps 1`] = `
   overflow: hidden;
   text-overflow: ellipsis;
   color: #444444;
-  font-weight: normal;
 }
 
 .c0 {
@@ -362,7 +359,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   width: 100%;
   padding: 0px;
   overflow: hidden;
-  gap: 0 0;
 }
 
 .c5 {
@@ -405,7 +401,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   overflow: hidden;
   text-overflow: ellipsis;
   color: #7D4CDB;
-  font-weight: normal;
 }
 
 .c10 {
@@ -416,7 +411,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   overflow: hidden;
   text-overflow: ellipsis;
   color: #444444;
-  font-weight: normal;
 }
 
 .c1 {
@@ -698,7 +692,6 @@ exports[`Stepper renders vertical steps 1`] = `
   height: 100%;
   padding: 0px;
   overflow: hidden;
-  gap: 0 0;
 }
 
 .c11 {
@@ -737,14 +730,12 @@ exports[`Stepper renders vertical steps 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  font-weight: normal;
 }
 
 .c12 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
-  font-weight: normal;
 }
 
 .c0 {
