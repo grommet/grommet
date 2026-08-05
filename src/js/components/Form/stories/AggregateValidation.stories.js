@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Button, Form, FormField, Text, TextInput } from 'grommet';
+import { Box, Button, Form, FormField, TextInput } from 'grommet';
 
 // This example shows a way to perform validation across multiple fields.
 export const AggregateValidation = () => {
@@ -23,15 +23,15 @@ export const AggregateValidation = () => {
             <TextInput aria-required id="name" name="name" type="name" />
           </FormField>
 
-          <FormField htmlFor="email" label="Email" name="email" required>
+          <FormField
+            htmlFor="email"
+            label="Email"
+            name="email"
+            required
+            error={message}
+          >
             <TextInput id="email" name="email" type="email" />
           </FormField>
-
-          {message && (
-            <Box pad={{ horizontal: 'small' }}>
-              <Text color="status-error">{message}</Text>
-            </Box>
-          )}
 
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button
