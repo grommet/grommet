@@ -9,10 +9,11 @@ import React, {
   useState,
 } from 'react';
 import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
+import styled from 'styled-components';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
-import { useForwardedRef } from '../../utils';
+import { styledComponentsConfig, useForwardedRef } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -35,6 +36,15 @@ import {
   StyledTimeInputSeparator,
 } from '../TimeInput/StyledTimeInput';
 import { DateTimeInputPropTypes } from './propTypes';
+
+const StyledDateTimeInputSeparator = styled(
+  StyledTimeInputSeparator,
+).withConfig(styledComponentsConfig)`
+  margin-inline: ${(props) =>
+    props.theme.global.edgeSize[
+      props.theme.dateTimeInput?.separator?.dateTimeGap || 'xsmall'
+    ]};
+`;
 
 const SECTION_DAY = 0;
 const SECTION_MONTH = 1;
@@ -162,7 +172,9 @@ const getLocaleSectionLayout = (format, showSeconds, locale) => {
         // from en-US) so the display matches the design spec (space only).
         const raw = sectionOrder.length === 0 ? '' : pendingLiteral;
         separatorMap[section] =
-          section === SECTION_HOUR ? raw.replace(/,/g, '').trimStart() || ' ' : raw;
+          section === SECTION_HOUR
+            ? raw.replace(/,/g, '').trimStart() || ' '
+            : raw;
         sectionOrder.push(section);
         seen.add(section);
       }
@@ -1107,16 +1119,20 @@ const DateTimeInput = forwardRef(
                     } else {
                       numericValue = sections[key] ?? sectionLimits.min;
                     }
+                    const Separator =
+                      section === SECTION_HOUR
+                        ? StyledDateTimeInputSeparator
+                        : StyledTimeInputSeparator;
 
                     return (
                       <React.Fragment key={section}>
                         {!!prefix && (
-                          <StyledTimeInputSeparator
+                          <Separator
                             $filled={hasDisplayValue}
                             {...passThemeFlag}
                           >
                             {prefix}
-                          </StyledTimeInputSeparator>
+                          </Separator>
                         )}
                         <StyledTimeInputSegment
                           ref={(segmentNode) => {

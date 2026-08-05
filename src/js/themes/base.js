@@ -1063,6 +1063,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: 'small',
         gap: 'medium',
       },
+      separator: {
+        dateTimeGap: 'xxsmall',
+      },
     },
     dataSearch: {
       // icons: {

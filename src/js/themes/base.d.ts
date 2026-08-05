@@ -1040,6 +1040,9 @@ export interface ThemeType {
       calendar?: React.ReactNode | Icon;
       size?: string;
     };
+    separator?: {
+      dateTimeGap?: GapType;
+    };
   };
   dataTable?: {
     body?: {
