@@ -109,7 +109,7 @@ describe('DateTimeInput', () => {
     );
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     await user.click(trigger);
 
@@ -147,7 +147,7 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     await user.click(trigger);
 
@@ -173,7 +173,7 @@ describe('DateTimeInput', () => {
     );
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
 
     expect(trigger).toHaveAttribute('aria-expanded', 'false');
@@ -186,7 +186,7 @@ describe('DateTimeInput', () => {
     const scoped = within(drop);
 
     expect(
-      scoped.queryByRole('dialog', { name: 'Choose date and time' }),
+      scoped.queryByRole('dialog', { name: /date and time/i }),
     ).not.toBeInTheDocument();
 
     const minuteList = scoped.getByRole('listbox', { name: 'minute' });
@@ -196,7 +196,7 @@ describe('DateTimeInput', () => {
 
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
     expect(
-      scoped.queryByRole('dialog', { name: 'Choose date and time' }),
+      scoped.queryByRole('dialog', { name: /date and time/i }),
     ).not.toBeInTheDocument();
   });
 
@@ -219,7 +219,7 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     await user.click(trigger);
 
@@ -252,7 +252,7 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     await user.click(trigger);
 
@@ -303,7 +303,7 @@ describe('DateTimeInput', () => {
     );
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
 
     await user.click(trigger);
@@ -326,7 +326,7 @@ describe('DateTimeInput', () => {
     );
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     expect(trigger).toBeDisabled();
 
@@ -505,14 +505,14 @@ describe('DateTimeInput', () => {
     );
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     await user.click(trigger);
 
     const drop = getDropFromTrigger(trigger);
     const scoped = within(drop);
     expect(
-      scoped.queryByRole('dialog', { name: 'Choose date and time' }),
+      scoped.queryByRole('dialog', { name: /date and time/i }),
     ).not.toBeInTheDocument();
 
     const hourList = scoped.getByRole('listbox', { name: 'hour' });
@@ -554,7 +554,7 @@ describe('DateTimeInput', () => {
     );
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     const minuteSegment = screen.getByRole('spinbutton', { name: 'minutes' });
     const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
@@ -597,7 +597,7 @@ describe('DateTimeInput', () => {
     );
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
     const initialHourText = hourSegment.textContent;
@@ -653,7 +653,7 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
 
     const trigger = screen.getByRole('button', {
-      name: 'Choose date and time',
+      name: /date and time/i,
     });
     await user.click(trigger);
 

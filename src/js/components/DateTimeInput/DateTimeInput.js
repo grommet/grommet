@@ -1204,12 +1204,7 @@ const DateTimeInput = forwardRef(
               target={dropTarget}
               align={{ top: 'bottom', left: 'left' }}
               onEsc={closePicker}
-              onClickOutside={({ target }) => {
-                const anchor = dropTarget;
-                if (anchor && target !== anchor && !anchor.contains(target)) {
-                  closePicker();
-                }
-              }}
+              onClickOutside={closePicker}
             >
               <Box
                 direction="row"
@@ -1228,19 +1223,17 @@ const DateTimeInput = forwardRef(
                     border={{ side: 'left', color: 'border' }}
                   />
                 </Box>
-                <Keyboard onEsc={closePicker}>
-                  <TimeInput
-                    inline
-                    format={resolvedFormat}
-                    value={timeValue}
-                    showSeconds={showSeconds}
-                    messages={messages}
-                    minuteStep={normalizedMinuteStep}
-                    disabled={disabled}
-                    readOnly={readOnly}
-                    onChange={handleTimeSelect}
-                  />
-                </Keyboard>
+                <TimeInput
+                  inline
+                  format={resolvedFormat}
+                  value={timeValue}
+                  showSeconds={showSeconds}
+                  messages={messages}
+                  minuteStep={normalizedMinuteStep}
+                  disabled={disabled}
+                  readOnly={readOnly}
+                  onChange={handleTimeSelect}
+                />
               </Box>
             </Drop>
           )}

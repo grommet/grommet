@@ -527,9 +527,6 @@ const TimeInputPopup = ({
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
           incrementSection(eventSection, 1);
-        } else if (event.key === 'Enter') {
-          event.preventDefault();
-          onClose?.();
         }
 
         onKeyDownProp?.(event);

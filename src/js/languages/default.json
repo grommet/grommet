@@ -27,7 +27,7 @@
   },
   "dateTimeInput": {
     "inputLabel": "Date time input",
-    "chooseDateTime": "Choose date and time",
+    "chooseDateTime": "Open date and time picker",
     "openDrop": "Press space to open date and time picker",
     "invalidDateTime": "Invalid date or time value",
     "activeSection": "{section} selected",
