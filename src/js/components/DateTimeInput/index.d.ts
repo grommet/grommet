@@ -37,7 +37,7 @@ export interface DateTimeInputExtendedProps
         React.InputHTMLAttributes<HTMLInputElement>,
         HTMLInputElement
       >,
-      'defaultValue' | 'onChange' | 'onError' | 'size' | 'value'
+      'defaultValue' | 'onChange' | 'value'
     > {}
 
 declare const DateTimeInput: React.FC<DateTimeInputExtendedProps>;
