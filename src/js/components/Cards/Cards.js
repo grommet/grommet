@@ -205,8 +205,8 @@ const Cards = React.forwardRef(
             as={!(onOrder || sizeKey) && as === 'ul' ? 'li' : undefined}
           >
             <CardBody>
-              {(typeof item === 'string' && item) ??
-                (typeof item === 'object' && Object.values(item)[0]) ??
+              {(typeof item === 'string' && item) ||
+                (typeof item === 'object' && Object.values(item)[0]) ||
                 index}
             </CardBody>
           </Card>

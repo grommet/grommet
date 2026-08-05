@@ -682,4 +682,32 @@ describe('Button', () => {
 
     expect(screen.getByLabelText('Add')).toBeInTheDocument();
   });
+
+  test('children should render as plain by default', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Button>Default children</Button>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('options.button.childrenPlain false should not force plain on children', () => {
+    const { asFragment } = render(
+      <Grommet options={{ button: { childrenPlain: false } }}>
+        <Button>Styled children</Button>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('options.button.childrenPlain false should not affect explicit plain prop', () => {
+    const { asFragment } = render(
+      <Grommet options={{ button: { childrenPlain: false } }}>
+        <Button plain>Explicit plain</Button>
+        <Button plain={false}>Explicit not plain</Button>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

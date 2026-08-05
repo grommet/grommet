@@ -75,9 +75,6 @@ const PopupOption = styled.div`
   &:focus-visible {
     ${focusStyle({ inset: true })}
   }
-
-  ${(props) =>
-    props.$selected && props.theme.timeInput?.drop?.option?.selected?.extend}
 `;
 
 const optionKey = (label, option) => `${label.toLowerCase()}-${option}`;

@@ -1025,41 +1025,6 @@ export interface ThemeType {
       size?: string;
     };
   };
-  timeInput?: {
-    button?: {
-      margin?: string;
-    };
-    container?: {
-      round?: RoundType;
-    };
-    active?: {
-      background?: ColorType;
-      pad?: string;
-      indicator?: {
-        color?: ColorType;
-        size?: string;
-      };
-    };
-    drop?: {
-      option?: {
-        background?: ColorType;
-        hover?: {
-          background?: ColorType;
-        };
-        selected?: {
-          background?: ColorType;
-          color?: ColorType;
-          hover?: {
-            background?: ColorType;
-          };
-          extend?: ExtendType;
-        };
-      };
-    };
-    icon?: {
-      clock?: React.ReactNode | Icon;
-    };
-  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
@@ -2209,6 +2174,86 @@ export interface ThemeType {
     currentError?: StepperHelperTextStateType;
     disabled?: StepperStatusWithHelperTextStateType;
   };
+  wizard?: {
+    container?: {
+      gap?: GapType;
+      background?: BackgroundType;
+      extend?: ExtendType;
+    };
+    body?: {
+      pad?: PadType;
+      gap?: GridGapType;
+      extend?: ExtendType;
+    };
+    header?: {
+      pad?: PadType;
+      background?: BackgroundType;
+      border?: BorderType;
+      title?: {
+        size?: string;
+      };
+      close?: {
+        icon?: React.ReactNode | Icon;
+      };
+      extend?: ExtendType;
+    };
+    progress?: {
+      horizontal?: {
+        pad?: PadType;
+        extend?: ExtendType;
+      };
+      vertical?: {
+        width?: string;
+        pad?: PadType;
+        extend?: ExtendType;
+      };
+    };
+    stepHeader?: {
+      pad?: PadType;
+      gap?: GapType;
+      counter?: {
+        size?: string;
+        color?: ColorType;
+      };
+      title?: {
+        size?: string;
+        margin?: MarginType;
+      };
+      description?: {
+        size?: string;
+        color?: ColorType;
+        margin?: MarginType;
+      };
+      extend?: ExtendType;
+    };
+    content?: {
+      pad?: PadType;
+      background?: BackgroundType;
+      round?: RoundType;
+      margin?: MarginType;
+      extend?: ExtendType;
+    };
+    footer?: {
+      pad?: PadType;
+      gap?: GridGapType;
+      background?: BackgroundType;
+      border?: BorderType;
+      justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
+      button?: {
+        next?: { icon?: React.ReactNode | Icon };
+        complete?: { icon?: React.ReactNode | Icon };
+        previous?: { icon?: React.ReactNode | Icon };
+        cancel?: { icon?: React.ReactNode | Icon };
+        skip?: { icon?: React.ReactNode | Icon };
+      };
+      extend?: ExtendType;
+    };
+    error?: {
+      color?: ColorType;
+      size?: string;
+      margin?: MarginType;
+    };
+  };
   table?: {
     caption?: {
       margin?: MarginType;
@@ -2376,6 +2421,40 @@ export interface ThemeType {
     };
     suggestions?: {
       extend?: ExtendType;
+    };
+  };
+  timeInput?: {
+    button?: {
+      margin?: MarginType;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    drop?: {
+      option?: {
+        background?: ColorType;
+        hover?: {
+          background?: ColorType;
+        };
+        selected?: {
+          background?: ColorType;
+          color?: ColorType;
+          hover?: {
+            background?: ColorType;
+          };
+        };
+      };
+    };
+    icon?: {
+      clock?: React.ReactNode | Icon;
     };
   };
   tip?: {
