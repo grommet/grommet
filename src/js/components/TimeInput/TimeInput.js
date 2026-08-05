@@ -135,12 +135,10 @@ const TimeInput = forwardRef(
       format = DEFAULT_FORMAT,
       id,
       inline = false,
-      inlineLabel,
       messages,
       minuteStep = 1,
       name,
       onChange,
-      onInlineClose,
       readOnly = false,
       value: valueArg,
       views,
@@ -693,20 +691,14 @@ const TimeInput = forwardRef(
         <TimeInputPopup
           inline
           activeSection={activeSection}
-          autoFocus
           format={format}
           formatMessage={formatMessage}
           hoursOptions={hoursOptions}
           incrementSection={incrementSection}
-          label={
-            inlineLabel ||
-            formatMessage({ id: 'timeInput.chooseTime', messages })
-          }
           messages={messages}
           minuteOptions={minuteOptions}
           moveSection={moveSection}
           sectionOrder={sectionOrder}
-          onClose={onInlineClose}
           secondOptions={secondOptions}
           sections={sections}
           setActiveSection={setActiveSection}

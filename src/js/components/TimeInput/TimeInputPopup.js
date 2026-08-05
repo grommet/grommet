@@ -169,7 +169,6 @@ const TimeInputPopup = ({
   messages,
   minuteOptions,
   moveSection,
-  onAccept,
   onClose,
   onFocusLeave,
   secondOptions,
@@ -181,7 +180,6 @@ const TimeInputPopup = ({
   dropProps,
   label,
   inline = false,
-  autoFocus = true,
   ...rest
 }) => {
   const { theme } = useThemeValue();
@@ -426,12 +424,6 @@ const TimeInputPopup = ({
       scrollSelectedOptionsIntoView();
     });
 
-    if (!autoFocus) {
-      return () => {
-        window.cancelAnimationFrame(scrollRaf);
-      };
-    }
-
     let rafB;
     const rafA = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
@@ -450,13 +442,13 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [autoFocus, focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
 
   const popupContent = (
     <Box
       ref={dialogRef}
-      role="dialog"
-      aria-label={label}
+      role={inline ? undefined : 'dialog'}
+      aria-label={inline ? undefined : label}
       direction="row"
       width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
       minHeight={theme.timeInput?.drop?.minHeight}
@@ -468,8 +460,10 @@ const TimeInputPopup = ({
       onWheelCapture={onPopupWheelCapture}
       onKeyDown={(event) => {
         if (event.key === 'Escape') {
-          event.preventDefault();
-          onClose?.();
+          if (onClose) {
+            event.preventDefault();
+            onClose();
+          }
         } else if (event.key === ' ' || event.key === 'Spacebar') {
           event.preventDefault();
           const focusedOption =
@@ -495,7 +489,6 @@ const TimeInputPopup = ({
           incrementSection(activeSection, 1);
         } else if (event.key === 'Enter') {
           event.preventDefault();
-          onAccept?.();
           onClose?.();
         }
       }}

@@ -1247,22 +1247,19 @@ const DateTimeInput = forwardRef(
                     border={{ side: 'left', color: 'border' }}
                   />
                 </Box>
-                <TimeInput
-                  inline
-                  format={resolvedFormat}
-                  value={timeValue}
-                  views={timeViews}
-                  inlineLabel={formatMessage({
-                    id: 'dateTimeInput.chooseDateTime',
-                    messages,
-                  })}
-                  messages={messages}
-                  minuteStep={normalizedMinuteStep}
-                  disabled={disabled}
-                  readOnly={readOnly}
-                  onChange={handleTimeSelect}
-                  onInlineClose={closePicker}
-                />
+                <Keyboard onEsc={closePicker}>
+                  <TimeInput
+                    inline
+                    format={resolvedFormat}
+                    value={timeValue}
+                    views={timeViews}
+                    messages={messages}
+                    minuteStep={normalizedMinuteStep}
+                    disabled={disabled}
+                    readOnly={readOnly}
+                    onChange={handleTimeSelect}
+                  />
+                </Keyboard>
               </Box>
             </Drop>
           )}
