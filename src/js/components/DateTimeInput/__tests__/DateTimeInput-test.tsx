@@ -625,6 +625,94 @@ describe('DateTimeInput', () => {
     });
   });
 
+  test('in 24-hour mode with showSeconds, second is available and meridiem is hidden', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-24h-seconds"
+          format="24"
+          showSeconds
+          value="2026-07-22T18:30:45.000Z"
+        />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'hours' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('spinbutton', { name: 'minutes' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('spinbutton', { name: 'seconds' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'meridiem' }),
+    ).not.toBeInTheDocument();
+
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const scoped = within(drop);
+
+    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
+    expect(
+      scoped.queryByRole('listbox', { name: 'period' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('does not emit onChange while the user clears sections', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    const ControlledHarness = () => {
+      const [value, setValue] = React.useState('2026-07-22T18:30:00.000Z');
+
+      return (
+        <DateTimeInput
+          format="12"
+          value={value}
+          onChange={({ value: nextValue }) => {
+            onChange({ value: nextValue });
+            setValue(nextValue || '');
+          }}
+        />
+      );
+    };
+
+    render(
+      <Grommet>
+        <ControlledHarness />
+      </Grommet>,
+    );
+
+    const clearSection = async (
+      section: 'day' | 'month' | 'year' | 'hours' | 'minutes' | 'meridiem',
+    ) => {
+      await user.click(screen.getByRole('spinbutton', { name: section }));
+      await user.keyboard('{Backspace}');
+    };
+
+    await clearSection('day');
+    await clearSection('month');
+    await clearSection('year');
+    await clearSection('hours');
+    await clearSection('minutes');
+
+    await clearSection('meridiem');
+
+    // User edits that leave the value incomplete should not emit a committed
+    // value payload.
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   test('associates the FormField label with the grouped segmented input', () => {
     render(
       <Grommet>

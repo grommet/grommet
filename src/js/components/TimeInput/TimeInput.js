@@ -13,6 +13,10 @@ import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
+import {
+  getSectionKeyFromType,
+  getSectionTokenFromType,
+} from '../../utils/sectionHelpers';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { FormContext } from '../Form';
@@ -38,26 +42,18 @@ import {
   SECTION_SECOND,
 } from './utils';
 
-const sectionTypeToSection = {
-  hours: SECTION_HOUR,
-  minutes: SECTION_MINUTE,
-  seconds: SECTION_SECOND,
-  meridiem: SECTION_PERIOD,
+const sectionTypeFromSection = (section) => {
+  if (section === SECTION_HOUR) return 'hours';
+  if (section === SECTION_MINUTE) return 'minutes';
+  if (section === SECTION_SECOND) return 'seconds';
+  return 'meridiem';
 };
 
-const getSectionKey = (section) => {
-  if (section === SECTION_HOUR) return 'hour';
-  if (section === SECTION_MINUTE) return 'minute';
-  if (section === SECTION_SECOND) return 'second';
-  return 'period';
-};
+const getSectionKey = (section) =>
+  getSectionKeyFromType(sectionTypeFromSection(section));
 
-const getSectionToken = (section) => {
-  if (section === SECTION_HOUR) return 'hh';
-  if (section === SECTION_MINUTE) return 'mm';
-  if (section === SECTION_SECOND) return 'ss';
-  return 'aa';
-};
+const getSectionToken = (section) =>
+  getSectionTokenFromType(sectionTypeFromSection(section));
 
 const getDisplaySectionKey = (section) => {
   if (section === SECTION_HOUR) return 'hour';
@@ -77,25 +73,13 @@ const getDisplaySectionText = ({ key, section, sections }) => {
   return pad(sections[key]);
 };
 
-const getSectionOrder = (format, views, showSeconds = format === '12') => {
-  let normalizedViews;
-  if (Array.isArray(views) && views.length) {
-    normalizedViews = views;
-  } else if (showSeconds) {
-    normalizedViews = ['hours', 'minutes', 'seconds'];
-  } else {
-    normalizedViews = ['hours', 'minutes'];
-  }
-
-  const numericSections = normalizedViews
-    .filter((view) => view !== 'meridiem')
-    .map((view) => sectionTypeToSection[view])
-    .filter((section) => section !== undefined);
+const getSectionOrder = (format, showSeconds = format === '12') => {
+  const numericSections = showSeconds
+    ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND]
+    : [SECTION_HOUR, SECTION_MINUTE];
 
   if (format === '12') {
-    const includePeriod =
-      normalizedViews.includes('meridiem') || normalizedViews.includes('hours');
-    if (includePeriod) return [...numericSections, SECTION_PERIOD];
+    return [...numericSections, SECTION_PERIOD];
   }
 
   return numericSections;
@@ -146,7 +130,6 @@ const TimeInput = forwardRef(
       readOnly = false,
       showSeconds,
       value: valueArg,
-      views,
       ...rest
     },
     refArg,
@@ -236,8 +219,8 @@ const TimeInput = forwardRef(
     );
 
     const sectionOrder = useMemo(
-      () => getSectionOrder(format, views, resolvedShowSeconds),
-      [format, resolvedShowSeconds, views],
+      () => getSectionOrder(format, resolvedShowSeconds),
+      [format, resolvedShowSeconds],
     );
 
     const firstSection = sectionOrder[0] || SECTION_HOUR;

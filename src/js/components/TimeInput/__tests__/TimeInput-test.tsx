@@ -1647,6 +1647,40 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('10:01:00');
   });
 
+  test('in 24-hour mode without showSeconds, only hour and minute are interactive', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'hours' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('spinbutton', { name: 'minutes' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'seconds' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'meridiem' }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'second' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'period' }),
+    ).not.toBeInTheDocument();
+  });
+
   test('auto-scrolls selected minute and second options on open', async () => {
     const user = userEvent.setup();
     const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
