@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -159,6 +161,7 @@ const Wizard = forwardRef(
     const [visitedSteps, setVisitedSteps] = useState([currentStep]);
     const [completedSteps, setCompletedSteps] = useState(() => new Set());
     const [validationError, setValidationError] = useState(undefined);
+    const [shouldFocusErrorField, setShouldFocusErrorField] = useState(false);
     const [isValidating, setIsValidating] = useState(false);
     // Without `onCancel`, cancel self-closes the wizard.
     const [isOpen, setIsOpen] = useState(true);
@@ -270,6 +273,7 @@ const Wizard = forwardRef(
           });
         }
         setValidationError(undefined);
+        setShouldFocusErrorField(false);
         setVisitedSteps((prev) => [...prev, nextId]);
         if (!isControlled) setUncontrolledStep(nextId);
       },
@@ -320,6 +324,7 @@ const Wizard = forwardRef(
       });
       const { ok, error } = await runValidation();
       if (!ok) {
+        setShouldFocusErrorField(true);
         setValidationError(error);
         emitStepChange({
           trigger: 'next',
@@ -366,6 +371,7 @@ const Wizard = forwardRef(
       if (!dest) return;
       setVisitedSteps((prev) => prev.slice(0, -1));
       setValidationError(undefined);
+      setShouldFocusErrorField(false);
       if (!isControlled) setUncontrolledStep(dest);
       emitStepChange({
         trigger: 'previous',
@@ -449,6 +455,7 @@ const Wizard = forwardRef(
       if (!nextId) return;
       // Skip: no validation, no completion.
       setValidationError(undefined);
+      setShouldFocusErrorField(false);
       setVisitedSteps((prev) => [...prev, nextId]);
       if (!isControlled) setUncontrolledStep(nextId);
       emitStepChange({
@@ -491,6 +498,7 @@ const Wizard = forwardRef(
         });
         return;
       }
+      setShouldFocusErrorField(false);
       emitStepChange({
         trigger: 'complete',
         phase: 'validated',
@@ -564,6 +572,72 @@ const Wizard = forwardRef(
       safeScrollTo(findScrollableAncestor(container));
       if (typeof window !== 'undefined') safeScrollTo(window);
     }, [currentStep, scrollToTop, wizardRef]);
+
+    // If Next is blocked by validation, move focus to the first invalid field
+    // in the current step so keyboard and screen reader users land on the
+    // actionable input.
+    useLayoutEffect(() => {
+      if (!shouldFocusErrorField || !validationError) return undefined;
+
+      let rafId;
+      let timeoutId;
+      const focusErrorField = () => {
+        const root = wizardRef.current;
+        if (!root) {
+          setShouldFocusErrorField(false);
+          return;
+        }
+
+        const firstInvalid = root.querySelector('[aria-invalid="true"]');
+        if (firstInvalid && typeof firstInvalid.focus === 'function') {
+          firstInvalid.focus();
+          setShouldFocusErrorField(false);
+          return;
+        }
+
+        const formFields = Array.from(
+          root.querySelectorAll('[class*="FormField__FormFieldBox"]'),
+        );
+        const erroredField =
+          formFields.find(
+            (field) =>
+              typeof field.textContent === 'string' &&
+              field.textContent.includes(validationError),
+          ) || formFields[0];
+
+        const firstInputInField = erroredField?.querySelector(
+          'input, textarea, select, [role="combobox"]',
+        );
+
+        if (
+          firstInputInField &&
+          typeof firstInputInField.focus === 'function'
+        ) {
+          firstInputInField.focus();
+        }
+        setShouldFocusErrorField(false);
+      };
+
+      if (
+        typeof window !== 'undefined' &&
+        typeof window.requestAnimationFrame === 'function'
+      ) {
+        rafId = window.requestAnimationFrame(focusErrorField);
+      } else {
+        timeoutId = setTimeout(focusErrorField, 0);
+      }
+
+      return () => {
+        if (
+          typeof window !== 'undefined' &&
+          typeof window.cancelAnimationFrame === 'function' &&
+          typeof rafId === 'number'
+        ) {
+          window.cancelAnimationFrame(rafId);
+        }
+        if (timeoutId) clearTimeout(timeoutId);
+      };
+    }, [shouldFocusErrorField, validationError, wizardRef]);
 
     const canGoNext = !currentStepObj?.disabled && !isValidating;
     const isBlocked = !!validationError && !currentStepObj?.skippable;
@@ -640,6 +714,8 @@ const Wizard = forwardRef(
             id={id}
             aria-label={ariaLabel}
             role="region"
+            width="100%"
+            height="100%"
             {...passThemeFlag}
             {...rest}
           >
@@ -651,7 +727,6 @@ const Wizard = forwardRef(
 
     const footerNode = footer ?? <WizardFooter />;
 
-    const containerTheme = theme.wizard?.container;
     const bodyTheme = theme.wizard?.body;
 
     // Default layout: header + middle (progress + step body) + footer.
@@ -695,14 +770,7 @@ const Wizard = forwardRef(
           {...passThemeFlag}
           {...rest}
         >
-          <Box
-            background={containerTheme?.background}
-            pad={containerTheme?.pad}
-            gap={containerTheme?.gap}
-            round={containerTheme?.round}
-            elevation={containerTheme?.elevation}
-            flex
-          >
+          <Box {...theme.wizard?.container} flex>
             {defaultLayout}
           </Box>
         </StyledWizard>

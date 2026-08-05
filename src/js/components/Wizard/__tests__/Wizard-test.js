@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -7,7 +9,7 @@ import { axe } from 'jest-axe';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Grommet, Wizard } from '../..';
+import { Form, FormField, Grommet, TextInput, Wizard } from '../..';
 
 const basicSteps = [
   { id: 'step1', title: 'Step 1', description: 'First step' },
@@ -137,6 +139,7 @@ describe('Wizard', () => {
 
   test('blocks navigation when validate returns falsy', async () => {
     const user = userEvent.setup();
+    const onStepChange = jest.fn();
     const steps = [
       {
         id: 's1',
@@ -150,14 +153,73 @@ describe('Wizard', () => {
         <Wizard
           steps={steps}
           renderStep={renderStep}
+          onStepChange={onStepChange}
           aria-label="Test wizard"
         />
       </Grommet>,
     );
     await user.click(screen.getByRole('button', { name: /next/i }));
-    // We should still be on step 1 and the error should be visible.
+    // We should still be on step 1 and a blocked event should fire.
     expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
-    expect(screen.getByRole('alert').textContent).toContain('Please fix this');
+    const blockedEvent = onStepChange.mock.calls
+      .map((call) => call[0])
+      .find((event) => event.trigger === 'next' && event.phase === 'blocked');
+    expect(blockedEvent).toBeTruthy();
+    expect(blockedEvent.error).toBe('Please fix this');
+  });
+
+  test('focuses invalid input when next is blocked', async () => {
+    const user = userEvent.setup();
+    const steps = [
+      {
+        id: 's1',
+        title: 'Step 1',
+        validate: (value) => {
+          if (!value.email) return 'Email is required';
+          return true;
+        },
+        render: (step, api) => {
+          const emailError =
+            api.validationError && !api.formValue.email
+              ? 'Email is required'
+              : undefined;
+          return (
+            <Form
+              value={api.formValue}
+              onChange={(nextValue) => api.setFormValue(nextValue)}
+            >
+              <FormField
+                htmlFor="wizard-test-email"
+                label="Email"
+                name="email"
+                required
+                error={emailError}
+              >
+                <TextInput id="wizard-test-email" name="email" />
+              </FormField>
+            </Form>
+          );
+        },
+      },
+      { id: 's2', title: 'Step 2' },
+    ];
+
+    render(
+      <Grommet>
+        <Wizard
+          steps={steps}
+          defaultValue={{ email: '' }}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: /next/i }));
+
+    await waitFor(() => {
+      const emailInput = screen.getByRole('textbox', { name: 'Email' });
+      expect(document.activeElement).toBe(emailInput);
+    });
   });
 
   test('async validate resolves and advances', async () => {

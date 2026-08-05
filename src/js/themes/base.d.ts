@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import {
   FlattenInterpolation,
   FlattenSimpleInterpolation,
@@ -2178,34 +2180,28 @@ export interface ThemeType {
     container?: {
       gap?: GapType;
       background?: BackgroundType;
-      extend?: ExtendType;
     };
     body?: {
       pad?: PadType;
       gap?: GridGapType;
-      extend?: ExtendType;
     };
     header?: {
       pad?: PadType;
       background?: BackgroundType;
-      border?: BorderType;
       title?: {
         size?: string;
       };
       close?: {
         icon?: React.ReactNode | Icon;
       };
-      extend?: ExtendType;
     };
     progress?: {
       horizontal?: {
         pad?: PadType;
-        extend?: ExtendType;
       };
       vertical?: {
         width?: string;
         pad?: PadType;
-        extend?: ExtendType;
       };
     };
     stepHeader?: {
@@ -2224,20 +2220,18 @@ export interface ThemeType {
         color?: ColorType;
         margin?: MarginType;
       };
-      extend?: ExtendType;
     };
     content?: {
       pad?: PadType;
       background?: BackgroundType;
       round?: RoundType;
       margin?: MarginType;
-      extend?: ExtendType;
     };
     footer?: {
-      pad?: PadType;
-      gap?: GridGapType;
       background?: BackgroundType;
       border?: BorderType;
+      gap?: GridGapType;
+      pad?: PadType;
       justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
       button?: {
         next?: { icon?: React.ReactNode | Icon };
@@ -2246,12 +2240,6 @@ export interface ThemeType {
         cancel?: { icon?: React.ReactNode | Icon };
         skip?: { icon?: React.ReactNode | Icon };
       };
-      extend?: ExtendType;
-    };
-    error?: {
-      color?: ColorType;
-      size?: string;
-      margin?: MarginType;
     };
   };
   table?: {
