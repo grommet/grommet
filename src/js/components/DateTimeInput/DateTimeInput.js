@@ -1233,13 +1233,20 @@ const DateTimeInput = forwardRef(
               <Box
                 direction="row"
                 pad={theme.dateTimeInput?.drop?.pad}
-                gap={theme.dateTimeInput?.drop?.gap}
+                gap="none"
               >
                 <Calendar
                   date={getCalendarDate(sections)}
                   initialFocus="days"
                   onSelect={handleCalendarSelect}
                 />
+                <Box pad={{ horizontal: theme.dateTimeInput?.drop?.gap }}>
+                  <Box
+                    fill="vertical"
+                    width={theme.global.borderSize.xsmall}
+                    border={{ side: 'left', color: 'border' }}
+                  />
+                </Box>
                 <TimeInput
                   inline
                   format={resolvedFormat}

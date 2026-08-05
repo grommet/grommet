@@ -1061,7 +1061,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       drop: {
         pad: 'small',
-        gap: 'medium',
+        gap: 'small',
       },
       separator: {
         dateTimeGap: 'xxsmall',
