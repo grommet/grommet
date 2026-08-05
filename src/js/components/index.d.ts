@@ -95,4 +95,5 @@ export * from './Tip';
 export * from './ToggleGroup';
 export * from './Toolbar';
 export * from './Video';
+export * from './Wizard';
 export * from './WorldMap';

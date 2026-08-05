@@ -96,4 +96,5 @@ export * from './Toolbar';
 export * from './ToggleGroup';
 export * from './ThumbsRating';
 export * from './Video';
+export * from './Wizard';
 export * from './WorldMap';
