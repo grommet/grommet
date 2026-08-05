@@ -1,0 +1,13 @@
+const adjustedData = useMemo(
+  () =>
+    data.map((d) => {
+      const nextData = { ...d };
+      Object.keys(nextData).forEach((key) => {
+        if (nextData[key] === null || nextData[key] === undefined) {
+          nextData[key] = '';
+        }
+      });
+      return nextData;
+    }),
+  [data],
+);

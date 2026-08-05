@@ -2382,12 +2382,12 @@ exports[`DataTableColumns renders 2`] = `
 exports[`DataTableColumns renders 3`] = `
 <div
   aria-label="Order columns Tab Contents"
-  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 dMQpkG"
   id="_r_0_"
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 fwoZHs"
+    class="StyledBox-sc-13pk1d4-0 cdluEy"
   >
     .c1 {
   display: flex;
@@ -3633,7 +3633,7 @@ exports[`DataTableColumns search 2`] = `
 exports[`DataTableColumns search 3`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 kVEyuL"
+  class="StyledButton-sc-323bzc-0 iNTjFx"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -3641,7 +3641,7 @@ exports[`DataTableColumns search 3`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 blUuJr"
+    class="StyledIcon-sc-ofa7kd-0 brAXQt"
     viewBox="0 0 24 24"
   >
     <path
@@ -3656,123 +3656,123 @@ exports[`DataTableColumns search 3`] = `
 
 exports[`DataTableColumns search 4`] = `
 "@media only screen and (max-width: 768px) {
-  .ljZKop {
+  .foTDqr {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dNjpRk {
+  .dzghle {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bfhaKP {
+  .hvLIlJ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bfhaKP {
+  .hvLIlJ {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bfhaKP {
+  .hvLIlJ {
     border-bottom: solid 2px #000000;
   }
 }
 @media only screen and (max-width: 768px) {
-  .bfhaKP {
+  .hvLIlJ {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dZganv {
+  .fqdwJd {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dZganv {
+  .fqdwJd {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dZganv {
+  .fqdwJd {
     border-bottom: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dZganv {
+  .fqdwJd {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kgnMcH {
+  .hPZpcx {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fvDdBU {
+  .brGfcK {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gHSfwH {
+  .kcOhNt {
     border: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fwoZHs {
+  .cdluEy {
     padding-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fpQWMh {
+  .zDhgr {
     border-top: solid 1px rgba(0, 0, 0, 0.33);
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .fpQWMh {
+  .zDhgr {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxUrvH {
+  .gcEQOZ {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .cxUrvH {
+  .gcEQOZ {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .fjqMzP {
+  .inySYZ {
     height: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dnbrLz {
+  .uytZF {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kpPQNX {
+  .hurftp {
     width: 12px;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .fxVdaI {
+  .denlti {
     display: flex;
     align-items: stretch;
   }
 }
-.kVEyuL {
+.iNTjFx {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3790,38 +3790,38 @@ exports[`DataTableColumns search 4`] = `
   line-height: 0;
   padding: 12px;
 }
-.kVEyuL:focus {
+.iNTjFx:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.kVEyuL:focus > circle,
-.kVEyuL:focus > ellipse,
-.kVEyuL:focus > line,
-.kVEyuL:focus > path,
-.kVEyuL:focus > polygon,
-.kVEyuL:focus > polyline,
-.kVEyuL:focus > rect {
+.iNTjFx:focus > circle,
+.iNTjFx:focus > ellipse,
+.iNTjFx:focus > line,
+.iNTjFx:focus > path,
+.iNTjFx:focus > polygon,
+.iNTjFx:focus > polyline,
+.iNTjFx:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.kVEyuL:focus ::-moz-focus-inner {
+.iNTjFx:focus ::-moz-focus-inner {
   border: 0;
 }
-.kVEyuL:focus:not(:focus-visible) {
+.iNTjFx:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.kVEyuL:focus:not(:focus-visible) > circle,
-.kVEyuL:focus:not(:focus-visible) > ellipse,
-.kVEyuL:focus:not(:focus-visible) > line,
-.kVEyuL:focus:not(:focus-visible) > path,
-.kVEyuL:focus:not(:focus-visible) > polygon,
-.kVEyuL:focus:not(:focus-visible) > polyline,
-.kVEyuL:focus:not(:focus-visible) > rect {
+.iNTjFx:focus:not(:focus-visible) > circle,
+.iNTjFx:focus:not(:focus-visible) > ellipse,
+.iNTjFx:focus:not(:focus-visible) > line,
+.iNTjFx:focus:not(:focus-visible) > path,
+.iNTjFx:focus:not(:focus-visible) > polygon,
+.iNTjFx:focus:not(:focus-visible) > polyline,
+.iNTjFx:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.kVEyuL:focus:not(:focus-visible) ::-moz-focus-inner {
+.iNTjFx:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }"
 `;
@@ -4740,12 +4740,12 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumns pad 2`] = `
 <div
   aria-label="Order columns Tab Contents"
-  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 TIIEM"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 dMQpkG"
   id="_r_5_"
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 ebSQwr"
+    class="StyledBox-sc-13pk1d4-0 gxQelZ"
   >
     .c1 {
   display: flex;
