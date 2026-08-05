@@ -168,7 +168,6 @@ const TimeInputPopup = ({
   incrementSection,
   messages,
   minuteOptions,
-  moveSection,
   onClose,
   onFocusLeave,
   secondOptions,
@@ -180,6 +179,7 @@ const TimeInputPopup = ({
   dropProps,
   label,
   inline = false,
+  onKeyDown: onKeyDownProp,
   ...rest
 }) => {
   const { theme } = useThemeValue();
@@ -301,6 +301,35 @@ const TimeInputPopup = ({
 
   const visiblePopupSections = popupSections.filter(({ section }) =>
     sectionOrder.includes(section),
+  );
+
+  const getSectionFromLabel = useCallback((listboxLabel) => {
+    if (listboxLabel === 'hour') return SECTION_HOUR;
+    if (listboxLabel === 'minute') return SECTION_MINUTE;
+    if (listboxLabel === 'second') return SECTION_SECOND;
+    if (listboxLabel === 'period') return SECTION_PERIOD;
+    return undefined;
+  }, []);
+
+  const getSectionFromEventTarget = useCallback(
+    (eventTarget) => {
+      const listboxNode = eventTarget?.closest?.('[role="listbox"]');
+      const ariaLabel = listboxNode?.getAttribute?.('aria-label');
+      return getSectionFromLabel(ariaLabel);
+    },
+    [getSectionFromLabel],
+  );
+
+  const getAdjacentSection = useCallback(
+    (section, delta) => {
+      const currentIndex = sectionOrder.indexOf(section);
+      if (currentIndex === -1) return sectionOrder[0] ?? section;
+
+      const nextIndex =
+        (currentIndex + delta + sectionOrder.length) % sectionOrder.length;
+      return sectionOrder[nextIndex] ?? section;
+    },
+    [sectionOrder],
   );
 
   const scrollSelectedOptionsIntoView = useCallback(() => {
@@ -459,6 +488,15 @@ const TimeInputPopup = ({
       onPointerCancelCapture={clearInteractionInProgress}
       onWheelCapture={onPopupWheelCapture}
       onKeyDown={(event) => {
+        const eventSectionFromTarget = getSectionFromEventTarget(event.target);
+        const eventSectionFromActiveElement = getSectionFromEventTarget(
+          document.activeElement,
+        );
+        const eventSection =
+          eventSectionFromTarget ??
+          eventSectionFromActiveElement ??
+          activeSection;
+
         if (event.key === 'Escape') {
           if (onClose) {
             event.preventDefault();
@@ -473,24 +511,28 @@ const TimeInputPopup = ({
         } else if (event.key === 'Tab') {
           if (!inline) {
             event.preventDefault();
-            setActiveSection(moveSection(event.shiftKey ? -1 : 1));
+            setActiveSection(
+              getAdjacentSection(eventSection, event.shiftKey ? -1 : 1),
+            );
           }
         } else if (event.key === 'ArrowLeft') {
           event.preventDefault();
-          setActiveSection(moveSection(-1));
+          setActiveSection(getAdjacentSection(eventSection, -1));
         } else if (event.key === 'ArrowRight') {
           event.preventDefault();
-          setActiveSection(moveSection(1));
+          setActiveSection(getAdjacentSection(eventSection, 1));
         } else if (event.key === 'ArrowUp') {
           event.preventDefault();
-          incrementSection(activeSection, -1);
+          incrementSection(eventSection, -1);
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
-          incrementSection(activeSection, 1);
+          incrementSection(eventSection, 1);
         } else if (event.key === 'Enter') {
           event.preventDefault();
           onClose?.();
         }
+
+        onKeyDownProp?.(event);
       }}
       onBlurCapture={(event) => {
         const nextFocusTarget = event.relatedTarget;

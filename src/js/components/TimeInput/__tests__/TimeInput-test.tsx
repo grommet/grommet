@@ -896,6 +896,72 @@ describe('TimeInput', () => {
     expect(document.getElementById('tab-cycle-picker__drop')).toBeTruthy();
   });
 
+  test('moves from minute to hour with ArrowLeft in popup', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const selectedMinuteOption = within(minuteList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+
+    expect(selectedMinuteOption).toBeTruthy();
+    fireEvent.keyDown(selectedMinuteOption as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /hours/,
+      );
+    });
+  });
+
+  test('moves from second to minute to hour with ArrowLeft in popup', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const selectedSecondOption = within(secondList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+
+    expect(selectedSecondOption).toBeTruthy();
+    fireEvent.keyDown(selectedSecondOption as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /minutes/,
+      );
+    });
+
+    fireEvent.keyDown(document.activeElement as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /hours/,
+      );
+    });
+  });
+
   test('supports option selection by click for touch-like interactions', async () => {
     const user = userEvent.setup();
 

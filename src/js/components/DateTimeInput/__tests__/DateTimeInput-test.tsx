@@ -4,6 +4,7 @@ import {
   fireEvent,
   render,
   screen,
+  waitFor,
   within,
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -537,6 +538,91 @@ describe('DateTimeInput', () => {
 
     fireEvent.keyDown(popupContent, { key: 'Enter' });
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  test('non-inline drop applies hour option ArrowDown from popup option target', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-drop-kbd-apply"
+          format="12"
+          defaultValue="2026-08-12T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    const minuteSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    const initialMinuteText = minuteSegment.textContent;
+    const initialHourText = hourSegment.textContent;
+
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const scoped = within(drop);
+    const hourList = scoped.getByRole('listbox', { name: 'hour' });
+    const popupContent = hourList.parentElement as HTMLElement;
+    const selectedHourOption = within(hourList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+
+    expect(selectedHourOption).toBeTruthy();
+    // Move active section away from hour to reproduce the stale-section path,
+    // then ArrowDown from an hour option target should still increment hour.
+    fireEvent.keyDown(popupContent, { key: 'ArrowRight' });
+    fireEvent.keyDown(selectedHourOption as HTMLElement, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(hourSegment.textContent).not.toBe(initialHourText);
+      expect(minuteSegment.textContent).toBe(initialMinuteText);
+    });
+  });
+
+  test('non-inline drop allows minute option ArrowLeft to move to hour before apply', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-drop-kbd-nav"
+          format="12"
+          defaultValue="2026-08-12T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: 'Choose date and time',
+    });
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    const initialHourText = hourSegment.textContent;
+
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const scoped = within(drop);
+    const hourList = scoped.getByRole('listbox', { name: 'hour' });
+    const minuteList = scoped.getByRole('listbox', { name: 'minute' });
+    const popupContent = hourList.parentElement as HTMLElement;
+
+    const selectedMinuteOption = within(minuteList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+    expect(selectedMinuteOption).toBeTruthy();
+
+    fireEvent.keyDown(selectedMinuteOption as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+    fireEvent.keyDown(popupContent, { key: 'ArrowDown' });
+
+    await waitFor(() => {
+      expect(hourSegment.textContent).not.toBe(initialHourText);
+    });
   });
 
   test('associates the FormField label with the grouped segmented input', () => {
