@@ -182,6 +182,7 @@ const TimeInputPopup = ({
   label,
   inline = false,
   autoFocus = true,
+  ...rest
 }) => {
   const { theme } = useThemeValue();
   const dialogRef = useRef();
@@ -507,6 +508,7 @@ const TimeInputPopup = ({
           onFocusLeave?.();
         }
       }}
+      {...rest}
     >
       {visiblePopupSections.map(({ section, label: sectionLabel, options }) => (
         <PopupColumn

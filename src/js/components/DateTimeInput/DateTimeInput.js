@@ -40,10 +40,7 @@ import { DateTimeInputPropTypes } from './propTypes';
 const StyledDateTimeInputSeparator = styled(
   StyledTimeInputSeparator,
 ).withConfig(styledComponentsConfig)`
-  margin-inline: ${(props) =>
-    props.theme.global.edgeSize[
-      props.theme.dateTimeInput?.separator?.dateTimeGap || 'xsmall'
-    ]};
+  padding-inline: ${(props) => props.$paddingInline};
 `;
 
 const SECTION_DAY = 0;
@@ -391,6 +388,8 @@ const DateTimeInput = forwardRef(
       () => format || getLocaleTimeFormat(locale),
       [format, locale],
     );
+    const dateTimeSeparatorPadding =
+      theme.global.edgeSize[theme.dateTimeInput.separator.dateTimeGap];
 
     const inputRef = useForwardedRef(refArg);
     const containerRef = useRef();
@@ -1129,6 +1128,7 @@ const DateTimeInput = forwardRef(
                         {!!prefix && (
                           <Separator
                             $filled={hasDisplayValue}
+                            $paddingInline={dateTimeSeparatorPadding}
                             {...passThemeFlag}
                           >
                             {prefix}

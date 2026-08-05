@@ -14,6 +14,9 @@ type DateTimeInputTheme = ThemeType & {
     button: {
       margin: string;
     };
+    separator: {
+      dateTimeGap: string;
+    };
     icon: {
       calendar: typeof Calendar;
     };
@@ -27,6 +30,9 @@ const customTheme: DateTimeInputTheme = {
     },
     button: {
       margin: 'xsmall',
+    },
+    separator: {
+      dateTimeGap: 'xsmall',
     },
     icon: {
       calendar: Calendar, // Pass the component, not JSX
