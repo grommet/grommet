@@ -205,7 +205,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     if (children) {
       _react.Children.map(children, function (child) {
         var _child$props, _child$props2;
-        if (((child == null || (_child$props = child.props) == null ? void 0 : _child$props.readOnly) === true || (child == null || (_child$props2 = child.props) == null ? void 0 : _child$props2.readOnlyCopy) === true) && child.type && ('TextInput'.indexOf(child.type.displayName) !== -1 || 'DateInput'.indexOf(child.type.displayName) !== -1)) {
+        if (((child == null || (_child$props = child.props) == null ? void 0 : _child$props.readOnly) === true || (child == null || (_child$props2 = child.props) == null ? void 0 : _child$props2.readOnlyCopy) === true) && child.type && (child.type.displayName === 'TextInput' || child.type.displayName === 'DateInput')) {
           readOnly = true;
         }
       });
@@ -237,7 +237,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
       return /*#__PURE__*/(0, _react.cloneElement)(child, {
         plain: true,
         focusIndicator: !containerFocus,
-        pad: 'CheckBox'.indexOf(child.type.displayName) !== -1 ? formFieldTheme == null || (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
+        pad: child.type.displayName === 'CheckBox' ? formFieldTheme == null || (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
       });
     }
     return child;
@@ -274,7 +274,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   // use fileinput plain use formfield to drive the border
   var isFileInputComponent;
   if (children && _react.Children.forEach(children, function (child) {
-    if (child && child.type && 'FileInput'.indexOf(child.type.displayName) !== -1) isFileInputComponent = true;
+    if (child && child.type && child.type.displayName === 'FileInput') isFileInputComponent = true;
   })) ;
   if (component && component.displayName === 'FileInput' && !isFileInputComponent) {
     isFileInputComponent = true;
