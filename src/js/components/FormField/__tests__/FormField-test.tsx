@@ -692,4 +692,51 @@ describe('FormField', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('does not apply readOnly styling to a non-input child whose displayName is a substring match', () => {
+    // regression test: `readOnlyField` detection previously used
+    // 'TextInput'.indexOf(child.type.displayName), which matched any
+    // child.type.displayName that is a substring of 'TextInput', such as
+    // grommet's own Text component ('Text' is a substring of 'TextInput').
+    const readOnlyTheme = {
+      global: {
+        input: {
+          readOnly: {
+            background: '#123456',
+          },
+        },
+      },
+    };
+
+    const { container: textInputContainer } = render(
+      <Grommet theme={readOnlyTheme}>
+        <FormField label="Label">
+          <TextInput readOnly />
+        </FormField>
+      </Grommet>,
+    );
+    const textInputContentBox = textInputContainer.querySelector(
+      '[class*="FormFieldContentBox"]',
+    );
+    expect(textInputContentBox).toHaveStyleRule(
+      'background-color',
+      '#123456',
+    );
+
+    const { container: textContainer } = render(
+      <Grommet theme={readOnlyTheme}>
+        <FormField label="Label">
+          {/* @ts-expect-error readOnly is not a valid Text prop */}
+          <Text readOnly>Some static content</Text>
+        </FormField>
+      </Grommet>,
+    );
+    const textContentBox = textContainer.querySelector(
+      '[class*="FormFieldContentBox"]',
+    );
+    expect(textContentBox).not.toHaveStyleRule(
+      'background-color',
+      '#123456',
+    );
+  });
 });
