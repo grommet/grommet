@@ -1052,40 +1052,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'medium',
       },
     },
-    timeInput: {
-      button: {
-        margin: { right: 'small' },
-      },
-      container: {
-        round: 'xxsmall',
-      },
-      active: {
-        background: 'active-background',
-        pad: 'xxsmall',
-        indicator: {
-          color: { dark: 'white', light: 'black' },
-          size: 'small',
-        },
-      },
-      drop: {
-        option: {
-          hover: {
-            background: 'active-background',
-          },
-          selected: {
-            background: 'selected',
-            color: 'white',
-            hover: {
-              // background: undefined,
-            },
-            // extend: undefined,
-          },
-        },
-      },
-      icon: {
-        // clock: undefined,
-      },
-    },
     dataSearch: {
       // icons: {
       //   search: undefined,
@@ -2629,6 +2595,40 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   copy: undefined,
       // },
     },
+    timeInput: {
+      button: {
+        margin: { right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+      active: {
+        background: 'active-background',
+        pad: 'xxsmall',
+        indicator: {
+          color: { dark: 'white', light: 'black' },
+          size: 'small',
+        },
+      },
+      drop: {
+        option: {
+          // background: undefined,
+          hover: {
+            background: 'active-background',
+          },
+          selected: {
+            background: 'selected',
+            color: 'white',
+            hover: {
+              // background: undefined,
+            },
+          },
+        },
+      },
+      icon: {
+        // clock: undefined,
+      },
+    },
     tip: {
       content: {
         // any Box props
@@ -2703,6 +2703,76 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             horizontal: 'small',
           },
         },
+      },
+    },
+    wizard: {
+      container: {
+        gap: 'none',
+        background: 'background-back',
+      },
+      body: {
+        pad: { horizontal: 'large', vertical: 'large' },
+        gap: { row: 'none', column: 'medium' },
+      },
+      header: {
+        pad: { horizontal: 'large', vertical: 'small' },
+        background: 'background-front',
+        title: {
+          size: 'small',
+        },
+        close: {
+          icon: FormClose,
+        },
+      },
+      progress: {
+        horizontal: {
+          pad: { horizontal: 'none', vertical: 'none' },
+        },
+        vertical: {
+          // Fixed rail width so the column doesn't collapse to label text.
+          width: 'small',
+          pad: { horizontal: 'xsmall', vertical: 'none' },
+        },
+      },
+      stepHeader: {
+        pad: { horizontal: 'none', vertical: 'none' },
+        counter: {
+          size: 'small',
+          color: 'text',
+        },
+        title: {
+          size: 'large',
+          margin: 'none',
+        },
+        description: {
+          size: 'medium',
+          color: 'text-weak',
+          margin: { top: 'xsmall', bottom: 'none' },
+        },
+      },
+      content: {
+        pad: 'medium',
+        background: 'background-front',
+        round: 'small',
+        margin: { top: 'medium' },
+      },
+      footer: {
+        pad: { horizontal: 'large', vertical: 'small' },
+        gap: { row: 'xsmall', column: 'small' },
+        background: 'background-front',
+        justify: 'end',
+        button: {
+          next: { icon: FormNext },
+          complete: { icon: undefined },
+          previous: { icon: FormPrevious },
+          cancel: { icon: undefined },
+          skip: { icon: FormNext },
+        },
+      },
+      error: {
+        color: 'status-error',
+        size: 'small',
+        margin: { top: 'xsmall' },
       },
     },
     worldMap: {

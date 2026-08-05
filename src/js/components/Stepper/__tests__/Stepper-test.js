@@ -15,6 +15,10 @@ describe('Stepper', () => {
     { id: 'step3', title: 'Step 3', status: 'pending' },
   ];
 
+  beforeEach(() => {
+    console.warn = jest.fn();
+  });
+
   test('should have no accessibility violations', async () => {
     const { container } = render(
       <Grommet>

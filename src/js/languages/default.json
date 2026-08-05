@@ -246,5 +246,18 @@
     "playButton": "play",
     "volumeDown": "volume down",
     "volumeUp": "volume up"
+  },
+  "wizard": {
+    "previous": "Previous",
+    "next": "Next",
+    "skip": "Skip",
+    "cancel": "Cancel",
+    "close": "Close",
+    "complete": "Complete",
+    "stepHeader": {
+      "counter": "Step {step} of {total}"
+    },
+    "progress": "Wizard progress",
+    "validationError": "Please complete required fields."
   }
 }

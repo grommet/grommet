@@ -9,6 +9,7 @@ export interface GrommetProps {
   dir?: 'rtl';
   full?: boolean | 'min';
   options?: {
+    button?: { childrenPlain?: boolean };
     box?: {
       cssGap?: boolean;
     };
@@ -220,10 +221,28 @@ export interface GrommetProps {
       skipLinks?: {
         skipTo?: string;
       };
+      stepper?: {
+        progress?: string;
+        step?: string;
+      };
       tabs?: {
         nextTab?: string;
         previousTab?: string;
         tabContents?: string;
+      };
+      timeInput?: {
+        activePeriodValue?: string;
+        activeSection?: string;
+        activeSectionValue?: string;
+        chooseTime?: string;
+        currentValue?: string;
+        inputLabel?: string;
+        invalidTime?: string;
+        openDrop?: string;
+        sectionHours?: string;
+        sectionMeridiem?: string;
+        sectionMinutes?: string;
+        sectionSeconds?: string;
       };
       textInput?: {
         enterSelect?: string;
