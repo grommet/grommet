@@ -9,11 +9,10 @@ import React, {
   useState,
 } from 'react';
 import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
-import styled from 'styled-components';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
-import { styledComponentsConfig, useForwardedRef } from '../../utils';
+import { useForwardedRef } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -28,20 +27,14 @@ import {
   getSectionTokenFromType,
 } from '../../utils/sectionHelpers';
 import {
-  StyledTimeInput,
-  StyledTimeInputContainer,
-  StyledTimeInputDisplay,
-  StyledTimeInputField,
-  StyledTimeInputSegment,
-  StyledTimeInputSeparator,
-} from '../TimeInput/StyledTimeInput';
+  StyledDateTimeInput,
+  StyledDateTimeInputContainer,
+  StyledDateTimeInputDisplay,
+  StyledDateTimeInputField,
+  StyledDateTimeInputSegment,
+  StyledDateTimeInputSeparator,
+} from './StyledDateTimeInput';
 import { DateTimeInputPropTypes } from './propTypes';
-
-const StyledDateTimeInputSeparator = styled(
-  StyledTimeInputSeparator,
-).withConfig(styledComponentsConfig)`
-  padding-inline: ${(props) => props.$paddingInline};
-`;
 
 const SECTION_DAY = 0;
 const SECTION_MONTH = 1;
@@ -1086,7 +1079,7 @@ const DateTimeInput = forwardRef(
               />
             </Box>
           ) : (
-            <StyledTimeInputContainer
+            <StyledDateTimeInputContainer
               ref={containerRef}
               direction="row"
               border
@@ -1097,8 +1090,8 @@ const DateTimeInput = forwardRef(
               focusIndicator={!iconFocused}
               {...passThemeFlag}
             >
-              <StyledTimeInputField {...passThemeFlag}>
-                <StyledTimeInputDisplay
+              <StyledDateTimeInputField {...passThemeFlag}>
+                <StyledDateTimeInputDisplay
                   role="group"
                   aria-label={groupLabel}
                   aria-labelledby={formFieldLabelId}
@@ -1121,7 +1114,7 @@ const DateTimeInput = forwardRef(
                     const Separator =
                       section === SECTION_HOUR
                         ? StyledDateTimeInputSeparator
-                        : StyledTimeInputSeparator;
+                        : StyledDateTimeInputSeparator;
 
                     return (
                       <React.Fragment key={section}>
@@ -1134,7 +1127,7 @@ const DateTimeInput = forwardRef(
                             {prefix}
                           </Separator>
                         )}
-                        <StyledTimeInputSegment
+                        <StyledDateTimeInputSegment
                           ref={(segmentNode) => {
                             segmentRefs.current[section] = segmentNode;
                           }}
@@ -1168,12 +1161,12 @@ const DateTimeInput = forwardRef(
                           {...passThemeFlag}
                         >
                           {text}
-                        </StyledTimeInputSegment>
+                        </StyledDateTimeInputSegment>
                       </React.Fragment>
                     );
                   })}
-                </StyledTimeInputDisplay>
-                <StyledTimeInput
+                </StyledDateTimeInputDisplay>
+                <StyledDateTimeInput
                   tabIndex={-1}
                   {...rest}
                   id={id}
@@ -1185,7 +1178,7 @@ const DateTimeInput = forwardRef(
                   focusIndicator={false}
                   plain
                 />
-              </StyledTimeInputField>
+              </StyledDateTimeInputField>
               {!readOnly && (
                 <Button
                   ref={triggerRef}
@@ -1205,7 +1198,7 @@ const DateTimeInput = forwardRef(
                   onClick={open ? closePicker : openPicker}
                 />
               )}
-            </StyledTimeInputContainer>
+            </StyledDateTimeInputContainer>
           )}
           {name && (
             <input
