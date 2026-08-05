@@ -3493,7 +3493,16 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c9 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3505,7 +3514,7 @@ exports[`DataTable custom theme 1`] = `
   height: 100%;
 }
 
-.c18 {
+.c19 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3515,7 +3524,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c20 {
+.c21 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3526,7 +3535,7 @@ exports[`DataTable custom theme 1`] = `
   justify-content: center;
 }
 
-.c23 {
+.c24 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3539,15 +3548,6 @@ exports[`DataTable custom theme 1`] = `
   width: 24px;
   justify-content: center;
   border-radius: 4px;
-}
-
-.c26 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
 }
 
 .c27 {
@@ -3565,13 +3565,13 @@ exports[`DataTable custom theme 1`] = `
   border-radius: 4px;
 }
 
-.c10 {
+.c11 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -3635,7 +3635,7 @@ exports[`DataTable custom theme 1`] = `
   border: 0;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3652,47 +3652,47 @@ exports[`DataTable custom theme 1`] = `
   text-align: inherit;
 }
 
-.c12:focus {
+.c13:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c12:focus ::-moz-focus-inner {
+.c13:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
-.c24 {
+.c25 {
   box-sizing: border-box;
   stroke-width: 4px;
   stroke: #7D4CDB;
@@ -3700,7 +3700,7 @@ exports[`DataTable custom theme 1`] = `
   height: 24px;
 }
 
-.c19 {
+.c20 {
   display: flex;
   flex-direction: row;
   user-select: none;
@@ -3714,12 +3714,12 @@ exports[`DataTable custom theme 1`] = `
   cursor: default;
 }
 
-.c19:hover input:not([disabled])+div,
-.c19:hover input:not([disabled])+span {
+.c20:hover input:not([disabled])+div,
+.c20:hover input:not([disabled])+span {
   border-color: #000000;
 }
 
-.c22 {
+.c23 {
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -3727,12 +3727,12 @@ exports[`DataTable custom theme 1`] = `
   margin: 0;
 }
 
-.c22:checked+span>span {
+.c23:checked+span>span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c21 {
+.c22 {
   flex-shrink: 0;
 }
 
@@ -3759,7 +3759,7 @@ exports[`DataTable custom theme 1`] = `
   padding: 0px;
 }
 
-.c17 {
+.c18 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3769,7 +3769,7 @@ exports[`DataTable custom theme 1`] = `
   text-align: start;
 }
 
-.c25 {
+.c26 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -3787,7 +3787,7 @@ exports[`DataTable custom theme 1`] = `
   width: inherit;
 }
 
-.c13 {
+.c14 {
   display: flex;
   justify-content: center;
   padding-top: 7px;
@@ -3808,51 +3808,51 @@ exports[`DataTable custom theme 1`] = `
   border-collapse: separate;
 }
 
+.c17:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus >circle,
+.c17:focus >ellipse,
+.c17:focus >line,
+.c17:focus >path,
+.c17:focus >polygon,
+.c17:focus >polyline,
+.c17:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c17:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c17:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) >circle,
+.c17:focus:not(:focus-visible) >ellipse,
+.c17:focus:not(:focus-visible) >line,
+.c17:focus:not(:focus-visible) >path,
+.c17:focus:not(:focus-visible) >polygon,
+.c17:focus:not(:focus-visible) >polyline,
+.c17:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c17:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c16:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c16:focus >circle,
-.c16:focus >ellipse,
-.c16:focus >line,
-.c16:focus >path,
-.c16:focus >polygon,
-.c16:focus >polyline,
-.c16:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c16:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c16:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) >circle,
-.c16:focus:not(:focus-visible) >ellipse,
-.c16:focus:not(:focus-visible) >line,
-.c16:focus:not(:focus-visible) >path,
-.c16:focus:not(:focus-visible) >polygon,
-.c16:focus:not(:focus-visible) >polyline,
-.c16:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c16:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c15:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c15:focus:not(:focus-visible) {
+.c16:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -3865,7 +3865,7 @@ exports[`DataTable custom theme 1`] = `
   color: #444444;
 }
 
-.c11 {
+.c12 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -3878,13 +3878,13 @@ exports[`DataTable custom theme 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
+  .c15 {
     border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c23 {
+  .c24 {
     border: solid 2px #7D4CDB;
   }
 }
@@ -3896,7 +3896,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c10 {
+  .c11 {
     width: 3px;
   }
 }
@@ -3928,22 +3928,30 @@ exports[`DataTable custom theme 1`] = `
             class="c5"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="c6 c7"
               type="button"
             >
               <div
                 class="c8"
               >
-                <span
-                  class="c9"
-                >
-                  A
-                </span>
                 <div
-                  class="c10"
+                  class="c9"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c10"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c11"
                 />
                 <span
-                  class="c11"
+                  aria-hidden="true"
+                  class="c12"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -3956,52 +3964,52 @@ exports[`DataTable custom theme 1`] = `
             aria-orientation="vertical"
             aria-valuenow="0"
             aria-valuetext="Resize A column"
-            class="c12 c13"
+            class="c13 c14"
             role="separator"
             type="button"
           >
             <div
-              class="c14"
+              class="c15"
             />
           </button>
         </th>
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c15"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c16"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
       >
         <td
           aria-disabled="true"
-          class="c17 "
+          class="c18 "
         >
           <div
-            class="c18"
+            class="c19"
             style="height: 0px;"
           >
             <label
-              class="c19"
+              class="c20"
               disabled=""
             >
               <div
-                class="c20 c21"
+                class="c21 c22"
                 disabled=""
               >
                 <input
                   aria-label="unselect alpha"
                   checked=""
-                  class="c22"
+                  class="c23"
                   disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="c23 "
+                  class="c24 "
                   disabled=""
                 >
                   <svg
-                    class="c24"
+                    class="c25"
                     disabled=""
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 24 24"
@@ -4021,14 +4029,14 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </td>
         <th
-          class="c25 "
+          class="c26 "
           scope="row"
         >
           <div
-            class="c26"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               alpha
             </span>
@@ -4036,27 +4044,27 @@ exports[`DataTable custom theme 1`] = `
         </th>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c16"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c17"
       >
         <td
           aria-disabled="true"
-          class="c17 "
+          class="c18 "
         >
           <div
-            class="c18"
+            class="c19"
             style="height: 0px;"
           >
             <label
-              class="c19"
+              class="c20"
               disabled=""
             >
               <div
-                class="c20 c21"
+                class="c21 c22"
                 disabled=""
               >
                 <input
                   aria-label="select beta"
-                  class="c22"
+                  class="c23"
                   disabled=""
                   type="checkbox"
                 />
@@ -4069,14 +4077,14 @@ exports[`DataTable custom theme 1`] = `
           </div>
         </td>
         <th
-          class="c25 "
+          class="c26 "
           scope="row"
         >
           <div
-            class="c26"
+            class="c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               beta
             </span>
@@ -4116,22 +4124,30 @@ exports[`DataTable custom theme 2`] = `
             class="StyledBox-sc-13pk1d4-0 cyLFae"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 ksMNO"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 gIpquo"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-a-label"
                 >
-                  A
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 gIpquo"
+                  >
+                    A
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -17087,7 +17103,7 @@ exports[`DataTable onSort 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -17096,713 +17112,18 @@ exports[`DataTable onSort 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
 
 .c15 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c5 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  height: 100%;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c5:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding: 0px;
-}
-
-.c13 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c2 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c11:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.c6 {
-  padding: 6px 12px;
-}
-
-.c10 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
-    width: 3px;
-  }
-}
-
-<div
-  class="c0"
->
-  <table
-    class="c1 c2"
-  >
-    <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-      >
-        <th
-          aria-sort="none"
-          class="c3 "
-          id="grommet-data-table-header-a"
-          scope="col"
-        >
-          <div
-            class="c4"
-          >
-            <button
-              class="c5 c6"
-              type="button"
-            >
-              <div
-                class="c7"
-              >
-                <span
-                  class="c8"
-                >
-                  A
-                </span>
-                <div
-                  class="c9"
-                />
-                <span
-                  class="c10"
-                >
-                  sortable, activate to sort ascending
-                </span>
-              </div>
-            </button>
-          </div>
-        </th>
-        <th
-          aria-sort="none"
-          class="c3 "
-          id="grommet-data-table-header-b"
-          scope="col"
-        >
-          <div
-            class="c4"
-          >
-            <button
-              class="c5 c6"
-              type="button"
-            >
-              <div
-                class="c7"
-              >
-                <span
-                  class="c8"
-                >
-                  B
-                </span>
-                <div
-                  class="c9"
-                />
-                <span
-                  class="c10"
-                >
-                  sortable, activate to sort ascending
-                </span>
-              </div>
-            </button>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
-      >
-        <th
-          class="c13 "
-          scope="row"
-        >
-          <div
-            class="c14"
-          >
-            <span
-              class="c15"
-            >
-              zero
-            </span>
-          </div>
-        </th>
-        <td
-          class="c13 "
-        >
-          <div
-            class="c14"
-          >
-            <span
-              class="c8"
-            >
-              0
-            </span>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
-      >
-        <th
-          class="c13 "
-          scope="row"
-        >
-          <div
-            class="c14"
-          >
-            <span
-              class="c15"
-            >
-              one
-            </span>
-          </div>
-        </th>
-        <td
-          class="c13 "
-        >
-          <div
-            class="c14"
-          >
-            <span
-              class="c8"
-            >
-              1
-            </span>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
-      >
-        <th
-          class="c13 "
-          scope="row"
-        >
-          <div
-            class="c14"
-          >
-            <span
-              class="c15"
-            >
-              two
-            </span>
-          </div>
-        </th>
-        <td
-          class="c13 "
-        >
-          <div
-            class="c14"
-          >
-            <span
-              class="c8"
-            >
-              2
-            </span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable onSort 2`] = `
-<div
-  class="StyledGrommet-sc-19lkkz7-0 jhJvIT"
->
-  <table
-    class="StyledTable-sc-1m3u5g-6 gfvJtN StyledDataTable-sc-xrlyjm-0 iySlWL"
-  >
-    <thead
-      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
-      >
-        <th
-          aria-sort="ascending"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
-          id="grommet-data-table-header-a"
-          scope="col"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 kTYaFZ"
-          >
-            <button
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
-              type="button"
-            >
-              <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
-              >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
-                >
-                  A
-                </span>
-                .c0 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 6px;
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    width: 3px;
-  }
-}
-
-<div
-                  class="c0"
-                />
-                .c0 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c0 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c0 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c0 *[stroke*='#'],
-.c0 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c0 *[fill-rule],
-.c0 *[FILL-RULE],
-.c0 *[fill*='#'],
-.c0 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-<svg
-                  aria-hidden="true"
-                  aria-label="FormUp"
-                  class="c0"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m18 15-6-6-6 6"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-                <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
-                />
-                .c0 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-<span
-                  class="c0"
-                >
-                  sorted ascending, activate to sort descending
-                </span>
-              </div>
-            </button>
-          </div>
-        </th>
-        <th
-          aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
-          id="grommet-data-table-header-b"
-          scope="col"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 kTYaFZ"
-          >
-            <button
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
-              type="button"
-            >
-              <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
-              >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
-                >
-                  B
-                </span>
-                <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
-                />
-                <span
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
-                >
-                  sortable, activate to sort ascending
-                </span>
-              </div>
-            </button>
-          </div>
-        </th>
-      </tr>
-    </thead>
-    <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 buut"
-    >
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
-      >
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 RYmEp"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 gIpquo"
-            >
-              one
-            </span>
-          </div>
-        </th>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 RYmEp"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 iuKlFO"
-            >
-              1
-            </span>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
-      >
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 RYmEp"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 gIpquo"
-            >
-              two
-            </span>
-          </div>
-        </th>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 RYmEp"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 iuKlFO"
-            >
-              2
-            </span>
-          </div>
-        </td>
-      </tr>
-      <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
-      >
-        <th
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
-          scope="row"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 RYmEp"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 gIpquo"
-            >
-              zero
-            </span>
-          </div>
-        </th>
-        <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
-        >
-          <div
-            class="StyledBox-sc-13pk1d4-0 RYmEp"
-          >
-            <span
-              class="StyledText-sc-1sadyjn-0 iuKlFO"
-            >
-              0
-            </span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-`;
-
-exports[`DataTable onSort external 1`] = `
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c7 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-}
-
-.c15 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c9 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 6px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -17965,7 +17286,734 @@ exports[`DataTable onSort external 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
+  .c10 {
+    width: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1 c2"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+      >
+        <th
+          aria-sort="none"
+          class="c3 "
+          id="grommet-data-table-header-a"
+          scope="col"
+        >
+          <div
+            class="c4"
+          >
+            <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
+              class="c5 c6"
+              type="button"
+            >
+              <div
+                class="c7"
+              >
+                <div
+                  class="c8"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c10"
+                />
+                <span
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-a-sort-status"
+                >
+                  sortable, activate to sort ascending
+                </span>
+              </div>
+            </button>
+          </div>
+        </th>
+        <th
+          aria-sort="none"
+          class="c3 "
+          id="grommet-data-table-header-b"
+          scope="col"
+        >
+          <div
+            class="c4"
+          >
+            <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
+              class="c5 c6"
+              type="button"
+            >
+              <div
+                class="c7"
+              >
+                <div
+                  class="c8"
+                  id="grommet-data-table-header-b-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    B
+                  </span>
+                </div>
+                <div
+                  class="c10"
+                />
+                <span
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-b-sort-status"
+                >
+                  sortable, activate to sort ascending
+                </span>
+              </div>
+            </button>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+      >
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c15"
+            >
+              zero
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              0
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+      >
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c15"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+      >
+        <th
+          class="c14 "
+          scope="row"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c15"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c14 "
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable onSort 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 jhJvIT"
+>
+  <table
+    class="StyledTable-sc-1m3u5g-6 gfvJtN StyledDataTable-sc-xrlyjm-0 iySlWL"
+  >
+    <thead
+      class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRowHeader-sc-xrlyjm-3 ktKCWw"
+      >
+        <th
+          aria-sort="ascending"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          id="grommet-data-table-header-a"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kTYaFZ"
+          >
+            <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
+              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+              >
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    A
+                  </span>
+                </div>
+                .c0 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+  .c0 {
+    width: 3px;
+  }
+}
+
+<div
+                  class="c0"
+                />
+                .c0 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*='#'],
+.c0 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*='#'],
+.c0 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<svg
+                  aria-hidden="true"
+                  aria-label="FormUp"
+                  class="c0"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m18 15-6-6-6 6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                .c0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+<span
+                  aria-hidden="true"
+                  class="c0"
+                  id="grommet-data-table-header-a-sort-status"
+                >
+                  sorted ascending, activate to sort descending
+                </span>
+              </div>
+            </button>
+          </div>
+        </th>
+        <th
+          aria-sort="none"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          id="grommet-data-table-header-b"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kTYaFZ"
+          >
+            <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
+              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+              >
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-b-label"
+                >
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    B
+                  </span>
+                </div>
+                <div
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                />
+                <span
+                  aria-hidden="true"
+                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-b-sort-status"
+                >
+                  sortable, activate to sort ascending
+                </span>
+              </div>
+            </button>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 StyledDataTable__StyledDataTableBody-sc-xrlyjm-4 buut"
+    >
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 RYmEp"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 gIpquo"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 RYmEp"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 iuKlFO"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 RYmEp"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 gIpquo"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 RYmEp"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 iuKlFO"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 StyledDataTable__StyledDataTableRow-sc-xrlyjm-2 iunPNm"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 RYmEp"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 gIpquo"
+            >
+              zero
+            </span>
+          </div>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 bufnLL StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 RYmEp"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 iuKlFO"
+            >
+              0
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable onSort external 1`] = `
+.c11 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c16 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding: 0px;
+}
+
+.c15 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c6 {
+  padding: 6px 12px;
+}
+
+.c12 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c10 {
     width: 3px;
   }
 }
@@ -17992,24 +18040,30 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  A
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <svg
                   aria-hidden="true"
                   aria-label="FormUp"
-                  class="c10"
+                  class="c11"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -18020,10 +18074,12 @@ exports[`DataTable onSort external 1`] = `
                   />
                 </svg>
                 <div
-                  class="c9"
+                  class="c10"
                 />
                 <span
-                  class="c11"
+                  aria-hidden="true"
+                  class="c12"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sorted ascending, activate to sort descending
                 </span>
@@ -18041,22 +18097,30 @@ exports[`DataTable onSort external 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  B
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-b-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    B
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c11"
+                  aria-hidden="true"
+                  class="c12"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -18067,17 +18131,17 @@ exports[`DataTable onSort external 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -18087,13 +18151,13 @@ exports[`DataTable onSort external 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               0
             </span>
@@ -18101,14 +18165,14 @@ exports[`DataTable onSort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -18118,13 +18182,13 @@ exports[`DataTable onSort external 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               1
             </span>
@@ -18132,14 +18196,14 @@ exports[`DataTable onSort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -18149,13 +18213,13 @@ exports[`DataTable onSort external 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               2
             </span>
@@ -18190,17 +18254,23 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-a-label"
                 >
-                  A
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    A
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
@@ -18257,7 +18327,9 @@ exports[`DataTable onSort external 2`] = `
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sorted descending, activate to sort ascending
                 </span>
@@ -18275,22 +18347,30 @@ exports[`DataTable onSort external 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-b-label"
                 >
-                  B
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    B
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -52065,7 +52145,7 @@ exports[`DataTable should use theme icons 2`] = `
 `;
 
 exports[`DataTable sort 1`] = `
-.c10 {
+.c11 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -52074,25 +52154,25 @@ exports[`DataTable sort 1`] = `
   stroke: #666666;
 }
 
-.c10 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c10 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -52128,7 +52208,7 @@ exports[`DataTable sort 1`] = `
   flex-direction: row;
 }
 
-.c15 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -52137,13 +52217,13 @@ exports[`DataTable sort 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -52222,7 +52302,7 @@ exports[`DataTable sort 1`] = `
   padding: 0px;
 }
 
-.c14 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -52246,51 +52326,51 @@ exports[`DataTable sort 1`] = `
   border-collapse: separate;
 }
 
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -52298,7 +52378,7 @@ exports[`DataTable sort 1`] = `
   padding: 6px 12px;
 }
 
-.c11 {
+.c12 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -52311,7 +52391,7 @@ exports[`DataTable sort 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
+  .c10 {
     width: 3px;
   }
 }
@@ -52338,24 +52418,30 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  A
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <svg
                   aria-hidden="true"
                   aria-label="FormUp"
-                  class="c10"
+                  class="c11"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -52366,10 +52452,12 @@ exports[`DataTable sort 1`] = `
                   />
                 </svg>
                 <div
-                  class="c9"
+                  class="c10"
                 />
                 <span
-                  class="c11"
+                  aria-hidden="true"
+                  class="c12"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sorted ascending, activate to sort descending
                 </span>
@@ -52387,22 +52475,30 @@ exports[`DataTable sort 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  B
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-b-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    B
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c11"
+                  aria-hidden="true"
+                  class="c12"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -52413,17 +52509,17 @@ exports[`DataTable sort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -52433,13 +52529,13 @@ exports[`DataTable sort 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               1
             </span>
@@ -52447,14 +52543,14 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -52464,13 +52560,13 @@ exports[`DataTable sort 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               2
             </span>
@@ -52478,14 +52574,14 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -52495,13 +52591,13 @@ exports[`DataTable sort 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               0
             </span>
@@ -52515,7 +52611,7 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort controlled 1`] = `
 <DocumentFragment>
-  .c11 {
+  .c12 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -52524,25 +52620,25 @@ exports[`DataTable sort controlled 1`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -52578,7 +52674,7 @@ exports[`DataTable sort controlled 1`] = `
   flex-direction: row;
 }
 
-.c16 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -52587,13 +52683,13 @@ exports[`DataTable sort controlled 1`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c11 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -52737,7 +52833,7 @@ exports[`DataTable sort controlled 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -52761,51 +52857,51 @@ exports[`DataTable sort controlled 1`] = `
   border-collapse: separate;
 }
 
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c14:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus >circle,
-.c14:focus >ellipse,
-.c14:focus >line,
-.c14:focus >path,
-.c14:focus >polygon,
-.c14:focus >polyline,
-.c14:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c14:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c14:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) >circle,
-.c14:focus:not(:focus-visible) >ellipse,
-.c14:focus:not(:focus-visible) >line,
-.c14:focus:not(:focus-visible) >path,
-.c14:focus:not(:focus-visible) >polygon,
-.c14:focus:not(:focus-visible) >polyline,
-.c14:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c14:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c13:focus:not(:focus-visible) {
+.c14:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -52813,7 +52909,7 @@ exports[`DataTable sort controlled 1`] = `
   padding: 6px 12px;
 }
 
-.c12 {
+.c13 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -52826,7 +52922,7 @@ exports[`DataTable sort controlled 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c10 {
+  .c11 {
     width: 3px;
   }
 }
@@ -52859,24 +52955,30 @@ exports[`DataTable sort controlled 1`] = `
               class="c5"
             >
               <button
+                aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
                 class="c6 c7"
                 type="button"
               >
                 <div
                   class="c8"
                 >
-                  <span
-                    class="c9"
-                  >
-                    A
-                  </span>
                   <div
-                    class="c10"
+                    class="c9"
+                    id="grommet-data-table-header-a-label"
+                  >
+                    <span
+                      class="c10"
+                    >
+                      A
+                    </span>
+                  </div>
+                  <div
+                    class="c11"
                   />
                   <svg
                     aria-hidden="true"
                     aria-label="FormUp"
-                    class="c11"
+                    class="c12"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -52887,10 +52989,12 @@ exports[`DataTable sort controlled 1`] = `
                     />
                   </svg>
                   <div
-                    class="c10"
+                    class="c11"
                   />
                   <span
-                    class="c12"
+                    aria-hidden="true"
+                    class="c13"
+                    id="grommet-data-table-header-a-sort-status"
                   >
                     sorted ascending, activate to sort descending
                   </span>
@@ -52908,22 +53012,30 @@ exports[`DataTable sort controlled 1`] = `
               class="c5"
             >
               <button
+                aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
                 class="c6 c7"
                 type="button"
               >
                 <div
                   class="c8"
                 >
-                  <span
-                    class="c9"
-                  >
-                    B
-                  </span>
                   <div
-                    class="c10"
+                    class="c9"
+                    id="grommet-data-table-header-b-label"
+                  >
+                    <span
+                      class="c10"
+                    >
+                      B
+                    </span>
+                  </div>
+                  <div
+                    class="c11"
                   />
                   <span
-                    class="c12"
+                    aria-hidden="true"
+                    class="c13"
+                    id="grommet-data-table-header-b-sort-status"
                   >
                     sortable, activate to sort ascending
                   </span>
@@ -52934,17 +53046,17 @@ exports[`DataTable sort controlled 1`] = `
         </tr>
       </thead>
       <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
       >
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c9"
             >
               <span
                 class="c17"
@@ -52954,13 +53066,13 @@ exports[`DataTable sort controlled 1`] = `
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 1
               </span>
@@ -52968,14 +53080,14 @@ exports[`DataTable sort controlled 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c9"
             >
               <span
                 class="c17"
@@ -52985,13 +53097,13 @@ exports[`DataTable sort controlled 1`] = `
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 2
               </span>
@@ -52999,14 +53111,14 @@ exports[`DataTable sort controlled 1`] = `
           </td>
         </tr>
         <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
         >
           <th
-            class="c15 "
+            class="c16 "
             scope="row"
           >
             <div
-              class="c16"
+              class="c9"
             >
               <span
                 class="c17"
@@ -53016,13 +53128,13 @@ exports[`DataTable sort controlled 1`] = `
             </div>
           </th>
           <td
-            class="c15 "
+            class="c16 "
           >
             <div
-              class="c16"
+              class="c9"
             >
               <span
-                class="c9"
+                class="c10"
               >
                 0
               </span>
@@ -53037,7 +53149,7 @@ exports[`DataTable sort controlled 1`] = `
 
 exports[`DataTable sort controlled 2`] = `
 <DocumentFragment>
-  .c11 {
+  .c12 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -53046,25 +53158,25 @@ exports[`DataTable sort controlled 2`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -53100,7 +53212,7 @@ exports[`DataTable sort controlled 2`] = `
   flex-direction: row;
 }
 
-.c16 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -53109,13 +53221,13 @@ exports[`DataTable sort controlled 2`] = `
   flex-direction: column;
 }
 
-.c10 {
+.c11 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -53259,7 +53371,7 @@ exports[`DataTable sort controlled 2`] = `
   padding: 0px;
 }
 
-.c15 {
+.c16 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -53278,6 +53390,478 @@ exports[`DataTable sort controlled 2`] = `
 }
 
 .c3 {
+  position: relative;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.c15:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus >circle,
+.c15:focus >ellipse,
+.c15:focus >line,
+.c15:focus >path,
+.c15:focus >polygon,
+.c15:focus >polyline,
+.c15:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c15:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c15:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) >circle,
+.c15:focus:not(:focus-visible) >ellipse,
+.c15:focus:not(:focus-visible) >line,
+.c15:focus:not(:focus-visible) >path,
+.c15:focus:not(:focus-visible) >polygon,
+.c15:focus:not(:focus-visible) >polyline,
+.c15:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c15:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus {
+  outline: 2px solid #6FFFB0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.c7 {
+  padding: 6px 12px;
+}
+
+.c13 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c11 {
+    width: 3px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+      type="button"
+    >
+      Sort data
+    </button>
+    <table
+      class="c2 c3"
+    >
+      <thead
+        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
+        >
+          <th
+            aria-sort="descending"
+            class="c4 "
+            id="grommet-data-table-header-a"
+            scope="col"
+          >
+            <div
+              class="c5"
+            >
+              <button
+                aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
+                class="c6 c7"
+                type="button"
+              >
+                <div
+                  class="c8"
+                >
+                  <div
+                    class="c9"
+                    id="grommet-data-table-header-a-label"
+                  >
+                    <span
+                      class="c10"
+                    >
+                      A
+                    </span>
+                  </div>
+                  <div
+                    class="c11"
+                  />
+                  <svg
+                    aria-hidden="true"
+                    aria-label="FormDown"
+                    class="c12"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="m18 9-6 6-6-6"
+                      fill="none"
+                      stroke="#000"
+                      stroke-width="2"
+                    />
+                  </svg>
+                  <div
+                    class="c11"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="c13"
+                    id="grommet-data-table-header-a-sort-status"
+                  >
+                    sorted descending, activate to sort ascending
+                  </span>
+                </div>
+              </button>
+            </div>
+          </th>
+          <th
+            aria-sort="none"
+            class="c4 "
+            id="grommet-data-table-header-b"
+            scope="col"
+          >
+            <div
+              class="c5"
+            >
+              <button
+                aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
+                class="c6 c7"
+                type="button"
+              >
+                <div
+                  class="c8"
+                >
+                  <div
+                    class="c9"
+                    id="grommet-data-table-header-b-label"
+                  >
+                    <span
+                      class="c10"
+                    >
+                      B
+                    </span>
+                  </div>
+                  <div
+                    class="c11"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="c13"
+                    id="grommet-data-table-header-b-sort-status"
+                  >
+                    sortable, activate to sort ascending
+                  </span>
+                </div>
+              </button>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c14"
+      >
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
+        >
+          <th
+            class="c16 "
+            scope="row"
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c17"
+              >
+                zero
+              </span>
+            </div>
+          </th>
+          <td
+            class="c16 "
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c10"
+              >
+                0
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
+        >
+          <th
+            class="c16 "
+            scope="row"
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c17"
+              >
+                two
+              </span>
+            </div>
+          </th>
+          <td
+            class="c16 "
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c10"
+              >
+                2
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c15"
+        >
+          <th
+            class="c16 "
+            scope="row"
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c17"
+              >
+                one
+              </span>
+            </div>
+          </th>
+          <td
+            class="c16 "
+          >
+            <div
+              class="c9"
+            >
+              <span
+                class="c10"
+              >
+                1
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DataTable sort external 1`] = `
+.c11 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+.c7 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c8 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c10 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 6px;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c16 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c5:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus >circle,
+.c5:focus >ellipse,
+.c5:focus >line,
+.c5:focus >path,
+.c5:focus >polygon,
+.c5:focus >polyline,
+.c5:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c5:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) >circle,
+.c5:focus:not(:focus-visible) >ellipse,
+.c5:focus:not(:focus-visible) >line,
+.c5:focus:not(:focus-visible) >path,
+.c5:focus:not(:focus-visible) >polygon,
+.c5:focus:not(:focus-visible) >polyline,
+.c5:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c5:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
+  padding: 0px;
+}
+
+.c15 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-align: start;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: inherit;
+}
+
+.c2 {
   position: relative;
   border-spacing: 0;
   border-collapse: separate;
@@ -53331,7 +53915,7 @@ exports[`DataTable sort controlled 2`] = `
   outline: none;
 }
 
-.c7 {
+.c6 {
   padding: 6px 12px;
 }
 
@@ -53349,462 +53933,6 @@ exports[`DataTable sort controlled 2`] = `
 
 @media only screen and (max-width: 768px) {
   .c10 {
-    width: 3px;
-  }
-}
-
-<div
-    class="c0"
-  >
-    <button
-      class="c1"
-      type="button"
-    >
-      Sort data
-    </button>
-    <table
-      class="c2 c3"
-    >
-      <thead
-        class="StyledTable__StyledTableHeader-sc-1m3u5g-4 StyledDataTable__StyledDataTableHeader-sc-xrlyjm-5"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 "
-        >
-          <th
-            aria-sort="descending"
-            class="c4 "
-            id="grommet-data-table-header-a"
-            scope="col"
-          >
-            <div
-              class="c5"
-            >
-              <button
-                class="c6 c7"
-                type="button"
-              >
-                <div
-                  class="c8"
-                >
-                  <span
-                    class="c9"
-                  >
-                    A
-                  </span>
-                  <div
-                    class="c10"
-                  />
-                  <svg
-                    aria-hidden="true"
-                    aria-label="FormDown"
-                    class="c11"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="m18 9-6 6-6-6"
-                      fill="none"
-                      stroke="#000"
-                      stroke-width="2"
-                    />
-                  </svg>
-                  <div
-                    class="c10"
-                  />
-                  <span
-                    class="c12"
-                  >
-                    sorted descending, activate to sort ascending
-                  </span>
-                </div>
-              </button>
-            </div>
-          </th>
-          <th
-            aria-sort="none"
-            class="c4 "
-            id="grommet-data-table-header-b"
-            scope="col"
-          >
-            <div
-              class="c5"
-            >
-              <button
-                class="c6 c7"
-                type="button"
-              >
-                <div
-                  class="c8"
-                >
-                  <span
-                    class="c9"
-                  >
-                    B
-                  </span>
-                  <div
-                    class="c10"
-                  />
-                  <span
-                    class="c12"
-                  >
-                    sortable, activate to sort ascending
-                  </span>
-                </div>
-              </button>
-            </div>
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
-      >
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
-        >
-          <th
-            class="c15 "
-            scope="row"
-          >
-            <div
-              class="c16"
-            >
-              <span
-                class="c17"
-              >
-                zero
-              </span>
-            </div>
-          </th>
-          <td
-            class="c15 "
-          >
-            <div
-              class="c16"
-            >
-              <span
-                class="c9"
-              >
-                0
-              </span>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
-        >
-          <th
-            class="c15 "
-            scope="row"
-          >
-            <div
-              class="c16"
-            >
-              <span
-                class="c17"
-              >
-                two
-              </span>
-            </div>
-          </th>
-          <td
-            class="c15 "
-          >
-            <div
-              class="c16"
-            >
-              <span
-                class="c9"
-              >
-                2
-              </span>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
-        >
-          <th
-            class="c15 "
-            scope="row"
-          >
-            <div
-              class="c16"
-            >
-              <span
-                class="c17"
-              >
-                one
-              </span>
-            </div>
-          </th>
-          <td
-            class="c15 "
-          >
-            <div
-              class="c16"
-            >
-              <span
-                class="c9"
-              >
-                1
-              </span>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`DataTable sort external 1`] = `
-.c10 {
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c10 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c10 *:not([stroke])[fill='none'] {
-  stroke-width: 0;
-}
-
-.c10 *[stroke*='#'],
-.c10 *[STROKE*='#'] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c10 *[fill-rule],
-.c10 *[FILL-RULE],
-.c10 *[fill*='#'],
-.c10 *[FILL*='#'] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c4 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-.c7 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: row;
-}
-
-.c15 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c9 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 6px;
-}
-
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.c16 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c5 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  outline: none;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  height: 100%;
-}
-
-.c5:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus >circle,
-.c5:focus >ellipse,
-.c5:focus >line,
-.c5:focus >path,
-.c5:focus >polygon,
-.c5:focus >polyline,
-.c5:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c5:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c5:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) >circle,
-.c5:focus:not(:focus-visible) >ellipse,
-.c5:focus:not(:focus-visible) >line,
-.c5:focus:not(:focus-visible) >path,
-.c5:focus:not(:focus-visible) >polygon,
-.c5:focus:not(:focus-visible) >polyline,
-.c5:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c5:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c3 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.33);
-  padding: 0px;
-}
-
-.c14 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  text-align: start;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: inherit;
-}
-
-.c2 {
-  position: relative;
-  border-spacing: 0;
-  border-collapse: separate;
-}
-
-.c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus {
-  outline: 2px solid #6FFFB0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-}
-
-.c6 {
-  padding: 6px 12px;
-}
-
-.c11 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .c9 {
     width: 3px;
   }
 }
@@ -53831,24 +53959,30 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  A
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <svg
                   aria-hidden="true"
                   aria-label="FormUp"
-                  class="c10"
+                  class="c11"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -53859,10 +53993,12 @@ exports[`DataTable sort external 1`] = `
                   />
                 </svg>
                 <div
-                  class="c9"
+                  class="c10"
                 />
                 <span
-                  class="c11"
+                  aria-hidden="true"
+                  class="c12"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sorted ascending, activate to sort descending
                 </span>
@@ -53880,22 +54016,30 @@ exports[`DataTable sort external 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  B
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-b-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    B
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c11"
+                  aria-hidden="true"
+                  class="c12"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -53906,17 +54050,17 @@ exports[`DataTable sort external 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -53926,13 +54070,13 @@ exports[`DataTable sort external 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               0
             </span>
@@ -53940,14 +54084,14 @@ exports[`DataTable sort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -53957,13 +54101,13 @@ exports[`DataTable sort external 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               1
             </span>
@@ -53971,14 +54115,14 @@ exports[`DataTable sort external 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -53988,13 +54132,13 @@ exports[`DataTable sort external 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               2
             </span>
@@ -54007,7 +54151,7 @@ exports[`DataTable sort external 1`] = `
 `;
 
 exports[`DataTable sort nested object 1`] = `
-.c11 {
+.c12 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -54016,25 +54160,25 @@ exports[`DataTable sort nested object 1`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -54070,7 +54214,7 @@ exports[`DataTable sort nested object 1`] = `
   flex-direction: row;
 }
 
-.c15 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54079,13 +54223,13 @@ exports[`DataTable sort nested object 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -54164,7 +54308,7 @@ exports[`DataTable sort nested object 1`] = `
   padding: 0px;
 }
 
-.c14 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -54188,51 +54332,51 @@ exports[`DataTable sort nested object 1`] = `
   border-collapse: separate;
 }
 
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -54240,7 +54384,7 @@ exports[`DataTable sort nested object 1`] = `
   padding: 6px 12px;
 }
 
-.c10 {
+.c11 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -54253,7 +54397,7 @@ exports[`DataTable sort nested object 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
+  .c10 {
     width: 3px;
   }
 }
@@ -54280,22 +54424,30 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  A
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -54313,24 +54465,30 @@ exports[`DataTable sort nested object 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b.value-label grommet-data-table-header-b.value-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  Value
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-b.value-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    Value
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <svg
                   aria-hidden="true"
                   aria-label="FormDown"
-                  class="c11"
+                  class="c12"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -54341,10 +54499,12 @@ exports[`DataTable sort nested object 1`] = `
                   />
                 </svg>
                 <div
-                  class="c9"
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-b.value-sort-status"
                 >
                   sorted descending, activate to sort ascending
                 </span>
@@ -54355,17 +54515,17 @@ exports[`DataTable sort nested object 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -54375,13 +54535,13 @@ exports[`DataTable sort nested object 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               3
             </span>
@@ -54389,14 +54549,14 @@ exports[`DataTable sort nested object 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -54406,13 +54566,13 @@ exports[`DataTable sort nested object 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               2
             </span>
@@ -54420,14 +54580,14 @@ exports[`DataTable sort nested object 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -54437,13 +54597,13 @@ exports[`DataTable sort nested object 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               1
             </span>
@@ -54456,7 +54616,7 @@ exports[`DataTable sort nested object 1`] = `
 `;
 
 exports[`DataTable sort nested object with onSort 1`] = `
-.c11 {
+.c12 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -54465,25 +54625,25 @@ exports[`DataTable sort nested object with onSort 1`] = `
   stroke: #666666;
 }
 
-.c11 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -54519,7 +54679,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex-direction: row;
 }
 
-.c15 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54528,13 +54688,13 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -54613,7 +54773,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   padding: 0px;
 }
 
-.c14 {
+.c15 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -54637,51 +54797,51 @@ exports[`DataTable sort nested object with onSort 1`] = `
   border-collapse: separate;
 }
 
+.c14:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus >circle,
+.c14:focus >ellipse,
+.c14:focus >line,
+.c14:focus >path,
+.c14:focus >polygon,
+.c14:focus >polyline,
+.c14:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c14:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c14:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) >circle,
+.c14:focus:not(:focus-visible) >ellipse,
+.c14:focus:not(:focus-visible) >line,
+.c14:focus:not(:focus-visible) >path,
+.c14:focus:not(:focus-visible) >polygon,
+.c14:focus:not(:focus-visible) >polyline,
+.c14:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c14:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c13:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus >circle,
-.c13:focus >ellipse,
-.c13:focus >line,
-.c13:focus >path,
-.c13:focus >polygon,
-.c13:focus >polyline,
-.c13:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c13:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c13:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) >circle,
-.c13:focus:not(:focus-visible) >ellipse,
-.c13:focus:not(:focus-visible) >line,
-.c13:focus:not(:focus-visible) >path,
-.c13:focus:not(:focus-visible) >polygon,
-.c13:focus:not(:focus-visible) >polyline,
-.c13:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c13:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c12:focus:not(:focus-visible) {
+.c13:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -54689,7 +54849,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   padding: 6px 12px;
 }
 
-.c10 {
+.c11 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -54702,7 +54862,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
+  .c10 {
     width: 3px;
   }
 }
@@ -54729,22 +54889,30 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  A
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -54762,24 +54930,30 @@ exports[`DataTable sort nested object with onSort 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b.value-label grommet-data-table-header-b.value-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  Value
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-b.value-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    Value
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <svg
                   aria-hidden="true"
                   aria-label="FormDown"
-                  class="c11"
+                  class="c12"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -54790,10 +54964,12 @@ exports[`DataTable sort nested object with onSort 1`] = `
                   />
                 </svg>
                 <div
-                  class="c9"
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-b.value-sort-status"
                 >
                   sorted descending, activate to sort ascending
                 </span>
@@ -54804,17 +54980,17 @@ exports[`DataTable sort nested object with onSort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c13"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -54824,13 +55000,13 @@ exports[`DataTable sort nested object with onSort 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               3
             </span>
@@ -54838,14 +55014,14 @@ exports[`DataTable sort nested object with onSort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -54855,13 +55031,13 @@ exports[`DataTable sort nested object with onSort 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               2
             </span>
@@ -54869,14 +55045,14 @@ exports[`DataTable sort nested object with onSort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c14"
       >
         <th
-          class="c14 "
+          class="c15 "
           scope="row"
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
               class="c16"
@@ -54886,13 +55062,13 @@ exports[`DataTable sort nested object with onSort 1`] = `
           </div>
         </th>
         <td
-          class="c14 "
+          class="c15 "
         >
           <div
-            class="c15"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               1
             </span>
@@ -54936,7 +55112,7 @@ exports[`DataTable sort null data 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54945,13 +55121,13 @@ exports[`DataTable sort null data 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -55030,7 +55206,7 @@ exports[`DataTable sort null data 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -55054,51 +55230,51 @@ exports[`DataTable sort null data 1`] = `
   border-collapse: separate;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -55106,7 +55282,7 @@ exports[`DataTable sort null data 1`] = `
   padding: 6px 12px;
 }
 
-.c10 {
+.c11 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -55119,7 +55295,7 @@ exports[`DataTable sort null data 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
+  .c10 {
     width: 3px;
   }
 }
@@ -55146,22 +55322,30 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  A
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -55179,22 +55363,30 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  B
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-b-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    B
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -55212,22 +55404,30 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-c-label grommet-data-table-header-c-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  C
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-c-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    C
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-c-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -55245,22 +55445,30 @@ exports[`DataTable sort null data 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-d-label grommet-data-table-header-d-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  D
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-d-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    D
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-d-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -55271,53 +55479,53 @@ exports[`DataTable sort null data 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c8"
           />
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               0
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               first
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               y
             </span>
@@ -55325,14 +55533,14 @@ exports[`DataTable sort null data 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
               class="c15"
@@ -55342,42 +55550,42 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               1
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           />
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
               class="c15"
@@ -55387,78 +55595,78 @@ exports[`DataTable sort null data 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               2
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               second
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c8"
           />
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               3
             </span>
           </div>
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           />
         </td>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               z
             </span>
@@ -55493,17 +55701,23 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-a-label"
                 >
-                  A
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    A
+                  </span>
+                </div>
                 .c0 {
   flex: 0 0 auto;
   align-self: stretch;
@@ -55588,7 +55802,9 @@ exports[`DataTable sort null data 2`] = `
 }
 
 <span
+                  aria-hidden="true"
                   class="c0"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sorted ascending, activate to sort descending
                 </span>
@@ -55606,22 +55822,30 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-b-label"
                 >
-                  B
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    B
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -55639,22 +55863,30 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-c-label grommet-data-table-header-c-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-c-label"
                 >
-                  C
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    C
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-c-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -55672,22 +55904,30 @@ exports[`DataTable sort null data 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-d-label grommet-data-table-header-d-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-d-label"
                 >
-                  D
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    D
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-d-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -55990,17 +56230,23 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-a-label"
                 >
-                  A
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    A
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
@@ -56021,7 +56267,9 @@ exports[`DataTable sort null data 3`] = `
 }
 
 <span
+                  aria-hidden="true"
                   class="c0"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -56039,22 +56287,30 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-b-label"
                 >
-                  B
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    B
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -56072,17 +56328,23 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-c-label grommet-data-table-header-c-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-c-label"
                 >
-                  C
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    C
+                  </span>
+                </div>
                 .c0 {
   flex: 0 0 auto;
   align-self: stretch;
@@ -56167,7 +56429,9 @@ exports[`DataTable sort null data 3`] = `
 }
 
 <span
+                  aria-hidden="true"
                   class="c0"
+                  id="grommet-data-table-header-c-sort-status"
                 >
                   sorted ascending, activate to sort descending
                 </span>
@@ -56185,22 +56449,30 @@ exports[`DataTable sort null data 3`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-d-label grommet-data-table-header-d-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-d-label"
                 >
-                  D
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    D
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-d-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -56503,22 +56775,30 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-a-label"
                 >
-                  A
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    A
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -56536,22 +56816,30 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-b-label"
                 >
-                  B
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    B
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -56569,17 +56857,23 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-c-label grommet-data-table-header-c-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-c-label"
                 >
-                  C
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    C
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
@@ -56600,7 +56894,9 @@ exports[`DataTable sort null data 4`] = `
 }
 
 <span
+                  aria-hidden="true"
                   class="c0"
+                  id="grommet-data-table-header-c-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -56618,17 +56914,23 @@ exports[`DataTable sort null data 4`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-d-label grommet-data-table-header-d-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-d-label"
                 >
-                  D
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    D
+                  </span>
+                </div>
                 .c0 {
   flex: 0 0 auto;
   align-self: stretch;
@@ -56713,7 +57015,9 @@ exports[`DataTable sort null data 4`] = `
 }
 
 <span
+                  aria-hidden="true"
                   class="c0"
+                  id="grommet-data-table-header-d-sort-status"
                 >
                   sorted ascending, activate to sort descending
                 </span>
@@ -57025,7 +57329,7 @@ exports[`DataTable sortable 1`] = `
   flex-direction: row;
 }
 
-.c14 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -57034,13 +57338,13 @@ exports[`DataTable sortable 1`] = `
   flex-direction: column;
 }
 
-.c9 {
+.c10 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 6px;
 }
 
-.c8 {
+.c9 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -57119,7 +57423,7 @@ exports[`DataTable sortable 1`] = `
   padding: 0px;
 }
 
-.c13 {
+.c14 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -57143,51 +57447,51 @@ exports[`DataTable sortable 1`] = `
   border-collapse: separate;
 }
 
+.c13:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus >circle,
+.c13:focus >ellipse,
+.c13:focus >line,
+.c13:focus >path,
+.c13:focus >polygon,
+.c13:focus >polyline,
+.c13:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c13:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c13:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) >circle,
+.c13:focus:not(:focus-visible) >ellipse,
+.c13:focus:not(:focus-visible) >line,
+.c13:focus:not(:focus-visible) >path,
+.c13:focus:not(:focus-visible) >polygon,
+.c13:focus:not(:focus-visible) >polyline,
+.c13:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c13:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c12:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus >circle,
-.c12:focus >ellipse,
-.c12:focus >line,
-.c12:focus >path,
-.c12:focus >polygon,
-.c12:focus >polyline,
-.c12:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c12:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c12:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) >circle,
-.c12:focus:not(:focus-visible) >ellipse,
-.c12:focus:not(:focus-visible) >line,
-.c12:focus:not(:focus-visible) >path,
-.c12:focus:not(:focus-visible) >polygon,
-.c12:focus:not(:focus-visible) >polyline,
-.c12:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c12:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c11:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c11:focus:not(:focus-visible) {
+.c12:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -57195,7 +57499,7 @@ exports[`DataTable sortable 1`] = `
   padding: 6px 12px;
 }
 
-.c10 {
+.c11 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -57208,7 +57512,7 @@ exports[`DataTable sortable 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c9 {
+  .c10 {
     width: 3px;
   }
 }
@@ -57235,22 +57539,30 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  A
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-a-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    A
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -57268,22 +57580,30 @@ exports[`DataTable sortable 1`] = `
             class="c4"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="c5 c6"
               type="button"
             >
               <div
                 class="c7"
               >
-                <span
-                  class="c8"
-                >
-                  B
-                </span>
                 <div
-                  class="c9"
+                  class="c8"
+                  id="grommet-data-table-header-b-label"
+                >
+                  <span
+                    class="c9"
+                  >
+                    B
+                  </span>
+                </div>
+                <div
+                  class="c10"
                 />
                 <span
-                  class="c10"
+                  aria-hidden="true"
+                  class="c11"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -57294,17 +57614,17 @@ exports[`DataTable sortable 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c11"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c12"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
               class="c15"
@@ -57314,13 +57634,13 @@ exports[`DataTable sortable 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               0
             </span>
@@ -57328,14 +57648,14 @@ exports[`DataTable sortable 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
               class="c15"
@@ -57345,13 +57665,13 @@ exports[`DataTable sortable 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               1
             </span>
@@ -57359,14 +57679,14 @@ exports[`DataTable sortable 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c12"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c13"
       >
         <th
-          class="c13 "
+          class="c14 "
           scope="row"
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
               class="c15"
@@ -57376,13 +57696,13 @@ exports[`DataTable sortable 1`] = `
           </div>
         </th>
         <td
-          class="c13 "
+          class="c14 "
         >
           <div
-            class="c14"
+            class="c8"
           >
             <span
-              class="c8"
+              class="c9"
             >
               2
             </span>
@@ -57417,17 +57737,23 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-a-label"
                 >
-                  A
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    A
+                  </span>
+                </div>
                 .c0 {
   flex: 0 0 auto;
   align-self: stretch;
@@ -57512,7 +57838,9 @@ exports[`DataTable sortable 2`] = `
 }
 
 <span
+                  aria-hidden="true"
                   class="c0"
+                  id="grommet-data-table-header-a-sort-status"
                 >
                   sorted ascending, activate to sort descending
                 </span>
@@ -57530,22 +57858,30 @@ exports[`DataTable sortable 2`] = `
             class="StyledBox-sc-13pk1d4-0 kTYaFZ"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
               type="button"
             >
               <div
                 class="StyledBox-sc-13pk1d4-0 bHjtLJ"
               >
-                <span
-                  class="StyledText-sc-1sadyjn-0 iuKlFO"
+                <div
+                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  id="grommet-data-table-header-b-label"
                 >
-                  B
-                </span>
+                  <span
+                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                  >
+                    B
+                  </span>
+                </div>
                 <div
                   class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
                 />
                 <span
+                  aria-hidden="true"
                   class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -57759,7 +58095,16 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   flex-direction: row;
 }
 
-.c22 {
+.c15 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c23 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -57770,16 +58115,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   justify-content: center;
 }
 
-.c27 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c19 {
+.c20 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -57791,19 +58127,19 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   padding-left: 48px;
 }
 
-.c16 {
+.c17 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 48px;
 }
 
-.c18 {
+.c19 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -57932,7 +58268,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   border: 0;
 }
 
-.c21 {
+.c22 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -57948,53 +58284,53 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   border-radius: 4px;
 }
 
-.c21:focus {
+.c22:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c21:focus >circle,
-.c21:focus >ellipse,
-.c21:focus >line,
-.c21:focus >path,
-.c21:focus >polygon,
-.c21:focus >polyline,
-.c21:focus >rect {
+.c22:focus >circle,
+.c22:focus >ellipse,
+.c22:focus >line,
+.c22:focus >path,
+.c22:focus >polygon,
+.c22:focus >polyline,
+.c22:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c21:focus ::-moz-focus-inner {
+.c22:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c21::-webkit-input-placeholder {
+.c22::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c21::-moz-placeholder {
+.c22::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c21:-ms-input-placeholder {
+.c22:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c21 ::-webkit-search-decoration {
+.c22 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c21::-moz-focus-inner {
+.c22::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c21:-moz-placeholder,
-.c21::-moz-placeholder {
+.c22:-moz-placeholder,
+.c22::-moz-placeholder {
   opacity: 1;
 }
 
-.c20 {
+.c21 {
   position: relative;
   width: 100%;
 }
@@ -58035,7 +58371,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   padding: 0px;
 }
 
-.c25 {
+.c26 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -58047,7 +58383,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   text-align: start;
 }
 
-.c26 {
+.c27 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -58071,51 +58407,51 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   border-collapse: separate;
 }
 
+.c25:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c25:focus >circle,
+.c25:focus >ellipse,
+.c25:focus >line,
+.c25:focus >path,
+.c25:focus >polygon,
+.c25:focus >polyline,
+.c25:focus >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c25:focus ::-moz-focus-inner {
+  border: 0;
+}
+
+.c25:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.c25:focus:not(:focus-visible) >circle,
+.c25:focus:not(:focus-visible) >ellipse,
+.c25:focus:not(:focus-visible) >line,
+.c25:focus:not(:focus-visible) >path,
+.c25:focus:not(:focus-visible) >polygon,
+.c25:focus:not(:focus-visible) >polyline,
+.c25:focus:not(:focus-visible) >rect {
+  outline: none;
+  box-shadow: none;
+}
+
+.c25:focus:not(:focus-visible) ::-moz-focus-inner {
+  border: 0;
+}
+
 .c24:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c24:focus >circle,
-.c24:focus >ellipse,
-.c24:focus >line,
-.c24:focus >path,
-.c24:focus >polygon,
-.c24:focus >polyline,
-.c24:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c24:focus ::-moz-focus-inner {
-  border: 0;
-}
-
-.c24:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
-.c24:focus:not(:focus-visible) >circle,
-.c24:focus:not(:focus-visible) >ellipse,
-.c24:focus:not(:focus-visible) >line,
-.c24:focus:not(:focus-visible) >path,
-.c24:focus:not(:focus-visible) >polygon,
-.c24:focus:not(:focus-visible) >polyline,
-.c24:focus:not(:focus-visible) >rect {
-  outline: none;
-  box-shadow: none;
-}
-
-.c24:focus:not(:focus-visible) ::-moz-focus-inner {
-  border: 0;
-}
-
-.c23:focus {
   outline: 2px solid #6FFFB0;
 }
 
-.c23:focus:not(:focus-visible) {
+.c24:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -58123,7 +58459,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   padding: 6px 12px;
 }
 
-.c17 {
+.c18 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -58150,19 +58486,19 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
 }
 
 @media only screen and (max-width: 768px) {
-  .c19 {
+  .c20 {
     padding-left: 24px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c16 {
+  .c17 {
     width: 24px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c18 {
+  .c19 {
     width: 6px;
   }
 }
@@ -58227,22 +58563,30 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
               class="c11"
             >
               <button
+                aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
                 class="c12 c13"
                 type="button"
               >
                 <div
                   class="c14"
                 >
-                  <span
-                    class="c15"
-                  >
-                    A
-                  </span>
                   <div
-                    class="c16"
+                    class="c15"
+                    id="grommet-data-table-header-a-label"
+                  >
+                    <span
+                      class="c16"
+                    >
+                      A
+                    </span>
+                  </div>
+                  <div
+                    class="c17"
                   />
                   <span
-                    class="c17"
+                    aria-hidden="true"
+                    class="c18"
+                    id="grommet-data-table-header-a-sort-status"
                   >
                     sortable, activate to sort ascending
                   </span>
@@ -58250,18 +58594,18 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
               </button>
             </div>
             <div
-              class="c18"
+              class="c19"
             />
             <div
-              class="c19"
+              class="c20"
             >
               <div
-                class="c20"
+                class="c21"
               >
                 <input
                   aria-label="Open search by a"
                   autocomplete="off"
-                  class="c21"
+                  class="c22"
                   name="search-a"
                   value=""
                 />
@@ -58276,25 +58620,33 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           scope="col"
         >
           <div
-            class="c22"
+            class="c23"
           >
             <button
+              aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
               class="c12 c13"
               type="button"
             >
               <div
                 class="c14"
               >
-                <span
-                  class="c15"
-                >
-                  B
-                </span>
                 <div
-                  class="c16"
+                  class="c15"
+                  id="grommet-data-table-header-b-label"
+                >
+                  <span
+                    class="c16"
+                  >
+                    B
+                  </span>
+                </div>
+                <div
+                  class="c17"
                 />
                 <span
-                  class="c17"
+                  aria-hidden="true"
+                  class="c18"
+                  id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
                 </span>
@@ -58305,13 +58657,13 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c23"
+      class="StyledTable__StyledTableBody-sc-1m3u5g-3 c24"
     >
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c24"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c25"
       >
         <td
-          class="c25"
+          class="c26"
         >
           <div
             class="c4"
@@ -58343,32 +58695,32 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </td>
         <th
-          class="c26 "
+          class="c27 "
           scope="row"
         >
           <div
-            class="c27"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="c26 "
+          class="c27 "
         >
           <div
-            class="c27"
+            class="c15"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c24"
+        class="StyledTable__StyledTableRow-sc-1m3u5g-2 c25"
       >
         <td
-          class="c25"
+          class="c26"
         >
           <div
             class="c4"
@@ -58400,24 +58752,24 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           </div>
         </td>
         <th
-          class="c26 "
+          class="c27 "
           scope="row"
         >
           <div
-            class="c27"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="c26 "
+          class="c27 "
         >
           <div
-            class="c27"
+            class="c15"
           />
         </td>
       </tr>

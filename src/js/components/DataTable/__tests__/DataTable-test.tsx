@@ -248,10 +248,10 @@ describe('DataTable', () => {
     ).toBeInTheDocument();
 
     // once a column becomes the active sort, aria-sort reflects direction
-    // and the button's accessible name (derived from content: visible
-    // header text + a visually hidden status/action span) updates to
-    // match, preserving the existing real-time sort announcement behavior
-    // since nothing is overridden via a static aria-label.
+    // and the button's accessible name (from aria-labelledby: visible header
+    // text + an aria-hidden status/action span) updates to match, preserving
+    // the existing real-time sort announcement behavior since nothing is
+    // overridden via a static aria-label.
     await user.click(
       screen.getByRole('button', {
         name: 'A sortable, activate to sort ascending',

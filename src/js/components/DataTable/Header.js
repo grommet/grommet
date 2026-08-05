@@ -113,9 +113,10 @@ const StyledContentBox = styled(Box)`
   ${(props) => props.extend}
 `;
 
-// Similar pattern used in Card.js. visually hidden but exposed to AT.
-// Used to add sort status + alternate action context to the sortable
-// header button's accessible name (computed from content).
+// Visually hidden. Carries the sort status + alternate action text;
+// it is aria-hidden and referenced by the sortable header button
+// via aria-labelledby, so it feeds the button's accessible name
+// without being a separately navigable node for screen readers.
 const HiddenText = styled.span`
   position: absolute;
   width: 1px;
@@ -420,14 +421,6 @@ const Header = forwardRef(
                   Icon = theme.dataTable.icons.sortable;
                 }
 
-                // sort status + alternate action text, exposed via a
-                // visually hidden span rather than an aria-label override on
-                // the button. This keeps the button's accessible name
-                // content-derived (visible header text + this hidden text),
-                // which is the same mechanism that already reliably
-                // announces sort changes in real time on activation -
-                // unlike a static aria-label override, which does not.
-                //
                 // `ascending`/`descending` are repurposed here to carry the
                 // full sort-status + action sentence (previously just the
                 // bare word, used as the icon's aria-label). This keeps any
@@ -441,6 +434,16 @@ const Header = forwardRef(
                   hiddenTextId = 'dataTable.descending';
                 }
 
+                // The button's accessible name comes from aria-labelledby:
+                // the visible label + the aria-hidden status span. aria-hidden
+                // keeps the span from being read as its own node, but text
+                // referenced by aria-labelledby is still included in the name.
+                // Because the status is part of the name, changing it on sort
+                // is announced live on the focused button
+                const baseId = `grommet-data-table-header-${property}`;
+                const labelId = `${baseId}-label`;
+                const sortStatusId = `${baseId}-sort-status`;
+
                 content = (
                   <StyledHeaderCellButton
                     plain
@@ -451,6 +454,7 @@ const Header = forwardRef(
                     sort={sort}
                     pad={cellProps.pad}
                     sortable
+                    aria-labelledby={`${labelId} ${sortStatusId}`}
                     verticalAlign={verticalAlign || columnVerticalAlign}
                     {...passThemeFlag}
                   >
@@ -460,9 +464,9 @@ const Header = forwardRef(
                       gap={theme.dataTable.sort?.gap}
                       justify={align}
                     >
-                      {content}
+                      <Box id={labelId}>{content}</Box>
                       {Icon && <Icon aria-hidden />}
-                      <HiddenText>
+                      <HiddenText id={sortStatusId} aria-hidden>
                         {format({ id: hiddenTextId, messages })}
                       </HiddenText>
                     </Box>
