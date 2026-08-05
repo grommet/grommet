@@ -218,6 +218,20 @@
     "suggestionsExist": "This input has suggestions use arrow keys to navigate",
     "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
   },
+  "timeInput": {
+    "inputLabel": "Time input",
+    "chooseTime": "Choose time",
+    "currentValue": "Current time {hour}:{minute}:{second}{period}",
+    "activeSection": "{section} selected",
+    "activeSectionValue": "{value} {section}",
+    "activePeriodValue": "{period} period",
+    "openDrop": "Press space to open time picker",
+    "invalidTime": "Invalid time value",
+    "sectionHours": "hours",
+    "sectionMinutes": "minutes",
+    "sectionSeconds": "seconds",
+    "sectionMeridiem": "meridiem"
+  },
   "video": {
     "audioDescriptions": "video audio description",
     "captions": "closed captions",
@@ -231,5 +245,18 @@
     "playButton": "play",
     "volumeDown": "volume down",
     "volumeUp": "volume up"
+  },
+  "wizard": {
+    "previous": "Previous",
+    "next": "Next",
+    "skip": "Skip",
+    "cancel": "Cancel",
+    "close": "Close",
+    "complete": "Complete",
+    "stepHeader": {
+      "counter": "Step {step} of {total}"
+    },
+    "progress": "Wizard progress",
+    "validationError": "Please complete required fields."
   }
 }

@@ -14,7 +14,6 @@ import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
-import { Radial } from 'grommet-icons/icons/Radial';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
 import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
@@ -2346,22 +2345,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       description: {
         size: 'small',
         color: 'text-weak',
-        margin: { top: 'hair' },
       },
       helperText: {
         size: 'xsmall',
         color: 'text-weak',
-        margin: { top: 'xsmall' },
-      },
-      horizontal: {
-        gap: 0,
-      },
-      vertical: {
-        gap: 0,
-      },
-      hover: {
-        background: 'background-contrast',
-        border: 'text-strong',
       },
       // States: [component].[state].[element].[property]
       pending: {
@@ -2370,7 +2357,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'text-strong',
           border: 'text-xweak',
           substep: {
-            icon: Radial,
             iconSize: 'small',
           },
           hover: {
@@ -2378,7 +2364,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             border: 'text-strong',
           },
         },
-        label: { color: 'text', weight: 'normal' },
+        label: { color: 'text' },
         connector: { color: 'border' },
       },
       current: {
@@ -2397,7 +2383,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
-          weight: 'normal',
         },
       },
       currentCompleted: {
@@ -2416,7 +2401,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
-          weight: 'normal',
         },
       },
       completed: {
@@ -2433,7 +2417,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             background: 'background-front',
           },
         },
-        label: { color: 'text-weak', weight: 'normal' },
+        label: { color: 'text-weak' },
         connector: { color: 'brand' },
       },
       error: {
@@ -2449,7 +2433,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             background: 'background-front',
           },
         },
-        label: { color: 'text', weight: 'normal' },
+        label: { color: 'text' },
         connector: { color: 'status-critical' },
         helperText: { color: 'status-critical' },
       },
@@ -2468,7 +2452,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: {
           color: 'status-critical',
-          weight: 'normal',
         },
       },
       disabled: {
@@ -2480,7 +2463,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             iconSize: 'small',
           },
         },
-        label: { color: 'text-weak', weight: 'normal' },
+        label: { color: 'text-weak' },
         connector: { color: 'border' },
       },
     },
@@ -2612,6 +2595,40 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   copy: undefined,
       // },
     },
+    timeInput: {
+      button: {
+        margin: { right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+      active: {
+        background: 'active-background',
+        pad: 'xxsmall',
+        indicator: {
+          color: { dark: 'white', light: 'black' },
+          size: 'small',
+        },
+      },
+      drop: {
+        option: {
+          // background: undefined,
+          hover: {
+            background: 'active-background',
+          },
+          selected: {
+            background: 'selected',
+            color: 'white',
+            hover: {
+              // background: undefined,
+            },
+          },
+        },
+      },
+      icon: {
+        // clock: undefined,
+      },
+    },
     tip: {
       content: {
         // any Box props
@@ -2686,6 +2703,76 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             horizontal: 'small',
           },
         },
+      },
+    },
+    wizard: {
+      container: {
+        gap: 'none',
+        background: 'background-back',
+      },
+      body: {
+        pad: { horizontal: 'large', vertical: 'large' },
+        gap: { row: 'none', column: 'medium' },
+      },
+      header: {
+        pad: { horizontal: 'large', vertical: 'small' },
+        background: 'background-front',
+        title: {
+          size: 'small',
+        },
+        close: {
+          icon: FormClose,
+        },
+      },
+      progress: {
+        horizontal: {
+          pad: { horizontal: 'none', vertical: 'none' },
+        },
+        vertical: {
+          // Fixed rail width so the column doesn't collapse to label text.
+          width: 'small',
+          pad: { horizontal: 'xsmall', vertical: 'none' },
+        },
+      },
+      stepHeader: {
+        pad: { horizontal: 'none', vertical: 'none' },
+        counter: {
+          size: 'small',
+          color: 'text',
+        },
+        title: {
+          size: 'large',
+          margin: 'none',
+        },
+        description: {
+          size: 'medium',
+          color: 'text-weak',
+          margin: { top: 'xsmall', bottom: 'none' },
+        },
+      },
+      content: {
+        pad: 'medium',
+        background: 'background-front',
+        round: 'small',
+        margin: { top: 'medium' },
+      },
+      footer: {
+        pad: { horizontal: 'large', vertical: 'small' },
+        gap: { row: 'xsmall', column: 'small' },
+        background: 'background-front',
+        justify: 'end',
+        button: {
+          next: { icon: FormNext },
+          complete: { icon: undefined },
+          previous: { icon: FormPrevious },
+          cancel: { icon: undefined },
+          skip: { icon: FormNext },
+        },
+      },
+      error: {
+        color: 'status-error',
+        size: 'small',
+        margin: { top: 'xsmall' },
       },
     },
     worldMap: {
