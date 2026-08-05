@@ -23,6 +23,7 @@ export interface TimeInputProps {
   name?: string;
   onChange?: (event: { value?: string }) => void;
   readOnly?: boolean;
+  showSeconds?: boolean;
   value?: string;
 }
 

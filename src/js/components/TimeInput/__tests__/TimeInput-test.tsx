@@ -115,7 +115,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -134,7 +134,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -153,7 +153,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -181,7 +181,7 @@ describe('TimeInput', () => {
     render(
       <Grommet>
         <div>
-          <TimeInput format="24" defaultValue="00:00:00" />
+          <TimeInput format="24" showSeconds defaultValue="00:00:00" />
           <button type="button">after</button>
         </div>
       </Grommet>,
@@ -208,7 +208,7 @@ describe('TimeInput', () => {
       <Grommet>
         <div>
           <button type="button">before</button>
-          <TimeInput format="24" defaultValue="00:00:00" />
+          <TimeInput format="24" showSeconds defaultValue="00:00:00" />
         </div>
       </Grommet>,
     );
@@ -227,7 +227,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -247,7 +247,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -455,7 +455,7 @@ describe('TimeInput', () => {
   test('falls back to the inputLabel message when there is no FormField label', () => {
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -681,7 +681,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:30:00" minuteStep={15} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:30:00"
+          minuteStep={15}
+        />
       </Grommet>,
     );
 
@@ -786,6 +791,7 @@ describe('TimeInput', () => {
         <>
           <TimeInput
             format="24"
+            showSeconds
             value={value}
             onChange={({ value: nextValue }) => {
               onChange(nextValue);
@@ -854,7 +860,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput id="tab-cycle-picker" format="24" defaultValue="13:45:30" />
+        <TimeInput
+          id="tab-cycle-picker"
+          format="24"
+          showSeconds
+          defaultValue="13:45:30"
+        />
       </Grommet>,
     );
 
@@ -901,7 +912,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="13:45:30" />
+        <TimeInput format="24" showSeconds defaultValue="13:45:30" />
       </Grommet>,
     );
 
@@ -929,7 +940,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="13:45:30" />
+        <TimeInput format="24" showSeconds defaultValue="13:45:30" />
       </Grommet>,
     );
 
@@ -967,7 +978,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="01:00:00" />
       </Grommet>,
     );
 
@@ -1013,7 +1024,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:45:50" />
+        <TimeInput format="24" showSeconds defaultValue="01:45:50" />
       </Grommet>,
     );
 
@@ -1044,7 +1055,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="05:55:55" />
+        <TimeInput format="24" showSeconds defaultValue="05:55:55" />
       </Grommet>,
     );
 
@@ -1170,7 +1181,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="01:00:00" />
       </Grommet>,
     );
 
@@ -1226,7 +1237,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" onChange={onChange} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="00:00:00"
+          onChange={onChange}
+        />
       </Grommet>,
     );
 
@@ -1291,7 +1307,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="07:30:00" />
+        <TimeInput format="24" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1313,7 +1329,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="07:30:00" />
+        <TimeInput format="24" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1336,7 +1352,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -1374,7 +1390,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1393,7 +1409,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1412,7 +1428,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1431,7 +1447,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1543,7 +1559,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={15} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={15}
+        />
       </Grommet>,
     );
 
@@ -1577,7 +1598,12 @@ describe('TimeInput', () => {
     // by rendering with a controlled default value and arrow-keying through
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={20} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={20}
+        />
       </Grommet>,
     );
 
@@ -1604,7 +1630,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={0} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={0}
+        />
       </Grommet>,
     );
 
@@ -1782,7 +1813,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet theme={customTheme}>
-        <TimeInput format="24" defaultValue="10:15:20" />
+        <TimeInput format="24" showSeconds defaultValue="10:15:20" />
       </Grommet>,
     );
 

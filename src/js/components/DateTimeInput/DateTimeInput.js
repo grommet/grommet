@@ -1010,18 +1010,6 @@ const DateTimeInput = forwardRef(
       [activeSection, commitSections, resolvedFormat, sections],
     );
 
-    const timeViews = useMemo(() => {
-      const numericViews = showSeconds
-        ? ['hours', 'minutes', 'seconds']
-        : ['hours', 'minutes'];
-
-      if (resolvedFormat === '12') {
-        return [...numericViews, 'meridiem'];
-      }
-
-      return numericViews;
-    }, [resolvedFormat, showSeconds]);
-
     const timeValue = useMemo(() => {
       if (sections.hour === undefined) {
         return undefined;
@@ -1245,7 +1233,7 @@ const DateTimeInput = forwardRef(
                     inline
                     format={resolvedFormat}
                     value={timeValue}
-                    views={timeViews}
+                    showSeconds={showSeconds}
                     messages={messages}
                     minuteStep={normalizedMinuteStep}
                     disabled={disabled}

@@ -77,11 +77,15 @@ const getDisplaySectionText = ({ key, section, sections }) => {
   return pad(sections[key]);
 };
 
-const getSectionOrder = (format, views) => {
-  const normalizedViews =
-    Array.isArray(views) && views.length
-      ? views
-      : ['hours', 'minutes', 'seconds'];
+const getSectionOrder = (format, views, showSeconds = format === '12') => {
+  let normalizedViews;
+  if (Array.isArray(views) && views.length) {
+    normalizedViews = views;
+  } else if (showSeconds) {
+    normalizedViews = ['hours', 'minutes', 'seconds'];
+  } else {
+    normalizedViews = ['hours', 'minutes'];
+  }
 
   const numericSections = normalizedViews
     .filter((view) => view !== 'meridiem')
@@ -140,6 +144,7 @@ const TimeInput = forwardRef(
       name,
       onChange,
       readOnly = false,
+      showSeconds,
       value: valueArg,
       views,
       ...rest
@@ -194,6 +199,9 @@ const TimeInput = forwardRef(
       [minuteStep],
     );
 
+    const resolvedShowSeconds =
+      showSeconds !== undefined ? showSeconds : format === '12';
+
     const handleInvalid = useCallback(() => {
       const error = formatMessage({ id: 'timeInput.invalidTime', messages });
       announce(error, 'assertive');
@@ -228,8 +236,8 @@ const TimeInput = forwardRef(
     );
 
     const sectionOrder = useMemo(
-      () => getSectionOrder(format, views),
-      [format, views],
+      () => getSectionOrder(format, views, resolvedShowSeconds),
+      [format, resolvedShowSeconds, views],
     );
 
     const firstSection = sectionOrder[0] || SECTION_HOUR;
