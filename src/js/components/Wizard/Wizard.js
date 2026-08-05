@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -672,9 +674,9 @@ const Wizard = forwardRef(
             fill="horizontal"
             direction={effectiveShowProgress === 'vertical' ? 'row' : 'column'}
           >
-            {effectiveShowProgress && responsiveSize !== 'small' && (
-              <WizardProgress />
-            )}
+            {effectiveShowProgress &&
+              responsiveSize !== 'small' &&
+              responsiveSize !== 'xsmall' && <WizardProgress />}
             <Box flex="grow">
               <WizardStepHeader />
               <WizardContent />
