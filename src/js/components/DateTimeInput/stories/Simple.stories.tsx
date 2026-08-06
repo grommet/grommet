@@ -7,16 +7,15 @@ import { DateTimeInput } from '../index';
 
 export const Simple = () => {
   const [value, setValue] = React.useState('2026-07-22T18:30:00.000Z');
+  const onChange = ({ value: next }: { value?: string }) => {
+    console.log('onChange iso date time:', next);
+    console.log('onChange utc date time:', next ? new Date(next) : undefined);
+    setValue(next || '');
+  };
 
   return (
     <Box pad="large" width="medium" gap="small">
-      <DateTimeInput
-        format="12"
-        value={value}
-        onChange={({ value: next }: { value?: string }) => {
-          setValue(next || '');
-        }}
-      />
+      <DateTimeInput format="12" value={value} onChange={onChange} />
     </Box>
   );
 };
