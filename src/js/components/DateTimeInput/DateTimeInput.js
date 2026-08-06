@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -310,12 +312,6 @@ const getSectionName = (section, formatMessage, messages) => {
   });
 };
 
-const sectionKey = (section) =>
-  getSectionKeyFromType(sectionTypeFromSection(section));
-
-const tokenForSection = (section) =>
-  getSectionTokenFromType(sectionTypeFromSection(section));
-
 const getSectionLimits = (section, format, sections) => {
   if (section === SECTION_DAY) {
     const year = sections.year || new Date().getFullYear();
@@ -346,7 +342,8 @@ const normalizeStep = (step) => {
 };
 
 const formatSectionText = (section, value) => {
-  if (value === undefined || value === '') return tokenForSection(section);
+  if (value === undefined || value === '')
+    return getSectionTokenFromType(sectionTypeFromSection(section));
   if (section === SECTION_YEAR) return pad4(value);
   if (section === SECTION_PERIOD) return value;
   return pad2(value);
@@ -446,7 +443,10 @@ const DateTimeInput = forwardRef(
       (nextSections) => {
         setSections(nextSections);
         const complete = sectionOrder.every(
-          (section) => nextSections[sectionKey(section)] !== undefined,
+          (section) =>
+            nextSections[
+              getSectionKeyFromType(sectionTypeFromSection(section))
+            ] !== undefined,
         );
         const anyValue = hasAnyValue(nextSections);
         const nextValue = complete
@@ -474,7 +474,7 @@ const DateTimeInput = forwardRef(
 
     const setSectionValue = useCallback(
       (section, rawValue) => {
-        const key = sectionKey(section);
+        const key = getSectionKeyFromType(sectionTypeFromSection(section));
         const nextSections = { ...sections, [key]: rawValue };
 
         if (section === SECTION_MONTH || section === SECTION_YEAR) {
@@ -529,7 +529,7 @@ const DateTimeInput = forwardRef(
           resolvedFormat,
           sections,
         );
-        const key = sectionKey(section);
+        const key = getSectionKeyFromType(sectionTypeFromSection(section));
         const current = sections[key] === undefined ? min : sections[key];
         const step = section === SECTION_MINUTE ? normalizedMinuteStep : 1;
         let next;
@@ -581,7 +581,9 @@ const DateTimeInput = forwardRef(
     const applyDigit = useCallback(
       (digit) => {
         if (activeSection === SECTION_PERIOD) return activeSection;
-        const key = sectionKey(activeSection);
+        const key = getSectionKeyFromType(
+          sectionTypeFromSection(activeSection),
+        );
         const needed = digitsPerSection(activeSection);
         const sameSection = editStateRef.current.section === activeSection;
         if (!sameSection) commitPendingBuffer();
@@ -653,7 +655,7 @@ const DateTimeInput = forwardRef(
 
     const getDisplayText = useCallback(
       (section) => {
-        const key = sectionKey(section);
+        const key = getSectionKeyFromType(sectionTypeFromSection(section));
         const pending = pendingDigits[key];
         if (pending !== undefined) {
           if (section === SECTION_YEAR) return pending.padEnd(4, 'y');
@@ -668,7 +670,7 @@ const DateTimeInput = forwardRef(
     const displaySections = useMemo(
       () =>
         sectionOrder.map((section, index) => {
-          const key = sectionKey(section);
+          const key = getSectionKeyFromType(sectionTypeFromSection(section));
           return {
             section,
             prefix:
@@ -687,7 +689,9 @@ const DateTimeInput = forwardRef(
       () =>
         sectionOrder
           .map((section, index) => {
-            const token = tokenForSection(section);
+            const token = getSectionTokenFromType(
+              sectionTypeFromSection(section),
+            );
             if (index === 0) return token;
             const prefix =
               separatorMap[section] ?? separatorBeforeSection(section);
@@ -706,7 +710,7 @@ const DateTimeInput = forwardRef(
     const sectionValueAnnouncement = useCallback(
       (section) => {
         const nameText = getSectionName(section, formatMessage, messages);
-        const key = sectionKey(section);
+        const key = getSectionKeyFromType(sectionTypeFromSection(section));
         const raw = sections[key];
 
         if (raw === undefined) {
@@ -1092,7 +1096,9 @@ const DateTimeInput = forwardRef(
                       resolvedFormat,
                       sections,
                     );
-                    const key = sectionKey(section);
+                    const key = getSectionKeyFromType(
+                      sectionTypeFromSection(section),
+                    );
                     let numericValue;
                     if (section === SECTION_PERIOD) {
                       numericValue = sections[key] === 'PM' ? 1 : 0;

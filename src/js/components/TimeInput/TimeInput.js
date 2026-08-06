@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -49,12 +51,6 @@ const sectionTypeFromSection = (section) => {
   return 'meridiem';
 };
 
-const getSectionKey = (section) =>
-  getSectionKeyFromType(sectionTypeFromSection(section));
-
-const getSectionToken = (section) =>
-  getSectionTokenFromType(sectionTypeFromSection(section));
-
 const getDisplaySectionKey = (section) => {
   if (section === SECTION_HOUR) return 'hour';
   if (section === SECTION_MINUTE) return 'minute';
@@ -68,7 +64,8 @@ const getDisplaySectionPrefix = (section, index) => {
 };
 
 const getDisplaySectionText = ({ key, section, sections }) => {
-  if (sections[key] === undefined) return getSectionToken(section);
+  if (sections[key] === undefined)
+    return getSectionTokenFromType(sectionTypeFromSection(section));
   if (section === SECTION_PERIOD) return sections[key];
   return pad(sections[key]);
 };
@@ -88,7 +85,7 @@ const getSectionOrder = (format, showSeconds = format === '12') => {
 const buildPlaceholder = (sectionOrder) =>
   sectionOrder
     .map((section, index) => {
-      const token = getSectionToken(section);
+      const token = getSectionTokenFromType(sectionTypeFromSection(section));
       if (index === 0) return token;
       return `${section === SECTION_PERIOD ? ' ' : ':'}${token}`;
     })
@@ -288,7 +285,9 @@ const TimeInput = forwardRef(
           });
         }
 
-        const sectionKey = getSectionKey(section);
+        const sectionKey = getSectionKeyFromType(
+          sectionTypeFromSection(section),
+        );
         const sectionValue = sections[sectionKey];
 
         if (sectionValue === undefined) {
