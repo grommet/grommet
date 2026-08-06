@@ -229,7 +229,6 @@ exports[`Stepper renders horizontal steps 1`] = `
   >
     <li
       class="c2"
-      direction="horizontal"
     >
       <button
         aria-current="step"
@@ -259,7 +258,6 @@ exports[`Stepper renders horizontal steps 1`] = `
         </span>
         <span
           class="c7"
-          direction="horizontal"
         >
           <span
             class="c8"
@@ -282,7 +280,6 @@ exports[`Stepper renders horizontal steps 1`] = `
     </li>
     <li
       class="c2"
-      direction="horizontal"
     >
       <button
         aria-label="Step 2 of 3: Step 2"
@@ -296,7 +293,6 @@ exports[`Stepper renders horizontal steps 1`] = `
         />
         <span
           class="c7"
-          direction="horizontal"
         >
           <span
             class="c11"
@@ -319,7 +315,6 @@ exports[`Stepper renders horizontal steps 1`] = `
     </li>
     <li
       class="c2"
-      direction="horizontal"
     >
       <button
         aria-label="Step 3 of 3: Step 3"
@@ -333,7 +328,6 @@ exports[`Stepper renders horizontal steps 1`] = `
         />
         <span
           class="c7"
-          direction="horizontal"
         >
           <span
             class="c11"
@@ -563,7 +557,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 >
   <li
     class="c1"
-    direction="horizontal"
   >
     <button
       aria-current="step"
@@ -593,7 +586,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
       </span>
       <span
         class="c6"
-        direction="horizontal"
       >
         <span
           class="c7"
@@ -616,7 +608,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   </li>
   <li
     class="c1"
-    direction="horizontal"
   >
     <button
       aria-label="Step 2 of 3: Step 2"
@@ -630,7 +621,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
       />
       <span
         class="c6"
-        direction="horizontal"
       >
         <span
           class="c10"
@@ -653,7 +643,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   </li>
   <li
     class="c1"
-    direction="horizontal"
   >
     <button
       aria-label="Step 3 of 3: Step 3"
@@ -667,7 +656,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
       />
       <span
         class="c6"
-        direction="horizontal"
       >
         <span
           class="c10"
@@ -909,7 +897,6 @@ exports[`Stepper renders vertical steps 1`] = `
   >
     <li
       class="c2"
-      direction="vertical"
     >
       <button
         aria-label="Step 1 of 3: Step 1"
@@ -923,7 +910,6 @@ exports[`Stepper renders vertical steps 1`] = `
         />
         <span
           class="c6"
-          direction="vertical"
         >
           <span
             class="c7"
@@ -951,7 +937,6 @@ exports[`Stepper renders vertical steps 1`] = `
     </li>
     <li
       class="c2"
-      direction="vertical"
     >
       <button
         aria-current="step"
@@ -981,7 +966,6 @@ exports[`Stepper renders vertical steps 1`] = `
         </span>
         <span
           class="c6"
-          direction="vertical"
         >
           <span
             class="c12"
@@ -1009,7 +993,6 @@ exports[`Stepper renders vertical steps 1`] = `
     </li>
     <li
       class="c2"
-      direction="vertical"
     >
       <button
         aria-label="Step 3 of 3: Step 3"
@@ -1023,7 +1006,6 @@ exports[`Stepper renders vertical steps 1`] = `
         />
         <span
           class="c6"
-          direction="vertical"
         >
           <span
             class="c7"
