@@ -26,7 +26,7 @@
     "outOfBounds": "Date is out of the allowed range. Enter a date between {start} and {end}."
   },
   "dateTimeInput": {
-    "inputLabel": "Date time input",
+    "inputLabel": "Date and time input",
     "chooseDateTime": "Open date and time picker",
     "openDrop": "Press space to open date and time picker",
     "invalidDateTime": "Invalid date or time value",
