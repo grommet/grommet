@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-nested-ternary */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
