@@ -595,25 +595,21 @@ const Wizard = forwardRef(
           return;
         }
 
-        const formFields = Array.from(
-          root.querySelectorAll('[class*="FormField__FormFieldBox"]'),
-        );
-        const erroredField =
-          formFields.find(
-            (field) =>
-              typeof field.textContent === 'string' &&
-              field.textContent.includes(validationError),
-          ) || formFields[0];
+        const labels = Array.from(root.querySelectorAll('label[for]'));
+        const erroredLabel =
+          labels.find(
+            (label) =>
+              typeof label.parentElement?.textContent === 'string' &&
+              label.parentElement.textContent.includes(validationError),
+          ) || labels[0];
 
-        const firstInputInField = erroredField?.querySelector(
-          'input, textarea, select, [role="combobox"]',
-        );
+        const controlId = erroredLabel?.getAttribute('for');
+        const target =
+          (controlId && root.querySelector(`#${controlId}`)) ||
+          root.querySelector('input, textarea, select, [role="combobox"]');
 
-        if (
-          firstInputInField &&
-          typeof firstInputInField.focus === 'function'
-        ) {
-          firstInputInField.focus();
+        if (target && typeof target.focus === 'function') {
+          target.focus();
         }
         setShouldFocusErrorField(false);
       };
