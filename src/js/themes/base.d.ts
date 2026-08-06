@@ -1034,13 +1034,24 @@ export interface ThemeType {
     container?: {
       round?: RoundType;
     };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
     drop?: {
       pad?: PadType;
       gap?: GapType;
+      border?: {
+        color?: ColorType;
+        size?: string;
+      };
     };
     icon?: {
       calendar?: React.ReactNode | Icon;
-      size?: string;
     };
     separator?: {
       dateTimeGap?: GapType;

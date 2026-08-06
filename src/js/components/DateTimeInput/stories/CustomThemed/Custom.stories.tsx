@@ -1,72 +1,100 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { ThemeType } from 'grommet/themes';
 
-import { Box, Grommet } from 'grommet';
-import { Calendar } from 'grommet-icons';
-import { DateTimeInput } from '../../index';
+import { hpe } from 'grommet-theme-hpe';
+import { Box, Grommet, TimeInput, DateTimeInput } from 'grommet';
+import { deepMerge } from 'grommet/utils';
+import { light, dark, components } from 'hpe-design-tokens/grommet';
+import {
+  Clock as ClockIcon,
+  Calendar as CalendarIcon,
+} from '@hpe-design/icons-grommet';
 
-type DateTimeInputTheme = ThemeType & {
-  dateTimeInput: {
-    container: {
-      round: string;
-    };
-    button: {
-      margin: string;
-    };
-    separator: {
-      dateTimeGap: string;
-    };
-    icon: {
-      calendar: typeof Calendar;
-    };
-  };
+// Pulling the raw values directly from the token files gives us the color
+// exactly as authored.
+const textOnSelectedPrimaryStrong = {
+  light: light.hpe.color.text.onSelectedPrimaryStrong,
+  dark: dark.hpe.color.text.onSelectedPrimaryStrong,
 };
 
-const customTheme: DateTimeInputTheme = {
+// Extend the HPE theme with TimeInput-specific overrides.
+// This story exists to validate what the TimeInput needs from the HPE theme
+// and to act as a visual reference for reviewers.
+const hpeTimeInputTheme = deepMerge(hpe, {
   dateTimeInput: {
-    container: {
-      round: 'xsmall',
-    },
     button: {
-      margin: 'xsmall',
+      margin: { right: '3xsmall' },
+    },
+    container: {
+      round:
+        components.hpe.formField.default.medium.input.container.borderRadius,
+    },
+    active: {
+      background: 'background-active',
+      pad: '5xsmall',
+      indicator: {
+        color: 'focus',
+      },
+    },
+    drop: {
+      pad: 'small',
+      gap: 'small',
+      border: {
+        color: 'border',
+        size: 'xsmall',
+      },
     },
     separator: {
-      dateTimeGap: 'xsmall',
+      dateTimeGap: '5xsmall',
     },
     icon: {
-      calendar: Calendar, // Pass the component, not JSX
+      calendar: CalendarIcon,
     },
   },
-};
-
-const meta: Meta<typeof DateTimeInput> = {
-  title: 'Input/DateTimeInput/Custom Themed',
-  component: DateTimeInput,
-};
-
-export default meta;
-
-type Story = StoryObj<typeof DateTimeInput>;
-
-export const CustomThemed: Story = {
-  render: () => {
-    const [value, setValue] = React.useState('2026-07-22T18:30:00.000Z');
-
-    return (
-      <Grommet theme={customTheme}>
-        <Box pad="large" width="medium" gap="small">
-          <DateTimeInput
-            format="12"
-            value={value}
-            onChange={({ value: next }: { value?: string }) => {
-              setValue(next || '');
-            }}
-          />
-        </Box>
-      </Grommet>
-    );
+  timeInput: {
+    container: {
+      round:
+        components.hpe.formField.default.medium.input.container.borderRadius,
+    },
+    button: {
+      margin: { right: '3xsmall' },
+    },
+    active: {
+      background: 'background-active',
+      pad: '5xsmall',
+      indicator: {
+        color: 'focus',
+        // size: 'small', we do not need same as grommet
+      },
+    },
+    drop: {
+      option: {
+        hover: {
+          background: 'background-active',
+        },
+        selected: {
+          background: 'background-selected-primary-strong',
+          color: textOnSelectedPrimaryStrong,
+          hover: { background: 'background-selected-primary-strong-hover' },
+        },
+      },
+    },
+    icon: {
+      clock: ClockIcon,
+    },
   },
+});
+
+export const Hpe = () => (
+  <Grommet theme={hpeTimeInputTheme}>
+    <Box pad="large" gap="medium" width="medium">
+      <TimeInput format="12" readOnly defaultValue="09:30:00" />
+      <DateTimeInput format="12" defaultValue="2024-01-01T09:30:00" />
+    </Box>
+  </Grommet>
+);
+
+export default {
+  title: 'Input/TimeInput/Custom Themed/HPE',
 };

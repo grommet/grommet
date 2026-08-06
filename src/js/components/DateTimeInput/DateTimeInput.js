@@ -1043,6 +1043,12 @@ const DateTimeInput = forwardRef(
     const dropTarget = inline ? triggerRef.current : containerRef.current;
     const generatedId = useId();
     const dropId = `${id || generatedId}__drop`;
+    const dropBorderColor =
+      theme.dateTimeInput?.drop?.border?.color || 'border';
+    const dropBorderSizeToken =
+      theme.dateTimeInput?.drop?.border?.size || 'xsmall';
+    const dropBorderSize =
+      theme.global.borderSize?.[dropBorderSizeToken] || dropBorderSizeToken;
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
@@ -1219,8 +1225,12 @@ const DateTimeInput = forwardRef(
                 <Box pad={{ horizontal: theme.dateTimeInput?.drop?.gap }}>
                   <Box
                     fill="vertical"
-                    width={theme.global.borderSize.xsmall}
-                    border={{ side: 'left', color: 'border' }}
+                    width={dropBorderSize}
+                    border={{
+                      side: 'start',
+                      color: dropBorderColor,
+                      size: dropBorderSizeToken,
+                    }}
                   />
                 </Box>
                 <TimeInput

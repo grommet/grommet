@@ -95,70 +95,80 @@ const PopupColumn = ({
   section,
   sections,
   theme,
-}) => (
-  <PopupColumnBox
-    role="listbox"
-    aria-label={label}
-    gap="xxsmall"
-    height={{
-      max: theme.timeInput?.drop?.column?.maxHeight || theme.global.size.small,
-    }}
-    overflow="auto"
-    flex={{ grow: 0, shrink: 0 }}
-  >
-    {options.map((option) => {
-      const key = optionKey(label, option);
-      const selected =
-        (section === SECTION_HOUR && sections.hour === option) ||
-        (section === SECTION_MINUTE && sections.minute === option) ||
-        (section === SECTION_SECOND && sections.second === option) ||
-        (section === SECTION_PERIOD && sections.period === option);
+}) => {
+  // When inline (in DateTimeInput), use 'medium' to match Calendar height.
+  // Otherwise use timeInput drop maxHeight with fallback to 'small'.
+  const maxHeightToken = inline ? 'medium' : null;
+  const maxHeight =
+    (maxHeightToken && theme.global.size?.[maxHeightToken]) ||
+    theme.timeInput?.drop?.column?.maxHeight ||
+    theme.global.size.small;
 
-      const optionColor = selected
-        ? theme.timeInput?.drop?.option?.selected?.color || 'text'
-        : 'text';
-      const isActive = selected && activeSection === section;
-      let optionTabIndex = -1;
-      if (inline) {
-        optionTabIndex = selected ? 0 : -1;
-      } else if (isActive) {
-        optionTabIndex = 0;
-      }
+  return (
+    <PopupColumnBox
+      role="listbox"
+      aria-label={label}
+      gap="xxsmall"
+      height={{
+        max: maxHeight,
+      }}
+      overflow="auto"
+      flex={{ grow: 0, shrink: 0 }}
+    >
+      {options.map((option) => {
+        const key = optionKey(label, option);
+        const selected =
+          (section === SECTION_HOUR && sections.hour === option) ||
+          (section === SECTION_MINUTE && sections.minute === option) ||
+          (section === SECTION_SECOND && sections.second === option) ||
+          (section === SECTION_PERIOD && sections.period === option);
 
-      return (
-        <PopupOption
-          key={key}
-          data-option-key={key}
-          role="option"
-          aria-selected={selected}
-          tabIndex={optionTabIndex}
-          aria-label={`${
-            section === SECTION_PERIOD ? option : pad(option)
-          } ${getSectionName(section, format, formatMessage, messages)}`}
-          $active={isActive}
-          $selected={selected}
-          onMouseDown={(event) => {
-            if (event.button !== 0) return;
-            // Commit on pointer press so momentum scroll does not swallow
-            // the first click commit on some trackpad/mouse flows.
-            event.preventDefault();
-            onPointerCommitOption(section, option);
-          }}
-          onClick={() => onClickCommitOption(section, option)}
-          onFocus={() => onSetSection(section)}
-        >
-          <Text
-            size={theme.global.input.font.size || 'small'}
-            weight={selected ? 'bold' : 'normal'}
-            color={optionColor}
+        const optionColor = selected
+          ? theme.timeInput?.drop?.option?.selected?.color || 'text'
+          : 'text';
+        const isActive = selected && activeSection === section;
+        let optionTabIndex = -1;
+        if (inline) {
+          optionTabIndex = selected ? 0 : -1;
+        } else if (isActive) {
+          optionTabIndex = 0;
+        }
+
+        return (
+          <PopupOption
+            key={key}
+            data-option-key={key}
+            role="option"
+            aria-selected={selected}
+            tabIndex={optionTabIndex}
+            aria-label={`${
+              section === SECTION_PERIOD ? option : pad(option)
+            } ${getSectionName(section, format, formatMessage, messages)}`}
+            $active={isActive}
+            $selected={selected}
+            onMouseDown={(event) => {
+              if (event.button !== 0) return;
+              // Commit on pointer press so momentum scroll does not swallow
+              // the first click commit on some trackpad/mouse flows.
+              event.preventDefault();
+              onPointerCommitOption(section, option);
+            }}
+            onClick={() => onClickCommitOption(section, option)}
+            onFocus={() => onSetSection(section)}
           >
-            {section === SECTION_PERIOD ? option : pad(option)}
-          </Text>
-        </PopupOption>
-      );
-    })}
-  </PopupColumnBox>
-);
+            <Text
+              size={theme.global.input.font.size || 'small'}
+              weight={selected ? 'bold' : 'normal'}
+              color={optionColor}
+            >
+              {section === SECTION_PERIOD ? option : pad(option)}
+            </Text>
+          </PopupOption>
+        );
+      })}
+    </PopupColumnBox>
+  );
+};
 
 const TimeInputPopup = ({
   activeSection,

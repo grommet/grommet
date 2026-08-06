@@ -116,12 +116,6 @@ export const StyledDateTimeInputSegment = styled.span.withConfig(
   align-items: center;
   position: relative;
   line-height: inherit;
-  padding-inline: ${(props) => {
-    const activeTokens = getActiveTokens(props.theme);
-    const padToken = activeTokens?.pad;
-
-    return props.theme.global.edgeSize?.[padToken] || padToken;
-  }};
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
