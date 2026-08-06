@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -109,6 +111,15 @@ const Wizard = forwardRef(
         (child) => child.children && child.children.length > 0,
       ),
     );
+
+    useEffect(() => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(
+          'Warning: Wizard is currently in beta. The API is subject ' +
+            'to change in future releases.',
+        );
+      }
+    }, []);
 
     if (process.env.NODE_ENV !== 'production') {
       if (hasSubSteps && showProgress === 'horizontal') {
