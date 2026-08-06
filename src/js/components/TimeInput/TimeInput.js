@@ -14,6 +14,7 @@ import { Clock as GrommetClockIcon } from 'grommet-icons/icons/Clock';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
+import { normalizeStep } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
 import {
   getSectionKeyFromType,
@@ -38,18 +39,12 @@ import {
   getSectionAriaMeta,
   getSectionName,
   pad,
+  sectionTypeFromSection,
   SECTION_HOUR,
   SECTION_MINUTE,
   SECTION_PERIOD,
   SECTION_SECOND,
 } from './utils';
-
-const sectionTypeFromSection = (section) => {
-  if (section === SECTION_HOUR) return 'hours';
-  if (section === SECTION_MINUTE) return 'minutes';
-  if (section === SECTION_SECOND) return 'seconds';
-  return 'meridiem';
-};
 
 const getDisplaySectionKey = (section) => {
   if (section === SECTION_HOUR) return 'hour';
@@ -90,12 +85,6 @@ const buildPlaceholder = (sectionOrder) =>
       return `${section === SECTION_PERIOD ? ' ' : ':'}${token}`;
     })
     .join('');
-
-const normalizeStep = (step) => {
-  const parsed = Number(step);
-  if (!Number.isFinite(parsed) || parsed <= 0) return 1;
-  return Math.max(1, Math.floor(parsed));
-};
 
 // When `format` isn't explicitly provided, default to the 12/24-hour
 // convention the browser's default locale uses, rather than hardcoding one.

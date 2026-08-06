@@ -4,15 +4,16 @@ import {
   getSectionKeyFromType,
   getSectionNameFromType,
 } from '../../utils/sectionHelpers';
+import { pad } from '../../utils/dates';
 
 export const SECTION_HOUR = 0;
 export const SECTION_MINUTE = 1;
 export const SECTION_SECOND = 2;
 export const SECTION_PERIOD = 3;
 
-export const pad = (value) => value.toString().padStart(2, '0');
+export { pad };
 
-const sectionTypeFromSection = (section) => {
+export const sectionTypeFromSection = (section) => {
   if (section === SECTION_HOUR) return 'hours';
   if (section === SECTION_MINUTE) return 'minutes';
   if (section === SECTION_SECOND) return 'seconds';

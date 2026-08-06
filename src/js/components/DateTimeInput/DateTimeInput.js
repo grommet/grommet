@@ -14,6 +14,7 @@ import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { normalizeStep, pad } from '../../utils/dates';
 import { useForwardedRef } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
@@ -46,7 +47,6 @@ const SECTION_MINUTE = 4;
 const SECTION_SECOND = 5;
 const SECTION_PERIOD = 6;
 
-const pad2 = (value) => String(value).padStart(2, '0');
 const pad4 = (value) => String(value).padStart(4, '0');
 
 const getDaysInMonth = (year, month) => new Date(year, month, 0).getDate();
@@ -276,7 +276,7 @@ const getCalendarDate = (sections) => {
   if (day < 1 || day > daysInMonth) return undefined;
 
   // Calendar selection should persist even before time sections are complete.
-  return `${pad4(year)}-${pad2(month)}-${pad2(day)}`;
+  return `${pad4(year)}-${pad(month)}-${pad(day)}`;
 };
 
 const parseCalendarSelection = (nextValue) => {
@@ -335,18 +335,12 @@ const digitsPerSection = (section) => {
   return 2;
 };
 
-const normalizeStep = (step) => {
-  const parsed = Number(step);
-  if (!Number.isFinite(parsed) || parsed <= 0) return 1;
-  return Math.max(1, Math.floor(parsed));
-};
-
 const formatSectionText = (section, value) => {
   if (value === undefined || value === '')
     return getSectionTokenFromType(sectionTypeFromSection(section));
   if (section === SECTION_YEAR) return pad4(value);
   if (section === SECTION_PERIOD) return value;
-  return pad2(value);
+  return pad(value);
 };
 
 const DateTimeInput = forwardRef(
@@ -1029,10 +1023,10 @@ const DateTimeInput = forwardRef(
       if (resolvedFormat === '12') {
         let hour24 = sections.hour % 12;
         if ((sections.period || 'AM') === 'PM') hour24 += 12;
-        return `${pad2(hour24)}:${pad2(minute)}:${pad2(resolvedSecond)}`;
+        return `${pad(hour24)}:${pad(minute)}:${pad(resolvedSecond)}`;
       }
 
-      return `${pad2(sections.hour)}:${pad2(minute)}:${pad2(resolvedSecond)}`;
+      return `${pad(sections.hour)}:${pad(minute)}:${pad(resolvedSecond)}`;
     }, [resolvedFormat, sections, showSeconds]);
 
     const showActiveSection =
