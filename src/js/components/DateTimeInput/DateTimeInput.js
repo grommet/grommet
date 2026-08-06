@@ -727,7 +727,7 @@ const DateTimeInput = forwardRef(
         return formatMessage({
           id: 'dateTimeInput.activeSectionValue',
           messages,
-          values: { value: raw, section: nameText },
+          values: { value: raw },
         });
       },
       [formatMessage, messages, sections],
