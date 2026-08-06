@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable max-len */
 import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';

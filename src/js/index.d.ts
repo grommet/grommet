@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 export * from './components/Accordion';
 export * from './components/AccordionPanel';
 export * from './components/Anchor';

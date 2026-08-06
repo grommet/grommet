@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   Children,
   cloneElement,
@@ -371,11 +373,7 @@ const FormField = forwardRef(
     if (
       children &&
       Children.forEach(children, (child) => {
-        if (
-          child &&
-          child.type &&
-          child.type.displayName === 'FileInput'
-        )
+        if (child && child.type && child.type.displayName === 'FileInput')
           isFileInputComponent = true;
       })
     );
