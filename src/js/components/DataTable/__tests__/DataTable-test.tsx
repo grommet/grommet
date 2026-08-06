@@ -178,6 +178,59 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('sortable columns have aria-sort="none" when unsorted', () => {
+    const { getByText } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+          ]}
+          sortable
+        />
+      </Grommet>,
+    );
+
+    const headerA = getByText('A').closest('th');
+    const headerB = getByText('B').closest('th');
+    expect(headerA).toHaveAttribute('aria-sort', 'none');
+    expect(headerB).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', { name: 'A, sortable' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'B, sortable' }),
+    ).toBeInTheDocument();
+
+    fireEvent.click(getByText('A'));
+    expect(headerA).toHaveAttribute('aria-sort', 'ascending');
+    expect(headerB).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', { name: 'B, sortable' }),
+    ).toBeInTheDocument();
+  });
+
+  test('sortable columns have aria-sort when sortable icon is not rendered', () => {
+    const { getByText } = render(
+      <Grommet theme={{ dataTable: { icons: { sortable: undefined } } }}>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'zero' }, { a: 'one' }]}
+          sortable
+        />
+      </Grommet>,
+    );
+
+    expect(getByText('A').closest('th')).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', { name: 'A, sortable' }),
+    ).toBeInTheDocument();
+  });
+
   test('sort null data', () => {
     const { container, getByText } = render(
       <Grommet>

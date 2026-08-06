@@ -75,6 +75,7 @@
     "rowsChanged": "Number of rows changed",
     "rowsSingle": "row",
     "searchBy": "Open search by {property}",
+    "sortable": "{label}, sortable",
     "total": "{total} {rows}",
     "totalSingle": "{total} {rows}"
   },
