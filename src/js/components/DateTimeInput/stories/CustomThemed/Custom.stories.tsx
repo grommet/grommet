@@ -11,6 +11,9 @@ import {
   Calendar as CalendarIcon,
 } from '@hpe-design/icons-grommet';
 
+// THIS STORY IS TO TEST WHAT THEME NEEDS TO PROVIDE FOR THE TIMEINPUT AND DATETIMEINPUT COMPONENTS
+// THIS SHOULD BE DELETED BEFORE WE MERGE INTO MASTER IT IS ONLY FOR REVIEWING THEME CHANGES AND SHOULD NOT BE USED AS A REFERENCE FOR IMPLEMENTATION
+
 // Pulling the raw values directly from the token files gives us the color
 // exactly as authored.
 const textOnSelectedPrimaryStrong = {
