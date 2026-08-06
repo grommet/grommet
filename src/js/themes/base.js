@@ -1081,7 +1081,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         calendar: undefined,
       },
       separator: {
-        dateTimeGap: 'xxsmall',
+        pad: 'xxsmall',
       },
     },
     dataSearch: {

@@ -372,8 +372,11 @@ const DateTimeInput = forwardRef(
       () => format || getLocaleTimeFormat(locale),
       [format, locale],
     );
+    const separatorPadToken = theme.dateTimeInput?.separator?.pad;
     const dateTimeSeparatorPadding =
-      theme.global.edgeSize[theme.dateTimeInput.separator.dateTimeGap];
+      theme.global.edgeSize?.[separatorPadToken] ||
+      separatorPadToken ||
+      theme.global.edgeSize?.xxsmall;
 
     const inputRef = useForwardedRef(refArg);
     const containerRef = useRef();
@@ -1045,19 +1048,11 @@ const DateTimeInput = forwardRef(
     const groupLabel = formFieldLabelId
       ? undefined
       : formatMessage({ id: 'dateTimeInput.inputLabel', messages });
-    const iconSize =
-      (theme.icon?.matchSize && rest.size) || theme.dateTimeInput?.icon?.size;
     const CalendarIcon =
       theme.dateTimeInput?.icon?.calendar || GrommetCalendarIcon;
     const dropTarget = inline ? triggerRef.current : containerRef.current;
     const generatedId = useId();
     const dropId = `${id || generatedId}__drop`;
-    const dropBorderColor =
-      theme.dateTimeInput?.drop?.border?.color || 'border';
-    const dropBorderSizeToken =
-      theme.dateTimeInput?.drop?.border?.size || 'xsmall';
-    const dropBorderSize =
-      theme.global.borderSize?.[dropBorderSizeToken] || dropBorderSizeToken;
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
@@ -1066,7 +1061,7 @@ const DateTimeInput = forwardRef(
             <Box direction="row" align="center">
               <Button
                 ref={triggerRef}
-                icon={<CalendarIcon size={iconSize} />}
+                icon={<CalendarIcon />}
                 plain
                 disabled={disabled || readOnly}
                 aria-label={formatMessage({
@@ -1114,21 +1109,17 @@ const DateTimeInput = forwardRef(
                     } else {
                       numericValue = sections[key] ?? sectionLimits.min;
                     }
-                    const Separator =
-                      section === SECTION_HOUR
-                        ? StyledDateTimeInputSeparator
-                        : StyledDateTimeInputSeparator;
 
                     return (
                       <React.Fragment key={section}>
                         {!!prefix && (
-                          <Separator
+                          <StyledDateTimeInputSeparator
                             $filled={hasDisplayValue}
                             $paddingInline={dateTimeSeparatorPadding}
                             {...passThemeFlag}
                           >
                             {prefix}
-                          </Separator>
+                          </StyledDateTimeInputSeparator>
                         )}
                         <StyledDateTimeInputSegment
                           ref={(segmentNode) => {
@@ -1185,7 +1176,7 @@ const DateTimeInput = forwardRef(
               {!readOnly && (
                 <Button
                   ref={triggerRef}
-                  icon={<CalendarIcon size={iconSize} />}
+                  icon={<CalendarIcon />}
                   plain
                   disabled={disabled}
                   margin={theme.dateTimeInput?.button?.margin}
@@ -1224,24 +1215,22 @@ const DateTimeInput = forwardRef(
               <Box
                 direction="row"
                 pad={theme.dateTimeInput?.drop?.pad}
-                gap="none"
+                gap={theme.dateTimeInput?.drop?.gap}
               >
                 <Calendar
                   date={getCalendarDate(sections)}
                   initialFocus="days"
                   onSelect={handleCalendarSelect}
                 />
-                <Box pad={{ horizontal: theme.dateTimeInput?.drop?.gap }}>
-                  <Box
-                    fill="vertical"
-                    width={dropBorderSize}
-                    border={{
-                      side: 'start',
-                      color: dropBorderColor,
-                      size: dropBorderSizeToken,
-                    }}
-                  />
-                </Box>
+                <Box
+                  alignSelf="stretch"
+                  flex={false}
+                  border={{
+                    side: 'start',
+                    color: theme.dateTimeInput?.drop?.border?.color,
+                    size: theme.dateTimeInput?.drop?.border?.size,
+                  }}
+                />
                 <TimeInput
                   inline
                   format={resolvedFormat}

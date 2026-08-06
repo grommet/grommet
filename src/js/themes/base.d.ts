@@ -1054,7 +1054,7 @@ export interface ThemeType {
       calendar?: React.ReactNode | Icon;
     };
     separator?: {
-      dateTimeGap?: GapType;
+      pad?: GapType;
     };
   };
   dataTable?: {

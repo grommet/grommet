@@ -68,6 +68,18 @@ describe('DateTimeInput', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
+  test('renders when dateTimeInput.separator is omitted from custom theme', () => {
+    expect(() =>
+      render(
+        <Grommet theme={{ dateTimeInput: { separator: undefined } } as any}>
+          <DateTimeInput format="12" value="2026-07-22T18:30:00.000Z" />
+        </Grommet>,
+      ),
+    ).not.toThrow();
+
+    expect(screen.getByRole('spinbutton', { name: 'day' })).toBeInTheDocument();
+  });
+
   test('emits committed ISO value on valid section update', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
@@ -798,29 +810,58 @@ describe('DateTimeInput', () => {
     ).toHaveValue('');
   });
 
-  test('respects theme.dateTimeInput properties', () => {
+  test('applies custom active colors from theme.dateTimeInput.active', async () => {
+    const user = userEvent.setup();
+
     const customTheme = {
       dateTimeInput: {
-        container: {
-          round: 'large',
-        },
-        button: {
-          margin: 'medium',
-        },
-        icon: {
-          // calendar: undefined — can be overridden with a component
+        active: {
+          background: 'pink',
+          indicator: {
+            color: 'red',
+            size: '3px',
+          },
         },
       },
     };
 
-    const { container } = render(
+    render(
       <Grommet theme={customTheme}>
         <DateTimeInput format="12" value="2026-07-22T18:30:00.000Z" />
       </Grommet>,
     );
 
-    // Verify the component renders without error when theme is provided
-    expect(container).toBeTruthy();
-    expect(screen.getByRole('group')).toBeInTheDocument();
+    const daySegment = screen.getByRole('spinbutton', { name: 'day' });
+    await user.click(daySegment);
+
+    expect(daySegment).toHaveStyleRule('background-color', 'pink', {
+      modifier: '::before',
+    });
+    expect(daySegment).toHaveStyleRule('background-color', 'red', {
+      modifier: '::after',
+    });
+    expect(daySegment).toHaveStyleRule('height', '3px', {
+      modifier: '::after',
+    });
+  });
+
+  test('applies custom calendar icon from theme.dateTimeInput.icon.calendar', () => {
+    const CustomCalendarIcon = () => <span>Custom Calendar Icon</span>;
+
+    render(
+      <Grommet
+        theme={{
+          dateTimeInput: {
+            icon: {
+              calendar: CustomCalendarIcon,
+            },
+          },
+        }}
+      >
+        <DateTimeInput format="12" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    expect(screen.getByText('Custom Calendar Icon')).toBeInTheDocument();
   });
 });

@@ -49,7 +49,7 @@ const hpeTimeInputTheme = deepMerge(hpe, {
       },
     },
     separator: {
-      dateTimeGap: '5xsmall',
+      pad: '5xsmall',
     },
     icon: {
       calendar: CalendarIcon,
@@ -68,7 +68,6 @@ const hpeTimeInputTheme = deepMerge(hpe, {
       pad: '5xsmall',
       indicator: {
         color: 'focus',
-        // size: 'small', we do not need same as grommet
       },
     },
     drop: {
