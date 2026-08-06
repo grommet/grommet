@@ -31,7 +31,7 @@
     "openDrop": "Press space to open date and time picker",
     "invalidDateTime": "Invalid date or time value",
     "activeSection": "{section} selected",
-    "activeSectionValue": "{value} {section}",
+    "activeSectionValue": "{value}",
     "sectionDay": "day",
     "sectionMonth": "month",
     "sectionYear": "year",
