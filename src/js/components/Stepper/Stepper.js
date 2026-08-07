@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -13,7 +15,6 @@ import { MessageContext } from '../../contexts/MessageContext';
 
 import { Keyboard } from '../Keyboard';
 
-import { StepConnector } from './StepConnector';
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
@@ -336,7 +337,7 @@ const Stepper = forwardRef(
             isLast={isLastParent}
             showConnector={
               direction === 'horizontal'
-                ? false
+                ? !isLastParent
                 : !isLastParent || !!childElements
             }
             direction={direction}
@@ -346,19 +347,9 @@ const Stepper = forwardRef(
             onFocusStep={updateFocusedIndex}
             stepsRef={stepsRef}
             stepRefs={stepRefs}
+            subSteps={childElements}
           />,
         );
-        if (!isLastParent || (childElements && direction === 'vertical')) {
-          elements.push(
-            <StepConnector
-              key={`${step.id}-connector`}
-              step={step}
-              direction={direction}
-            >
-              {childElements}
-            </StepConnector>,
-          );
-        }
       });
       return elements;
     };
