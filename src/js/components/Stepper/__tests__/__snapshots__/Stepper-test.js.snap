@@ -95,7 +95,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   outline: none;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 6px;
   text-align: center;
   width: 100%;
 }
@@ -203,8 +203,8 @@ exports[`Stepper renders horizontal steps 1`] = `
   left: calc(50% + calc(24px / 2 + 3px));
   right: calc(-50% + calc(24px / 2 + 3px));
   height: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-left: 3px;
+  margin-right: 3px;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
@@ -416,7 +416,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   outline: none;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 6px;
   text-align: center;
   width: 100%;
 }
@@ -524,8 +524,8 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   left: calc(50% + calc(24px / 2 + 3px));
   right: calc(-50% + calc(24px / 2 + 3px));
   height: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-left: 3px;
+  margin-right: 3px;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
@@ -721,7 +721,15 @@ exports[`Stepper renders vertical steps 1`] = `
   position: relative;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 3px;
+  padding-bottom: 24px;
+}
+
+.c12 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 0px;
 }
 
 .c4 {
@@ -838,11 +846,12 @@ exports[`Stepper renders vertical steps 1`] = `
 .c8 {
   border-radius: 6px;
   left: calc( calc(24px / 2 + 3px) + 2px - 2px / 2 );
-  top: calc(24px + 3px * 3);
+  top: calc(24px + 3px +       (2px * 2) + 4px);
   bottom: 0;
+  min-height: 12px;
   width: 2px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
@@ -942,7 +951,7 @@ exports[`Stepper renders vertical steps 1`] = `
       />
     </li>
     <li
-      class="c2"
+      class="c12"
     >
       <button
         aria-label="Step 3 of 3: Step 3"
