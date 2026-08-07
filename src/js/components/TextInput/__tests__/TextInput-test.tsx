@@ -65,6 +65,48 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('supports password reveal toggle', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput aria-label="Password" type="password" showPasswordToggle />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute(
+      'type',
+      'password',
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute('type', 'text');
+    expect(
+      screen.getByRole('button', { name: 'Hide password' }),
+    ).toBeInTheDocument();
+  });
+
+  test('supports password toggle theme icons', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={{
+          textInput: { icons: { showPassword: Add, hidePassword: Search } },
+        }}
+      >
+        <TextInput aria-label="Password" type="password" showPasswordToggle />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Search')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+  });
+
   test('suggestions', (done) => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
