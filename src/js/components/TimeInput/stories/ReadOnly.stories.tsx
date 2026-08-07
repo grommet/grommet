@@ -10,4 +10,5 @@ export const ReadOnly = () => (
 
 export default {
   title: 'Input/TimeInput/ReadOnly',
+  component: TimeInput,
 };

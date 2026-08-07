@@ -35,4 +35,5 @@ TimeForm.storyName = 'Form';
 
 export default {
   title: 'Input/TimeInput',
+  component: TimeInput,
 };
