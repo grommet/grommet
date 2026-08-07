@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { Actions } from 'grommet-icons/icons/Actions';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
@@ -2731,7 +2733,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         vertical: {
           // Fixed rail width so the column doesn't collapse to label text.
           width: 'small',
-          pad: { horizontal: 'xsmall', vertical: 'none' },
+          // pad: undefined,
         },
       },
       stepHeader: {
@@ -2768,11 +2770,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           cancel: { icon: undefined },
           skip: { icon: FormNext },
         },
-      },
-      error: {
-        color: 'status-error',
-        size: 'small',
-        margin: { top: 'xsmall' },
       },
     },
     worldMap: {

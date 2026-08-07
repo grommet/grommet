@@ -16,13 +16,13 @@ import { useThemeValue } from '../../utils/useThemeValue';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
+import { Form } from '../Form';
 import { WizardContext } from './WizardContext';
 import { WizardHeader } from './WizardHeader';
 import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
 import { WizardContent } from './WizardContent';
 import { WizardFooter } from './WizardFooter';
-import { StyledWizard } from './StyledWizard';
 import { WizardPropTypes } from './propTypes';
 
 // Flatten step tree into ordered leaves; parents with children are
@@ -93,7 +93,7 @@ const Wizard = forwardRef(
     },
     ref,
   ) => {
-    const { theme, passThemeFlag } = useThemeValue();
+    const { theme } = useThemeValue();
     const { format } = React.useContext(MessageContext);
     const responsiveSize = React.useContext(ResponsiveContext);
     const sendAnalytics = useAnalytics();
@@ -641,82 +641,81 @@ const Wizard = forwardRef(
     if (!isOpen) return null;
 
     // Custom composition: consumers supply their own tree via `children`.
-    // Skip the default-layout work (footer resolution, theme lookups, JSX
-    // construction) since it would just be discarded.
-    if (children) {
-      return (
-        <WizardContext.Provider value={contextValue}>
-          <StyledWizard
+    let content = children;
+
+    if (!content) {
+      const footerNode = footer ?? <WizardFooter />;
+
+      const bodyTheme = theme.wizard?.body;
+
+      // Default layout: header + middle (progress + step body) + footer.
+      // Header/footer stay pinned; only WizardContent scrolls internally.
+      content = (
+        <Box {...theme.wizard?.container} flex>
+          <>
+            <WizardHeader title={title} />
+            <Box
+              align="center"
+              flex={{ grow: 1, shrink: 1 }}
+              fill="horizontal"
+              overflow="auto"
+            >
+              <Box
+                pad={bodyTheme?.pad}
+                gap={bodyTheme?.gap}
+                flex="grow"
+                fill="horizontal"
+                direction={
+                  effectiveShowProgress === 'vertical' ? 'row' : 'column'
+                }
+              >
+                {effectiveShowProgress && responsiveSize !== 'small' && (
+                  <WizardProgress />
+                )}
+                <Box flex="grow">
+                  <WizardStepHeader />
+                  <WizardContent />
+                </Box>
+              </Box>
+            </Box>
+            {footerNode}
+          </>
+        </Box>
+      );
+    }
+    return (
+      <WizardContext.Provider value={contextValue}>
+        <Form
+          value={formValue}
+          onChange={setFormValue}
+          onSubmit={next}
+          style={{ display: 'flex', flex: '1 1 auto' }}
+          onValidate={(validationResults) => {
+            // focus first error field if any
+            if (validationResults.errors) {
+              const fields = Object.keys(validationResults.errors);
+              for (let i = 0; i < fields.length; i += 1) {
+                const name = fields[i];
+                const element = document.getElementsByName(name)[0];
+                if (element) {
+                  element.focus();
+                  break;
+                }
+              }
+            }
+          }}
+        >
+          <Box
             ref={wizardRef}
             id={id}
             aria-label={ariaLabel}
             role="region"
-            {...passThemeFlag}
+            flex={{ grow: 1, shrink: 1 }}
             {...rest}
           >
-            {children}
-          </StyledWizard>
-        </WizardContext.Provider>
-      );
-    }
-
-    const footerNode = footer ?? <WizardFooter />;
-
-    const containerTheme = theme.wizard?.container;
-    const bodyTheme = theme.wizard?.body;
-
-    // Default layout: header + middle (progress + step body) + footer.
-    // Header/footer stay pinned; only WizardContent scrolls internally.
-    const defaultLayout = (
-      <>
-        <WizardHeader title={title} />
-        <Box
-          align="center"
-          flex={{ grow: 1, shrink: 1 }}
-          fill="horizontal"
-          overflow="auto"
-        >
-          <Box
-            pad={bodyTheme?.pad}
-            gap={bodyTheme?.gap}
-            flex="grow"
-            fill="horizontal"
-            direction={effectiveShowProgress === 'vertical' ? 'row' : 'column'}
-          >
-            {effectiveShowProgress && responsiveSize !== 'small' && (
-              <WizardProgress />
-            )}
-            <Box flex="grow">
-              <WizardStepHeader />
-              <WizardContent />
-            </Box>
+            {content}
           </Box>
-        </Box>
-        {footerNode}
-      </>
-    );
-
-    return (
-      <WizardContext.Provider value={contextValue}>
-        <StyledWizard
-          ref={wizardRef}
-          id={id}
-          aria-label={ariaLabel}
-          role="region"
-          {...passThemeFlag}
-          {...rest}
-        >
-          <Box
-            background={containerTheme?.background}
-            pad={containerTheme?.pad}
-            gap={containerTheme?.gap}
-            round={containerTheme?.round}
-            elevation={containerTheme?.elevation}
-            flex
-          >
-            {defaultLayout}
-          </Box>
-        </StyledWizard>
+        </Form>
       </WizardContext.Provider>
     );
   },

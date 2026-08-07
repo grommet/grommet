@@ -1,47 +1,81 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 
-import { Box, Notification, Paragraph, TextInput } from 'grommet';
+import { Box, Notification, Paragraph, TextInput, FormField } from 'grommet';
 import { Wizard } from '../Wizard';
+
+const validateEmail = (email) => {
+  if (!email) return 'Email is required.';
+  if (!email.includes('@')) return 'Enter a valid email address.';
+  return undefined;
+};
+
+const validatePassword = (password) => {
+  if (!password || password.length < 6) {
+    return 'Password must be at least 6 characters.';
+  }
+  return undefined;
+};
 
 const Validation = () => {
   const [result, setResult] = useState(null);
+
   const steps = [
     {
       id: 'email',
       title: 'Email',
       description: 'Enter a valid email address.',
-      validate: (value) => {
-        if (!value.email) return 'Email is required.';
-        if (!value.email.includes('@')) return 'Enter a valid email address.';
-        return true;
-      },
-      render: (step, api) => (
-        <TextInput
-          placeholder="you@example.com"
-          value={api.formValue.email || ''}
-          onChange={(event) =>
-            api.setFormValue({ ...api.formValue, email: event.target.value })
-          }
-        />
+      skippable: true,
+      render: (/* step, api */) => (
+        <>
+          <FormField
+            htmlFor="wizard-email"
+            label="Email"
+            name="email"
+            required
+            validate={validateEmail}
+          >
+            <TextInput
+              id="wizard-email"
+              name="email"
+              placeholder="you@example.com"
+            />
+          </FormField>
+          <FormField
+            htmlFor="wizard-input"
+            label="Input"
+            name="ainput"
+            required
+          >
+            <TextInput
+              id="wizard-input"
+              name="ainput"
+              placeholder="Enter something"
+            />
+          </FormField>
+        </>
       ),
     },
     {
       id: 'password',
       title: 'Password',
       description: 'Choose a password.',
-      validate: (value) =>
-        value.password && value.password.length >= 6
-          ? true
-          : 'Password must be at least 6 characters.',
-      render: (step, api) => (
-        <TextInput
-          type="password"
-          placeholder="password"
-          value={api.formValue.password || ''}
-          onChange={(event) =>
-            api.setFormValue({ ...api.formValue, password: event.target.value })
-          }
-        />
+      render: (/* step, api */) => (
+        <FormField
+          htmlFor="wizard-password"
+          label="Password"
+          name="password"
+          required
+          validate={validatePassword}
+        >
+          <TextInput
+            id="wizard-password"
+            name="password"
+            type="password"
+            placeholder="password"
+          />
+        </FormField>
       ),
     },
     {

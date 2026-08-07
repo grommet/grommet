@@ -1,6 +1,7 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box } from '../Box';
-import { Text } from '../Text';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
 
@@ -9,10 +10,9 @@ import { useWizard } from './WizardContext';
 export const WizardContent = ({ ...rest }) => {
   const { theme } = useThemeValue();
   const wizard = useWizard();
-  const { currentStepObj, renderStep, validationError } = wizard;
+  const { currentStepObj, renderStep } = wizard;
 
   const contentTheme = theme.wizard?.content;
-  const errorTheme = theme.wizard?.error;
 
   if (!currentStepObj) return null;
 
@@ -31,11 +31,6 @@ export const WizardContent = ({ ...rest }) => {
       {...rest}
     >
       {body}
-      {validationError && (
-        <Text role="alert" aria-live="polite" {...errorTheme}>
-          {validationError}
-        </Text>
-      )}
     </Box>
   );
 };
