@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import {
   FlattenInterpolation,
   FlattenSimpleInterpolation,
@@ -1023,6 +1025,36 @@ export interface ThemeType {
     icon?: {
       calendar?: React.ReactNode | Icon;
       size?: string;
+    };
+  };
+  dateTimeInput?: {
+    button?: {
+      margin?: string | object;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    drop?: {
+      pad?: PadType;
+      gap?: GapType;
+      border?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    icon?: {
+      calendar?: React.ReactNode | Icon;
+    };
+    separator?: {
+      pad?: GapType;
     };
   };
   dataTable?: {

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { Actions } from 'grommet-icons/icons/Actions';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
@@ -1050,6 +1052,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       icon: {
         // calendar: undefined,
         size: 'medium',
+      },
+    },
+    dateTimeInput: {
+      button: {
+        margin: { right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+      active: {
+        background: 'active-background',
+        pad: 'xxsmall',
+        indicator: {
+          color: { dark: 'white', light: 'black' },
+          size: 'small',
+        },
+      },
+      drop: {
+        pad: 'small',
+        gap: 'small',
+        border: {
+          color: 'border',
+          size: 'xsmall',
+        },
+      },
+      icon: {
+        calendar: undefined,
+      },
+      separator: {
+        pad: 'xxsmall',
       },
     },
     dataSearch: {
@@ -2619,6 +2651,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           selected: {
             background: 'selected',
             color: 'white',
+            text: {
+              weight: 'medium',
+            },
             hover: {
               // background: undefined,
             },
