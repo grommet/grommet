@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -9,6 +11,7 @@ import React, {
 } from 'react';
 
 import styled from 'styled-components';
+import { Hide, View } from 'grommet-icons';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -30,6 +33,7 @@ import {
   StyledTextInputContainer,
   StyledPlaceholder,
   StyledIcon,
+  StyledInlineButton,
   StyledSuggestions,
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -94,11 +98,13 @@ const TextInput = forwardRef(
       onSuggestionsOpen,
       placeholder,
       plain,
+      showPasswordToggle,
       readOnly: readOnlyProp,
       readOnlyCopy,
       reverse,
       suggestions,
       textAlign,
+      type: typeProp,
       value: valueProp,
       width: widthProp,
       ...rest
@@ -122,6 +128,7 @@ const TextInput = forwardRef(
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
+    const [passwordRevealed, setPasswordRevealed] = useState(false);
 
     const handleSuggestionSelect = useMemo(
       () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
@@ -144,6 +151,14 @@ const TextInput = forwardRef(
     });
 
     const [tip, setTip] = useState(readOnlyCopyPrompt);
+    const showPasswordMessage = format({
+      id: 'textInput.showPassword',
+      messages,
+    });
+    const hidePasswordMessage = format({
+      id: 'textInput.hidePassword',
+      messages,
+    });
 
     const onClickCopy = () => {
       navigator.clipboard.writeText(value);
@@ -154,6 +169,14 @@ const TextInput = forwardRef(
     const onBlurCopy = () => {
       if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
     };
+
+    const passwordToggle =
+      showPasswordToggle && typeProp === 'password' && !readOnlyCopy;
+
+    useEffect(() => {
+      // When the toggle stops applying, return the input to its authored type.
+      if (!passwordToggle) setPasswordRevealed(false);
+    }, [passwordToggle]);
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
@@ -483,6 +506,12 @@ const TextInput = forwardRef(
     // primarily for tests.
 
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
+    const ShowPasswordIcon = theme.textInput?.icons?.showPassword || View;
+    const HidePasswordIcon = theme.textInput?.icons?.hidePassword || Hide;
+    let inputType = typeProp;
+    if (passwordToggle) {
+      inputType = passwordRevealed ? 'text' : 'password';
+    }
 
     const ReadOnlyCopyButton = (
       <CopyButton
@@ -495,8 +524,24 @@ const TextInput = forwardRef(
       />
     );
 
+    const PasswordToggleButton = passwordToggle ? (
+      <Button
+        disabled={disabled}
+        kind="toolbar"
+        icon={passwordRevealed ? <ShowPasswordIcon /> : <HidePasswordIcon />}
+        onClick={() => setPasswordRevealed((current) => !current)}
+        aria-label={
+          passwordRevealed ? hidePasswordMessage : showPasswordMessage
+        }
+        {...passThemeFlag}
+      />
+    ) : undefined;
+
+    const textInputButton = readOnlyCopy ? ReadOnlyCopyButton : undefined;
+
     return (
       <StyledTextInputContainer
+        hasButton={!!textInputButton}
         readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
         readOnlyCopy={readOnlyCopy}
         plain={plain}
@@ -505,7 +550,7 @@ const TextInput = forwardRef(
         onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
-        {reverse && readOnlyCopy && ReadOnlyCopyButton}
+        {reverse && textInputButton}
         {showStyledPlaceholder && (
           <StyledPlaceholder {...passThemeFlag}>
             {placeholder}
@@ -531,8 +576,11 @@ const TextInput = forwardRef(
             icon={!readOnlyCopy && icon}
             reverse={reverse}
             focus={focus}
+            hasButton={!!textInputButton}
+            hasInlineButton={passwordToggle}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
+            type={inputType}
             widthProp={widthProp}
             {...passThemeFlag}
             {...rest}
@@ -591,7 +639,12 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-        {!reverse && readOnlyCopy && ReadOnlyCopyButton}
+        {PasswordToggleButton && !readOnlyCopy && (
+          <StyledInlineButton {...passThemeFlag}>
+            {PasswordToggleButton}
+          </StyledInlineButton>
+        )}
+        {!reverse && textInputButton}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );

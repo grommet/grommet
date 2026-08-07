@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { Actions } from 'grommet-icons/icons/Actions';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
@@ -2593,6 +2595,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // disabled: { opacity: undefined },
       // icons: {
       //   copy: undefined,
+      //   hidePassword: undefined,
+      //   showPassword: undefined,
       // },
     },
     timeInput: {

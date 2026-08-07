@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import {
   FlattenInterpolation,
   FlattenSimpleInterpolation,
@@ -2415,6 +2417,8 @@ export interface ThemeType {
     };
     icons?: {
       copy?: React.ReactNode | Icon;
+      hidePassword?: React.ReactNode | Icon;
+      showPassword?: React.ReactNode | Icon;
     };
     placeholder?: {
       extend?: ExtendType;
