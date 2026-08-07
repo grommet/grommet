@@ -32,8 +32,7 @@ const getConnectorColor = (stepStatus, theme) =>
   );
 
 const StyledStepItem = styled.li.withConfig({
-  shouldForwardProp: (prop) =>
-    isPropValid(prop) && prop !== 'direction',
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
 })`
   display: flex;
   position: relative;
@@ -60,7 +59,7 @@ const StyledStepItem = styled.li.withConfig({
       align-items: center;
       flex: 1;
       min-width: 0;
-      overflow: hidden;
+      overflow: visible;
     `;
   }}
 `;
@@ -251,6 +250,8 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
             left: calc(${props.isBetween ? '-' : ''}50% + ${connectorOffset});
             right: calc(-50% + ${connectorOffset});
             height: ${connectorThickness};
+            margin-left: ${props.theme.global.borderSize.medium};
+            margin-right: ${props.theme.global.borderSize.medium};
           `
         : css`
             left: calc(
@@ -262,11 +263,31 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
               : `calc(${parentSize} + ${buttonPad} * 3)`};
             bottom: 0;
             width: ${connectorThickness};
+            margin-top: ${props.theme.global.borderSize.medium};
+            margin-bottom: ${props.theme.global.borderSize.medium};
           `}
     `;
   }}
   position: absolute;
   background: ${(props) => getConnectorColor(props.status, props.theme)};
+`;
+
+const StyledSubStepsList = styled.ol.withConfig(styledComponentsConfig)`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  ${(props) => {
+    if (props.direction !== 'vertical') return '';
+
+    const indicatorSizeToken = props.theme.stepper?.indicator?.size || 'medium';
+    const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
+    const textGap = props.theme.global?.edgeSize?.small || '12px';
+    const buttonPad = props.theme.global?.edgeSize?.xxsmall || '4px';
+
+    return css`
+      padding-inline-start: calc(${indicatorSize} + ${textGap} + ${buttonPad});
+    `;
+  }}
 `;
 
 export {
@@ -275,4 +296,5 @@ export {
   StyledStepContent,
   StyledIndicator,
   StyledConnector,
+  StyledSubStepsList,
 };
