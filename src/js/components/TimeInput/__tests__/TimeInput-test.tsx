@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import 'jest-styled-components';
 import {
@@ -1769,5 +1771,156 @@ describe('TimeInput', () => {
       'color',
       '#FFFFFF',
     );
+  });
+
+  test('updates displayed value when picking a new hour from the popup after a single-digit keystroke', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
+    // A single-digit keystroke commits immediately (e.g. hour "1" -> "01")
+    // without waiting for a second digit, since 1 * 10 is not > the max
+    // hour value. This used to leave a stale pending-digit overlay in
+    // place that masked any later update to the same section.
+    await user.keyboard('1');
+    expect(getDisplayInput()).toHaveValue('01:mm:ss');
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    await user.click(
+      within(hourList).getByRole('option', { name: '06 hours' }),
+    );
+
+    await waitFor(() => {
+      expect(getDisplayInput()).toHaveValue('06:mm:ss');
+    });
+    expect(hourSegment).toHaveTextContent('06');
+  });
+
+  test('updates displayed value on arrow-key increment after a single-digit keystroke', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
+    await user.keyboard('1');
+    expect(getDisplayInput()).toHaveValue('01:mm:ss');
+
+    await user.keyboard('{ArrowUp}');
+
+    expect(getDisplayInput()).toHaveValue('02:mm:ss');
+    expect(hourSegment).toHaveTextContent('02');
+  });
+
+  test('updates displayed value when picking a new minute from the popup after a single-digit keystroke', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const minuteSegment = getSegment('minutes');
+    await user.click(minuteSegment);
+    // A single-digit keystroke commits immediately (e.g. minute "1" -> "01")
+    // without waiting for a second digit, since 1 * 10 is not > the max
+    // minute value.
+    await user.keyboard('1');
+    expect(getDisplayInput()).toHaveValue('hh:01:ss');
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    await user.click(
+      within(minuteList).getByRole('option', { name: '06 minutes' }),
+    );
+
+    await waitFor(() => {
+      expect(getDisplayInput()).toHaveValue('hh:06:ss');
+    });
+    expect(minuteSegment).toHaveTextContent('06');
+  });
+
+  test('updates displayed value on arrow-key increment after a single-digit keystroke in minutes', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const minuteSegment = getSegment('minutes');
+    await user.click(minuteSegment);
+    await user.keyboard('1');
+    expect(getDisplayInput()).toHaveValue('hh:01:ss');
+
+    await user.keyboard('{ArrowUp}');
+
+    expect(getDisplayInput()).toHaveValue('hh:02:ss');
+    expect(minuteSegment).toHaveTextContent('02');
+  });
+
+  test('updates displayed value when picking a new second from the popup after a single-digit keystroke', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const secondSegment = getSegment('seconds');
+    await user.click(secondSegment);
+    // A single-digit keystroke commits immediately (e.g. second "1" -> "01")
+    // without waiting for a second digit, since 1 * 10 is not > the max
+    // second value.
+    await user.keyboard('1');
+    expect(getDisplayInput()).toHaveValue('hh:mm:01');
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+    await user.click(
+      within(secondList).getByRole('option', { name: '06 seconds' }),
+    );
+
+    await waitFor(() => {
+      expect(getDisplayInput()).toHaveValue('hh:mm:06');
+    });
+    expect(secondSegment).toHaveTextContent('06');
+  });
+
+  test('updates displayed value on arrow-key increment after a single-digit keystroke in seconds', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const secondSegment = getSegment('seconds');
+    await user.click(secondSegment);
+    await user.keyboard('1');
+    expect(getDisplayInput()).toHaveValue('hh:mm:01');
+
+    await user.keyboard('{ArrowUp}');
+
+    expect(getDisplayInput()).toHaveValue('hh:mm:02');
+    expect(secondSegment).toHaveTextContent('02');
   });
 });
