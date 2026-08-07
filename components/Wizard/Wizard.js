@@ -28,7 +28,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _createForOfIteratorHelperLoose(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (t) return (t = t.call(r)).next.bind(t); if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var o = 0; return function () { return o >= r.length ? { done: !0 } : { done: !1, value: r[o++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // Flatten step tree into ordered leaves; parents with children are
 // aggregate-only, never nav targets.
 var flattenLeaves = function flattenLeaves(steps) {
@@ -118,6 +119,11 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       return child.children && child.children.length > 0;
     });
   });
+  (0, _react.useEffect)(function () {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('Warning: Wizard is currently in beta. The API is subject ' + 'to change in future releases.');
+    }
+  }, []);
   if (process.env.NODE_ENV !== 'production') {
     if (hasSubSteps && showProgress === 'horizontal') {
       console.warn('Wizard: horizontal showProgress with sub-steps is not supported. ' + 'Falling back to vertical.');
