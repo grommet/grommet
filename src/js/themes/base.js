@@ -2651,6 +2651,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           selected: {
             background: 'selected',
             color: 'white',
+            text: {
+              weight: 'medium',
+            },
             hover: {
               // background: undefined,
             },
