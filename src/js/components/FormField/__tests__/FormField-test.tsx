@@ -1,13 +1,18 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import 'jest-styled-components';
+import '@testing-library/jest-dom';
 import React from 'react';
 import 'regenerator-runtime/runtime';
 import styled, { css } from 'styled-components';
 
 import { Alert, New, StatusInfo } from 'grommet-icons';
 import { FormField } from '..';
+import { Button } from '../../Button';
 import { CheckBox } from '../../CheckBox';
 import { RadioButtonGroup } from '../../RadioButtonGroup';
 import { RangeInput } from '../../RangeInput';
@@ -691,5 +696,164 @@ describe('FormField', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('links error message via aria-describedby with children pattern', () => {
+    render(
+      <Grommet>
+        <FormField htmlFor="email-input" error="Invalid email">
+          <TextInput id="email-input" name="email" />
+        </FormField>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute(
+      'aria-describedby',
+      'grommet-email-input__error',
+    );
+    expect(
+      document.getElementById('grommet-email-input__error'),
+    ).toHaveTextContent('Invalid email');
+  });
+
+  test('merges aria-describedby with a pre-existing value on the child', () => {
+    render(
+      <Grommet>
+        <FormField htmlFor="email-input" error="Invalid email">
+          <TextInput
+            id="email-input"
+            name="email"
+            aria-describedby="custom-hint"
+          />
+        </FormField>
+        <span id="custom-hint">Use your work email</span>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute(
+      'aria-describedby',
+      'custom-hint grommet-email-input__error',
+    );
+  });
+
+  test('does not link aria-describedby for a custom non-grommet input', () => {
+    const CustomInput = (props: any) => <input {...props} />;
+    render(
+      <Grommet>
+        <FormField htmlFor="custom-input" error="Invalid value">
+          <CustomInput id="custom-input" name="custom" />
+        </FormField>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    expect(input).not.toHaveAttribute('aria-describedby');
+    expect(input).not.toHaveAttribute('aria-invalid');
+  });
+
+  test('sets aria-invalid on grommet input children when there is an error', () => {
+    render(
+      <Grommet>
+        <FormField htmlFor="email-input" error="Invalid email">
+          <TextInput id="email-input" name="email" />
+        </FormField>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute('aria-invalid', 'true');
+  });
+
+  test(`merges aria-describedby with pre-existing value on internal Input
+  (no children)`, () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="email"
+            name="email"
+            error="Invalid email"
+            aria-describedby="custom-hint"
+          />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute(
+      'aria-describedby',
+      'custom-hint grommet-email__error',
+    );
+  });
+
+  test('preserves the input value when an error appears after typing', async () => {
+    // guards against the field remounting (and losing its value) when the
+    // aria-describedby link is added once an error appears
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            label="Email"
+            name="email"
+            htmlFor="email-input"
+            validate={(value: string) => (value ? 'Invalid value' : undefined)}
+          >
+            <TextInput id="email-input" name="email" />
+          </FormField>
+          <Button label="Submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    await user.type(input, 'typed value');
+    await user.click(screen.getByRole('button', { name: 'Submit' }));
+
+    expect(await screen.findByText('Invalid value')).toBeInTheDocument();
+    expect(input).toHaveValue('typed value');
+  });
+
+  test('does not apply readOnly styling to a non-input child whose displayName is a substring match', () => {
+    // regression test: `readOnlyField` detection previously used
+    // 'TextInput'.indexOf(child.type.displayName), which matched any
+    // child.type.displayName that is a substring of 'TextInput', such as
+    // grommet's own Text component ('Text' is a substring of 'TextInput').
+    const readOnlyTheme = {
+      global: {
+        input: {
+          readOnly: {
+            background: '#123456',
+          },
+        },
+      },
+    };
+
+    const { container: textInputContainer } = render(
+      <Grommet theme={readOnlyTheme}>
+        <FormField label="Label">
+          <TextInput readOnly />
+        </FormField>
+      </Grommet>,
+    );
+    const textInputContentBox = textInputContainer.querySelector(
+      '[class*="FormFieldContentBox"]',
+    );
+    expect(textInputContentBox).toHaveStyleRule('background-color', '#123456');
+
+    const { container: textContainer } = render(
+      <Grommet theme={readOnlyTheme}>
+        <FormField label="Label">
+          {/* @ts-expect-error readOnly is not a valid Text prop */}
+          <Text readOnly>Some static content</Text>
+        </FormField>
+      </Grommet>,
+    );
+    const textContentBox = textContainer.querySelector(
+      '[class*="FormFieldContentBox"]',
+    );
+    expect(textContentBox).not.toHaveStyleRule('background-color', '#123456');
   });
 });

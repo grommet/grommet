@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   Children,
   cloneElement,
@@ -126,6 +128,17 @@ const ScreenReaderOnly = styled(Text)`
   border: 0;
 `;
 
+const MessageContent = ({ message, id, ...rest }) =>
+  typeof message === 'string' ? (
+    <Text id={id} {...rest}>
+      {message}
+    </Text>
+  ) : (
+    <Box id={id} {...rest}>
+      {message}
+    </Box>
+  );
+
 const Message = ({ error, info, message, type, ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
   if (message) {
@@ -137,24 +150,24 @@ const Message = ({ error, info, message, type, ...rest }) => {
       containerProps = theme.formField[type] && theme.formField[type].container;
     }
 
-    let messageContent;
-    if (typeof message === 'string')
-      messageContent = <Text {...rest}>{message}</Text>;
-    else messageContent = <Box {...rest}>{message}</Box>;
+    // id is in rest; extract it so we can place it on the outermost element
+    const { id, ...contentRest } = rest;
 
-    return icon || containerProps ? (
-      <StyledMessageContainer
-        direction="row"
-        messageType={type}
-        {...containerProps}
-        {...passThemeFlag}
-      >
-        {icon && <Box flex={false}>{icon}</Box>}
-        {messageContent}
-      </StyledMessageContainer>
-    ) : (
-      messageContent
-    );
+    if (icon || containerProps) {
+      return (
+        <StyledMessageContainer
+          direction="row"
+          messageType={type}
+          {...containerProps}
+          {...passThemeFlag}
+          id={id}
+        >
+          {icon && <Box flex={false}>{icon}</Box>}
+          <MessageContent message={message} {...contentRest} />
+        </StyledMessageContainer>
+      );
+    }
+    return <MessageContent message={message} id={id} {...contentRest} />;
   }
   return null;
 };
@@ -192,6 +205,47 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
     />
   );
 };
+
+// Adds aria-describedby (linking to the error Message) and aria-invalid to
+// a Grommet input child when the field has an error. Merges with any
+// aria-describedby the consumer already put on the child instead of
+// overwriting it.
+const getChildErrorProps = (child, errorId, error) => {
+  if (!errorId && !error) return {};
+  const props = {};
+  if (errorId) {
+    const existingDescribedBy = child.props['aria-describedby'];
+    props['aria-describedby'] = existingDescribedBy
+      ? `${existingDescribedBy} ${errorId}`
+      : errorId;
+  }
+  if (error) props['aria-invalid'] = true;
+  return props;
+};
+
+// Backwards compatibility: defaults plain/focusIndicator/pad on a Grommet
+// input child, unless the consumer already set plain or focusIndicator.
+// This is the same logic FormField has always had; only pulled out into
+// its own function so it can be reasoned about independent of the newer
+// error-linking logic above.
+const getChildFocusProps = (
+  child,
+  themeBorder,
+  containerFocus,
+  formFieldTheme,
+) =>
+  !themeBorder ||
+  child.props.plain !== undefined ||
+  child.props.focusIndicator !== undefined
+    ? {}
+    : {
+        plain: true,
+        focusIndicator: !containerFocus,
+        pad:
+          child.type.displayName === 'CheckBox'
+            ? formFieldTheme?.checkBox?.pad
+            : undefined,
+      };
 
 const FormField = forwardRef(
   (
@@ -263,8 +317,8 @@ const FormField = forwardRef(
             (child?.props?.readOnly === true ||
               child?.props?.readOnlyCopy === true) &&
             child.type &&
-            ('TextInput'.indexOf(child.type.displayName) !== -1 ||
-              'DateInput'.indexOf(child.type.displayName) !== -1)
+            (child.type.displayName === 'TextInput' ||
+              child.type.displayName === 'DateInput')
           ) {
             readOnly = true;
           }
@@ -288,6 +342,32 @@ const FormField = forwardRef(
       return focusIndicatorFlag;
     }, [children, theme.formField?.focus?.containerFocus]);
 
+    // Check if child is Select or SelectMultiple and modify htmlFor if needed
+    let adjustedHtmlFor = htmlFor;
+    if (htmlFor) {
+      let isSelectComponent = false;
+
+      // Check if children contain Select or SelectMultiple
+      if (children) {
+        Children.forEach(children, (child) => {
+          if (
+            child &&
+            child.type &&
+            (child.type.displayName === 'Select' ||
+              child.type.displayName === 'SelectMultiple') &&
+            child.props.id === htmlFor
+          ) {
+            isSelectComponent = true;
+          }
+        });
+      }
+
+      // If it's a Select component and htmlFor doesn't end with __input, add it
+      if (isSelectComponent && !htmlFor.endsWith('__input')) {
+        adjustedHtmlFor = `${htmlFor}__input`;
+      }
+    }
+
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
     // already set.
@@ -297,45 +377,57 @@ const FormField = forwardRef(
         component === CheckBoxGroup ||
         component === RadioButtonGroup);
 
-    let contents =
-      (themeBorder &&
-        children &&
-        Children.map(children, (child) => {
-          if (
-            child &&
-            child.type &&
-            grommetInputPadNames.indexOf(child.type.displayName) !== -1
-          ) {
-            wantContentPad = true;
-          }
+    // id of the error Message, used to link it to its input via
+    // aria-describedby. Always computed when there's an error + htmlFor,
+    // regardless of theme border config.
+    const errorId =
+      error && htmlFor ? `grommet-${adjustedHtmlFor}__error` : undefined;
 
-          const isInputComponent =
-            child &&
-            child.type &&
-            grommetInputNames.indexOf(child.type.displayName) !== -1;
+    // Single Children.map pass applying both the error-linking props
+    // (getChildErrorProps) and the plain/focusIndicator/pad backwards-compat
+    // defaults (getChildFocusProps) to each Grommet input child. Must run
+    // the same way regardless of `error`, or a child's reconciliation key
+    // changes between renders - remounting it and losing state (e.g. a
+    // typed value) right when the error appears.
+    let contents;
+    if (children) {
+      contents = Children.map(children, (child) => {
+        if (!child || !child.type || !isGrommetInput(child.type)) return child;
 
-          if (
-            isInputComponent &&
-            child.props.plain === undefined &&
-            child.props.focusIndicator === undefined
-          ) {
-            return cloneElement(child, {
-              plain: true,
-              focusIndicator: !containerFocus,
-              pad:
-                'CheckBox'.indexOf(child.type.displayName) !== -1
-                  ? formFieldTheme?.checkBox?.pad
-                  : undefined,
-            });
-          }
-          return child;
-        })) ||
-      children;
+        if (
+          themeBorder &&
+          grommetInputPadNames.indexOf(child.type.displayName) !== -1
+        ) {
+          wantContentPad = true;
+        }
+
+        const newProps = {
+          ...getChildErrorProps(child, errorId, error),
+          ...getChildFocusProps(
+            child,
+            themeBorder,
+            containerFocus,
+            formFieldTheme,
+          ),
+        };
+        return Object.keys(newProps).length
+          ? cloneElement(child, newProps)
+          : child;
+      });
+    } else {
+      contents = children;
+    }
 
     // put rest on container, unless we use internal Input
     let containerRest = rest;
     if (inForm) {
       if (!contents) containerRest = {};
+      // Merge aria-describedby with the error id rather than
+      // letting either one silently win.
+      const { 'aria-describedby': ariaDescribedBy, ...restWithoutAria } = rest;
+      const combinedAriaDescribedBy = errorId
+        ? [ariaDescribedBy, errorId].filter(Boolean).join(' ')
+        : ariaDescribedBy;
       contents = contents || (
         <Input
           component={component}
@@ -343,7 +435,8 @@ const FormField = forwardRef(
           invalid={!!error}
           name={name}
           label={component === CheckBox ? label : undefined}
-          {...rest}
+          {...restWithoutAria}
+          aria-describedby={combinedAriaDescribedBy || undefined}
         />
       );
     }
@@ -367,17 +460,12 @@ const FormField = forwardRef(
     // fileinput handle
     // use fileinput plain use formfield to drive the border
     let isFileInputComponent;
-    if (
-      children &&
+    if (children) {
       Children.forEach(children, (child) => {
-        if (
-          child &&
-          child.type &&
-          'FileInput'.indexOf(child.type.displayName) !== -1
-        )
+        if (child && child.type && child.type.displayName === 'FileInput')
           isFileInputComponent = true;
-      })
-    );
+      });
+    }
 
     if (
       component &&
@@ -448,10 +536,9 @@ const FormField = forwardRef(
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
 
-    let labelStyle;
-    if (formKind) {
-      labelStyle = { ...formFieldTheme[formKind].label };
-    } else labelStyle = { ...formFieldTheme.label };
+    const labelStyle = {
+      ...(formKind ? formFieldTheme[formKind].label : formFieldTheme.label),
+    };
 
     if (disabled) {
       labelStyle.color =
@@ -598,32 +685,6 @@ const FormField = forwardRef(
     if (typeof required === 'object' && required.indicator === false)
       showRequiredIndicator = false;
 
-    // Check if child is Select or SelectMultiple and modify htmlFor if needed
-    let adjustedHtmlFor = htmlFor;
-    if (htmlFor) {
-      let isSelectComponent = false;
-
-      // Check if children contain Select or SelectMultiple
-      if (children) {
-        Children.forEach(children, (child) => {
-          if (
-            child &&
-            child.type &&
-            (child.type.displayName === 'Select' ||
-              child.type.displayName === 'SelectMultiple') &&
-            child.props.id === htmlFor
-          ) {
-            isSelectComponent = true;
-          }
-        });
-      }
-
-      // If it's a Select component and htmlFor doesn't end with __input, add it
-      if (isSelectComponent && !htmlFor.endsWith('__input')) {
-        adjustedHtmlFor = `${htmlFor}__input`;
-      }
-    }
-
     return (
       <FormFieldBox
         ref={formFieldRef}
@@ -688,7 +749,12 @@ const FormField = forwardRef(
           </>
         ) : undefined}
         {contents}
-        <Message type="error" message={error} {...formFieldTheme.error} />
+        <Message
+          type="error"
+          message={error}
+          {...formFieldTheme.error}
+          id={errorId}
+        />
         <Message type="info" message={info} {...themeInfoProps} />
       </FormFieldBox>
     );
