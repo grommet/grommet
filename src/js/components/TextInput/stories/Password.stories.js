@@ -1,33 +1,20 @@
 import React from 'react';
 
-import { Hide, View } from 'grommet-icons';
-import { Box, Button, TextInput } from 'grommet';
+import { Box, TextInput } from 'grommet';
 
 export const Password = () => {
   const [value, setValue] = React.useState('');
-  const [reveal, setReveal] = React.useState(false);
 
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box
-      width="medium"
-      direction="row"
-      margin="large"
-      align="center"
-      round="small"
-      border
-    >
+    <Box width="medium" margin="large">
       <TextInput
-        plain
-        type={reveal ? 'text' : 'password'}
+        type="password"
+        showPasswordToggle
         value={value}
         onChange={(event) => setValue(event.target.value)}
-        aria-label="Input Password"
-      />
-      <Button
-        icon={reveal ? <View size="medium" /> : <Hide size="medium" />}
-        onClick={() => setReveal(!reveal)}
+        aria-label="Password"
       />
     </Box>
     // </Grommet>

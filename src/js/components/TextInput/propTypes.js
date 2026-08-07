@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import PropTypes from 'prop-types';
 import { widthPropType } from '../../utils/general-prop-types';
 
@@ -23,6 +25,8 @@ if (process.env.NODE_ENV !== 'production') {
     focusIndicator: PropTypes.bool,
     messages: PropTypes.shape({
       enterSelect: PropTypes.string,
+      hidePassword: PropTypes.string,
+      showPassword: PropTypes.string,
       suggestionsCount: PropTypes.string,
       suggestionsExist: PropTypes.string,
       suggestionIsOpen: PropTypes.string,
@@ -35,6 +39,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSuggestionsClose: PropTypes.func,
     placeholder: PropTypes.node,
     plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['full'])]),
+    showPasswordToggle: PropTypes.bool,
     readOnlyCopy: PropTypes.bool,
     reverse: PropTypes.bool,
     size: PropTypes.oneOfType([
