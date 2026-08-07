@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import {
   alignContentStyle,
@@ -188,9 +190,6 @@ const rowsStyle = (props) => {
 
 const areasStyle = (props) => {
   // translate areas objects into grid-template-areas syntax
-  if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
-    console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
-  }
   if (
     Array.isArray(props.areas) &&
     props.areas.every((area) => Array.isArray(area))
@@ -198,6 +197,10 @@ const areasStyle = (props) => {
     return `grid-template-areas: ${props.areas
       .map((area) => `"${area.join(' ')}"`)
       .join(' ')};`;
+  }
+  if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
+    console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
+    return undefined;
   }
   const cells = props.rowsProp.map(() => props.columns.map(() => '.'));
   props.areas.forEach((area) => {
