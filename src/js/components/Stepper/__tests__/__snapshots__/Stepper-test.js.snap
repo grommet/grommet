@@ -203,6 +203,8 @@ exports[`Stepper renders horizontal steps 1`] = `
   left: calc(50% + calc(24px / 2 + 3px));
   right: calc(-50% + calc(24px / 2 + 3px));
   height: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
@@ -522,6 +524,8 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   left: calc(50% + calc(24px / 2 + 3px));
   right: calc(-50% + calc(24px / 2 + 3px));
   height: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
@@ -837,6 +841,8 @@ exports[`Stepper renders vertical steps 1`] = `
   top: calc(24px + 3px * 3);
   bottom: 0;
   width: 2px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
