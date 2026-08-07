@@ -19,9 +19,13 @@ var _FormContext = require("../Form/FormContext");
 var _propTypes = require("./propTypes");
 var _useThemeValue3 = require("../../utils/useThemeValue");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
-var _excluded = ["error", "info", "message", "type"],
-  _excluded2 = ["component", "disabled", "invalid", "name", "onChange"],
-  _excluded3 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"];
+var _excluded = ["message", "id"],
+  _excluded2 = ["error", "info", "message", "type"],
+  _excluded3 = ["id"],
+  _excluded4 = ["component", "disabled", "invalid", "name", "onChange"],
+  _excluded5 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"],
+  _excluded6 = ["aria-describedby"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -80,12 +84,22 @@ var ScreenReaderOnly = (0, _styledComponents["default"])(_Text.Text).withConfig(
   displayName: "FormField__ScreenReaderOnly",
   componentId: "sc-m9hood-5"
 })(["position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;"]);
-var Message = function Message(_ref) {
-  var error = _ref.error,
-    info = _ref.info,
-    message = _ref.message,
-    type = _ref.type,
+var MessageContent = function MessageContent(_ref) {
+  var message = _ref.message,
+    id = _ref.id,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  return typeof message === 'string' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
+    id: id
+  }, rest), message) : /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
+    id: id
+  }, rest), message);
+};
+var Message = function Message(_ref2) {
+  var error = _ref2.error,
+    info = _ref2.info,
+    message = _ref2.message,
+    type = _ref2.type,
+    rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
@@ -96,24 +110,36 @@ var Message = function Message(_ref) {
       icon = theme.formField[type] && theme.formField[type].icon;
       containerProps = theme.formField[type] && theme.formField[type].container;
     }
-    var messageContent;
-    if (typeof message === 'string') messageContent = /*#__PURE__*/_react["default"].createElement(_Text.Text, rest, message);else messageContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, rest, message);
-    return icon || containerProps ? /*#__PURE__*/_react["default"].createElement(StyledMessageContainer, _extends({
-      direction: "row",
-      messageType: type
-    }, containerProps, passThemeFlag), icon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-      flex: false
-    }, icon), messageContent) : messageContent;
+
+    // id is in rest; extract it so we can place it on the outermost element
+    var id = rest.id,
+      contentRest = _objectWithoutPropertiesLoose(rest, _excluded3);
+    if (icon || containerProps) {
+      return /*#__PURE__*/_react["default"].createElement(StyledMessageContainer, _extends({
+        direction: "row",
+        messageType: type
+      }, containerProps, passThemeFlag, {
+        id: id
+      }), icon && /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+        flex: false
+      }, icon), /*#__PURE__*/_react["default"].createElement(MessageContent, _extends({
+        message: message
+      }, contentRest)));
+    }
+    return /*#__PURE__*/_react["default"].createElement(MessageContent, _extends({
+      message: message,
+      id: id
+    }, contentRest));
   }
   return null;
 };
-var Input = function Input(_ref2) {
-  var component = _ref2.component,
-    disabled = _ref2.disabled,
-    invalid = _ref2.invalid,
-    name = _ref2.name,
-    _onChange = _ref2.onChange,
-    rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
+var Input = function Input(_ref3) {
+  var component = _ref3.component,
+    disabled = _ref3.disabled,
+    invalid = _ref3.invalid,
+    name = _ref3.name,
+    _onChange = _ref3.onChange,
+    rest = _objectWithoutPropertiesLoose(_ref3, _excluded4);
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _formContext$useFormI = formContext.useFormInput({
       name: name,
@@ -144,29 +170,58 @@ var Input = function Input(_ref2) {
     "aria-invalid": invalid || undefined
   }, rest, extraProps));
 };
-var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref3, ref) {
+
+// Adds aria-describedby (linking to the error Message) and aria-invalid to
+// a Grommet input child when the field has an error. Merges with any
+// aria-describedby the consumer already put on the child instead of
+// overwriting it.
+var getChildErrorProps = function getChildErrorProps(child, errorId, error) {
+  if (!errorId && !error) return {};
+  var props = {};
+  if (errorId) {
+    var existingDescribedBy = child.props['aria-describedby'];
+    props['aria-describedby'] = existingDescribedBy ? existingDescribedBy + " " + errorId : errorId;
+  }
+  if (error) props['aria-invalid'] = true;
+  return props;
+};
+
+// Backwards compatibility: defaults plain/focusIndicator/pad on a Grommet
+// input child, unless the consumer already set plain or focusIndicator.
+// This is the same logic FormField has always had; only pulled out into
+// its own function so it can be reasoned about independent of the newer
+// error-linking logic above.
+var getChildFocusProps = function getChildFocusProps(child, themeBorder, containerFocus, formFieldTheme) {
+  var _formFieldTheme$check;
+  return !themeBorder || child.props.plain !== undefined || child.props.focusIndicator !== undefined ? {} : {
+    plain: true,
+    focusIndicator: !containerFocus,
+    pad: child.type.displayName === 'CheckBox' ? formFieldTheme == null || (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
+  };
+};
+var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref4, ref) {
   var _theme$formField2, _theme$global$input, _formFieldTheme$disab, _formFieldTheme$disab2;
-  var children = _ref3.children,
-    className = _ref3.className,
-    component = _ref3.component,
-    contentProps = _ref3.contentProps,
-    disabled = _ref3.disabled,
-    errorProp = _ref3.error,
-    help = _ref3.help,
-    htmlFor = _ref3.htmlFor,
-    infoProp = _ref3.info,
-    label = _ref3.label,
-    margin = _ref3.margin,
-    name = _ref3.name,
-    _onBlur = _ref3.onBlur,
-    onChange = _ref3.onChange,
-    _onFocus = _ref3.onFocus,
-    pad = _ref3.pad,
-    required = _ref3.required,
-    style = _ref3.style,
-    validate = _ref3.validate,
-    validateOn = _ref3.validateOn,
-    rest = _objectWithoutPropertiesLoose(_ref3, _excluded3);
+  var children = _ref4.children,
+    className = _ref4.className,
+    component = _ref4.component,
+    contentProps = _ref4.contentProps,
+    disabled = _ref4.disabled,
+    errorProp = _ref4.error,
+    help = _ref4.help,
+    htmlFor = _ref4.htmlFor,
+    infoProp = _ref4.info,
+    label = _ref4.label,
+    margin = _ref4.margin,
+    name = _ref4.name,
+    _onBlur = _ref4.onBlur,
+    onChange = _ref4.onChange,
+    _onFocus = _ref4.onFocus,
+    pad = _ref4.pad,
+    required = _ref4.required,
+    style = _ref4.style,
+    validate = _ref4.validate,
+    validateOn = _ref4.validateOn,
+    rest = _objectWithoutPropertiesLoose(_ref4, _excluded5);
   var _useThemeValue2 = (0, _useThemeValue3.useThemeValue)(),
     theme = _useThemeValue2.theme,
     passThemeFlag = _useThemeValue2.passThemeFlag;
@@ -223,37 +278,74 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     return focusIndicatorFlag;
   }, [children, (_theme$formField2 = theme.formField) == null || (_theme$formField2 = _theme$formField2.focus) == null ? void 0 : _theme$formField2.containerFocus]);
 
+  // Check if child is Select or SelectMultiple and modify htmlFor if needed
+  var adjustedHtmlFor = htmlFor;
+  if (htmlFor) {
+    var isSelectComponent = false;
+
+    // Check if children contain Select or SelectMultiple
+    if (children) {
+      _react.Children.forEach(children, function (child) {
+        if (child && child.type && (child.type.displayName === 'Select' || child.type.displayName === 'SelectMultiple') && child.props.id === htmlFor) {
+          isSelectComponent = true;
+        }
+      });
+    }
+
+    // If it's a Select component and htmlFor doesn't end with __input, add it
+    if (isSelectComponent && !htmlFor.endsWith('__input')) {
+      adjustedHtmlFor = htmlFor + "__input";
+    }
+  }
+
   // This is here for backwards compatibility. In case the child is a grommet
   // input component, set plain and focusIndicator props, if they aren't
   // already set.
   var wantContentPad = component && (component === _CheckBox.CheckBox || component === _CheckBoxGroup.CheckBoxGroup || component === _RadioButtonGroup.RadioButtonGroup);
-  var contents = themeBorder && children && _react.Children.map(children, function (child) {
-    if (child && child.type && grommetInputPadNames.indexOf(child.type.displayName) !== -1) {
-      wantContentPad = true;
-    }
-    var isInputComponent = child && child.type && grommetInputNames.indexOf(child.type.displayName) !== -1;
-    if (isInputComponent && child.props.plain === undefined && child.props.focusIndicator === undefined) {
-      var _formFieldTheme$check;
-      return /*#__PURE__*/(0, _react.cloneElement)(child, {
-        plain: true,
-        focusIndicator: !containerFocus,
-        pad: child.type.displayName === 'CheckBox' ? formFieldTheme == null || (_formFieldTheme$check = formFieldTheme.checkBox) == null ? void 0 : _formFieldTheme$check.pad : undefined
-      });
-    }
-    return child;
-  }) || children;
+
+  // id of the error Message, used to link it to its input via
+  // aria-describedby. Always computed when there's an error + htmlFor,
+  // regardless of theme border config.
+  var errorId = error && htmlFor ? "grommet-" + adjustedHtmlFor + "__error" : undefined;
+
+  // Single Children.map pass applying both the error-linking props
+  // (getChildErrorProps) and the plain/focusIndicator/pad backwards-compat
+  // defaults (getChildFocusProps) to each Grommet input child. Must run
+  // the same way regardless of `error`, or a child's reconciliation key
+  // changes between renders - remounting it and losing state (e.g. a
+  // typed value) right when the error appears.
+  var contents;
+  if (children) {
+    contents = _react.Children.map(children, function (child) {
+      if (!child || !child.type || !isGrommetInput(child.type)) return child;
+      if (themeBorder && grommetInputPadNames.indexOf(child.type.displayName) !== -1) {
+        wantContentPad = true;
+      }
+      var newProps = _extends({}, getChildErrorProps(child, errorId, error), getChildFocusProps(child, themeBorder, containerFocus, formFieldTheme));
+      return Object.keys(newProps).length ? /*#__PURE__*/(0, _react.cloneElement)(child, newProps) : child;
+    });
+  } else {
+    contents = children;
+  }
 
   // put rest on container, unless we use internal Input
   var containerRest = rest;
   if (inForm) {
     if (!contents) containerRest = {};
+    // Merge aria-describedby with the error id rather than
+    // letting either one silently win.
+    var ariaDescribedBy = rest['aria-describedby'],
+      restWithoutAria = _objectWithoutPropertiesLoose(rest, _excluded6);
+    var combinedAriaDescribedBy = errorId ? [ariaDescribedBy, errorId].filter(Boolean).join(' ') : ariaDescribedBy;
     contents = contents || /*#__PURE__*/_react["default"].createElement(Input, _extends({
       component: component,
       disabled: disabled,
       invalid: !!error,
       name: name,
       label: component === _CheckBox.CheckBox ? label : undefined
-    }, rest));
+    }, restWithoutAria, {
+      "aria-describedby": combinedAriaDescribedBy || undefined
+    }));
   }
   var themeContentProps = _extends({}, formFieldTheme.content);
   if (!pad && !wantContentPad) {
@@ -273,9 +365,11 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   // fileinput handle
   // use fileinput plain use formfield to drive the border
   var isFileInputComponent;
-  if (children && _react.Children.forEach(children, function (child) {
-    if (child && child.type && child.type.displayName === 'FileInput') isFileInputComponent = true;
-  })) ;
+  if (children) {
+    _react.Children.forEach(children, function (child) {
+      if (child && child.type && child.type.displayName === 'FileInput') isFileInputComponent = true;
+    });
+  }
   if (component && component.displayName === 'FileInput' && !isFileInputComponent) {
     isFileInputComponent = true;
   }
@@ -314,10 +408,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   } else {
     borderColor = themeBorder && themeBorder.color || 'border';
   }
-  var labelStyle;
-  if (formKind) {
-    labelStyle = _extends({}, formFieldTheme[formKind].label);
-  } else labelStyle = _extends({}, formFieldTheme.label);
+  var labelStyle = _extends({}, formKind ? formFieldTheme[formKind].label : formFieldTheme.label);
   if (disabled) {
     labelStyle.color = formFieldTheme.disabled && formFieldTheme.disabled.label ? formFieldTheme.disabled.label.color : labelStyle.color;
   }
@@ -405,26 +496,6 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     }, "*"), /*#__PURE__*/_react["default"].createElement(ScreenReaderOnly, null, "required"));
   var showRequiredIndicator = required && requiredIndicator;
   if (typeof required === 'object' && required.indicator === false) showRequiredIndicator = false;
-
-  // Check if child is Select or SelectMultiple and modify htmlFor if needed
-  var adjustedHtmlFor = htmlFor;
-  if (htmlFor) {
-    var isSelectComponent = false;
-
-    // Check if children contain Select or SelectMultiple
-    if (children) {
-      _react.Children.forEach(children, function (child) {
-        if (child && child.type && (child.type.displayName === 'Select' || child.type.displayName === 'SelectMultiple') && child.props.id === htmlFor) {
-          isSelectComponent = true;
-        }
-      });
-    }
-
-    // If it's a Select component and htmlFor doesn't end with __input, add it
-    if (isSelectComponent && !htmlFor.endsWith('__input')) {
-      adjustedHtmlFor = htmlFor + "__input";
-    }
-  }
   return /*#__PURE__*/_react["default"].createElement(FormFieldBox, _extends({
     ref: formFieldRef,
     className: className,
@@ -471,7 +542,9 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   }, themeHelpProps))) : undefined, contents, /*#__PURE__*/_react["default"].createElement(Message, _extends({
     type: "error",
     message: error
-  }, formFieldTheme.error)), /*#__PURE__*/_react["default"].createElement(Message, _extends({
+  }, formFieldTheme.error, {
+    id: errorId
+  })), /*#__PURE__*/_react["default"].createElement(Message, _extends({
     type: "info",
     message: info
   }, themeInfoProps)));

@@ -1,5 +1,7 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-import { Box, Button, Form, FormField, Text, TextInput } from 'grommet';
+import { Box, Button, Form, FormField, TextInput } from 'grommet';
 
 // This example shows a way to perform validation across multiple fields.
 export var AggregateValidation = function AggregateValidation() {
@@ -43,18 +45,13 @@ export var AggregateValidation = function AggregateValidation() {
       htmlFor: "email",
       label: "Email",
       name: "email",
-      required: true
+      required: true,
+      error: message
     }, /*#__PURE__*/React.createElement(TextInput, {
       id: "email",
       name: "email",
       type: "email"
-    })), message && /*#__PURE__*/React.createElement(Box, {
-      pad: {
-        horizontal: 'small'
-      }
-    }, /*#__PURE__*/React.createElement(Text, {
-      color: "status-error"
-    }, message)), /*#__PURE__*/React.createElement(Box, {
+    })), /*#__PURE__*/React.createElement(Box, {
       direction: "row",
       justify: "between",
       margin: {

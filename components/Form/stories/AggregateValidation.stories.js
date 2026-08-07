@@ -5,6 +5,9 @@ exports["default"] = exports.AggregateValidation = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 // This example shows a way to perform validation across multiple fields.
 var AggregateValidation = exports.AggregateValidation = function AggregateValidation() {
   var _React$useState = _react["default"].useState({
@@ -47,18 +50,13 @@ var AggregateValidation = exports.AggregateValidation = function AggregateValida
       htmlFor: "email",
       label: "Email",
       name: "email",
-      required: true
+      required: true,
+      error: message
     }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
       id: "email",
       name: "email",
       type: "email"
-    })), message && /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
-      pad: {
-        horizontal: 'small'
-      }
-    }, /*#__PURE__*/_react["default"].createElement(_grommet.Text, {
-      color: "status-error"
-    }, message)), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
+    })), /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
       direction: "row",
       justify: "between",
       margin: {
