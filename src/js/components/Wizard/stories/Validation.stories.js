@@ -2,14 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 
-import {
-  Box,
-  Notification,
-  Paragraph,
-  TextInput,
-  Form,
-  FormField,
-} from 'grommet';
+import { Box, Notification, Paragraph, TextInput, FormField } from 'grommet';
 import { Wizard } from '../Wizard';
 
 const validateEmail = (email) => {
@@ -34,68 +27,56 @@ const Validation = () => {
       title: 'Email',
       description: 'Enter a valid email address.',
       skippable: true,
-      validate: (value) => validateEmail(value.email) || true,
-      render: (step, api) => {
-        const emailError =
-          api.validationError && validateEmail(api.formValue.email);
-
-        return (
-          <Form
-            value={api.formValue}
-            onChange={(nextValue) => api.setFormValue(nextValue)}
-            validate="submit"
+      render: (/* step, api */) => (
+        <>
+          <FormField
+            htmlFor="wizard-email"
+            label="Email"
+            name="email"
+            required
+            validate={validateEmail}
           >
-            <FormField
-              htmlFor="wizard-email"
-              label="Email"
+            <TextInput
+              id="wizard-email"
               name="email"
-              required
-              validate={validateEmail}
-              error={emailError}
-            >
-              <TextInput
-                id="wizard-email"
-                name="email"
-                placeholder="you@example.com"
-              />
-            </FormField>
-          </Form>
-        );
-      },
+              placeholder="you@example.com"
+            />
+          </FormField>
+          <FormField
+            htmlFor="wizard-input"
+            label="Input"
+            name="ainput"
+            required
+          >
+            <TextInput
+              id="wizard-input"
+              name="ainput"
+              placeholder="Enter something"
+            />
+          </FormField>
+        </>
+      ),
     },
     {
       id: 'password',
       title: 'Password',
       description: 'Choose a password.',
-      validate: (value) => validatePassword(value.password) || true,
-      render: (step, api) => {
-        const passwordError =
-          api.validationError && validatePassword(api.formValue.password);
-
-        return (
-          <Form
-            value={api.formValue}
-            onChange={(nextValue) => api.setFormValue(nextValue)}
-            validate="change"
-          >
-            <FormField
-              htmlFor="wizard-password"
-              label="Password"
-              name="password"
-              required
-              validate={validatePassword}
-              error={passwordError}
-            >
-              <TextInput
-                id="wizard-password"
-                name="password"
-                type="password"
-                placeholder="password"
-              />
-            </FormField>
-          </Form>
-        );
-      },
+      render: (/* step, api */) => (
+        <FormField
+          htmlFor="wizard-password"
+          label="Password"
+          name="password"
+          required
+          validate={validatePassword}
+        >
+          <TextInput
+            id="wizard-password"
+            name="password"
+            type="password"
+            placeholder="password"
+          />
+        </FormField>
+      ),
     },
     {
       id: 'confirm',

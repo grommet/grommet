@@ -16,13 +16,13 @@ import { useThemeValue } from '../../utils/useThemeValue';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
+import { Form } from '../Form';
 import { WizardContext } from './WizardContext';
 import { WizardHeader } from './WizardHeader';
 import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
 import { WizardContent } from './WizardContent';
 import { WizardFooter } from './WizardFooter';
-import { StyledWizard } from './StyledWizard';
 import { WizardPropTypes } from './propTypes';
 
 // Flatten step tree into ordered leaves; parents with children are
@@ -93,7 +93,7 @@ const Wizard = forwardRef(
     },
     ref,
   ) => {
-    const { theme, passThemeFlag } = useThemeValue();
+    const { theme } = useThemeValue();
     const { format } = React.useContext(MessageContext);
     const responsiveSize = React.useContext(ResponsiveContext);
     const sendAnalytics = useAnalytics();
@@ -161,7 +161,6 @@ const Wizard = forwardRef(
     const [visitedSteps, setVisitedSteps] = useState([currentStep]);
     const [completedSteps, setCompletedSteps] = useState(() => new Set());
     const [validationError, setValidationError] = useState(undefined);
-    const [shouldFocusErrorField, setShouldFocusErrorField] = useState(false);
     const [isValidating, setIsValidating] = useState(false);
     // Without `onCancel`, cancel self-closes the wizard.
     const [isOpen, setIsOpen] = useState(true);
@@ -273,7 +272,6 @@ const Wizard = forwardRef(
           });
         }
         setValidationError(undefined);
-        setShouldFocusErrorField(false);
         setVisitedSteps((prev) => [...prev, nextId]);
         if (!isControlled) setUncontrolledStep(nextId);
       },
@@ -324,7 +322,6 @@ const Wizard = forwardRef(
       });
       const { ok, error } = await runValidation();
       if (!ok) {
-        setShouldFocusErrorField(true);
         setValidationError(error);
         emitStepChange({
           trigger: 'next',
@@ -371,7 +368,6 @@ const Wizard = forwardRef(
       if (!dest) return;
       setVisitedSteps((prev) => prev.slice(0, -1));
       setValidationError(undefined);
-      setShouldFocusErrorField(false);
       if (!isControlled) setUncontrolledStep(dest);
       emitStepChange({
         trigger: 'previous',
@@ -455,7 +451,6 @@ const Wizard = forwardRef(
       if (!nextId) return;
       // Skip: no validation, no completion.
       setValidationError(undefined);
-      setShouldFocusErrorField(false);
       setVisitedSteps((prev) => [...prev, nextId]);
       if (!isControlled) setUncontrolledStep(nextId);
       emitStepChange({
@@ -498,7 +493,6 @@ const Wizard = forwardRef(
         });
         return;
       }
-      setShouldFocusErrorField(false);
       emitStepChange({
         trigger: 'complete',
         phase: 'validated',
@@ -573,68 +567,6 @@ const Wizard = forwardRef(
       if (typeof window !== 'undefined') safeScrollTo(window);
     }, [currentStep, scrollToTop, wizardRef]);
 
-    // If Next is blocked by validation, move focus to the first invalid field
-    // in the current step so keyboard and screen reader users land on the
-    // actionable input.
-    useLayoutEffect(() => {
-      if (!shouldFocusErrorField || !validationError) return undefined;
-
-      let rafId;
-      let timeoutId;
-      const focusErrorField = () => {
-        const root = wizardRef.current;
-        if (!root) {
-          setShouldFocusErrorField(false);
-          return;
-        }
-
-        const firstInvalid = root.querySelector('[aria-invalid="true"]');
-        if (firstInvalid && typeof firstInvalid.focus === 'function') {
-          firstInvalid.focus();
-          setShouldFocusErrorField(false);
-          return;
-        }
-
-        const labels = Array.from(root.querySelectorAll('label[for]'));
-        const erroredLabel =
-          labels.find(
-            (label) =>
-              typeof label.parentElement?.textContent === 'string' &&
-              label.parentElement.textContent.includes(validationError),
-          ) || labels[0];
-
-        const controlId = erroredLabel?.getAttribute('for');
-        const target =
-          (controlId && root.querySelector(`#${controlId}`)) ||
-          root.querySelector('input, textarea, select, [role="combobox"]');
-
-        if (target && typeof target.focus === 'function') {
-          target.focus();
-        }
-        setShouldFocusErrorField(false);
-      };
-
-      if (
-        typeof window !== 'undefined' &&
-        typeof window.requestAnimationFrame === 'function'
-      ) {
-        rafId = window.requestAnimationFrame(focusErrorField);
-      } else {
-        timeoutId = setTimeout(focusErrorField, 0);
-      }
-
-      return () => {
-        if (
-          typeof window !== 'undefined' &&
-          typeof window.cancelAnimationFrame === 'function' &&
-          typeof rafId === 'number'
-        ) {
-          window.cancelAnimationFrame(rafId);
-        }
-        if (timeoutId) clearTimeout(timeoutId);
-      };
-    }, [shouldFocusErrorField, validationError, wizardRef]);
-
     const canGoNext = !currentStepObj?.disabled && !isValidating;
     const isBlocked = !!validationError && !currentStepObj?.skippable;
     const isCompleted = completedSteps.has(currentStep);
@@ -700,76 +632,81 @@ const Wizard = forwardRef(
     if (!isOpen) return null;
 
     // Custom composition: consumers supply their own tree via `children`.
-    // Skip the default-layout work (footer resolution, theme lookups, JSX
-    // construction) since it would just be discarded.
-    if (children) {
-      return (
-        <WizardContext.Provider value={contextValue}>
-          <StyledWizard
-            ref={wizardRef}
-            id={id}
-            aria-label={ariaLabel}
-            role="region"
-            width="100%"
-            height="100%"
-            {...passThemeFlag}
-            {...rest}
-          >
-            {children}
-          </StyledWizard>
-        </WizardContext.Provider>
+    let content = children;
+
+    if (!content) {
+      const footerNode = footer ?? <WizardFooter />;
+
+      const bodyTheme = theme.wizard?.body;
+
+      // Default layout: header + middle (progress + step body) + footer.
+      // Header/footer stay pinned; only WizardContent scrolls internally.
+      content = (
+        <Box {...theme.wizard?.container} flex>
+          <>
+            <WizardHeader title={title} />
+            <Box
+              align="center"
+              flex={{ grow: 1, shrink: 1 }}
+              fill="horizontal"
+              overflow="auto"
+            >
+              <Box
+                pad={bodyTheme?.pad}
+                gap={bodyTheme?.gap}
+                flex="grow"
+                fill="horizontal"
+                direction={
+                  effectiveShowProgress === 'vertical' ? 'row' : 'column'
+                }
+              >
+                {effectiveShowProgress && responsiveSize !== 'small' && (
+                  <WizardProgress />
+                )}
+                <Box flex="grow">
+                  <WizardStepHeader />
+                  <WizardContent />
+                </Box>
+              </Box>
+            </Box>
+            {footerNode}
+          </>
+        </Box>
       );
     }
-
-    const footerNode = footer ?? <WizardFooter />;
-
-    const bodyTheme = theme.wizard?.body;
-
-    // Default layout: header + middle (progress + step body) + footer.
-    // Header/footer stay pinned; only WizardContent scrolls internally.
-    const defaultLayout = (
-      <>
-        <WizardHeader title={title} />
-        <Box
-          align="center"
-          flex={{ grow: 1, shrink: 1 }}
-          fill="horizontal"
-          overflow="auto"
-        >
-          <Box
-            pad={bodyTheme?.pad}
-            gap={bodyTheme?.gap}
-            flex="grow"
-            fill="horizontal"
-            direction={effectiveShowProgress === 'vertical' ? 'row' : 'column'}
-          >
-            {effectiveShowProgress && responsiveSize !== 'small' && (
-              <WizardProgress />
-            )}
-            <Box flex="grow">
-              <WizardStepHeader />
-              <WizardContent />
-            </Box>
-          </Box>
-        </Box>
-        {footerNode}
-      </>
-    );
-
     return (
       <WizardContext.Provider value={contextValue}>
-        <StyledWizard
+        <Box
           ref={wizardRef}
           id={id}
           aria-label={ariaLabel}
           role="region"
-          {...passThemeFlag}
+          flex={{ grow: 1, shrink: 1 }}
           {...rest}
         >
-          <Box {...theme.wizard?.container} flex>
-            {defaultLayout}
-          </Box>
-        </StyledWizard>
+          <Form
+            value={formValue}
+            onChange={setFormValue}
+            onSubmit={next}
+            style={{ display: 'flex', flex: '1 1 auto' }}
+            onValidate={(validationResults) => {
+              // focus first error field if any
+              if (validationResults.errors) {
+                const fields = Object.keys(validationResults.errors);
+                for (let i = 0; i < fields.length; i += 1) {
+                  const name = fields[i];
+                  const element = document.getElementsByName(name)[0];
+                  if (element) {
+                    element.focus();
+                    break;
+                  }
+                }
+              }
+            }}
+          >
+            {content}
+          </Form>
+        </Box>
       </WizardContext.Provider>
     );
   },

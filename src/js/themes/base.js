@@ -2733,7 +2733,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         vertical: {
           // Fixed rail width so the column doesn't collapse to label text.
           width: 'small',
-          pad: { horizontal: 'xsmall', vertical: 'none' },
+          // pad: undefined,
         },
       },
       stepHeader: {

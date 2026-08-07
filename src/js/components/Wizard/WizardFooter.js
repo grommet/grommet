@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -16,7 +18,6 @@ export const WizardFooter = ({ children, ...rest }) => {
     currentStepIndex,
     totalSteps,
     canGoNext,
-    next,
     previous,
     skip,
     complete,
@@ -86,12 +87,12 @@ export const WizardFooter = ({ children, ...rest }) => {
       ) : (
         <Button
           key="next"
+          type="submit"
           label={label('next')}
           primary
           icon={NextIcon ? <NextIcon aria-hidden="true" /> : undefined}
           reverse
           disabled={!canGoNext}
-          onClick={next}
         />
       ),
     ];
