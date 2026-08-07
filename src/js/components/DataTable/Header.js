@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-underscore-dangle */
 import React, { forwardRef, useCallback, useContext, useRef } from 'react';
 import styled, { css } from 'styled-components';
@@ -111,6 +113,22 @@ const StyledHeaderCellButton = styled(Button)`
 // allow extend to spread onto Box that surrounds column label
 const StyledContentBox = styled(Box)`
   ${(props) => props.extend}
+`;
+
+// Visually hidden. Carries the sort status + alternate action text;
+// it is aria-hidden and referenced by the sortable header button
+// via aria-labelledby, so it feeds the button's accessible name
+// without being a separately navigable node for screen readers.
+const HiddenText = styled.span`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 `;
 
 const Header = forwardRef(
@@ -315,6 +333,37 @@ const Header = forwardRef(
               size,
               units,
             }) => {
+              // Extract a plain-text label for the column, used for
+              // accessible names (e.g. resizer aria-label, and the sortable
+              // button's hidden sort-status text). Falls back to the column
+              // property when no text can be derived from a non-string /
+              // node header.
+              const headerText =
+                typeof header === 'string'
+                  ? header
+                  : (() => {
+                      const textFromNode = (node) => {
+                        if (
+                          node === null ||
+                          node === undefined ||
+                          typeof node === 'boolean'
+                        )
+                          return '';
+                        if (
+                          typeof node === 'string' ||
+                          typeof node === 'number'
+                        )
+                          return String(node);
+                        if (Array.isArray(node))
+                          return node.map(textFromNode).join(' ');
+                        if (React.isValidElement(node))
+                          return textFromNode(node.props.children);
+                        return '';
+                      };
+
+                      const text = textFromNode(header).trim();
+                      return text || property;
+                    })();
               let content;
               const unitsContent = units ? (
                 <Text {...textProps} {...theme.dataTable.header.units}>
@@ -359,30 +408,43 @@ const Header = forwardRef(
               let ariaSort;
               if (onSort && sortable !== false) {
                 let Icon;
-                let iconAriaLabel;
-                if (onSort && sortable !== false) {
-                  if (sort && sort.property === property) {
-                    Icon =
-                      theme.dataTable.icons[
-                        sort.direction !== 'asc' ? 'ascending' : 'descending'
-                      ];
-                    if (sort.direction === 'asc') {
-                      ariaSort = 'ascending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.ascending',
-                        messages,
-                      });
-                    } else if (sort.direction === 'desc') {
-                      ariaSort = 'descending';
-                      iconAriaLabel = format({
-                        id: 'dataTable.descending',
-                        messages,
-                      });
-                    }
-                  } else if (theme.dataTable.icons.sortable) {
-                    Icon = theme.dataTable.icons.sortable;
-                  }
+                // default to 'none' so AT users can discover a column is
+                // sortable before interacting with it. Overridden below
+                // when the column is the active sort.
+                ariaSort = 'none';
+                if (sort && sort.property === property) {
+                  Icon =
+                    theme.dataTable.icons[
+                      sort.direction !== 'asc' ? 'ascending' : 'descending'
+                    ];
+                  ariaSort =
+                    sort.direction === 'asc' ? 'ascending' : 'descending';
+                } else if (theme.dataTable.icons.sortable) {
+                  Icon = theme.dataTable.icons.sortable;
                 }
+
+                // `ascending`/`descending` are repurposed here to carry the
+                // full sort-status + action sentence (previously just the
+                // bare word, used as the icon's aria-label). This keeps any
+                // existing consumer customization of these two keys applied
+                // on upgrade, rather than silently orphaning it in favor of
+                // new keys - see default.json for the expected shape.
+                let hiddenTextId = 'dataTable.sortable';
+                if (ariaSort === 'ascending') {
+                  hiddenTextId = 'dataTable.ascending';
+                } else if (ariaSort === 'descending') {
+                  hiddenTextId = 'dataTable.descending';
+                }
+
+                // The button's accessible name comes from aria-labelledby:
+                // the visible label + the aria-hidden status span. aria-hidden
+                // keeps the span from being read as its own node, but text
+                // referenced by aria-labelledby is still included in the name.
+                // Because the status is part of the name, changing it on sort
+                // is announced live on the focused button
+                const baseId = `grommet-data-table-header-${property}`;
+                const labelId = `${baseId}-label`;
+                const sortStatusId = `${baseId}-sort-status`;
 
                 content = (
                   <StyledHeaderCellButton
@@ -394,6 +456,7 @@ const Header = forwardRef(
                     sort={sort}
                     pad={cellProps.pad}
                     sortable
+                    aria-labelledby={`${labelId} ${sortStatusId}`}
                     verticalAlign={verticalAlign || columnVerticalAlign}
                     {...passThemeFlag}
                   >
@@ -403,8 +466,11 @@ const Header = forwardRef(
                       gap={theme.dataTable.sort?.gap}
                       justify={align}
                     >
-                      {content}
-                      {Icon && <Icon aria-label={iconAriaLabel} />}
+                      <Box id={labelId}>{content}</Box>
+                      {Icon && <Icon aria-hidden />}
+                      <HiddenText id={sortStatusId} aria-hidden>
+                        {format({ id: hiddenTextId, messages })}
+                      </HiddenText>
                     </Box>
                   </StyledHeaderCellButton>
                 );
@@ -519,9 +585,7 @@ const Header = forwardRef(
                         onResize(prop, width);
                         updateWidths(prop, width);
                       }}
-                      headerText={
-                        typeof header === 'string' ? header : property
-                      }
+                      headerText={headerText}
                       messages={messages}
                       headerId={headerId}
                     />

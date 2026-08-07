@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import PropTypes from 'prop-types';
 import { genericProps } from '../../utils/general-prop-types';
 
@@ -143,6 +145,7 @@ if (process.env.NODE_ENV !== 'production') {
       rowsChanged: PropTypes.string,
       rowsSingle: PropTypes.string,
       searchBy: PropTypes.string,
+      sortable: PropTypes.string,
       total: PropTypes.string,
       totalSingle: PropTypes.string,
     }),
