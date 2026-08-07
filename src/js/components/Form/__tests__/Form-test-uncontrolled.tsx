@@ -655,48 +655,53 @@ describe('Form uncontrolled', () => {
   test('validate on blur', async () => {
     jest.useFakeTimers();
     const onFocus = jest.fn();
-    const { getByText, getByPlaceholderText, queryAllByText, queryByText } =
-      render(
-        <Grommet>
-          <Form validate="blur">
-            <FormField
-              onFocus={onFocus}
-              label="Name"
-              name="name"
-              placeholder="name"
-              required
-              validate={[
-                { regexp: /^[a-z]/i },
-                (name) => {
-                  if (name && name.length === 1) return 'must be >1 character';
-                  return undefined;
-                },
-                (name) => {
-                  if (name === 'good')
-                    return {
-                      message: 'good',
-                      status: 'info',
-                    };
-                  return undefined;
-                },
-              ]}
-            />
+    const {
+      getByRole,
+      getByText,
+      getByPlaceholderText,
+      queryAllByText,
+      queryByText,
+    } = render(
+      <Grommet>
+        <Form validate="blur">
+          <FormField
+            onFocus={onFocus}
+            label="Name"
+            name="name"
+            placeholder="name"
+            required
+            validate={[
+              { regexp: /^[a-z]/i },
+              (name) => {
+                if (name && name.length === 1) return 'must be >1 character';
+                return undefined;
+              },
+              (name) => {
+                if (name === 'good')
+                  return {
+                    message: 'good',
+                    status: 'info',
+                  };
+                return undefined;
+              },
+            ]}
+          />
 
-            <FormField onFocus={onFocus} label="Email" name="email" required>
-              <TextInput
-                a11yTitle="test"
-                name="email"
-                type="email"
-                placeholder="email"
-              />
-            </FormField>
-            <Button onFocus={onFocus} label="submit" type="submit" />
-          </Form>
-        </Grommet>,
-      );
+          <FormField onFocus={onFocus} label="Email" name="email" required>
+            <TextInput
+              a11yTitle="test"
+              name="email"
+              type="email"
+              placeholder="email"
+            />
+          </FormField>
+          <Button onFocus={onFocus} label="submit" type="submit" />
+        </Form>
+      </Grommet>,
+    );
 
     // both fields have required error message
-    act(() => getByText('submit').focus());
+    act(() => getByRole('button', { name: 'submit' }).focus());
     fireEvent.click(getByText('submit'));
     expect(queryAllByText('required')).toHaveLength(2);
 
@@ -705,7 +710,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'Input has changed' },
     });
-    act(() => getByText('submit').focus());
+    act(() => getByRole('button', { name: 'submit' }).focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(queryAllByText('required')).toHaveLength(1);
 
@@ -714,7 +719,7 @@ describe('Form uncontrolled', () => {
     fireEvent.change(getByPlaceholderText('name'), {
       target: { value: 'a' },
     });
-    act(() => getByText('submit').focus());
+    act(() => getByRole('button', { name: 'submit' }).focus());
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(queryByText('required')).toBeTruthy();
     expect(queryByText('must be >1 character')).toBeTruthy();
@@ -760,7 +765,9 @@ describe('Form uncontrolled', () => {
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(screen.queryAllByText('required')).toHaveLength(0);
 
-    act(() => screen.getByText('submit').focus());
+    act(() =>
+      screen.getByRole('button', { name: 'submit', hidden: true }).focus(),
+    );
     act(() => jest.advanceTimersByTime(200)); // allow validations to run
     expect(screen.queryAllByText('required')).toHaveLength(1);
 

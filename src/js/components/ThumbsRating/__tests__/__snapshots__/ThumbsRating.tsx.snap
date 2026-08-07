@@ -856,7 +856,9 @@ exports[`ThumbsRating value for thumbs 1`] = `
       class="c11"
       type="submit"
     >
-      submit
+      <span>
+        submit
+      </span>
     </button>
   </form>
 </div>
