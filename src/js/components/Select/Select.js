@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   isValidElement,
@@ -385,7 +387,7 @@ const Select = forwardRef(
                 <>
                   {selectValue || displayLabelKey}
                   <HiddenInput
-                    type="text"
+                    type="hidden"
                     name={name}
                     id={id ? selectInputId(id) : undefined}
                     inert={inertTrueValue}
