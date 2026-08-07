@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-nested-ternary */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
@@ -208,6 +210,9 @@ export const useSectionedTimeField = ({
       const key = sectionKey(section);
       const next = { ...sections, [key]: rawValue };
       commitSections(next);
+      // Clear any pending first-digit overlay, since it's now stale
+      // relative to the section value we just committed.
+      setPendingDigits({});
     },
     [commitSections, sections],
   );
