@@ -34,6 +34,7 @@ export * from './Diagram';
 export * from './Distribution';
 export * from './Drop';
 export * from './DropButton';
+export * from './DualRangeInput';
 export * from './FileInput';
 export * from './Footer';
 export * from './Form';
