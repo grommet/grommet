@@ -1,4 +1,7 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import {
   focusStyle,
   normalizeColor,
@@ -28,7 +31,10 @@ const getConnectorColor = (stepStatus, theme) =>
     theme,
   );
 
-const StyledStepItem = styled.li.withConfig(styledComponentsConfig)`
+const StyledStepItem = styled.li.withConfig({
+  shouldForwardProp: (prop) =>
+    isPropValid(prop) && prop !== 'direction',
+})`
   display: flex;
   position: relative;
   ${(props) => {
@@ -83,7 +89,9 @@ const StyledStepButton = styled.button.withConfig(styledComponentsConfig)`
         `}
 `;
 
-const StyledStepContent = styled.span.withConfig(styledComponentsConfig)`
+const StyledStepContent = styled.span.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+})`
   display: flex;
   flex-direction: column;
   ${(props) => {
