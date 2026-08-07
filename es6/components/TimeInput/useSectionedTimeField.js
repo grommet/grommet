@@ -1,4 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-nested-ternary */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { defaultSections, hasAnyValue, isoTimeToSections, normalizeToIsoTime, pad, sectionKey, sectionMax, sectionMin, sectionsToIsoTime, SECTION_HOUR, SECTION_MINUTE, SECTION_PERIOD, SECTION_SECOND } from './utils';
@@ -151,6 +153,9 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
     var key = sectionKey(section);
     var next = _extends({}, sections, (_extends2 = {}, _extends2[key] = rawValue, _extends2));
     commitSections(next);
+    // Clear any pending first-digit overlay, since it's now stale
+    // relative to the section value we just committed.
+    setPendingDigits({});
   }, [commitSections, sections]);
   var moveSection = useCallback(function (direction) {
     if (!sectionOrder.length) return activeSection;

@@ -4,7 +4,9 @@ exports.__esModule = true;
 exports.useSectionedTimeField = void 0;
 var _react = require("react");
 var _utils = require("./utils");
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } /* eslint-disable no-nested-ternary */
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+/* eslint-disable no-nested-ternary */
 var separatorBeforeSection = function separatorBeforeSection(section) {
   return section === _utils.SECTION_PERIOD ? ' ' : ':';
 };
@@ -154,6 +156,9 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
     var key = (0, _utils.sectionKey)(section);
     var next = _extends({}, sections, (_extends2 = {}, _extends2[key] = rawValue, _extends2));
     commitSections(next);
+    // Clear any pending first-digit overlay, since it's now stale
+    // relative to the section value we just committed.
+    setPendingDigits({});
   }, [commitSections, sections]);
   var moveSection = (0, _react.useCallback)(function (direction) {
     if (!sectionOrder.length) return activeSection;
