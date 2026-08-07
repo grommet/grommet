@@ -3,8 +3,13 @@
 exports.__esModule = true;
 exports.StyledStepItem = exports.StyledStepContent = exports.StyledStepButton = exports.StyledIndicator = exports.StyledConnector = void 0;
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _utils = require("../../utils");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var getMetricSize = function getMetricSize(theme, size) {
   var _theme$global, _theme$global2;
   return ((_theme$global = theme.global) == null || (_theme$global = _theme$global.edgeSize) == null ? void 0 : _theme$global[size]) || ((_theme$global2 = theme.global) == null || (_theme$global2 = _theme$global2.size) == null ? void 0 : _theme$global2[size]) || size;
@@ -27,7 +32,11 @@ var getConnectorColor = function getConnectorColor(stepStatus, theme) {
   var _theme$stepper;
   return (0, _utils.normalizeColor)(((_theme$stepper = theme.stepper) == null || (_theme$stepper = _theme$stepper[stepStatus]) == null || (_theme$stepper = _theme$stepper.connector) == null ? void 0 : _theme$stepper.color) || 'border', theme);
 };
-var StyledStepItem = exports.StyledStepItem = _styledComponents["default"].li.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledStepItem = exports.StyledStepItem = _styledComponents["default"].li.withConfig({
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return (0, _isPropValid["default"])(prop) && prop !== 'direction';
+  }
+}).withConfig({
   displayName: "StyledStepper__StyledStepItem",
   componentId: "sc-gmpe0p-0"
 })(["display:flex;position:relative;", ""], function (props) {
@@ -53,7 +62,11 @@ var StyledStepButton = exports.StyledStepButton = _styledComponents["default"].b
   var _props$theme$global3, _props$theme$global4;
   return props.direction === 'vertical' ? (0, _styledComponents.css)(["flex-direction:row;align-items:flex-start;gap:", ";text-align:left;"], (_props$theme$global3 = props.theme.global) == null || (_props$theme$global3 = _props$theme$global3.edgeSize) == null ? void 0 : _props$theme$global3.small) : (0, _styledComponents.css)(["flex-direction:column;align-items:center;gap:", ";text-align:center;width:100%;"], (_props$theme$global4 = props.theme.global) == null || (_props$theme$global4 = _props$theme$global4.edgeSize) == null ? void 0 : _props$theme$global4.xxsmall);
 });
-var StyledStepContent = exports.StyledStepContent = _styledComponents["default"].span.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledStepContent = exports.StyledStepContent = _styledComponents["default"].span.withConfig({
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return (0, _isPropValid["default"])(prop) && prop !== 'direction';
+  }
+}).withConfig({
   displayName: "StyledStepper__StyledStepContent",
   componentId: "sc-gmpe0p-2"
 })(["display:flex;flex-direction:column;", ""], function (props) {

@@ -1,4 +1,7 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { focusStyle, normalizeColor, styledComponentsConfig } from '../../utils';
 var getMetricSize = function getMetricSize(theme, size) {
   var _theme$global, _theme$global2;
@@ -22,7 +25,11 @@ var getConnectorColor = function getConnectorColor(stepStatus, theme) {
   var _theme$stepper;
   return normalizeColor(((_theme$stepper = theme.stepper) == null || (_theme$stepper = _theme$stepper[stepStatus]) == null || (_theme$stepper = _theme$stepper.connector) == null ? void 0 : _theme$stepper.color) || 'border', theme);
 };
-var StyledStepItem = styled.li.withConfig(styledComponentsConfig).withConfig({
+var StyledStepItem = styled.li.withConfig({
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return isPropValid(prop) && prop !== 'direction';
+  }
+}).withConfig({
   displayName: "StyledStepper__StyledStepItem",
   componentId: "sc-gmpe0p-0"
 })(["display:flex;position:relative;", ""], function (props) {
@@ -48,7 +55,11 @@ var StyledStepButton = styled.button.withConfig(styledComponentsConfig).withConf
   var _props$theme$global3, _props$theme$global4;
   return props.direction === 'vertical' ? css(["flex-direction:row;align-items:flex-start;gap:", ";text-align:left;"], (_props$theme$global3 = props.theme.global) == null || (_props$theme$global3 = _props$theme$global3.edgeSize) == null ? void 0 : _props$theme$global3.small) : css(["flex-direction:column;align-items:center;gap:", ";text-align:center;width:100%;"], (_props$theme$global4 = props.theme.global) == null || (_props$theme$global4 = _props$theme$global4.edgeSize) == null ? void 0 : _props$theme$global4.xxsmall);
 });
-var StyledStepContent = styled.span.withConfig(styledComponentsConfig).withConfig({
+var StyledStepContent = styled.span.withConfig({
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return isPropValid(prop) && prop !== 'direction';
+  }
+}).withConfig({
   displayName: "StyledStepper__StyledStepContent",
   componentId: "sc-gmpe0p-2"
 })(["display:flex;flex-direction:column;", ""], function (props) {
