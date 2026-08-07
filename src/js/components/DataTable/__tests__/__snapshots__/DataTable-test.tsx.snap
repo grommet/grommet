@@ -4115,7 +4115,7 @@ exports[`DataTable custom theme 2`] = `
         />
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hdohsq StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 dmLTwd StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-a"
           scope="col"
           style="box-sizing: border-box; position: relative; overflow: visible;"
@@ -4125,28 +4125,28 @@ exports[`DataTable custom theme 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 ksMNO"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 jmXFih"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 gIpquo"
+                    class="StyledText-sc-1sadyjn-0 lfrzIL"
                   >
                     A
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -17512,18 +17512,18 @@ exports[`DataTable onSort 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     A
                   </span>
@@ -17593,7 +17593,7 @@ exports[`DataTable onSort 2`] = `
                   />
                 </svg>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 .c0 {
   position: absolute;
@@ -17624,7 +17624,7 @@ exports[`DataTable onSort 2`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-b"
           scope="col"
         >
@@ -17633,28 +17633,28 @@ exports[`DataTable onSort 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     B
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -18255,18 +18255,18 @@ exports[`DataTable onSort external 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     A
                   </span>
@@ -18324,11 +18324,11 @@ exports[`DataTable onSort external 2`] = `
                   />
                 </svg>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-a-sort-status"
                 >
                   sorted descending, activate to sort ascending
@@ -18339,7 +18339,7 @@ exports[`DataTable onSort external 2`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-b"
           scope="col"
         >
@@ -18348,28 +18348,28 @@ exports[`DataTable onSort external 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     B
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -55702,18 +55702,18 @@ exports[`DataTable sort null data 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     A
                   </span>
@@ -55783,7 +55783,7 @@ exports[`DataTable sort null data 2`] = `
                   />
                 </svg>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 .c0 {
   position: absolute;
@@ -55814,7 +55814,7 @@ exports[`DataTable sort null data 2`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-b"
           scope="col"
         >
@@ -55823,28 +55823,28 @@ exports[`DataTable sort null data 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     B
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -55855,7 +55855,7 @@ exports[`DataTable sort null data 2`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-c"
           scope="col"
         >
@@ -55864,28 +55864,28 @@ exports[`DataTable sort null data 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-c-label grommet-data-table-header-c-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-c-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     C
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-c-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -55896,7 +55896,7 @@ exports[`DataTable sort null data 2`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-d"
           scope="col"
         >
@@ -55905,28 +55905,28 @@ exports[`DataTable sort null data 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-d-label grommet-data-table-header-d-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-d-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     D
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-d-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -56222,7 +56222,7 @@ exports[`DataTable sort null data 3`] = `
       >
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-a"
           scope="col"
         >
@@ -56231,24 +56231,24 @@ exports[`DataTable sort null data 3`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     A
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 .c0 {
   position: absolute;
@@ -56279,7 +56279,7 @@ exports[`DataTable sort null data 3`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-b"
           scope="col"
         >
@@ -56288,28 +56288,28 @@ exports[`DataTable sort null data 3`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     B
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -56329,18 +56329,18 @@ exports[`DataTable sort null data 3`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-c-label grommet-data-table-header-c-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-c-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     C
                   </span>
@@ -56410,7 +56410,7 @@ exports[`DataTable sort null data 3`] = `
                   />
                 </svg>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 .c0 {
   position: absolute;
@@ -56441,7 +56441,7 @@ exports[`DataTable sort null data 3`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-d"
           scope="col"
         >
@@ -56450,28 +56450,28 @@ exports[`DataTable sort null data 3`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-d-label grommet-data-table-header-d-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-d-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     D
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-d-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -56767,7 +56767,7 @@ exports[`DataTable sort null data 4`] = `
       >
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-a"
           scope="col"
         >
@@ -56776,28 +56776,28 @@ exports[`DataTable sort null data 4`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     A
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-a-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -56808,7 +56808,7 @@ exports[`DataTable sort null data 4`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-b"
           scope="col"
         >
@@ -56817,28 +56817,28 @@ exports[`DataTable sort null data 4`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     B
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
@@ -56849,7 +56849,7 @@ exports[`DataTable sort null data 4`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-c"
           scope="col"
         >
@@ -56858,24 +56858,24 @@ exports[`DataTable sort null data 4`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-c-label grommet-data-table-header-c-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-c-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     C
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 .c0 {
   position: absolute;
@@ -56915,18 +56915,18 @@ exports[`DataTable sort null data 4`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-d-label grommet-data-table-header-d-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-d-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     D
                   </span>
@@ -56996,7 +56996,7 @@ exports[`DataTable sort null data 4`] = `
                   />
                 </svg>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 .c0 {
   position: absolute;
@@ -57738,18 +57738,18 @@ exports[`DataTable sortable 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     A
                   </span>
@@ -57819,7 +57819,7 @@ exports[`DataTable sortable 2`] = `
                   />
                 </svg>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 .c0 {
   position: absolute;
@@ -57850,7 +57850,7 @@ exports[`DataTable sortable 2`] = `
         </th>
         <th
           aria-sort="none"
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kzbMTh StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 lnazUs"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hOZOmy StyledDataTable__StyledDataTableCell-sc-xrlyjm-7 bUIvzv"
           id="grommet-data-table-header-b"
           scope="col"
         >
@@ -57859,28 +57859,28 @@ exports[`DataTable sortable 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-b-label grommet-data-table-header-b-sort-status"
-              class="StyledButton-sc-323bzc-0 gVLKEX Header__StyledHeaderCellButton-sc-1baku5q-0 llZrcE"
+              class="StyledButton-sc-323bzc-0 bAVJwI Header__StyledHeaderCellButton-sc-1baku5q-0 ibIvEn"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 bHjtLJ"
+                class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 RYmEp"
+                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
-                    class="StyledText-sc-1sadyjn-0 iuKlFO"
+                    class="StyledText-sc-1sadyjn-0 kOiApB"
                   >
                     B
                   </span>
                 </div>
                 <div
-                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 DBOrP"
+                  class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eLTzWo"
                 />
                 <span
                   aria-hidden="true"
-                  class="Header__HiddenText-sc-1baku5q-2 jumPUf"
+                  class="Header__HiddenText-sc-1baku5q-2 amLmo"
                   id="grommet-data-table-header-b-sort-status"
                 >
                   sortable, activate to sort ascending
