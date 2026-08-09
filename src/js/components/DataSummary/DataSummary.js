@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext } from 'react';
 import { Text } from '../Text';
 import { DataContext } from '../../contexts/DataContext';
@@ -28,6 +30,10 @@ export const DataSummary = ({ messages, ...rest }) => {
     messages: messages || dataMessages?.dataSummary,
   });
 
+  // `selected` is a count when reported by DataTable, but may also be
+  // supplied as an array of ids when DataContext is provided directly
+  const selectedCount = Array.isArray(selected) ? selected.length : selected;
+
   return (
     <Text margin={theme.dataSummary?.margin} {...rest}>
       {format({
@@ -39,9 +45,9 @@ export const DataSummary = ({ messages, ...rest }) => {
           items,
         },
       })}
-      {selected > 0 ? (
+      {selectedCount > 0 ? (
         <>
-          {/* separator with margin to ensure | is not confused 
+          {/* separator with margin to ensure | is not confused
           as a 1 in the selected count */}
           <Text margin={theme.dataSummary?.separator?.margin}>|</Text>
           <Text>
@@ -49,7 +55,7 @@ export const DataSummary = ({ messages, ...rest }) => {
               id: 'dataSummary.selected',
               messages: messages || dataMessages?.dataSummary,
               values: {
-                selected,
+                selected: selectedCount,
               },
             })}
           </Text>
