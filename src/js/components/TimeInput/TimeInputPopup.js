@@ -129,7 +129,17 @@ const PopupColumn = ({
         const isActive = selected && activeSection === section;
         let optionTabIndex = -1;
         if (inline) {
-          optionTabIndex = selected ? 0 : -1;
+          // In inline mode each column needs exactly one tabbable option so Tab
+          // key lands on the option (with Grommet focus style) instead of the
+          // listbox container (which has no theme focus style). Use the selected
+          // value when set, otherwise fall back to the column's first option.
+          const sectionHasValue =
+            (section === SECTION_HOUR && sections.hour !== undefined) ||
+            (section === SECTION_MINUTE && sections.minute !== undefined) ||
+            (section === SECTION_SECOND && sections.second !== undefined) ||
+            (section === SECTION_PERIOD && sections.period !== undefined);
+          optionTabIndex =
+            selected || (!sectionHasValue && option === options[0]) ? 0 : -1;
         } else if (isActive) {
           optionTabIndex = 0;
         }

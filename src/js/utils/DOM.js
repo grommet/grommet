@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 export const findScrollParent = (element, horizontal) => {
   let result;
   if (element) {
@@ -87,10 +89,17 @@ export const withinDropPortal = (node, portalContext) => {
   return true;
 };
 
-// Check if the element.tagName is an input, select or textarea
+// Check if an element can receive focus: native form inputs or any element
+// with an explicit non-negative tabIndex (e.g. span[role="spinbutton"]).
 export const isFocusable = (element) => {
+  if (!element || element.disabled) return false;
   const tagName = element.tagName.toLowerCase();
-  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+  return (
+    tagName === 'input' ||
+    tagName === 'select' ||
+    tagName === 'textarea' ||
+    element.tabIndex >= 0
+  );
 };
 
 // Get the first element that can receive focus
