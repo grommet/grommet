@@ -112,6 +112,15 @@ const Wizard = forwardRef(
       ),
     );
 
+    useEffect(() => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(
+          'Warning: Wizard is currently in beta. The API is subject ' +
+            'to change in future releases.',
+        );
+      }
+    }, []);
+
     if (process.env.NODE_ENV !== 'production') {
       if (hasSubSteps && showProgress === 'horizontal') {
         console.warn(
