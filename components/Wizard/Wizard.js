@@ -747,7 +747,7 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     flex: "grow",
     fill: "horizontal",
     direction: effectiveShowProgress === 'vertical' ? 'row' : 'column'
-  }, effectiveShowProgress && responsiveSize !== 'small' && /*#__PURE__*/_react["default"].createElement(_WizardProgress.WizardProgress, null), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+  }, effectiveShowProgress && responsiveSize !== 'small' && responsiveSize !== 'xsmall' && /*#__PURE__*/_react["default"].createElement(_WizardProgress.WizardProgress, null), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     flex: "grow"
   }, /*#__PURE__*/_react["default"].createElement(_WizardStepHeader.WizardStepHeader, null), /*#__PURE__*/_react["default"].createElement(_WizardContent.WizardContent, null)))), footerNode);
   return /*#__PURE__*/_react["default"].createElement(_WizardContext.WizardContext.Provider, {

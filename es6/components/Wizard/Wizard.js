@@ -744,7 +744,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     flex: "grow",
     fill: "horizontal",
     direction: effectiveShowProgress === 'vertical' ? 'row' : 'column'
-  }, effectiveShowProgress && responsiveSize !== 'small' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(Box, {
+  }, effectiveShowProgress && responsiveSize !== 'small' && responsiveSize !== 'xsmall' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(Box, {
     flex: "grow"
   }, /*#__PURE__*/React.createElement(WizardStepHeader, null), /*#__PURE__*/React.createElement(WizardContent, null)))), footerNode);
   return /*#__PURE__*/React.createElement(WizardContext.Provider, {
