@@ -131,15 +131,6 @@ const HiddenText = styled.span`
   border: 0;
 `;
 
-// Label target for the sortable button's aria-labelledby. display: contents
-// adds no layout box, so the label lays out exactly as the content would on
-// its own; a real Box wrapper here would shift the header. A div (not span)
-// so it validly wraps any content node incl. a Box, and its subtree text
-// still feeds the accessible name.
-const LabelContent = styled.div`
-  display: contents;
-`;
-
 const Header = forwardRef(
   (
     {
@@ -475,12 +466,12 @@ const Header = forwardRef(
                       gap={theme.dataTable.sort?.gap}
                       justify={align}
                     >
-                      <LabelContent id={labelId}>{content}</LabelContent>
+                      <Box id={labelId}>{content}</Box>
                       {Icon && <Icon aria-hidden />}
-                      <HiddenText id={sortStatusId} aria-hidden>
-                        {format({ id: hiddenTextId, messages })}
-                      </HiddenText>
                     </Box>
+                    <HiddenText id={sortStatusId} aria-hidden>
+                      {format({ id: hiddenTextId, messages })}
+                    </HiddenText>
                   </StyledHeaderCellButton>
                 );
               }
