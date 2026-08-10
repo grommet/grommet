@@ -109,6 +109,47 @@ describe('TextInput', () => {
     expect(screen.getByLabelText('Add')).toBeInTheDocument();
   });
 
+  test('supports password toggle theme icon elements', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={{
+          textInput: {
+            icons: { showPassword: <Add />, hidePassword: <Search /> },
+          },
+        }}
+      >
+        <TextInput aria-label="Password" type="password" password />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Search')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+  });
+
+  test('suppresses reverse icon when password toggle is active', () => {
+    render(
+      <Grommet>
+        <TextInput
+          aria-label="Password"
+          type="password"
+          password
+          reverse
+          icon={<Search />}
+        />
+      </Grommet>,
+    );
+
+    expect(screen.queryByLabelText('Search')).not.toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Show password' }),
+    ).toBeInTheDocument();
+  });
+
   test('suggestions', (done) => {
     const onChange = jest.fn();
     const onFocus = jest.fn();

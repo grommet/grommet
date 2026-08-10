@@ -58,6 +58,13 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
+const renderIcon = (iconValue) => {
+  if (React.isValidElement(iconValue)) return iconValue;
+
+  const IconComponent = iconValue;
+  return IconComponent ? <IconComponent /> : undefined;
+};
+
 const ContainerBox = styled(Box)`
   ${(props) =>
     props.dropHeight
@@ -505,12 +512,14 @@ const TextInput = forwardRef(
     // primarily for tests.
 
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
-    const ShowPasswordIcon = theme.textInput?.icons?.showPassword || View;
-    const HidePasswordIcon = theme.textInput?.icons?.hidePassword || Hide;
+    const showPasswordIcon = theme.textInput?.icons?.showPassword || View;
+    const hidePasswordIcon = theme.textInput?.icons?.hidePassword || Hide;
     let inputType = typeProp;
     if (passwordToggle) {
       inputType = passwordRevealed ? 'text' : 'password';
     }
+    const showTextInputIcon =
+      !!textInputIcon && !readOnlyCopy && !(passwordToggle && reverse);
 
     const ReadOnlyCopyButton = (
       <CopyButton
@@ -527,7 +536,11 @@ const TextInput = forwardRef(
       <Button
         disabled={disabled}
         kind="toolbar"
-        icon={passwordRevealed ? <ShowPasswordIcon /> : <HidePasswordIcon />}
+        icon={
+          passwordRevealed
+            ? renderIcon(showPasswordIcon)
+            : renderIcon(hidePasswordIcon)
+        }
         onClick={() => setPasswordRevealed((current) => !current)}
         aria-label={
           passwordRevealed ? hidePasswordMessage : showPasswordMessage
@@ -555,7 +568,7 @@ const TextInput = forwardRef(
             {placeholder}
           </StyledPlaceholder>
         )}
-        {textInputIcon && !readOnlyCopy && (
+        {showTextInputIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
@@ -572,7 +585,7 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={!readOnlyCopy && icon}
+            icon={showTextInputIcon ? icon : undefined}
             reverse={reverse}
             focus={focus}
             hasButton={!!textInputButton}
