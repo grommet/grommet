@@ -356,6 +356,8 @@ const DateTimeInput = forwardRef(
       minuteStep = 1,
       name,
       onChange,
+      plain: plainProp,
+      focusIndicator: focusIndicatorProp,
       readOnly = false,
       showSeconds = false,
       value: valueArg,
@@ -1078,12 +1080,12 @@ const DateTimeInput = forwardRef(
             <StyledDateTimeInputContainer
               ref={containerRef}
               direction="row"
-              border
+              border={!plainProp}
               fill
               round={theme.dateTimeInput?.container?.round}
               disabled={disabled}
               readOnlyProp={readOnly}
-              focusIndicator={!iconFocused}
+              focusIndicator={(focusIndicatorProp ?? true) && !iconFocused}
               {...passThemeFlag}
             >
               <StyledDateTimeInputField {...passThemeFlag}>
