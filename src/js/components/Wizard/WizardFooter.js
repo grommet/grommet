@@ -18,6 +18,7 @@ export const WizardFooter = ({ children, ...rest }) => {
     currentStepIndex,
     totalSteps,
     canGoNext,
+    next,
     previous,
     skip,
     complete,
@@ -87,12 +88,12 @@ export const WizardFooter = ({ children, ...rest }) => {
       ) : (
         <Button
           key="next"
-          type="submit"
           label={label('next')}
           primary
           icon={NextIcon ? <NextIcon aria-hidden="true" /> : undefined}
           reverse
           disabled={!canGoNext}
+          onClick={next}
         />
       ),
     ];

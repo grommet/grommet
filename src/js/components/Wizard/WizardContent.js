@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box } from '../Box';
+import { Notification } from '../Notification';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useWizard } from './WizardContext';
 
@@ -10,9 +11,11 @@ import { useWizard } from './WizardContext';
 export const WizardContent = ({ ...rest }) => {
   const { theme } = useThemeValue();
   const wizard = useWizard();
-  const { currentStepObj, renderStep } = wizard;
+  const { currentStepObj, renderStep, validationError } = wizard;
 
   const contentTheme = theme.wizard?.content;
+  const errorTheme = theme.wizard?.error;
+  const Icon = errorTheme?.icon || (() => null);
 
   if (!currentStepObj) return null;
 
@@ -20,17 +23,19 @@ export const WizardContent = ({ ...rest }) => {
   const body = stepRender ? stepRender(currentStepObj, wizard) : null;
 
   return (
-    <Box
-      pad={contentTheme?.pad}
-      background={contentTheme?.background}
-      round={contentTheme?.round}
-      margin={contentTheme?.margin}
-      // Grow to fill the middle region without shrinking. The scroll
-      // region lives on the middle (StyledWizardMiddle), not here.
-      flex="grow"
-      {...rest}
-    >
+    <Box {...contentTheme} flex="grow" {...rest}>
       {body}
+      {validationError && (
+        <Notification
+          status="critical"
+          message={validationError}
+          icon={
+            <Box margin={{ top: '4px' }}>
+              <Icon />
+            </Box>
+          }
+        />
+      )}
     </Box>
   );
 };

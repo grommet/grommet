@@ -2176,72 +2176,6 @@ export interface ThemeType {
     currentError?: StepperHelperTextStateType;
     disabled?: StepperStatusWithHelperTextStateType;
   };
-  wizard?: {
-    container?: {
-      gap?: GapType;
-      background?: BackgroundType;
-    };
-    body?: {
-      pad?: PadType;
-      gap?: GridGapType;
-    };
-    header?: {
-      pad?: PadType;
-      background?: BackgroundType;
-      title?: {
-        size?: string;
-      };
-      close?: {
-        icon?: React.ReactNode | Icon;
-      };
-    };
-    progress?: {
-      horizontal?: {
-        pad?: PadType;
-      };
-      vertical?: {
-        width?: string;
-        pad?: PadType;
-      };
-    };
-    stepHeader?: {
-      pad?: PadType;
-      gap?: GapType;
-      counter?: {
-        size?: string;
-        color?: ColorType;
-      };
-      title?: {
-        size?: string;
-        margin?: MarginType;
-      };
-      description?: {
-        size?: string;
-        color?: ColorType;
-        margin?: MarginType;
-      };
-    };
-    content?: {
-      pad?: PadType;
-      background?: BackgroundType;
-      round?: RoundType;
-      margin?: MarginType;
-    };
-    footer?: {
-      background?: BackgroundType;
-      border?: BorderType;
-      gap?: GridGapType;
-      pad?: PadType;
-      justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
-      button?: {
-        next?: { icon?: React.ReactNode | Icon };
-        complete?: { icon?: React.ReactNode | Icon };
-        previous?: { icon?: React.ReactNode | Icon };
-        cancel?: { icon?: React.ReactNode | Icon };
-        skip?: { icon?: React.ReactNode | Icon };
-      };
-    };
-  };
   table?: {
     caption?: {
       margin?: MarginType;
@@ -2502,6 +2436,76 @@ export interface ThemeType {
       container?: {
         pad?: PadType;
       };
+    };
+  };
+  wizard?: {
+    container?: {
+      gap?: GapType;
+      background?: BackgroundType;
+    };
+    body?: {
+      pad?: PadType;
+      gap?: GridGapType;
+    };
+    header?: {
+      pad?: PadType;
+      background?: BackgroundType;
+      title?: {
+        size?: string;
+      };
+      close?: {
+        icon?: React.ReactNode | Icon;
+      };
+    };
+    progress?: {
+      horizontal?: {
+        pad?: PadType;
+      };
+      vertical?: {
+        width?: string;
+        pad?: PadType;
+      };
+    };
+    stepHeader?: {
+      pad?: PadType;
+      gap?: GapType;
+      counter?: {
+        size?: string;
+        color?: ColorType;
+      };
+      title?: {
+        size?: string;
+        margin?: MarginType;
+      };
+      description?: {
+        size?: string;
+        color?: ColorType;
+        margin?: MarginType;
+      };
+    };
+    content?: {
+      pad?: PadType;
+      gap?: GapType;
+      background?: BackgroundType;
+      round?: RoundType;
+      margin?: MarginType;
+    };
+    footer?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      gap?: GridGapType;
+      pad?: PadType;
+      justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
+      button?: {
+        next?: { icon?: React.ReactNode | Icon };
+        complete?: { icon?: React.ReactNode | Icon };
+        previous?: { icon?: React.ReactNode | Icon };
+        cancel?: { icon?: React.ReactNode | Icon };
+        skip?: { icon?: React.ReactNode | Icon };
+      };
+    };
+    error?: {
+      icon?: React.ReactNode | Icon;
     };
   };
   worldMap?: {

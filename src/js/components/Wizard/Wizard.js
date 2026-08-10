@@ -16,7 +16,6 @@ import { useThemeValue } from '../../utils/useThemeValue';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
-import { Form } from '../Form';
 import { WizardContext } from './WizardContext';
 import { WizardHeader } from './WizardHeader';
 import { WizardProgress } from './WizardProgress';
@@ -676,37 +675,16 @@ const Wizard = forwardRef(
     }
     return (
       <WizardContext.Provider value={contextValue}>
-        <Form
-          value={formValue}
-          onChange={setFormValue}
-          onSubmit={next}
-          style={{ display: 'flex', flex: '1 1 auto' }}
-          onValidate={(validationResults) => {
-            // focus first error field if any
-            if (validationResults.errors) {
-              const fields = Object.keys(validationResults.errors);
-              for (let i = 0; i < fields.length; i += 1) {
-                const name = fields[i];
-                const element = document.getElementsByName(name)[0];
-                if (element) {
-                  element.focus();
-                  break;
-                }
-              }
-            }
-          }}
+        <Box
+          ref={wizardRef}
+          id={id}
+          aria-label={ariaLabel}
+          role="region"
+          flex={{ grow: 1, shrink: 1 }}
+          {...rest}
         >
-          <Box
-            ref={wizardRef}
-            id={id}
-            aria-label={ariaLabel}
-            role="region"
-            flex={{ grow: 1, shrink: 1 }}
-            {...rest}
-          >
-            {content}
-          </Box>
-        </Form>
+          {content}
+        </Box>
       </WizardContext.Provider>
     );
   },
