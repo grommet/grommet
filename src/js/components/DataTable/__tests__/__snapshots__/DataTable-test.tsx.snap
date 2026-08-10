@@ -3493,15 +3493,6 @@ exports[`DataTable custom theme 1`] = `
   flex-direction: row;
 }
 
-.c9 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
 .c15 {
   display: flex;
   box-sizing: border-box;
@@ -3551,6 +3542,15 @@ exports[`DataTable custom theme 1`] = `
 }
 
 .c27 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c28 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3877,6 +3877,10 @@ exports[`DataTable custom theme 1`] = `
   border: 0;
 }
 
+.c9 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c15 {
     border-inline-end: solid 1px rgba(0, 0, 0, 0.33);
@@ -3890,7 +3894,7 @@ exports[`DataTable custom theme 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c27 {
+  .c28 {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
@@ -4033,7 +4037,7 @@ exports[`DataTable custom theme 1`] = `
           scope="row"
         >
           <div
-            class="c9"
+            class="c27"
           >
             <span
               class="c10"
@@ -4069,7 +4073,7 @@ exports[`DataTable custom theme 1`] = `
                   type="checkbox"
                 />
                 <div
-                  class="c27 "
+                  class="c28 "
                   disabled=""
                 />
               </div>
@@ -4081,7 +4085,7 @@ exports[`DataTable custom theme 1`] = `
           scope="row"
         >
           <div
-            class="c9"
+            class="c27"
           >
             <span
               class="c10"
@@ -4132,7 +4136,7 @@ exports[`DataTable custom theme 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
@@ -17103,7 +17107,7 @@ exports[`DataTable onSort 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -17123,7 +17127,7 @@ exports[`DataTable onSort 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -17285,6 +17289,10 @@ exports[`DataTable onSort 1`] = `
   border: 0;
 }
 
+.c8 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c10 {
     width: 3px;
@@ -17398,10 +17406,10 @@ exports[`DataTable onSort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               zero
             </span>
@@ -17411,7 +17419,7 @@ exports[`DataTable onSort 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -17429,10 +17437,10 @@ exports[`DataTable onSort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
@@ -17442,7 +17450,7 @@ exports[`DataTable onSort 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -17460,10 +17468,10 @@ exports[`DataTable onSort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
@@ -17473,7 +17481,7 @@ exports[`DataTable onSort 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -17519,7 +17527,7 @@ exports[`DataTable onSort 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
@@ -17640,7 +17648,7 @@ exports[`DataTable onSort 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
@@ -17830,7 +17838,7 @@ exports[`DataTable onSort external 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -17850,7 +17858,7 @@ exports[`DataTable onSort external 1`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -18012,6 +18020,10 @@ exports[`DataTable onSort external 1`] = `
   border: 0;
 }
 
+.c8 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c10 {
     width: 3px;
@@ -18141,10 +18153,10 @@ exports[`DataTable onSort external 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               zero
             </span>
@@ -18154,7 +18166,7 @@ exports[`DataTable onSort external 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -18172,10 +18184,10 @@ exports[`DataTable onSort external 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               one
             </span>
@@ -18185,7 +18197,7 @@ exports[`DataTable onSort external 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -18203,10 +18215,10 @@ exports[`DataTable onSort external 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               two
             </span>
@@ -18216,7 +18228,7 @@ exports[`DataTable onSort external 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -18262,7 +18274,7 @@ exports[`DataTable onSort external 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
@@ -18355,7 +18367,7 @@ exports[`DataTable onSort external 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
@@ -52208,7 +52220,7 @@ exports[`DataTable sort 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -52228,7 +52240,7 @@ exports[`DataTable sort 1`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -52390,6 +52402,10 @@ exports[`DataTable sort 1`] = `
   border: 0;
 }
 
+.c8 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c10 {
     width: 3px;
@@ -52519,10 +52535,10 @@ exports[`DataTable sort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               one
             </span>
@@ -52532,7 +52548,7 @@ exports[`DataTable sort 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -52550,10 +52566,10 @@ exports[`DataTable sort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               two
             </span>
@@ -52563,7 +52579,7 @@ exports[`DataTable sort 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -52581,10 +52597,10 @@ exports[`DataTable sort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               zero
             </span>
@@ -52594,7 +52610,7 @@ exports[`DataTable sort 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -52674,7 +52690,7 @@ exports[`DataTable sort controlled 1`] = `
   flex-direction: row;
 }
 
-.c9 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -52694,7 +52710,7 @@ exports[`DataTable sort controlled 1`] = `
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -52919,6 +52935,10 @@ exports[`DataTable sort controlled 1`] = `
   clip: rect(0,0,0,0);
   white-space: nowrap;
   border: 0;
+}
+
+.c9 {
+  display: contents;
 }
 
 @media only screen and (max-width: 768px) {
@@ -53056,10 +53076,10 @@ exports[`DataTable sort controlled 1`] = `
             scope="row"
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 one
               </span>
@@ -53069,7 +53089,7 @@ exports[`DataTable sort controlled 1`] = `
             class="c16 "
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
                 class="c10"
@@ -53087,10 +53107,10 @@ exports[`DataTable sort controlled 1`] = `
             scope="row"
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 two
               </span>
@@ -53100,7 +53120,7 @@ exports[`DataTable sort controlled 1`] = `
             class="c16 "
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
                 class="c10"
@@ -53118,10 +53138,10 @@ exports[`DataTable sort controlled 1`] = `
             scope="row"
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 zero
               </span>
@@ -53131,7 +53151,7 @@ exports[`DataTable sort controlled 1`] = `
             class="c16 "
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
                 class="c10"
@@ -53212,7 +53232,7 @@ exports[`DataTable sort controlled 2`] = `
   flex-direction: row;
 }
 
-.c9 {
+.c17 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -53232,7 +53252,7 @@ exports[`DataTable sort controlled 2`] = `
   line-height: 24px;
 }
 
-.c17 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -53459,6 +53479,10 @@ exports[`DataTable sort controlled 2`] = `
   border: 0;
 }
 
+.c9 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c11 {
     width: 3px;
@@ -53594,10 +53618,10 @@ exports[`DataTable sort controlled 2`] = `
             scope="row"
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 zero
               </span>
@@ -53607,7 +53631,7 @@ exports[`DataTable sort controlled 2`] = `
             class="c16 "
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
                 class="c10"
@@ -53625,10 +53649,10 @@ exports[`DataTable sort controlled 2`] = `
             scope="row"
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 two
               </span>
@@ -53638,7 +53662,7 @@ exports[`DataTable sort controlled 2`] = `
             class="c16 "
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
                 class="c10"
@@ -53656,10 +53680,10 @@ exports[`DataTable sort controlled 2`] = `
             scope="row"
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
-                class="c17"
+                class="c18"
               >
                 one
               </span>
@@ -53669,7 +53693,7 @@ exports[`DataTable sort controlled 2`] = `
             class="c16 "
           >
             <div
-              class="c9"
+              class="c17"
             >
               <span
                 class="c10"
@@ -53749,7 +53773,7 @@ exports[`DataTable sort external 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -53769,7 +53793,7 @@ exports[`DataTable sort external 1`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -53929,6 +53953,10 @@ exports[`DataTable sort external 1`] = `
   clip: rect(0,0,0,0);
   white-space: nowrap;
   border: 0;
+}
+
+.c8 {
+  display: contents;
 }
 
 @media only screen and (max-width: 768px) {
@@ -54060,10 +54088,10 @@ exports[`DataTable sort external 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               zero
             </span>
@@ -54073,7 +54101,7 @@ exports[`DataTable sort external 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -54091,10 +54119,10 @@ exports[`DataTable sort external 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               one
             </span>
@@ -54104,7 +54132,7 @@ exports[`DataTable sort external 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -54122,10 +54150,10 @@ exports[`DataTable sort external 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               two
             </span>
@@ -54135,7 +54163,7 @@ exports[`DataTable sort external 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -54214,7 +54242,7 @@ exports[`DataTable sort nested object 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54234,7 +54262,7 @@ exports[`DataTable sort nested object 1`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -54396,6 +54424,10 @@ exports[`DataTable sort nested object 1`] = `
   border: 0;
 }
 
+.c8 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c10 {
     width: 3px;
@@ -54525,10 +54557,10 @@ exports[`DataTable sort nested object 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               two
             </span>
@@ -54538,7 +54570,7 @@ exports[`DataTable sort nested object 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -54556,10 +54588,10 @@ exports[`DataTable sort nested object 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               one
             </span>
@@ -54569,7 +54601,7 @@ exports[`DataTable sort nested object 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -54587,10 +54619,10 @@ exports[`DataTable sort nested object 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               zero
             </span>
@@ -54600,7 +54632,7 @@ exports[`DataTable sort nested object 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -54679,7 +54711,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c16 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -54699,7 +54731,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
   line-height: 24px;
 }
 
-.c16 {
+.c17 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -54861,6 +54893,10 @@ exports[`DataTable sort nested object with onSort 1`] = `
   border: 0;
 }
 
+.c8 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c10 {
     width: 3px;
@@ -54990,10 +55026,10 @@ exports[`DataTable sort nested object with onSort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               two
             </span>
@@ -55003,7 +55039,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -55021,10 +55057,10 @@ exports[`DataTable sort nested object with onSort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               one
             </span>
@@ -55034,7 +55070,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -55052,10 +55088,10 @@ exports[`DataTable sort nested object with onSort 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
-              class="c16"
+              class="c17"
             >
               zero
             </span>
@@ -55065,7 +55101,7 @@ exports[`DataTable sort nested object with onSort 1`] = `
           class="c15 "
         >
           <div
-            class="c8"
+            class="c16"
           >
             <span
               class="c9"
@@ -55112,7 +55148,7 @@ exports[`DataTable sort null data 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -55132,7 +55168,7 @@ exports[`DataTable sort null data 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -55292,6 +55328,10 @@ exports[`DataTable sort null data 1`] = `
   clip: rect(0,0,0,0);
   white-space: nowrap;
   border: 0;
+}
+
+.c8 {
+  display: contents;
 }
 
 @media only screen and (max-width: 768px) {
@@ -55489,14 +55529,14 @@ exports[`DataTable sort null data 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           />
         </th>
         <td
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -55509,7 +55549,7 @@ exports[`DataTable sort null data 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -55522,7 +55562,7 @@ exports[`DataTable sort null data 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -55540,10 +55580,10 @@ exports[`DataTable sort null data 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
@@ -55553,7 +55593,7 @@ exports[`DataTable sort null data 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -55566,14 +55606,14 @@ exports[`DataTable sort null data 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           />
         </td>
         <td
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           />
         </td>
       </tr>
@@ -55585,10 +55625,10 @@ exports[`DataTable sort null data 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
@@ -55598,7 +55638,7 @@ exports[`DataTable sort null data 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -55611,7 +55651,7 @@ exports[`DataTable sort null data 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -55624,7 +55664,7 @@ exports[`DataTable sort null data 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           />
         </td>
       </tr>
@@ -55636,14 +55676,14 @@ exports[`DataTable sort null data 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           />
         </th>
         <td
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -55656,14 +55696,14 @@ exports[`DataTable sort null data 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           />
         </td>
         <td
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -55709,7 +55749,7 @@ exports[`DataTable sort null data 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
@@ -55830,7 +55870,7 @@ exports[`DataTable sort null data 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
@@ -55871,7 +55911,7 @@ exports[`DataTable sort null data 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-c-label"
                 >
                   <span
@@ -55912,7 +55952,7 @@ exports[`DataTable sort null data 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-d-label"
                 >
                   <span
@@ -56238,7 +56278,7 @@ exports[`DataTable sort null data 3`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
@@ -56295,7 +56335,7 @@ exports[`DataTable sort null data 3`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
@@ -56336,7 +56376,7 @@ exports[`DataTable sort null data 3`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-c-label"
                 >
                   <span
@@ -56457,7 +56497,7 @@ exports[`DataTable sort null data 3`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-d-label"
                 >
                   <span
@@ -56783,7 +56823,7 @@ exports[`DataTable sort null data 4`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
@@ -56824,7 +56864,7 @@ exports[`DataTable sort null data 4`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
@@ -56865,7 +56905,7 @@ exports[`DataTable sort null data 4`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-c-label"
                 >
                   <span
@@ -56922,7 +56962,7 @@ exports[`DataTable sort null data 4`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-d-label"
                 >
                   <span
@@ -57329,7 +57369,7 @@ exports[`DataTable sortable 1`] = `
   flex-direction: row;
 }
 
-.c8 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -57349,7 +57389,7 @@ exports[`DataTable sortable 1`] = `
   line-height: 24px;
 }
 
-.c15 {
+.c16 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
@@ -57511,6 +57551,10 @@ exports[`DataTable sortable 1`] = `
   border: 0;
 }
 
+.c8 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c10 {
     width: 3px;
@@ -57624,10 +57668,10 @@ exports[`DataTable sortable 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               zero
             </span>
@@ -57637,7 +57681,7 @@ exports[`DataTable sortable 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -57655,10 +57699,10 @@ exports[`DataTable sortable 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               one
             </span>
@@ -57668,7 +57712,7 @@ exports[`DataTable sortable 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -57686,10 +57730,10 @@ exports[`DataTable sortable 1`] = `
           scope="row"
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
-              class="c15"
+              class="c16"
             >
               two
             </span>
@@ -57699,7 +57743,7 @@ exports[`DataTable sortable 1`] = `
           class="c14 "
         >
           <div
-            class="c8"
+            class="c15"
           >
             <span
               class="c9"
@@ -57745,7 +57789,7 @@ exports[`DataTable sortable 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-a-label"
                 >
                   <span
@@ -57866,7 +57910,7 @@ exports[`DataTable sortable 2`] = `
                 class="StyledBox-sc-13pk1d4-0 iXQVLG"
               >
                 <div
-                  class="StyledBox-sc-13pk1d4-0 gwWQjW"
+                  class="Header__LabelContent-sc-1baku5q-3 cUfvAP"
                   id="grommet-data-table-header-b-label"
                 >
                   <span
@@ -58095,15 +58139,6 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   flex-direction: row;
 }
 
-.c15 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
 .c23 {
   display: flex;
   box-sizing: border-box;
@@ -58113,6 +58148,15 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   flex-direction: column;
   flex: 1 0 auto;
   justify-content: center;
+}
+
+.c28 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
 }
 
 .c20 {
@@ -58471,6 +58515,10 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
   border: 0;
 }
 
+.c15 {
+  display: contents;
+}
+
 @media only screen and (max-width: 768px) {
   .c6 {
     padding-left: 6px;
@@ -58699,7 +58747,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           scope="row"
         >
           <div
-            class="c15"
+            class="c28"
           >
             <span
               class="c16"
@@ -58712,7 +58760,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           class="c27 "
         >
           <div
-            class="c15"
+            class="c28"
           />
         </td>
       </tr>
@@ -58756,7 +58804,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           scope="row"
         >
           <div
-            class="c15"
+            class="c28"
           >
             <span
               class="c16"
@@ -58769,7 +58817,7 @@ exports[`DataTable theme search pad, search text pad, sort gap, and expand size 
           class="c27 "
         >
           <div
-            class="c15"
+            class="c28"
           />
         </td>
       </tr>
