@@ -1909,7 +1909,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1940,7 +1940,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1960,7 +1960,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1990,7 +1990,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -2010,7 +2010,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -2040,7 +2040,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
