@@ -72,7 +72,7 @@ describe('TextInput', () => {
 
     render(
       <Grommet>
-        <TextInput aria-label="Password" type="password" showPasswordToggle />
+        <TextInput aria-label="Password" type="password" password />
       </Grommet>,
     );
 
@@ -98,7 +98,7 @@ describe('TextInput', () => {
           textInput: { icons: { showPassword: Add, hidePassword: Search } },
         }}
       >
-        <TextInput aria-label="Password" type="password" showPasswordToggle />
+        <TextInput aria-label="Password" type="password" password />
       </Grommet>,
     );
 

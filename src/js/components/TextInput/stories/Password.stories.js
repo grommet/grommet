@@ -13,7 +13,7 @@ export const Password = () => {
     <Box width="medium" margin="large">
       <TextInput
         type="password"
-        showPasswordToggle
+        password
         value={value}
         onChange={(event) => setValue(event.target.value)}
         aria-label="Password"

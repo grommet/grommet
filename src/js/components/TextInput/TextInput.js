@@ -96,9 +96,9 @@ const TextInput = forwardRef(
       onSuggestionSelect,
       onSuggestionsClose,
       onSuggestionsOpen,
+      password,
       placeholder,
       plain,
-      showPasswordToggle,
       readOnly: readOnlyProp,
       readOnlyCopy,
       reverse,
@@ -170,8 +170,7 @@ const TextInput = forwardRef(
       if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
     };
 
-    const passwordToggle =
-      showPasswordToggle && typeProp === 'password' && !readOnlyCopy;
+    const passwordToggle = password && typeProp === 'password' && !readOnlyCopy;
 
     useEffect(() => {
       // When the toggle stops applying, return the input to its authored type.

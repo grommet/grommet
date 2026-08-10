@@ -37,9 +37,9 @@ if (process.env.NODE_ENV !== 'production') {
     onSuggestionSelect: PropTypes.func,
     onSuggestionsOpen: PropTypes.func,
     onSuggestionsClose: PropTypes.func,
+    password: PropTypes.bool,
     placeholder: PropTypes.node,
     plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['full'])]),
-    showPasswordToggle: PropTypes.bool,
     readOnlyCopy: PropTypes.bool,
     reverse: PropTypes.bool,
     size: PropTypes.oneOfType([
