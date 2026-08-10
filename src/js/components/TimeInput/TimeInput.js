@@ -113,6 +113,7 @@ const TimeInput = forwardRef(
       minuteStep = 1,
       name,
       onChange,
+      onPartialChange,
       readOnly = false,
       showSeconds,
       value: valueArg,
@@ -230,7 +231,10 @@ const TimeInput = forwardRef(
       sectionOrder,
       minuteStep: normalizedMinuteStep,
       value,
-      onCommit: (_nextSections, nextValue) => {
+      onCommit: (_nextSections, nextValue, _changedSection) => {
+        // Fire partial change on every commit so consumers can update
+        // display state even before all sections are filled.
+        onPartialChange?.(_nextSections, _changedSection);
         if (!nextValue) {
           setValue('');
           onChange?.({ value: undefined });

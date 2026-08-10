@@ -171,7 +171,7 @@ export const useSectionedTimeField = ({
   }, [sectionOrder, sections, pendingDigits]);
 
   const commitSections = useCallback(
-    (nextSections) => {
+    (nextSections, changedSection) => {
       setSections(nextSections);
 
       const complete = sectionOrder.every(
@@ -200,7 +200,7 @@ export const useSectionedTimeField = ({
       const hasIncompleteSections = !complete || !allValid;
       preserveIncompleteSectionsRef.current =
         hasIncompleteSections && hasAnyValue(nextSections);
-      onCommit(nextSections, nextValue);
+      onCommit(nextSections, nextValue, changedSection);
     },
     [onCommit, sectionOrder, format],
   );
@@ -209,7 +209,7 @@ export const useSectionedTimeField = ({
     (section, rawValue) => {
       const key = sectionKey(section);
       const next = { ...sections, [key]: rawValue };
-      commitSections(next);
+      commitSections(next, section);
       // Clear any pending first-digit overlay, since it's now stale
       // relative to the section value we just committed.
       setPendingDigits({});

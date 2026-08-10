@@ -1022,6 +1022,32 @@ const DateTimeInput = forwardRef(
       [activeSection, commitSections, resolvedFormat, sections],
     );
 
+    // TimeInput section constants (0–3) → DateTimeInput section constants (3–6)
+    const TIME_TO_DT_SECTION = useMemo(
+      () => [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND, SECTION_PERIOD],
+      [],
+    );
+
+    const handleTimePartialChange = useCallback(
+      (timeSections, changedTimeSectionIndex) => {
+        // Sync the active spinbutton segment to the column being edited
+        const dtSection = TIME_TO_DT_SECTION[changedTimeSectionIndex];
+        if (dtSection !== undefined) setActiveSection(dtSection);
+
+        // Update display state with partial time fields immediately so the
+        // input shows values as each column is selected, not only on
+        // completion.
+        setSections((prev) => ({
+          ...prev,
+          hour: timeSections.hour,
+          minute: timeSections.minute,
+          ...(showSeconds ? { second: timeSections.second } : {}),
+          ...(resolvedFormat === '12' ? { period: timeSections.period } : {}),
+        }));
+      },
+      [resolvedFormat, setActiveSection, showSeconds, TIME_TO_DT_SECTION],
+    );
+
     const timeValue = useMemo(() => {
       if (sections.hour === undefined) {
         return undefined;
@@ -1243,6 +1269,7 @@ const DateTimeInput = forwardRef(
                   disabled={disabled}
                   readOnly={readOnly}
                   onChange={handleTimeSelect}
+                  onPartialChange={handleTimePartialChange}
                 />
               </Box>
             </Drop>
