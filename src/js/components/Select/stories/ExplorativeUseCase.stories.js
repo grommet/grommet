@@ -26,7 +26,7 @@ const transparentDisabledOptionTheme = {
   },
 };
 
-// Reference example for HPE Design System adopters (e.g. Zerto) showing how
+// Reference example for explorative use case showing how
 // to cover three commonly requested Select capabilities without forking it:
 //
 //   1. Loading state   -> `valueLabel` (control) + a placeholder option (drop)
@@ -283,5 +283,5 @@ export const StartAndEndIcons = () => {
 };
 
 export default {
-  title: 'Input/Select/Zerto Select Use case',
+  title: 'Input/Select/Explorative use case',
 };
