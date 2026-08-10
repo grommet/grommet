@@ -14,17 +14,11 @@ const StyledStepConnectorGroup = styled.div.withConfig({
   position: relative;
   flex: 1;
   overflow: visible;
-  ${(props) => {
-    if (props.direction === 'horizontal') {
-      return css`
-        align-items: center;
-      `;
-    }
-
-    return css`
-      justify-content: flex-start;
-    `;
-  }}
+  ${(props) =>
+    props.direction === 'horizontal' &&
+    css`
+      align-items: center;
+    `}
 `;
 
 export const StepConnector = ({ step, direction, children }) => {

@@ -69,7 +69,9 @@ const StyledStepItem = styled.li.withConfig({
   }}
 `;
 
-const StyledStepButton = styled.button.withConfig(styledComponentsConfig)`
+const StyledStepButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+})`
   display: flex;
   background: none;
   border: none;
@@ -268,10 +270,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
             left: calc(${props.isBetween ? '-' : ''}50% + ${connectorOffset});
             right: calc(-50% + ${connectorOffset});
             height: ${connectorThickness};
-            margin-left: ${props.theme.global.edgeSize[
-              props.theme.stepper?.horizontal?.connector?.margin || 'xxsmall'
-            ]};
-            margin-right: ${props.theme.global.edgeSize[
+            margin-inline: ${props.theme.global.edgeSize[
               props.theme.stepper?.horizontal?.connector?.margin || 'xxsmall'
             ]};
           `
@@ -281,17 +280,13 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
                 ${connectorThickness} / 2
             );
             top: ${props.isBetween ? 0 : nonBetweenTop};
-            ${props.isBetween
-              ? css`
-                  bottom: 0;
-                `
-              : css`
-                  bottom: 0;
-                  min-height: 12px;
-                `}
+            bottom: 0;
+            ${!props.isBetween &&
+            css`
+              min-height: 12px;
+            `}
             width: ${connectorThickness};
-            margin-top: 0;
-            margin-bottom: 0;
+            margin-block: 0;
           `}
     `;
   }}
@@ -299,7 +294,9 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
   background: ${(props) => getConnectorColor(props.status, props.theme)};
 `;
 
-const StyledSubStepsList = styled.ol.withConfig(styledComponentsConfig)`
+const StyledSubStepsList = styled.ol.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+})`
   list-style: none;
   margin: 0;
   padding: 0;

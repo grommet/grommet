@@ -203,8 +203,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   left: calc(50% + calc(24px / 2 + 3px));
   right: calc(-50% + calc(24px / 2 + 3px));
   height: 2px;
-  margin-left: 3px;
-  margin-right: 3px;
+  margin-inline: 3px;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
@@ -236,7 +235,6 @@ exports[`Stepper renders horizontal steps 1`] = `
         aria-current="step"
         aria-label="Step 1 of 3: Step 1"
         class="c3 c4"
-        direction="horizontal"
         tabindex="0"
         type="button"
       >
@@ -280,7 +278,6 @@ exports[`Stepper renders horizontal steps 1`] = `
       <button
         aria-label="Step 2 of 3: Step 2"
         class="c3 c4"
-        direction="horizontal"
         tabindex="-1"
         type="button"
       >
@@ -309,7 +306,6 @@ exports[`Stepper renders horizontal steps 1`] = `
       <button
         aria-label="Step 3 of 3: Step 3"
         class="c3 c4"
-        direction="horizontal"
         tabindex="-1"
         type="button"
       >
@@ -524,8 +520,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   left: calc(50% + calc(24px / 2 + 3px));
   right: calc(-50% + calc(24px / 2 + 3px));
   height: 2px;
-  margin-left: 3px;
-  margin-right: 3px;
+  margin-inline: 3px;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
@@ -554,7 +549,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
       aria-current="step"
       aria-label="Step 1 of 3: Step 1"
       class="c2 c3"
-      direction="horizontal"
       tabindex="0"
       type="button"
     >
@@ -598,7 +592,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
     <button
       aria-label="Step 2 of 3: Step 2"
       class="c2 c3"
-      direction="horizontal"
       tabindex="-1"
       type="button"
     >
@@ -627,7 +620,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
     <button
       aria-label="Step 3 of 3: Step 3"
       class="c2 c3"
-      direction="horizontal"
       tabindex="-1"
       type="button"
     >
@@ -850,8 +842,7 @@ exports[`Stepper renders vertical steps 1`] = `
   bottom: 0;
   min-height: 12px;
   width: 2px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-block: 0;
   position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
@@ -882,7 +873,6 @@ exports[`Stepper renders vertical steps 1`] = `
       <button
         aria-label="Step 1 of 3: Step 1"
         class="c3 c4"
-        direction="vertical"
         tabindex="-1"
         type="button"
       >
@@ -912,7 +902,6 @@ exports[`Stepper renders vertical steps 1`] = `
         aria-current="step"
         aria-label="Step 2 of 3: Step 2"
         class="c3 c4"
-        direction="vertical"
         tabindex="0"
         type="button"
       >
@@ -956,7 +945,6 @@ exports[`Stepper renders vertical steps 1`] = `
       <button
         aria-label="Step 3 of 3: Step 3"
         class="c3 c4"
-        direction="vertical"
         tabindex="-1"
         type="button"
       >
