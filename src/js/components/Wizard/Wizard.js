@@ -22,7 +22,6 @@ import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
 import { WizardContent } from './WizardContent';
 import { WizardFooter } from './WizardFooter';
-import { StyledWizard } from './StyledWizard';
 import { WizardPropTypes } from './propTypes';
 
 // Flatten step tree into ordered leaves; parents with children are
@@ -93,7 +92,7 @@ const Wizard = forwardRef(
     },
     ref,
   ) => {
-    const { theme, passThemeFlag } = useThemeValue();
+    const { theme } = useThemeValue();
     const { format } = React.useContext(MessageContext);
     const responsiveSize = React.useContext(ResponsiveContext);
     const sendAnalytics = useAnalytics();
@@ -641,82 +640,60 @@ const Wizard = forwardRef(
     if (!isOpen) return null;
 
     // Custom composition: consumers supply their own tree via `children`.
-    // Skip the default-layout work (footer resolution, theme lookups, JSX
-    // construction) since it would just be discarded.
-    if (children) {
-      return (
-        <WizardContext.Provider value={contextValue}>
-          <StyledWizard
-            ref={wizardRef}
-            id={id}
-            aria-label={ariaLabel}
-            role="region"
-            {...passThemeFlag}
-            {...rest}
-          >
-            {children}
-          </StyledWizard>
-        </WizardContext.Provider>
+    let content = children;
+
+    if (!content) {
+      const footerNode = footer ?? <WizardFooter />;
+
+      const bodyTheme = theme.wizard?.body;
+
+      // Default layout: header + middle (progress + step body) + footer.
+      // Header/footer stay pinned; only WizardContent scrolls internally.
+      content = (
+        <Box {...theme.wizard?.container} flex>
+          <>
+            <WizardHeader title={title} />
+            <Box
+              align="center"
+              flex={{ grow: 1, shrink: 1 }}
+              fill="horizontal"
+              overflow="auto"
+            >
+              <Box
+                pad={bodyTheme?.pad}
+                gap={bodyTheme?.gap}
+                flex="grow"
+                fill="horizontal"
+                direction={
+                  effectiveShowProgress === 'vertical' ? 'row' : 'column'
+                }
+              >
+                {effectiveShowProgress &&
+                  responsiveSize !== 'small' &&
+                  responsiveSize !== 'xsmall' && <WizardProgress />}
+                <Box flex="grow">
+                  <WizardStepHeader />
+                  <WizardContent />
+                </Box>
+              </Box>
+            </Box>
+            {footerNode}
+          </>
+        </Box>
       );
     }
-
-    const footerNode = footer ?? <WizardFooter />;
-
-    const containerTheme = theme.wizard?.container;
-    const bodyTheme = theme.wizard?.body;
-
-    // Default layout: header + middle (progress + step body) + footer.
-    // Header/footer stay pinned; only WizardContent scrolls internally.
-    const defaultLayout = (
-      <>
-        <WizardHeader title={title} />
-        <Box
-          align="center"
-          flex={{ grow: 1, shrink: 1 }}
-          fill="horizontal"
-          overflow="auto"
-        >
-          <Box
-            pad={bodyTheme?.pad}
-            gap={bodyTheme?.gap}
-            flex="grow"
-            fill="horizontal"
-            direction={effectiveShowProgress === 'vertical' ? 'row' : 'column'}
-          >
-            {effectiveShowProgress &&
-              responsiveSize !== 'small' &&
-              responsiveSize !== 'xsmall' && <WizardProgress />}
-            <Box flex="grow">
-              <WizardStepHeader />
-              <WizardContent />
-            </Box>
-          </Box>
-        </Box>
-        {footerNode}
-      </>
-    );
-
     return (
       <WizardContext.Provider value={contextValue}>
-        <StyledWizard
+        <Box
           ref={wizardRef}
           id={id}
           aria-label={ariaLabel}
           role="region"
-          {...passThemeFlag}
+          flex={{ grow: 1, shrink: 1 }}
           {...rest}
         >
-          <Box
-            background={containerTheme?.background}
-            pad={containerTheme?.pad}
-            gap={containerTheme?.gap}
-            round={containerTheme?.round}
-            elevation={containerTheme?.elevation}
-            flex
-          >
-            {defaultLayout}
-          </Box>
-        </StyledWizard>
+          {content}
+        </Box>
       </WizardContext.Provider>
     );
   },

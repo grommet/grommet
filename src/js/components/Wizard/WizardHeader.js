@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -31,7 +33,6 @@ export const WizardHeader = ({ title, children, ...rest }) => {
     <Box
       pad={headerTheme?.pad}
       background={headerTheme?.background}
-      border={headerTheme?.border}
       direction="row"
       align="center"
       justify="between"
