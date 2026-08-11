@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import {
   FlattenInterpolation,
   FlattenSimpleInterpolation,
@@ -2160,6 +2162,22 @@ export interface ThemeType {
     helperText?: {
       size?: string;
       color?: ColorType;
+    };
+    button?: {
+      pad?: EdgeSizeType;
+    };
+    horizontal?: {
+      connector?: {
+        margin?: EdgeSizeType;
+      };
+      button?: {
+        gap?: GapType;
+      };
+    };
+    vertical?: {
+      button?: {
+        gap?: GapType;
+      };
     };
     hover?: {
       background?: BackgroundType;

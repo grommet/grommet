@@ -10,9 +10,11 @@ var _StepperIndicator = require("./StepperIndicator");
 var _StepperLabel = require("./StepperLabel");
 var _StepperDescription = require("./StepperDescription");
 var _StepperHelperText = require("./StepperHelperText");
+var _StepConnector = require("./StepConnector");
 var _StyledStepper = require("./StyledStepper");
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var StepperStep = exports.StepperStep = function StepperStep(_ref) {
   var _step$children, _stepsRef$current;
   var step = _ref.step,
@@ -23,6 +25,7 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
     focusedIndex = _ref.focusedIndex,
     indexProp = _ref.index,
     isSubStep = _ref.isSubStep,
+    subSteps = _ref.subSteps,
     onFocusStep = _ref.onFocusStep,
     stepsRef = _ref.stepsRef,
     stepRefs = _ref.stepRefs;
@@ -98,7 +101,9 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
     value: stepItemValue
   }, /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledStepItem, _extends({
     direction: direction,
-    isSubStep: isSubStep
+    isSubStep: isSubStep,
+    isLast: isLast,
+    hasSubSteps: !!(subSteps != null && subSteps.length)
   }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledStepButton, _extends({
     as: isReadOnly ? 'div' : 'button',
     role: isReadOnly ? 'group' : undefined,
@@ -119,9 +124,14 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
     direction: direction,
     isSubStep: isSubStep,
     hasDescription: !!step.description
-  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StepperLabel.StepperLabel, null), showDescription && /*#__PURE__*/_react["default"].createElement(_StepperDescription.StepperDescription, null), /*#__PURE__*/_react["default"].createElement(_StepperHelperText.StepperError, null), /*#__PURE__*/_react["default"].createElement(_StepperHelperText.StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) && /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledConnector, _extends({
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StepperLabel.StepperLabel, null), showDescription && /*#__PURE__*/_react["default"].createElement(_StepperDescription.StepperDescription, null), /*#__PURE__*/_react["default"].createElement(_StepperHelperText.StepperError, null), /*#__PURE__*/_react["default"].createElement(_StepperHelperText.StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) && !(subSteps != null && subSteps.length) && /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledConnector, _extends({
     direction: direction,
     status: step.status,
     "aria-hidden": "true"
-  }, passThemeFlag))));
+  }, passThemeFlag)), !!(subSteps != null && subSteps.length) && /*#__PURE__*/_react["default"].createElement(_StepConnector.StepConnector, {
+    step: step,
+    direction: direction
+  }, /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledSubStepsList, _extends({
+    direction: direction
+  }, passThemeFlag), subSteps))));
 };

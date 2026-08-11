@@ -34,26 +34,33 @@ var StyledStepItem = styled.li.withConfig({
   componentId: "sc-gmpe0p-0"
 })(["display:flex;position:relative;", ""], function (props) {
   if (props.direction === 'vertical') {
-    var _props$theme$global;
-    return css(["flex-direction:column;align-items:flex-start;padding-bottom:", ";"], ((_props$theme$global = props.theme.global) == null || (_props$theme$global = _props$theme$global.edgeSize) == null ? void 0 : _props$theme$global.xxsmall) || '4px');
+    var paddingBottom = '0px';
+    if (!props.isSubStep && !props.isLast && !props.hasSubSteps) {
+      paddingBottom = "" + props.theme.global.edgeSize.medium;
+    }
+    return css(["flex-direction:column;align-items:flex-start;padding-bottom:", ";"], paddingBottom);
   }
   if (props.isSubStep) {
     // horizontal and sub-steps isn't supported
     return css(["flex-direction:row;align-items:center;flex:none;min-width:0;overflow:hidden;"]);
   }
-  return css(["flex-direction:column;align-items:center;flex:1;min-width:0;overflow:hidden;"]);
+  return css(["flex-direction:column;align-items:center;flex:1;min-width:0;overflow:visible;"]);
 });
-var StyledStepButton = styled.button.withConfig(styledComponentsConfig).withConfig({
+var StyledStepButton = styled.button.withConfig({
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return isPropValid(prop) && prop !== 'direction';
+  }
+}).withConfig({
   displayName: "StyledStepper__StyledStepButton",
   componentId: "sc-gmpe0p-1"
 })(["display:flex;background:none;border:none;padding:", ";cursor:", ";outline:none;", ""], function (props) {
-  var _props$theme$global2;
-  return ((_props$theme$global2 = props.theme.global) == null || (_props$theme$global2 = _props$theme$global2.edgeSize) == null ? void 0 : _props$theme$global2.xxsmall) || '4px';
+  var _props$theme$global, _props$theme$stepper;
+  return (_props$theme$global = props.theme.global) == null || (_props$theme$global = _props$theme$global.edgeSize) == null ? void 0 : _props$theme$global[((_props$theme$stepper = props.theme.stepper) == null || (_props$theme$stepper = _props$theme$stepper.button) == null ? void 0 : _props$theme$stepper.pad) || 'xxsmall'];
 }, function (props) {
   return props.isClickable ? 'pointer' : 'default';
 }, function (props) {
-  var _props$theme$global3, _props$theme$global4;
-  return props.direction === 'vertical' ? css(["flex-direction:row;align-items:flex-start;gap:", ";text-align:left;"], (_props$theme$global3 = props.theme.global) == null || (_props$theme$global3 = _props$theme$global3.edgeSize) == null ? void 0 : _props$theme$global3.small) : css(["flex-direction:column;align-items:center;gap:", ";text-align:center;width:100%;"], (_props$theme$global4 = props.theme.global) == null || (_props$theme$global4 = _props$theme$global4.edgeSize) == null ? void 0 : _props$theme$global4.xxsmall);
+  var _props$theme$global2, _props$theme$stepper2, _props$theme$global3, _props$theme$stepper3;
+  return props.direction === 'vertical' ? css(["flex-direction:row;align-items:flex-start;gap:", ";text-align:left;"], (_props$theme$global2 = props.theme.global) == null || (_props$theme$global2 = _props$theme$global2.edgeSize) == null ? void 0 : _props$theme$global2[((_props$theme$stepper2 = props.theme.stepper) == null || (_props$theme$stepper2 = _props$theme$stepper2.vertical) == null || (_props$theme$stepper2 = _props$theme$stepper2.button) == null ? void 0 : _props$theme$stepper2.gap) || 'small']) : css(["flex-direction:column;align-items:center;gap:", ";text-align:center;width:100%;"], (_props$theme$global3 = props.theme.global) == null || (_props$theme$global3 = _props$theme$global3.edgeSize) == null ? void 0 : _props$theme$global3[((_props$theme$stepper3 = props.theme.stepper) == null || (_props$theme$stepper3 = _props$theme$stepper3.horizontal) == null || (_props$theme$stepper3 = _props$theme$stepper3.button) == null ? void 0 : _props$theme$stepper3.gap) || 'xxsmall']);
 });
 var StyledStepContent = styled.span.withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
@@ -64,8 +71,8 @@ var StyledStepContent = styled.span.withConfig({
   componentId: "sc-gmpe0p-2"
 })(["display:flex;flex-direction:column;", ""], function (props) {
   if (props.direction === 'vertical' && !props.isSubStep && !props.hasDescription) {
-    var _props$theme$stepper;
-    var indicatorSizeToken = ((_props$theme$stepper = props.theme.stepper) == null || (_props$theme$stepper = _props$theme$stepper.indicator) == null ? void 0 : _props$theme$stepper.size) || 'medium';
+    var _props$theme$stepper4;
+    var indicatorSizeToken = ((_props$theme$stepper4 = props.theme.stepper) == null || (_props$theme$stepper4 = _props$theme$stepper4.indicator) == null ? void 0 : _props$theme$stepper4.size) || 'medium';
     var indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
     var lineHeight = getTextMetric(props.theme, 'small', 'height');
     return css(["padding-top:calc((", " - ", ") / 2);"], indicatorSize, lineHeight);
@@ -76,12 +83,12 @@ var StyledIndicator = styled.span.withConfig(styledComponentsConfig).withConfig(
   displayName: "StyledStepper__StyledIndicator",
   componentId: "sc-gmpe0p-3"
 })(["display:flex;align-items:center;justify-content:center;border-radius:50%;transition:transform 0.1s ease,background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease;", " ", " ", ":focus-visible &{", "}", ""], function (props) {
-  return function (_props$theme$stepper2, _props$theme$stepper3, _props$theme$global5) {
-    var indicatorSizeToken = ((_props$theme$stepper2 = props.theme.stepper) == null || (_props$theme$stepper2 = _props$theme$stepper2.indicator) == null ? void 0 : _props$theme$stepper2.size) || 'medium';
+  return function (_props$theme$stepper5, _props$theme$stepper6, _props$theme$global4) {
+    var indicatorSizeToken = ((_props$theme$stepper5 = props.theme.stepper) == null || (_props$theme$stepper5 = _props$theme$stepper5.indicator) == null ? void 0 : _props$theme$stepper5.size) || 'medium';
     var parentSize = getMetricSize(props.theme, indicatorSizeToken);
     var subStepSize = getMetricSize(props.theme, getSubStepSizeToken(indicatorSizeToken));
     var size = props.isSubStep ? subStepSize : parentSize;
-    var borderWidth = ((_props$theme$stepper3 = props.theme.stepper) == null || (_props$theme$stepper3 = _props$theme$stepper3.indicator) == null || (_props$theme$stepper3 = _props$theme$stepper3.border) == null ? void 0 : _props$theme$stepper3.width) || ((_props$theme$global5 = props.theme.global) == null || (_props$theme$global5 = _props$theme$global5.borderSize) == null ? void 0 : _props$theme$global5.small) || '2px';
+    var borderWidth = ((_props$theme$stepper6 = props.theme.stepper) == null || (_props$theme$stepper6 = _props$theme$stepper6.indicator) == null || (_props$theme$stepper6 = _props$theme$stepper6.border) == null ? void 0 : _props$theme$stepper6.width) || ((_props$theme$global4 = props.theme.global) == null || (_props$theme$global4 = _props$theme$global4.borderSize) == null ? void 0 : _props$theme$global4.small) || '2px';
     return css(["width:", ";height:", ";min-width:", ";min-height:", ";border:", " solid;"], size, size, size, size, borderWidth);
   }();
 }, function (props) {
@@ -115,17 +122,35 @@ var StyledConnector = styled.span.withConfig(styledComponentsConfig).withConfig(
   displayName: "StyledStepper__StyledConnector",
   componentId: "sc-gmpe0p-4"
 })(["", " position:absolute;background:", ";"], function (props) {
-  var _theme$stepper6, _theme$stepper7, _theme$global3, _theme$stepper8, _theme$global4, _theme$global5;
+  var _theme$stepper6, _theme$stepper7, _props$theme$global5, _props$theme$stepper7, _theme$stepper8, _theme$global3, _theme$global4, _props$theme$stepper8;
   var theme = props.theme;
   var indicatorSizeToken = ((_theme$stepper6 = theme.stepper) == null || (_theme$stepper6 = _theme$stepper6.indicator) == null ? void 0 : _theme$stepper6.size) || 'medium';
   var parentSize = getMetricSize(theme, indicatorSizeToken);
   var indicatorBorderWidth = getMetricSize(theme, ((_theme$stepper7 = theme.stepper) == null || (_theme$stepper7 = _theme$stepper7.indicator) == null || (_theme$stepper7 = _theme$stepper7.border) == null ? void 0 : _theme$stepper7.width) || '2px');
-  var buttonPad = ((_theme$global3 = theme.global) == null || (_theme$global3 = _theme$global3.edgeSize) == null ? void 0 : _theme$global3.xxsmall) || '4px';
-  var connectorThickness = ((_theme$stepper8 = theme.stepper) == null || (_theme$stepper8 = _theme$stepper8.connector) == null || (_theme$stepper8 = _theme$stepper8.stroke) == null ? void 0 : _theme$stepper8.width) || ((_theme$global4 = theme.global) == null || (_theme$global4 = _theme$global4.borderSize) == null ? void 0 : _theme$global4.small) || '2px';
-  var connectorRadius = ((_theme$global5 = theme.global) == null || (_theme$global5 = _theme$global5.edgeSize) == null ? void 0 : _theme$global5.xsmall) || '4px';
+  var buttonPad = (_props$theme$global5 = props.theme.global) == null || (_props$theme$global5 = _props$theme$global5.edgeSize) == null ? void 0 : _props$theme$global5[((_props$theme$stepper7 = props.theme.stepper) == null || (_props$theme$stepper7 = _props$theme$stepper7.button) == null ? void 0 : _props$theme$stepper7.pad) || 'xxsmall'];
+  var connectorThickness = ((_theme$stepper8 = theme.stepper) == null || (_theme$stepper8 = _theme$stepper8.connector) == null || (_theme$stepper8 = _theme$stepper8.stroke) == null ? void 0 : _theme$stepper8.width) || ((_theme$global3 = theme.global) == null || (_theme$global3 = _theme$global3.borderSize) == null ? void 0 : _theme$global3.small) || '2px';
+  var connectorRadius = ((_theme$global4 = theme.global) == null || (_theme$global4 = _theme$global4.edgeSize) == null ? void 0 : _theme$global4.xsmall) || '4px';
   var connectorOffset = "calc(" + parentSize + " / 2 + " + buttonPad + ")";
-  return css(["border-radius:", ";", ""], connectorRadius, props.direction === 'horizontal' ? css(["top:", ";left:calc(", "50% + ", ");right:calc(-50% + ", ");height:", ";"], connectorOffset, props.isBetween ? '-' : '', connectorOffset, connectorOffset, connectorThickness) : css(["left:calc( ", " + ", " - ", " / 2 );top:", ";bottom:0;width:", ";"], connectorOffset, indicatorBorderWidth, connectorThickness, props.isBetween ? 0 : "calc(" + parentSize + " + " + buttonPad + " * 3)", connectorThickness));
+  var connectorGap = '4px';
+  var nonBetweenTop = "calc(" + parentSize + " + " + buttonPad + " +\n      (" + indicatorBorderWidth + " * 2) + " + connectorGap + ")";
+  return css(["border-radius:", ";", ""], connectorRadius, props.direction === 'horizontal' ? css(["top:", ";left:calc(", "50% + ", ");right:calc(-50% + ", ");height:", ";margin-inline:", ";"], connectorOffset, props.isBetween ? '-' : '', connectorOffset, connectorOffset, connectorThickness, props.theme.global.edgeSize[((_props$theme$stepper8 = props.theme.stepper) == null || (_props$theme$stepper8 = _props$theme$stepper8.horizontal) == null || (_props$theme$stepper8 = _props$theme$stepper8.connector) == null ? void 0 : _props$theme$stepper8.margin) || 'xxsmall']) : css(["left:calc( ", " + ", " - ", " / 2 );top:", ";bottom:0;", " width:", ";margin-block:0;"], connectorOffset, indicatorBorderWidth, connectorThickness, props.isBetween ? 0 : nonBetweenTop, !props.isBetween && css(["min-height:12px;"]), connectorThickness));
 }, function (props) {
   return getConnectorColor(props.status, props.theme);
 });
-export { StyledStepItem, StyledStepButton, StyledStepContent, StyledIndicator, StyledConnector };
+var StyledSubStepsList = styled.ol.withConfig({
+  shouldForwardProp: function shouldForwardProp(prop) {
+    return isPropValid(prop) && prop !== 'direction';
+  }
+}).withConfig({
+  displayName: "StyledStepper__StyledSubStepsList",
+  componentId: "sc-gmpe0p-5"
+})(["list-style:none;margin:0;padding:0;", ""], function (props) {
+  var _props$theme$stepper9, _props$theme$global6, _props$theme$stepper0, _props$theme$global7, _props$theme$stepper1;
+  if (props.direction !== 'vertical') return '';
+  var indicatorSizeToken = ((_props$theme$stepper9 = props.theme.stepper) == null || (_props$theme$stepper9 = _props$theme$stepper9.indicator) == null ? void 0 : _props$theme$stepper9.size) || 'medium';
+  var indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
+  var textGap = (_props$theme$global6 = props.theme.global) == null || (_props$theme$global6 = _props$theme$global6.edgeSize) == null ? void 0 : _props$theme$global6[((_props$theme$stepper0 = props.theme.stepper) == null || (_props$theme$stepper0 = _props$theme$stepper0.vertical) == null || (_props$theme$stepper0 = _props$theme$stepper0.button) == null ? void 0 : _props$theme$stepper0.gap) || 'small'];
+  var buttonPad = (_props$theme$global7 = props.theme.global) == null || (_props$theme$global7 = _props$theme$global7.edgeSize) == null ? void 0 : _props$theme$global7[((_props$theme$stepper1 = props.theme.stepper) == null || (_props$theme$stepper1 = _props$theme$stepper1.button) == null ? void 0 : _props$theme$stepper1.pad) || 'xxsmall'];
+  return css(["padding-inline-start:calc(", " + ", " + ", ");"], indicatorSize, textGap, buttonPad);
+});
+export { StyledStepItem, StyledStepButton, StyledStepContent, StyledIndicator, StyledConnector, StyledSubStepsList };

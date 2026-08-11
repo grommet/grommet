@@ -1,4 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useMemo } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -7,7 +9,8 @@ import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
 import { StepperDescription } from './StepperDescription';
 import { StepperError, StepperDisabledReason } from './StepperHelperText';
-import { StyledStepItem, StyledStepButton, StyledStepContent, StyledConnector } from './StyledStepper';
+import { StepConnector } from './StepConnector';
+import { StyledStepItem, StyledStepButton, StyledStepContent, StyledConnector, StyledSubStepsList } from './StyledStepper';
 export var StepperStep = function StepperStep(_ref) {
   var _step$children, _stepsRef$current;
   var step = _ref.step,
@@ -18,6 +21,7 @@ export var StepperStep = function StepperStep(_ref) {
     focusedIndex = _ref.focusedIndex,
     indexProp = _ref.index,
     isSubStep = _ref.isSubStep,
+    subSteps = _ref.subSteps,
     onFocusStep = _ref.onFocusStep,
     stepsRef = _ref.stepsRef,
     stepRefs = _ref.stepRefs;
@@ -93,7 +97,9 @@ export var StepperStep = function StepperStep(_ref) {
     value: stepItemValue
   }, /*#__PURE__*/React.createElement(StyledStepItem, _extends({
     direction: direction,
-    isSubStep: isSubStep
+    isSubStep: isSubStep,
+    isLast: isLast,
+    hasSubSteps: !!(subSteps != null && subSteps.length)
   }, passThemeFlag), /*#__PURE__*/React.createElement(StyledStepButton, _extends({
     as: isReadOnly ? 'div' : 'button',
     role: isReadOnly ? 'group' : undefined,
@@ -114,9 +120,14 @@ export var StepperStep = function StepperStep(_ref) {
     direction: direction,
     isSubStep: isSubStep,
     hasDescription: !!step.description
-  }, passThemeFlag), /*#__PURE__*/React.createElement(StepperLabel, null), showDescription && /*#__PURE__*/React.createElement(StepperDescription, null), /*#__PURE__*/React.createElement(StepperError, null), /*#__PURE__*/React.createElement(StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) && /*#__PURE__*/React.createElement(StyledConnector, _extends({
+  }, passThemeFlag), /*#__PURE__*/React.createElement(StepperLabel, null), showDescription && /*#__PURE__*/React.createElement(StepperDescription, null), /*#__PURE__*/React.createElement(StepperError, null), /*#__PURE__*/React.createElement(StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) && !(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StyledConnector, _extends({
     direction: direction,
     status: step.status,
     "aria-hidden": "true"
-  }, passThemeFlag))));
+  }, passThemeFlag)), !!(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StepConnector, {
+    step: step,
+    direction: direction
+  }, /*#__PURE__*/React.createElement(StyledSubStepsList, _extends({
+    direction: direction
+  }, passThemeFlag), subSteps))));
 };

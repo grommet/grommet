@@ -1,4 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { Actions } from 'grommet-icons/icons/Actions';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
@@ -2507,6 +2509,22 @@ export var generate = function generate(baseSpacing, scale) {
       helperText: {
         size: 'xsmall',
         color: 'text-weak'
+      },
+      button: {
+        pad: 'xxsmall'
+      },
+      horizontal: {
+        connector: {
+          margin: 'xxsmall'
+        },
+        button: {
+          gap: 'xsmall'
+        }
+      },
+      vertical: {
+        button: {
+          gap: 'small'
+        }
       },
       // States: [component].[state].[element].[property]
       pending: {

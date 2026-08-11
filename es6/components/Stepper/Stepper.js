@@ -1,11 +1,12 @@
 var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "onStepClick", "aria-label", "children", "id"];
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
 import { Keyboard } from '../Keyboard';
-import { StepConnector } from './StepConnector';
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
@@ -260,22 +261,16 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
         step: step,
         stepNumber: parentFlatIndex + 1,
         isLast: isLastParent,
-        showConnector: direction === 'horizontal' ? false : !isLastParent || !!childElements,
+        showConnector: direction === 'horizontal' ? !isLastParent : !isLastParent || !!childElements,
         direction: direction,
         focusedIndex: focusedIndex,
         index: parentFlatIndex,
         isSubStep: false,
         onFocusStep: updateFocusedIndex,
         stepsRef: stepsRef,
-        stepRefs: stepRefs
+        stepRefs: stepRefs,
+        subSteps: childElements
       }));
-      if (!isLastParent || childElements && direction === 'vertical') {
-        elements.push(/*#__PURE__*/React.createElement(StepConnector, {
-          key: step.id + "-connector",
-          step: step,
-          direction: direction
-        }, childElements));
-      }
     });
     return elements;
   };

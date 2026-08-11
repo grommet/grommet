@@ -28,7 +28,8 @@ var _VolumeLow = require("grommet-icons/icons/VolumeLow");
 var _base = require("grommet-icons/themes/base");
 var _object = require("../utils/object");
 var _mixins = require("../utils/mixins");
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var brandColor = '#7D4CDB';
 var accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 var neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
@@ -2511,6 +2512,22 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       helperText: {
         size: 'xsmall',
         color: 'text-weak'
+      },
+      button: {
+        pad: 'xxsmall'
+      },
+      horizontal: {
+        connector: {
+          margin: 'xxsmall'
+        },
+        button: {
+          gap: 'xsmall'
+        }
+      },
+      vertical: {
+        button: {
+          gap: 'small'
+        }
       },
       // States: [component].[state].[element].[property]
       pending: {
