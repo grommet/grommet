@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'jest-styled-components';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Grommet } from '../../Grommet';
@@ -2188,6 +2188,42 @@ describe('DataTable', () => {
 
     expect(onClickRow).not.toHaveBeenCalled();
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('arrow key navigation does not scroll the page', async () => {
+    const onClickRow = jest.fn();
+    render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'name', header: 'Name' }]}
+          data={[{ name: 'alpha' }, { name: 'beta' }]}
+          onClickRow={onClickRow}
+        />
+      </Grommet>,
+    );
+
+    // focus the second row so ArrowUp moves focus to the first row
+    const secondRow = screen.getByText('beta').closest('tr');
+    expect(secondRow).not.toBeNull();
+
+    // first act: focus the row so focused state updates
+    await act(async () => {
+      fireEvent.focus(secondRow!);
+    });
+
+    // second act: now focused state is set, press ArrowUp
+    await act(async () => {
+      fireEvent.keyDown(secondRow!, {
+        key: 'ArrowUp',
+        code: 'ArrowUp',
+        keyCode: 38,
+      });
+    });
+
+    // after ArrowUp, the first row should be focusable (tabIndex 0)
+    const firstRow = screen.getByText('alpha').closest('tr');
+    expect(firstRow).not.toBeNull();
+    expect(firstRow!.getAttribute('tabindex')).toBe('0');
   });
 
   type Ship = {
