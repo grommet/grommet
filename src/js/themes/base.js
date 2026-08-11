@@ -2353,6 +2353,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'xsmall',
         color: 'text-weak',
       },
+      button: {
+        pad: 'xxsmall',
+      },
+      horizontal: {
+        connector: {
+          margin: 'xxsmall',
+        },
+        button: {
+          gap: 'xsmall',
+        },
+      },
+      vertical: {
+        button: {
+          gap: 'small',
+        },
+      },
       // States: [component].[state].[element].[property]
       pending: {
         indicator: {

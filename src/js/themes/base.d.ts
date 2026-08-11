@@ -2163,6 +2163,22 @@ export interface ThemeType {
       size?: string;
       color?: ColorType;
     };
+    button?: {
+      pad?: EdgeSizeType;
+    };
+    horizontal?: {
+      connector?: {
+        margin?: EdgeSizeType;
+      };
+      button?: {
+        gap?: GapType;
+      };
+    };
+    vertical?: {
+      button?: {
+        gap?: GapType;
+      };
+    };
     hover?: {
       background?: BackgroundType;
       border?: ColorType;
