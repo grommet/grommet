@@ -1,6 +1,8 @@
 var _excluded = ["title", "children"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -39,7 +41,6 @@ export var WizardHeader = function WizardHeader(_ref) {
   return /*#__PURE__*/React.createElement(Box, _extends({
     pad: headerTheme == null ? void 0 : headerTheme.pad,
     background: headerTheme == null ? void 0 : headerTheme.background,
-    border: headerTheme == null ? void 0 : headerTheme.border,
     direction: "row",
     align: "center",
     justify: "between",

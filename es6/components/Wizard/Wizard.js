@@ -24,7 +24,6 @@ import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
 import { WizardContent } from './WizardContent';
 import { WizardFooter } from './WizardFooter';
-import { StyledWizard } from './StyledWizard';
 import { WizardPropTypes } from './propTypes';
 
 // Flatten step tree into ordered leaves; parents with children are
@@ -73,7 +72,6 @@ var findScrollableAncestor = function findScrollableAncestor(node) {
   return undefined;
 };
 var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$wizard, _theme$wizard2;
   var steps = _ref.steps,
     currentStepProp = _ref.currentStep,
     defaultStep = _ref.defaultStep,
@@ -96,8 +94,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     children = _ref.children,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = useThemeValue(),
-    theme = _useThemeValue.theme,
-    passThemeFlag = _useThemeValue.passThemeFlag;
+    theme = _useThemeValue.theme;
   var _React$useContext = React.useContext(MessageContext),
     format = _React$useContext.format;
   var responsiveSize = React.useContext(ResponsiveContext);
@@ -710,58 +707,48 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
   if (!isOpen) return null;
 
   // Custom composition: consumers supply their own tree via `children`.
-  // Skip the default-layout work (footer resolution, theme lookups, JSX
-  // construction) since it would just be discarded.
-  if (children) {
-    return /*#__PURE__*/React.createElement(WizardContext.Provider, {
-      value: contextValue
-    }, /*#__PURE__*/React.createElement(StyledWizard, _extends({
-      ref: wizardRef,
-      id: id,
-      "aria-label": ariaLabel,
-      role: "region"
-    }, passThemeFlag, rest), children));
-  }
-  var footerNode = footer != null ? footer : /*#__PURE__*/React.createElement(WizardFooter, null);
-  var containerTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.container;
-  var bodyTheme = (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.body;
+  var content = children;
+  if (!content) {
+    var _theme$wizard, _theme$wizard2;
+    var footerNode = footer != null ? footer : /*#__PURE__*/React.createElement(WizardFooter, null);
+    var bodyTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.body;
 
-  // Default layout: header + middle (progress + step body) + footer.
-  // Header/footer stay pinned; only WizardContent scrolls internally.
-  var defaultLayout = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WizardHeader, {
-    title: title
-  }), /*#__PURE__*/React.createElement(Box, {
-    align: "center",
-    flex: {
-      grow: 1,
-      shrink: 1
-    },
-    fill: "horizontal",
-    overflow: "auto"
-  }, /*#__PURE__*/React.createElement(Box, {
-    pad: bodyTheme == null ? void 0 : bodyTheme.pad,
-    gap: bodyTheme == null ? void 0 : bodyTheme.gap,
-    flex: "grow",
-    fill: "horizontal",
-    direction: effectiveShowProgress === 'vertical' ? 'row' : 'column'
-  }, effectiveShowProgress && responsiveSize !== 'small' && responsiveSize !== 'xsmall' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(Box, {
-    flex: "grow"
-  }, /*#__PURE__*/React.createElement(WizardStepHeader, null), /*#__PURE__*/React.createElement(WizardContent, null)))), footerNode);
+    // Default layout: header + middle (progress + step body) + footer.
+    // Header/footer stay pinned; only WizardContent scrolls internally.
+    content = /*#__PURE__*/React.createElement(Box, _extends({}, (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.container, {
+      flex: true
+    }), /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WizardHeader, {
+      title: title
+    }), /*#__PURE__*/React.createElement(Box, {
+      align: "center",
+      flex: {
+        grow: 1,
+        shrink: 1
+      },
+      fill: "horizontal",
+      overflow: "auto"
+    }, /*#__PURE__*/React.createElement(Box, {
+      pad: bodyTheme == null ? void 0 : bodyTheme.pad,
+      gap: bodyTheme == null ? void 0 : bodyTheme.gap,
+      flex: "grow",
+      fill: "horizontal",
+      direction: effectiveShowProgress === 'vertical' ? 'row' : 'column'
+    }, effectiveShowProgress && responsiveSize !== 'small' && responsiveSize !== 'xsmall' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(Box, {
+      flex: "grow"
+    }, /*#__PURE__*/React.createElement(WizardStepHeader, null), /*#__PURE__*/React.createElement(WizardContent, null)))), footerNode));
+  }
   return /*#__PURE__*/React.createElement(WizardContext.Provider, {
     value: contextValue
-  }, /*#__PURE__*/React.createElement(StyledWizard, _extends({
+  }, /*#__PURE__*/React.createElement(Box, _extends({
     ref: wizardRef,
     id: id,
     "aria-label": ariaLabel,
-    role: "region"
-  }, passThemeFlag, rest), /*#__PURE__*/React.createElement(Box, {
-    background: containerTheme == null ? void 0 : containerTheme.background,
-    pad: containerTheme == null ? void 0 : containerTheme.pad,
-    gap: containerTheme == null ? void 0 : containerTheme.gap,
-    round: containerTheme == null ? void 0 : containerTheme.round,
-    elevation: containerTheme == null ? void 0 : containerTheme.elevation,
-    flex: true
-  }, defaultLayout)));
+    role: "region",
+    flex: {
+      grow: 1,
+      shrink: 1
+    }
+  }, rest), content));
 });
 Wizard.displayName = 'Wizard';
 Wizard.propTypes = WizardPropTypes;

@@ -9,7 +9,8 @@ var _Heading = require("../Heading");
 var _MessageContext = require("../../contexts/MessageContext");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _WizardContext = require("./WizardContext");
-var _excluded = ["title", "children"];
+var _excluded = ["title", "children"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -43,7 +44,6 @@ var WizardHeader = exports.WizardHeader = function WizardHeader(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     pad: headerTheme == null ? void 0 : headerTheme.pad,
     background: headerTheme == null ? void 0 : headerTheme.background,
-    border: headerTheme == null ? void 0 : headerTheme.border,
     direction: "row",
     align: "center",
     justify: "between",

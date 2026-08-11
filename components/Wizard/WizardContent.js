@@ -4,12 +4,13 @@ exports.__esModule = true;
 exports.WizardContent = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _Box = require("../Box");
-var _Text = require("../Text");
+var _Notification = require("../Notification");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _WizardContext = require("./WizardContext");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // WizardContent renders the current step body and any wizard-level
 // validation error message.
 var WizardContent = exports.WizardContent = function WizardContent(_ref) {
@@ -23,21 +24,18 @@ var WizardContent = exports.WizardContent = function WizardContent(_ref) {
     validationError = wizard.validationError;
   var contentTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.content;
   var errorTheme = (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.error;
+  var Icon = (errorTheme == null ? void 0 : errorTheme.icon) || function () {
+    return null;
+  };
   if (!currentStepObj) return null;
   var stepRender = currentStepObj.render || renderStep;
   var body = stepRender ? stepRender(currentStepObj, wizard) : null;
-  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
-    pad: contentTheme == null ? void 0 : contentTheme.pad,
-    background: contentTheme == null ? void 0 : contentTheme.background,
-    round: contentTheme == null ? void 0 : contentTheme.round,
-    margin: contentTheme == null ? void 0 : contentTheme.margin
-    // Grow to fill the middle region without shrinking. The scroll
-    // region lives on the middle (StyledWizardMiddle), not here.
-    ,
+  return /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, contentTheme, {
     flex: "grow"
-  }, rest), body, validationError && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
-    role: "alert",
-    "aria-live": "polite"
-  }, errorTheme), validationError));
+  }, rest), body, validationError && /*#__PURE__*/_react["default"].createElement(_Notification.Notification, {
+    status: "critical",
+    message: validationError,
+    icon: /*#__PURE__*/_react["default"].createElement(Icon, null)
+  }));
 };
 WizardContent.displayName = 'WizardContent';

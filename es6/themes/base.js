@@ -2,6 +2,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import { Actions } from 'grommet-icons/icons/Actions';
+import { Alert } from 'grommet-icons/icons/Alert';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
@@ -2993,11 +2994,8 @@ export var generate = function generate(baseSpacing, scale) {
         },
         vertical: {
           // Fixed rail width so the column doesn't collapse to label text.
-          width: 'small',
-          pad: {
-            horizontal: 'xsmall',
-            vertical: 'none'
-          }
+          width: 'small'
+          // pad: undefined,
         }
       },
       stepHeader: {
@@ -3024,6 +3022,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       content: {
         pad: 'medium',
+        gap: 'medium',
         background: 'background-front',
         round: 'small',
         margin: {
@@ -3060,11 +3059,7 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       error: {
-        color: 'status-error',
-        size: 'small',
-        margin: {
-          top: 'xsmall'
-        }
+        icon: Alert
       }
     },
     worldMap: {

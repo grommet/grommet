@@ -16,7 +16,6 @@ var _WizardProgress = require("./WizardProgress");
 var _WizardStepHeader = require("./WizardStepHeader");
 var _WizardContent = require("./WizardContent");
 var _WizardFooter = require("./WizardFooter");
-var _StyledWizard = require("./StyledWizard");
 var _propTypes = require("./propTypes");
 var _excluded = ["steps", "currentStep", "defaultStep", "showProgress", "onStepChange", "onComplete", "onCancel", "renderStep", "title", "footer", "scrollToTop", "value", "defaultValue", "onChange", "id", "aria-label", "messages", "children"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t2 in e) "default" !== _t2 && {}.hasOwnProperty.call(e, _t2) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t2)) && (i.get || i.set) ? o(f, _t2, i) : f[_t2] = e[_t2]); return f; })(e, t); }
@@ -76,7 +75,6 @@ var findScrollableAncestor = function findScrollableAncestor(node) {
   return undefined;
 };
 var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
-  var _theme$wizard, _theme$wizard2;
   var steps = _ref.steps,
     currentStepProp = _ref.currentStep,
     defaultStep = _ref.defaultStep,
@@ -99,8 +97,7 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     children = _ref.children,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
-    theme = _useThemeValue.theme,
-    passThemeFlag = _useThemeValue.passThemeFlag;
+    theme = _useThemeValue.theme;
   var _React$useContext = _react["default"].useContext(_MessageContext.MessageContext),
     format = _React$useContext.format;
   var responsiveSize = _react["default"].useContext(_ResponsiveContext.ResponsiveContext);
@@ -713,58 +710,48 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   if (!isOpen) return null;
 
   // Custom composition: consumers supply their own tree via `children`.
-  // Skip the default-layout work (footer resolution, theme lookups, JSX
-  // construction) since it would just be discarded.
-  if (children) {
-    return /*#__PURE__*/_react["default"].createElement(_WizardContext.WizardContext.Provider, {
-      value: contextValue
-    }, /*#__PURE__*/_react["default"].createElement(_StyledWizard.StyledWizard, _extends({
-      ref: wizardRef,
-      id: id,
-      "aria-label": ariaLabel,
-      role: "region"
-    }, passThemeFlag, rest), children));
-  }
-  var footerNode = footer != null ? footer : /*#__PURE__*/_react["default"].createElement(_WizardFooter.WizardFooter, null);
-  var containerTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.container;
-  var bodyTheme = (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.body;
+  var content = children;
+  if (!content) {
+    var _theme$wizard, _theme$wizard2;
+    var footerNode = footer != null ? footer : /*#__PURE__*/_react["default"].createElement(_WizardFooter.WizardFooter, null);
+    var bodyTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.body;
 
-  // Default layout: header + middle (progress + step body) + footer.
-  // Header/footer stay pinned; only WizardContent scrolls internally.
-  var defaultLayout = /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_WizardHeader.WizardHeader, {
-    title: title
-  }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    align: "center",
-    flex: {
-      grow: 1,
-      shrink: 1
-    },
-    fill: "horizontal",
-    overflow: "auto"
-  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    pad: bodyTheme == null ? void 0 : bodyTheme.pad,
-    gap: bodyTheme == null ? void 0 : bodyTheme.gap,
-    flex: "grow",
-    fill: "horizontal",
-    direction: effectiveShowProgress === 'vertical' ? 'row' : 'column'
-  }, effectiveShowProgress && responsiveSize !== 'small' && responsiveSize !== 'xsmall' && /*#__PURE__*/_react["default"].createElement(_WizardProgress.WizardProgress, null), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    flex: "grow"
-  }, /*#__PURE__*/_react["default"].createElement(_WizardStepHeader.WizardStepHeader, null), /*#__PURE__*/_react["default"].createElement(_WizardContent.WizardContent, null)))), footerNode);
+    // Default layout: header + middle (progress + step body) + footer.
+    // Header/footer stay pinned; only WizardContent scrolls internally.
+    content = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({}, (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.container, {
+      flex: true
+    }), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_WizardHeader.WizardHeader, {
+      title: title
+    }), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      align: "center",
+      flex: {
+        grow: 1,
+        shrink: 1
+      },
+      fill: "horizontal",
+      overflow: "auto"
+    }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      pad: bodyTheme == null ? void 0 : bodyTheme.pad,
+      gap: bodyTheme == null ? void 0 : bodyTheme.gap,
+      flex: "grow",
+      fill: "horizontal",
+      direction: effectiveShowProgress === 'vertical' ? 'row' : 'column'
+    }, effectiveShowProgress && responsiveSize !== 'small' && responsiveSize !== 'xsmall' && /*#__PURE__*/_react["default"].createElement(_WizardProgress.WizardProgress, null), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+      flex: "grow"
+    }, /*#__PURE__*/_react["default"].createElement(_WizardStepHeader.WizardStepHeader, null), /*#__PURE__*/_react["default"].createElement(_WizardContent.WizardContent, null)))), footerNode));
+  }
   return /*#__PURE__*/_react["default"].createElement(_WizardContext.WizardContext.Provider, {
     value: contextValue
-  }, /*#__PURE__*/_react["default"].createElement(_StyledWizard.StyledWizard, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: wizardRef,
     id: id,
     "aria-label": ariaLabel,
-    role: "region"
-  }, passThemeFlag, rest), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
-    background: containerTheme == null ? void 0 : containerTheme.background,
-    pad: containerTheme == null ? void 0 : containerTheme.pad,
-    gap: containerTheme == null ? void 0 : containerTheme.gap,
-    round: containerTheme == null ? void 0 : containerTheme.round,
-    elevation: containerTheme == null ? void 0 : containerTheme.elevation,
-    flex: true
-  }, defaultLayout)));
+    role: "region",
+    flex: {
+      grow: 1,
+      shrink: 1
+    }
+  }, rest), content));
 });
 Wizard.displayName = 'Wizard';
 Wizard.propTypes = _propTypes.WizardPropTypes;

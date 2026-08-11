@@ -3,6 +3,7 @@
 exports.__esModule = true;
 exports.generate = exports.base = void 0;
 var _Actions = require("grommet-icons/icons/Actions");
+var _Alert = require("grommet-icons/icons/Alert");
 var _AssistListening = require("grommet-icons/icons/AssistListening");
 var _CircleInformation = require("grommet-icons/icons/CircleInformation");
 var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
@@ -2996,11 +2997,8 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         },
         vertical: {
           // Fixed rail width so the column doesn't collapse to label text.
-          width: 'small',
-          pad: {
-            horizontal: 'xsmall',
-            vertical: 'none'
-          }
+          width: 'small'
+          // pad: undefined,
         }
       },
       stepHeader: {
@@ -3027,6 +3025,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       },
       content: {
         pad: 'medium',
+        gap: 'medium',
         background: 'background-front',
         round: 'small',
         margin: {
@@ -3063,11 +3062,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         }
       },
       error: {
-        color: 'status-error',
-        size: 'small',
-        margin: {
-          top: 'xsmall'
-        }
+        icon: _Alert.Alert
       }
     },
     worldMap: {
