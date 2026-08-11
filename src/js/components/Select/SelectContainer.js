@@ -168,8 +168,14 @@ const SelectContainer = forwardRef(
 
     // for keyboard/screenreader, keep the active option in focus
     useEffect(() => {
-      if (activeIndex >= 0) activeRef.current?.focus();
-    }, [activeIndex]);
+      if (activeIndex >= 0) {
+        // When search is enabled and the user is using the mouse,
+        // don't let option hover steal focus from the search input.
+        // Only focus the active option when using keyboard navigation.
+        if (onSearch && !keyboardNavigation) return;
+        activeRef.current?.focus();
+      }
+    }, [activeIndex, keyboardNavigation, onSearch]);
 
     // set initial focus
     useEffect(() => {
