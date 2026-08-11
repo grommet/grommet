@@ -14,11 +14,11 @@ export const WizardFooter = ({ children, ...rest }) => {
   const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const {
+    currentStep,
     currentStepObj,
     currentStepIndex,
     totalSteps,
     canGoNext,
-    next,
     previous,
     skip,
     complete,
@@ -93,7 +93,8 @@ export const WizardFooter = ({ children, ...rest }) => {
           icon={NextIcon ? <NextIcon aria-hidden="true" /> : undefined}
           reverse
           disabled={!canGoNext}
-          onClick={next}
+          type="submit"
+          form={`${currentStep}-form`}
         />
       ),
     ];

@@ -288,6 +288,16 @@ const Wizard = forwardRef(
 
     // Run step.validate (sync or async). Returns { ok, error }.
     const runValidation = useCallback(async () => {
+      const formElement = document.getElementById(`${currentStep}-form`);
+      const formIsValid =
+        formElement?.getAttribute('data-form-valid') === 'true';
+
+      if (!formIsValid) {
+        return {
+          ok: false,
+          error: format({ id: 'wizard.validationError', messages }),
+        };
+      }
       if (typeof currentStepObj?.validate !== 'function') {
         return { ok: true };
       }
@@ -314,7 +324,7 @@ const Wizard = forwardRef(
             err?.message || format({ id: 'wizard.validationError', messages }),
         };
       }
-    }, [currentStepObj, formValue, format, messages]);
+    }, [currentStep, currentStepObj, formValue, format, messages]);
 
     const next = useCallback(async () => {
       if (isValidating) return;
@@ -520,7 +530,9 @@ const Wizard = forwardRef(
       if (onComplete) {
         // setCompletedSteps above is async; include currentStep here so the
         // payload reflects the just-completed final step.
-        const completedStepsList = [...completedSteps, currentStep];
+        const nextCompleted = new Set(completedSteps);
+        nextCompleted.add(currentStep);
+        const completedStepsList = Array.from(nextCompleted);
         onComplete({ value: formValue, completedSteps: completedStepsList });
       }
       if (sendAnalytics)
