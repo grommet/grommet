@@ -29,11 +29,7 @@ export const WizardContent = ({ ...rest }) => {
         <Notification
           status="critical"
           message={validationError}
-          icon={
-            <Box margin={{ top: '4px' }}>
-              <Icon />
-            </Box>
-          }
+          icon={<Icon />}
         />
       )}
     </Box>
