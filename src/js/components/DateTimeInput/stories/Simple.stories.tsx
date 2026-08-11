@@ -8,8 +8,6 @@ import { DateTimeInput } from '../index';
 export const Simple = () => {
   const [value, setValue] = React.useState('2026-07-22T18:30:00.000Z');
   const onChange = ({ value: next }: { value?: string }) => {
-    console.log('onChange iso date time:', next);
-    console.log('onChange utc date time:', next ? new Date(next) : undefined);
     setValue(next || '');
   };
 

@@ -1,2 +1,3 @@
 ## DateTimeInput
-Documentation for this component: https://v2.grommet.io/datetimeinput
+
+A segmented date-and-time input with a calendar and time-column drop picker.

@@ -398,15 +398,6 @@ const DateTimeInput = forwardRef(
       initialValue: defaultValue || '',
     });
 
-    useEffect(() => {
-      if (process.env.NODE_ENV !== 'production') {
-        console.warn(
-          'Warning: DateTimeInput is currently in beta. The API is subject ' +
-            'to change in future releases.',
-        );
-      }
-    }, []);
-
     const parsedValue = useMemo(
       () => toLocalSections(value, resolvedFormat),
       [resolvedFormat, value],
