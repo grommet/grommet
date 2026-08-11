@@ -425,7 +425,6 @@ const DateTimeInput = forwardRef(
     const [activeSection, setActiveSection] = useState(firstSection);
     const [segmentFocused, setSegmentFocused] = useState(false);
     const [open, setOpen] = useState(false);
-    const [iconFocused, setIconFocused] = useState(false);
     const normalizedMinuteStep = useMemo(
       () => normalizeStep(minuteStep),
       [minuteStep],
@@ -1111,7 +1110,7 @@ const DateTimeInput = forwardRef(
               round={theme.dateTimeInput?.container?.round}
               disabled={disabled}
               readOnlyProp={readOnly}
-              focusIndicator={(focusIndicatorProp ?? true) && !iconFocused}
+              focusIndicator={focusIndicatorProp ?? true}
               {...passThemeFlag}
             >
               <StyledDateTimeInputField {...passThemeFlag}>
@@ -1215,8 +1214,7 @@ const DateTimeInput = forwardRef(
                   aria-haspopup="dialog"
                   aria-expanded={open}
                   aria-controls={dropId}
-                  onFocus={() => setIconFocused(true)}
-                  onBlur={() => setIconFocused(false)}
+                  focusIndicator={false}
                   onClick={open ? closePicker : openPicker}
                 />
               )}
