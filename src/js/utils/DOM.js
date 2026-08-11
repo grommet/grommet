@@ -89,16 +89,21 @@ export const withinDropPortal = (node, portalContext) => {
   return true;
 };
 
-// Check if an element can receive focus: native form inputs or any element
-// with an explicit non-negative tabIndex (e.g. span[role="spinbutton"]).
+// Check if an element can receive focus: native form inputs, or non-native
+// interactive elements with an explicit tabIndex attribute
+// (e.g. span[role="spinbutton"]). Excludes native interactive elements
+// (button, a) so they don't trigger FormField focus state.
 export const isFocusable = (element) => {
   if (!element || element.disabled) return false;
   const tagName = element.tagName.toLowerCase();
+  if (tagName === 'input' || tagName === 'select' || tagName === 'textarea')
+    return true;
+  // Only non-native-interactive elements with an explicit tabindex attribute
+  const isNativeInteractive = tagName === 'button' || tagName === 'a';
   return (
-    tagName === 'input' ||
-    tagName === 'select' ||
-    tagName === 'textarea' ||
-    element.tabIndex >= 0
+    !isNativeInteractive &&
+    element.tabIndex >= 0 &&
+    element.hasAttribute('tabindex')
   );
 };
 

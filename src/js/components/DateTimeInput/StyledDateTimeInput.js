@@ -26,7 +26,9 @@ export const StyledDateTimeInputContainer = styled(Box).withConfig({
   ${(props) =>
     props.focusIndicator !== false &&
     css`
-      &:focus-within {
+      /* Suppress container ring only when the icon button has keyboard focus
+         (the button shows its own ring via :focus-visible in that case). */
+      &:focus-within:not(:has(button:focus-visible)) {
         ${focusStyle()}
       }
     `}

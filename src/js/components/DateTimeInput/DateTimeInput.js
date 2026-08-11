@@ -1214,7 +1214,6 @@ const DateTimeInput = forwardRef(
                   aria-haspopup="dialog"
                   aria-expanded={open}
                   aria-controls={dropId}
-                  focusIndicator={false}
                   onClick={open ? closePicker : openPicker}
                 />
               )}
