@@ -2520,9 +2520,6 @@ export interface ThemeType {
         skip?: { icon?: React.ReactNode | Icon };
       };
     };
-    error?: {
-      icon?: React.ReactNode | Icon;
-    };
   };
   worldMap?: {
     color?: ColorType;
