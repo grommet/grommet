@@ -290,12 +290,12 @@ const Wizard = forwardRef(
     const runValidation = useCallback(async () => {
       const formElement = document.getElementById(`${currentStep}-form`);
       const formIsValid =
-        formElement?.getAttribute('data-form-valid') === 'true';
+        formElement?.getAttribute('data-form-valid') !== 'false';
 
       if (!formIsValid) {
         return {
           ok: false,
-          error: format({ id: 'wizard.validationError', messages }),
+          error: undefined,
         };
       }
       if (typeof currentStepObj?.validate !== 'function') {

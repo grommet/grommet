@@ -28,19 +28,28 @@ const Validation = () => {
       description: 'Enter a valid email address.',
       skippable: true,
       render: (/* step, api */) => (
-        <FormField
-          htmlFor="wizard-email"
-          label="Email"
-          name="email"
-          required
-          validate={validateEmail}
-        >
-          <TextInput
-            id="wizard-email"
+        <>
+          <FormField
+            htmlFor="wizard-email"
+            label="Email"
             name="email"
-            placeholder="you@example.com"
-          />
-        </FormField>
+            required
+            validate={validateEmail}
+          >
+            <TextInput
+              id="wizard-email"
+              name="email"
+              placeholder="you@example.com"
+            />
+          </FormField>
+          <FormField htmlFor="wizard-extra" label="Extra" name="extra" required>
+            <TextInput
+              id="wizard-extra"
+              name="extra"
+              placeholder="Extra information"
+            />
+          </FormField>
+        </>
       ),
     },
     {

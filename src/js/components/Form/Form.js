@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -751,7 +753,8 @@ const Form = forwardRef(
                 // Show form's validity when clicking on Submit
                 valid: buildValid(nextErrors),
               };
-              if (onValidate) onValidate(nextValidationResults);
+              if (onValidate)
+                onValidate({ submitting: true, ...nextValidationResults });
               validationResultsRef.current = nextValidationResults;
               updateAnalytics();
               return nextValidationResults;
