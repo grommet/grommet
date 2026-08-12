@@ -14,6 +14,7 @@
  *   node tools/license-header.js --staged   Fix only files staged for commit
  *                                            (progressive migration) and
  *                                            re-stage anything it corrects.
+ *   node tools/license-header.js [paths...] Limit to the given files/dirs.
  *                                           usable with --check (ignored when
  *                                           --staged is set).
  */
