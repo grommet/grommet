@@ -16,11 +16,13 @@ import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
+import { Hide } from 'grommet-icons/icons/Hide';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
 import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
 import { StatusUnknownSmall } from 'grommet-icons/icons/StatusUnknownSmall';
 import { Subtract } from 'grommet-icons/icons/Subtract';
+import { View } from 'grommet-icons/icons/View';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
@@ -2593,11 +2595,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     textInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
-      // icons: {
-      //   copy: undefined,
-      //   hidePassword: undefined,
-      //   showPassword: undefined,
-      // },
+      icons: {
+        // copy: undefined,
+        hidePassword: Hide,
+        showPassword: View,
+      },
     },
     timeInput: {
       button: {

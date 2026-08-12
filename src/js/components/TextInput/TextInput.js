@@ -11,7 +11,6 @@ import React, {
 } from 'react';
 
 import styled from 'styled-components';
-import { Hide, View } from 'grommet-icons';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -512,8 +511,8 @@ const TextInput = forwardRef(
     // primarily for tests.
 
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
-    const showPasswordIcon = theme.textInput?.icons?.showPassword || View;
-    const hidePasswordIcon = theme.textInput?.icons?.hidePassword || Hide;
+    const showPasswordIcon = theme.textInput?.icons?.showPassword;
+    const hidePasswordIcon = theme.textInput?.icons?.hidePassword;
     let inputType = typeProp;
     if (passwordToggle) {
       inputType = passwordRevealed ? 'text' : 'password';
