@@ -14,8 +14,6 @@ export const WizardContent = ({ ...rest }) => {
   const { currentStepObj, renderStep, validationError } = wizard;
 
   const contentTheme = theme.wizard?.content;
-  const errorTheme = theme.wizard?.error;
-  const Icon = errorTheme?.icon || (() => null);
 
   if (!currentStepObj) return null;
 
@@ -26,11 +24,7 @@ export const WizardContent = ({ ...rest }) => {
     <Box {...contentTheme} flex="grow" {...rest}>
       {body}
       {validationError && (
-        <Notification
-          status="critical"
-          message={validationError}
-          icon={<Icon />}
-        />
+        <Notification status="critical" message={validationError} />
       )}
     </Box>
   );
