@@ -11,7 +11,7 @@ import { useWizard } from './WizardContext';
 // WizardContent renders the current step body and any wizard-level
 // validation error message.
 export var WizardContent = function WizardContent(_ref) {
-  var _theme$wizard, _theme$wizard2;
+  var _theme$wizard;
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
@@ -20,10 +20,6 @@ export var WizardContent = function WizardContent(_ref) {
     renderStep = wizard.renderStep,
     validationError = wizard.validationError;
   var contentTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.content;
-  var errorTheme = (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.error;
-  var Icon = (errorTheme == null ? void 0 : errorTheme.icon) || function () {
-    return null;
-  };
   if (!currentStepObj) return null;
   var stepRender = currentStepObj.render || renderStep;
   var body = stepRender ? stepRender(currentStepObj, wizard) : null;
@@ -31,8 +27,7 @@ export var WizardContent = function WizardContent(_ref) {
     flex: "grow"
   }, rest), body, validationError && /*#__PURE__*/React.createElement(Notification, {
     status: "critical",
-    message: validationError,
-    icon: /*#__PURE__*/React.createElement(Icon, null)
+    message: validationError
   }));
 };
 WizardContent.displayName = 'WizardContent';

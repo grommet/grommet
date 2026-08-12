@@ -3,7 +3,6 @@
 exports.__esModule = true;
 exports.generate = exports.base = void 0;
 var _Actions = require("grommet-icons/icons/Actions");
-var _Alert = require("grommet-icons/icons/Alert");
 var _AssistListening = require("grommet-icons/icons/AssistListening");
 var _CircleInformation = require("grommet-icons/icons/CircleInformation");
 var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
@@ -3060,9 +3059,6 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
             icon: _FormNext.FormNext
           }
         }
-      },
-      error: {
-        icon: _Alert.Alert
       }
     },
     worldMap: {

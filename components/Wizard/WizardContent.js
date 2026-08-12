@@ -14,7 +14,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 // WizardContent renders the current step body and any wizard-level
 // validation error message.
 var WizardContent = exports.WizardContent = function WizardContent(_ref) {
-  var _theme$wizard, _theme$wizard2;
+  var _theme$wizard;
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
@@ -23,10 +23,6 @@ var WizardContent = exports.WizardContent = function WizardContent(_ref) {
     renderStep = wizard.renderStep,
     validationError = wizard.validationError;
   var contentTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.content;
-  var errorTheme = (_theme$wizard2 = theme.wizard) == null ? void 0 : _theme$wizard2.error;
-  var Icon = (errorTheme == null ? void 0 : errorTheme.icon) || function () {
-    return null;
-  };
   if (!currentStepObj) return null;
   var stepRender = currentStepObj.render || renderStep;
   var body = stepRender ? stepRender(currentStepObj, wizard) : null;
@@ -34,8 +30,7 @@ var WizardContent = exports.WizardContent = function WizardContent(_ref) {
     flex: "grow"
   }, rest), body, validationError && /*#__PURE__*/_react["default"].createElement(_Notification.Notification, {
     status: "critical",
-    message: validationError,
-    icon: /*#__PURE__*/_react["default"].createElement(Icon, null)
+    message: validationError
   }));
 };
 WizardContent.displayName = 'WizardContent';
