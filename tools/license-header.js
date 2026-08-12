@@ -14,8 +14,8 @@
  *   node tools/license-header.js --staged   Fix only files staged for commit
  *                                            (progressive migration) and
  *                                            re-stage anything it corrects.
- *   node tools/license-header.js [paths...] Limit to the given files/dirs.
- *                                            usable with --check or --staged.
+ *                                           usable with --check (ignored when
+ *                                           --staged is set).
  */
 
 const fs = require('fs');
@@ -50,7 +50,7 @@ function isIncluded(filePath) {
 function collectStagedFiles() {
   const output = execFileSync(
     'git',
-    ['diff', '--cached', '--name-only', '--diff-filter=ACM'],
+    ['diff', '--cached', '--name-only', '--diff-filter=ACMR'],
     { encoding: 'utf8' },
   );
   return output
