@@ -131,6 +131,28 @@ describe('TextInput', () => {
     expect(screen.getByLabelText('Add')).toBeInTheDocument();
   });
 
+  test('supports password toggle with matchSize and custom size', () => {
+    render(
+      <Grommet
+        theme={{
+          icon: {
+            matchSize: true,
+          },
+        }}
+      >
+        <TextInput aria-label="Password" type="password" password size="16px" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute(
+      'type',
+      'password',
+    );
+    expect(
+      screen.getByRole('button', { name: 'Show password' }),
+    ).toBeInTheDocument();
+  });
+
   test('suppresses reverse icon when password toggle is active', () => {
     render(
       <Grommet>

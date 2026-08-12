@@ -13,22 +13,12 @@ import {
   widthStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { inputPadForIcon } from '../../utils/styles';
+import { getInputIconPad, inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
 
-const getInputIconPad = (props) => {
-  if (props.theme?.icon?.matchSize) {
-    return `${
-      parseMetricToNum(props.theme.icon?.size?.[props?.size || 'medium']) +
-      parseMetricToNum(props.theme.global.edgeSize.medium)
-    }px`;
-  }
-  return props.theme.global.edgeSize.large;
-};
-
 const getInlineButtonPad = (props) => {
-  const rightInset = parseMetricToNum(getInputPadBySide(props, 'right'));
-  const iconPad = parseMetricToNum(getInputIconPad(props));
+  const rightInset = Number.parseFloat(getInputPadBySide(props, 'right'));
+  const iconPad = Number.parseFloat(getInputIconPad(props));
   // Reserve both the icon space and the control's edge inset so text clears
   // the flush-right password toggle.
   return `${iconPad + rightInset}px`;

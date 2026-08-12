@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
@@ -39,6 +41,19 @@ export const controlBorderStyle = css`
       )};
   border-radius: ${(props) => props.theme.global.control.border.radius};
 `;
+
+export const getInputIconPad = (props) => {
+  const matchedIconSize = props.theme?.icon?.size?.[props?.size || 'medium'];
+
+  if (props.theme?.icon?.matchSize && matchedIconSize) {
+    return `${
+      parseMetricToNum(matchedIconSize) +
+      parseMetricToNum(props.theme.global.edgeSize.medium)
+    }px`;
+  }
+
+  return props.theme.global.edgeSize.large;
+};
 
 export const edgeStyle = (
   kind,
@@ -584,12 +599,7 @@ export const inputStyle = css`
 // to ensure there is reasonable space between the icon and value or placeholder
 export const inputPadForIcon = css`
   ${(props) => {
-    const pad = props.theme?.icon?.matchSize
-      ? `${
-          parseMetricToNum(props.theme.icon?.size?.[props?.size || 'medium']) +
-          parseMetricToNum(props.theme.global.edgeSize.medium)
-        }px`
-      : props.theme.global.edgeSize.large;
+    const pad = getInputIconPad(props);
 
     return props.reverse ? `padding-right: ${pad};` : `padding-left: ${pad};`;
   }}

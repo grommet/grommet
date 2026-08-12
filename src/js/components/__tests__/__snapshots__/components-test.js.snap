@@ -1150,6 +1150,7 @@ exports[`Components loads 1`] = `
       "onSuggestionSelect": [Function],
       "onSuggestionsClose": [Function],
       "onSuggestionsOpen": [Function],
+      "password": [Function],
       "placeholder": [Function],
       "plain": [Function],
       "readOnlyCopy": [Function],
