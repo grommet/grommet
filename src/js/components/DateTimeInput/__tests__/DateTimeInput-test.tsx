@@ -207,6 +207,41 @@ describe('DateTimeInput', () => {
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
   });
 
+  test('continues syncing time edits after selecting a calendar day', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-calendar-time-sync"
+          format="12"
+          showSeconds
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: /date and time/i,
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const calendarDay = within(drop).getByRole('button', {
+      name: /Jul 23 2026/i,
+    });
+    await user.click(calendarDay);
+
+    const minuteOption = within(
+      within(drop).getByRole('listbox', { name: 'minute' }),
+    ).getByRole('option', { name: '45 minutes' });
+    await user.click(minuteOption);
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'minutes', hidden: true }),
+    ).toHaveTextContent('45');
+  });
+
   test('selecting time in drop selects a calendar day when date is empty', async () => {
     const user = userEvent.setup();
 

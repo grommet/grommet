@@ -585,6 +585,12 @@ const TimeInputPopup = ({
             event.preventDefault();
             onClose();
           }
+        } else if (event.key === 'Enter') {
+          event.preventDefault();
+          const focusedOption =
+            event.target?.closest?.('[role="option"]') ||
+            document.activeElement?.closest?.('[role="option"]');
+          focusedOption?.click?.();
         } else if (event.key === ' ' || event.key === 'Spacebar') {
           event.preventDefault();
           const focusedOption =

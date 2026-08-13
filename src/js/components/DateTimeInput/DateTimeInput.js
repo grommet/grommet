@@ -16,6 +16,7 @@ import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeStep, pad } from '../../utils/dates';
 import { useForwardedRef } from '../../utils';
+import { useSectionedField } from '../../utils/useSectionedField';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -425,7 +426,6 @@ const DateTimeInput = forwardRef(
       section: SECTION_DAY,
       buffer: '',
     });
-    const preserveIncompleteSectionsRef = useRef(false);
 
     const [value, setValue] = useFormInput({
       name,
@@ -433,10 +433,6 @@ const DateTimeInput = forwardRef(
       initialValue: defaultValue || '',
     });
 
-    const parsedValue = useMemo(
-      () => toLocalSections(value, resolvedFormat),
-      [resolvedFormat, value],
-    );
     const { sectionOrder, separatorMap } = useMemo(
       () => getLocaleSectionLayout(resolvedFormat, showSeconds, locale),
       [resolvedFormat, showSeconds, locale],
@@ -444,11 +440,28 @@ const DateTimeInput = forwardRef(
     const firstSection = sectionOrder[0] || SECTION_DAY;
     const lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_SECOND;
 
-    const [sections, setSections] = useState(
-      parsedValue || defaultSections(resolvedFormat, showSeconds),
+    const parseValue = useCallback(
+      (nextValue) => toLocalSections(nextValue, resolvedFormat),
+      [resolvedFormat],
     );
-    const [pendingDigits, setPendingDigits] = useState({});
-    const [activeSection, setActiveSection] = useState(firstSection);
+    const getDefaultValue = useCallback(
+      () => defaultSections(resolvedFormat, showSeconds),
+      [resolvedFormat, showSeconds],
+    );
+    const {
+      activeSection,
+      pendingDigits,
+      preserveIncompleteSectionsRef,
+      sections,
+      setActiveSection,
+      setPendingDigits,
+      setSections,
+    } = useSectionedField({
+      value,
+      parseValue,
+      defaultValue: getDefaultValue,
+      sectionOrder,
+    });
     const [segmentFocused, setSegmentFocused] = useState(false);
     const [open, setOpen] = useState(false);
     const normalizedMinuteStep = useMemo(
@@ -458,19 +471,7 @@ const DateTimeInput = forwardRef(
 
     useEffect(() => {
       activeSectionRef.current = activeSection;
-      if (!sectionOrder.includes(activeSection)) {
-        setActiveSection(firstSection);
-      }
-    }, [activeSection, firstSection, sectionOrder]);
-
-    useEffect(() => {
-      if (!parsedValue && preserveIncompleteSectionsRef.current) {
-        preserveIncompleteSectionsRef.current = false;
-        return;
-      }
-
-      setSections(parsedValue || defaultSections(resolvedFormat, showSeconds));
-    }, [parsedValue, resolvedFormat, showSeconds]);
+    }, [activeSection]);
 
     const commitSections = useCallback(
       (nextSections) => {
@@ -502,7 +503,15 @@ const DateTimeInput = forwardRef(
           onChange?.({ value: undefined });
         }
       },
-      [onChange, resolvedFormat, sectionOrder, setValue, showSeconds],
+      [
+        onChange,
+        preserveIncompleteSectionsRef,
+        resolvedFormat,
+        sectionOrder,
+        setSections,
+        setValue,
+        showSeconds,
+      ],
     );
 
     const setSectionValue = useCallback(
@@ -535,7 +544,7 @@ const DateTimeInput = forwardRef(
         setActiveSection(nextSection);
         return nextSection;
       },
-      [activeSection, sectionOrder],
+      [activeSection, sectionOrder, setActiveSection],
     );
 
     const focusSection = useCallback((section) => {
@@ -609,7 +618,7 @@ const DateTimeInput = forwardRef(
       }
       editStateRef.current = { section, buffer: '' };
       setPendingDigits({});
-    }, [resolvedFormat, sections, setSectionValue]);
+    }, [resolvedFormat, sections, setPendingDigits, setSectionValue]);
 
     const applyDigit = useCallback(
       (digit) => {
@@ -676,6 +685,7 @@ const DateTimeInput = forwardRef(
         resolvedFormat,
         sectionOrder,
         sections,
+        setPendingDigits,
         setSectionValue,
       ],
     );
@@ -684,7 +694,7 @@ const DateTimeInput = forwardRef(
       setPendingDigits({});
       editStateRef.current = { section: activeSection, buffer: '' };
       setSectionValue(activeSection, undefined);
-    }, [activeSection, setSectionValue]);
+    }, [activeSection, setPendingDigits, setSectionValue]);
 
     const getDisplayText = useCallback(
       (section) => {
@@ -779,6 +789,7 @@ const DateTimeInput = forwardRef(
       messages,
       readOnly,
       segmentFocused,
+      setActiveSection,
     ]);
 
     const closePicker = useCallback(() => {
@@ -806,7 +817,7 @@ const DateTimeInput = forwardRef(
         setActiveSection(section);
         focusSection(section);
       },
-      [commitPendingBuffer, disabled, focusSection, readOnly],
+      [commitPendingBuffer, disabled, focusSection, readOnly, setActiveSection],
     );
 
     const onDisplayMouseDown = useCallback(
@@ -832,6 +843,7 @@ const DateTimeInput = forwardRef(
         focusSection,
         onDisplaySectionMouseDown,
         readOnly,
+        setActiveSection,
       ],
     );
 
@@ -845,7 +857,7 @@ const DateTimeInput = forwardRef(
         if (readOnly || disabled) return;
         setActiveSection(section);
       },
-      [disabled, readOnly],
+      [disabled, readOnly, setActiveSection],
     );
 
     const onSegmentBlur = useCallback(() => {
@@ -980,6 +992,7 @@ const DateTimeInput = forwardRef(
         readOnly,
         resolvedFormat,
         segmentFocused,
+        setActiveSection,
         setSectionValue,
       ],
     );
@@ -1027,7 +1040,15 @@ const DateTimeInput = forwardRef(
         setActiveSection(SECTION_HOUR);
         commitSections(nextSections);
       },
-      [activeSection, commitSections, resolvedFormat, sections, showSeconds],
+      [
+        activeSection,
+        commitSections,
+        resolvedFormat,
+        sections,
+        setActiveSection,
+        setPendingDigits,
+        showSeconds,
+      ],
     );
 
     const handleTimeSelect = useCallback(
@@ -1064,7 +1085,13 @@ const DateTimeInput = forwardRef(
           period: nextPeriod,
         });
       },
-      [activeSection, commitSections, resolvedFormat, sections],
+      [
+        activeSection,
+        commitSections,
+        resolvedFormat,
+        sections,
+        setPendingDigits,
+      ],
     );
 
     // TimeInput section constants (0–3) → DateTimeInput section constants (3–6)
@@ -1111,7 +1138,13 @@ const DateTimeInput = forwardRef(
           };
         });
       },
-      [resolvedFormat, setActiveSection, showSeconds, TIME_TO_DT_SECTION],
+      [
+        resolvedFormat,
+        setActiveSection,
+        setSections,
+        showSeconds,
+        TIME_TO_DT_SECTION,
+      ],
     );
 
     const timeValue = useMemo(() => {

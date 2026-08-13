@@ -1,8 +1,9 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-nested-ternary */
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 
+import { useSectionedField } from '../../utils/useSectionedField';
 import {
   defaultSections,
   hasAnyValue,
@@ -124,35 +125,25 @@ export const useSectionedTimeField = ({
     previousValue: undefined,
     firstDigit: undefined,
   });
-  const preserveIncompleteSectionsRef = useRef(false);
-  // Track pending single digit for display without committing
-  const [pendingDigits, setPendingDigits] = useState({});
-  const parsedValue = useMemo(
-    () => isoTimeToSections(normalizeToIsoTime(value), format),
-    [format, value],
+  const parseValue = useCallback(
+    (nextValue) => isoTimeToSections(normalizeToIsoTime(nextValue), format),
+    [format],
   );
-
-  const [sections, setSections] = useState(
-    parsedValue || defaultSections(format),
-  );
-  const [activeSection, setActiveSection] = useState(
-    sectionOrder[0] || SECTION_HOUR,
-  );
-
-  useEffect(() => {
-    if (!sectionOrder.includes(activeSection)) {
-      setActiveSection(sectionOrder[0] || SECTION_HOUR);
-    }
-  }, [activeSection, sectionOrder]);
-
-  useEffect(() => {
-    if (!parsedValue && preserveIncompleteSectionsRef.current) {
-      preserveIncompleteSectionsRef.current = false;
-      return;
-    }
-
-    setSections(parsedValue || defaultSections(format));
-  }, [parsedValue, format]);
+  const getDefaultValue = useCallback(() => defaultSections(format), [format]);
+  const {
+    activeSection,
+    pendingDigits,
+    preserveIncompleteSectionsRef,
+    sections,
+    setActiveSection,
+    setPendingDigits,
+    setSections,
+  } = useSectionedField({
+    value,
+    parseValue,
+    defaultValue: getDefaultValue,
+    sectionOrder,
+  });
 
   const displayValue = useMemo(() => {
     if (!hasAnyValue(sections)) return '';
@@ -203,7 +194,13 @@ export const useSectionedTimeField = ({
         hasIncompleteSections && hasAnyValue(nextSections);
       onCommit(nextSections, nextValue, changedSection);
     },
-    [onCommit, sectionOrder, format],
+    [
+      format,
+      onCommit,
+      preserveIncompleteSectionsRef,
+      sectionOrder,
+      setSections,
+    ],
   );
 
   const setSectionValue = useCallback(
@@ -215,7 +212,7 @@ export const useSectionedTimeField = ({
       // relative to the section value we just committed.
       setPendingDigits({});
     },
-    [commitSections, sections],
+    [commitSections, sections, setPendingDigits],
   );
 
   const moveSection = useCallback(
@@ -229,7 +226,7 @@ export const useSectionedTimeField = ({
       setActiveSection(nextSection);
       return nextSection;
     },
-    [activeSection, sectionOrder],
+    [activeSection, sectionOrder, setActiveSection],
   );
 
   const incrementSection = useCallback(

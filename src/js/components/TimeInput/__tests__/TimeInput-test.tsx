@@ -66,6 +66,36 @@ describe('TimeInput', () => {
     expect(document.getElementById('time-picker__drop')).toBeNull();
   });
 
+  test('commits a focused popup option with Enter', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput
+          id="time-enter-option"
+          format="24"
+          defaultValue="13:45:30"
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const drop = document.getElementById('time-enter-option__drop');
+    const hourList = within(drop as HTMLElement).getByRole('listbox', {
+      name: 'hour',
+    });
+    const hourOption = within(hourList).getByRole('option', {
+      name: '13 hours',
+    });
+
+    fireEvent.focus(hourOption);
+    await user.keyboard('{Enter}');
+
+    expect(onChange).toHaveBeenLastCalledWith({ value: '13:45:30' });
+  });
+
   test('links trigger aria-controls to popup id when id is provided', async () => {
     const user = userEvent.setup();
 
