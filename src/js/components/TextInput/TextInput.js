@@ -176,7 +176,9 @@ const TextInput = forwardRef(
       if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
     };
 
-    const passwordToggle = password && typeProp === 'password' && !readOnlyCopy;
+    const authoredType = typeProp || (password ? 'password' : undefined);
+    const passwordToggle =
+      password && authoredType === 'password' && !readOnlyCopy;
 
     useEffect(() => {
       // When the toggle stops applying, return the input to its authored type.
@@ -513,7 +515,7 @@ const TextInput = forwardRef(
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
     const showPasswordIcon = theme.textInput?.icons?.showPassword;
     const hidePasswordIcon = theme.textInput?.icons?.hidePassword;
-    let inputType = typeProp;
+    let inputType = authoredType;
     if (passwordToggle) {
       inputType = passwordRevealed ? 'text' : 'password';
     }

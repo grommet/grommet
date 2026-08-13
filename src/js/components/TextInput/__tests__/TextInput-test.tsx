@@ -89,6 +89,25 @@ describe('TextInput', () => {
     ).toBeInTheDocument();
   });
 
+  test('uses password type when password is set without type', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput aria-label="Password" password />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute(
+      'type',
+      'password',
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute('type', 'text');
+  });
+
   test('supports password toggle theme icons', async () => {
     const user = userEvent.setup();
 
