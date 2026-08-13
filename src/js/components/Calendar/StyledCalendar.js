@@ -283,6 +283,7 @@ const StyledDay = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.responsive && responsiveDaySizeStyle(props)}
   ${(props) => dayStyle(props)}
   ${(props) => dayFontStyle(props)}
+  ${(props) => props.isToday && 'border-bottom: 2px solid;'}
    ${(props) => {
     // fallback to medium if no size-specific styles
     const round =
