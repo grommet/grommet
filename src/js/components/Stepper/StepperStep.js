@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useMemo } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
@@ -6,11 +8,13 @@ import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
 import { StepperDescription } from './StepperDescription';
 import { StepperError, StepperDisabledReason } from './StepperHelperText';
+import { StepConnector } from './StepConnector';
 import {
   StyledStepItem,
   StyledStepButton,
   StyledStepContent,
   StyledConnector,
+  StyledSubStepsList,
 } from './StyledStepper';
 
 export const StepperStep = ({
@@ -22,6 +26,7 @@ export const StepperStep = ({
   focusedIndex,
   index: indexProp,
   isSubStep,
+  subSteps,
   onFocusStep,
   stepsRef,
   stepRefs,
@@ -105,6 +110,8 @@ export const StepperStep = ({
       <StyledStepItem
         direction={direction}
         isSubStep={isSubStep}
+        isLast={isLast}
+        hasSubSteps={!!subSteps?.length}
         {...passThemeFlag}
       >
         <StyledStepButton
@@ -142,13 +149,21 @@ export const StepperStep = ({
             <StepperDisabledReason />
           </StyledStepContent>
         </StyledStepButton>
-        {(showConnector !== undefined ? showConnector : !isLast) && (
-          <StyledConnector
-            direction={direction}
-            status={step.status}
-            aria-hidden="true"
-            {...passThemeFlag}
-          />
+        {(showConnector !== undefined ? showConnector : !isLast) &&
+          !subSteps?.length && (
+            <StyledConnector
+              direction={direction}
+              status={step.status}
+              aria-hidden="true"
+              {...passThemeFlag}
+            />
+          )}
+        {!!subSteps?.length && (
+          <StepConnector step={step} direction={direction}>
+            <StyledSubStepsList direction={direction} {...passThemeFlag}>
+              {subSteps}
+            </StyledSubStepsList>
+          </StepConnector>
         )}
       </StyledStepItem>
     </StepItemContext.Provider>
