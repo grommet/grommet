@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
@@ -246,12 +248,11 @@ describe('CheckBoxGroup', () => {
   });
 
   test('renders without crashing when options is omitted', () => {
-    // regression test: `options` is optional in propTypes and has no
-    // default, but was previously mapped over unconditionally, throwing
-    // a TypeError when the prop was left unset.
+    // regression test: `options` is optional in propTypes and previously had no
+    // runtime default, but was mapped over unconditionally, throwing a TypeError
+    // when the prop was left unset.
     const { asFragment } = render(
       <Grommet>
-        {/* @ts-expect-error options is required by the type but optional at runtime */}
         <CheckBoxGroup name="checkbox-group" />
       </Grommet>,
     );
