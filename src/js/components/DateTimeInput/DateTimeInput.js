@@ -313,6 +313,28 @@ const getSeededTimeSections = (sections, format, showSeconds) => {
   };
 };
 
+const hasCompleteDateSections = (sections) =>
+  sections.day !== undefined &&
+  sections.month !== undefined &&
+  sections.year !== undefined;
+
+const getSeededDateSections = (sections) => {
+  if (hasCompleteDateSections(sections)) {
+    return {
+      day: sections.day,
+      month: sections.month,
+      year: sections.year,
+    };
+  }
+
+  const today = new Date();
+  return {
+    day: today.getDate(),
+    month: today.getMonth() + 1,
+    year: today.getFullYear(),
+  };
+};
+
 const getSectionName = (section, formatMessage, messages) => {
   const sectionType = sectionTypeFromSection(section);
   return getSectionNameFromType({
@@ -397,6 +419,7 @@ const DateTimeInput = forwardRef(
     const segmentRefs = useRef({});
     const activeSectionRef = useRef(SECTION_DAY);
     const suppressSegmentFocusRef = useRef(false);
+    const suppressTimePartialSyncRef = useRef(false);
     const editStateRef = useRef({
       section: SECTION_DAY,
       buffer: '',
@@ -972,17 +995,35 @@ const DateTimeInput = forwardRef(
       (nextDateValue) => {
         const parsed = parseCalendarSelection(nextDateValue);
         if (!parsed) return;
-        setPendingDigits({});
-        editStateRef.current = { section: activeSection, buffer: '' };
-        activeSectionRef.current = SECTION_HOUR;
-        setActiveSection(SECTION_HOUR);
+        const seededTimeSections = getSeededTimeSections(
+          sections,
+          resolvedFormat,
+          showSeconds,
+        );
         const nextSections = {
           ...sections,
           day: parsed.day,
           month: parsed.month,
           year: parsed.year,
-          ...getSeededTimeSections(sections, resolvedFormat, showSeconds),
+          ...seededTimeSections,
         };
+
+        const isSameSelection =
+          nextSections.day === sections.day &&
+          nextSections.month === sections.month &&
+          nextSections.year === sections.year &&
+          nextSections.hour === sections.hour &&
+          nextSections.minute === sections.minute &&
+          nextSections.second === sections.second &&
+          nextSections.period === sections.period;
+
+        if (isSameSelection) return;
+
+        suppressTimePartialSyncRef.current = true;
+        setPendingDigits({});
+        editStateRef.current = { section: activeSection, buffer: '' };
+        activeSectionRef.current = SECTION_HOUR;
+        setActiveSection(SECTION_HOUR);
         commitSections(nextSections);
       },
       [activeSection, commitSections, resolvedFormat, sections, showSeconds],
@@ -1015,6 +1056,7 @@ const DateTimeInput = forwardRef(
 
         commitSections({
           ...sections,
+          ...getSeededDateSections(sections),
           hour: nextHour,
           minute,
           second,
@@ -1032,6 +1074,11 @@ const DateTimeInput = forwardRef(
 
     const handleTimePartialChange = useCallback(
       (timeSections, changedTimeSectionIndex) => {
+        if (suppressTimePartialSyncRef.current) {
+          suppressTimePartialSyncRef.current = false;
+          return;
+        }
+
         // Sync the active spinbutton segment to the column being edited
         const dtSection = TIME_TO_DT_SECTION[changedTimeSectionIndex];
         if (dtSection !== undefined) setActiveSection(dtSection);
@@ -1039,13 +1086,29 @@ const DateTimeInput = forwardRef(
         // Update display state with partial time fields immediately so the
         // input shows values as each column is selected, not only on
         // completion.
-        setSections((prev) => ({
-          ...prev,
-          hour: timeSections.hour,
-          minute: timeSections.minute,
-          ...(showSeconds ? { second: timeSections.second } : {}),
-          ...(resolvedFormat === '12' ? { period: timeSections.period } : {}),
-        }));
+        setSections((prev) => {
+          const mergedTimeSections = {
+            ...prev,
+            hour: timeSections.hour ?? prev.hour,
+            minute: timeSections.minute ?? prev.minute,
+            ...(showSeconds
+              ? { second: timeSections.second ?? prev.second }
+              : {}),
+            ...(resolvedFormat === '12'
+              ? { period: timeSections.period ?? prev.period }
+              : {}),
+          };
+
+          return {
+            ...prev,
+            ...getSeededDateSections(prev),
+            ...getSeededTimeSections(
+              mergedTimeSections,
+              resolvedFormat,
+              showSeconds,
+            ),
+          };
+        });
       },
       [resolvedFormat, setActiveSection, showSeconds, TIME_TO_DT_SECTION],
     );

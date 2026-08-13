@@ -207,6 +207,48 @@ describe('DateTimeInput', () => {
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
   });
 
+  test('selecting time in drop selects a calendar day when date is empty', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput id="dt-time-seeds-date" format="12" showSeconds />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: /date and time/i,
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    expect(
+      within(drop).queryAllByRole('gridcell', { selected: true }),
+    ).toHaveLength(0);
+
+    const hourList = within(drop).getByRole('listbox', { name: 'hour' });
+    await user.click(within(hourList).getAllByRole('option')[0]);
+
+    await waitFor(() => {
+      expect(
+        within(drop).queryAllByRole('gridcell', { selected: true }).length,
+      ).toBeGreaterThan(0);
+    });
+
+    expect(
+      screen.getByRole('spinbutton', {
+        name: 'minutes',
+        hidden: true,
+      }),
+    ).toHaveTextContent('00');
+    expect(
+      screen.getByRole('spinbutton', {
+        name: 'meridiem',
+        hidden: true,
+      }),
+    ).toHaveTextContent('AM');
+  });
+
   test('icon click opens and stays open during in-popup interaction', async () => {
     const user = userEvent.setup();
 
