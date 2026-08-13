@@ -562,7 +562,17 @@ const Calendar = forwardRef(
         referenceStartOfMonth.getMinutes(),
         referenceStartOfMonth.getSeconds(),
       );
-      setActive(firstOfMonth);
+      // Don't set active to a date outside of bounds
+      if (bounds && !betweenDates(firstOfMonth, normalizeInput(bounds))) {
+        const normalizedBounds = normalizeInput(bounds);
+        if (firstOfMonth < normalizedBounds[0]) {
+          setActive(normalizedBounds[0]);
+        } else {
+          setActive(normalizedBounds[1]);
+        }
+      } else {
+        setActive(firstOfMonth);
+      }
 
       announce(
         format({
@@ -656,6 +666,9 @@ const Calendar = forwardRef(
     );
 
     const onClick = (selectedDate) => {
+      if (bounds && !betweenDates(selectedDate, normalizeInput(bounds))) {
+        return;
+      }
       selectDate(selectedDate);
       announce(
         `Selected ${getLocaleString(selectedDate, locale)}`,
