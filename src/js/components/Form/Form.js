@@ -547,8 +547,9 @@ const Form = forwardRef(
           // form drives, pattern #1
           useValue = formValue;
         else if (formValue === undefined && name)
-          // form has reset, so reset input value as well
-          useValue = initialValue;
+          // controlled form: keep input controlled; uncontrolled: reset
+          useValue =
+            valueProp !== undefined ? initialValue ?? '' : initialValue;
         else useValue = inputValue;
 
         return [
