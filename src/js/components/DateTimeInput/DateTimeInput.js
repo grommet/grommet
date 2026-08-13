@@ -302,6 +302,17 @@ const parseCalendarSelection = (nextValue) => {
   };
 };
 
+const getSeededTimeSections = (sections, format, showSeconds) => {
+  const hourMin = format === '12' ? 1 : 0;
+
+  return {
+    hour: sections.hour ?? hourMin,
+    minute: sections.minute ?? 0,
+    ...(showSeconds ? { second: sections.second ?? 0 } : {}),
+    ...(format === '12' ? { period: sections.period ?? 'AM' } : {}),
+  };
+};
+
 const getSectionName = (section, formatMessage, messages) => {
   const sectionType = sectionTypeFromSection(section);
   return getSectionNameFromType({
@@ -970,10 +981,11 @@ const DateTimeInput = forwardRef(
           day: parsed.day,
           month: parsed.month,
           year: parsed.year,
+          ...getSeededTimeSections(sections, resolvedFormat, showSeconds),
         };
         commitSections(nextSections);
       },
-      [activeSection, commitSections, sections],
+      [activeSection, commitSections, resolvedFormat, sections, showSeconds],
     );
 
     const handleTimeSelect = useCallback(
@@ -1042,13 +1054,9 @@ const DateTimeInput = forwardRef(
       if (sections.hour === undefined) {
         return undefined;
       }
-      // Default missing minute/second to 0 so the picker always starts with a
-      // complete value when at least hour is set.
-      const minute = sections.minute ?? 0;
-      const resolvedSecond = showSeconds
-        ? sections.second ?? 0
-        : sections.second ?? 0;
       if (showSeconds && sections.second === undefined) return undefined;
+      const minute = sections.minute ?? 0;
+      const resolvedSecond = sections.second ?? 0;
 
       if (resolvedFormat === '12') {
         let hour24 = sections.hour % 12;

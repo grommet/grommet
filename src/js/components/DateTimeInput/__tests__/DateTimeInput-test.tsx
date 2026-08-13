@@ -173,6 +173,40 @@ describe('DateTimeInput', () => {
     expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
   });
 
+  test('selecting a calendar day does not move focus into the hour listbox', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-calendar-focus"
+          format="12"
+          showSeconds
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: /date and time/i,
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const dayButton = within(drop).getByRole('button', {
+      name: /Jul 22 2026/i,
+    });
+    const hourListbox = within(drop).getByRole('listbox', { name: 'hour' });
+
+    await user.click(dayButton);
+
+    await waitFor(() => expect(dayButton).toHaveFocus());
+    expect(
+      hourListbox.querySelector('[role="option"][tabindex="0"]'),
+    ).not.toHaveFocus();
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+  });
+
   test('icon click opens and stays open during in-popup interaction', async () => {
     const user = userEvent.setup();
 
