@@ -78,15 +78,7 @@ export const WizardContent = ({ ...rest }) => {
       <Box {...contentTheme} flex="grow" {...rest}>
         {body}
         {validationError && (
-          <Notification
-            status="critical"
-            message={validationError}
-            icon={
-              <Box margin={{ top: '4px' }}>
-                <Icon />
-              </Box>
-            }
-          />
+          <Notification status="critical" message={validationError} />
         )}
       </Box>
     </Form>

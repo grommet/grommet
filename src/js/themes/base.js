@@ -1,7 +1,6 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import { Actions } from 'grommet-icons/icons/Actions';
-import { Alert } from 'grommet-icons/icons/Alert';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
@@ -2788,9 +2787,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           cancel: { icon: undefined },
           skip: { icon: FormNext },
         },
-      },
-      error: {
-        icon: Alert,
       },
     },
     worldMap: {
