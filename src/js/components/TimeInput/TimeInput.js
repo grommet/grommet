@@ -136,6 +136,15 @@ const TimeInput = forwardRef(
       initialValue: defaultValue || '',
     });
 
+    useEffect(() => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(
+          'Warning: TimeInput is currently in beta. The API is subject ' +
+            'to change in future releases.',
+        );
+      }
+    }, []);
+
     const { inForm } = formContext.useFormField({});
     const formFieldLabelId = inForm && id ? `grommet-${id}__label` : undefined;
     const groupLabel = formFieldLabelId
