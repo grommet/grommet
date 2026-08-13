@@ -12,6 +12,7 @@ import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Text } from '../Text';
 import {
+  defaultHourForFormat,
   pad,
   getSectionName,
   SECTION_HOUR,
@@ -81,6 +82,15 @@ const PopupOption = styled.div`
 
 const optionKey = (label, option) => `${label.toLowerCase()}-${option}`;
 
+const getDefaultPopupOption = ({ section, format, options }) => {
+  if (section === SECTION_HOUR) {
+    const defaultHour = defaultHourForFormat(format);
+    return options.includes(defaultHour) ? defaultHour : options[0];
+  }
+  if (section === SECTION_PERIOD) return 'AM';
+  return options[0];
+};
+
 const PopupColumn = ({
   activeSection,
   format,
@@ -117,6 +127,14 @@ const PopupColumn = ({
     >
       {options.map((option) => {
         const key = optionKey(label, option);
+        const sectionHasValue =
+          (section === SECTION_HOUR && sections.hour !== undefined) ||
+          (section === SECTION_MINUTE && sections.minute !== undefined) ||
+          (section === SECTION_SECOND && sections.second !== undefined) ||
+          (section === SECTION_PERIOD && sections.period !== undefined);
+
+        // In empty state, keep focus defaults but avoid visually selecting
+        // options until the user makes an explicit choice.
         const selected =
           (section === SECTION_HOUR && sections.hour === option) ||
           (section === SECTION_MINUTE && sections.minute === option) ||
@@ -133,13 +151,13 @@ const PopupColumn = ({
           // key lands on the option (with Grommet focus style) instead of the
           // listbox container (which has no theme focus style). Use the selected
           // value when set, otherwise fall back to the column's first option.
-          const sectionHasValue =
-            (section === SECTION_HOUR && sections.hour !== undefined) ||
-            (section === SECTION_MINUTE && sections.minute !== undefined) ||
-            (section === SECTION_SECOND && sections.second !== undefined) ||
-            (section === SECTION_PERIOD && sections.period !== undefined);
+          const defaultOption = getDefaultPopupOption({
+            section,
+            format,
+            options,
+          });
           optionTabIndex =
-            selected || (!sectionHasValue && option === options[0]) ? 0 : -1;
+            selected || (!sectionHasValue && option === defaultOption) ? 0 : -1;
         } else if (isActive) {
           optionTabIndex = 0;
         }
@@ -372,11 +390,29 @@ const TimeInputPopup = ({
 
     const sectionValue = {
       [SECTION_HOUR]:
-        sections.hour !== undefined ? sections.hour : hoursOptions[0],
+        sections.hour !== undefined
+          ? sections.hour
+          : getDefaultPopupOption({
+              section: SECTION_HOUR,
+              format,
+              options: hoursOptions,
+            }),
       [SECTION_MINUTE]:
-        sections.minute !== undefined ? sections.minute : minuteOptions[0],
+        sections.minute !== undefined
+          ? sections.minute
+          : getDefaultPopupOption({
+              section: SECTION_MINUTE,
+              format,
+              options: minuteOptions,
+            }),
       [SECTION_SECOND]:
-        sections.second !== undefined ? sections.second : secondOptions[0],
+        sections.second !== undefined
+          ? sections.second
+          : getDefaultPopupOption({
+              section: SECTION_SECOND,
+              format,
+              options: secondOptions,
+            }),
       [SECTION_PERIOD]: sections.period || 'AM',
     };
 
@@ -411,6 +447,7 @@ const TimeInputPopup = ({
       }
     });
   }, [
+    format,
     hoursOptions,
     minuteOptions,
     secondOptions,
@@ -429,15 +466,33 @@ const TimeInputPopup = ({
     const keyMap = {
       [SECTION_HOUR]: optionKey(
         'hour',
-        sections.hour !== undefined ? sections.hour : hoursOptions[0],
+        sections.hour !== undefined
+          ? sections.hour
+          : getDefaultPopupOption({
+              section: SECTION_HOUR,
+              format,
+              options: hoursOptions,
+            }),
       ),
       [SECTION_MINUTE]: optionKey(
         'minute',
-        sections.minute !== undefined ? sections.minute : minuteOptions[0],
+        sections.minute !== undefined
+          ? sections.minute
+          : getDefaultPopupOption({
+              section: SECTION_MINUTE,
+              format,
+              options: minuteOptions,
+            }),
       ),
       [SECTION_SECOND]: optionKey(
         'second',
-        sections.second !== undefined ? sections.second : secondOptions[0],
+        sections.second !== undefined
+          ? sections.second
+          : getDefaultPopupOption({
+              section: SECTION_SECOND,
+              format,
+              options: secondOptions,
+            }),
       ),
       [SECTION_PERIOD]: optionKey('period', sections.period || 'AM'),
     };
@@ -463,7 +518,14 @@ const TimeInputPopup = ({
     }
 
     return false;
-  }, [activeSection, hoursOptions, minuteOptions, secondOptions, sections]);
+  }, [
+    activeSection,
+    format,
+    hoursOptions,
+    minuteOptions,
+    secondOptions,
+    sections,
+  ]);
 
   useLayoutEffect(() => {
     // Avoid stealing pointer interactions: while the user is actively

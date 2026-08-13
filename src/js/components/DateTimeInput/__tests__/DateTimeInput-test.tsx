@@ -249,6 +249,45 @@ describe('DateTimeInput', () => {
     ).toHaveTextContent('AM');
   });
 
+  test('selecting a calendar day seeds 12-hour time to 12:00 AM when empty', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput id="dt-calendar-seed-midnight" format="12" showSeconds />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: /date and time/i,
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const calendarGrid = within(drop).getByRole('grid');
+    const dayButton = within(calendarGrid).getAllByRole('button')[0];
+    await user.click(dayButton);
+
+    expect(
+      screen.getByRole('spinbutton', {
+        name: 'hours',
+        hidden: true,
+      }),
+    ).toHaveTextContent('12');
+    expect(
+      screen.getByRole('spinbutton', {
+        name: 'minutes',
+        hidden: true,
+      }),
+    ).toHaveTextContent('00');
+    expect(
+      screen.getByRole('spinbutton', {
+        name: 'meridiem',
+        hidden: true,
+      }),
+    ).toHaveTextContent('AM');
+  });
+
   test('icon click opens and stays open during in-popup interaction', async () => {
     const user = userEvent.setup();
 

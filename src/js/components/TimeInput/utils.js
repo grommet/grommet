@@ -202,6 +202,8 @@ export const sectionMin = (section, format) => {
   return 0;
 };
 
+export const defaultHourForFormat = (format) => (format === '12' ? 12 : 0);
+
 export const sectionKey = (section) => {
   const sectionType = sectionTypeFromSection(section);
   return getSectionKeyFromType(sectionType);
@@ -219,7 +221,9 @@ export const getSectionAriaMeta = ({ section, format, sections }) => {
   const key = sectionKey(section);
   const min = sectionMin(section, format);
   const max = sectionMax(section, format);
-  const now = sections[key] ?? min;
+  const now =
+    sections[key] ??
+    (section === SECTION_HOUR ? defaultHourForFormat(format) : min);
 
   return { now, min, max };
 };

@@ -24,6 +24,7 @@ import { Drop } from '../Drop';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { TimeInput } from '../TimeInput';
+import { defaultHourForFormat } from '../TimeInput/utils';
 import {
   getSectionKeyFromType,
   getSectionNameFromType,
@@ -303,7 +304,7 @@ const parseCalendarSelection = (nextValue) => {
 };
 
 const getSeededTimeSections = (sections, format, showSeconds) => {
-  const hourMin = format === '12' ? 1 : 0;
+  const hourMin = defaultHourForFormat(format);
 
   return {
     hour: sections.hour ?? hourMin,

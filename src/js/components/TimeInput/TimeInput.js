@@ -637,9 +637,9 @@ const TimeInput = forwardRef(
 
     const hoursOptions = useMemo(
       () =>
-        Array.from({ length: format === '12' ? 12 : 24 }, (_, index) =>
-          format === '12' ? index + 1 : index,
-        ),
+        format === '12'
+          ? [12, ...Array.from({ length: 11 }, (_, index) => index + 1)]
+          : Array.from({ length: 24 }, (_, index) => index),
       [format],
     );
 

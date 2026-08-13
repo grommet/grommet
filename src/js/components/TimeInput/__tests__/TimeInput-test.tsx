@@ -540,7 +540,7 @@ describe('TimeInput', () => {
       expect(input).toHaveFocus();
     });
 
-    expect(input).toHaveAttribute('aria-valuenow', '1');
+    expect(input).toHaveAttribute('aria-valuenow', '12');
     expect(input).toHaveAttribute('aria-valuemin', '1');
     expect(input).toHaveAttribute('aria-valuemax', '12');
   });
@@ -1195,7 +1195,7 @@ describe('TimeInput', () => {
     expect(option).not.toHaveAttribute('pad');
   });
 
-  test('moves focus to hour-01 when opened via icon from placeholder state', async () => {
+  test('moves focus to hour-12 when opened via icon from placeholder state', async () => {
     const user = userEvent.setup();
 
     render(
@@ -1210,9 +1210,47 @@ describe('TimeInput', () => {
 
     await waitFor(() => {
       expect(
-        within(hourList).getByRole('option', { name: '01 hours' }),
+        within(hourList).getByRole('option', { name: '12 hours' }),
       ).toHaveFocus();
     });
+  });
+
+  test('does not mark options selected when opened from placeholder state', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" showSeconds />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const periodList = screen.getByRole('listbox', { name: 'period' });
+
+    expect(
+      within(hourList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(minuteList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(secondList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(periodList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
   });
 
   test('allows replacing hour with leading zero in 12-hour format', async () => {
