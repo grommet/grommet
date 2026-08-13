@@ -33,6 +33,7 @@ import {
   StyledPlaceholder,
   StyledIcon,
   StyledInlineButton,
+  StyledInlineIcon,
   StyledSuggestions,
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -519,8 +520,9 @@ const TextInput = forwardRef(
     if (passwordToggle) {
       inputType = passwordRevealed ? 'text' : 'password';
     }
-    const showTextInputIcon =
-      !!textInputIcon && !readOnlyCopy && !(passwordToggle && reverse);
+    const showTextInputIcon = !!textInputIcon && !readOnlyCopy;
+    const showLeadingIcon = showTextInputIcon && !reverse;
+    const showTrailingIcon = showTextInputIcon && reverse;
 
     const ReadOnlyCopyButton = (
       <CopyButton
@@ -569,7 +571,7 @@ const TextInput = forwardRef(
             {placeholder}
           </StyledPlaceholder>
         )}
-        {showTextInputIcon && (
+        {showLeadingIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
@@ -591,6 +593,7 @@ const TextInput = forwardRef(
             focus={focus}
             hasButton={!!textInputButton}
             hasInlineButton={passwordToggle}
+            hasTrailingIcon={showTrailingIcon}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
             type={inputType}
@@ -654,8 +657,18 @@ const TextInput = forwardRef(
         </Keyboard>
         {PasswordToggleButton && !readOnlyCopy && (
           <StyledInlineButton {...passThemeFlag}>
+            {showTrailingIcon && (
+              <StyledInlineIcon {...passThemeFlag}>
+                {textInputIcon}
+              </StyledInlineIcon>
+            )}
             {PasswordToggleButton}
           </StyledInlineButton>
+        )}
+        {showTrailingIcon && !PasswordToggleButton && (
+          <StyledIcon reverse={reverse} theme={theme}>
+            {textInputIcon}
+          </StyledIcon>
         )}
         {!reverse && textInputButton}
         {!readOnly && drop}

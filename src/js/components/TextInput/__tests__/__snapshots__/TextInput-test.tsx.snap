@@ -1721,7 +1721,7 @@ exports[`TextInput icon 1`] = `
 `;
 
 exports[`TextInput icon reverse 1`] = `
-.c2 {
+.c3 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -1730,30 +1730,30 @@ exports[`TextInput icon reverse 1`] = `
   stroke: #666666;
 }
 
-.c2 g {
+.c3 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c2 *:not([stroke])[fill='none'] {
+.c3 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c2 *[stroke*='#'],
-.c2 *[STROKE*='#'] {
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c2 *[fill-rule],
-.c2 *[FILL-RULE],
-.c2 *[fill*='#'],
-.c2 *[FILL*='#'] {
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c3 {
+.c1 {
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -1770,49 +1770,49 @@ exports[`TextInput icon reverse 1`] = `
   padding-right: 48px;
 }
 
-.c3:focus {
+.c1:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c1:focus >circle,
+.c1:focus >ellipse,
+.c1:focus >line,
+.c1:focus >path,
+.c1:focus >polygon,
+.c1:focus >polyline,
+.c1:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c1:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c3::-webkit-input-placeholder {
+.c1::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3::-moz-placeholder {
+.c1::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c3:-ms-input-placeholder {
+.c1:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c3 ::-webkit-search-decoration {
+.c1 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c3::-moz-focus-inner {
+.c1::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c3:-moz-placeholder,
-.c3::-moz-placeholder {
+.c1:-moz-placeholder,
+.c1::-moz-placeholder {
   opacity: 1;
 }
 
@@ -1821,7 +1821,7 @@ exports[`TextInput icon reverse 1`] = `
   width: 100%;
 }
 
-.c1 {
+.c2 {
   position: absolute;
   display: flex;
   justify: center;
@@ -1834,12 +1834,17 @@ exports[`TextInput icon reverse 1`] = `
 <div
   class="c0"
 >
-  <div
+  <input
+    autocomplete="off"
     class="c1"
+    name="item"
+  />
+  <div
+    class="c2"
   >
     <svg
       aria-label="Search"
-      class="c2"
+      class="c3"
       viewBox="0 0 24 24"
     >
       <path
@@ -1850,11 +1855,6 @@ exports[`TextInput icon reverse 1`] = `
       />
     </svg>
   </div>
-  <input
-    autocomplete="off"
-    class="c3"
-    name="item"
-  />
 </div>
 `;
 

@@ -19,9 +19,10 @@ import { readOnlyStyle } from '../../utils/readOnly';
 const getInlineButtonPad = (props) => {
   const rightInset = Number.parseFloat(getInputPadBySide(props, 'right'));
   const iconPad = Number.parseFloat(getInputIconPad(props));
+  const trailingIconPad = props.hasTrailingIcon ? iconPad : 0;
   // Reserve both the icon space and the control's edge inset so text clears
-  // the flush-right password toggle.
-  return `${iconPad + rightInset}px`;
+  // the flush-right password toggle, and the reversed icon when both coexist.
+  return `${iconPad + trailingIconPad + rightInset}px`;
 };
 
 const getPlainStyle = (plain) => {
@@ -128,6 +129,13 @@ const StyledInlineButton = styled.div.withConfig(styledComponentsConfig)`
   z-index: 1;
 `;
 
+const StyledInlineIcon = styled.div.withConfig(styledComponentsConfig)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+`;
+
 const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -147,5 +155,6 @@ export {
   StyledPlaceholder,
   StyledIcon,
   StyledInlineButton,
+  StyledInlineIcon,
   StyledSuggestions,
 };

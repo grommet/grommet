@@ -172,7 +172,7 @@ describe('TextInput', () => {
     ).toBeInTheDocument();
   });
 
-  test('suppresses reverse icon when password toggle is active', () => {
+  test('supports reverse icon when password toggle is active', () => {
     render(
       <Grommet>
         <TextInput
@@ -185,7 +185,7 @@ describe('TextInput', () => {
       </Grommet>,
     );
 
-    expect(screen.queryByLabelText('Search')).not.toBeInTheDocument();
+    expect(screen.getByLabelText('Search')).toBeInTheDocument();
     expect(
       screen.getByRole('button', { name: 'Show password' }),
     ).toBeInTheDocument();
