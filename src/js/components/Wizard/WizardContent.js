@@ -23,8 +23,6 @@ export const WizardContent = ({ ...rest }) => {
   } = wizard;
 
   const contentTheme = theme.wizard?.content;
-  const errorTheme = theme.wizard?.error;
-  const Icon = errorTheme?.icon || (() => null);
 
   const onValidate = useCallback(
     ({ valid, errors, submitting }) => {

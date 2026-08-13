@@ -27,6 +27,12 @@ const Validation = () => {
       title: 'Email',
       description: 'Enter a valid email address.',
       skippable: true,
+      validate: (value) => {
+        if (value.extra !== 'please') {
+          return 'You must enter "please" in the Extra field to proceed.';
+        }
+        return undefined;
+      },
       render: (/* step, api */) => (
         <>
           <FormField
