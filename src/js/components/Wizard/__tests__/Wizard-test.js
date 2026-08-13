@@ -193,7 +193,9 @@ describe('Wizard', () => {
     );
   });
 
-  test('blocks next when required form field is invalid, then advances once valid', async () => {
+  test(
+    'blocks next when required form field is invalid, then advances once valid',
+    async () => {
     const user = userEvent.setup();
     const onStepChange = jest.fn();
     const steps = [
