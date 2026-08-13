@@ -671,7 +671,7 @@ const Wizard = forwardRef(
                 {effectiveShowProgress &&
                   responsiveSize !== 'small' &&
                   responsiveSize !== 'xsmall' && <WizardProgress />}
-                <Box flex="grow">
+                <Box flex="grow" gap={theme.wizard?.content?.gap}>
                   <WizardStepHeader />
                   <WizardContent />
                 </Box>
