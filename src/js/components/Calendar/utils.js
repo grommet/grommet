@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // Utility functions for the Calendar.
 // Just what's needed to avoid having to include a dependency like momentjs.
 
