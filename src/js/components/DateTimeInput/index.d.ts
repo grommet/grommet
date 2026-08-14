@@ -2,24 +2,27 @@
 // SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 
-export interface TimeInputProps {
+export interface DateTimeInputProps {
   defaultValue?: string;
   disabled?: boolean;
   format?: '12' | '24';
   id?: string;
+  locale?: string;
+  inline?: boolean;
   messages?: {
-    activePeriodValue?: string;
     activeSection?: string;
     activeSectionValue?: string;
-    chooseTime?: string;
-    currentValue?: string;
+    chooseDateTime?: string;
     inputLabel?: string;
-    invalidTime?: string;
+    invalidDateTime?: string;
     openDrop?: string;
+    sectionDay?: string;
     sectionHours?: string;
     sectionMeridiem?: string;
     sectionMinutes?: string;
+    sectionMonth?: string;
     sectionSeconds?: string;
+    sectionYear?: string;
   };
   minuteStep?: number;
   name?: string;
@@ -29,16 +32,16 @@ export interface TimeInputProps {
   value?: string;
 }
 
-export interface TimeInputExtendedProps
-  extends TimeInputProps,
+export interface DateTimeInputExtendedProps
+  extends DateTimeInputProps,
     Omit<
       React.DetailedHTMLProps<
         React.InputHTMLAttributes<HTMLInputElement>,
         HTMLInputElement
       >,
-      'defaultValue' | 'onChange' | 'onError' | 'size' | 'value'
+      'defaultValue' | 'onChange' | 'value'
     > {}
 
-declare const TimeInput: React.FC<TimeInputExtendedProps>;
+declare const DateTimeInput: React.FC<DateTimeInputExtendedProps>;
 
-export { TimeInput };
+export { DateTimeInput };

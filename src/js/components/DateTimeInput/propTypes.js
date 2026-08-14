@@ -9,19 +9,22 @@ if (process.env.NODE_ENV !== 'production') {
     disabled: PropTypes.bool,
     format: PropTypes.oneOf(['12', '24']),
     id: PropTypes.string,
+    locale: PropTypes.string,
+    inline: PropTypes.bool,
     messages: PropTypes.shape({
-      activePeriodValue: PropTypes.string,
       activeSection: PropTypes.string,
       activeSectionValue: PropTypes.string,
-      chooseTime: PropTypes.string,
-      currentValue: PropTypes.string,
+      chooseDateTime: PropTypes.string,
       inputLabel: PropTypes.string,
-      invalidTime: PropTypes.string,
+      invalidDateTime: PropTypes.string,
       openDrop: PropTypes.string,
+      sectionDay: PropTypes.string,
       sectionHours: PropTypes.string,
       sectionMeridiem: PropTypes.string,
       sectionMinutes: PropTypes.string,
+      sectionMonth: PropTypes.string,
       sectionSeconds: PropTypes.string,
+      sectionYear: PropTypes.string,
     }),
     minuteStep: PropTypes.number,
     name: PropTypes.string,
@@ -32,4 +35,4 @@ if (process.env.NODE_ENV !== 'production') {
   };
 }
 
-export const TimeInputPropTypes = PropType;
+export const DateTimeInputPropTypes = PropType;

@@ -66,6 +66,36 @@ describe('TimeInput', () => {
     expect(document.getElementById('time-picker__drop')).toBeNull();
   });
 
+  test('commits a focused popup option with Enter', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput
+          id="time-enter-option"
+          format="24"
+          defaultValue="13:45:30"
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const drop = document.getElementById('time-enter-option__drop');
+    const hourList = within(drop as HTMLElement).getByRole('listbox', {
+      name: 'hour',
+    });
+    const hourOption = within(hourList).getByRole('option', {
+      name: '13 hours',
+    });
+
+    fireEvent.focus(hourOption);
+    await user.keyboard('{Enter}');
+
+    expect(onChange).toHaveBeenLastCalledWith({ value: '13:45:30' });
+  });
+
   test('links trigger aria-controls to popup id when id is provided', async () => {
     const user = userEvent.setup();
 
@@ -117,7 +147,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -136,7 +166,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -155,7 +185,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -183,7 +213,7 @@ describe('TimeInput', () => {
     render(
       <Grommet>
         <div>
-          <TimeInput format="24" defaultValue="00:00:00" />
+          <TimeInput format="24" showSeconds defaultValue="00:00:00" />
           <button type="button">after</button>
         </div>
       </Grommet>,
@@ -210,7 +240,7 @@ describe('TimeInput', () => {
       <Grommet>
         <div>
           <button type="button">before</button>
-          <TimeInput format="24" defaultValue="00:00:00" />
+          <TimeInput format="24" showSeconds defaultValue="00:00:00" />
         </div>
       </Grommet>,
     );
@@ -229,7 +259,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -249,7 +279,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -457,7 +487,7 @@ describe('TimeInput', () => {
   test('falls back to the inputLabel message when there is no FormField label', () => {
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -540,7 +570,7 @@ describe('TimeInput', () => {
       expect(input).toHaveFocus();
     });
 
-    expect(input).toHaveAttribute('aria-valuenow', '1');
+    expect(input).toHaveAttribute('aria-valuenow', '12');
     expect(input).toHaveAttribute('aria-valuemin', '1');
     expect(input).toHaveAttribute('aria-valuemax', '12');
   });
@@ -683,7 +713,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:30:00" minuteStep={15} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:30:00"
+          minuteStep={15}
+        />
       </Grommet>,
     );
 
@@ -788,6 +823,7 @@ describe('TimeInput', () => {
         <>
           <TimeInput
             format="24"
+            showSeconds
             value={value}
             onChange={({ value: nextValue }) => {
               onChange(nextValue);
@@ -856,7 +892,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput id="tab-cycle-picker" format="24" defaultValue="13:45:30" />
+        <TimeInput
+          id="tab-cycle-picker"
+          format="24"
+          showSeconds
+          defaultValue="13:45:30"
+        />
       </Grommet>,
     );
 
@@ -898,12 +939,78 @@ describe('TimeInput', () => {
     expect(document.getElementById('tab-cycle-picker__drop')).toBeTruthy();
   });
 
+  test('moves from minute to hour with ArrowLeft in popup', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const selectedMinuteOption = within(minuteList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+
+    expect(selectedMinuteOption).toBeTruthy();
+    fireEvent.keyDown(selectedMinuteOption as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /hours/,
+      );
+    });
+  });
+
+  test('moves from second to minute to hour with ArrowLeft in popup', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const selectedSecondOption = within(secondList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+
+    expect(selectedSecondOption).toBeTruthy();
+    fireEvent.keyDown(selectedSecondOption as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /minutes/,
+      );
+    });
+
+    fireEvent.keyDown(document.activeElement as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /hours/,
+      );
+    });
+  });
+
   test('supports option selection by click for touch-like interactions', async () => {
     const user = userEvent.setup();
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="01:00:00" />
       </Grommet>,
     );
 
@@ -949,7 +1056,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:45:50" />
+        <TimeInput format="24" showSeconds defaultValue="01:45:50" />
       </Grommet>,
     );
 
@@ -980,7 +1087,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="05:55:55" />
+        <TimeInput format="24" showSeconds defaultValue="05:55:55" />
       </Grommet>,
     );
 
@@ -1106,7 +1213,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="01:00:00" />
       </Grommet>,
     );
 
@@ -1118,7 +1225,7 @@ describe('TimeInput', () => {
     expect(option).not.toHaveAttribute('pad');
   });
 
-  test('moves focus to hour-01 when opened via icon from placeholder state', async () => {
+  test('moves focus to hour-12 when opened via icon from placeholder state', async () => {
     const user = userEvent.setup();
 
     render(
@@ -1133,9 +1240,47 @@ describe('TimeInput', () => {
 
     await waitFor(() => {
       expect(
-        within(hourList).getByRole('option', { name: '01 hours' }),
+        within(hourList).getByRole('option', { name: '12 hours' }),
       ).toHaveFocus();
     });
+  });
+
+  test('does not mark options selected when opened from placeholder state', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" showSeconds />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const periodList = screen.getByRole('listbox', { name: 'period' });
+
+    expect(
+      within(hourList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(minuteList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(secondList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(periodList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
   });
 
   test('allows replacing hour with leading zero in 12-hour format', async () => {
@@ -1162,7 +1307,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" onChange={onChange} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="00:00:00"
+          onChange={onChange}
+        />
       </Grommet>,
     );
 
@@ -1227,7 +1377,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="07:30:00" />
+        <TimeInput format="24" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1249,7 +1399,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="07:30:00" />
+        <TimeInput format="24" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1272,7 +1422,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -1310,7 +1460,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1329,7 +1479,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1348,7 +1498,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1367,7 +1517,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1479,7 +1629,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={15} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={15}
+        />
       </Grommet>,
     );
 
@@ -1513,7 +1668,12 @@ describe('TimeInput', () => {
     // by rendering with a controlled default value and arrow-keying through
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={20} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={20}
+        />
       </Grommet>,
     );
 
@@ -1540,7 +1700,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={0} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={0}
+        />
       </Grommet>,
     );
 
@@ -1550,6 +1715,40 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}{ArrowRight}');
     await user.keyboard('{ArrowUp}');
     expect(getDisplayInput()).toHaveValue('10:01:00');
+  });
+
+  test('in 24-hour mode without showSeconds, only hour and minute are interactive', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'hours' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('spinbutton', { name: 'minutes' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'seconds' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'meridiem' }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'second' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'period' }),
+    ).not.toBeInTheDocument();
   });
 
   test('auto-scrolls selected minute and second options on open', async () => {
@@ -1718,7 +1917,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet theme={customTheme}>
-        <TimeInput format="24" defaultValue="10:15:20" />
+        <TimeInput format="24" showSeconds defaultValue="10:15:20" />
       </Grommet>,
     );
 
@@ -1778,7 +1977,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1809,7 +2008,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1829,7 +2028,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1859,7 +2058,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1879,7 +2078,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1909,7 +2108,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
