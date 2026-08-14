@@ -25,6 +25,21 @@
     "exitCalendar": "Exited calendar dialog",
     "outOfBounds": "Date is out of the allowed range. Enter a date between {start} and {end}."
   },
+  "dateTimeInput": {
+    "inputLabel": "Date and time input",
+    "chooseDateTime": "Open date and time picker",
+    "openDrop": "Press space to open date and time picker",
+    "invalidDateTime": "Invalid date or time value",
+    "activeSection": "{section} selected",
+    "activeSectionValue": "{value}",
+    "sectionDay": "day",
+    "sectionMonth": "month",
+    "sectionYear": "year",
+    "sectionHours": "hours",
+    "sectionMinutes": "minutes",
+    "sectionSeconds": "seconds",
+    "sectionMeridiem": "meridiem"
+  },
   "dataChart": {
     "detailTitle": "Data chart",
     "detailFocus": "Use the left and right arrow keys to navigate the chart data."

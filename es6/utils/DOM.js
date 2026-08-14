@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 export var findScrollParent = function findScrollParent(element, horizontal) {
   var result;
   if (element) {
@@ -76,10 +78,17 @@ export var withinDropPortal = function withinDropPortal(node, portalContext) {
   return true;
 };
 
-// Check if the element.tagName is an input, select or textarea
+// Check if an element can receive focus: native form inputs, or non-native
+// interactive elements with an explicit tabIndex attribute
+// (e.g. span[role="spinbutton"]). Excludes native interactive elements
+// (button, a) so they don't trigger FormField focus state.
 export var isFocusable = function isFocusable(element) {
+  if (!element || element.disabled) return false;
   var tagName = element.tagName.toLowerCase();
-  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+  if (tagName === 'input' || tagName === 'select' || tagName === 'textarea') return true;
+  // Only non-native-interactive elements with an explicit tabindex attribute
+  var isNativeInteractive = tagName === 'button' || tagName === 'a';
+  return !isNativeInteractive && element.tabIndex >= 0 && element.hasAttribute('tabindex');
 };
 
 // Get the first element that can receive focus

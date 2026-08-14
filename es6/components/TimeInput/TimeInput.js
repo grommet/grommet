@@ -1,13 +1,17 @@
-var _excluded = ["defaultValue", "disabled", "format", "id", "messages", "minuteStep", "name", "onChange", "readOnly", "value"],
+var _excluded = ["defaultValue", "disabled", "format", "id", "inline", "messages", "minuteStep", "name", "onChange", "onPartialChange", "readOnly", "showSeconds", "value"],
   _excluded2 = ["plain", "focusIndicator"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Clock as GrommetClockIcon } from 'grommet-icons/icons/Clock';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
+import { normalizeStep } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { getSectionKeyFromType, getSectionTokenFromType } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { FormContext } from '../Form';
@@ -16,25 +20,7 @@ import { StyledTimeInputDisplay, StyledTimeInputField, StyledTimeInputSegment, S
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
 import { useSectionedTimeField } from './useSectionedTimeField';
-import { getSectionAriaMeta, getSectionName, pad, SECTION_HOUR, SECTION_MINUTE, SECTION_PERIOD, SECTION_SECOND } from './utils';
-var sectionTypeToSection = {
-  hours: SECTION_HOUR,
-  minutes: SECTION_MINUTE,
-  seconds: SECTION_SECOND,
-  meridiem: SECTION_PERIOD
-};
-var getSectionKey = function getSectionKey(section) {
-  if (section === SECTION_HOUR) return 'hour';
-  if (section === SECTION_MINUTE) return 'minute';
-  if (section === SECTION_SECOND) return 'second';
-  return 'period';
-};
-var getSectionToken = function getSectionToken(section) {
-  if (section === SECTION_HOUR) return 'hh';
-  if (section === SECTION_MINUTE) return 'mm';
-  if (section === SECTION_SECOND) return 'ss';
-  return 'aa';
-};
+import { getSectionAriaMeta, getSectionName, pad, sectionTypeFromSection, SECTION_HOUR, SECTION_MINUTE, SECTION_PERIOD, SECTION_SECOND } from './utils';
 var getDisplaySectionKey = function getDisplaySectionKey(section) {
   if (section === SECTION_HOUR) return 'hour';
   if (section === SECTION_MINUTE) return 'minute';
@@ -49,36 +35,26 @@ var getDisplaySectionText = function getDisplaySectionText(_ref) {
   var key = _ref.key,
     section = _ref.section,
     sections = _ref.sections;
-  if (sections[key] === undefined) return getSectionToken(section);
+  if (sections[key] === undefined) return getSectionTokenFromType(sectionTypeFromSection(section));
   if (section === SECTION_PERIOD) return sections[key];
   return pad(sections[key]);
 };
-var getSectionOrder = function getSectionOrder(format, views) {
-  var normalizedViews = Array.isArray(views) && views.length ? views : ['hours', 'minutes', 'seconds'];
-  var numericSections = normalizedViews.filter(function (view) {
-    return view !== 'meridiem';
-  }).map(function (view) {
-    return sectionTypeToSection[view];
-  }).filter(function (section) {
-    return section !== undefined;
-  });
+var getSectionOrder = function getSectionOrder(format, showSeconds) {
+  if (showSeconds === void 0) {
+    showSeconds = format === '12';
+  }
+  var numericSections = showSeconds ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND] : [SECTION_HOUR, SECTION_MINUTE];
   if (format === '12') {
-    var includePeriod = normalizedViews.includes('meridiem') || normalizedViews.includes('hours');
-    if (includePeriod) return [].concat(numericSections, [SECTION_PERIOD]);
+    return [].concat(numericSections, [SECTION_PERIOD]);
   }
   return numericSections;
 };
 var buildPlaceholder = function buildPlaceholder(sectionOrder) {
   return sectionOrder.map(function (section, index) {
-    var token = getSectionToken(section);
+    var token = getSectionTokenFromType(sectionTypeFromSection(section));
     if (index === 0) return token;
     return "" + (section === SECTION_PERIOD ? ' ' : ':') + token;
   }).join('');
-};
-var normalizeStep = function normalizeStep(step) {
-  var parsed = Number(step);
-  if (!Number.isFinite(parsed) || parsed <= 0) return 1;
-  return Math.max(1, Math.floor(parsed));
 };
 
 // When `format` isn't explicitly provided, default to the 12/24-hour
@@ -102,13 +78,17 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
     _ref2$format = _ref2.format,
     format = _ref2$format === void 0 ? DEFAULT_FORMAT : _ref2$format,
     id = _ref2.id,
+    _ref2$inline = _ref2.inline,
+    inline = _ref2$inline === void 0 ? false : _ref2$inline,
     messages = _ref2.messages,
     _ref2$minuteStep = _ref2.minuteStep,
     minuteStep = _ref2$minuteStep === void 0 ? 1 : _ref2$minuteStep,
     name = _ref2.name,
     onChange = _ref2.onChange,
+    onPartialChange = _ref2.onPartialChange,
     _ref2$readOnly = _ref2.readOnly,
     readOnly = _ref2$readOnly === void 0 ? false : _ref2$readOnly,
+    showSeconds = _ref2.showSeconds,
     valueArg = _ref2.value,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
   var _useThemeValue = useThemeValue(),
@@ -156,6 +136,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
   var normalizedMinuteStep = useMemo(function () {
     return normalizeStep(minuteStep);
   }, [minuteStep]);
+  var resolvedShowSeconds = showSeconds !== undefined ? showSeconds : format === '12';
   var handleInvalid = useCallback(function () {
     var error = formatMessage({
       id: 'timeInput.invalidTime',
@@ -178,8 +159,8 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
     }), 'polite');
   }, [announce, format, formatMessage, messages]);
   var sectionOrder = useMemo(function () {
-    return getSectionOrder(format);
-  }, [format]);
+    return getSectionOrder(format, resolvedShowSeconds);
+  }, [format, resolvedShowSeconds]);
   var firstSection = sectionOrder[0] || SECTION_HOUR;
   var lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_HOUR;
   var _useSectionedTimeFiel = useSectionedTimeField({
@@ -187,7 +168,10 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
       sectionOrder: sectionOrder,
       minuteStep: normalizedMinuteStep,
       value: value,
-      onCommit: function onCommit(_nextSections, nextValue) {
+      onCommit: function onCommit(_nextSections, nextValue, _changedSection) {
+        // Fire partial change on every commit so consumers can update
+        // display state even before all sections are filled.
+        onPartialChange == null || onPartialChange(_nextSections, _changedSection);
         if (!nextValue) {
           setValue('');
           onChange == null || onChange({
@@ -241,7 +225,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
         }
       });
     }
-    var sectionKey = getSectionKey(section);
+    var sectionKey = getSectionKeyFromType(sectionTypeFromSection(section));
     var sectionValue = sections[sectionKey];
     if (sectionValue === undefined) {
       return formatMessage({
@@ -524,10 +508,14 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
     event.preventDefault();
   }, [commitSections, handleInvalid, parsePasted, readOnly]);
   var hoursOptions = useMemo(function () {
-    return Array.from({
-      length: format === '12' ? 12 : 24
+    return format === '12' ? [12].concat(Array.from({
+      length: 11
     }, function (_, index) {
-      return format === '12' ? index + 1 : index;
+      return index + 1;
+    })) : Array.from({
+      length: 24
+    }, function (_, index) {
+      return index;
     });
   }, [format]);
   var minuteOptions = useMemo(function () {
@@ -547,6 +535,23 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
     });
   }, []);
   var showActiveSection = (segmentFocused || open) && !readOnly && !disabled;
+  if (inline) {
+    return /*#__PURE__*/React.createElement(TimeInputPopup, _extends({
+      inline: true,
+      activeSection: activeSection,
+      format: format,
+      formatMessage: formatMessage,
+      hoursOptions: hoursOptions,
+      incrementSection: incrementSection,
+      messages: messages,
+      minuteOptions: minuteOptions,
+      sectionOrder: sectionOrder,
+      secondOptions: secondOptions,
+      sections: sections,
+      setActiveSection: setActiveSection,
+      setSectionValue: setSectionValue
+    }, inputRest));
+  }
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: open ? closePicker : undefined
   }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(StyledTimeInputContainer, _extends({
@@ -669,7 +674,6 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
     }),
     messages: messages,
     minuteOptions: minuteOptions,
-    moveSection: moveSection,
     sectionOrder: sectionOrder,
     onClose: closePicker,
     onFocusLeave: closePicker,

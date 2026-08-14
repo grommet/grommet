@@ -3,6 +3,7 @@
 exports.__esModule = true;
 exports.useSectionedTimeField = void 0;
 var _react = require("react");
+var _useSectionedField2 = require("../../utils/useSectionedField");
 var _utils = require("./utils");
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
@@ -85,32 +86,25 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
     previousValue: undefined,
     firstDigit: undefined
   });
-  var preserveIncompleteSectionsRef = (0, _react.useRef)(false);
-  // Track pending single digit for display without committing
-  var _useState = (0, _react.useState)({}),
-    pendingDigits = _useState[0],
-    setPendingDigits = _useState[1];
-  var parsedValue = (0, _react.useMemo)(function () {
-    return (0, _utils.isoTimeToSections)((0, _utils.normalizeToIsoTime)(value), format);
-  }, [format, value]);
-  var _useState2 = (0, _react.useState)(parsedValue || (0, _utils.defaultSections)(format)),
-    sections = _useState2[0],
-    setSections = _useState2[1];
-  var _useState3 = (0, _react.useState)(sectionOrder[0] || _utils.SECTION_HOUR),
-    activeSection = _useState3[0],
-    setActiveSection = _useState3[1];
-  (0, _react.useEffect)(function () {
-    if (!sectionOrder.includes(activeSection)) {
-      setActiveSection(sectionOrder[0] || _utils.SECTION_HOUR);
-    }
-  }, [activeSection, sectionOrder]);
-  (0, _react.useEffect)(function () {
-    if (!parsedValue && preserveIncompleteSectionsRef.current) {
-      preserveIncompleteSectionsRef.current = false;
-      return;
-    }
-    setSections(parsedValue || (0, _utils.defaultSections)(format));
-  }, [parsedValue, format]);
+  var parseValue = (0, _react.useCallback)(function (nextValue) {
+    return (0, _utils.isoTimeToSections)((0, _utils.normalizeToIsoTime)(nextValue), format);
+  }, [format]);
+  var getDefaultValue = (0, _react.useCallback)(function () {
+    return (0, _utils.defaultSections)(format);
+  }, [format]);
+  var _useSectionedField = (0, _useSectionedField2.useSectionedField)({
+      value: value,
+      parseValue: parseValue,
+      defaultValue: getDefaultValue,
+      sectionOrder: sectionOrder
+    }),
+    activeSection = _useSectionedField.activeSection,
+    pendingDigits = _useSectionedField.pendingDigits,
+    preserveIncompleteSectionsRef = _useSectionedField.preserveIncompleteSectionsRef,
+    sections = _useSectionedField.sections,
+    setActiveSection = _useSectionedField.setActiveSection,
+    setPendingDigits = _useSectionedField.setPendingDigits,
+    setSections = _useSectionedField.setSections;
   var displayValue = (0, _react.useMemo)(function () {
     if (!(0, _utils.hasAnyValue)(sections)) return '';
 
@@ -126,7 +120,7 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
       includeTokens: true
     });
   }, [sectionOrder, sections, pendingDigits]);
-  var commitSections = (0, _react.useCallback)(function (nextSections) {
+  var commitSections = (0, _react.useCallback)(function (nextSections, changedSection) {
     var _nextSections$second;
     setSections(nextSections);
     var complete = sectionOrder.every(function (section) {
@@ -149,17 +143,17 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
     // Mark as incomplete if: sections incomplete OR some invalid
     var hasIncompleteSections = !complete || !allValid;
     preserveIncompleteSectionsRef.current = hasIncompleteSections && (0, _utils.hasAnyValue)(nextSections);
-    onCommit(nextSections, nextValue);
-  }, [onCommit, sectionOrder, format]);
+    onCommit(nextSections, nextValue, changedSection);
+  }, [format, onCommit, preserveIncompleteSectionsRef, sectionOrder, setSections]);
   var setSectionValue = (0, _react.useCallback)(function (section, rawValue) {
     var _extends2;
     var key = (0, _utils.sectionKey)(section);
     var next = _extends({}, sections, (_extends2 = {}, _extends2[key] = rawValue, _extends2));
-    commitSections(next);
+    commitSections(next, section);
     // Clear any pending first-digit overlay, since it's now stale
     // relative to the section value we just committed.
     setPendingDigits({});
-  }, [commitSections, sections]);
+  }, [commitSections, sections, setPendingDigits]);
   var moveSection = (0, _react.useCallback)(function (direction) {
     if (!sectionOrder.length) return activeSection;
     var activeIndex = Math.max(0, sectionOrder.indexOf(activeSection));
@@ -168,7 +162,7 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
     var nextSection = sectionOrder[nextIndex];
     setActiveSection(nextSection);
     return nextSection;
-  }, [activeSection, sectionOrder]);
+  }, [activeSection, sectionOrder, setActiveSection]);
   var incrementSection = (0, _react.useCallback)(function (section, delta) {
     if (section === _utils.SECTION_PERIOD) {
       setSectionValue(section, sections.period === 'AM' ? 'PM' : 'AM');
@@ -205,7 +199,7 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
         })) != null ? _descending$find : options[options.length - 1];
       }
     } else {
-      var base = current === undefined ? minValue : current;
+      var base = current === undefined ? section === _utils.SECTION_HOUR ? (0, _utils.defaultHourForFormat)(format) : minValue : current;
       next = base + delta;
       if (next > maxValue) next = minValue;
       if (next < minValue) next = maxValue;

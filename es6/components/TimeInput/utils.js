@@ -1,25 +1,28 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+import { getSectionKeyFromType, getSectionNameFromType } from '../../utils/sectionHelpers';
+import { pad } from '../../utils/dates';
 export var SECTION_HOUR = 0;
 export var SECTION_MINUTE = 1;
 export var SECTION_SECOND = 2;
 export var SECTION_PERIOD = 3;
-export var pad = function pad(value) {
-  return value.toString().padStart(2, '0');
-};
-var sectionMessageId = function sectionMessageId(section) {
-  if (section === SECTION_HOUR) return 'timeInput.sectionHours';
-  if (section === SECTION_MINUTE) return 'timeInput.sectionMinutes';
-  if (section === SECTION_SECOND) return 'timeInput.sectionSeconds';
-  return 'timeInput.sectionMeridiem';
+export { pad };
+export var sectionTypeFromSection = function sectionTypeFromSection(section) {
+  if (section === SECTION_HOUR) return 'hours';
+  if (section === SECTION_MINUTE) return 'minutes';
+  if (section === SECTION_SECOND) return 'seconds';
+  return 'meridiem';
 };
 export var getSectionName = function getSectionName(section, format, formatMessage, messages) {
-  if (formatMessage) {
-    return formatMessage({
-      id: sectionMessageId(section),
-      messages: messages
-    });
-  }
-  var names = format === '12' ? ['hours', 'minutes', 'seconds', 'meridiem'] : ['hours', 'minutes', 'seconds'];
-  return names[section];
+  var sectionType = sectionTypeFromSection(section);
+  var sectionName = getSectionNameFromType({
+    sectionType: sectionType,
+    messagePrefix: 'timeInput',
+    formatMessage: formatMessage,
+    messages: messages
+  });
+  if (format !== '12' && sectionType === 'meridiem') return undefined;
+  return sectionName;
 };
 export var getRanges = function getRanges(format) {
   if (format === '12') {
@@ -143,11 +146,12 @@ export var sectionMin = function sectionMin(section, format) {
   if (section === SECTION_HOUR) return format === '12' ? 1 : 0;
   return 0;
 };
+export var defaultHourForFormat = function defaultHourForFormat(format) {
+  return format === '12' ? 12 : 0;
+};
 export var sectionKey = function sectionKey(section) {
-  if (section === SECTION_HOUR) return 'hour';
-  if (section === SECTION_MINUTE) return 'minute';
-  if (section === SECTION_SECOND) return 'second';
-  return 'period';
+  var sectionType = sectionTypeFromSection(section);
+  return getSectionKeyFromType(sectionType);
 };
 export var getSectionAriaMeta = function getSectionAriaMeta(_ref) {
   var _sections$key;
@@ -164,7 +168,7 @@ export var getSectionAriaMeta = function getSectionAriaMeta(_ref) {
   var key = sectionKey(section);
   var min = sectionMin(section, format);
   var max = sectionMax(section, format);
-  var now = (_sections$key = sections[key]) != null ? _sections$key : min;
+  var now = (_sections$key = sections[key]) != null ? _sections$key : section === SECTION_HOUR ? defaultHourForFormat(format) : min;
   return {
     now: now,
     min: min,

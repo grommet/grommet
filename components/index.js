@@ -187,6 +187,12 @@ Object.keys(_DateInput).forEach(function (key) {
   if (key in exports && exports[key] === _DateInput[key]) return;
   exports[key] = _DateInput[key];
 });
+var _DateTimeInput = require("./DateTimeInput");
+Object.keys(_DateTimeInput).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _DateTimeInput[key]) return;
+  exports[key] = _DateTimeInput[key];
+});
 var _Diagram = require("./Diagram");
 Object.keys(_Diagram).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

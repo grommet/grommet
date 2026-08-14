@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import PropTypes from 'prop-types';
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
@@ -24,6 +26,7 @@ if (process.env.NODE_ENV !== 'production') {
     name: PropTypes.string,
     onChange: PropTypes.func,
     readOnly: PropTypes.bool,
+    showSeconds: PropTypes.bool,
     value: PropTypes.string
   };
 }

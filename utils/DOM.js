@@ -2,6 +2,8 @@
 
 exports.__esModule = true;
 exports.withinDropPortal = exports.shouldKeepFocus = exports.setFocusWithoutScroll = exports.makeNodeUnfocusable = exports.makeNodeFocusable = exports.isNodeBeforeScroll = exports.isNodeAfterScroll = exports.isFocusable = exports.getNewContainer = exports.getFirstFocusableDescendant = exports.findVisibleParent = exports.findScrollParents = exports.findScrollParent = exports.findButtonParent = exports.containsFocus = void 0;
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var findScrollParent = exports.findScrollParent = function findScrollParent(element, horizontal) {
   var result;
   if (element) {
@@ -80,10 +82,17 @@ var withinDropPortal = exports.withinDropPortal = function withinDropPortal(node
   return true;
 };
 
-// Check if the element.tagName is an input, select or textarea
+// Check if an element can receive focus: native form inputs, or non-native
+// interactive elements with an explicit tabIndex attribute
+// (e.g. span[role="spinbutton"]). Excludes native interactive elements
+// (button, a) so they don't trigger FormField focus state.
 var isFocusable = exports.isFocusable = function isFocusable(element) {
+  if (!element || element.disabled) return false;
   var tagName = element.tagName.toLowerCase();
-  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+  if (tagName === 'input' || tagName === 'select' || tagName === 'textarea') return true;
+  // Only non-native-interactive elements with an explicit tabindex attribute
+  var isNativeInteractive = tagName === 'button' || tagName === 'a';
+  return !isNativeInteractive && element.tabIndex >= 0 && element.hasAttribute('tabindex');
 };
 
 // Get the first element that can receive focus

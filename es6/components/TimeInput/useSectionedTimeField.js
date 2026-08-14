@@ -2,8 +2,9 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-nested-ternary */
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { defaultSections, hasAnyValue, isoTimeToSections, normalizeToIsoTime, pad, sectionKey, sectionMax, sectionMin, sectionsToIsoTime, SECTION_HOUR, SECTION_MINUTE, SECTION_PERIOD, SECTION_SECOND } from './utils';
+import { useCallback, useMemo, useRef } from 'react';
+import { useSectionedField } from '../../utils/useSectionedField';
+import { defaultSections, hasAnyValue, isoTimeToSections, normalizeToIsoTime, pad, sectionKey, sectionMax, sectionMin, sectionsToIsoTime, SECTION_HOUR, SECTION_MINUTE, SECTION_PERIOD, SECTION_SECOND, defaultHourForFormat } from './utils';
 var separatorBeforeSection = function separatorBeforeSection(section) {
   return section === SECTION_PERIOD ? ' ' : ':';
 };
@@ -82,32 +83,25 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
     previousValue: undefined,
     firstDigit: undefined
   });
-  var preserveIncompleteSectionsRef = useRef(false);
-  // Track pending single digit for display without committing
-  var _useState = useState({}),
-    pendingDigits = _useState[0],
-    setPendingDigits = _useState[1];
-  var parsedValue = useMemo(function () {
-    return isoTimeToSections(normalizeToIsoTime(value), format);
-  }, [format, value]);
-  var _useState2 = useState(parsedValue || defaultSections(format)),
-    sections = _useState2[0],
-    setSections = _useState2[1];
-  var _useState3 = useState(sectionOrder[0] || SECTION_HOUR),
-    activeSection = _useState3[0],
-    setActiveSection = _useState3[1];
-  useEffect(function () {
-    if (!sectionOrder.includes(activeSection)) {
-      setActiveSection(sectionOrder[0] || SECTION_HOUR);
-    }
-  }, [activeSection, sectionOrder]);
-  useEffect(function () {
-    if (!parsedValue && preserveIncompleteSectionsRef.current) {
-      preserveIncompleteSectionsRef.current = false;
-      return;
-    }
-    setSections(parsedValue || defaultSections(format));
-  }, [parsedValue, format]);
+  var parseValue = useCallback(function (nextValue) {
+    return isoTimeToSections(normalizeToIsoTime(nextValue), format);
+  }, [format]);
+  var getDefaultValue = useCallback(function () {
+    return defaultSections(format);
+  }, [format]);
+  var _useSectionedField = useSectionedField({
+      value: value,
+      parseValue: parseValue,
+      defaultValue: getDefaultValue,
+      sectionOrder: sectionOrder
+    }),
+    activeSection = _useSectionedField.activeSection,
+    pendingDigits = _useSectionedField.pendingDigits,
+    preserveIncompleteSectionsRef = _useSectionedField.preserveIncompleteSectionsRef,
+    sections = _useSectionedField.sections,
+    setActiveSection = _useSectionedField.setActiveSection,
+    setPendingDigits = _useSectionedField.setPendingDigits,
+    setSections = _useSectionedField.setSections;
   var displayValue = useMemo(function () {
     if (!hasAnyValue(sections)) return '';
 
@@ -123,7 +117,7 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
       includeTokens: true
     });
   }, [sectionOrder, sections, pendingDigits]);
-  var commitSections = useCallback(function (nextSections) {
+  var commitSections = useCallback(function (nextSections, changedSection) {
     var _nextSections$second;
     setSections(nextSections);
     var complete = sectionOrder.every(function (section) {
@@ -146,17 +140,17 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
     // Mark as incomplete if: sections incomplete OR some invalid
     var hasIncompleteSections = !complete || !allValid;
     preserveIncompleteSectionsRef.current = hasIncompleteSections && hasAnyValue(nextSections);
-    onCommit(nextSections, nextValue);
-  }, [onCommit, sectionOrder, format]);
+    onCommit(nextSections, nextValue, changedSection);
+  }, [format, onCommit, preserveIncompleteSectionsRef, sectionOrder, setSections]);
   var setSectionValue = useCallback(function (section, rawValue) {
     var _extends2;
     var key = sectionKey(section);
     var next = _extends({}, sections, (_extends2 = {}, _extends2[key] = rawValue, _extends2));
-    commitSections(next);
+    commitSections(next, section);
     // Clear any pending first-digit overlay, since it's now stale
     // relative to the section value we just committed.
     setPendingDigits({});
-  }, [commitSections, sections]);
+  }, [commitSections, sections, setPendingDigits]);
   var moveSection = useCallback(function (direction) {
     if (!sectionOrder.length) return activeSection;
     var activeIndex = Math.max(0, sectionOrder.indexOf(activeSection));
@@ -165,7 +159,7 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
     var nextSection = sectionOrder[nextIndex];
     setActiveSection(nextSection);
     return nextSection;
-  }, [activeSection, sectionOrder]);
+  }, [activeSection, sectionOrder, setActiveSection]);
   var incrementSection = useCallback(function (section, delta) {
     if (section === SECTION_PERIOD) {
       setSectionValue(section, sections.period === 'AM' ? 'PM' : 'AM');
@@ -202,7 +196,7 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
         })) != null ? _descending$find : options[options.length - 1];
       }
     } else {
-      var base = current === undefined ? minValue : current;
+      var base = current === undefined ? section === SECTION_HOUR ? defaultHourForFormat(format) : minValue : current;
       next = base + delta;
       if (next > maxValue) next = minValue;
       if (next < minValue) next = maxValue;

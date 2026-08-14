@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.TimeInputPropTypes = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
@@ -29,6 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
     name: _propTypes["default"].string,
     onChange: _propTypes["default"].func,
     readOnly: _propTypes["default"].bool,
+    showSeconds: _propTypes["default"].bool,
     value: _propTypes["default"].string
   };
 }
