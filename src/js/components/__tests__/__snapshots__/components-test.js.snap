@@ -359,6 +359,25 @@ exports[`Components loads 1`] = `
     },
     "render": [Function],
   },
+  "DateTimeInput": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "defaultValue": [Function],
+      "disabled": [Function],
+      "format": [Function],
+      "id": [Function],
+      "inline": [Function],
+      "locale": [Function],
+      "messages": [Function],
+      "minuteStep": [Function],
+      "name": [Function],
+      "onChange": [Function],
+      "readOnly": [Function],
+      "showSeconds": [Function],
+      "value": [Function],
+    },
+    "render": [Function],
+  },
   "Diagram": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
@@ -1175,6 +1194,7 @@ exports[`Components loads 1`] = `
       "name": [Function],
       "onChange": [Function],
       "readOnly": [Function],
+      "showSeconds": [Function],
       "value": [Function],
     },
     "render": [Function],

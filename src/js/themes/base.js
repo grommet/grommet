@@ -1054,6 +1054,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'medium',
       },
     },
+    dateTimeInput: {
+      button: {
+        margin: { right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+      active: {
+        background: 'active-background',
+        pad: 'xxsmall',
+        indicator: {
+          color: { dark: 'white', light: 'black' },
+          size: 'small',
+        },
+      },
+      drop: {
+        pad: 'small',
+        gap: 'small',
+        border: {
+          color: 'border',
+          size: 'xsmall',
+        },
+      },
+      icon: {
+        calendar: undefined,
+      },
+      separator: {
+        pad: 'xxsmall',
+      },
+    },
     dataSearch: {
       // icons: {
       //   search: undefined,
@@ -2637,6 +2667,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           selected: {
             background: 'selected',
             color: 'white',
+            text: {
+              weight: 'medium',
+            },
             hover: {
               // background: undefined,
             },

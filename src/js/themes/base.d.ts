@@ -1027,6 +1027,36 @@ export interface ThemeType {
       size?: string;
     };
   };
+  dateTimeInput?: {
+    button?: {
+      margin?: string | object;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    drop?: {
+      pad?: PadType;
+      gap?: GapType;
+      border?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    icon?: {
+      calendar?: React.ReactNode | Icon;
+    };
+    separator?: {
+      pad?: GapType;
+    };
+  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
