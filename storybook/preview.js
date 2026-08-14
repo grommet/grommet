@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line import/no-unresolved
 import { addons } from 'storybook/preview-api';

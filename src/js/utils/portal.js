@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import css from 'postcss'; // eslint-disable-line max-len, import/no-extraneous-dependencies
 import prettier from 'prettier'; // eslint-disable-line max-len, import/no-extraneous-dependencies
 

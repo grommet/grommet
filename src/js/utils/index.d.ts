@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // colors.js
 declare const normalizeColor: (
   color: string | { dark?: string; light?: string },

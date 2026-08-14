@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
