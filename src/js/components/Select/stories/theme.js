@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { CaretDownFill, CaretUpFill, FormCheckmark } from 'grommet-icons';
 
 import { normalizeColor } from '../../../utils';
