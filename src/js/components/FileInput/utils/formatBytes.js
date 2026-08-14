@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 const SI_CONVERSION_FACTOR = 1000;
 const IEC_CONVERSION_FACTOR = 1024;
 
