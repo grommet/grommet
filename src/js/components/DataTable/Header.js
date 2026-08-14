@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-underscore-dangle */
 import React, { forwardRef, useCallback, useContext, useRef } from 'react';
 import styled, { css } from 'styled-components';

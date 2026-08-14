@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useEffect, useRef, useState } from 'react';
 
 import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';

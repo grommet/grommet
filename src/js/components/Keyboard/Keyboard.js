@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { Children, cloneElement, useCallback, useEffect } from 'react';
 import { KeyboardPropTypes } from './propTypes';
 
