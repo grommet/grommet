@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useMemo, useState } from 'react';
 import { Descend } from 'grommet-icons/icons/Descend';
 import { DataContext } from '../../contexts/DataContext';
@@ -26,8 +28,7 @@ const Content = ({ options: optionsArg }) => {
 
     if (optionsArg) {
       props = { options: optionsArg };
-    }
-    if (properties && Array.isArray(properties)) {
+    } else if (properties && Array.isArray(properties)) {
       props = { options: properties };
     } else if (properties && typeof properties === 'object') {
       props = {
