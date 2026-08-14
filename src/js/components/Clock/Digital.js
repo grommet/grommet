@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useEffect, useState } from 'react';
 import { useThemeValue } from '../../utils/useThemeValue';
 

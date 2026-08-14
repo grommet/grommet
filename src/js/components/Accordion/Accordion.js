@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { Children, forwardRef, useCallback, useState } from 'react';
 import { AccordionPropTypes } from './propTypes';
 import { Box } from '../Box';
