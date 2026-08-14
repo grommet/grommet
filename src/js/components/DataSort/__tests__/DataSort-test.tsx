@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import {
   act,
@@ -5,6 +7,7 @@ import {
   render,
   screen,
   waitFor,
+  within,
 } from '@testing-library/react';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
@@ -127,5 +130,37 @@ describe('DataSort', () => {
 
     expect(drop).toBeTruthy();
     expect(drop).toMatchSnapshot();
+  });
+
+  test('options prop takes priority over derived properties', async () => {
+    const items = [
+      { name: 'a', loc: 'Home' },
+      { name: 'b', loc: 'School' },
+    ];
+    const properties = {
+      name: { label: 'My Name' },
+      loc: { label: 'Location' },
+    };
+
+    render(
+      <Grommet>
+        <Data data={items} properties={properties}>
+          <DataFilters>
+            <DataSort options={['custom-a', 'custom-b']} />
+          </DataFilters>
+        </Data>
+      </Grommet>,
+    );
+
+    const propButton = screen.getByRole('button', {
+      name: 'Sort by Open Drop',
+    });
+    fireEvent.click(propButton);
+    const drop = await waitFor(() => screen.getByRole('listbox'));
+
+    expect(within(drop).getByText('custom-a')).toBeInTheDocument();
+    expect(within(drop).getByText('custom-b')).toBeInTheDocument();
+    expect(within(drop).queryByText('My Name')).not.toBeInTheDocument();
+    expect(within(drop).queryByText('Location')).not.toBeInTheDocument();
   });
 });
