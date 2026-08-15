@@ -2,12 +2,24 @@
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
 import { Grid } from '..';
 
 describe('Grid', () => {
+  test('should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Grid />
+      </Grommet>,
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   test('renders', () => {
     const { container } = render(
       <Grommet>
@@ -95,27 +107,31 @@ describe('Grid', () => {
     // propTypes) while `areas` uses the named-area object form, which
     // previously crashed with `props.columns.map is not a function`
     // instead of just warning.
-    console.error = jest.fn();
-    console.warn = jest.fn();
-    const warnSpy = jest.spyOn(console, 'warn');
-    const { container } = render(
-      <Grommet>
-        <Grid
-          rows={['xxsmall', 'medium', 'xsmall']}
-          columns="small"
-          areas={[
-            { name: 'header', start: [0, 0], end: [0, 1] },
-            { name: 'main', start: [1, 0], end: [1, 0] },
-            { name: 'sidebar', start: [1, 1], end: [1, 1] },
-            { name: 'footer', start: [2, 0], end: [2, 1] },
-          ]}
-        />
-      </Grommet>,
-    );
-    expect(warnSpy).toHaveBeenCalledWith(
-      'Grid `areas` requires `rows` and `columns` to be arrays.',
-    );
-    expect(container.firstChild).toMatchSnapshot();
+    const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    try {
+      const { container } = render(
+        <Grommet>
+          <Grid
+            rows={['xxsmall', 'medium', 'xsmall']}
+            columns="small"
+            areas={[
+              { name: 'header', start: [0, 0], end: [0, 1] },
+              { name: 'main', start: [1, 0], end: [1, 0] },
+              { name: 'sidebar', start: [1, 1], end: [1, 1] },
+              { name: 'footer', start: [2, 0], end: [2, 1] },
+            ]}
+          />
+        </Grommet>,
+      );
+      expect(warnSpy).toHaveBeenCalledWith(
+        'Grid `areas` requires `rows` and `columns` to be arrays.',
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    } finally {
+      warnSpy.mockRestore();
+      errorSpy.mockRestore();
+    }
   });
 
   test('areas renders when given an array of string arrays', () => {
