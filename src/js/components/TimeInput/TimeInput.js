@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -358,7 +360,6 @@ const TimeInput = forwardRef(
         if (disabled) return;
         if (event.button !== 0) return;
         if (event.defaultPrevented) return;
-        event.preventDefault();
         event.stopPropagation();
         setSegmentFocused(true);
         setActiveSection(section);
