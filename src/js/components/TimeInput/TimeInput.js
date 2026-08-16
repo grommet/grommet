@@ -346,7 +346,6 @@ const TimeInput = forwardRef(
         if (disabled) return;
         if (event.button !== 0) return;
         if (event.defaultPrevented) return;
-        event.preventDefault();
         event.stopPropagation();
         setSegmentFocused(true);
         setActiveSection(section);
