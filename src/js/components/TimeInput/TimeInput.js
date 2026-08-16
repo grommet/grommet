@@ -114,6 +114,7 @@ const TimeInput = forwardRef(
       name,
       onChange,
       onPartialChange,
+      onActiveSectionChange,
       readOnly = false,
       showSeconds,
       value: valueArg,
@@ -465,6 +466,7 @@ const TimeInput = forwardRef(
         setSegmentFocused(true);
         if (readOnly || disabled) return;
         setActiveSection(section);
+        onActiveSectionChange?.(section);
       },
       [
         announce,
@@ -474,6 +476,7 @@ const TimeInput = forwardRef(
         open,
         readOnly,
         segmentFocused,
+        onActiveSectionChange,
         setActiveSection,
       ],
     );

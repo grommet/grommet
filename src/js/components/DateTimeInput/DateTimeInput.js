@@ -792,6 +792,15 @@ const DateTimeInput = forwardRef(
       setActiveSection,
     ]);
 
+    
+    const handleTimeActiveSectionChange = useCallback(
+      (timeSection) => {
+        const dtSection = TIME_TO_DT_SECTION[timeSection];
+        if (dtSection !== undefined) setActiveSection(dtSection);
+      },
+      [setActiveSection],
+    );
+
     const closePicker = useCallback(() => {
       setSegmentFocused(false);
       suppressSegmentFocusRef.current = true;
@@ -1362,6 +1371,7 @@ const DateTimeInput = forwardRef(
                   disabled={disabled}
                   readOnly={readOnly}
                   onChange={handleTimeSelect}
+                  onActiveSectionChange={handleTimeActiveSectionChange}
                   onPartialChange={handleTimePartialChange}
                 />
               </Box>
