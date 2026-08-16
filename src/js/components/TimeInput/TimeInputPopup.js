@@ -137,6 +137,7 @@ const PopupColumn = ({
           }}
           onClick={() => onClickCommitOption(section, option)}
           onFocus={() => onSetSection(section)}
+          onMouseEnter={() => onSetSection(section)}
         >
           <Text
             size={theme.global.input.font.size || 'small'}
