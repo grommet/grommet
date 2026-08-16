@@ -147,6 +147,7 @@ const StyledDataTableCell = styled(TableCell)`
     props.pin &&
     props.pin.length > 0 &&
     `position: sticky;
+    background: ${normalizeColor('background', props.theme)};
     ${props.pin
       .map(
         (p) =>
