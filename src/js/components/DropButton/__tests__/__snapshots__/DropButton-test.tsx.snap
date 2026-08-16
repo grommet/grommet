@@ -84,7 +84,9 @@ exports[`DropButton close by clicking outside 1`] = `
     class="c1"
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
 </div>
 `;
@@ -187,7 +189,9 @@ exports[`DropButton closed 1`] = `
     class="c1"
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
 </div>
 `;
@@ -263,7 +267,9 @@ exports[`DropButton closed outside grommet wrapper 1`] = `
   class="c0"
   type="button"
 >
-  Dropper
+  <span>
+    Dropper
+  </span>
 </button>
 `;
 
@@ -350,7 +356,9 @@ exports[`DropButton disabled 1`] = `
     disabled=""
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
 </div>
 `;
@@ -439,7 +447,9 @@ exports[`DropButton open and close 1`] = `
     class="c1"
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
 </div>
 `;
@@ -546,7 +556,9 @@ exports[`DropButton opened 1`] = `
     class="c1"
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
 </div>
 `;
@@ -639,7 +651,9 @@ exports[`DropButton opened ref 1`] = `
     class="c1"
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
 </div>
 `;
@@ -746,7 +760,9 @@ exports[`DropButton ref function 1`] = `
     class="c1"
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
 </div>
 `;
@@ -849,14 +865,18 @@ exports[`DropButton rendersr a11yTitle and aria-label 1`] = `
     class="c1"
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
   <button
     aria-label="Test Label-2"
     class="c1"
     type="button"
   >
-    Dropper
+    <span>
+      Dropper
+    </span>
   </button>
 </div>
 `;

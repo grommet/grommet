@@ -80,8 +80,14 @@ const Anchor = forwardRef(
 
     const anchorIcon = useSizedIcon(coloredIcon, sizeProp || size, theme);
 
-    const first = reverse ? label : anchorIcon;
-    const second = reverse ? anchorIcon : label;
+    // Wrap a plain string label in a span so browser translation tools
+    // (e.g. Chrome's Google Translate) replace the text node inside the span
+    // rather than a text node that is a direct sibling of React-managed
+    // elements, which would break React's DOM reconciliation
+    // (NotFoundError on insertBefore).
+    const safeLabel = typeof label === 'string' ? <span>{label}</span> : label;
+    const first = reverse ? safeLabel : anchorIcon;
+    const second = reverse ? anchorIcon : safeLabel;
 
     return (
       <StyledAnchor
