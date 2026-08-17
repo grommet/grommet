@@ -9,7 +9,7 @@ import { axe } from 'jest-axe';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Grommet, Wizard } from '../..';
+import { FormField, Grommet, TextInput, Wizard } from '../..';
 
 const basicSteps = [
   { id: 'step1', title: 'Step 1', description: 'First step' },
@@ -191,6 +191,50 @@ describe('Wizard', () => {
     await waitFor(() =>
       expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy(),
     );
+  });
+
+  test(
+    'blocks next when required form field is invalid, then advances once valid',
+    async () => {
+    const user = userEvent.setup();
+    const onStepChange = jest.fn();
+    const steps = [
+      {
+        id: 's1',
+        title: 'Step 1',
+        render: () => (
+          <FormField htmlFor="wizard-email" label="Email" name="email" required>
+            <TextInput
+              id="wizard-email"
+              name="email"
+              placeholder="you@example.com"
+            />
+          </FormField>
+        ),
+      },
+      { id: 's2', title: 'Step 2' },
+    ];
+    render(
+      <Grommet>
+        <Wizard
+          steps={steps}
+          renderStep={renderStep}
+          onStepChange={onStepChange}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    await user.click(screen.getByRole('button', { name: /next/i }));
+    // We should still be on step 1 and a blocked event should fire.
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    const blockedEvent = onStepChange.mock.calls
+      .map((call) => call[0])
+      .find((event) => event.trigger === 'next' && event.phase === 'blocked');
+    expect(blockedEvent).toBeTruthy();
+
+    await user.type(screen.getByRole('textbox', { name: 'Email' }), 'a@b.com');
+    await user.click(screen.getByRole('button', { name: /next/i }));
+    expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy();
   });
 
   test('branching via nextStep(formValue) routes to declared id', async () => {
