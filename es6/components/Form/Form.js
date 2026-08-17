@@ -1,6 +1,8 @@
 var _excluded = ["children", "errors", "infos", "messages", "kind", "onChange", "onReset", "onSubmit", "onValidate", "validate", "value"];
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -506,8 +508,8 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         useValue = componentValue;else if (valueProp && name && formValue !== undefined)
         // form drives, pattern #1
         useValue = formValue;else if (formValue === undefined && name)
-        // form has reset, so reset input value as well
-        useValue = initialValue;else useValue = inputValue;
+        // controlled form: keep input controlled; uncontrolled: reset
+        useValue = valueProp !== undefined ? initialValue != null ? initialValue : '' : initialValue;else useValue = inputValue;
       return [useValue, function (nextComponentValue) {
         if (name) {
           // we have somewhere to put this
@@ -672,7 +674,9 @@ var Form = /*#__PURE__*/forwardRef(function (_ref2, ref) {
             // Show form's validity when clicking on Submit
             valid: buildValid(nextErrors)
           };
-          if (onValidate) onValidate(nextValidationResults);
+          if (onValidate) onValidate(_extends({
+            submitting: true
+          }, nextValidationResults));
           validationResultsRef.current = nextValidationResults;
           updateAnalytics();
           return nextValidationResults;

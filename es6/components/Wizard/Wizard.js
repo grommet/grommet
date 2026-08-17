@@ -277,35 +277,46 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   // Run step.validate (sync or async). Returns { ok, error }.
   var runValidation = useCallback(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-    var result, _t;
+    var formElement, formIsValid, result, _t;
     return _regenerator().w(function (_context) {
       while (1) switch (_context.p = _context.n) {
         case 0:
-          if (!(typeof (currentStepObj == null ? void 0 : currentStepObj.validate) !== 'function')) {
+          formElement = document.getElementById(currentStep + "-form");
+          formIsValid = (formElement == null ? void 0 : formElement.getAttribute('data-form-valid')) !== 'false';
+          if (formIsValid) {
             _context.n = 1;
             break;
           }
           return _context.a(2, {
-            ok: true
+            ok: false,
+            error: undefined
           });
         case 1:
-          setIsValidating(true);
-          _context.p = 2;
-          _context.n = 3;
-          return currentStepObj.validate(formValue);
-        case 3:
-          result = _context.v;
-          setIsValidating(false);
-          if (!(result === true || result === undefined)) {
-            _context.n = 4;
+          if (!(typeof (currentStepObj == null ? void 0 : currentStepObj.validate) !== 'function')) {
+            _context.n = 2;
             break;
           }
           return _context.a(2, {
             ok: true
           });
+        case 2:
+          setIsValidating(true);
+          _context.p = 3;
+          _context.n = 4;
+          return currentStepObj.validate(formValue);
         case 4:
-          if (!(result === false)) {
+          result = _context.v;
+          setIsValidating(false);
+          if (!(result === true || result === undefined)) {
             _context.n = 5;
+            break;
+          }
+          return _context.a(2, {
+            ok: true
+          });
+        case 5:
+          if (!(result === false)) {
+            _context.n = 6;
             break;
           }
           return _context.a(2, {
@@ -315,30 +326,30 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
               messages: messages
             })
           });
-        case 5:
+        case 6:
           if (!(typeof result === 'string')) {
-            _context.n = 6;
+            _context.n = 7;
             break;
           }
           return _context.a(2, {
             ok: false,
             error: result
           });
-        case 6:
+        case 7:
           if (!(typeof result === 'object' && result.error)) {
-            _context.n = 7;
+            _context.n = 8;
             break;
           }
           return _context.a(2, {
             ok: false,
             error: result.error
           });
-        case 7:
+        case 8:
           return _context.a(2, {
             ok: true
           });
-        case 8:
-          _context.p = 8;
+        case 9:
+          _context.p = 9;
           _t = _context.v;
           setIsValidating(false);
           return _context.a(2, {
@@ -349,8 +360,8 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
             })
           });
       }
-    }, _callee, null, [[2, 8]]);
-  })), [currentStepObj, formValue, format, messages]);
+    }, _callee, null, [[3, 9]]);
+  })), [currentStep, currentStepObj, formValue, format, messages]);
   var next = useCallback(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
     var _yield$runValidation, ok, error, nextId;
     return _regenerator().w(function (_context2) {
@@ -550,7 +561,7 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   }, [sendAnalytics, currentStep, currentStepObj, emitStepChange, isControlled, resolveNextStepId]);
   var complete = useCallback(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
-    var _yield$runValidation3, ok, error, completedStepsList;
+    var _yield$runValidation3, ok, error, nextCompleted, completedStepsList;
     return _regenerator().w(function (_context4) {
       while (1) switch (_context4.n) {
         case 0:
@@ -608,7 +619,9 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
           if (onComplete) {
             // setCompletedSteps above is async; include currentStep here so the
             // payload reflects the just-completed final step.
-            completedStepsList = [].concat(completedSteps, [currentStep]);
+            nextCompleted = new Set(completedSteps);
+            nextCompleted.add(currentStep);
+            completedStepsList = Array.from(nextCompleted);
             onComplete({
               value: formValue,
               completedSteps: completedStepsList

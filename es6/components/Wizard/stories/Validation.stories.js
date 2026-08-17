@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
-import { Box, Notification, Paragraph, TextInput, Form, FormField } from 'grommet';
+import { Box, Notification, Paragraph, TextInput, FormField } from 'grommet';
 import { Wizard } from '../Wizard';
 var validateEmail = function validateEmail(email) {
   if (!email) return 'Email is required.';
@@ -24,57 +24,52 @@ var Validation = function Validation() {
     description: 'Enter a valid email address.',
     skippable: true,
     validate: function validate(value) {
-      return validateEmail(value.email) ? 'Fix the issues to continue' : true;
+      if (value.extra !== 'please') {
+        return 'You must enter "please" in the Extra field to proceed.';
+      }
+      return undefined;
     },
-    render: function render(step, api) {
-      var emailError = api.validationError && validateEmail(api.formValue.email);
-      return /*#__PURE__*/React.createElement(Form, {
-        value: api.formValue,
-        onChange: function onChange(nextValue) {
-          return api.setFormValue(nextValue);
-        },
-        validate: "submit"
-      }, /*#__PURE__*/React.createElement(FormField, {
+    render: function render(/* step, api */
+    ) {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(FormField, {
         htmlFor: "wizard-email",
         label: "Email",
         name: "email",
         required: true,
-        validate: validateEmail,
-        error: emailError
+        validate: validateEmail
       }, /*#__PURE__*/React.createElement(TextInput, {
         id: "wizard-email",
         name: "email",
         placeholder: "you@example.com"
+      })), /*#__PURE__*/React.createElement(FormField, {
+        htmlFor: "wizard-extra",
+        label: "Extra",
+        name: "extra",
+        required: true
+      }, /*#__PURE__*/React.createElement(TextInput, {
+        id: "wizard-extra",
+        name: "extra",
+        placeholder: "Extra information"
       })));
     }
   }, {
     id: 'password',
     title: 'Password',
     description: 'Choose a password.',
-    validate: function validate(value) {
-      return validatePassword(value.password) ? 'Fix the issues to continue' : true;
-    },
-    render: function render(step, api) {
-      var passwordError = api.validationError && validatePassword(api.formValue.password);
-      return /*#__PURE__*/React.createElement(Form, {
-        value: api.formValue,
-        onChange: function onChange(nextValue) {
-          return api.setFormValue(nextValue);
-        },
-        validate: "change"
-      }, /*#__PURE__*/React.createElement(FormField, {
+    render: function render(/* step, api */
+    ) {
+      return /*#__PURE__*/React.createElement(FormField, {
         htmlFor: "wizard-password",
         label: "Password",
         name: "password",
         required: true,
-        validate: validatePassword,
-        error: passwordError
+        validate: validatePassword
       }, /*#__PURE__*/React.createElement(TextInput, {
         id: "wizard-password",
         name: "password",
         type: "password",
         placeholder: "password"
-      })));
+      }));
     }
   }, {
     id: 'confirm',

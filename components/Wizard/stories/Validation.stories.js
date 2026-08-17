@@ -30,57 +30,52 @@ var Validation = exports.Validation = function Validation() {
     description: 'Enter a valid email address.',
     skippable: true,
     validate: function validate(value) {
-      return validateEmail(value.email) ? 'Fix the issues to continue' : true;
+      if (value.extra !== 'please') {
+        return 'You must enter "please" in the Extra field to proceed.';
+      }
+      return undefined;
     },
-    render: function render(step, api) {
-      var emailError = api.validationError && validateEmail(api.formValue.email);
-      return /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
-        value: api.formValue,
-        onChange: function onChange(nextValue) {
-          return api.setFormValue(nextValue);
-        },
-        validate: "submit"
-      }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    render: function render(/* step, api */
+    ) {
+      return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
         htmlFor: "wizard-email",
         label: "Email",
         name: "email",
         required: true,
-        validate: validateEmail,
-        error: emailError
+        validate: validateEmail
       }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
         id: "wizard-email",
         name: "email",
         placeholder: "you@example.com"
+      })), /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+        htmlFor: "wizard-extra",
+        label: "Extra",
+        name: "extra",
+        required: true
+      }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
+        id: "wizard-extra",
+        name: "extra",
+        placeholder: "Extra information"
       })));
     }
   }, {
     id: 'password',
     title: 'Password',
     description: 'Choose a password.',
-    validate: function validate(value) {
-      return validatePassword(value.password) ? 'Fix the issues to continue' : true;
-    },
-    render: function render(step, api) {
-      var passwordError = api.validationError && validatePassword(api.formValue.password);
-      return /*#__PURE__*/_react["default"].createElement(_grommet.Form, {
-        value: api.formValue,
-        onChange: function onChange(nextValue) {
-          return api.setFormValue(nextValue);
-        },
-        validate: "change"
-      }, /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
+    render: function render(/* step, api */
+    ) {
+      return /*#__PURE__*/_react["default"].createElement(_grommet.FormField, {
         htmlFor: "wizard-password",
         label: "Password",
         name: "password",
         required: true,
-        validate: validatePassword,
-        error: passwordError
+        validate: validatePassword
       }, /*#__PURE__*/_react["default"].createElement(_grommet.TextInput, {
         id: "wizard-password",
         name: "password",
         type: "password",
         placeholder: "password"
-      })));
+      }));
     }
   }, {
     id: 'confirm',

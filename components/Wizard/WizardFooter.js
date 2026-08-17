@@ -25,11 +25,11 @@ var WizardFooter = exports.WizardFooter = function WizardFooter(_ref) {
   var _React$useContext = _react["default"].useContext(_MessageContext.MessageContext),
     format = _React$useContext.format;
   var _useWizard = (0, _WizardContext.useWizard)(),
+    currentStep = _useWizard.currentStep,
     currentStepObj = _useWizard.currentStepObj,
     currentStepIndex = _useWizard.currentStepIndex,
     totalSteps = _useWizard.totalSteps,
     canGoNext = _useWizard.canGoNext,
-    next = _useWizard.next,
     previous = _useWizard.previous,
     skip = _useWizard.skip,
     complete = _useWizard.complete,
@@ -101,7 +101,8 @@ var WizardFooter = exports.WizardFooter = function WizardFooter(_ref) {
       }) : undefined,
       reverse: true,
       disabled: !canGoNext,
-      onClick: next
+      type: "submit",
+      form: currentStep + "-form"
     })];
   }
   return /*#__PURE__*/_react["default"].createElement(_ResponsiveContext.ResponsiveContext.Consumer, null, function (size) {
