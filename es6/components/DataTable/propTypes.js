@@ -1,4 +1,6 @@
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import PropTypes from 'prop-types';
 import { genericProps } from '../../utils/general-prop-types';
 var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
@@ -87,6 +89,7 @@ if (process.env.NODE_ENV !== 'production') {
       rowsChanged: PropTypes.string,
       rowsSingle: PropTypes.string,
       searchBy: PropTypes.string,
+      sortable: PropTypes.string,
       total: PropTypes.string,
       totalSingle: PropTypes.string
     }),

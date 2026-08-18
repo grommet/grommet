@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 import { ThemeType } from '../../themes';
 import { BackgroundType } from '../../utils';
@@ -98,6 +100,7 @@ export interface GrommetProps {
         rowsChanged?: string;
         rowsSingle?: string;
         searchBy?: string;
+        sortable?: string;
         total?: string;
         totalSingle?: string;
       };

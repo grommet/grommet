@@ -5,7 +5,8 @@ exports.DataTablePropTypes = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _generalPropTypes = require("../../utils/general-prop-types");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var sizes = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sides = ['horizontal', 'vertical', 'top', 'bottom', 'left', 'right'];
 var parts = ['header', 'body', 'footer'];
@@ -92,6 +93,7 @@ if (process.env.NODE_ENV !== 'production') {
       rowsChanged: _propTypes["default"].string,
       rowsSingle: _propTypes["default"].string,
       searchBy: _propTypes["default"].string,
+      sortable: _propTypes["default"].string,
       total: _propTypes["default"].string,
       totalSingle: _propTypes["default"].string
     }),

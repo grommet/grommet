@@ -2,6 +2,8 @@ var _excluded = ["background", "border", "color", "font", "gap", "pad", "units"]
   _excluded2 = ["allowSelectAll", "cellProps", "columns", "data", "disabled", "fill", "filtering", "filters", "groupBy", "groups", "groupState", "messages", "onFilter", "onFiltering", "onResize", "onSelect", "onSort", "onToggle", "onWidths", "pin", "pinnedOffset", "primaryProperty", "selected", "rowDetails", "sort", "widths", "verticalAlign"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-underscore-dangle */
 import React, { forwardRef, useCallback, useContext, useRef } from 'react';
 import styled, { css } from 'styled-components';
@@ -98,6 +100,15 @@ var StyledContentBox = styled(Box).withConfig({
 })(["", ""], function (props) {
   return props.extend;
 });
+
+// Visually hidden. Carries the sort status + alternate action text;
+// it is aria-hidden and referenced by the sortable header button
+// via aria-labelledby, so it feeds the button's accessible name
+// without being a separately navigable node for screen readers.
+var HiddenText = styled.span.withConfig({
+  displayName: "Header__HiddenText",
+  componentId: "sc-1baku5q-2"
+})(["position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"]);
 var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
   var _theme$dataTable$expa;
   var allowSelectAll = _ref2.allowSelectAll,
@@ -254,6 +265,22 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
       columnVerticalAlign = _ref4.verticalAlign,
       size = _ref4.size,
       units = _ref4.units;
+    // Extract a plain-text label for the column, used for
+    // accessible names (e.g. resizer aria-label, and the sortable
+    // button's hidden sort-status text). Falls back to the column
+    // property when no text can be derived from a non-string /
+    // node header.
+    var headerText = typeof header === 'string' ? header : function () {
+      var _textFromNode = function textFromNode(node) {
+        if (node === null || node === undefined || typeof node === 'boolean') return '';
+        if (typeof node === 'string' || typeof node === 'number') return String(node);
+        if (Array.isArray(node)) return node.map(_textFromNode).join(' ');
+        if (/*#__PURE__*/React.isValidElement(node)) return _textFromNode(node.props.children);
+        return '';
+      };
+      var text = _textFromNode(header).trim();
+      return text || property;
+    }();
     var content;
     var unitsContent = units ? /*#__PURE__*/React.createElement(Text, _extends({}, textProps, theme.dataTable.header.units), units) : undefined;
     if (typeof header === 'string') {
@@ -282,27 +309,39 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
     if (onSort && sortable !== false) {
       var _theme$dataTable$sort;
       var Icon;
-      var iconAriaLabel;
-      if (onSort && sortable !== false) {
-        if (sort && sort.property === property) {
-          Icon = theme.dataTable.icons[sort.direction !== 'asc' ? 'ascending' : 'descending'];
-          if (sort.direction === 'asc') {
-            ariaSort = 'ascending';
-            iconAriaLabel = format({
-              id: 'dataTable.ascending',
-              messages: messages
-            });
-          } else if (sort.direction === 'desc') {
-            ariaSort = 'descending';
-            iconAriaLabel = format({
-              id: 'dataTable.descending',
-              messages: messages
-            });
-          }
-        } else if (theme.dataTable.icons.sortable) {
-          Icon = theme.dataTable.icons.sortable;
-        }
+      // default to 'none' so AT users can discover a column is
+      // sortable before interacting with it. Overridden below
+      // when the column is the active sort.
+      ariaSort = 'none';
+      if (sort && sort.property === property) {
+        Icon = theme.dataTable.icons[sort.direction !== 'asc' ? 'ascending' : 'descending'];
+        ariaSort = sort.direction === 'asc' ? 'ascending' : 'descending';
+      } else if (theme.dataTable.icons.sortable) {
+        Icon = theme.dataTable.icons.sortable;
       }
+
+      // `ascending`/`descending` are repurposed here to carry the
+      // full sort-status + action sentence (previously just the
+      // bare word, used as the icon's aria-label). This keeps any
+      // existing consumer customization of these two keys applied
+      // on upgrade, rather than silently orphaning it in favor of
+      // new keys - see default.json for the expected shape.
+      var hiddenTextId = 'dataTable.sortable';
+      if (ariaSort === 'ascending') {
+        hiddenTextId = 'dataTable.ascending';
+      } else if (ariaSort === 'descending') {
+        hiddenTextId = 'dataTable.descending';
+      }
+
+      // The button's accessible name comes from aria-labelledby:
+      // the visible label + the aria-hidden status span. aria-hidden
+      // keeps the span from being read as its own node, but text
+      // referenced by aria-labelledby is still included in the name.
+      // Because the status is part of the name, changing it on sort
+      // is announced live on the focused button
+      var baseId = "grommet-data-table-header-" + property;
+      var labelId = baseId + "-label";
+      var sortStatusId = baseId + "-sort-status";
       content = /*#__PURE__*/React.createElement(StyledHeaderCellButton, _extends({
         plain: true,
         column: property,
@@ -312,14 +351,23 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         sort: sort,
         pad: cellProps.pad,
         sortable: true,
+        "aria-labelledby": labelId + " " + sortStatusId,
         verticalAlign: verticalAlign || columnVerticalAlign
       }, passThemeFlag), /*#__PURE__*/React.createElement(Box, {
         direction: "row",
         align: "center",
         gap: (_theme$dataTable$sort = theme.dataTable.sort) == null ? void 0 : _theme$dataTable$sort.gap,
         justify: align
-      }, content, Icon && /*#__PURE__*/React.createElement(Icon, {
-        "aria-label": iconAriaLabel
+      }, /*#__PURE__*/React.createElement(Box, {
+        id: labelId
+      }, content), Icon && /*#__PURE__*/React.createElement(Icon, {
+        "aria-hidden": true
+      })), /*#__PURE__*/React.createElement(HiddenText, {
+        id: sortStatusId,
+        "aria-hidden": true
+      }, format({
+        id: hiddenTextId,
+        messages: messages
       })));
     }
 
@@ -410,7 +458,7 @@ var Header = /*#__PURE__*/forwardRef(function (_ref2, ref) {
         _onResize(prop, width);
         updateWidths(prop, width);
       },
-      headerText: typeof header === 'string' ? header : property,
+      headerText: headerText,
       messages: messages,
       headerId: headerId
     }));

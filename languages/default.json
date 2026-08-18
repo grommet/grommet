@@ -77,11 +77,11 @@
     "totalSingle": "{total} {items}"
   },
   "dataTable": {
-    "ascending": "ascending",
+    "ascending": "sorted ascending, activate to sort descending",
     "collapse": "collapse {label}",
     "collapseAll": "collapse all",
     "decrease": "Decrease {headerText} column width",
-    "descending": "descending",
+    "descending": "sorted descending, activate to sort ascending",
     "increase": "Increase {headerText} column width",
     "expand": "expand {label}",
     "expandAll": "expand all",
@@ -90,6 +90,7 @@
     "rowsChanged": "Number of rows changed",
     "rowsSingle": "row",
     "searchBy": "Open search by {property}",
+    "sortable": "sortable, activate to sort ascending",
     "total": "{total} {rows}",
     "totalSingle": "{total} {rows}"
   },
