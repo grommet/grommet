@@ -76,6 +76,7 @@ const Carousel = ({
     });
     setInTransition(true);
     setDirection('left');
+    setActiveChildState(nextActiveIndex);
     onChildChange(nextActiveIndex);
   }, [activeIndex, inTransition, lastIndex, onChildChange]);
 
@@ -89,6 +90,7 @@ const Carousel = ({
     });
     setInTransition(true);
     setDirection('right');
+    setActiveChildState(nextActiveIndex);
     onChildChange(nextActiveIndex);
   }, [activeIndex, inTransition, lastIndex, onChildChange]);
 
@@ -99,6 +101,7 @@ const Carousel = ({
         setIndexes({ activeIndex: index, priorActiveIndex: activeIndex });
         setInTransition(true);
         setDirection(index > activeIndex ? 'left' : 'right');
+        setActiveChildState(index);
         onChildChange(index);
       }
     },
