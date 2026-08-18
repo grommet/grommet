@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 
 export interface FormExtendedEvent<R = Record<string, unknown>, T = Element>
@@ -18,6 +20,7 @@ export interface FormProps<T> {
     errors: Record<string, any>;
     infos: Record<string, any>;
     valid: boolean;
+    submitting?: boolean;
   }) => void;
   validate?: 'blur' | 'submit' | 'change';
   value?: T;

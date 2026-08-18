@@ -1,8 +1,9 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-nested-ternary */
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 
+import { useSectionedField } from '../../utils/useSectionedField';
 import {
   defaultSections,
   hasAnyValue,
@@ -17,6 +18,7 @@ import {
   SECTION_MINUTE,
   SECTION_PERIOD,
   SECTION_SECOND,
+  defaultHourForFormat,
 } from './utils';
 
 const separatorBeforeSection = (section) =>
@@ -123,35 +125,25 @@ export const useSectionedTimeField = ({
     previousValue: undefined,
     firstDigit: undefined,
   });
-  const preserveIncompleteSectionsRef = useRef(false);
-  // Track pending single digit for display without committing
-  const [pendingDigits, setPendingDigits] = useState({});
-  const parsedValue = useMemo(
-    () => isoTimeToSections(normalizeToIsoTime(value), format),
-    [format, value],
+  const parseValue = useCallback(
+    (nextValue) => isoTimeToSections(normalizeToIsoTime(nextValue), format),
+    [format],
   );
-
-  const [sections, setSections] = useState(
-    parsedValue || defaultSections(format),
-  );
-  const [activeSection, setActiveSection] = useState(
-    sectionOrder[0] || SECTION_HOUR,
-  );
-
-  useEffect(() => {
-    if (!sectionOrder.includes(activeSection)) {
-      setActiveSection(sectionOrder[0] || SECTION_HOUR);
-    }
-  }, [activeSection, sectionOrder]);
-
-  useEffect(() => {
-    if (!parsedValue && preserveIncompleteSectionsRef.current) {
-      preserveIncompleteSectionsRef.current = false;
-      return;
-    }
-
-    setSections(parsedValue || defaultSections(format));
-  }, [parsedValue, format]);
+  const getDefaultValue = useCallback(() => defaultSections(format), [format]);
+  const {
+    activeSection,
+    pendingDigits,
+    preserveIncompleteSectionsRef,
+    sections,
+    setActiveSection,
+    setPendingDigits,
+    setSections,
+  } = useSectionedField({
+    value,
+    parseValue,
+    defaultValue: getDefaultValue,
+    sectionOrder,
+  });
 
   const displayValue = useMemo(() => {
     if (!hasAnyValue(sections)) return '';
@@ -171,7 +163,7 @@ export const useSectionedTimeField = ({
   }, [sectionOrder, sections, pendingDigits]);
 
   const commitSections = useCallback(
-    (nextSections) => {
+    (nextSections, changedSection) => {
       setSections(nextSections);
 
       const complete = sectionOrder.every(
@@ -200,21 +192,27 @@ export const useSectionedTimeField = ({
       const hasIncompleteSections = !complete || !allValid;
       preserveIncompleteSectionsRef.current =
         hasIncompleteSections && hasAnyValue(nextSections);
-      onCommit(nextSections, nextValue);
+      onCommit(nextSections, nextValue, changedSection);
     },
-    [onCommit, sectionOrder, format],
+    [
+      format,
+      onCommit,
+      preserveIncompleteSectionsRef,
+      sectionOrder,
+      setSections,
+    ],
   );
 
   const setSectionValue = useCallback(
     (section, rawValue) => {
       const key = sectionKey(section);
       const next = { ...sections, [key]: rawValue };
-      commitSections(next);
+      commitSections(next, section);
       // Clear any pending first-digit overlay, since it's now stale
       // relative to the section value we just committed.
       setPendingDigits({});
     },
-    [commitSections, sections],
+    [commitSections, sections, setPendingDigits],
   );
 
   const moveSection = useCallback(
@@ -228,7 +226,7 @@ export const useSectionedTimeField = ({
       setActiveSection(nextSection);
       return nextSection;
     },
-    [activeSection, sectionOrder],
+    [activeSection, sectionOrder, setActiveSection],
   );
 
   const incrementSection = useCallback(
@@ -278,7 +276,12 @@ export const useSectionedTimeField = ({
             options[options.length - 1];
         }
       } else {
-        const base = current === undefined ? minValue : current;
+        const base =
+          current === undefined
+            ? section === SECTION_HOUR
+              ? defaultHourForFormat(format)
+              : minValue
+            : current;
         next = base + delta;
         if (next > maxValue) next = minValue;
         if (next < minValue) next = maxValue;

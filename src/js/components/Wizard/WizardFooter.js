@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -12,14 +14,13 @@ export const WizardFooter = ({ children, ...rest }) => {
   const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const {
+    currentStep,
     currentStepObj,
     currentStepIndex,
     totalSteps,
     canGoNext,
-    next,
     previous,
     skip,
-    complete,
     cancel,
     hasCancelHandler,
     messages,
@@ -81,7 +82,8 @@ export const WizardFooter = ({ children, ...rest }) => {
           icon={CompleteIcon ? <CompleteIcon aria-hidden="true" /> : undefined}
           primary
           disabled={!canGoNext}
-          onClick={complete}
+          type="submit"
+          form={`${currentStep}-form`}
         />
       ) : (
         <Button
@@ -91,7 +93,8 @@ export const WizardFooter = ({ children, ...rest }) => {
           icon={NextIcon ? <NextIcon aria-hidden="true" /> : undefined}
           reverse
           disabled={!canGoNext}
-          onClick={next}
+          type="submit"
+          form={`${currentStep}-form`}
         />
       ),
     ];

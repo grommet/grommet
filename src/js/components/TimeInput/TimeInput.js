@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -12,7 +14,12 @@ import { Clock as GrommetClockIcon } from 'grommet-icons/icons/Clock';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
+import { normalizeStep } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
+import {
+  getSectionKeyFromType,
+  getSectionTokenFromType,
+} from '../../utils/sectionHelpers';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { FormContext } from '../Form';
@@ -32,32 +39,12 @@ import {
   getSectionAriaMeta,
   getSectionName,
   pad,
+  sectionTypeFromSection,
   SECTION_HOUR,
   SECTION_MINUTE,
   SECTION_PERIOD,
   SECTION_SECOND,
 } from './utils';
-
-const sectionTypeToSection = {
-  hours: SECTION_HOUR,
-  minutes: SECTION_MINUTE,
-  seconds: SECTION_SECOND,
-  meridiem: SECTION_PERIOD,
-};
-
-const getSectionKey = (section) => {
-  if (section === SECTION_HOUR) return 'hour';
-  if (section === SECTION_MINUTE) return 'minute';
-  if (section === SECTION_SECOND) return 'second';
-  return 'period';
-};
-
-const getSectionToken = (section) => {
-  if (section === SECTION_HOUR) return 'hh';
-  if (section === SECTION_MINUTE) return 'mm';
-  if (section === SECTION_SECOND) return 'ss';
-  return 'aa';
-};
 
 const getDisplaySectionKey = (section) => {
   if (section === SECTION_HOUR) return 'hour';
@@ -72,26 +59,19 @@ const getDisplaySectionPrefix = (section, index) => {
 };
 
 const getDisplaySectionText = ({ key, section, sections }) => {
-  if (sections[key] === undefined) return getSectionToken(section);
+  if (sections[key] === undefined)
+    return getSectionTokenFromType(sectionTypeFromSection(section));
   if (section === SECTION_PERIOD) return sections[key];
   return pad(sections[key]);
 };
 
-const getSectionOrder = (format, views) => {
-  const normalizedViews =
-    Array.isArray(views) && views.length
-      ? views
-      : ['hours', 'minutes', 'seconds'];
-
-  const numericSections = normalizedViews
-    .filter((view) => view !== 'meridiem')
-    .map((view) => sectionTypeToSection[view])
-    .filter((section) => section !== undefined);
+const getSectionOrder = (format, showSeconds = format === '12') => {
+  const numericSections = showSeconds
+    ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND]
+    : [SECTION_HOUR, SECTION_MINUTE];
 
   if (format === '12') {
-    const includePeriod =
-      normalizedViews.includes('meridiem') || normalizedViews.includes('hours');
-    if (includePeriod) return [...numericSections, SECTION_PERIOD];
+    return [...numericSections, SECTION_PERIOD];
   }
 
   return numericSections;
@@ -100,17 +80,11 @@ const getSectionOrder = (format, views) => {
 const buildPlaceholder = (sectionOrder) =>
   sectionOrder
     .map((section, index) => {
-      const token = getSectionToken(section);
+      const token = getSectionTokenFromType(sectionTypeFromSection(section));
       if (index === 0) return token;
       return `${section === SECTION_PERIOD ? ' ' : ':'}${token}`;
     })
     .join('');
-
-const normalizeStep = (step) => {
-  const parsed = Number(step);
-  if (!Number.isFinite(parsed) || parsed <= 0) return 1;
-  return Math.max(1, Math.floor(parsed));
-};
 
 // When `format` isn't explicitly provided, default to the 12/24-hour
 // convention the browser's default locale uses, rather than hardcoding one.
@@ -134,11 +108,14 @@ const TimeInput = forwardRef(
       disabled,
       format = DEFAULT_FORMAT,
       id,
+      inline = false,
       messages,
       minuteStep = 1,
       name,
       onChange,
+      onPartialChange,
       readOnly = false,
+      showSeconds,
       value: valueArg,
       ...rest
     },
@@ -192,6 +169,9 @@ const TimeInput = forwardRef(
       [minuteStep],
     );
 
+    const resolvedShowSeconds =
+      showSeconds !== undefined ? showSeconds : format === '12';
+
     const handleInvalid = useCallback(() => {
       const error = formatMessage({ id: 'timeInput.invalidTime', messages });
       announce(error, 'assertive');
@@ -225,7 +205,10 @@ const TimeInput = forwardRef(
       [announce, format, formatMessage, messages],
     );
 
-    const sectionOrder = useMemo(() => getSectionOrder(format), [format]);
+    const sectionOrder = useMemo(
+      () => getSectionOrder(format, resolvedShowSeconds),
+      [format, resolvedShowSeconds],
+    );
 
     const firstSection = sectionOrder[0] || SECTION_HOUR;
     const lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_HOUR;
@@ -248,7 +231,10 @@ const TimeInput = forwardRef(
       sectionOrder,
       minuteStep: normalizedMinuteStep,
       value,
-      onCommit: (_nextSections, nextValue) => {
+      onCommit: (_nextSections, nextValue, _changedSection) => {
+        // Fire partial change on every commit so consumers can update
+        // display state even before all sections are filled.
+        onPartialChange?.(_nextSections, _changedSection);
         if (!nextValue) {
           setValue('');
           onChange?.({ value: undefined });
@@ -292,7 +278,9 @@ const TimeInput = forwardRef(
           });
         }
 
-        const sectionKey = getSectionKey(section);
+        const sectionKey = getSectionKeyFromType(
+          sectionTypeFromSection(section),
+        );
         const sectionValue = sections[sectionKey];
 
         if (sectionValue === undefined) {
@@ -658,9 +646,9 @@ const TimeInput = forwardRef(
 
     const hoursOptions = useMemo(
       () =>
-        Array.from({ length: format === '12' ? 12 : 24 }, (_, index) =>
-          format === '12' ? index + 1 : index,
-        ),
+        format === '12'
+          ? [12, ...Array.from({ length: 11 }, (_, index) => index + 1)]
+          : Array.from({ length: 24 }, (_, index) => index),
       [format],
     );
 
@@ -680,6 +668,27 @@ const TimeInput = forwardRef(
 
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
+
+    if (inline) {
+      return (
+        <TimeInputPopup
+          inline
+          activeSection={activeSection}
+          format={format}
+          formatMessage={formatMessage}
+          hoursOptions={hoursOptions}
+          incrementSection={incrementSection}
+          messages={messages}
+          minuteOptions={minuteOptions}
+          sectionOrder={sectionOrder}
+          secondOptions={secondOptions}
+          sections={sections}
+          setActiveSection={setActiveSection}
+          setSectionValue={setSectionValue}
+          {...inputRest}
+        />
+      );
+    }
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
@@ -825,7 +834,6 @@ const TimeInput = forwardRef(
               label={formatMessage({ id: 'timeInput.chooseTime', messages })}
               messages={messages}
               minuteOptions={minuteOptions}
-              moveSection={moveSection}
               sectionOrder={sectionOrder}
               onClose={closePicker}
               onFocusLeave={closePicker}
