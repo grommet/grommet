@@ -548,7 +548,6 @@ const TextInput = forwardRef(
         aria-label={
           passwordRevealed ? hidePasswordMessage : showPasswordMessage
         }
-        {...passThemeFlag}
       />
     ) : undefined;
 

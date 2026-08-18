@@ -10,9 +10,8 @@ export const Password = () => {
   return (
     // Uncomment <Grommet> lines when using outside of storybook
     // <Grommet theme={...}>
-    <Box width="medium" margin="large">
+    <Box align="center" pad="large" width="medium">
       <TextInput
-        type="password"
         password
         value={value}
         onChange={(event) => setValue(event.target.value)}
