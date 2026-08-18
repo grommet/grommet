@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 import { ThemeType } from '../../themes';
 import { BackgroundType } from '../../utils';
@@ -245,6 +247,10 @@ export interface GrommetProps {
       };
       textInput?: {
         enterSelect?: string;
+        hidePassword?: string;
+        showPassword?: string;
+        hidePassword?: string;
+        showPassword?: string;
         suggestionsCount?: string;
         suggestionsExist?: string;
         suggestionIsOpen?: string;
