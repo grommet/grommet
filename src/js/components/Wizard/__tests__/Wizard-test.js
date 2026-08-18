@@ -137,6 +137,35 @@ describe('Wizard', () => {
     });
   });
 
+  test('blocks completion when a required final field is empty', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    const steps = [
+      {
+        id: 'final',
+        title: 'Final step',
+        render: () => (
+          <FormField htmlFor="wizard-email" label="Email" name="email" required>
+            <TextInput id="wizard-email" name="email" />
+          </FormField>
+        ),
+      },
+    ];
+    render(
+      <Grommet>
+        <Wizard
+          steps={steps}
+          onComplete={onComplete}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: /complete/i }));
+
+    expect(onComplete).not.toHaveBeenCalled();
+  });
+
   test('blocks navigation when validate returns falsy', async () => {
     const user = userEvent.setup();
     const onStepChange = jest.fn();
@@ -193,9 +222,7 @@ describe('Wizard', () => {
     );
   });
 
-  test(
-    'blocks next when required form field is invalid, then advances once valid',
-    async () => {
+  test('blocks next when required form field is invalid, then advances once valid', async () => {
     const user = userEvent.setup();
     const onStepChange = jest.fn();
     const steps = [
