@@ -14,8 +14,11 @@ export const WizardContent = ({ ...rest }) => {
   const wizard = useWizard();
   const {
     currentStep,
+    currentStepIndex,
     currentStepObj,
+    totalSteps,
     formValue,
+    complete,
     next,
     renderStep,
     setFormValue,
@@ -23,6 +26,7 @@ export const WizardContent = ({ ...rest }) => {
   } = wizard;
 
   const contentTheme = theme.wizard?.content;
+  const submit = currentStepIndex >= totalSteps - 1 ? complete : next;
 
   const onValidate = useCallback(
     ({ valid, errors, submitting }) => {
@@ -44,17 +48,17 @@ export const WizardContent = ({ ...rest }) => {
         }
         if (!valid) {
           // Since onSubmit won't get called in this case, go ahead and
-          // call next() to trigger wizard-level state changes. By calling
-          // next() here, it will get to the runValidation step, see that
+          // call submit() to trigger wizard-level state changes. It will
+          // get to the runValidation step, see that
           // the form is invalid from the data-form-valid attribute and set
           // the appropriate blocked state.
           // TODO: consider a method on the wizard context to set the
-          //       blocked state directly instead of calling next()
-          next();
+          //       blocked state directly instead of calling submit()
+          submit();
         }
       }
     },
-    [currentStep, next],
+    [currentStep, submit],
   );
 
   if (!currentStepObj) return null;
@@ -67,7 +71,7 @@ export const WizardContent = ({ ...rest }) => {
       id={`${currentStep}-form`}
       value={formValue}
       onChange={setFormValue}
-      onSubmit={next}
+      onSubmit={submit}
       onValidate={onValidate}
       method="post"
       data-form-valid="true"

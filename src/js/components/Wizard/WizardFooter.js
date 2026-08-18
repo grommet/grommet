@@ -21,7 +21,6 @@ export const WizardFooter = ({ children, ...rest }) => {
     canGoNext,
     previous,
     skip,
-    complete,
     cancel,
     hasCancelHandler,
     messages,
@@ -83,7 +82,8 @@ export const WizardFooter = ({ children, ...rest }) => {
           icon={CompleteIcon ? <CompleteIcon aria-hidden="true" /> : undefined}
           primary
           disabled={!canGoNext}
-          onClick={complete}
+          type="submit"
+          form={`${currentStep}-form`}
         />
       ) : (
         <Button
