@@ -381,6 +381,11 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }),
     value = _useFormInput[0],
     setValue = _useFormInput[1];
+  useEffect(function () {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('Warning: DateTimeInput is currently in beta. The API is subject ' + 'to change in future releases.');
+    }
+  }, []);
   var _useMemo = useMemo(function () {
       return getLocaleSectionLayout(resolvedFormat, showSeconds, locale);
     }, [resolvedFormat, showSeconds, locale]),

@@ -385,6 +385,11 @@ var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(
     }),
     value = _useFormInput[0],
     setValue = _useFormInput[1];
+  (0, _react.useEffect)(function () {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('Warning: DateTimeInput is currently in beta. The API is subject ' + 'to change in future releases.');
+    }
+  }, []);
   var _useMemo = (0, _react.useMemo)(function () {
       return getLocaleSectionLayout(resolvedFormat, showSeconds, locale);
     }, [resolvedFormat, showSeconds, locale]),
