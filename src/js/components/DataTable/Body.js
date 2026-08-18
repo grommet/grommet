@@ -335,7 +335,8 @@ const Body = forwardRef(
         }
         onUp={
           onClickRow && focused
-            ? () => {
+            ? (event) => {
+                event.preventDefault();
                 const previousIndex = focused - 1;
                 setFocused(previousIndex);
                 setActive(previousIndex);
