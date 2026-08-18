@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import 'jest-styled-components';
 import { render, fireEvent, screen, act } from '@testing-library/react';
@@ -15,6 +17,9 @@ import {
   LayerPositionType,
 } from '../..';
 import { LayerContainer } from '../LayerContainer';
+
+// matches StyledLayer's animationDuration (200ms)
+const LAYER_ANIMATION_DURATION = 200;
 
 const SimpleLayer = () => {
   const [showLayer, setShowLayer] = React.useState(true);
@@ -620,6 +625,38 @@ describe('Layer', () => {
       jest.runOnlyPendingTimers();
     });
     expect(document.activeElement).toBe(triggerButton);
+    jest.useRealTimers();
+  });
+
+  test('does not tear down an open Layer when modal prop changes', () => {
+    jest.useFakeTimers();
+
+    const { rerender } = render(
+      <Grommet>
+        <Layer data-testid="layer-content" modal={false}>
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+
+    expect(getByTestId(document.body, 'layer-content')).toBeTruthy();
+
+    // changing modal (or animate/animation/containerTarget) on an
+    // already-open Layer should not run the unmount cleanup logic
+    rerender(
+      <Grommet>
+        <Layer data-testid="layer-content" modal>
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+
+    act(() => {
+      jest.advanceTimersByTime(LAYER_ANIMATION_DURATION);
+    });
+
+    expect(getByTestId(document.body, 'layer-content')).toBeTruthy();
+
     jest.useRealTimers();
   });
 
