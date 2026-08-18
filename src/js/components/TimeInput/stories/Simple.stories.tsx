@@ -16,4 +16,5 @@ export const Simple = () => {
 
 export default {
   title: 'Input/TimeInput/Simple',
+  component: TimeInput,
 };

@@ -26,4 +26,5 @@ export const Controlled = () => {
 
 export default {
   title: 'Input/TimeInput/Controlled',
+  component: TimeInput,
 };
