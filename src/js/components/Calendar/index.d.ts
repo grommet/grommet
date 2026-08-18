@@ -12,6 +12,7 @@ export interface RenderProps {
   day: number;
   isInRange: boolean;
   isSelected: boolean;
+  isToday: boolean;
 }
 
 export interface CalendarHeaderProps {
