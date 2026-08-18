@@ -21,13 +21,17 @@ var WizardContent = exports.WizardContent = function WizardContent(_ref) {
     theme = _useThemeValue.theme;
   var wizard = (0, _WizardContext.useWizard)();
   var currentStep = wizard.currentStep,
+    currentStepIndex = wizard.currentStepIndex,
     currentStepObj = wizard.currentStepObj,
+    totalSteps = wizard.totalSteps,
     formValue = wizard.formValue,
+    complete = wizard.complete,
     next = wizard.next,
     renderStep = wizard.renderStep,
     setFormValue = wizard.setFormValue,
     validationError = wizard.validationError;
   var contentTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.content;
+  var submit = currentStepIndex >= totalSteps - 1 ? complete : next;
   var onValidate = (0, _react.useCallback)(function (_ref2) {
     var valid = _ref2.valid,
       errors = _ref2.errors,
@@ -51,16 +55,16 @@ var WizardContent = exports.WizardContent = function WizardContent(_ref) {
       }
       if (!valid) {
         // Since onSubmit won't get called in this case, go ahead and
-        // call next() to trigger wizard-level state changes. By calling
-        // next() here, it will get to the runValidation step, see that
+        // call submit() to trigger wizard-level state changes. It will
+        // get to the runValidation step, see that
         // the form is invalid from the data-form-valid attribute and set
         // the appropriate blocked state.
         // TODO: consider a method on the wizard context to set the
-        //       blocked state directly instead of calling next()
-        next();
+        //       blocked state directly instead of calling submit()
+        submit();
       }
     }
-  }, [currentStep, next]);
+  }, [currentStep, submit]);
   if (!currentStepObj) return null;
   var stepRender = currentStepObj.render || renderStep;
   var body = stepRender ? stepRender(currentStepObj, wizard) : null;
@@ -68,7 +72,7 @@ var WizardContent = exports.WizardContent = function WizardContent(_ref) {
     id: currentStep + "-form",
     value: formValue,
     onChange: setFormValue,
-    onSubmit: next,
+    onSubmit: submit,
     onValidate: onValidate,
     method: "post",
     "data-form-valid": "true",

@@ -29,7 +29,6 @@ export var WizardFooter = function WizardFooter(_ref) {
     canGoNext = _useWizard.canGoNext,
     previous = _useWizard.previous,
     skip = _useWizard.skip,
-    complete = _useWizard.complete,
     cancel = _useWizard.cancel,
     hasCancelHandler = _useWizard.hasCancelHandler,
     messages = _useWizard.messages;
@@ -88,7 +87,8 @@ export var WizardFooter = function WizardFooter(_ref) {
       }) : undefined,
       primary: true,
       disabled: !canGoNext,
-      onClick: complete
+      type: "submit",
+      form: currentStep + "-form"
     }) : /*#__PURE__*/React.createElement(Button, {
       key: "next",
       label: label('next'),
