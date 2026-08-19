@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -896,6 +898,26 @@ describe('List disabled', () => {
     );
 
     expect(onClickItem).toHaveBeenCalledTimes(2);
+  });
+
+  test('disabled matches an item whose itemKey resolves to an empty string', () => {
+    const onClickItem = jest.fn();
+    render(
+      <Grommet>
+        <List
+          data={[
+            { id: 'one', name: 'alpha' },
+            { id: '', name: 'beta' },
+          ]}
+          itemKey="id"
+          primaryKey="name"
+          disabled={['']}
+          onClickItem={onClickItem}
+        />
+      </Grommet>,
+    );
+    fireEvent.click(screen.getByText('beta'));
+    expect(onClickItem).not.toHaveBeenCalled();
   });
 
   test('Disabled items should not call onClickItem with keyboard', async () => {

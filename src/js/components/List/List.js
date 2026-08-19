@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   Fragment,
   cloneElement,
@@ -387,7 +389,10 @@ const List = React.forwardRef(
                 let content;
                 let boxProps = {};
 
-                const key = getValue(item, index, itemKey) || index;
+                const rawKey = getValue(item, index, itemKey);
+                const key = rawKey === undefined || rawKey === null
+                  ? index
+                  : rawKey;
                 let isPinned;
                 if (
                   (Array.isArray(pinned) && pinned.length > 0) ||
