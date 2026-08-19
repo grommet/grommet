@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useState } from 'react';
 import { StyledImage } from './StyledImage';
 import { ImagePropTypes } from './propTypes';
