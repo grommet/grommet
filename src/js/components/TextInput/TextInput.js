@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -30,6 +32,8 @@ import {
   StyledTextInputContainer,
   StyledPlaceholder,
   StyledIcon,
+  StyledInlineButton,
+  StyledInlineIcon,
   StyledSuggestions,
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -52,6 +56,13 @@ const stringLabel = (suggestion) => {
     return suggestion.value;
   }
   return suggestion;
+};
+
+const renderIcon = (iconValue) => {
+  if (React.isValidElement(iconValue)) return iconValue;
+
+  const IconComponent = iconValue;
+  return IconComponent ? <IconComponent /> : undefined;
 };
 
 const ContainerBox = styled(Box)`
@@ -92,6 +103,7 @@ const TextInput = forwardRef(
       onSuggestionSelect,
       onSuggestionsClose,
       onSuggestionsOpen,
+      password,
       placeholder,
       plain,
       readOnly: readOnlyProp,
@@ -99,6 +111,7 @@ const TextInput = forwardRef(
       reverse,
       suggestions,
       textAlign,
+      type: typeProp,
       value: valueProp,
       width: widthProp,
       ...rest
@@ -122,6 +135,7 @@ const TextInput = forwardRef(
 
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
+    const [passwordRevealed, setPasswordRevealed] = useState(false);
 
     const handleSuggestionSelect = useMemo(
       () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
@@ -144,6 +158,14 @@ const TextInput = forwardRef(
     });
 
     const [tip, setTip] = useState(readOnlyCopyPrompt);
+    const showPasswordMessage = format({
+      id: 'textInput.showPassword',
+      messages,
+    });
+    const hidePasswordMessage = format({
+      id: 'textInput.hidePassword',
+      messages,
+    });
 
     const onClickCopy = () => {
       navigator.clipboard.writeText(value);
@@ -154,6 +176,15 @@ const TextInput = forwardRef(
     const onBlurCopy = () => {
       if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
     };
+
+    const authoredType = typeProp || (password ? 'password' : undefined);
+    const passwordToggle =
+      password && authoredType === 'password' && !readOnlyCopy;
+
+    useEffect(() => {
+      // When the toggle stops applying, return the input to its authored type.
+      if (!passwordToggle) setPasswordRevealed(false);
+    }, [passwordToggle]);
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
@@ -483,6 +514,15 @@ const TextInput = forwardRef(
     // primarily for tests.
 
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
+    const showPasswordIcon = theme.textInput?.icons?.showPassword;
+    const hidePasswordIcon = theme.textInput?.icons?.hidePassword;
+    let inputType = authoredType;
+    if (passwordToggle) {
+      inputType = passwordRevealed ? 'text' : 'password';
+    }
+    const showTextInputIcon = !!textInputIcon && !readOnlyCopy;
+    const showLeadingIcon = showTextInputIcon && !reverse;
+    const showTrailingIcon = showTextInputIcon && reverse;
 
     const ReadOnlyCopyButton = (
       <CopyButton
@@ -495,8 +535,27 @@ const TextInput = forwardRef(
       />
     );
 
+    const PasswordToggleButton = passwordToggle ? (
+      <Button
+        disabled={disabled}
+        kind="toolbar"
+        icon={
+          passwordRevealed
+            ? renderIcon(showPasswordIcon)
+            : renderIcon(hidePasswordIcon)
+        }
+        onClick={() => setPasswordRevealed((current) => !current)}
+        aria-label={
+          passwordRevealed ? hidePasswordMessage : showPasswordMessage
+        }
+      />
+    ) : undefined;
+
+    const textInputButton = readOnlyCopy ? ReadOnlyCopyButton : undefined;
+
     return (
       <StyledTextInputContainer
+        hasButton={!!textInputButton}
         readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
         readOnlyCopy={readOnlyCopy}
         plain={plain}
@@ -505,13 +564,13 @@ const TextInput = forwardRef(
         onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
-        {reverse && readOnlyCopy && ReadOnlyCopyButton}
+        {reverse && textInputButton}
         {showStyledPlaceholder && (
           <StyledPlaceholder {...passThemeFlag}>
             {placeholder}
           </StyledPlaceholder>
         )}
-        {textInputIcon && !readOnlyCopy && (
+        {showLeadingIcon && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
@@ -528,11 +587,15 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={!readOnlyCopy && icon}
+            icon={showTextInputIcon ? icon : undefined}
             reverse={reverse}
             focus={focus}
+            hasButton={!!textInputButton}
+            hasInlineButton={passwordToggle}
+            hasTrailingIcon={showTrailingIcon}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
+            type={inputType}
             widthProp={widthProp}
             {...passThemeFlag}
             {...rest}
@@ -591,7 +654,22 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-        {!reverse && readOnlyCopy && ReadOnlyCopyButton}
+        {PasswordToggleButton && !readOnlyCopy && (
+          <StyledInlineButton {...passThemeFlag}>
+            {showTrailingIcon && (
+              <StyledInlineIcon {...passThemeFlag}>
+                {textInputIcon}
+              </StyledInlineIcon>
+            )}
+            {PasswordToggleButton}
+          </StyledInlineButton>
+        )}
+        {showTrailingIcon && !PasswordToggleButton && (
+          <StyledIcon reverse={reverse} theme={theme}>
+            {textInputIcon}
+          </StyledIcon>
+        )}
+        {!reverse && textInputButton}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );

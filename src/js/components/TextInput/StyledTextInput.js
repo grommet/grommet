@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 
 import {
@@ -11,8 +13,17 @@ import {
   widthStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { inputPadForIcon } from '../../utils/styles';
+import { getInputIconPad, inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
+
+const getInlineButtonPad = (props) => {
+  const rightInset = Number.parseFloat(getInputPadBySide(props, 'right'));
+  const iconPad = Number.parseFloat(getInputIconPad(props));
+  const trailingIconPad = props.hasTrailingIcon ? iconPad : 0;
+  // Reserve both the icon space and the control's edge inset so text clears
+  // the flush-right password toggle, and the reversed icon when both coexist.
+  return `${iconPad + trailingIconPad + rightInset}px`;
+};
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
@@ -25,14 +36,18 @@ const getPlainStyle = (plain) => {
 
 const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
+  ${(props) => (props.hasButton || props.readOnlyCopy) && 'flex: 1 1 auto;'}
+  ${(props) => (props.hasButton || props.readOnlyCopy) && 'min-width: 0;'}
   ${(props) =>
-    props.readOnlyCopy
+    props.readOnlyCopy || props.hasButton
       ? `padding-${props.reverse ? 'left' : 'right'}: 0px;`
       : ''}
   // readOnly border is handled by StyledTextInputContainer
   ${(props) => props.readOnly && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}
   ${(props) => props.icon && inputPadForIcon}
+  ${(props) =>
+    props.hasInlineButton && `padding-right: ${getInlineButtonPad(props)};`}
   ${(props) =>
     props.disabled &&
     disabledStyle(
@@ -58,11 +73,12 @@ const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => props.readOnlyProp && !props.plain && controlBorderStyle};
 
   ${(props) =>
-    props.readOnlyCopy &&
+    (props.readOnlyCopy || props.hasButton) &&
     `
     box-sizing: border-box;
     flex-direction: row;
     display: flex;
+    align-items: stretch;
   `};
 
   ${(props) => props.readOnlyProp && !props.plain && readOnlyStyle(props.theme)}
@@ -103,6 +119,23 @@ const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
       : `left: ${getInputPadBySide(props, 'left')};`}
 `;
 
+const StyledInlineButton = styled.div.withConfig(styledComponentsConfig)`
+  position: absolute;
+  display: flex;
+  align-items: stretch;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+`;
+
+const StyledInlineIcon = styled.div.withConfig(styledComponentsConfig)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+`;
+
 const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -121,5 +154,7 @@ export {
   StyledTextInputContainer,
   StyledPlaceholder,
   StyledIcon,
+  StyledInlineButton,
+  StyledInlineIcon,
   StyledSuggestions,
 };
