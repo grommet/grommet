@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
@@ -239,6 +241,19 @@ describe('CheckBoxGroup', () => {
     const { asFragment } = render(
       <Grommet theme={customTheme}>
         <CheckBoxGroup options={['First', 'Second', 'Third']} />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('renders without crashing when options is omitted', () => {
+    // regression test: `options` is optional in propTypes and previously had no
+    // runtime default, but was mapped over unconditionally, throwing a TypeError
+    // when the prop was left unset.
+    const { asFragment } = render(
+      <Grommet>
+        <CheckBoxGroup name="checkbox-group" />
       </Grommet>,
     );
 

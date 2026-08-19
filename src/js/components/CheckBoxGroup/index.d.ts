@@ -1,10 +1,12 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 import { BoxProps } from '../Box/index';
 import { CheckBoxProps } from '../CheckBox/index';
 import { Omit } from '../../utils';
 
 interface OnChangeEvent {
-  value: string;
+  value: (string | number)[];
   option: string | CheckBoxProps;
 }
 
@@ -27,7 +29,7 @@ export interface CheckBoxGroupProps {
   labelKey?: string;
   name?: string;
   onChange?: (event?: OnChangeEvent) => void;
-  options: (CheckBoxType | string)[];
+  options?: (CheckBoxType | string)[];
   valueKey?: string;
 }
 
