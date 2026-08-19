@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { render, fireEvent, act, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
@@ -24,13 +26,14 @@ describe('Select', () => {
 
     const results = await axe(container, {
       rules: {
-        /* This rule is flagged because Select is built using a 
-        TextInput within a DropButton. According to Dequeue and 
-        WCAG 4.1.2 "interactive controls must not have focusable 
+        /* This rule is flagged because when no value is selected, Select
+        renders a readOnly, non-focusable placeholder TextInput within a
+        DropButton (see DefaultSelectTextInput). According to Dequeue and
+        WCAG 4.1.2 "interactive controls must not have focusable
         descendants". Jest-axe is assuming that the input is focusable
-        and since the input is a descendant of the button the rule is 
-        flagged. However, the TextInput is built so that it is read 
-        only and cannot receive focus. Select is accessible 
+        and since the input is a descendant of the button the rule is
+        flagged. However, the TextInput is built so that it is read
+        only and cannot receive focus. Select is accessible
         according to the WCAG specification, but jest-axe is flagging
         it so we are disabling this rule. */
         'nested-interactive': { enabled: false },
@@ -2015,6 +2018,23 @@ describe('Select', () => {
     });
 
     expectPortal('test-select__drop').toMatchSnapshot();
+  });
+
+  test(`should not have accessibility violations when a value is
+    selected`, async () => {
+    jest.useRealTimers();
+    const { container } = render(
+      <Grommet>
+        <Select
+          options={['one', 'two', 'three']}
+          value="one"
+          a11yTitle="test"
+        />
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 
   window.scrollTo.mockRestore();
