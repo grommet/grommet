@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 export const normalizeValues = (values) =>
   (values || []).map((value, index) => {
     if (value === undefined) return { value: [index, undefined] };
