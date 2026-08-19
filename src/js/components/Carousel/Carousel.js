@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   Children,
   useCallback,
@@ -162,7 +164,7 @@ const Carousel = ({
       timerRef.current = timer;
 
       return () => {
-        clearTimeout(timer);
+        clearInterval(timer);
       };
     }
     return () => {};
