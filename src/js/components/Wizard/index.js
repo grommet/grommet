@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 export { Wizard } from './Wizard';
 export { WizardContext, useWizard } from './WizardContext';
 export { WizardHeader } from './WizardHeader';
