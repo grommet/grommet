@@ -5,6 +5,9 @@ exports["default"] = exports.CustomBoxMaskedInput = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var CustomBoxMaskedInput = exports.CustomBoxMaskedInput = function CustomBoxMaskedInput() {
   var _React$useState = _react["default"].useState(''),
     value = _React$useState[0],

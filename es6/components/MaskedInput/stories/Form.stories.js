@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Button, Form, FormField, MaskedInput } from 'grommet';
 export var MaskedInputForm = function MaskedInputForm() {

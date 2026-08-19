@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { Page, PageContent, Heading, Paragraph, Grid, Card, Box, Button, Notification } from 'grommet';
 export var PageNotification = function PageNotification() {

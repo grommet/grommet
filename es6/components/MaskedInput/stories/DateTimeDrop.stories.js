@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Button, Keyboard, Text, Calendar, MaskedInput, DropButton } from 'grommet';
 import { Schedule } from "grommet-icons/es6/icons/Schedule";

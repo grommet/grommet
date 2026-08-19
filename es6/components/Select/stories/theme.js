@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { CaretDownFill } from "grommet-icons/es6/icons/CaretDownFill";
 import { CaretUpFill } from "grommet-icons/es6/icons/CaretUpFill";
 import { FormCheckmark } from "grommet-icons/es6/icons/FormCheckmark";

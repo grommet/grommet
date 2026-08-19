@@ -7,6 +7,9 @@ var _styles = require("../../utils/styles");
 var _Button = require("../Button");
 var _Text = require("../Text");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var sizeStyle = function sizeStyle(props) {
   var style = props.theme.pagination.button && props.theme.pagination.button.size && props.theme.pagination.button.size[props.size || 'medium'];
   return style ? {

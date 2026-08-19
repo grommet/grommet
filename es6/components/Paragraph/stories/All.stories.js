@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Paragraph } from 'grommet';
 var sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', '10px'];

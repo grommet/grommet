@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import { focusStyle, normalizeColor, styledComponentsConfig } from '../../utils';
 import { Box } from '../Box';

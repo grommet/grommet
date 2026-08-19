@@ -8,6 +8,9 @@ var _grommetIcons = require("grommet-icons");
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("grommet/utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var StyledRadioChild = (0, _styledComponents["default"])(_grommet.Box).withConfig({
   displayName: "Childrenstories__StyledRadioChild",
   componentId: "sc-z14q6m-0"

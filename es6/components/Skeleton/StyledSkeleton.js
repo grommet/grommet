@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled from 'styled-components';
 import { backgroundStyle, edgeStyle, genericStyles, heightStyle, roundStyle, widthStyle, styledComponentsConfig } from '../../utils';
 import { breakpointStyle } from '../../utils/mixins';

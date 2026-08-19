@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useEffect } from 'react';
 import { Box, Button, Grommet, RangeInput } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";

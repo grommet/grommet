@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';

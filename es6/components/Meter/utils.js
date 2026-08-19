@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { normalizeColor } from '../../utils';
 export var strokeProps = function strokeProps(color, theme) {
   var result = {};

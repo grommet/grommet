@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, CheckBox, Select } from 'grommet';
 var dummyOptions = Array(2000).fill().map(function (_, i) {

@@ -5,6 +5,9 @@ exports.theme = void 0;
 var _grommetIcons = require("grommet-icons");
 var _utils = require("../../../utils");
 var _SearchInput = require("./components/SearchInput");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var theme = exports.theme = {
   global: {
     colors: {

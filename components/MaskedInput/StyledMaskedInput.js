@@ -6,6 +6,9 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 var _styles = require("../../utils/styles");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var StyledMaskedInput = exports.StyledMaskedInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledMaskedInput",
   componentId: "sc-99vkfa-0"

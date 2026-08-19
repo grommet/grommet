@@ -3,6 +3,9 @@
 exports.__esModule = true;
 exports.strokeProps = exports.fillProps = exports.defaultColor = void 0;
 var _utils = require("../../utils");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var strokeProps = exports.strokeProps = function strokeProps(color, theme) {
   var result = {};
   if (color) {

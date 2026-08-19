@@ -5,6 +5,9 @@ exports.statusData = exports.metricData = exports.languageData = exports.data = 
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var data = exports.data = {
   'Model type': 'MXQ83700F3',
   'Request created by': /*#__PURE__*/_react["default"].createElement(_grommet.Anchor, {

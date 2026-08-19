@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Anchor, Box, Grommet, Main, Nav } from 'grommet';
 import { grommet } from 'grommet/themes';

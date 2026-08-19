@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef } from 'react';
 import { Skeleton } from '../Skeleton';
 import { Box } from '../Box';

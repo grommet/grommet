@@ -5,6 +5,9 @@ exports["default"] = exports.BottomControlButton = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var ControlBottomMenu = function ControlBottomMenu() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {
     height: "medium",

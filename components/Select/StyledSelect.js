@@ -9,6 +9,9 @@ var _DropButton = require("../DropButton");
 var _TextInput = require("../TextInput");
 var _utils = require("../../utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"

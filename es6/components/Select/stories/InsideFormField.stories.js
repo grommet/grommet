@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useCallback, useState } from 'react';
 import { Box, Button, Form, FormField, Select } from 'grommet';
 var options = [{

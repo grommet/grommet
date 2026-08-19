@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Anchor, Box, Button, grommet, Grommet, PageHeader, Page, PageContent } from 'grommet';
 import { deepMerge } from 'grommet/utils';
