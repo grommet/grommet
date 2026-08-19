@@ -10513,7 +10513,7 @@ __metadata:
     simple-git: "npm:^3.36.0"
     storybook: "npm:^10.5.6"
     storybook-dark-mode: "npm:^5.0.0"
-    styled-components: "npm:^6.5.0"
+    styled-components: "npm:^6.5.3"
     tarball-extract: "npm:^0.0.6"
     testcafe: "npm:^3.7.6"
     testcafe-react-selectors: "npm:^5.0.3"
@@ -16424,9 +16424,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.5.0":
-  version: 6.5.0
-  resolution: "styled-components@npm:6.5.0"
+"styled-components@npm:^6.5.3":
+  version: 6.5.3
+  resolution: "styled-components@npm:6.5.3"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.4.0"
     css-to-react-native: "npm:3.2.0"
@@ -16444,7 +16444,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10c0/67e13f6c47f42fe1f4088c57066ac9951c37b755ac6a94f8eebfba97d15d0381a95a8763f71846b16df8f52bca9045fe29e1749eaffbe422560cf3ef8eb5c076
+  checksum: 10c0/76b525c7cbf4febdf52e6b15eeddb3782bb50e11f078e5d0a299b221067314386c7b05cf703f141f3eb15c541f41b20e43386405322986e441e8bb07324adf06
   languageName: node
   linkType: hard
 
