@@ -18,11 +18,13 @@ var _Pause = require("grommet-icons/icons/Pause");
 var _Play = require("grommet-icons/icons/Play");
 var _FormPin = require("grommet-icons/icons/FormPin");
 var _Previous = require("grommet-icons/icons/Previous");
+var _Hide = require("grommet-icons/icons/Hide");
 var _StatusCriticalSmall = require("grommet-icons/icons/StatusCriticalSmall");
 var _StatusGoodSmall = require("grommet-icons/icons/StatusGoodSmall");
 var _StatusWarningSmall = require("grommet-icons/icons/StatusWarningSmall");
 var _StatusUnknownSmall = require("grommet-icons/icons/StatusUnknownSmall");
 var _Subtract = require("grommet-icons/icons/Subtract");
+var _View = require("grommet-icons/icons/View");
 var _Volume = require("grommet-icons/icons/Volume");
 var _VolumeLow = require("grommet-icons/icons/VolumeLow");
 var _base = require("grommet-icons/themes/base");
@@ -2869,9 +2871,11 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
     textInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
-      // icons: {
-      //   copy: undefined,
-      // },
+      icons: {
+        // copy: undefined,
+        hidePassword: _Hide.Hide,
+        showPassword: _View.View
+      }
     },
     timeInput: {
       button: {

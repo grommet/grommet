@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
@@ -29,6 +31,14 @@ export var controlBorderStyle = css(["border:", " solid ", ";border-radius:", ";
 }, function (props) {
   return props.theme.global.control.border.radius;
 });
+export var getInputIconPad = function getInputIconPad(props) {
+  var _props$theme, _props$theme2;
+  var matchedIconSize = (_props$theme = props.theme) == null || (_props$theme = _props$theme.icon) == null || (_props$theme = _props$theme.size) == null ? void 0 : _props$theme[(props == null ? void 0 : props.size) || 'medium'];
+  if ((_props$theme2 = props.theme) != null && (_props$theme2 = _props$theme2.icon) != null && _props$theme2.matchSize && matchedIconSize) {
+    return parseMetricToNum(matchedIconSize) + parseMetricToNum(props.theme.global.edgeSize.medium) + "px";
+  }
+  return props.theme.global.edgeSize.large;
+};
 export var edgeStyle = function edgeStyle(kind, data, responsive, responsiveBreakpoint, theme) {
   var breakpoint = getBreakpointStyle(theme, responsiveBreakpoint);
   if (typeof data === 'string') {
@@ -304,8 +314,7 @@ export var inputStyle = css(["box-sizing:border-box;", " font-family:inherit;bor
 // icon should equal the icon dimension + 12px (edgeSize.medium)
 // to ensure there is reasonable space between the icon and value or placeholder
 export var inputPadForIcon = css(["", ""], function (props) {
-  var _props$theme, _props$theme$icon;
-  var pad = (_props$theme = props.theme) != null && (_props$theme = _props$theme.icon) != null && _props$theme.matchSize ? parseMetricToNum((_props$theme$icon = props.theme.icon) == null || (_props$theme$icon = _props$theme$icon.size) == null ? void 0 : _props$theme$icon[(props == null ? void 0 : props.size) || 'medium']) + parseMetricToNum(props.theme.global.edgeSize.medium) + "px" : props.theme.global.edgeSize.large;
+  var pad = getInputIconPad(props);
   return props.reverse ? "padding-right: " + pad + ";" : "padding-left: " + pad + ";";
 });
 export var overflowStyle = function overflowStyle(overflowProp) {

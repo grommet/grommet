@@ -5,6 +5,9 @@ exports.TextInputPropTypes = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _generalPropTypes = require("../../utils/general-prop-types");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
@@ -24,6 +27,8 @@ if (process.env.NODE_ENV !== 'production') {
     focusIndicator: _propTypes["default"].bool,
     messages: _propTypes["default"].shape({
       enterSelect: _propTypes["default"].string,
+      hidePassword: _propTypes["default"].string,
+      showPassword: _propTypes["default"].string,
       suggestionsCount: _propTypes["default"].string,
       suggestionsExist: _propTypes["default"].string,
       suggestionIsOpen: _propTypes["default"].string
@@ -34,6 +39,7 @@ if (process.env.NODE_ENV !== 'production') {
     onSuggestionSelect: _propTypes["default"].func,
     onSuggestionsOpen: _propTypes["default"].func,
     onSuggestionsClose: _propTypes["default"].func,
+    password: _propTypes["default"].bool,
     placeholder: _propTypes["default"].node,
     plain: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['full'])]),
     readOnlyCopy: _propTypes["default"].bool,

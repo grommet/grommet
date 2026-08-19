@@ -1,6 +1,8 @@
-var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "disabled", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "value", "width"];
+var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "disabled", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "password", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "type", "value", "width"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Box } from '../Box';
@@ -11,7 +13,7 @@ import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
 import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
-import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledSuggestions } from './StyledTextInput';
+import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledInlineButton, StyledInlineIcon, StyledSuggestions } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 import { CopyButton } from './CopyButton';
@@ -31,6 +33,11 @@ var stringLabel = function stringLabel(suggestion) {
   }
   return suggestion;
 };
+var renderIcon = function renderIcon(iconValue) {
+  if (/*#__PURE__*/React.isValidElement(iconValue)) return iconValue;
+  var IconComponent = iconValue;
+  return IconComponent ? /*#__PURE__*/React.createElement(IconComponent, null) : undefined;
+};
 var ContainerBox = styled(Box).withConfig({
   displayName: "TextInput__ContainerBox",
   componentId: "sc-1ai0c08-0"
@@ -42,7 +49,7 @@ var defaultDropAlign = {
   left: 'left'
 };
 var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _inputRef$current, _inputRef$current2;
+  var _inputRef$current, _inputRef$current2, _theme$textInput, _theme$textInput2;
   var a11yTitle = _ref.a11yTitle,
     defaultSuggestion = _ref.defaultSuggestion,
     defaultValue = _ref.defaultValue,
@@ -66,6 +73,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onSuggestionSelect = _ref.onSuggestionSelect,
     onSuggestionsClose = _ref.onSuggestionsClose,
     onSuggestionsOpen = _ref.onSuggestionsOpen,
+    password = _ref.password,
     placeholder = _ref.placeholder,
     plain = _ref.plain,
     readOnlyProp = _ref.readOnly,
@@ -73,6 +81,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     reverse = _ref.reverse,
     suggestions = _ref.suggestions,
     textAlign = _ref.textAlign,
+    typeProp = _ref.type,
     valueProp = _ref.value,
     widthProp = _ref.width,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -101,15 +110,18 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _useState2 = useState(false),
     showDrop = _useState2[0],
     setShowDrop = _useState2[1];
+  var _useState3 = useState(false),
+    passwordRevealed = _useState3[0],
+    setPasswordRevealed = _useState3[1];
   var handleSuggestionSelect = useMemo(function () {
     return onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect;
   }, [onSelect, onSuggestionSelect]);
   var handleTextSelect = useMemo(function () {
     return onSelect && onSuggestionSelect ? onSelect : undefined;
   }, [onSelect, onSuggestionSelect]);
-  var _useState3 = useState(),
-    suggestionsAtClose = _useState3[0],
-    setSuggestionsAtClose = _useState3[1];
+  var _useState4 = useState(),
+    suggestionsAtClose = _useState4[0],
+    setSuggestionsAtClose = _useState4[1];
   var readOnlyCopyValidation = format({
     id: 'input.readOnlyCopy.validation',
     messages: messages
@@ -118,9 +130,17 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     id: 'input.readOnlyCopy.prompt',
     messages: messages
   });
-  var _useState4 = useState(readOnlyCopyPrompt),
-    tip = _useState4[0],
-    setTip = _useState4[1];
+  var _useState5 = useState(readOnlyCopyPrompt),
+    tip = _useState5[0],
+    setTip = _useState5[1];
+  var showPasswordMessage = format({
+    id: 'textInput.showPassword',
+    messages: messages
+  });
+  var hidePasswordMessage = format({
+    id: 'textInput.hidePassword',
+    messages: messages
+  });
   var onClickCopy = function onClickCopy() {
     navigator.clipboard.writeText(value);
     announce(readOnlyCopyValidation, 'assertive');
@@ -129,6 +149,12 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var onBlurCopy = function onBlurCopy() {
     if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
   };
+  var authoredType = typeProp || (password ? 'password' : undefined);
+  var passwordToggle = password && authoredType === 'password' && !readOnlyCopy;
+  useEffect(function () {
+    // When the toggle stops applying, return the input to its authored type.
+    if (!passwordToggle) setPasswordRevealed(false);
+  }, [passwordToggle]);
   var openDrop = useCallback(function () {
     setShowDrop(true);
     announce(format({
@@ -185,15 +211,15 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
 
   // activeSuggestionIndex unifies mouse and keyboard interaction of
   // the suggestions
-  var _useState5 = useState(resetSuggestionIndex),
-    activeSuggestionIndex = _useState5[0],
-    setActiveSuggestionIndex = _useState5[1];
+  var _useState6 = useState(resetSuggestionIndex),
+    activeSuggestionIndex = _useState6[0],
+    setActiveSuggestionIndex = _useState6[1];
 
   // Only update active suggestion index when the mouse actually moves,
   // not when suggestions are moving under the mouse.
-  var _useState6 = useState(),
-    mouseMovedSinceLastKey = _useState6[0],
-    setMouseMovedSinceLastKey = _useState6[1];
+  var _useState7 = useState(),
+    mouseMovedSinceLastKey = _useState7[0],
+    setMouseMovedSinceLastKey = _useState7[1];
 
   // set activeSuggestionIndex when value changes
   useEffect(function () {
@@ -385,6 +411,15 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   // primarily for tests.
 
   var textInputIcon = useSizedIcon(icon, rest.size, theme);
+  var showPasswordIcon = (_theme$textInput = theme.textInput) == null || (_theme$textInput = _theme$textInput.icons) == null ? void 0 : _theme$textInput.showPassword;
+  var hidePasswordIcon = (_theme$textInput2 = theme.textInput) == null || (_theme$textInput2 = _theme$textInput2.icons) == null ? void 0 : _theme$textInput2.hidePassword;
+  var inputType = authoredType;
+  if (passwordToggle) {
+    inputType = passwordRevealed ? 'text' : 'password';
+  }
+  var showTextInputIcon = !!textInputIcon && !readOnlyCopy;
+  var showLeadingIcon = showTextInputIcon && !reverse;
+  var showTrailingIcon = showTextInputIcon && reverse;
   var ReadOnlyCopyButton = /*#__PURE__*/React.createElement(CopyButton, {
     disabled: disabled,
     onBlurCopy: onBlurCopy,
@@ -393,7 +428,20 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     tip: tip,
     value: value
   });
+  var PasswordToggleButton = passwordToggle ? /*#__PURE__*/React.createElement(Button, {
+    disabled: disabled,
+    kind: "toolbar",
+    icon: passwordRevealed ? renderIcon(showPasswordIcon) : renderIcon(hidePasswordIcon),
+    onClick: function onClick() {
+      return setPasswordRevealed(function (current) {
+        return !current;
+      });
+    },
+    "aria-label": passwordRevealed ? hidePasswordMessage : showPasswordMessage
+  }) : undefined;
+  var textInputButton = readOnlyCopy ? ReadOnlyCopyButton : undefined;
   return /*#__PURE__*/React.createElement(StyledTextInputContainer, _extends({
+    hasButton: !!textInputButton,
     readOnlyProp: readOnly // readOnlyProp to avoid passing to DOM
     ,
     readOnlyCopy: readOnlyCopy,
@@ -403,7 +451,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseMove: function onMouseMove() {
       return setMouseMovedSinceLastKey(true);
     }
-  }, passThemeFlag), reverse && readOnlyCopy && ReadOnlyCopyButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, passThemeFlag, placeholder), textInputIcon && !readOnlyCopy && /*#__PURE__*/React.createElement(StyledIcon, {
+  }, passThemeFlag), reverse && textInputButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, passThemeFlag, placeholder), showLeadingIcon && /*#__PURE__*/React.createElement(StyledIcon, {
     reverse: reverse,
     theme: theme
   }, textInputIcon), /*#__PURE__*/React.createElement(Keyboard, _extends({
@@ -417,11 +465,15 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     disabled: disabled,
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
-    icon: !readOnlyCopy && icon,
+    icon: showTextInputIcon ? icon : undefined,
     reverse: reverse,
     focus: focus,
+    hasButton: !!textInputButton,
+    hasInlineButton: passwordToggle,
+    hasTrailingIcon: showTrailingIcon,
     focusIndicator: focusIndicator,
     textAlign: textAlign,
+    type: inputType,
     widthProp: widthProp
   }, passThemeFlag, rest, extraProps, comboboxProps, {
     defaultValue: renderLabel(defaultValue),
@@ -466,7 +518,10 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setActiveSuggestionIndex(resetSuggestionIndex);
       if (onChange) onChange(event);
     }
-  }))), !reverse && readOnlyCopy && ReadOnlyCopyButton, !readOnly && drop);
+  }))), PasswordToggleButton && !readOnlyCopy && /*#__PURE__*/React.createElement(StyledInlineButton, passThemeFlag, showTrailingIcon && /*#__PURE__*/React.createElement(StyledInlineIcon, passThemeFlag, textInputIcon), PasswordToggleButton), showTrailingIcon && !PasswordToggleButton && /*#__PURE__*/React.createElement(StyledIcon, {
+    reverse: reverse,
+    theme: theme
+  }, textInputIcon), !reverse && textInputButton, !readOnly && drop);
 });
 TextInput.displayName = 'TextInput';
 TextInput.propTypes = TextInputPropTypes;

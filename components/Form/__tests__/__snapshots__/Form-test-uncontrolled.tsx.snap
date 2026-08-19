@@ -1137,7 +1137,7 @@ exports[`Form uncontrolled dynamically removed fields should be removed from for
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iKSay"
+            class="StyledTextInput-sc-1x30a0s-0 eaXSmi"
             name="name"
             placeholder="test name"
           />
@@ -1511,7 +1511,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation\\n  do
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iKSay"
+            class="StyledTextInput-sc-1x30a0s-0 eaXSmi"
             name="name"
             placeholder="test name"
           />
@@ -1737,7 +1737,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation\\n  do
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iKSay"
+            class="StyledTextInput-sc-1x30a0s-0 eaXSmi"
             name="name"
             placeholder="test name"
           />
@@ -2972,7 +2972,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               >
                 <input
                   autocomplete="off"
-                  class="StyledTextInput-sc-1x30a0s-0 hVXjBt StyledSelect__SelectTextInput-sc-znp66n-4 hQtXQL"
+                  class="StyledTextInput-sc-1x30a0s-0 dzhDdt StyledSelect__SelectTextInput-sc-znp66n-4 hQtXQL"
                   id="test-select__input"
                   inert=""
                   name="test-select"
@@ -3362,7 +3362,7 @@ exports[`Form uncontrolled uncontrolled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iKSay"
+            class="StyledTextInput-sc-1x30a0s-0 eaXSmi"
             name="test"
             placeholder="test input"
           />
@@ -3395,7 +3395,7 @@ exports[`Form uncontrolled uncontrolled 3`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iKSay"
+            class="StyledTextInput-sc-1x30a0s-0 eaXSmi"
             name="test"
             placeholder="test input"
           />
@@ -3621,7 +3621,7 @@ exports[`Form uncontrolled uncontrolled onValidate 2`] = `
           <input
             aria-invalid="true"
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iKSay"
+            class="StyledTextInput-sc-1x30a0s-0 eaXSmi"
             name="test"
             placeholder="test input"
           />
@@ -3874,7 +3874,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom error 2`] = `
           <input
             aria-invalid="true"
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iKSay"
+            class="StyledTextInput-sc-1x30a0s-0 eaXSmi"
             name="test"
             placeholder="test input"
           />
@@ -4126,7 +4126,7 @@ exports[`Form uncontrolled uncontrolled onValidate custom info 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 iKSay"
+            class="StyledTextInput-sc-1x30a0s-0 eaXSmi"
             name="test"
             placeholder="test input"
           />

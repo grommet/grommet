@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import 'jest-styled-components';
 import 'regenerator-runtime/runtime';
@@ -63,6 +65,130 @@ describe('TextInput', () => {
       <TextInput icon={<Search />} reverse name="item" />,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('supports password reveal toggle', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput aria-label="Password" type="password" password />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute(
+      'type',
+      'password',
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute('type', 'text');
+    expect(
+      screen.getByRole('button', { name: 'Hide password' }),
+    ).toBeInTheDocument();
+  });
+
+  test('uses password type when password is set without type', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput aria-label="Password" password />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute(
+      'type',
+      'password',
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute('type', 'text');
+  });
+
+  test('supports password toggle theme icons', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={{
+          textInput: { icons: { showPassword: Add, hidePassword: Search } },
+        }}
+      >
+        <TextInput aria-label="Password" type="password" password />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Search')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+  });
+
+  test('supports password toggle theme icon elements', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={{
+          textInput: {
+            icons: { showPassword: <Add />, hidePassword: <Search /> },
+          },
+        }}
+      >
+        <TextInput aria-label="Password" type="password" password />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Search')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Show password' }));
+
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+  });
+
+  test('supports password toggle with matchSize and custom size', () => {
+    render(
+      <Grommet
+        theme={{
+          icon: {
+            matchSize: true,
+          },
+        }}
+      >
+        <TextInput aria-label="Password" type="password" password size="16px" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Password')).toHaveAttribute(
+      'type',
+      'password',
+    );
+    expect(
+      screen.getByRole('button', { name: 'Show password' }),
+    ).toBeInTheDocument();
+  });
+
+  test('supports reverse icon when password toggle is active', () => {
+    render(
+      <Grommet>
+        <TextInput
+          aria-label="Password"
+          type="password"
+          password
+          reverse
+          icon={<Search />}
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Search')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Show password' }),
+    ).toBeInTheDocument();
   });
 
   test('suggestions', (done) => {

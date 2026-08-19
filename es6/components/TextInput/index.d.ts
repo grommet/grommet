@@ -1,12 +1,8 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
-import {
-  A11yTitleType,
-  Omit,
-  PlaceHolderType,
-  TextAlignType,
-  WidthType,
-} from '../../utils';
 import { DropType } from '../Drop';
+import { A11yTitleType, TextAlignType, WidthType } from '../../utils';
 
 export interface TextInputProps
   extends Omit<
@@ -28,10 +24,12 @@ export interface TextInputProps
   dropProps?: DropType;
   focusIndicator?: boolean;
   defaultSuggestion?: number;
-  icon?: JSX.Element;
+  icon?: React.ReactNode;
   id?: string;
   messages?: {
     enterSelect?: string;
+    hidePassword?: string;
+    showPassword?: string;
     suggestionsCount?: string;
     suggestionsExist?: string;
     suggestionIsOpen?: string;
@@ -47,7 +45,8 @@ export interface TextInputProps
   }) => void;
   onSuggestionsOpen?: () => void;
   onSuggestionsClose?: () => void;
-  placeholder?: PlaceHolderType;
+  password?: boolean;
+  placeholder?: string | React.ReactNode;
   plain?: boolean | 'full';
   readOnlyCopy?: boolean;
   reverse?: boolean;
