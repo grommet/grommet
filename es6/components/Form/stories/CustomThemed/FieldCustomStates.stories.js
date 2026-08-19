@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useRef, useEffect } from 'react';
 import { grommet, Box, Form, FormField, TextInput, Grommet } from 'grommet';
 import { deepMerge } from 'grommet/utils';

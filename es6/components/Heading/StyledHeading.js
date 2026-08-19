@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import { breakpointStyle, genericStyles, normalizeColor, textAlignStyle, styledComponentsConfig } from '../../utils';
 var sizeStyle = function sizeStyle(props) {

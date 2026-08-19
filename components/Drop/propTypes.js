@@ -5,6 +5,9 @@ exports.DropPropTypes = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _generalPropTypes = require("../../utils/general-prop-types");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 // if you update values here, make sure to update in Box too.
 var dropOverflowPropTypes = _propTypes["default"].oneOfType([_propTypes["default"].oneOf(_generalPropTypes.OVERFLOW_VALUES), _propTypes["default"].shape({
   horizontal: _propTypes["default"].oneOf(_generalPropTypes.OVERFLOW_VALUES),

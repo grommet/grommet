@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { Box, Button, CheckBox, Form, FormField, TextInput } from 'grommet';
 export var DynamicFields = function DynamicFields() {

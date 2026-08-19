@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { Avatar, Nav, Anchor, Menu, Button, Box, Header, Heading, Layer, Paragraph, Page, PageContent, Grid, Card } from 'grommet';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";

@@ -5,6 +5,9 @@ exports.StyledFileInput = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var StyledFileInput = exports.StyledFileInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledFileInput",
   componentId: "sc-rl7ywv-0"

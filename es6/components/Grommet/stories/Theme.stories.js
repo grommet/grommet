@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Grommet, Anchor, Box } from 'grommet';
 import { Add } from "grommet-icons/es6/icons/Add";

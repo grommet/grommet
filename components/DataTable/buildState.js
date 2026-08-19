@@ -3,6 +3,8 @@
 exports.__esModule = true;
 exports.set = exports.normalizeRowProp = exports.normalizeRowCellProps = exports.normalizePrimaryProperty = exports.normalizeCellProps = exports.normalizeBackgroundColor = exports.initializeFilters = exports.filterAndSortData = exports.datumValue = exports.buildGroups = exports.buildGroupState = exports.buildFooterValues = void 0;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // This file contains helper functions for DataTable, to keep the component
 // files simpler.
 

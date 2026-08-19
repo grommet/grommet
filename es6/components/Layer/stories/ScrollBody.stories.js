@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
 import { Box, Button, Layer, Text } from 'grommet';

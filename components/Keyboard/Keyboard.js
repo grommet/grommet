@@ -4,7 +4,8 @@ exports.__esModule = true;
 exports.Keyboard = void 0;
 var _react = require("react");
 var _propTypes = require("./propTypes");
-var _excluded = ["capture", "target", "children", "onKeyDown"];
+var _excluded = ["capture", "target", "children", "onKeyDown"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var KEYS = {
   8: 'onBackspace',

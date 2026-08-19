@@ -1,4 +1,6 @@
 function _readOnlyError(r) { throw new TypeError('"' + r + '" is read-only'); }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { findScrollParent, findScrollParents, isNodeAfterScroll, isNodeBeforeScroll } from '../../utils';

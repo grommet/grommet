@@ -6,6 +6,9 @@ var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var headingFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
 var longWord = 'Supercalifragilisticexpialidocious';
 var H = function H(_ref) {

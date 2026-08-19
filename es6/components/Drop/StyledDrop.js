@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { keyframes } from 'styled-components';
 import { Box } from '../Box';
 import { baseStyle, edgeStyle, roundStyle } from '../../utils/styles';

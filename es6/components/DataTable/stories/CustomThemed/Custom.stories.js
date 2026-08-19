@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Grommet, DataTable } from 'grommet';
 import { Blank } from "grommet-icons/es6/icons/Blank"; // Source code for the data can be found here

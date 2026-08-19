@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef } from 'react';
 export var PlaceholderBody = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var _ref$columns = _ref.columns,

@@ -9,6 +9,9 @@ var _grommet = require("grommet");
 var _themes = require("grommet/themes");
 var _utils = require("../../../../utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   formField: {
     border: {

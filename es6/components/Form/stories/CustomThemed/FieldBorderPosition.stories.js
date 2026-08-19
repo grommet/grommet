@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { Box, CheckBoxGroup, Form, FormField, Grid, RadioButtonGroup, RangeInput, Select, Text, TextArea, TextInput, ThemeContext } from 'grommet';
 import { deepMerge } from 'grommet/utils';

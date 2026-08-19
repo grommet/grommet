@@ -5,6 +5,9 @@ exports["default"] = exports.RangeFormat = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var RangeFormat = exports.RangeFormat = function RangeFormat() {
   var _React$useState = _react["default"].useState(['2020-07-31T15:24:26.256Z', '2020-08-07T15:24:26.256Z']),
     value = _React$useState[0],

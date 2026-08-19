@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Add } from "grommet-icons/es6/icons/Add";
 import { FormClose } from "grommet-icons/es6/icons/FormClose";

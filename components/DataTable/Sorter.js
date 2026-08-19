@@ -8,7 +8,8 @@ var _Button = require("../Button");
 var _Box = require("../Box");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var SorterButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "Sorter__SorterButton",
   componentId: "sc-fzr2yb-0"

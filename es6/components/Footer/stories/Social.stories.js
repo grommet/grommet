@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Grommet as GrommetIcon } from "grommet-icons/es6/icons/Grommet";
 import { FacebookOption } from "grommet-icons/es6/icons/FacebookOption";

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled from 'styled-components';
 import { inputStyle, styledComponentsConfig } from '../../utils';
 var StyledFileInput = styled.input.withConfig(styledComponentsConfig).withConfig({

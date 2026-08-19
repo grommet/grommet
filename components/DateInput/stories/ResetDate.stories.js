@@ -6,6 +6,9 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _Button = require("../../Button");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var DATE = '2020-07-02T00:00:00-08:00';
 var DATES = ['2020-07-02T00:00:00-08:00', '2020-07-07T00:00:00-08:00'];
 var ResetDateWithString = exports.ResetDateWithString = function ResetDateWithString() {

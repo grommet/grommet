@@ -7,6 +7,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var DropContent = function DropContent(_ref) {
   var onClose = _ref.onClose;
   return /*#__PURE__*/_react["default"].createElement(_grommet.Box, {

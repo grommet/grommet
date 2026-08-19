@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState, useEffect, useRef } from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';

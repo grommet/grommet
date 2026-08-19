@@ -2,6 +2,8 @@
 
 exports.__esModule = true;
 exports.formatBytes = void 0;
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var SI_CONVERSION_FACTOR = 1000;
 var IEC_CONVERSION_FACTOR = 1024;
 var getCurrentOS = function getCurrentOS() {

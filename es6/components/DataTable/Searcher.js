@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
 import { Box } from '../Box';
