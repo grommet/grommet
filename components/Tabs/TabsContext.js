@@ -4,4 +4,7 @@ exports.__esModule = true;
 exports.TabsContext = void 0;
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var TabsContext = exports.TabsContext = /*#__PURE__*/_react["default"].createContext({});

@@ -3,6 +3,8 @@
 exports.__esModule = true;
 exports.useLayoutEffect = exports["default"] = void 0;
 var _react = require("react");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable no-restricted-imports */
 
 /**

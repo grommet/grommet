@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Text, Heading } from 'grommet';
 var wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];

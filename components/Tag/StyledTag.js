@@ -6,6 +6,9 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 var _Button = require("../Button");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var StyledTagButton = exports.StyledTagButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   displayName: "StyledTag__StyledTagButton",
   componentId: "sc-cb9fl2-0"

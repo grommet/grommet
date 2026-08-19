@@ -2,6 +2,8 @@
 
 exports.__esModule = true;
 exports.wedgeCommands = exports.translateEndAngle = exports.polarToCartesian = exports.lineCommands = exports.calcAngle = exports.baseUnit = exports.arcCommands = void 0;
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var POST_DECIMAL_DIGITS = 10;
 var baseUnit = exports.baseUnit = 24;
 var polarToCartesian = exports.polarToCartesian = function polarToCartesian(centerX, centerY, radius, angleInDegrees) {

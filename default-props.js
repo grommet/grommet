@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.withTheme = exports.extendDefaultTheme = exports.defaultProps = void 0;
 var _utils = require("./utils");
 var _base = require("./themes/base");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var defaultProps = exports.defaultProps = {
   theme: _base.base
 };

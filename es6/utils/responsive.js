@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled from 'styled-components';
 export var getBreakpoint = function getBreakpoint(viewportWidth, theme) {
   var sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(function (a, b) {

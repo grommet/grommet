@@ -7,6 +7,9 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _grommetIcons = require("grommet-icons");
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var FavoriteFilled = (0, _styledComponents["default"])(_grommetIcons.Favorite).withConfig({
   displayName: "ChildrenSpinnerstories__FavoriteFilled",
   componentId: "sc-1r7oc1p-0"

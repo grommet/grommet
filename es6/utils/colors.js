@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // Track which deprecated colors have already been warned about
 var warnedColors = new Set();
 var checkColorDeprecation = function checkColorDeprecation(color, theme, dark) {

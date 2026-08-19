@@ -3,6 +3,9 @@
 exports.__esModule = true;
 exports.normalizeTiming = exports.animationObjectStyle = exports.animationEnding = exports.animationBounds = void 0;
 var _styledComponents = require("styled-components");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var PULSE_SIZES = {
   xsmall: 1.001,
   small: 1.01,

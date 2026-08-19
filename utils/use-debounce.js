@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.useDebounce = exports["default"] = void 0;
 var _react = require("react");
 var _useThemeValue2 = require("./useThemeValue");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var useDebounce = exports.useDebounce = function useDebounce(debounceDelay) {
   var _useState = (0, _react.useState)(),
     func = _useState[0],

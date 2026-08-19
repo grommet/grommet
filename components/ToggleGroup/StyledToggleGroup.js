@@ -7,6 +7,9 @@ var _Button = require("../Button");
 var _Box = require("../Box");
 var _utils = require("../../utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var adjustPad = function adjustPad(value, theme) {
   // resolve t-shirt size if it exists
   var vertical = typeof value === 'string' ? value : value == null ? void 0 : value.vertical;

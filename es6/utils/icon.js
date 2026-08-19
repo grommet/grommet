@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { cloneElement } from 'react';
 export var useSizedIcon = function useSizedIcon(icon, size, theme) {
   var _theme$icon;

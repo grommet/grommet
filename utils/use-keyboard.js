@@ -3,6 +3,9 @@
 exports.__esModule = true;
 exports.useKeyboard = exports["default"] = void 0;
 var _react = require("react");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var useKeyboard = exports.useKeyboard = function useKeyboard() {
   var _useState = (0, _react.useState)(),
     usingKeyboard = _useState[0],

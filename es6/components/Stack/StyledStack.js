@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import { genericStyles, styledComponentsConfig } from '../../utils';
 var fillStyle = css(["", " ", " flex-grow:1;display:flex;"], function (props) {

@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.hacktoberfest2022 = void 0;
 var _styledComponents = require("styled-components");
 var _object = require("../utils/object");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var hacktoberfest2022 = exports.hacktoberfest2022 = (0, _object.deepFreeze)({
   defaultMode: 'dark',
   global: {

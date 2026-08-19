@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { Box, Heading, InfiniteScroll, Table, TableRow, TableBody, TableCell, TableHeader, Text } from 'grommet';
 export var InfiniteScrollInTable = function InfiniteScrollInTable() {

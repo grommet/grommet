@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.supportsContainerQueries = exports.isSmall = exports.getDeviceBreakpoint = exports.getBreakpointStyle = exports.getBreakpoint = exports.deviceResponsive = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var getBreakpoint = exports.getBreakpoint = function getBreakpoint(viewportWidth, theme) {
   var sortedBreakpoints = Object.keys(theme.global.breakpoints).sort(function (a, b) {
     var first = theme.global.breakpoints[a];

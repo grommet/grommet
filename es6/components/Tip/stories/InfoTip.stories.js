@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Button, Text, Tip } from 'grommet';
 import { HelpOption } from "grommet-icons/es6/icons/HelpOption";

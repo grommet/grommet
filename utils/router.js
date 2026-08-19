@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.ROUTER_PROPS = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var ROUTER_PROPS = exports.ROUTER_PROPS = {
   // Indicates the path to be used for react-router link.
   path: _propTypes["default"].string.isRequired,

@@ -1,4 +1,6 @@
 var _React$useId;
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 var currentId = 0;
 var getId = function getId() {

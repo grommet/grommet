@@ -3,6 +3,9 @@
 exports.__esModule = true;
 exports.parseMetricToNum = exports.getAvailableAtBadge = exports.fontSize = exports.findAllByType = exports.edgeToNum = exports.breakpointStyle = void 0;
 var _styledComponents = require("styled-components");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var parseMetricToNum = exports.parseMetricToNum = function parseMetricToNum(metric) {
   if (typeof metric === 'number') return metric;
   if (metric.match(/\s/) && process.env.NODE_ENV !== 'production') {

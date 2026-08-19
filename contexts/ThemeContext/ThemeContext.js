@@ -8,6 +8,9 @@ exports.ThemeContext = _styledComponents.ThemeContext;
 var _utils = require("../../utils");
 var _propTypes2 = require("./propTypes");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 _styledComponents.ThemeContext.Extend = function (_ref) {
   var children = _ref.children,
     value = _ref.value;

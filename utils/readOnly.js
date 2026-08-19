@@ -5,6 +5,9 @@ exports.readOnlyStyle = void 0;
 var _styledComponents = require("styled-components");
 var _background = require("./background");
 var _colors = require("./colors");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var readOnlyStyle = exports.readOnlyStyle = function readOnlyStyle(theme) {
   var _theme$global$input$r, _theme$global$input$r2, _theme$global$input$r3;
   var styles = [];

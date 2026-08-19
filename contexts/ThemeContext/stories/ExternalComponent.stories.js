@@ -6,6 +6,9 @@ var _react = _interopRequireDefault(require("react"));
 var _themes = require("grommet/themes");
 var _grommet = require("grommet");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var ExternalComponentWithTheme = exports.ExternalComponentWithTheme = function ExternalComponentWithTheme() {
   return /*#__PURE__*/_react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet

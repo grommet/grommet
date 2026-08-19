@@ -3,6 +3,9 @@
 exports.__esModule = true;
 exports.useStepper = exports.useStepItem = exports.StepperContext = exports.StepItemContext = void 0;
 var _react = require("react");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var StepperContext = exports.StepperContext = /*#__PURE__*/(0, _react.createContext)({
   currentStep: '',
   steps: [],

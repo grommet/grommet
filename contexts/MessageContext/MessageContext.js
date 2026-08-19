@@ -5,6 +5,9 @@ exports.format = exports.MessageContext = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _default = _interopRequireDefault(require("../../languages/default.json"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 // options:
 //   id: message id
 //   messages: (optional) an object of message overrides

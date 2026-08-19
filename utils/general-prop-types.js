@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.widthPropType = exports.skeletonPropType = exports.skeletonColorsPropType = exports.roundPropType = exports.pointPropType = exports.patternPropType = exports.padPropType = exports.marginProp = exports.hoverIndicatorPropType = exports.heightPropType = exports.genericProps = exports.elevationPropType = exports.colorPropType = exports.backgroundPropType = exports.backgroundDoc = exports.animationPropType = exports.alignPropType = exports.a11yTitlePropType = exports.OVERFLOW_VALUES = exports.MARGIN_SIZES = void 0;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var a11yTitlePropType = exports.a11yTitlePropType = _propTypes["default"].string;
 var alignPropType = exports.alignPropType = _propTypes["default"].oneOfType([_propTypes["default"].oneOf(['baseline', 'center', 'end', 'start', 'stretch']), _propTypes["default"].string]);
 var ANIMATION_TYPE = _propTypes["default"].oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'rotateLeft', 'rotateRight', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);

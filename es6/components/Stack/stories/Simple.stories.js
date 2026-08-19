@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Stack, Text } from 'grommet';
 import { Cart } from "grommet-icons/es6/icons/Cart";

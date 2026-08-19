@@ -1,4 +1,6 @@
 var _FLEX_MAP;
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import { Box } from '../Box';
 import { genericStyles, styledComponentsConfig } from '../../utils';

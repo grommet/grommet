@@ -5,6 +5,9 @@ exports.responsiveBorderStyle = exports.borderStyle = void 0;
 var _styledComponents = require("styled-components");
 var _colors = require("./colors");
 var _mixins = require("./mixins");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var responsiveBorderStyle = exports.responsiveBorderStyle = function responsiveBorderStyle(data, theme) {
   var color = (0, _colors.normalizeColor)(data.color || 'border', theme);
   var borderSize = data.size || 'xsmall';

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { useImperativeHandle, useRef } from 'react';
 export var useForwardedRef = function useForwardedRef(ref) {
   var innerRef = useRef(null);

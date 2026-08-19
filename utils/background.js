@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.selectedStyle = exports.normalizeBackground = exports.getHoverIndicatorStyle = exports.backgroundStyle = exports.backgroundIsDark = exports.backgroundAndTextColors = exports.activeStyle = void 0;
 var _styledComponents = require("styled-components");
 var _colors = require("./colors");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 // evalStyle() converts a styled-components item into a string
 var evalStyle = function evalStyle(arg, theme) {
   if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {

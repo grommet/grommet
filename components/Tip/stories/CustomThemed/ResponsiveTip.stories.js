@@ -6,6 +6,9 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _utils = require("grommet/utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var tooltipColor = 'white';
 var theme = (0, _utils.deepMerge)(_grommet.grommet, {
   list: {

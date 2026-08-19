@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Text } from 'grommet';
 var alphabet = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';

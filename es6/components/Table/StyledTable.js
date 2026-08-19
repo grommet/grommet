@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import { backgroundStyle, borderStyle, edgeStyle, genericStyles, styledComponentsConfig } from '../../utils';
 var SIZE_MAP = {

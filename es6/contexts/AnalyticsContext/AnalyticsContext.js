@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
 export var AnalyticsContext = /*#__PURE__*/React.createContext(function () {});
 export var useAnalytics = function useAnalytics() {

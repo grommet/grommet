@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext } from 'react';
 import { Announce } from "grommet-icons/es6/icons/Announce";
 import { grommet } from 'grommet/themes'; // used only for the grommet's font

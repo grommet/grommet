@@ -4,6 +4,9 @@ exports.__esModule = true;
 exports.grommet = void 0;
 var _styledComponents = require("styled-components");
 var _object = require("../utils/object");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var grommet = exports.grommet = (0, _object.deepFreeze)({
   global: {
     colors: {

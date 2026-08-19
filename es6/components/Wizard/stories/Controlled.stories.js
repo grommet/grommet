@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { Box, Button, Heading, Layer, Notification, Paragraph } from 'grommet';
 import { Wizard } from '../Wizard';

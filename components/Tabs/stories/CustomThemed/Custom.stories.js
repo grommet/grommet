@@ -9,6 +9,9 @@ var _grommet = require("grommet");
 var _themes = require("grommet/themes");
 var _utils = require("grommet/utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var RichTabTitle = function RichTabTitle(_ref) {
   var icon = _ref.icon,
     label = _ref.label;

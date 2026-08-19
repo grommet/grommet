@@ -5,6 +5,9 @@ exports.dark = void 0;
 var _styledComponents = require("styled-components");
 var _object = require("../utils/object");
 var _colors = require("../utils/colors");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
 var neutralColors = ['#EB6060', '#01C781', '#6095EB', '#FFB200'];
 var statusColors = {

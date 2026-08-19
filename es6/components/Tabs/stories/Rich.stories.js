@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Tab, Tabs } from 'grommet';
 import { Currency } from "grommet-icons/es6/icons/Currency";

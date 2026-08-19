@@ -3,6 +3,9 @@
 exports.__esModule = true;
 exports.useControlled = void 0;
 var _react = require("react");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 // This hook allows to manage components controlled and uncontrolled
 var useControlled = exports.useControlled = function useControlled(_ref) {
   var prop = _ref.prop,

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var POST_DECIMAL_DIGITS = 10;
 export var baseUnit = 24;
 export var polarToCartesian = function polarToCartesian(centerX, centerY, radius, angleInDegrees) {

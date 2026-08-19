@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Avatar, Button, Box, Grommet, Nav, Sidebar, Stack, Tip } from 'grommet';
 import { Analytics } from "grommet-icons/es6/icons/Analytics";
