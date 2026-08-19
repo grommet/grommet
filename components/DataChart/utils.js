@@ -3,6 +3,9 @@
 exports.__esModule = true;
 exports.showInUnits = exports.points = exports.minimum = exports.maximum = exports.largestSize = exports.heightYGranularity = exports.halfPad = exports.doublePad = exports.createDateFormat = void 0;
 var _Chart = require("../Chart");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var points = exports.points = ['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown'];
 var heightYGranularity = exports.heightYGranularity = {
   xxsmall: {

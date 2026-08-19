@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Card, CardBody, CardFooter, Grid, Heading, Main } from 'grommet';
 import { Cards } from '../Cards';

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useEffect } from 'react';
 import { Box, Button, Heading, ResponsiveContext, Text, ThemeContext } from 'grommet';
 import { FormNext } from "grommet-icons/es6/icons/FormNext";

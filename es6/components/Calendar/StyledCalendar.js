@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css, keyframes } from 'styled-components';
 import { Button } from '../Button';
 import { backgroundStyle, disabledStyle, focusStyle, genericStyles, kindPartStyles, normalizeColor, parseMetricToNum, roundStyle, styledComponentsConfig } from '../../utils';

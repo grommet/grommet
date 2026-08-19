@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { calcMinMax, normalizeValues } from './utils';
 export var round = function round(value, decimals) {
   return Number(Math.round(value + "e" + decimals) + "e-" + decimals);

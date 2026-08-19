@@ -2,6 +2,8 @@
 
 exports.__esModule = true;
 exports.filter = void 0;
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // TODO: share with DataTable, List, Cards, etc.
 var _datumValue = function datumValue(datum, property) {
   if (!property) return undefined;

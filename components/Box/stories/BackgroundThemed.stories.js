@@ -7,6 +7,9 @@ var _grommet = require("grommet");
 var _Grid = require("../../Grid");
 var _useThemeValue2 = require("../../../utils/useThemeValue");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var BackgroundThemed = exports.BackgroundThemed = function BackgroundThemed() {
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;

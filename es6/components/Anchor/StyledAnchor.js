@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import { edgeStyle, focusStyle, genericStyles, normalizeColor, styledComponentsConfig } from '../../utils';
 var disabledStyle = "\n  opacity: 0.3;\n  cursor: default;\n  text-decoration: none;\n";

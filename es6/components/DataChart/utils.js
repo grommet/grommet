@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { round } from '../Chart';
 export var points = ['circle', 'diamond', 'square', 'star', 'triangle', 'triangleDown'];
 export var heightYGranularity = {

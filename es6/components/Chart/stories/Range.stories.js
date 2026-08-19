@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, Chart, Heading } from 'grommet';
 var values = [[10, 20, 30], [20, 30, 60], [30, 15, 20]];

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { Accordion, AccordionPanel, Box, Text, TextInput } from 'grommet';
 var renderPanelHeader = function renderPanelHeader(title, active) {

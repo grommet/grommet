@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css, keyframes } from 'styled-components';
 import { normalizeColor, genericStyles, styledComponentsConfig } from '../../utils';
 var StyledHour = styled.line.withConfig(styledComponentsConfig).withConfig({

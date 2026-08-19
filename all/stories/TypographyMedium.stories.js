@@ -6,6 +6,9 @@ var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
 var _themes = require("grommet/themes");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var paragraphFiller = "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua.\n";
 var Medium = exports.Medium = function Medium() {
   var margin = undefined;

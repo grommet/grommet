@@ -4,7 +4,8 @@ exports.__esModule = true;
 exports["default"] = exports.Simple = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _grommet = require("grommet");
-var _excluded = ["animate", "multiple"];
+var _excluded = ["animate", "multiple"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var Simple = exports.Simple = function Simple(props) {

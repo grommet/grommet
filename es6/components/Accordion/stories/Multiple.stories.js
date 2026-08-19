@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Accordion, AccordionPanel, Box } from 'grommet';
 export var Multiple = function Multiple() {

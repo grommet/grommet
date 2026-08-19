@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Grid, DataTable, DataFilters, DataSearch, DataSummary, Text, Toolbar } from 'grommet';
 import { Data } from '../Data';

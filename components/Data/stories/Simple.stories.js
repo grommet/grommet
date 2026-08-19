@@ -7,6 +7,9 @@ var _grommet = require("grommet");
 var _Data = require("../Data");
 var _data = require("../../DataTable/stories/data");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var Simple = exports.Simple = function Simple() {
   return (
     /*#__PURE__*/

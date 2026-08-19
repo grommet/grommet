@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';

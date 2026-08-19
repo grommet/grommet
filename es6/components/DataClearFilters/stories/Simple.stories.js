@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext } from 'react';
 import { Box, Data, DataClearFilters, DataContext, DataFilter, DataFilters, DataSearch, DataSummary, DataView, DataTable, SelectMultiple, Toolbar } from 'grommet';
 import { columns, DATA } from '../../DataTable/stories/data';

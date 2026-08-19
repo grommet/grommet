@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 import { BoxProps } from '../Box/index';
 import { CheckBoxProps } from '../CheckBox/index';

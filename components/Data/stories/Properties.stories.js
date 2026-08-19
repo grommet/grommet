@@ -7,6 +7,9 @@ var _grommet = require("grommet");
 var _data = require("../../DataTable/stories/data");
 var _DataSummary = require("../../DataSummary");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',

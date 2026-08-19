@@ -2,6 +2,8 @@
 
 exports.__esModule = true;
 exports.withinDates = exports.subtractMonths = exports.subtractDays = exports.startOfMonth = exports.sameDayOrBefore = exports.sameDayOrAfter = exports.sameDay = exports.handleOffset = exports.getRangePosition = exports.endOfMonth = exports.daysApart = exports.betweenDates = exports.addMonths = exports.addDays = void 0;
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // Utility functions for the Calendar.
 // Just what's needed to avoid having to include a dependency like momentjs.
 

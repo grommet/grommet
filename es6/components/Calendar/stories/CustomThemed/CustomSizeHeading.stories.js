@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { deepMerge } from 'grommet/utils';
 import { Box, Calendar, Grommet, grommet } from 'grommet';

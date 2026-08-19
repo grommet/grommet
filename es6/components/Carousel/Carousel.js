@@ -1,6 +1,8 @@
 var _excluded = ["activeChild", "initialChild", "onChild", "play", "children", "controls", "height", "fill", "width", "onFocus", "onBlur", "wrap"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { Children, useCallback, useContext, useEffect, useMemo, useState, useRef } from 'react';
 import { normalizeColor } from '../../utils';
 import { MessageContext } from '../../contexts/MessageContext';

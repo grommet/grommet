@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState, useEffect } from 'react';
 import { CarouselChildPropTypes } from './propTypes';
 import { StyledCarouselChild } from './StyledCarousel';

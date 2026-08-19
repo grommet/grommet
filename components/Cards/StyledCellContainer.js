@@ -5,7 +5,8 @@ exports.StyledCellContainer = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _utils = require("../../utils");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var sizeStyles = function sizeStyles(size) {
   return size && typeof size === 'object' ? "\n      " + (size != null && size.columns ? "grid-column: span " + size.columns + ";" : '') + "\n      " + (size != null && size.rows ? "grid-row: span " + size.rows + ";" : '') + "\n    " : '';
 };

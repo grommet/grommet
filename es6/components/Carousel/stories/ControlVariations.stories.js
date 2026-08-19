@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Attraction } from "grommet-icons/es6/icons/Attraction";
 import { Car } from "grommet-icons/es6/icons/Car";

@@ -3,6 +3,9 @@
 exports.__esModule = true;
 exports.round = exports.calcs = exports.calcBounds = void 0;
 var _utils = require("./utils");
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+
 var round = exports.round = function round(value, decimals) {
   return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
 };
