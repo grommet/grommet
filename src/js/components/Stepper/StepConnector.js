@@ -1,79 +1,31 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-
+import styled, { css } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { StyledConnector } from './StyledStepper';
 
+const StyledStepConnectorGroup = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+})`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  overflow: visible;
+  ${(props) =>
+    props.direction === 'horizontal' &&
+    css`
+      align-items: center;
+    `}
+`;
+
 export const StepConnector = ({ step, direction, children }) => {
-  const { theme, passThemeFlag } = useThemeValue();
-
-  const indicatorSize =
-    theme.stepper?.indicator?.size &&
-    theme.global?.edgeSize?.[theme.stepper.indicator.size]
-      ? theme.global.edgeSize[theme.stepper.indicator.size]
-      : theme.global?.edgeSize?.medium || '24px';
-  const childGap = theme.global?.edgeSize?.xsmall || '8px';
-  const childPadTop = theme.global?.edgeSize?.medium || '24px';
-  const minConnectorInlineSize = theme.global?.edgeSize?.small || '12px';
-
-  const directionStyle =
-    direction === 'horizontal'
-      ? {
-          alignItems: 'center',
-          minWidth: minConnectorInlineSize,
-        }
-      : {
-          justifyContent: 'flex-start',
-          minHeight: minConnectorInlineSize,
-        };
-
-  const renderChildren = () => {
-    if (!children) return null;
-
-    const childIndent = `calc(${indicatorSize} + ${
-      theme.global?.edgeSize?.small || '12px'
-    })`;
-
-    return direction === 'horizontal' ? (
-      <span
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
-          gap: childGap,
-          paddingTop: childPadTop,
-          maxWidth: '100%',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-        }}
-      >
-        {children}
-      </span>
-    ) : (
-      <ol
-        style={{
-          listStyle: 'none',
-          padding: `0 0 0 ${childIndent}`,
-          margin: 0,
-        }}
-      >
-        {children}
-      </ol>
-    );
-  };
+  const { passThemeFlag } = useThemeValue();
 
   return (
-    <li
-      role="presentation"
-      aria-hidden={children ? undefined : 'true'}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'relative',
-        flex: 1,
-        overflow: 'visible',
-        ...directionStyle,
-      }}
-    >
+    <StyledStepConnectorGroup direction={direction} {...passThemeFlag}>
       <StyledConnector
         direction={direction}
         status={step.status}
@@ -81,7 +33,7 @@ export const StepConnector = ({ step, direction, children }) => {
         isBetween
         {...passThemeFlag}
       />
-      {renderChildren()}
-    </li>
+      {children}
+    </StyledStepConnectorGroup>
   );
 };

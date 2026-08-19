@@ -1056,6 +1056,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'medium',
       },
     },
+    dateTimeInput: {
+      button: {
+        margin: { right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+      active: {
+        background: 'active-background',
+        pad: 'xxsmall',
+        indicator: {
+          color: { dark: 'white', light: 'black' },
+          size: 'small',
+        },
+      },
+      drop: {
+        pad: 'small',
+        gap: 'small',
+        border: {
+          color: 'border',
+          size: 'xsmall',
+        },
+      },
+      icon: {
+        calendar: undefined,
+      },
+      separator: {
+        pad: 'xxsmall',
+      },
+    },
     dataSearch: {
       // icons: {
       //   search: undefined,
@@ -2354,6 +2384,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'xsmall',
         color: 'text-weak',
       },
+      button: {
+        pad: 'xxsmall',
+      },
+      horizontal: {
+        connector: {
+          margin: 'xxsmall',
+        },
+        button: {
+          gap: 'xsmall',
+        },
+      },
+      vertical: {
+        button: {
+          gap: 'small',
+        },
+      },
       // States: [component].[state].[element].[property]
       pending: {
         indicator: {
@@ -2625,6 +2671,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           selected: {
             background: 'selected',
             color: 'white',
+            text: {
+              weight: 'medium',
+            },
             hover: {
               // background: undefined,
             },
@@ -2737,7 +2786,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         vertical: {
           // Fixed rail width so the column doesn't collapse to label text.
           width: 'small',
-          pad: { horizontal: 'xsmall', vertical: 'none' },
+          // pad: undefined,
         },
       },
       stepHeader: {
@@ -2758,6 +2807,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       content: {
         pad: 'medium',
+        gap: 'medium',
         background: 'background-front',
         round: 'small',
         margin: { top: 'medium' },
@@ -2774,11 +2824,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           cancel: { icon: undefined },
           skip: { icon: FormNext },
         },
-      },
-      error: {
-        color: 'status-error',
-        size: 'small',
-        margin: { top: 'xsmall' },
       },
     },
     worldMap: {

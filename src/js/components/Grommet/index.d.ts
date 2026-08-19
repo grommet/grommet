@@ -100,6 +100,7 @@ export interface GrommetProps {
         rowsChanged?: string;
         rowsSingle?: string;
         searchBy?: string;
+        sortable?: string;
         total?: string;
         totalSingle?: string;
       };
