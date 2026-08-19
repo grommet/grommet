@@ -250,7 +250,6 @@ export interface GrommetProps {
         enterSelect?: string;
         hidePassword?: string;
         showPassword?: string;
-        showPassword?: string;
         suggestionsCount?: string;
         suggestionsExist?: string;
         suggestionIsOpen?: string;
