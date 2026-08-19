@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';
@@ -6,6 +8,8 @@ import { Data } from '../../Data';
 import { DataFilters } from '../../DataFilters';
 import { DataTable } from '../../DataTable';
 import { Grommet } from '../../Grommet';
+// @ts-expect-error DataContext.js has no type declarations
+import { DataContext } from '../../../contexts/DataContext';
 import { DataSummary } from '..';
 
 // asserts that DataSummary has text. Previously this was set to 2 to include AnnounceContext
@@ -92,6 +96,28 @@ describe('DataSummary', () => {
     expect(screen.getByText('1 selected')).toBeTruthy();
     const rowCheckbox = screen.getByRole('checkbox', { name: 'select b' });
     fireEvent.click(rowCheckbox);
+    expect(screen.getByText('2 selected')).toBeTruthy();
+  });
+
+  // regression test: DataTable always reports `selected` to DataContext as
+  // a number (select.length), but DataContext can also be supplied
+  // directly (bypassing DataTable) with `selected` as an array of ids.
+  test('renders selected count when selected is provided as an array', () => {
+    render(
+      <Grommet>
+        <DataContext.Provider
+          value={{
+            data,
+            total: data.length,
+            filteredTotal: data.length,
+            selected: ['a', 'b'],
+          }}
+        >
+          <DataSummary />
+        </DataContext.Provider>
+      </Grommet>,
+    );
+
     expect(screen.getByText('2 selected')).toBeTruthy();
   });
 
