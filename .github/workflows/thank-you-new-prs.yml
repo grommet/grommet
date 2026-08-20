@@ -60,11 +60,9 @@ jobs:
               fi
 
               if [ "$IS_FIRST_TIMER" = "true" ]; then
-                MESSAGE="${MARKER}
-          Thanks so much for your first contribution to Grommet, and welcome! 🎉 A maintainer will review it as soon as they can. In the meantime, feel free to check out our [contributing guide](https://github.com/${REPO}/blob/master/CONTRIBUTING.md) if you have any questions."
+                MESSAGE="${MARKER}"$'\n'"Thanks so much for your first contribution to Grommet, and welcome! 🎉 A maintainer will review it as soon as they can. In the meantime, feel free to check out our [contributing guide](https://github.com/${REPO}/blob/master/CONTRIBUTING.md) if you have any questions."
               else
-                MESSAGE="${MARKER}
-          Thank you for the contribution! The Grommet team will take a look at this as soon as we can. 🙏"
+                MESSAGE="${MARKER}"$'\n'"Thank you for the contribution! The Grommet team will take a look at this as soon as we can. 🙏"
               fi
 
               # Look for failing Jest/test checks on the PR so the
@@ -74,12 +72,7 @@ jobs:
                 || true)
 
               if [ -n "$FAILING_TESTS" ]; then
-                MESSAGE="${MESSAGE}
-
-          It also looks like the following check(s) are currently failing:
-          ${FAILING_TESTS}
-
-          Taking a look at the failing Jest test(s) above would be a great place to start while you wait for a full review."
+                MESSAGE="${MESSAGE}"$'\n\n'"It also looks like the following check(s) are currently failing:"$'\n'"${FAILING_TESTS}"$'\n\n'"Taking a look at the failing Jest test(s) above would be a great place to start while you wait for a full review."
               fi
 
               if [ "$DRY_RUN" = "true" ]; then
