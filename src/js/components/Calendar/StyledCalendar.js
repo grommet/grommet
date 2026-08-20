@@ -217,7 +217,7 @@ const dayStyle = (props) => {
   let backgroundObj;
   let colorObj;
   if (props.isSelected) {
-    backgroundObj = props.theme.calendar.day?.selected?.background || 'control';
+    backgroundObj = props.theme.calendar.day?.selected?.background || 'selected';
     colorObj = props.theme.calendar.day?.selected?.color;
   } else if (props.inRange) {
     // for backwards compatability, only apply this if caller hasn't specified
