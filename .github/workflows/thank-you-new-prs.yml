@@ -37,6 +37,19 @@ jobs:
           PR_NUMBERS=$(gh pr list --repo "$REPO" --state open --json number -q '.[].number')
 
           for PR in $PR_NUMBERS; do
+            PR_AUTHOR=$(gh pr view "$PR" --repo "$REPO" --json author -q '.author.login')
+            IS_TEAM_AUTHOR=""
+            for TEAM_MEMBER in $TEAM_MEMBERS; do
+              if [ "$PR_AUTHOR" = "$TEAM_MEMBER" ]; then
+                IS_TEAM_AUTHOR="true"
+                break
+              fi
+            done
+            if [ "$IS_TEAM_AUTHOR" = "true" ]; then
+              echo "PR #$PR opened by team member $PR_AUTHOR, skipping."
+              continue
+            fi
+
             EXISTING=$(gh pr view "$PR" --repo "$REPO" --json comments -q '.comments[].body' | grep -F "$MARKER" || true)
             if [ -z "$EXISTING" ]; then
               TEAM_RESPONDED=""
