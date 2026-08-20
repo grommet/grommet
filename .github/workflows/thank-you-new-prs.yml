@@ -38,7 +38,28 @@ jobs:
             if [ -z "$EXISTING" ]; then
               # gh pr view has no authorAssociation field; use the REST API directly.
               ASSOCIATION=$(gh api "repos/${REPO}/pulls/${PR}" --jq '.author_association')
+
+              IS_FIRST_TIMER=""
               if [ "$ASSOCIATION" = "FIRST_TIME_CONTRIBUTOR" ] || [ "$ASSOCIATION" = "FIRST_TIMER" ]; then
+                IS_FIRST_TIMER="true"
+              fi
+
+              if [ "$IS_FIRST_TIMER" = "true" ]; then
+                # GitHub reports FIRST_TIME_CONTRIBUTOR on every PR from an
+                # author until one of their PRs actually merges, so the same
+                # person can show up as "first time" across several open PRs.
+                # Only send the welcome message once per author.
+                AUTHOR=$(gh api "repos/${REPO}/pulls/${PR}" --jq '.user.login')
+                OTHER_PRS=$(gh api "search/issues?q=repo:${REPO}+type:pr+author:${AUTHOR}" --jq '.items[].number' | grep -vx "$PR" || true)
+                for OTHER_PR in $OTHER_PRS; do
+                  if gh pr view "$OTHER_PR" --repo "$REPO" --json comments -q '.comments[].body' | grep -qF "$MARKER"; then
+                    IS_FIRST_TIMER=""
+                    break
+                  fi
+                done
+              fi
+
+              if [ "$IS_FIRST_TIMER" = "true" ]; then
                 MESSAGE="${MARKER}
           Thanks so much for your first contribution to Grommet, and welcome! 🎉 A maintainer will review it as soon as they can. In the meantime, feel free to check out our [contributing guide](https://github.com/${REPO}/blob/master/CONTRIBUTING.md) if you have any questions."
               else
