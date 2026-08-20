@@ -1154,6 +1154,7 @@ exports[`Components loads 1`] = `
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
       "a11yTitle": [Function],
+      "copy": [Function],
       "defaultSuggestion": [Function],
       "dropAlign": [Function],
       "dropHeight": [Function],
@@ -1165,6 +1166,7 @@ exports[`Components loads 1`] = `
       "messages": [Function],
       "name": [Function],
       "onChange": [Function],
+      "onClickCopy": [Function],
       "onSelect": [Function],
       "onSuggestionSelect": [Function],
       "onSuggestionsClose": [Function],
