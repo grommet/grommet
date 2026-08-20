@@ -29,6 +29,9 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run == true }}
         run: |
           MARKER="<!-- grommet-thank-you-bot -->"
+          # GitHub logins of the Grommet team - PRs already commented on by
+          # one of these are left alone since a maintainer has responded.
+          TEAM_MEMBERS="seanhillweb jcfilben MikeKingdom halocline Sulaymon333"
           echo "Dry run: $DRY_RUN"
 
           PR_NUMBERS=$(gh pr list --repo "$REPO" --state open --json number -q '.[].number')
@@ -36,6 +39,22 @@ jobs:
           for PR in $PR_NUMBERS; do
             EXISTING=$(gh pr view "$PR" --repo "$REPO" --json comments -q '.comments[].body' | grep -F "$MARKER" || true)
             if [ -z "$EXISTING" ]; then
+              TEAM_RESPONDED=""
+              COMMENT_AUTHORS=$(gh pr view "$PR" --repo "$REPO" --json comments -q '.comments[].author.login')
+              for COMMENT_AUTHOR in $COMMENT_AUTHORS; do
+                for TEAM_MEMBER in $TEAM_MEMBERS; do
+                  if [ "$COMMENT_AUTHOR" = "$TEAM_MEMBER" ]; then
+                    TEAM_RESPONDED="true"
+                    break 2
+                  fi
+                done
+              done
+
+              if [ "$TEAM_RESPONDED" = "true" ]; then
+                echo "PR #$PR already has a team response, skipping."
+                continue
+              fi
+
               # gh pr view has no authorAssociation field; use the REST API directly.
               ASSOCIATION=$(gh api "repos/${REPO}/pulls/${PR}" --jq '.author_association')
 
