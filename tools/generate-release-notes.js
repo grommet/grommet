@@ -143,6 +143,7 @@ const BETA_LABELS = new Set(['beta', 'Beta']);
  * We auto-detect from source and merge these defaults as a fallback.
  */
 const DEFAULT_BETA_COMPONENT_SECTIONS = new Set([
+  'DateTimeInput',
   'Stepper',
   'TimeInput',
   'Wizard',
