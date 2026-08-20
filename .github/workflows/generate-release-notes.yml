@@ -1,0 +1,104 @@
+name: Generate Release Notes
+
+# Adds a "Run workflow" button in the GitHub Actions UI.
+# Any maintainer with write access can trigger this to generate
+# a draft set of release notes between two tags.
+on:
+  workflow_dispatch:
+    inputs:
+      from_tag:
+        description: 'Starting tag (exclusive) — e.g. v2.55.0'
+        required: true
+        type: string
+      to_tag:
+        description: 'Ending tag or branch (inclusive) — defaults to HEAD/master'
+        required: false
+        type: string
+        default: 'HEAD'
+      create_draft_release:
+        description: 'Create a GitHub draft release with the generated notes'
+        required: false
+        type: boolean
+        default: false
+      release_tag:
+        description: 'Tag name for the draft release (required when create_draft_release is true)'
+        required: false
+        type: string
+
+permissions:
+  contents: write # needed to create a draft release
+
+jobs:
+  generate:
+    name: Generate release notes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Generate release notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn generate-release-notes \
+            -- \
+            --from "${{ inputs.from_tag }}" \
+            --to "${{ inputs.to_tag }}" \
+            --output RELEASE_NOTES.md
+
+      - name: Generate Slack announcement
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn generate-release-announcement \
+            -- \
+            --from "${{ inputs.from_tag }}" \
+            --to "${{ inputs.to_tag }}" \
+            --output RELEASE_ANNOUNCEMENT.txt
+
+      - name: Show preview
+        run: |
+          echo '=== RELEASE NOTES ==='
+          cat RELEASE_NOTES.md
+          echo
+          echo '=== SLACK ANNOUNCEMENT ==='
+          cat RELEASE_ANNOUNCEMENT.txt
+
+      - name: Upload notes as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes-${{ inputs.from_tag }}-to-${{ inputs.to_tag }}
+          path: |
+            RELEASE_NOTES.md
+            RELEASE_ANNOUNCEMENT.txt
+          retention-days: 30
+
+      - name: Create draft GitHub release
+        if: ${{ inputs.create_draft_release == true }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ inputs.release_tag }}"
+          if [ -z "$TAG" ]; then
+            echo "Error: release_tag input is required when create_draft_release is true."
+            exit 1
+          fi
+          NOTES=$(cat RELEASE_NOTES.md)
+          gh release create "$TAG" \
+            --title "$TAG" \
+            --notes "$NOTES" \
+            --draft \
+            --repo "${{ github.repository }}"
+          echo "Draft release created for tag $TAG."
