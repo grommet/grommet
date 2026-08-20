@@ -1363,6 +1363,7 @@ const DateTimeInput = forwardRef(
                 />
                 <TimeInput
                   inline
+                  focusOnMount={false}
                   format={resolvedFormat}
                   value={timeValue}
                   showSeconds={showSeconds}
