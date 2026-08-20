@@ -1,0 +1,77 @@
+name: Thank New Contributors
+
+# Runs every morning and leaves a welcome comment on any open PR
+# that doesn't already have one, thanking the contributor.
+on:
+  schedule:
+    - cron: '0 13 * * *' # 9am ET / 13:00 UTC daily
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Log what would be posted without actually commenting'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  pull-requests: write
+
+jobs:
+  thank-new-prs:
+    name: Comment on new PRs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Comment on PRs missing a welcome message
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          DRY_RUN: ${{ inputs.dry_run == true }}
+        run: |
+          MARKER="<!-- grommet-thank-you-bot -->"
+          echo "Dry run: $DRY_RUN"
+
+          PR_NUMBERS=$(gh pr list --repo "$REPO" --state open --json number -q '.[].number')
+
+          for PR in $PR_NUMBERS; do
+            EXISTING=$(gh pr view "$PR" --repo "$REPO" --json comments -q '.comments[].body' | grep -F "$MARKER" || true)
+            if [ -z "$EXISTING" ]; then
+              ASSOCIATION=$(gh pr view "$PR" --repo "$REPO" --json authorAssociation -q '.authorAssociation')
+              if [ "$ASSOCIATION" = "FIRST_TIME_CONTRIBUTOR" ] || [ "$ASSOCIATION" = "FIRST_TIMER" ]; then
+                MESSAGE="${MARKER}
+          Thanks so much for your first contribution to Grommet, and welcome! 🎉 A maintainer will review it as soon as they can. In the meantime, feel free to check out our [contributing guide](https://github.com/${REPO}/blob/master/CONTRIBUTING.md) if you have any questions."
+              else
+                MESSAGE="${MARKER}
+          Thank you for the contribution! The Grommet team will take a look at this as soon as we can. 🙏"
+              fi
+
+              # Look for failing Jest/test checks on the PR so the
+              # contributor has somewhere concrete to start.
+              FAILING_TESTS=$(gh pr checks "$PR" --repo "$REPO" --json name,bucket,link 2>/dev/null \
+                | jq -r '.[] | select(.bucket == "fail") | select(.name | test("jest|test"; "i")) | "- [\(.name)](\(.link))"' \
+                || true)
+
+              if [ -n "$FAILING_TESTS" ]; then
+                MESSAGE="${MESSAGE}
+
+          It also looks like the following check(s) are currently failing:
+          ${FAILING_TESTS}
+
+          Taking a look at the failing Jest test(s) above would be a great place to start while you wait for a full review."
+              fi
+
+              if [ "$DRY_RUN" = "true" ]; then
+                echo "[dry run] Would comment on PR #$PR:"
+                echo "$MESSAGE"
+                echo '---'
+              else
+                echo "Commenting on PR #$PR"
+                gh pr comment "$PR" --repo "$REPO" --body "$MESSAGE"
+              fi
+            else
+              echo "Commenting on PR #$PR (authorAssociation: $ASSOCIATION)"
+              gh pr comment "$PR" --repo "$REPO" --body "$MESSAGE"
+            else
+              echo "PR #$PR already has a welcome comment, skipping."
+            fi
+          done
