@@ -97,6 +97,7 @@ const TextInput = forwardRef(
       name,
       onBlur,
       onChange,
+      onClickCopy: onClickCopyProp,
       onFocus,
       onKeyDown,
       onSelect,
@@ -106,6 +107,7 @@ const TextInput = forwardRef(
       password,
       placeholder,
       plain,
+      copy,
       readOnly: readOnlyProp,
       readOnlyCopy,
       reverse,
@@ -167,8 +169,10 @@ const TextInput = forwardRef(
       messages,
     });
 
-    const onClickCopy = () => {
-      navigator.clipboard.writeText(value);
+    const onClickCopy = async () => {
+      if (onClickCopyProp) await onClickCopyProp();
+      else await navigator.clipboard.writeText(value ?? '');
+
       announce(readOnlyCopyValidation, 'assertive');
       setTip(readOnlyCopyValidation);
     };
@@ -524,7 +528,7 @@ const TextInput = forwardRef(
     const showLeadingIcon = showTextInputIcon && !reverse;
     const showTrailingIcon = showTextInputIcon && reverse;
 
-    const ReadOnlyCopyButton = (
+    const CopyButtonElement = (
       <CopyButton
         disabled={disabled}
         onBlurCopy={onBlurCopy}
@@ -551,7 +555,12 @@ const TextInput = forwardRef(
       />
     ) : undefined;
 
-    const textInputButton = readOnlyCopy ? ReadOnlyCopyButton : undefined;
+    const inlineCopyButton =
+      copy && !reverse && passwordToggle ? CopyButtonElement : undefined;
+    const textInputButton =
+      readOnlyCopy || (copy && (!passwordToggle || reverse))
+        ? CopyButtonElement
+        : undefined;
 
     return (
       <StyledTextInputContainer
@@ -592,6 +601,7 @@ const TextInput = forwardRef(
             focus={focus}
             hasButton={!!textInputButton}
             hasInlineButton={passwordToggle}
+            hasCopyButton={!!inlineCopyButton}
             hasTrailingIcon={showTrailingIcon}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
@@ -655,12 +665,16 @@ const TextInput = forwardRef(
           />
         </Keyboard>
         {PasswordToggleButton && !readOnlyCopy && (
-          <StyledInlineButton {...passThemeFlag}>
+          <StyledInlineButton
+            hasCopyButton={!!inlineCopyButton}
+            {...passThemeFlag}
+          >
             {showTrailingIcon && (
               <StyledInlineIcon {...passThemeFlag}>
                 {textInputIcon}
               </StyledInlineIcon>
             )}
+            {inlineCopyButton}
             {PasswordToggleButton}
           </StyledInlineButton>
         )}

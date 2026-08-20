@@ -879,6 +879,62 @@ describe('TextInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('copy editable value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput value="test" copy aria-label="Editable value" />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', { name: 'Copy to clipboard test' }),
+    );
+
+    expect(await navigator.clipboard.readText()).toBe('test');
+    expect(screen.getByLabelText('Editable value')).not.toHaveAttribute(
+      'readonly',
+    );
+  });
+
+  test('copy editable value with custom handler', async () => {
+    const user = userEvent.setup();
+    const onClickCopy = jest.fn();
+
+    render(
+      <Grommet>
+        <TextInput
+          value="test"
+          copy
+          onClickCopy={onClickCopy}
+          aria-label="Editable value"
+        />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', { name: 'Copy to clipboard test' }),
+    );
+
+    expect(onClickCopy).toHaveBeenCalledTimes(1);
+  });
+
+  test('supports copy with password toggle', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" copy password aria-label="Password" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Copy to clipboard test' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Show password' }),
+    ).toBeInTheDocument();
+  });
+
   test('read only copy theme icon', async () => {
     render(
       <Grommet theme={{ textInput: { icons: { copy: Add } } }}>

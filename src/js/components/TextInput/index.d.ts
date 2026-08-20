@@ -35,6 +35,7 @@ export interface TextInputProps
     suggestionIsOpen?: string;
   };
   name?: string;
+  onClickCopy?: () => void | Promise<void>;
   onSelect?: (x: {
     target: React.RefObject<HTMLElement | null>['current'];
     suggestion: any;
@@ -48,6 +49,7 @@ export interface TextInputProps
   password?: boolean;
   placeholder?: string | React.ReactNode;
   plain?: boolean | 'full';
+  copy?: boolean;
   readOnlyCopy?: boolean;
   reverse?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
