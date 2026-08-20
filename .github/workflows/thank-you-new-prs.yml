@@ -91,9 +91,6 @@ jobs:
                 gh pr comment "$PR" --repo "$REPO" --body "$MESSAGE"
               fi
             else
-              echo "Commenting on PR #$PR (authorAssociation: $ASSOCIATION)"
-              gh pr comment "$PR" --repo "$REPO" --body "$MESSAGE"
-            else
               echo "PR #$PR already has a welcome comment, skipping."
             fi
           done
