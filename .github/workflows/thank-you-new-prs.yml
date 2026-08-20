@@ -36,7 +36,8 @@ jobs:
           for PR in $PR_NUMBERS; do
             EXISTING=$(gh pr view "$PR" --repo "$REPO" --json comments -q '.comments[].body' | grep -F "$MARKER" || true)
             if [ -z "$EXISTING" ]; then
-              ASSOCIATION=$(gh pr view "$PR" --repo "$REPO" --json authorAssociation -q '.authorAssociation')
+              # gh pr view has no authorAssociation field; use the REST API directly.
+              ASSOCIATION=$(gh api "repos/${REPO}/pulls/${PR}" --jq '.author_association')
               if [ "$ASSOCIATION" = "FIRST_TIME_CONTRIBUTOR" ] || [ "$ASSOCIATION" = "FIRST_TIMER" ]; then
                 MESSAGE="${MARKER}
           Thanks so much for your first contribution to Grommet, and welcome! 🎉 A maintainer will review it as soon as they can. In the meantime, feel free to check out our [contributing guide](https://github.com/${REPO}/blob/master/CONTRIBUTING.md) if you have any questions."
