@@ -104,7 +104,7 @@ jobs:
                 || true)
 
               if [ -n "$FAILING_TESTS" ]; then
-                MESSAGE="${MESSAGE}"$'\n\n'"It also looks like the following check(s) are currently failing:"$'\n'"${FAILING_TESTS}"$'\n\n'"Taking a look at the failing Jest test(s) above would be a great place to start while you wait for a full review."
+                MESSAGE="${MESSAGE}"$'\n\n'"It looks like the following check(s) are currently failing:"$'\n'"${FAILING_TESTS}"$'\n\n'"Taking a look at the failing Jest test(s) above would be a great place to start while you wait for a full review."
               fi
 
               if [ "$DRY_RUN" = "true" ]; then
