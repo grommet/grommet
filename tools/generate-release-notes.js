@@ -778,6 +778,12 @@ const args = parseArgs();
     args.token,
   );
 
+  if (compare.total_commits > compare.commits.length) {
+    throw new Error(
+      `Compare API returned only ${compare.commits.length} of ${compare.total_commits} commits. ` +
+        'The release range is too large; please choose a smaller range or switch to a paginated strategy.',
+    );
+  }
   // Extract PR numbers embedded in commit messages.
   // GitHub squash-merge format:  "PR title (#1234)"
   // GitHub merge-commit format:  "Merge pull request #1234 from ..."
