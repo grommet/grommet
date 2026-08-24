@@ -95,10 +95,9 @@ jobs:
             echo "Error: release_tag input is required when create_draft_release is true."
             exit 1
           fi
-          NOTES=$(cat RELEASE_NOTES.md)
           gh release create "$TAG" \
             --title "$TAG" \
-            --notes "$NOTES" \
+            --notes-file RELEASE_NOTES.md \
             --draft \
             --repo "${{ github.repository }}"
           echo "Draft release created for tag $TAG."
