@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 const SPACING_PROPS = new Set(['gap', 'margin', 'pad', 'thickness']);
 const BORDER_PROPS = new Set(['border']);
 const CONTAINER_PROPS = new Set(['height', 'width', 'columns', 'rows']);
