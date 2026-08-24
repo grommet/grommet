@@ -303,7 +303,8 @@ function includeByBody(body) {
     .trim()
     .split('\n')[0]
     .trim()
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/[.!?]+$/, '');
 
   if (!answer) return true;
 
