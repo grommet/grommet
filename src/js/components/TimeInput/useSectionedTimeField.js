@@ -18,7 +18,6 @@ import {
   SECTION_MINUTE,
   SECTION_PERIOD,
   SECTION_SECOND,
-  defaultHourForFormat,
 } from './utils';
 
 const separatorBeforeSection = (section) =>
@@ -275,14 +274,15 @@ export const useSectionedTimeField = ({
             descending.find((option) => option < (current ?? maxValue + 1)) ??
             options[options.length - 1];
         }
+      } else if (current === undefined) {
+        // When a numeric section is empty, the first arrow interaction
+        // seeds it at the section boundary (ArrowUp → min, ArrowDown →
+        // max) instead of incrementing from the default, which previously
+        // produced min+1 (e.g. "02" for 12-hour) instead of the valid
+        // initial value ("01").
+        next = delta > 0 ? minValue : maxValue;
       } else {
-        const base =
-          current === undefined
-            ? section === SECTION_HOUR
-              ? defaultHourForFormat(format)
-              : minValue
-            : current;
-        next = base + delta;
+        next = current + delta;
         if (next > maxValue) next = minValue;
         if (next < minValue) next = maxValue;
       }
