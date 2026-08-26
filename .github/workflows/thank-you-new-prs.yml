@@ -28,13 +28,14 @@ jobs:
           REPO: ${{ github.repository }}
           DRY_RUN: ${{ inputs.dry_run == true }}
         run: |
+          set -e
           MARKER="<!-- grommet-thank-you-bot -->"
           # Fetch current members of the grommet/devs team dynamically.
           # Requires a token with read:org scope (set ORG_READ_TOKEN secret).
           TEAM_MEMBERS=$(gh api orgs/grommet/teams/devs/members --jq '.[].login')
           echo "Dry run: $DRY_RUN"
 
-          PR_NUMBERS=$(gh pr list --repo "$REPO" --state open --json number -q '.[].number')
+          PR_NUMBERS=$(gh pr list --repo "$REPO" --state open --limit 100 --json number -q '.[].number')
 
           for PR in $PR_NUMBERS; do
             PR_AUTHOR=$(gh pr view "$PR" --repo "$REPO" --json author -q '.author.login')
@@ -69,7 +70,9 @@ jobs:
               fi
 
               # gh pr view has no authorAssociation field; use the REST API directly.
-              ASSOCIATION=$(gh api "repos/${REPO}/pulls/${PR}" --jq '.author_association')
+              PR_DATA=$(gh api "repos/${REPO}/pulls/${PR}" --jq '{association: .author_association, author: .user.login}')
+              ASSOCIATION=$(echo "$PR_DATA" | jq -r '.association')
+              AUTHOR=$(echo "$PR_DATA" | jq -r '.author')
 
               IS_FIRST_TIMER=""
               if [ "$ASSOCIATION" = "FIRST_TIME_CONTRIBUTOR" ] || [ "$ASSOCIATION" = "FIRST_TIMER" ]; then
@@ -81,7 +84,6 @@ jobs:
                 # author until one of their PRs actually merges, so the same
                 # person can show up as "first time" across several open PRs.
                 # Only send the welcome message once per author.
-                AUTHOR=$(gh api "repos/${REPO}/pulls/${PR}" --jq '.user.login')
                 OTHER_PRS=$(gh api "search/issues?q=repo:${REPO}+type:pr+author:${AUTHOR}" --jq '.items[].number' | grep -vx "$PR" || true)
                 for OTHER_PR in $OTHER_PRS; do
                   if gh pr view "$OTHER_PR" --repo "$REPO" --json comments -q '.comments[].body' | grep -qF "$MARKER"; then
