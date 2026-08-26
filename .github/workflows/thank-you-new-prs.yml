@@ -92,9 +92,9 @@ jobs:
               fi
 
               if [ "$IS_FIRST_TIMER" = "true" ]; then
-                MESSAGE="${MARKER}"$'\n'"Thanks so much for your first contribution to Grommet, and welcome! 🎉 A maintainer will review it as soon as they can. In the meantime, feel free to check out our [contributing guide](https://github.com/${REPO}/blob/master/CONTRIBUTING.md) if you have any questions."
+                MESSAGE="${MARKER}"$'\n'"Thanks so much for your first contribution to Grommet, and welcome! 🎉"$'\n\n'"A maintainer will review it as soon as they can. The Grommet team is committed to maintaining quality across utility, usability, accessibility, and developer experience — honoring those standards takes time, but it's what makes Grommet a library the whole community can trust."$'\n\n'"In the meantime, feel free to check out our [contributing guide](https://github.com/${REPO}/blob/master/CONTRIBUTING.md) if you have any questions."$'\n\n'"_(This message was posted automatically by the Grommet bot.)_"
               else
-                MESSAGE="${MARKER}"$'\n'"Thank you for the contribution! The Grommet team will take a look at this as soon as we can. 🙏"
+                MESSAGE="${MARKER}"$'\n'"Thank you for the contribution! 🙏"$'\n\n'"A maintainer will review it as soon as they can. The Grommet team is committed to maintaining quality across utility, usability, accessibility, and developer experience — honoring those standards takes time, but it's what makes Grommet a library the whole community can trust."$'\n\n'"_(This message was posted automatically by the Grommet bot.)_"
               fi
 
               # Look for failing Jest/test checks on the PR so the
