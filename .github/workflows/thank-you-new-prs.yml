@@ -50,6 +50,10 @@ jobs:
               echo "PR #$PR opened by team member $PR_AUTHOR, skipping."
               continue
             fi
+          if [ "$ASSOCIATION" = "BOT" ] || [[ "$PR_AUTHOR" == *"[bot]" ]]; then
+            echo "PR #$PR opened by bot $PR_AUTHOR, skipping."
+            continue
+          fi
 
             EXISTING=$(gh pr view "$PR" --repo "$REPO" --json comments -q '.comments[].body' | grep -F "$MARKER" || true)
             if [ -z "$EXISTING" ]; then
