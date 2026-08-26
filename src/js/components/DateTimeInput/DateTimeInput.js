@@ -581,7 +581,12 @@ const DateTimeInput = forwardRef(
           sections,
         );
         const key = getSectionKeyFromType(sectionTypeFromSection(section));
-        const current = sections[key] === undefined ? min : sections[key];
+        if (sections[key] === undefined) {
+          setSectionValue(section, min);
+          return;
+        }
+
+        const current = sections[key];
         const step = section === SECTION_MINUTE ? normalizedMinuteStep : 1;
         let next;
 
