@@ -30,9 +30,9 @@ jobs:
         run: |
           set -e
           MARKER="<!-- grommet-thank-you-bot -->"
-          # Fetch current members of the grommet/devs team dynamically.
-          # Requires a token with read:org scope (set ORG_READ_TOKEN secret).
-          TEAM_MEMBERS=$(gh api orgs/grommet/teams/devs/members --jq '.[].login')
+          # GitHub logins of the Grommet team - PRs already commented on by
+          # one of these are left alone since a maintainer has responded.
+          TEAM_MEMBERS="seanhillweb jcfilben MikeKingdom halocline Sulaymon333 britt6612"
           echo "Dry run: $DRY_RUN"
 
           PR_NUMBERS=$(gh pr list --repo "$REPO" --state open --limit 100 --json number -q '.[].number')
