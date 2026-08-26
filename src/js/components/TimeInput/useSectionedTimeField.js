@@ -18,7 +18,6 @@ import {
   SECTION_MINUTE,
   SECTION_PERIOD,
   SECTION_SECOND,
-  defaultHourForFormat,
 } from './utils';
 
 const separatorBeforeSection = (section) =>
@@ -241,6 +240,11 @@ export const useSectionedTimeField = ({
       const key = sectionKey(section);
       const current = sections[key];
 
+      if (current === undefined) {
+        setSectionValue(section, minValue);
+        return;
+      }
+
       const step =
         section === SECTION_MINUTE
           ? minuteStep
@@ -276,13 +280,7 @@ export const useSectionedTimeField = ({
             options[options.length - 1];
         }
       } else {
-        const base =
-          current === undefined
-            ? section === SECTION_HOUR
-              ? defaultHourForFormat(format)
-              : minValue
-            : current;
-        next = base + delta;
+        next = current + delta;
         if (next > maxValue) next = minValue;
         if (next < minValue) next = maxValue;
       }
