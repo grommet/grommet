@@ -734,6 +734,34 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('10:00:00');
   });
 
+  test('seeds an empty section at its valid initial value on first ArrowUp', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds />
+      </Grommet>,
+    );
+
+    // Empty 24-hour section should seed to 00 (not 01) on first ArrowUp.
+    const hourInput = getSegment('hours');
+    await user.click(hourInput);
+    await user.keyboard('{ArrowUp}');
+    expect(hourInput).toHaveTextContent('00');
+
+    // Empty minute section should seed to 00 on first ArrowUp.
+    const minuteInput = getSegment('minutes');
+    await user.click(minuteInput);
+    await user.keyboard('{ArrowUp}');
+    expect(minuteInput).toHaveTextContent('00');
+
+    // Empty second section should seed to 00 on first ArrowUp.
+    const secondInput = getSegment('seconds');
+    await user.click(secondInput);
+    await user.keyboard('{ArrowUp}');
+    expect(secondInput).toHaveTextContent('00');
+  });
+
   test('submits only committed value and never section placeholders', async () => {
     const user = userEvent.setup();
 

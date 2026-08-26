@@ -581,11 +581,18 @@ const DateTimeInput = forwardRef(
           sections,
         );
         const key = getSectionKeyFromType(sectionTypeFromSection(section));
-        const current = sections[key] === undefined ? min : sections[key];
+        const current = sections[key];
         const step = section === SECTION_MINUTE ? normalizedMinuteStep : 1;
         let next;
 
-        if (section === SECTION_MINUTE && step > 1) {
+        if (current === undefined) {
+          // When a numeric section is empty, the first arrow interaction
+          // seeds it at the section boundary (ArrowUp → min, ArrowDown →
+          // max) rather than incrementing from the minimum, which
+          // previously produced min+1 (e.g. "02" for day/month) instead
+          // of the valid initial value ("01").
+          next = delta > 0 ? min : max;
+        } else if (section === SECTION_MINUTE && step > 1) {
           const options = Array.from(
             { length: Math.ceil((max - min + 1) / step) },
             (_, index) => min + index * step,

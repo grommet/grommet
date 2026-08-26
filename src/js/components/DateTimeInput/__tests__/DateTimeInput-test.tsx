@@ -108,6 +108,40 @@ describe('DateTimeInput', () => {
     );
   });
 
+  test('seeds an empty section at its valid initial value on first ArrowUp', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="24" showSeconds />
+      </Grommet>,
+    );
+
+    // Empty day section should seed to 01 (not 02) on first ArrowUp.
+    const daySegment = screen.getByRole('spinbutton', { name: 'day' });
+    await user.click(daySegment);
+    await user.keyboard('{ArrowUp}');
+    expect(daySegment).toHaveTextContent('01');
+
+    // Empty month section should seed to 01 on first ArrowUp.
+    const monthSegment = screen.getByRole('spinbutton', { name: 'month' });
+    await user.click(monthSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(monthSegment).toHaveTextContent('01');
+
+    // Empty 24-hour section should seed to 00 (not 01) on first ArrowUp.
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    await user.click(hourSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(hourSegment).toHaveTextContent('00');
+
+    // Empty minute section should seed to 00 on first ArrowUp.
+    const minuteSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    await user.click(minuteSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(minuteSegment).toHaveTextContent('00');
+  });
+
   test('drop shows calendar and time columns without nested time input field', async () => {
     const user = userEvent.setup();
 
