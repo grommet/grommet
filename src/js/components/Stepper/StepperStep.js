@@ -94,7 +94,9 @@ export const StepperStep = ({
   }
 
   const focusableProps = isReadOnly
-    ? {}
+    ? // null rather than undefined, so Button's `type = 'button'` default
+      // parameter doesn't put a type attribute on the rendered div
+      { type: null }
     : {
         tabIndex: focusedIndex === index ? 0 : -1,
         onClick: handleClick,
@@ -115,7 +117,8 @@ export const StepperStep = ({
         {...passThemeFlag}
       >
         <StyledStepButton
-          as={isReadOnly ? 'div' : 'button'}
+          plain
+          forwardedAs={isReadOnly ? 'div' : 'button'}
           role={isReadOnly ? 'group' : undefined}
           ref={(el) => {
             if (stepRefs) {

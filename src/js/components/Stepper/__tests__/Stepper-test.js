@@ -225,7 +225,7 @@ describe('Stepper', () => {
     );
 
     const step1 = getByLabelText(/Step 1 of 3/);
-    step1.focus();
+    act(() => step1.focus());
     fireEvent.keyDown(step1, { key: 'ArrowRight' });
 
     const step2 = getByLabelText(/Step 2 of 3/);
@@ -240,7 +240,7 @@ describe('Stepper', () => {
     );
 
     const step2 = getByLabelText(/Step 2 of 3/);
-    step2.focus();
+    act(() => step2.focus());
     fireEvent.keyDown(step2, { key: 'End' });
 
     const step3 = getByLabelText(/Step 3 of 3/);
@@ -417,7 +417,7 @@ describe('Stepper', () => {
     );
 
     const step1 = getByLabelText(/Step 1 of 3/);
-    step1.focus();
+    act(() => step1.focus());
     fireEvent.keyDown(step1, { key: 'ArrowDown' });
 
     const step2 = getByLabelText(/Step 2 of 3/);

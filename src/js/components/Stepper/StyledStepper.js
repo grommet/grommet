@@ -7,6 +7,7 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
+import { Button } from '../Button';
 
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
@@ -69,18 +70,17 @@ const StyledStepItem = styled.li.withConfig({
   }}
 `;
 
-const StyledStepButton = styled.button.withConfig({
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+// Button is rendered `plain`, which already clears border, outline and padding.
+// `direction` is stripped because isPropValid lets it reach the DOM.
+const StyledStepButton = styled(Button).withConfig({
+  shouldForwardProp: (prop) => prop !== 'direction',
 })`
   display: flex;
-  background: none;
-  border: none;
   padding: ${(props) =>
     props.theme.global?.edgeSize?.[
       props.theme.stepper?.button?.pad || 'xxsmall'
     ]};
   cursor: ${(props) => (props.isClickable ? 'pointer' : 'default')};
-  outline: none;
   ${(props) =>
     props.direction === 'vertical'
       ? css`
