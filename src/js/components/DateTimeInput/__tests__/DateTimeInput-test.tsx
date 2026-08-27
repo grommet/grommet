@@ -501,13 +501,13 @@ describe('DateTimeInput', () => {
     expect(document.getElementById(controlsId as string)).toBeFalsy();
   });
 
-  test('pickerInline renders calendar and time picker without a trigger', () => {
+  test('inline="all" renders calendar and time picker without a trigger', () => {
     render(
       <Grommet>
         <DateTimeInput
           id="dt-picker-inline"
           format="24"
-          pickerInline
+          inline="all"
           value="2026-07-22T13:00:00.000Z"
         />
       </Grommet>,
@@ -520,7 +520,7 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
   });
 
-  test('pickerInline calendar selection updates the value', async () => {
+  test('inline="all" calendar selection updates the value', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
 
@@ -529,7 +529,7 @@ describe('DateTimeInput', () => {
         <DateTimeInput
           id="dt-picker-inline-select"
           format="24"
-          pickerInline
+          inline="all"
           value="2026-07-22T13:00:00.000Z"
           onChange={onChange}
         />
@@ -544,7 +544,7 @@ describe('DateTimeInput', () => {
     );
   });
 
-  test('pickerInline readOnly disables time columns but shows picker', async () => {
+  test('inline="all" readOnly disables time columns but shows picker', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
 
@@ -553,7 +553,7 @@ describe('DateTimeInput', () => {
         <DateTimeInput
           id="dt-picker-inline-readonly"
           format="24"
-          pickerInline
+          inline="all"
           readOnly
           value="2026-07-22T13:00:00.000Z"
           onChange={onChange}

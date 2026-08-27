@@ -391,7 +391,6 @@ const DateTimeInput = forwardRef(
       minuteStep = 1,
       name,
       onChange,
-      pickerInline = false,
       plain: plainProp,
       focusIndicator: focusIndicatorProp,
       readOnly = false,
@@ -808,7 +807,7 @@ const DateTimeInput = forwardRef(
       setOpen(false);
 
       requestAnimationFrame(() => {
-        if (inline) {
+        if (inline === true) {
           triggerRef.current?.focus();
           return;
         }
@@ -1183,14 +1182,15 @@ const DateTimeInput = forwardRef(
       : formatMessage({ id: 'dateTimeInput.inputLabel', messages });
     const CalendarIcon =
       theme.dateTimeInput?.icon?.calendar || GrommetCalendarIcon;
-    const dropTarget = inline ? triggerRef.current : containerRef.current;
+    const dropTarget =
+      inline === true ? triggerRef.current : containerRef.current;
     const generatedId = useId();
     const dropId = `${id || generatedId}__drop`;
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
         <Box>
-          {inline ? (
+          {inline === true ? (
             <Box direction="row" align="center">
               <Button
                 ref={triggerRef}
@@ -1212,7 +1212,7 @@ const DateTimeInput = forwardRef(
               ref={containerRef}
               direction="row"
               border={!plainProp}
-              fill={pickerInline ? 'horizontal' : true}
+              fill={inline === 'all' ? 'horizontal' : true}
               round={theme.dateTimeInput?.container?.round}
               disabled={disabled}
               readOnlyProp={readOnly}
@@ -1306,7 +1306,7 @@ const DateTimeInput = forwardRef(
                   plain
                 />
               </StyledDateTimeInputField>
-              {!readOnly && !pickerInline && (
+              {!readOnly && inline !== 'all' && (
                 <Button
                   ref={triggerRef}
                   icon={<CalendarIcon />}
@@ -1335,7 +1335,7 @@ const DateTimeInput = forwardRef(
               value={value || ''}
             />
           )}
-          {pickerInline ? (
+          {inline === 'all' ? (
             <Box
               direction="row"
               pad={theme.dateTimeInput?.drop?.pad}

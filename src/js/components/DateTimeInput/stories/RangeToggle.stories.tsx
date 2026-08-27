@@ -103,7 +103,7 @@ export const RangeToggle = function RangeToggleStory() {
                 <DateTimeInput
                   id="toggle-range-start"
                   format="24"
-                  pickerInline
+                  inline="all"
                   value={draftRange.start}
                   onChange={({ value: next }: { value?: string }) =>
                     setDraftRange({
@@ -119,7 +119,7 @@ export const RangeToggle = function RangeToggleStory() {
                 <DateTimeInput
                   id="toggle-range-end"
                   format="24"
-                  pickerInline
+                  inline="all"
                   value={draftRange.end}
                   onChange={({ value: next }: { value?: string }) =>
                     setDraftRange({

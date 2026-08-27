@@ -10,8 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
     format: PropTypes.oneOf(['12', '24']),
     id: PropTypes.string,
     locale: PropTypes.string,
-    inline: PropTypes.bool,
-    pickerInline: PropTypes.bool,
+    inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['all'])]),
     messages: PropTypes.shape({
       activeSection: PropTypes.string,
       activeSectionValue: PropTypes.string,

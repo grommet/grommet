@@ -8,8 +8,7 @@ export interface DateTimeInputProps {
   format?: '12' | '24';
   id?: string;
   locale?: string;
-  inline?: boolean;
-  pickerInline?: boolean;
+  inline?: boolean | 'all';
   messages?: {
     activeSection?: string;
     activeSectionValue?: string;

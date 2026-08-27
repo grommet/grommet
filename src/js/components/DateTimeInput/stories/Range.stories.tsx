@@ -83,7 +83,7 @@ export const Range = function RangeStory() {
       <DateTimeInput
         id={`range-${label.toLowerCase()}`}
         format="24"
-        pickerInline
+        inline="all"
         value={value}
         onChange={({ value: next }: { value?: string }) => onChange(next || '')}
         messages={{
