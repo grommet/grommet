@@ -2668,7 +2668,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           // background: undefined,
           // gap: undefined,
           // size: undefined,
-          // pad: undefined,
+          pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
           // round: undefined,
           hover: {
             background: 'active-background',

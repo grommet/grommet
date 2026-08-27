@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { focusStyle, normalizeColor } from '../../utils';
+import { edgeStyle, focusStyle, normalizeColor, roundStyle } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
@@ -30,27 +30,25 @@ const PopupOption = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  padding: ${(props) => {
-    const padToken = props.theme.timeInput?.drop?.option?.pad;
-    if (!padToken) {
-      return `${props.theme.global.edgeSize.xxsmall} ${props.theme.global.edgeSize.xsmall}`;
-    }
-    if (typeof padToken === 'string') {
-      return props.theme.global.edgeSize?.[padToken] || padToken;
-    }
-    const v =
-      props.theme.global.edgeSize?.[padToken.vertical] || padToken.vertical;
-    const h =
-      props.theme.global.edgeSize?.[padToken.horizontal] || padToken.horizontal;
-    return `${v} ${h}`;
-  }};
-  border-radius: ${(props) => {
-    const round = props.theme.timeInput?.drop?.option?.round;
+  ${(props) => {
+    const optionPad = props.theme.timeInput?.drop?.option?.pad;
     return (
-      (round && (props.theme.global.edgeSize?.[round] || round)) ||
-      props.theme.global.control?.border?.radius
+      optionPad &&
+      edgeStyle(
+        'padding',
+        optionPad,
+        false,
+        props.theme.box.responsiveBreakpoint,
+        props.theme,
+      )
     );
-  }};
+  }}
+  ${(props) => {
+    const round =
+      props.theme.timeInput?.drop?.option?.round ||
+      props.theme.global.control?.border?.radius;
+    return round && roundStyle(round, false, props.theme);
+  }}
   background: ${(props) => {
     if (props.$selected) {
       return normalizeColor(
