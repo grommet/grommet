@@ -448,6 +448,13 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
       // Clicking the scrollbar blurs the focused option with
       // relatedTarget = null. Keep the popup open for that interaction.
       if (!nextFocusTarget) return;
+      // If the user is currently interacting with the popup (pointer
+      // down inside), don't close on blur. This prevents the popup
+      // from closing when clicking on a non-focusable area within
+      // the popup (e.g., the gap between columns or padding), which
+      // would otherwise move focus to the document body and trigger
+      // a false onFocusLeave.
+      if (pointerDownInsideRef.current) return;
       if (!event.currentTarget.contains(nextFocusTarget)) {
         onFocusLeave == null || onFocusLeave();
       }
