@@ -2374,7 +2374,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       connector: {
-        stroke: { width: '2px' },
+        stroke: { width: 'small' },
       },
       description: {
         size: 'small',
