@@ -9,10 +9,12 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
   containsFocus,
+  normalizeColor,
   shouldKeepFocus,
   withinDropPortal,
   PortalContext,
@@ -87,19 +89,40 @@ const getFocusStyle = (props) => {
   return props.focus ? focusStyle({ justBorder: true }) : undefined;
 };
 
+// allowHover is set by FormField only on the element rendering the field
+// container, and only when no higher priority state (disabled, readOnly,
+// error, focus) applies. When the theme has no border, only the background
+// portion of the hover config has anything to paint.
+const getHoverStyle = (props) => {
+  const hover = props.theme.formField?.hover;
+  if (!props.allowHover || !hover) return undefined;
+  const borderColor = hover.border?.color;
+  if (!borderColor && hover.background === undefined) return undefined;
+  return css`
+    &:hover {
+      ${borderColor &&
+      `border-color: ${normalizeColor(borderColor, props.theme)};`}
+      ${backgroundStyle(hover.background, props.theme)}
+    }
+  `;
+};
+
 const FormFieldBox = styled(Box)`
   ${(props) => getFocusStyle(props)}
+  ${(props) => getHoverStyle(props)}
   ${(props) => props.theme.formField?.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
   ${(props) => getFocusStyle(props)}
+  ${(props) => getHoverStyle(props)}
   ${(props) =>
     props.theme.formField &&
     props.theme.formField[props?.componentName]?.container?.extend}
 `;
 
 const StyledContentsBox = styled(Box)`
+  ${(props) => getHoverStyle(props)}
   ${(props) =>
     props.theme.formField &&
     props.theme.formField[props?.componentName]?.container?.extend}
@@ -486,6 +509,8 @@ const FormField = forwardRef(
       }
     });
 
+    const allowHover = !disabled && !readOnlyField && !error && !focus;
+
     if (!themeBorder) {
       contents = (
         <StyledContentsBox
@@ -494,6 +519,7 @@ const FormField = forwardRef(
           componentName={childName}
           {...themeContentProps}
           {...contentProps}
+          allowHover={allowHover} // internal prop
         >
           {contents}
         </StyledContentsBox>
@@ -597,6 +623,8 @@ const FormField = forwardRef(
           {...innerProps}
           {...contentProps}
           containerFocus={containerFocus} // internal prop
+          // internal prop
+          allowHover={allowHover && themeBorder.position === 'inner'}
           {...passThemeFlag}
         >
           {contents}
@@ -695,6 +723,8 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         containerFocus={containerFocus} // internal prop
+        // internal prop
+        allowHover={allowHover && themeBorder?.position === 'outer'}
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {
