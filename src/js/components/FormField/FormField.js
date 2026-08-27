@@ -107,7 +107,7 @@ const getHoverStyle = (role) => (props) => {
     &:hover {
       ${borderColor &&
       `border-color: ${normalizeColor(borderColor, props.theme)};`}
-      ${backgroundStyle(background, props.theme)}
+      ${backgroundStyle(background, props.theme, false)}
     }
   `;
 };
