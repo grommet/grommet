@@ -2409,8 +2409,13 @@ export interface ThemeType {
       };
     };
     drop?: {
+      gap?: GapType;
       option?: {
         background?: ColorType;
+        gap?: GapType;
+        size?: string;
+        pad?: PadType;
+        round?: RoundType;
         hover?: {
           background?: ColorType;
         };
