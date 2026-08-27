@@ -372,6 +372,7 @@ exports[`Components loads 1`] = `
       "minuteStep": [Function],
       "name": [Function],
       "onChange": [Function],
+      "pickerInline": [Function],
       "readOnly": [Function],
       "showSeconds": [Function],
       "value": [Function],

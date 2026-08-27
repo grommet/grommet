@@ -11,6 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
     id: PropTypes.string,
     locale: PropTypes.string,
     inline: PropTypes.bool,
+    pickerInline: PropTypes.bool,
     messages: PropTypes.shape({
       activeSection: PropTypes.string,
       activeSectionValue: PropTypes.string,

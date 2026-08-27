@@ -9,6 +9,7 @@ export interface DateTimeInputProps {
   id?: string;
   locale?: string;
   inline?: boolean;
+  pickerInline?: boolean;
   messages?: {
     activeSection?: string;
     activeSectionValue?: string;

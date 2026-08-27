@@ -93,6 +93,7 @@ const getDefaultPopupOption = ({ section, format, options }) => {
 
 const PopupColumn = ({
   activeSection,
+  columnMaxHeight,
   format,
   formatMessage,
   inline,
@@ -106,11 +107,12 @@ const PopupColumn = ({
   sections,
   theme,
 }) => {
-  // When inline (in DateTimeInput), use 'medium' to match Calendar height.
-  // Otherwise use timeInput drop maxHeight with fallback to 'small'.
-  const maxHeightToken = inline ? 'medium' : null;
+  // When inline, default to 'medium' to match Calendar medium height.
+  // columnMaxHeight overrides this (e.g. 'small' to match Calendar size="small").
+  const inlineHeightToken = columnMaxHeight || (inline ? 'medium' : null);
   const maxHeight =
-    (maxHeightToken && theme.global.size?.[maxHeightToken]) ||
+    (inlineHeightToken &&
+      (theme.global.size?.[inlineHeightToken] || inlineHeightToken)) ||
     theme.timeInput?.drop?.column?.maxHeight ||
     theme.global.size.small;
 
@@ -200,6 +202,7 @@ const PopupColumn = ({
 const TimeInputPopup = ({
   activeSection,
   align,
+  columnMaxHeight,
   format,
   formatMessage,
   hoursOptions,
@@ -635,6 +638,7 @@ const TimeInputPopup = ({
         <PopupColumn
           key={sectionLabel}
           activeSection={activeSection}
+          columnMaxHeight={columnMaxHeight}
           format={format}
           formatMessage={formatMessage}
           inline={inline}
