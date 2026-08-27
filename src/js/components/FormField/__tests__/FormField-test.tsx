@@ -908,6 +908,25 @@ describe('FormField', () => {
       ).toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
     });
 
+    test('keeps hover background off the outer box so it does not cover the label', () => {
+      const { container } = render(
+        <Grommet theme={outerHoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldBox"]'),
+      ).not.toHaveStyleRule('background-color', '#654321', {
+        modifier: ':hover',
+      });
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).toHaveStyleRule('background-color', '#654321', { modifier: ':hover' });
+    });
+
     test('applies theme hover background when theme has no border', () => {
       const { container } = render(
         <Grommet
