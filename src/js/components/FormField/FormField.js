@@ -102,7 +102,7 @@ const getHoverStyle = (props) => {
     &:hover {
       ${borderColor &&
       `border-color: ${normalizeColor(borderColor, props.theme)};`}
-      ${backgroundStyle(hover.background, props.theme)}
+      ${backgroundStyle(hover.background, props.theme, false)}
     }
   `;
 };
