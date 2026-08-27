@@ -544,7 +544,10 @@ describe('DateTimeInput', () => {
     );
   });
 
-  test('pickerInline readOnly disables time columns but shows picker', () => {
+  test('pickerInline readOnly disables time columns but shows picker', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
     render(
       <Grommet>
         <DateTimeInput
@@ -553,6 +556,7 @@ describe('DateTimeInput', () => {
           pickerInline
           readOnly
           value="2026-07-22T13:00:00.000Z"
+          onChange={onChange}
         />
       </Grommet>,
     );
@@ -560,6 +564,10 @@ describe('DateTimeInput', () => {
     expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
     const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
     expect(hourSegment).toHaveAttribute('aria-readonly', 'true');
+
+    const dayButton = screen.getByRole('button', { name: /Jul 25 2026/i });
+    await user.click(dayButton);
+    expect(onChange).not.toHaveBeenCalled();
   });
 
   test('increments minutes by minuteStep on keyboard arrow', async () => {

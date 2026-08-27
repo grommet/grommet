@@ -1345,7 +1345,9 @@ const DateTimeInput = forwardRef(
                 size="small"
                 date={getCalendarDate(sections)}
                 initialFocus="days"
-                onSelect={handleCalendarSelect}
+                onSelect={
+                  disabled || readOnly ? undefined : handleCalendarSelect
+                }
               />
               <Box
                 alignSelf="stretch"
@@ -1366,8 +1368,10 @@ const DateTimeInput = forwardRef(
                 minuteStep={normalizedMinuteStep}
                 disabled={disabled}
                 readOnly={readOnly}
-                onChange={handleTimeSelect}
-                onPartialChange={handleTimePartialChange}
+                onChange={disabled || readOnly ? undefined : handleTimeSelect}
+                onPartialChange={
+                  disabled || readOnly ? undefined : handleTimePartialChange
+                }
               />
             </Box>
           ) : (
