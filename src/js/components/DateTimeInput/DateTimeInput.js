@@ -1201,6 +1201,9 @@ const DateTimeInput = forwardRef(
 
     const pickerContent = (
       <Box
+        role="group"
+        aria-label={groupLabel}
+        aria-labelledby={formFieldLabelId}
         direction="row"
         pad={theme.dateTimeInput?.drop?.pad}
         gap={theme.dateTimeInput?.drop?.gap}
