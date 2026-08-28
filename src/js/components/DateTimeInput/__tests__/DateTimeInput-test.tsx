@@ -498,7 +498,8 @@ describe('DateTimeInput', () => {
     expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
   });
 
-  test('inline readOnly mode renders picker but disables selection', () => {
+  test('inline readOnly mode renders picker but disables selection', async () => {
+    const user = userEvent.setup();
     const onChange = jest.fn();
 
     render(
@@ -518,6 +519,11 @@ describe('DateTimeInput', () => {
     expect(
       screen.queryByRole('button', { name: /date and time/i }),
     ).not.toBeInTheDocument();
+
+    // Clicking a calendar day does not fire onChange in readOnly mode
+    const dayButton = screen.getByRole('button', { name: /Jul 25 2026/i });
+    await user.click(dayButton);
+    expect(onChange).not.toHaveBeenCalled();
   });
 
   test('increments minutes by minuteStep on keyboard arrow', async () => {
@@ -717,7 +723,7 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
   });
 
-  test('inline picker supports Tab/Arrow navigation without dialog semantics', () => {
+  test('inline picker supports Arrow navigation without dialog semantics', () => {
     render(
       <Grommet>
         <DateTimeInput

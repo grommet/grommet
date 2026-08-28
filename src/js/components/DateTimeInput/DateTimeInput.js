@@ -1253,7 +1253,17 @@ const DateTimeInput = forwardRef(
     if (inline) {
       return (
         <>
-          {hiddenInput}
+          <input
+            {...rest}
+            aria-hidden="true"
+            id={id}
+            name={name}
+            readOnly
+            ref={inputRef}
+            tabIndex={-1}
+            type="hidden"
+            value={value || ''}
+          />
           {pickerContent}
         </>
       );
