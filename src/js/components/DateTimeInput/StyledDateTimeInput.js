@@ -71,6 +71,7 @@ export const StyledDateTimeInputDisplay = styled.div.withConfig(
   display: flex;
   align-items: center;
   overflow: hidden;
+  outline: none;
   ${(props) =>
     props.theme.global.input.padding &&
     (typeof props.theme.global.input.padding !== 'object'

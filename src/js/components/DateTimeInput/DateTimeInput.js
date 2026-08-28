@@ -807,7 +807,7 @@ const DateTimeInput = forwardRef(
       setOpen(false);
 
       requestAnimationFrame(() => {
-        if (inline) {
+        if (inline === true) {
           triggerRef.current?.focus();
           return;
         }
@@ -1182,14 +1182,54 @@ const DateTimeInput = forwardRef(
       : formatMessage({ id: 'dateTimeInput.inputLabel', messages });
     const CalendarIcon =
       theme.dateTimeInput?.icon?.calendar || GrommetCalendarIcon;
-    const dropTarget = inline ? triggerRef.current : containerRef.current;
+    const dropTarget =
+      inline === true ? triggerRef.current : containerRef.current;
     const generatedId = useId();
     const dropId = `${id || generatedId}__drop`;
+
+    const pickerContent = (
+      <Box
+        direction="row"
+        pad={theme.dateTimeInput?.drop?.pad}
+        gap={theme.dateTimeInput?.drop?.gap}
+      >
+        <Calendar
+          size={inline === 'all' ? 'small' : undefined}
+          date={getCalendarDate(sections)}
+          initialFocus={inline !== 'all' ? 'days' : undefined}
+          onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
+        />
+        <Box
+          alignSelf="stretch"
+          flex={false}
+          border={{
+            side: 'start',
+            color: theme.dateTimeInput?.drop?.border?.color,
+            size: theme.dateTimeInput?.drop?.border?.size,
+          }}
+        />
+        <TimeInput
+          inline
+          columnMaxHeight={inline === 'all' ? 'small' : undefined}
+          format={resolvedFormat}
+          value={timeValue}
+          showSeconds={showSeconds}
+          messages={messages}
+          minuteStep={normalizedMinuteStep}
+          disabled={disabled}
+          readOnly={readOnly}
+          onChange={disabled || readOnly ? undefined : handleTimeSelect}
+          onPartialChange={
+            disabled || readOnly ? undefined : handleTimePartialChange
+          }
+        />
+      </Box>
+    );
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
         <Box>
-          {inline ? (
+          {inline === true ? (
             <Box direction="row" align="center">
               <Button
                 ref={triggerRef}
@@ -1211,7 +1251,7 @@ const DateTimeInput = forwardRef(
               ref={containerRef}
               direction="row"
               border={!plainProp}
-              fill
+              fill={inline === 'all' ? 'horizontal' : true}
               round={theme.dateTimeInput?.container?.round}
               disabled={disabled}
               readOnlyProp={readOnly}
@@ -1305,7 +1345,7 @@ const DateTimeInput = forwardRef(
                   plain
                 />
               </StyledDateTimeInputField>
-              {!readOnly && (
+              {!readOnly && inline !== 'all' && (
                 <Button
                   ref={triggerRef}
                   icon={<CalendarIcon />}
@@ -1334,48 +1374,19 @@ const DateTimeInput = forwardRef(
               value={value || ''}
             />
           )}
-          {open && (
-            <Drop
-              id={dropId}
-              target={dropTarget}
-              align={{ top: 'bottom', left: 'left' }}
-              onEsc={closePicker}
-              onClickOutside={closePicker}
-            >
-              <Box
-                direction="row"
-                pad={theme.dateTimeInput?.drop?.pad}
-                gap={theme.dateTimeInput?.drop?.gap}
-              >
-                <Calendar
-                  date={getCalendarDate(sections)}
-                  initialFocus="days"
-                  onSelect={handleCalendarSelect}
-                />
-                <Box
-                  alignSelf="stretch"
-                  flex={false}
-                  border={{
-                    side: 'start',
-                    color: theme.dateTimeInput?.drop?.border?.color,
-                    size: theme.dateTimeInput?.drop?.border?.size,
-                  }}
-                />
-                <TimeInput
-                  inline
-                  format={resolvedFormat}
-                  value={timeValue}
-                  showSeconds={showSeconds}
-                  messages={messages}
-                  minuteStep={normalizedMinuteStep}
-                  disabled={disabled}
-                  readOnly={readOnly}
-                  onChange={handleTimeSelect}
-                  onPartialChange={handleTimePartialChange}
-                />
-              </Box>
-            </Drop>
-          )}
+          {inline === 'all'
+            ? pickerContent
+            : open && (
+                <Drop
+                  id={dropId}
+                  target={dropTarget}
+                  align={{ top: 'bottom', left: 'left' }}
+                  onEsc={closePicker}
+                  onClickOutside={closePicker}
+                >
+                  {pickerContent}
+                </Drop>
+              )}
         </Box>
       </Keyboard>
     );

@@ -501,6 +501,75 @@ describe('DateTimeInput', () => {
     expect(document.getElementById(controlsId as string)).toBeFalsy();
   });
 
+  test('inline="all" renders calendar and time picker without a trigger', () => {
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-picker-inline"
+          format="24"
+          inline="all"
+          value="2026-07-22T13:00:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: /date and time/i }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('inline="all" calendar selection updates the value', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-picker-inline-select"
+          format="24"
+          inline="all"
+          value="2026-07-22T13:00:00.000Z"
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    const dayButton = screen.getByRole('button', { name: /Jul 25 2026/i });
+    await user.click(dayButton);
+
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: expect.stringContaining('2026-07-25') }),
+    );
+  });
+
+  test('inline="all" readOnly disables time columns but shows picker', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-picker-inline-readonly"
+          format="24"
+          inline="all"
+          readOnly
+          value="2026-07-22T13:00:00.000Z"
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hourSegment).toHaveAttribute('aria-readonly', 'true');
+
+    const dayButton = screen.getByRole('button', { name: /Jul 25 2026/i });
+    await user.click(dayButton);
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   test('increments minutes by minuteStep on keyboard arrow', async () => {
     const user = userEvent.setup();
 
