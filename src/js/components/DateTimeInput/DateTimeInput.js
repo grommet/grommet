@@ -1357,7 +1357,7 @@ const DateTimeInput = forwardRef(
                             // Preserve an existing theme value first to avoid
                             // breaking its auto-computed text contrast color
                             // in hpe theme.
-                            theme.calendar?.day?.selected?.background ||
+                            theme.calendar?.day?.selected?.background ??
                             theme.dateTimeInput?.calendar?.day?.selected
                               ?.background,
                         },
