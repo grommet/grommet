@@ -1196,7 +1196,7 @@ const DateTimeInput = forwardRef(
         <Calendar
           size={inline === 'all' ? 'small' : undefined}
           date={getCalendarDate(sections)}
-          initialFocus="days"
+          initialFocus={inline !== 'all' ? 'days' : undefined}
           onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
         />
         <Box

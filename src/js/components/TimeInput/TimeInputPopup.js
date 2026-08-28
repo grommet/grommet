@@ -438,9 +438,10 @@ const TimeInputPopup = ({
           selectedNode.scrollIntoView({ block: 'nearest' });
         }
 
-        // Center selected value in each listbox so all sections (hh/mm/ss)
-        // are consistently aligned on open, not just the focused section.
-        const selectedOffsetTop = selectedNode.offsetTop;
+        // Subtract listboxNode.offsetTop so the position is relative to the
+        // listbox content origin, not the nearest positioned ancestor.
+        const selectedOffsetTop =
+          selectedNode.offsetTop - listboxNode.offsetTop;
         const selectedHeight = selectedNode.offsetHeight;
         const targetScrollTop =
           selectedOffsetTop -
@@ -503,7 +504,7 @@ const TimeInputPopup = ({
     const selector = `[data-option-key="${keyMap[activeSection]}"]`;
     const node = dialogRef.current?.querySelector(selector);
     if (node) {
-      node.focus();
+      node.focus({ preventScroll: true });
       return true;
     }
 
@@ -516,7 +517,7 @@ const TimeInputPopup = ({
       `[role="listbox"][aria-label="${sectionLabel}"] [role="option"]`,
     );
     if (fallbackNode) {
-      fallbackNode.focus();
+      fallbackNode.focus({ preventScroll: true });
       return true;
     }
 
@@ -534,6 +535,15 @@ const TimeInputPopup = ({
     // Avoid stealing pointer interactions: while the user is actively
     // clicking inside the popup, let that click settle before refocusing.
     if (pointerDownInsideRef.current) return undefined;
+
+    // When inline (embedded in a parent), only manage focus if it already
+    // lives inside the popup — otherwise just keep the options scrolled.
+    if (inline && !dialogRef.current?.contains(document.activeElement)) {
+      const scrollRaf = requestAnimationFrame(() => {
+        scrollSelectedOptionsIntoView();
+      });
+      return () => window.cancelAnimationFrame(scrollRaf);
+    }
 
     const scrollRaf = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
@@ -557,7 +567,7 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, inline, scrollSelectedOptionsIntoView]);
 
   const popupContent = (
     <Box
