@@ -1156,6 +1156,13 @@ export var generate = function generate(baseSpacing, scale) {
           size: 'xsmall'
         }
       },
+      calendar: {
+        day: {
+          selected: {
+            background: 'selected'
+          }
+        }
+      },
       icon: {
         calendar: undefined
       },

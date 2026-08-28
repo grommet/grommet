@@ -11,6 +11,7 @@ import { normalizeStep, pad } from '../../utils/dates';
 import { useForwardedRef } from '../../utils';
 import { useSectionedField } from '../../utils/useSectionedField';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Calendar } from '../Calendar';
@@ -329,7 +330,7 @@ var formatSectionText = function formatSectionText(section, value) {
   return pad(value);
 };
 var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
-  var _theme$dateTimeInput, _theme$global$edgeSiz, _theme$global$edgeSiz2, _theme$dateTimeInput2, _theme$dateTimeInput3, _theme$dateTimeInput4, _theme$dateTimeInput5, _theme$dateTimeInput6, _theme$dateTimeInput7, _theme$dateTimeInput8;
+  var _theme$dateTimeInput, _theme$global$edgeSiz, _theme$global$edgeSiz2, _theme$dateTimeInput2, _theme$dateTimeInput3, _theme$dateTimeInput4, _theme$dateTimeInput5, _theme$dateTimeInput6, _theme$dateTimeInput7, _theme$calendar, _theme$dateTimeInput8, _theme$dateTimeInput9;
   var defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     format = _ref.format,
@@ -1062,17 +1063,27 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     direction: "row",
     pad: (_theme$dateTimeInput5 = theme.dateTimeInput) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.drop) == null ? void 0 : _theme$dateTimeInput5.pad,
     gap: (_theme$dateTimeInput6 = theme.dateTimeInput) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.drop) == null ? void 0 : _theme$dateTimeInput6.gap
+  }, /*#__PURE__*/React.createElement(ThemeContext.Extend, {
+    value: {
+      calendar: {
+        day: {
+          selected: {
+            background: ((_theme$dateTimeInput7 = theme.dateTimeInput) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.calendar) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.day) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.selected) == null ? void 0 : _theme$dateTimeInput7.background) || ((_theme$calendar = theme.calendar) == null || (_theme$calendar = _theme$calendar.day) == null || (_theme$calendar = _theme$calendar.selected) == null ? void 0 : _theme$calendar.background)
+          }
+        }
+      }
+    }
   }, /*#__PURE__*/React.createElement(Calendar, {
     date: getCalendarDate(sections),
     initialFocus: "days",
     onSelect: handleCalendarSelect
-  }), /*#__PURE__*/React.createElement(Box, {
+  })), /*#__PURE__*/React.createElement(Box, {
     alignSelf: "stretch",
     flex: false,
     border: {
       side: 'start',
-      color: (_theme$dateTimeInput7 = theme.dateTimeInput) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.drop) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.border) == null ? void 0 : _theme$dateTimeInput7.color,
-      size: (_theme$dateTimeInput8 = theme.dateTimeInput) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.drop) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.border) == null ? void 0 : _theme$dateTimeInput8.size
+      color: (_theme$dateTimeInput8 = theme.dateTimeInput) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.drop) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.border) == null ? void 0 : _theme$dateTimeInput8.color,
+      size: (_theme$dateTimeInput9 = theme.dateTimeInput) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.drop) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.border) == null ? void 0 : _theme$dateTimeInput9.size
     }
   }), /*#__PURE__*/React.createElement(TimeInput, {
     inline: true,
