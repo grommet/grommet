@@ -34,7 +34,10 @@ if (process.env.NODE_ENV !== 'production') {
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     clickableSteps: PropTypes.bool,
     showDescription: PropTypes.bool,
-    errorAnnouncement: PropTypes.oneOf(['assertive', 'polite', false]),
+    errorAnnouncement: PropTypes.oneOfType([
+      PropTypes.oneOf(['assertive', 'polite']),
+      PropTypes.bool,
+    ]),
     onStepClick: PropTypes.func,
     id: PropTypes.string,
     children: PropTypes.node,
