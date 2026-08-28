@@ -91,13 +91,55 @@ describe('Stepper', () => {
         errorMessage: 'Card invalid',
       },
     ];
-    const { getByText } = render(
+    const { getByRole, getByText } = render(
       <Grommet>
         <Stepper steps={steps} currentStep="step2" />
       </Grommet>,
     );
 
     expect(getByText('Card invalid')).toBeTruthy();
+    expect(getByRole('alert').textContent).toBe('Card invalid');
+  });
+
+  test('supports polite error announcements', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        status: 'error',
+        errorMessage: 'Card invalid',
+      },
+    ];
+    const { getByRole } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="step1" errorAnnouncement="polite" />
+      </Grommet>,
+    );
+
+    expect(getByRole('status').textContent).toBe('Card invalid');
+  });
+
+  test('supports disabling error announcements', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        status: 'error',
+        errorMessage: 'Card invalid',
+      },
+    ];
+    const { getByLabelText, getByText, queryByRole } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="step1" errorAnnouncement={false} />
+      </Grommet>,
+    );
+
+    expect(getByText('Card invalid')).toBeTruthy();
+    expect(queryByRole('alert')).toBeNull();
+    expect(queryByRole('status')).toBeNull();
+    expect(getByLabelText(/Step 1 of 1/).getAttribute('aria-describedby')).toBe(
+      'stepper-error-step1',
+    );
   });
 
   test('uses theme-provided Stepper icons', () => {
