@@ -2544,7 +2544,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       connector: {
         stroke: {
-          width: '2px'
+          width: 'small'
         }
       },
       description: {

@@ -11,6 +11,10 @@ var getTextMetric = function getTextMetric(theme, size, metric) {
   var _theme$text, _theme$text2;
   return ((_theme$text = theme.text) == null || (_theme$text = _theme$text[size]) == null ? void 0 : _theme$text[metric]) || ((_theme$text2 = theme.text) == null || (_theme$text2 = _theme$text2.medium) == null ? void 0 : _theme$text2[metric]);
 };
+var getBorderWidth = function getBorderWidth(theme, size) {
+  var _theme$global3, _theme$global4;
+  return ((_theme$global3 = theme.global) == null || (_theme$global3 = _theme$global3.borderSize) == null ? void 0 : _theme$global3[size]) || size || ((_theme$global4 = theme.global) == null || (_theme$global4 = _theme$global4.borderSize) == null ? void 0 : _theme$global4.xsmall);
+};
 var getSubStepSizeToken = function getSubStepSizeToken(indicatorSize) {
   switch (indicatorSize) {
     case 'large':
@@ -122,14 +126,15 @@ var StyledConnector = styled.span.withConfig(styledComponentsConfig).withConfig(
   displayName: "StyledStepper__StyledConnector",
   componentId: "sc-gmpe0p-4"
 })(["", " position:absolute;background:", ";"], function (props) {
-  var _theme$stepper6, _theme$stepper7, _props$theme$global5, _props$theme$stepper7, _theme$stepper8, _theme$global3, _theme$global4, _props$theme$stepper8;
+  var _theme$stepper6, _theme$stepper7, _props$theme$global5, _props$theme$stepper7, _theme$stepper8, _theme$global5, _props$theme$stepper8;
   var theme = props.theme;
   var indicatorSizeToken = ((_theme$stepper6 = theme.stepper) == null || (_theme$stepper6 = _theme$stepper6.indicator) == null ? void 0 : _theme$stepper6.size) || 'medium';
   var parentSize = getMetricSize(theme, indicatorSizeToken);
   var indicatorBorderWidth = getMetricSize(theme, ((_theme$stepper7 = theme.stepper) == null || (_theme$stepper7 = _theme$stepper7.indicator) == null || (_theme$stepper7 = _theme$stepper7.border) == null ? void 0 : _theme$stepper7.width) || '2px');
   var buttonPad = (_props$theme$global5 = props.theme.global) == null || (_props$theme$global5 = _props$theme$global5.edgeSize) == null ? void 0 : _props$theme$global5[((_props$theme$stepper7 = props.theme.stepper) == null || (_props$theme$stepper7 = _props$theme$stepper7.button) == null ? void 0 : _props$theme$stepper7.pad) || 'xxsmall'];
-  var connectorThickness = ((_theme$stepper8 = theme.stepper) == null || (_theme$stepper8 = _theme$stepper8.connector) == null || (_theme$stepper8 = _theme$stepper8.stroke) == null ? void 0 : _theme$stepper8.width) || ((_theme$global3 = theme.global) == null || (_theme$global3 = _theme$global3.borderSize) == null ? void 0 : _theme$global3.small) || '2px';
-  var connectorRadius = ((_theme$global4 = theme.global) == null || (_theme$global4 = _theme$global4.edgeSize) == null ? void 0 : _theme$global4.xsmall) || '4px';
+  var connectorStrokeToken = ((_theme$stepper8 = theme.stepper) == null || (_theme$stepper8 = _theme$stepper8.connector) == null || (_theme$stepper8 = _theme$stepper8.stroke) == null ? void 0 : _theme$stepper8.width) || 'small';
+  var connectorThickness = getBorderWidth(theme, connectorStrokeToken);
+  var connectorRadius = ((_theme$global5 = theme.global) == null || (_theme$global5 = _theme$global5.edgeSize) == null ? void 0 : _theme$global5.xsmall) || '4px';
   var connectorOffset = "calc(" + parentSize + " / 2 + " + buttonPad + ")";
   var connectorGap = '4px';
   var nonBetweenTop = "calc(" + parentSize + " + " + buttonPad + " +\n      (" + indicatorBorderWidth + " * 2) + " + connectorGap + ")";
