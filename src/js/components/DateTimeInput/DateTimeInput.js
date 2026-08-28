@@ -1188,51 +1188,74 @@ const DateTimeInput = forwardRef(
     const generatedId = useId();
     const dropId = `${id || generatedId}__drop`;
 
-    if (inline) {
-      return (
-        <Box
-          direction="row"
-          pad={theme.dateTimeInput?.drop?.pad}
-          gap={theme.dateTimeInput?.drop?.gap}
+    const hiddenInput = name ? (
+      <input
+        aria-hidden="true"
+        name={name}
+        readOnly
+        tabIndex={-1}
+        type="hidden"
+        value={value || ''}
+      />
+    ) : null;
+
+    const pickerContent = (
+      <Box
+        direction="row"
+        pad={theme.dateTimeInput?.drop?.pad}
+        gap={theme.dateTimeInput?.drop?.gap}
+      >
+        <ThemeContext.Extend
+          value={{
+            calendar: {
+              day: {
+                selected: {
+                  background:
+                    theme.dateTimeInput?.calendar?.day?.selected?.background ||
+                    theme.calendar?.day?.selected?.background,
+                },
+              },
+            },
+          }}
         >
-          {name && (
-            <input
-              aria-hidden="true"
-              name={name}
-              readOnly
-              tabIndex={-1}
-              type="hidden"
-              value={value || ''}
-            />
-          )}
           <Calendar
             date={getCalendarDate(sections)}
+            initialFocus={inline ? undefined : 'days'}
             onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
           />
-          <Box
-            alignSelf="stretch"
-            flex={false}
-            border={{
-              side: 'start',
-              color: theme.dateTimeInput?.drop?.border?.color,
-              size: theme.dateTimeInput?.drop?.border?.size,
-            }}
-          />
-          <TimeInput
-            inline
-            format={resolvedFormat}
-            value={timeValue}
-            showSeconds={showSeconds}
-            messages={messages}
-            minuteStep={normalizedMinuteStep}
-            disabled={disabled}
-            readOnly={readOnly}
-            onChange={disabled || readOnly ? undefined : handleTimeSelect}
-            onPartialChange={
-              disabled || readOnly ? undefined : handleTimePartialChange
-            }
-          />
-        </Box>
+        </ThemeContext.Extend>
+        <Box
+          alignSelf="stretch"
+          flex={false}
+          border={{
+            side: 'start',
+            color: theme.dateTimeInput?.drop?.border?.color,
+            size: theme.dateTimeInput?.drop?.border?.size,
+          }}
+        />
+        <TimeInput
+          inline
+          format={resolvedFormat}
+          value={timeValue}
+          showSeconds={showSeconds}
+          messages={messages}
+          minuteStep={normalizedMinuteStep}
+          disabled={disabled}
+          readOnly={readOnly}
+          onChange={disabled || readOnly ? undefined : handleTimeSelect}
+          onPartialChange={
+            disabled || readOnly ? undefined : handleTimePartialChange
+          }
+        />
+      </Box>
+    );
+
+    if (inline) {
+      return (
+        <>
+          {hiddenInput}
+          {pickerContent}
+        </>
       );
     }
 
@@ -1351,16 +1374,7 @@ const DateTimeInput = forwardRef(
               />
             )}
           </StyledDateTimeInputContainer>
-          {name && (
-            <input
-              aria-hidden="true"
-              name={name}
-              readOnly
-              tabIndex={-1}
-              type="hidden"
-              value={value || ''}
-            />
-          )}
+          {hiddenInput}
           {open && (
             <Drop
               id={dropId}
@@ -1369,53 +1383,7 @@ const DateTimeInput = forwardRef(
               onEsc={closePicker}
               onClickOutside={closePicker}
             >
-              <Box
-                direction="row"
-                pad={theme.dateTimeInput?.drop?.pad}
-                gap={theme.dateTimeInput?.drop?.gap}
-              >
-                <ThemeContext.Extend
-                  value={{
-                    calendar: {
-                      day: {
-                        selected: {
-                          background:
-                            theme.dateTimeInput?.calendar?.day?.selected
-                              ?.background ||
-                            theme.calendar?.day?.selected?.background,
-                        },
-                      },
-                    },
-                  }}
-                >
-                  <Calendar
-                    date={getCalendarDate(sections)}
-                    initialFocus="days"
-                    onSelect={handleCalendarSelect}
-                  />
-                </ThemeContext.Extend>
-                <Box
-                  alignSelf="stretch"
-                  flex={false}
-                  border={{
-                    side: 'start',
-                    color: theme.dateTimeInput?.drop?.border?.color,
-                    size: theme.dateTimeInput?.drop?.border?.size,
-                  }}
-                />
-                <TimeInput
-                  inline
-                  format={resolvedFormat}
-                  value={timeValue}
-                  showSeconds={showSeconds}
-                  messages={messages}
-                  minuteStep={normalizedMinuteStep}
-                  disabled={disabled}
-                  readOnly={readOnly}
-                  onChange={handleTimeSelect}
-                  onPartialChange={handleTimePartialChange}
-                />
-              </Box>
+              {pickerContent}
             </Drop>
           )}
         </Box>
