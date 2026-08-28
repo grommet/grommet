@@ -21,7 +21,7 @@ export const Inline = () => {
     : 'none';
 
   return (
-    <Box pad="large" gap="small" width="large">
+    <Box align="center" pad="large" gap="small">
       <DateTimeInput
         id="inline-date-time"
         inline
@@ -30,12 +30,6 @@ export const Inline = () => {
           setValue(next || '');
         }}
       />
-      <Text size="small" truncate>
-        Local display: {localValue}
-      </Text>
-      <Text size="small" truncate>
-        UTC ISO value: {value || 'none'}
-      </Text>
     </Box>
   );
 };
