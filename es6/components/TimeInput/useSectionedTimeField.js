@@ -4,7 +4,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 /* eslint-disable no-nested-ternary */
 import { useCallback, useMemo, useRef } from 'react';
 import { useSectionedField } from '../../utils/useSectionedField';
-import { defaultSections, hasAnyValue, isoTimeToSections, normalizeToIsoTime, pad, sectionKey, sectionMax, sectionMin, sectionsToIsoTime, SECTION_HOUR, SECTION_MINUTE, SECTION_PERIOD, SECTION_SECOND, defaultHourForFormat } from './utils';
+import { defaultSections, hasAnyValue, isoTimeToSections, normalizeToIsoTime, pad, sectionKey, sectionMax, sectionMin, sectionsToIsoTime, SECTION_HOUR, SECTION_MINUTE, SECTION_PERIOD, SECTION_SECOND } from './utils';
 var separatorBeforeSection = function separatorBeforeSection(section) {
   return section === SECTION_PERIOD ? ' ' : ':';
 };
@@ -169,6 +169,10 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
     var maxValue = sectionMax(section, format);
     var key = sectionKey(section);
     var current = sections[key];
+    if (current === undefined) {
+      setSectionValue(section, delta > 0 ? minValue : maxValue);
+      return;
+    }
     var step = section === SECTION_MINUTE ? minuteStep : section === SECTION_SECOND ? 1 : 1;
     var next;
     if (step > 1 && (section === SECTION_MINUTE || section === SECTION_SECOND)) {
@@ -196,8 +200,7 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
         })) != null ? _descending$find : options[options.length - 1];
       }
     } else {
-      var base = current === undefined ? section === SECTION_HOUR ? defaultHourForFormat(format) : minValue : current;
-      next = base + delta;
+      next = current + delta;
       if (next > maxValue) next = minValue;
       if (next < minValue) next = maxValue;
     }

@@ -436,10 +436,10 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
         setActiveSection(getAdjacentSection(eventSection, 1));
       } else if (event.key === 'ArrowUp') {
         event.preventDefault();
-        incrementSection(eventSection, -1);
+        incrementSection(eventSection, 1);
       } else if (event.key === 'ArrowDown') {
         event.preventDefault();
-        incrementSection(eventSection, 1);
+        incrementSection(eventSection, -1);
       }
       onKeyDownProp == null || onKeyDownProp(event);
     },

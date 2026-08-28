@@ -323,6 +323,32 @@ describe('DateTimeInput', () => {
     ).toHaveTextContent('AM');
   });
 
+  test('initializes empty drop hour at zero with ArrowUp', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="24" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: /date and time/i });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const hourList = within(drop).getByRole('listbox', { name: 'hour' });
+    await waitFor(() =>
+      expect(
+        within(hourList).getByRole('option', { name: '00 hours' }),
+      ).toHaveFocus(),
+    );
+    await user.keyboard('{ArrowUp}');
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'hours', hidden: true }),
+    ).toHaveTextContent('00');
+  });
+
   test('icon click opens and stays open during in-popup interaction', async () => {
     const user = userEvent.setup();
 

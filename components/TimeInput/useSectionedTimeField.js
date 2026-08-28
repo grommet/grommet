@@ -172,6 +172,10 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
     var maxValue = (0, _utils.sectionMax)(section, format);
     var key = (0, _utils.sectionKey)(section);
     var current = sections[key];
+    if (current === undefined) {
+      setSectionValue(section, delta > 0 ? minValue : maxValue);
+      return;
+    }
     var step = section === _utils.SECTION_MINUTE ? minuteStep : section === _utils.SECTION_SECOND ? 1 : 1;
     var next;
     if (step > 1 && (section === _utils.SECTION_MINUTE || section === _utils.SECTION_SECOND)) {
@@ -199,8 +203,7 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
         })) != null ? _descending$find : options[options.length - 1];
       }
     } else {
-      var base = current === undefined ? section === _utils.SECTION_HOUR ? (0, _utils.defaultHourForFormat)(format) : minValue : current;
-      next = base + delta;
+      next = current + delta;
       if (next > maxValue) next = minValue;
       if (next < minValue) next = maxValue;
     }
