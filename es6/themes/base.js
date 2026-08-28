@@ -1430,6 +1430,14 @@ export var generate = function generate(baseSpacing, scale) {
         // container: {}, // any Box props
         // icon: undefined,
       },
+      // hover: {
+      //   background: {
+      //     color: undefined,
+      //   },
+      //   border: {
+      //     color: undefined,
+      //   },
+      // },
       // extend: undefined,
       help: {
         color: 'dark-2',

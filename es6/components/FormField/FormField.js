@@ -9,8 +9,8 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { Children, cloneElement, forwardRef, useContext, useEffect, useMemo, useState } from 'react';
-import styled from 'styled-components';
-import { containsFocus, shouldKeepFocus, withinDropPortal, PortalContext } from '../../utils';
+import styled, { css } from 'styled-components';
+import { backgroundStyle, containsFocus, normalizeColor, shouldKeepFocus, withinDropPortal, PortalContext } from '../../utils';
 import { useDebounce } from '../../utils/use-debounce';
 import { focusStyle } from '../../utils/styles';
 import { parseMetricToNum } from '../../utils/mixins';
@@ -40,30 +40,49 @@ var getFocusStyle = function getFocusStyle(props) {
     justBorder: true
   }) : undefined;
 };
+
+// The border color has to be painted by whichever element owns the border,
+// but the background belongs on the content element so it doesn't bleed
+// behind the label and messages when the border is positioned 'outer'.
+// FormField sets allowHover only when no higher priority state (disabled,
+// readOnly, error, focus) applies.
+var getHoverStyle = function getHoverStyle(role) {
+  return function (props) {
+    var _props$theme$formFiel2, _props$theme$formFiel3, _hover$border;
+    var hover = (_props$theme$formFiel2 = props.theme.formField) == null ? void 0 : _props$theme$formFiel2.hover;
+    if (!props.allowHover || !hover) return undefined;
+    var position = (_props$theme$formFiel3 = props.theme.formField) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.border) == null ? void 0 : _props$theme$formFiel3.position;
+    var ownsBorder = role === 'outer' ? position === 'outer' : position === 'inner';
+    var borderColor = ownsBorder ? (_hover$border = hover.border) == null ? void 0 : _hover$border.color : undefined;
+    var background = role === 'content' ? hover.background : undefined;
+    if (!borderColor && background === undefined) return undefined;
+    return css(["&:hover{", " ", "}"], borderColor && "border-color: " + normalizeColor(borderColor, props.theme) + ";", backgroundStyle(background, props.theme, false));
+  };
+};
 var FormFieldBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "sc-m9hood-0"
-})(["", " ", ""], function (props) {
+})(["", " ", " ", ""], function (props) {
   return getFocusStyle(props);
-}, function (props) {
-  var _props$theme$formFiel2;
-  return (_props$theme$formFiel2 = props.theme.formField) == null ? void 0 : _props$theme$formFiel2.extend;
+}, getHoverStyle('outer'), function (props) {
+  var _props$theme$formFiel4;
+  return (_props$theme$formFiel4 = props.theme.formField) == null ? void 0 : _props$theme$formFiel4.extend;
 });
 var FormFieldContentBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
-})(["", " ", ""], function (props) {
+})(["", " ", " ", ""], function (props) {
   return getFocusStyle(props);
-}, function (props) {
-  var _props$theme$formFiel3;
-  return props.theme.formField && ((_props$theme$formFiel3 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.container) == null ? void 0 : _props$theme$formFiel3.extend);
+}, getHoverStyle('content'), function (props) {
+  var _props$theme$formFiel5;
+  return props.theme.formField && ((_props$theme$formFiel5 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel5 = _props$theme$formFiel5.container) == null ? void 0 : _props$theme$formFiel5.extend);
 });
 var StyledContentsBox = styled(Box).withConfig({
   displayName: "FormField__StyledContentsBox",
   componentId: "sc-m9hood-2"
-})(["", ""], function (props) {
-  var _props$theme$formFiel4;
-  return props.theme.formField && ((_props$theme$formFiel4 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel4 = _props$theme$formFiel4.container) == null ? void 0 : _props$theme$formFiel4.extend);
+})(["", " ", ""], getHoverStyle('content'), function (props) {
+  var _props$theme$formFiel6;
+  return props.theme.formField && ((_props$theme$formFiel6 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel6 = _props$theme$formFiel6.container) == null ? void 0 : _props$theme$formFiel6.extend);
 });
 var StyledMessageContainer = styled(Box).withConfig({
   displayName: "FormField__StyledMessageContainer",
@@ -377,12 +396,15 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       if (((_childName = childName) == null ? void 0 : _childName.length) > 0) childName = childName.charAt(0).toLowerCase() + childName.slice(1);
     }
   });
+  var allowHover = !disabled && !readOnlyField && !error && !focus;
   if (!themeBorder) {
     contents = /*#__PURE__*/React.createElement(StyledContentsBox, _extends({
       disabledProp: disabled,
       error: error,
       componentName: childName
-    }, themeContentProps, contentProps), contents);
+    }, themeContentProps, contentProps, {
+      allowHover: allowHover // internal prop
+    }), contents);
   }
   var borderColor;
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
@@ -439,6 +461,8 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       componentName: childName
     }, themeContentProps, innerProps, contentProps, {
       containerFocus: containerFocus // internal prop
+      ,
+      allowHover: allowHover // internal prop
     }, passThemeFlag), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
@@ -499,6 +523,8 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref4, ref) {
   }, outerProps, {
     style: outerStyle,
     containerFocus: containerFocus // internal prop
+    ,
+    allowHover: allowHover // internal prop
     ,
     onFocus: function onFocus(event) {
       var _formFieldRef$current;

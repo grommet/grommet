@@ -1261,6 +1261,12 @@ export interface ThemeType {
       container?: BoxProps;
       icon?: any;
     };
+    hover?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
+    };
     help?: {
       color?: ColorType;
       margin?: MarginType;

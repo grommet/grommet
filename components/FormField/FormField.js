@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.FormField = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _useDebounce = require("../../utils/use-debounce");
 var _styles = require("../../utils/styles");
@@ -26,7 +26,6 @@ var _excluded = ["message", "id"],
   _excluded5 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"],
   _excluded6 = ["aria-describedby"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -45,30 +44,49 @@ var getFocusStyle = function getFocusStyle(props) {
     justBorder: true
   }) : undefined;
 };
+
+// The border color has to be painted by whichever element owns the border,
+// but the background belongs on the content element so it doesn't bleed
+// behind the label and messages when the border is positioned 'outer'.
+// FormField sets allowHover only when no higher priority state (disabled,
+// readOnly, error, focus) applies.
+var getHoverStyle = function getHoverStyle(role) {
+  return function (props) {
+    var _props$theme$formFiel2, _props$theme$formFiel3, _hover$border;
+    var hover = (_props$theme$formFiel2 = props.theme.formField) == null ? void 0 : _props$theme$formFiel2.hover;
+    if (!props.allowHover || !hover) return undefined;
+    var position = (_props$theme$formFiel3 = props.theme.formField) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.border) == null ? void 0 : _props$theme$formFiel3.position;
+    var ownsBorder = role === 'outer' ? position === 'outer' : position === 'inner';
+    var borderColor = ownsBorder ? (_hover$border = hover.border) == null ? void 0 : _hover$border.color : undefined;
+    var background = role === 'content' ? hover.background : undefined;
+    if (!borderColor && background === undefined) return undefined;
+    return (0, _styledComponents.css)(["&:hover{", " ", "}"], borderColor && "border-color: " + (0, _utils.normalizeColor)(borderColor, props.theme) + ";", (0, _utils.backgroundStyle)(background, props.theme, false));
+  };
+};
 var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "sc-m9hood-0"
-})(["", " ", ""], function (props) {
+})(["", " ", " ", ""], function (props) {
   return getFocusStyle(props);
-}, function (props) {
-  var _props$theme$formFiel2;
-  return (_props$theme$formFiel2 = props.theme.formField) == null ? void 0 : _props$theme$formFiel2.extend;
+}, getHoverStyle('outer'), function (props) {
+  var _props$theme$formFiel4;
+  return (_props$theme$formFiel4 = props.theme.formField) == null ? void 0 : _props$theme$formFiel4.extend;
 });
 var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
-})(["", " ", ""], function (props) {
+})(["", " ", " ", ""], function (props) {
   return getFocusStyle(props);
-}, function (props) {
-  var _props$theme$formFiel3;
-  return props.theme.formField && ((_props$theme$formFiel3 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.container) == null ? void 0 : _props$theme$formFiel3.extend);
+}, getHoverStyle('content'), function (props) {
+  var _props$theme$formFiel5;
+  return props.theme.formField && ((_props$theme$formFiel5 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel5 = _props$theme$formFiel5.container) == null ? void 0 : _props$theme$formFiel5.extend);
 });
 var StyledContentsBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__StyledContentsBox",
   componentId: "sc-m9hood-2"
-})(["", ""], function (props) {
-  var _props$theme$formFiel4;
-  return props.theme.formField && ((_props$theme$formFiel4 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel4 = _props$theme$formFiel4.container) == null ? void 0 : _props$theme$formFiel4.extend);
+})(["", " ", ""], getHoverStyle('content'), function (props) {
+  var _props$theme$formFiel6;
+  return props.theme.formField && ((_props$theme$formFiel6 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel6 = _props$theme$formFiel6.container) == null ? void 0 : _props$theme$formFiel6.extend);
 });
 var StyledMessageContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__StyledMessageContainer",
@@ -382,12 +400,15 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
       if (((_childName = childName) == null ? void 0 : _childName.length) > 0) childName = childName.charAt(0).toLowerCase() + childName.slice(1);
     }
   });
+  var allowHover = !disabled && !readOnlyField && !error && !focus;
   if (!themeBorder) {
     contents = /*#__PURE__*/_react["default"].createElement(StyledContentsBox, _extends({
       disabledProp: disabled,
       error: error,
       componentName: childName
-    }, themeContentProps, contentProps), contents);
+    }, themeContentProps, contentProps, {
+      allowHover: allowHover // internal prop
+    }), contents);
   }
   var borderColor;
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
@@ -444,6 +465,8 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
       componentName: childName
     }, themeContentProps, innerProps, contentProps, {
       containerFocus: containerFocus // internal prop
+      ,
+      allowHover: allowHover // internal prop
     }, passThemeFlag), contents);
     var mergedMargin = margin || formFieldTheme.margin;
     abut = themeBorder.position === 'outer' && (themeBorder.side === 'all' || themeBorder.side === 'horizontal' || !themeBorder.side) && !(mergedMargin && (typeof mergedMargin === 'string' && mergedMargin !== 'none' || mergedMargin.bottom && mergedMargin.bottom !== 'none' || mergedMargin.horizontal && mergedMargin.horizontal !== 'none'));
@@ -504,6 +527,8 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   }, outerProps, {
     style: outerStyle,
     containerFocus: containerFocus // internal prop
+    ,
+    allowHover: allowHover // internal prop
     ,
     onFocus: function onFocus(event) {
       var _formFieldRef$current;
