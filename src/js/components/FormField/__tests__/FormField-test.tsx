@@ -856,4 +856,150 @@ describe('FormField', () => {
     );
     expect(textContentBox).not.toHaveStyleRule('background-color', '#123456');
   });
+
+  describe('hover', () => {
+    const hoverTheme = {
+      formField: {
+        hover: {
+          background: '#654321',
+          border: { color: '#AAFF00' },
+        },
+      },
+    };
+
+    const outerHoverTheme = {
+      formField: {
+        ...hoverTheme.formField,
+        border: { position: 'outer' as const, side: 'all' as const },
+      },
+    };
+
+    test('applies theme hover border and background to inner border', () => {
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      const contentBox = container.querySelector(
+        '[class*="FormFieldContentBox"]',
+      );
+      expect(contentBox).toHaveStyleRule('border-color', '#AAFF00', {
+        modifier: ':hover',
+      });
+      expect(contentBox).toHaveStyleRule('background-color', '#654321', {
+        modifier: ':hover',
+      });
+    });
+
+    test('applies theme hover border to outer border', () => {
+      const { container } = render(
+        <Grommet theme={outerHoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldBox"]'),
+      ).toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('keeps hover background off the outer box so it does not cover the label', () => {
+      const { container } = render(
+        <Grommet theme={outerHoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldBox"]'),
+      ).not.toHaveStyleRule('background-color', '#654321', {
+        modifier: ':hover',
+      });
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).toHaveStyleRule('background-color', '#654321', { modifier: ':hover' });
+    });
+
+    test('applies theme hover background when theme has no border', () => {
+      const { container } = render(
+        <Grommet
+          theme={{ formField: { ...hoverTheme.formField, border: false } }}
+        >
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="StyledContentsBox"]'),
+      ).toHaveStyleRule('background-color', '#654321', { modifier: ':hover' });
+    });
+
+    test('does not apply hover styling when disabled', () => {
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label" disabled>
+            <TextInput disabled />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('does not apply hover styling when readOnly', () => {
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label">
+            <TextInput readOnly />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('does not apply hover styling when there is an error', () => {
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label" error="Required">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('does not apply hover styling when focused', async () => {
+      const user = userEvent.setup();
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      await user.click(screen.getByRole('textbox'));
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+  });
 });
