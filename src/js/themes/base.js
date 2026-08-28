@@ -1079,6 +1079,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           size: 'xsmall',
         },
       },
+      calendar: {
+        day: {
+          selected: {
+            background: 'selected',
+          },
+        },
+      },
       icon: {
         calendar: undefined,
       },
@@ -1337,6 +1344,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // container: {}, // any Box props
         // icon: undefined,
       },
+      // hover: {
+      //   background: {
+      //     color: undefined,
+      //   },
+      //   border: {
+      //     color: undefined,
+      //   },
+      // },
       // extend: undefined,
       help: {
         color: 'dark-2',
@@ -2374,7 +2389,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       connector: {
-        stroke: { width: '2px' },
+        stroke: { width: 'small' },
       },
       description: {
         size: 'small',

@@ -1050,6 +1050,13 @@ export interface ThemeType {
         size?: string;
       };
     };
+    calendar?: {
+      day?: {
+        selected?: {
+          background?: BackgroundType;
+        };
+      };
+    };
     icon?: {
       calendar?: React.ReactNode | Icon;
     };
@@ -1260,6 +1267,12 @@ export interface ThemeType {
       margin?: MarginType;
       container?: BoxProps;
       icon?: any;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
     };
     help?: {
       color?: ColorType;
