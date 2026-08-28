@@ -734,7 +734,7 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('10:00:00');
   });
 
-  test('initializes empty hour and minute sections at zero', async () => {
+  test('initializes empty 24-hour sections based on arrow direction', async () => {
     const user = userEvent.setup();
 
     render(
@@ -751,7 +751,27 @@ describe('TimeInput', () => {
     const minuteInput = getSegment('minutes');
     await user.click(minuteInput);
     await user.keyboard('{ArrowDown}');
-    expect(getDisplayInput()).toHaveValue('00:00');
+    expect(getDisplayInput()).toHaveValue('00:59');
+  });
+
+  test('initializes empty 12-hour sections based on arrow direction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" />
+      </Grommet>,
+    );
+
+    const hourInput = getSegment('hours');
+    await user.click(hourInput);
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('12:mm:ss aa');
+
+    const minuteInput = getSegment('minutes');
+    await user.click(minuteInput);
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('12:00:ss aa');
   });
 
   test('submits only committed value and never section placeholders', async () => {

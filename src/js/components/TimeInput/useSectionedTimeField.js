@@ -241,7 +241,7 @@ export const useSectionedTimeField = ({
       const current = sections[key];
 
       if (current === undefined) {
-        setSectionValue(section, minValue);
+        setSectionValue(section, delta > 0 ? minValue : maxValue);
         return;
       }
 
