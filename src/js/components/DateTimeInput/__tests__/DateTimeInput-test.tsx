@@ -1014,4 +1014,38 @@ describe('DateTimeInput', () => {
 
     expect(screen.getByText('Custom Calendar Icon')).toBeInTheDocument();
   });
+
+  test('applies dateTimeInput.calendar.day.selected.background in dark mode', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={
+          {
+            dark: true,
+            dateTimeInput: {
+              calendar: {
+                day: {
+                  selected: { background: '#ABCDEF' },
+                },
+              },
+            },
+          } as any
+        }
+      >
+        <DateTimeInput format="24" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: /date and time/i });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const selectedDayButton = within(drop).getByRole('button', {
+      name: /Jul 22 2026/i,
+    });
+    // StyledDay is the first child div — it carries the background-color rule.
+    const dayCircle = selectedDayButton.querySelector('div');
+    expect(dayCircle).toHaveStyleRule('background-color', '#ABCDEF');
+  });
 });
