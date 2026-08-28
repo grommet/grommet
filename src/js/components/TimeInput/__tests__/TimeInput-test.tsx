@@ -1787,6 +1787,34 @@ describe('TimeInput', () => {
     }
   });
 
+  test('focus moves to mouse-clicked option after keyboard navigation', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="04:30:00" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hour4 = within(hourList).getByRole('option', { name: '04 hours' });
+    const hour7 = within(hourList).getByRole('option', { name: '07 hours' });
+
+    // Keyboard-navigate to hour 4
+    hour4.focus();
+    expect(document.activeElement).toBe(hour4);
+
+    // Mouse-click hour 7; event.preventDefault() on mousedown keeps focus on
+    // hour 4 during the interaction — the fix syncs focus afterward via RAF
+    await user.click(hour7);
+
+    await waitFor(() => {
+      expect(document.activeElement).toBe(hour7);
+    });
+  });
+
   test('does not scroll popup options after clicking to select one', async () => {
     const user = userEvent.setup();
     const offsetHeightDescriptor = Object.getOwnPropertyDescriptor(

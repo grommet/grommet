@@ -228,6 +228,8 @@ const TimeInputPopup = ({
   const suppressNextAutoScrollRef = useRef(false);
   const wheelInteractionTimeoutRef = useRef();
   const pointerReleaseTimeoutRef = useRef();
+  // Always holds the latest focusCurrentPopupOption to avoid stale closures.
+  const focusCurrentPopupOptionRef = useRef(null);
 
   const clearPointerReleaseTimeout = useCallback(() => {
     if (pointerReleaseTimeoutRef.current) {
@@ -251,6 +253,9 @@ const TimeInputPopup = ({
     pointerReleaseTimeoutRef.current = window.setTimeout(() => {
       pointerDownInsideRef.current = false;
       pointerReleaseTimeoutRef.current = undefined;
+      // Use the ref so we always call the latest version, not a stale closure
+      // captured before the committed selection updated sections.
+      requestAnimationFrame(() => focusCurrentPopupOptionRef.current?.());
     }, 0);
   }, [clearPointerReleaseTimeout]);
 
@@ -526,6 +531,8 @@ const TimeInputPopup = ({
     secondOptions,
     sections,
   ]);
+
+  focusCurrentPopupOptionRef.current = focusCurrentPopupOption;
 
   useLayoutEffect(() => {
     // Avoid stealing pointer interactions: while the user is actively
