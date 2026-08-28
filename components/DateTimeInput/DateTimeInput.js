@@ -493,7 +493,11 @@ var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(
       min = _getSectionLimits.min,
       max = _getSectionLimits.max;
     var key = (0, _sectionHelpers.getSectionKeyFromType)(sectionTypeFromSection(section));
-    var current = sections[key] === undefined ? min : sections[key];
+    if (sections[key] === undefined) {
+      setSectionValue(section, min);
+      return;
+    }
+    var current = sections[key];
     var step = section === SECTION_MINUTE ? normalizedMinuteStep : 1;
     var next;
     if (section === SECTION_MINUTE && step > 1) {
