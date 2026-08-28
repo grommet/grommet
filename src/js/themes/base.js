@@ -1337,6 +1337,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // container: {}, // any Box props
         // icon: undefined,
       },
+      // hover: {
+      //   background: {
+      //     color: undefined,
+      //   },
+      //   border: {
+      //     color: undefined,
+      //   },
+      // },
       // extend: undefined,
       help: {
         color: 'dark-2',
