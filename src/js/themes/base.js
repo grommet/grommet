@@ -1290,7 +1290,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // [inputname]: {
       //  container: {
       //    extend: undefined,
-      //   }
+      //   },
+      //   hover: {
+      //     background: {
+      //       color: undefined,
+      //     },
+      //     border: {
+      //       color: undefined,
+      //     },
+      //   },
       // }
       border: {
         color: 'border',

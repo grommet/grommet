@@ -95,17 +95,40 @@ const getFocusStyle = (props) => {
 // FormField sets allowHover only when no higher priority state (disabled,
 // readOnly, error, focus) applies.
 const getHoverStyle = (role) => (props) => {
-  const hover = props.theme.formField?.hover;
-  if (!props.allowHover || !hover) return undefined;
-  const position = props.theme.formField?.border?.position;
+  const formFieldTheme = props.theme.formField;
+  const hover = formFieldTheme?.hover;
+  const componentHover = formFieldTheme?.[props.componentName]?.hover;
+  if (!props.allowHover || (!hover && !componentHover)) return undefined;
+  const position = formFieldTheme?.border?.position;
   const ownsBorder =
     role === 'outer' ? position === 'outer' : position === 'inner';
-  const borderColor = ownsBorder ? hover.border?.color : undefined;
-  const background = role === 'content' ? hover.background : undefined;
+
+  const hasComponentBorderOverride =
+    componentHover && componentHover.border !== undefined;
+  const hasComponentBackgroundOverride =
+    componentHover && componentHover.background !== undefined;
+
+  let borderColor;
+  if (ownsBorder) {
+    if (hasComponentBorderOverride) {
+      borderColor = componentHover.border.color;
+    } else {
+      borderColor = hover?.border?.color;
+    }
+  }
+
+  let background;
+  if (role === 'content') {
+    if (hasComponentBackgroundOverride) {
+      background = componentHover.background;
+    } else {
+      background = hover?.background;
+    }
+  }
   if (!borderColor && background === undefined) return undefined;
   return css`
     &:hover {
-      ${borderColor &&
+      ${borderColor !== undefined &&
       `border-color: ${normalizeColor(borderColor, props.theme)};`}
       ${backgroundStyle(background, props.theme, false)}
     }

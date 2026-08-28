@@ -943,6 +943,56 @@ describe('FormField', () => {
       ).toHaveStyleRule('background-color', '#654321', { modifier: ':hover' });
     });
 
+    test('allows a child input to opt out of the shared hover border color', () => {
+      const { container } = render(
+        <Grommet
+          theme={{
+            formField: {
+              ...hoverTheme.formField,
+              radioButtonGroup: {
+                hover: {
+                  border: { color: undefined },
+                },
+              },
+            },
+          }}
+        >
+          <FormField label="Label">
+            <RadioButtonGroup name="test" options={['One', 'Two']} />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('allows a child input to override the shared hover border color', () => {
+      const { container } = render(
+        <Grommet
+          theme={{
+            formField: {
+              ...hoverTheme.formField,
+              radioButtonGroup: {
+                hover: {
+                  border: { color: '#112233' },
+                },
+              },
+            },
+          }}
+        >
+          <FormField label="Label">
+            <RadioButtonGroup name="test" options={['One', 'Two']} />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).toHaveStyleRule('border-color', '#112233', { modifier: ':hover' });
+    });
+
     test('does not apply hover styling when disabled', () => {
       const { container } = render(
         <Grommet theme={hoverTheme}>
