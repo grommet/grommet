@@ -15,7 +15,7 @@ const getTextMetric = (theme, size, metric) =>
   theme.text?.[size]?.[metric] || theme.text?.medium?.[metric];
 
 const getBorderWidth = (theme, size) =>
-  theme.global?.borderSize?.[size] || theme.global?.borderSize?.xsmall;
+  theme.global?.borderSize?.[size] || size || theme.global?.borderSize?.xsmall;
 
 const getSubStepSizeToken = (indicatorSize) => {
   switch (indicatorSize) {
