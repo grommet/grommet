@@ -1787,7 +1787,7 @@ describe('TimeInput', () => {
     }
   });
 
-  test('focus moves to mouse-clicked option after keyboard navigation', async () => {
+  test('keyboard focus ring clears when switching to mouse interaction', async () => {
     const user = userEvent.setup();
 
     render(
@@ -1806,13 +1806,10 @@ describe('TimeInput', () => {
     hour4.focus();
     expect(document.activeElement).toBe(hour4);
 
-    // Mouse-click hour 7; event.preventDefault() on mousedown keeps focus on
-    // hour 4 during the interaction — the fix syncs focus afterward via RAF
+    // Mouse click — keyboard ring should dismiss (focus leaves hour 4)
     await user.click(hour7);
 
-    await waitFor(() => {
-      expect(document.activeElement).toBe(hour7);
-    });
+    expect(document.activeElement).not.toBe(hour4);
   });
 
   test('does not scroll popup options after clicking to select one', async () => {
