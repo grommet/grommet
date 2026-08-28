@@ -103,15 +103,16 @@ const getHoverStyle = (role) => (props) => {
   const ownsBorder =
     role === 'outer' ? position === 'outer' : position === 'inner';
 
-  const hasComponentBorderOverride =
-    componentHover && componentHover.border !== undefined;
-  const hasComponentBackgroundOverride =
-    componentHover && componentHover.background !== undefined;
+  const componentHoverBorder = componentHover?.border ?? undefined;
+  const componentHoverBackground = componentHover?.background ?? undefined;
+
+  const hasComponentBorderOverride = componentHoverBorder !== undefined;
+  const hasComponentBackgroundOverride = componentHoverBackground !== undefined;
 
   let borderColor;
   if (ownsBorder) {
     if (hasComponentBorderOverride) {
-      borderColor = componentHover.border.color;
+      borderColor = componentHoverBorder.color;
     } else {
       borderColor = hover?.border?.color;
     }
@@ -120,7 +121,7 @@ const getHoverStyle = (role) => (props) => {
   let background;
   if (role === 'content') {
     if (hasComponentBackgroundOverride) {
-      background = componentHover.background;
+      background = componentHoverBackground;
     } else {
       background = hover?.background;
     }
