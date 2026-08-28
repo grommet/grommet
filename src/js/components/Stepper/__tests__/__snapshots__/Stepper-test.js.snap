@@ -83,26 +83,6 @@ exports[`Stepper renders horizontal steps 1`] = `
   text-align: inherit;
 }
 
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus ::-moz-focus-inner {
-  border: 0;
-}
-
 .c3:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -464,26 +444,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   text-align: inherit;
 }
 
-.c2:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c2:focus >circle,
-.c2:focus >ellipse,
-.c2:focus >line,
-.c2:focus >path,
-.c2:focus >polygon,
-.c2:focus >polyline,
-.c2:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c2:focus ::-moz-focus-inner {
-  border: 0;
-}
-
 .c2:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
@@ -821,26 +781,6 @@ exports[`Stepper renders vertical steps 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c3:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
-  outline: none;
-  box-shadow: 0 0 2px 2px #6FFFB0;
-}
-
-.c3:focus ::-moz-focus-inner {
-  border: 0;
 }
 
 .c3:focus:not(:focus-visible) {

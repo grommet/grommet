@@ -118,6 +118,8 @@ export const StepperStep = ({
       >
         <StyledStepButton
           plain
+          // indicator provides focus-visible treatment; avoid a second ring
+          focusIndicator={false}
           forwardedAs={isReadOnly ? 'div' : 'button'}
           role={isReadOnly ? 'group' : undefined}
           ref={(el) => {
