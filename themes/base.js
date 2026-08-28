@@ -2913,8 +2913,16 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         }
       },
       drop: {
+        // gap: undefined,
         option: {
           // background: undefined,
+          // gap: undefined,
+          // size: undefined,
+          pad: {
+            vertical: 'xxsmall',
+            horizontal: 'xsmall'
+          },
+          // round: undefined,
           hover: {
             background: 'active-background'
           },
