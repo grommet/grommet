@@ -993,6 +993,31 @@ describe('FormField', () => {
       ).toHaveStyleRule('border-color', '#112233', { modifier: ':hover' });
     });
 
+    test('allows a child input to override the shared hover background color', () => {
+      const { container } = render(
+        <Grommet
+          theme={{
+            formField: {
+              ...hoverTheme.formField,
+              radioButtonGroup: {
+                hover: {
+                  background: '#223344',
+                },
+              },
+            },
+          }}
+        >
+          <FormField label="Label">
+            <RadioButtonGroup name="test" options={['One', 'Two']} />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).toHaveStyleRule('background-color', '#223344', { modifier: ':hover' });
+    });
+
     test('does not apply hover styling when disabled', () => {
       const { container } = render(
         <Grommet theme={hoverTheme}>
