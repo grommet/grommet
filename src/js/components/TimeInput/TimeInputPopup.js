@@ -612,10 +612,10 @@ const TimeInputPopup = ({
           setActiveSection(getAdjacentSection(eventSection, 1));
         } else if (event.key === 'ArrowUp') {
           event.preventDefault();
-          incrementSection(eventSection, -1);
+          incrementSection(eventSection, 1);
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
-          incrementSection(eventSection, 1);
+          incrementSection(eventSection, -1);
         }
 
         onKeyDownProp?.(event);

@@ -11,7 +11,7 @@ export const Simple = () => {
 
   return (
     <Box pad="large" width="medium">
-      <TimeInput format="12" onChange={onChange} />
+      <TimeInput format="24" onChange={onChange} />
     </Box>
   );
 };
