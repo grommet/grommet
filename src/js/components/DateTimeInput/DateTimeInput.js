@@ -18,6 +18,7 @@ import { normalizeStep, pad } from '../../utils/dates';
 import { useForwardedRef } from '../../utils';
 import { useSectionedField } from '../../utils/useSectionedField';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Calendar } from '../Calendar';
@@ -1347,11 +1348,29 @@ const DateTimeInput = forwardRef(
                 pad={theme.dateTimeInput?.drop?.pad}
                 gap={theme.dateTimeInput?.drop?.gap}
               >
-                <Calendar
-                  date={getCalendarDate(sections)}
-                  initialFocus="days"
-                  onSelect={handleCalendarSelect}
-                />
+                <ThemeContext.Extend
+                  value={{
+                    calendar: {
+                      day: {
+                        selected: {
+                          background:
+                            // Preserve an existing theme value first to avoid
+                            // breaking its auto-computed text contrast color
+                            // in hpe theme.
+                            theme.calendar?.day?.selected?.background ||
+                            theme.dateTimeInput?.calendar?.day?.selected
+                              ?.background,
+                        },
+                      },
+                    },
+                  }}
+                >
+                  <Calendar
+                    date={getCalendarDate(sections)}
+                    initialFocus="days"
+                    onSelect={handleCalendarSelect}
+                  />
+                </ThemeContext.Extend>
                 <Box
                   alignSelf="stretch"
                   flex={false}

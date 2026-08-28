@@ -1079,6 +1079,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           size: 'xsmall',
         },
       },
+      calendar: {
+        day: {
+          selected: {
+            background: 'selected',
+          },
+        },
+      },
       icon: {
         calendar: undefined,
       },
