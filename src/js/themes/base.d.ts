@@ -1050,6 +1050,13 @@ export interface ThemeType {
         size?: string;
       };
     };
+    calendar?: {
+      day?: {
+        selected?: {
+          background?: BackgroundType;
+        };
+      };
+    };
     icon?: {
       calendar?: React.ReactNode | Icon;
     };
