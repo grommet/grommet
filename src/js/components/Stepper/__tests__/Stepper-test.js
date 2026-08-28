@@ -81,7 +81,7 @@ describe('Stepper', () => {
     expect(svgs.length).toBeGreaterThan(0);
   });
 
-  test('renders error state with message', () => {
+  test('renders error state with polite announcement by default', () => {
     const steps = [
       { id: 'step1', title: 'Step 1', status: 'completed' },
       {
@@ -98,6 +98,28 @@ describe('Stepper', () => {
     );
 
     expect(getByText('Card invalid')).toBeTruthy();
+    expect(getByRole('status').textContent).toBe('Card invalid');
+  });
+
+  test('supports assertive error announcements', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        status: 'error',
+        errorMessage: 'Card invalid',
+      },
+    ];
+    const { getByRole } = render(
+      <Grommet>
+        <Stepper
+          steps={steps}
+          currentStep="step1"
+          errorAnnouncement="assertive"
+        />
+      </Grommet>,
+    );
+
     expect(getByRole('alert').textContent).toBe('Card invalid');
   });
 

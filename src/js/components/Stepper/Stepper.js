@@ -65,7 +65,7 @@ const Stepper = forwardRef(
       direction: directionProp = 'horizontal',
       clickableSteps = true,
       showDescription = true,
-      errorAnnouncement = 'assertive',
+      errorAnnouncement = 'polite',
       onStepClick,
       'aria-label': ariaLabel,
       children,
