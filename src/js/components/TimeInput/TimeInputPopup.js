@@ -222,6 +222,7 @@ const TimeInputPopup = ({
   align,
   format,
   formatMessage,
+  focusOnMount = true,
   hoursOptions,
   id,
   incrementSection,
@@ -548,33 +549,42 @@ const TimeInputPopup = ({
   ]);
 
   useLayoutEffect(() => {
-    // Avoid stealing pointer interactions: while the user is actively
-    // clicking inside the popup, let that click settle before refocusing.
-    if (pointerDownInsideRef.current) return undefined;
+    // Scroll selected options into view regardless. But avoid stealing
+    // focus when the popup mounts inside another component (e.g. Calendar
+    // in DateTimeInput) that manages its own initial focus.
+    if (focusOnMount && !pointerDownInsideRef.current) {
+      const scrollRaf = requestAnimationFrame(() => {
+        scrollSelectedOptionsIntoView();
+      });
+
+      let rafB;
+      const rafA = requestAnimationFrame(() => {
+        scrollSelectedOptionsIntoView();
+        const focused = focusCurrentPopupOption();
+        // Retry one more frame to handle occasional mount timing races.
+        if (!focused) {
+          rafB = requestAnimationFrame(() => {
+            scrollSelectedOptionsIntoView();
+            focusCurrentPopupOption();
+          });
+        }
+      });
+
+      return () => {
+        window.cancelAnimationFrame(scrollRaf);
+        window.cancelAnimationFrame(rafA);
+        if (rafB) window.cancelAnimationFrame(rafB);
+      };
+    }
 
     const scrollRaf = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
     });
 
-    let rafB;
-    const rafA = requestAnimationFrame(() => {
-      scrollSelectedOptionsIntoView();
-      const focused = focusCurrentPopupOption();
-      // Retry one more frame to handle occasional mount timing races.
-      if (!focused) {
-        rafB = requestAnimationFrame(() => {
-          scrollSelectedOptionsIntoView();
-          focusCurrentPopupOption();
-        });
-      }
-    });
-
     return () => {
       window.cancelAnimationFrame(scrollRaf);
-      window.cancelAnimationFrame(rafA);
-      if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, focusOnMount, scrollSelectedOptionsIntoView]);
 
   const popupContent = (
     <Box

@@ -107,6 +107,7 @@ const TimeInput = forwardRef(
       defaultValue,
       disabled,
       format = DEFAULT_FORMAT,
+      focusOnMount = true,
       id,
       inline = false,
       messages,
@@ -673,6 +674,7 @@ const TimeInput = forwardRef(
       return (
         <TimeInputPopup
           inline
+          focusOnMount={focusOnMount}
           activeSection={activeSection}
           format={format}
           formatMessage={formatMessage}
