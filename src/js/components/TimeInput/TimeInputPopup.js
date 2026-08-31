@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { focusStyle, normalizeColor } from '../../utils';
+import { edgeStyle, focusStyle, normalizeColor, roundStyle } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
@@ -30,9 +30,25 @@ const PopupOption = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  padding: ${(props) =>
-    `${props.theme.global.edgeSize.xxsmall} ${props.theme.global.edgeSize.xsmall}`};
-  border-radius: ${(props) => props.theme.global.control?.border?.radius};
+  ${(props) => {
+    const optionPad = props.theme.timeInput?.drop?.option?.pad;
+    return (
+      optionPad &&
+      edgeStyle(
+        'padding',
+        optionPad,
+        false,
+        props.theme.box.responsiveBreakpoint,
+        props.theme,
+      )
+    );
+  }}
+  ${(props) => {
+    const round =
+      props.theme.timeInput?.drop?.option?.round ||
+      props.theme.global.control?.border?.radius;
+    return round && roundStyle(round, false, props.theme);
+  }}
   background: ${(props) => {
     if (props.$selected) {
       return normalizeColor(
@@ -118,7 +134,7 @@ const PopupColumn = ({
     <PopupColumnBox
       role="listbox"
       aria-label={label}
-      gap="xxsmall"
+      gap={theme.timeInput?.drop?.option?.gap || 'xxsmall'}
       height={{
         max: maxHeight,
       }}
@@ -185,7 +201,11 @@ const PopupColumn = ({
             onFocus={() => onSetSection(section)}
           >
             <Text
-              size={theme.global.input.font.size || 'small'}
+              size={
+                theme.timeInput?.drop?.option?.size ||
+                theme.global.input.font.size ||
+                'small'
+              }
               color={optionColor}
             >
               {section === SECTION_PERIOD ? option : pad(option)}
@@ -564,7 +584,7 @@ const TimeInputPopup = ({
       direction="row"
       width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
       minHeight={theme.timeInput?.drop?.minHeight}
-      gap="xsmall"
+      gap={theme.timeInput?.drop?.gap || 'xsmall'}
       pad={inline ? 'none' : theme.timeInput?.drop?.pad || 'small'}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}

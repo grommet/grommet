@@ -2686,8 +2686,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       drop: {
+        // gap: undefined,
         option: {
           // background: undefined,
+          // gap: undefined,
+          // size: undefined,
+          pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+          // round: undefined,
           hover: {
             background: 'active-background',
           },
