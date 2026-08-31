@@ -1802,7 +1802,8 @@ describe('TimeInput', () => {
     const hour4 = within(hourList).getByRole('option', { name: '04 hours' });
     const hour7 = within(hourList).getByRole('option', { name: '07 hours' });
 
-    // Keyboard-navigate to hour 4
+    // Simulate prior keyboard focus (programmatic focus, as in a real
+    // keyboard session where the option was navigated to via arrow keys).
     hour4.focus();
     expect(document.activeElement).toBe(hour4);
 
