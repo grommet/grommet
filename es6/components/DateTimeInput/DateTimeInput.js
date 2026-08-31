@@ -330,7 +330,7 @@ var formatSectionText = function formatSectionText(section, value) {
   return pad(value);
 };
 var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
-  var _theme$dateTimeInput, _theme$global$edgeSiz, _theme$global$edgeSiz2, _theme$dateTimeInput2, _theme$dateTimeInput3, _theme$dateTimeInput4, _theme$dateTimeInput5, _theme$dateTimeInput6, _theme$dateTimeInput7, _theme$calendar, _theme$dateTimeInput8, _theme$dateTimeInput9;
+  var _theme$dateTimeInput, _theme$global$edgeSiz, _theme$global$edgeSiz2, _theme$dateTimeInput2, _theme$dateTimeInput3, _theme$dateTimeInput4, _theme$dateTimeInput5, _theme$calendar, _theme$dateTimeInput6, _theme$dateTimeInput7, _theme$dateTimeInput8, _theme$dateTimeInput9;
   var defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     format = _ref.format,
@@ -678,14 +678,9 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     suppressSegmentFocusRef.current = true;
     setOpen(false);
     requestAnimationFrame(function () {
-      if (inline) {
-        var _triggerRef$current;
-        (_triggerRef$current = triggerRef.current) == null || _triggerRef$current.focus();
-        return;
-      }
       focusSection(activeSectionRef.current);
     });
-  }, [focusSection, inline]);
+  }, [focusSection]);
   var onDisplaySectionMouseDown = useCallback(function (section, event) {
     if (readOnly || disabled) return;
     if (event.button !== 0 || event.defaultPrevented) return;
@@ -940,33 +935,78 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     messages: messages
   });
   var CalendarIcon = ((_theme$dateTimeInput2 = theme.dateTimeInput) == null || (_theme$dateTimeInput2 = _theme$dateTimeInput2.icon) == null ? void 0 : _theme$dateTimeInput2.calendar) || GrommetCalendarIcon;
-  var dropTarget = inline ? triggerRef.current : containerRef.current;
+  var dropTarget = containerRef.current;
   var generatedId = useId();
   var dropId = (id || generatedId) + "__drop";
+  var hiddenInput = name ? /*#__PURE__*/React.createElement("input", {
+    "aria-hidden": "true",
+    name: name,
+    readOnly: true,
+    tabIndex: -1,
+    type: "hidden",
+    value: value || ''
+  }) : null;
+  var pickerContent = /*#__PURE__*/React.createElement(Box, {
+    role: "group",
+    "aria-label": groupLabel,
+    "aria-labelledby": formFieldLabelId,
+    direction: "row",
+    pad: (_theme$dateTimeInput3 = theme.dateTimeInput) == null || (_theme$dateTimeInput3 = _theme$dateTimeInput3.drop) == null ? void 0 : _theme$dateTimeInput3.pad,
+    gap: (_theme$dateTimeInput4 = theme.dateTimeInput) == null || (_theme$dateTimeInput4 = _theme$dateTimeInput4.drop) == null ? void 0 : _theme$dateTimeInput4.gap
+  }, /*#__PURE__*/React.createElement(ThemeContext.Extend, {
+    value: {
+      calendar: {
+        day: {
+          selected: {
+            background: ((_theme$dateTimeInput5 = theme.dateTimeInput) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.calendar) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.day) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.selected) == null ? void 0 : _theme$dateTimeInput5.background) || ((_theme$calendar = theme.calendar) == null || (_theme$calendar = _theme$calendar.day) == null || (_theme$calendar = _theme$calendar.selected) == null ? void 0 : _theme$calendar.background)
+          }
+        }
+      }
+    }
+  }, /*#__PURE__*/React.createElement(Calendar, {
+    date: getCalendarDate(sections),
+    initialFocus: inline ? undefined : 'days',
+    onSelect: disabled || readOnly ? undefined : handleCalendarSelect
+  })), /*#__PURE__*/React.createElement(Box, {
+    alignSelf: "stretch",
+    flex: false,
+    border: {
+      side: 'start',
+      color: (_theme$dateTimeInput6 = theme.dateTimeInput) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.drop) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.border) == null ? void 0 : _theme$dateTimeInput6.color,
+      size: (_theme$dateTimeInput7 = theme.dateTimeInput) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.drop) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.border) == null ? void 0 : _theme$dateTimeInput7.size
+    }
+  }), /*#__PURE__*/React.createElement(TimeInput, {
+    inline: true,
+    format: resolvedFormat,
+    value: timeValue,
+    showSeconds: showSeconds,
+    messages: messages,
+    minuteStep: normalizedMinuteStep,
+    disabled: disabled,
+    readOnly: readOnly,
+    onChange: disabled || readOnly ? undefined : handleTimeSelect,
+    onPartialChange: disabled || readOnly ? undefined : handleTimePartialChange
+  }));
+  if (inline) {
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("input", _extends({}, rest, {
+      "aria-hidden": "true",
+      id: id,
+      name: name,
+      readOnly: true,
+      ref: inputRef,
+      tabIndex: -1,
+      type: "hidden",
+      value: value || ''
+    })), pickerContent);
+  }
   return /*#__PURE__*/React.createElement(Keyboard, {
     onEsc: open ? closePicker : undefined
-  }, /*#__PURE__*/React.createElement(Box, null, inline ? /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    align: "center"
-  }, /*#__PURE__*/React.createElement(Button, {
-    ref: triggerRef,
-    icon: /*#__PURE__*/React.createElement(CalendarIcon, null),
-    plain: true,
-    disabled: disabled || readOnly,
-    "aria-label": formatMessage({
-      id: 'dateTimeInput.chooseDateTime',
-      messages: messages
-    }),
-    "aria-haspopup": "dialog",
-    "aria-expanded": open,
-    "aria-controls": dropId,
-    onClick: open ? closePicker : openPicker
-  })) : /*#__PURE__*/React.createElement(StyledDateTimeInputContainer, _extends({
+  }, /*#__PURE__*/React.createElement(Box, null, /*#__PURE__*/React.createElement(StyledDateTimeInputContainer, _extends({
     ref: containerRef,
     direction: "row",
     border: !plainProp,
     fill: true,
-    round: (_theme$dateTimeInput3 = theme.dateTimeInput) == null || (_theme$dateTimeInput3 = _theme$dateTimeInput3.container) == null ? void 0 : _theme$dateTimeInput3.round,
+    round: (_theme$dateTimeInput8 = theme.dateTimeInput) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.container) == null ? void 0 : _theme$dateTimeInput8.round,
     disabled: disabled,
     readOnlyProp: readOnly,
     focusIndicator: focusIndicatorProp != null ? focusIndicatorProp : true
@@ -1034,7 +1074,7 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     icon: /*#__PURE__*/React.createElement(CalendarIcon, null),
     plain: true,
     disabled: disabled,
-    margin: (_theme$dateTimeInput4 = theme.dateTimeInput) == null || (_theme$dateTimeInput4 = _theme$dateTimeInput4.button) == null ? void 0 : _theme$dateTimeInput4.margin,
+    margin: (_theme$dateTimeInput9 = theme.dateTimeInput) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.button) == null ? void 0 : _theme$dateTimeInput9.margin,
     "aria-label": formatMessage({
       id: 'dateTimeInput.chooseDateTime',
       messages: messages
@@ -1043,14 +1083,7 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     "aria-expanded": open,
     "aria-controls": dropId,
     onClick: open ? closePicker : openPicker
-  })), name && /*#__PURE__*/React.createElement("input", {
-    "aria-hidden": "true",
-    name: name,
-    readOnly: true,
-    tabIndex: -1,
-    type: "hidden",
-    value: value || ''
-  }), open && /*#__PURE__*/React.createElement(Drop, {
+  })), hiddenInput, open && /*#__PURE__*/React.createElement(Drop, {
     id: dropId,
     target: dropTarget,
     align: {
@@ -1059,44 +1092,7 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     },
     onEsc: closePicker,
     onClickOutside: closePicker
-  }, /*#__PURE__*/React.createElement(Box, {
-    direction: "row",
-    pad: (_theme$dateTimeInput5 = theme.dateTimeInput) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.drop) == null ? void 0 : _theme$dateTimeInput5.pad,
-    gap: (_theme$dateTimeInput6 = theme.dateTimeInput) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.drop) == null ? void 0 : _theme$dateTimeInput6.gap
-  }, /*#__PURE__*/React.createElement(ThemeContext.Extend, {
-    value: {
-      calendar: {
-        day: {
-          selected: {
-            background: ((_theme$dateTimeInput7 = theme.dateTimeInput) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.calendar) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.day) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.selected) == null ? void 0 : _theme$dateTimeInput7.background) || ((_theme$calendar = theme.calendar) == null || (_theme$calendar = _theme$calendar.day) == null || (_theme$calendar = _theme$calendar.selected) == null ? void 0 : _theme$calendar.background)
-          }
-        }
-      }
-    }
-  }, /*#__PURE__*/React.createElement(Calendar, {
-    date: getCalendarDate(sections),
-    initialFocus: "days",
-    onSelect: handleCalendarSelect
-  })), /*#__PURE__*/React.createElement(Box, {
-    alignSelf: "stretch",
-    flex: false,
-    border: {
-      side: 'start',
-      color: (_theme$dateTimeInput8 = theme.dateTimeInput) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.drop) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.border) == null ? void 0 : _theme$dateTimeInput8.color,
-      size: (_theme$dateTimeInput9 = theme.dateTimeInput) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.drop) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.border) == null ? void 0 : _theme$dateTimeInput9.size
-    }
-  }), /*#__PURE__*/React.createElement(TimeInput, {
-    inline: true,
-    format: resolvedFormat,
-    value: timeValue,
-    showSeconds: showSeconds,
-    messages: messages,
-    minuteStep: normalizedMinuteStep,
-    disabled: disabled,
-    readOnly: readOnly,
-    onChange: handleTimeSelect,
-    onPartialChange: handleTimePartialChange
-  })))));
+  }, pickerContent)));
 });
 DateTimeInput.displayName = 'DateTimeInput';
 if (process.env.NODE_ENV !== 'production') {
