@@ -35,7 +35,10 @@ export interface TextInputProps
     suggestionIsOpen?: string;
   };
   name?: string;
-  onClickCopy?: () => void | Promise<void>;
+  onClickCopy?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    value: string,
+  ) => void | Promise<void>;
   onSelect?: (x: {
     target: React.RefObject<HTMLElement | null>['current'];
     suggestion: any;

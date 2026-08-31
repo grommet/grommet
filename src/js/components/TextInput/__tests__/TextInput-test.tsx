@@ -918,6 +918,24 @@ describe('TextInput', () => {
     );
 
     expect(onClickCopy).toHaveBeenCalledTimes(1);
+    expect(onClickCopy).toHaveBeenCalledWith(expect.anything(), 'test');
+  });
+
+  test('copy uncontrolled value after edit', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput defaultValue="test" copy aria-label="Uncontrolled value" />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Uncontrolled value');
+    await user.type(input, ' edited');
+
+    await user.click(screen.getByRole('button', { name: 'Copy to clipboard' }));
+
+    expect(await navigator.clipboard.readText()).toBe('test edited');
   });
 
   test('supports copy with password toggle', () => {
