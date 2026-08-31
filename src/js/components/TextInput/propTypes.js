@@ -33,7 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
     }),
     name: PropTypes.string,
     onChange: PropTypes.func,
-    onClickCopy: PropTypes.func,
+    onCopy: PropTypes.func,
     onSelect: PropTypes.func,
     onSuggestionSelect: PropTypes.func,
     onSuggestionsOpen: PropTypes.func,

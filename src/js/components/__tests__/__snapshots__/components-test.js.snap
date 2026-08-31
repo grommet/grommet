@@ -1166,7 +1166,7 @@ exports[`Components loads 1`] = `
       "messages": [Function],
       "name": [Function],
       "onChange": [Function],
-      "onClickCopy": [Function],
+      "onCopy": [Function],
       "onSelect": [Function],
       "onSuggestionSelect": [Function],
       "onSuggestionsClose": [Function],

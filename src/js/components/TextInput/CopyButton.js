@@ -24,7 +24,7 @@ export const CopyButton = ({
   authoredType,
   disabled,
   messages,
-  onClickCopy,
+  onCopy,
   onBlurCopy,
   tip,
   value,
@@ -47,7 +47,7 @@ export const CopyButton = ({
     <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>
       <StyledButton
         disabled={disabled}
-        onClick={onClickCopy}
+        onClick={onCopy}
         icon={<CopyIcon />}
         pad={{
           horizontal: theme.global.input.padding?.horizontal,

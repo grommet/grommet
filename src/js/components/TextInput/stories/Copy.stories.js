@@ -22,7 +22,7 @@ export const Copy = () => {
         <TextInput
           value="Custom copy handler"
           copy
-          onClickCopy={(event, copiedValue) =>
+          onCopy={(event, copiedValue) =>
             setStatus(`Custom copy handler called with "${copiedValue}"`)
           }
           aria-label="Custom copy handler"

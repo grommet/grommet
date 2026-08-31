@@ -900,14 +900,14 @@ describe('TextInput', () => {
 
   test('copy editable value with custom handler', async () => {
     const user = userEvent.setup();
-    const onClickCopy = jest.fn();
+    const onCopy = jest.fn();
 
     render(
       <Grommet>
         <TextInput
           value="test"
           copy
-          onClickCopy={onClickCopy}
+          onCopy={onCopy}
           aria-label="Editable value"
         />
       </Grommet>,
@@ -917,8 +917,8 @@ describe('TextInput', () => {
       screen.getByRole('button', { name: 'Copy to clipboard test' }),
     );
 
-    expect(onClickCopy).toHaveBeenCalledTimes(1);
-    expect(onClickCopy).toHaveBeenCalledWith(expect.anything(), 'test');
+    expect(onCopy).toHaveBeenCalledTimes(1);
+    expect(onCopy).toHaveBeenCalledWith(expect.anything(), 'test');
   });
 
   test('copy uncontrolled value after edit', async () => {
