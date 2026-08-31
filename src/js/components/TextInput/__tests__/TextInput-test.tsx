@@ -954,6 +954,94 @@ describe('TextInput', () => {
     ).toBeInTheDocument();
   });
 
+  test('supports copy with password toggle when reverse', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput value="test" copy password reverse aria-label="Password" />
+      </Grommet>,
+    );
+
+    const copyButton = screen.getByRole('button', {
+      name: 'Copy to clipboard',
+    });
+    const toggleButton = screen.getByRole('button', {
+      name: 'Show password',
+    });
+    const input = screen.getByLabelText('Password');
+
+    // reverse moves the copy button before the input while the password
+    // toggle stays in its trailing wrapper; neither should overlap or
+    // replace the other
+    expect(copyButton).not.toBe(toggleButton);
+    expect(
+      copyButton.compareDocumentPosition(input) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      input.compareDocumentPosition(toggleButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+
+    await user.click(copyButton);
+    expect(await navigator.clipboard.readText()).toBe('test');
+
+    await user.click(toggleButton);
+    expect(input).toHaveAttribute('type', 'text');
+    expect(
+      screen.getByRole('button', { name: 'Hide password' }),
+    ).toBeInTheDocument();
+  });
+
+  test('supports copy, password toggle, and reverse icon together', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput
+          value="test"
+          copy
+          password
+          reverse
+          icon={<Search />}
+          aria-label="Password"
+        />
+      </Grommet>,
+    );
+
+    const copyButton = screen.getByRole('button', {
+      name: 'Copy to clipboard',
+    });
+    const toggleButton = screen.getByRole('button', {
+      name: 'Show password',
+    });
+    const icon = screen.getByLabelText('Search');
+    const input = screen.getByLabelText('Password');
+
+    // all three controls must remain distinct and usable, with the icon
+    // and toggle grouped together after the input, and copy before it
+    expect(copyButton).not.toBe(toggleButton);
+    expect(icon).not.toBe(toggleButton);
+    expect(
+      copyButton.compareDocumentPosition(input) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      input.compareDocumentPosition(icon) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      icon.compareDocumentPosition(toggleButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+
+    await user.click(copyButton);
+    expect(await navigator.clipboard.readText()).toBe('test');
+
+    await user.click(toggleButton);
+    expect(input).toHaveAttribute('type', 'text');
+  });
+
   test('read only copy theme icon', async () => {
     render(
       <Grommet theme={{ textInput: { icons: { copy: Add } } }}>
