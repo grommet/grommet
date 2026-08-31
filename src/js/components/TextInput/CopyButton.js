@@ -1,12 +1,13 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Copy } from 'grommet-icons/icons/Copy';
 import { Button } from '../Button';
 import { Tip } from '../Tip';
 import { edgeStyle } from '../../utils/styles';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { MessageContext } from '../../contexts/MessageContext';
 
 // to overcome `plain` styling due to (icon && !label) condition
 // in buttons without theme.button.default, apply the padding here
@@ -22,20 +23,25 @@ export const CopyButton = ({
   ariaLabel,
   authoredType,
   disabled,
+  messages,
   onClickCopy,
   onBlurCopy,
-  readOnlyCopyPrompt,
   tip,
   value,
 }) => {
   const { theme, passThemeFlag } = useThemeValue();
+  const { format } = useContext(MessageContext);
   const CopyIcon = theme.textInput?.icons?.copy || Copy;
   // never expose the masked value via the accessible name
   const buttonAriaLabel =
     ariaLabel ||
-    `${readOnlyCopyPrompt}${
-      authoredType !== 'password' && (value || value === 0) ? ` ${value}` : ''
-    }`;
+    (authoredType !== 'password' && (value || value === 0)
+      ? format({
+          id: 'input.readOnlyCopy.promptWithValue',
+          messages,
+          values: { value },
+        })
+      : format({ id: 'input.readOnlyCopy.prompt', messages }));
 
   return (
     <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>

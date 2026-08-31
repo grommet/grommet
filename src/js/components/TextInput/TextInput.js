@@ -535,9 +535,9 @@ const TextInput = forwardRef(
       <CopyButton
         authoredType={authoredType}
         disabled={disabled}
+        messages={messages}
         onBlurCopy={onBlurCopy}
         onClickCopy={onClickCopy}
-        readOnlyCopyPrompt={readOnlyCopyPrompt}
         tip={tip}
         value={value}
       />
