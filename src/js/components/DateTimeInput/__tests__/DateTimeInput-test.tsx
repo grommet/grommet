@@ -323,6 +323,32 @@ describe('DateTimeInput', () => {
     ).toHaveTextContent('AM');
   });
 
+  test('initializes empty drop hour at zero with ArrowUp', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="24" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: /date and time/i });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const hourList = within(drop).getByRole('listbox', { name: 'hour' });
+    await waitFor(() =>
+      expect(
+        within(hourList).getByRole('option', { name: '00 hours' }),
+      ).toHaveFocus(),
+    );
+    await user.keyboard('{ArrowUp}');
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'hours', hidden: true }),
+    ).toHaveTextContent('00');
+  });
+
   test('icon click opens and stays open during in-popup interaction', async () => {
     const user = userEvent.setup();
 
@@ -521,6 +547,31 @@ describe('DateTimeInput', () => {
     expect(minuteSegment).toHaveTextContent('45');
   });
 
+  test('seeds empty day, month, and hour sections on first arrow interaction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="12" />
+      </Grommet>,
+    );
+
+    const daySegment = screen.getByRole('spinbutton', { name: 'day' });
+    await user.click(daySegment);
+    await user.keyboard('{ArrowUp}');
+    expect(daySegment).toHaveTextContent('01');
+
+    const monthSegment = screen.getByRole('spinbutton', { name: 'month' });
+    await user.click(monthSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(monthSegment).toHaveTextContent('01');
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    await user.click(hourSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(hourSegment).toHaveTextContent('01');
+  });
+
   test('seeds empty year to current year on first arrow interaction', async () => {
     const user = userEvent.setup();
 
@@ -537,6 +588,26 @@ describe('DateTimeInput', () => {
     expect(yearSegment).toHaveTextContent(
       String(new Date().getFullYear()).padStart(4, '0'),
     );
+  });
+
+  test('seeds empty 24-hour and minute sections at zero', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    await user.click(hourSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(hourSegment).toHaveTextContent('00');
+
+    const minuteSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    await user.click(minuteSegment);
+    await user.keyboard('{ArrowDown}');
+    expect(minuteSegment).toHaveTextContent('00');
   });
 
   test('uses locale-driven DMY ordering for date sections', () => {
@@ -1013,5 +1084,39 @@ describe('DateTimeInput', () => {
     );
 
     expect(screen.getByText('Custom Calendar Icon')).toBeInTheDocument();
+  });
+
+  test('applies dateTimeInput.calendar.day.selected.background in dark mode', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={
+          {
+            dark: true,
+            dateTimeInput: {
+              calendar: {
+                day: {
+                  selected: { background: '#ABCDEF' },
+                },
+              },
+            },
+          } as any
+        }
+      >
+        <DateTimeInput format="24" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: /date and time/i });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const selectedDayButton = within(drop).getByRole('button', {
+      name: /Jul 22 2026/i,
+    });
+    // StyledDay is the first child div — it carries the background-color rule.
+    const dayCircle = selectedDayButton.querySelector('div');
+    expect(dayCircle).toHaveStyleRule('background-color', '#ABCDEF');
   });
 });
