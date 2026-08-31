@@ -20,6 +20,7 @@ const StyledButton = styled(Button)`
 
 export const CopyButton = ({
   ariaLabel,
+  authoredType,
   disabled,
   onClickCopy,
   onBlurCopy,
@@ -29,9 +30,12 @@ export const CopyButton = ({
 }) => {
   const { theme, passThemeFlag } = useThemeValue();
   const CopyIcon = theme.textInput?.icons?.copy || Copy;
+  // never expose the masked value via the accessible name
   const buttonAriaLabel =
     ariaLabel ||
-    `${readOnlyCopyPrompt}${value || value === 0 ? ` ${value}` : ''}`;
+    `${readOnlyCopyPrompt}${
+      authoredType !== 'password' && (value || value === 0) ? ` ${value}` : ''
+    }`;
 
   return (
     <Tip dropProps={{ align: { bottom: 'top' } }} content={tip}>

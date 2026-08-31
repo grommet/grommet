@@ -927,8 +927,9 @@ describe('TextInput', () => {
       </Grommet>,
     );
 
+    // value must not be exposed via the accessible name for masked inputs
     expect(
-      screen.getByRole('button', { name: 'Copy to clipboard test' }),
+      screen.getByRole('button', { name: 'Copy to clipboard' }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole('button', { name: 'Show password' }),

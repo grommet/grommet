@@ -530,6 +530,7 @@ const TextInput = forwardRef(
 
     const CopyButtonElement = (
       <CopyButton
+        authoredType={authoredType}
         disabled={disabled}
         onBlurCopy={onBlurCopy}
         onClickCopy={onClickCopy}
