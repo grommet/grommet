@@ -52,15 +52,36 @@ var getFocusStyle = function getFocusStyle(props) {
 // readOnly, error, focus) applies.
 var getHoverStyle = function getHoverStyle(role) {
   return function (props) {
-    var _props$theme$formFiel2, _props$theme$formFiel3, _hover$border;
-    var hover = (_props$theme$formFiel2 = props.theme.formField) == null ? void 0 : _props$theme$formFiel2.hover;
-    if (!props.allowHover || !hover) return undefined;
-    var position = (_props$theme$formFiel3 = props.theme.formField) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.border) == null ? void 0 : _props$theme$formFiel3.position;
+    var _formFieldTheme$props, _formFieldTheme$borde, _componentHover$borde, _componentHover$backg;
+    var formFieldTheme = props.theme.formField;
+    var hover = formFieldTheme == null ? void 0 : formFieldTheme.hover;
+    var componentHover = formFieldTheme == null || (_formFieldTheme$props = formFieldTheme[props.componentName]) == null ? void 0 : _formFieldTheme$props.hover;
+    if (!props.allowHover || !hover && !componentHover) return undefined;
+    var position = formFieldTheme == null || (_formFieldTheme$borde = formFieldTheme.border) == null ? void 0 : _formFieldTheme$borde.position;
     var ownsBorder = role === 'outer' ? position === 'outer' : position === 'inner';
-    var borderColor = ownsBorder ? (_hover$border = hover.border) == null ? void 0 : _hover$border.color : undefined;
-    var background = role === 'content' ? hover.background : undefined;
+    var componentHoverBorder = (_componentHover$borde = componentHover == null ? void 0 : componentHover.border) != null ? _componentHover$borde : undefined;
+    var componentHoverBackground = (_componentHover$backg = componentHover == null ? void 0 : componentHover.background) != null ? _componentHover$backg : undefined;
+    var hasComponentBorderOverride = componentHoverBorder !== undefined;
+    var hasComponentBackgroundOverride = componentHoverBackground !== undefined;
+    var borderColor;
+    if (ownsBorder) {
+      if (hasComponentBorderOverride) {
+        borderColor = componentHoverBorder.color;
+      } else {
+        var _hover$border;
+        borderColor = hover == null || (_hover$border = hover.border) == null ? void 0 : _hover$border.color;
+      }
+    }
+    var background;
+    if (role === 'content') {
+      if (hasComponentBackgroundOverride) {
+        background = componentHoverBackground;
+      } else {
+        background = hover == null ? void 0 : hover.background;
+      }
+    }
     if (!borderColor && background === undefined) return undefined;
-    return (0, _styledComponents.css)(["&:hover{", " ", "}"], borderColor && "border-color: " + (0, _utils.normalizeColor)(borderColor, props.theme) + ";", (0, _utils.backgroundStyle)(background, props.theme, false));
+    return (0, _styledComponents.css)(["&:hover{", " ", "}"], borderColor !== undefined && "border-color: " + (0, _utils.normalizeColor)(borderColor, props.theme) + ";", (0, _utils.backgroundStyle)(background, props.theme, false));
   };
 };
 var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
@@ -69,8 +90,8 @@ var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 })(["", " ", " ", ""], function (props) {
   return getFocusStyle(props);
 }, getHoverStyle('outer'), function (props) {
-  var _props$theme$formFiel4;
-  return (_props$theme$formFiel4 = props.theme.formField) == null ? void 0 : _props$theme$formFiel4.extend;
+  var _props$theme$formFiel2;
+  return (_props$theme$formFiel2 = props.theme.formField) == null ? void 0 : _props$theme$formFiel2.extend;
 });
 var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
@@ -78,15 +99,15 @@ var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig
 })(["", " ", " ", ""], function (props) {
   return getFocusStyle(props);
 }, getHoverStyle('content'), function (props) {
-  var _props$theme$formFiel5;
-  return props.theme.formField && ((_props$theme$formFiel5 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel5 = _props$theme$formFiel5.container) == null ? void 0 : _props$theme$formFiel5.extend);
+  var _props$theme$formFiel3;
+  return props.theme.formField && ((_props$theme$formFiel3 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.container) == null ? void 0 : _props$theme$formFiel3.extend);
 });
 var StyledContentsBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__StyledContentsBox",
   componentId: "sc-m9hood-2"
 })(["", " ", ""], getHoverStyle('content'), function (props) {
-  var _props$theme$formFiel6;
-  return props.theme.formField && ((_props$theme$formFiel6 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel6 = _props$theme$formFiel6.container) == null ? void 0 : _props$theme$formFiel6.extend);
+  var _props$theme$formFiel4;
+  return props.theme.formField && ((_props$theme$formFiel4 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel4 = _props$theme$formFiel4.container) == null ? void 0 : _props$theme$formFiel4.extend);
 });
 var StyledMessageContainer = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__StyledMessageContainer",

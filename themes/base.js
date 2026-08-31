@@ -1383,7 +1383,15 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       // [inputname]: {
       //  container: {
       //    extend: undefined,
-      //   }
+      //   },
+      //   hover: {
+      //     background: {
+      //       color: undefined,
+      //     },
+      //     border: {
+      //       color: undefined,
+      //     },
+      //   },
       // }
       border: {
         color: 'border',

@@ -297,6 +297,12 @@ type ContainerExtend = {
   container?: {
     extend?: ExtendType;
   };
+  hover?: {
+    background?: BackgroundType;
+    border?: {
+      color?: ColorType;
+    };
+  };
 };
 
 interface StepperStateType {
