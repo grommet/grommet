@@ -1804,9 +1804,8 @@ describe('TimeInput', () => {
 
     // Simulate prior keyboard focus (programmatic focus, as in a real
     // keyboard session where the option was navigated to via arrow keys).
-    hour4.focus();
-    expect(document.activeElement).toBe(hour4);
-
+    fireEvent.focus(hour4);
+    expect(hour4).toHaveFocus();
     // Mouse click — keyboard ring should dismiss (focus leaves hour 4)
     await user.click(hour7);
 
