@@ -1946,6 +1946,9 @@ describe('TimeInput', () => {
             selected: {
               background: '#0000FF',
               color: '#FFFFFF',
+              text: {
+                weight: 'bold',
+              },
               hover: {
                 background: '#00FF00',
               },
