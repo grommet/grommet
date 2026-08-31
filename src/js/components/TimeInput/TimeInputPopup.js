@@ -30,6 +30,7 @@ const PopupOption = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   padding: ${(props) =>
     `${props.theme.global.edgeSize.xxsmall} ${props.theme.global.edgeSize.xsmall}`};
   border-radius: ${(props) => props.theme.global.control?.border?.radius};
@@ -187,6 +188,11 @@ const PopupColumn = ({
             <Text
               size={theme.global.input.font.size || 'small'}
               color={optionColor}
+              weight={
+                selected
+                  ? theme.timeInput?.drop?.option?.selected?.text?.weight
+                  : undefined
+              }
             >
               {section === SECTION_PERIOD ? option : pad(option)}
             </Text>
