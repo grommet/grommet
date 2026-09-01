@@ -110,6 +110,10 @@ const Tip = forwardRef(
             {...dropProps}
             onMouseEnter={() => setTooltipOver(true)}
             onMouseLeave={() => setTooltipOver(false)}
+            onClickOutside={() => {
+              setOver(false);
+              setTooltipOver(false);
+            }}
           >
             {plain ? content : <Box {...theme.tip.content}>{content}</Box>}
           </Drop>
