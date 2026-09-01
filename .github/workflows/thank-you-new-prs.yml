@@ -30,24 +30,19 @@ jobs:
         run: |
           set -e
           MARKER="<!-- grommet-thank-you-bot -->"
-          # GitHub logins of the Grommet team - PRs already commented on by
-          # one of these are left alone since a maintainer has responded.
-          TEAM_MEMBERS="seanhillweb jcfilben MikeKingdom halocline Sulaymon333 britt6612"
           echo "Dry run: $DRY_RUN"
 
-          PR_NUMBERS=$(gh pr list --repo "$REPO" --state open --limit 100 --json number -q '.[].number')
+          PR_NUMBERS=$(gh pr list --repo "$REPO" --state open --limit 100 --json number,createdAt \
+            -q '.[] | select(.createdAt >= "2026-01-01") | .number')
 
           for PR in $PR_NUMBERS; do
-            PR_AUTHOR=$(gh pr view "$PR" --repo "$REPO" --json author -q '.author.login')
-            IS_TEAM_AUTHOR=""
-            for TEAM_MEMBER in $TEAM_MEMBERS; do
-              if [ "$PR_AUTHOR" = "$TEAM_MEMBER" ]; then
-                IS_TEAM_AUTHOR="true"
-                break
-              fi
-            done
-            if [ "$IS_TEAM_AUTHOR" = "true" ]; then
-              echo "PR #$PR opened by team member $PR_AUTHOR, skipping."
+            # Use the REST API for author_association since gh pr view doesn't expose it.
+            PR_DATA=$(gh api "repos/${REPO}/pulls/${PR}" --jq '{association: .author_association, author: .user.login}')
+            ASSOCIATION=$(echo "$PR_DATA" | jq -r '.association')
+            AUTHOR=$(echo "$PR_DATA" | jq -r '.author')
+
+            if [ "$ASSOCIATION" = "MEMBER" ] || [ "$ASSOCIATION" = "OWNER" ] || [ "$ASSOCIATION" = "COLLABORATOR" ]; then
+              echo "PR #$PR opened by org member/collaborator $AUTHOR, skipping."
               continue
             fi
           if [ "$ASSOCIATION" = "BOT" ] || [[ "$PR_AUTHOR" == *"[bot]" ]]; then
@@ -57,26 +52,13 @@ jobs:
 
             EXISTING=$(gh pr view "$PR" --repo "$REPO" --json comments -q '.comments[].body' | grep -F "$MARKER" || true)
             if [ -z "$EXISTING" ]; then
-              TEAM_RESPONDED=""
-              COMMENT_AUTHORS=$(gh pr view "$PR" --repo "$REPO" --json comments -q '.comments[].author.login')
-              for COMMENT_AUTHOR in $COMMENT_AUTHORS; do
-                for TEAM_MEMBER in $TEAM_MEMBERS; do
-                  if [ "$COMMENT_AUTHOR" = "$TEAM_MEMBER" ]; then
-                    TEAM_RESPONDED="true"
-                    break 2
-                  fi
-                done
-              done
-
-              if [ "$TEAM_RESPONDED" = "true" ]; then
+              # Skip if any org member or collaborator has already commented.
+              TEAM_RESPONDED=$(gh pr view "$PR" --repo "$REPO" --json comments \
+                -q '.comments[].authorAssociation' | grep -E "^(MEMBER|OWNER|COLLABORATOR)$" || true)
+              if [ -n "$TEAM_RESPONDED" ]; then
                 echo "PR #$PR already has a team response, skipping."
                 continue
               fi
-
-              # gh pr view has no authorAssociation field; use the REST API directly.
-              PR_DATA=$(gh api "repos/${REPO}/pulls/${PR}" --jq '{association: .author_association, author: .user.login}')
-              ASSOCIATION=$(echo "$PR_DATA" | jq -r '.association')
-              AUTHOR=$(echo "$PR_DATA" | jq -r '.author')
 
               IS_FIRST_TIMER=""
               if [ "$ASSOCIATION" = "FIRST_TIME_CONTRIBUTOR" ] || [ "$ASSOCIATION" = "FIRST_TIMER" ]; then
