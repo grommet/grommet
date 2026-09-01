@@ -994,6 +994,18 @@ describe('TextInput', () => {
     ).toBeInTheDocument();
   });
 
+  test('does not zero left padding when copy button is reversed', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" copy reverse aria-label="Reversed copy" />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Reversed copy');
+
+    expect(input).not.toHaveStyleRule('padding-left', '0px');
+  });
+
   test('supports copy, password toggle, and reverse icon together', async () => {
     const user = userEvent.setup();
 
