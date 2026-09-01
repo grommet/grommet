@@ -297,6 +297,12 @@ type ContainerExtend = {
   container?: {
     extend?: ExtendType;
   };
+  hover?: {
+    background?: BackgroundType;
+    border?: {
+      color?: ColorType;
+    };
+  };
 };
 
 interface StepperStateType {
@@ -1050,6 +1056,13 @@ export interface ThemeType {
         size?: string;
       };
     };
+    calendar?: {
+      day?: {
+        selected?: {
+          background?: BackgroundType;
+        };
+      };
+    };
     icon?: {
       calendar?: React.ReactNode | Icon;
     };
@@ -1260,6 +1273,12 @@ export interface ThemeType {
       margin?: MarginType;
       container?: BoxProps;
       icon?: any;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
     };
     help?: {
       color?: ColorType;
@@ -2409,8 +2428,13 @@ export interface ThemeType {
       };
     };
     drop?: {
+      gap?: GapType;
       option?: {
         background?: ColorType;
+        gap?: GapType;
+        size?: string;
+        pad?: PadType;
+        round?: RoundType;
         hover?: {
           background?: ColorType;
         };

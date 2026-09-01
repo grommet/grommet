@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -129,6 +131,45 @@ describe('Stepper', () => {
 
     expect(getByTestId('custom-completed-icon')).toBeTruthy();
     expect(getByTestId('custom-error-icon')).toBeTruthy();
+  });
+
+  test('resolves connector thickness from a t-shirt border size token', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          global: { borderSize: { small: '2px', large: '8px' } },
+          stepper: { connector: { stroke: { width: 'large' } } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
+    );
+
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule('height', '8px');
+  });
+
+  test('resolves connector thickness from a literal CSS length', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          stepper: { connector: { stroke: { width: '5px' } } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
+    );
+
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule('height', '5px');
   });
 
   test('renders disabled step with reason', () => {
