@@ -223,6 +223,7 @@ const TimeInputPopup = ({
   format,
   formatMessage,
   hoursOptions,
+  focusOnOpen = true,
   id,
   incrementSection,
   messages,
@@ -556,7 +557,8 @@ const TimeInputPopup = ({
       scrollSelectedOptionsIntoView();
     });
 
-    if (inline) return () => window.cancelAnimationFrame(scrollRaf);
+    // DateTimeInput disables this so its Calendar can receive initial focus.
+    if (!focusOnOpen) return () => window.cancelAnimationFrame(scrollRaf);
 
     let rafB;
     const rafA = requestAnimationFrame(() => {
@@ -576,7 +578,7 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, inline, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
 
   const popupContent = (
     <Box

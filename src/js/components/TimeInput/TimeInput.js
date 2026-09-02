@@ -106,6 +106,7 @@ const TimeInput = forwardRef(
     {
       defaultValue,
       disabled,
+      focusOnOpen = true,
       format = DEFAULT_FORMAT,
       id,
       inline = false,
@@ -676,6 +677,7 @@ const TimeInput = forwardRef(
           activeSection={activeSection}
           format={format}
           formatMessage={formatMessage}
+          focusOnOpen={focusOnOpen}
           hoursOptions={hoursOptions}
           incrementSection={incrementSection}
           messages={messages}
@@ -828,6 +830,7 @@ const TimeInput = forwardRef(
               dropProps={{ stretch: false }}
               format={format}
               formatMessage={formatMessage}
+              focusOnOpen={focusOnOpen}
               hoursOptions={hoursOptions}
               id={id}
               incrementSection={incrementSection}
