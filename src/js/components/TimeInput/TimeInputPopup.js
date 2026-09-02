@@ -556,6 +556,8 @@ const TimeInputPopup = ({
       scrollSelectedOptionsIntoView();
     });
 
+    if (inline) return () => window.cancelAnimationFrame(scrollRaf);
+
     let rafB;
     const rafA = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
@@ -574,7 +576,7 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, inline, scrollSelectedOptionsIntoView]);
 
   const popupContent = (
     <Box
