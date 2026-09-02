@@ -97,7 +97,7 @@ const TextInput = forwardRef(
       name,
       onBlur,
       onChange,
-      onCopy: onCopyProp,
+      onClickCopy,
       onFocus,
       onKeyDown,
       onSelect,
@@ -169,11 +169,11 @@ const TextInput = forwardRef(
       messages,
     });
 
-    const onCopy = async (event) => {
+    const handleCopyClick = async (event) => {
       // uncontrolled inputs keep their current text on the DOM node, not
       // in `value`, which stays undefined outside a Form
       const currentValue = inputRef.current?.value ?? value ?? '';
-      if (onCopyProp) await onCopyProp(event, currentValue);
+      if (onClickCopy) await onClickCopy(event, currentValue);
       else await navigator.clipboard.writeText(currentValue);
 
       announce(readOnlyCopyValidation, 'assertive');
@@ -537,7 +537,7 @@ const TextInput = forwardRef(
         disabled={disabled}
         messages={messages}
         onBlurCopy={onBlurCopy}
-        onCopy={onCopy}
+        onCopy={handleCopyClick}
         tip={tip}
         value={value}
       />

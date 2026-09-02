@@ -24,7 +24,7 @@ export const Copy = () => {
         <TextInput
           value="Custom copy handler"
           copy
-          onCopy={(
+          onClickCopy={(
             _event: React.MouseEvent<HTMLButtonElement>,
             copiedValue: string,
           ) => setStatus(`Custom copy handler called with "${copiedValue}"`)}

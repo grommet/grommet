@@ -898,16 +898,16 @@ describe('TextInput', () => {
     );
   });
 
-  test('copy editable value with custom handler', async () => {
+  test('copy editable value with custom click handler', async () => {
     const user = userEvent.setup();
-    const onCopy = jest.fn();
+    const onClickCopy = jest.fn();
 
     render(
       <Grommet>
         <TextInput
           value="test"
           copy
-          onCopy={onCopy}
+          onClickCopy={onClickCopy}
           aria-label="Editable value"
         />
       </Grommet>,
@@ -917,8 +917,23 @@ describe('TextInput', () => {
       screen.getByRole('button', { name: 'Copy to clipboard test' }),
     );
 
+    expect(onClickCopy).toHaveBeenCalledTimes(1);
+    expect(onClickCopy).toHaveBeenCalledWith(expect.anything(), 'test');
+  });
+
+  test('forwards native onCopy to the input', () => {
+    const onCopy = jest.fn();
+
+    render(
+      <Grommet>
+        <TextInput value="test" copy onCopy={onCopy} aria-label="Value" />
+      </Grommet>,
+    );
+
+    fireEvent.copy(screen.getByLabelText('Value'));
+
     expect(onCopy).toHaveBeenCalledTimes(1);
-    expect(onCopy).toHaveBeenCalledWith(expect.anything(), 'test');
+    expect(onCopy.mock.calls[0][0]).toHaveProperty('clipboardData');
   });
 
   test('copy uncontrolled value after edit', async () => {
