@@ -296,10 +296,12 @@ describe('TimeInput', () => {
       await user.click(hourSegment);
       await user.tab({ shift: true });
 
+      expect(requestAnimationFrameSpy).toHaveBeenCalledTimes(1);
+      expect(animationFrameCallback).toBeDefined();
+
       act(() => {
         animationFrameCallback?.(0);
       });
-
       await waitFor(() => {
         expect(document.body).toHaveFocus();
       });
