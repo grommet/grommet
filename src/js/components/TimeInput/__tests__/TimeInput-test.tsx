@@ -3,6 +3,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import {
+  act,
   fireEvent,
   render,
   screen,
@@ -272,6 +273,39 @@ describe('TimeInput', () => {
     // With no preceding focusable element on the page, focus falls through
     // to document.body; onSegmentBlur must not yank it back onto the segment.
     expect(document.body).toHaveFocus();
+  });
+
+  test('does not reclaim focus after a segment blurs to the document body', async () => {
+    const user = userEvent.setup();
+    let animationFrameCallback: FrameRequestCallback | undefined;
+    const requestAnimationFrameSpy = jest
+      .spyOn(window, 'requestAnimationFrame')
+      .mockImplementation((callback) => {
+        animationFrameCallback = callback;
+        return 0;
+      });
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    try {
+      await user.click(hourSegment);
+      await user.tab({ shift: true });
+
+      act(() => {
+        animationFrameCallback?.(0);
+      });
+
+      await waitFor(() => {
+        expect(document.body).toHaveFocus();
+      });
+    } finally {
+      requestAnimationFrameSpy.mockRestore();
+    }
   });
 
   test('updates active section via arrows and digits', async () => {
