@@ -10,6 +10,7 @@ import {
   getHoverIndicatorStyle,
   selectedStyle,
   controlBorderStyle,
+  normalizeColor,
   sizeStyle,
   styledComponentsConfig,
 } from '../../utils';
@@ -35,6 +36,8 @@ export const OptionsContainer = styled.div.withConfig(styledComponentsConfig)`
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  scrollbar-color: ${(props) =>
+    `${normalizeColor('border', props.theme)} transparent`};
   ${(props) => {
     if (props.selectMultiple)
       return (
