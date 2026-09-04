@@ -133,6 +133,45 @@ describe('Stepper', () => {
     expect(getByTestId('custom-error-icon')).toBeTruthy();
   });
 
+  test('resolves connector thickness from a t-shirt border size token', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          global: { borderSize: { small: '2px', large: '8px' } },
+          stepper: { connector: { stroke: { width: 'large' } } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
+    );
+
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule('height', '8px');
+  });
+
+  test('resolves connector thickness from a literal CSS length', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          stepper: { connector: { stroke: { width: '5px' } } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
+    );
+
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule('height', '5px');
+  });
+
   test('renders disabled step with reason', () => {
     const steps = [
       { id: 'step1', title: 'Step 1', status: 'pending' },

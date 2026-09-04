@@ -141,9 +141,7 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
   });
 
-  test('inline mode renders icon trigger and opens date-time drop', async () => {
-    const user = userEvent.setup();
-
+  test('inline mode renders picker content directly without a trigger', () => {
     render(
       <Grommet>
         <DateTimeInput
@@ -156,21 +154,15 @@ describe('DateTimeInput', () => {
       </Grommet>,
     );
 
+    // No trigger button — picker is always visible
     expect(
-      screen.queryByRole('spinbutton', { name: 'day' }),
+      screen.queryByRole('button', { name: /date and time/i }),
     ).not.toBeInTheDocument();
 
-    const trigger = screen.getByRole('button', {
-      name: /date and time/i,
-    });
-    await user.click(trigger);
-
-    const drop = getDropFromTrigger(trigger);
-
-    const scoped = within(drop);
-    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
+    // Calendar and time columns are immediately in the document
+    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
   });
 
   test('selecting a calendar day does not move focus into the hour listbox', async () => {
@@ -321,6 +313,32 @@ describe('DateTimeInput', () => {
         hidden: true,
       }),
     ).toHaveTextContent('AM');
+  });
+
+  test('initializes empty drop hour at zero with ArrowUp', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="24" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: /date and time/i });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const hourList = within(drop).getByRole('listbox', { name: 'hour' });
+    await waitFor(() =>
+      expect(
+        within(hourList).getByRole('option', { name: '00 hours' }),
+      ).toHaveFocus(),
+    );
+    await user.keyboard('{ArrowUp}');
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'hours', hidden: true }),
+    ).toHaveTextContent('00');
   });
 
   test('icon click opens and stays open during in-popup interaction', async () => {
@@ -480,25 +498,32 @@ describe('DateTimeInput', () => {
     expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
   });
 
-  test('inline readOnly mode keeps icon visible and does not open drop', async () => {
+  test('inline readOnly mode renders picker but disables selection', async () => {
     const user = userEvent.setup();
+    const onChange = jest.fn();
 
     render(
       <Grommet>
-        <DateTimeInput id="dt-inline-readonly" inline readOnly />
+        <DateTimeInput
+          id="dt-inline-readonly"
+          inline
+          readOnly
+          value="2026-07-22T18:30:00.000Z"
+          onChange={onChange}
+        />
       </Grommet>,
     );
 
-    const trigger = screen.getByRole('button', {
-      name: /date and time/i,
-    });
-    expect(trigger).toBeDisabled();
+    // Picker is always shown — no trigger button
+    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: /date and time/i }),
+    ).not.toBeInTheDocument();
 
-    await user.click(trigger);
-
-    expect(trigger).toHaveAttribute('aria-expanded', 'false');
-    const controlsId = trigger.getAttribute('aria-controls');
-    expect(document.getElementById(controlsId as string)).toBeFalsy();
+    // Clicking a calendar day does not fire onChange in readOnly mode
+    const dayButton = screen.getByRole('button', { name: /Jul 25 2026/i });
+    await user.click(dayButton);
+    expect(onChange).not.toHaveBeenCalled();
   });
 
   test('increments minutes by minuteStep on keyboard arrow', async () => {
@@ -521,6 +546,31 @@ describe('DateTimeInput', () => {
     expect(minuteSegment).toHaveTextContent('45');
   });
 
+  test('seeds empty day, month, and hour sections on first arrow interaction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="12" />
+      </Grommet>,
+    );
+
+    const daySegment = screen.getByRole('spinbutton', { name: 'day' });
+    await user.click(daySegment);
+    await user.keyboard('{ArrowUp}');
+    expect(daySegment).toHaveTextContent('01');
+
+    const monthSegment = screen.getByRole('spinbutton', { name: 'month' });
+    await user.click(monthSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(monthSegment).toHaveTextContent('01');
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    await user.click(hourSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(hourSegment).toHaveTextContent('01');
+  });
+
   test('seeds empty year to current year on first arrow interaction', async () => {
     const user = userEvent.setup();
 
@@ -537,6 +587,26 @@ describe('DateTimeInput', () => {
     expect(yearSegment).toHaveTextContent(
       String(new Date().getFullYear()).padStart(4, '0'),
     );
+  });
+
+  test('seeds empty 24-hour and minute sections at zero', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    await user.click(hourSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(hourSegment).toHaveTextContent('00');
+
+    const minuteSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    await user.click(minuteSegment);
+    await user.keyboard('{ArrowDown}');
+    expect(minuteSegment).toHaveTextContent('00');
   });
 
   test('uses locale-driven DMY ordering for date sections', () => {
@@ -653,9 +723,7 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
   });
 
-  test('inline popup supports Tab/Arrow navigation without dialog semantics', async () => {
-    const user = userEvent.setup();
-
+  test('inline picker supports Arrow navigation without dialog semantics', () => {
     render(
       <Grommet>
         <DateTimeInput
@@ -664,23 +732,14 @@ describe('DateTimeInput', () => {
           format="12"
           value="2026-07-22T18:30:00.000Z"
         />
-        <Button type="button" label="After inline picker" />
       </Grommet>,
     );
 
-    const trigger = screen.getByRole('button', {
-      name: /date and time/i,
-    });
-    await user.click(trigger);
+    // No dialog, no trigger — listboxes are directly accessible
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 
-    const drop = getDropFromTrigger(trigger);
-    const scoped = within(drop);
-    expect(
-      scoped.queryByRole('dialog', { name: /date and time/i }),
-    ).not.toBeInTheDocument();
-
-    const hourList = scoped.getByRole('listbox', { name: 'hour' });
-    const minuteList = scoped.getByRole('listbox', { name: 'minute' });
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
     const popupContent = hourList.parentElement as HTMLElement;
 
     const selectedHourOption = within(hourList)
@@ -688,20 +747,13 @@ describe('DateTimeInput', () => {
       .find((option) => option.getAttribute('aria-selected') === 'true');
     expect(selectedHourOption).toBeTruthy();
 
-    fireEvent.keyDown(popupContent, { key: 'Tab' });
-    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    fireEvent.keyDown(popupContent, { key: 'ArrowRight' });
+    fireEvent.keyDown(popupContent, { key: 'ArrowDown' });
 
     const selectedMinuteOption = within(minuteList)
       .getAllByRole('option')
       .find((option) => option.getAttribute('aria-selected') === 'true');
     expect(selectedMinuteOption).toBeTruthy();
-
-    fireEvent.keyDown(popupContent, { key: 'ArrowRight' });
-    fireEvent.keyDown(popupContent, { key: 'ArrowDown' });
-    expect(trigger).toHaveAttribute('aria-expanded', 'true');
-
-    fireEvent.keyDown(popupContent, { key: 'Enter' });
-    expect(trigger).toHaveAttribute('aria-expanded', 'true');
   });
 
   test('non-inline drop applies hour option ArrowDown from popup option target', async () => {
@@ -1013,5 +1065,39 @@ describe('DateTimeInput', () => {
     );
 
     expect(screen.getByText('Custom Calendar Icon')).toBeInTheDocument();
+  });
+
+  test('applies dateTimeInput.calendar.day.selected.background in dark mode', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={
+          {
+            dark: true,
+            dateTimeInput: {
+              calendar: {
+                day: {
+                  selected: { background: '#ABCDEF' },
+                },
+              },
+            },
+          } as any
+        }
+      >
+        <DateTimeInput format="24" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: /date and time/i });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    const selectedDayButton = within(drop).getByRole('button', {
+      name: /Jul 22 2026/i,
+    });
+    // StyledDay is the first child div — it carries the background-color rule.
+    const dayCircle = selectedDayButton.querySelector('div');
+    expect(dayCircle).toHaveStyleRule('background-color', '#ABCDEF');
   });
 });
