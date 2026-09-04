@@ -220,6 +220,7 @@ const PopupColumn = ({
 const TimeInputPopup = ({
   activeSection,
   align,
+  focusOnMount,
   format,
   formatMessage,
   hoursOptions,
@@ -559,6 +560,7 @@ const TimeInputPopup = ({
     let rafB;
     const rafA = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
+      if (!focusOnMount) return;
       const focused = focusCurrentPopupOption();
       // Retry one more frame to handle occasional mount timing races.
       if (!focused) {
@@ -574,7 +576,7 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, focusOnMount, scrollSelectedOptionsIntoView]);
 
   const popupContent = (
     <Box
