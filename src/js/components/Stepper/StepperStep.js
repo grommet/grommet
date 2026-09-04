@@ -139,7 +139,6 @@ export const StepperStep = ({
           isSubStep={isSubStep}
           direction={direction}
           {...focusableProps}
-          {...passThemeFlag}
         >
           <StepperIndicator />
           <StyledStepContent
