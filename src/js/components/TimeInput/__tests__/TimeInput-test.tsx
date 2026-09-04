@@ -47,6 +47,16 @@ describe('TimeInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('preserves the native autoFocus input behavior', () => {
+    render(
+      <Grommet>
+        <TimeInput autoFocus format="12" />
+      </Grommet>,
+    );
+
+    expect(getDisplayInput()).toHaveFocus();
+  });
+
   test('opens and closes picker with keyboard', async () => {
     const user = userEvent.setup();
 

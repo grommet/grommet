@@ -55,6 +55,7 @@ const grommetInputNames = [
   'TextArea',
   'DateInput',
   'DateTimeInput',
+  'DateTimeRangeInput',
   'TimeInput',
   'FileInput',
   'RadioButton',

@@ -39,7 +39,9 @@ export const StyledDateTimeInput = styled.input.withConfig(
 )`
   ${inputStyle}
   ${plainInputStyle}
-  position: relative;
+  position: absolute;
+  inset: 0;
+  width: 100%;
   pointer-events: none;
   color: transparent;
   caret-color: transparent;
@@ -66,11 +68,10 @@ export const StyledDateTimeInputField = styled.div.withConfig(
 export const StyledDateTimeInputDisplay = styled.div.withConfig(
   styledComponentsConfig,
 )`
-  position: absolute;
-  inset: 0;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  min-width: max-content;
+  white-space: nowrap;
   ${(props) =>
     props.theme.global.input.padding &&
     (typeof props.theme.global.input.padding !== 'object'
