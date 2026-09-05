@@ -13,4 +13,5 @@ export const Step = () => (
 
 export default {
   title: 'Input/TimeInput/Step',
+  component: TimeInput,
 };
