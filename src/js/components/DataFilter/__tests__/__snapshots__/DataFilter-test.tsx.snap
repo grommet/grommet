@@ -294,12 +294,14 @@ exports[`DataFilter !inDataForm 1`] = `
         >
           <label
             class="c5"
+            for="_r_s_"
           >
             <div
               class="c6 c7"
             >
               <input
                 class="c8"
+                id="_r_s_"
                 type="checkbox"
               />
               <div
@@ -315,12 +317,14 @@ exports[`DataFilter !inDataForm 1`] = `
           />
           <label
             class="c5"
+            for="_r_t_"
           >
             <div
               class="c6 c7"
             >
               <input
                 class="c8"
+                id="_r_t_"
                 type="checkbox"
               />
               <div
@@ -336,12 +340,14 @@ exports[`DataFilter !inDataForm 1`] = `
           />
           <label
             class="c5"
+            for="_r_u_"
           >
             <div
               class="c6 c7"
             >
               <input
                 class="c8"
+                id="_r_u_"
                 type="checkbox"
               />
               <div
@@ -365,12 +371,14 @@ exports[`DataFilter !inDataForm 1`] = `
         >
           <label
             class="c5"
+            for="_r_v_"
           >
             <div
               class="c6 c7"
             >
               <input
                 class="c8"
+                id="_r_v_"
                 type="checkbox"
               />
               <div
@@ -386,12 +394,14 @@ exports[`DataFilter !inDataForm 1`] = `
           />
           <label
             class="c5"
+            for="_r_10_"
           >
             <div
               class="c6 c7"
             >
               <input
                 class="c8"
+                id="_r_10_"
                 type="checkbox"
               />
               <div
@@ -2915,12 +2925,14 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_5_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_5_"
                         type="checkbox"
                       />
                       <div
@@ -2936,12 +2948,14 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_6_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_6_"
                         type="checkbox"
                       />
                       <div
@@ -2957,12 +2971,14 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_7_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_7_"
                         type="checkbox"
                       />
                       <div
@@ -2997,12 +3013,14 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_8_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_8_"
                         type="checkbox"
                       />
                       <div
@@ -3018,12 +3036,14 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_9_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_9_"
                         type="checkbox"
                       />
                       <div
@@ -3058,12 +3078,14 @@ exports[`DataFilter options 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_a_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_a_"
                         type="checkbox"
                       />
                       <div
@@ -3079,12 +3101,14 @@ exports[`DataFilter options 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_b_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_b_"
                         type="checkbox"
                       />
                       <div
@@ -4919,12 +4943,14 @@ exports[`DataFilter renders 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_0_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_0_"
                         type="checkbox"
                       />
                       <div
@@ -4940,12 +4966,14 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_1_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_1_"
                         type="checkbox"
                       />
                       <div
@@ -4961,12 +4989,14 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_2_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_2_"
                         type="checkbox"
                       />
                       <div
@@ -5001,12 +5031,14 @@ exports[`DataFilter renders 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_3_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_3_"
                         type="checkbox"
                       />
                       <div
@@ -5022,12 +5054,14 @@ exports[`DataFilter renders 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_4_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_4_"
                         type="checkbox"
                       />
                       <div
@@ -8859,6 +8893,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
       >
         <label
           class="c15"
+          for="_r_19_"
           style="pointer-events: none;"
         >
           <div
@@ -8866,6 +8901,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
           >
             <input
               class="c18"
+              id="_r_19_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8894,6 +8930,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
       >
         <label
           class="c15"
+          for="_r_1a_"
           style="pointer-events: none;"
         >
           <div
@@ -8901,6 +8938,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
           >
             <input
               class="c18"
+              id="_r_1a_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8929,6 +8967,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
       >
         <label
           class="c15"
+          for="_r_1b_"
           style="pointer-events: none;"
         >
           <div
@@ -8936,6 +8975,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
           >
             <input
               class="c18"
+              id="_r_1b_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8964,6 +9004,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
       >
         <label
           class="c15"
+          for="_r_1c_"
           style="pointer-events: none;"
         >
           <div
@@ -8971,6 +9012,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
           >
             <input
               class="c18"
+              id="_r_1c_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8999,6 +9041,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
       >
         <label
           class="c15"
+          for="_r_1d_"
           style="pointer-events: none;"
         >
           <div
@@ -9006,6 +9049,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
           >
             <input
               class="c18"
+              id="_r_1d_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -9034,6 +9078,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
       >
         <label
           class="c15"
+          for="_r_1e_"
           style="pointer-events: none;"
         >
           <div
@@ -9041,6 +9086,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
           >
             <input
               class="c18"
+              id="_r_1e_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -9069,6 +9115,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
       >
         <label
           class="c15"
+          for="_r_1f_"
           style="pointer-events: none;"
         >
           <div
@@ -9076,6 +9123,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
           >
             <input
               class="c18"
+              id="_r_1f_"
               inert=""
               tabindex="-1"
               type="checkbox"
