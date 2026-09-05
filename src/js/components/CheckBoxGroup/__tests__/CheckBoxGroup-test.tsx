@@ -246,4 +246,17 @@ describe('CheckBoxGroup', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('renders without crashing when options is omitted', () => {
+    // regression test: `options` is optional in propTypes and previously had no
+    // runtime default, but was mapped over unconditionally, throwing a TypeError
+    // when the prop was left unset.
+    const { asFragment } = render(
+      <Grommet>
+        <CheckBoxGroup name="checkbox-group" />
+      </Grommet>,
+    );
+
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
