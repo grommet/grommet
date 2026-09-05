@@ -33,6 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
     }),
     name: PropTypes.string,
     onChange: PropTypes.func,
+    onClickCopy: PropTypes.func,
     onSelect: PropTypes.func,
     onSuggestionSelect: PropTypes.func,
     onSuggestionsOpen: PropTypes.func,
@@ -40,6 +41,7 @@ if (process.env.NODE_ENV !== 'production') {
     password: PropTypes.bool,
     placeholder: PropTypes.node,
     plain: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['full'])]),
+    copy: PropTypes.bool,
     readOnlyCopy: PropTypes.bool,
     reverse: PropTypes.bool,
     size: PropTypes.oneOfType([

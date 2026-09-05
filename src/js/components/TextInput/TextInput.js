@@ -97,6 +97,7 @@ const TextInput = forwardRef(
       name,
       onBlur,
       onChange,
+      onClickCopy,
       onFocus,
       onKeyDown,
       onSelect,
@@ -106,6 +107,7 @@ const TextInput = forwardRef(
       password,
       placeholder,
       plain,
+      copy,
       readOnly: readOnlyProp,
       readOnlyCopy,
       reverse,
@@ -167,8 +169,13 @@ const TextInput = forwardRef(
       messages,
     });
 
-    const onClickCopy = () => {
-      navigator.clipboard.writeText(value);
+    const handleCopyClick = async (event) => {
+      // uncontrolled inputs keep their current text on the DOM node, not
+      // in `value`, which stays undefined outside a Form
+      const currentValue = inputRef.current?.value ?? value ?? '';
+      if (onClickCopy) await onClickCopy(event, currentValue);
+      else await navigator.clipboard.writeText(currentValue);
+
       announce(readOnlyCopyValidation, 'assertive');
       setTip(readOnlyCopyValidation);
     };
@@ -524,12 +531,13 @@ const TextInput = forwardRef(
     const showLeadingIcon = showTextInputIcon && !reverse;
     const showTrailingIcon = showTextInputIcon && reverse;
 
-    const ReadOnlyCopyButton = (
+    const CopyButtonElement = (
       <CopyButton
+        authoredType={authoredType}
         disabled={disabled}
+        messages={messages}
         onBlurCopy={onBlurCopy}
-        onClickCopy={onClickCopy}
-        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        onCopy={handleCopyClick}
         tip={tip}
         value={value}
       />
@@ -551,7 +559,12 @@ const TextInput = forwardRef(
       />
     ) : undefined;
 
-    const textInputButton = readOnlyCopy ? ReadOnlyCopyButton : undefined;
+    const inlineCopyButton =
+      copy && !reverse && passwordToggle ? CopyButtonElement : undefined;
+    const textInputButton =
+      readOnlyCopy || (copy && (!passwordToggle || reverse))
+        ? CopyButtonElement
+        : undefined;
 
     return (
       <StyledTextInputContainer
@@ -592,6 +605,7 @@ const TextInput = forwardRef(
             focus={focus}
             hasButton={!!textInputButton}
             hasInlineButton={passwordToggle}
+            hasCopyButton={!!inlineCopyButton}
             hasTrailingIcon={showTrailingIcon}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
@@ -655,12 +669,16 @@ const TextInput = forwardRef(
           />
         </Keyboard>
         {PasswordToggleButton && !readOnlyCopy && (
-          <StyledInlineButton {...passThemeFlag}>
+          <StyledInlineButton
+            hasCopyButton={!!inlineCopyButton}
+            {...passThemeFlag}
+          >
             {showTrailingIcon && (
               <StyledInlineIcon {...passThemeFlag}>
                 {textInputIcon}
               </StyledInlineIcon>
             )}
+            {inlineCopyButton}
             {PasswordToggleButton}
           </StyledInlineButton>
         )}

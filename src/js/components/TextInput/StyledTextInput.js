@@ -20,15 +20,21 @@ const getInlineButtonPad = (props) => {
   const rightInset = Number.parseFloat(getInputPadBySide(props, 'right'));
   const iconPad = Number.parseFloat(getInputIconPad(props));
   const trailingIconPad = props.hasTrailingIcon ? iconPad : 0;
+  const copyButtonPad = props.hasCopyButton
+    ? Number.parseFloat(getInputIconPad(props)) +
+      Number.parseFloat(getInputPadBySide(props, 'left')) +
+      Number.parseFloat(getInputPadBySide(props, 'right'))
+    : 0;
   // Reserve both the icon space and the control's edge inset so text clears
   // the flush-right password toggle, and the reversed icon when both coexist.
-  return `${iconPad + trailingIconPad + rightInset}px`;
+  return `${iconPad + trailingIconPad + rightInset + copyButtonPad}px`;
 };
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
     return css`
-      ${plainInputStyle} padding: 0;
+      ${plainInputStyle};
+      padding: 0;
     `;
   }
   return plain && plainInputStyle;
@@ -38,10 +44,11 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'flex: 1 1 auto;'}
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'min-width: 0;'}
-  ${(props) =>
-    props.readOnlyCopy || props.hasButton
-      ? `padding-${props.reverse ? 'left' : 'right'}: 0px;`
-      : ''}
+  ${(props) => {
+    if (!(props.readOnlyCopy || props.hasButton)) return '';
+    if (props.reverse) return '';
+    return 'padding-right: 0px;';
+  }}
   // readOnly border is handled by StyledTextInputContainer
   ${(props) => props.readOnly && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}

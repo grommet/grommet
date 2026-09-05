@@ -879,6 +879,196 @@ describe('TextInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('copy editable value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput value="test" copy aria-label="Editable value" />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', { name: 'Copy to clipboard test' }),
+    );
+
+    expect(await navigator.clipboard.readText()).toBe('test');
+    expect(screen.getByLabelText('Editable value')).not.toHaveAttribute(
+      'readonly',
+    );
+  });
+
+  test('copy editable value with custom click handler', async () => {
+    const user = userEvent.setup();
+    const onClickCopy = jest.fn();
+
+    render(
+      <Grommet>
+        <TextInput
+          value="test"
+          copy
+          onClickCopy={onClickCopy}
+          aria-label="Editable value"
+        />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', { name: 'Copy to clipboard test' }),
+    );
+
+    expect(onClickCopy).toHaveBeenCalledTimes(1);
+    expect(onClickCopy).toHaveBeenCalledWith(expect.anything(), 'test');
+  });
+
+  test('forwards native onCopy to the input', () => {
+    const onCopy = jest.fn();
+
+    render(
+      <Grommet>
+        <TextInput value="test" copy onCopy={onCopy} aria-label="Value" />
+      </Grommet>,
+    );
+
+    fireEvent.copy(screen.getByLabelText('Value'));
+
+    expect(onCopy).toHaveBeenCalledTimes(1);
+    expect(onCopy.mock.calls[0][0]).toHaveProperty('clipboardData');
+  });
+
+  test('copy uncontrolled value after edit', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput defaultValue="test" copy aria-label="Uncontrolled value" />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Uncontrolled value');
+    await user.type(input, ' edited');
+
+    await user.click(screen.getByRole('button', { name: 'Copy to clipboard' }));
+
+    expect(await navigator.clipboard.readText()).toBe('test edited');
+  });
+
+  test('supports copy with password toggle', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" copy password aria-label="Password" />
+      </Grommet>,
+    );
+
+    // value must not be exposed via the accessible name for masked inputs
+    expect(
+      screen.getByRole('button', { name: 'Copy to clipboard' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Show password' }),
+    ).toBeInTheDocument();
+  });
+
+  test('supports copy with password toggle when reverse', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput value="test" copy password reverse aria-label="Password" />
+      </Grommet>,
+    );
+
+    const copyButton = screen.getByRole('button', {
+      name: 'Copy to clipboard',
+    });
+    const toggleButton = screen.getByRole('button', {
+      name: 'Show password',
+    });
+    const input = screen.getByLabelText('Password');
+
+    // reverse moves the copy button before the input while the password
+    // toggle stays in its trailing wrapper; neither should overlap or
+    // replace the other
+    expect(copyButton).not.toBe(toggleButton);
+    expect(
+      copyButton.compareDocumentPosition(input) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      input.compareDocumentPosition(toggleButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+
+    await user.click(copyButton);
+    expect(await navigator.clipboard.readText()).toBe('test');
+
+    await user.click(toggleButton);
+    expect(input).toHaveAttribute('type', 'text');
+    expect(
+      screen.getByRole('button', { name: 'Hide password' }),
+    ).toBeInTheDocument();
+  });
+
+  test('does not zero left padding when copy button is reversed', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" copy reverse aria-label="Reversed copy" />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Reversed copy');
+
+    expect(input).not.toHaveStyleRule('padding-left', '0px');
+  });
+
+  test('supports copy, password toggle, and reverse icon together', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput
+          value="test"
+          copy
+          password
+          reverse
+          icon={<Search />}
+          aria-label="Password"
+        />
+      </Grommet>,
+    );
+
+    const copyButton = screen.getByRole('button', {
+      name: 'Copy to clipboard',
+    });
+    const toggleButton = screen.getByRole('button', {
+      name: 'Show password',
+    });
+    const icon = screen.getByLabelText('Search');
+    const input = screen.getByLabelText('Password');
+
+    // all three controls must remain distinct and usable, with the icon
+    // and toggle grouped together after the input, and copy before it
+    expect(copyButton).not.toBe(toggleButton);
+    expect(icon).not.toBe(toggleButton);
+    expect(
+      copyButton.compareDocumentPosition(input) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      input.compareDocumentPosition(icon) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      icon.compareDocumentPosition(toggleButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+
+    await user.click(copyButton);
+    expect(await navigator.clipboard.readText()).toBe('test');
+
+    await user.click(toggleButton);
+    expect(input).toHaveAttribute('type', 'text');
+  });
+
   test('read only copy theme icon', async () => {
     render(
       <Grommet theme={{ textInput: { icons: { copy: Add } } }}>
