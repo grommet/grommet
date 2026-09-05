@@ -6,6 +6,7 @@ export interface TimeInputProps {
   defaultValue?: string;
   disabled?: boolean;
   format?: '12' | '24';
+  focusPopupOnMount?: boolean;
   id?: string;
   messages?: {
     activePeriodValue?: string;

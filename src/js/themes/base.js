@@ -1093,6 +1093,60 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pad: 'xxsmall',
       },
     },
+    dateTimeRangeInput: {
+      active: {
+        indicator: {
+          color: 'control',
+          size: 'small',
+        },
+      },
+      button: {
+        margin: { left: 'small', right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+      footer: {
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        actions: {
+          gap: 'small',
+        },
+        border: {
+          color: 'border',
+          size: 'xsmall',
+        },
+      },
+      gap: 'small',
+      field: {
+        pad: { horizontal: 'small' },
+      },
+      fieldGap: 'xsmall',
+      icon: {
+        calendar: undefined,
+      },
+      presets: {
+        background: 'background-contrast',
+        width: 'small',
+        pad: '6px',
+        gap: '6px',
+        item: {
+          pad: { horizontal: 'xsmall', vertical: '5px' },
+        },
+        selected: {
+          background: { dark: '#006750', light: '#D1FFEE' },
+          round: '6px',
+          border: {
+            color: { dark: '#D1FFEE', light: '#006750' },
+            size: '6px',
+          },
+        },
+        border: {
+          color: 'border',
+          size: 'xsmall',
+        },
+      },
+      responsiveBreakpoint: 'small',
+    },
     dataSearch: {
       // icons: {
       //   search: undefined,
@@ -1300,6 +1354,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //     },
       //   },
       // }
+      dateTimeRangeInput: {
+        container: {
+          extend: `
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+          `,
+        },
+      },
       border: {
         color: 'border',
         error: {

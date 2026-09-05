@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
     defaultValue: PropTypes.string,
     disabled: PropTypes.bool,
     format: PropTypes.oneOf(['12', '24']),
+    focusPopupOnMount: PropTypes.bool,
     id: PropTypes.string,
     messages: PropTypes.shape({
       activePeriodValue: PropTypes.string,
