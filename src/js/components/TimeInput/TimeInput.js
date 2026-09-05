@@ -484,20 +484,11 @@ const TimeInput = forwardRef(
         const isSegmentFocused = Object.values(segmentRefs.current).includes(
           activeElement,
         );
-        if (
-          !isSegmentFocused &&
-          activeElement === document.body &&
-          !readOnly &&
-          !disabled
-        ) {
-          focusSection(activeSection);
-          return;
-        }
         if (!isSegmentFocused) {
           setSegmentFocused(false);
         }
       });
-    }, [activeSection, disabled, focusSection, readOnly]);
+    }, []);
 
     const onSegmentKeyDown = useCallback(
       (section, event) => {
