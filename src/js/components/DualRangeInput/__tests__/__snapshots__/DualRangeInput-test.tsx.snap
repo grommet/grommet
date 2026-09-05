@@ -1,0 +1,2277 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DualRangeInput renders outside Grommet wrapper 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c1 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c2 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c4 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+}
+
+.c4::-moz-focus-outer {
+  border: none;
+}
+
+.c4::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c4::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c4::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c4::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c4:focus-visible {
+  outline: 0;
+}
+
+.c4:focus {
+  outline: none;
+}
+
+.c5 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+}
+
+.c5::-moz-focus-outer {
+  border: none;
+}
+
+.c5::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c5::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c5::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c5::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c5:focus-visible {
+  outline: 0;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+<div
+    class="c0 c1"
+  >
+    <div
+      class="c2"
+    />
+    <div
+      class="c3"
+      style="left: 25%; width: 50%;"
+    />
+    <input
+      aria-label="Lower Bound"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="25"
+      class="c4"
+      max="100"
+      min="0"
+      step="1"
+      type="range"
+      value="25"
+    />
+    <input
+      aria-label="Upper Bound"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="75"
+      class="c5"
+      max="100"
+      min="0"
+      step="1"
+      type="range"
+      value="75"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualRangeInput renders with color 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c4 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c5 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+}
+
+.c5::-moz-focus-outer {
+  border: none;
+}
+
+.c5::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c5::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c5::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c5::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c5:focus-visible {
+  outline: 0;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c6 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+}
+
+.c6::-moz-focus-outer {
+  border: none;
+}
+
+.c6::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c6::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c6::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c6::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c6:focus-visible {
+  outline: 0;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <div
+        class="c3"
+      />
+      <div
+        class="c4"
+        color="brand"
+        style="left: 20%; width: 60%;"
+      />
+      <input
+        aria-label="Lower Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="20"
+      />
+      <input
+        aria-label="Upper Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="80"
+        class="c6"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="80"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualRangeInput renders with default props 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c4 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c5 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+}
+
+.c5::-moz-focus-outer {
+  border: none;
+}
+
+.c5::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c5::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c5::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c5::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c5:focus-visible {
+  outline: 0;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c6 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+}
+
+.c6::-moz-focus-outer {
+  border: none;
+}
+
+.c6::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c6::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c6::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c6::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c6:focus-visible {
+  outline: 0;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <div
+        class="c3"
+      />
+      <div
+        class="c4"
+        style="left: 25%; width: 50%;"
+      />
+      <input
+        aria-label="Lower Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="25"
+        class="c5"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="25"
+      />
+      <input
+        aria-label="Upper Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="75"
+        class="c6"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="75"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualRangeInput renders with label boolean 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c5 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c6 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c7 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c7::-moz-focus-inner {
+  border: none;
+}
+
+.c7::-moz-focus-outer {
+  border: none;
+}
+
+.c7::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c7::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c7::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c7::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c7::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c7::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c7:focus-visible {
+  outline: 0;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c8 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c8::-moz-focus-inner {
+  border: none;
+}
+
+.c8::-moz-focus-outer {
+  border: none;
+}
+
+.c8::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c8::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c8::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c8::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c8:focus-visible {
+  outline: 0;
+}
+
+.c8:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        20
+      </span>
+      <div
+        class="c3 c4"
+      >
+        <div
+          class="c5"
+        />
+        <div
+          class="c6"
+          style="left: 20%; width: 60%;"
+        />
+        <input
+          aria-label="Lower Bound"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
+          class="c7"
+          max="100"
+          min="0"
+          step="1"
+          type="range"
+          value="20"
+        />
+        <input
+          aria-label="Upper Bound"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="80"
+          class="c8"
+          max="100"
+          min="0"
+          step="1"
+          type="range"
+          value="80"
+        />
+      </div>
+      <span
+        class="c2"
+      >
+        80
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualRangeInput renders with label function 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.c3 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c5 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c6 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c7 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c7::-moz-focus-inner {
+  border: none;
+}
+
+.c7::-moz-focus-outer {
+  border: none;
+}
+
+.c7::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c7::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c7::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c7::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c7::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c7::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c7:focus-visible {
+  outline: 0;
+}
+
+.c7:focus {
+  outline: none;
+}
+
+.c8 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c8::-moz-focus-inner {
+  border: none;
+}
+
+.c8::-moz-focus-outer {
+  border: none;
+}
+
+.c8::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c8::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c8::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c8::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c8::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c8:focus-visible {
+  outline: 0;
+}
+
+.c8:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        20%
+      </span>
+      <div
+        class="c3 c4"
+      >
+        <div
+          class="c5"
+        />
+        <div
+          class="c6"
+          style="left: 20%; width: 60%;"
+        />
+        <input
+          aria-label="Lower Bound"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="20"
+          class="c7"
+          max="100"
+          min="0"
+          step="1"
+          type="range"
+          value="20"
+        />
+        <input
+          aria-label="Upper Bound"
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow="80"
+          class="c8"
+          max="100"
+          min="0"
+          step="1"
+          type="range"
+          value="80"
+        />
+      </div>
+      <span
+        class="c2"
+      >
+        80%
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualRangeInput renders with min and max 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c4 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c5 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+}
+
+.c5::-moz-focus-outer {
+  border: none;
+}
+
+.c5::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c5::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c5::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c5::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c5:focus-visible {
+  outline: 0;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c6 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+}
+
+.c6::-moz-focus-outer {
+  border: none;
+}
+
+.c6::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c6::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c6::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c6::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c6:focus-visible {
+  outline: 0;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <div
+        class="c3"
+      />
+      <div
+        class="c4"
+        style="left: 25%; width: 50%;"
+      />
+      <input
+        aria-label="Lower Bound"
+        aria-valuemax="50"
+        aria-valuemin="10"
+        aria-valuenow="20"
+        class="c5"
+        max="50"
+        min="10"
+        step="1"
+        type="range"
+        value="20"
+      />
+      <input
+        aria-label="Upper Bound"
+        aria-valuemax="50"
+        aria-valuemin="10"
+        aria-valuenow="40"
+        class="c6"
+        max="50"
+        min="10"
+        step="1"
+        type="range"
+        value="40"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualRangeInput renders with step 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c4 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c5 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+}
+
+.c5::-moz-focus-outer {
+  border: none;
+}
+
+.c5::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c5::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c5::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c5::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c5:focus-visible {
+  outline: 0;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c6 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+}
+
+.c6::-moz-focus-outer {
+  border: none;
+}
+
+.c6::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c6::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c6::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c6::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c6:focus-visible {
+  outline: 0;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <div
+        class="c3"
+      />
+      <div
+        class="c4"
+        style="left: 20%; width: 60%;"
+      />
+      <input
+        aria-label="Lower Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        max="100"
+        min="0"
+        step="10"
+        type="range"
+        value="20"
+      />
+      <input
+        aria-label="Upper Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="80"
+        class="c6"
+        max="100"
+        min="0"
+        step="10"
+        type="range"
+        value="80"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualRangeInput should have no accessibility violations 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c4 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c5 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+}
+
+.c5::-moz-focus-outer {
+  border: none;
+}
+
+.c5::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c5::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c5::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c5::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c5:focus-visible {
+  outline: 0;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c6 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+}
+
+.c6::-moz-focus-outer {
+  border: none;
+}
+
+.c6::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c6::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c6::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c6::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c6:focus-visible {
+  outline: 0;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <div
+        class="c3"
+      />
+      <div
+        class="c4"
+        style="left: 20%; width: 60%;"
+      />
+      <input
+        aria-label="Lower Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="20"
+        class="c5"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="20"
+      />
+      <input
+        aria-label="Upper Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="80"
+        class="c6"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="80"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DualRangeInput uses defaultValues when values is not provided 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  height: 24px;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.33);
+}
+
+.c4 {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  background: #7D4CDB;
+}
+
+.c5 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+}
+
+.c5::-moz-focus-outer {
+  border: none;
+}
+
+.c5::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c5::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c5::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c5::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c5::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c5:focus-visible {
+  outline: 0;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c6 {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+}
+
+.c6::-moz-focus-outer {
+  border: none;
+}
+
+.c6::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  margin-top: -10px;
+}
+
+.c6::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 4px;
+}
+
+.c6::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  pointer-events: all;
+  border: none;
+}
+
+.c6::-moz-range-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c6::-moz-range-track {
+  background: transparent;
+  height: 4px;
+}
+
+.c6:focus-visible {
+  outline: 0;
+}
+
+.c6:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+    >
+      <div
+        class="c3"
+      />
+      <div
+        class="c4"
+        style="left: 30%; width: 40%;"
+      />
+      <input
+        aria-label="Lower Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="30"
+        class="c5"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="30"
+      />
+      <input
+        aria-label="Upper Bound"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="70"
+        class="c6"
+        max="100"
+        min="0"
+        step="1"
+        type="range"
+        value="70"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
