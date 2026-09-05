@@ -3,6 +3,7 @@
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { focusStyle, normalizeColor, styledComponentsConfig } from '../../utils';
+import { Button } from '../Button';
 var getMetricSize = function getMetricSize(theme, size) {
   var _theme$global, _theme$global2;
   return ((_theme$global = theme.global) == null || (_theme$global = _theme$global.edgeSize) == null ? void 0 : _theme$global[size]) || ((_theme$global2 = theme.global) == null || (_theme$global2 = _theme$global2.size) == null ? void 0 : _theme$global2[size]) || size;
@@ -50,14 +51,17 @@ var StyledStepItem = styled.li.withConfig({
   }
   return css(["flex-direction:column;align-items:center;flex:1;min-width:0;overflow:visible;"]);
 });
-var StyledStepButton = styled.button.withConfig({
+
+// Button is rendered `plain`, which already clears border, outline and padding.
+// `direction` is stripped because isPropValid lets it reach the DOM.
+var StyledStepButton = styled(Button).withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
-    return isPropValid(prop) && prop !== 'direction';
+    return prop !== 'direction';
   }
 }).withConfig({
   displayName: "StyledStepper__StyledStepButton",
   componentId: "sc-gmpe0p-1"
-})(["display:flex;background:none;border:none;padding:", ";cursor:", ";outline:none;", ""], function (props) {
+})(["display:flex;padding:", ";cursor:", ";", ""], function (props) {
   var _props$theme$global, _props$theme$stepper;
   return (_props$theme$global = props.theme.global) == null || (_props$theme$global = _props$theme$global.edgeSize) == null ? void 0 : _props$theme$global[((_props$theme$stepper = props.theme.stepper) == null || (_props$theme$stepper = _props$theme$stepper.button) == null ? void 0 : _props$theme$stepper.pad) || 'xxsmall'];
 }, function (props) {

@@ -5,6 +5,7 @@ exports.StyledSubStepsList = exports.StyledStepItem = exports.StyledStepContent 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _utils = require("../../utils");
+var _Button = require("../Button");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
@@ -57,14 +58,17 @@ var StyledStepItem = exports.StyledStepItem = _styledComponents["default"].li.wi
   }
   return (0, _styledComponents.css)(["flex-direction:column;align-items:center;flex:1;min-width:0;overflow:visible;"]);
 });
-var StyledStepButton = exports.StyledStepButton = _styledComponents["default"].button.withConfig({
+
+// Button is rendered `plain`, which already clears border, outline and padding.
+// `direction` is stripped because isPropValid lets it reach the DOM.
+var StyledStepButton = exports.StyledStepButton = (0, _styledComponents["default"])(_Button.Button).withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
-    return (0, _isPropValid["default"])(prop) && prop !== 'direction';
+    return prop !== 'direction';
   }
 }).withConfig({
   displayName: "StyledStepper__StyledStepButton",
   componentId: "sc-gmpe0p-1"
-})(["display:flex;background:none;border:none;padding:", ";cursor:", ";outline:none;", ""], function (props) {
+})(["display:flex;padding:", ";cursor:", ";", ""], function (props) {
   var _props$theme$global, _props$theme$stepper;
   return (_props$theme$global = props.theme.global) == null || (_props$theme$global = _props$theme$global.edgeSize) == null ? void 0 : _props$theme$global[((_props$theme$stepper = props.theme.stepper) == null || (_props$theme$stepper = _props$theme$stepper.button) == null ? void 0 : _props$theme$stepper.pad) || 'xxsmall'];
 }, function (props) {

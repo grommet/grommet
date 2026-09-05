@@ -88,7 +88,12 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
   if (step.disabledReason && step.status === 'disabled') {
     describedBy.push("stepper-reason-" + step.id);
   }
-  var focusableProps = isReadOnly ? {} : {
+  var focusableProps = isReadOnly ?
+  // null rather than undefined, so Button's `type = 'button'` default
+  // parameter doesn't put a type attribute on the rendered div
+  {
+    type: null
+  } : {
     tabIndex: focusedIndex === index ? 0 : -1,
     onClick: handleClick,
     onKeyDown: handleKeyDown,
@@ -105,7 +110,11 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
     isLast: isLast,
     hasSubSteps: !!(subSteps != null && subSteps.length)
   }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledStepButton, _extends({
-    as: isReadOnly ? 'div' : 'button',
+    plain: true
+    // indicator provides focus-visible treatment; avoid a second ring
+    ,
+    focusIndicator: false,
+    forwardedAs: isReadOnly ? 'div' : 'button',
     role: isReadOnly ? 'group' : undefined,
     ref: function ref(el) {
       if (stepRefs) {
@@ -120,7 +129,7 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
     isDisabled: isDisabled,
     isSubStep: isSubStep,
     direction: direction
-  }, focusableProps, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StepperIndicator.StepperIndicator, null), /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledStepContent, _extends({
+  }, focusableProps), /*#__PURE__*/_react["default"].createElement(_StepperIndicator.StepperIndicator, null), /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledStepContent, _extends({
     direction: direction,
     isSubStep: isSubStep,
     hasDescription: !!step.description
