@@ -22,6 +22,7 @@ export interface StepperProps
   direction?: 'horizontal' | 'vertical';
   clickableSteps?: boolean;
   showDescription?: boolean;
+  errorAnnouncement?: 'assertive' | 'polite' | false;
   onStepClick?: (stepId: string) => void;
   id?: string;
   'aria-label'?: string;
