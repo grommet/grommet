@@ -1827,6 +1827,31 @@ describe('TimeInput', () => {
     }
   });
 
+  test('keyboard focus ring clears when switching to mouse interaction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="04:30:00" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hour4 = within(hourList).getByRole('option', { name: '04 hours' });
+    const hour7 = within(hourList).getByRole('option', { name: '07 hours' });
+
+    // Simulate prior keyboard focus (programmatic focus, as in a real
+    // keyboard session where the option was navigated to via arrow keys).
+    fireEvent.focus(hour4);
+    expect(hour4).toHaveFocus();
+    // Mouse click — keyboard ring should dismiss (focus leaves hour 4)
+    await user.click(hour7);
+
+    expect(document.activeElement).not.toBe(hour4);
+  });
+
   test('does not scroll popup options after clicking to select one', async () => {
     const user = userEvent.setup();
     const offsetHeightDescriptor = Object.getOwnPropertyDescriptor(
