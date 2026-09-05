@@ -136,7 +136,7 @@ const Content = ({ drop, options = [], activePanel, ...rest }) => {
     </Box>
   );
 
-  const orderColumnsContent = (
+  const orderColumnsContent = value.length > 0 ? (
     <Box pad={theme.dataTableColumns.orderColumns.pad}>
       <List
         id={`${dataId}--order-columns`}
@@ -156,6 +156,15 @@ const Content = ({ drop, options = [], activePanel, ...rest }) => {
         primaryKey={(objectOptions && 'label') || undefined}
         pinned={pinned}
       />
+    </Box>
+  ) : (
+    <Box pad={theme.dataTableColumns.orderColumns.pad}>
+      <Text>
+        {format({
+          id: 'dataTableColumns.noColumnsSelected',
+          messages: messages?.dataTableColumns,
+        })}
+      </Text>
     </Box>
   );
 

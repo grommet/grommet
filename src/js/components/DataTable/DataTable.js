@@ -560,6 +560,23 @@ const DataTable = ({
     />
   );
 
+  // When no columns are visible (e.g. user deselected all in DataTableColumns),
+  // show a message instead of an empty table.
+  if (columns.length === 0 && view?.columns !== undefined) {
+    return (
+      <Container {...containterProps}>
+        <Box align="center" pad="medium">
+          <Text>
+            {format({
+              id: 'dataTableColumns.noColumnsSelected',
+              messages: messages?.dataTableColumns,
+            })}
+          </Text>
+        </Box>
+      </Container>
+    );
+  }
+
   return (
     <Container {...containterProps}>
       <OverflowContainer {...overflowContainerProps}>
