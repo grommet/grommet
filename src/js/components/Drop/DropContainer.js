@@ -59,6 +59,29 @@ const getContainingBlock = (element) => {
 
 const defaultAlign = { top: 'top', left: 'left' };
 
+// The drop animates in with a scale transform (see StyledDrop). A
+// getBoundingClientRect() taken while that animation is running returns the
+// scaled size, so a drop placed mid-animation would be sized too small.
+// Undo the current transform to get the layout size.
+const getLayoutRect = (element) => {
+  const rect = element.getBoundingClientRect();
+  const { transform } = window.getComputedStyle(element);
+  const match = transform && transform.match(/^matrix(3d)?\((.+)\)$/);
+  if (!match) return rect;
+  const values = match[2].split(',').map(Number);
+  const [a, b, c, d] = match[1]
+    ? [values[0], values[1], values[4], values[5]]
+    : values;
+  const scaleX = Math.hypot(a, b);
+  const scaleY = Math.hypot(c, d);
+  if (!scaleX || !scaleY || (scaleX === 1 && scaleY === 1)) return rect;
+  return {
+    ...rect,
+    width: rect.width / scaleX,
+    height: rect.height / scaleY,
+  };
+};
+
 const DropContainer = forwardRef(
   (
     {
@@ -165,7 +188,7 @@ const DropContainer = forwardRef(
           }
           // get bounds
           const targetRect = target.getBoundingClientRect();
-          const containerRect = container.getBoundingClientRect();
+          const containerRect = getLayoutRect(container);
           // determine width
           let width;
           if (stretch) {
