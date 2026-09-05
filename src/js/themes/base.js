@@ -2700,7 +2700,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             background: 'selected',
             color: 'white',
             text: {
-              weight: 'medium',
+              weight: 500,
             },
             hover: {
               // background: undefined,

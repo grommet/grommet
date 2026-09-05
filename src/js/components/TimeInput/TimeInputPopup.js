@@ -30,6 +30,7 @@ const PopupOption = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   ${(props) => {
     const optionPad = props.theme.timeInput?.drop?.option?.pad;
     return (
@@ -205,6 +206,11 @@ const PopupColumn = ({
                 theme.timeInput?.drop?.option?.size ||
                 theme.global.input.font.size ||
                 'small'
+              }
+              weight={
+                selected
+                  ? theme.timeInput?.drop?.option?.selected?.text?.weight
+                  : undefined
               }
               color={optionColor}
             >
