@@ -6443,6 +6443,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   padding: 24px;
 }
 
@@ -8481,6 +8482,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c19 {

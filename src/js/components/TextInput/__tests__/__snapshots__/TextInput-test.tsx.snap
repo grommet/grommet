@@ -402,6 +402,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
 
 .c3 {
   max-height: inherit;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -617,6 +618,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
 
 .c3 {
   max-height: inherit;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -909,6 +911,7 @@ exports[`TextInput close suggestion drop 2`] = `
 
 .c3 {
   max-height: inherit;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1222,6 +1225,7 @@ exports[`TextInput complex suggestions 2`] = `
 
 .c3 {
   max-height: inherit;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1979,6 +1983,7 @@ exports[`TextInput large drop height 1`] = `
 
 .c3 {
   max-height: 768px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2570,6 +2575,7 @@ exports[`TextInput medium drop height 1`] = `
 
 .c3 {
   max-height: 384px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4723,6 +4729,7 @@ exports[`TextInput select suggestion 2`] = `
 
 .c3 {
   max-height: inherit;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -5653,6 +5660,7 @@ exports[`TextInput small drop height 1`] = `
 
 .c3 {
   max-height: 192px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -5931,6 +5939,7 @@ exports[`TextInput suggestions 2`] = `
 
 .c3 {
   max-height: inherit;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {

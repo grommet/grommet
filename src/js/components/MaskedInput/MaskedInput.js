@@ -16,7 +16,12 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
-import { sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
+import {
+  normalizeColor,
+  sizeStyle,
+  useForwardedRef,
+  useSizedIcon,
+} from '../../utils';
 
 import {
   StyledMaskedInput,
@@ -152,6 +157,8 @@ const ContainerBox = styled(Box)`
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
+  scrollbar-color: ${(props) =>
+    `${normalizeColor('border', props.theme)} transparent`};
 `;
 
 const dropAlign = { top: 'bottom', left: 'left' };

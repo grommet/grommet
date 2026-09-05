@@ -24,6 +24,8 @@ import {
 const PopupColumnBox = styled(Box)`
   scrollbar-gutter: stable;
   scrollbar-width: thin;
+  scrollbar-color: ${(props) =>
+    `${normalizeColor('border', props.theme)} transparent`};
 `;
 
 const PopupOption = styled.div`
