@@ -8884,7 +8884,7 @@ exports[`Select onChange with valueLabel 1`] = `
           id="test-select__input"
           inert=""
           readonly=""
-          type="text"
+          type="hidden"
         />
       </div>
       <div
@@ -17510,7 +17510,7 @@ exports[`Select select an option with complex options 1`] = `
           id="test-select__input"
           inert=""
           readonly=""
-          type="text"
+          type="hidden"
         />
       </div>
       <div
@@ -20466,7 +20466,7 @@ exports[`Select valueLabel with value=0 1`] = `
             class="c5"
             inert=""
             readonly=""
-            type="text"
+            type="hidden"
           />
         </div>
         <div
