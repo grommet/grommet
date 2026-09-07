@@ -24,6 +24,14 @@ import {
 const PopupColumnBox = styled(Box)`
   scrollbar-gutter: stable;
   scrollbar-width: thin;
+  ${(props) =>
+    edgeStyle(
+      'padding',
+      'xsmall',
+      false,
+      props.theme.box.responsiveBreakpoint,
+      props.theme,
+    )}
 `;
 
 const PopupOption = styled.div`
@@ -584,7 +592,7 @@ const TimeInputPopup = ({
       direction="row"
       width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
       minHeight={theme.timeInput?.drop?.minHeight}
-      gap={theme.timeInput?.drop?.gap || 'xsmall'}
+      gap={theme.timeInput?.drop?.gap || 'none'}
       pad={inline ? 'none' : theme.timeInput?.drop?.pad || 'small'}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}
