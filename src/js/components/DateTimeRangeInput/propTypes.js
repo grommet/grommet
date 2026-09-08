@@ -14,6 +14,8 @@ if (process.env.NODE_ENV !== 'production') {
     gridArea: genericProps.gridArea,
     id: PropTypes.string,
     locale: PropTypes.string,
+    minDate: PropTypes.string,
+    maxDate: PropTypes.string,
     margin: genericProps.margin,
     messages: PropTypes.shape({
       activeSection: PropTypes.string,
@@ -25,6 +27,8 @@ if (process.env.NODE_ENV !== 'production') {
       inputLabel: PropTypes.string,
       invalidDateTime: PropTypes.string,
       invalidRange: PropTypes.string,
+      beforeMinDate: PropTypes.string,
+      afterMaxDate: PropTypes.string,
       next: PropTypes.string,
       nextRange: PropTypes.string,
       apply: PropTypes.string,

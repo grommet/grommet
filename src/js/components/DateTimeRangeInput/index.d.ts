@@ -15,6 +15,8 @@ export interface DateTimeRangeInputProps {
   format?: '12' | '24';
   id?: string;
   locale?: string;
+  minDate?: string;
+  maxDate?: string;
   messages?: {
     activeSection?: string;
     activeSectionValue?: string;
@@ -25,6 +27,8 @@ export interface DateTimeRangeInputProps {
     inputLabel?: string;
     invalidDateTime?: string;
     invalidRange?: string;
+    beforeMinDate?: string;
+    afterMaxDate?: string;
     next?: string;
     nextRange?: string;
     apply?: string;

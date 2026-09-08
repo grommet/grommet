@@ -9,6 +9,7 @@ import React, {
   useMemo,
   useReducer,
   useRef,
+  useState,
 } from 'react';
 import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
 import { FormDown } from 'grommet-icons/icons/FormDown';
@@ -59,6 +60,63 @@ const isValidRange = (range) =>
   range.length === 2 &&
   range.every((value) => getTimestamp(value) !== undefined) &&
   !isRangeInvalid(range[0], range[1]);
+
+const isWithinDateBounds = (value, minDate, maxDate) => {
+  const timestamp = getTimestamp(value);
+  if (timestamp === undefined) return false;
+  const minTimestamp = minDate ? getTimestamp(minDate) : undefined;
+  const maxTimestamp = maxDate ? getTimestamp(maxDate) : undefined;
+  return (
+    (minTimestamp === undefined || timestamp >= minTimestamp) &&
+    (maxTimestamp === undefined || timestamp <= maxTimestamp)
+  );
+};
+
+const isRangeWithinDateBounds = (range, minDate, maxDate) =>
+  range.every((value) => !value || isWithinDateBounds(value, minDate, maxDate));
+
+const getDateBoundsViolation = (range, minDate, maxDate) => {
+  const timestamps = range.filter(Boolean).map((value) => getTimestamp(value));
+  const minTimestamp = minDate ? getTimestamp(minDate) : undefined;
+  const maxTimestamp = maxDate ? getTimestamp(maxDate) : undefined;
+
+  if (
+    minTimestamp !== undefined &&
+    timestamps.some((value) => value < minTimestamp)
+  ) {
+    return 'min';
+  }
+  if (
+    maxTimestamp !== undefined &&
+    timestamps.some((value) => value > maxTimestamp)
+  ) {
+    return 'max';
+  }
+  return undefined;
+};
+
+const formatBound = (value, locale, format, showSeconds) => {
+  if (!value) return '';
+  return new Intl.DateTimeFormat(locale, {
+    dateStyle: 'medium',
+    timeStyle: showSeconds ? 'medium' : 'short',
+    ...(format === '12' ? { hour12: true } : {}),
+    ...(format === '24' ? { hour12: false } : {}),
+  }).format(new Date(value));
+};
+
+const getShiftedRange = (start, end, direction) => {
+  if (!isRangeNavigable(start, end)) return undefined;
+  const startMs = getTimestamp(start);
+  const endMs = getTimestamp(end);
+  if (startMs === undefined || endMs === undefined) return undefined;
+  const duration = endMs - startMs || 24 * 60 * 60 * 1000;
+  const deltaMs = duration * direction;
+  return [
+    new Date(startMs + deltaMs).toISOString(),
+    new Date(endMs + deltaMs).toISOString(),
+  ];
+};
 
 // merges a calendar date-only selection with the time-of-day already
 // present on the reference value, or a fallback start/end-of-day time
@@ -223,6 +281,8 @@ const DateTimeRangeInput = forwardRef(
       'aria-label': ariaLabel,
       'aria-invalid': ariaInvalid,
       locale,
+      minDate,
+      maxDate,
       messages,
       minuteStep = 1,
       name,
@@ -253,6 +313,7 @@ const DateTimeRangeInput = forwardRef(
       pickerReducer,
       initialPickerState,
     );
+    const [inputResetKey, setInputResetKey] = useState(0);
     const { open, phase, draftStart, draftEnd, selectedPreset } = pickerState;
 
     const [value, setValue] = useFormInput({
@@ -262,6 +323,7 @@ const DateTimeRangeInput = forwardRef(
     });
 
     const [start, end] = value || [];
+
     const selectedRange = rangesMatch(value, selectedPreset?.value)
       ? ranges?.find(({ id: rangeId }) => rangeId === selectedPreset?.id)
       : undefined;
@@ -272,19 +334,60 @@ const DateTimeRangeInput = forwardRef(
     else if (phase === SELECTING_END) activeRangePart = 'end';
     const effectiveStart = open ? draftStart : start;
     const effectiveEnd = open ? draftEnd : end;
-    const invalid = isRangeInvalid(effectiveStart, effectiveEnd);
+    const rangeInvalid = isRangeInvalid(effectiveStart, effectiveEnd);
+    const boundsInvalid =
+      !rangeInvalid &&
+      !isRangeWithinDateBounds(
+        [effectiveStart, effectiveEnd],
+        minDate,
+        maxDate,
+      );
+    const boundsViolation = boundsInvalid
+      ? getDateBoundsViolation([effectiveStart, effectiveEnd], minDate, maxDate)
+      : undefined;
+    const boundsMessageId =
+      boundsViolation === 'min'
+        ? 'dateTimeRangeInput.beforeMinDate'
+        : 'dateTimeRangeInput.afterMaxDate';
+    const invalid = rangeInvalid || boundsInvalid;
     const navigable = isRangeNavigable(start, end);
     const wasInvalidRef = useRef(false);
 
     useEffect(() => {
       if (invalid && !wasInvalidRef.current) {
         announce(
-          formatMessage({ id: 'dateTimeRangeInput.invalidRange', messages }),
+          formatMessage({
+            id: boundsInvalid
+              ? boundsMessageId
+              : 'dateTimeRangeInput.invalidRange',
+            values: {
+              bound: formatBound(
+                boundsViolation === 'min' ? minDate : maxDate,
+                locale,
+                format,
+                showSeconds,
+              ),
+            },
+            messages,
+          }),
           'assertive',
         );
       }
       wasInvalidRef.current = invalid;
-    }, [announce, formatMessage, invalid, messages]);
+    }, [
+      announce,
+      boundsInvalid,
+      boundsMessageId,
+      boundsViolation,
+      format,
+      formatMessage,
+      invalid,
+      locale,
+      maxDate,
+      messages,
+      minDate,
+      showSeconds,
+    ]);
 
     // isolate the internal DateTimeInput fields from the outer Form so they
     // don't independently register a field under the same (or no) name
@@ -299,28 +402,31 @@ const DateTimeRangeInput = forwardRef(
 
     const commit = useCallback(
       (nextStart, nextEnd) => {
+        if (
+          isRangeInvalid(nextStart, nextEnd) ||
+          !isRangeWithinDateBounds([nextStart, nextEnd], minDate, maxDate)
+        ) {
+          setInputResetKey((key) => key + 1);
+          return false;
+        }
         const nextValue = [nextStart, nextEnd];
         setValue(nextValue);
         onChange?.({ value: nextValue });
+        return true;
       },
-      [onChange, setValue],
+      [maxDate, minDate, onChange, setValue],
     );
 
     const shiftRange = useCallback(
       (direction) => {
-        if (!isRangeNavigable(start, end)) return;
-        const startMs = getTimestamp(start);
-        const endMs = getTimestamp(end);
-        if (startMs === undefined || endMs === undefined) return;
-        const duration = endMs - startMs || 24 * 60 * 60 * 1000;
-        const deltaMs = duration * direction;
-        commit(
-          new Date(startMs + deltaMs).toISOString(),
-          new Date(endMs + deltaMs).toISOString(),
-        );
-        dispatch({ type: 'clearPreset' });
+        const nextRange = getShiftedRange(start, end, direction);
+        if (!nextRange || !isRangeWithinDateBounds(nextRange, minDate, maxDate))
+          return;
+        if (commit(nextRange[0], nextRange[1])) {
+          dispatch({ type: 'clearPreset' });
+        }
       },
-      [commit, end, start],
+      [commit, end, maxDate, minDate, start],
     );
 
     const openPicker = useCallback(() => {
@@ -344,12 +450,16 @@ const DateTimeRangeInput = forwardRef(
     const selectPreset = useCallback(
       (preset) => {
         const nextValue = preset.getValue();
-        if (!isValidRange(nextValue)) return;
+        if (
+          !isValidRange(nextValue) ||
+          !isRangeWithinDateBounds(nextValue, minDate, maxDate)
+        )
+          return;
         commit(nextValue[0], nextValue[1]);
         dispatch({ type: 'selectPreset', id: preset.id, value: nextValue });
         closePickerAndRestoreFocus();
       },
-      [closePickerAndRestoreFocus, commit],
+      [closePickerAndRestoreFocus, commit, maxDate, minDate],
     );
 
     const openCustomRange = useCallback(() => {
@@ -414,6 +524,49 @@ const DateTimeRangeInput = forwardRef(
       }
     };
 
+    const disabledDateBounds = useMemo(() => {
+      const disabledDates = [];
+      const minTimestamp = minDate ? getTimestamp(minDate) : undefined;
+      const maxTimestamp = maxDate ? getTimestamp(maxDate) : undefined;
+
+      if (minTimestamp !== undefined) {
+        const minDay = new Date(minTimestamp);
+        minDay.setDate(minDay.getDate() - 1);
+        disabledDates.push(['0001-01-01', toDateOnly(minDay)]);
+      }
+      if (maxTimestamp !== undefined) {
+        const maxDay = new Date(maxTimestamp);
+        maxDay.setDate(maxDay.getDate() + 1);
+        disabledDates.push([toDateOnly(maxDay), '9999-12-31']);
+      }
+      return disabledDates;
+    }, [maxDate, minDate]);
+
+    const disabledCalendarDates = useMemo(
+      () => [
+        ...disabledDateBounds,
+        ...(phase === SELECTING_END ? disabledEndDates || [] : []),
+      ],
+      [disabledDateBounds, disabledEndDates, phase],
+    );
+
+    const previousRange = useMemo(
+      () => getShiftedRange(start, end, -1),
+      [end, start],
+    );
+    const nextRange = useMemo(
+      () => getShiftedRange(start, end, 1),
+      [end, start],
+    );
+    const canShiftPrevious =
+      navigable &&
+      previousRange &&
+      isRangeWithinDateBounds(previousRange, minDate, maxDate);
+    const canShiftNext =
+      navigable &&
+      nextRange &&
+      isRangeWithinDateBounds(nextRange, minDate, maxDate);
+
     const calendar = (
       <Calendar
         key={phase}
@@ -421,7 +574,9 @@ const DateTimeRangeInput = forwardRef(
         activeDate={selectingSingleStart ? undefined : activeRangePart}
         date={selectingSingleStart ? effectiveStart : undefined}
         dates={selectingSingleStart ? undefined : dates}
-        disabled={phase === SELECTING_END ? disabledEndDates : undefined}
+        disabled={
+          disabledCalendarDates.length ? disabledCalendarDates : undefined
+        }
         initialFocus={open ? 'days' : undefined}
         onSelect={activeRangePart ? selectCalendarDate : undefined}
       />
@@ -457,6 +612,7 @@ const DateTimeRangeInput = forwardRef(
             role="group"
             aria-label={formFieldLabelId ? undefined : ariaLabel}
             aria-labelledby={formFieldLabelId}
+            aria-disabled={disabled ? true : undefined}
             direction="row"
             align="center"
             gap={theme.dateTimeRangeInput?.gap}
@@ -465,7 +621,7 @@ const DateTimeRangeInput = forwardRef(
             <Button
               icon={<FormPrevious />}
               plain
-              disabled={disabled || readOnly || !navigable}
+              disabled={disabled || readOnly || !canShiftPrevious}
               aria-label={formatMessage({
                 id: 'dateTimeRangeInput.previousRange',
                 messages,
@@ -526,6 +682,7 @@ const DateTimeRangeInput = forwardRef(
                       width={theme.dateTimeRangeInput?.field?.width}
                     >
                       <DateTimeInput
+                        key={`start-${inputResetKey}`}
                         aria-invalid={ariaInvalid}
                         disabled={disabled}
                         focusIndicator={false}
@@ -576,6 +733,7 @@ const DateTimeRangeInput = forwardRef(
                       width={theme.dateTimeRangeInput?.field?.width}
                     >
                       <DateTimeInput
+                        key={`end-${inputResetKey}`}
                         aria-invalid={ariaInvalid}
                         disabled={disabled}
                         focusIndicator={false}
@@ -620,7 +778,7 @@ const DateTimeRangeInput = forwardRef(
             <Button
               icon={<FormNext />}
               plain
-              disabled={disabled || readOnly || !navigable}
+              disabled={disabled || readOnly || !canShiftNext}
               aria-label={formatMessage({
                 id: 'dateTimeRangeInput.nextRange',
                 messages,
@@ -739,7 +897,17 @@ const DateTimeRangeInput = forwardRef(
                   <Box pad={{ horizontal: 'small', bottom: 'xsmall' }}>
                     <Text color="status-critical" size="small">
                       {formatMessage({
-                        id: 'dateTimeRangeInput.invalidRange',
+                        id: boundsInvalid
+                          ? boundsMessageId
+                          : 'dateTimeRangeInput.invalidRange',
+                        values: {
+                          bound: formatBound(
+                            boundsViolation === 'min' ? minDate : maxDate,
+                            locale,
+                            format,
+                            showSeconds,
+                          ),
+                        },
                         messages,
                       })}
                     </Text>
