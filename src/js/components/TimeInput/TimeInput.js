@@ -106,6 +106,10 @@ const TimeInput = forwardRef(
     {
       defaultValue,
       disabled,
+      // Internal-only flag used by DateTimeInput to suppress focus on open.
+      // It is intentionally not included in PropTypes or TS types because it
+      // is not part of the public TimeInput API.
+      focusOnOpen = true,
       format = DEFAULT_FORMAT,
       id,
       inline = false,
@@ -676,6 +680,7 @@ const TimeInput = forwardRef(
           activeSection={activeSection}
           format={format}
           formatMessage={formatMessage}
+          focusOnOpen={focusOnOpen}
           hoursOptions={hoursOptions}
           incrementSection={incrementSection}
           messages={messages}
@@ -828,6 +833,7 @@ const TimeInput = forwardRef(
               dropProps={{ stretch: false }}
               format={format}
               formatMessage={formatMessage}
+              focusOnOpen={focusOnOpen}
               hoursOptions={hoursOptions}
               id={id}
               incrementSection={incrementSection}

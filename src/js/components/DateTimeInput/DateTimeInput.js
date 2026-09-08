@@ -1239,6 +1239,7 @@ const DateTimeInput = forwardRef(
         <TimeInput
           inline
           format={resolvedFormat}
+          focusOnOpen={false}
           value={timeValue}
           showSeconds={showSeconds}
           messages={messages}
