@@ -7,12 +7,16 @@ import {
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
+import { Button } from '../Button';
 
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
 
 const getTextMetric = (theme, size, metric) =>
   theme.text?.[size]?.[metric] || theme.text?.medium?.[metric];
+
+const getBorderWidth = (theme, size) =>
+  theme.global?.borderSize?.[size] || size || theme.global?.borderSize?.xsmall;
 
 const getSubStepSizeToken = (indicatorSize) => {
   switch (indicatorSize) {
@@ -69,18 +73,17 @@ const StyledStepItem = styled.li.withConfig({
   }}
 `;
 
-const StyledStepButton = styled.button.withConfig({
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+// Button is rendered `plain`, which already clears border, outline and padding.
+// `direction` is stripped because isPropValid lets it reach the DOM.
+const StyledStepButton = styled(Button).withConfig({
+  shouldForwardProp: (prop) => prop !== 'direction',
 })`
   display: flex;
-  background: none;
-  border: none;
   padding: ${(props) =>
     props.theme.global?.edgeSize?.[
       props.theme.stepper?.button?.pad || 'xxsmall'
     ]};
   cursor: ${(props) => (props.isClickable ? 'pointer' : 'default')};
-  outline: none;
   ${(props) =>
     props.direction === 'vertical'
       ? css`
@@ -252,10 +255,10 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       props.theme.global?.edgeSize?.[
         props.theme.stepper?.button?.pad || 'xxsmall'
       ];
-    const connectorThickness =
-      theme.stepper?.connector?.stroke?.width ||
-      theme.global?.borderSize?.small ||
-      '2px';
+    const connectorStrokeToken =
+      theme.stepper?.connector?.stroke?.width || 'small';
+    const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
+
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
     const connectorOffset = `calc(${parentSize} / 2 + ${buttonPad})`;
     const connectorGap = '4px';
