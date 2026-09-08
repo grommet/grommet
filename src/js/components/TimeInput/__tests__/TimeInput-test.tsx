@@ -117,29 +117,6 @@ describe('TimeInput', () => {
     expect(trigger).toHaveAttribute('aria-controls', 'time-a11y__drop');
   });
 
-  test('uses a square trigger and supports button theme customization', () => {
-    render(
-      <Grommet
-        theme={{
-          timeInput: {
-            button: {
-              background: 'background-contrast',
-              border: { radius: 'large' },
-            },
-          },
-        }}
-      >
-        <TimeInput format="24" />
-      </Grommet>,
-    );
-
-    const trigger = screen.getByRole('button', { name: 'Choose time' });
-    expect(trigger).toHaveStyleRule('width', '100%');
-    expect(trigger).toHaveStyleRule('height', '100%');
-    expect(trigger.parentElement).toHaveStyleRule('width', '48px');
-    expect(trigger).toHaveStyleRule('border-radius', 'large');
-  });
-
   test('does not show an active section before focus', () => {
     render(
       <Grommet>
@@ -1948,7 +1925,6 @@ describe('TimeInput', () => {
       timeInput: {
         button: {
           background: '#EEEEEE',
-          border: { radius: 'large' },
         },
         container: {
           round: 'large',
@@ -1993,7 +1969,8 @@ describe('TimeInput', () => {
     // button theme and geometry
     const trigger = screen.getByRole('button', { name: 'Choose time' });
     expect(trigger).toHaveStyleRule('background-color', '#EEEEEE');
-    expect(trigger).toHaveStyleRule('border-radius', 'large');
+    expect(trigger).toHaveStyleRule('width', '100%');
+    expect(trigger).toHaveStyleRule('height', '100%');
     expect(trigger.parentElement).toHaveStyleRule('width', '48px');
 
     // active.pad applies to every segment, active or not
