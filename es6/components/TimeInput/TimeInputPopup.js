@@ -132,7 +132,6 @@ var PopupColumn = function PopupColumn(_ref2) {
         if (event.button !== 0) return;
         // Commit on pointer press so momentum scroll does not swallow
         // the first click commit on some trackpad/mouse flows.
-        event.preventDefault();
         onPointerCommitOption(section, option);
       },
       onClick: function onClick() {
