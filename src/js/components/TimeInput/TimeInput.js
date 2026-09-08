@@ -106,6 +106,9 @@ const TimeInput = forwardRef(
     {
       defaultValue,
       disabled,
+      // Internal-only flag used by DateTimeInput to suppress focus on open.
+      // It is intentionally not included in PropTypes or TS types because it
+      // is not part of the public TimeInput API.
       focusOnOpen = true,
       format = DEFAULT_FORMAT,
       id,
