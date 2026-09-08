@@ -25,7 +25,7 @@ var PopupColumnBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 var PopupOption = _styledComponents["default"].div.withConfig({
   displayName: "TimeInputPopup__PopupOption",
   componentId: "sc-r2j8uh-1"
-})(["box-sizing:border-box;cursor:pointer;display:flex;", " ", " background:", ";&:hover{background:", ";}&:focus-visible{", "}"], function (props) {
+})(["box-sizing:border-box;cursor:pointer;display:flex;justify-content:center;", " ", " background:", ";&:hover{background:", ";}&:focus-visible{", "}"], function (props) {
   var _props$theme$timeInpu;
   var optionPad = (_props$theme$timeInpu = props.theme.timeInput) == null || (_props$theme$timeInpu = _props$theme$timeInpu.drop) == null || (_props$theme$timeInpu = _props$theme$timeInpu.option) == null ? void 0 : _props$theme$timeInpu.pad;
   return optionPad && (0, _utils.edgeStyle)('padding', optionPad, false, props.theme.box.responsiveBreakpoint, props.theme);
@@ -100,7 +100,7 @@ var PopupColumn = function PopupColumn(_ref2) {
       shrink: 0
     }
   }, options.map(function (option) {
-    var _theme$timeInput3, _theme$timeInput4;
+    var _theme$timeInput3, _theme$timeInput4, _theme$timeInput5;
     var key = optionKey(label, option);
     var sectionHasValue = section === _utils2.SECTION_HOUR && sections.hour !== undefined || section === _utils2.SECTION_MINUTE && sections.minute !== undefined || section === _utils2.SECTION_SECOND && sections.second !== undefined || section === _utils2.SECTION_PERIOD && sections.period !== undefined;
 
@@ -147,12 +147,13 @@ var PopupColumn = function PopupColumn(_ref2) {
       }
     }, /*#__PURE__*/_react["default"].createElement(_Text.Text, {
       size: ((_theme$timeInput4 = theme.timeInput) == null || (_theme$timeInput4 = _theme$timeInput4.drop) == null || (_theme$timeInput4 = _theme$timeInput4.option) == null ? void 0 : _theme$timeInput4.size) || theme.global.input.font.size || 'small',
+      weight: selected ? (_theme$timeInput5 = theme.timeInput) == null || (_theme$timeInput5 = _theme$timeInput5.drop) == null || (_theme$timeInput5 = _theme$timeInput5.option) == null || (_theme$timeInput5 = _theme$timeInput5.selected) == null || (_theme$timeInput5 = _theme$timeInput5.text) == null ? void 0 : _theme$timeInput5.weight : undefined,
       color: optionColor
     }, section === _utils2.SECTION_PERIOD ? option : (0, _utils2.pad)(option)));
   }));
 };
 var TimeInputPopup = exports.TimeInputPopup = function TimeInputPopup(_ref3) {
-  var _theme$timeInput5, _theme$timeInput6, _theme$timeInput7, _theme$timeInput8;
+  var _theme$timeInput6, _theme$timeInput7, _theme$timeInput8, _theme$timeInput9;
   var activeSection = _ref3.activeSection,
     align = _ref3.align,
     format = _ref3.format,
@@ -400,12 +401,12 @@ var TimeInputPopup = exports.TimeInputPopup = function TimeInputPopup(_ref3) {
     "aria-label": inline ? undefined : label,
     direction: "row",
     width: {
-      width: (_theme$timeInput5 = theme.timeInput) == null || (_theme$timeInput5 = _theme$timeInput5.drop) == null ? void 0 : _theme$timeInput5.width,
+      width: (_theme$timeInput6 = theme.timeInput) == null || (_theme$timeInput6 = _theme$timeInput6.drop) == null ? void 0 : _theme$timeInput6.width,
       max: '100%'
     },
-    minHeight: (_theme$timeInput6 = theme.timeInput) == null || (_theme$timeInput6 = _theme$timeInput6.drop) == null ? void 0 : _theme$timeInput6.minHeight,
-    gap: ((_theme$timeInput7 = theme.timeInput) == null || (_theme$timeInput7 = _theme$timeInput7.drop) == null ? void 0 : _theme$timeInput7.gap) || 'xsmall',
-    pad: inline ? 'none' : ((_theme$timeInput8 = theme.timeInput) == null || (_theme$timeInput8 = _theme$timeInput8.drop) == null ? void 0 : _theme$timeInput8.pad) || 'small',
+    minHeight: (_theme$timeInput7 = theme.timeInput) == null || (_theme$timeInput7 = _theme$timeInput7.drop) == null ? void 0 : _theme$timeInput7.minHeight,
+    gap: ((_theme$timeInput8 = theme.timeInput) == null || (_theme$timeInput8 = _theme$timeInput8.drop) == null ? void 0 : _theme$timeInput8.gap) || 'xsmall',
+    pad: inline ? 'none' : ((_theme$timeInput9 = theme.timeInput) == null || (_theme$timeInput9 = _theme$timeInput9.drop) == null ? void 0 : _theme$timeInput9.pad) || 'small',
     onPointerDownCapture: markInteractionInProgress,
     onPointerUpCapture: releaseInteractionAfterClick,
     onPointerCancelCapture: clearInteractionInProgress,

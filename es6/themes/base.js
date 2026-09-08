@@ -2935,7 +2935,7 @@ export var generate = function generate(baseSpacing, scale) {
             background: 'selected',
             color: 'white',
             text: {
-              weight: 'medium'
+              weight: 500
             },
             hover: {
               // background: undefined,
