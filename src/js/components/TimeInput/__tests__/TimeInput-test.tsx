@@ -117,6 +117,28 @@ describe('TimeInput', () => {
     expect(trigger).toHaveAttribute('aria-controls', 'time-a11y__drop');
   });
 
+  test('uses input padding and control radius without a button theme', () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: { padding: { horizontal: '16px' } },
+            control: { border: { radius: '8px' } },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: 'Choose time' });
+    expect(trigger).toHaveStyleRule('padding-left', '16px');
+    expect(trigger).toHaveStyleRule('padding-right', '16px');
+    expect(trigger).toHaveStyleRule('padding-top', '0');
+    expect(trigger).toHaveStyleRule('padding-bottom', '0');
+    expect(trigger).toHaveStyleRule('border-radius', '8px');
+  });
+
   test('does not show an active section before focus', () => {
     render(
       <Grommet>
@@ -1925,6 +1947,8 @@ describe('TimeInput', () => {
       timeInput: {
         button: {
           background: '#EEEEEE',
+          padding: { horizontal: '16px', vertical: '0px' },
+          border: { radius: '6px' },
         },
         container: {
           round: 'large',
@@ -1966,12 +1990,11 @@ describe('TimeInput', () => {
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
 
-    // button theme and geometry
+    // button theme
     const trigger = screen.getByRole('button', { name: 'Choose time' });
     expect(trigger).toHaveStyleRule('background-color', '#EEEEEE');
-    expect(trigger).toHaveStyleRule('width', '100%');
-    expect(trigger).toHaveStyleRule('height', '100%');
-    expect(trigger.parentElement).toHaveStyleRule('width', '48px');
+    expect(trigger).toHaveStyleRule('padding', '0px 16px');
+    expect(trigger).toHaveStyleRule('border-radius', '6px');
 
     // active.pad applies to every segment, active or not
     const hourSegment = getSegment('hours');

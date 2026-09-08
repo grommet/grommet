@@ -31,7 +31,6 @@ import {
   StyledTimeInputContainer,
   StyledTimeInput,
   StyledTimeInputButton,
-  StyledTimeInputButtonContainer,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
@@ -800,33 +799,38 @@ const TimeInput = forwardRef(
               />
             )}
             {!readOnly && (
-              <StyledTimeInputButtonContainer
-                width="xxsmall"
+              <StyledTimeInputButton
+                pad={
+                  theme.timeInput?.button
+                    ? undefined
+                    : {
+                        horizontal: theme.global.input.padding?.horizontal,
+                        left: theme.global.input.padding?.left,
+                        right: theme.global.input.padding?.right,
+                        top: '0',
+                        bottom: '0',
+                      }
+                }
+                icon={<GrommetClockIcon />}
+                disabled={disabled}
+                kind={theme.timeInput?.button}
+                aria-label={formatMessage({
+                  id: 'timeInput.chooseTime',
+                  messages,
+                })}
+                aria-haspopup="dialog"
+                aria-expanded={open}
+                aria-controls={id ? `${id}__drop` : undefined}
+                focusIndicator="inset"
+                onFocus={() => {
+                  setIconFocused(true);
+                }}
+                onBlur={() => {
+                  setIconFocused(false);
+                }}
+                onClick={open ? closePicker : openPicker}
                 {...passThemeFlag}
-              >
-                <StyledTimeInputButton
-                  fill
-                  icon={<GrommetClockIcon />}
-                  disabled={disabled}
-                  kind={theme.timeInput?.button}
-                  aria-label={formatMessage({
-                    id: 'timeInput.chooseTime',
-                    messages,
-                  })}
-                  aria-haspopup="dialog"
-                  aria-expanded={open}
-                  aria-controls={id ? `${id}__drop` : undefined}
-                  focusIndicator="inset"
-                  hoverIndicator
-                  onFocus={() => {
-                    setIconFocused(true);
-                  }}
-                  onBlur={() => {
-                    setIconFocused(false);
-                  }}
-                  onClick={open ? closePicker : openPicker}
-                />
-              </StyledTimeInputButtonContainer>
+              />
             )}
           </StyledTimeInputContainer>
           {open && (
