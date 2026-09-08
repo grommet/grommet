@@ -559,6 +559,9 @@ const TimeInputPopup = ({
     let rafB;
     const rafA = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
+      // Inline pickers share focus with the calendar; only refocus within them.
+      if (inline && !dialogRef.current?.contains(document.activeElement))
+        return;
       const focused = focusCurrentPopupOption();
       // Retry one more frame to handle occasional mount timing races.
       if (!focused) {
@@ -574,7 +577,7 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, inline, scrollSelectedOptionsIntoView]);
 
   const popupContent = (
     <Box

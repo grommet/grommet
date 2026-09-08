@@ -1193,6 +1193,7 @@ exports[`Components loads 1`] = `
       "messages": [Function],
       "minuteStep": [Function],
       "name": [Function],
+      "onActiveSectionChange": [Function],
       "onChange": [Function],
       "readOnly": [Function],
       "showSeconds": [Function],

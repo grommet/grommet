@@ -113,6 +113,7 @@ const TimeInput = forwardRef(
       minuteStep = 1,
       name,
       onChange,
+      onActiveSectionChange,
       onPartialChange,
       readOnly = false,
       showSeconds,
@@ -223,7 +224,7 @@ const TimeInput = forwardRef(
       moveSection,
       parsePasted,
       sections,
-      setActiveSection,
+      setActiveSection: setActiveSectionState,
       setSectionValue,
       pendingDigits,
     } = useSectionedTimeField({
@@ -247,6 +248,15 @@ const TimeInput = forwardRef(
       },
       onInvalid: handleInvalid,
     });
+
+    // makes DateTimeInput track focus-driven section changes, not just commits.
+    const setActiveSection = useCallback(
+      (section) => {
+        setActiveSectionState(section);
+        onActiveSectionChange?.(section);
+      },
+      [onActiveSectionChange, setActiveSectionState],
+    );
 
     // Builds the announcement text for a given section: its current value
     // (e.g. "3 hours") if it has one, or just the section name (e.g. "hours

@@ -23,6 +23,7 @@ export interface TimeInputProps {
   };
   minuteStep?: number;
   name?: string;
+  onActiveSectionChange?: (activeSection: number) => void;
   onChange?: (event: { value?: string }) => void;
   readOnly?: boolean;
   showSeconds?: boolean;

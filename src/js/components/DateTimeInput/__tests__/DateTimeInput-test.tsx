@@ -3,6 +3,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import {
+  act,
   fireEvent,
   render,
   screen,
@@ -234,6 +235,109 @@ describe('DateTimeInput', () => {
     ).toHaveTextContent('45');
   });
 
+  test('marks the day segment active after selecting a calendar day', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-calendar-active-section"
+          format="12"
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: /date and time/i,
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    await user.click(
+      within(drop).getByRole('button', { name: /Jul 23 2026/i }),
+    );
+
+    // ::after underline marks the active segment; #000000 is its theme default.
+    expect(
+      screen.getByRole('spinbutton', { name: 'day', hidden: true }),
+    ).toHaveStyleRule('background-color', '#000000', { modifier: '::after' });
+    expect(
+      screen.getByRole('spinbutton', { name: 'hours', hidden: true }),
+    ).not.toHaveStyleRule('background-color', '#000000', {
+      modifier: '::after',
+    });
+  });
+
+  test('marks the segment active for the focused popup time column', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-popup-focus-section"
+          format="12"
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: /date and time/i,
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    // Focus without committing a value — the underline must still follow.
+    fireEvent.focus(
+      within(within(drop).getByRole('listbox', { name: 'minute' })).getByRole(
+        'option',
+        { name: '30 minutes' },
+      ),
+    );
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'minutes', hidden: true }),
+    ).toHaveStyleRule('background-color', '#000000', { modifier: '::after' });
+  });
+
+  test('marks the day segment active when focus moves back to a calendar day', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-calendar-refocus"
+          format="12"
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', {
+      name: /date and time/i,
+    });
+    await user.click(trigger);
+
+    const drop = getDropFromTrigger(trigger);
+    fireEvent.focus(
+      within(within(drop).getByRole('listbox', { name: 'minute' })).getByRole(
+        'option',
+        { name: '30 minutes' },
+      ),
+    );
+    fireEvent.focus(within(drop).getByRole('button', { name: /Jul 21 2026/i }));
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'day', hidden: true }),
+    ).toHaveStyleRule('background-color', '#000000', { modifier: '::after' });
+    expect(
+      screen.getByRole('spinbutton', { name: 'minutes', hidden: true }),
+    ).not.toHaveStyleRule('background-color', '#000000', {
+      modifier: '::after',
+    });
+  });
+
   test('selecting time in drop selects a calendar day when date is empty', async () => {
     const user = userEvent.setup();
 
@@ -329,11 +433,13 @@ describe('DateTimeInput', () => {
 
     const drop = getDropFromTrigger(trigger);
     const hourList = within(drop).getByRole('listbox', { name: 'hour' });
-    await waitFor(() =>
-      expect(
-        within(hourList).getByRole('option', { name: '00 hours' }),
-      ).toHaveFocus(),
-    );
+    const hourOption = within(hourList).getByRole('option', {
+      name: '00 hours',
+    });
+    act(() => {
+      hourOption.focus();
+    });
+    await waitFor(() => expect(hourOption).toHaveFocus());
     await user.keyboard('{ArrowUp}');
 
     expect(
