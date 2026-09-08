@@ -30,6 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
     direction: _propTypes["default"].oneOf(['horizontal', 'vertical']),
     clickableSteps: _propTypes["default"].bool,
     showDescription: _propTypes["default"].bool,
+    errorAnnouncement: _propTypes["default"].oneOf(['assertive', 'polite', false]),
     onStepClick: _propTypes["default"].func,
     id: _propTypes["default"].string,
     children: _propTypes["default"].node

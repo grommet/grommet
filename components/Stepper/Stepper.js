@@ -9,7 +9,7 @@ var _Keyboard = require("../Keyboard");
 var _StepperContext = require("./StepperContext");
 var _StepperStep = require("./StepperStep");
 var _propTypes = require("./propTypes");
-var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "onStepClick", "aria-label", "children", "id"];
+var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "errorAnnouncement", "onStepClick", "aria-label", "children", "id"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
@@ -58,6 +58,8 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
     clickableSteps = _ref$clickableSteps === void 0 ? true : _ref$clickableSteps,
     _ref$showDescription = _ref.showDescription,
     showDescription = _ref$showDescription === void 0 ? true : _ref$showDescription,
+    _ref$errorAnnouncemen = _ref.errorAnnouncement,
+    errorAnnouncement = _ref$errorAnnouncemen === void 0 ? 'polite' : _ref$errorAnnouncemen,
     onStepClick = _ref.onStepClick,
     ariaLabel = _ref['aria-label'],
     children = _ref.children,
@@ -161,13 +163,14 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
       clickableSteps: clickableSteps,
       onStepClick: onStepClick,
       showDescription: showDescription,
+      errorAnnouncement: errorAnnouncement,
       stepIndex: stepIndex,
       isPriorStep: isPriorStep,
       isAfterStep: isAfterStep,
       isCurrentStep: isCurrentStep,
       canNavigateTo: canNavigateTo
     };
-  }, [effectiveCurrentStep, flatSteps, direction, clickableSteps, onStepClick, showDescription, stepIndex, isPriorStep, isAfterStep, isCurrentStep, canNavigateTo]);
+  }, [effectiveCurrentStep, flatSteps, direction, clickableSteps, onStepClick, showDescription, errorAnnouncement, stepIndex, isPriorStep, isAfterStep, isCurrentStep, canNavigateTo]);
 
   // Wraps around the step list to find the next step
   // in the given direction (+1 forward, -1 backward).

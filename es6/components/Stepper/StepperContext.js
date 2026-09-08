@@ -8,6 +8,7 @@ export var StepperContext = /*#__PURE__*/createContext({
   clickableSteps: true,
   onStepClick: undefined,
   showDescription: true,
+  errorAnnouncement: 'polite',
   stepIndex: function stepIndex() {
     return -1;
   },

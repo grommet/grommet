@@ -13,6 +13,7 @@ var StepperContext = exports.StepperContext = /*#__PURE__*/(0, _react.createCont
   clickableSteps: true,
   onStepClick: undefined,
   showDescription: true,
+  errorAnnouncement: 'polite',
   stepIndex: function stepIndex() {
     return -1;
   },

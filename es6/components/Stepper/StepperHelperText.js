@@ -6,7 +6,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Text } from '../Text';
-import { useStepItem } from './StepperContext';
+import { useStepItem, useStepper } from './StepperContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 var StepperHelperText = function StepperHelperText(_ref) {
   var _theme$stepper, _theme$stepper2;
@@ -22,10 +22,15 @@ export var StepperError = function StepperError(_ref2) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref2), _ref2));
   var _useStepItem = useStepItem(),
     step = _useStepItem.step;
+  var _useStepper = useStepper(),
+    errorAnnouncement = _useStepper.errorAnnouncement;
   if (!step || step.status !== 'error' || !step.errorMessage) return null;
+  var role;
+  if (errorAnnouncement === 'polite') role = 'status';
+  if (errorAnnouncement === 'assertive') role = 'alert';
   return /*#__PURE__*/React.createElement(StepperHelperText, _extends({
     id: "stepper-error-" + step.id,
-    role: "alert",
+    role: role,
     variant: "error"
   }, rest), step.errorMessage);
 };

@@ -26,10 +26,15 @@ var StepperError = exports.StepperError = function StepperError(_ref2) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref2), _ref2));
   var _useStepItem = (0, _StepperContext.useStepItem)(),
     step = _useStepItem.step;
+  var _useStepper = (0, _StepperContext.useStepper)(),
+    errorAnnouncement = _useStepper.errorAnnouncement;
   if (!step || step.status !== 'error' || !step.errorMessage) return null;
+  var role;
+  if (errorAnnouncement === 'polite') role = 'status';
+  if (errorAnnouncement === 'assertive') role = 'alert';
   return /*#__PURE__*/_react["default"].createElement(StepperHelperText, _extends({
     id: "stepper-error-" + step.id,
-    role: "alert",
+    role: role,
     variant: "error"
   }, rest), step.errorMessage);
 };
