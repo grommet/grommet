@@ -543,7 +543,7 @@ const TextInput = forwardRef(
       />
     );
 
-    const PasswordToggleButton = passwordToggle ? (
+    const passwordToggleButton = passwordToggle ? (
       <Button
         disabled={disabled}
         kind="toolbar"
@@ -668,7 +668,7 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-        {PasswordToggleButton && !readOnlyCopy && (
+        {passwordToggleButton && !readOnlyCopy && (
           <StyledInlineButton
             hasCopyButton={!!inlineCopyButton}
             {...passThemeFlag}
@@ -679,10 +679,10 @@ const TextInput = forwardRef(
               </StyledInlineIcon>
             )}
             {inlineCopyButton}
-            {PasswordToggleButton}
+            {passwordToggleButton}
           </StyledInlineButton>
         )}
-        {showTrailingIcon && !PasswordToggleButton && (
+        {showTrailingIcon && !passwordToggleButton && (
           <StyledIcon reverse={reverse} theme={theme}>
             {textInputIcon}
           </StyledIcon>
