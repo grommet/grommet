@@ -1047,8 +1047,8 @@ const DateTimeInput = forwardRef(
         suppressTimePartialSyncRef.current = true;
         setPendingDigits({});
         editStateRef.current = { section: activeSection, buffer: '' };
-        activeSectionRef.current = SECTION_HOUR;
-        setActiveSection(SECTION_HOUR);
+        activeSectionRef.current = SECTION_DAY;
+        setActiveSection(SECTION_DAY);
         commitSections(nextSections);
       },
       [
@@ -1175,6 +1175,24 @@ const DateTimeInput = forwardRef(
       return `${pad(sections.hour)}:${pad(minute)}:${pad(resolvedSecond)}`;
     }, [resolvedFormat, sections, showSeconds]);
 
+    const handleTimeActiveSectionChange = useCallback(
+      (changedTimeSectionIndex) => {
+        const dtSection = TIME_TO_DT_SECTION[changedTimeSectionIndex];
+        if (dtSection !== undefined) setActiveSection(dtSection);
+      },
+      [setActiveSection, TIME_TO_DT_SECTION],
+    );
+
+    const handleCalendarFocus = useCallback(
+      (event) => {
+        if (disabled || readOnly) return;
+        if (event.target.closest?.('[role="grid"]')) {
+          setActiveSection(SECTION_DAY);
+        }
+      },
+      [disabled, readOnly, setActiveSection],
+    );
+
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
     const { inForm } = formContext.useFormField({});
@@ -1224,6 +1242,7 @@ const DateTimeInput = forwardRef(
           <Calendar
             date={getCalendarDate(sections)}
             initialFocus={inline ? undefined : 'days'}
+            onFocus={handleCalendarFocus}
             onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
           />
         </ThemeContext.Extend>
@@ -1246,6 +1265,9 @@ const DateTimeInput = forwardRef(
           disabled={disabled}
           readOnly={readOnly}
           onChange={disabled || readOnly ? undefined : handleTimeSelect}
+          onActiveSectionChange={
+            disabled || readOnly ? undefined : handleTimeActiveSectionChange
+          }
           onPartialChange={
             disabled || readOnly ? undefined : handleTimePartialChange
           }
