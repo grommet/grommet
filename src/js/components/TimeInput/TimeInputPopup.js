@@ -30,6 +30,7 @@ const PopupOption = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   ${(props) => {
     const optionPad = props.theme.timeInput?.drop?.option?.pad;
     return (
@@ -194,7 +195,6 @@ const PopupColumn = ({
               if (event.button !== 0) return;
               // Commit on pointer press so momentum scroll does not swallow
               // the first click commit on some trackpad/mouse flows.
-              event.preventDefault();
               onPointerCommitOption(section, option);
             }}
             onClick={() => onClickCommitOption(section, option)}
@@ -205,6 +205,11 @@ const PopupColumn = ({
                 theme.timeInput?.drop?.option?.size ||
                 theme.global.input.font.size ||
                 'small'
+              }
+              weight={
+                selected
+                  ? theme.timeInput?.drop?.option?.selected?.text?.weight
+                  : undefined
               }
               color={optionColor}
             >
