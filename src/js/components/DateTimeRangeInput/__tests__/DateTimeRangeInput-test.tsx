@@ -700,6 +700,59 @@ describe('DateTimeRangeInput', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
+  test('does not emit an invalid range from inline editing', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput
+          format="24"
+          value={['2026-07-22T18:00:00.000Z', '2026-07-22T19:00:00.000Z']}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    const endGroup = screen.getByRole('group', {
+      name: 'End date and time',
+    });
+    const initialEndText = endGroup.textContent;
+    const endHours = within(endGroup).getByRole('spinbutton', {
+      name: 'hours',
+    });
+
+    await user.click(endHours);
+    await user.keyboard('{ArrowDown}');
+
+    expect(onChange).not.toHaveBeenCalled();
+    expect(endGroup.textContent).toBe(initialEndText);
+  });
+
+  test('exposes disabled state and read-only descendants', () => {
+    const { rerender } = render(
+      <Grommet>
+        <DateTimeRangeInput disabled aria-label="Range" />
+      </Grommet>,
+    );
+
+    const group = screen.getByRole('group', { name: 'Range' });
+    expect(group).toHaveAttribute('aria-disabled', 'true');
+
+    rerender(
+      <Grommet>
+        <DateTimeRangeInput readOnly aria-label="Range" />
+      </Grommet>,
+    );
+
+    expect(group).not.toHaveAttribute('aria-disabled');
+    expect(
+      within(group)
+        .getAllByRole('spinbutton')
+        .every((segment) => segment.getAttribute('aria-readonly') === 'true'),
+    ).toBe(true);
+  });
+
   test('renders custom messages', () => {
     render(
       <Grommet>
@@ -1314,6 +1367,138 @@ describe('DateTimeRangeInput', () => {
         hidden: true,
       }),
     ).toHaveTextContent('hh:mm aa');
+  });
+
+  test('disables dates outside the configured min and max dates', async () => {
+    const user = userEvent.setup();
+    const minDate = currentMonthDate(10).toISOString();
+    const maxDate = currentMonthDate(20, 23, 59).toISOString();
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput format="12" minDate={minDate} maxDate={maxDate} />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Open date and time range picker',
+      }),
+    );
+
+    const calendar = within(screen.getByRole('grid'));
+    expect(
+      calendar.getByRole('button', {
+        name: currentMonthDate(9).toDateString(),
+      }),
+    ).toHaveAttribute('aria-disabled', 'true');
+    expect(
+      calendar.getByRole('button', {
+        name: currentMonthDate(10).toDateString(),
+      }),
+    ).toHaveAttribute('aria-disabled', 'false');
+    expect(
+      calendar.getByRole('button', {
+        name: currentMonthDate(20).toDateString(),
+      }),
+    ).toHaveAttribute('aria-disabled', 'false');
+    expect(
+      calendar.getByRole('button', {
+        name: currentMonthDate(21).toDateString(),
+      }),
+    ).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  test('does not apply a preset outside the configured date bounds', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput
+          minDate="2026-07-10T00:00:00.000Z"
+          maxDate="2026-07-20T23:59:59.999Z"
+          ranges={[
+            {
+              id: 'outside-bounds',
+              label: 'Outside bounds',
+              getValue: () => [
+                '2026-07-01T00:00:00.000Z',
+                '2026-07-11T00:00:00.000Z',
+              ],
+            },
+          ]}
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Open date and time range picker',
+      }),
+    );
+    await user.click(screen.getByRole('button', { name: 'Outside bounds' }));
+
+    expect(onChange).not.toHaveBeenCalled();
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
+  test('keeps Apply disabled when the draft violates a time-bearing minDate', async () => {
+    const user = userEvent.setup();
+    const minDate = currentMonthDate(10, 12).toISOString();
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput
+          format="12"
+          minDate={minDate}
+          maxDate={currentMonthDate(20, 23, 59).toISOString()}
+        />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Open date and time range picker',
+      }),
+    );
+    await user.click(
+      within(screen.getByRole('grid')).getByRole('button', {
+        name: currentMonthDate(10).toDateString(),
+      }),
+    );
+    await user.click(screen.getByRole('button', { name: 'Next' }));
+    await user.click(
+      within(screen.getByRole('grid')).getByRole('button', {
+        name: currentMonthDate(11).toDateString(),
+      }),
+    );
+
+    expect(
+      screen.getByText(/Date and time must be on or after .*12:00 PM/),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
+  test('disables range navigation when a shift would exceed bounds', async () => {
+    render(
+      <Grommet>
+        <DateTimeRangeInput
+          value={['2026-07-15T09:00:00.000Z', '2026-07-15T17:00:00.000Z']}
+          minDate="2026-07-15T09:00:00.000Z"
+          maxDate="2026-07-15T17:00:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Go to previous range' }),
+    ).toBeDisabled();
+    expect(
+      screen.getByRole('button', { name: 'Go to next range' }),
+    ).toBeDisabled();
   });
 
   test('shows an error when same-day end time is not after start', async () => {
