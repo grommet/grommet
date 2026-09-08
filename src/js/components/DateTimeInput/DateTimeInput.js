@@ -18,6 +18,7 @@ import { normalizeStep, pad } from '../../utils/dates';
 import { useForwardedRef } from '../../utils';
 import { useSectionedField } from '../../utils/useSectionedField';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Calendar } from '../Calendar';
@@ -581,7 +582,12 @@ const DateTimeInput = forwardRef(
           sections,
         );
         const key = getSectionKeyFromType(sectionTypeFromSection(section));
-        const current = sections[key] === undefined ? min : sections[key];
+        if (sections[key] === undefined) {
+          setSectionValue(section, min);
+          return;
+        }
+
+        const current = sections[key];
         const step = section === SECTION_MINUTE ? normalizedMinuteStep : 1;
         let next;
 
@@ -807,13 +813,9 @@ const DateTimeInput = forwardRef(
       setOpen(false);
 
       requestAnimationFrame(() => {
-        if (inline) {
-          triggerRef.current?.focus();
-          return;
-        }
         focusSection(activeSectionRef.current);
       });
-    }, [focusSection, inline]);
+    }, [focusSection]);
 
     const onDisplaySectionMouseDown = useCallback(
       (section, event) => {
@@ -1182,20 +1184,198 @@ const DateTimeInput = forwardRef(
       : formatMessage({ id: 'dateTimeInput.inputLabel', messages });
     const CalendarIcon =
       theme.dateTimeInput?.icon?.calendar || GrommetCalendarIcon;
-    const dropTarget = inline ? triggerRef.current : containerRef.current;
+    const dropTarget = containerRef.current;
     const generatedId = useId();
     const dropId = `${id || generatedId}__drop`;
+
+    const hiddenInput = name ? (
+      <input
+        aria-hidden="true"
+        name={name}
+        readOnly
+        tabIndex={-1}
+        type="hidden"
+        value={value || ''}
+      />
+    ) : null;
+
+    const pickerContent = (
+      <Box
+        role="group"
+        aria-label={groupLabel}
+        aria-labelledby={formFieldLabelId}
+        direction="row"
+        pad={theme.dateTimeInput?.drop?.pad}
+        gap={theme.dateTimeInput?.drop?.gap}
+      >
+        <ThemeContext.Extend
+          value={{
+            calendar: {
+              day: {
+                selected: {
+                  background:
+                    theme.dateTimeInput?.calendar?.day?.selected?.background ||
+                    theme.calendar?.day?.selected?.background,
+                },
+              },
+            },
+          }}
+        >
+          <Calendar
+            date={getCalendarDate(sections)}
+            initialFocus={inline ? undefined : 'days'}
+            onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
+          />
+        </ThemeContext.Extend>
+        <Box
+          alignSelf="stretch"
+          flex={false}
+          border={{
+            side: 'start',
+            color: theme.dateTimeInput?.drop?.border?.color,
+            size: theme.dateTimeInput?.drop?.border?.size,
+          }}
+        />
+        <TimeInput
+          inline
+          format={resolvedFormat}
+          value={timeValue}
+          showSeconds={showSeconds}
+          messages={messages}
+          minuteStep={normalizedMinuteStep}
+          disabled={disabled}
+          readOnly={readOnly}
+          onChange={disabled || readOnly ? undefined : handleTimeSelect}
+          onPartialChange={
+            disabled || readOnly ? undefined : handleTimePartialChange
+          }
+        />
+      </Box>
+    );
+
+    if (inline) {
+      return (
+        <>
+          <input
+            {...rest}
+            aria-hidden="true"
+            id={id}
+            name={name}
+            readOnly
+            ref={inputRef}
+            tabIndex={-1}
+            type="hidden"
+            value={value || ''}
+          />
+          {pickerContent}
+        </>
+      );
+    }
 
     return (
       <Keyboard onEsc={open ? closePicker : undefined}>
         <Box>
-          {inline ? (
-            <Box direction="row" align="center">
+          <StyledDateTimeInputContainer
+            ref={containerRef}
+            direction="row"
+            border={!plainProp}
+            fill
+            round={theme.dateTimeInput?.container?.round}
+            disabled={disabled}
+            readOnlyProp={readOnly}
+            focusIndicator={focusIndicatorProp ?? true}
+            {...passThemeFlag}
+          >
+            <StyledDateTimeInputField {...passThemeFlag}>
+              <StyledDateTimeInputDisplay
+                role="group"
+                aria-label={groupLabel}
+                aria-labelledby={formFieldLabelId}
+                onMouseDown={onDisplayMouseDown}
+                {...passThemeFlag}
+              >
+                {displaySections.map(({ section, prefix, text, filled }) => {
+                  const sectionLimits = getSectionLimits(
+                    section,
+                    resolvedFormat,
+                    sections,
+                  );
+                  const key = getSectionKeyFromType(
+                    sectionTypeFromSection(section),
+                  );
+                  let numericValue;
+                  if (section === SECTION_PERIOD) {
+                    numericValue = sections[key] === 'PM' ? 1 : 0;
+                  } else {
+                    numericValue = sections[key] ?? sectionLimits.min;
+                  }
+
+                  return (
+                    <React.Fragment key={section}>
+                      {!!prefix && (
+                        <StyledDateTimeInputSeparator
+                          $filled={hasDisplayValue}
+                          $paddingInline={dateTimeSeparatorPadding}
+                          {...passThemeFlag}
+                        >
+                          {prefix}
+                        </StyledDateTimeInputSeparator>
+                      )}
+                      <StyledDateTimeInputSegment
+                        ref={(segmentNode) => {
+                          segmentRefs.current[section] = segmentNode;
+                        }}
+                        tabIndex={
+                          !readOnly && !disabled && activeSection === section
+                            ? 0
+                            : -1
+                        }
+                        $active={showActiveSection && activeSection === section}
+                        $filled={filled}
+                        onFocus={() => onSegmentFocus(section)}
+                        onBlur={onSegmentBlur}
+                        onKeyDown={(event) => onSegmentKeyDown(section, event)}
+                        data-section={section}
+                        role="spinbutton"
+                        aria-label={getSectionName(
+                          section,
+                          formatMessage,
+                          messages,
+                        )}
+                        aria-disabled={disabled || undefined}
+                        aria-readonly={readOnly || undefined}
+                        aria-valuenow={numericValue}
+                        aria-valuemin={sectionLimits.min}
+                        aria-valuemax={sectionLimits.max}
+                        aria-valuetext={sectionValueAnnouncement(section)}
+                        {...passThemeFlag}
+                      >
+                        {text}
+                      </StyledDateTimeInputSegment>
+                    </React.Fragment>
+                  );
+                })}
+              </StyledDateTimeInputDisplay>
+              <StyledDateTimeInput
+                tabIndex={-1}
+                {...rest}
+                id={id}
+                ref={inputRef}
+                value={inputValue}
+                aria-hidden="true"
+                disabled={disabled}
+                readOnly
+                focusIndicator={false}
+                plain
+              />
+            </StyledDateTimeInputField>
+            {!readOnly && (
               <Button
                 ref={triggerRef}
                 icon={<CalendarIcon />}
                 plain
-                disabled={disabled || readOnly}
+                disabled={disabled}
+                margin={theme.dateTimeInput?.button?.margin}
                 aria-label={formatMessage({
                   id: 'dateTimeInput.chooseDateTime',
                   messages,
@@ -1205,135 +1385,9 @@ const DateTimeInput = forwardRef(
                 aria-controls={dropId}
                 onClick={open ? closePicker : openPicker}
               />
-            </Box>
-          ) : (
-            <StyledDateTimeInputContainer
-              ref={containerRef}
-              direction="row"
-              border={!plainProp}
-              fill
-              round={theme.dateTimeInput?.container?.round}
-              disabled={disabled}
-              readOnlyProp={readOnly}
-              focusIndicator={focusIndicatorProp ?? true}
-              {...passThemeFlag}
-            >
-              <StyledDateTimeInputField {...passThemeFlag}>
-                <StyledDateTimeInputDisplay
-                  role="group"
-                  aria-label={groupLabel}
-                  aria-labelledby={formFieldLabelId}
-                  onMouseDown={onDisplayMouseDown}
-                  {...passThemeFlag}
-                >
-                  {displaySections.map(({ section, prefix, text, filled }) => {
-                    const sectionLimits = getSectionLimits(
-                      section,
-                      resolvedFormat,
-                      sections,
-                    );
-                    const key = getSectionKeyFromType(
-                      sectionTypeFromSection(section),
-                    );
-                    let numericValue;
-                    if (section === SECTION_PERIOD) {
-                      numericValue = sections[key] === 'PM' ? 1 : 0;
-                    } else {
-                      numericValue = sections[key] ?? sectionLimits.min;
-                    }
-
-                    return (
-                      <React.Fragment key={section}>
-                        {!!prefix && (
-                          <StyledDateTimeInputSeparator
-                            $filled={hasDisplayValue}
-                            $paddingInline={dateTimeSeparatorPadding}
-                            {...passThemeFlag}
-                          >
-                            {prefix}
-                          </StyledDateTimeInputSeparator>
-                        )}
-                        <StyledDateTimeInputSegment
-                          ref={(segmentNode) => {
-                            segmentRefs.current[section] = segmentNode;
-                          }}
-                          tabIndex={
-                            !readOnly && !disabled && activeSection === section
-                              ? 0
-                              : -1
-                          }
-                          $active={
-                            showActiveSection && activeSection === section
-                          }
-                          $filled={filled}
-                          onFocus={() => onSegmentFocus(section)}
-                          onBlur={onSegmentBlur}
-                          onKeyDown={(event) =>
-                            onSegmentKeyDown(section, event)
-                          }
-                          data-section={section}
-                          role="spinbutton"
-                          aria-label={getSectionName(
-                            section,
-                            formatMessage,
-                            messages,
-                          )}
-                          aria-disabled={disabled || undefined}
-                          aria-readonly={readOnly || undefined}
-                          aria-valuenow={numericValue}
-                          aria-valuemin={sectionLimits.min}
-                          aria-valuemax={sectionLimits.max}
-                          aria-valuetext={sectionValueAnnouncement(section)}
-                          {...passThemeFlag}
-                        >
-                          {text}
-                        </StyledDateTimeInputSegment>
-                      </React.Fragment>
-                    );
-                  })}
-                </StyledDateTimeInputDisplay>
-                <StyledDateTimeInput
-                  tabIndex={-1}
-                  {...rest}
-                  id={id}
-                  ref={inputRef}
-                  value={inputValue}
-                  aria-hidden="true"
-                  disabled={disabled}
-                  readOnly
-                  focusIndicator={false}
-                  plain
-                />
-              </StyledDateTimeInputField>
-              {!readOnly && (
-                <Button
-                  ref={triggerRef}
-                  icon={<CalendarIcon />}
-                  plain
-                  disabled={disabled}
-                  margin={theme.dateTimeInput?.button?.margin}
-                  aria-label={formatMessage({
-                    id: 'dateTimeInput.chooseDateTime',
-                    messages,
-                  })}
-                  aria-haspopup="dialog"
-                  aria-expanded={open}
-                  aria-controls={dropId}
-                  onClick={open ? closePicker : openPicker}
-                />
-              )}
-            </StyledDateTimeInputContainer>
-          )}
-          {name && (
-            <input
-              aria-hidden="true"
-              name={name}
-              readOnly
-              tabIndex={-1}
-              type="hidden"
-              value={value || ''}
-            />
-          )}
+            )}
+          </StyledDateTimeInputContainer>
+          {hiddenInput}
           {open && (
             <Drop
               id={dropId}
@@ -1342,38 +1396,7 @@ const DateTimeInput = forwardRef(
               onEsc={closePicker}
               onClickOutside={closePicker}
             >
-              <Box
-                direction="row"
-                pad={theme.dateTimeInput?.drop?.pad}
-                gap={theme.dateTimeInput?.drop?.gap}
-              >
-                <Calendar
-                  date={getCalendarDate(sections)}
-                  initialFocus="days"
-                  onSelect={handleCalendarSelect}
-                />
-                <Box
-                  alignSelf="stretch"
-                  flex={false}
-                  border={{
-                    side: 'start',
-                    color: theme.dateTimeInput?.drop?.border?.color,
-                    size: theme.dateTimeInput?.drop?.border?.size,
-                  }}
-                />
-                <TimeInput
-                  inline
-                  format={resolvedFormat}
-                  value={timeValue}
-                  showSeconds={showSeconds}
-                  messages={messages}
-                  minuteStep={normalizedMinuteStep}
-                  disabled={disabled}
-                  readOnly={readOnly}
-                  onChange={handleTimeSelect}
-                  onPartialChange={handleTimePartialChange}
-                />
-              </Box>
+              {pickerContent}
             </Drop>
           )}
         </Box>
