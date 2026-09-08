@@ -13,6 +13,8 @@ export interface TextInputProps
     'onSelect' | 'size' | 'placeholder' | 'width'
   > {
   a11yTitle?: A11yTitleType;
+  copy?: boolean;
+  defaultSuggestion?: number;
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -20,10 +22,9 @@ export interface TextInputProps
     left?: 'left' | 'right';
   };
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  dropTarget?: object;
   dropProps?: DropType;
+  dropTarget?: object;
   focusIndicator?: boolean;
-  defaultSuggestion?: number;
   icon?: React.ReactNode;
   id?: string;
   messages?: {
@@ -47,12 +48,11 @@ export interface TextInputProps
     target: React.RefObject<HTMLElement | null>['current'];
     suggestion: any;
   }) => void;
-  onSuggestionsOpen?: () => void;
   onSuggestionsClose?: () => void;
+  onSuggestionsOpen?: () => void;
   password?: boolean;
   placeholder?: string | React.ReactNode;
   plain?: boolean | 'full';
-  copy?: boolean;
   readOnlyCopy?: boolean;
   reverse?: boolean;
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
