@@ -11,7 +11,7 @@ var _Box = require("../Box");
 var _Drop = require("../Drop");
 var _Text = require("../Text");
 var _utils2 = require("./utils");
-var _excluded = ["activeSection", "align", "format", "formatMessage", "hoursOptions", "id", "incrementSection", "messages", "minuteOptions", "onClose", "onFocusLeave", "secondOptions", "sectionOrder", "sections", "setActiveSection", "setSectionValue", "target", "dropProps", "label", "inline", "onKeyDown"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+var _excluded = ["activeSection", "align", "format", "formatMessage", "hoursOptions", "focusOnOpen", "id", "incrementSection", "messages", "minuteOptions", "onClose", "onFocusLeave", "secondOptions", "sectionOrder", "sections", "setActiveSection", "setSectionValue", "target", "dropProps", "label", "inline", "onKeyDown"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 /* eslint-disable max-len */
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -159,6 +159,8 @@ var TimeInputPopup = exports.TimeInputPopup = function TimeInputPopup(_ref3) {
     format = _ref3.format,
     formatMessage = _ref3.formatMessage,
     hoursOptions = _ref3.hoursOptions,
+    _ref3$focusOnOpen = _ref3.focusOnOpen,
+    focusOnOpen = _ref3$focusOnOpen === void 0 ? true : _ref3$focusOnOpen,
     id = _ref3.id,
     incrementSection = _ref3.incrementSection,
     messages = _ref3.messages,
@@ -377,6 +379,11 @@ var TimeInputPopup = exports.TimeInputPopup = function TimeInputPopup(_ref3) {
     var scrollRaf = requestAnimationFrame(function () {
       scrollSelectedOptionsIntoView();
     });
+
+    // DateTimeInput disables this so its Calendar can receive initial focus.
+    if (!focusOnOpen) return function () {
+      return window.cancelAnimationFrame(scrollRaf);
+    };
     var rafB;
     var rafA = requestAnimationFrame(function () {
       scrollSelectedOptionsIntoView();
@@ -394,7 +401,7 @@ var TimeInputPopup = exports.TimeInputPopup = function TimeInputPopup(_ref3) {
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
   var popupContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: dialogRef,
     role: inline ? undefined : 'dialog',

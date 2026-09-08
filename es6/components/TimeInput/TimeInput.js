@@ -1,4 +1,4 @@
-var _excluded = ["defaultValue", "disabled", "format", "id", "inline", "messages", "minuteStep", "name", "onChange", "onPartialChange", "readOnly", "showSeconds", "value"],
+var _excluded = ["defaultValue", "disabled", "focusOnOpen", "format", "id", "inline", "messages", "minuteStep", "name", "onChange", "onPartialChange", "readOnly", "showSeconds", "value"],
   _excluded2 = ["plain", "focusIndicator"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -75,6 +75,8 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
   var _theme$timeInput, _theme$global, _theme$timeInput2;
   var defaultValue = _ref2.defaultValue,
     disabled = _ref2.disabled,
+    _ref2$focusOnOpen = _ref2.focusOnOpen,
+    focusOnOpen = _ref2$focusOnOpen === void 0 ? true : _ref2$focusOnOpen,
     _ref2$format = _ref2.format,
     format = _ref2$format === void 0 ? DEFAULT_FORMAT : _ref2$format,
     id = _ref2.id,
@@ -541,6 +543,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
       activeSection: activeSection,
       format: format,
       formatMessage: formatMessage,
+      focusOnOpen: focusOnOpen,
       hoursOptions: hoursOptions,
       incrementSection: incrementSection,
       messages: messages,
@@ -665,6 +668,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref2, refArg) {
     },
     format: format,
     formatMessage: formatMessage,
+    focusOnOpen: focusOnOpen,
     hoursOptions: hoursOptions,
     id: id,
     incrementSection: incrementSection,

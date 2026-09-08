@@ -982,6 +982,7 @@ var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(
   }), /*#__PURE__*/_react["default"].createElement(_TimeInput.TimeInput, {
     inline: true,
     format: resolvedFormat,
+    focusOnOpen: false,
     value: timeValue,
     showSeconds: showSeconds,
     messages: messages,

@@ -19,7 +19,7 @@ var _TimeInputPopup = require("./TimeInputPopup");
 var _propTypes = require("./propTypes");
 var _useSectionedTimeField = require("./useSectionedTimeField");
 var _utils2 = require("./utils");
-var _excluded = ["defaultValue", "disabled", "format", "id", "inline", "messages", "minuteStep", "name", "onChange", "onPartialChange", "readOnly", "showSeconds", "value"],
+var _excluded = ["defaultValue", "disabled", "focusOnOpen", "format", "id", "inline", "messages", "minuteStep", "name", "onChange", "onPartialChange", "readOnly", "showSeconds", "value"],
   _excluded2 = ["plain", "focusIndicator"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -79,6 +79,8 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
   var _theme$timeInput, _theme$global, _theme$timeInput2;
   var defaultValue = _ref2.defaultValue,
     disabled = _ref2.disabled,
+    _ref2$focusOnOpen = _ref2.focusOnOpen,
+    focusOnOpen = _ref2$focusOnOpen === void 0 ? true : _ref2$focusOnOpen,
     _ref2$format = _ref2.format,
     format = _ref2$format === void 0 ? DEFAULT_FORMAT : _ref2$format,
     id = _ref2.id,
@@ -545,6 +547,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
       activeSection: activeSection,
       format: format,
       formatMessage: formatMessage,
+      focusOnOpen: focusOnOpen,
       hoursOptions: hoursOptions,
       incrementSection: incrementSection,
       messages: messages,
@@ -669,6 +672,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     },
     format: format,
     formatMessage: formatMessage,
+    focusOnOpen: focusOnOpen,
     hoursOptions: hoursOptions,
     id: id,
     incrementSection: incrementSection,

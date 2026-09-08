@@ -141,6 +141,28 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
   });
 
+  test('moves focus to the calendar when opening with Space from a date segment', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-calendar-initial-focus"
+          locale="en-US"
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('spinbutton', { name: 'month' }));
+    await user.keyboard(' ');
+
+    const calendar = screen.getByRole('grid');
+    await waitFor(() =>
+      expect(calendar.contains(document.activeElement)).toBe(true),
+    );
+  });
+
   test('inline mode renders picker content directly without a trigger', () => {
     render(
       <Grommet>
@@ -315,7 +337,7 @@ describe('DateTimeInput', () => {
     ).toHaveTextContent('AM');
   });
 
-  test('initializes empty drop hour at zero with ArrowUp', async () => {
+  test('initializes empty drop hour at zero with ArrowUp after Tab', async () => {
     const user = userEvent.setup();
 
     render(
@@ -329,6 +351,7 @@ describe('DateTimeInput', () => {
 
     const drop = getDropFromTrigger(trigger);
     const hourList = within(drop).getByRole('listbox', { name: 'hour' });
+    await user.keyboard('{Tab}');
     await waitFor(() =>
       expect(
         within(hourList).getByRole('option', { name: '00 hours' }),

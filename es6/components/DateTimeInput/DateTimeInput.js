@@ -978,6 +978,7 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }), /*#__PURE__*/React.createElement(TimeInput, {
     inline: true,
     format: resolvedFormat,
+    focusOnOpen: false,
     value: timeValue,
     showSeconds: showSeconds,
     messages: messages,

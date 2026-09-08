@@ -1,4 +1,4 @@
-var _excluded = ["activeSection", "align", "format", "formatMessage", "hoursOptions", "id", "incrementSection", "messages", "minuteOptions", "onClose", "onFocusLeave", "secondOptions", "sectionOrder", "sections", "setActiveSection", "setSectionValue", "target", "dropProps", "label", "inline", "onKeyDown"];
+var _excluded = ["activeSection", "align", "format", "formatMessage", "hoursOptions", "focusOnOpen", "id", "incrementSection", "messages", "minuteOptions", "onClose", "onFocusLeave", "secondOptions", "sectionOrder", "sections", "setActiveSection", "setSectionValue", "target", "dropProps", "label", "inline", "onKeyDown"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
@@ -154,6 +154,8 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
     format = _ref3.format,
     formatMessage = _ref3.formatMessage,
     hoursOptions = _ref3.hoursOptions,
+    _ref3$focusOnOpen = _ref3.focusOnOpen,
+    focusOnOpen = _ref3$focusOnOpen === void 0 ? true : _ref3$focusOnOpen,
     id = _ref3.id,
     incrementSection = _ref3.incrementSection,
     messages = _ref3.messages,
@@ -372,6 +374,11 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
     var scrollRaf = requestAnimationFrame(function () {
       scrollSelectedOptionsIntoView();
     });
+
+    // DateTimeInput disables this so its Calendar can receive initial focus.
+    if (!focusOnOpen) return function () {
+      return window.cancelAnimationFrame(scrollRaf);
+    };
     var rafB;
     var rafA = requestAnimationFrame(function () {
       scrollSelectedOptionsIntoView();
@@ -389,7 +396,7 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
   var popupContent = /*#__PURE__*/React.createElement(Box, _extends({
     ref: dialogRef,
     role: inline ? undefined : 'dialog',
