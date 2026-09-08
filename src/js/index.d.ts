@@ -31,6 +31,7 @@ export * from './components/DataTableGroupBy';
 export * from './components/DataView';
 export * from './components/DateInput';
 export * from './components/DateTimeInput';
+export * from './components/DateTimeRangeInput';
 export * from './components/Diagram';
 export * from './components/Distribution';
 export * from './components/Drop';

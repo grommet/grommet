@@ -392,9 +392,11 @@ const DateTimeInput = forwardRef(
       minuteStep = 1,
       name,
       onChange,
+      onFocus: onFocusProp,
       plain: plainProp,
       focusIndicator: focusIndicatorProp,
       readOnly = false,
+      showCalendarButton = true,
       showSeconds = false,
       value: valueArg,
       ...rest
@@ -1367,9 +1369,17 @@ const DateTimeInput = forwardRef(
                 readOnly
                 focusIndicator={false}
                 plain
+                onFocus={(event) => {
+                  onFocusProp?.(event);
+                  if (!disabled && !readOnly) {
+                    setSegmentFocused(true);
+                    setActiveSection(firstSection);
+                    focusSection(firstSection);
+                  }
+                }}
               />
             </StyledDateTimeInputField>
-            {!readOnly && (
+            {!readOnly && showCalendarButton && (
               <Button
                 ref={triggerRef}
                 icon={<CalendarIcon />}

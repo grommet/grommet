@@ -40,6 +40,19 @@
     "sectionSeconds": "seconds",
     "sectionMeridiem": "meridiem"
   },
+  "dateTimeRangeInput": {
+    "startLabel": "Start date and time",
+    "endLabel": "End date and time",
+    "separator": "-",
+    "previousRange": "Go to previous range",
+    "nextRange": "Go to next range",
+    "chooseDateTimeRange": "Open date and time range picker",
+    "invalidRange": "End date and time must be after start date and time",
+    "cancel": "Cancel",
+    "next": "Next",
+    "apply": "Apply",
+    "customRange": "Custom range"
+  },
   "dataChart": {
     "detailTitle": "Data chart",
     "detailFocus": "Use the left and right arrow keys to navigate the chart data."
