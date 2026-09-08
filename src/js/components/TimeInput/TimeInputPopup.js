@@ -123,6 +123,7 @@ const PopupColumn = ({
   section,
   sections,
   theme,
+  passThemeFlag,
 }) => {
   // When inline (in DateTimeInput), use 'medium' to match Calendar height.
   // Otherwise use timeInput drop maxHeight with fallback to 'small'.
@@ -142,6 +143,7 @@ const PopupColumn = ({
       }}
       overflow="auto"
       flex={{ grow: 0, shrink: 0 }}
+      {...passThemeFlag}
     >
       {options.map((option) => {
         const key = optionKey(label, option);
@@ -243,7 +245,7 @@ const TimeInputPopup = ({
   onKeyDown: onKeyDownProp,
   ...rest
 }) => {
-  const { theme } = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const dialogRef = useRef();
   const pointerDownInsideRef = useRef(false);
   const pointerSelectionCommittedRef = useRef(false);
@@ -676,6 +678,7 @@ const TimeInputPopup = ({
           section={section}
           sections={sections}
           theme={theme}
+          passThemeFlag={passThemeFlag}
         />
       ))}
     </Box>
