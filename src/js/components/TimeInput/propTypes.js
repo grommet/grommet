@@ -25,6 +25,7 @@ if (process.env.NODE_ENV !== 'production') {
     }),
     minuteStep: PropTypes.number,
     name: PropTypes.string,
+    onActiveSectionChange: PropTypes.func,
     onChange: PropTypes.func,
     readOnly: PropTypes.bool,
     showSeconds: PropTypes.bool,
