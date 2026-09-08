@@ -83,13 +83,14 @@ const TextInput = forwardRef(
   (
     {
       a11yTitle,
+      copy,
       defaultSuggestion,
       defaultValue,
       disabled,
       dropAlign = defaultDropAlign,
       dropHeight,
-      dropTarget,
       dropProps,
+      dropTarget,
       focusIndicator = true,
       icon,
       id,
@@ -107,7 +108,6 @@ const TextInput = forwardRef(
       password,
       placeholder,
       plain,
-      copy,
       readOnly: readOnlyProp,
       readOnlyCopy,
       reverse,
