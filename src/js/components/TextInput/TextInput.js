@@ -531,7 +531,7 @@ const TextInput = forwardRef(
     const showLeadingIcon = showTextInputIcon && !reverse;
     const showTrailingIcon = showTextInputIcon && reverse;
 
-    const CopyButtonElement = (
+    const copyButtonElement = (
       <CopyButton
         authoredType={authoredType}
         disabled={disabled}
@@ -560,10 +560,10 @@ const TextInput = forwardRef(
     ) : undefined;
 
     const inlineCopyButton =
-      copy && !reverse && passwordToggle ? CopyButtonElement : undefined;
+      copy && !reverse && passwordToggle ? copyButtonElement : undefined;
     const textInputButton =
       readOnlyCopy || (copy && (!passwordToggle || reverse))
-        ? CopyButtonElement
+        ? copyButtonElement
         : undefined;
 
     return (
