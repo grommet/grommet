@@ -1430,6 +1430,60 @@ exports[`Box hoverIndicator 1`] = `
 </div>
 `;
 
+exports[`Box hoverIndicator with border 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.c2:hover {
+  border: solid 1px #009E67;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2:hover {
+    border: solid 1px #009E67;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+      tabindex="0"
+    />
+  </div>
+</div>
+`;
+
 exports[`Box round 1`] = `
 .c0 {
   font-size: 18px;

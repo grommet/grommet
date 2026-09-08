@@ -44,7 +44,11 @@ export interface BoxProps {
   gap?: GapType | { row?: GapType; column?: GapType };
   height?: HeightType;
   hoverIndicator?:
-    | { background?: BackgroundType; elevation?: ElevationType }
+    | {
+        background?: BackgroundType;
+        elevation?: ElevationType;
+        border?: BorderType;
+      }
     | BackgroundType
     | boolean;
   justify?:
