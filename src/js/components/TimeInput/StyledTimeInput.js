@@ -14,6 +14,7 @@ import {
   styledComponentsConfig,
 } from '../../utils';
 import { Box } from '../Box';
+import { Button } from '../Button';
 
 export const StyledTimeInputContainer = styled(Box).withConfig({
   // Keep Box styling props like border and round flowing into Box.
@@ -55,6 +56,21 @@ export const StyledTimeInputField = styled.div.withConfig(
   position: relative;
   flex: 1 1 auto;
   min-width: 0;
+`;
+
+export const StyledTimeInputButton = styled(Button)`
+  align-items: center;
+  display: flex;
+  flex: none;
+  justify-content: center;
+`;
+
+export const StyledTimeInputButtonContainer = styled(Box).withConfig(
+  styledComponentsConfig,
+)`
+  align-self: stretch;
+  display: flex;
+  flex: none;
 `;
 
 export const StyledTimeInputDisplay = styled.div.withConfig(

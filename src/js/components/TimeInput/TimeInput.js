@@ -21,7 +21,6 @@ import {
   getSectionTokenFromType,
 } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import {
@@ -31,6 +30,8 @@ import {
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
   StyledTimeInput,
+  StyledTimeInputButton,
+  StyledTimeInputButtonContainer,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
@@ -799,26 +800,33 @@ const TimeInput = forwardRef(
               />
             )}
             {!readOnly && (
-              <Button
-                icon={<GrommetClockIcon />}
-                plain
-                disabled={disabled}
-                margin={theme.timeInput?.button?.margin}
-                aria-label={formatMessage({
-                  id: 'timeInput.chooseTime',
-                  messages,
-                })}
-                aria-haspopup="dialog"
-                aria-expanded={open}
-                aria-controls={id ? `${id}__drop` : undefined}
-                onFocus={() => {
-                  setIconFocused(true);
-                }}
-                onBlur={() => {
-                  setIconFocused(false);
-                }}
-                onClick={open ? closePicker : openPicker}
-              />
+              <StyledTimeInputButtonContainer
+                width="xxsmall"
+                {...passThemeFlag}
+              >
+                <StyledTimeInputButton
+                  fill
+                  icon={<GrommetClockIcon />}
+                  disabled={disabled}
+                  kind={theme.timeInput?.button}
+                  aria-label={formatMessage({
+                    id: 'timeInput.chooseTime',
+                    messages,
+                  })}
+                  aria-haspopup="dialog"
+                  aria-expanded={open}
+                  aria-controls={id ? `${id}__drop` : undefined}
+                  focusIndicator="inset"
+                  hoverIndicator
+                  onFocus={() => {
+                    setIconFocused(true);
+                  }}
+                  onBlur={() => {
+                    setIconFocused(false);
+                  }}
+                  onClick={open ? closePicker : openPicker}
+                />
+              </StyledTimeInputButtonContainer>
             )}
           </StyledTimeInputContainer>
           {open && (
