@@ -123,7 +123,7 @@ describe('TimeInput', () => {
         theme={{
           global: {
             input: { padding: { horizontal: '16px' } },
-            control: { border: { radius: '8px' } },
+            control: { border: { radius: '6px' } },
           },
         }}
       >
