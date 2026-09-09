@@ -36,6 +36,10 @@ export interface TextInputProps
     suggestionIsOpen?: string;
   };
   name?: string;
+  /**
+   * Called when the copy button is activated. The value is unmasked; do not
+   * log, persist, or transmit it unless explicitly required.
+   */
   onClickCopy?: (
     event: React.MouseEvent<HTMLButtonElement>,
     value: string,

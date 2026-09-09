@@ -964,9 +964,18 @@ describe('TextInput', () => {
     expect(
       screen.getByRole('button', { name: 'Copy to clipboard' }),
     ).toBeInTheDocument();
+    const copyButton = screen.getByRole('button', {
+      name: 'Copy to clipboard',
+    });
+    const passwordButton = screen.getByRole('button', {
+      name: 'Show password',
+    });
+
+    expect(passwordButton).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: 'Show password' }),
-    ).toBeInTheDocument();
+      passwordButton.compareDocumentPosition(copyButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
   });
 
   test('supports copy with password toggle when reverse', async () => {
@@ -986,16 +995,14 @@ describe('TextInput', () => {
     });
     const input = screen.getByLabelText('Password');
 
-    // reverse moves the copy button before the input while the password
-    // toggle stays in its trailing wrapper; neither should overlap or
-    // replace the other
+    // reverse moves the actions group before the input.
     expect(copyButton).not.toBe(toggleButton);
     expect(
       copyButton.compareDocumentPosition(input) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
     expect(
-      input.compareDocumentPosition(toggleButton) &
+      toggleButton.compareDocumentPosition(input) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
 
@@ -1046,19 +1053,18 @@ describe('TextInput', () => {
     const icon = screen.getByLabelText('Search');
     const input = screen.getByLabelText('Password');
 
-    // all three controls must remain distinct and usable, with the icon
-    // and toggle grouped together after the input, and copy before it
+    // reverse moves the icon before the input while the actions group stays after it
     expect(copyButton).not.toBe(toggleButton);
     expect(icon).not.toBe(toggleButton);
     expect(
-      copyButton.compareDocumentPosition(input) &
+      icon.compareDocumentPosition(input) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      input.compareDocumentPosition(toggleButton) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
     expect(
-      input.compareDocumentPosition(icon) & Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
-    expect(
-      icon.compareDocumentPosition(toggleButton) &
+      input.compareDocumentPosition(copyButton) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
 

@@ -3,6 +3,7 @@
 import React from 'react';
 
 import { Box, Text, TextInput } from 'grommet';
+import { Search } from 'grommet-icons';
 
 export const CopySecret = () => {
   const [status, setStatus] = React.useState<string>('');
@@ -17,6 +18,7 @@ export const CopySecret = () => {
           value={secret}
           password
           copy
+          // The callback receives the unmasked value. Never log or persist it.
           onClickCopy={async (_event, copiedValue) => {
             await navigator.clipboard.writeText(copiedValue);
             setStatus('Secret copied to clipboard');
