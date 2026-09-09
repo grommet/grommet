@@ -38,6 +38,14 @@ import { DateTimeRangeInputPropTypes } from './propTypes';
 
 const getTimestamp = (value) => {
   if (typeof value !== 'string' || !value) return undefined;
+
+  const dateOnlyMatch = /^\d{4}-\d{2}-\d{2}$/.exec(value.trim());
+  if (dateOnlyMatch) {
+    const [year, month, day] = dateOnlyMatch[0].split('-').map(Number);
+    const parsed = new Date(year, month - 1, day);
+    return Number.isNaN(parsed.getTime()) ? undefined : parsed.getTime();
+  }
+
   const timestamp = new Date(value).getTime();
   return Number.isNaN(timestamp) ? undefined : timestamp;
 };

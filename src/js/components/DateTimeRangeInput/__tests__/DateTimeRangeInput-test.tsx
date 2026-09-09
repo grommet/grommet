@@ -1482,6 +1482,31 @@ describe('DateTimeRangeInput', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
+  test('interprets date-only minDate values in local time when validating ranges', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput
+          format="12"
+          minDate="2026-07-10"
+          value={['2026-07-10T01:00:00.000Z', '2026-07-10T03:00:00.000Z']}
+        />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Open date and time range picker',
+      }),
+    );
+
+    expect(
+      screen.getAllByText(/Date and time must be on or after/i).length,
+    ).toBeGreaterThan(0);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
   test('disables range navigation when a shift would exceed bounds', async () => {
     render(
       <Grommet>
