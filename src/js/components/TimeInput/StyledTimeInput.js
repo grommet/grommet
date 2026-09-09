@@ -63,16 +63,11 @@ export const StyledTimeInputButton = styled(Button)`
   display: flex;
   flex: none;
   justify-content: center;
+  border-radius: ${(props) => props.theme.global.control.border.radius};
   ${(props) =>
-    !props.kind &&
-    css`
-      border-radius: ${props.theme.global.control.border.radius};
-    `}
-  // Icon-only buttons are plain in themes without a default button kind.
-  ${(props) =>
-    !props.theme.button.default &&
-    !props.kind &&
-    edgeStyle('padding', props.pad, false, undefined, props.theme)}
+    !props.theme.button.default
+      ? edgeStyle('padding', props.pad, false, undefined, props.theme)
+      : ''}
 `;
 
 export const StyledTimeInputDisplay = styled.div.withConfig(

@@ -117,7 +117,7 @@ describe('TimeInput', () => {
     expect(trigger).toHaveAttribute('aria-controls', 'time-a11y__drop');
   });
 
-  test('uses input padding and control radius without a button theme', () => {
+  test('uses input padding and control radius for the clock button', () => {
     render(
       <Grommet
         theme={{
@@ -1970,11 +1970,6 @@ describe('TimeInput', () => {
 
     const customTheme: ThemeType = {
       timeInput: {
-        button: {
-          background: '#EEEEEE',
-          padding: { horizontal: '16px', vertical: '0px' },
-          border: { radius: '6px' },
-        },
         container: {
           round: 'large',
         },
@@ -2017,12 +2012,6 @@ describe('TimeInput', () => {
     const container = screen.getByRole('group').parentElement
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
-
-    // button theme
-    const trigger = screen.getByRole('button', { name: 'Choose time' });
-    expect(trigger).toHaveStyleRule('background-color', '#EEEEEE');
-    expect(trigger).toHaveStyleRule('padding', '0px 16px');
-    expect(trigger).toHaveStyleRule('border-radius', '6px');
 
     // active.pad applies to every segment, active or not
     const hourSegment = getSegment('hours');

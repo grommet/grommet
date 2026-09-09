@@ -2671,7 +2671,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     timeInput: {
-      // button: undefined,
       container: {
         round: 'xxsmall',
       },

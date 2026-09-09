@@ -2413,7 +2413,6 @@ export interface ThemeType {
     };
   };
   timeInput?: {
-    button?: ButtonType | string;
     container?: {
       round?: RoundType;
     };

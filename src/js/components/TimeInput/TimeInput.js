@@ -805,20 +805,16 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <StyledTimeInputButton
-                pad={
-                  theme.timeInput?.button
-                    ? undefined
-                    : {
-                        horizontal: theme.global.input.padding?.horizontal,
-                        left: theme.global.input.padding?.left,
-                        right: theme.global.input.padding?.right,
-                        top: '0',
-                        bottom: '0',
-                      }
-                }
+                pad={{
+                  horizontal: theme.global.input.padding?.horizontal,
+                  left: theme.global.input.padding?.left,
+                  right: theme.global.input.padding?.right,
+                  // Only horizontal padding; the button fills the input height.
+                  top: '0',
+                  bottom: '0',
+                }}
                 icon={<GrommetClockIcon />}
                 disabled={disabled}
-                kind={theme.timeInput?.button}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
                   messages,
