@@ -136,7 +136,7 @@ describe('TimeInput', () => {
     expect(trigger).toHaveStyleRule('padding-right', '16px');
     expect(trigger).toHaveStyleRule('padding-top', '0');
     expect(trigger).toHaveStyleRule('padding-bottom', '0');
-    expect(trigger).toHaveStyleRule('border-radius', '8px');
+    expect(trigger).toHaveStyleRule('border-radius', '6px');
   });
 
   test('does not show an active section before focus', () => {
