@@ -103,11 +103,12 @@ const getDateBoundsViolation = (range, minDate, maxDate) => {
   return undefined;
 };
 
-const formatBound = (value, locale, format, showSeconds) => {
+const formatBound = (value, locale, format, showSeconds, timezone) => {
   if (!value) return '';
   return new Intl.DateTimeFormat(locale, {
     dateStyle: 'medium',
     timeStyle: showSeconds ? 'medium' : 'short',
+    ...(timezone ? { timeZone: timezone } : {}),
     ...(format === '12' ? { hour12: true } : {}),
     ...(format === '24' ? { hour12: false } : {}),
   }).format(new Date(value));
@@ -300,6 +301,7 @@ const DateTimeRangeInput = forwardRef(
       ranges,
       readOnly = false,
       showSeconds = false,
+      timezone,
       value: valueArg,
       ...rest
     },
@@ -374,6 +376,7 @@ const DateTimeRangeInput = forwardRef(
                 locale,
                 format,
                 showSeconds,
+                timezone,
               ),
             },
             messages,
@@ -395,6 +398,7 @@ const DateTimeRangeInput = forwardRef(
       messages,
       minDate,
       showSeconds,
+      timezone,
     ]);
 
     // isolate the internal DateTimeInput fields from the outer Form so they
@@ -914,6 +918,7 @@ const DateTimeRangeInput = forwardRef(
                             locale,
                             format,
                             showSeconds,
+                            timezone,
                           ),
                         },
                         messages,

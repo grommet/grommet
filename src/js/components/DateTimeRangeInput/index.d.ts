@@ -51,6 +51,7 @@ export interface DateTimeRangeInputProps {
   plain?: boolean;
   readOnly?: boolean;
   showSeconds?: boolean;
+  timezone?: string;
   value?: [string?, string?];
 }
 

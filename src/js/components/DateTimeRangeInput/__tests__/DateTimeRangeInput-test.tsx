@@ -1507,6 +1507,40 @@ describe('DateTimeRangeInput', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
+  test('supports an optional timezone override for min and max bound messaging', async () => {
+    const user = userEvent.setup();
+    const minDate = '2026-07-10T00:00:00.000Z';
+    const expectedBoundText = new Intl.DateTimeFormat('en-US', {
+      dateStyle: 'medium',
+      timeStyle: 'short',
+      timeZone: 'UTC',
+    }).format(new Date(minDate));
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput
+          format="12"
+          locale="en-US"
+          minDate={minDate}
+          timezone="UTC"
+          value={['2026-07-09T23:30:00.000Z', '2026-07-09T23:45:00.000Z']}
+        />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Open date and time range picker',
+      }),
+    );
+
+    expect(
+      within(screen.getByRole('dialog')).getByText(
+        new RegExp(expectedBoundText),
+      ),
+    ).toBeInTheDocument();
+  });
+
   test('disables range navigation when a shift would exceed bounds', async () => {
     render(
       <Grommet>

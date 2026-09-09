@@ -57,6 +57,7 @@ if (process.env.NODE_ENV !== 'production') {
     ),
     readOnly: PropTypes.bool,
     showSeconds: PropTypes.bool,
+    timezone: PropTypes.string,
     value: PropTypes.arrayOf(PropTypes.string),
   };
 }
