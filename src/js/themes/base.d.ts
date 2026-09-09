@@ -2439,6 +2439,9 @@ export interface ThemeType {
         selected?: {
           background?: ColorType;
           color?: ColorType;
+          text?: {
+            weight?: string | number;
+          };
           hover?: {
             background?: ColorType;
           };
