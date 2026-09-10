@@ -130,10 +130,10 @@ describe('DateTimeInput', () => {
     const drop = getDropFromTrigger(trigger);
 
     const scoped = within(drop);
-    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'period' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'hours' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'minutes' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'seconds' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'meridiem' })).toBeInTheDocument();
 
     // Ensure there is no full TimeInput field rendered inside the drop.
     expect(
@@ -160,9 +160,9 @@ describe('DateTimeInput', () => {
     ).not.toBeInTheDocument();
 
     // Calendar and time columns are immediately in the document
-    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
-    expect(screen.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
-    expect(screen.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'hours' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'minutes' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'seconds' })).toBeInTheDocument();
   });
 
   test('selecting a calendar day does not move focus into the hour listbox', async () => {
@@ -188,7 +188,7 @@ describe('DateTimeInput', () => {
     const dayButton = within(drop).getByRole('button', {
       name: /Jul 22 2026/i,
     });
-    const hourListbox = within(drop).getByRole('listbox', { name: 'hour' });
+    const hourListbox = within(drop).getByRole('listbox', { name: 'hours' });
 
     await user.click(dayButton);
 
@@ -225,7 +225,7 @@ describe('DateTimeInput', () => {
     await user.click(calendarDay);
 
     const minuteOption = within(
-      within(drop).getByRole('listbox', { name: 'minute' }),
+      within(drop).getByRole('listbox', { name: 'minutes' }),
     ).getByRole('option', { name: '45 minutes' });
     await user.click(minuteOption);
 
@@ -253,7 +253,7 @@ describe('DateTimeInput', () => {
       within(drop).queryAllByRole('gridcell', { selected: true }),
     ).toHaveLength(0);
 
-    const hourList = within(drop).getByRole('listbox', { name: 'hour' });
+    const hourList = within(drop).getByRole('listbox', { name: 'hours' });
     await user.click(within(hourList).getAllByRole('option')[0]);
 
     await waitFor(() => {
@@ -328,7 +328,7 @@ describe('DateTimeInput', () => {
     await user.click(trigger);
 
     const drop = getDropFromTrigger(trigger);
-    const hourList = within(drop).getByRole('listbox', { name: 'hour' });
+    const hourList = within(drop).getByRole('listbox', { name: 'hours' });
     await waitFor(() =>
       expect(
         within(hourList).getByRole('option', { name: '00 hours' }),
@@ -371,7 +371,7 @@ describe('DateTimeInput', () => {
       scoped.queryByRole('dialog', { name: /date and time/i }),
     ).not.toBeInTheDocument();
 
-    const minuteList = scoped.getByRole('listbox', { name: 'minute' });
+    const minuteList = scoped.getByRole('listbox', { name: 'minutes' });
     const firstMinute = within(minuteList).getAllByRole('option')[0];
 
     await user.click(firstMinute);
@@ -408,12 +408,12 @@ describe('DateTimeInput', () => {
     const drop = getDropFromTrigger(trigger);
     const scoped = within(drop);
 
-    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'hours' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'minutes' })).toBeInTheDocument();
     expect(
-      scoped.queryByRole('listbox', { name: 'second' }),
+      scoped.queryByRole('listbox', { name: 'seconds' }),
     ).not.toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'period' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'meridiem' })).toBeInTheDocument();
   });
 
   test('hides seconds in field and popup by default', async () => {
@@ -440,7 +440,7 @@ describe('DateTimeInput', () => {
 
     const drop = getDropFromTrigger(trigger);
     expect(
-      within(drop).queryByRole('listbox', { name: 'second' }),
+      within(drop).queryByRole('listbox', { name: 'seconds' }),
     ).not.toBeInTheDocument();
   });
 
@@ -493,9 +493,9 @@ describe('DateTimeInput', () => {
     const drop = getDropFromTrigger(trigger);
 
     const scoped = within(drop);
-    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'hours' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'minutes' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'seconds' })).toBeInTheDocument();
   });
 
   test('inline readOnly mode renders picker but disables selection', async () => {
@@ -515,7 +515,7 @@ describe('DateTimeInput', () => {
     );
 
     // Picker is always shown — no trigger button
-    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'hours' })).toBeInTheDocument();
     expect(
       screen.queryByRole('button', { name: /date and time/i }),
     ).not.toBeInTheDocument();
@@ -738,8 +738,8 @@ describe('DateTimeInput', () => {
     // No dialog, no trigger — listboxes are directly accessible
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
-    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
+    const minuteList = screen.getByRole('listbox', { name: 'minutes' });
     const popupContent = hourList.parentElement as HTMLElement;
 
     const selectedHourOption = within(hourList)
@@ -781,7 +781,7 @@ describe('DateTimeInput', () => {
 
     const drop = getDropFromTrigger(trigger);
     const scoped = within(drop);
-    const hourList = scoped.getByRole('listbox', { name: 'hour' });
+    const hourList = scoped.getByRole('listbox', { name: 'hours' });
     const popupContent = hourList.parentElement as HTMLElement;
     const selectedHourOption = within(hourList)
       .getAllByRole('option')
@@ -822,8 +822,8 @@ describe('DateTimeInput', () => {
 
     const drop = getDropFromTrigger(trigger);
     const scoped = within(drop);
-    const hourList = scoped.getByRole('listbox', { name: 'hour' });
-    const minuteList = scoped.getByRole('listbox', { name: 'minute' });
+    const hourList = scoped.getByRole('listbox', { name: 'hours' });
+    const minuteList = scoped.getByRole('listbox', { name: 'minutes' });
     const popupContent = hourList.parentElement as HTMLElement;
 
     const selectedMinuteOption = within(minuteList)
@@ -876,11 +876,11 @@ describe('DateTimeInput', () => {
     const drop = getDropFromTrigger(trigger);
     const scoped = within(drop);
 
-    expect(scoped.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
-    expect(scoped.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'hours' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'minutes' })).toBeInTheDocument();
+    expect(scoped.getByRole('listbox', { name: 'seconds' })).toBeInTheDocument();
     expect(
-      scoped.queryByRole('listbox', { name: 'period' }),
+      scoped.queryByRole('listbox', { name: 'meridiem' }),
     ).not.toBeInTheDocument();
   });
 

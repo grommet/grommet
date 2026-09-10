@@ -96,7 +96,7 @@ const PopupOption = styled.div`
   }
 `;
 
-const optionKey = (label, option) => `${label.toLowerCase()}-${option}`;
+const optionKey = (section, option) => `${section}-${option}`;
 
 const getDefaultPopupOption = ({ section, format, options }) => {
   if (section === SECTION_HOUR) {
@@ -134,6 +134,7 @@ const PopupColumn = ({
     <PopupColumnBox
       role="listbox"
       aria-label={label}
+      data-section={section}
       gap={theme.timeInput?.drop?.option?.gap || 'xxsmall'}
       height={{
         max: maxHeight,
@@ -142,7 +143,7 @@ const PopupColumn = ({
       flex={{ grow: 0, shrink: 0 }}
     >
       {options.map((option) => {
-        const key = optionKey(label, option);
+        const key = optionKey(section, option);
         const sectionHasValue =
           (section === SECTION_HOUR && sections.hour !== undefined) ||
           (section === SECTION_MINUTE && sections.minute !== undefined) ||
@@ -339,22 +340,22 @@ const TimeInputPopup = ({
   const popupSections = [
     {
       section: SECTION_HOUR,
-      label: 'hour',
+      label: formatMessage({ id: 'timeInput.sectionHours', messages }),
       options: hoursOptions,
     },
     {
       section: SECTION_MINUTE,
-      label: 'minute',
+      label: formatMessage({ id: 'timeInput.sectionMinutes', messages }),
       options: minuteOptions,
     },
     {
       section: SECTION_SECOND,
-      label: 'second',
+      label: formatMessage({ id: 'timeInput.sectionSeconds', messages }),
       options: secondOptions,
     },
     {
       section: SECTION_PERIOD,
-      label: 'period',
+      label: formatMessage({ id: 'timeInput.sectionMeridiem', messages }),
       options: ['AM', 'PM'],
     },
   ];
@@ -363,22 +364,11 @@ const TimeInputPopup = ({
     sectionOrder.includes(section),
   );
 
-  const getSectionFromLabel = useCallback((listboxLabel) => {
-    if (listboxLabel === 'hour') return SECTION_HOUR;
-    if (listboxLabel === 'minute') return SECTION_MINUTE;
-    if (listboxLabel === 'second') return SECTION_SECOND;
-    if (listboxLabel === 'period') return SECTION_PERIOD;
-    return undefined;
+  const getSectionFromEventTarget = useCallback((eventTarget) => {
+    const listboxNode = eventTarget?.closest?.('[role="listbox"]');
+    const section = listboxNode?.dataset?.section;
+    return section === undefined ? undefined : Number(section);
   }, []);
-
-  const getSectionFromEventTarget = useCallback(
-    (eventTarget) => {
-      const listboxNode = eventTarget?.closest?.('[role="listbox"]');
-      const ariaLabel = listboxNode?.getAttribute?.('aria-label');
-      return getSectionFromLabel(ariaLabel);
-    },
-    [getSectionFromLabel],
-  );
 
   const getAdjacentSection = useCallback(
     (section, delta) => {
@@ -401,13 +391,6 @@ const TimeInputPopup = ({
 
     const popupNode = dialogRef.current;
     if (!popupNode) return;
-
-    const sectionLabel = {
-      [SECTION_HOUR]: 'hour',
-      [SECTION_MINUTE]: 'minute',
-      [SECTION_SECOND]: 'second',
-      [SECTION_PERIOD]: 'period',
-    };
 
     const sectionValue = {
       [SECTION_HOUR]:
@@ -438,17 +421,14 @@ const TimeInputPopup = ({
     };
 
     visiblePopupSections.forEach(({ section }) => {
-      const labelValue = sectionLabel[section];
-      if (!labelValue) return;
-
       const listboxNode = popupNode.querySelector(
-        `[role="listbox"][aria-label="${labelValue}"]`,
+        `[role="listbox"][data-section="${section}"]`,
       );
       if (!listboxNode) return;
 
       const selectedNode =
         popupNode.querySelector(
-          `[data-option-key="${optionKey(labelValue, sectionValue[section])}"]`,
+          `[data-option-key="${optionKey(section, sectionValue[section])}"]`,
         ) || listboxNode.querySelector('[role="option"][aria-selected="true"]');
 
       if (selectedNode) {
@@ -477,16 +457,9 @@ const TimeInputPopup = ({
   ]);
 
   const focusCurrentPopupOption = useCallback(() => {
-    const labelMap = {
-      [SECTION_HOUR]: 'hour',
-      [SECTION_MINUTE]: 'minute',
-      [SECTION_SECOND]: 'second',
-      [SECTION_PERIOD]: 'period',
-    };
-
     const keyMap = {
       [SECTION_HOUR]: optionKey(
-        'hour',
+        SECTION_HOUR,
         sections.hour !== undefined
           ? sections.hour
           : getDefaultPopupOption({
@@ -496,7 +469,7 @@ const TimeInputPopup = ({
             }),
       ),
       [SECTION_MINUTE]: optionKey(
-        'minute',
+        SECTION_MINUTE,
         sections.minute !== undefined
           ? sections.minute
           : getDefaultPopupOption({
@@ -506,7 +479,7 @@ const TimeInputPopup = ({
             }),
       ),
       [SECTION_SECOND]: optionKey(
-        'second',
+        SECTION_SECOND,
         sections.second !== undefined
           ? sections.second
           : getDefaultPopupOption({
@@ -515,7 +488,7 @@ const TimeInputPopup = ({
               options: secondOptions,
             }),
       ),
-      [SECTION_PERIOD]: optionKey('period', sections.period || 'AM'),
+        [SECTION_PERIOD]: optionKey(SECTION_PERIOD, sections.period || 'AM'),
     };
 
     const selector = `[data-option-key="${keyMap[activeSection]}"]`;
@@ -527,11 +500,8 @@ const TimeInputPopup = ({
 
     // Fallback: if current section value has no matching option
     // (e.g., minute=31 with minuteStep=15), focus first option in section.
-    const sectionLabel = labelMap[activeSection];
-    if (!sectionLabel) return false;
-
     const fallbackNode = dialogRef.current?.querySelector(
-      `[role="listbox"][aria-label="${sectionLabel}"] [role="option"]`,
+      `[role="listbox"][data-section="${activeSection}"] [role="option"]`,
     );
     if (fallbackNode) {
       fallbackNode.focus();
