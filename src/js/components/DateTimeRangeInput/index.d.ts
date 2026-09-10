@@ -23,6 +23,7 @@ export interface DateTimeRangeInputProps {
     chooseDateTime?: string;
     chooseDateTimeRange?: string;
     cancel?: string;
+    customRange?: string;
     endLabel?: string;
     inputLabel?: string;
     invalidDateTime?: string;

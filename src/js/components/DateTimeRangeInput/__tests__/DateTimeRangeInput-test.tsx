@@ -1478,6 +1478,9 @@ describe('DateTimeRangeInput', () => {
     expect(
       screen.getByText(/Date and time must be on or after .*12:00 PM/),
     ).toBeInTheDocument();
+    screen
+      .getAllByRole('textbox', { hidden: true })
+      .forEach((input) => expect(input).toHaveAttribute('aria-invalid', 'true'));
     expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
