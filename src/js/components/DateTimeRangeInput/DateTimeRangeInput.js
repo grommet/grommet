@@ -31,7 +31,10 @@ import { TimeInput } from '../TimeInput';
 import { Text } from '../Text';
 import {
   StyledDateTimeRangeInputContainer,
+  StyledDateTimeRangeInputDrop,
   StyledDateTimeRangeInputField,
+  StyledDateTimeRangeInputPicker,
+  StyledDateTimeRangeInputPickerBody,
   StyledDateTimeRangeInputSeparator,
 } from './StyledDateTimeRangeInput';
 import { DateTimeRangeInputPropTypes } from './propTypes';
@@ -809,10 +812,11 @@ const DateTimeRangeInput = forwardRef(
             })}
             target={fieldRef.current}
             align={{ top: 'bottom', left: 'left' }}
+            overflow="hidden"
             onEsc={closePickerAndRestoreFocus}
             onClickOutside={closePicker}
           >
-            <Box direction="row">
+            <StyledDateTimeRangeInputDrop direction="row" {...passThemeFlag}>
               {ranges?.length > 0 && (
                 <Box
                   flex={false}
@@ -853,11 +857,15 @@ const DateTimeRangeInput = forwardRef(
                   </Box>
                 </Box>
               )}
-              <Box direction="column">
-                <Box
+              <StyledDateTimeRangeInputPicker
+                direction="column"
+                {...passThemeFlag}
+              >
+                <StyledDateTimeRangeInputPickerBody
                   direction="row"
                   pad={theme.dateTimeInput?.drop?.pad}
                   gap={theme.dateTimeInput?.drop?.gap}
+                  {...passThemeFlag}
                 >
                   {calendar}
                   <Box
@@ -904,7 +912,7 @@ const DateTimeRangeInput = forwardRef(
                       }
                     }}
                   />
-                </Box>
+                </StyledDateTimeRangeInputPickerBody>
                 {invalid && editingCustomRange && (
                   <Box pad={{ horizontal: 'small', bottom: 'xsmall' }}>
                     <Text color="status-critical" size="small">
@@ -928,6 +936,8 @@ const DateTimeRangeInput = forwardRef(
                 )}
                 <Box
                   direction="row"
+                  align="center"
+                  flex={false}
                   justify="end"
                   border={{
                     side: 'top',
@@ -939,6 +949,7 @@ const DateTimeRangeInput = forwardRef(
                 >
                   <Button
                     plain
+                    flex={false}
                     label={formatMessage({
                       id: 'dateTimeRangeInput.cancel',
                       messages,
@@ -948,6 +959,7 @@ const DateTimeRangeInput = forwardRef(
                   {activeRangePart === 'start' ? (
                     <Button
                       secondary
+                      flex={false}
                       label={formatMessage({
                         id: 'dateTimeRangeInput.next',
                         messages,
@@ -958,6 +970,7 @@ const DateTimeRangeInput = forwardRef(
                   ) : (
                     <Button
                       primary
+                      flex={false}
                       label={formatMessage({
                         id: 'dateTimeRangeInput.apply',
                         messages,
@@ -976,8 +989,8 @@ const DateTimeRangeInput = forwardRef(
                     />
                   )}
                 </Box>
-              </Box>
-            </Box>
+              </StyledDateTimeRangeInputPicker>
+            </StyledDateTimeRangeInputDrop>
           </Drop>
         )}
       </FormContext.Provider>

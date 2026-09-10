@@ -82,3 +82,23 @@ export const StyledDateTimeRangeInputField = styled(Box)`
     `;
   }}
 `;
+
+export const StyledDateTimeRangeInputDrop = styled(Box)`
+  display: flex;
+  align-items: stretch;
+  max-height: inherit;
+  min-height: 0;
+`;
+
+export const StyledDateTimeRangeInputPicker = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+  min-height: 0;
+`;
+
+export const StyledDateTimeRangeInputPickerBody = styled(Box)`
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+`;
