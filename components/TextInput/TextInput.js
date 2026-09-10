@@ -38,10 +38,10 @@ var stringLabel = function stringLabel(suggestion) {
   }
   return suggestion;
 };
-var renderIcon = function renderIcon(iconValue) {
-  if (/*#__PURE__*/_react["default"].isValidElement(iconValue)) return iconValue;
+var renderIcon = function renderIcon(iconValue, props) {
+  if (/*#__PURE__*/_react["default"].isValidElement(iconValue)) return /*#__PURE__*/_react["default"].cloneElement(iconValue, props);
   var IconComponent = iconValue;
-  return IconComponent ? /*#__PURE__*/_react["default"].createElement(IconComponent, null) : undefined;
+  return IconComponent ? /*#__PURE__*/_react["default"].createElement(IconComponent, props) : undefined;
 };
 var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "TextInput__ContainerBox",
@@ -436,7 +436,11 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
   var PasswordToggleButton = passwordToggle ? /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     disabled: disabled,
     kind: "toolbar",
-    icon: passwordRevealed ? renderIcon(showPasswordIcon) : renderIcon(hidePasswordIcon),
+    icon: passwordRevealed ? renderIcon(hidePasswordIcon, {
+      'aria-hidden': true
+    }) : renderIcon(showPasswordIcon, {
+      'aria-hidden': true
+    }),
     onClick: function onClick() {
       return setPasswordRevealed(function (current) {
         return !current;
