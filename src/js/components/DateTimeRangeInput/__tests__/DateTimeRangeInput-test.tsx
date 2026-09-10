@@ -153,10 +153,45 @@ describe('DateTimeRangeInput', () => {
     await user.click(screen.getByRole('button', { name: 'Last day' }));
 
     expect(screen.getByText('Last day')).toBeInTheDocument();
-    expect(screen.getByText('Last day').parentElement).toHaveStyleRule(
-      'align-items',
-      'center',
+    expect(
+      screen.queryByRole('group', { name: 'Start date and time' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'Custom range' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('uses the provided custom range message', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput
+          format="12"
+          messages={{ customRange: 'Choose exact dates' }}
+          ranges={[
+            {
+              id: 'last-hour',
+              label: 'Last hour',
+              getValue: () => [
+                '2026-07-22T09:00:00.000Z',
+                '2026-07-22T18:30:00.000Z',
+              ],
+            },
+          ]}
+        />
+      </Grommet>,
     );
+
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Open date and time range picker',
+      }),
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Choose exact dates' }),
+    ).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('keeps the footer inside the calendar/time panel, not the preset list', async () => {
