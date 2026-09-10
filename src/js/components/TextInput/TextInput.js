@@ -541,8 +541,8 @@ const TextInput = forwardRef(
         kind="toolbar"
         icon={
           passwordRevealed
-            ? renderIcon(showPasswordIcon)
-            : renderIcon(hidePasswordIcon)
+            ? renderIcon(hidePasswordIcon)
+            : renderIcon(showPasswordIcon)
         }
         onClick={() => setPasswordRevealed((current) => !current)}
         aria-label={

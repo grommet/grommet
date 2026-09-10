@@ -121,11 +121,11 @@ describe('TextInput', () => {
       </Grommet>,
     );
 
-    expect(screen.getByLabelText('Search')).toBeInTheDocument();
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Show password' }));
 
-    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+    expect(screen.getByLabelText('Search')).toBeInTheDocument();
   });
 
   test('supports password toggle theme icon elements', async () => {
@@ -143,11 +143,11 @@ describe('TextInput', () => {
       </Grommet>,
     );
 
-    expect(screen.getByLabelText('Search')).toBeInTheDocument();
+    expect(screen.getByLabelText('Add')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Show password' }));
 
-    expect(screen.getByLabelText('Add')).toBeInTheDocument();
+    expect(screen.getByLabelText('Search')).toBeInTheDocument();
   });
 
   test('supports password toggle with matchSize and custom size', () => {
