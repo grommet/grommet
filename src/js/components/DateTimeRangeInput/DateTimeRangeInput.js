@@ -698,7 +698,7 @@ const DateTimeRangeInput = forwardRef(
                     >
                       <DateTimeInput
                         key={`start-${inputResetKey}`}
-                        aria-invalid={ariaInvalid}
+                        aria-invalid={ariaInvalid || invalid}
                         disabled={disabled}
                         focusIndicator={false}
                         format={format}
@@ -749,7 +749,7 @@ const DateTimeRangeInput = forwardRef(
                     >
                       <DateTimeInput
                         key={`end-${inputResetKey}`}
-                        aria-invalid={ariaInvalid}
+                        aria-invalid={ariaInvalid || invalid}
                         disabled={disabled}
                         focusIndicator={false}
                         format={format}

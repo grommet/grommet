@@ -23,6 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
       chooseDateTime: PropTypes.string,
       chooseDateTimeRange: PropTypes.string,
       cancel: PropTypes.string,
+      customRange: PropTypes.string,
       endLabel: PropTypes.string,
       inputLabel: PropTypes.string,
       invalidDateTime: PropTypes.string,

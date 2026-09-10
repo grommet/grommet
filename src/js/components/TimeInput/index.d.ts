@@ -8,6 +8,7 @@ export interface TimeInputProps {
   format?: '12' | '24';
   focusPopupOnMount?: boolean;
   id?: string;
+  inline?: boolean;
   messages?: {
     activePeriodValue?: string;
     activeSection?: string;
@@ -25,6 +26,7 @@ export interface TimeInputProps {
   minuteStep?: number;
   name?: string;
   onChange?: (event: { value?: string }) => void;
+  onPartialChange?: (sections: object, changedSection?: string) => void;
   readOnly?: boolean;
   showSeconds?: boolean;
   value?: string;
