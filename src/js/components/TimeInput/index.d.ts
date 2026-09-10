@@ -26,7 +26,7 @@ export interface TimeInputProps {
   minuteStep?: number;
   name?: string;
   onChange?: (event: { value?: string }) => void;
-  onPartialChange?: (sections: object, changedSection?: string) => void;
+  onPartialChange?: (sections: object, changedSection?: number) => void;
   readOnly?: boolean;
   showSeconds?: boolean;
   value?: string;
