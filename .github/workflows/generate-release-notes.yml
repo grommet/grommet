@@ -24,6 +24,15 @@ on:
         description: 'Tag name for the draft release (required when create_draft_release is true)'
         required: false
         type: string
+      update_changelog:
+        description: 'Add the generated notes to CHANGELOG.md'
+        required: false
+        type: boolean
+        default: true
+      changelog_version:
+        description: 'Version heading for the changelog entry — e.g. v2.56.2 (defaults to to_tag)'
+        required: false
+        type: string
 
 permissions:
   contents: write # needed to create a draft release
@@ -68,6 +77,28 @@ jobs:
             --to "${{ inputs.to_tag }}" \
             --output RELEASE_ANNOUNCEMENT.txt
 
+      - name: Update changelog
+        if: ${{ inputs.update_changelog == true }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ inputs.changelog_version }}"
+          if [ -z "$VERSION" ]; then
+            VERSION="${{ inputs.to_tag }}"
+          fi
+          if [ -z "$VERSION" ] || [ "$VERSION" = "HEAD" ]; then
+            echo "Error: changelog_version input is required when to_tag is not a version tag."
+            exit 1
+          fi
+
+          yarn generate-release-notes \
+            -- \
+            --from "${{ inputs.from_tag }}" \
+            --to "${{ inputs.to_tag }}" \
+            --version "$VERSION" \
+            --changelog CHANGELOG.md \
+            > /dev/null
+
       - name: Show preview
         run: |
           echo '=== RELEASE NOTES ==='
@@ -83,6 +114,7 @@ jobs:
           path: |
             RELEASE_NOTES.md
             RELEASE_ANNOUNCEMENT.txt
+            CHANGELOG.md
           retention-days: 30
 
       - name: Create draft GitHub release
