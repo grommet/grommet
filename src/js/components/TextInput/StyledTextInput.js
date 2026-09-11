@@ -13,22 +13,14 @@ import {
   widthStyle,
   styledComponentsConfig,
 } from '../../utils';
-import { getInputIconPad, inputPadForIcon } from '../../utils/styles';
+import { inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
-
-const getInlineButtonPad = (props) => {
-  const rightInset = Number.parseFloat(getInputPadBySide(props, 'right'));
-  const iconPad = Number.parseFloat(getInputIconPad(props));
-  const trailingIconPad = props.hasTrailingIcon ? iconPad : 0;
-  // Reserve both the icon space and the control's edge inset so text clears
-  // the flush-right password toggle, and the reversed icon when both coexist.
-  return `${iconPad + trailingIconPad + rightInset}px`;
-};
 
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
     return css`
-      ${plainInputStyle} padding: 0;
+      ${plainInputStyle};
+      padding: 0;
     `;
   }
   return plain && plainInputStyle;
@@ -38,16 +30,15 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'flex: 1 1 auto;'}
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'min-width: 0;'}
-  ${(props) =>
-    props.readOnlyCopy || props.hasButton
-      ? `padding-${props.reverse ? 'left' : 'right'}: 0px;`
-      : ''}
+  ${(props) => {
+    if (!(props.readOnlyCopy || props.hasButton)) return '';
+    if (props.reverse) return '';
+    return 'padding-right: 0px;';
+  }}
   // readOnly border is handled by StyledTextInputContainer
-  ${(props) => props.readOnly && `border: none;`}
+  ${(props) => (props.readOnly || props.hasButton) && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}
-  ${(props) => props.icon && inputPadForIcon}
-  ${(props) =>
-    props.hasInlineButton && `padding-right: ${getInlineButtonPad(props)};`}
+  ${(props) => props.icon && !props.hasActionsGroup && inputPadForIcon}
   ${(props) =>
     props.disabled &&
     disabledStyle(
@@ -70,7 +61,12 @@ const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)`
     props.readOnlyProp &&
     widthStyle(props.widthProp, props.theme)}
 
-  ${(props) => props.readOnlyProp && !props.plain && controlBorderStyle};
+  ${(props) =>
+    // The container owns the border so the actions group remains inside
+    // the field.
+    (props.readOnlyProp || props.hasButton) &&
+    !props.plain &&
+    controlBorderStyle};
 
   ${(props) =>
     (props.readOnlyCopy || props.hasButton) &&
@@ -113,27 +109,32 @@ const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  ${(props) =>
-    props.reverse
+  ${(props) => {
+    if (props.hasActionsGroup) {
+      return `
+        position: static;
+        align-items: center;
+        transform: none;
+        padding-left: ${
+          props.theme.global.input.padding?.left ||
+          props.theme.global.input.padding?.horizontal
+        };
+        padding-right: ${
+          props.theme.global.input.padding?.right ||
+          props.theme.global.input.padding?.horizontal
+        };
+      `;
+    }
+    return props.reverse
       ? `right: ${getInputPadBySide(props, 'right')};`
-      : `left: ${getInputPadBySide(props, 'left')};`}
+      : `left: ${getInputPadBySide(props, 'left')};`;
+  }}
 `;
 
-const StyledInlineButton = styled.div.withConfig(styledComponentsConfig)`
-  position: absolute;
+const StyledActionsGroup = styled.div.withConfig(styledComponentsConfig)`
   display: flex;
   align-items: stretch;
-  top: 0;
-  right: 0;
-  bottom: 0;
   z-index: 1;
-`;
-
-const StyledInlineIcon = styled.div.withConfig(styledComponentsConfig)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
 `;
 
 const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)`
@@ -154,7 +155,6 @@ export {
   StyledTextInputContainer,
   StyledPlaceholder,
   StyledIcon,
-  StyledInlineButton,
-  StyledInlineIcon,
+  StyledActionsGroup,
   StyledSuggestions,
 };

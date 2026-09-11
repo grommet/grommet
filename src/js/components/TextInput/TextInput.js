@@ -32,8 +32,7 @@ import {
   StyledTextInputContainer,
   StyledPlaceholder,
   StyledIcon,
-  StyledInlineButton,
-  StyledInlineIcon,
+  StyledActionsGroup,
   StyledSuggestions,
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -84,13 +83,14 @@ const TextInput = forwardRef(
   (
     {
       a11yTitle,
+      copy,
       defaultSuggestion,
       defaultValue,
       disabled,
       dropAlign = defaultDropAlign,
       dropHeight,
-      dropTarget,
       dropProps,
+      dropTarget,
       focusIndicator = true,
       icon,
       id,
@@ -98,6 +98,7 @@ const TextInput = forwardRef(
       name,
       onBlur,
       onChange,
+      onClickCopy,
       onFocus,
       onKeyDown,
       onSelect,
@@ -168,8 +169,13 @@ const TextInput = forwardRef(
       messages,
     });
 
-    const onClickCopy = () => {
-      navigator.clipboard.writeText(value);
+    const handleCopyClick = async (event) => {
+      // uncontrolled inputs keep their current text on the DOM node, not
+      // in `value`, which stays undefined outside a Form
+      const currentValue = inputRef.current?.value ?? value ?? '';
+      if (onClickCopy) await onClickCopy(event, currentValue);
+      else await navigator.clipboard.writeText(currentValue);
+
       announce(readOnlyCopyValidation, 'assertive');
       setTip(readOnlyCopyValidation);
     };
@@ -522,21 +528,20 @@ const TextInput = forwardRef(
       inputType = passwordRevealed ? 'text' : 'password';
     }
     const showTextInputIcon = !!textInputIcon && !readOnlyCopy;
-    const showLeadingIcon = showTextInputIcon && !reverse;
-    const showTrailingIcon = showTextInputIcon && reverse;
 
-    const ReadOnlyCopyButton = (
+    const copyButtonElement = (
       <CopyButton
+        authoredType={authoredType}
         disabled={disabled}
+        messages={messages}
         onBlurCopy={onBlurCopy}
-        onClickCopy={onClickCopy}
-        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        onCopy={handleCopyClick}
         tip={tip}
         value={value}
       />
     );
 
-    const PasswordToggleButton = passwordToggle ? (
+    const passwordToggleButton = passwordToggle ? (
       <Button
         disabled={disabled}
         kind="toolbar"
@@ -552,11 +557,26 @@ const TextInput = forwardRef(
       />
     ) : undefined;
 
-    const textInputButton = readOnlyCopy ? ReadOnlyCopyButton : undefined;
+    const copyButton = readOnlyCopy || copy ? copyButtonElement : undefined;
+    // Keep state-changing password visibility before the non-destructive
+    // copy action.
+    const actionsGroup =
+      passwordToggleButton || copyButton ? (
+        <StyledActionsGroup {...passThemeFlag}>
+          {passwordToggleButton}
+          {copyButton}
+        </StyledActionsGroup>
+      ) : undefined;
+    const hasActionsGroup = !!actionsGroup;
+    const iconOnRight = hasActionsGroup ? !reverse : reverse;
+    const showLeadingIcon = showTextInputIcon && !iconOnRight;
+    const showTrailingIcon = showTextInputIcon && iconOnRight;
+    const showActionsBeforeInput =
+      hasActionsGroup && reverse && !showTextInputIcon;
 
     return (
       <StyledTextInputContainer
-        hasButton={!!textInputButton}
+        hasButton={!!actionsGroup}
         readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
         readOnlyCopy={readOnlyCopy}
         plain={plain}
@@ -565,14 +585,20 @@ const TextInput = forwardRef(
         onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
-        {reverse && textInputButton}
+        {/* With an icon, reverse moves only the icon; otherwise it moves */}
+        {/* the actions group. */}
+        {showActionsBeforeInput && actionsGroup}
         {showStyledPlaceholder && (
           <StyledPlaceholder {...passThemeFlag}>
             {placeholder}
           </StyledPlaceholder>
         )}
         {showLeadingIcon && (
-          <StyledIcon reverse={reverse} theme={theme}>
+          <StyledIcon
+            reverse={iconOnRight}
+            hasActionsGroup={hasActionsGroup}
+            theme={theme}
+          >
             {textInputIcon}
           </StyledIcon>
         )}
@@ -588,11 +614,11 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={showTextInputIcon ? icon : undefined}
-            reverse={reverse}
+            icon={showTextInputIcon && !hasActionsGroup ? icon : undefined}
+            reverse={iconOnRight}
             focus={focus}
-            hasButton={!!textInputButton}
-            hasInlineButton={passwordToggle}
+            hasButton={hasActionsGroup}
+            hasActionsGroup={hasActionsGroup}
             hasTrailingIcon={showTrailingIcon}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
@@ -655,22 +681,16 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
-        {PasswordToggleButton && !readOnlyCopy && (
-          <StyledInlineButton {...passThemeFlag}>
-            {showTrailingIcon && (
-              <StyledInlineIcon {...passThemeFlag}>
-                {textInputIcon}
-              </StyledInlineIcon>
-            )}
-            {PasswordToggleButton}
-          </StyledInlineButton>
-        )}
-        {showTrailingIcon && !PasswordToggleButton && (
-          <StyledIcon reverse={reverse} theme={theme}>
+        {showTrailingIcon && (
+          <StyledIcon
+            reverse={iconOnRight}
+            hasActionsGroup={hasActionsGroup}
+            theme={theme}
+          >
             {textInputIcon}
           </StyledIcon>
         )}
-        {!reverse && textInputButton}
+        {!showActionsBeforeInput && actionsGroup}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );
