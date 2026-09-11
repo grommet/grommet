@@ -12,6 +12,18 @@ Chromatic (visual regression snapshots) is intentionally gated in CircleCI to co
 
 `hold-chromatic` and `chromatic` both require `checkout` to have completed and are excluded from both the `master` branch and all tags (`tags: ignore: /.*/`), since CircleCI evaluates `tags` filters independently of `branches` filters — a `branches: ignore: master` filter alone does **not** exclude tag-triggered pipelines, so the explicit `tags: ignore` is required. `release` (master-only) now requires `chromatic-accept` instead of `chromatic`, since `chromatic` never runs on `master`. `publish` (tag-only) no longer requires `chromatic` at all, since it's excluded from tag pipelines.
 
+## Why the approval gate alone isn't sufficient
+
+`.circleci/config.yml` is read from the commit under test, which means a PR — including one from an untrusted fork — can edit its own copy of the file to delete `hold-chromatic` or point `chromatic`'s `requires` directly at `checkout`, bypassing the approval step entirely. A workflow graph defined in untrusted YAML is not a security boundary by itself.
+
+To close that gap, `chromatic` and `chromatic-accept` run under a restricted CircleCI **context** named `chromatic` (see `context:` in `config.yml`), and `CHROMATIC_TOKEN` lives only inside that context, not as a bare project environment variable. Context secrets are only injected when the _triggering actor_ is authorized for the context's security group — an authorization CircleCI checks independently of anything the pipeline's own YAML declares. So even if a PR's commit removes `hold-chromatic`, an unauthorized/forked-PR trigger still won't receive `$CHROMATIC_TOKEN`, and `yarn chromatic` fails to authenticate instead of spending snapshot quota. This is the actual enforcement boundary; the `hold-chromatic` approval job is a convenience/UX gate on top of it, not a replacement for it.
+
+**Manual follow-up required (not achievable via `config.yml` alone):**
+
+1. In the CircleCI dashboard, create a `chromatic` context restricted to a maintainers-only security group.
+2. Move `CHROMATIC_TOKEN` into that context and remove it from the project's plain Environment Variables (if present there), so there's no unrestricted fallback path to the secret.
+3. Confirm the project setting **"Pass secrets to builds from forked pull requests"** stays disabled, as an additional layer independent of contexts.
+
 ## Process flow
 
 ```mermaid
@@ -38,6 +50,7 @@ flowchart TD
 
 ## Related follow-ups (not yet implemented)
 
+- Create the `chromatic` context and migrate `CHROMATIC_TOKEN` into it (see "Why the approval gate alone isn't sufficient" above) — this is the primary outstanding action item and should be prioritized ahead of the items below.
 - Enable CircleCI's **"Auto-cancel redundant workflows"** project setting so a new push cancels a stale, still-pending/running Chromatic workflow instead of accumulating multiple runs.
 - Consider a GitHub PR label (e.g. `chromatic-approved`) as an alternative approval mechanism that persists across pushes, avoiding repeated manual clicks in the CircleCI UI.
 

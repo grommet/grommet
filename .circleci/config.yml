@@ -169,6 +169,8 @@ workflows:
               ignore:
                 - master
       - chromatic:
+          context:
+            - chromatic
           requires:
             - hold-chromatic
           filters:
@@ -178,6 +180,8 @@ workflows:
               ignore:
                 - master
       - chromatic-accept:
+          context:
+            - chromatic
           requires:
             - checkout
           filters:
