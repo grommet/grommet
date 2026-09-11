@@ -822,7 +822,6 @@ const TimeInput = forwardRef(
                   setIconFocused(false);
                 }}
                 onClick={open ? closePicker : openPicker}
-                {...passThemeFlag}
               />
             )}
           </StyledTimeInputContainer>
