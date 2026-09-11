@@ -6,6 +6,7 @@ import {
   disabledStyle,
   edgeStyle,
   focusStyle,
+  getInputPadBySide,
   inputStyle,
   normalizeColor,
   parseMetricToNum,
@@ -13,12 +14,21 @@ import {
   readOnlyStyle,
   styledComponentsConfig,
 } from '../../utils';
+import { getInputIconPad } from '../../utils/styles';
 import { Box } from '../Box';
+
+const getTimeInputButtonPad = (props) => {
+  const rightInset = Number.parseFloat(getInputPadBySide(props, 'right'));
+  const iconPad = Number.parseFloat(getInputIconPad(props));
+
+  return `${iconPad + rightInset}px`;
+};
 
 export const StyledTimeInputContainer = styled(Box).withConfig({
   // Keep Box styling props like border and round flowing into Box.
   shouldForwardProp: (prop) => prop !== 'disabled' && prop !== 'readOnlyProp',
 })`
+  position: relative;
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
   ${(props) =>
@@ -28,6 +38,18 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
         ${focusStyle()}
       }
     `}
+`;
+
+export const StyledTimeInputButtonContainer = styled.div.withConfig(
+  styledComponentsConfig,
+)`
+  position: absolute;
+  display: flex;
+  align-items: stretch;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 `;
 
 export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
@@ -81,6 +103,8 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
           props.theme.box.responsiveBreakpoint,
           props.theme,
         ))}
+  ${(props) =>
+    props.$hasInlineButton && `padding-right: ${getTimeInputButtonPad(props)};`}
 `;
 
 export const StyledTimeInputSeparator = styled.span.withConfig(
