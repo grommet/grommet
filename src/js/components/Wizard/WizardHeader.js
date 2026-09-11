@@ -13,7 +13,7 @@ import { useWizard } from './WizardContext';
 export const WizardHeader = ({ title, children, ...rest }) => {
   const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
-  const { cancel, messages } = useWizard();
+  const { cancel, closable, messages } = useWizard();
   const headerTheme = theme.wizard?.header;
 
   // Custom children override the themed title.
@@ -42,11 +42,13 @@ export const WizardHeader = ({ title, children, ...rest }) => {
       <Box direction="row" align="center" flex>
         {content}
       </Box>
-      <Button
-        aria-label={closeLabel}
-        icon={CloseIcon ? <CloseIcon aria-hidden="true" /> : undefined}
-        onClick={cancel}
-      />
+      {closable && (
+        <Button
+          aria-label={closeLabel}
+          icon={CloseIcon ? <CloseIcon aria-hidden="true" /> : undefined}
+          onClick={cancel}
+        />
+      )}
     </Box>
   );
 };

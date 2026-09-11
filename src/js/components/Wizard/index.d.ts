@@ -82,6 +82,8 @@ export interface WizardMessages {
 
 export interface WizardProps<TValue = Record<string, any>> {
   steps: WizardStep<TValue>[];
+  clickableSteps?: boolean;
+  closable?: boolean;
   currentStep?: string;
   defaultStep?: string;
   showProgress?: WizardShowProgress;
@@ -130,6 +132,7 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   skip: () => void;
   complete: () => void;
   cancel: () => void;
+  clickableSteps: boolean;
   showProgress: WizardShowProgress;
   renderStep?: (
     step: WizardStep<TValue>,

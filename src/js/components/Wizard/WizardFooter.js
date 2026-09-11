@@ -65,7 +65,7 @@ export const WizardFooter = ({ children, ...rest }) => {
           onClick={previous}
         />
       ),
-      currentStepObj.skippable && !isLastStep && (
+      currentStepObj.skippable && !currentStepObj.disabled && !isLastStep && (
         <Button
           key="skip"
           label={label('skip')}

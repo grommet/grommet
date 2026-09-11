@@ -71,6 +71,8 @@ const Wizard = forwardRef(
   (
     {
       steps,
+      clickableSteps = false,
+      closable = true,
       currentStep: currentStepProp,
       defaultStep,
       showProgress = false,
@@ -219,6 +221,7 @@ const Wizard = forwardRef(
         if (!step) return 'pending';
         if (step.disabled) return 'disabled';
         if (stepId === currentStep && validationError) return 'error';
+        if (step.status === 'error') return 'error';
         if (completedSteps.has(stepId)) return 'completed';
         return 'pending';
       },
@@ -595,6 +598,8 @@ const Wizard = forwardRef(
       () => ({
         steps,
         flatSteps,
+        clickableSteps,
+        closable,
         currentStep,
         currentStepIndex,
         currentStepObj,
@@ -624,6 +629,8 @@ const Wizard = forwardRef(
       [
         steps,
         flatSteps,
+        clickableSteps,
+        closable,
         currentStep,
         currentStepIndex,
         currentStepObj,

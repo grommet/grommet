@@ -1237,6 +1237,8 @@ exports[`Components loads 1`] = `
     "propTypes": {
       "aria-label": [Function],
       "children": [Function],
+      "clickableSteps": [Function],
+      "closable": [Function],
       "currentStep": [Function],
       "defaultStep": [Function],
       "defaultValue": [Function],
@@ -1269,6 +1271,8 @@ exports[`Components loads 1`] = `
     "_currentValue": {
       "canGoNext": true,
       "cancel": [Function],
+      "clickableSteps": false,
+      "closable": true,
       "complete": [Function],
       "currentStep": "",
       "currentStepIndex": 0,
@@ -1293,6 +1297,8 @@ exports[`Components loads 1`] = `
     "_currentValue2": {
       "canGoNext": true,
       "cancel": [Function],
+      "clickableSteps": false,
+      "closable": true,
       "complete": [Function],
       "currentStep": "",
       "currentStepIndex": 0,

@@ -25,6 +25,8 @@ if (process.env.NODE_ENV !== 'production') {
 
   propType = {
     steps: PropTypes.arrayOf(PropTypes.shape(nestedStepShape)).isRequired,
+    clickableSteps: PropTypes.bool,
+    closable: PropTypes.bool,
     currentStep: PropTypes.string,
     defaultStep: PropTypes.string,
     showProgress: PropTypes.oneOfType([
