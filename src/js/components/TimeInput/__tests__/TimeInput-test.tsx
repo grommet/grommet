@@ -2190,4 +2190,30 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('hh:mm:02');
     expect(secondSegment).toHaveTextContent('02');
   });
+
+  test('column box should have padding', async () => {
+    const user = userEvent.setup();
+    const Controlled = () => {
+      const [value, setValue] = React.useState('09:10:11');
+      const onChange = ({ value: next }: { value?: string }) => {
+        setValue(next || '');
+      };
+      return (
+        <>
+          <TimeInput value={value} onChange={onChange} format="12" />
+        </>
+      );
+    };
+
+    render(
+      <Grommet>
+        <Controlled />
+      </Grommet>,
+    );
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const boxes = screen.getAllByRole('listbox');
+    expect(boxes[0]).toHaveStyleRule('padding', '6px');
+    expect(boxes[1]).toHaveStyleRule('padding', '6px');
+    expect(boxes[2]).toHaveStyleRule('padding', '6px');
+  });
 });
