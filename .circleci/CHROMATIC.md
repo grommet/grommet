@@ -4,27 +4,30 @@ Chromatic (visual regression snapshots) is intentionally gated in CircleCI to co
 
 ## Conditions
 
-| Branch / event                                                 | Job                | Trigger                                     | Notes                                                                                                                                                                      |
-| -------------------------------------------------------------- | ------------------ | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Any branch except `master` (includes PRs from community/forks) | `chromatic`        | Manual approval required (`hold-chromatic`) | A maintainer must click **Approve** on `hold-chromatic` in the CircleCI workflow UI. Runs with `--only-changed` (TurboSnap) to snapshot only stories affected by the diff. |
-| `master` (post-merge)                                          | `chromatic-accept` | Automatic, no approval                      | Master only contains already-reviewed/merged code, so snapshots are captured and auto-accepted as the new baseline without a manual gate.                                  |
-| Tags (e.g. release tags)                                       | —                  | Not run                                     | Neither `chromatic` nor `chromatic-accept` is included in tag-only pipeline runs.                                                                                          |
+| Branch / event                                                 | Job                | Trigger                                     | Notes                                                                                                                                                                                                                                                     |
+| -------------------------------------------------------------- | ------------------ | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Any branch except `master` (includes PRs from community/forks) | `chromatic`        | Manual approval required (`hold-chromatic`) | A maintainer must click **Approve** on `hold-chromatic` in the CircleCI workflow UI. Runs with `--only-changed` (TurboSnap) to snapshot only stories affected by the diff.                                                                                |
+| `master` (post-merge)                                          | `chromatic-accept` | Automatic, no approval                      | Master only contains already-reviewed/merged code, so snapshots are captured and auto-accepted as the new baseline without a manual gate.                                                                                                                 |
+| Tags (e.g. release tags)                                       | —                  | Not run                                     | `hold-chromatic`/`chromatic` explicitly set `tags: ignore: /.*/`, so release tags never enter the approval gate. Release tags are cut from `master`, which was already snapshotted/accepted by `chromatic-accept`, so no further Chromatic run is needed. |
 
-`hold-chromatic` and `chromatic` both require `checkout` to have completed and are excluded from the `master` branch filter, since `master` uses `chromatic-accept` instead.
+`hold-chromatic` and `chromatic` both require `checkout` to have completed and are excluded from both the `master` branch and all tags (`tags: ignore: /.*/`), since CircleCI evaluates `tags` filters independently of `branches` filters — a `branches: ignore: master` filter alone does **not** exclude tag-triggered pipelines, so the explicit `tags: ignore` is required. `release` (master-only) now requires `chromatic-accept` instead of `chromatic`, since `chromatic` never runs on `master`. `publish` (tag-only) no longer requires `chromatic` at all, since it's excluded from tag pipelines.
 
 ## Process flow
 
 ```mermaid
 flowchart TD
-    A[Push commit] --> B[checkout job]
-    B --> C{Branch is master?}
-    C -- "No (PR / feature branch)" --> D[hold-chromatic\ntype: approval]
+    A[Push commit / tag] --> B[checkout job]
+    B --> C{Trigger type?}
+    C -- "Branch push (not master)" --> D[hold-chromatic\ntype: approval]
     D --> E{Maintainer approves\nin CircleCI UI?}
     E -- No --> F[chromatic job stays pending]
     E -- Yes --> G[chromatic job runs\nyarn chromatic --only-changed]
     G --> H[Snapshots published to Chromatic\nfor visual review on the PR]
-    C -- Yes --> I[chromatic-accept job runs\nautomatically, no approval]
+    C -- "Branch push (master)" --> I[chromatic-accept job runs\nautomatically, no approval]
     I --> J[Snapshots auto-accepted\nas new baseline on master]
+    J --> K[release job\nrequires chromatic-accept]
+    C -- "Tag push (e.g. v1.2.3)" --> L[chromatic / hold-chromatic\nexcluded via tags: ignore]
+    L --> M[publish job\nrequires jest, lint, build only]
 ```
 
 ## Why this exists

@@ -156,13 +156,15 @@ workflows:
               only: /.*/
       # requires a maintainer to manually approve in the CircleCI UI before
       # spending Chromatic snapshot quota on a branch/PR
+      # excluded from tag pipelines: release tags are cut from master, which
+      # is already snapshotted/accepted by chromatic-accept
       - hold-chromatic:
           type: approval
           requires:
             - checkout
           filters:
             tags:
-              only: /.*/
+              ignore: /.*/
             branches:
               ignore:
                 - master
@@ -171,7 +173,7 @@ workflows:
             - hold-chromatic
           filters:
             tags:
-              only: /.*/
+              ignore: /.*/
             branches:
               ignore:
                 - master
@@ -199,7 +201,7 @@ workflows:
             - grommet
           requires:
             - jest
-            - chromatic
+            - chromatic-accept
             - lint
             - build
           filters:
@@ -211,7 +213,6 @@ workflows:
             - grommet
           requires:
             - jest
-            - chromatic
             - lint
             - build
           filters:
