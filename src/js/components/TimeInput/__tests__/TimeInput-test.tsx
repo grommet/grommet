@@ -117,28 +117,6 @@ describe('TimeInput', () => {
     expect(trigger).toHaveAttribute('aria-controls', 'time-a11y__drop');
   });
 
-  test('uses input padding and control radius for the clock button', () => {
-    render(
-      <Grommet
-        theme={{
-          global: {
-            input: { padding: { horizontal: '16px' } },
-            control: { border: { radius: '6px' } },
-          },
-        }}
-      >
-        <TimeInput format="24" />
-      </Grommet>,
-    );
-
-    const trigger = screen.getByRole('button', { name: 'Choose time' });
-    expect(trigger).toHaveStyleRule('padding-left', '16px');
-    expect(trigger).toHaveStyleRule('padding-right', '16px');
-    expect(trigger).toHaveStyleRule('padding-top', '0');
-    expect(trigger).toHaveStyleRule('padding-bottom', '0');
-    expect(trigger).toHaveStyleRule('border-radius', '6px');
-  });
-
   test('does not show an active section before focus', () => {
     render(
       <Grommet>

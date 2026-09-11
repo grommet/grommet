@@ -2413,6 +2413,9 @@ export interface ThemeType {
     };
   };
   timeInput?: {
+    button?: {
+      margin?: MarginType;
+    };
     container?: {
       round?: RoundType;
     };

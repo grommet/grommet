@@ -21,6 +21,7 @@ import {
   getSectionTokenFromType,
 } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import {
@@ -30,7 +31,6 @@ import {
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
   StyledTimeInput,
-  StyledTimeInputButton,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
@@ -804,15 +804,8 @@ const TimeInput = forwardRef(
               />
             )}
             {!readOnly && (
-              <StyledTimeInputButton
-                pad={{
-                  horizontal: theme.global.input.padding?.horizontal,
-                  left: theme.global.input.padding?.left,
-                  right: theme.global.input.padding?.right,
-                  // Only horizontal padding; the button fills the input height.
-                  top: '0',
-                  bottom: '0',
-                }}
+              <Button
+                kind="toolbar"
                 icon={<GrommetClockIcon />}
                 disabled={disabled}
                 aria-label={formatMessage({
