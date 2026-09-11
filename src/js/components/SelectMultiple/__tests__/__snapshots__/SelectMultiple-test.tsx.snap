@@ -3495,7 +3495,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
           class="c11"
           inert=""
           readonly=""
-          type="text"
+          type="hidden"
         />
       </button>
       <div
@@ -4025,7 +4025,7 @@ exports[`SelectMultiple showSelectionInline with children 1`] = `
           class="c11"
           inert=""
           readonly=""
-          type="text"
+          type="hidden"
         />
       </button>
       <div
@@ -4655,7 +4655,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
           class="c11"
           inert=""
           readonly=""
-          type="text"
+          type="hidden"
         />
       </button>
       <div
@@ -5156,7 +5156,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
           class="c11"
           inert=""
           readonly=""
-          type="text"
+          type="hidden"
         />
       </button>
       <div
@@ -7661,7 +7661,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
             id="test-select-multiple-theme__input"
             inert=""
             readonly=""
-            type="text"
+            type="hidden"
           />
         </button>
         <div
