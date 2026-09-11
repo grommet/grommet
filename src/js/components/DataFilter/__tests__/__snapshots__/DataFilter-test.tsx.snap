@@ -8692,6 +8692,7 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
   scroll-behavior: smooth;
   overflow: auto;
   outline: none;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c14 {

@@ -475,7 +475,7 @@ exports[`Menu close by clicking outside 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -599,6 +599,10 @@ exports[`Menu close by clicking outside 2`] = `
   outline: none;
 }
 
+.c11 {
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+}
+
 @media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
@@ -606,7 +610,7 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
+  .c12 {
     padding: 6px;
   }
 }
@@ -677,7 +681,7 @@ exports[`Menu close by clicking outside 2`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c10 c11"
       role="menu"
     >
       <div
@@ -690,7 +694,7 @@ exports[`Menu close by clicking outside 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 1
           </div>
@@ -706,7 +710,7 @@ exports[`Menu close by clicking outside 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 2
           </div>
@@ -3284,7 +3288,7 @@ exports[`Menu open and close on click 3`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -3408,6 +3412,10 @@ exports[`Menu open and close on click 3`] = `
   outline: none;
 }
 
+.c11 {
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+}
+
 @media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
@@ -3415,7 +3423,7 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
+  .c12 {
     padding: 6px;
   }
 }
@@ -3486,7 +3494,7 @@ exports[`Menu open and close on click 3`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c10 c11"
       role="menu"
     >
       <div
@@ -3499,7 +3507,7 @@ exports[`Menu open and close on click 3`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 1
           </div>
@@ -3515,7 +3523,7 @@ exports[`Menu open and close on click 3`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 2
           </div>
@@ -3531,7 +3539,7 @@ exports[`Menu open and close on click 3`] = `
           role="menuitem"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 3
           </div>
@@ -3951,7 +3959,7 @@ exports[`Menu open on up close on esc 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4075,6 +4083,10 @@ exports[`Menu open on up close on esc 2`] = `
   outline: none;
 }
 
+.c11 {
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+}
+
 @media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
@@ -4082,7 +4094,7 @@ exports[`Menu open on up close on esc 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
+  .c12 {
     padding: 6px;
   }
 }
@@ -4153,7 +4165,7 @@ exports[`Menu open on up close on esc 2`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c10 c11"
       role="menu"
     >
       <div
@@ -4166,7 +4178,7 @@ exports[`Menu open on up close on esc 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 1
           </div>
@@ -4182,7 +4194,7 @@ exports[`Menu open on up close on esc 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 2
           </div>
@@ -4768,7 +4780,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
   overflow: auto;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4778,7 +4790,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -4789,7 +4801,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
   padding: 12px;
 }
 
-.c8 {
+.c9 {
   flex: 0 0 auto;
   align-self: stretch;
   height: 6px;
@@ -4815,7 +4827,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
   animation-delay: 0.01s;
 }
 
-.c6 {
+.c7 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4832,28 +4844,28 @@ exports[`Menu should apply theme.menu.container 1`] = `
   text-align: inherit;
 }
 
-.c6:hover {
+.c7:hover {
   background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
-.c6:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -4863,6 +4875,10 @@ exports[`Menu should apply theme.menu.container 1`] = `
 
 .c3:focus {
   outline: none;
+}
+
+.c5 {
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -4876,7 +4892,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
+  .c8 {
     padding: 6px;
   }
 }
@@ -4886,7 +4902,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c9 {
     height: 3px;
   }
 }
@@ -4916,39 +4932,39 @@ exports[`Menu should apply theme.menu.container 1`] = `
     tabindex="-1"
   >
     <div
-      class="c4"
+      class="c4 c5"
       role="menu"
     >
       <div
-        class="c5"
+        class="c6"
         role="none"
       >
         <button
-          class="c6"
+          class="c7"
           role="menuitem"
           type="button"
         >
           <div
-            class="c7"
+            class="c8"
           >
             Item 1
           </div>
         </button>
       </div>
       <div
-        class="c8"
+        class="c9"
       />
       <div
-        class="c5"
+        class="c6"
         role="none"
       >
         <button
-          class="c6"
+          class="c7"
           role="menuitem"
           type="button"
         >
           <div
-            class="c7"
+            class="c8"
           >
             Item 2
           </div>
@@ -5213,7 +5229,7 @@ exports[`Menu should group items 1`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5224,7 +5240,7 @@ exports[`Menu should group items 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5235,7 +5251,7 @@ exports[`Menu should group items 1`] = `
   padding: 12px;
 }
 
-.c13 {
+.c14 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5246,7 +5262,7 @@ exports[`Menu should group items 1`] = `
   padding-right: 12px;
 }
 
-.c14 {
+.c15 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -5369,6 +5385,10 @@ exports[`Menu should group items 1`] = `
   outline: none;
 }
 
+.c11 {
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+}
+
 @media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
@@ -5376,27 +5396,27 @@ exports[`Menu should group items 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
+  .c12 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c12 {
+  .c13 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c13 {
+  .c14 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .c14 {
+  .c15 {
     border-top: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
@@ -5467,14 +5487,14 @@ exports[`Menu should group items 1`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c10 c11"
       role="menu"
     >
       <div
         class="c4"
       >
         <div
-          class="c11"
+          class="c12"
         >
           <div
             class="c4"
@@ -5486,7 +5506,7 @@ exports[`Menu should group items 1`] = `
               type="button"
             >
               <div
-                class="c12"
+                class="c13"
               >
                 Item 1
               </div>
@@ -5502,7 +5522,7 @@ exports[`Menu should group items 1`] = `
               type="button"
             >
               <div
-                class="c12"
+                class="c13"
               >
                 Item 2
               </div>
@@ -5514,14 +5534,14 @@ exports[`Menu should group items 1`] = `
         class="c4"
       >
         <div
-          class="c13"
+          class="c14"
         >
           <div
-            class="c14"
+            class="c15"
           />
         </div>
         <div
-          class="c11"
+          class="c12"
         >
           <div
             class="c4"
@@ -5533,7 +5553,7 @@ exports[`Menu should group items 1`] = `
               type="button"
             >
               <div
-                class="c12"
+                class="c13"
               >
                 Item 3
               </div>
@@ -6061,7 +6081,7 @@ exports[`Menu with dropAlign bottom renders 1`] = `
 `;
 
 exports[`Menu with dropAlign bottom renders 2`] = `
-.c8 {
+.c9 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6103,7 +6123,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   overflow: auto;
 }
 
-.c5 {
+.c6 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6113,7 +6133,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   flex: 0 0 auto;
 }
 
-.c7 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6124,13 +6144,13 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 12px;
 }
 
-.c11 {
+.c12 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6139,25 +6159,25 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   stroke: #7D4CDB;
 }
 
-.c11 g {
+.c12 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill='none'] {
+.c12 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*='#'],
-.c11 *[STROKE*='#'] {
+.c12 *[stroke*='#'],
+.c12 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*='#'],
-.c11 *[FILL*='#'] {
+.c12 *[fill-rule],
+.c12 *[FILL-RULE],
+.c12 *[fill*='#'],
+.c12 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6182,12 +6202,12 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   animation-delay: 0.01s;
 }
 
-.c9 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
 }
 
-.c6 {
+.c7 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6204,28 +6224,28 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   text-align: inherit;
 }
 
-.c6:hover {
+.c7:hover {
   background-color: rgba(221, 221, 221, 0.4);
   color: #000000;
 }
 
-.c6:focus:not(:focus-visible) {
+.c7:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) >circle,
-.c6:focus:not(:focus-visible) >ellipse,
-.c6:focus:not(:focus-visible) >line,
-.c6:focus:not(:focus-visible) >path,
-.c6:focus:not(:focus-visible) >polygon,
-.c6:focus:not(:focus-visible) >polyline,
-.c6:focus:not(:focus-visible) >rect {
+.c7:focus:not(:focus-visible) >circle,
+.c7:focus:not(:focus-visible) >ellipse,
+.c7:focus:not(:focus-visible) >line,
+.c7:focus:not(:focus-visible) >path,
+.c7:focus:not(:focus-visible) >polygon,
+.c7:focus:not(:focus-visible) >polyline,
+.c7:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c6:focus:not(:focus-visible) ::-moz-focus-inner {
+.c7:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -6237,6 +6257,16 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   outline: none;
 }
 
+.c5 {
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  .c9 {
+    padding: 6px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .c8 {
     padding: 6px;
@@ -6244,13 +6274,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c7 {
-    padding: 6px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c10 {
+  .c11 {
     width: 6px;
   }
 }
@@ -6280,36 +6304,36 @@ exports[`Menu with dropAlign bottom renders 2`] = `
     tabindex="-1"
   >
     <div
-      class="c4"
+      class="c4 c5"
       role="menu"
     >
       <div
-        class="c5"
+        class="c6"
         role="none"
       >
         <button
-          class="c6"
+          class="c7"
           role="menuitem"
           type="button"
         >
           <div
-            class="c7"
+            class="c8"
           >
             Item 1
           </div>
         </button>
       </div>
       <div
-        class="c5"
+        class="c6"
         role="none"
       >
         <button
-          class="c6"
+          class="c7"
           role="menuitem"
           type="button"
         >
           <div
-            class="c7"
+            class="c8"
           >
             Item 2
           </div>
@@ -6317,28 +6341,28 @@ exports[`Menu with dropAlign bottom renders 2`] = `
       </div>
     </div>
     <div
-      class="c5"
+      class="c6"
     >
       <button
         aria-label="Close Menu"
-        class="c6"
+        class="c7"
         tabindex="-1"
         type="button"
       >
         <div
-          class="c8"
+          class="c9"
         >
           <span
-            class="c9"
+            class="c10"
           >
             Test
           </span>
           <div
-            class="c10"
+            class="c11"
           />
           <svg
             aria-label="FormDown"
-            class="c11"
+            class="c12"
             viewBox="0 0 24 24"
           >
             <path
@@ -6590,7 +6614,7 @@ exports[`Menu with dropAlign top renders 2`] = `
   flex: 0 0 auto;
 }
 
-.c11 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -6714,6 +6738,10 @@ exports[`Menu with dropAlign top renders 2`] = `
   outline: none;
 }
 
+.c11 {
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+}
+
 @media only screen and (max-width: 768px) {
   .c6 {
     padding: 6px;
@@ -6721,7 +6749,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c11 {
+  .c12 {
     padding: 6px;
   }
 }
@@ -6792,7 +6820,7 @@ exports[`Menu with dropAlign top renders 2`] = `
       </button>
     </div>
     <div
-      class="c10"
+      class="c10 c11"
       role="menu"
     >
       <div
@@ -6805,7 +6833,7 @@ exports[`Menu with dropAlign top renders 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 1
           </div>
@@ -6821,7 +6849,7 @@ exports[`Menu with dropAlign top renders 2`] = `
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 2
           </div>
