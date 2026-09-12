@@ -138,10 +138,14 @@ const formValueToView = (value, views) => {
   const valueCopy = { ...value };
 
   Object.keys(viewFormKeyMap).forEach((key) => {
-    if (valueCopy[viewFormKeyMap[key]]) {
-      result[key] = valueCopy[viewFormKeyMap[key]];
+    const formKey = viewFormKeyMap[key];
+    if (valueCopy[formKey]) {
+      result[key] = valueCopy[formKey];
+    } else if (formKey === formColumnsKey && valueCopy[formKey] !== undefined) {
+      // _columns can be an empty array (no columns selected)
+      result[key] = valueCopy[formKey];
     }
-    delete valueCopy[viewFormKeyMap[key]];
+    delete valueCopy[formKey];
   });
 
   // flatten any nested objects
@@ -167,7 +171,14 @@ const formValueToView = (value, views) => {
 const clearEmpty = (formValue, pendingReset) => {
   const value = formValue;
   Object.keys(value).forEach((k) => {
-    if (Array.isArray(value[k]) && value[k].length === 0) delete value[k];
+    // _columns (formColumnsKey) can be an empty array to indicate
+    // no columns selected; don't delete it.
+    if (
+      Array.isArray(value[k]) &&
+      value[k].length === 0 &&
+      k !== formColumnsKey
+    )
+      delete value[k];
     // special case for when range selector returns to its min/max
     // flat format with full: true needed to match filter name structure
     // { a: b: { _range: [0, 100] } } ==> a.b._range: [0, 100]
