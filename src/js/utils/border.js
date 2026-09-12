@@ -106,3 +106,23 @@ export const borderStyle = (borderData, responsive, theme) => {
 
   return borderStyles;
 };
+
+export const getHoverIndicatorBorderStyle = (
+  hoverIndicator,
+  responsive,
+  theme,
+) => {
+  let border;
+  if (typeof hoverIndicator === 'object') {
+    if (hoverIndicator.border) {
+      border = hoverIndicator.border;
+    } else {
+      return null;
+    }
+  } else {
+    return null;
+  }
+  return css`
+    ${borderStyle(border, responsive, theme)}
+  `;
+};
