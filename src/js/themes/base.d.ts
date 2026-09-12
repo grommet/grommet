@@ -343,6 +343,7 @@ interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
 }
 
 export interface ThemeType {
+  defaultMode?: 'dark' | 'light' | 'auto';
   global?: {
     active?: {
       background?:
