@@ -218,6 +218,26 @@ describe('Form uncontrolled', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('onValidate treats 0 as a valid required value', () => {
+    const onValidate = jest.fn();
+    render(
+      <Grommet>
+        <Form onValidate={onValidate}>
+          <FormField name="test" required value={0} />
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+    fireEvent.click(screen.getByText('Submit'));
+    expect(onValidate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        errors: {},
+        infos: {},
+        valid: true,
+      }),
+    );
+  });
+
   test('uncontrolled onValidate custom error', () => {
     const onValidate = jest.fn();
     const errorMessage = 'One uppercase letter';
