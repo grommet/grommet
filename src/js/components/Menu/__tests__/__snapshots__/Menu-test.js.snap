@@ -1943,7 +1943,9 @@ exports[`Menu custom theme with default button 1`] = `
     <div
       class="c2"
     >
-      Test Menu
+      <span>
+        Test Menu
+      </span>
       <div
         class="c3"
       />

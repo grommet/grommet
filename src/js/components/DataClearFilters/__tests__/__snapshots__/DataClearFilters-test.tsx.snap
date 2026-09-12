@@ -536,7 +536,9 @@ exports[`DataClearFilters clears filters when clicked 1`] = `
         class="c3"
         type="button"
       >
-        Clear filters
+        <span>
+          Clear filters
+        </span>
       </button>
     </div>
   </div>
@@ -641,7 +643,9 @@ exports[`DataClearFilters renders 1`] = `
         class="c2"
         type="button"
       >
-        Clear filters
+        <span>
+          Clear filters
+        </span>
       </button>
     </div>
   </div>
@@ -1058,7 +1062,9 @@ exports[`DataClearFilters renders custom message 1`] = `
         class="c12"
         type="button"
       >
-        Remove all filters
+        <span>
+          Remove all filters
+        </span>
       </button>
     </div>
   </div>

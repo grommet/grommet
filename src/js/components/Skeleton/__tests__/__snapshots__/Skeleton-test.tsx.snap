@@ -138,7 +138,9 @@ exports[`Skeleton Box skeleton loaded 1`] = `
         class="c5"
         type="button"
       >
-        Button
+        <span>
+          Button
+        </span>
       </button>
     </div>
   </div>

@@ -33,7 +33,9 @@ exports[`Anchor blur renders 1`] = `
     class="c1"
     href="#"
   >
-    Test
+    <span>
+      Test
+    </span>
   </a>
 </div>
 `;
@@ -125,7 +127,9 @@ exports[`Anchor focus renders 1`] = `
     class="c1"
     href="#"
   >
-    Test
+    <span>
+      Test
+    </span>
   </a>
 </div>
 `;
@@ -213,7 +217,9 @@ exports[`Anchor gap renders 1`] = `
         <span
           class="c3"
         />
-        Theme Gap
+        <span>
+          Theme Gap
+        </span>
       </span>
     </a>
     <a
@@ -229,7 +235,9 @@ exports[`Anchor gap renders 1`] = `
         <span
           class="c4"
         />
-        Small Gap
+        <span>
+          Small Gap
+        </span>
       </span>
     </a>
     <a
@@ -245,7 +253,9 @@ exports[`Anchor gap renders 1`] = `
         <span
           class="c5"
         />
-        Medium Gap
+        <span>
+          Medium Gap
+        </span>
       </span>
     </a>
     <a
@@ -261,7 +271,9 @@ exports[`Anchor gap renders 1`] = `
         <span
           class="c6"
         />
-        Large Gap
+        <span>
+          Large Gap
+        </span>
       </span>
     </a>
     <a
@@ -277,7 +289,9 @@ exports[`Anchor gap renders 1`] = `
         <span
           class="c7"
         />
-        5px Gap
+        <span>
+          5px Gap
+        </span>
       </span>
     </a>
   </div>
@@ -342,7 +356,9 @@ exports[`Anchor icon label renders 1`] = `
         <span
           class="c3"
         />
-        Test
+        <span>
+          Test
+        </span>
       </span>
     </a>
   </div>
@@ -382,7 +398,9 @@ exports[`Anchor is clickable 1`] = `
     class="c1"
     href="#"
   >
-    Test
+    <span>
+      Test
+    </span>
   </a>
 </div>
 `;
@@ -674,7 +692,9 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
         <span
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </span>
     </a>
     <a
@@ -698,7 +718,9 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
         <span
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </span>
     </a>
     <a
@@ -722,7 +744,9 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
         <span
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </span>
     </a>
     <a
@@ -746,7 +770,9 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
         <span
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </span>
     </a>
     <a
@@ -770,7 +796,9 @@ exports[`Anchor matches icon size to size prop when theme.icon.matchSize is true
         <span
           class="c4"
         />
-        Label
+        <span>
+          Label
+        </span>
       </span>
     </a>
   </div>
@@ -849,14 +877,18 @@ exports[`Anchor renders a11yTitle and aria-label 1`] = `
       class="c1"
       href="#"
     >
-      Test
+      <span>
+        Test
+      </span>
     </a>
     <a
       aria-label="test-2"
       class="c1"
       href="#"
     >
-      Test
+      <span>
+        Test
+      </span>
     </a>
   </div>
 </div>
@@ -1161,7 +1193,9 @@ exports[`Anchor renders size specific theming 1`] = `
       <a
         class="c2"
       >
-        xsmall
+        <span>
+          xsmall
+        </span>
       </a>
       <span
         class="c3"
@@ -1170,7 +1204,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <a
           class="c2"
         >
-          xsmall
+          <span>
+            xsmall
+          </span>
         </a>
          from text.
       </span>
@@ -1181,7 +1217,9 @@ exports[`Anchor renders size specific theming 1`] = `
       <a
         class="c4"
       >
-        small
+        <span>
+          small
+        </span>
       </a>
       <span
         class="c5"
@@ -1190,7 +1228,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <a
           class="c4"
         >
-          small
+          <span>
+            small
+          </span>
         </a>
          from text.
       </span>
@@ -1201,7 +1241,9 @@ exports[`Anchor renders size specific theming 1`] = `
       <a
         class="c6"
       >
-        medium
+        <span>
+          medium
+        </span>
       </a>
       <span
         class="c7"
@@ -1210,7 +1252,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <a
           class="c6"
         >
-          medium
+          <span>
+            medium
+          </span>
         </a>
          from text.
       </span>
@@ -1221,7 +1265,9 @@ exports[`Anchor renders size specific theming 1`] = `
       <a
         class="c8"
       >
-        large
+        <span>
+          large
+        </span>
       </a>
       <span
         class="c9"
@@ -1230,7 +1276,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <a
           class="c8"
         >
-          large
+          <span>
+            large
+          </span>
         </a>
          from text.
       </span>
@@ -1241,7 +1289,9 @@ exports[`Anchor renders size specific theming 1`] = `
       <a
         class="c10"
       >
-        xlarge
+        <span>
+          xlarge
+        </span>
       </a>
       <span
         class="c11"
@@ -1250,7 +1300,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <a
           class="c10"
         >
-          xlarge
+          <span>
+            xlarge
+          </span>
         </a>
          from text.
       </span>
@@ -1261,7 +1313,9 @@ exports[`Anchor renders size specific theming 1`] = `
       <a
         class="c12"
       >
-        xxlarge
+        <span>
+          xxlarge
+        </span>
       </a>
       <span
         class="c13"
@@ -1270,7 +1324,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <a
           class="c12"
         >
-          xxlarge
+          <span>
+            xxlarge
+          </span>
         </a>
          from text.
       </span>
@@ -1282,14 +1338,18 @@ exports[`Anchor renders size specific theming 1`] = `
       <a
         class="c4"
       >
-        small
+        <span>
+          small
+        </span>
       </a>
        from Paragraph.
     </p>
     <a
       class="c15"
     >
-      Default anchor with no size prop should receive medium
+      <span>
+        Default anchor with no size prop should receive medium
+      </span>
     </a>
     <a
       class="c16"
@@ -1312,7 +1372,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <span
           class="c19"
         />
-        Anchor with icon
+        <span>
+          Anchor with icon
+        </span>
       </span>
     </a>
     <a
@@ -1336,7 +1398,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <span
           class="c21"
         />
-        small anchor with icon should receive color on icon
+        <span>
+          small anchor with icon should receive color on icon
+        </span>
       </span>
     </a>
     <a
@@ -1360,7 +1424,9 @@ exports[`Anchor renders size specific theming 1`] = `
         <span
           class="c22"
         />
-        Large anchor with icon should receive color on icon
+        <span>
+          Large anchor with icon should receive color on icon
+        </span>
       </span>
     </a>
   </div>
@@ -1498,7 +1564,9 @@ exports[`Anchor renders specific icon color 1`] = `
         <span
           class="c4"
         />
-        Color prop on icon
+        <span>
+          Color prop on icon
+        </span>
       </span>
     </a>
     <a
@@ -1522,7 +1590,9 @@ exports[`Anchor renders specific icon color 1`] = `
         <span
           class="c4"
         />
-        Anchor with color prop
+        <span>
+          Anchor with color prop
+        </span>
       </span>
     </a>
     <a
@@ -1546,7 +1616,9 @@ exports[`Anchor renders specific icon color 1`] = `
         <span
           class="c4"
         />
-        Anchor using theme
+        <span>
+          Anchor using theme
+        </span>
       </span>
     </a>
   </div>
@@ -1647,7 +1719,9 @@ exports[`Anchor renders specific icon color 1`] = `
         <span
           class="c4"
         />
-        Anchor color
+        <span>
+          Anchor color
+        </span>
       </span>
     </a>
   </div>
@@ -1688,7 +1762,9 @@ exports[`Anchor renders tag 1`] = `
       class="c1"
       href="#"
     >
-      Test
+      <span>
+        Test
+      </span>
     </span>
   </div>
 </div>
@@ -1784,7 +1860,9 @@ exports[`Anchor reverse icon label renders 1`] = `
       <span
         class="c2"
       >
-        Test
+        <span>
+          Test
+        </span>
         <span
           class="c3"
         />
@@ -2192,7 +2270,9 @@ exports[`Anchor warns about invalid label render 1`] = `
     class="c1"
     href="#"
   >
-    Test
+    <span>
+      Test
+    </span>
   </a>
 </div>
 `;
@@ -2351,55 +2431,73 @@ exports[`Anchor weight renders 1`] = `
       class="c1"
       href="#"
     >
-      Normal
+      <span>
+        Normal
+      </span>
     </a>
     <a
       class="c2"
       href="#"
     >
-      Bold
+      <span>
+        Bold
+      </span>
     </a>
     <a
       class="c3"
       href="#"
     >
-      Bold
+      <span>
+        Bold
+      </span>
     </a>
     <a
       class="c4"
       href="#"
     >
-      Lighter
+      <span>
+        Lighter
+      </span>
     </a>
     <a
       class="c5"
       href="#"
     >
-      Bolder
+      <span>
+        Bolder
+      </span>
     </a>
     <a
       class="c6"
       href="#"
     >
-      Inherit
+      <span>
+        Inherit
+      </span>
     </a>
     <a
       class="c7"
       href="#"
     >
-      Initial
+      <span>
+        Initial
+      </span>
     </a>
     <a
       class="c8"
       href="#"
     >
-      Revert
+      <span>
+        Revert
+      </span>
     </a>
     <a
       class="c9"
       href="#"
     >
-      Unset
+      <span>
+        Unset
+      </span>
     </a>
   </div>
 </div>
