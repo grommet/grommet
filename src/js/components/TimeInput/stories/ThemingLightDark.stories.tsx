@@ -21,4 +21,5 @@ export const ThemingLightDark = () => (
 
 export default {
   title: 'Input/TimeInput/Theming Light Dark',
+  component: TimeInput,
 };
