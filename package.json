@@ -32,6 +32,7 @@
     "release-styled-components-beta-stable": "babel-node ./tools/release-styled-components-beta-stable",
     "generate-release-notes": "babel-node ./tools/generate-release-notes",
     "generate-release-announcement": "babel-node ./tools/generate-release-notes --format announcement",
+    "release-checklist": "babel-node ./tools/release-checklist",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "license": "node ./tools/license-header.js",
