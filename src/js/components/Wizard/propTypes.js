@@ -37,7 +37,7 @@ if (process.env.NODE_ENV !== 'production') {
     onComplete: PropTypes.func,
     onCancel: PropTypes.func,
     renderStep: PropTypes.func,
-    title: PropTypes.string,
+    title: PropTypes.node,
     footer: PropTypes.node,
     scrollToTop: PropTypes.bool,
     value: PropTypes.object,

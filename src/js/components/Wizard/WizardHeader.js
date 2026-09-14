@@ -17,14 +17,17 @@ export const WizardHeader = ({ title, children, ...rest }) => {
   const headerTheme = theme.wizard?.header;
 
   // Custom children override the themed title.
-  const content =
-    children !== undefined
-      ? children
-      : title && (
-          <Heading level={1} size={headerTheme?.title?.size} margin="none">
-            {title}
-          </Heading>
-        );
+  let content = children;
+  if (children === undefined) {
+    content =
+      typeof title === 'string' && title ? (
+        <Heading level={1} size={headerTheme?.title?.size} margin="none">
+          {title}
+        </Heading>
+      ) : (
+        title
+      );
+  }
 
   const CloseIcon = headerTheme?.close?.icon;
   const closeLabel = format({ id: 'wizard.close', messages });

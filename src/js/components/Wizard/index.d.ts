@@ -94,7 +94,7 @@ export interface WizardProps<TValue = Record<string, any>> {
     step: WizardStep<TValue>,
     api: WizardContextValue<TValue>,
   ) => React.ReactNode;
-  title?: string;
+  title?: React.ReactNode;
   footer?: React.ReactNode;
   scrollToTop?: boolean;
   value?: TValue;
@@ -146,8 +146,8 @@ export function useWizard<
   TValue = Record<string, any>,
 >(): WizardContextValue<TValue>;
 
-export interface WizardHeaderProps extends BoxExtendedProps {
-  title?: string;
+export interface WizardHeaderProps extends Omit<BoxExtendedProps, 'title'> {
+  title?: React.ReactNode;
   children?: React.ReactNode;
 }
 
