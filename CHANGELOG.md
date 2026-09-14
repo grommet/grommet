@@ -1,3 +1,17 @@
+# 2.57.0
+
+General:
+
+- Added TextInput password affordance. [#8020](https://github.com/grommet/grommet/pull/8020)
+- Added `formField.hover` theme property. [#8092](https://github.com/grommet/grommet/pull/8092)
+- Fixed sortable column accessibility issue on DateTable (aria-sort, discoverability, sort status). [#7988](https://github.com/grommet/grommet/pull/7988)
+
+Beta - APIs are subject to change:
+
+- Fixed TimeInput popup closes when clicking on non-button area inside drop (#8058). [#8067](https://github.com/grommet/grommet/pull/8067)
+- Fixed DateTimeInput keyboard behavior. [#8087](https://github.com/grommet/grommet/pull/8087)
+- Fixed TimeInput keyboard behavior. [#8088](https://github.com/grommet/grommet/pull/8088)
+
 # 2.56.1
 
 General:
@@ -1710,8 +1724,6 @@ TypeScript:
 - Fixed types of Avatar to include IntrinsicElements.
 - Fixed theme property type for Select `control.open`.
 
-
-
 Hooks Refactoring:
 
 - WorldMap to use hooks.
@@ -1833,8 +1845,6 @@ Dev
 
 - Upgraded ‘styled-components’ to 5.0.1 and more packages with minor changes (make sure you have a clean installation and updated npm version).
 - Changed webpack loaders to work on both windows and \*nix on dev mode.
-
-
 
 Note: Due to the new color additions of  `graph-0`, `graph-1`, `graph-2`, `graph-3`, the logic of color calculations on visual components had changed. You wouldn’t tell the difference unless you are using a Meter with an array of more than two default grommet colors.
 
