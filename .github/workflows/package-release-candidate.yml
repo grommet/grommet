@@ -40,12 +40,6 @@ jobs:
       - name: Check out requested ref
         uses: actions/checkout@v4
         with:
-          # codeql[actions/cache-poisoning]: inputs.ref only ever resolves to a ref
-          # already present in this repo. Triggering workflow_dispatch and pushing
-          # refs both require collaborator write access, so there is no path for an
-          # untrusted actor to influence this value. Further mitigated by the
-          # required-reviewer `release-candidate-validation` environment gate above
-          # and `permissions: contents: read`.
           ref: ${{ inputs.ref }}
           fetch-depth: 0
 
