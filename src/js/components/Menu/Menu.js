@@ -38,6 +38,11 @@ const ContainerBox = styled(Box)`
   ${(props) => props.theme.menu.extend};
 `;
 
+const MenuItemsBox = styled(Box)`
+  scrollbar-color: ${(props) =>
+    `${normalizeColor('border', props.theme)} transparent`};
+`;
+
 /* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
 
 To open menu when menu button is focused:
@@ -467,14 +472,15 @@ const Menu = forwardRef((props, ref) => {
               align.top !== 'bottom'
                 ? controlMirror
                 : undefined}
-              <Box
+              <MenuItemsBox
                 overflow="auto"
                 role="menu"
                 a11yTitle={a11y}
                 {...(!grouped ? theme.menu.container : {})}
+                {...passThemeFlag}
               >
                 {menuContent}
-              </Box>
+              </MenuItemsBox>
               {/*
                 If align.top was defined,
                 don't show controlMirror when window height has shrunk
