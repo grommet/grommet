@@ -267,8 +267,17 @@ const Wizard = forwardRef(
         }
         return nextId;
       }
-      const nextIndex = currentStepIndex + 1;
-      return flatSteps[nextIndex]?.id;
+      let nextIndex = currentStepIndex + 1;
+      while (nextIndex < flatSteps.length) {
+        const nextStep = flatSteps[nextIndex];
+        if (!nextStep?.disabled) return nextStep.id;
+        if (nextStep?.disabled && nextStep?.skippable) {
+          nextIndex += 1;
+        } else {
+          return undefined;
+        }
+      }
+      return undefined;
     }, [currentStepObj, currentStepIndex, flatSteps, formValue, steps]);
 
     // Apply a navigation transition (id, history, completion, focus).
