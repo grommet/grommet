@@ -21,6 +21,7 @@ Use this workflow when:
 - package name
 - target ref or branch
 - exact version to publish
+- optional release-note range (`from_tag` and `to_tag`)
 - release intent or type
 - whether a GitHub release should be created
 - whether npm publish is intended
@@ -60,7 +61,8 @@ Stop the flow and ask for approval or remediation when any of the following are 
 
 4. Generate release notes.
 
-   - Use the canonical release-note generation logic.
+   - Use the repo-native release-note generation logic.
+   - Supply the appropriate `from_tag`/`to_tag` range when generating notes.
    - Review the draft for grouping, wording, and scope.
    - Stop for human approval before continuing.
 

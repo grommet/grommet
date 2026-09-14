@@ -16,6 +16,15 @@ on:
         description: 'Exact package version to validate'
         required: true
         type: string
+      from_tag:
+        description: 'Starting tag for release-note generation (optional)'
+        required: false
+        type: string
+      to_tag:
+        description: 'Ending tag or ref for release-note generation'
+        required: false
+        default: 'HEAD'
+        type: string
 
 permissions:
   contents: read
@@ -49,6 +58,19 @@ jobs:
         run: |
           test -n "${{ inputs.package_name }}"
           test -n "${{ inputs.version }}"
+
+      - name: Generate release-note draft
+        if: ${{ inputs.from_tag != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn generate-release-notes \
+            -- \
+            --from "${{ inputs.from_tag }}" \
+            --to "${{ inputs.to_tag }}" \
+            --output RELEASE_NOTES.md
+          echo '--- Release notes preview ---'
+          head -n 30 RELEASE_NOTES.md
 
       - name: Run build
         run: yarn build
@@ -86,5 +108,6 @@ jobs:
           name: ${{ inputs.package_name }}-${{ inputs.version }}-candidate
           path: |
             *.tgz
+            RELEASE_NOTES.md
             release-artifacts/*.json
           if-no-files-found: error
