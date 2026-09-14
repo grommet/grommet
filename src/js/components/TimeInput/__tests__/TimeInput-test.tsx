@@ -1948,9 +1948,6 @@ describe('TimeInput', () => {
 
     const customTheme: ThemeType = {
       timeInput: {
-        button: {
-          margin: { right: 'large' },
-        },
         container: {
           round: 'large',
         },
@@ -1993,10 +1990,6 @@ describe('TimeInput', () => {
     const container = screen.getByRole('group').parentElement
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
-
-    // button.margin
-    const trigger = screen.getByRole('button', { name: 'Choose time' });
-    expect(trigger).toHaveStyleRule('margin-right', '48px');
 
     // active.pad applies to every segment, active or not
     const hourSegment = getSegment('hours');
