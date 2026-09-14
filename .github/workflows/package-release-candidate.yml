@@ -33,6 +33,9 @@ jobs:
   candidate:
     name: Build release candidate
     runs-on: ubuntu-latest
+    # Required reviewer gate on this environment must approve before the
+    # untrusted `inputs.ref` is checked out and executed (yarn install/build).
+    environment: release-candidate-validation
     steps:
       - name: Check out requested ref
         uses: actions/checkout@v4
@@ -54,19 +57,24 @@ jobs:
         run: yarn install --immutable
 
       - name: Run preflight validation
+        env:
+          PACKAGE_NAME: ${{ inputs.package_name }}
+          REQUESTED_VERSION: ${{ inputs.version }}
         run: |
-          test -n "${{ inputs.package_name }}"
-          test -n "${{ inputs.version }}"
+          test -n "$PACKAGE_NAME"
+          test -n "$REQUESTED_VERSION"
 
       - name: Generate release-note draft
         if: ${{ inputs.from_tag != '' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FROM_TAG: ${{ inputs.from_tag }}
+          TO_TAG: ${{ inputs.to_tag }}
         run: |
           yarn generate-release-notes \
             -- \
-            --from "${{ inputs.from_tag }}" \
-            --to "${{ inputs.to_tag }}" \
+            --from "$FROM_TAG" \
+            --to "$TO_TAG" \
             --output RELEASE_NOTES.md
           echo '--- Release notes preview ---'
           head -n 30 RELEASE_NOTES.md
@@ -75,8 +83,11 @@ jobs:
         run: yarn build
 
       - name: Create candidate tarball
+        env:
+          PACKAGE_NAME: ${{ inputs.package_name }}
+          REQUESTED_VERSION: ${{ inputs.version }}
         run: |
-          yarn pack --filename "${{ inputs.package_name }}-${{ inputs.version }}.tgz"
+          yarn pack --filename "${PACKAGE_NAME}-${REQUESTED_VERSION}.tgz"
 
       - name: Record candidate metadata
         env:

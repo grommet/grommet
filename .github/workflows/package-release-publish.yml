@@ -33,11 +33,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           CANDIDATE_RUN_ID: ${{ inputs.candidate_run_id }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           run=$(gh api "repos/${{ github.repository }}/actions/runs/$CANDIDATE_RUN_ID")
           test "$(echo "$run" | jq -r '.status')" = "completed"
           test "$(echo "$run" | jq -r '.conclusion')" = "success"
-          test "$(echo "$run" | jq -r '.head_branch')" = "${{ github.event.repository.default_branch }}"
+          test "$(echo "$run" | jq -r '.head_branch')" = "$DEFAULT_BRANCH"
 
       - name: Download candidate artifact
         uses: actions/download-artifact@v4
@@ -89,10 +90,12 @@ jobs:
       - name: Publish GitHub release draft
         env:
           GH_TOKEN: ${{ github.token }}
+          PACKAGE_NAME: ${{ inputs.package_name }}
+          EXPECTED_VERSION: ${{ inputs.version }}
         run: |
-          gh release create "${{ inputs.package_name }}@${{ inputs.version }}" \
-            --title "${{ inputs.package_name }}@${{ inputs.version }}" \
-            --notes "Approved release candidate published for ${{ inputs.version }}." \
+          gh release create "${PACKAGE_NAME}@${EXPECTED_VERSION}" \
+            --title "${PACKAGE_NAME}@${EXPECTED_VERSION}" \
+            --notes "Approved release candidate published for ${EXPECTED_VERSION}." \
             --draft || true
 
       - name: Final verification summary
