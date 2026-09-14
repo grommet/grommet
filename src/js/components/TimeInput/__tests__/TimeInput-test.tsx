@@ -2190,4 +2190,68 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('hh:mm:02');
     expect(secondSegment).toHaveTextContent('02');
   });
+
+  test('updates displayed value on ArrowDown in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+    await user.click(chooseTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('01:mm');
+  });
+
+  test('initialises hour with zero on ArrowUp in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const choostTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+
+    await user.click(choostTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+  });
+
+  test('updates displayed value on ArrowUp in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const choostTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+
+    await user.click(choostTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('23:mm');
+  });
 });
