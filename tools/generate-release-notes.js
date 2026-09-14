@@ -393,7 +393,7 @@ function getSection(pr) {
  */
 function formatEntry(pr) {
   const sentence = formatReleaseSentence(pr).replace(/[.!?]+$/, '');
-  return `- ${sentence}. ([${pr.title} #${pr.number}](${GH_PR_URL}/${pr.number}))`;
+  return `- ${sentence}. [#${pr.number}](${GH_PR_URL}/${pr.number})`;
 }
 
 function lowerFirst(value) {
@@ -681,7 +681,8 @@ function formatReleaseNotes(sections) {
     const entries = sections.get(name);
     if (!entries || entries.length === 0) continue;
 
-    const heading = `${name}:`;
+    const heading =
+      name === 'Beta' ? 'Beta - APIs are subject to change:' : `${name}:`;
 
     // Only print the section heading when there are multiple sections
     // (matches the pattern: single-section releases omit headings)

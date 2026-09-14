@@ -57,11 +57,12 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
-const renderIcon = (iconValue) => {
-  if (React.isValidElement(iconValue)) return iconValue;
+const renderIcon = (iconValue, props) => {
+  if (React.isValidElement(iconValue))
+    return React.cloneElement(iconValue, props);
 
   const IconComponent = iconValue;
-  return IconComponent ? <IconComponent /> : undefined;
+  return IconComponent ? <IconComponent {...props} /> : undefined;
 };
 
 const ContainerBox = styled(Box)`
@@ -546,8 +547,8 @@ const TextInput = forwardRef(
         kind="toolbar"
         icon={
           passwordRevealed
-            ? renderIcon(showPasswordIcon)
-            : renderIcon(hidePasswordIcon)
+            ? renderIcon(hidePasswordIcon, { 'aria-hidden': true })
+            : renderIcon(showPasswordIcon, { 'aria-hidden': true })
         }
         onClick={() => setPasswordRevealed((current) => !current)}
         aria-label={
