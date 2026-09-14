@@ -29,6 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
     closable: PropTypes.bool,
     currentStep: PropTypes.string,
     defaultStep: PropTypes.string,
+    form: PropTypes.bool,
     showProgress: PropTypes.oneOfType([
       PropTypes.oneOf(['horizontal', 'vertical']),
       PropTypes.bool,

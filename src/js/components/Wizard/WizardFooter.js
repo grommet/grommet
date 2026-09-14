@@ -17,8 +17,11 @@ export const WizardFooter = ({ children, ...rest }) => {
     currentStep,
     currentStepObj,
     currentStepIndex,
+    form,
     totalSteps,
     canGoNext,
+    complete,
+    next,
     previous,
     skip,
     cancel,
@@ -45,6 +48,8 @@ export const WizardFooter = ({ children, ...rest }) => {
     const SkipIcon = footerTheme?.button?.skip?.icon;
     const CompleteIcon = footerTheme?.button?.complete?.icon;
     const CancelIcon = footerTheme?.button?.cancel?.icon;
+
+    const submit = currentStepIndex >= totalSteps - 1 ? complete : next;
 
     content = [
       hasCancelHandler && (
@@ -93,8 +98,9 @@ export const WizardFooter = ({ children, ...rest }) => {
           icon={NextIcon ? <NextIcon aria-hidden="true" /> : undefined}
           reverse
           disabled={!canGoNext}
-          type="submit"
-          form={`${currentStep}-form`}
+          type={form ? "submit" : undefined}
+          form={form ? `${currentStep}-form` : undefined}
+          onClick={form ? undefined : submit }
         />
       ),
     ];

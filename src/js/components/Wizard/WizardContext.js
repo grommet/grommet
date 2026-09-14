@@ -12,6 +12,7 @@ export const WizardContext = React.createContext({
   currentStepObj: undefined,
   totalSteps: 0,
   stepStates: {},
+  form: true,
   formValue: {},
   setFormValue: () => {},
   validationError: undefined,

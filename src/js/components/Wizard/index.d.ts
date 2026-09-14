@@ -86,6 +86,7 @@ export interface WizardProps<TValue = Record<string, any>> {
   closable?: boolean;
   currentStep?: string;
   defaultStep?: string;
+  form?: boolean;
   showProgress?: WizardShowProgress;
   onStepChange?: (event: StepChangeEvent) => void;
   onComplete?: (event: { value: TValue; completedSteps: string[] }) => void;
@@ -119,6 +120,7 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   currentStepObj?: WizardStep<TValue>;
   totalSteps: number;
   stepStates: Record<string, WizardStepStatus>;
+  form: boolean;
   formValue: TValue;
   setFormValue: (next: TValue | ((prev: TValue) => TValue)) => void;
   validationError?: string;
