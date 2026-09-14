@@ -1,0 +1,104 @@
+name: Publish approved package
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate_run_id:
+        description: 'Successful candidate workflow run ID to publish'
+        required: true
+        type: string
+      version:
+        description: 'Exact package version from the candidate run'
+        required: true
+        type: string
+      commit_sha:
+        description: 'Exact candidate commit SHA'
+        required: true
+        type: string
+      package_name:
+        description: 'Package name to publish'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish:
+    name: Publish approved candidate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate run is a successful candidate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CANDIDATE_RUN_ID: ${{ inputs.candidate_run_id }}
+        run: |
+          run=$(gh api "repos/${{ github.repository }}/actions/runs/$CANDIDATE_RUN_ID")
+          test "$(echo "$run" | jq -r '.status')" = "completed"
+          test "$(echo "$run" | jq -r '.conclusion')" = "success"
+          test "$(echo "$run" | jq -r '.head_branch')" = "${{ github.event.repository.default_branch }}"
+
+      - name: Download candidate artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.package_name }}-${{ inputs.version }}-candidate
+          path: release-artifact
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.candidate_run_id }}
+
+      - name: Validate candidate artifact
+        env:
+          EXPECTED_VERSION: ${{ inputs.version }}
+          EXPECTED_SHA: ${{ inputs.commit_sha }}
+          PACKAGE_NAME: ${{ inputs.package_name }}
+        run: |
+          artifact=$(find release-artifact -maxdepth 2 -name '*.tgz' -print -quit)
+          test -n "$artifact"
+          metadata=$(find release-artifact -maxdepth 2 -name 'release-metadata.json' -print -quit)
+          test -n "$metadata"
+          test "$(jq -r '.package' "$metadata")" = "$PACKAGE_NAME"
+          test "$(jq -r '.version' "$metadata")" = "$EXPECTED_VERSION"
+          test "$(jq -r '.requested_version' "$metadata")" = "$EXPECTED_VERSION"
+          test "$(jq -r '.commit_sha' "$metadata")" = "$EXPECTED_SHA"
+
+      - name: Set up Node for publish
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          registry-url: https://registry.npmjs.org
+
+      - name: Publish package
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          artifact=$(find release-artifact -maxdepth 2 -name '*.tgz' -print -quit)
+          npm publish "$artifact" --access public --provenance
+
+      - name: Verify npm registry
+        env:
+          PACKAGE_NAME: ${{ inputs.package_name }}
+          EXPECTED_VERSION: ${{ inputs.version }}
+        run: |
+          for attempt in 1 2 3 4 5; do
+            npm view "$PACKAGE_NAME@$EXPECTED_VERSION" version --json && break
+            sleep 10
+          done
+
+      - name: Publish GitHub release draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ inputs.package_name }}@${{ inputs.version }}" \
+            --title "${{ inputs.package_name }}@${{ inputs.version }}" \
+            --notes "Approved release candidate published for ${{ inputs.version }}." \
+            --draft || true
+
+      - name: Final verification summary
+        env:
+          PACKAGE_NAME: ${{ inputs.package_name }}
+          EXPECTED_VERSION: ${{ inputs.version }}
+        run: |
+          echo "Published ${PACKAGE_NAME}@${EXPECTED_VERSION} successfully."
+          echo "Registry check passed."

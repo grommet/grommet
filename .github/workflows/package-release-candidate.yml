@@ -1,0 +1,90 @@
+name: Package release candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      package_name:
+        description: 'Package name to release'
+        required: true
+        type: string
+      ref:
+        description: 'Branch, tag, or commit to validate'
+        required: true
+        default: 'master'
+        type: string
+      version:
+        description: 'Exact package version to validate'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    name: Build release candidate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out requested ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+
+      - name: Verify clean working tree
+        run: |
+          git diff --quiet
+          git diff --cached --quiet
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Run preflight validation
+        run: |
+          test -n "${{ inputs.package_name }}"
+          test -n "${{ inputs.version }}"
+
+      - name: Run build
+        run: yarn build
+
+      - name: Create candidate tarball
+        run: |
+          yarn pack --filename "${{ inputs.package_name }}-${{ inputs.version }}.tgz"
+
+      - name: Record candidate metadata
+        env:
+          REQUESTED_VERSION: ${{ inputs.version }}
+          PACKAGE_NAME: ${{ inputs.package_name }}
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const { execSync } = require('child_process');
+          const pkgName = process.env.PACKAGE_NAME;
+          const version = process.env.REQUESTED_VERSION;
+          const ref = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+          const metadata = {
+            package: pkgName,
+            version,
+            commit_sha: ref,
+            requested_version: version,
+            generated_at: new Date().toISOString(),
+          };
+          const dir = 'release-artifacts';
+          fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(`${dir}/release-metadata.json`, JSON.stringify(metadata, null, 2) + '\n');
+          NODE
+
+      - name: Upload release candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.package_name }}-${{ inputs.version }}-candidate
+          path: |
+            *.tgz
+            release-artifacts/*.json
+          if-no-files-found: error
