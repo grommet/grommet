@@ -52,6 +52,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.15.0'
+          package-manager-cache: false
 
       - name: Install dependencies
         run: yarn install --immutable
