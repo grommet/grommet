@@ -53,7 +53,7 @@ jobs:
           command: git config --global url."https://github.com/".insteadOf "git@github.com:"
       - run:
           name: Running chromatic test
-          command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes
+          command: yarn chromatic -t $CHROMATIC_TOKEN --exit-zero-on-changes --only-changed
   chromatic-accept:
     <<: *defaults
     steps:
@@ -154,16 +154,34 @@ workflows:
           filters:
             tags:
               only: /.*/
-      - chromatic:
+      # requires a maintainer to manually approve in the CircleCI UI before
+      # spending Chromatic snapshot quota on a branch/PR
+      # excluded from tag pipelines: release tags are cut from master, which
+      # is already snapshotted/accepted by chromatic-accept
+      - hold-chromatic:
+          type: approval
           requires:
             - checkout
           filters:
             tags:
-              only: /.*/
+              ignore: /.*/
+            branches:
+              ignore:
+                - master
+      - chromatic:
+          context:
+            - chromatic
+          requires:
+            - hold-chromatic
+          filters:
+            tags:
+              ignore: /.*/
             branches:
               ignore:
                 - master
       - chromatic-accept:
+          context:
+            - chromatic
           requires:
             - checkout
           filters:
@@ -187,7 +205,7 @@ workflows:
             - grommet
           requires:
             - jest
-            - chromatic
+            - chromatic-accept
             - lint
             - build
           filters:
@@ -199,7 +217,6 @@ workflows:
             - grommet
           requires:
             - jest
-            - chromatic
             - lint
             - build
           filters:
