@@ -310,29 +310,6 @@ async function getLatestTag(token) {
  * Check the PR body's answer to the release-notes template question.
  * Returns false only when the maintainer explicitly answered no.
  */
-function includeByBody(body) {
-  if (!body) return true;
-  const lower = body.toLowerCase();
-  const marker = 'should this pr be mentioned in the release notes?';
-  const idx = lower.indexOf(marker);
-  if (idx === -1) return true; // Pre-template PR → include
-
-  // Extract the answer block between this heading and the next ####
-  const after = body.slice(idx + marker.length);
-  const nextSection = after.indexOf('####');
-  const answer = (nextSection === -1 ? after : after.slice(0, nextSection))
-    .trim()
-    .split('\n')[0]
-    .trim()
-    .toLowerCase()
-    .replace(/[.!?]+$/, '');
-
-  if (!answer) return true;
-
-  const negative = new Set(['no', 'n', 'n/a', 'na', '-', 'nope', 'false']);
-  return !negative.has(answer);
-}
-
 function shouldSkipByContent(pr) {
   const title = (pr.title || '').toLowerCase();
   const body = (pr.body || '').toLowerCase();
@@ -548,6 +525,13 @@ function extractComponentName(pr) {
   return null;
 }
 
+/** Only the reliable conventional-commit scope, e.g. "feat(Wizard): ...". */
+function extractScopedComponentName(pr) {
+  const title = (pr.title || '').trim();
+  const scopeMatch = title.match(/^[A-Za-z]+\(([^)]+)\):/);
+  return scopeMatch ? scopeMatch[1].trim() : null;
+}
+
 /** Look for a known component name anywhere in the PR title. */
 function inferComponentFromText(pr) {
   const text = pr.title || '';
@@ -558,8 +542,20 @@ function inferComponentFromText(pr) {
 }
 
 function resolveHighlightComponent(pr) {
-  if (pr.section && pr.section !== 'General') return pr.section;
-  return extractComponentName(pr) || inferComponentFromText(pr) || pr.section;
+  // 'Beta' is a generic bucket, not a real component name - always try to
+  // resolve the actual component (TimeInput, DateTimeInput, Stepper, etc.)
+  // for beta PRs so their fixes/enhancements aren't dropped from summaries.
+  if (pr.section && pr.section !== 'General' && pr.section !== 'Beta') {
+    return pr.section;
+  }
+  // Prefer a known component name found anywhere in the title over the
+  // generic leading-word fallback, which otherwise produces noise like
+  // "fix"/"clean"/"Adds" as a "component". Fall back to pr.section (which
+  // downstream callers already filter out for 'General'/'Beta') rather
+  // than guessing from the first word of the title.
+  return (
+    extractScopedComponentName(pr) || inferComponentFromText(pr) || pr.section
+  );
 }
 
 function getFixComponents(prs) {
@@ -803,6 +799,12 @@ function formatAnnouncement(context) {
     lines.push(...betaLines);
   }
 
+  const contributors = formatContributors(context.prs);
+  if (contributors) {
+    lines.push('');
+    lines.push(contributors);
+  }
+
   return lines.join('\n').trim();
 }
 
@@ -900,11 +902,6 @@ const args = parseArgs();
       continue;
     }
     const forceIncludeAsBeta = shouldForceIncludeAsBeta(pr);
-    if (!forceIncludeAsBeta && !includeByBody(pr.body)) {
-      console.error(`  skip [body]    #${pr.number}: ${pr.title}`);
-      skipped++;
-      continue;
-    }
 
     const contentSkip = shouldSkipByContent(pr);
     if (contentSkip.skip) {
@@ -913,10 +910,6 @@ const args = parseArgs();
       );
       skipped++;
       continue;
-    }
-
-    if (forceIncludeAsBeta && !includeByBody(pr.body)) {
-      console.error(`  include [beta-override] #${pr.number}: ${pr.title}`);
     }
 
     const section = forceIncludeAsBeta ? 'Beta' : getSection(pr);
