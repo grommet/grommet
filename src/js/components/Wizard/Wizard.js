@@ -44,7 +44,7 @@ const findStepById = (steps, id) => {
   for (const step of steps) {
     if (step.id === id) return step;
     if (step.children) {
-      const match = step.children.find((child) => child.id === id);
+      const match = findStepById(step.children, id);
       if (match) return match;
     }
   }
@@ -71,8 +71,11 @@ const Wizard = forwardRef(
   (
     {
       steps,
+      clickableSteps = false,
+      closable = true,
       currentStep: currentStepProp,
       defaultStep,
+      form = true,
       showProgress = false,
       onStepChange,
       onComplete,
@@ -193,20 +196,22 @@ const Wizard = forwardRef(
 
     const totalSteps = flatSteps.length;
 
+    const statusFromStep = useCallback((step) => {
+      if (step.disabled) return 'disabled';
+      if (step.id === currentStep && validationError) return 'error';
+      if (step.status === 'error') return 'error';
+      if (completedSteps.has(step.id)) return 'completed';
+      return 'pending';
+    }, [currentStep, validationError, completedSteps]);
+
     // Derive step status; parents aggregate from their children.
     const getStepStatus = useCallback(
       (stepId) => {
         // Parent-with-children aggregate
-        const parent = steps.find(
-          (step) => step.id === stepId && step.children && step.children.length,
-        );
+        const step = findStepById(steps, stepId);
+        const parent = step?.children?.length > 0;
         if (parent) {
-          const childStatuses = parent.children.map((child) => {
-            if (child.disabled) return 'disabled';
-            if (child.id === currentStep && validationError) return 'error';
-            if (completedSteps.has(child.id)) return 'completed';
-            return 'pending';
-          });
+          const childStatuses = step.children.map(statusFromStep);
           if (childStatuses.some((status) => status === 'error'))
             return 'error';
           if (childStatuses.every((status) => status === 'completed'))
@@ -215,14 +220,9 @@ const Wizard = forwardRef(
             return 'disabled';
           return 'pending';
         }
-        const step = findStepById(steps, stepId);
-        if (!step) return 'pending';
-        if (step.disabled) return 'disabled';
-        if (stepId === currentStep && validationError) return 'error';
-        if (completedSteps.has(stepId)) return 'completed';
-        return 'pending';
+        return statusFromStep(step);
       },
-      [steps, currentStep, completedSteps, validationError],
+      [steps, statusFromStep],
     );
 
     // Record<id, status> for every step (top-level + children).
@@ -264,8 +264,17 @@ const Wizard = forwardRef(
         }
         return nextId;
       }
-      const nextIndex = currentStepIndex + 1;
-      return flatSteps[nextIndex]?.id;
+      let nextIndex = currentStepIndex + 1;
+      while (nextIndex < flatSteps.length) {
+        const nextStep = flatSteps[nextIndex];
+        if (!nextStep?.disabled) return nextStep.id;
+        if (nextStep?.disabled && nextStep?.skippable) {
+          nextIndex += 1;
+        } else {
+          return undefined;
+        }
+      }
+      return undefined;
     }, [currentStepObj, currentStepIndex, flatSteps, formValue, steps]);
 
     // Apply a navigation transition (id, history, completion, focus).
@@ -595,11 +604,14 @@ const Wizard = forwardRef(
       () => ({
         steps,
         flatSteps,
+        clickableSteps,
+        closable,
         currentStep,
         currentStepIndex,
         currentStepObj,
         totalSteps,
         stepStates,
+        form,
         formValue,
         setFormValue,
         validationError,
@@ -624,11 +636,14 @@ const Wizard = forwardRef(
       [
         steps,
         flatSteps,
+        clickableSteps,
+        closable,
         currentStep,
         currentStepIndex,
         currentStepObj,
         totalSteps,
         stepStates,
+        form,
         formValue,
         setFormValue,
         validationError,
