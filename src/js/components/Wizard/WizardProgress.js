@@ -64,6 +64,11 @@ export const WizardProgress = ({
   const ariaLabel =
     ariaLabelProp || format({ id: 'wizard.progress', messages });
 
+  const onStepClick = clickableSteps ? (stepId) => {
+    const step = steps.find((s) => s.id === stepId);
+    goTo(step?.children?.length ? step.children[0].id : stepId);
+  } : undefined;
+
   return (
     <Box
       pad={progressTheme?.pad}
@@ -78,7 +83,7 @@ export const WizardProgress = ({
         currentStep={currentStep}
         direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
         clickableSteps={clickableSteps}
-        onStepClick={clickableSteps ? goTo : undefined}
+        onStepClick={onStepClick}
         showDescription={showDescription}
         aria-label={ariaLabel}
       />
