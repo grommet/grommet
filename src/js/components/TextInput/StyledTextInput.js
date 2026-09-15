@@ -32,7 +32,6 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'min-width: 0;'}
   ${(props) => {
     if (!(props.readOnlyCopy || props.hasButton)) return '';
-    if (props.reverse) return '';
     return 'padding-right: 0px;';
   }}
   // readOnly border is handled by StyledTextInputContainer

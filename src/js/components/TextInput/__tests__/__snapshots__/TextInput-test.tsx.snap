@@ -2861,6 +2861,7 @@ exports[`TextInput read only copy 1`] = `
   border-radius: 4px;
   flex: 1 1 auto;
   min-width: 0;
+  padding-right: 0px;
   border: none;
 }
 
@@ -3117,6 +3118,7 @@ exports[`TextInput read only copy with width 1`] = `
   border-radius: 4px;
   flex: 1 1 auto;
   min-width: 0;
+  padding-right: 0px;
   border: none;
 }
 

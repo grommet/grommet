@@ -1001,15 +1001,15 @@ describe('TextInput', () => {
     });
     const input = screen.getByLabelText('Password');
 
-    // reverse moves the actions group before the input.
+    // reverse does not move the actions group before the input.
     expect(copyButton).not.toBe(toggleButton);
     expect(
       copyButton.compareDocumentPosition(input) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
+        Node.DOCUMENT_POSITION_PRECEDING,
     ).toBeTruthy();
     expect(
       toggleButton.compareDocumentPosition(input) &
-        Node.DOCUMENT_POSITION_FOLLOWING,
+        Node.DOCUMENT_POSITION_PRECEDING,
     ).toBeTruthy();
 
     await user.click(copyButton);
@@ -1022,7 +1022,7 @@ describe('TextInput', () => {
     ).toBeInTheDocument();
   });
 
-  test('does not zero left padding when copy button is reversed', () => {
+  test('zeros right padding when copy button is reversed', () => {
     render(
       <Grommet>
         <TextInput value="test" copy reverse aria-label="Reversed copy" />
@@ -1031,7 +1031,7 @@ describe('TextInput', () => {
 
     const input = screen.getByLabelText('Reversed copy');
 
-    expect(input).not.toHaveStyleRule('padding-left', '0px');
+    expect(input).toHaveStyleRule('padding-right', '0px');
   });
 
   test('supports copy, password toggle, and reverse icon together', async () => {
