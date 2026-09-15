@@ -42,8 +42,10 @@ export interface WizardStep<TValue = Record<string, any>> {
     | Promise<boolean | string | void | { error?: string }>;
   nextStep?: (value: TValue) => string | undefined | null;
   skippable?: boolean;
+  status?: WizardStepStatus;
   disabled?: boolean;
   disabledReason?: string;
+  errorMessage?: string;
   children?: WizardStep<TValue>[];
   'aria-label'?: string;
 }
