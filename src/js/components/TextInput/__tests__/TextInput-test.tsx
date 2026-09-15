@@ -1059,11 +1059,11 @@ describe('TextInput', () => {
     const icon = screen.getByLabelText('Search');
     const input = screen.getByLabelText('Password');
 
-    // reverse moves the icon before the input while the actions group stays after it
+    // reverse moves the icon after the input while the actions group stays after it
     expect(copyButton).not.toBe(toggleButton);
     expect(icon).not.toBe(toggleButton);
     expect(
-      icon.compareDocumentPosition(input) & Node.DOCUMENT_POSITION_FOLLOWING,
+      input.compareDocumentPosition(icon) & Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
     expect(
       input.compareDocumentPosition(toggleButton) &

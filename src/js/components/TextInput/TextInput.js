@@ -568,7 +568,7 @@ const TextInput = forwardRef(
         </StyledActionsGroup>
       ) : undefined;
     const hasActionsGroup = !!actionsGroup;
-    const iconOnRight = hasActionsGroup ? !reverse : reverse;
+    const iconOnRight = reverse;
     const showLeadingIcon = showTextInputIcon && !iconOnRight;
     const showTrailingIcon = showTextInputIcon && iconOnRight;
 
