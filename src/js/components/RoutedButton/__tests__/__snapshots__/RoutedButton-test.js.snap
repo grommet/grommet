@@ -84,7 +84,9 @@ exports[`RoutedButton renders 1`] = `
       class="c1"
       href="/"
     >
-      Test
+      <span>
+        Test
+      </span>
     </a>
   </div>
 </div>
