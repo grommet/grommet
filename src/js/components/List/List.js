@@ -389,7 +389,7 @@ const List = React.forwardRef(
                 let content;
                 let boxProps = {};
 
-                const key = getValue(item, index, itemKey) || index;
+                const key = getValue(item, index, itemKey) ?? index;
                 let isPinned;
                 if (
                   (Array.isArray(pinned) && pinned.length > 0) ||
