@@ -1040,6 +1040,7 @@ exports[`DataSummary theme separator margin and dataSummary margin 1`] = `
                 <label
                   class="c19"
                   disabled=""
+                  for="_r_6_"
                 >
                   <div
                     class="c20 c21"
@@ -1050,6 +1051,7 @@ exports[`DataSummary theme separator margin and dataSummary margin 1`] = `
                       checked=""
                       class="c22"
                       disabled=""
+                      id="_r_6_"
                       type="checkbox"
                     />
                     <div
@@ -1118,6 +1120,7 @@ exports[`DataSummary theme separator margin and dataSummary margin 1`] = `
                 <label
                   class="c19"
                   disabled=""
+                  for="_r_7_"
                 >
                   <div
                     class="c20 c21"
@@ -1127,6 +1130,7 @@ exports[`DataSummary theme separator margin and dataSummary margin 1`] = `
                       aria-label="select Bryan"
                       class="c22"
                       disabled=""
+                      id="_r_7_"
                       type="checkbox"
                     />
                     <div
