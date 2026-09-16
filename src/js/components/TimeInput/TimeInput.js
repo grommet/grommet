@@ -49,13 +49,6 @@ const getDisplaySectionPrefix = (section, index) => {
   return section === SECTION_PERIOD ? ' ' : ':';
 };
 
-const getDisplaySectionText = ({ key, section, sections }) => {
-  if (sections[key] === undefined)
-    return getSectionTokenFromType(sectionTypeFromSection(section));
-  if (section === SECTION_PERIOD) return sections[key];
-  return pad(sections[key]);
-};
-
 const getSectionOrder = (format, showSeconds = format === '12') => {
   const numericSections = showSeconds
     ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND]
@@ -317,17 +310,22 @@ const TimeInput = forwardRef(
 
       return sectionOrder.map((section, index) => {
         const key = sectionKey(section);
+        const sectionValue = displaySectionsData[key];
+        let text;
+        if (sectionValue === undefined) {
+          text = getSectionTokenFromType(sectionTypeFromSection(section));
+        } else if (section === SECTION_PERIOD) {
+          text = sectionValue;
+        } else {
+          text = pad(sectionValue);
+        }
 
         return {
           ariaMeta: getSectionAriaMeta({ section, format, sections }),
           section,
           prefix: getDisplaySectionPrefix(section, index),
-          text: getDisplaySectionText({
-            key,
-            section,
-            sections: displaySectionsData,
-          }),
-          filled: displaySectionsData[key] !== undefined,
+          text,
+          filled: sectionValue !== undefined,
         };
       });
     }, [format, pendingDigits, sectionOrder, sections]);
