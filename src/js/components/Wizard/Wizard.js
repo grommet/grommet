@@ -199,7 +199,7 @@ const Wizard = forwardRef(
     const statusFromStep = useCallback((step) => {
       if (step.disabled) return 'disabled';
       if (step.id === currentStep && validationError) return 'error';
-      if (step.status === 'error') return 'error';
+      if (step.status) return step.status;
       if (completedSteps.has(step.id)) return 'completed';
       return 'pending';
     }, [currentStep, validationError, completedSteps]);
