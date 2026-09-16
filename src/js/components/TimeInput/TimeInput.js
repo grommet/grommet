@@ -21,13 +21,13 @@ import {
   getSectionTokenFromType,
 } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import {
   StyledTimeInputDisplay,
   StyledTimeInputField,
   StyledTimeInputButtonContainer,
+  StyledTimeInputButton,
   StyledTimeInputSegment,
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
@@ -807,7 +807,7 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <StyledTimeInputButtonContainer>
-                <Button
+                <StyledTimeInputButton
                   kind="toolbar"
                   icon={<GrommetClockIcon />}
                   disabled={disabled}

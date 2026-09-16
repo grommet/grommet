@@ -16,6 +16,7 @@ import {
 } from '../../utils';
 import { getInputIconPad } from '../../utils/styles';
 import { Box } from '../Box';
+import { Button } from '../Button';
 
 const getTimeInputButtonPad = (props) => {
   const rightInset = Number.parseFloat(getInputPadBySide(props, 'right'));
@@ -50,6 +51,12 @@ export const StyledTimeInputButtonContainer = styled.div.withConfig(
   right: 0;
   bottom: 0;
   z-index: 1;
+`;
+
+export const StyledTimeInputButton = styled(Button)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
