@@ -29,8 +29,12 @@ export interface TimeInputProps {
   value?: string;
 }
 
+export interface TimeInputRef {
+  focus: () => void;
+}
+
 declare const TimeInput: React.ForwardRefExoticComponent<
-  TimeInputProps & React.RefAttributes<HTMLDivElement>
+  TimeInputProps & React.RefAttributes<TimeInputRef>
 >;
 
 export { TimeInput };

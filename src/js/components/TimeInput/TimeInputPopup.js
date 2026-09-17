@@ -59,6 +59,27 @@ const PopupOption = styled(Box)`
 
       const hoverStyles = kindPartStyles(hoverState, props.theme);
 
+      const hoverText = hoverState.text;
+      if (hoverText) {
+        const textTheme = hoverText.size
+          ? props.theme.text?.[hoverText.size]
+          : undefined;
+        const textColor = hoverText.color
+          ? normalizeColor(hoverText.color, props.theme)
+          : undefined;
+        const textSize = textTheme?.size || hoverText.size;
+        const textHeight = textTheme?.height;
+
+        hoverStyles.push(`
+            & > span {
+              ${textColor ? `color: ${textColor};` : ''}
+              ${hoverText.weight ? `font-weight: ${hoverText.weight};` : ''}
+              ${textSize ? `font-size: ${textSize};` : ''}
+              ${textHeight ? `line-height: ${textHeight};` : ''}
+            }
+          `);
+      }
+
       // If kindPartStyles didn't emit a background rule (or if background is a
       // simple color string that backgroundStyle converted to background-color),
       // ensure we also check the hover background directly.

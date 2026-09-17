@@ -3,6 +3,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import {
+  act,
   fireEvent,
   render,
   screen,
@@ -42,6 +43,22 @@ describe('TimeInput', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('focuses the active segment through the forwarded ref', () => {
+    const ref = React.createRef<{ focus: () => void }>();
+
+    render(
+      <Grommet>
+        <TimeInput ref={ref} format="24" />
+      </Grommet>,
+    );
+
+    act(() => {
+      ref.current?.focus();
+    });
+
+    expect(getSegment('hours')).toHaveFocus();
   });
 
   test('opens and closes picker with keyboard', async () => {
@@ -1838,6 +1855,10 @@ describe('TimeInput', () => {
     const hourList = screen.getByRole('listbox', { name: 'hour' });
     const hour4 = within(hourList).getByRole('option', { name: '04 hours' });
     const hour7 = within(hourList).getByRole('option', { name: '07 hours' });
+
+    await waitFor(() => {
+      expect(hour4).toHaveFocus();
+    });
 
     // Simulate prior keyboard focus (programmatic focus, as in a real
     // keyboard session where the option was navigated to via arrow keys).

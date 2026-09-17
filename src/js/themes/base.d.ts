@@ -11,7 +11,6 @@ import { Icon } from 'grommet-icons';
 import {
   BackgroundType,
   BorderType,
-  BoxSideType,
   BoxSizeType,
   BreakpointBorderSize,
   BreakpointEdgeSize,
@@ -350,12 +349,12 @@ interface TimeInputDropOptionStateProps extends BoxProps {
 
 export interface TimeInputCursorType {
   border?: {
-    side?: BoxSideType;
+    side?: 'top' | 'bottom' | 'left' | 'right';
     size?: BoxSizeType;
   };
   pad?: PadType;
   active?: {
-    background?: BackgroundType;
+    background?: ColorType;
     border?: {
       color?: ColorType;
     };

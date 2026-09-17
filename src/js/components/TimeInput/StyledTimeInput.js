@@ -93,6 +93,16 @@ const getCursorBorderSide = (theme) => {
   return ['top', 'bottom', 'left', 'right'].includes(side) ? side : 'bottom';
 };
 
+const getCursorActiveRound = (theme) => {
+  const activeRound =
+    theme.timeInput?.cursor?.active?.round || theme.global.edgeSize?.hair;
+  if (activeRound === 'full') return '100%';
+  if (typeof activeRound !== 'string') return activeRound;
+
+  const radius = theme.global.radius ? 'radius' : 'edgeSize';
+  return theme.global[radius]?.[activeRound] || activeRound;
+};
+
 export const StyledTimeInputSegment = styled.span.withConfig(
   styledComponentsConfig,
 )`
@@ -131,9 +141,7 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   ${(props) => {
     if (!props.$active) return '';
 
-    const activeRound =
-      props.theme.timeInput?.cursor?.active?.round ||
-      props.theme.global.edgeSize?.hair;
+    const activeRound = getCursorActiveRound(props.theme);
     const cursorBorderSide = getCursorBorderSide(props.theme);
 
     return css`

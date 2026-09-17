@@ -5,6 +5,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useImperativeHandle,
   useMemo,
   useRef,
   useState,
@@ -13,7 +14,6 @@ import { Clock as GrommetClockIcon } from 'grommet-icons/icons/Clock';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
-import { useForwardedRef } from '../../utils';
 import { normalizeStep } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
 import {
@@ -120,7 +120,6 @@ const TimeInput = forwardRef(
     const formContext = useContext(FormContext);
     const { useFormInput } = formContext;
 
-    const inputRef = useForwardedRef(refArg);
     const containerRef = useRef();
     const [value, setValue] = useFormInput({
       name,
@@ -301,6 +300,14 @@ const TimeInput = forwardRef(
         target.focus();
       }
     }, []);
+
+    useImperativeHandle(
+      refArg,
+      () => ({
+        focus: () => focusSection(activeSection),
+      }),
+      [activeSection, focusSection],
+    );
 
     const hasDisplayValue = !!displayValue;
     const displaySections = useMemo(() => {
@@ -694,7 +701,6 @@ const TimeInput = forwardRef(
           >
             <StyledTimeInputSegmentGroup
               id={id}
-              ref={inputRef}
               role="group"
               aria-label={groupLabel}
               aria-labelledby={formFieldLabelId}
