@@ -6,11 +6,10 @@ import {
   disabledStyle,
   edgeStyle,
   focusStyle,
-  inputStyle,
   normalizeColor,
   parseMetricToNum,
-  plainInputStyle,
   readOnlyStyle,
+  roundStyle,
   styledComponentsConfig,
 } from '../../utils';
 import { Box } from '../Box';
@@ -30,41 +29,22 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
     `}
 `;
 
-export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
-  ${inputStyle}
-  ${plainInputStyle}
-  position: relative;
-  pointer-events: none;
-  color: transparent;
-  caret-color: transparent;
-  text-shadow: none;
-
-  &::selection {
-    background: transparent;
-    color: transparent;
-  }
-
-  &::placeholder {
-    color: transparent;
-  }
-`;
-
-export const StyledTimeInputField = styled.div.withConfig(
+export const StyledTimeInputSegmentGroup = styled.div.withConfig(
   styledComponentsConfig,
 )`
-  position: relative;
-  flex: 1 1 auto;
-  min-width: 0;
-`;
-
-export const StyledTimeInputDisplay = styled.div.withConfig(
-  styledComponentsConfig,
-)`
-  position: absolute;
-  inset: 0;
+  box-sizing: border-box;
   display: flex;
+  flex: 1 1 auto;
   align-items: center;
+  min-width: 0;
   overflow: hidden;
+  font-family: inherit;
+  font-size: ${(props) =>
+    props.theme.global.input.font.size
+      ? props.theme.text[props.theme.global.input.font.size]?.size ||
+        props.theme.global.input.font.size
+      : 'inherit'};
+  line-height: ${(props) => props.theme.global.input.font.height || 'inherit'};
   ${(props) =>
     props.theme.global.input.padding &&
     (typeof props.theme.global.input.padding !== 'object'
@@ -81,25 +61,37 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
           props.theme.box.responsiveBreakpoint,
           props.theme,
         ))}
-`;
-
-export const StyledTimeInputSeparator = styled.span.withConfig(
-  styledComponentsConfig,
-)`
-  display: inline-flex;
-  align-items: center;
-  line-height: inherit;
-  color: ${(props) =>
-    normalizeColor(
-      props.$filled ? 'text' : props.theme.global.colors.placeholder,
-      props.theme,
-    )};
   ${(props) => {
     const weight =
       props.theme.global.input.weight || props.theme.global.input.font.weight;
     return weight && `font-weight: ${weight};`;
   }}
 `;
+
+export const StyledTimeInputSeparator = styled.span.withConfig(
+  styledComponentsConfig,
+)`
+  color: ${(props) =>
+    normalizeColor(
+      props.$filled ? 'text' : props.theme.global.colors.placeholder,
+      props.theme,
+    )};
+`;
+
+const getCursorBorderSize = (theme) => {
+  const cursorBorderToken = theme.timeInput?.cursor?.border?.size;
+  return (
+    theme.global.borderSize?.[cursorBorderToken] ||
+    theme.global.edgeSize?.[cursorBorderToken] ||
+    cursorBorderToken ||
+    theme.global.borderSize.small
+  );
+};
+
+const getCursorBorderSide = (theme) => {
+  const side = theme.timeInput?.cursor?.border?.side;
+  return ['top', 'bottom', 'left', 'right'].includes(side) ? side : 'bottom';
+};
 
 export const StyledTimeInputSegment = styled.span.withConfig(
   styledComponentsConfig,
@@ -109,10 +101,19 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   }
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   line-height: inherit;
+  ${(props) => {
+    const cursorBorderSide = getCursorBorderSide(props.theme);
+    return css`
+      border-${cursorBorderSide}-width: ${getCursorBorderSize(props.theme)};
+      border-${cursorBorderSide}-style: solid;
+      border-${cursorBorderSide}-color: transparent;
+    `;
+  }}
   padding-inline: ${(props) => {
-    const padToken = props.theme.timeInput?.active?.pad;
+    const padToken = props.theme.timeInput?.cursor?.pad;
 
     return props.theme.global.edgeSize?.[padToken] || padToken;
   }};
@@ -130,47 +131,38 @@ export const StyledTimeInputSegment = styled.span.withConfig(
   ${(props) => {
     if (!props.$active) return '';
 
-    // The active indicator's corner rounding is intentionally a fixed
-    // "hair" edge size rather than a theme-exposed value we can expose
-    // theme in future.
-    const activeRound = props.theme.global.edgeSize?.hair;
-
-    const activeBorderToken = props.theme.timeInput?.active?.indicator?.size;
-    const activeBorderSize =
-      props.theme.global.borderSize?.[activeBorderToken] ||
-      props.theme.global.edgeSize?.[activeBorderToken] ||
-      activeBorderToken ||
-      props.theme.global.borderSize.small;
+    const activeRound =
+      props.theme.timeInput?.cursor?.active?.round ||
+      props.theme.global.edgeSize?.hair;
+    const cursorBorderSide = getCursorBorderSide(props.theme);
 
     return css`
+      border-${cursorBorderSide}-color: ${normalizeColor(
+      props.theme.timeInput?.cursor?.active?.border?.color || {
+        dark: 'white',
+        light: 'black',
+      },
+      props.theme,
+    )};
+      ${roundStyle(
+        { size: activeRound, corner: cursorBorderSide },
+        false,
+        props.theme,
+      )}
+
       &::before {
         content: '';
         position: absolute;
         inset: 0;
+          z-index: -1;
         background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.background,
+          props.theme.timeInput?.cursor?.active?.background,
           props.theme,
         )};
         border-top-left-radius: ${activeRound};
         border-top-right-radius: ${activeRound};
       }
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: ${activeBorderSize};
-        background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.indicator?.color || {
-            dark: 'white',
-            light: 'black',
-          },
-          props.theme,
-        )};
-        border-bottom-left-radius: ${activeRound};
-        border-bottom-right-radius: ${activeRound};
-      }
+        z-index: 0;
     `;
   }}
 `;

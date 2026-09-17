@@ -2671,46 +2671,58 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     timeInput: {
-      button: {
-        margin: { right: 'small' },
-      },
       container: {
+        // any box props
         round: 'xxsmall',
       },
-      active: {
-        background: 'active-background',
-        pad: 'xxsmall',
-        indicator: {
-          color: { dark: 'white', light: 'black' },
+      cursor: {
+        // cursor styling
+        border: {
+          side: 'bottom',
           size: 'small',
+        },
+        pad: 'xxsmall',
+        active: {
+          // active cursor styling
+          background: 'active-background',
+          border: {
+            color: { dark: 'white', light: 'black' },
+          },
         },
       },
       drop: {
-        // gap: undefined,
+        gap: 'xxsmall',
+        columns: {
+          // any box props
+          gap: 'xsmall',
+        },
         option: {
-          // background: undefined,
-          // gap: undefined,
-          // size: undefined,
-          pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
-          // round: undefined,
           hover: {
+            // any box props
             background: 'active-background',
+            text: {
+              // any text props
+            },
+          },
+          pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+          text: {
+            // any text props
           },
           selected: {
-            background: 'selected',
-            color: 'white',
+            // any box props
+            background: 'brand',
             text: {
-              weight: 500,
-            },
-            hover: {
-              // background: undefined,
+              // any text props
+              color: 'white',
+              weight: 'bold',
             },
           },
         },
       },
-      icon: {
-        // clock: undefined,
-      },
+      // dropButton: {
+      //   any button props
+      //   icon: undefined,
+      // },
     },
     tip: {
       content: {

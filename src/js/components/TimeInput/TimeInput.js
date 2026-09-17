@@ -25,12 +25,10 @@ import { Button } from '../Button';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import {
-  StyledTimeInputDisplay,
-  StyledTimeInputField,
   StyledTimeInputSegment,
+  StyledTimeInputSegmentGroup,
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
-  StyledTimeInput,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
@@ -76,15 +74,6 @@ const getSectionOrder = (format, showSeconds = format === '12') => {
 
   return numericSections;
 };
-
-const buildPlaceholder = (sectionOrder) =>
-  sectionOrder
-    .map((section, index) => {
-      const token = getSectionTokenFromType(sectionTypeFromSection(section));
-      if (index === 0) return token;
-      return `${section === SECTION_PERIOD ? ' ' : ':'}${token}`;
-    })
-    .join('');
 
 // When `format` isn't explicitly provided, default to the 12/24-hour
 // convention the browser's default locale uses, rather than hardcoding one.
@@ -133,7 +122,6 @@ const TimeInput = forwardRef(
 
     const inputRef = useForwardedRef(refArg);
     const containerRef = useRef();
-
     const [value, setValue] = useFormInput({
       name,
       value: valueArg,
@@ -314,11 +302,6 @@ const TimeInput = forwardRef(
       }
     }, []);
 
-    const placeholder = useMemo(
-      () => buildPlaceholder(sectionOrder),
-      [sectionOrder],
-    );
-    const inputValue = displayValue || placeholder;
     const hasDisplayValue = !!displayValue;
     const displaySections = useMemo(() => {
       // Merge sections with pending digits for display
@@ -703,96 +686,81 @@ const TimeInput = forwardRef(
             direction="row"
             border={!plainProp}
             fill
-            round={
-              theme.timeInput?.container?.round ||
-              theme.global?.control?.border?.radius
-            }
+            {...theme.timeInput?.container}
             disabled={disabled}
             readOnlyProp={readOnly}
             focusIndicator={(focusIndicatorProp ?? true) && !iconFocused}
             {...passThemeFlag}
           >
-            <StyledTimeInputField {...passThemeFlag}>
-              <StyledTimeInputDisplay
-                role="group"
-                aria-label={groupLabel}
-                aria-labelledby={formFieldLabelId}
-                onMouseDown={onDisplayMouseDown}
-                {...passThemeFlag}
-              >
-                {displaySections.map(({ section, prefix, text, filled }) => (
-                  <React.Fragment key={section}>
-                    {!!prefix && (
-                      <StyledTimeInputSeparator
-                        $filled={hasDisplayValue}
-                        {...passThemeFlag}
-                      >
-                        {prefix}
-                      </StyledTimeInputSeparator>
-                    )}
-                    <StyledTimeInputSegment
-                      ref={(segmentNode) => {
-                        segmentRefs.current[section] = segmentNode;
-                      }}
-                      tabIndex={
-                        !readOnly && !disabled && activeSection === section
-                          ? 0
-                          : -1
-                      }
-                      $active={showActiveSection && activeSection === section}
-                      $filled={filled}
-                      onFocus={() => onSegmentFocus(section)}
-                      onBlur={onSegmentBlur}
-                      onKeyDown={(event) => onSegmentKeyDown(section, event)}
-                      onPaste={onSegmentPaste}
-                      data-active={
-                        showActiveSection && activeSection === section
-                      }
-                      data-testid={
-                        showActiveSection && activeSection === section
-                          ? 'time-input-active-section'
-                          : undefined
-                      }
-                      data-section={section}
+            <StyledTimeInputSegmentGroup
+              id={id}
+              ref={inputRef}
+              role="group"
+              aria-label={groupLabel}
+              aria-labelledby={formFieldLabelId}
+              onMouseDown={onDisplayMouseDown}
+              {...inputRest}
+              {...passThemeFlag}
+            >
+              {displaySections.map(({ section, prefix, text, filled }) => (
+                <React.Fragment key={section}>
+                  {!!prefix && (
+                    <StyledTimeInputSeparator
+                      $filled={hasDisplayValue}
+                      aria-hidden="true"
                       {...passThemeFlag}
-                      aria-label={getSectionName(
-                        section,
-                        format,
-                        formatMessage,
-                        messages,
-                      )}
-                      role="spinbutton"
-                      aria-disabled={disabled || undefined}
-                      aria-readonly={readOnly || undefined}
-                      aria-valuenow={
-                        getSectionAriaMeta({ section, format, sections }).now
-                      }
-                      aria-valuemin={
-                        getSectionAriaMeta({ section, format, sections }).min
-                      }
-                      aria-valuemax={
-                        getSectionAriaMeta({ section, format, sections }).max
-                      }
-                      aria-valuetext={getSectionValueAnnouncement(section)}
                     >
-                      {text}
-                    </StyledTimeInputSegment>
-                  </React.Fragment>
-                ))}
-              </StyledTimeInputDisplay>
-              <StyledTimeInput
-                tabIndex={-1}
-                {...inputRest}
-                id={id}
-                ref={inputRef}
-                value={inputValue}
-                aria-hidden="true"
-                disabled={disabled}
-                readOnly
-                focusIndicator={false}
-                plain
-              />
-            </StyledTimeInputField>
+                      {prefix}
+                    </StyledTimeInputSeparator>
+                  )}
+                  <StyledTimeInputSegment
+                    ref={(segmentNode) => {
+                      segmentRefs.current[section] = segmentNode;
+                    }}
+                    tabIndex={
+                      !readOnly && !disabled && activeSection === section
+                        ? 0
+                        : -1
+                    }
+                    $active={showActiveSection && activeSection === section}
+                    $filled={filled}
+                    onFocus={() => onSegmentFocus(section)}
+                    onBlur={onSegmentBlur}
+                    onKeyDown={(event) => onSegmentKeyDown(section, event)}
+                    onPaste={onSegmentPaste}
+                    data-active={showActiveSection && activeSection === section}
+                    data-testid={
+                      showActiveSection && activeSection === section
+                        ? 'time-input-active-section'
+                        : undefined
+                    }
+                    data-section={section}
+                    {...passThemeFlag}
+                    aria-label={getSectionName(
+                      section,
+                      format,
+                      formatMessage,
+                      messages,
+                    )}
+                    role="spinbutton"
+                    aria-disabled={disabled || undefined}
+                    aria-readonly={readOnly || undefined}
+                    aria-valuenow={
+                      getSectionAriaMeta({ section, format, sections }).now
+                    }
+                    aria-valuemin={
+                      getSectionAriaMeta({ section, format, sections }).min
+                    }
+                    aria-valuemax={
+                      getSectionAriaMeta({ section, format, sections }).max
+                    }
+                    aria-valuetext={getSectionValueAnnouncement(section)}
+                  >
+                    {text}
+                  </StyledTimeInputSegment>
+                </React.Fragment>
+              ))}
+            </StyledTimeInputSegmentGroup>
             {name && (
               <input
                 aria-hidden="true"
@@ -805,10 +773,10 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                icon={<GrommetClockIcon />}
-                plain
+                icon={theme.timeInput?.dropButton?.icon || <GrommetClockIcon />}
+                kind={theme.timeInput?.dropButton}
+                plain={!Object.keys(theme.timeInput?.dropButton || {}).length}
                 disabled={disabled}
-                margin={theme.timeInput?.button?.margin}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
                   messages,
