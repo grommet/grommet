@@ -102,7 +102,6 @@ const getCursorActiveRound = (theme) => {
   const radius = theme.global.radius ? 'radius' : 'edgeSize';
   return theme.global[radius]?.[activeRound] || activeRound;
 };
-
 export const StyledTimeInputSegment = styled.span.withConfig(
   styledComponentsConfig,
 )`

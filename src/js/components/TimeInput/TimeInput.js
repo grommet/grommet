@@ -289,7 +289,6 @@ const TimeInput = forwardRef(
       }),
       [activeSection, focusSection],
     );
-
     const hasDisplayValue = !!displayValue;
     const displaySections = useMemo(() => {
       // Merge sections with pending digits for display

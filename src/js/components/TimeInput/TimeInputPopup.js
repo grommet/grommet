@@ -79,7 +79,6 @@ const PopupOption = styled(Box)`
             }
           `);
       }
-
       // If kindPartStyles didn't emit a background rule (or if background is a
       // simple color string that backgroundStyle converted to background-color),
       // ensure we also check the hover background directly.
