@@ -16,10 +16,7 @@ import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
 import { normalizeStep } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
-import {
-  getSectionKeyFromType,
-  getSectionTokenFromType,
-} from '../../utils/sectionHelpers';
+import { getSectionTokenFromType } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { FormContext } from '../Form';
@@ -38,29 +35,16 @@ import {
   getSectionName,
   pad,
   sectionTypeFromSection,
+  sectionKey,
   SECTION_HOUR,
   SECTION_MINUTE,
   SECTION_PERIOD,
   SECTION_SECOND,
 } from './utils';
 
-const getDisplaySectionKey = (section) => {
-  if (section === SECTION_HOUR) return 'hour';
-  if (section === SECTION_MINUTE) return 'minute';
-  if (section === SECTION_SECOND) return 'second';
-  return 'period';
-};
-
 const getDisplaySectionPrefix = (section, index) => {
   if (index === 0) return '';
   return section === SECTION_PERIOD ? ' ' : ':';
-};
-
-const getDisplaySectionText = ({ key, section, sections }) => {
-  if (sections[key] === undefined)
-    return getSectionTokenFromType(sectionTypeFromSection(section));
-  if (section === SECTION_PERIOD) return sections[key];
-  return pad(sections[key]);
 };
 
 const getSectionOrder = (format, showSeconds = format === '12') => {
@@ -269,10 +253,7 @@ const TimeInput = forwardRef(
           });
         }
 
-        const sectionKey = getSectionKeyFromType(
-          sectionTypeFromSection(section),
-        );
-        const sectionValue = sections[sectionKey];
+        const sectionValue = sections[sectionKey(section)];
 
         if (sectionValue === undefined) {
           return formatMessage({
@@ -319,20 +300,26 @@ const TimeInput = forwardRef(
       }
 
       return sectionOrder.map((section, index) => {
-        const key = getDisplaySectionKey(section);
+        const key = sectionKey(section);
+        const sectionValue = displaySectionsData[key];
+        let text;
+        if (sectionValue === undefined) {
+          text = getSectionTokenFromType(sectionTypeFromSection(section));
+        } else if (section === SECTION_PERIOD) {
+          text = sectionValue;
+        } else {
+          text = pad(sectionValue);
+        }
 
         return {
+          ariaMeta: getSectionAriaMeta({ section, format, sections }),
           section,
           prefix: getDisplaySectionPrefix(section, index),
-          text: getDisplaySectionText({
-            key,
-            section,
-            sections: displaySectionsData,
-          }),
-          filled: displaySectionsData[key] !== undefined,
+          text,
+          filled: sectionValue !== undefined,
         };
       });
-    }, [sectionOrder, sections, pendingDigits]);
+    }, [format, pendingDigits, sectionOrder, sections]);
 
     const onDisplaySectionMouseDown = useCallback(
       (section, event) => {
