@@ -25,23 +25,9 @@ var _excluded = ["defaultValue", "disabled", "focusOnOpen", "format", "id", "inl
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
-var getDisplaySectionKey = function getDisplaySectionKey(section) {
-  if (section === _utils2.SECTION_HOUR) return 'hour';
-  if (section === _utils2.SECTION_MINUTE) return 'minute';
-  if (section === _utils2.SECTION_SECOND) return 'second';
-  return 'period';
-};
 var getDisplaySectionPrefix = function getDisplaySectionPrefix(section, index) {
   if (index === 0) return '';
   return section === _utils2.SECTION_PERIOD ? ' ' : ':';
-};
-var getDisplaySectionText = function getDisplaySectionText(_ref) {
-  var key = _ref.key,
-    section = _ref.section,
-    sections = _ref.sections;
-  if (sections[key] === undefined) return (0, _sectionHelpers.getSectionTokenFromType)((0, _utils2.sectionTypeFromSection)(section));
-  if (section === _utils2.SECTION_PERIOD) return sections[key];
-  return (0, _utils2.pad)(sections[key]);
 };
 var getSectionOrder = function getSectionOrder(format, showSeconds) {
   if (showSeconds === void 0) {
@@ -56,8 +42,7 @@ var getSectionOrder = function getSectionOrder(format, showSeconds) {
 var buildPlaceholder = function buildPlaceholder(sectionOrder) {
   return sectionOrder.map(function (section, index) {
     var token = (0, _sectionHelpers.getSectionTokenFromType)((0, _utils2.sectionTypeFromSection)(section));
-    if (index === 0) return token;
-    return "" + (section === _utils2.SECTION_PERIOD ? ' ' : ':') + token;
+    return "" + getDisplaySectionPrefix(section, index) + token;
   }).join('');
 };
 
@@ -75,28 +60,28 @@ var getDefaultFormat = function getDefaultFormat() {
   }
 };
 var DEFAULT_FORMAT = getDefaultFormat();
-var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref2, refArg) {
+var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
   var _theme$timeInput, _theme$global, _theme$timeInput2;
-  var defaultValue = _ref2.defaultValue,
-    disabled = _ref2.disabled,
-    _ref2$focusOnOpen = _ref2.focusOnOpen,
-    focusOnOpen = _ref2$focusOnOpen === void 0 ? true : _ref2$focusOnOpen,
-    _ref2$format = _ref2.format,
-    format = _ref2$format === void 0 ? DEFAULT_FORMAT : _ref2$format,
-    id = _ref2.id,
-    _ref2$inline = _ref2.inline,
-    inline = _ref2$inline === void 0 ? false : _ref2$inline,
-    messages = _ref2.messages,
-    _ref2$minuteStep = _ref2.minuteStep,
-    minuteStep = _ref2$minuteStep === void 0 ? 1 : _ref2$minuteStep,
-    name = _ref2.name,
-    onChange = _ref2.onChange,
-    onPartialChange = _ref2.onPartialChange,
-    _ref2$readOnly = _ref2.readOnly,
-    readOnly = _ref2$readOnly === void 0 ? false : _ref2$readOnly,
-    showSeconds = _ref2.showSeconds,
-    valueArg = _ref2.value,
-    rest = _objectWithoutPropertiesLoose(_ref2, _excluded);
+  var defaultValue = _ref.defaultValue,
+    disabled = _ref.disabled,
+    _ref$focusOnOpen = _ref.focusOnOpen,
+    focusOnOpen = _ref$focusOnOpen === void 0 ? true : _ref$focusOnOpen,
+    _ref$format = _ref.format,
+    format = _ref$format === void 0 ? DEFAULT_FORMAT : _ref$format,
+    id = _ref.id,
+    _ref$inline = _ref.inline,
+    inline = _ref$inline === void 0 ? false : _ref$inline,
+    messages = _ref.messages,
+    _ref$minuteStep = _ref.minuteStep,
+    minuteStep = _ref$minuteStep === void 0 ? 1 : _ref$minuteStep,
+    name = _ref.name,
+    onChange = _ref.onChange,
+    onPartialChange = _ref.onPartialChange,
+    _ref$readOnly = _ref.readOnly,
+    readOnly = _ref$readOnly === void 0 ? false : _ref$readOnly,
+    showSeconds = _ref.showSeconds,
+    valueArg = _ref.value,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme,
     passThemeFlag = _useThemeValue.passThemeFlag;
@@ -231,8 +216,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
         }
       });
     }
-    var sectionKey = (0, _sectionHelpers.getSectionKeyFromType)((0, _utils2.sectionTypeFromSection)(section));
-    var sectionValue = sections[sectionKey];
+    var sectionValue = sections[(0, _utils2.sectionKey)(section)];
     if (sectionValue === undefined) {
       return formatMessage({
         id: 'timeInput.activeSection',
@@ -270,19 +254,29 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
       displaySectionsData[pendingSection] = pendingDigits[pendingSection];
     }
     return sectionOrder.map(function (section, index) {
-      var key = getDisplaySectionKey(section);
+      var key = (0, _utils2.sectionKey)(section);
+      var sectionValue = displaySectionsData[key];
+      var text;
+      if (sectionValue === undefined) {
+        text = (0, _sectionHelpers.getSectionTokenFromType)((0, _utils2.sectionTypeFromSection)(section));
+      } else if (section === _utils2.SECTION_PERIOD) {
+        text = sectionValue;
+      } else {
+        text = (0, _utils2.pad)(sectionValue);
+      }
       return {
+        ariaMeta: (0, _utils2.getSectionAriaMeta)({
+          section: section,
+          format: format,
+          sections: sections
+        }),
         section: section,
         prefix: getDisplaySectionPrefix(section, index),
-        text: getDisplaySectionText({
-          key: key,
-          section: section,
-          sections: displaySectionsData
-        }),
-        filled: displaySectionsData[key] !== undefined
+        text: text,
+        filled: sectionValue !== undefined
       };
     });
-  }, [sectionOrder, sections, pendingDigits]);
+  }, [format, pendingDigits, sectionOrder, sections]);
   var onDisplaySectionMouseDown = (0, _react.useCallback)(function (section, event) {
     if (readOnly) return;
     if (disabled) return;
@@ -319,8 +313,8 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
       }).sort(function (a, b) {
         return a.rect.left - b.rect.left;
       });
-      var sectionFromBounds = sectionsWithRects.find(function (_ref3) {
-        var rect = _ref3.rect;
+      var sectionFromBounds = sectionsWithRects.find(function (_ref2) {
+        var rect = _ref2.rect;
         return x >= rect.left && x <= rect.right;
       });
       if ((sectionFromBounds == null || (_sectionFromBounds$no = sectionFromBounds.node) == null || (_sectionFromBounds$no = _sectionFromBounds$no.dataset) == null ? void 0 : _sectionFromBounds$no.section) !== undefined) {
@@ -330,8 +324,8 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
           return;
         }
       }
-      var zones = sectionsWithRects.map(function (_ref4, index) {
-        var rect = _ref4.rect;
+      var zones = sectionsWithRects.map(function (_ref3, index) {
+        var rect = _ref3.rect;
         var prev = sectionsWithRects[index - 1];
         var next = sectionsWithRects[index + 1];
         var start = prev !== undefined ? (prev.rect.right + rect.left) / 2 : Number.NEGATIVE_INFINITY;
@@ -342,9 +336,9 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
           end: end
         };
       });
-      var zone = zones.find(function (_ref5) {
-        var start = _ref5.start,
-          end = _ref5.end;
+      var zone = zones.find(function (_ref4) {
+        var start = _ref4.start,
+          end = _ref4.end;
         return x >= start && x <= end;
       }) || zones[0] || null;
       if (zone) {
@@ -575,11 +569,12 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     "aria-label": groupLabel,
     "aria-labelledby": formFieldLabelId,
     onMouseDown: onDisplayMouseDown
-  }, passThemeFlag), displaySections.map(function (_ref6) {
-    var section = _ref6.section,
-      prefix = _ref6.prefix,
-      text = _ref6.text,
-      filled = _ref6.filled;
+  }, passThemeFlag), displaySections.map(function (_ref5) {
+    var ariaMeta = _ref5.ariaMeta,
+      section = _ref5.section,
+      prefix = _ref5.prefix,
+      text = _ref5.text,
+      filled = _ref5.filled;
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, {
       key: section
     }, !!prefix && /*#__PURE__*/_react["default"].createElement(_StyledTimeInput.StyledTimeInputSeparator, _extends({
@@ -600,28 +595,15 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
       },
       onPaste: onSegmentPaste,
       "data-active": showActiveSection && activeSection === section,
-      "data-testid": showActiveSection && activeSection === section ? 'time-input-active-section' : undefined,
       "data-section": section
     }, passThemeFlag, {
       "aria-label": (0, _utils2.getSectionName)(section, format, formatMessage, messages),
       role: "spinbutton",
       "aria-disabled": disabled || undefined,
       "aria-readonly": readOnly || undefined,
-      "aria-valuenow": (0, _utils2.getSectionAriaMeta)({
-        section: section,
-        format: format,
-        sections: sections
-      }).now,
-      "aria-valuemin": (0, _utils2.getSectionAriaMeta)({
-        section: section,
-        format: format,
-        sections: sections
-      }).min,
-      "aria-valuemax": (0, _utils2.getSectionAriaMeta)({
-        section: section,
-        format: format,
-        sections: sections
-      }).max,
+      "aria-valuenow": ariaMeta.now,
+      "aria-valuemin": ariaMeta.min,
+      "aria-valuemax": ariaMeta.max,
       "aria-valuetext": getSectionValueAnnouncement(section)
     }), text));
   })), /*#__PURE__*/_react["default"].createElement(_StyledTimeInput.StyledTimeInput, _extends({
