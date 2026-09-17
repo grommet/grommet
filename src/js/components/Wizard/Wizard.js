@@ -169,20 +169,12 @@ const Wizard = forwardRef(
       [formValue, isValueControlled, onChange],
     );
 
-    const [visitedSteps, setVisitedSteps] = useState([currentStep]);
     const [completedSteps, setCompletedSteps] = useState(() => new Set());
     const [validationError, setValidationError] = useState(undefined);
     const [isValidating, setIsValidating] = useState(false);
     // Without `onCancel`, cancel self-closes the wizard.
     const [isOpen, setIsOpen] = useState(true);
     const hasCancelHandler = onCancel !== undefined;
-
-    // Keep visited history in sync when currentStep is externally set.
-    useEffect(() => {
-      setVisitedSteps((prev) =>
-        prev[prev.length - 1] === currentStep ? prev : [...prev, currentStep],
-      );
-    }, [currentStep]);
 
     const currentStepObj = useMemo(
       () => findStepById(steps, currentStep),
@@ -277,6 +269,16 @@ const Wizard = forwardRef(
       return undefined;
     }, [currentStepObj, currentStepIndex, flatSteps, formValue, steps]);
 
+    const resolvePreviousStepId = useCallback(() => {
+      let prevIndex = currentStepIndex - 1;
+      while (prevIndex >= 0) {
+        const prevStep = flatSteps[prevIndex];
+        if (!prevStep?.disabled) return prevStep.id;
+        prevIndex -= 1;
+      }
+      return undefined;
+    }, [currentStepIndex, flatSteps]);
+
     // Apply a navigation transition (id, history, completion, focus).
     const applyTransition = useCallback(
       (nextId, { markCompleted } = {}) => {
@@ -289,7 +291,6 @@ const Wizard = forwardRef(
           });
         }
         setValidationError(undefined);
-        setVisitedSteps((prev) => [...prev, nextId]);
         if (!isControlled) setUncontrolledStep(nextId);
       },
       [currentStep, isControlled],
@@ -385,15 +386,8 @@ const Wizard = forwardRef(
     ]);
 
     const previous = useCallback(() => {
-      // History-aware; falls back to the linear predecessor.
-      const historyDest =
-        visitedSteps.length > 1
-          ? visitedSteps[visitedSteps.length - 2]
-          : undefined;
-      const fallbackDest = flatSteps[currentStepIndex - 1]?.id;
-      const dest = historyDest || fallbackDest;
+      const dest = resolvePreviousStepId();
       if (!dest) return;
-      setVisitedSteps((prev) => prev.slice(0, -1));
       setValidationError(undefined);
       if (!isControlled) setUncontrolledStep(dest);
       emitStepChange({
@@ -407,11 +401,9 @@ const Wizard = forwardRef(
     }, [
       sendAnalytics,
       currentStep,
-      currentStepIndex,
+      resolvePreviousStepId,
       emitStepChange,
-      flatSteps,
       isControlled,
-      visitedSteps,
     ]);
 
     const goTo = useCallback(
@@ -478,7 +470,6 @@ const Wizard = forwardRef(
       if (!nextId) return;
       // Skip: no validation, no completion.
       setValidationError(undefined);
-      setVisitedSteps((prev) => [...prev, nextId]);
       if (!isControlled) setUncontrolledStep(nextId);
       emitStepChange({
         trigger: 'skip',
