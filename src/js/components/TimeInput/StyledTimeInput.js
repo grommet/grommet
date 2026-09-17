@@ -16,7 +16,6 @@ import {
 } from '../../utils';
 import { getInputIconPad } from '../../utils/styles';
 import { Box } from '../Box';
-import { Button } from '../Button';
 
 const getTimeInputButtonPad = (props) => {
   const rightInset = Number.parseFloat(getInputPadBySide(props, 'right'));
@@ -39,24 +38,6 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
         ${focusStyle()}
       }
     `}
-`;
-
-export const StyledTimeInputButtonContainer = styled.div.withConfig(
-  styledComponentsConfig,
-)`
-  position: absolute;
-  display: flex;
-  align-items: stretch;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-`;
-
-export const StyledTimeInputButton = styled(Button)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`

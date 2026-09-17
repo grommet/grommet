@@ -21,13 +21,12 @@ import {
   getSectionTokenFromType,
 } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import {
   StyledTimeInputDisplay,
   StyledTimeInputField,
-  StyledTimeInputButtonContainer,
-  StyledTimeInputButton,
   StyledTimeInputSegment,
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
@@ -806,27 +805,25 @@ const TimeInput = forwardRef(
               />
             )}
             {!readOnly && (
-              <StyledTimeInputButtonContainer>
-                <StyledTimeInputButton
-                  kind="toolbar"
-                  icon={<GrommetClockIcon />}
-                  disabled={disabled}
-                  aria-label={formatMessage({
-                    id: 'timeInput.chooseTime',
-                    messages,
-                  })}
-                  aria-haspopup="dialog"
-                  aria-expanded={open}
-                  aria-controls={id ? `${id}__drop` : undefined}
-                  onFocus={() => {
-                    setIconFocused(true);
-                  }}
-                  onBlur={() => {
-                    setIconFocused(false);
-                  }}
-                  onClick={open ? closePicker : openPicker}
-                />
-              </StyledTimeInputButtonContainer>
+              <Button
+                kind="toolbar"
+                icon={<GrommetClockIcon />}
+                disabled={disabled}
+                aria-label={formatMessage({
+                  id: 'timeInput.chooseTime',
+                  messages,
+                })}
+                aria-haspopup="dialog"
+                aria-expanded={open}
+                aria-controls={id ? `${id}__drop` : undefined}
+                onFocus={() => {
+                  setIconFocused(true);
+                }}
+                onBlur={() => {
+                  setIconFocused(false);
+                }}
+                onClick={open ? closePicker : openPicker}
+              />
             )}
           </StyledTimeInputContainer>
           {open && (
