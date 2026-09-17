@@ -11,6 +11,8 @@ import { Icon } from 'grommet-icons';
 import {
   BackgroundType,
   BorderType,
+  BoxSideType,
+  BoxSizeType,
   BreakpointBorderSize,
   BreakpointEdgeSize,
   BreakpointSize,
@@ -339,6 +341,32 @@ interface StepperStatusStateType extends StepperStateType {
 interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
   helperText?: {
     color?: ColorType;
+  };
+}
+
+interface TimeInputDropOptionStateProps extends BoxProps {
+  text?: TextProps;
+}
+
+export interface TimeInputCursorType {
+  border?: {
+    side?: BoxSideType;
+    size?: BoxSizeType;
+  };
+  pad?: PadType;
+  active?: {
+    background?: BackgroundType;
+    border?: {
+      color?: ColorType;
+    };
+    round?: RoundType;
+  };
+}
+
+export interface TimeInputDropOptionType extends TimeInputDropOptionStateProps {
+  hover?: TimeInputDropOptionStateProps;
+  selected?: TimeInputDropOptionStateProps & {
+    hover?: TimeInputDropOptionStateProps;
   };
 }
 
@@ -2413,45 +2441,14 @@ export interface ThemeType {
     };
   };
   timeInput?: {
-    button?: {
-      margin?: MarginType;
+    container?: BoxProps;
+    cursor?: TimeInputCursorType;
+    drop?: BoxProps & {
+      columns?: BoxProps;
+      option?: TimeInputDropOptionType;
     };
-    container?: {
-      round?: RoundType;
-    };
-    active?: {
-      background?: ColorType;
-      pad?: string;
-      indicator?: {
-        color?: ColorType;
-        size?: string;
-      };
-    };
-    drop?: {
-      gap?: GapType;
-      option?: {
-        background?: ColorType;
-        gap?: GapType;
-        size?: string;
-        pad?: PadType;
-        round?: RoundType;
-        hover?: {
-          background?: ColorType;
-        };
-        selected?: {
-          background?: ColorType;
-          color?: ColorType;
-          text?: {
-            weight?: string | number;
-          };
-          hover?: {
-            background?: ColorType;
-          };
-        };
-      };
-    };
-    icon?: {
-      clock?: React.ReactNode | Icon;
+    dropButton?: ButtonType & {
+      icon?: React.ReactNode | Icon;
     };
   };
   tip?: {

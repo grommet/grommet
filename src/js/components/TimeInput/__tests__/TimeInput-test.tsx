@@ -25,10 +25,7 @@ import { TimeInput } from '..';
 const getSegment = (name: 'hours' | 'minutes' | 'seconds' | 'meridiem') =>
   screen.getByRole('spinbutton', { name });
 
-const getDisplayInput = () =>
-  document.querySelector(
-    'input[aria-hidden="true"]:not([type="hidden"])',
-  ) as HTMLInputElement;
+const getDisplayValue = () => screen.getByRole('group', { hidden: true });
 
 describe('TimeInput', () => {
   beforeEach(() => {
@@ -291,7 +288,7 @@ describe('TimeInput', () => {
     await user.keyboard('3');
     await user.keyboard('4');
 
-    expect(getDisplayInput()).toHaveValue('12:34:00');
+    expect(getDisplayValue()).toHaveTextContent('12:34:00');
   });
 
   test('announces active section value through aria-valuetext', async () => {
@@ -566,7 +563,7 @@ describe('TimeInput', () => {
     await user.click(input);
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('hh:mm:ss aa');
+      expect(getDisplayValue()).toHaveTextContent('hh:mm:ss aa');
       expect(input).toHaveFocus();
     });
 
@@ -610,7 +607,7 @@ describe('TimeInput', () => {
     expect(getSegment('minutes')).toHaveFocus();
 
     await user.keyboard('15');
-    expect(getDisplayInput()).toHaveValue('hh:15:ss aa');
+    expect(getDisplayValue()).toHaveTextContent('hh:15:ss aa');
   });
 
   test('keeps clicked placeholder section active for hh, mm, ss, and aa', async () => {
@@ -658,7 +655,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    expect(getDisplayInput()).toHaveValue('01:05:09 PM');
+    expect(getDisplayValue()).toHaveTextContent('01:05:09 PM');
   });
 
   test('clears only the active section when deleting from a complete value', async () => {
@@ -676,7 +673,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}');
     await user.keyboard('{Backspace}');
 
-    expect(getDisplayInput()).toHaveValue('hh:34:56 PM');
+    expect(getDisplayValue()).toHaveTextContent('hh:34:56 PM');
   });
 
   test('keeps selection on cleared middle sections after delete', async () => {
@@ -695,7 +692,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Backspace}');
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('12:mm:56 PM');
+      expect(getDisplayValue()).toHaveTextContent('12:mm:56 PM');
       expect(getSegment('minutes')).toHaveFocus();
     });
 
@@ -703,7 +700,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Backspace}');
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('12:mm:ss PM');
+      expect(getDisplayValue()).toHaveTextContent('12:mm:ss PM');
       expect(getSegment('seconds')).toHaveFocus();
     });
   });
@@ -728,10 +725,10 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}{ArrowRight}');
 
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:45:00');
+    expect(getDisplayValue()).toHaveTextContent('10:45:00');
 
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:00:00');
+    expect(getDisplayValue()).toHaveTextContent('10:00:00');
   });
 
   test('initializes empty 24-hour sections based on arrow direction', async () => {
@@ -746,12 +743,12 @@ describe('TimeInput', () => {
     const hourInput = getSegment('hours');
     await user.click(hourInput);
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('00:mm');
+    expect(getDisplayValue()).toHaveTextContent('00:mm');
 
     const minuteInput = getSegment('minutes');
     await user.click(minuteInput);
     await user.keyboard('{ArrowDown}');
-    expect(getDisplayInput()).toHaveValue('00:59');
+    expect(getDisplayValue()).toHaveTextContent('00:59');
   });
 
   test('initializes empty 12-hour sections based on arrow direction', async () => {
@@ -766,12 +763,12 @@ describe('TimeInput', () => {
     const hourInput = getSegment('hours');
     await user.click(hourInput);
     await user.keyboard('{ArrowDown}');
-    expect(getDisplayInput()).toHaveValue('12:mm:ss aa');
+    expect(getDisplayValue()).toHaveTextContent('12:mm:ss aa');
 
     const minuteInput = getSegment('minutes');
     await user.click(minuteInput);
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('12:00:ss aa');
+    expect(getDisplayValue()).toHaveTextContent('12:00:ss aa');
   });
 
   test('submits only committed value and never section placeholders', async () => {
@@ -836,7 +833,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}99');
 
     expect(document.getElementById('read-only-picker__drop')).toBeNull();
-    expect(getDisplayInput()).toHaveValue('12:00:00 AM');
+    expect(getDisplayValue()).toHaveTextContent('12:00:00 AM');
   });
 
   test('read-only mode does not show active section highlight on focus', async () => {
@@ -888,7 +885,7 @@ describe('TimeInput', () => {
     );
 
     const input = getSegment('hours');
-    expect(getDisplayInput()).toHaveValue('09:10:11');
+    expect(getDisplayValue()).toHaveTextContent('09:10:11');
 
     await user.click(input);
     await user.keyboard('{Home}12');
@@ -898,7 +895,7 @@ describe('TimeInput', () => {
     await user.click(
       screen.getByRole('button', { name: 'set-controlled-value' }),
     );
-    expect(getDisplayInput()).toHaveValue('10:20:30');
+    expect(getDisplayValue()).toHaveTextContent('10:20:30');
   });
 
   test('closes picker when focus leaves popup', async () => {
@@ -1063,7 +1060,7 @@ describe('TimeInput', () => {
       within(hourList).getByRole('option', { name: '07 hours' }),
     );
 
-    expect(getDisplayInput()).toHaveValue('07:00:00');
+    expect(getDisplayValue()).toHaveTextContent('07:00:00');
   });
 
   test('announces popup option values with their section type', async () => {
@@ -1111,14 +1108,14 @@ describe('TimeInput', () => {
       within(minuteList).getByRole('option', { name: '10 minutes' }),
     );
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('01:10:50');
+      expect(getDisplayValue()).toHaveTextContent('01:10:50');
     });
 
     await user.click(
       within(secondList).getByRole('option', { name: '08 seconds' }),
     );
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('01:10:08');
+      expect(getDisplayValue()).toHaveTextContent('01:10:08');
     });
   });
 
@@ -1144,7 +1141,7 @@ describe('TimeInput', () => {
       within(minuteList).getByRole('option', { name: '22 minutes' }),
     );
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('05:22:55');
+      expect(getDisplayValue()).toHaveTextContent('05:22:55');
     });
 
     fireEvent.wheel(secondList, { deltaY: -120 });
@@ -1152,7 +1149,7 @@ describe('TimeInput', () => {
       within(secondList).getByRole('option', { name: '11 seconds' }),
     );
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('05:22:11');
+      expect(getDisplayValue()).toHaveTextContent('05:22:11');
     });
 
     fireEvent.wheel(hourList, { deltaY: 120 });
@@ -1160,7 +1157,7 @@ describe('TimeInput', () => {
       within(hourList).getByRole('option', { name: '08 hours' }),
     );
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('08:22:11');
+      expect(getDisplayValue()).toHaveTextContent('08:22:11');
     });
   });
 
@@ -1337,7 +1334,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}05');
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('05:30:00 AM');
+      expect(getDisplayValue()).toHaveTextContent('05:30:00 AM');
     });
   });
 
@@ -1384,7 +1381,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}22');
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('02:02:00 AM');
+      expect(getDisplayValue()).toHaveTextContent('02:02:00 AM');
     });
   });
 
@@ -1408,7 +1405,7 @@ describe('TimeInput', () => {
     await user.keyboard('66');
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('02:06:06 AM');
+      expect(getDisplayValue()).toHaveTextContent('02:06:06 AM');
     });
   });
 
@@ -1430,7 +1427,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}222');
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('22:02:00');
+      expect(getDisplayValue()).toHaveTextContent('22:02:00');
     });
   });
 
@@ -1453,7 +1450,7 @@ describe('TimeInput', () => {
     await user.keyboard('{Home}2222');
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('22:22:00');
+      expect(getDisplayValue()).toHaveTextContent('22:22:00');
     });
   });
 
@@ -1474,7 +1471,7 @@ describe('TimeInput', () => {
 
     // Should be 12:34:56
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('12:34:56');
+      expect(getDisplayValue()).toHaveTextContent('12:34:56');
     });
 
     // Verify typing another digit stays on SS (doesn't wrap to HH)
@@ -1483,7 +1480,7 @@ describe('TimeInput', () => {
     await user.keyboard('4');
     await waitFor(() => {
       // Focus stays on SS, 4 becomes first digit (SS = 04)
-      expect(getDisplayInput()).toHaveValue('12:34:04');
+      expect(getDisplayValue()).toHaveTextContent('12:34:04');
     });
 
     // Type another digit to complete the second digit in SS
@@ -1491,7 +1488,7 @@ describe('TimeInput', () => {
     await user.keyboard('5');
     await waitFor(() => {
       // 4 + 5 = 45, and focus stays on SS (not wrapping back to HH)
-      expect(getDisplayInput()).toHaveValue('12:34:45');
+      expect(getDisplayValue()).toHaveTextContent('12:34:45');
     });
   });
 
@@ -1511,7 +1508,7 @@ describe('TimeInput', () => {
     await user.keyboard('12:22:00');
 
     // Expect the value to remain 12:22:00 (not snapped to 12:15:00 or 12:30:00)
-    expect(getDisplayInput()).toHaveValue('12:22:00');
+    expect(getDisplayValue()).toHaveTextContent('12:22:00');
   });
 
   test('does not modify typed minute values 07 that do not match minuteStep', async () => {
@@ -1530,7 +1527,7 @@ describe('TimeInput', () => {
     await user.keyboard('10:07:00');
 
     // Expect value to remain exactly as typed (not corrected to 10:00:00 or 10:15:00)
-    expect(getDisplayInput()).toHaveValue('10:07:00');
+    expect(getDisplayValue()).toHaveTextContent('10:07:00');
   });
 
   test('does not modify pasted time values with misaligned minutes', async () => {
@@ -1549,7 +1546,7 @@ describe('TimeInput', () => {
     await user.keyboard('14:22:30');
 
     // Value must be preserved exactly as typed (not snapped/corrected)
-    expect(getDisplayInput()).toHaveValue('14:22:30');
+    expect(getDisplayValue()).toHaveTextContent('14:22:30');
   });
 
   test('applies compact HHMMSS paste contract in 24-hour format', async () => {
@@ -1578,7 +1575,7 @@ describe('TimeInput', () => {
         },
       });
 
-      expect(getDisplayInput()).toHaveValue(expected);
+      expect(getDisplayValue()).toHaveTextContent(expected);
     });
   });
 
@@ -1608,7 +1605,7 @@ describe('TimeInput', () => {
         },
       });
 
-      expect(getDisplayInput()).toHaveValue(expected);
+      expect(getDisplayValue()).toHaveTextContent(expected);
     });
   });
 
@@ -1631,7 +1628,7 @@ describe('TimeInput', () => {
       },
     });
 
-    expect(getDisplayInput()).toHaveValue('09:30:00 AM');
+    expect(getDisplayValue()).toHaveTextContent('09:30:00 AM');
   });
 
   test('uses explicit meridiem token only when AM or PM is a full token', async () => {
@@ -1653,7 +1650,7 @@ describe('TimeInput', () => {
       },
     });
 
-    expect(getDisplayInput()).toHaveValue('11:22:33 PM');
+    expect(getDisplayValue()).toHaveTextContent('11:22:33 PM');
 
     fireEvent.paste(input, {
       clipboardData: {
@@ -1661,7 +1658,7 @@ describe('TimeInput', () => {
       },
     });
 
-    expect(getDisplayInput()).toHaveValue('11:22:33 AM');
+    expect(getDisplayValue()).toHaveTextContent('11:22:33 AM');
   });
 
   test('arrow keys still respect minuteStep increment', async () => {
@@ -1686,19 +1683,19 @@ describe('TimeInput', () => {
 
     // Press ArrowUp to increment by minuteStep (15)
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:15:00');
+    expect(getDisplayValue()).toHaveTextContent('10:15:00');
 
     // Press ArrowUp again
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:30:00');
+    expect(getDisplayValue()).toHaveTextContent('10:30:00');
 
     // Continue incrementing: 45, 0 (wrap), 15, 30
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:45:00');
+    expect(getDisplayValue()).toHaveTextContent('10:45:00');
 
     // Wrap around at end (minute=45 + step=15 => 0)
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:00:00');
+    expect(getDisplayValue()).toHaveTextContent('10:00:00');
   });
 
   test('dropdown options reflect minuteStep intervals', async () => {
@@ -1725,14 +1722,14 @@ describe('TimeInput', () => {
 
     // Arrow through options - should step in multiples of 20 only
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:20:00');
+    expect(getDisplayValue()).toHaveTextContent('10:20:00');
 
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:40:00');
+    expect(getDisplayValue()).toHaveTextContent('10:40:00');
 
     // Wraps from 40 back to 0
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:00:00');
+    expect(getDisplayValue()).toHaveTextContent('10:00:00');
   });
 
   test('normalizes invalid minuteStep values to avoid crashes', async () => {
@@ -1754,7 +1751,7 @@ describe('TimeInput', () => {
     await user.click(input);
     await user.keyboard('{Home}{ArrowRight}');
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('10:01:00');
+    expect(getDisplayValue()).toHaveTextContent('10:01:00');
   });
 
   test('in 24-hour mode without showSeconds, only hour and minute are interactive', async () => {
@@ -1914,7 +1911,7 @@ describe('TimeInput', () => {
 
       await user.click(nextMinuteOption);
 
-      expect(getDisplayInput()).toHaveValue('12:31:20 AM');
+      expect(getDisplayValue()).toHaveTextContent('12:31:20 AM');
       expect(minuteList.scrollTop).toBe(initialMinuteScrollTop);
     } finally {
       if (offsetHeightDescriptor) {
@@ -1948,34 +1945,50 @@ describe('TimeInput', () => {
 
     const customTheme: ThemeType = {
       timeInput: {
-        button: {
-          margin: { right: 'large' },
-        },
         container: {
           round: 'large',
         },
-        active: {
-          background: '#FFD700',
-          pad: 'large',
-          indicator: {
-            color: '#FF0000',
+        cursor: {
+          border: {
+            side: 'left',
             size: 'large',
+          },
+          pad: 'large',
+          active: {
+            background: '#FFD700',
+            border: {
+              color: '#FF0000',
+            },
           },
         },
         drop: {
+          background: '#DDDDDD',
+          round: 'large',
+          columns: {
+            pad: '14px',
+          },
           option: {
             background: '#EEEEEE',
+            border: { color: '#123456', size: 'small' },
+            pad: 'small',
+            round: 'large',
+            text: {
+              size: '18px',
+            },
             hover: {
               background: '#CCCCCC',
+              pad: '16px',
             },
             selected: {
               background: '#0000FF',
-              color: '#FFFFFF',
               text: {
+                color: '#FFFFFF',
+                size: 'large',
                 weight: 'bold',
               },
               hover: {
                 background: '#00FF00',
+                border: { color: '#FF00FF' },
               },
             },
           },
@@ -1990,35 +2003,31 @@ describe('TimeInput', () => {
     );
 
     // container.round
-    const container = screen.getByRole('group').parentElement
-      ?.parentElement as HTMLElement;
+    const container = screen.getByRole('group').parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
 
-    // button.margin
-    const trigger = screen.getByRole('button', { name: 'Choose time' });
-    expect(trigger).toHaveStyleRule('margin-right', '48px');
-
-    // active.pad applies to every segment, active or not
+    // cursor.pad applies to every segment, active or not
     const hourSegment = getSegment('hours');
     expect(hourSegment).toHaveStyleRule('padding-inline', '48px');
 
-    // active.background and active.indicator only render on the
+    // cursor.active.background and cursor.active.border only render on the
     // currently focused/active segment
     await user.click(hourSegment);
     expect(hourSegment).toHaveStyleRule('background-color', '#FFD700', {
       modifier: '::before',
     });
-    expect(hourSegment).toHaveStyleRule('background-color', '#FF0000', {
-      modifier: '::after',
-    });
-    expect(hourSegment).toHaveStyleRule('height', '12px', {
-      modifier: '::after',
-    });
+    expect(hourSegment).toHaveStyleRule('border-left-color', '#FF0000');
+    expect(hourSegment).toHaveStyleRule('border-left-width', '12px');
 
     // open the drop to check drop.option theme tokens
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
+    const dialog = screen.getByRole('dialog');
+    expect(dialog).toHaveStyleRule('background-color', '#DDDDDD');
+    expect(dialog).toHaveStyleRule('border-radius', '48px');
+
     const hourList = screen.getByRole('listbox', { name: 'hour' });
+    expect(hourList).toHaveStyleRule('padding', '14px');
     const selectedOption = within(hourList).getByRole('option', {
       name: '10 hours',
     });
@@ -2027,16 +2036,38 @@ describe('TimeInput', () => {
     });
 
     expect(unselectedOption).toHaveStyleRule('background', '#EEEEEE');
+    expect(unselectedOption).toHaveStyleRule('border', 'solid 2px #123456');
+    expect(unselectedOption).toHaveStyleRule('padding', '12px');
+    expect(unselectedOption).toHaveStyleRule('border-radius', '48px');
     expect(selectedOption).toHaveStyleRule('background', '#0000FF');
     expect(unselectedOption).toHaveStyleRule('background', '#CCCCCC', {
+      modifier: ':hover',
+    });
+    expect(unselectedOption).toHaveStyleRule('padding', '16px', {
       modifier: ':hover',
     });
     expect(selectedOption).toHaveStyleRule('background', '#00FF00', {
       modifier: ':hover',
     });
+    expect(selectedOption).toHaveStyleRule('border-color', '#FF00FF', {
+      modifier: ':hover',
+    });
+    // unselected option picks up option.text size
+    expect(within(unselectedOption).getByText('11')).toHaveStyleRule(
+      'font-size',
+      '18px',
+    );
     expect(within(selectedOption).getByText('10')).toHaveStyleRule(
       'color',
       '#FFFFFF',
+    );
+    expect(within(selectedOption).getByText('10')).toHaveStyleRule(
+      'font-size',
+      '22px',
+    );
+    expect(within(selectedOption).getByText('10')).toHaveStyleRule(
+      'font-weight',
+      'bold',
     );
   });
 
@@ -2056,7 +2087,7 @@ describe('TimeInput', () => {
     // hour value. This used to leave a stale pending-digit overlay in
     // place that masked any later update to the same section.
     await user.keyboard('1');
-    expect(getDisplayInput()).toHaveValue('01:mm:ss');
+    expect(getDisplayValue()).toHaveTextContent('01:mm:ss');
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
@@ -2066,7 +2097,7 @@ describe('TimeInput', () => {
     );
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('06:mm:ss');
+      expect(getDisplayValue()).toHaveTextContent('06:mm:ss');
     });
     expect(hourSegment).toHaveTextContent('06');
   });
@@ -2083,11 +2114,11 @@ describe('TimeInput', () => {
     const hourSegment = getSegment('hours');
     await user.click(hourSegment);
     await user.keyboard('1');
-    expect(getDisplayInput()).toHaveValue('01:mm:ss');
+    expect(getDisplayValue()).toHaveTextContent('01:mm:ss');
 
     await user.keyboard('{ArrowUp}');
 
-    expect(getDisplayInput()).toHaveValue('02:mm:ss');
+    expect(getDisplayValue()).toHaveTextContent('02:mm:ss');
     expect(hourSegment).toHaveTextContent('02');
   });
 
@@ -2106,7 +2137,7 @@ describe('TimeInput', () => {
     // without waiting for a second digit, since 1 * 10 is not > the max
     // minute value.
     await user.keyboard('1');
-    expect(getDisplayInput()).toHaveValue('hh:01:ss');
+    expect(getDisplayValue()).toHaveTextContent('hh:01:ss');
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
@@ -2116,7 +2147,7 @@ describe('TimeInput', () => {
     );
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('hh:06:ss');
+      expect(getDisplayValue()).toHaveTextContent('hh:06:ss');
     });
     expect(minuteSegment).toHaveTextContent('06');
   });
@@ -2133,11 +2164,11 @@ describe('TimeInput', () => {
     const minuteSegment = getSegment('minutes');
     await user.click(minuteSegment);
     await user.keyboard('1');
-    expect(getDisplayInput()).toHaveValue('hh:01:ss');
+    expect(getDisplayValue()).toHaveTextContent('hh:01:ss');
 
     await user.keyboard('{ArrowUp}');
 
-    expect(getDisplayInput()).toHaveValue('hh:02:ss');
+    expect(getDisplayValue()).toHaveTextContent('hh:02:ss');
     expect(minuteSegment).toHaveTextContent('02');
   });
 
@@ -2156,7 +2187,7 @@ describe('TimeInput', () => {
     // without waiting for a second digit, since 1 * 10 is not > the max
     // second value.
     await user.keyboard('1');
-    expect(getDisplayInput()).toHaveValue('hh:mm:01');
+    expect(getDisplayValue()).toHaveTextContent('hh:mm:01');
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
@@ -2166,7 +2197,7 @@ describe('TimeInput', () => {
     );
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('hh:mm:06');
+      expect(getDisplayValue()).toHaveTextContent('hh:mm:06');
     });
     expect(secondSegment).toHaveTextContent('06');
   });
@@ -2183,11 +2214,11 @@ describe('TimeInput', () => {
     const secondSegment = getSegment('seconds');
     await user.click(secondSegment);
     await user.keyboard('1');
-    expect(getDisplayInput()).toHaveValue('hh:mm:01');
+    expect(getDisplayValue()).toHaveTextContent('hh:mm:01');
 
     await user.keyboard('{ArrowUp}');
 
-    expect(getDisplayInput()).toHaveValue('hh:mm:02');
+    expect(getDisplayValue()).toHaveTextContent('hh:mm:02');
     expect(secondSegment).toHaveTextContent('02');
   });
 });
