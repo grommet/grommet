@@ -114,14 +114,8 @@ const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
         position: static;
         align-items: center;
         transform: none;
-        padding-left: ${
-          props.theme.global.input.padding?.left ||
-          props.theme.global.input.padding?.horizontal
-        };
-        padding-right: ${
-          props.theme.global.input.padding?.right ||
-          props.theme.global.input.padding?.horizontal
-        };
+        padding-left: ${getInputPadBySide(props, 'left')};
+        padding-right: ${getInputPadBySide(props, 'right')};
       `;
     }
     return props.reverse

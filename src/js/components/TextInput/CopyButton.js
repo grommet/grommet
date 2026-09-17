@@ -35,7 +35,7 @@ export const CopyButton = ({
   // never expose the masked value via the accessible name
   const buttonAriaLabel =
     ariaLabel ||
-    (authoredType !== 'password' && (value || value === 0)
+    (authoredType?.toLowerCase() !== 'password' && (value || value === 0)
       ? format({
           id: 'input.readOnlyCopy.promptWithValue',
           messages,

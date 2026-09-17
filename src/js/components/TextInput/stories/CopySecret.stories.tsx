@@ -3,7 +3,6 @@
 import React from 'react';
 
 import { Box, Text, TextInput } from 'grommet';
-import { Search } from 'grommet-icons';
 
 export const CopySecret = () => {
   const [status, setStatus] = React.useState<string>('');

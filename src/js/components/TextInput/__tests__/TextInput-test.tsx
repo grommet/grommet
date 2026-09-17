@@ -885,6 +885,28 @@ describe('TextInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('keeps reversed read only copy before the input', () => {
+    render(
+      <Grommet>
+        <TextInput
+          value="test"
+          readOnly
+          readOnlyCopy
+          reverse
+          aria-label="Reversed read only copy"
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Reversed read only copy');
+    const copyButton = screen.getByRole('button');
+
+    expect(
+      copyButton.compareDocumentPosition(input) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+  });
+
   test('copy editable value', async () => {
     const user = userEvent.setup();
 
