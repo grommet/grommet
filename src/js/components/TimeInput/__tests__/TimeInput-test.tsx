@@ -124,7 +124,9 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
+    screen.getAllByRole('spinbutton').forEach((segment) => {
+      expect(segment).toHaveAttribute('data-active', 'false');
+    });
   });
 
   test('allows clicking directly on a non-first segment to focus it', async () => {
@@ -848,9 +850,10 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    await user.click(getSegment('hours'));
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
 
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
+    expect(hourSegment).toHaveAttribute('data-active', 'false');
   });
 
   test('supports controlled updates', async () => {
@@ -1948,9 +1951,6 @@ describe('TimeInput', () => {
 
     const customTheme: ThemeType = {
       timeInput: {
-        button: {
-          margin: { right: 'large' },
-        },
         container: {
           round: 'large',
         },
@@ -1993,10 +1993,6 @@ describe('TimeInput', () => {
     const container = screen.getByRole('group').parentElement
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
-
-    // button.margin
-    const trigger = screen.getByRole('button', { name: 'Choose time' });
-    expect(trigger).toHaveStyleRule('margin-right', '48px');
 
     // active.pad applies to every segment, active or not
     const hourSegment = getSegment('hours');
