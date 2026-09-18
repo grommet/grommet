@@ -17,7 +17,7 @@ var StyledTimeInputContainer = exports.StyledTimeInputContainer = (0, _styledCom
 }).withConfig({
   displayName: "StyledTimeInput__StyledTimeInputContainer",
   componentId: "sc-xktdr3-0"
-})(["", " ", " ", ""], function (props) {
+})(["position:relative;", " ", " ", ""], function (props) {
   return props.disabled && (0, _utils.disabledStyle)();
 }, function (props) {
   return props.readOnlyProp && (0, _utils.readOnlyStyle)(props.theme);

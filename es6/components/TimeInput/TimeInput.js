@@ -57,7 +57,7 @@ var getDefaultFormat = function getDefaultFormat() {
 };
 var DEFAULT_FORMAT = getDefaultFormat();
 var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
-  var _theme$timeInput, _theme$global, _theme$timeInput2;
+  var _theme$timeInput, _theme$global;
   var defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     _ref$focusOnOpen = _ref.focusOnOpen,
@@ -621,10 +621,9 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     type: "hidden",
     value: value || ''
   }), !readOnly && /*#__PURE__*/React.createElement(Button, {
+    kind: "toolbar",
     icon: /*#__PURE__*/React.createElement(GrommetClockIcon, null),
-    plain: true,
     disabled: disabled,
-    margin: (_theme$timeInput2 = theme.timeInput) == null || (_theme$timeInput2 = _theme$timeInput2.button) == null ? void 0 : _theme$timeInput2.margin,
     "aria-label": formatMessage({
       id: 'timeInput.chooseTime',
       messages: messages
