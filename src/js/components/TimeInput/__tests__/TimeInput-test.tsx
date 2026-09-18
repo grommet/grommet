@@ -124,7 +124,9 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
+    screen.getAllByRole('spinbutton').forEach((segment) => {
+      expect(segment).toHaveAttribute('data-active', 'false');
+    });
   });
 
   test('allows clicking directly on a non-first segment to focus it', async () => {
@@ -848,9 +850,10 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    await user.click(getSegment('hours'));
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
 
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
+    expect(hourSegment).toHaveAttribute('data-active', 'false');
   });
 
   test('supports controlled updates', async () => {
