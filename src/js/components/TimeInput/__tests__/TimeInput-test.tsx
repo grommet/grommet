@@ -2221,11 +2221,11 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const choostTimeButton = screen.getByRole('button', {
+    const chooseTimeButton = screen.getByRole('button', {
       name: 'Choose time',
     });
 
-    await user.click(choostTimeButton);
+    await user.click(chooseTimeButton);
     expect(getDisplayInput()).toHaveValue('hh:mm');
 
     await user.keyboard('{ArrowUp}');
