@@ -714,7 +714,6 @@ const TimeInput = forwardRef(
           >
             <StyledTimeInputField {...passThemeFlag}>
               <StyledTimeInputDisplay
-                $hasInlineButton={!readOnly}
                 role="group"
                 aria-label={groupLabel}
                 aria-labelledby={formFieldLabelId}
