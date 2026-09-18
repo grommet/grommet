@@ -19,6 +19,7 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
   // Keep Box styling props like border and round flowing into Box.
   shouldForwardProp: (prop) => prop !== 'disabled' && prop !== 'readOnlyProp',
 })`
+  position: relative;
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
   ${(props) =>

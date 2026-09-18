@@ -782,10 +782,9 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
+                kind="toolbar"
                 icon={<GrommetClockIcon />}
-                plain
                 disabled={disabled}
-                margin={theme.timeInput?.button?.margin}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
                   messages,
