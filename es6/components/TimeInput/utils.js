@@ -24,12 +24,6 @@ export var getSectionName = function getSectionName(section, format, formatMessa
   if (format !== '12' && sectionType === 'meridiem') return undefined;
   return sectionName;
 };
-export var getRanges = function getRanges(format) {
-  if (format === '12') {
-    return [[0, 2], [3, 5], [6, 8], [9, 11]];
-  }
-  return [[0, 2], [3, 5], [6, 8]];
-};
 
 // TimeInput always transacts (value/defaultValue/onChange) in a canonical
 // 24-hour ISO time string ("HH:MM:SS"), regardless of the display `format`
@@ -82,47 +76,6 @@ export var sectionsToIsoTime = function sectionsToIsoTime(sections, format) {
   }
   return pad(hour24) + ":" + pad(sections.minute) + ":" + pad(sections.second);
 };
-export var parseTime = function parseTime(value, format) {
-  if (!value || typeof value !== 'string') return undefined;
-  var trimmed = value.trim().toUpperCase();
-  if (format === '12') {
-    var _match = trimmed.match(/^(\d{1,2}):(\d{2}):(\d{2})\s*(AM|PM)$/);
-    if (!_match) return undefined;
-    var _hour = Number(_match[1]);
-    var _minute = Number(_match[2]);
-    var _second = Number(_match[3]);
-    var period = _match[4];
-    if (Number.isNaN(_hour) || Number.isNaN(_minute) || Number.isNaN(_second) || _hour < 1 || _hour > 12 || _minute < 0 || _minute > 59 || _second < 0 || _second > 59) {
-      return undefined;
-    }
-    return {
-      hour: _hour,
-      minute: _minute,
-      second: _second,
-      period: period
-    };
-  }
-  var match = trimmed.match(/^(\d{1,2}):(\d{2}):(\d{2})$/);
-  if (!match) return undefined;
-  var hour = Number(match[1]);
-  var minute = Number(match[2]);
-  var second = Number(match[3]);
-  if (Number.isNaN(hour) || Number.isNaN(minute) || Number.isNaN(second) || hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59) {
-    return undefined;
-  }
-  return {
-    hour: hour,
-    minute: minute,
-    second: second
-  };
-};
-export var formatTime = function formatTime(time, format) {
-  if (!time) return undefined;
-  if (format === '12') {
-    return pad(time.hour) + ":" + pad(time.minute) + ":" + pad(time.second) + " " + (time.period || 'AM');
-  }
-  return pad(time.hour) + ":" + pad(time.minute) + ":" + pad(time.second);
-};
 export var defaultSections = function defaultSections(format) {
   return format === '12' ? {
     hour: undefined,
@@ -174,14 +127,4 @@ export var getSectionAriaMeta = function getSectionAriaMeta(_ref) {
     min: min,
     max: max
   };
-};
-export var getActiveSectionAriaMeta = function getActiveSectionAriaMeta(_ref2) {
-  var activeSection = _ref2.activeSection,
-    format = _ref2.format,
-    sections = _ref2.sections;
-  return getSectionAriaMeta({
-    section: activeSection,
-    format: format,
-    sections: sections
-  });
 };

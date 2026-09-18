@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.sectionsToIsoTime = exports.sectionTypeFromSection = exports.sectionMin = exports.sectionMax = exports.sectionKey = exports.parseTime = exports.normalizeToIsoTime = exports.isoTimeToSections = exports.hasAnyValue = exports.getSectionName = exports.getSectionAriaMeta = exports.getRanges = exports.getActiveSectionAriaMeta = exports.formatTime = exports.defaultSections = exports.defaultHourForFormat = exports.SECTION_SECOND = exports.SECTION_PERIOD = exports.SECTION_MINUTE = exports.SECTION_HOUR = exports.ISO_TIME_REGEX = void 0;
+exports.sectionsToIsoTime = exports.sectionTypeFromSection = exports.sectionMin = exports.sectionMax = exports.sectionKey = exports.normalizeToIsoTime = exports.isoTimeToSections = exports.hasAnyValue = exports.getSectionName = exports.getSectionAriaMeta = exports.defaultSections = exports.defaultHourForFormat = exports.SECTION_SECOND = exports.SECTION_PERIOD = exports.SECTION_MINUTE = exports.SECTION_HOUR = exports.ISO_TIME_REGEX = void 0;
 var _sectionHelpers = require("../../utils/sectionHelpers");
 var _dates = require("../../utils/dates");
 exports.pad = _dates.pad;
@@ -28,12 +28,6 @@ var getSectionName = exports.getSectionName = function getSectionName(section, f
   });
   if (format !== '12' && sectionType === 'meridiem') return undefined;
   return sectionName;
-};
-var getRanges = exports.getRanges = function getRanges(format) {
-  if (format === '12') {
-    return [[0, 2], [3, 5], [6, 8], [9, 11]];
-  }
-  return [[0, 2], [3, 5], [6, 8]];
 };
 
 // TimeInput always transacts (value/defaultValue/onChange) in a canonical
@@ -87,47 +81,6 @@ var sectionsToIsoTime = exports.sectionsToIsoTime = function sectionsToIsoTime(s
   }
   return (0, _dates.pad)(hour24) + ":" + (0, _dates.pad)(sections.minute) + ":" + (0, _dates.pad)(sections.second);
 };
-var parseTime = exports.parseTime = function parseTime(value, format) {
-  if (!value || typeof value !== 'string') return undefined;
-  var trimmed = value.trim().toUpperCase();
-  if (format === '12') {
-    var _match = trimmed.match(/^(\d{1,2}):(\d{2}):(\d{2})\s*(AM|PM)$/);
-    if (!_match) return undefined;
-    var _hour = Number(_match[1]);
-    var _minute = Number(_match[2]);
-    var _second = Number(_match[3]);
-    var period = _match[4];
-    if (Number.isNaN(_hour) || Number.isNaN(_minute) || Number.isNaN(_second) || _hour < 1 || _hour > 12 || _minute < 0 || _minute > 59 || _second < 0 || _second > 59) {
-      return undefined;
-    }
-    return {
-      hour: _hour,
-      minute: _minute,
-      second: _second,
-      period: period
-    };
-  }
-  var match = trimmed.match(/^(\d{1,2}):(\d{2}):(\d{2})$/);
-  if (!match) return undefined;
-  var hour = Number(match[1]);
-  var minute = Number(match[2]);
-  var second = Number(match[3]);
-  if (Number.isNaN(hour) || Number.isNaN(minute) || Number.isNaN(second) || hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59) {
-    return undefined;
-  }
-  return {
-    hour: hour,
-    minute: minute,
-    second: second
-  };
-};
-var formatTime = exports.formatTime = function formatTime(time, format) {
-  if (!time) return undefined;
-  if (format === '12') {
-    return (0, _dates.pad)(time.hour) + ":" + (0, _dates.pad)(time.minute) + ":" + (0, _dates.pad)(time.second) + " " + (time.period || 'AM');
-  }
-  return (0, _dates.pad)(time.hour) + ":" + (0, _dates.pad)(time.minute) + ":" + (0, _dates.pad)(time.second);
-};
 var defaultSections = exports.defaultSections = function defaultSections(format) {
   return format === '12' ? {
     hour: undefined,
@@ -179,14 +132,4 @@ var getSectionAriaMeta = exports.getSectionAriaMeta = function getSectionAriaMet
     min: min,
     max: max
   };
-};
-var getActiveSectionAriaMeta = exports.getActiveSectionAriaMeta = function getActiveSectionAriaMeta(_ref2) {
-  var activeSection = _ref2.activeSection,
-    format = _ref2.format,
-    sections = _ref2.sections;
-  return getSectionAriaMeta({
-    section: activeSection,
-    format: format,
-    sections: sections
-  });
 };
