@@ -242,11 +242,6 @@ export const useSectionedTimeField = ({
 
       if (current === undefined) {
         setSectionValue(section, minValue);
-        // if (section === SECTION_HOUR) {
-        //   setSectionValue(section, minValue);
-        // } else {
-        //   setSectionValue(section, delta > 0 ? minValue : maxValue);
-        // }
         return;
       }
 
