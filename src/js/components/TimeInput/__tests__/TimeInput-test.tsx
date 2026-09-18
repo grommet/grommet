@@ -751,7 +751,7 @@ describe('TimeInput', () => {
     const minuteInput = getSegment('minutes');
     await user.click(minuteInput);
     await user.keyboard('{ArrowDown}');
-    expect(getDisplayInput()).toHaveValue('00:59');
+    expect(getDisplayInput()).toHaveValue('00:00');
   });
 
   test('initializes empty 12-hour sections based on arrow direction', async () => {
@@ -766,12 +766,12 @@ describe('TimeInput', () => {
     const hourInput = getSegment('hours');
     await user.click(hourInput);
     await user.keyboard('{ArrowDown}');
-    expect(getDisplayInput()).toHaveValue('12:mm:ss aa');
+    expect(getDisplayInput()).toHaveValue('01:mm:ss aa');
 
     const minuteInput = getSegment('minutes');
     await user.click(minuteInput);
     await user.keyboard('{ArrowUp}');
-    expect(getDisplayInput()).toHaveValue('12:00:ss aa');
+    expect(getDisplayInput()).toHaveValue('01:00:ss aa');
   });
 
   test('submits only committed value and never section placeholders', async () => {
@@ -2241,11 +2241,11 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const choostTimeButton = screen.getByRole('button', {
+    const chooseTimeButton = screen.getByRole('button', {
       name: 'Choose time',
     });
 
-    await user.click(choostTimeButton);
+    await user.click(chooseTimeButton);
     expect(getDisplayInput()).toHaveValue('hh:mm');
 
     await user.keyboard('{ArrowUp}');

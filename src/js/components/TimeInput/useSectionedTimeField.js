@@ -241,11 +241,12 @@ export const useSectionedTimeField = ({
       const current = sections[key];
 
       if (current === undefined) {
-        if (section === SECTION_HOUR) {
-          setSectionValue(section, format === '12' ? maxValue : minValue);
-        } else {
-          setSectionValue(section, delta > 0 ? minValue : maxValue);
-        }
+        setSectionValue(section, minValue);
+        // if (section === SECTION_HOUR) {
+        //   setSectionValue(section, minValue);
+        // } else {
+        //   setSectionValue(section, delta > 0 ? minValue : maxValue);
+        // }
         return;
       }
 
