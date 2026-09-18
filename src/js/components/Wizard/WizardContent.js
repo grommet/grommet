@@ -17,6 +17,7 @@ export const WizardContent = ({ ...rest }) => {
     currentStepIndex,
     currentStepObj,
     totalSteps,
+    form,
     formValue,
     complete,
     next,
@@ -66,7 +67,16 @@ export const WizardContent = ({ ...rest }) => {
   const stepRender = currentStepObj.render || renderStep;
   const body = stepRender ? stepRender(currentStepObj, wizard) : null;
 
-  return (
+  const content = (
+    <Box {...contentTheme} flex="grow" {...rest}>
+      {body}
+      {validationError && (
+        <Notification status="critical" message={validationError} />
+      )}
+    </Box>
+  );
+
+  return form ? (
     <Form
       id={`${currentStep}-form`}
       value={formValue}
@@ -77,14 +87,9 @@ export const WizardContent = ({ ...rest }) => {
       data-form-valid="true"
       style={{ display: 'flex', flex: '1 1 auto' }}
     >
-      <Box {...contentTheme} flex="grow" {...rest}>
-        {body}
-        {validationError && (
-          <Notification status="critical" message={validationError} />
-        )}
-      </Box>
+      {content}
     </Form>
-  );
+  ) : content;
 };
 
 WizardContent.displayName = 'WizardContent';

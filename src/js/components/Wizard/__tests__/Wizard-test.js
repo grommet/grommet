@@ -53,6 +53,24 @@ describe('Wizard', () => {
     expect(screen.getByText('Step 1 of 3')).toBeTruthy();
   });
 
+  test('renders React node title without wrapping it in a heading', () => {
+    render(
+      <Grommet>
+        <Wizard
+          title={<span>Custom wizard title</span>}
+          steps={basicSteps}
+          renderStep={renderStep}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByText('Custom wizard title')).toBeTruthy();
+    expect(
+      screen.queryByRole('heading', { name: 'Custom wizard title' }),
+    ).toBeNull();
+  });
+
   test('renders the step at defaultStep when provided', () => {
     render(
       <Grommet>
