@@ -484,7 +484,8 @@ const TimeInput = forwardRef(
         const isSegmentFocused = Object.values(segmentRefs.current).includes(
           activeElement,
         );
-        if (!isSegmentFocused) {
+        const isInsideTimeInput = containerRef.current?.contains(activeElement);
+        if (!isSegmentFocused && !isInsideTimeInput) {
           setSegmentFocused(false);
         }
       });

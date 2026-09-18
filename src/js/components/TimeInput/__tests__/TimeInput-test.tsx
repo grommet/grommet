@@ -143,6 +143,28 @@ describe('TimeInput', () => {
     expect(meridiemSegment).toHaveFocus();
   });
 
+  test('keeps focus within the container while moving between segments', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet theme={{ global: { colors: { focus: '#FF0000' } } }}>
+        <TimeInput format="24" defaultValue="12:34:56" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    const minuteSegment = getSegment('minutes');
+    const container = screen.getByRole('group').parentElement
+      ?.parentElement as HTMLElement;
+
+    await user.click(hourSegment);
+    expect(hourSegment).toHaveFocus();
+
+    await user.keyboard('{ArrowRight}');
+    expect(minuteSegment).toHaveFocus();
+    expect(container).toContainElement(minuteSegment);
+  });
+
   test('keeps segment typing active for two-digit entry', async () => {
     const user = userEvent.setup();
 
