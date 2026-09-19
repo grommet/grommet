@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
@@ -42,6 +42,28 @@ describe('CheckBox', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('associates label and input with a generated id', () => {
+    render(
+      <Grommet>
+        <CheckBox label="test label" />
+      </Grommet>,
+    );
+    const input = screen.getByRole('checkbox', { name: 'test label' });
+    expect(input.id).toBeTruthy();
+    expect(input.closest('label')?.getAttribute('for')).toBe(input.id);
+  });
+
+  test('associates label and input with the provided id', () => {
+    render(
+      <Grommet>
+        <CheckBox id="custom-id" label="test label" />
+      </Grommet>,
+    );
+    const input = screen.getByRole('checkbox', { name: 'test label' });
+    expect(input.id).toBe('custom-id');
+    expect(input.closest('label')?.getAttribute('for')).toBe('custom-id');
   });
 
   test('renders without grommet wrapper', () => {
