@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { Image } from '../Image';
 import { StyledAvatar, StyledAvatarText } from './StyledAvatar';
@@ -35,15 +35,6 @@ const Avatar = ({
       width: avatarSize,
     }),
     [align, avatarSize, justify, round],
-  );
-
-  const AvatarChildren = useCallback(
-    () => (
-      <StyledAvatar {...avatarProps} {...rest}>
-        {children}
-      </StyledAvatar>
-    ),
-    [avatarProps, children, rest],
   );
 
   if (height || width) {
@@ -83,7 +74,11 @@ const Avatar = ({
     );
   }
 
-  return <AvatarChildren />;
+  return (
+    <StyledAvatar {...avatarProps} {...rest}>
+      {children}
+    </StyledAvatar>
+  );
 };
 
 Avatar.propTypes = AvatarPropTypes;
