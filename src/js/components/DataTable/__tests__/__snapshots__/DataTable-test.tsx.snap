@@ -3854,7 +3854,8 @@ exports[`DataTable custom theme 1`] = `
   padding: 6px 12px;
 }
 
-.c7:hover {
+.c7:hover,
+.c7:focus-visible {
   background-color: rgba(242, 242, 242, 1);
   color: #444444;
 }
@@ -4110,7 +4111,7 @@ exports[`DataTable custom theme 2`] = `
           >
             <button
               aria-labelledby="grommet-data-table-header-a-label grommet-data-table-header-a-sort-status"
-              class="StyledButton-sc-323bzc-0 fukeSz Header__StyledHeaderCellButton-sc-1baku5q-0 idAFoS"
+              class="StyledButton-sc-323bzc-0 fukeSz Header__StyledHeaderCellButton-sc-1baku5q-0 ZJQtp"
               type="button"
             >
               <div
