@@ -33,22 +33,6 @@ export const getSectionName = (section, format, formatMessage, messages) => {
   return sectionName;
 };
 
-export const getRanges = (format) => {
-  if (format === '12') {
-    return [
-      [0, 2],
-      [3, 5],
-      [6, 8],
-      [9, 11],
-    ];
-  }
-  return [
-    [0, 2],
-    [3, 5],
-    [6, 8],
-  ];
-};
-
 // TimeInput always transacts (value/defaultValue/onChange) in a canonical
 // 24-hour ISO time string ("HH:MM:SS"), regardless of the display `format`
 // prop.
@@ -108,70 +92,6 @@ export const sectionsToIsoTime = (sections, format) => {
   return `${pad(hour24)}:${pad(sections.minute)}:${pad(sections.second)}`;
 };
 
-export const parseTime = (value, format) => {
-  if (!value || typeof value !== 'string') return undefined;
-  const trimmed = value.trim().toUpperCase();
-
-  if (format === '12') {
-    const match = trimmed.match(/^(\d{1,2}):(\d{2}):(\d{2})\s*(AM|PM)$/);
-    if (!match) return undefined;
-
-    const hour = Number(match[1]);
-    const minute = Number(match[2]);
-    const second = Number(match[3]);
-    const period = match[4];
-
-    if (
-      Number.isNaN(hour) ||
-      Number.isNaN(minute) ||
-      Number.isNaN(second) ||
-      hour < 1 ||
-      hour > 12 ||
-      minute < 0 ||
-      minute > 59 ||
-      second < 0 ||
-      second > 59
-    ) {
-      return undefined;
-    }
-
-    return { hour, minute, second, period };
-  }
-
-  const match = trimmed.match(/^(\d{1,2}):(\d{2}):(\d{2})$/);
-  if (!match) return undefined;
-
-  const hour = Number(match[1]);
-  const minute = Number(match[2]);
-  const second = Number(match[3]);
-
-  if (
-    Number.isNaN(hour) ||
-    Number.isNaN(minute) ||
-    Number.isNaN(second) ||
-    hour < 0 ||
-    hour > 23 ||
-    minute < 0 ||
-    minute > 59 ||
-    second < 0 ||
-    second > 59
-  ) {
-    return undefined;
-  }
-
-  return { hour, minute, second };
-};
-
-export const formatTime = (time, format) => {
-  if (!time) return undefined;
-  if (format === '12') {
-    return `${pad(time.hour)}:${pad(time.minute)}:${pad(time.second)} ${
-      time.period || 'AM'
-    }`;
-  }
-  return `${pad(time.hour)}:${pad(time.minute)}:${pad(time.second)}`;
-};
-
 export const defaultSections = (format) =>
   format === '12'
     ? {
@@ -227,6 +147,3 @@ export const getSectionAriaMeta = ({ section, format, sections }) => {
 
   return { now, min, max };
 };
-
-export const getActiveSectionAriaMeta = ({ activeSection, format, sections }) =>
-  getSectionAriaMeta({ section: activeSection, format, sections });
