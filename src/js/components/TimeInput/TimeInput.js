@@ -148,6 +148,12 @@ const TimeInput = forwardRef(
       // maintaining the agreed external TimeInput API surface.
       plain: plainProp,
       focusIndicator: focusIndicatorProp,
+      // FormField injects these on error; they must reach the focusable
+      // spinbutton segments, not the aria-hidden mirror input, or a screen
+      // reader user focusing a segment never hears the error is invalid or
+      // where its description text lives.
+      'aria-describedby': ariaDescribedBy,
+      'aria-invalid': ariaInvalid,
       ...inputRest
     } = rest;
 
@@ -329,6 +335,11 @@ const TimeInput = forwardRef(
         };
       });
     }, [format, pendingDigits, sectionOrder, sections]);
+
+    // A required-field error is caused by whichever section(s) are still
+    // empty, so only announce it there; once every section has a value the
+    // error must be about the value as a whole, so announce it everywhere.
+    const allSectionsFilled = displaySections.every((entry) => entry.filled);
 
     const onDisplaySectionMouseDown = useCallback(
       (section, event) => {
@@ -707,54 +718,68 @@ const TimeInput = forwardRef(
                 {...passThemeFlag}
               >
                 {displaySections.map(
-                  ({ ariaMeta, section, prefix, text, filled }) => (
-                    <React.Fragment key={section}>
-                      {!!prefix && (
-                        <StyledTimeInputSeparator
-                          $filled={hasDisplayValue}
-                          {...passThemeFlag}
-                        >
-                          {prefix}
-                        </StyledTimeInputSeparator>
-                      )}
-                      <StyledTimeInputSegment
-                        ref={(segmentNode) => {
-                          segmentRefs.current[section] = segmentNode;
-                        }}
-                        tabIndex={
-                          !readOnly && !disabled && activeSection === section
-                            ? 0
-                            : -1
-                        }
-                        $active={showActiveSection && activeSection === section}
-                        $filled={filled}
-                        onFocus={() => onSegmentFocus(section)}
-                        onBlur={onSegmentBlur}
-                        onKeyDown={(event) => onSegmentKeyDown(section, event)}
-                        onPaste={onSegmentPaste}
-                        data-active={
-                          showActiveSection && activeSection === section
-                        }
-                        data-section={section}
-                        {...passThemeFlag}
-                        aria-label={getSectionName(
-                          section,
-                          format,
-                          formatMessage,
-                          messages,
+                  ({ ariaMeta, section, prefix, text, filled }) => {
+                    const describeSegment = !filled || allSectionsFilled;
+
+                    return (
+                      <React.Fragment key={section}>
+                        {!!prefix && (
+                          <StyledTimeInputSeparator
+                            $filled={hasDisplayValue}
+                            {...passThemeFlag}
+                          >
+                            {prefix}
+                          </StyledTimeInputSeparator>
                         )}
-                        role="spinbutton"
-                        aria-disabled={disabled || undefined}
-                        aria-readonly={readOnly || undefined}
-                        aria-valuenow={ariaMeta.now}
-                        aria-valuemin={ariaMeta.min}
-                        aria-valuemax={ariaMeta.max}
-                        aria-valuetext={getSectionValueAnnouncement(section)}
-                      >
-                        {text}
-                      </StyledTimeInputSegment>
-                    </React.Fragment>
-                  ),
+                        <StyledTimeInputSegment
+                          ref={(segmentNode) => {
+                            segmentRefs.current[section] = segmentNode;
+                          }}
+                          tabIndex={
+                            !readOnly && !disabled && activeSection === section
+                              ? 0
+                              : -1
+                          }
+                          $active={
+                            showActiveSection && activeSection === section
+                          }
+                          $filled={filled}
+                          onFocus={() => onSegmentFocus(section)}
+                          onBlur={onSegmentBlur}
+                          onKeyDown={(event) =>
+                            onSegmentKeyDown(section, event)
+                          }
+                          onPaste={onSegmentPaste}
+                          data-active={
+                            showActiveSection && activeSection === section
+                          }
+                          data-section={section}
+                          {...passThemeFlag}
+                          aria-label={getSectionName(
+                            section,
+                            format,
+                            formatMessage,
+                            messages,
+                          )}
+                          role="spinbutton"
+                          aria-disabled={disabled || undefined}
+                          aria-readonly={readOnly || undefined}
+                          aria-invalid={
+                            (ariaInvalid && describeSegment) || undefined
+                          }
+                          aria-describedby={
+                            describeSegment ? ariaDescribedBy : undefined
+                          }
+                          aria-valuenow={ariaMeta.now}
+                          aria-valuemin={ariaMeta.min}
+                          aria-valuemax={ariaMeta.max}
+                          aria-valuetext={getSectionValueAnnouncement(section)}
+                        >
+                          {text}
+                        </StyledTimeInputSegment>
+                      </React.Fragment>
+                    );
+                  },
                 )}
               </StyledTimeInputDisplay>
               <StyledTimeInput

@@ -486,6 +486,65 @@ describe('TimeInput', () => {
     expect(group).not.toHaveAttribute('aria-label');
   });
 
+  test('links FormField error text to every segment via aria-describedby/aria-invalid', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput id="appointment-time" name="value" format="24" />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    const errorMessage = screen.getByText('Time is required');
+    const errorId = errorMessage.getAttribute('id');
+    expect(errorId).toBeTruthy();
+
+    ['hours', 'minutes'].forEach((segmentName) => {
+      const segment = screen.getByRole('spinbutton', { name: segmentName });
+      expect(segment).toHaveAttribute('aria-invalid', 'true');
+      expect(segment).toHaveAttribute('aria-describedby', errorId);
+    });
+  });
+
+  test('scopes the FormField error to segments still missing a value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput id="appointment-time" name="value" format="24" />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('spinbutton', { name: 'minutes' }));
+    await user.keyboard('30');
+
+    const errorId = screen.getByText('Time is required').getAttribute('id');
+
+    const hoursSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hoursSegment).toHaveAttribute('aria-invalid', 'true');
+    expect(hoursSegment).toHaveAttribute('aria-describedby', errorId);
+
+    const minutesSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    expect(minutesSegment).not.toHaveAttribute('aria-invalid');
+    expect(minutesSegment).not.toHaveAttribute('aria-describedby');
+  });
+
   test('falls back to the inputLabel message when there is no FormField label', () => {
     render(
       <Grommet>
