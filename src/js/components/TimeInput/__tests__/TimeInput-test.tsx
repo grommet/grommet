@@ -653,6 +653,43 @@ describe('TimeInput', () => {
     expect(getSegment('seconds')).toHaveFocus();
   });
 
+  test('selects the expected section around a separator midpoint', () => {
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="12:34:56" />
+      </Grommet>,
+    );
+
+    const sections = [
+      [getSegment('hours'), 0, 20],
+      [getSegment('minutes'), 30, 50],
+      [getSegment('seconds'), 60, 80],
+      [getSegment('meridiem'), 90, 110],
+    ] as const;
+
+    sections.forEach(([segment, left, right]) => {
+      jest.spyOn(segment, 'getBoundingClientRect').mockReturnValue({
+        left,
+        right,
+      } as DOMRect);
+    });
+
+    const separator = screen.getAllByText(':')[0];
+    fireEvent.mouseDown(separator, {
+      button: 0,
+      clientX: 25,
+    });
+
+    expect(getSegment('hours')).toHaveFocus();
+
+    fireEvent.mouseDown(separator, {
+      button: 0,
+      clientX: 26,
+    });
+
+    expect(getSegment('minutes')).toHaveFocus();
+  });
+
   test('supports uncontrolled initial value', () => {
     render(
       <Grommet>

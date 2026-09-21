@@ -69,6 +69,26 @@ const buildPlaceholder = (sectionOrder) =>
     })
     .join('');
 
+const getSectionFromPointerPosition = (sectionBounds, position) => {
+  const boundsByPosition = [...sectionBounds].sort((a, b) => a.left - b.left);
+  const sectionFromBounds = boundsByPosition.find(
+    ({ left, right }) => position >= left && position <= right,
+  );
+
+  if (sectionFromBounds) return sectionFromBounds.section;
+
+  return boundsByPosition.find(({ left, right }, index) => {
+    const previous = boundsByPosition[index - 1];
+    const next = boundsByPosition[index + 1];
+    const start = previous
+      ? (previous.right + left) / 2
+      : Number.NEGATIVE_INFINITY;
+    const end = next ? (right + next.left) / 2 : Number.POSITIVE_INFINITY;
+
+    return position >= start && position <= end;
+  })?.section;
+};
+
 // When `format` isn't explicitly provided, default to the 12/24-hour
 // convention the browser's default locale uses, rather than hardcoding one.
 const getDefaultFormat = () => {
@@ -365,57 +385,23 @@ const TimeInput = forwardRef(
         );
 
         if (nodes.length) {
-          const x = event.clientX;
+          const sectionBounds = nodes
+            .map((node) => {
+              const section = Number(node.dataset.section);
+              if (Number.isNaN(section)) return undefined;
 
-          const sectionsWithRects = nodes
-            .map((node) => ({
-              node,
-              rect: node.getBoundingClientRect(),
-            }))
-            .sort((a, b) => a.rect.left - b.rect.left);
-
-          const sectionFromBounds = sectionsWithRects.find(
-            ({ rect }) => x >= rect.left && x <= rect.right,
+              const { left, right } = node.getBoundingClientRect();
+              return { section, left, right };
+            })
+            .filter(Boolean);
+          const section = getSectionFromPointerPosition(
+            sectionBounds,
+            event.clientX,
           );
 
-          if (sectionFromBounds?.node?.dataset?.section !== undefined) {
-            const section = Number(sectionFromBounds.node.dataset.section);
-            if (!Number.isNaN(section)) {
-              onDisplaySectionMouseDown(section, event);
-              return;
-            }
-          }
-
-          const zones = sectionsWithRects.map(({ rect }, index) => {
-            const prev = sectionsWithRects[index - 1];
-            const next = sectionsWithRects[index + 1];
-
-            const start =
-              prev !== undefined
-                ? (prev.rect.right + rect.left) / 2
-                : Number.NEGATIVE_INFINITY;
-            const end =
-              next !== undefined
-                ? (rect.right + next.rect.left) / 2
-                : Number.POSITIVE_INFINITY;
-
-            return { index, start, end };
-          });
-
-          const zone =
-            zones.find(({ start, end }) => x >= start && x <= end) ||
-            zones[0] ||
-            null;
-
-          if (zone) {
-            const matched = sectionsWithRects[zone.index]?.node;
-            if (matched?.dataset?.section !== undefined) {
-              const section = Number(matched.dataset.section);
-              if (!Number.isNaN(section)) {
-                onDisplaySectionMouseDown(section, event);
-                return;
-              }
-            }
+          if (section !== undefined) {
+            onDisplaySectionMouseDown(section, event);
+            return;
           }
         }
 
