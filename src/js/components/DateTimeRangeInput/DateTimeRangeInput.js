@@ -18,7 +18,9 @@ import { FormPrevious } from 'grommet-icons/icons/FormPrevious';
 
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
+import { ResponsiveContext } from '../../contexts/ResponsiveContext';
 import { useForwardedRef } from '../../utils';
+import { isSmall } from '../../utils/responsive';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -35,6 +37,7 @@ import {
   StyledDateTimeRangeInputField,
   StyledDateTimeRangeInputPicker,
   StyledDateTimeRangeInputPickerBody,
+  StyledDateTimeRangeInputTime,
   StyledDateTimeRangeInputSeparator,
 } from './StyledDateTimeRangeInput';
 import { DateTimeRangeInputPropTypes } from './propTypes';
@@ -228,9 +231,7 @@ const pickerReducer = (state, action) => {
         ? state
         : { ...state, phase: SELECTING_START };
     case 'activateEnd':
-      return state.draftStart && state.draftEnd
-        ? { ...state, phase: SELECTING_END }
-        : state;
+      return state.draftStart ? { ...state, phase: SELECTING_END } : state;
     case 'selectStart': {
       const nextStartTime = getTimestamp(action.value);
       const currentEndTime = getTimestamp(state.draftEnd);
@@ -313,6 +314,8 @@ const DateTimeRangeInput = forwardRef(
     const { theme, passThemeFlag } = useThemeValue();
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
+    const responsiveSize = useContext(ResponsiveContext);
+    const isSmallScreen = isSmall(responsiveSize);
     const formContext = useContext(FormContext);
     const { useFormInput } = formContext;
     const { inForm } = formContext.useFormField({});
@@ -326,7 +329,10 @@ const DateTimeRangeInput = forwardRef(
       pickerReducer,
       initialPickerState,
     );
-    const [inputResetKey, setInputResetKey] = useState(0);
+    const pickerWasOpenRef = useRef(false);
+    const focusCalendarRef = useRef(false);
+    const [calendarFocusKey, setCalendarFocusKey] = useState(0);
+    const [inlineDraft, setInlineDraft] = useState();
     const { open, phase, draftStart, draftEnd, selectedPreset } = pickerState;
 
     const [value, setValue] = useFormInput({
@@ -336,6 +342,12 @@ const DateTimeRangeInput = forwardRef(
     });
 
     const [start, end] = value || [];
+    const inlineStart = inlineDraft ? inlineDraft[0] : start;
+    const inlineEnd = inlineDraft ? inlineDraft[1] : end;
+
+    useEffect(() => {
+      setInlineDraft(undefined);
+    }, [end, start]);
 
     const selectedRange = rangesMatch(value, selectedPreset?.value)
       ? ranges?.find(({ id: rangeId }) => rangeId === selectedPreset?.id)
@@ -345,8 +357,8 @@ const DateTimeRangeInput = forwardRef(
     let activeRangePart;
     if (phase === SELECTING_START) activeRangePart = 'start';
     else if (phase === SELECTING_END) activeRangePart = 'end';
-    const effectiveStart = open ? draftStart : start;
-    const effectiveEnd = open ? draftEnd : end;
+    const effectiveStart = open ? draftStart : inlineStart;
+    const effectiveEnd = open ? draftEnd : inlineEnd;
     const rangeInvalid = isRangeInvalid(effectiveStart, effectiveEnd);
     const boundsInvalid =
       !rangeInvalid &&
@@ -416,15 +428,16 @@ const DateTimeRangeInput = forwardRef(
     );
 
     const commit = useCallback(
-      (nextStart, nextEnd) => {
+      (nextStart, nextEnd, { preserveInvalidDraft = false } = {}) => {
         if (
           isRangeInvalid(nextStart, nextEnd) ||
           !isRangeWithinDateBounds([nextStart, nextEnd], minDate, maxDate)
         ) {
-          setInputResetKey((key) => key + 1);
+          if (preserveInvalidDraft) setInlineDraft([nextStart, nextEnd]);
           return false;
         }
         const nextValue = [nextStart, nextEnd];
+        setInlineDraft(undefined);
         setValue(nextValue);
         onChange?.({ value: nextValue });
         return true;
@@ -478,6 +491,8 @@ const DateTimeRangeInput = forwardRef(
     );
 
     const openCustomRange = useCallback(() => {
+      focusCalendarRef.current = true;
+      setCalendarFocusKey((key) => key + 1);
       dispatch({ type: 'openCustom' });
     }, []);
 
@@ -582,9 +597,16 @@ const DateTimeRangeInput = forwardRef(
       nextRange &&
       isRangeWithinDateBounds(nextRange, minDate, maxDate);
 
+    const focusCalendarOnOpen =
+      (open && !pickerWasOpenRef.current) || focusCalendarRef.current;
+    useEffect(() => {
+      pickerWasOpenRef.current = open;
+      focusCalendarRef.current = false;
+    }, [open, phase]);
+
     const calendar = (
       <Calendar
-        key={phase}
+        key={calendarFocusKey}
         range={selectingSingleStart ? undefined : 'array'}
         activeDate={selectingSingleStart ? undefined : activeRangePart}
         date={selectingSingleStart ? effectiveStart : undefined}
@@ -592,7 +614,7 @@ const DateTimeRangeInput = forwardRef(
         disabled={
           disabledCalendarDates.length ? disabledCalendarDates : undefined
         }
-        initialFocus={open ? 'days' : undefined}
+        initialFocus={focusCalendarOnOpen ? 'days' : undefined}
         onSelect={activeRangePart ? selectCalendarDate : undefined}
       />
     );
@@ -697,7 +719,6 @@ const DateTimeRangeInput = forwardRef(
                       width={theme.dateTimeRangeInput?.field?.width}
                     >
                       <DateTimeInput
-                        key={`start-${inputResetKey}`}
                         aria-invalid={ariaInvalid || invalid}
                         disabled={disabled}
                         focusIndicator={false}
@@ -717,7 +738,11 @@ const DateTimeRangeInput = forwardRef(
                           dispatch({ type: 'clearPreset' });
                           if (open) {
                             dispatch({ type: 'selectStart', value: nextStart });
-                          } else commit(nextStart, end);
+                          } else {
+                            commit(nextStart, end, {
+                              preserveInvalidDraft: true,
+                            });
+                          }
                         }}
                       />
                     </StyledDateTimeRangeInputField>
@@ -748,7 +773,6 @@ const DateTimeRangeInput = forwardRef(
                       width={theme.dateTimeRangeInput?.field?.width}
                     >
                       <DateTimeInput
-                        key={`end-${inputResetKey}`}
                         aria-invalid={ariaInvalid || invalid}
                         disabled={disabled}
                         focusIndicator={false}
@@ -765,7 +789,11 @@ const DateTimeRangeInput = forwardRef(
                           dispatch({ type: 'clearPreset' });
                           if (open) {
                             dispatch({ type: 'selectEnd', value: nextEnd });
-                          } else commit(start, nextEnd);
+                          } else {
+                            commit(start, nextEnd, {
+                              preserveInvalidDraft: true,
+                            });
+                          }
                         }}
                       />
                     </StyledDateTimeRangeInputField>
@@ -813,19 +841,28 @@ const DateTimeRangeInput = forwardRef(
             target={fieldRef.current}
             align={{ top: 'bottom', left: 'left' }}
             overflow="hidden"
+            trapFocus={false}
             onEsc={closePickerAndRestoreFocus}
             onClickOutside={closePicker}
           >
-            <StyledDateTimeRangeInputDrop direction="row" {...passThemeFlag}>
+            <StyledDateTimeRangeInputDrop
+              direction="row"
+              $smallScreen={isSmallScreen}
+              {...passThemeFlag}
+            >
               {ranges?.length > 0 && (
                 <Box
                   flex={false}
                   background={theme.dateTimeRangeInput?.presets?.background}
-                  width={theme.dateTimeRangeInput?.presets?.width}
+                  width={
+                    isSmallScreen
+                      ? '100%'
+                      : theme.dateTimeRangeInput?.presets?.width
+                  }
                   pad={theme.dateTimeRangeInput?.presets?.pad}
                   gap={theme.dateTimeRangeInput?.presets?.gap}
                   border={{
-                    side: 'end',
+                    side: isSmallScreen ? 'bottom' : 'end',
                     color: theme.dateTimeRangeInput?.presets?.border?.color,
                     size: theme.dateTimeRangeInput?.presets?.border?.size,
                   }}
@@ -863,6 +900,7 @@ const DateTimeRangeInput = forwardRef(
               >
                 <StyledDateTimeRangeInputPickerBody
                   direction="row"
+                  $smallScreen={isSmallScreen}
                   pad={theme.dateTimeInput?.drop?.pad}
                   gap={theme.dateTimeInput?.drop?.gap}
                   {...passThemeFlag}
@@ -872,46 +910,51 @@ const DateTimeRangeInput = forwardRef(
                     alignSelf="stretch"
                     flex={false}
                     border={{
-                      side: 'start',
+                      side: isSmallScreen ? 'top' : 'start',
                       color: theme.dateTimeInput?.drop?.border?.color,
                       size: theme.dateTimeInput?.drop?.border?.size,
                     }}
                   />
-                  <TimeInput
-                    inline
-                    focusPopupOnMount={false}
-                    format={format}
-                    value={activeTimeValue}
-                    showSeconds={showSeconds}
-                    messages={messages}
-                    minuteStep={minuteStep}
-                    disabled={
-                      disabled || !activeRangeValue || !editingCustomRange
-                    }
-                    readOnly={readOnly || !editingCustomRange}
-                    onChange={({ value: nextTime }) => {
-                      if (!nextTime || !activeRangeValue) return;
-                      if (activeRangePart === 'end') {
-                        dispatch({
-                          type: 'setTime',
-                          part: 'end',
-                          value: applyIsoTimeToDateTime(
-                            draftEnd || draftStart,
-                            nextTime,
-                          ),
-                        });
-                      } else {
-                        dispatch({
-                          type: 'setTime',
-                          part: 'start',
-                          value: applyIsoTimeToDateTime(
-                            draftStart || draftEnd,
-                            nextTime,
-                          ),
-                        });
+                  <StyledDateTimeRangeInputTime
+                    flex={false}
+                    $smallScreen={isSmallScreen}
+                  >
+                    <TimeInput
+                      inline
+                      focusPopupOnMount={false}
+                      format={format}
+                      value={activeTimeValue}
+                      showSeconds={showSeconds}
+                      messages={messages}
+                      minuteStep={minuteStep}
+                      disabled={
+                        disabled || !activeRangeValue || !editingCustomRange
                       }
-                    }}
-                  />
+                      readOnly={readOnly || !editingCustomRange}
+                      onChange={({ value: nextTime }) => {
+                        if (!nextTime || !activeRangeValue) return;
+                        if (activeRangePart === 'end') {
+                          dispatch({
+                            type: 'setTime',
+                            part: 'end',
+                            value: applyIsoTimeToDateTime(
+                              draftEnd || draftStart,
+                              nextTime,
+                            ),
+                          });
+                        } else {
+                          dispatch({
+                            type: 'setTime',
+                            part: 'start',
+                            value: applyIsoTimeToDateTime(
+                              draftStart || draftEnd,
+                              nextTime,
+                            ),
+                          });
+                        }
+                      }}
+                    />
+                  </StyledDateTimeRangeInputTime>
                 </StyledDateTimeRangeInputPickerBody>
                 {invalid && editingCustomRange && (
                   <Box pad={{ horizontal: 'small', bottom: 'xsmall' }}>
@@ -965,7 +1008,11 @@ const DateTimeRangeInput = forwardRef(
                         messages,
                       })}
                       disabled={!draftStart}
-                      onClick={() => dispatch({ type: 'next' })}
+                      onClick={() => {
+                        focusCalendarRef.current = true;
+                        setCalendarFocusKey((key) => key + 1);
+                        dispatch({ type: 'next' });
+                      }}
                     />
                   ) : (
                     <Button

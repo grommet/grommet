@@ -1913,7 +1913,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
     const hour4 = within(hourList).getByRole('option', { name: '04 hours' });
     const hour7 = within(hourList).getByRole('option', { name: '07 hours' });
 

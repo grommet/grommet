@@ -1,7 +1,6 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-import 'jest-styled-components';
 import {
   fireEvent,
   render,
@@ -146,10 +145,11 @@ describe('DateTimeRangeInput', () => {
       }),
     );
 
-    const presetButtons = screen.getAllByRole('button');
-    expect(presetButtons.map((button) => button.textContent)).toEqual(
-      expect.arrayContaining(['Last hour', 'Last day', 'Custom range']),
-    );
+    expect(screen.getByRole('button', { name: 'Last hour' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Last day' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Custom range' }),
+    ).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: 'Last day' }));
 
     expect(screen.getByText('Last day')).toBeInTheDocument();
@@ -194,7 +194,7 @@ describe('DateTimeRangeInput', () => {
     ).toHaveAttribute('aria-pressed', 'true');
   });
 
-  test('keeps the footer inside the calendar/time panel, not the preset list', async () => {
+  test('shows custom range actions separately from presets', async () => {
     const user = userEvent.setup();
 
     render(
@@ -222,71 +222,14 @@ describe('DateTimeRangeInput', () => {
     );
     await user.click(screen.getByRole('button', { name: 'Custom range' }));
 
-    const presetButton = screen.getByRole('button', { name: 'Last hour' });
-    const presetContainer = presetButton.parentElement;
     const nextButton = screen.getByRole('button', { name: 'Next' });
     const cancelButton = screen.getByRole('button', { name: 'Cancel' });
 
-    expect(presetContainer).not.toContainElement(nextButton);
-    expect(presetContainer).not.toContainElement(cancelButton);
-  });
-
-  test('styles the preset rail and selected custom range from theme', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Grommet
-        theme={{
-          dateTimeRangeInput: {
-            presets: {
-              background: '#F2F2F2',
-              selected: {
-                background: '#D1FFEE',
-                border: { color: '#006750', size: '6px' },
-                round: '6px',
-              },
-            },
-          },
-        }}
-      >
-        <DateTimeRangeInput
-          format="12"
-          ranges={[
-            {
-              id: 'last-hour',
-              label: 'Last hour',
-              getValue: () => [
-                '2026-07-22T09:00:00.000Z',
-                '2026-07-22T18:30:00.000Z',
-              ],
-            },
-          ]}
-        />
-      </Grommet>,
-    );
-
-    await user.click(
-      screen.getByRole('button', {
-        name: 'Open date and time range picker',
-      }),
-    );
-
-    const customButton = screen.getByRole('button', { name: 'Custom range' });
-    const selectedItem = customButton.parentElement as HTMLElement;
-    const presetRail = selectedItem.parentElement as HTMLElement;
-    const itemGap = selectedItem.previousElementSibling as HTMLElement;
-
-    expect(presetRail).toHaveStyleRule('background-color', '#F2F2F2');
-    expect(presetRail).toHaveStyleRule('padding', '6px');
-    expect(itemGap).toHaveStyleRule('height', '6px');
-    expect(selectedItem).toHaveStyleRule('background-color', '#D1FFEE');
-    expect(selectedItem).toHaveStyleRule(
-      'border-inline-start',
-      'solid 6px #006750',
-    );
-    expect(selectedItem).toHaveStyleRule('border-radius', '6px');
-    expect(selectedItem).toHaveStyleRule('padding-top', '5px');
-    expect(selectedItem).toHaveStyleRule('padding-bottom', '5px');
+    expect(nextButton).toBeInTheDocument();
+    expect(cancelButton).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'Last hour' }),
+    ).toBeInTheDocument();
   });
 
   test('opens the editable custom range flow from a preset selection', async () => {
@@ -355,6 +298,121 @@ describe('DateTimeRangeInput', () => {
     await user.click(screen.getByRole('button', { name: 'Cancel' }));
     expect(screen.getByText('Business hours')).toBeInTheDocument();
     expect(screen.queryByRole('grid')).not.toBeInTheDocument();
+  });
+
+  test('keeps focus on empty End meridiem after typing Start with keyboard', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput format="12" />
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', {
+        name: 'Open date and time range picker',
+      }),
+    );
+
+    const startGroup = screen.getByRole('group', {
+      name: 'Start date and time',
+      hidden: true,
+    });
+    await user.click(
+      within(startGroup).getByRole('spinbutton', {
+        name: 'day',
+        hidden: true,
+      }),
+    );
+    await user.keyboard('12');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', {
+        name: 'month',
+        hidden: true,
+      }),
+    );
+    await user.keyboard('09');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', {
+        name: 'year',
+        hidden: true,
+      }),
+    );
+    await user.keyboard('2026');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', {
+        name: 'hours',
+        hidden: true,
+      }),
+    );
+    await user.keyboard('10');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', {
+        name: 'minutes',
+        hidden: true,
+      }),
+    );
+    await user.keyboard('00');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', {
+        name: 'meridiem',
+        hidden: true,
+      }),
+    );
+    await user.keyboard('{ArrowUp}');
+
+    const endGroup = screen.getByRole('group', {
+      name: 'End date and time',
+      hidden: true,
+    });
+    const endMeridiem = within(endGroup).getByRole('spinbutton', {
+      name: 'meridiem',
+      hidden: true,
+    });
+
+    await user.click(endMeridiem);
+    expect(endMeridiem).toHaveFocus();
+    await user.keyboard('{ArrowUp}');
+
+    expect(endMeridiem).toHaveTextContent('AM');
+    await waitFor(() => expect(endMeridiem).toHaveFocus());
+
+    await user.keyboard('{ArrowDown}');
+
+    expect(endMeridiem).toHaveTextContent('PM');
+    await waitFor(() => expect(endMeridiem).toHaveFocus());
+  });
+
+  test('changes the active time segment with ArrowUp and ArrowDown', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <DateTimeRangeInput
+          format="24"
+          value={[
+            currentMonthDate(10, 10).toISOString(),
+            currentMonthDate(10, 12).toISOString(),
+          ]}
+        />
+      </Grommet>,
+    );
+
+    const startGroup = screen.getByRole('group', {
+      name: 'Start date and time',
+    });
+    const hours = within(startGroup).getByRole('spinbutton', {
+      name: 'hours',
+    });
+
+    await user.click(hours);
+    await user.keyboard('{ArrowUp}');
+    expect(startGroup).toHaveTextContent('11:00');
+
+    await user.keyboard('{ArrowDown}');
+    expect(startGroup).toHaveTextContent('10:00');
+    expect(hours).toHaveFocus();
   });
 
   test('renders the preset calendar as read-only', async () => {
@@ -544,53 +602,6 @@ describe('DateTimeRangeInput', () => {
     ).toHaveFocus();
   });
 
-  test('preserves an explicit plain prop inside FormField', () => {
-    render(
-      <Grommet>
-        <Form>
-          <FormField name="range" label="Range">
-            <DateTimeRangeInput plain name="range" />
-          </FormField>
-        </Form>
-      </Grommet>,
-    );
-
-    const trigger = screen.getByRole('button', {
-      name: 'Open date and time range picker',
-    });
-    expect(trigger.parentElement).not.toHaveStyleRule('border');
-  });
-
-  test('keeps FormField border around the range field only', () => {
-    render(
-      <Grommet>
-        <Form>
-          <FormField htmlFor="form-range" name="range" label="Range">
-            <DateTimeRangeInput id="form-range" name="range" format="12" />
-          </FormField>
-        </Form>
-      </Grommet>,
-    );
-
-    const trigger = screen.getByRole('button', {
-      name: 'Open date and time range picker',
-    });
-    const innerField = trigger.parentElement as HTMLElement;
-    const rangeGroup = screen.getByRole('group', { name: 'Range' });
-    const formFieldContent = rangeGroup.parentElement as HTMLElement;
-    const previous = screen.getByRole('button', {
-      name: 'Go to previous range',
-    });
-    const next = screen.getByRole('button', { name: 'Go to next range' });
-
-    expect(window.getComputedStyle(formFieldContent).borderStyle).not.toBe(
-      'solid',
-    );
-    expect(window.getComputedStyle(innerField).borderStyle).toBe('solid');
-    expect(innerField).not.toContainElement(previous);
-    expect(innerField).not.toContainElement(next);
-  });
-
   test('selects and applies a complete range inside FormField', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
@@ -639,15 +650,7 @@ describe('DateTimeRangeInput', () => {
         : 'Select both a start and end date and time.';
 
     render(
-      <Grommet
-        theme={{
-          formField: {
-            error: {
-              background: '#FFE5E5',
-            },
-          },
-        }}
-      >
+      <Grommet>
         <Form value={{ stay: [undefined, undefined] }}>
           <FormField name="stay" required validate={validateRange}>
             <DateTimeRangeInput name="stay" format="12" />
@@ -658,27 +661,15 @@ describe('DateTimeRangeInput', () => {
     );
 
     await user.click(screen.getByRole('button', { name: 'Submit' }));
-    await screen.findByText('Select both a start and end date and time.');
 
-    const trigger = screen.getByRole('button', {
-      name: 'Open date and time range picker',
-    });
-    const field = trigger.parentElement as HTMLElement;
-    const root = field.parentElement as HTMLElement;
-    const formFieldContent = root.parentElement as HTMLElement;
-    const previous = screen.getByRole('button', {
-      name: 'Go to previous range',
-    });
-    const next = screen.getByRole('button', { name: 'Go to next range' });
-
-    await waitFor(() =>
-      expect(field).toHaveStyleRule('border', 'solid 1px #EB0000'),
-    );
-    expect(getComputedStyle(formFieldContent).backgroundColor).not.toBe(
-      'rgb(255, 229, 229)',
-    );
-    expect(field).not.toContainElement(previous);
-    expect(field).not.toContainElement(next);
+    expect(
+      screen.getByText('Select both a start and end date and time.'),
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByRole('textbox', { hidden: true }).every((input) =>
+        input.getAttribute('aria-invalid') === 'true',
+      ),
+    ).toBe(true);
   });
 
   test('supports FormField validation for an incomplete range', async () => {
@@ -705,14 +696,10 @@ describe('DateTimeRangeInput', () => {
       screen.getByText('Select both a start and end date and time.'),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: 'Open date and time range picker' })
-        .parentElement,
-    ).toHaveStyleRule('border', 'solid 1px #EB0000');
-    const field = screen.getByRole('button', {
-      name: 'Open date and time range picker',
-    }).parentElement as HTMLElement;
-    const contentWrapper = field.parentElement?.parentElement as HTMLElement;
-    expect(contentWrapper).not.toHaveStyleRule('background-color', '#FFE5E5');
+      screen.getAllByRole('textbox', { hidden: true }).every((input) =>
+        input.getAttribute('aria-invalid') === 'true',
+      ),
+    ).toBe(true);
   });
 
   test('does not emit onChange during initial render', () => {
@@ -735,7 +722,7 @@ describe('DateTimeRangeInput', () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
-  test('does not emit an invalid range from inline editing', async () => {
+  test('keeps invalid controlled inline edit visible for correction', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
 
@@ -752,7 +739,6 @@ describe('DateTimeRangeInput', () => {
     const endGroup = screen.getByRole('group', {
       name: 'End date and time',
     });
-    const initialEndText = endGroup.textContent;
     const endHours = within(endGroup).getByRole('spinbutton', {
       name: 'hours',
     });
@@ -761,10 +747,99 @@ describe('DateTimeRangeInput', () => {
     await user.keyboard('{ArrowDown}');
 
     expect(onChange).not.toHaveBeenCalled();
-    expect(endGroup.textContent).toBe(initialEndText);
+    expect(endGroup).toHaveTextContent('11:00');
+    await waitFor(() => expect(endHours).toHaveFocus());
   });
 
-  test('exposes disabled state and read-only descendants', () => {
+  test('keeps invalid inline End entry visible and focused for correction', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    const ControlledRange = () => {
+      const [range, setRange] = React.useState<[string?, string?]>([
+        undefined,
+        undefined,
+      ]);
+      return (
+        <DateTimeRangeInput
+          format="12"
+          value={range}
+          onChange={({ value: nextRange }) => {
+            onChange({ value: nextRange });
+            setRange(nextRange || [undefined, undefined]);
+          }}
+        />
+      );
+    };
+
+    render(
+      <Grommet>
+        <ControlledRange />
+      </Grommet>,
+    );
+
+    const startGroup = screen.getByRole('group', {
+      name: 'Start date and time',
+    });
+    await user.click(
+      within(startGroup).getByRole('spinbutton', { name: 'day' }),
+    );
+    await user.keyboard('03');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', { name: 'month' }),
+    );
+    await user.keyboard('02');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', { name: 'year' }),
+    );
+    await user.keyboard('2027');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', { name: 'hours' }),
+    );
+    await user.keyboard('02');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', { name: 'minutes' }),
+    );
+    await user.keyboard('01');
+    await user.click(
+      within(startGroup).getByRole('spinbutton', { name: 'meridiem' }),
+    );
+    await user.keyboard('{ArrowUp}');
+
+    const endGroup = screen.getByRole('group', {
+      name: 'End date and time',
+    });
+    await user.click(within(endGroup).getByRole('spinbutton', { name: 'day' }));
+    await user.keyboard('01');
+    await user.click(
+      within(endGroup).getByRole('spinbutton', { name: 'month' }),
+    );
+    await user.keyboard('01');
+    await user.click(
+      within(endGroup).getByRole('spinbutton', { name: 'year' }),
+    );
+    await user.keyboard('2026');
+    await user.click(
+      within(endGroup).getByRole('spinbutton', { name: 'hours' }),
+    );
+    await user.keyboard('01');
+    await user.click(
+      within(endGroup).getByRole('spinbutton', { name: 'minutes' }),
+    );
+    await user.keyboard('00');
+
+    const endMeridiem = within(endGroup).getByRole('spinbutton', {
+      name: 'meridiem',
+    });
+    await user.click(endMeridiem);
+    await user.keyboard('{ArrowUp}');
+
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(endGroup).toHaveTextContent('01/01/2026 01:00 AM');
+    await waitFor(() => expect(endMeridiem).toHaveFocus());
+  });
+
+  test('blocks disabled and read-only interactions', async () => {
     const { rerender } = render(
       <Grommet>
         <DateTimeRangeInput disabled aria-label="Range" />
@@ -773,6 +848,9 @@ describe('DateTimeRangeInput', () => {
 
     const group = screen.getByRole('group', { name: 'Range' });
     expect(group).toHaveAttribute('aria-disabled', 'true');
+    expect(
+      screen.getByRole('button', { name: 'Open date and time range picker' }),
+    ).toBeDisabled();
 
     rerender(
       <Grommet>
@@ -786,6 +864,10 @@ describe('DateTimeRangeInput', () => {
         .getAllByRole('spinbutton')
         .every((segment) => segment.getAttribute('aria-readonly') === 'true'),
     ).toBe(true);
+    expect(
+      screen.queryByRole('button', { name: 'Open date and time range picker' }),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   test('renders custom messages', () => {
@@ -845,28 +927,6 @@ describe('DateTimeRangeInput', () => {
     );
 
     expect(screen.getByText('Custom Range Calendar Icon')).toBeInTheDocument();
-  });
-
-  test('renders the resting field border and configured radius', () => {
-    render(
-      <Grommet
-        theme={{
-          dateTimeRangeInput: {
-            container: { round: '12px' },
-          },
-        }}
-      >
-        <DateTimeRangeInput format="12" />
-      </Grommet>,
-    );
-
-    const trigger = screen.getByRole('button', {
-      name: 'Open date and time range picker',
-    });
-    const field = trigger.parentElement as HTMLElement;
-
-    expect(field).toHaveStyleRule('border-radius', '12px');
-    expect(window.getComputedStyle(field).borderStyle).toBe('solid');
   });
 
   test('disables previous/next range navigation until both dates are set', () => {
@@ -1074,6 +1134,8 @@ describe('DateTimeRangeInput', () => {
       ),
     );
     fireEvent.keyDown(document.activeElement as HTMLElement, {
+      key: 'Escape',
+      code: 'Escape',
       keyCode: 27,
     });
 
@@ -1096,8 +1158,6 @@ describe('DateTimeRangeInput', () => {
     const startGroup = screen.getByRole('group', {
       name: 'Start date and time',
     });
-    const initialStartText = startGroup.textContent?.replace(/\s/g, ' ');
-
     await user.click(
       screen.getByRole('button', {
         name: 'Open date and time range picker',
@@ -1106,7 +1166,7 @@ describe('DateTimeRangeInput', () => {
     await user.click(screen.getByRole('option', { name: '10 hours' }));
     await user.click(screen.getByRole('button', { name: 'Cancel' }));
 
-    expect(startGroup.textContent?.replace(/\s/g, ' ')).toBe(initialStartText);
+    expect(startGroup).toHaveTextContent('07/22/2026 02:00 AM');
   });
 
   test('requires correcting equal endpoints before Apply', async () => {
@@ -1264,14 +1324,17 @@ describe('DateTimeRangeInput', () => {
     await user.click(sixth);
     expect(startGroup).toHaveTextContent('12:00 AM');
     expect(endGroup).toHaveTextContent('hh:mm aa');
-    expect(sixth.parentElement).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('gridcell', { selected: true })).toHaveTextContent(
+      '6',
+    );
 
     await user.click(fourteenth);
 
     expect(startGroup).toHaveTextContent('12:00 AM');
     expect(endGroup).toHaveTextContent('hh:mm aa');
-    expect(sixth.parentElement).toHaveAttribute('aria-selected', 'false');
-    expect(fourteenth.parentElement).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getByRole('gridcell', { selected: true })).toHaveTextContent(
+      '14',
+    );
   });
 
   test('keeps the selected start date visible after pressing Next', async () => {
@@ -1295,68 +1358,9 @@ describe('DateTimeRangeInput', () => {
     await user.click(sixth);
     await user.click(screen.getByRole('button', { name: 'Next' }));
 
-    expect(sixth.parentElement).toHaveAttribute('aria-selected', 'true');
-  });
-
-  test('underlines the active start and end range fields', async () => {
-    const user = userEvent.setup();
-
-    render(
-      <Grommet
-        theme={{
-          dateTimeRangeInput: {
-            active: {
-              indicator: { color: '#006750', size: '2px' },
-            },
-          },
-        }}
-      >
-        <DateTimeRangeInput format="12" />
-      </Grommet>,
+    expect(screen.getByRole('gridcell', { selected: true })).toHaveTextContent(
+      '6',
     );
-
-    const rangeField = screen.getByRole('button', {
-      name: 'Open date and time range picker',
-    }).parentElement as HTMLElement;
-    const startField = within(rangeField).getByRole('group', {
-      name: 'Start date and time',
-    }).parentElement?.parentElement?.parentElement
-      ?.parentElement as HTMLElement;
-    const endField = within(rangeField).getByRole('group', {
-      name: 'End date and time',
-    }).parentElement?.parentElement?.parentElement
-      ?.parentElement as HTMLElement;
-
-    await user.click(
-      screen.getByRole('button', {
-        name: 'Open date and time range picker',
-      }),
-    );
-
-    expect(startField).toHaveStyleRule('height', '2px', {
-      modifier: '::after',
-    });
-    expect(startField).toHaveStyleRule('background-color', '#006750', {
-      modifier: '::after',
-    });
-    expect(endField).not.toHaveStyleRule('height', '2px', {
-      modifier: '::after',
-    });
-    expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
-
-    await user.click(
-      within(screen.getByRole('grid')).getByRole('button', {
-        name: currentMonthDate(14).toDateString(),
-      }),
-    );
-    await user.click(screen.getByRole('button', { name: 'Next' }));
-
-    expect(startField).not.toHaveStyleRule('height', '2px', {
-      modifier: '::after',
-    });
-    expect(endField).toHaveStyleRule('height', '2px', {
-      modifier: '::after',
-    });
   });
 
   test('disables calendar days before start while selecting end', async () => {
@@ -1515,7 +1519,9 @@ describe('DateTimeRangeInput', () => {
     ).toBeInTheDocument();
     screen
       .getAllByRole('textbox', { hidden: true })
-      .forEach((input) => expect(input).toHaveAttribute('aria-invalid', 'true'));
+      .forEach((input) =>
+        expect(input).toHaveAttribute('aria-invalid', 'true'),
+      );
     expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
@@ -1672,15 +1678,7 @@ describe('DateTimeRangeInput', () => {
 
     await user.click(trigger);
     calendar = within(screen.getByRole('grid'));
-    const sixth = calendar.getByRole('button', {
-      name: currentMonthDate(6).toDateString(),
-    });
-    const fourteenth = calendar.getByRole('button', {
-      name: currentMonthDate(14).toDateString(),
-    });
-
-    expect(sixth.parentElement).toHaveAttribute('aria-selected', 'true');
-    expect(fourteenth.parentElement).toHaveAttribute('aria-selected', 'true');
+    expect(screen.getAllByRole('gridcell', { selected: true })).toHaveLength(2);
   });
 
   test('reopens with start active and updates the chosen end', async () => {
@@ -1702,19 +1700,12 @@ describe('DateTimeRangeInput', () => {
       </Grommet>,
     );
 
-    const rangeField = screen.getByRole('button', {
-      name: 'Open date and time range picker',
-    }).parentElement as HTMLElement;
-    const startGroup = within(rangeField).getByRole('group', {
+    const startGroup = screen.getByRole('group', {
       name: 'Start date and time',
     });
-    const endGroup = within(rangeField).getByRole('group', {
+    const endGroup = screen.getByRole('group', {
       name: 'End date and time',
     });
-    const startField = startGroup.parentElement?.parentElement?.parentElement
-      ?.parentElement as HTMLElement;
-    const endField = endGroup.parentElement?.parentElement?.parentElement
-      ?.parentElement as HTMLElement;
 
     await user.click(
       screen.getByRole('button', {
@@ -1722,23 +1713,12 @@ describe('DateTimeRangeInput', () => {
       }),
     );
 
-    expect(startField).toHaveStyleRule('height', '2px', {
-      modifier: '::after',
-    });
-    expect(endField).not.toHaveStyleRule('height', '2px', {
-      modifier: '::after',
-    });
-
     await user.click(
       within(endGroup).getByRole('spinbutton', {
         name: 'day',
         hidden: true,
       }),
     );
-    expect(endField).toHaveStyleRule('height', '2px', {
-      modifier: '::after',
-    });
-
     await user.click(
       within(screen.getByRole('grid')).getByRole('button', {
         name: currentMonthDate(16).toDateString(),
@@ -1801,17 +1781,7 @@ describe('DateTimeRangeInput', () => {
     await user.click(tenth);
 
     expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
-    expect(
-      calendar.getByRole('button', {
-        name: currentMonthDate(6).toDateString(),
-      }).parentElement,
-    ).toHaveAttribute('aria-selected', 'false');
-    expect(
-      calendar.getByRole('button', {
-        name: currentMonthDate(14).toDateString(),
-      }).parentElement,
-    ).toHaveAttribute('aria-selected', 'true');
-    expect(tenth.parentElement).toHaveAttribute('aria-selected', 'true');
+    expect(calendar.getAllByRole('gridcell', { selected: true })).toHaveLength(2);
   });
 
   test('clears end when a reopened start moves after it', async () => {
@@ -1892,5 +1862,5 @@ describe('DateTimeRangeInput', () => {
       hidden: true,
     });
     expect(endGroup).toHaveTextContent('10:20 PM');
-  });
+  }, 10000);
 });

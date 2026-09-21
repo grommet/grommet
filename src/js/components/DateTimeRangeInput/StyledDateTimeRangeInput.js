@@ -88,6 +88,23 @@ export const StyledDateTimeRangeInputDrop = styled(Box)`
   align-items: stretch;
   max-height: inherit;
   min-height: 0;
+  max-width: 100vw;
+  ${(props) =>
+    props.$smallScreen &&
+    css`
+      flex-direction: column;
+      width: 100%;
+    `}
+  ${(props) => {
+    const responsiveBreakpoint =
+      props.theme.dateTimeRangeInput?.responsiveBreakpoint;
+    return responsiveBreakpoint
+      ? breakpointStyle(
+          getBreakpointStyle(props.theme, responsiveBreakpoint),
+          'flex-direction: column; width: 100%;',
+        )
+      : '';
+  }}
 `;
 
 export const StyledDateTimeRangeInputPicker = styled(Box)`
@@ -101,4 +118,36 @@ export const StyledDateTimeRangeInputPickerBody = styled(Box)`
   flex: 1 1 auto;
   min-height: 0;
   overflow: auto;
+  max-width: 100%;
+  ${(props) =>
+    props.$smallScreen &&
+    css`
+      flex-direction: column;
+      width: 100%;
+    `}
+  ${(props) => {
+    const responsiveBreakpoint =
+      props.theme.dateTimeRangeInput?.responsiveBreakpoint;
+    return responsiveBreakpoint
+      ? breakpointStyle(
+          getBreakpointStyle(props.theme, responsiveBreakpoint),
+          'flex-direction: column; width: 100%;',
+        )
+      : '';
+  }}
+`;
+
+export const StyledDateTimeRangeInputTime = styled(Box)`
+  ${(props) =>
+    props.$smallScreen &&
+    css`
+      width: 100%;
+      & > div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 100%;
+      }
+    `}
 `;
