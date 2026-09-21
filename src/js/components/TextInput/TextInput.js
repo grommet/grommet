@@ -571,8 +571,6 @@ const TextInput = forwardRef(
     const iconOnRight = reverse;
     const showLeadingIcon = showTextInputIcon && !iconOnRight;
     const showTrailingIcon = showTextInputIcon && iconOnRight;
-    const showActionsBeforeInput =
-      readOnlyCopy && reverse && !showTextInputIcon;
 
     return (
       <StyledTextInputContainer
@@ -585,9 +583,8 @@ const TextInput = forwardRef(
         onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
-        {/* reverse changes the icon position; readOnlyCopy preserves its */}
-        {/* legacy action placement. */}
-        {showActionsBeforeInput && actionsGroup}
+        {/* reverse changes the icon position; actions always stay on the */}
+        {/* right. */}
         {showStyledPlaceholder && (
           <StyledPlaceholder {...passThemeFlag}>
             {placeholder}
@@ -690,7 +687,7 @@ const TextInput = forwardRef(
             {textInputIcon}
           </StyledIcon>
         )}
-        {!showActionsBeforeInput && actionsGroup}
+        {actionsGroup}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );

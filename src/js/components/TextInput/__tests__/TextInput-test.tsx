@@ -885,7 +885,7 @@ describe('TextInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('keeps reversed read only copy before the input', () => {
+  test('keeps read only copy after the input when reversed', () => {
     render(
       <Grommet>
         <TextInput
@@ -902,7 +902,7 @@ describe('TextInput', () => {
     const copyButton = screen.getByRole('button');
 
     expect(
-      copyButton.compareDocumentPosition(input) &
+      input.compareDocumentPosition(copyButton) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
   });
