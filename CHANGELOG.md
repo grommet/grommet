@@ -1,3 +1,25 @@
+# 2.57.0
+
+General:
+
+- Added TextInput `password` prop. [#8020](https://github.com/grommet/grommet/pull/8020)
+- Added `formField.hover` theme property. [#8092](https://github.com/grommet/grommet/pull/8092)
+- Added `formField.[inputname].hover` theme property so child input components can explicitly opt out of inherited hover treatments. [#8098](https://github.com/grommet/grommet/pull/8098)
+- Fixed `sortable` column accessibility issue on DateTable (aria-sort, discoverability, sort status). [#7988](https://github.com/grommet/grommet/pull/7988)
+
+Beta - **APIs are subject to change**:
+
+- Added `timeInput.drop.option.selected.text.weight` to the theme. (https://github.com/grommet/grommet/pull/8100)
+- Added ability to control error announcement prominence in Stepper via the `errorAnnouncement` prop. (https://github.com/grommet/grommet/pull/8095
+- Added additional props to the TimeInput theme (`timeInput.drop.gap`, `timeInput.drop.option.gap`, `timeInput.drop.option.size`, `timeInput.drop.option.pad`, and `timeInput.drop.option.round`). (https://github.com/grommet/grommet/pull/8091)
+- Added `theme.dateTimeInput.calendar.day.selected.background` to DateTimeInput theme to allow control over the selected day background color (https://github.com/grommet/grommet/pull/8096).
+- Fixed TimeInput popup closes when clicking on non-button area inside drop. [#8067](https://github.com/grommet/grommet/pull/8067)
+- Fixed DateTimeInput keyboard to ensure empty fields initialize to minimum valid values on initial arrow interactions. [#8087](https://github.com/grommet/grommet/pull/8087)
+- Fixed focus ring behavior in TimeInput when switching from keyboard navigation to mouse clicks. [#8099](https://github.com/grommet/grommet/pull/8099)
+- Fixed empty fields in TimeInput to minimum valid values on initial arrow interaction. [#8088](https://github.com/grommet/grommet/pull/8088)
+- Fixed the initial focus behavior when opening the drop on DateTimeInput. (https://github.com/grommet/grommet/pull/8103)
+- Fixed `inline` behavior for DateTimeInput to align with the DateInput behavior. (https://github.com/grommet/grommet/pull/8097)
+
 # 2.56.1
 
 General:
@@ -1710,8 +1732,6 @@ TypeScript:
 - Fixed types of Avatar to include IntrinsicElements.
 - Fixed theme property type for Select `control.open`.
 
-
-
 Hooks Refactoring:
 
 - WorldMap to use hooks.
@@ -1833,8 +1853,6 @@ Dev
 
 - Upgraded ‘styled-components’ to 5.0.1 and more packages with minor changes (make sure you have a clean installation and updated npm version).
 - Changed webpack loaders to work on both windows and \*nix on dev mode.
-
-
 
 Note: Due to the new color additions of  `graph-0`, `graph-1`, `graph-2`, `graph-3`, the logic of color calculations on visual components had changed. You wouldn’t tell the difference unless you are using a Meter with an array of more than two default grommet colors.
 
