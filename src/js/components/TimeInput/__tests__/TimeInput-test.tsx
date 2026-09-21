@@ -653,6 +653,37 @@ describe('TimeInput', () => {
     expect(getSegment('seconds')).toHaveFocus();
   });
 
+  test('reports partial section changes during entry and clearing', async () => {
+    const user = userEvent.setup();
+    const onPartialChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput
+          format="24"
+          defaultValue="12:34:00"
+          {...({ onPartialChange } as object)}
+        />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
+    await user.keyboard('1');
+
+    expect(onPartialChange).toHaveBeenLastCalledWith(
+      { hour: 1, minute: 34, second: 0 },
+      0,
+    );
+
+    await user.keyboard('{ArrowRight}{Backspace}');
+
+    expect(onPartialChange).toHaveBeenLastCalledWith(
+      { hour: 1, minute: undefined, second: 0 },
+      1,
+    );
+  });
+
   test('selects the expected section around a separator midpoint', () => {
     render(
       <Grommet>
