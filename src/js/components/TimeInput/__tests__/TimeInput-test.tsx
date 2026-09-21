@@ -545,6 +545,45 @@ describe('TimeInput', () => {
     expect(minutesSegment).not.toHaveAttribute('aria-describedby');
   });
 
+  test('preserves a consumer aria-describedby on every segment while scoping the FormField error id', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput
+              id="appointment-time"
+              name="value"
+              format="24"
+              aria-describedby="time-hint"
+            />
+          </FormField>
+        </Form>
+        <span id="time-hint">24-hour format</span>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('spinbutton', { name: 'minutes' }));
+    await user.keyboard('30');
+
+    const errorId = screen.getByText('Time is required').getAttribute('id');
+
+    const hoursSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hoursSegment).toHaveAttribute(
+      'aria-describedby',
+      `time-hint ${errorId}`,
+    );
+
+    const minutesSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    expect(minutesSegment).toHaveAttribute('aria-describedby', 'time-hint');
+  });
+
   test('falls back to the inputLabel message when there is no FormField label', () => {
     render(
       <Grommet>

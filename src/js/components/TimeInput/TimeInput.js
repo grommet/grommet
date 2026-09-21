@@ -157,6 +157,20 @@ const TimeInput = forwardRef(
       ...inputRest
     } = rest;
 
+    // FormField merges its generated error id into aria-describedby
+    // alongside any id the consumer already had on the child. Split those
+    // back apart so a pre-existing description stays on every segment,
+    // while the error id itself is only added to the segment(s) it's about.
+    const errorId = id ? `grommet-${id}__error` : undefined;
+    const describedByTokens = ariaDescribedBy
+      ? ariaDescribedBy.split(' ').filter(Boolean)
+      : [];
+    const hasErrorDescribedBy =
+      !!errorId && describedByTokens.includes(errorId);
+    const consumerDescribedBy =
+      describedByTokens.filter((token) => token !== errorId).join(' ') ||
+      undefined;
+
     const normalizedMinuteStep = useMemo(
       () => normalizeStep(minuteStep),
       [minuteStep],
@@ -768,7 +782,14 @@ const TimeInput = forwardRef(
                             (ariaInvalid && describeSegment) || undefined
                           }
                           aria-describedby={
-                            describeSegment ? ariaDescribedBy : undefined
+                            [
+                              consumerDescribedBy,
+                              describeSegment && hasErrorDescribedBy
+                                ? errorId
+                                : undefined,
+                            ]
+                              .filter(Boolean)
+                              .join(' ') || undefined
                           }
                           aria-valuenow={ariaMeta.now}
                           aria-valuemin={ariaMeta.min}
