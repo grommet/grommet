@@ -649,6 +649,15 @@ const TimeInput = forwardRef(
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
 
+    // theme icon may be a component (e.g. Clock) or an already-rendered element
+    const ThemedDropButtonIcon = theme.timeInput?.dropButton?.icon;
+    let dropButtonIcon = <GrommetClockIcon />;
+    if (ThemedDropButtonIcon) {
+      dropButtonIcon = React.isValidElement(ThemedDropButtonIcon)
+        ? ThemedDropButtonIcon
+        : React.createElement(ThemedDropButtonIcon);
+    }
+
     if (inline) {
       return (
         <TimeInputPopup
@@ -763,7 +772,7 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                icon={theme.timeInput?.dropButton?.icon || <GrommetClockIcon />}
+                icon={dropButtonIcon}
                 kind={theme.timeInput?.dropButton || 'toolbar'}
                 disabled={disabled}
                 aria-label={formatMessage({

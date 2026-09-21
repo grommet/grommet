@@ -95,10 +95,19 @@ const getCursorBorderSide = (theme) => {
 };
 
 const getCursorActiveRound = (theme) => {
+  const configuredRound = theme.timeInput?.cursor?.active?.round;
   const activeRound =
-    theme.timeInput?.cursor?.active?.round || theme.global.edgeSize?.hair;
+    configuredRound !== undefined
+      ? configuredRound
+      : theme.global.edgeSize?.hair;
+
+  // explicit `false` means no rounding, not "use the default"
+  if (activeRound === false) return undefined;
+  if (activeRound === true) return 'medium';
   if (activeRound === 'full') return '100%';
-  if (typeof activeRound !== 'string') return activeRound;
+  // TimeInput always applies its own corner (via cursor.border.side), so
+  // only the object form's `size` is honored here.
+  if (typeof activeRound === 'object') return activeRound.size;
 
   const radius = theme.global.radius ? 'radius' : 'edgeSize';
   return theme.global[radius]?.[activeRound] || activeRound;
@@ -152,11 +161,14 @@ export const StyledTimeInputSegment = styled.span.withConfig(
       },
       props.theme,
     )};
-      ${roundStyle(
-        { size: activeRound, corner: cursorBorderSide },
-        false,
-        props.theme,
-      )}
+      ${
+        activeRound &&
+        roundStyle(
+          { size: activeRound, corner: cursorBorderSide },
+          false,
+          props.theme,
+        )
+      }
 
       &::before {
         content: '';
@@ -167,8 +179,14 @@ export const StyledTimeInputSegment = styled.span.withConfig(
           props.theme.timeInput?.cursor?.active?.background,
           props.theme,
         )};
-        border-top-left-radius: ${activeRound};
-        border-top-right-radius: ${activeRound};
+        ${
+          activeRound &&
+          roundStyle(
+            { size: activeRound, corner: cursorBorderSide },
+            false,
+            props.theme,
+          )
+        }
       }
         z-index: 0;
     `;
