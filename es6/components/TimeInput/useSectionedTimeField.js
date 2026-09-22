@@ -160,7 +160,7 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
     setActiveSection(nextSection);
     return nextSection;
   }, [activeSection, sectionOrder, setActiveSection]);
-  var incrementSection = useCallback(function (section, delta) {
+  var incrementSection = useCallback(function (section, delta, isDrop) {
     if (section === SECTION_PERIOD) {
       setSectionValue(section, sections.period === 'AM' ? 'PM' : 'AM');
       return;
@@ -170,7 +170,7 @@ export var useSectionedTimeField = function useSectionedTimeField(_ref2) {
     var key = sectionKey(section);
     var current = sections[key];
     if (current === undefined) {
-      setSectionValue(section, delta > 0 ? minValue : maxValue);
+      setSectionValue(section, isDrop ? minValue : delta > 0 ? minValue : maxValue);
       return;
     }
     var step = section === SECTION_MINUTE ? minuteStep : section === SECTION_SECOND ? 1 : 1;

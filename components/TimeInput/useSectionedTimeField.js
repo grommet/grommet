@@ -163,7 +163,7 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
     setActiveSection(nextSection);
     return nextSection;
   }, [activeSection, sectionOrder, setActiveSection]);
-  var incrementSection = (0, _react.useCallback)(function (section, delta) {
+  var incrementSection = (0, _react.useCallback)(function (section, delta, isDrop) {
     if (section === _utils.SECTION_PERIOD) {
       setSectionValue(section, sections.period === 'AM' ? 'PM' : 'AM');
       return;
@@ -173,7 +173,7 @@ var useSectionedTimeField = exports.useSectionedTimeField = function useSectione
     var key = (0, _utils.sectionKey)(section);
     var current = sections[key];
     if (current === undefined) {
-      setSectionValue(section, delta > 0 ? minValue : maxValue);
+      setSectionValue(section, isDrop ? minValue : delta > 0 ? minValue : maxValue);
       return;
     }
     var step = section === _utils.SECTION_MINUTE ? minuteStep : section === _utils.SECTION_SECOND ? 1 : 1;
