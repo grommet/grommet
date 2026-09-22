@@ -489,27 +489,53 @@ const TimeInput = forwardRef(
       });
     }, [activeSection, disabled, focusSection, readOnly]);
 
-    const onSegmentKeyDown = useCallback(
-      (section, event) => {
-        if (readOnly || disabled) return;
+    const getSectionFromKeyEvent = useCallback((event) => {
+      const sectionNode = event.target.closest?.('[data-section]');
+      const section = Number(sectionNode?.dataset?.section);
+      return Number.isNaN(section) ? undefined : section;
+    }, []);
+
+    const onDisplayKeyDown = useCallback(
+      (event) => {
+        if (event.defaultPrevented) return;
+
+        const section = getSectionFromKeyEvent(event);
+        if (section === undefined || readOnly || disabled) return;
+
         const { key } = event;
+        if (activeSection !== section) setActiveSection(section);
 
-        if (activeSection !== section) {
-          setActiveSection(section);
-        }
-
-        if (key === 'ArrowRight') {
+        const moveToAdjacentSection = (direction) => {
           event.preventDefault();
-          const next = moveSection(1);
+          const next = moveSection(direction);
           setActiveSection(next);
           focusSection(next);
+        };
+
+        const changeSectionValue = (direction) => {
+          event.preventDefault();
+          incrementSection(section, open ? -direction : direction);
+        };
+
+        if (key === 'ArrowRight') {
+          moveToAdjacentSection(1);
           return;
         }
         if (key === 'ArrowLeft') {
-          event.preventDefault();
-          const next = moveSection(-1);
-          setActiveSection(next);
-          focusSection(next);
+          moveToAdjacentSection(-1);
+          return;
+        }
+        if (key === 'ArrowUp') {
+          changeSectionValue(1);
+          return;
+        }
+        if (key === 'ArrowDown') {
+          if (event.altKey) {
+            event.preventDefault();
+            openPicker();
+            return;
+          }
+          changeSectionValue(-1);
           return;
         }
         if (key === 'Home') {
@@ -522,21 +548,6 @@ const TimeInput = forwardRef(
           event.preventDefault();
           setActiveSection(lastSection);
           focusSection(lastSection);
-          return;
-        }
-        if (key === 'ArrowUp') {
-          event.preventDefault();
-          incrementSection(section, open ? -1 : 1);
-          return;
-        }
-        if (key === 'ArrowDown') {
-          if (event.altKey) {
-            event.preventDefault();
-            openPicker();
-            return;
-          }
-          event.preventDefault();
-          incrementSection(section, open ? 1 : -1);
           return;
         }
         if (key === 'Delete' || key === 'Backspace') {
@@ -577,22 +588,18 @@ const TimeInput = forwardRef(
           const next = applyDigit(Number(key));
           const targetSection = next ?? section;
           setActiveSection(targetSection);
-          if (targetSection === section) {
-            event.currentTarget.focus();
-          } else {
-            focusSection(targetSection);
-          }
+          focusSection(targetSection);
         }
       },
       [
         activeSection,
         applyDigit,
         clearActiveSection,
-        closePicker,
         disabled,
         firstSection,
         focusSection,
         format,
+        getSectionFromKeyEvent,
         incrementSection,
         lastSection,
         moveSection,
@@ -601,6 +608,7 @@ const TimeInput = forwardRef(
         readOnly,
         setActiveSection,
         setSectionValue,
+        closePicker,
       ],
     );
 
@@ -699,64 +707,67 @@ const TimeInput = forwardRef(
             {...passThemeFlag}
           >
             <StyledTimeInputField {...passThemeFlag}>
-              <StyledTimeInputDisplay
-                role="group"
-                aria-label={groupLabel}
-                aria-labelledby={formFieldLabelId}
-                onMouseDown={onDisplayMouseDown}
-                {...passThemeFlag}
-              >
-                {displaySections.map(
-                  ({ ariaMeta, section, prefix, text, filled }) => (
-                    <React.Fragment key={section}>
-                      {!!prefix && (
-                        <StyledTimeInputSeparator
-                          $filled={hasDisplayValue}
-                          {...passThemeFlag}
-                        >
-                          {prefix}
-                        </StyledTimeInputSeparator>
-                      )}
-                      <StyledTimeInputSegment
-                        ref={(segmentNode) => {
-                          segmentRefs.current[section] = segmentNode;
-                        }}
-                        tabIndex={
-                          !readOnly && !disabled && activeSection === section
-                            ? 0
-                            : -1
-                        }
-                        $active={showActiveSection && activeSection === section}
-                        $filled={filled}
-                        onFocus={() => onSegmentFocus(section)}
-                        onBlur={onSegmentBlur}
-                        onKeyDown={(event) => onSegmentKeyDown(section, event)}
-                        onPaste={onSegmentPaste}
-                        data-active={
-                          showActiveSection && activeSection === section
-                        }
-                        data-section={section}
-                        {...passThemeFlag}
-                        aria-label={getSectionName(
-                          section,
-                          format,
-                          formatMessage,
-                          messages,
+              <Keyboard onKeyDown={onDisplayKeyDown}>
+                <StyledTimeInputDisplay
+                  role="group"
+                  aria-label={groupLabel}
+                  aria-labelledby={formFieldLabelId}
+                  onMouseDown={onDisplayMouseDown}
+                  {...passThemeFlag}
+                >
+                  {displaySections.map(
+                    ({ ariaMeta, section, prefix, text, filled }) => (
+                      <React.Fragment key={section}>
+                        {!!prefix && (
+                          <StyledTimeInputSeparator
+                            $filled={hasDisplayValue}
+                            {...passThemeFlag}
+                          >
+                            {prefix}
+                          </StyledTimeInputSeparator>
                         )}
-                        role="spinbutton"
-                        aria-disabled={disabled || undefined}
-                        aria-readonly={readOnly || undefined}
-                        aria-valuenow={ariaMeta.now}
-                        aria-valuemin={ariaMeta.min}
-                        aria-valuemax={ariaMeta.max}
-                        aria-valuetext={getSectionValueAnnouncement(section)}
-                      >
-                        {text}
-                      </StyledTimeInputSegment>
-                    </React.Fragment>
-                  ),
-                )}
-              </StyledTimeInputDisplay>
+                        <StyledTimeInputSegment
+                          ref={(segmentNode) => {
+                            segmentRefs.current[section] = segmentNode;
+                          }}
+                          tabIndex={
+                            !readOnly && !disabled && activeSection === section
+                              ? 0
+                              : -1
+                          }
+                          $active={
+                            showActiveSection && activeSection === section
+                          }
+                          $filled={filled}
+                          onFocus={() => onSegmentFocus(section)}
+                          onBlur={onSegmentBlur}
+                          onPaste={onSegmentPaste}
+                          data-active={
+                            showActiveSection && activeSection === section
+                          }
+                          data-section={section}
+                          {...passThemeFlag}
+                          aria-label={getSectionName(
+                            section,
+                            format,
+                            formatMessage,
+                            messages,
+                          )}
+                          role="spinbutton"
+                          aria-disabled={disabled || undefined}
+                          aria-readonly={readOnly || undefined}
+                          aria-valuenow={ariaMeta.now}
+                          aria-valuemin={ariaMeta.min}
+                          aria-valuemax={ariaMeta.max}
+                          aria-valuetext={getSectionValueAnnouncement(section)}
+                        >
+                          {text}
+                        </StyledTimeInputSegment>
+                      </React.Fragment>
+                    ),
+                  )}
+                </StyledTimeInputDisplay>
+              </Keyboard>
               <StyledTimeInput
                 tabIndex={-1}
                 {...inputRest}

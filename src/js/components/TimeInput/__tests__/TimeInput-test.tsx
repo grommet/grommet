@@ -66,6 +66,21 @@ describe('TimeInput', () => {
     expect(document.getElementById('time-picker__drop')).toBeNull();
   });
 
+  test('opens picker with Space from a focused segment', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput id="time-space-picker" format="24" defaultValue="13:45" />
+      </Grommet>,
+    );
+
+    await user.click(getSegment('hours'));
+    await user.keyboard(' ');
+
+    expect(document.getElementById('time-space-picker__drop')).toBeTruthy();
+  });
+
   test('commits a focused popup option with Enter', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
@@ -663,7 +678,28 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('01:05:09 PM');
   });
 
-  test('clears only the active section when deleting from a complete value', async () => {
+  test.each(['{Delete}', '{Backspace}'])(
+    'clears only the active section with %s from a complete value',
+    async (key) => {
+      const user = userEvent.setup();
+
+      render(
+        <Grommet>
+          <TimeInput format="12" defaultValue="12:34:56" />
+        </Grommet>,
+      );
+
+      const input = getSegment('hours');
+
+      await user.click(input);
+      await user.keyboard('{Home}');
+      await user.keyboard(key);
+
+      expect(getDisplayInput()).toHaveValue('hh:34:56 PM');
+    },
+  );
+
+  test('moves to the previous section with ArrowLeft', async () => {
     const user = userEvent.setup();
 
     render(
@@ -672,13 +708,25 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const input = getSegment('hours');
+    await user.click(getSegment('minutes'));
+    await user.keyboard('{ArrowLeft}');
 
-    await user.click(input);
-    await user.keyboard('{Home}');
-    await user.keyboard('{Backspace}');
+    expect(getSegment('hours')).toHaveFocus();
+  });
 
-    expect(getDisplayInput()).toHaveValue('hh:34:56 PM');
+  test('sets AM when typing a in the meridiem section', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="12:34:56" />
+      </Grommet>,
+    );
+
+    await user.click(getSegment('meridiem'));
+    await user.keyboard('a');
+
+    expect(getDisplayInput()).toHaveValue('12:34:56 AM');
   });
 
   test('keeps selection on cleared middle sections after delete', async () => {
