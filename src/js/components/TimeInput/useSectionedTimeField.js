@@ -229,7 +229,7 @@ export const useSectionedTimeField = ({
   );
 
   const incrementSection = useCallback(
-    (section, delta) => {
+    (section, delta, isDrop) => {
       if (section === SECTION_PERIOD) {
         setSectionValue(section, sections.period === 'AM' ? 'PM' : 'AM');
         return;
@@ -241,7 +241,10 @@ export const useSectionedTimeField = ({
       const current = sections[key];
 
       if (current === undefined) {
-        setSectionValue(section, minValue);
+        setSectionValue(
+          section,
+          isDrop ? minValue : delta > 0 ? minValue : maxValue,
+        );
         return;
       }
 
