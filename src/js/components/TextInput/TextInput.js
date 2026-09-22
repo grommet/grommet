@@ -545,6 +545,7 @@ const TextInput = forwardRef(
       <Button
         disabled={disabled}
         kind="toolbar"
+        pad={{ vertical: '0' }}
         icon={
           passwordRevealed
             ? renderIcon(hidePasswordIcon, { 'aria-hidden': true })
