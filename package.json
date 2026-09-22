@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.56.1",
+  "version": "2.57.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -125,7 +125,7 @@
     "eslint-plugin-testing-library": "^7.16.2",
     "fs-extra": "^11.4.0",
     "globals": "^17.11.0",
-    "grommet-theme-hpe": "^8.1.5",
+    "grommet-theme-hpe": "^8.2.0",
     "jest": "^30.4.2",
     "jest-axe": "^11.0.0",
     "jest-cli": "^30.4.2",
