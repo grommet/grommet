@@ -121,7 +121,6 @@ export const useSectionedTimeField = ({
   const editStateRef = useRef({
     section: SECTION_HOUR,
     digits: 0,
-    previousValue: undefined,
     firstDigit: undefined,
   });
   const parseValue = useCallback(
@@ -245,18 +244,10 @@ export const useSectionedTimeField = ({
         return;
       }
 
-      const step =
-        section === SECTION_MINUTE
-          ? minuteStep
-          : section === SECTION_SECOND
-          ? 1
-          : 1;
+      const step = section === SECTION_MINUTE ? minuteStep : 1;
 
       let next;
-      if (
-        step > 1 &&
-        (section === SECTION_MINUTE || section === SECTION_SECOND)
-      ) {
+      if (step > 1) {
         const options = Array.from(
           { length: Math.ceil((maxValue - minValue + 1) / step) },
           (_, index) => minValue + index * step,
@@ -270,13 +261,11 @@ export const useSectionedTimeField = ({
             options.length;
           next = options[wrappedIndex];
         } else if (delta > 0) {
-          next =
-            options.find((option) => option > (current ?? minValue - 1)) ??
-            options[0];
+          next = options.find((option) => option > current) ?? options[0];
         } else {
           const descending = [...options].reverse();
           next =
-            descending.find((option) => option < (current ?? maxValue + 1)) ??
+            descending.find((option) => option < current) ??
             options[options.length - 1];
         }
       } else {
@@ -309,7 +298,6 @@ export const useSectionedTimeField = ({
         editStateRef.current = {
           section: activeSection,
           digits: 0,
-          previousValue: editStateRef.current.previousValue,
           firstDigit: undefined,
         };
         // Clear pending digits since we're committing now
@@ -320,7 +308,6 @@ export const useSectionedTimeField = ({
         editStateRef.current = {
           section: activeSection,
           digits: 1,
-          previousValue: sections[key],
           firstDigit: digit,
         };
         // Show the first digit in pending state
@@ -407,9 +394,7 @@ export const useSectionedTimeField = ({
       }
 
       const digits = pasted.replace(/\D/g, '');
-      const numericSections = sectionOrder.filter(
-        (section) => section !== SECTION_PERIOD,
-      );
+      const numericSections = sectionOrder.filter(isNumericSection);
       const hasExplicitPeriod = /\b(AM|PM)\b/i.test(pasted);
       const shouldInferPeriod =
         format === '12' &&
