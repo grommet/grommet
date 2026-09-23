@@ -16,10 +16,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { useForwardedRef } from '../../utils';
 import { normalizeStep } from '../../utils/dates';
 import { useThemeValue } from '../../utils/useThemeValue';
-import {
-  getSectionKeyFromType,
-  getSectionTokenFromType,
-} from '../../utils/sectionHelpers';
+import { getSectionTokenFromType } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { FormContext } from '../Form';
@@ -40,29 +37,16 @@ import {
   getSectionName,
   pad,
   sectionTypeFromSection,
+  sectionKey,
   SECTION_HOUR,
   SECTION_MINUTE,
   SECTION_PERIOD,
   SECTION_SECOND,
 } from './utils';
 
-const getDisplaySectionKey = (section) => {
-  if (section === SECTION_HOUR) return 'hour';
-  if (section === SECTION_MINUTE) return 'minute';
-  if (section === SECTION_SECOND) return 'second';
-  return 'period';
-};
-
 const getDisplaySectionPrefix = (section, index) => {
   if (index === 0) return '';
   return section === SECTION_PERIOD ? ' ' : ':';
-};
-
-const getDisplaySectionText = ({ key, section, sections }) => {
-  if (sections[key] === undefined)
-    return getSectionTokenFromType(sectionTypeFromSection(section));
-  if (section === SECTION_PERIOD) return sections[key];
-  return pad(sections[key]);
 };
 
 const getSectionOrder = (format, showSeconds = format === '12') => {
@@ -81,8 +65,7 @@ const buildPlaceholder = (sectionOrder) =>
   sectionOrder
     .map((section, index) => {
       const token = getSectionTokenFromType(sectionTypeFromSection(section));
-      if (index === 0) return token;
-      return `${section === SECTION_PERIOD ? ' ' : ':'}${token}`;
+      return `${getDisplaySectionPrefix(section, index)}${token}`;
     })
     .join('');
 
@@ -106,6 +89,10 @@ const TimeInput = forwardRef(
     {
       defaultValue,
       disabled,
+      // Internal-only flag used by DateTimeInput to suppress focus on open.
+      // It is intentionally not included in PropTypes or TS types because it
+      // is not part of the public TimeInput API.
+      focusOnOpen = true,
       format = DEFAULT_FORMAT,
       id,
       inline = false,
@@ -278,10 +265,7 @@ const TimeInput = forwardRef(
           });
         }
 
-        const sectionKey = getSectionKeyFromType(
-          sectionTypeFromSection(section),
-        );
-        const sectionValue = sections[sectionKey];
+        const sectionValue = sections[sectionKey(section)];
 
         if (sectionValue === undefined) {
           return formatMessage({
@@ -325,20 +309,26 @@ const TimeInput = forwardRef(
       }
 
       return sectionOrder.map((section, index) => {
-        const key = getDisplaySectionKey(section);
+        const key = sectionKey(section);
+        const sectionValue = displaySectionsData[key];
+        let text;
+        if (sectionValue === undefined) {
+          text = getSectionTokenFromType(sectionTypeFromSection(section));
+        } else if (section === SECTION_PERIOD) {
+          text = sectionValue;
+        } else {
+          text = pad(sectionValue);
+        }
 
         return {
+          ariaMeta: getSectionAriaMeta({ section, format, sections }),
           section,
           prefix: getDisplaySectionPrefix(section, index),
-          text: getDisplaySectionText({
-            key,
-            section,
-            sections: displaySectionsData,
-          }),
-          filled: displaySectionsData[key] !== undefined,
+          text,
+          filled: sectionValue !== undefined,
         };
       });
-    }, [sectionOrder, sections, pendingDigits]);
+    }, [format, pendingDigits, sectionOrder, sections]);
 
     const onDisplaySectionMouseDown = useCallback(
       (section, event) => {
@@ -668,6 +658,7 @@ const TimeInput = forwardRef(
           activeSection={activeSection}
           format={format}
           formatMessage={formatMessage}
+          focusOnOpen={focusOnOpen}
           hoursOptions={hoursOptions}
           incrementSection={incrementSection}
           messages={messages}
@@ -707,65 +698,56 @@ const TimeInput = forwardRef(
                 onMouseDown={onDisplayMouseDown}
                 {...passThemeFlag}
               >
-                {displaySections.map(({ section, prefix, text, filled }) => (
-                  <React.Fragment key={section}>
-                    {!!prefix && (
-                      <StyledTimeInputSeparator
-                        $filled={hasDisplayValue}
-                        {...passThemeFlag}
-                      >
-                        {prefix}
-                      </StyledTimeInputSeparator>
-                    )}
-                    <StyledTimeInputSegment
-                      ref={(segmentNode) => {
-                        segmentRefs.current[section] = segmentNode;
-                      }}
-                      tabIndex={
-                        !readOnly && !disabled && activeSection === section
-                          ? 0
-                          : -1
-                      }
-                      $active={showActiveSection && activeSection === section}
-                      $filled={filled}
-                      onFocus={() => onSegmentFocus(section)}
-                      onBlur={onSegmentBlur}
-                      onKeyDown={(event) => onSegmentKeyDown(section, event)}
-                      onPaste={onSegmentPaste}
-                      data-active={
-                        showActiveSection && activeSection === section
-                      }
-                      data-testid={
-                        showActiveSection && activeSection === section
-                          ? 'time-input-active-section'
-                          : undefined
-                      }
-                      data-section={section}
-                      {...passThemeFlag}
-                      aria-label={getSectionName(
-                        section,
-                        format,
-                        formatMessage,
-                        messages,
+                {displaySections.map(
+                  ({ ariaMeta, section, prefix, text, filled }) => (
+                    <React.Fragment key={section}>
+                      {!!prefix && (
+                        <StyledTimeInputSeparator
+                          $filled={hasDisplayValue}
+                          {...passThemeFlag}
+                        >
+                          {prefix}
+                        </StyledTimeInputSeparator>
                       )}
-                      role="spinbutton"
-                      aria-disabled={disabled || undefined}
-                      aria-readonly={readOnly || undefined}
-                      aria-valuenow={
-                        getSectionAriaMeta({ section, format, sections }).now
-                      }
-                      aria-valuemin={
-                        getSectionAriaMeta({ section, format, sections }).min
-                      }
-                      aria-valuemax={
-                        getSectionAriaMeta({ section, format, sections }).max
-                      }
-                      aria-valuetext={getSectionValueAnnouncement(section)}
-                    >
-                      {text}
-                    </StyledTimeInputSegment>
-                  </React.Fragment>
-                ))}
+                      <StyledTimeInputSegment
+                        ref={(segmentNode) => {
+                          segmentRefs.current[section] = segmentNode;
+                        }}
+                        tabIndex={
+                          !readOnly && !disabled && activeSection === section
+                            ? 0
+                            : -1
+                        }
+                        $active={showActiveSection && activeSection === section}
+                        $filled={filled}
+                        onFocus={() => onSegmentFocus(section)}
+                        onBlur={onSegmentBlur}
+                        onKeyDown={(event) => onSegmentKeyDown(section, event)}
+                        onPaste={onSegmentPaste}
+                        data-active={
+                          showActiveSection && activeSection === section
+                        }
+                        data-section={section}
+                        {...passThemeFlag}
+                        aria-label={getSectionName(
+                          section,
+                          format,
+                          formatMessage,
+                          messages,
+                        )}
+                        role="spinbutton"
+                        aria-disabled={disabled || undefined}
+                        aria-readonly={readOnly || undefined}
+                        aria-valuenow={ariaMeta.now}
+                        aria-valuemin={ariaMeta.min}
+                        aria-valuemax={ariaMeta.max}
+                        aria-valuetext={getSectionValueAnnouncement(section)}
+                      >
+                        {text}
+                      </StyledTimeInputSegment>
+                    </React.Fragment>
+                  ),
+                )}
               </StyledTimeInputDisplay>
               <StyledTimeInput
                 tabIndex={-1}
@@ -792,10 +774,9 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
+                kind="toolbar"
                 icon={<GrommetClockIcon />}
-                plain
                 disabled={disabled}
-                margin={theme.timeInput?.button?.margin}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
                   messages,
@@ -820,6 +801,7 @@ const TimeInput = forwardRef(
               dropProps={{ stretch: false }}
               format={format}
               formatMessage={formatMessage}
+              focusOnOpen={focusOnOpen}
               hoursOptions={hoursOptions}
               id={id}
               incrementSection={incrementSection}

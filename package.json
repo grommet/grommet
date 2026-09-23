@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.56.1",
+  "version": "2.57.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -32,6 +32,7 @@
     "release-styled-components-beta-stable": "babel-node ./tools/release-styled-components-beta-stable",
     "generate-release-notes": "babel-node ./tools/generate-release-notes",
     "generate-release-announcement": "babel-node ./tools/generate-release-notes --format announcement",
+    "release-checklist": "babel-node ./tools/release-checklist",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "license": "node ./tools/license-header.js",
@@ -124,7 +125,7 @@
     "eslint-plugin-testing-library": "^7.16.2",
     "fs-extra": "^11.4.0",
     "globals": "^17.11.0",
-    "grommet-theme-hpe": "^8.1.5",
+    "grommet-theme-hpe": "^8.2.0",
     "jest": "^30.4.2",
     "jest-axe": "^11.0.0",
     "jest-cli": "^30.4.2",
@@ -217,7 +218,7 @@
   "bundlesize": [
     {
       "path": "./dist/grommet.min.js",
-      "maxSize": "217 kB"
+      "maxSize": "218 kB"
     }
   ],
   "keywords": [

@@ -2429,6 +2429,7 @@ export interface ThemeType {
     };
     drop?: {
       gap?: GapType;
+      pad?: PadType;
       option?: {
         background?: ColorType;
         gap?: GapType;
@@ -2441,6 +2442,9 @@ export interface ThemeType {
         selected?: {
           background?: ColorType;
           color?: ColorType;
+          text?: {
+            weight?: string | number;
+          };
           hover?: {
             background?: ColorType;
           };

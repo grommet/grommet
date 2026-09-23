@@ -30,6 +30,7 @@ const PopupOption = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   ${(props) => {
     const optionPad = props.theme.timeInput?.drop?.option?.pad;
     return (
@@ -140,6 +141,7 @@ const PopupColumn = ({
       }}
       overflow="auto"
       flex={{ grow: 0, shrink: 0 }}
+      pad={{ horizontal: 'xsmall' }}
     >
       {options.map((option) => {
         const key = optionKey(label, option);
@@ -194,7 +196,6 @@ const PopupColumn = ({
               if (event.button !== 0) return;
               // Commit on pointer press so momentum scroll does not swallow
               // the first click commit on some trackpad/mouse flows.
-              event.preventDefault();
               onPointerCommitOption(section, option);
             }}
             onClick={() => onClickCommitOption(section, option)}
@@ -205,6 +206,11 @@ const PopupColumn = ({
                 theme.timeInput?.drop?.option?.size ||
                 theme.global.input.font.size ||
                 'small'
+              }
+              weight={
+                selected
+                  ? theme.timeInput?.drop?.option?.selected?.text?.weight
+                  : undefined
               }
               color={optionColor}
             >
@@ -223,6 +229,7 @@ const TimeInputPopup = ({
   format,
   formatMessage,
   hoursOptions,
+  focusOnOpen = true,
   id,
   incrementSection,
   messages,
@@ -556,6 +563,9 @@ const TimeInputPopup = ({
       scrollSelectedOptionsIntoView();
     });
 
+    // DateTimeInput disables this so its Calendar can receive initial focus.
+    if (!focusOnOpen) return () => window.cancelAnimationFrame(scrollRaf);
+
     let rafB;
     const rafA = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
@@ -574,7 +584,7 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
 
   const popupContent = (
     <Box
@@ -584,8 +594,8 @@ const TimeInputPopup = ({
       direction="row"
       width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
       minHeight={theme.timeInput?.drop?.minHeight}
-      gap={theme.timeInput?.drop?.gap || 'xsmall'}
-      pad={inline ? 'none' : theme.timeInput?.drop?.pad || 'small'}
+      gap={theme.timeInput?.drop?.gap}
+      pad={inline ? 'none' : theme.timeInput?.drop?.pad}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}
       onPointerCancelCapture={clearInteractionInProgress}
@@ -632,10 +642,10 @@ const TimeInputPopup = ({
           setActiveSection(getAdjacentSection(eventSection, 1));
         } else if (event.key === 'ArrowUp') {
           event.preventDefault();
-          incrementSection(eventSection, 1);
+          incrementSection(eventSection, -1, true);
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
-          incrementSection(eventSection, -1);
+          incrementSection(eventSection, 1, true);
         }
 
         onKeyDownProp?.(event);

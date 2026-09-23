@@ -125,7 +125,9 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
+    screen.getAllByRole('spinbutton').forEach((segment) => {
+      expect(segment).toHaveAttribute('data-active', 'false');
+    });
   });
 
   test('allows clicking directly on a non-first segment to focus it', async () => {
@@ -906,9 +908,10 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    await user.click(getSegment('hours'));
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
 
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
+    expect(hourSegment).toHaveAttribute('data-active', 'false');
   });
 
   test('supports controlled updates', async () => {
@@ -1885,6 +1888,31 @@ describe('TimeInput', () => {
     }
   });
 
+  test('keyboard focus ring clears when switching to mouse interaction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="04:30:00" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hour4 = within(hourList).getByRole('option', { name: '04 hours' });
+    const hour7 = within(hourList).getByRole('option', { name: '07 hours' });
+
+    // Simulate prior keyboard focus (programmatic focus, as in a real
+    // keyboard session where the option was navigated to via arrow keys).
+    fireEvent.focus(hour4);
+    expect(hour4).toHaveFocus();
+    // Mouse click — keyboard ring should dismiss (focus leaves hour 4)
+    await user.click(hour7);
+
+    expect(document.activeElement).not.toBe(hour4);
+  });
+
   test('does not scroll popup options after clicking to select one', async () => {
     const user = userEvent.setup();
     const offsetHeightDescriptor = Object.getOwnPropertyDescriptor(
@@ -1981,9 +2009,6 @@ describe('TimeInput', () => {
 
     const customTheme: ThemeType = {
       timeInput: {
-        button: {
-          margin: { right: 'large' },
-        },
         container: {
           round: 'large',
         },
@@ -2004,6 +2029,9 @@ describe('TimeInput', () => {
             selected: {
               background: '#0000FF',
               color: '#FFFFFF',
+              text: {
+                weight: 'bold',
+              },
               hover: {
                 background: '#00FF00',
               },
@@ -2023,10 +2051,6 @@ describe('TimeInput', () => {
     const container = screen.getByRole('group').parentElement
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
-
-    // button.margin
-    const trigger = screen.getByRole('button', { name: 'Choose time' });
-    expect(trigger).toHaveStyleRule('margin-right', '48px');
 
     // active.pad applies to every segment, active or not
     const hourSegment = getSegment('hours');
@@ -2219,5 +2243,93 @@ describe('TimeInput', () => {
 
     expect(getDisplayInput()).toHaveValue('hh:mm:02');
     expect(secondSegment).toHaveTextContent('02');
+  });
+
+  test('updates displayed value on ArrowDown in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+    await user.click(chooseTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('01:mm');
+  });
+
+  test('initialises hour with zero on ArrowUp in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+
+    await user.click(chooseTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+  });
+
+  test('updates displayed value on ArrowUp in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+
+    await user.click(chooseTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('23:mm');
+  });
+
+  test('initializes minutes and seconds with zero on ArrowUp', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" />
+      </Grommet>,
+    );
+
+    expect(getDisplayInput()).toHaveValue('hh:mm:ss aa');
+
+    const minutesSegment = getSegment('minutes');
+    await user.click(minutesSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('hh:00:ss aa');
+
+    const secondsSegment = getSegment('seconds');
+
+    await user.click(secondsSegment);
+    await user.keyboard('{ArrowUp}');
+
+    expect(getDisplayInput()).toHaveValue('hh:00:00 aa');
   });
 });
