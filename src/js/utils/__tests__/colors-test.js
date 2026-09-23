@@ -72,6 +72,24 @@ describe('colorIsDark', () => {
     const dark = colorIsDark('rgba(102, 102, 102, 0.4)');
     expect(dark).toBe(undefined);
   });
+
+  test('#000000', () => {
+    const dark = colorIsDark('#000000');
+    expect(dark).toBe(true);
+  });
+
+  test('#FFFFFF', () => {
+    const dark = colorIsDark('#FFFFFF');
+    expect(dark).toBe(false);
+  });
+
+  // https://github.com/grommet/grommet/issues/8151
+  // WCAG relative luminance classifies this as light, unlike the legacy
+  // perceived-brightness formula which incorrectly classified it as dark.
+  test('#00a4b3', () => {
+    const dark = colorIsDark('#00a4b3');
+    expect(dark).toBe(false);
+  });
 });
 
 describe('getRGBA', () => {
