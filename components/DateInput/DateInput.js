@@ -310,7 +310,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
       })
     }, buttonProps));
   }
-  var onClickCopy = function onClickCopy() {
+  var onCopy = function onCopy() {
     navigator.clipboard.writeText(textValue);
     announce(readOnlyCopyValidation, 'assertive');
     setTip(readOnlyCopyValidation);
@@ -320,9 +320,9 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
   };
   var DateInputButton = readOnlyCopy ? /*#__PURE__*/_react["default"].createElement(_CopyButton.CopyButton, {
     disabled: disabled,
+    messages: messages,
     onBlurCopy: onBlurCopy,
-    onClickCopy: onClickCopy,
-    readOnlyCopyPrompt: readOnlyCopyPrompt,
+    onCopy: onCopy,
     tip: tip,
     value: value
   }) : /*#__PURE__*/_react["default"].createElement(_Button.Button, {

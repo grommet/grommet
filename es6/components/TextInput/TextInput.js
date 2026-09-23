@@ -1,5 +1,9 @@
-var _excluded = ["a11yTitle", "defaultSuggestion", "defaultValue", "disabled", "dropAlign", "dropHeight", "dropTarget", "dropProps", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "password", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "type", "value", "width"];
+var _excluded = ["a11yTitle", "copy", "defaultSuggestion", "defaultValue", "disabled", "dropAlign", "dropHeight", "dropProps", "dropTarget", "focusIndicator", "icon", "id", "messages", "name", "onBlur", "onChange", "onClickCopy", "onFocus", "onKeyDown", "onSelect", "onSuggestionSelect", "onSuggestionsClose", "onSuggestionsOpen", "password", "placeholder", "plain", "readOnly", "readOnlyCopy", "reverse", "suggestions", "textAlign", "type", "value", "width"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
@@ -13,7 +17,7 @@ import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
 import { AnnounceContext } from '../../contexts';
 import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle, useForwardedRef, useSizedIcon } from '../../utils';
-import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledInlineButton, StyledInlineIcon, StyledSuggestions } from './StyledTextInput';
+import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledIcon, StyledActionsGroup, StyledSuggestions } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
 import { TextInputPropTypes } from './propTypes';
 import { CopyButton } from './CopyButton';
@@ -44,21 +48,26 @@ var ContainerBox = styled(Box).withConfig({
 })(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
   return props.dropHeight ? sizeStyle('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
 });
+var StyledPasswordToggleButton = styled(Button).withConfig({
+  displayName: "TextInput__StyledPasswordToggleButton",
+  componentId: "sc-1ai0c08-1"
+})(["padding-top:0;padding-bottom:0;"]);
 var defaultDropAlign = {
   top: 'bottom',
   left: 'left'
 };
 var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _inputRef$current, _inputRef$current2, _theme$textInput, _theme$textInput2;
+  var _inputRef$current2, _inputRef$current3, _theme$textInput, _theme$textInput2;
   var a11yTitle = _ref.a11yTitle,
+    copy = _ref.copy,
     defaultSuggestion = _ref.defaultSuggestion,
     defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     _ref$dropAlign = _ref.dropAlign,
     dropAlign = _ref$dropAlign === void 0 ? defaultDropAlign : _ref$dropAlign,
     dropHeight = _ref.dropHeight,
-    dropTarget = _ref.dropTarget,
     dropProps = _ref.dropProps,
+    dropTarget = _ref.dropTarget,
     _ref$focusIndicator = _ref.focusIndicator,
     focusIndicator = _ref$focusIndicator === void 0 ? true : _ref$focusIndicator,
     icon = _ref.icon,
@@ -67,6 +76,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     name = _ref.name,
     _onBlur = _ref.onBlur,
     onChange = _ref.onChange,
+    onClickCopy = _ref.onClickCopy,
     _onFocus = _ref.onFocus,
     onKeyDown = _ref.onKeyDown,
     onSelect = _ref.onSelect,
@@ -141,11 +151,40 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     id: 'textInput.hidePassword',
     messages: messages
   });
-  var onClickCopy = function onClickCopy() {
-    navigator.clipboard.writeText(value);
-    announce(readOnlyCopyValidation, 'assertive');
-    setTip(readOnlyCopyValidation);
-  };
+  var handleCopyClick = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(event) {
+      var _ref3, _inputRef$current$val, _inputRef$current;
+      var currentValue;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.n) {
+          case 0:
+            // uncontrolled inputs keep their current text on the DOM node, not
+            // in `value`, which stays undefined outside a Form
+            currentValue = (_ref3 = (_inputRef$current$val = (_inputRef$current = inputRef.current) == null ? void 0 : _inputRef$current.value) != null ? _inputRef$current$val : value) != null ? _ref3 : '';
+            if (!onClickCopy) {
+              _context.n = 2;
+              break;
+            }
+            _context.n = 1;
+            return onClickCopy(event, currentValue);
+          case 1:
+            _context.n = 3;
+            break;
+          case 2:
+            _context.n = 3;
+            return navigator.clipboard.writeText(currentValue);
+          case 3:
+            announce(readOnlyCopyValidation, 'assertive');
+            setTip(readOnlyCopyValidation);
+          case 4:
+            return _context.a(2);
+        }
+      }, _callee);
+    }));
+    return function handleCopyClick(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
   var onBlurCopy = function onBlurCopy() {
     if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
   };
@@ -262,7 +301,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     if (readOnly && inputRef != null && inputRef.current && inputRef.current.scrollLeft > 0) {
       inputRef.current.scrollLeft = 0;
     }
-  }, [readOnly, inputRef, inputRef == null || (_inputRef$current = inputRef.current) == null ? void 0 : _inputRef$current.scrollLeft]);
+  }, [readOnly, inputRef, inputRef == null || (_inputRef$current2 = inputRef.current) == null ? void 0 : _inputRef$current2.scrollLeft]);
   var setValueFromSuggestion = function setValueFromSuggestion(event, suggestion) {
     // if we stole the focus in the drop, perhaps by interacting with
     // a suggestion button or the scrollbar, give it back
@@ -291,7 +330,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, [activeSuggestionIndex]);
 
   // account for input value in both controlled and uncontrolled scenarios
-  var hasValue = value || ((_inputRef$current2 = inputRef.current) == null ? void 0 : _inputRef$current2.value);
+  var hasValue = value || ((_inputRef$current3 = inputRef.current) == null ? void 0 : _inputRef$current3.value);
   var showStyledPlaceholder = useMemo(function () {
     return placeholder && typeof placeholder !== 'string' && !hasValue;
   }, [hasValue, placeholder]);
@@ -418,17 +457,16 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     inputType = passwordRevealed ? 'text' : 'password';
   }
   var showTextInputIcon = !!textInputIcon && !readOnlyCopy;
-  var showLeadingIcon = showTextInputIcon && !reverse;
-  var showTrailingIcon = showTextInputIcon && reverse;
-  var ReadOnlyCopyButton = /*#__PURE__*/React.createElement(CopyButton, {
+  var copyButtonElement = /*#__PURE__*/React.createElement(CopyButton, {
+    authoredType: authoredType,
     disabled: disabled,
+    messages: messages,
     onBlurCopy: onBlurCopy,
-    onClickCopy: onClickCopy,
-    readOnlyCopyPrompt: readOnlyCopyPrompt,
+    onCopy: handleCopyClick,
     tip: tip,
     value: value
   });
-  var PasswordToggleButton = passwordToggle ? /*#__PURE__*/React.createElement(Button, {
+  var passwordToggleButton = passwordToggle ? /*#__PURE__*/React.createElement(StyledPasswordToggleButton, _extends({
     disabled: disabled,
     kind: "toolbar",
     icon: passwordRevealed ? renderIcon(hidePasswordIcon, {
@@ -442,10 +480,17 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       });
     },
     "aria-label": passwordRevealed ? hidePasswordMessage : showPasswordMessage
-  }) : undefined;
-  var textInputButton = readOnlyCopy ? ReadOnlyCopyButton : undefined;
+  }, passThemeFlag)) : undefined;
+  var copyButton = readOnlyCopy || copy ? copyButtonElement : undefined;
+  // Keep state-changing password visibility before the non-destructive
+  // copy action.
+  var actionsGroup = passwordToggleButton || copyButton ? /*#__PURE__*/React.createElement(StyledActionsGroup, passThemeFlag, passwordToggleButton, copyButton) : undefined;
+  var hasActionsGroup = !!actionsGroup;
+  var iconOnRight = reverse;
+  var showLeadingIcon = showTextInputIcon && !iconOnRight;
+  var showTrailingIcon = showTextInputIcon && iconOnRight;
   return /*#__PURE__*/React.createElement(StyledTextInputContainer, _extends({
-    hasButton: !!textInputButton,
+    hasButton: !!actionsGroup,
     readOnlyProp: readOnly // readOnlyProp to avoid passing to DOM
     ,
     readOnlyCopy: readOnlyCopy,
@@ -455,8 +500,9 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     onMouseMove: function onMouseMove() {
       return setMouseMovedSinceLastKey(true);
     }
-  }, passThemeFlag), reverse && textInputButton, showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, passThemeFlag, placeholder), showLeadingIcon && /*#__PURE__*/React.createElement(StyledIcon, {
-    reverse: reverse,
+  }, passThemeFlag), showStyledPlaceholder && /*#__PURE__*/React.createElement(StyledPlaceholder, passThemeFlag, placeholder), showLeadingIcon && /*#__PURE__*/React.createElement(StyledIcon, {
+    reverse: iconOnRight,
+    hasActionsGroup: hasActionsGroup,
     theme: theme
   }, textInputIcon), /*#__PURE__*/React.createElement(Keyboard, _extends({
     target: focus ? 'document' : undefined
@@ -469,11 +515,11 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     disabled: disabled,
     plain: plain,
     placeholder: typeof placeholder === 'string' ? placeholder : undefined,
-    icon: showTextInputIcon ? icon : undefined,
-    reverse: reverse,
+    icon: showTextInputIcon && !hasActionsGroup ? icon : undefined,
+    reverse: iconOnRight,
     focus: focus,
-    hasButton: !!textInputButton,
-    hasInlineButton: passwordToggle,
+    hasButton: hasActionsGroup,
+    hasActionsGroup: hasActionsGroup,
     hasTrailingIcon: showTrailingIcon,
     focusIndicator: focusIndicator,
     textAlign: textAlign,
@@ -522,10 +568,11 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       setActiveSuggestionIndex(resetSuggestionIndex);
       if (onChange) onChange(event);
     }
-  }))), PasswordToggleButton && !readOnlyCopy && /*#__PURE__*/React.createElement(StyledInlineButton, passThemeFlag, showTrailingIcon && /*#__PURE__*/React.createElement(StyledInlineIcon, passThemeFlag, textInputIcon), PasswordToggleButton), showTrailingIcon && !PasswordToggleButton && /*#__PURE__*/React.createElement(StyledIcon, {
-    reverse: reverse,
+  }))), showTrailingIcon && /*#__PURE__*/React.createElement(StyledIcon, {
+    reverse: iconOnRight,
+    hasActionsGroup: hasActionsGroup,
     theme: theme
-  }, textInputIcon), !reverse && textInputButton, !readOnly && drop);
+  }, textInputIcon), actionsGroup, !readOnly && drop);
 });
 TextInput.displayName = 'TextInput';
 TextInput.propTypes = TextInputPropTypes;

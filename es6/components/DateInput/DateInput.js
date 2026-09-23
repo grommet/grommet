@@ -305,7 +305,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       })
     }, buttonProps));
   }
-  var onClickCopy = function onClickCopy() {
+  var onCopy = function onCopy() {
     navigator.clipboard.writeText(textValue);
     announce(readOnlyCopyValidation, 'assertive');
     setTip(readOnlyCopyValidation);
@@ -315,9 +315,9 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   };
   var DateInputButton = readOnlyCopy ? /*#__PURE__*/React.createElement(CopyButton, {
     disabled: disabled,
+    messages: messages,
     onBlurCopy: onBlurCopy,
-    onClickCopy: onClickCopy,
-    readOnlyCopyPrompt: readOnlyCopyPrompt,
+    onCopy: onCopy,
     tip: tip,
     value: value
   }) : /*#__PURE__*/React.createElement(Button, {
