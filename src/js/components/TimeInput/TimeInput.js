@@ -26,6 +26,7 @@ import {
   StyledTimeInputSegmentGroup,
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
+  getSegmentCursorProps,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
@@ -716,6 +717,10 @@ const TimeInput = forwardRef(
                       </StyledTimeInputSeparator>
                     )}
                     <StyledTimeInputSegment
+                      tag="span"
+                      align="center"
+                      justify="center"
+                      pad={theme.timeInput?.cursor?.pad}
                       ref={(segmentNode) => {
                         segmentRefs.current[section] = segmentNode;
                       }}
@@ -724,7 +729,10 @@ const TimeInput = forwardRef(
                           ? 0
                           : -1
                       }
-                      $active={showActiveSection && activeSection === section}
+                      {...getSegmentCursorProps(
+                        theme,
+                        showActiveSection && activeSection === section,
+                      )}
                       $filled={filled}
                       onFocus={() => onSegmentFocus(section)}
                       onBlur={onSegmentBlur}

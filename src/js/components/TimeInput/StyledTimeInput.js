@@ -9,7 +9,6 @@ import {
   normalizeColor,
   parseMetricToNum,
   readOnlyStyle,
-  roundStyle,
   styledComponentsConfig,
 } from '../../utils';
 import { Box } from '../Box';
@@ -79,63 +78,14 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
     )};
 `;
 
-const getCursorBorderSize = (theme) => {
-  const cursorBorderToken = theme.timeInput?.cursor?.border?.size;
-  return (
-    theme.global.borderSize?.[cursorBorderToken] ||
-    theme.global.edgeSize?.[cursorBorderToken] ||
-    cursorBorderToken ||
-    theme.global.borderSize.small
-  );
-};
-
-const getCursorBorderSide = (theme) => {
-  const side = theme.timeInput?.cursor?.border?.side;
-  return ['top', 'bottom', 'left', 'right'].includes(side) ? side : 'bottom';
-};
-
-const getCursorActiveRound = (theme) => {
-  const configuredRound = theme.timeInput?.cursor?.active?.round;
-  const activeRound =
-    configuredRound !== undefined
-      ? configuredRound
-      : theme.global.edgeSize?.hair;
-
-  // explicit `false` means no rounding, not "use the default"
-  if (activeRound === false) return undefined;
-  if (activeRound === true) return 'medium';
-  if (activeRound === 'full') return '100%';
-  // TimeInput always applies its own corner (via cursor.border.side), so
-  // only the object form's `size` is honored here.
-  if (typeof activeRound === 'object') return activeRound.size;
-
-  const radius = theme.global.radius ? 'radius' : 'edgeSize';
-  return theme.global[radius]?.[activeRound] || activeRound;
-};
-export const StyledTimeInputSegment = styled.span.withConfig(
-  styledComponentsConfig,
-)`
+// Wraps Box directly (not via styledComponentsConfig/isPropValid) so
+// Box's own styling props (border, round, background) keep flowing
+// through instead of being filtered out as invalid DOM attributes.
+export const StyledTimeInputSegment = styled(Box)`
   &:focus {
     outline: none;
   }
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  line-height: inherit;
-  ${(props) => {
-    const cursorBorderSide = getCursorBorderSide(props.theme);
-    return css`
-      border-${cursorBorderSide}-width: ${getCursorBorderSize(props.theme)};
-      border-${cursorBorderSide}-style: solid;
-      border-${cursorBorderSide}-color: transparent;
-    `;
-  }}
-  padding-inline: ${(props) => {
-    const padToken = props.theme.timeInput?.cursor?.pad;
-
-    return props.theme.global.edgeSize?.[padToken] || padToken;
-  }};
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
@@ -146,49 +96,12 @@ export const StyledTimeInputSegment = styled.span.withConfig(
       props.theme.global.input.weight || props.theme.global.input.font.weight;
     return weight && `font-weight: ${weight};`;
   }}
-
-  ${(props) => {
-    if (!props.$active) return '';
-
-    const activeRound = getCursorActiveRound(props.theme);
-    const cursorBorderSide = getCursorBorderSide(props.theme);
-
-    return css`
-      border-${cursorBorderSide}-color: ${normalizeColor(
-      props.theme.timeInput?.cursor?.active?.border?.color || {
-        dark: 'white',
-        light: 'black',
-      },
-      props.theme,
-    )};
-      ${
-        activeRound &&
-        roundStyle(
-          { size: activeRound, corner: cursorBorderSide },
-          false,
-          props.theme,
-        )
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-          z-index: -1;
-        background-color: ${normalizeColor(
-          props.theme.timeInput?.cursor?.active?.background,
-          props.theme,
-        )};
-        ${
-          activeRound &&
-          roundStyle(
-            { size: activeRound, corner: cursorBorderSide },
-            false,
-            props.theme,
-          )
-        }
-      }
-        z-index: 0;
-    `;
-  }}
 `;
+
+// The cursor (any Box props)
+// only renders while the segment is active/focused.
+export const getSegmentCursorProps = (theme, active) => {
+  if (!active) return {};
+
+  return theme.timeInput?.cursor;
+};

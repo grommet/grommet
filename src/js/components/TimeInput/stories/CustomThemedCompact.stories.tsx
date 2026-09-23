@@ -18,13 +18,10 @@ const theme: ThemeType = {
       round: 'xsmall',
     },
     cursor: {
-      border: { side: 'bottom', size: 'small' },
-      pad: 'xxsmall',
-      active: {
-        background: 'accent-3',
-        border: { color: 'accent-3' },
-        round: 'full',
-      },
+      background: 'accent-3',
+      border: { side: 'bottom', size: 'small', color: 'accent-3' },
+      pad: { start: 'xxsmall', end: 'xxsmall' },
+      round: { size: 'full', corner: 'bottom' },
     },
     drop: {
       background: 'dark-1',

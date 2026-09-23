@@ -1973,17 +1973,13 @@ describe('TimeInput', () => {
           round: 'large',
         },
         cursor: {
+          background: '#FFD700',
           border: {
             side: 'left',
             size: 'large',
+            color: '#FF0000',
           },
-          pad: 'large',
-          active: {
-            background: '#FFD700',
-            border: {
-              color: '#FF0000',
-            },
-          },
+          pad: { start: 'large', end: 'large' },
         },
         drop: {
           background: '#DDDDDD',
@@ -2032,16 +2028,14 @@ describe('TimeInput', () => {
 
     // cursor.pad applies to every segment, active or not
     const hourSegment = getSegment('hours');
-    expect(hourSegment).toHaveStyleRule('padding-inline', '48px');
+    expect(hourSegment).toHaveStyleRule('padding-inline-start', '48px');
+    expect(hourSegment).toHaveStyleRule('padding-inline-end', '48px');
 
-    // cursor.active.background and cursor.active.border only render on the
+    // cursor.background and cursor.border.color only render on the
     // currently focused/active segment
     await user.click(hourSegment);
-    expect(hourSegment).toHaveStyleRule('background-color', '#FFD700', {
-      modifier: '::before',
-    });
-    expect(hourSegment).toHaveStyleRule('border-left-color', '#FF0000');
-    expect(hourSegment).toHaveStyleRule('border-left-width', '12px');
+    expect(hourSegment).toHaveStyleRule('background-color', '#FFD700');
+    expect(hourSegment).toHaveStyleRule('border-left', 'solid 12px #FF0000');
 
     // open the drop to check drop.option theme tokens
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');

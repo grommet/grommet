@@ -14,13 +14,10 @@ const theme: ThemeType = {
       width: 'medium',
     },
     cursor: {
-      border: { side: 'bottom', size: 'medium' },
-      pad: 'xsmall',
-      active: {
-        background: 'accent-1',
-        border: { color: 'brand' },
-        round: 'xsmall',
-      },
+      background: 'accent-1',
+      border: { side: 'bottom', size: 'medium', color: 'brand' },
+      pad: { start: 'xsmall', end: 'xsmall' },
+      round: { size: 'xsmall', corner: 'bottom' },
     },
     drop: {
       background: 'background-front',

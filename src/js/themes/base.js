@@ -2676,19 +2676,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         round: 'xxsmall',
       },
       cursor: {
-        // cursor styling
+        // any Box props; `pad` always applies, the rest only while a
+        // segment is focused
+        background: 'active-background',
         border: {
           side: 'bottom',
           size: 'small',
+          color: { dark: 'white', light: 'black' },
         },
-        pad: 'xxsmall',
-        active: {
-          // active cursor styling
-          background: 'active-background',
-          border: {
-            color: { dark: 'white', light: 'black' },
-          },
-        },
+        pad: { start: 'xxsmall', end: 'xxsmall' },
+        round: { size: 'hair', corner: 'bottom' },
       },
       drop: {
         gap: 'xxsmall',
