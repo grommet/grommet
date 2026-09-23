@@ -77,6 +77,11 @@ const ContainerBox = styled(Box)`
   }
 `;
 
+const StyledPasswordToggleButton = styled(Button)`
+  padding-top: 0;
+  padding-bottom: 0;
+`;
+
 const defaultDropAlign = { top: 'bottom', left: 'left' };
 
 const TextInput = forwardRef(
@@ -542,10 +547,9 @@ const TextInput = forwardRef(
     );
 
     const passwordToggleButton = passwordToggle ? (
-      <Button
+      <StyledPasswordToggleButton
         disabled={disabled}
         kind="toolbar"
-        pad={{ vertical: '0' }}
         icon={
           passwordRevealed
             ? renderIcon(hidePasswordIcon, { 'aria-hidden': true })
@@ -555,6 +559,7 @@ const TextInput = forwardRef(
         aria-label={
           passwordRevealed ? hidePasswordMessage : showPasswordMessage
         }
+        {...passThemeFlag}
       />
     ) : undefined;
 

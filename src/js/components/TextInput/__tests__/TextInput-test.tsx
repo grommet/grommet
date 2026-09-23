@@ -1006,6 +1006,24 @@ describe('TextInput', () => {
     ).toBeTruthy();
   });
 
+  test('preserves password toggle horizontal padding', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" password aria-label="Password" />
+      </Grommet>,
+    );
+
+    const passwordButton = screen.getByRole('button', {
+      name: 'Show password',
+    });
+    const style = window.getComputedStyle(passwordButton);
+
+    expect(style.paddingLeft).not.toBe('0px');
+    expect(style.paddingRight).not.toBe('0px');
+    expect(style.paddingTop).toBe('0px');
+    expect(style.paddingBottom).toBe('0px');
+  });
+
   test('supports copy with password toggle when reverse', async () => {
     const user = userEvent.setup();
 
