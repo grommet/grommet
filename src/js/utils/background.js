@@ -110,21 +110,21 @@ export const backgroundIsDark = (backgroundArg, theme) => {
       ) {
         const backgroundColor = normalizeColor(background.color, theme);
         if (backgroundColor) {
-          result = colorIsDark(backgroundColor);
+          result = colorIsDark(backgroundColor, theme);
         }
       }
     } else {
       const color = normalizeColor(background, theme);
       if (color) {
-        result = colorIsDark(color);
+        result = colorIsDark(color, theme);
       }
     }
   }
   return result;
 };
 
-const darkContext = (backgroundColor) => {
-  const isDark = colorIsDark(backgroundColor);
+const darkContext = (backgroundColor, theme) => {
+  const isDark = colorIsDark(backgroundColor, theme);
   if (isDark === undefined) return undefined;
   return isDark ? 'dark' : 'light';
 };

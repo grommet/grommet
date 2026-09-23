@@ -90,6 +90,26 @@ describe('colorIsDark', () => {
     const dark = colorIsDark('#00a4b3');
     expect(dark).toBe(false);
   });
+
+  // without a theme, the threshold assumes black/white text and classifies
+  // #777777 as light (luminance ~0.1845 is above the black/white threshold
+  // ~0.179).
+  test('#777777 without theme', () => {
+    const dark = colorIsDark('#777777');
+    expect(dark).toBe(false);
+  });
+
+  // base theme's actual text colors (#f8f8f8 / #444444) are less extreme
+  // than pure white/black, so the equal-contrast threshold is higher
+  // (~0.277) and #777777 (luminance ~0.1845) is correctly classified dark,
+  // selecting the higher-contrast text.dark (#f8f8f8) foreground.
+  test('#777777 with theme text colors', () => {
+    const theme = {
+      global: { colors: { text: { dark: '#f8f8f8', light: '#444444' } } },
+    };
+    const dark = colorIsDark('#777777', theme);
+    expect(dark).toBe(true);
+  });
 });
 
 describe('getRGBA', () => {
