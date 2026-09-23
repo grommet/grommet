@@ -93,6 +93,9 @@ var PopupColumn = function PopupColumn(_ref2) {
     flex: {
       grow: 0,
       shrink: 0
+    },
+    pad: {
+      horizontal: 'xsmall'
     }
   }, options.map(function (option) {
     var _theme$timeInput3, _theme$timeInput4, _theme$timeInput5;
@@ -407,8 +410,8 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
       max: '100%'
     },
     minHeight: (_theme$timeInput7 = theme.timeInput) == null || (_theme$timeInput7 = _theme$timeInput7.drop) == null ? void 0 : _theme$timeInput7.minHeight,
-    gap: ((_theme$timeInput8 = theme.timeInput) == null || (_theme$timeInput8 = _theme$timeInput8.drop) == null ? void 0 : _theme$timeInput8.gap) || 'xsmall',
-    pad: inline ? 'none' : ((_theme$timeInput9 = theme.timeInput) == null || (_theme$timeInput9 = _theme$timeInput9.drop) == null ? void 0 : _theme$timeInput9.pad) || 'small',
+    gap: (_theme$timeInput8 = theme.timeInput) == null || (_theme$timeInput8 = _theme$timeInput8.drop) == null ? void 0 : _theme$timeInput8.gap,
+    pad: inline ? 'none' : (_theme$timeInput9 = theme.timeInput) == null || (_theme$timeInput9 = _theme$timeInput9.drop) == null ? void 0 : _theme$timeInput9.pad,
     onPointerDownCapture: markInteractionInProgress,
     onPointerUpCapture: releaseInteractionAfterClick,
     onPointerCancelCapture: clearInteractionInProgress,

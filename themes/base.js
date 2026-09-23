@@ -2922,6 +2922,10 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       },
       drop: {
         // gap: undefined,
+        pad: {
+          horizontal: 'xsmall',
+          vertical: 'small'
+        },
         option: {
           // background: undefined,
           // gap: undefined,
