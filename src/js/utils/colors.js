@@ -142,15 +142,28 @@ export const getRGBArray = (color) => {
   return color;
 };
 
+// Linearizes an sRGB channel (0-255) per the WCAG relative luminance spec.
+// https://www.w3.org/TR/WCAG22/#dfn-relative-luminance
+const linearizeChannel = (value) => {
+  const c = value / 255;
+  return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+};
+
+const relativeLuminance = (red, green, blue) =>
+  0.2126 * linearizeChannel(red) +
+  0.7152 * linearizeChannel(green) +
+  0.0722 * linearizeChannel(blue);
+
+// Luminance at which black and white text have equal WCAG contrast ratios
+// against the background: solving (1.05 / (L+0.05)) = ((L+0.05) / 0.05).
+const EQUAL_CONTRAST_LUMINANCE = 0.179;
+
 export const colorIsDark = (color) => {
   if (color && canExtractRGBArray(color)) {
     const [red, green, blue, alpha] = getRGBArray(color);
     // if there is an alpha and it's greater than 50%, we can't really tell
     if (alpha < 0.5) return undefined;
-    const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
-    // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
-    // Above domain is no longer registered.
-    return brightness < 125;
+    return relativeLuminance(red, green, blue) < EQUAL_CONTRAST_LUMINANCE;
   }
   return undefined;
 };
