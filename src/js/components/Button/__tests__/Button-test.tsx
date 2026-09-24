@@ -13,6 +13,7 @@ import '@testing-library/jest-dom';
 import { Add, Next } from 'grommet-icons';
 import { Grommet, Button, Text } from '../..';
 import { ThemeType } from '../../../themes';
+import { grommet } from '../../../themes/grommet';
 
 describe('Button', () => {
   test('should have no accessibility violations', async () => {
@@ -158,6 +159,25 @@ describe('Button', () => {
     const { container } = render(
       <Grommet theme={theme} themeMode="light">
         <Button icon={<Add />} primary color="black" onClick={() => {}} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  // https://github.com/grommet/grommet/issues/8151
+  // when colorIsDark() can't determine a shade (e.g. background alpha < 0.5),
+  // the icon must fall back to the ambient theme.dark like backgroundStyle()
+  // does for the label, not default to the light shade.
+  test('primary icon color falls back to theme.dark when shade is unknown', () => {
+    const { container } = render(
+      <Grommet theme={grommet} themeMode="dark">
+        <Button
+          icon={<Add />}
+          primary
+          color="rgba(0, 0, 0, 0.3)"
+          onClick={() => {}}
+        />
       </Grommet>,
     );
 
