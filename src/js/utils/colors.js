@@ -198,10 +198,12 @@ const luminanceOf = (color, theme, dark) => {
 // are available, preserving prior behavior for callers that don't pass one.
 const equalContrastLuminance = (theme, text = theme?.global?.colors?.text) => {
   if (!text) return EQUAL_CONTRAST_LUMINANCE;
-  // explicit dark args so alias colors (e.g. text.dark: 'text-strong')
-  // resolve to the intended side rather than the theme's current mode
-  const darkTextLuminance = luminanceOf(text.light, theme, false);
-  const lightTextLuminance = luminanceOf(text.dark, theme, true);
+  // resolve both sides directly from text (a color name, a raw color, or a
+  // { dark, light } pair) with explicit dark args, so named theme colors
+  // (e.g. 'text') and aliases (e.g. text.dark: 'text-strong') resolve to
+  // the intended side rather than the theme's current mode
+  const darkTextLuminance = luminanceOf(text, theme, false);
+  const lightTextLuminance = luminanceOf(text, theme, true);
   if (darkTextLuminance === undefined || lightTextLuminance === undefined) {
     return EQUAL_CONTRAST_LUMINANCE;
   }
