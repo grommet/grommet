@@ -352,11 +352,12 @@ const Button = forwardRef(
     };
 
     // matches the text color backgroundStyle() selects for the label, so
-    // icon/animation colors stay in sync with an explicit theme.button.color
+    // icon/animation colors stay in sync with an explicit theme.button.color.
+    // isDarkBackground() may be undefined (unknown shade); normalizeColor()
+    // then falls back to the ambient theme.dark, matching backgroundStyle().
     const primaryTextColor = () => {
       const text = theme.button.color || theme.global.colors.text;
-      const shade = isDarkBackground() ? 'dark' : 'light';
-      return normalizeColor(text[shade] || text, theme, shade === 'dark');
+      return normalizeColor(text, theme, isDarkBackground());
     };
 
     const onMouseOverButton = (event) => {
