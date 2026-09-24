@@ -178,8 +178,8 @@ const WCAG_CONTRAST_OFFSET = 0.05;
 // against the background: solving (1.05 / (L+0.05)) = ((L+0.05) / 0.05).
 const EQUAL_CONTRAST_LUMINANCE = 0.179;
 
-const luminanceOf = (color, theme) => {
-  const resolved = (theme && normalizeColor(color, theme)) || color;
+const luminanceOf = (color, theme, dark) => {
+  const resolved = (theme && normalizeColor(color, theme, dark)) || color;
   if (resolved && canExtractRGBArray(resolved)) {
     const [red, green, blue] = getRGBArray(resolved);
     return relativeLuminance(red, green, blue);
@@ -197,8 +197,10 @@ const luminanceOf = (color, theme) => {
 const equalContrastLuminance = (theme) => {
   const text = theme?.global?.colors?.text;
   if (!text) return EQUAL_CONTRAST_LUMINANCE;
-  const darkTextLuminance = luminanceOf(text.light, theme);
-  const lightTextLuminance = luminanceOf(text.dark, theme);
+  // explicit dark args so alias colors (e.g. text.dark: 'text-strong')
+  // resolve to the intended side rather than the theme's current mode
+  const darkTextLuminance = luminanceOf(text.light, theme, false);
+  const lightTextLuminance = luminanceOf(text.dark, theme, true);
   if (darkTextLuminance === undefined || lightTextLuminance === undefined) {
     return EQUAL_CONTRAST_LUMINANCE;
   }
