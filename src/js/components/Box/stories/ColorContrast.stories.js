@@ -18,7 +18,7 @@ export const ColorContrast = () => (
   <Box pad="small" gap="small" align="start">
     {[...flippedColors, ...stableColors].map((color) => (
       <Box key={color} pad="small" background={color} width="medium">
-        <Text color="text-strong">{color}</Text>
+        <Text>{color}</Text>
       </Box>
     ))}
   </Box>
