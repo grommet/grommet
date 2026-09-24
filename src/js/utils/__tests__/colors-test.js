@@ -110,6 +110,25 @@ describe('colorIsDark', () => {
     const dark = colorIsDark('#777777', theme);
     expect(dark).toBe(true);
   });
+
+  // theme.global.colors.text.light/.dark can be aliases to a shared
+  // { dark, light } color (e.g. 'text-strong'). Resolving those aliases
+  // must pick the intended semantic side (light-mode vs dark-mode text),
+  // not the theme's current mode, or the threshold collapses to 0 and
+  // every normal background is reported as light.
+  test('#666666 with theme text color aliases on a light theme', () => {
+    const theme = {
+      dark: false,
+      global: {
+        colors: {
+          text: { dark: 'text-strong', light: 'text-strong' },
+          'text-strong': { dark: '#FFFFFF', light: '#000000' },
+        },
+      },
+    };
+    const dark = colorIsDark('#666666', theme);
+    expect(dark).toBe(true);
+  });
 });
 
 describe('getRGBA', () => {
