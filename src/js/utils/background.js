@@ -123,8 +123,8 @@ export const backgroundIsDark = (backgroundArg, theme) => {
   return result;
 };
 
-const darkContext = (backgroundColor, theme) => {
-  const isDark = colorIsDark(backgroundColor, theme);
+const darkContext = (backgroundColor, theme, text) => {
+  const isDark = colorIsDark(backgroundColor, theme, text);
   if (isDark === undefined) return undefined;
   return isDark ? 'dark' : 'light';
 };
@@ -160,13 +160,13 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       // set the textColor to have the best contrast against the background
       // color.
       if (!textColor && (opacity === undefined || opacity > 0.3)) {
-        const shade = darkContext(backgroundColor, theme);
+        const shade = darkContext(backgroundColor, theme, text);
         textColor = normalizeColor((shade && text[shade]) || text, theme);
       }
     }
   } else {
     backgroundColor = normalizeBackgroundColor(background, theme);
-    const shade = darkContext(backgroundColor, theme);
+    const shade = darkContext(backgroundColor, theme, text);
     let transparent;
 
     if (backgroundColor && canExtractRGBArray(backgroundColor)) {

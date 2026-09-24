@@ -187,15 +187,16 @@ const luminanceOf = (color, theme, dark) => {
   return undefined;
 };
 
-// Luminance at which the theme's actual light/dark text colors have equal
-// WCAG contrast against the background. theme.global.colors.text.light is
-// the (typically darker) text used against light backgrounds and
-// theme.global.colors.text.dark is the (typically lighter) text used
-// against dark backgrounds. Falls back to the black/white derived
-// EQUAL_CONTRAST_LUMINANCE when the theme or its text colors aren't
-// available, preserving prior behavior for callers that don't pass a theme.
-const equalContrastLuminance = (theme) => {
-  const text = theme?.global?.colors?.text;
+// Luminance at which a pair of light/dark text colors have equal WCAG
+// contrast against the background. text.light is the (typically darker)
+// text used against light backgrounds and text.dark is the (typically
+// lighter) text used against dark backgrounds. text defaults to
+// theme.global.colors.text so callers that select an alternate text color
+// pair (e.g. Button's explicit color prop) can pass it in and get a
+// threshold that matches what will actually be selected. Falls back to the
+// black/white derived EQUAL_CONTRAST_LUMINANCE when no usable text colors
+// are available, preserving prior behavior for callers that don't pass one.
+const equalContrastLuminance = (theme, text = theme?.global?.colors?.text) => {
   if (!text) return EQUAL_CONTRAST_LUMINANCE;
   // explicit dark args so alias colors (e.g. text.dark: 'text-strong')
   // resolve to the intended side rather than the theme's current mode
@@ -212,12 +213,14 @@ const equalContrastLuminance = (theme) => {
   );
 };
 
-export const colorIsDark = (color, theme) => {
+export const colorIsDark = (color, theme, text) => {
   if (color && canExtractRGBArray(color)) {
     const [red, green, blue, alpha] = getRGBArray(color);
     // if there is an alpha and it's greater than 50%, we can't really tell
     if (alpha < 0.5) return undefined;
-    return relativeLuminance(red, green, blue) < equalContrastLuminance(theme);
+    return (
+      relativeLuminance(red, green, blue) < equalContrastLuminance(theme, text)
+    );
   }
   return undefined;
 };

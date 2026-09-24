@@ -111,6 +111,20 @@ describe('colorIsDark', () => {
     expect(dark).toBe(true);
   });
 
+  // when a caller (e.g. Button with an explicit color prop) will select
+  // from an alternate text pair rather than the theme's global text colors,
+  // that pair must drive the threshold, or the classification can pick the
+  // pair with lower contrast (here: black/white instead of the default
+  // #f8f8f8/#444444, which raises the threshold above #777777's luminance).
+  test('#777777 with explicit text pair overriding theme text colors', () => {
+    const theme = {
+      global: { colors: { text: { dark: '#f8f8f8', light: '#444444' } } },
+    };
+    const explicitText = { dark: '#FFFFFF', light: '#000000' };
+    const dark = colorIsDark('#777777', theme, explicitText);
+    expect(dark).toBe(false);
+  });
+
   // theme.global.colors.text.light/.dark can be aliases to a shared
   // { dark, light } color (e.g. 'text-strong'). Resolving those aliases
   // must pick the intended semantic side (light-mode vs dark-mode text),
