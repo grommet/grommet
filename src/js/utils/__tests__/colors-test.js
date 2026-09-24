@@ -143,6 +143,22 @@ describe('colorIsDark', () => {
     const dark = colorIsDark('#666666', theme);
     expect(dark).toBe(true);
   });
+
+  // backgroundAndTextColors passes a named theme color string (e.g. 'text')
+  // as the text pair, which itself must be resolved against theme colors
+  // rather than accessed as a { dark, light } object directly, or the
+  // threshold silently falls back to the black/white default.
+  test('#777777 with a named theme color string as the text pair', () => {
+    const theme = {
+      global: {
+        colors: {
+          text: { dark: '#f8f8f8', light: '#444444' },
+        },
+      },
+    };
+    const dark = colorIsDark('#777777', theme, 'text');
+    expect(dark).toBe(true);
+  });
 });
 
 describe('getRGBA', () => {
