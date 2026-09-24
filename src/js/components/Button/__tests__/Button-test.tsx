@@ -145,6 +145,25 @@ describe('Button', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  // https://github.com/grommet/grommet/issues/8151
+  // theme.button.color aliases (e.g. 'text-strong') must resolve by the
+  // shade determined from the button's actual background, not the theme's
+  // ambient dark/light mode, or icon/animation colors can mismatch the label.
+  test('primary icon color resolves theme.button.color alias by background shade', () => {
+    const theme: ThemeType = {
+      button: {
+        color: 'text-strong',
+      },
+    };
+    const { container } = render(
+      <Grommet theme={theme} themeMode="light">
+        <Button icon={<Add />} primary color="black" onClick={() => {}} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('color', () => {
     const { container } = render(
       <Grommet>

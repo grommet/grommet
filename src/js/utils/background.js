@@ -161,7 +161,11 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       // color.
       if (!textColor && (opacity === undefined || opacity > 0.3)) {
         const shade = darkContext(backgroundColor, theme, text);
-        textColor = normalizeColor((shade && text[shade]) || text, theme);
+        textColor = normalizeColor(
+          (shade && text[shade]) || text,
+          theme,
+          shade === 'dark',
+        );
       }
     }
   } else {
