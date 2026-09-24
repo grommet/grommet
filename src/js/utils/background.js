@@ -161,10 +161,12 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       // color.
       if (!textColor && (opacity === undefined || opacity > 0.3)) {
         const shade = darkContext(backgroundColor, theme, text);
+        // preserve undefined (unknown shade) so normalizeColor falls back
+        // to the ambient theme.dark instead of forcing the light side
         textColor = normalizeColor(
           (shade && text[shade]) || text,
           theme,
-          shade === 'dark',
+          shade === undefined ? undefined : shade === 'dark',
         );
       }
     }
