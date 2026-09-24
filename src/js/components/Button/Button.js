@@ -356,7 +356,7 @@ const Button = forwardRef(
     const primaryTextColor = () => {
       const text = theme.button.color || theme.global.colors.text;
       const shade = isDarkBackground() ? 'dark' : 'light';
-      return normalizeColor(text[shade] || text, theme);
+      return normalizeColor(text[shade] || text, theme, shade === 'dark');
     };
 
     const onMouseOverButton = (event) => {
