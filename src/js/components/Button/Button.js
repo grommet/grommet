@@ -348,7 +348,15 @@ const Button = forwardRef(
         theme,
       );
 
-      return colorIsDark(backgroundColor, theme);
+      return colorIsDark(backgroundColor, theme, theme.button.color);
+    };
+
+    // matches the text color backgroundStyle() selects for the label, so
+    // icon/animation colors stay in sync with an explicit theme.button.color
+    const primaryTextColor = () => {
+      const text = theme.button.color || theme.global.colors.text;
+      const shade = isDarkBackground() ? 'dark' : 'light';
+      return normalizeColor(text[shade] || text, theme);
     };
 
     const onMouseOverButton = (event) => {
@@ -381,8 +389,7 @@ const Button = forwardRef(
         }
       } else if (primary) {
         buttonIcon = cloneElement(icon, {
-          color:
-            theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'],
+          color: primaryTextColor(),
         });
       }
     } else if (kindIcon && !plain) {
@@ -471,8 +478,7 @@ const Button = forwardRef(
             getIconColor(themePaths.base, theme, color, kind);
         }
       } else if (primary) {
-        animationColor =
-          theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+        animationColor = primaryTextColor();
       }
 
       contents = (
