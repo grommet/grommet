@@ -3241,7 +3241,7 @@ exports[`Button hoverIndicator color 1`] = `
 
 .c1:hover {
   background-color: #777777;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .c1:focus {
