@@ -512,7 +512,38 @@ describe('TimeInput', () => {
       expect(segment).toHaveAttribute('aria-describedby', errorId);
     });
   });
+test('links a whole-value error to every segment when the time is complete', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is unavailable"
+          >
+            <TimeInput
+              id="appointment-time"
+              name="value"
+              format="24"
+              defaultValue="14:30"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
 
+    const errorId = screen
+      .getByText('Time is unavailable')
+      .getAttribute('id');
+    expect(errorId).toBeTruthy();
+
+    ['hours', 'minutes'].forEach((segmentName) => {
+      const segment = screen.getByRole('spinbutton', { name: segmentName });
+      expect(segment).toHaveAttribute('aria-invalid', 'true');
+      expect(segment).toHaveAttribute('aria-describedby', errorId);
+    });
+  });
   test('scopes the FormField error to segments still missing a value', async () => {
     const user = userEvent.setup();
 
