@@ -2688,11 +2688,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         round: { size: 'hair', corner: 'bottom' },
       },
       drop: {
-        gap: 'xxsmall',
         columns: {
           // any box props
           gap: 'xsmall',
+          pad: { horizontal: 'xsmall' },
         },
+        pad: { horizontal: 'xsmall', vertical: 'small' },
         option: {
           hover: {
             // any box props

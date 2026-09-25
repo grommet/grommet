@@ -2239,4 +2239,92 @@ describe('TimeInput', () => {
     expect(getDisplayValue()).toHaveTextContent('hh:mm:02');
     expect(secondSegment).toHaveTextContent('02');
   });
+
+  test('updates displayed value on ArrowDown in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+    await user.click(chooseTimeButton);
+    expect(getDisplayValue()).toHaveTextContent('hh:mm');
+
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayValue()).toHaveTextContent('00:mm');
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayValue()).toHaveTextContent('01:mm');
+  });
+
+  test('initialises hour with zero on ArrowUp in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+
+    await user.click(chooseTimeButton);
+    expect(getDisplayValue()).toHaveTextContent('hh:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayValue()).toHaveTextContent('00:mm');
+  });
+
+  test('updates displayed value on ArrowUp in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+
+    await user.click(chooseTimeButton);
+    expect(getDisplayValue()).toHaveTextContent('hh:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayValue()).toHaveTextContent('00:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayValue()).toHaveTextContent('23:mm');
+  });
+
+  test('initializes minutes and seconds with zero on ArrowUp', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" />
+      </Grommet>,
+    );
+
+    expect(getDisplayValue()).toHaveTextContent('hh:mm:ss aa');
+
+    const minutesSegment = getSegment('minutes');
+    await user.click(minutesSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayValue()).toHaveTextContent('hh:00:ss aa');
+
+    const secondsSegment = getSegment('seconds');
+
+    await user.click(secondsSegment);
+    await user.keyboard('{ArrowUp}');
+
+    expect(getDisplayValue()).toHaveTextContent('hh:00:00 aa');
+  });
 });

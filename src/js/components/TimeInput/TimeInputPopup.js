@@ -614,8 +614,7 @@ const TimeInputPopup = ({
       aria-label={inline ? undefined : label}
       direction="row"
       width={{ width: undefined, max: '100%' }}
-      gap="xsmall"
-      pad={inline ? 'none' : 'small'}
+      minHeight={theme.timeInput?.drop?.minHeight}
       {...dropContainerProps}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}
@@ -663,10 +662,10 @@ const TimeInputPopup = ({
           setActiveSection(getAdjacentSection(eventSection, 1));
         } else if (event.key === 'ArrowUp') {
           event.preventDefault();
-          incrementSection(eventSection, 1);
+          incrementSection(eventSection, -1, true);
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
-          incrementSection(eventSection, -1);
+          incrementSection(eventSection, 1, true);
         }
 
         onKeyDownProp?.(event);
