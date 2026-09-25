@@ -148,8 +148,28 @@ const TimeInput = forwardRef(
       // maintaining the agreed external TimeInput API surface.
       plain: plainProp,
       focusIndicator: focusIndicatorProp,
+      // FormField injects these on error; they must reach the focusable
+      // spinbutton segments, not the aria-hidden mirror input, or a screen
+      // reader user focusing a segment never hears the error is invalid or
+      // where its description text lives.
+      'aria-describedby': ariaDescribedBy,
+      'aria-invalid': ariaInvalid,
       ...inputRest
     } = rest;
+
+    // FormField merges its generated error id into aria-describedby
+    // alongside any id the consumer already had on the child. Split those
+    // back apart so a pre-existing description stays on every segment,
+    // while the error id itself is only added to the segment(s) it's about.
+    const errorId = id ? `grommet-${id}__error` : undefined;
+    const describedByTokens = ariaDescribedBy
+      ? ariaDescribedBy.split(' ').filter(Boolean)
+      : [];
+    const hasErrorDescribedBy =
+      !!errorId && describedByTokens.includes(errorId);
+    const consumerDescribedBy =
+      describedByTokens.filter((token) => token !== errorId).join(' ') ||
+      undefined;
 
     const normalizedMinuteStep = useMemo(
       () => normalizeStep(minuteStep),
@@ -329,6 +349,11 @@ const TimeInput = forwardRef(
         };
       });
     }, [format, pendingDigits, sectionOrder, sections]);
+
+    // A required-field error is caused by whichever section(s) are still
+    // empty, so only announce it there; once every section has a value the
+    // error must be about the value as a whole, so announce it everywhere.
+    const allSectionsFilled = displaySections.every((entry) => entry.filled);
 
     const onDisplaySectionMouseDown = useCallback(
       (section, event) => {
@@ -707,54 +732,75 @@ const TimeInput = forwardRef(
                 {...passThemeFlag}
               >
                 {displaySections.map(
-                  ({ ariaMeta, section, prefix, text, filled }) => (
-                    <React.Fragment key={section}>
-                      {!!prefix && (
-                        <StyledTimeInputSeparator
-                          $filled={hasDisplayValue}
-                          {...passThemeFlag}
-                        >
-                          {prefix}
-                        </StyledTimeInputSeparator>
-                      )}
-                      <StyledTimeInputSegment
-                        ref={(segmentNode) => {
-                          segmentRefs.current[section] = segmentNode;
-                        }}
-                        tabIndex={
-                          !readOnly && !disabled && activeSection === section
-                            ? 0
-                            : -1
-                        }
-                        $active={showActiveSection && activeSection === section}
-                        $filled={filled}
-                        onFocus={() => onSegmentFocus(section)}
-                        onBlur={onSegmentBlur}
-                        onKeyDown={(event) => onSegmentKeyDown(section, event)}
-                        onPaste={onSegmentPaste}
-                        data-active={
-                          showActiveSection && activeSection === section
-                        }
-                        data-section={section}
-                        {...passThemeFlag}
-                        aria-label={getSectionName(
-                          section,
-                          format,
-                          formatMessage,
-                          messages,
+                  ({ ariaMeta, section, prefix, text, filled }) => {
+                    const describeSegment = !filled || allSectionsFilled;
+
+                    return (
+                      <React.Fragment key={section}>
+                        {!!prefix && (
+                          <StyledTimeInputSeparator
+                            $filled={hasDisplayValue}
+                            {...passThemeFlag}
+                          >
+                            {prefix}
+                          </StyledTimeInputSeparator>
                         )}
-                        role="spinbutton"
-                        aria-disabled={disabled || undefined}
-                        aria-readonly={readOnly || undefined}
-                        aria-valuenow={ariaMeta.now}
-                        aria-valuemin={ariaMeta.min}
-                        aria-valuemax={ariaMeta.max}
-                        aria-valuetext={getSectionValueAnnouncement(section)}
-                      >
-                        {text}
-                      </StyledTimeInputSegment>
-                    </React.Fragment>
-                  ),
+                        <StyledTimeInputSegment
+                          ref={(segmentNode) => {
+                            segmentRefs.current[section] = segmentNode;
+                          }}
+                          tabIndex={
+                            !readOnly && !disabled && activeSection === section
+                              ? 0
+                              : -1
+                          }
+                          $active={
+                            showActiveSection && activeSection === section
+                          }
+                          $filled={filled}
+                          onFocus={() => onSegmentFocus(section)}
+                          onBlur={onSegmentBlur}
+                          onKeyDown={(event) =>
+                            onSegmentKeyDown(section, event)
+                          }
+                          onPaste={onSegmentPaste}
+                          data-active={
+                            showActiveSection && activeSection === section
+                          }
+                          data-section={section}
+                          {...passThemeFlag}
+                          aria-label={getSectionName(
+                            section,
+                            format,
+                            formatMessage,
+                            messages,
+                          )}
+                          role="spinbutton"
+                          aria-disabled={disabled || undefined}
+                          aria-readonly={readOnly || undefined}
+                          aria-invalid={
+                            (ariaInvalid && describeSegment) || undefined
+                          }
+                          aria-describedby={
+                            [
+                              consumerDescribedBy,
+                              describeSegment && hasErrorDescribedBy
+                                ? errorId
+                                : undefined,
+                            ]
+                              .filter(Boolean)
+                              .join(' ') || undefined
+                          }
+                          aria-valuenow={ariaMeta.now}
+                          aria-valuemin={ariaMeta.min}
+                          aria-valuemax={ariaMeta.max}
+                          aria-valuetext={getSectionValueAnnouncement(section)}
+                        >
+                          {text}
+                        </StyledTimeInputSegment>
+                      </React.Fragment>
+                    );
+                  },
                 )}
               </StyledTimeInputDisplay>
               <StyledTimeInput
