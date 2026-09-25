@@ -142,15 +142,87 @@ export const getRGBArray = (color) => {
   return color;
 };
 
-export const colorIsDark = (color) => {
+// sRGB-to-linear conversion constants.
+// https://www.w3.org/TR/WCAG22/#dfn-relative-luminance
+const SRGB_LINEAR_THRESHOLD = 0.04045;
+const SRGB_LINEAR_DIVISOR = 12.92;
+const SRGB_GAMMA_OFFSET = 0.055;
+const SRGB_GAMMA_DIVISOR = 1.055;
+const SRGB_GAMMA_EXPONENT = 2.4;
+
+// Linearizes an sRGB channel (0-255) per the WCAG relative luminance spec.
+// https://www.w3.org/TR/WCAG22/#dfn-relative-luminance
+const linearizeChannel = (value) => {
+  const c = value / 255;
+  return c <= SRGB_LINEAR_THRESHOLD
+    ? c / SRGB_LINEAR_DIVISOR
+    : ((c + SRGB_GAMMA_OFFSET) / SRGB_GAMMA_DIVISOR) ** SRGB_GAMMA_EXPONENT;
+};
+
+// WCAG relative luminance coefficients for linearized sRGB channels.
+// https://www.w3.org/TR/WCAG22/#dfn-relative-luminance
+const RED_LUMINANCE_COEFFICIENT = 0.2126;
+const GREEN_LUMINANCE_COEFFICIENT = 0.7152;
+const BLUE_LUMINANCE_COEFFICIENT = 0.0722;
+
+const relativeLuminance = (red, green, blue) =>
+  RED_LUMINANCE_COEFFICIENT * linearizeChannel(red) +
+  GREEN_LUMINANCE_COEFFICIENT * linearizeChannel(green) +
+  BLUE_LUMINANCE_COEFFICIENT * linearizeChannel(blue);
+
+// Offset added to luminance values in the WCAG contrast ratio formula:
+// (L1 + 0.05) / (L2 + 0.05). https://www.w3.org/TR/WCAG22/#dfn-contrast-ratio
+const WCAG_CONTRAST_OFFSET = 0.05;
+
+// Luminance at which black and white text have equal WCAG contrast ratios
+// against the background: solving (1.05 / (L+0.05)) = ((L+0.05) / 0.05).
+const EQUAL_CONTRAST_LUMINANCE = 0.179;
+
+const luminanceOf = (color, theme, dark) => {
+  const resolved = (theme && normalizeColor(color, theme, dark)) || color;
+  if (resolved && canExtractRGBArray(resolved)) {
+    const [red, green, blue] = getRGBArray(resolved);
+    return relativeLuminance(red, green, blue);
+  }
+  return undefined;
+};
+
+// Luminance at which a pair of light/dark text colors have equal WCAG
+// contrast against the background. text.light is the (typically darker)
+// text used against light backgrounds and text.dark is the (typically
+// lighter) text used against dark backgrounds. text defaults to
+// theme.global.colors.text so callers that select an alternate text color
+// pair (e.g. Button's explicit color prop) can pass it in and get a
+// threshold that matches what will actually be selected. Falls back to the
+// black/white derived EQUAL_CONTRAST_LUMINANCE when no usable text colors
+// are available, preserving prior behavior for callers that don't pass one.
+const equalContrastLuminance = (theme, text = theme?.global?.colors?.text) => {
+  if (!text) return EQUAL_CONTRAST_LUMINANCE;
+  // resolve both sides directly from text (a color name, a raw color, or a
+  // { dark, light } pair) with explicit dark args, so named theme colors
+  // (e.g. 'text') and aliases (e.g. text.dark: 'text-strong') resolve to
+  // the intended side rather than the theme's current mode
+  const darkTextLuminance = luminanceOf(text, theme, false);
+  const lightTextLuminance = luminanceOf(text, theme, true);
+  if (darkTextLuminance === undefined || lightTextLuminance === undefined) {
+    return EQUAL_CONTRAST_LUMINANCE;
+  }
+  return (
+    Math.sqrt(
+      (darkTextLuminance + WCAG_CONTRAST_OFFSET) *
+        (lightTextLuminance + WCAG_CONTRAST_OFFSET),
+    ) - WCAG_CONTRAST_OFFSET
+  );
+};
+
+export const colorIsDark = (color, theme, text) => {
   if (color && canExtractRGBArray(color)) {
     const [red, green, blue, alpha] = getRGBArray(color);
     // if there is an alpha and it's greater than 50%, we can't really tell
     if (alpha < 0.5) return undefined;
-    const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
-    // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
-    // Above domain is no longer registered.
-    return brightness < 125;
+    return (
+      relativeLuminance(red, green, blue) < equalContrastLuminance(theme, text)
+    );
   }
   return undefined;
 };
