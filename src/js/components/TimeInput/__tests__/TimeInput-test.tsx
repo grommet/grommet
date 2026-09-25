@@ -653,6 +653,74 @@ describe('TimeInput', () => {
     expect(getSegment('seconds')).toHaveFocus();
   });
 
+  test('reports partial section changes during entry and clearing', async () => {
+    const user = userEvent.setup();
+    const onPartialChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput
+          format="24"
+          defaultValue="12:34:00"
+          {...({ onPartialChange } as object)}
+        />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
+    await user.keyboard('1');
+
+    expect(onPartialChange).toHaveBeenLastCalledWith(
+      { hour: 1, minute: 34, second: 0 },
+      0,
+    );
+
+    await user.keyboard('{ArrowRight}{Backspace}');
+
+    expect(onPartialChange).toHaveBeenLastCalledWith(
+      { hour: 1, minute: undefined, second: 0 },
+      1,
+    );
+  });
+
+  test('selects the expected section around a separator midpoint', () => {
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="12:34:56" />
+      </Grommet>,
+    );
+
+    const sections = [
+      [getSegment('hours'), 0, 20],
+      [getSegment('minutes'), 30, 50],
+      [getSegment('seconds'), 60, 80],
+      [getSegment('meridiem'), 90, 110],
+    ] as const;
+
+    sections.forEach(([segment, left, right]) => {
+      jest.spyOn(segment, 'getBoundingClientRect').mockReturnValue({
+        left,
+        right,
+      } as DOMRect);
+    });
+
+    const separator = screen.getAllByText(':')[0];
+    fireEvent.mouseDown(separator, {
+      button: 0,
+      clientX: 25,
+    });
+
+    expect(getSegment('hours')).toHaveFocus();
+
+    fireEvent.mouseDown(separator, {
+      button: 0,
+      clientX: 26,
+    });
+
+    expect(getSegment('minutes')).toHaveFocus();
+  });
+
   test('supports uncontrolled initial value', () => {
     render(
       <Grommet>
