@@ -44,7 +44,7 @@ const findStepById = (steps, id) => {
   for (const step of steps) {
     if (step.id === id) return step;
     if (step.children) {
-      const match = step.children.find((child) => child.id === id);
+      const match = findStepById(step.children, id);
       if (match) return match;
     }
   }
@@ -71,8 +71,11 @@ const Wizard = forwardRef(
   (
     {
       steps,
+      clickableSteps = false,
+      closable = true,
       currentStep: currentStepProp,
       defaultStep,
+      form = true,
       showProgress = false,
       onStepChange,
       onComplete,
@@ -166,20 +169,12 @@ const Wizard = forwardRef(
       [formValue, isValueControlled, onChange],
     );
 
-    const [visitedSteps, setVisitedSteps] = useState([currentStep]);
     const [completedSteps, setCompletedSteps] = useState(() => new Set());
     const [validationError, setValidationError] = useState(undefined);
     const [isValidating, setIsValidating] = useState(false);
     // Without `onCancel`, cancel self-closes the wizard.
     const [isOpen, setIsOpen] = useState(true);
     const hasCancelHandler = onCancel !== undefined;
-
-    // Keep visited history in sync when currentStep is externally set.
-    useEffect(() => {
-      setVisitedSteps((prev) =>
-        prev[prev.length - 1] === currentStep ? prev : [...prev, currentStep],
-      );
-    }, [currentStep]);
 
     const currentStepObj = useMemo(
       () => findStepById(steps, currentStep),
@@ -193,20 +188,22 @@ const Wizard = forwardRef(
 
     const totalSteps = flatSteps.length;
 
+    const statusFromStep = useCallback((step) => {
+      if (step.disabled) return 'disabled';
+      if (step.id === currentStep && validationError) return 'error';
+      if (step.status) return step.status;
+      if (completedSteps.has(step.id)) return 'completed';
+      return 'pending';
+    }, [currentStep, validationError, completedSteps]);
+
     // Derive step status; parents aggregate from their children.
     const getStepStatus = useCallback(
       (stepId) => {
         // Parent-with-children aggregate
-        const parent = steps.find(
-          (step) => step.id === stepId && step.children && step.children.length,
-        );
+        const step = findStepById(steps, stepId);
+        const parent = step?.children?.length > 0;
         if (parent) {
-          const childStatuses = parent.children.map((child) => {
-            if (child.disabled) return 'disabled';
-            if (child.id === currentStep && validationError) return 'error';
-            if (completedSteps.has(child.id)) return 'completed';
-            return 'pending';
-          });
+          const childStatuses = step.children.map(statusFromStep);
           if (childStatuses.some((status) => status === 'error'))
             return 'error';
           if (childStatuses.every((status) => status === 'completed'))
@@ -215,14 +212,9 @@ const Wizard = forwardRef(
             return 'disabled';
           return 'pending';
         }
-        const step = findStepById(steps, stepId);
-        if (!step) return 'pending';
-        if (step.disabled) return 'disabled';
-        if (stepId === currentStep && validationError) return 'error';
-        if (completedSteps.has(stepId)) return 'completed';
-        return 'pending';
+        return statusFromStep(step);
       },
-      [steps, currentStep, completedSteps, validationError],
+      [steps, statusFromStep],
     );
 
     // Record<id, status> for every step (top-level + children).
@@ -264,9 +256,28 @@ const Wizard = forwardRef(
         }
         return nextId;
       }
-      const nextIndex = currentStepIndex + 1;
-      return flatSteps[nextIndex]?.id;
+      let nextIndex = currentStepIndex + 1;
+      while (nextIndex < flatSteps.length) {
+        const nextStep = flatSteps[nextIndex];
+        if (!nextStep?.disabled) return nextStep.id;
+        if (nextStep?.disabled && nextStep?.skippable) {
+          nextIndex += 1;
+        } else {
+          return undefined;
+        }
+      }
+      return undefined;
     }, [currentStepObj, currentStepIndex, flatSteps, formValue, steps]);
+
+    const resolvePreviousStepId = useCallback(() => {
+      let prevIndex = currentStepIndex - 1;
+      while (prevIndex >= 0) {
+        const prevStep = flatSteps[prevIndex];
+        if (!prevStep?.disabled) return prevStep.id;
+        prevIndex -= 1;
+      }
+      return undefined;
+    }, [currentStepIndex, flatSteps]);
 
     // Apply a navigation transition (id, history, completion, focus).
     const applyTransition = useCallback(
@@ -280,7 +291,6 @@ const Wizard = forwardRef(
           });
         }
         setValidationError(undefined);
-        setVisitedSteps((prev) => [...prev, nextId]);
         if (!isControlled) setUncontrolledStep(nextId);
       },
       [currentStep, isControlled],
@@ -376,15 +386,8 @@ const Wizard = forwardRef(
     ]);
 
     const previous = useCallback(() => {
-      // History-aware; falls back to the linear predecessor.
-      const historyDest =
-        visitedSteps.length > 1
-          ? visitedSteps[visitedSteps.length - 2]
-          : undefined;
-      const fallbackDest = flatSteps[currentStepIndex - 1]?.id;
-      const dest = historyDest || fallbackDest;
+      const dest = resolvePreviousStepId();
       if (!dest) return;
-      setVisitedSteps((prev) => prev.slice(0, -1));
       setValidationError(undefined);
       if (!isControlled) setUncontrolledStep(dest);
       emitStepChange({
@@ -398,11 +401,9 @@ const Wizard = forwardRef(
     }, [
       sendAnalytics,
       currentStep,
-      currentStepIndex,
+      resolvePreviousStepId,
       emitStepChange,
-      flatSteps,
       isControlled,
-      visitedSteps,
     ]);
 
     const goTo = useCallback(
@@ -469,7 +470,6 @@ const Wizard = forwardRef(
       if (!nextId) return;
       // Skip: no validation, no completion.
       setValidationError(undefined);
-      setVisitedSteps((prev) => [...prev, nextId]);
       if (!isControlled) setUncontrolledStep(nextId);
       emitStepChange({
         trigger: 'skip',
@@ -595,11 +595,14 @@ const Wizard = forwardRef(
       () => ({
         steps,
         flatSteps,
+        clickableSteps,
+        closable,
         currentStep,
         currentStepIndex,
         currentStepObj,
         totalSteps,
         stepStates,
+        form,
         formValue,
         setFormValue,
         validationError,
@@ -624,11 +627,14 @@ const Wizard = forwardRef(
       [
         steps,
         flatSteps,
+        clickableSteps,
+        closable,
         currentStep,
         currentStepIndex,
         currentStepObj,
         totalSteps,
         stepStates,
+        form,
         formValue,
         setFormValue,
         validationError,

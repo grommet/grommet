@@ -42,8 +42,10 @@ export interface WizardStep<TValue = Record<string, any>> {
     | Promise<boolean | string | void | { error?: string }>;
   nextStep?: (value: TValue) => string | undefined | null;
   skippable?: boolean;
+  status?: WizardStepStatus;
   disabled?: boolean;
   disabledReason?: string;
+  errorMessage?: string;
   children?: WizardStep<TValue>[];
   'aria-label'?: string;
 }
@@ -82,8 +84,11 @@ export interface WizardMessages {
 
 export interface WizardProps<TValue = Record<string, any>> {
   steps: WizardStep<TValue>[];
+  clickableSteps?: boolean;
+  closable?: boolean;
   currentStep?: string;
   defaultStep?: string;
+  form?: boolean;
   showProgress?: WizardShowProgress;
   onStepChange?: (event: StepChangeEvent) => void;
   onComplete?: (event: { value: TValue; completedSteps: string[] }) => void;
@@ -92,7 +97,7 @@ export interface WizardProps<TValue = Record<string, any>> {
     step: WizardStep<TValue>,
     api: WizardContextValue<TValue>,
   ) => React.ReactNode;
-  title?: string;
+  title?: React.ReactNode;
   footer?: React.ReactNode;
   scrollToTop?: boolean;
   value?: TValue;
@@ -117,6 +122,7 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   currentStepObj?: WizardStep<TValue>;
   totalSteps: number;
   stepStates: Record<string, WizardStepStatus>;
+  form: boolean;
   formValue: TValue;
   setFormValue: (next: TValue | ((prev: TValue) => TValue)) => void;
   validationError?: string;
@@ -130,6 +136,7 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   skip: () => void;
   complete: () => void;
   cancel: () => void;
+  clickableSteps: boolean;
   showProgress: WizardShowProgress;
   renderStep?: (
     step: WizardStep<TValue>,
@@ -143,8 +150,8 @@ export function useWizard<
   TValue = Record<string, any>,
 >(): WizardContextValue<TValue>;
 
-export interface WizardHeaderProps extends BoxExtendedProps {
-  title?: string;
+export interface WizardHeaderProps extends Omit<BoxExtendedProps, 'title'> {
+  title?: React.ReactNode;
   children?: React.ReactNode;
 }
 
