@@ -141,6 +141,7 @@ const PopupColumn = ({
       }}
       overflow="auto"
       flex={{ grow: 0, shrink: 0 }}
+      pad={{ horizontal: 'xsmall' }}
     >
       {options.map((option) => {
         const key = optionKey(label, option);
@@ -593,8 +594,8 @@ const TimeInputPopup = ({
       direction="row"
       width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
       minHeight={theme.timeInput?.drop?.minHeight}
-      gap={theme.timeInput?.drop?.gap || 'xsmall'}
-      pad={inline ? 'none' : theme.timeInput?.drop?.pad || 'small'}
+      gap={theme.timeInput?.drop?.gap}
+      pad={inline ? 'none' : theme.timeInput?.drop?.pad}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}
       onPointerCancelCapture={clearInteractionInProgress}
@@ -641,10 +642,10 @@ const TimeInputPopup = ({
           setActiveSection(getAdjacentSection(eventSection, 1));
         } else if (event.key === 'ArrowUp') {
           event.preventDefault();
-          incrementSection(eventSection, 1);
+          incrementSection(eventSection, -1, true);
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
-          incrementSection(eventSection, -1);
+          incrementSection(eventSection, 1, true);
         }
 
         onKeyDownProp?.(event);
