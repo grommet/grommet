@@ -29,16 +29,12 @@ export interface TimeInputProps {
   value?: string;
 }
 
-export interface TimeInputExtendedProps
-  extends TimeInputProps,
-    Omit<
-      React.DetailedHTMLProps<
-        React.InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
-      >,
-      'defaultValue' | 'onChange' | 'onError' | 'size' | 'value'
-    > {}
+export interface TimeInputRef {
+  focus: () => void;
+}
 
-declare const TimeInput: React.FC<TimeInputExtendedProps>;
+declare const TimeInput: React.ForwardRefExoticComponent<
+  TimeInputProps & React.RefAttributes<TimeInputRef>
+>;
 
 export { TimeInput };

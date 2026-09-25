@@ -2671,47 +2671,56 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     timeInput: {
-      button: {
-        margin: { right: 'small' },
-      },
       container: {
+        // any box props
         round: 'xxsmall',
       },
-      active: {
+      cursor: {
+        // any Box props; `pad` always applies, the rest only while a
+        // segment is focused
         background: 'active-background',
-        pad: 'xxsmall',
-        indicator: {
-          color: { dark: 'white', light: 'black' },
+        border: {
+          side: 'bottom',
           size: 'small',
+          color: { dark: 'white', light: 'black' },
         },
+        pad: { start: 'xxsmall', end: 'xxsmall' },
+        round: { size: 'hair', corner: 'bottom' },
       },
       drop: {
-        // gap: undefined,
+        columns: {
+          // any box props
+          gap: 'xsmall',
+          pad: { horizontal: 'xsmall' },
+        },
         pad: { horizontal: 'xsmall', vertical: 'small' },
         option: {
-          // background: undefined,
-          // gap: undefined,
-          // size: undefined,
-          pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
-          // round: undefined,
           hover: {
+            // any box props
             background: 'active-background',
+            text: {
+              // any text props
+            },
+          },
+          pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+          text: {
+            // any text props
           },
           selected: {
-            background: 'selected',
-            color: 'white',
+            // any box props
+            background: 'brand',
             text: {
-              weight: 500,
-            },
-            hover: {
-              // background: undefined,
+              // any text props
+              color: 'white',
+              weight: 'bold',
             },
           },
         },
       },
-      icon: {
-        // clock: undefined,
-      },
+      // dropButton: {
+      //   any button props
+      //   icon: undefined,
+      // },
     },
     tip: {
       content: {
