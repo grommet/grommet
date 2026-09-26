@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { useEffect, useState } from 'react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 
 import { Favorite } from 'grommet-icons';
@@ -173,5 +173,40 @@ describe('Avatar', () => {
     );
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom children are not remounted when parent re-renders', () => {
+    const onMount = jest.fn();
+    const Child = () => {
+      useEffect(() => {
+        onMount();
+      }, []);
+      return <span>child</span>;
+    };
+    const Test = () => {
+      const [count, setCount] = useState(0);
+      return (
+        <Grommet>
+          <button type="button" onClick={() => setCount(count + 1)}>
+            rerender {count}
+          </button>
+          <Avatar background="brand">
+            <Child />
+          </Avatar>
+        </Grommet>
+      );
+    };
+
+    const { getByText, getByRole } = render(<Test />);
+
+    const avatarChild = getByText('child');
+    expect(onMount).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(getByRole('button', { name: 'rerender 0' }));
+
+    // the same DOM node should still be there and the child should not
+    // have gone through another mount cycle
+    expect(getByText('child')).toBe(avatarChild);
+    expect(onMount).toHaveBeenCalledTimes(1);
   });
 });
