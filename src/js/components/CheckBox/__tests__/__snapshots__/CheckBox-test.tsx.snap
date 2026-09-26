@@ -88,6 +88,7 @@ exports[`CheckBox checked renders 1`] = `
 >
   <label
     class="c1"
+    for="_r_9_"
   >
     <div
       class="c2 c3"
@@ -95,6 +96,7 @@ exports[`CheckBox checked renders 1`] = `
       <input
         checked=""
         class="c4"
+        id="_r_9_"
         type="checkbox"
       />
       <div
@@ -212,6 +214,7 @@ exports[`CheckBox controlled 1`] = `
 >
   <label
     class="c1"
+    for="_r_n_"
   >
     <div
       class="c2 c3"
@@ -219,6 +222,7 @@ exports[`CheckBox controlled 1`] = `
       <input
         checked=""
         class="c4"
+        id="_r_n_"
         type="checkbox"
       />
       <div
@@ -249,6 +253,7 @@ exports[`CheckBox controlled 2`] = `
 >
   <label
     class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dOWXkA"
+    for="_r_n_"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 krZJuA StyledCheckBox-sc-1dbk5ju-6 fXQYEo"
@@ -256,6 +261,7 @@ exports[`CheckBox controlled 2`] = `
       <input
         checked=""
         class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dEyzxY"
+        id="_r_n_"
         type="checkbox"
       />
       <div
@@ -372,12 +378,14 @@ exports[`CheckBox custom theme 1`] = `
 >
   <label
     class="c1"
+    for="_r_o_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_o_"
         type="checkbox"
       />
       <div
@@ -479,6 +487,7 @@ exports[`CheckBox defaultChecked 1`] = `
 >
   <label
     class="c1"
+    for="_r_a_"
   >
     <div
       class="c2 c3"
@@ -486,6 +495,7 @@ exports[`CheckBox defaultChecked 1`] = `
       <input
         checked=""
         class="c4"
+        id="_r_a_"
         type="checkbox"
       />
       <div
@@ -617,6 +627,7 @@ exports[`CheckBox disabled renders 1`] = `
   <label
     class="c1"
     disabled=""
+    for="_r_b_"
   >
     <div
       class="c2 c3"
@@ -625,6 +636,7 @@ exports[`CheckBox disabled renders 1`] = `
       <input
         class="c4"
         disabled=""
+        id="_r_b_"
         type="checkbox"
       />
       <div
@@ -636,6 +648,7 @@ exports[`CheckBox disabled renders 1`] = `
   <label
     class="c1"
     disabled=""
+    for="_r_c_"
   >
     <div
       class="c2 c3"
@@ -645,6 +658,7 @@ exports[`CheckBox disabled renders 1`] = `
         checked=""
         class="c4"
         disabled=""
+        id="_r_c_"
         type="checkbox"
       />
       <div
@@ -793,12 +807,14 @@ exports[`CheckBox indeterminate renders 1`] = `
 >
   <label
     class="c1"
+    for="_r_j_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_j_"
         type="checkbox"
       />
       <div
@@ -819,12 +835,14 @@ exports[`CheckBox indeterminate renders 1`] = `
   </label>
   <label
     class="c7"
+    for="_r_k_"
   >
     <div
       class="c8 c3"
     >
       <input
         class="c4"
+        id="_r_k_"
         type="checkbox"
       />
       <div
@@ -951,12 +969,14 @@ exports[`CheckBox label renders 1`] = `
 >
   <label
     class="c1"
+    for="_r_7_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_7_"
         type="checkbox"
       />
       <div
@@ -969,12 +989,14 @@ exports[`CheckBox label renders 1`] = `
   </label>
   <label
     class="c6"
+    for="_r_8_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_8_"
         type="checkbox"
       />
       <div
@@ -1076,12 +1098,14 @@ exports[`CheckBox label should not have accessibility violations 1`] = `
 >
   <label
     class="c1"
+    for="_r_1_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_1_"
         type="checkbox"
       />
       <div
@@ -1175,12 +1199,14 @@ exports[`CheckBox renders 1`] = `
 >
   <label
     class="c1"
+    for="_r_2_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_2_"
         type="checkbox"
       />
       <div
@@ -1289,6 +1315,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
 >
   <label
     class="c1"
+    for="_r_q_"
   >
     <div
       class="c2 c3"
@@ -1296,6 +1323,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
       <input
         aria-label="Label"
         class="c4"
+        id="_r_q_"
         type="checkbox"
       />
       <div
@@ -1305,6 +1333,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
   </label>
   <label
     class="c1"
+    for="_r_r_"
   >
     <div
       class="c2 c3"
@@ -1312,6 +1341,7 @@ exports[`CheckBox renders a11yTitle and aria-label 1`] = `
       <input
         aria-label="Label-2"
         class="c4"
+        id="_r_r_"
         type="checkbox"
       />
       <div
@@ -1410,6 +1440,7 @@ exports[`CheckBox renders custom checked icon 1`] = `
 >
   <label
     class="c1"
+    for="_r_p_"
   >
     <div
       class="c2 c3"
@@ -1417,6 +1448,7 @@ exports[`CheckBox renders custom checked icon 1`] = `
       <input
         checked=""
         class="c4"
+        id="_r_p_"
         type="checkbox"
       />
       <div
@@ -1501,12 +1533,14 @@ exports[`CheckBox renders without grommet wrapper 1`] = `
 
 <label
   class="c0"
+  for="_r_6_"
 >
   <div
     class="c1 c2"
   >
     <input
       class="c3"
+      id="_r_6_"
       type="checkbox"
     />
     <div
@@ -1604,6 +1638,7 @@ exports[`CheckBox reverse renders 1`] = `
 >
   <label
     class="c1"
+    for="_r_d_"
   >
     <span>
       test label
@@ -1613,6 +1648,7 @@ exports[`CheckBox reverse renders 1`] = `
     >
       <input
         class="c4"
+        id="_r_d_"
         type="checkbox"
       />
       <div
@@ -1737,6 +1773,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
 >
   <label
     class="c1"
+    for="_r_h_"
   >
     <span>
       test label
@@ -1746,6 +1783,7 @@ exports[`CheckBox reverse toggle fill 1`] = `
     >
       <input
         class="c4"
+        id="_r_h_"
         type="checkbox"
       />
       <span
@@ -1759,12 +1797,14 @@ exports[`CheckBox reverse toggle fill 1`] = `
   </label>
   <label
     class="c1"
+    for="_r_i_"
   >
     <div
       class="c7 c3"
     >
       <input
         class="c4"
+        id="_r_i_"
         type="checkbox"
       />
       <span
@@ -1862,6 +1902,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
 >
   <label
     class="c1"
+    for="_r_0_"
   >
     <div
       class="c2 c3"
@@ -1869,6 +1910,7 @@ exports[`CheckBox should not have accessibility violations 1`] = `
       <input
         aria-label="test"
         class="c4"
+        id="_r_0_"
         type="checkbox"
       />
       <div
@@ -2011,12 +2053,14 @@ exports[`CheckBox theme gap 1`] = `
   >
     <label
       class="c1"
+      for="_r_s_"
     >
       <div
         class="c2 c3"
       >
         <input
           class="c4"
+          id="_r_s_"
           type="checkbox"
         />
         <div
@@ -2029,6 +2073,7 @@ exports[`CheckBox theme gap 1`] = `
     </label>
     <label
       class="c1"
+      for="_r_t_"
     >
       <span>
         test label
@@ -2038,6 +2083,7 @@ exports[`CheckBox theme gap 1`] = `
       >
         <input
           class="c4"
+          id="_r_t_"
           type="checkbox"
         />
         <div
@@ -2047,12 +2093,14 @@ exports[`CheckBox theme gap 1`] = `
     </label>
     <label
       class="c1"
+      for="_r_u_"
     >
       <div
         class="c2 c3"
       >
         <input
           class="c4"
+          id="_r_u_"
           type="checkbox"
         />
         <span
@@ -2188,12 +2236,14 @@ exports[`CheckBox toggle renders 1`] = `
 >
   <label
     class="c1"
+    for="_r_e_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_e_"
         type="checkbox"
       />
       <span
@@ -2207,6 +2257,7 @@ exports[`CheckBox toggle renders 1`] = `
   </label>
   <label
     class="c1"
+    for="_r_f_"
   >
     <div
       class="c2 c3"
@@ -2214,6 +2265,7 @@ exports[`CheckBox toggle renders 1`] = `
       <input
         checked=""
         class="c4"
+        id="_r_f_"
         type="checkbox"
       />
       <span
@@ -2227,12 +2279,14 @@ exports[`CheckBox toggle renders 1`] = `
   </label>
   <label
     class="c7"
+    for="_r_g_"
   >
     <div
       class="c8 c3"
     >
       <input
         class="c4"
+        id="_r_g_"
         type="checkbox"
       />
       <span

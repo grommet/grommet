@@ -541,12 +541,14 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
       >
         <label
           class="c4"
+          for="_r_1_"
         >
           <div
             class="c5 c6"
           >
             <input
               class="c7"
+              id="_r_1_"
               type="checkbox"
             />
             <div
@@ -561,12 +563,14 @@ exports[`FormField checkbox pad is defined in formfield 1`] = `
     </div>
     <label
       class="c9"
+      for="_r_2_"
     >
       <div
         class="c5 c6"
       >
         <input
           class="c7"
+          id="_r_2_"
           type="checkbox"
         />
         <div
@@ -2102,12 +2106,14 @@ exports[`FormField does not apply focusIndicator when formField.focusIndicator i
       >
         <label
           class="c3"
+          for="_r_0_"
         >
           <div
             class="c4 c5"
           >
             <input
               class="c6"
+              id="_r_0_"
               type="checkbox"
             />
             <div
