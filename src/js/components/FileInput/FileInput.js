@@ -194,6 +194,26 @@ const FileInput = forwardRef(
       });
     } else message = `${files.length} items`;
 
+    // Keep the native <input>'s FileList in sync with the `files` state.
+    // The native input only ever holds whatever was picked in the most
+    // recent browse/drop, so once `files` accumulates selections across
+    // multiple browses (multiple mode), the native FileList needs to be
+    // rebuilt from the full `files` array, not just patched, otherwise
+    // it silently diverges from what's shown in the UI (e.g. a native
+    // form submission would miss files from earlier browses).
+    // https://stackoverflow.com/a/64019766
+    const syncNativeFiles = (nextFiles) => {
+      /* eslint-disable no-undef */
+      const dt = new DataTransfer();
+      nextFiles.forEach((file) => dt.items.add(file));
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'files',
+      ).set;
+      /* eslint-enable no-undef */
+      nativeInputValueSetter.call(inputRef.current, dt.files);
+    };
+
     const removeFile = (index) => {
       let nextFiles;
       if (index === 'all') {
@@ -204,24 +224,12 @@ const FileInput = forwardRef(
       }
       setFiles(nextFiles);
 
-      // Need to have a way to track the files other than an array
-      // since inputRef.current.files is a read-only FileList
-      // https://stackoverflow.com/a/64019766
-      /* eslint-disable no-undef */
-      const dt = new DataTransfer();
-      const curFiles = inputRef.current.files;
-      if (index === 'all' || nextFiles.length === 0)
+      if (nextFiles.length === 0) {
         inputRef.current.value = '';
-      for (let i = 0; i < curFiles.length; i += 1) {
-        const curfile = curFiles[i];
-        if (index !== i) dt.items.add(curfile);
+      } else {
+        syncNativeFiles(nextFiles);
       }
 
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-        window.HTMLInputElement.prototype,
-        'files',
-      ).set;
-      nativeInputValueSetter.call(inputRef.current, dt.files);
       const event = new Event('input', { bubbles: true });
       inputRef.current.dispatchEvent(event);
 
@@ -347,6 +355,10 @@ const FileInput = forwardRef(
                 }
               }
               setFiles(nextFiles);
+              // In multiple mode, the native input only reflects this
+              // browse's selection, so it needs to be resynced with the
+              // full accumulated list.
+              if (multiple) syncNativeFiles(nextFiles);
               setDragOver(false);
               if (onChange) onChange(event, { files: nextFiles });
             }}
