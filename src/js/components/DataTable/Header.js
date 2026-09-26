@@ -72,7 +72,8 @@ const buttonStyle = ({ pad, theme, verticalAlign }) => {
     if (partStyles.length > 0)
       styles.push(
         css`
-          &:hover {
+          &:hover,
+          &:focus-visible {
             ${partStyles}
           }
         `,
