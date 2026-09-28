@@ -55,7 +55,7 @@ ClickableProgress.args = {
 };
 
 export default {
-  title: 'Layout/Wizard/Clickable Progress',
+  title: 'Layout/Wizard/Clickable Steps',
 };
 
 export { ClickableProgress };
