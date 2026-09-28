@@ -2687,6 +2687,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       drop: {
         // gap: undefined,
+        pad: { horizontal: 'xsmall', vertical: 'small' },
         option: {
           // background: undefined,
           // gap: undefined,
