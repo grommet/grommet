@@ -66,7 +66,17 @@ export const WizardProgress = ({
 
   const onStepClick = clickableSteps ? (stepId) => {
     const step = steps.find((s) => s.id === stepId);
-    goTo(step?.children?.length ? step.children[0].id : stepId);
+    if (step?.children?.length) {
+      // find the first child we are allowed to go to
+      const firstAllowedChild = step.children.find(
+        (child) => !child.disabled,
+      );
+      if (firstAllowedChild) {
+        goTo(firstAllowedChild.id);
+      }
+    } else {
+      goTo(stepId);
+    }
   } : undefined;
 
   return (

@@ -260,14 +260,21 @@ const Wizard = forwardRef(
       while (nextIndex < flatSteps.length) {
         const nextStep = flatSteps[nextIndex];
         if (!nextStep?.disabled) return nextStep.id;
-        if (nextStep?.disabled && nextStep?.skippable) {
+        if (nextStep?.disabled && clickableSteps) {
           nextIndex += 1;
         } else {
           return undefined;
         }
       }
       return undefined;
-    }, [currentStepObj, currentStepIndex, flatSteps, formValue, steps]);
+    }, [
+      clickableSteps,
+      currentStepObj,
+      currentStepIndex,
+      flatSteps,
+      formValue,
+      steps,
+    ]);
 
     const resolvePreviousStepId = useCallback(() => {
       let prevIndex = currentStepIndex - 1;
