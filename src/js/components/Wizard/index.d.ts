@@ -137,6 +137,7 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   complete: () => void;
   cancel: () => void;
   clickableSteps: boolean;
+  closable: boolean;
   showProgress: WizardShowProgress;
   renderStep?: (
     step: WizardStep<TValue>,
