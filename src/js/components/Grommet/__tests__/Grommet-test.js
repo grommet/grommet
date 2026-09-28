@@ -87,6 +87,39 @@ describe('Grommet', () => {
     expect(getByText('true')).toBeTruthy();
   });
 
+  // eslint-disable-next-line max-len
+  test('updates background classification when legacyColorIsDark changes', () => {
+    const { getByText, rerender } = render(
+      <Grommet background="#00a4b3">
+        <ThemeContext.Consumer>
+          {(theme) => String(theme.dark)}
+        </ThemeContext.Consumer>
+      </Grommet>,
+    );
+
+    expect(getByText('false')).toBeTruthy();
+
+    rerender(
+      <Grommet background="#00a4b3" options={{ legacyColorIsDark: true }}>
+        <ThemeContext.Consumer>
+          {(theme) => String(theme.dark)}
+        </ThemeContext.Consumer>
+      </Grommet>,
+    );
+
+    expect(getByText('true')).toBeTruthy();
+
+    rerender(
+      <Grommet background="#00a4b3">
+        <ThemeContext.Consumer>
+          {(theme) => String(theme.dark)}
+        </ThemeContext.Consumer>
+      </Grommet>,
+    );
+
+    expect(getByText('false')).toBeTruthy();
+  });
+
   test('announce', (done) => {
     const { container } = render(
       <Grommet>
