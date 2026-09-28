@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import { colorIsDark, getRGBA } from '..';
+import { LEGACY_COLOR_IS_DARK } from '../legacyColorIsDark';
 
 describe('colorIsDark', () => {
   test('#666666', () => {
@@ -89,6 +90,19 @@ describe('colorIsDark', () => {
   test('#00a4b3', () => {
     const dark = colorIsDark('#00a4b3');
     expect(dark).toBe(false);
+  });
+
+  // eslint-disable-next-line max-len
+  test('uses legacy brightness classification when enabled on the theme', () => {
+    const theme = { [LEGACY_COLOR_IS_DARK]: true };
+    expect(colorIsDark('#00a4b3', theme)).toBe(true);
+    expect(colorIsDark('#666666', theme)).toBe(true);
+    expect(colorIsDark('#999999', theme)).toBe(false);
+  });
+
+  test('legacy brightness classification retains the alpha cutoff', () => {
+    const theme = { [LEGACY_COLOR_IS_DARK]: true };
+    expect(colorIsDark('rgba(102, 102, 102, 0.4)', theme)).toBe(undefined);
   });
 
   // without a theme, the threshold assumes black/white text and classifies

@@ -1,5 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
+import { LEGACY_COLOR_IS_DARK, legacyColorIsDark } from './legacyColorIsDark';
+
 // Track which deprecated colors have already been warned about
 const warnedColors = new Set();
 
@@ -220,6 +222,9 @@ export const colorIsDark = (color, theme, text) => {
     const [red, green, blue, alpha] = getRGBArray(color);
     // if there is an alpha and it's greater than 50%, we can't really tell
     if (alpha < 0.5) return undefined;
+    if (theme?.[LEGACY_COLOR_IS_DARK]) {
+      return legacyColorIsDark(red, green, blue);
+    }
     return (
       relativeLuminance(red, green, blue) < equalContrastLuminance(theme, text)
     );
