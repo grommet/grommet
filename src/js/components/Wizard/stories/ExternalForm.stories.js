@@ -16,6 +16,8 @@ const steps = [
   {
     id: 'details',
     title: 'Details',
+    validate: (value) =>
+      value.name?.trim() ? undefined : 'A request name is required.',
     render: () => (
       <FormField htmlFor="request-name" label="Request name" name="name">
         <TextInput id="request-name" name="name" />
@@ -25,16 +27,19 @@ const steps = [
   {
     id: 'review',
     title: 'Review',
-    render: () => (
-      <Paragraph>Review the request and complete the wizard.</Paragraph>
+    render: (step, api) => (
+      <Paragraph>
+        Review the request for {api.formValue.name || 'an unnamed request'}.
+      </Paragraph>
     ),
   },
 ];
 
 const ExternalForm = () => {
   const [complete, setComplete] = useState(false);
+  const [value, setValue] = useState({ name: '' });
   return (
-    <Form>
+    <Form value={value} onChange={setValue}>
       <Box fill>
         <Wizard
           aria-label="New request"
@@ -42,6 +47,8 @@ const ExternalForm = () => {
           title="New request"
           showProgress="vertical"
           steps={steps}
+          value={value}
+          onChange={({ value: nextValue }) => setValue(nextValue)}
           onComplete={() => setComplete(true)}
         />
         {complete && (
