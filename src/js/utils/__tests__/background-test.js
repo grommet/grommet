@@ -8,7 +8,7 @@ describe('backgroundAndTextColors', () => {
   // opacity 'medium' (0.4 alpha) makes colorIsDark() return undefined
   // (can't tell). That unknown shade must fall back to the ambient
   // theme.dark, not be coerced to false and force the light-mode text.
-  test('undetermined shade falls back to theme.dark on dark theme', () => {
+  test('undetermined shade falls back to text.dark on dark theme', () => {
     const theme = { ...base, dark: true };
     const [, textColor] = backgroundAndTextColors(
       { color: 'white', opacity: 'medium' },
@@ -18,7 +18,7 @@ describe('backgroundAndTextColors', () => {
     expect(textColor).toBe(theme.global.colors.text.dark);
   });
 
-  test('undetermined shade falls back to theme.dark on light theme', () => {
+  test('undetermined shade falls back to text.light on light theme', () => {
     const theme = { ...base, dark: false };
     const [, textColor] = backgroundAndTextColors(
       { color: 'white', opacity: 'medium' },
