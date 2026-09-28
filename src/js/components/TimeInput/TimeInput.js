@@ -475,7 +475,7 @@ const TimeInput = forwardRef(
           activeElement,
         );
         const isInsideTimeInput = containerRef.current?.contains(activeElement);
-        if (!isSegmentFocused && !isInsideTimeInput) {
+        if (!isSegmentFocused || !isInsideTimeInput) {
           setSegmentFocused(false);
         }
       });
@@ -495,10 +495,12 @@ const TimeInput = forwardRef(
           const next = moveSection(1);
           setActiveSection(next);
           focusSection(next);
+          event.stopPropagation();
           return;
         }
         if (key === 'ArrowLeft') {
           event.preventDefault();
+          event.stopPropagation();
           const next = moveSection(-1);
           setActiveSection(next);
           focusSection(next);
@@ -506,48 +508,51 @@ const TimeInput = forwardRef(
         }
         if (key === 'Home') {
           event.preventDefault();
+          event.stopPropagation();
           setActiveSection(firstSection);
           focusSection(firstSection);
           return;
         }
         if (key === 'End') {
           event.preventDefault();
+          event.stopPropagation();
           setActiveSection(lastSection);
           focusSection(lastSection);
           return;
         }
         if (key === 'ArrowUp') {
           event.preventDefault();
+          event.stopPropagation();
           incrementSection(section, open ? -1 : 1);
           return;
         }
         if (key === 'ArrowDown') {
           if (event.altKey) {
             event.preventDefault();
+            event.stopPropagation();
             openPicker();
             return;
           }
           event.preventDefault();
+          event.stopPropagation();
           incrementSection(section, open ? 1 : -1);
           return;
         }
         if (key === 'Delete' || key === 'Backspace') {
           event.preventDefault();
+          event.stopPropagation();
           clearActiveSection();
           return;
         }
-        if (key === 'Enter') {
+        if ((key === 'Enter' || key === 'Escape') && open) {
           event.preventDefault();
-          if (open) closePicker();
-          return;
-        }
-        if (key === 'Escape' && open) {
-          event.preventDefault();
+          event.stopPropagation();
           closePicker();
           return;
         }
         if (key === ' ' || key === 'Spacebar') {
           event.preventDefault();
+          event.stopPropagation();
           openPicker();
           return;
         }
@@ -556,9 +561,11 @@ const TimeInput = forwardRef(
           const lower = key.toLowerCase();
           if (lower === 'a') {
             event.preventDefault();
+            event.stopPropagation();
             setSectionValue(SECTION_PERIOD, 'AM');
           } else if (lower === 'p') {
             event.preventDefault();
+            event.stopPropagation();
             setSectionValue(SECTION_PERIOD, 'PM');
           }
           return;
@@ -566,12 +573,12 @@ const TimeInput = forwardRef(
 
         if (/^\d$/.test(key)) {
           event.preventDefault();
+          event.stopPropagation();
           const next = applyDigit(Number(key));
           const targetSection = next ?? section;
           setActiveSection(targetSection);
-          if (targetSection === section) {
-            event.currentTarget.focus();
-          } else {
+          if (targetSection !== section) {
+            // moving to a different section focus for digit',
             focusSection(targetSection);
           }
         }
