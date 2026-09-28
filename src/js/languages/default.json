@@ -147,6 +147,7 @@
   "input": {
     "readOnlyCopy": {
       "prompt": "Copy to clipboard",
+      "promptWithValue": "Copy to clipboard {value}",
       "validation": "Copied"
     }
   },

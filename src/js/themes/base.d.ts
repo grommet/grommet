@@ -2429,6 +2429,7 @@ export interface ThemeType {
     };
     drop?: {
       gap?: GapType;
+      pad?: PadType;
       option?: {
         background?: ColorType;
         gap?: GapType;
