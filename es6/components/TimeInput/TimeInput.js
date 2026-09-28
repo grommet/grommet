@@ -1,5 +1,5 @@
 var _excluded = ["defaultValue", "disabled", "focusOnOpen", "format", "id", "inline", "messages", "minuteStep", "name", "onChange", "onPartialChange", "readOnly", "showSeconds", "value"],
-  _excluded2 = ["plain", "focusIndicator"];
+  _excluded2 = ["plain", "focusIndicator", "aria-describedby", "aria-invalid"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
@@ -119,7 +119,20 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var segmentRefs = useRef({});
   var plainProp = rest.plain,
     focusIndicatorProp = rest.focusIndicator,
+    ariaDescribedBy = rest['aria-describedby'],
+    ariaInvalid = rest['aria-invalid'],
     inputRest = _objectWithoutPropertiesLoose(rest, _excluded2);
+
+  // FormField merges its generated error id into aria-describedby
+  // alongside any id the consumer already had on the child. Split those
+  // back apart so a pre-existing description stays on every segment,
+  // while the error id itself is only added to the segment(s) it's about.
+  var errorId = id ? "grommet-" + id + "__error" : undefined;
+  var describedByTokens = ariaDescribedBy ? ariaDescribedBy.split(' ').filter(Boolean) : [];
+  var hasErrorDescribedBy = !!errorId && describedByTokens.includes(errorId);
+  var consumerDescribedBy = describedByTokens.filter(function (token) {
+    return token !== errorId;
+  }).join(' ') || undefined;
   var normalizedMinuteStep = useMemo(function () {
     return normalizeStep(minuteStep);
   }, [minuteStep]);
@@ -273,6 +286,13 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       };
     });
   }, [format, pendingDigits, sectionOrder, sections]);
+
+  // A required-field error is caused by whichever section(s) are still
+  // empty, so only announce it there; once every section has a value the
+  // error must be about the value as a whole, so announce it everywhere.
+  var allSectionsFilled = displaySections.every(function (entry) {
+    return entry.filled;
+  });
   var onDisplaySectionMouseDown = useCallback(function (section, event) {
     if (readOnly) return;
     if (disabled) return;
@@ -571,6 +591,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       prefix = _ref5.prefix,
       text = _ref5.text,
       filled = _ref5.filled;
+    var describeSegment = !filled || allSectionsFilled;
     return /*#__PURE__*/React.createElement(React.Fragment, {
       key: section
     }, !!prefix && /*#__PURE__*/React.createElement(StyledTimeInputSeparator, _extends({
@@ -597,6 +618,8 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       role: "spinbutton",
       "aria-disabled": disabled || undefined,
       "aria-readonly": readOnly || undefined,
+      "aria-invalid": ariaInvalid && describeSegment || undefined,
+      "aria-describedby": [consumerDescribedBy, describeSegment && hasErrorDescribedBy ? errorId : undefined].filter(Boolean).join(' ') || undefined,
       "aria-valuenow": ariaMeta.now,
       "aria-valuemin": ariaMeta.min,
       "aria-valuemax": ariaMeta.max,
