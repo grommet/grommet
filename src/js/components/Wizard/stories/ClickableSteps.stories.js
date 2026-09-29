@@ -2,11 +2,19 @@
 // SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 
-import { Box, FormField, Notification, Paragraph, TextInput } from 'grommet';
+import {
+  Box,
+  CheckBox,
+  FormField,
+  Notification,
+  Paragraph,
+  TextInput,
+} from 'grommet';
 import { Wizard } from '../Wizard';
 
 const ClickableSteps = () => {
   const [complete, setComplete] = useState(false);
+  const [value, setValue] = useState({ advanced: false });
   const steps = [
     {
       id: 'details',
@@ -21,11 +29,10 @@ const ClickableSteps = () => {
             name="name"
             required
           >
-            <TextInput
-              id="resource-name"
-              name="name"
-              placeholder="Resource name"
-            />
+            <TextInput id="resource-name" name="name" />
+          </FormField>
+          <FormField name="advanced">
+            <CheckBox name="advanced" label="Enable advanced options" />
           </FormField>
         </Box>
       ),
@@ -39,13 +46,12 @@ const ClickableSteps = () => {
       render: () => <Paragraph>Configure the resource options.</Paragraph>,
     },
     {
-      id: 'approval',
-      title: 'Approval',
-      description: 'Request approval to continue.',
-      disabled: true,
-      disabledReason: 'Approval is unavailable for this resource.',
-      skippable: true,
-      render: () => <Paragraph>Request approval for the resource.</Paragraph>,
+      id: 'advanced',
+      title: 'Advanced',
+      description: 'Configure advanced resource options.',
+      disabled: !value.advanced,
+      disabledReason: 'Enable advanced options to configure this step.',
+      render: () => <Paragraph>Configure advanced resource options.</Paragraph>,
     },
     {
       id: 'review',
@@ -66,6 +72,8 @@ const ClickableSteps = () => {
         title="Create resource"
         showProgress="vertical"
         steps={steps}
+        value={value}
+        onChange={({ value: nextValue }) => setValue(nextValue)}
         onComplete={() => setComplete(true)}
       />
       {complete && (
