@@ -4,63 +4,109 @@ import React, { useState } from 'react';
 
 import {
   Box,
-  Form,
+  Button,
   FormField,
   Notification,
   Paragraph,
   TextInput,
 } from 'grommet';
 import { Wizard } from '../Wizard';
+import { WizardFooter } from '../WizardFooter';
+import { useWizard } from '../WizardContext';
 
-const steps = [
-  {
-    id: 'details',
-    title: 'Details',
-    validate: (value) =>
-      value.name?.trim() ? undefined : 'A request name is required.',
-    render: () => (
-      <FormField htmlFor="request-name" label="Request name" name="name">
-        <TextInput id="request-name" name="name" />
-      </FormField>
-    ),
-  },
-  {
-    id: 'review',
-    title: 'Review',
-    render: (step, api) => (
-      <Paragraph>
-        Review the request for {api.formValue.name || 'an unnamed request'}.
-      </Paragraph>
-    ),
-  },
-];
+const validate = (value) => ({
+  details: value.name?.trim() ? undefined : 'A request name is required.',
+});
+
+const ExternalFormFooter = ({ errors }) => {
+  const {
+    complete,
+    currentStep,
+    currentStepIndex,
+    next,
+    previous,
+    totalSteps,
+  } = useWizard();
+  const isFirstStep = currentStepIndex === 0;
+  const isLastStep = currentStepIndex === totalSteps - 1;
+  const hasError = !!errors[currentStep];
+
+  return (
+    <WizardFooter>
+      {!isFirstStep && <Button label="Previous" secondary onClick={previous} />}
+      <Button
+        label={isLastStep ? 'Complete' : 'Next'}
+        primary
+        disabled={hasError}
+        onClick={isLastStep ? complete : next}
+      />
+    </WizardFooter>
+  );
+};
 
 const ExternalForm = () => {
-  const [complete, setComplete] = useState(false);
+  const [submittedValue, setSubmittedValue] = useState();
   const [value, setValue] = useState({ name: '' });
-  return (
-    <Form value={value} onChange={setValue}>
-      <Box fill>
-        <Wizard
-          aria-label="New request"
-          form={false}
-          title="New request"
-          showProgress="vertical"
-          steps={steps}
-          value={value}
-          onChange={({ value: nextValue }) => setValue(nextValue)}
-          onComplete={() => setComplete(true)}
-        />
-        {complete && (
-          <Notification
-            toast={{ position: 'top' }}
-            status="normal"
-            title="Wizard complete"
-            onClose={() => setComplete(false)}
+  const errors = validate(value);
+  const steps = [
+    {
+      id: 'details',
+      title: 'Details',
+      status: errors.details ? 'error' : 'completed',
+      errorMessage: errors.details,
+      render: () => (
+        <FormField
+          htmlFor="request-name"
+          label="Request name"
+          name="name"
+          error={errors.details}
+        >
+          <TextInput
+            id="request-name"
+            name="name"
+            value={value.name}
+            onChange={(event) =>
+              setValue((currentValue) => ({
+                ...currentValue,
+                name: event.target.value,
+              }))
+            }
           />
-        )}
-      </Box>
-    </Form>
+        </FormField>
+      ),
+    },
+    {
+      id: 'review',
+      title: 'Review',
+      render: () => (
+        <Paragraph>
+          Review the request for {value.name || 'an unnamed request'}.
+        </Paragraph>
+      ),
+    },
+  ];
+
+  return (
+    <Box fill>
+      <Wizard
+        aria-label="New request"
+        form={false}
+        title="New request"
+        showProgress="vertical"
+        steps={steps}
+        footer={<ExternalFormFooter errors={errors} />}
+        onComplete={() => setSubmittedValue(value)}
+      />
+      {submittedValue && (
+        <Notification
+          toast={{ position: 'top' }}
+          status="normal"
+          title="Request submitted"
+          message={`Created request ${submittedValue.name}.`}
+          onClose={() => setSubmittedValue(undefined)}
+        />
+      )}
+    </Box>
   );
 };
 
