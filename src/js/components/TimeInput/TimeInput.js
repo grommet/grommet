@@ -509,7 +509,8 @@ const TimeInput = forwardRef(
     const onSegmentKeyDown = useCallback(
       (section, event) => {
         if (readOnly || disabled) return;
-        const { key } = event;
+        const { key, ctrlKey, metaKey, altKey } = event;
+        if (ctrlKey || metaKey || (altKey && key !== 'ArrowDown')) return;
 
         if (activeSection !== section) {
           setActiveSection(section);
@@ -552,7 +553,7 @@ const TimeInput = forwardRef(
           return;
         }
         if (key === 'ArrowDown') {
-          if (event.altKey) {
+          if (altKey) {
             event.preventDefault();
             event.stopPropagation();
             openPicker();
