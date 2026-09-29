@@ -3,6 +3,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import {
+  act,
   fireEvent,
   render,
   screen,
@@ -64,6 +65,26 @@ describe('TimeInput', () => {
 
     await user.keyboard('{Escape}');
     expect(document.getElementById('time-picker__drop')).toBeNull();
+  });
+
+  test('ignores unsupported modifier key combinations', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="00:34:56" />
+      </Grommet>,
+    );
+
+    const minuteSegment = getSegment('minutes');
+    await user.click(minuteSegment);
+    await user.keyboard('{Control>}{ArrowUp}{/Control}');
+    await user.keyboard('{Meta>}{ArrowUp}{/Meta}');
+    await user.keyboard('{Alt>}{ArrowUp}{/Alt}');
+    await user.click(getSegment('meridiem'));
+    await user.keyboard('{Meta>}p{/Meta}');
+
+    expect(getDisplayInput()).toHaveValue('12:34:56 AM');
   });
 
   test('commits a focused popup option with Enter', async () => {
@@ -142,6 +163,28 @@ describe('TimeInput', () => {
     await user.click(meridiemSegment);
 
     expect(meridiemSegment).toHaveFocus();
+  });
+
+  test('keeps focus within the container while moving between segments', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet theme={{ global: { colors: { focus: '#FF0000' } } }}>
+        <TimeInput format="24" defaultValue="12:34:56" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    const minuteSegment = getSegment('minutes');
+    const container = screen.getByRole('group').parentElement
+      ?.parentElement as HTMLElement;
+
+    await user.click(hourSegment);
+    expect(hourSegment).toHaveFocus();
+
+    await user.keyboard('{ArrowRight}');
+    expect(minuteSegment).toHaveFocus();
+    expect(container).toContainElement(minuteSegment);
   });
 
   test('keeps segment typing active for two-digit entry', async () => {
@@ -274,6 +317,41 @@ describe('TimeInput', () => {
     // With no preceding focusable element on the page, focus falls through
     // to document.body; onSegmentBlur must not yank it back onto the segment.
     expect(document.body).toHaveFocus();
+  });
+
+  test('does not reclaim focus after a segment blurs to the document body', async () => {
+    const user = userEvent.setup();
+    let animationFrameCallback: FrameRequestCallback | undefined;
+    const requestAnimationFrameSpy = jest
+      .spyOn(window, 'requestAnimationFrame')
+      .mockImplementation((callback) => {
+        animationFrameCallback = callback;
+        return 0;
+      });
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    try {
+      await user.click(hourSegment);
+      await user.tab({ shift: true });
+
+      expect(requestAnimationFrameSpy).toHaveBeenCalledTimes(1);
+      expect(animationFrameCallback).toBeDefined();
+
+      act(() => {
+        animationFrameCallback?.(0);
+      });
+      await waitFor(() => {
+        expect(document.body).toHaveFocus();
+      });
+    } finally {
+      requestAnimationFrameSpy.mockRestore();
+    }
   });
 
   test('updates active section via arrows and digits', async () => {
@@ -512,7 +590,7 @@ describe('TimeInput', () => {
       expect(segment).toHaveAttribute('aria-describedby', errorId);
     });
   });
-test('links a whole-value error to every segment when the time is complete', () => {
+  test('links a whole-value error to every segment when the time is complete', () => {
     render(
       <Grommet>
         <Form>
@@ -533,9 +611,7 @@ test('links a whole-value error to every segment when the time is complete', () 
       </Grommet>,
     );
 
-    const errorId = screen
-      .getByText('Time is unavailable')
-      .getAttribute('id');
+    const errorId = screen.getByText('Time is unavailable').getAttribute('id');
     expect(errorId).toBeTruthy();
 
     ['hours', 'minutes'].forEach((segmentName) => {
