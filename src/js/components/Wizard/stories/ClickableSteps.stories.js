@@ -17,7 +17,7 @@ const ClickableSteps = () => {
           <Paragraph>Describe the resource to create.</Paragraph>
           <FormField
             htmlFor="resource-name"
-            label="Resource"
+            label="Resource name"
             name="name"
             required
           >
