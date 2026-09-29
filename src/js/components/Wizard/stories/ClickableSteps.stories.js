@@ -5,11 +5,6 @@ import React, { useState } from 'react';
 import { Box, FormField, Notification, Paragraph, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
 
-const validateResourceName = (name) => {
-  if (!name || !name.trim()) return 'Enter a resource name to continue.';
-  return undefined;
-};
-
 const ClickableSteps = () => {
   const [complete, setComplete] = useState(false);
   const steps = [
@@ -25,7 +20,6 @@ const ClickableSteps = () => {
             label="Resource"
             name="name"
             required
-            validate={validateResourceName}
           >
             <TextInput
               id="resource-name"
