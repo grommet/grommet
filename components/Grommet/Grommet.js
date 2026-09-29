@@ -14,6 +14,7 @@ var _MessageContext = require("../../contexts/MessageContext");
 var _default = _interopRequireDefault(require("../../languages/default.json"));
 var _propTypes = require("./propTypes");
 var _AnalyticsContext = require("../../contexts/AnalyticsContext");
+var _legacyColorIsDark = require("../../utils/legacyColorIsDark");
 var _excluded = ["children", "full", "containerTarget", "theme", "options", "messages", "onAnalytics"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -37,11 +38,13 @@ var Grommet = exports.Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (pr
     dir = props.dir,
     themeMode = props.themeMode,
     userAgent = props.userAgent;
+  var legacyColorIsDark = options.legacyColorIsDark === true;
   var _useState = (0, _react.useState)(),
     stateResponsive = _useState[0],
     setResponsive = _useState[1];
   var theme = (0, _react.useMemo)(function () {
     var nextTheme = (0, _utils.deepMerge)(_themes.base, themeProp || {});
+    nextTheme[_legacyColorIsDark.LEGACY_COLOR_IS_DARK] = legacyColorIsDark;
 
     // if user provides specific menu alignment, we don't want
     // the defaults to be included at all (can cause issues with controlMirror)
@@ -65,7 +68,7 @@ var Grommet = exports.Grommet = /*#__PURE__*/(0, _react.forwardRef)(function (pr
       nextTheme.dir = dir;
     }
     return nextTheme;
-  }, [background, dir, themeMode, themeProp]);
+  }, [background, dir, legacyColorIsDark, themeMode, themeProp]);
   var messages = (0, _react.useMemo)(function () {
     // combine the passed in messages, if any, with the default
     // messages and format function.

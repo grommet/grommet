@@ -79,20 +79,20 @@ var backgroundIsDark = exports.backgroundIsDark = function backgroundIsDark(back
       !opacity || opacity !== 'weak')) {
         var backgroundColor = (0, _colors.normalizeColor)(background.color, theme);
         if (backgroundColor) {
-          result = (0, _colors.colorIsDark)(backgroundColor);
+          result = (0, _colors.colorIsDark)(backgroundColor, theme);
         }
       }
     } else {
       var _color = (0, _colors.normalizeColor)(background, theme);
       if (_color) {
-        result = (0, _colors.colorIsDark)(_color);
+        result = (0, _colors.colorIsDark)(_color, theme);
       }
     }
   }
   return result;
 };
-var darkContext = function darkContext(backgroundColor) {
-  var isDark = (0, _colors.colorIsDark)(backgroundColor);
+var darkContext = function darkContext(backgroundColor, theme, text) {
+  var isDark = (0, _colors.colorIsDark)(backgroundColor, theme, text);
   if (isDark === undefined) return undefined;
   return isDark ? 'dark' : 'light';
 };
@@ -122,13 +122,15 @@ var backgroundAndTextColors = exports.backgroundAndTextColors = function backgro
       // set the textColor to have the best contrast against the background
       // color.
       if (!textColor && (opacity === undefined || opacity > 0.3)) {
-        var shade = darkContext(backgroundColor, theme);
-        textColor = (0, _colors.normalizeColor)(shade && text[shade] || text, theme);
+        var shade = darkContext(backgroundColor, theme, text);
+        // preserve undefined (unknown shade) so normalizeColor falls back
+        // to the ambient theme.dark instead of forcing the light side
+        textColor = (0, _colors.normalizeColor)(shade && text[shade] || text, theme, shade === undefined ? undefined : shade === 'dark');
       }
     }
   } else {
     backgroundColor = normalizeBackgroundColor(background, theme);
-    var _shade = darkContext(backgroundColor, theme);
+    var _shade = darkContext(backgroundColor, theme, text);
     var transparent;
     if (backgroundColor && (0, _colors.canExtractRGBArray)(backgroundColor)) {
       var colorArray = (0, _colors.getRGBArray)(backgroundColor);

@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
     dir: _propTypes["default"].oneOf(['rtl']),
     full: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['min'])]),
     options: _propTypes["default"].shape({
+      legacyColorIsDark: _propTypes["default"].bool,
       box: _propTypes["default"].shape({
         cssGap: _propTypes["default"].bool
       }),

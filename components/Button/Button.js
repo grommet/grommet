@@ -296,7 +296,16 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
   // only used when theme does not have button.default
   var isDarkBackground = function isDarkBackground() {
     var backgroundColor = (0, _utils.normalizeBackground)((0, _utils.normalizeColor)(color || theme.button.primary && theme.button.primary.color || theme.global.colors.control || 'brand', theme), theme);
-    return (0, _utils.colorIsDark)(backgroundColor, theme);
+    return (0, _utils.colorIsDark)(backgroundColor, theme, theme.button.color);
+  };
+
+  // matches the text color backgroundStyle() selects for the label, so
+  // icon/animation colors stay in sync with an explicit theme.button.color.
+  // isDarkBackground() may be undefined (unknown shade); normalizeColor()
+  // then falls back to the ambient theme.dark, matching backgroundStyle().
+  var primaryTextColor = function primaryTextColor() {
+    var text = theme.button.color || theme.global.colors.text;
+    return (0, _utils.normalizeColor)(text, theme, isDarkBackground());
   };
   var onMouseOverButton = function onMouseOverButton(event) {
     setHover(true);
@@ -324,7 +333,7 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       }
     } else if (primary) {
       buttonIcon = /*#__PURE__*/(0, _react.cloneElement)(icon, {
-        color: theme.global.colors.text[isDarkBackground() ? 'dark' : 'light']
+        color: primaryTextColor()
       });
     }
   } else if (kindIcon && !plain) {
@@ -388,7 +397,7 @@ var Button = exports.Button = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         animationColor = hover && getIconColor(themePaths.hover, theme) || getIconColor(themePaths.base, theme, color, kind);
       }
     } else if (primary) {
-      animationColor = theme.global.colors.text[isDarkBackground() ? 'dark' : 'light'];
+      animationColor = primaryTextColor();
     }
     contents =
     /*#__PURE__*/

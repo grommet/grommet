@@ -9,6 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
     dir: PropTypes.oneOf(['rtl']),
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])]),
     options: PropTypes.shape({
+      legacyColorIsDark: PropTypes.bool,
       box: PropTypes.shape({
         cssGap: PropTypes.bool
       }),

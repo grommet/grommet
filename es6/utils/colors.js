@@ -1,5 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
+import { LEGACY_COLOR_IS_DARK, legacyColorIsDark } from './legacyColorIsDark';
+
 // Track which deprecated colors have already been warned about
 var warnedColors = new Set();
 var checkColorDeprecation = function checkColorDeprecation(color, theme, dark) {
@@ -136,29 +138,99 @@ export var getRGBArray = function getRGBArray(color) {
   }
   return color;
 };
-export var colorIsDark = function colorIsDark(color) {
-  if (color && canExtractRGBArray(color)) {
-    var _getRGBArray = getRGBArray(color),
+
+// sRGB-to-linear conversion constants.
+// https://www.w3.org/TR/WCAG22/#dfn-relative-luminance
+var SRGB_LINEAR_THRESHOLD = 0.04045;
+var SRGB_LINEAR_DIVISOR = 12.92;
+var SRGB_GAMMA_OFFSET = 0.055;
+var SRGB_GAMMA_DIVISOR = 1.055;
+var SRGB_GAMMA_EXPONENT = 2.4;
+
+// Linearizes an sRGB channel (0-255) per the WCAG relative luminance spec.
+// https://www.w3.org/TR/WCAG22/#dfn-relative-luminance
+var linearizeChannel = function linearizeChannel(value) {
+  var c = value / 255;
+  return c <= SRGB_LINEAR_THRESHOLD ? c / SRGB_LINEAR_DIVISOR : Math.pow((c + SRGB_GAMMA_OFFSET) / SRGB_GAMMA_DIVISOR, SRGB_GAMMA_EXPONENT);
+};
+
+// WCAG relative luminance coefficients for linearized sRGB channels.
+// https://www.w3.org/TR/WCAG22/#dfn-relative-luminance
+var RED_LUMINANCE_COEFFICIENT = 0.2126;
+var GREEN_LUMINANCE_COEFFICIENT = 0.7152;
+var BLUE_LUMINANCE_COEFFICIENT = 0.0722;
+var relativeLuminance = function relativeLuminance(red, green, blue) {
+  return RED_LUMINANCE_COEFFICIENT * linearizeChannel(red) + GREEN_LUMINANCE_COEFFICIENT * linearizeChannel(green) + BLUE_LUMINANCE_COEFFICIENT * linearizeChannel(blue);
+};
+
+// Offset added to luminance values in the WCAG contrast ratio formula:
+// (L1 + 0.05) / (L2 + 0.05). https://www.w3.org/TR/WCAG22/#dfn-contrast-ratio
+var WCAG_CONTRAST_OFFSET = 0.05;
+
+// Luminance at which black and white text have equal WCAG contrast ratios
+// against the background: solving (1.05 / (L+0.05)) = ((L+0.05) / 0.05).
+var EQUAL_CONTRAST_LUMINANCE = 0.179;
+var luminanceOf = function luminanceOf(color, theme, dark) {
+  var resolved = theme && _normalizeColor(color, theme, dark) || color;
+  if (resolved && canExtractRGBArray(resolved)) {
+    var _getRGBArray = getRGBArray(resolved),
       red = _getRGBArray[0],
       green = _getRGBArray[1],
-      blue = _getRGBArray[2],
-      alpha = _getRGBArray[3];
-    // if there is an alpha and it's greater than 50%, we can't really tell
-    if (alpha < 0.5) return undefined;
-    var brightness = (299 * red + 587 * green + 114 * blue) / 1000;
-    // From: http://www.had2know.com/technology/color-contrast-calculator-web-design.html
-    // Above domain is no longer registered.
-    return brightness < 125;
+      blue = _getRGBArray[2];
+    return relativeLuminance(red, green, blue);
   }
   return undefined;
 };
-export var getRGBA = function getRGBA(color, opacity) {
+
+// Luminance at which a pair of light/dark text colors have equal WCAG
+// contrast against the background. text.light is the (typically darker)
+// text used against light backgrounds and text.dark is the (typically
+// lighter) text used against dark backgrounds. text defaults to
+// theme.global.colors.text so callers that select an alternate text color
+// pair (e.g. Button's explicit color prop) can pass it in and get a
+// threshold that matches what will actually be selected. Falls back to the
+// black/white derived EQUAL_CONTRAST_LUMINANCE when no usable text colors
+// are available, preserving prior behavior for callers that don't pass one.
+var equalContrastLuminance = function equalContrastLuminance(theme, text) {
+  if (text === void 0) {
+    var _theme$global;
+    text = theme == null || (_theme$global = theme.global) == null || (_theme$global = _theme$global.colors) == null ? void 0 : _theme$global.text;
+  }
+  if (!text) return EQUAL_CONTRAST_LUMINANCE;
+  // resolve both sides directly from text (a color name, a raw color, or a
+  // { dark, light } pair) with explicit dark args, so named theme colors
+  // (e.g. 'text') and aliases (e.g. text.dark: 'text-strong') resolve to
+  // the intended side rather than the theme's current mode
+  var darkTextLuminance = luminanceOf(text, theme, false);
+  var lightTextLuminance = luminanceOf(text, theme, true);
+  if (darkTextLuminance === undefined || lightTextLuminance === undefined) {
+    return EQUAL_CONTRAST_LUMINANCE;
+  }
+  return Math.sqrt((darkTextLuminance + WCAG_CONTRAST_OFFSET) * (lightTextLuminance + WCAG_CONTRAST_OFFSET)) - WCAG_CONTRAST_OFFSET;
+};
+export var colorIsDark = function colorIsDark(color, theme, text) {
   if (color && canExtractRGBArray(color)) {
     var _getRGBArray2 = getRGBArray(color),
       red = _getRGBArray2[0],
       green = _getRGBArray2[1],
       blue = _getRGBArray2[2],
       alpha = _getRGBArray2[3];
+    // if there is an alpha and it's greater than 50%, we can't really tell
+    if (alpha < 0.5) return undefined;
+    if (theme != null && theme[LEGACY_COLOR_IS_DARK]) {
+      return legacyColorIsDark(red, green, blue);
+    }
+    return relativeLuminance(red, green, blue) < equalContrastLuminance(theme, text);
+  }
+  return undefined;
+};
+export var getRGBA = function getRGBA(color, opacity) {
+  if (color && canExtractRGBArray(color)) {
+    var _getRGBArray3 = getRGBArray(color),
+      red = _getRGBArray3[0],
+      green = _getRGBArray3[1],
+      blue = _getRGBArray3[2],
+      alpha = _getRGBArray3[3];
     var normalizedAlpha;
     if (opacity !== undefined) {
       normalizedAlpha = opacity;

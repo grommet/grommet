@@ -11,6 +11,11 @@ export interface GrommetProps {
   dir?: 'rtl';
   full?: boolean | 'min';
   options?: {
+    /**
+     * Legacy compatibility fallback: restores the pre-WCAG color heuristic,
+     * which may select foreground colors that fail WCAG contrast requirements.
+     */
+    legacyColorIsDark?: boolean;
     button?: { childrenPlain?: boolean };
     box?: {
       cssGap?: boolean;

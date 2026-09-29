@@ -15,6 +15,7 @@ import { format as _format, MessageContext } from '../../contexts/MessageContext
 import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
 import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
+import { LEGACY_COLOR_IS_DARK } from '../../utils/legacyColorIsDark';
 var FullGlobalStyle = createGlobalStyle(["body{margin:0;}"]);
 var defaultOptions = {};
 var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
@@ -32,11 +33,13 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
     dir = props.dir,
     themeMode = props.themeMode,
     userAgent = props.userAgent;
+  var legacyColorIsDark = options.legacyColorIsDark === true;
   var _useState = useState(),
     stateResponsive = _useState[0],
     setResponsive = _useState[1];
   var theme = useMemo(function () {
     var nextTheme = deepMerge(baseTheme, themeProp || {});
+    nextTheme[LEGACY_COLOR_IS_DARK] = legacyColorIsDark;
 
     // if user provides specific menu alignment, we don't want
     // the defaults to be included at all (can cause issues with controlMirror)
@@ -60,7 +63,7 @@ var Grommet = /*#__PURE__*/forwardRef(function (props, ref) {
       nextTheme.dir = dir;
     }
     return nextTheme;
-  }, [background, dir, themeMode, themeProp]);
+  }, [background, dir, legacyColorIsDark, themeMode, themeProp]);
   var messages = useMemo(function () {
     // combine the passed in messages, if any, with the default
     // messages and format function.

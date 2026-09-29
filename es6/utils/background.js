@@ -75,20 +75,20 @@ export var backgroundIsDark = function backgroundIsDark(backgroundArg, theme) {
       !opacity || opacity !== 'weak')) {
         var backgroundColor = normalizeColor(background.color, theme);
         if (backgroundColor) {
-          result = colorIsDark(backgroundColor);
+          result = colorIsDark(backgroundColor, theme);
         }
       }
     } else {
       var _color = normalizeColor(background, theme);
       if (_color) {
-        result = colorIsDark(_color);
+        result = colorIsDark(_color, theme);
       }
     }
   }
   return result;
 };
-var darkContext = function darkContext(backgroundColor) {
-  var isDark = colorIsDark(backgroundColor);
+var darkContext = function darkContext(backgroundColor, theme, text) {
+  var isDark = colorIsDark(backgroundColor, theme, text);
   if (isDark === undefined) return undefined;
   return isDark ? 'dark' : 'light';
 };
@@ -118,13 +118,15 @@ export var backgroundAndTextColors = function backgroundAndTextColors(background
       // set the textColor to have the best contrast against the background
       // color.
       if (!textColor && (opacity === undefined || opacity > 0.3)) {
-        var shade = darkContext(backgroundColor, theme);
-        textColor = normalizeColor(shade && text[shade] || text, theme);
+        var shade = darkContext(backgroundColor, theme, text);
+        // preserve undefined (unknown shade) so normalizeColor falls back
+        // to the ambient theme.dark instead of forcing the light side
+        textColor = normalizeColor(shade && text[shade] || text, theme, shade === undefined ? undefined : shade === 'dark');
       }
     }
   } else {
     backgroundColor = normalizeBackgroundColor(background, theme);
-    var _shade = darkContext(backgroundColor, theme);
+    var _shade = darkContext(backgroundColor, theme, text);
     var transparent;
     if (backgroundColor && canExtractRGBArray(backgroundColor)) {
       var colorArray = getRGBArray(backgroundColor);
