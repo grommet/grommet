@@ -92,8 +92,12 @@ var FormFieldBox = styled(Box).withConfig({
 var FormFieldContentBox = styled(Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
-})(["", " ", " ", ""], function (props) {
+})(["", " ", " ", " ", ""], function (props) {
   return getFocusStyle(props);
+}, function (props) {
+  return props.componentName === 'timeInput' && css(["&:focus-within{", "}"], focusStyle({
+    justBorder: true
+  }));
 }, getHoverStyle('content'), function (props) {
   var _props$theme$formFiel3;
   return props.theme.formField && ((_props$theme$formFiel3 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.container) == null ? void 0 : _props$theme$formFiel3.extend);
@@ -556,7 +560,9 @@ var FormField = /*#__PURE__*/forwardRef(function (_ref4, ref) {
       if (_onFocus) _onFocus(event);
     },
     onBlur: function onBlur(event) {
-      setFocus(false);
+      var _formFieldRef$current2;
+      var focusRemainsInside = (_formFieldRef$current2 = formFieldRef.current) == null ? void 0 : _formFieldRef$current2.contains(event.relatedTarget);
+      if (!focusRemainsInside) setFocus(false);
 
       // if input has a drop and focus is within drop
       // prevent onBlur validation from running until

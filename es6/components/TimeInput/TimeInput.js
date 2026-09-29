@@ -398,18 +398,16 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, [announce, disabled, formatMessage, messages, open, readOnly, segmentFocused, setActiveSection]);
   var onSegmentBlur = useCallback(function () {
     requestAnimationFrame(function () {
+      var _containerRef$current;
       var _document = document,
         activeElement = _document.activeElement;
       var isSegmentFocused = Object.values(segmentRefs.current).includes(activeElement);
-      if (!isSegmentFocused && activeElement === document.body && !readOnly && !disabled) {
-        focusSection(activeSection);
-        return;
-      }
-      if (!isSegmentFocused) {
+      var isInsideTimeInput = (_containerRef$current = containerRef.current) == null ? void 0 : _containerRef$current.contains(activeElement);
+      if (!isSegmentFocused || !isInsideTimeInput) {
         setSegmentFocused(false);
       }
     });
-  }, [activeSection, disabled, focusSection, readOnly]);
+  }, []);
   var onSegmentKeyDown = useCallback(function (section, event) {
     if (readOnly || disabled) return;
     var key = event.key;
@@ -421,10 +419,12 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       var next = moveSection(1);
       setActiveSection(next);
       focusSection(next);
+      event.stopPropagation();
       return;
     }
     if (key === 'ArrowLeft') {
       event.preventDefault();
+      event.stopPropagation();
       var _next = moveSection(-1);
       setActiveSection(_next);
       focusSection(_next);
@@ -432,48 +432,51 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }
     if (key === 'Home') {
       event.preventDefault();
+      event.stopPropagation();
       setActiveSection(firstSection);
       focusSection(firstSection);
       return;
     }
     if (key === 'End') {
       event.preventDefault();
+      event.stopPropagation();
       setActiveSection(lastSection);
       focusSection(lastSection);
       return;
     }
     if (key === 'ArrowUp') {
       event.preventDefault();
+      event.stopPropagation();
       incrementSection(section, open ? -1 : 1);
       return;
     }
     if (key === 'ArrowDown') {
       if (event.altKey) {
         event.preventDefault();
+        event.stopPropagation();
         openPicker();
         return;
       }
       event.preventDefault();
+      event.stopPropagation();
       incrementSection(section, open ? 1 : -1);
       return;
     }
     if (key === 'Delete' || key === 'Backspace') {
       event.preventDefault();
+      event.stopPropagation();
       clearActiveSection();
       return;
     }
-    if (key === 'Enter') {
+    if ((key === 'Enter' || key === 'Escape') && open) {
       event.preventDefault();
-      if (open) closePicker();
-      return;
-    }
-    if (key === 'Escape' && open) {
-      event.preventDefault();
+      event.stopPropagation();
       closePicker();
       return;
     }
     if (key === ' ' || key === 'Spacebar') {
       event.preventDefault();
+      event.stopPropagation();
       openPicker();
       return;
     }
@@ -481,21 +484,23 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       var lower = key.toLowerCase();
       if (lower === 'a') {
         event.preventDefault();
+        event.stopPropagation();
         setSectionValue(SECTION_PERIOD, 'AM');
       } else if (lower === 'p') {
         event.preventDefault();
+        event.stopPropagation();
         setSectionValue(SECTION_PERIOD, 'PM');
       }
       return;
     }
     if (/^\d$/.test(key)) {
       event.preventDefault();
+      event.stopPropagation();
       var _next2 = applyDigit(Number(key));
       var targetSection = _next2 != null ? _next2 : section;
       setActiveSection(targetSection);
-      if (targetSection === section) {
-        event.currentTarget.focus();
-      } else {
+      if (targetSection !== section) {
+        // moving to a different section focus for digit',
         focusSection(targetSection);
       }
     }
