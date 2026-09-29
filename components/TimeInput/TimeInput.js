@@ -414,7 +414,11 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
   }, []);
   var onSegmentKeyDown = (0, _react.useCallback)(function (section, event) {
     if (readOnly || disabled) return;
-    var key = event.key;
+    var key = event.key,
+      ctrlKey = event.ctrlKey,
+      metaKey = event.metaKey,
+      altKey = event.altKey;
+    if (ctrlKey || metaKey || altKey && key !== 'ArrowDown') return;
     if (activeSection !== section) {
       setActiveSection(section);
     }
@@ -455,7 +459,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
       return;
     }
     if (key === 'ArrowDown') {
-      if (event.altKey) {
+      if (altKey) {
         event.preventDefault();
         event.stopPropagation();
         openPicker();

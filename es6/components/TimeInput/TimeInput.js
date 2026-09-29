@@ -410,7 +410,11 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, []);
   var onSegmentKeyDown = useCallback(function (section, event) {
     if (readOnly || disabled) return;
-    var key = event.key;
+    var key = event.key,
+      ctrlKey = event.ctrlKey,
+      metaKey = event.metaKey,
+      altKey = event.altKey;
+    if (ctrlKey || metaKey || altKey && key !== 'ArrowDown') return;
     if (activeSection !== section) {
       setActiveSection(section);
     }
@@ -451,7 +455,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       return;
     }
     if (key === 'ArrowDown') {
-      if (event.altKey) {
+      if (altKey) {
         event.preventDefault();
         event.stopPropagation();
         openPicker();

@@ -67,6 +67,26 @@ describe('TimeInput', () => {
     expect(document.getElementById('time-picker__drop')).toBeNull();
   });
 
+  test('ignores unsupported modifier key combinations', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="00:34:56" />
+      </Grommet>,
+    );
+
+    const minuteSegment = getSegment('minutes');
+    await user.click(minuteSegment);
+    await user.keyboard('{Control>}{ArrowUp}{/Control}');
+    await user.keyboard('{Meta>}{ArrowUp}{/Meta}');
+    await user.keyboard('{Alt>}{ArrowUp}{/Alt}');
+    await user.click(getSegment('meridiem'));
+    await user.keyboard('{Meta>}p{/Meta}');
+
+    expect(getDisplayInput()).toHaveValue('12:34:56 AM');
+  });
+
   test('commits a focused popup option with Enter', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
@@ -570,7 +590,7 @@ describe('TimeInput', () => {
       expect(segment).toHaveAttribute('aria-describedby', errorId);
     });
   });
-test('links a whole-value error to every segment when the time is complete', () => {
+  test('links a whole-value error to every segment when the time is complete', () => {
     render(
       <Grommet>
         <Form>
@@ -591,9 +611,7 @@ test('links a whole-value error to every segment when the time is complete', () 
       </Grommet>,
     );
 
-    const errorId = screen
-      .getByText('Time is unavailable')
-      .getAttribute('id');
+    const errorId = screen.getByText('Time is unavailable').getAttribute('id');
     expect(errorId).toBeTruthy();
 
     ['hours', 'minutes'].forEach((segmentName) => {
