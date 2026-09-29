@@ -260,7 +260,7 @@ const Wizard = forwardRef(
       while (nextIndex < flatSteps.length) {
         const nextStep = flatSteps[nextIndex];
         if (!nextStep?.disabled) return nextStep.id;
-        if (nextStep?.disabled && clickableSteps) {
+        if (nextStep?.disabled && (clickableSteps || nextStep?.skippable)) {
           nextIndex += 1;
         } else {
           return undefined;
