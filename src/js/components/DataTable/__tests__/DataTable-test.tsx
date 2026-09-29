@@ -358,6 +358,51 @@ describe('DataTable', () => {
     ).toBeInTheDocument();
   });
 
+  test('sortable header shows indicator styling on keyboard focus', async () => {
+    const user = userEvent.setup();
+    const customTheme = {
+      dataTable: {
+        header: {
+          hover: {
+            background: {
+              color: 'accent-1',
+            },
+          },
+        },
+      },
+    };
+    render(
+      <Grommet theme={customTheme}>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          sortable
+        />
+      </Grommet>,
+    );
+
+    const sortButton = screen.getByRole('button', {
+      name: 'A sortable, activate to sort ascending',
+    });
+    expect(sortButton).not.toHaveFocus();
+    await user.tab();
+    expect(sortButton).toHaveFocus();
+    expect(sortButton).toHaveStyleRule(
+      'background-color',
+      'rgba(111, 255, 176, 1)',
+      {
+        modifier: ':focus-visible',
+      },
+    );
+    expect(sortButton).toHaveStyleRule(
+      'background-color',
+      'rgba(111, 255, 176, 1)',
+      {
+        modifier: ':hover',
+      },
+    );
+  });
+
   test('sort null data', () => {
     const { container, getByText } = render(
       <Grommet>
