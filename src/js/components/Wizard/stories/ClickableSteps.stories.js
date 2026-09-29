@@ -2,35 +2,37 @@
 // SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 
-import { Box, Notification, Paragraph, TextInput } from 'grommet';
+import { Box, FormField, Notification, Paragraph, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
+
+const validateResourceName = (name) => {
+  if (!name || !name.trim()) return 'Enter a resource name to continue.';
+  return undefined;
+};
 
 const ClickableSteps = () => {
   const [complete, setComplete] = useState(false);
-  const [value, setValue] = useState({ name: '' });
   const steps = [
     {
       id: 'details',
       title: 'Details',
       description: 'Provide the resource details.',
-      validate: (formValue) =>
-        formValue.name?.trim()
-          ? undefined
-          : 'Enter a resource name before continuing.',
-      render: (step, api) => (
+      render: (/* step, api */) => (
         <Box gap="small">
           <Paragraph>Describe the resource to create.</Paragraph>
-          <TextInput
-            aria-label="Resource name"
-            placeholder="Resource name"
-            value={api.formValue.name || ''}
-            onChange={(event) =>
-              api.setFormValue({
-                ...api.formValue,
-                name: event.target.value,
-              })
-            }
-          />
+          <FormField
+            htmlFor="resource-name"
+            label="Resource"
+            name="name"
+            required
+            validate={validateResourceName}
+          >
+            <TextInput
+              id="resource-name"
+              name="name"
+              placeholder="Resource name"
+            />
+          </FormField>
         </Box>
       ),
     },
@@ -70,8 +72,6 @@ const ClickableSteps = () => {
         title="Create resource"
         showProgress="vertical"
         steps={steps}
-        value={value}
-        onChange={({ value: nextValue }) => setValue(nextValue)}
         onComplete={() => setComplete(true)}
       />
       {complete && (
