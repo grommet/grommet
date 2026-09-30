@@ -48,6 +48,31 @@ describe('TimeInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('omits aria-valuenow on empty segments, sets it once filled', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    const minuteSegment = getSegment('minutes');
+
+    // empty: no real value yet, so aria-valuenow must be absent entirely -
+    // not defaulted to 0/min, which would misrepresent an unset value
+    expect(hourSegment).not.toHaveAttribute('aria-valuenow');
+    expect(minuteSegment).not.toHaveAttribute('aria-valuenow');
+
+    await user.click(hourSegment);
+    await user.keyboard('14');
+
+    expect(hourSegment).toHaveAttribute('aria-valuenow', '14');
+    // minutes is still empty
+    expect(minuteSegment).not.toHaveAttribute('aria-valuenow');
+  });
+
   test('opens and closes picker with keyboard', async () => {
     const user = userEvent.setup();
 
@@ -777,7 +802,7 @@ describe('TimeInput', () => {
       expect(input).toHaveFocus();
     });
 
-    expect(input).toHaveAttribute('aria-valuenow', '12');
+    expect(input).not.toHaveAttribute('aria-valuenow');
     expect(input).toHaveAttribute('aria-valuemin', '1');
     expect(input).toHaveAttribute('aria-valuemax', '12');
   });
@@ -2407,6 +2432,14 @@ describe('TimeInput', () => {
     await user.click(chooseTimeButton);
     expect(getDisplayInput()).toHaveValue('hh:mm');
 
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
+
     await user.keyboard('{ArrowDown}');
     expect(getDisplayInput()).toHaveValue('00:mm');
     await user.keyboard('{ArrowDown}');
@@ -2429,6 +2462,14 @@ describe('TimeInput', () => {
     await user.click(chooseTimeButton);
     expect(getDisplayInput()).toHaveValue('hh:mm');
 
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
+
     await user.keyboard('{ArrowUp}');
     expect(getDisplayInput()).toHaveValue('00:mm');
   });
@@ -2448,6 +2489,14 @@ describe('TimeInput', () => {
 
     await user.click(chooseTimeButton);
     expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
 
     await user.keyboard('{ArrowUp}');
     expect(getDisplayInput()).toHaveValue('00:mm');
