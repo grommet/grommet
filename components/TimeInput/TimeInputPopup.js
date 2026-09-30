@@ -77,7 +77,6 @@ var PopupColumn = function PopupColumn(_ref2) {
     label = _ref2.label,
     messages = _ref2.messages,
     onClickCommitOption = _ref2.onClickCommitOption,
-    onPointerCommitOption = _ref2.onPointerCommitOption,
     onSetSection = _ref2.onSetSection,
     options = _ref2.options,
     section = _ref2.section,
@@ -136,12 +135,6 @@ var PopupColumn = function PopupColumn(_ref2) {
       "aria-label": (section === _utils2.SECTION_PERIOD ? option : (0, _utils2.pad)(option)) + " " + (0, _utils2.getSectionName)(section, format, formatMessage, messages),
       $active: isActive,
       $selected: selected,
-      onMouseDown: function onMouseDown(event) {
-        if (event.button !== 0) return;
-        // Commit on pointer press so momentum scroll does not swallow
-        // the first click commit on some trackpad/mouse flows.
-        onPointerCommitOption(section, option);
-      },
       onClick: function onClick() {
         return onClickCommitOption(section, option);
       },
@@ -186,7 +179,6 @@ var TimeInputPopup = exports.TimeInputPopup = function TimeInputPopup(_ref3) {
     theme = _useThemeValue.theme;
   var dialogRef = (0, _react.useRef)();
   var pointerDownInsideRef = (0, _react.useRef)(false);
-  var pointerSelectionCommittedRef = (0, _react.useRef)(false);
   var suppressNextAutoScrollRef = (0, _react.useRef)(false);
   var wheelInteractionTimeoutRef = (0, _react.useRef)();
   var pointerReleaseTimeoutRef = (0, _react.useRef)();
@@ -222,18 +214,14 @@ var TimeInputPopup = exports.TimeInputPopup = function TimeInputPopup(_ref3) {
     setActiveSection(section);
     setSectionValue(section, option);
   }, [setActiveSection, setSectionValue]);
-  var commitPointerOptionSelection = (0, _react.useCallback)(function (section, option) {
-    pointerSelectionCommittedRef.current = true;
+
+  // Commit on the up-event (click), not mousedown - see WCAG 2.5.2 (Pointer
+  // Cancellation). Committing on press would leave no way to abort by
+  // moving the pointer off-target before releasing.
+  var commitClickOptionSelection = (0, _react.useCallback)(function (section, option) {
     suppressNextAutoScroll();
     commitOptionSelection(section, option);
   }, [commitOptionSelection, suppressNextAutoScroll]);
-  var commitClickOptionSelection = (0, _react.useCallback)(function (section, option) {
-    if (pointerSelectionCommittedRef.current) {
-      pointerSelectionCommittedRef.current = false;
-      return;
-    }
-    commitOptionSelection(section, option);
-  }, [commitOptionSelection]);
   var onPopupWheelCapture = (0, _react.useCallback)(function () {
     pointerDownInsideRef.current = true;
     if (wheelInteractionTimeoutRef.current) {
@@ -490,7 +478,6 @@ var TimeInputPopup = exports.TimeInputPopup = function TimeInputPopup(_ref3) {
       label: sectionLabel,
       messages: messages,
       onClickCommitOption: commitClickOptionSelection,
-      onPointerCommitOption: commitPointerOptionSelection,
       onSetSection: setActiveSection,
       options: options,
       section: section,

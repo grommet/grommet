@@ -162,6 +162,34 @@ describe('TimeInput', () => {
     expect(onChange).toHaveBeenLastCalledWith({ value: '13:45:30' });
   });
 
+  test('does not commit a popup option on mousedown alone (WCAG 2.5.2)', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput id="time-pointer-cancel" format="24" onChange={onChange} />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const drop = document.getElementById('time-pointer-cancel__drop');
+    const hourList = within(drop as HTMLElement).getByRole('listbox', {
+      name: 'hour',
+    });
+    const hourOption = within(hourList).getByRole('option', {
+      name: '05 hours',
+    });
+
+    // Press down on the option without releasing - must NOT commit.
+    fireEvent.mouseDown(hourOption, { button: 0 });
+    expect(onChange).not.toHaveBeenCalled();
+
+    // A real click (down + up on the same element) must commit.
+    await user.click(hourOption);
+    expect(onChange).toHaveBeenCalled();
+  });
+
   test('links trigger aria-controls to popup id when id is provided', async () => {
     const user = userEvent.setup();
 
