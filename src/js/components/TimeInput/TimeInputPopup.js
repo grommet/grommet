@@ -29,9 +29,8 @@ const PopupColumnBox = styled(Box)`
 const PopupOption = styled(Box)`
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   &:focus:not(:focus-visible) {
-    outline: none !important;
+    outline: none;
   }
   &:focus-visible {
     ${focusStyle({ inset: true })}
@@ -149,7 +148,6 @@ const PopupColumn = ({
       role="listbox"
       aria-label={label}
       cssGap
-      gap="xsmall"
       height={{
         max: maxHeight,
       }}
