@@ -55,6 +55,7 @@ const grommetInputNames = [
   'TextArea',
   'DateInput',
   'DateTimeInput',
+  'DateTimeRangeInput',
   'TimeInput',
   'FileInput',
   'RadioButton',
@@ -79,6 +80,7 @@ const isGrommetInput = (comp) =>
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
 const getFocusStyle = (props) => {
+  if (props.componentName === 'dateTimeRangeInput') return null;
   if (
     props.focus &&
     props.containerFocus === false &&

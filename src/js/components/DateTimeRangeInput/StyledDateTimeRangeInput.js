@@ -1,0 +1,153 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+import styled, { css } from 'styled-components';
+
+import {
+  disabledStyle,
+  focusStyle,
+  getBreakpointStyle,
+  normalizeColor,
+  readOnlyStyle,
+  styledComponentsConfig,
+} from '../../utils';
+import { breakpointStyle } from '../../utils/mixins';
+import { Box } from '../Box';
+import { Text } from '../Text';
+
+export const StyledDateTimeRangeInputContainer = styled(Box)`
+  font-variant-numeric: tabular-nums;
+  ${(props) => {
+    const inputPadding = props.theme.global.input?.padding;
+    const verticalPadding =
+      typeof inputPadding === 'object' ? inputPadding.vertical : undefined;
+
+    return verticalPadding
+      ? css`
+          && [role='group'] {
+            padding-block: ${verticalPadding};
+          }
+        `
+      : '';
+  }}
+  ${(props) => {
+    const responsiveBreakpoint =
+      props.theme.dateTimeRangeInput?.responsiveBreakpoint;
+    return responsiveBreakpoint
+      ? breakpointStyle(
+          getBreakpointStyle(props.theme, responsiveBreakpoint),
+          'flex-wrap: wrap;',
+        )
+      : '';
+  }}
+  ${(props) => props.$disabled && disabledStyle()}
+  ${(props) => props.$readOnly && readOnlyStyle(props.theme)}
+  ${(props) =>
+    props.$focusIndicator !== false &&
+    css`
+      &:focus-within {
+        ${focusStyle()}
+      }
+    `}
+`;
+
+export const StyledDateTimeRangeInputSeparator = styled(Text).withConfig(
+  styledComponentsConfig,
+)`
+  white-space: nowrap;
+`;
+
+export const StyledDateTimeRangeInputField = styled(Box)`
+  position: relative;
+  ${(props) => {
+    if (!props.$active) return '';
+    const indicator = props.theme.dateTimeRangeInput?.active?.indicator;
+    const indicatorSize =
+      props.theme.global.borderSize?.[indicator?.size] ||
+      indicator?.size ||
+      props.theme.global.borderSize.small;
+
+    return css`
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: ${indicatorSize};
+        background-color: ${normalizeColor(
+          indicator?.color || 'control',
+          props.theme,
+        )};
+      }
+    `;
+  }}
+`;
+
+export const StyledDateTimeRangeInputDrop = styled(Box)`
+  display: flex;
+  align-items: stretch;
+  max-height: inherit;
+  min-height: 0;
+  max-width: 100vw;
+  ${(props) =>
+    props.$smallScreen &&
+    css`
+      flex-direction: column;
+      width: 100%;
+    `}
+  ${(props) => {
+    const responsiveBreakpoint =
+      props.theme.dateTimeRangeInput?.responsiveBreakpoint;
+    return responsiveBreakpoint
+      ? breakpointStyle(
+          getBreakpointStyle(props.theme, responsiveBreakpoint),
+          'flex-direction: column; width: 100%;',
+        )
+      : '';
+  }}
+`;
+
+export const StyledDateTimeRangeInputPicker = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+  min-height: 0;
+`;
+
+export const StyledDateTimeRangeInputPickerBody = styled(Box)`
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  max-width: 100%;
+  ${(props) =>
+    props.$smallScreen &&
+    css`
+      flex-direction: column;
+      width: 100%;
+    `}
+  ${(props) => {
+    const responsiveBreakpoint =
+      props.theme.dateTimeRangeInput?.responsiveBreakpoint;
+    return responsiveBreakpoint
+      ? breakpointStyle(
+          getBreakpointStyle(props.theme, responsiveBreakpoint),
+          'flex-direction: column; width: 100%;',
+        )
+      : '';
+  }}
+`;
+
+export const StyledDateTimeRangeInputTime = styled(Box)`
+  ${(props) =>
+    props.$smallScreen &&
+    css`
+      width: 100%;
+      & > div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 100%;
+      }
+    `}
+`;

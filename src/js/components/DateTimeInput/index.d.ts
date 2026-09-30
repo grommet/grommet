@@ -6,6 +6,7 @@ export interface DateTimeInputProps {
   defaultValue?: string;
   disabled?: boolean;
   format?: '12' | '24';
+  focusIndicator?: boolean;
   id?: string;
   locale?: string;
   inline?: boolean;
@@ -28,6 +29,7 @@ export interface DateTimeInputProps {
   name?: string;
   onChange?: (event: { value?: string }) => void;
   readOnly?: boolean;
+  showCalendarButton?: boolean;
   showSeconds?: boolean;
   value?: string;
 }

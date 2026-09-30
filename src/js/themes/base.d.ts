@@ -1026,7 +1026,9 @@ export interface ThemeType {
       margin?: string;
     };
     container?: {
+      minWidth?: WidthType;
       round?: RoundType;
+      width?: WidthType;
     };
     icon?: {
       calendar?: React.ReactNode | Icon;
@@ -1069,6 +1071,63 @@ export interface ThemeType {
     separator?: {
       pad?: GapType;
     };
+  };
+  dateTimeRangeInput?: {
+    active?: {
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    button?: {
+      margin?: string | object;
+    };
+    container?: {
+      minWidth?: WidthType;
+      round?: RoundType;
+      width?: WidthType;
+    };
+    footer?: {
+      pad?: PadType;
+      actions?: {
+        gap?: GapType;
+      };
+      border?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    gap?: GapType;
+    field?: {
+      pad?: PadType;
+      width?: WidthType;
+    };
+    fieldGap?: GapType;
+    icon?: {
+      calendar?: React.ReactNode | Icon;
+    };
+    presets?: {
+      background?: BackgroundType;
+      width?: WidthType;
+      pad?: PadType;
+      gap?: GapType;
+      item?: {
+        pad?: PadType;
+      };
+      selected?: {
+        background?: BackgroundType;
+        round?: RoundType;
+        border?: {
+          color?: ColorType;
+          size?: string;
+        };
+      };
+      border?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    responsiveBreakpoint?: string;
   };
   dataTable?: {
     body?: {
@@ -1303,6 +1362,7 @@ export interface ThemeType {
     };
     checkBox?: ContainerExtend & { pad?: PadType };
     checkBoxGroup?: ContainerExtend;
+    dateTimeRangeInput?: ContainerExtend;
     textArea?: ContainerExtend;
     textInput?: ContainerExtend;
     select?: ContainerExtend;

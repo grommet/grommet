@@ -94,6 +94,7 @@ const TimeInput = forwardRef(
       // is not part of the public TimeInput API.
       focusOnOpen = true,
       format = DEFAULT_FORMAT,
+      focusPopupOnMount = true,
       id,
       inline = false,
       messages,
@@ -689,6 +690,7 @@ const TimeInput = forwardRef(
         <TimeInputPopup
           inline
           activeSection={activeSection}
+          focusOnMount={focusPopupOnMount}
           format={format}
           formatMessage={formatMessage}
           focusOnOpen={focusOnOpen}
@@ -851,6 +853,7 @@ const TimeInput = forwardRef(
           {open && (
             <TimeInputPopup
               activeSection={activeSection}
+              focusOnMount={focusPopupOnMount}
               align={{ top: 'bottom', left: 'left' }}
               dropProps={{ stretch: false }}
               format={format}

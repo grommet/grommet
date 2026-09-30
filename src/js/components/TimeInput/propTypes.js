@@ -8,7 +8,9 @@ if (process.env.NODE_ENV !== 'production') {
     defaultValue: PropTypes.string,
     disabled: PropTypes.bool,
     format: PropTypes.oneOf(['12', '24']),
+    focusPopupOnMount: PropTypes.bool,
     id: PropTypes.string,
+    inline: PropTypes.bool,
     messages: PropTypes.shape({
       activePeriodValue: PropTypes.string,
       activeSection: PropTypes.string,
@@ -26,6 +28,7 @@ if (process.env.NODE_ENV !== 'production') {
     minuteStep: PropTypes.number,
     name: PropTypes.string,
     onChange: PropTypes.func,
+    onPartialChange: PropTypes.func,
     readOnly: PropTypes.bool,
     showSeconds: PropTypes.bool,
     value: PropTypes.string,

@@ -11,6 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
     id: PropTypes.string,
     locale: PropTypes.string,
     inline: PropTypes.bool,
+    focusIndicator: PropTypes.bool,
     messages: PropTypes.shape({
       activeSection: PropTypes.string,
       activeSectionValue: PropTypes.string,
@@ -30,6 +31,7 @@ if (process.env.NODE_ENV !== 'production') {
     name: PropTypes.string,
     onChange: PropTypes.func,
     readOnly: PropTypes.bool,
+    showCalendarButton: PropTypes.bool,
     showSeconds: PropTypes.bool,
     value: PropTypes.string,
   };

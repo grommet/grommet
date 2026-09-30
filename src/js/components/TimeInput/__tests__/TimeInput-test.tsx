@@ -48,6 +48,16 @@ describe('TimeInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('preserves the native autoFocus input behavior', () => {
+    render(
+      <Grommet>
+        <TimeInput autoFocus format="12" />
+      </Grommet>,
+    );
+
+    expect(getDisplayInput()).toHaveFocus();
+  });
+
   test('opens and closes picker with keyboard', async () => {
     const user = userEvent.setup();
 
@@ -105,7 +115,7 @@ describe('TimeInput', () => {
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
     const drop = document.getElementById('time-enter-option__drop');
     const hourList = within(drop as HTMLElement).getByRole('listbox', {
-      name: 'hour',
+      name: 'hours',
     });
     const hourOption = within(hourList).getByRole('option', {
       name: '13 hours',
@@ -726,6 +736,69 @@ describe('TimeInput', () => {
     ).toBeInTheDocument();
   });
 
+  test('uses section message keys for popup listbox labels', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput
+          format="12"
+          defaultValue="12:34:56"
+          messages={{
+            sectionHours: 'heures',
+            sectionMinutes: 'minutes-fr',
+            sectionSeconds: 'secondes',
+            sectionMeridiem: 'periode',
+          }}
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    expect(screen.getByRole('listbox', { name: 'heures' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('listbox', { name: 'minutes-fr' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('listbox', { name: 'secondes' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('listbox', { name: 'periode' }),
+    ).toBeInTheDocument();
+  });
+
+  test('supports inline popup composition with partial change updates', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+    const onPartialChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput
+          inline
+          format="24"
+          defaultValue="13:45:30"
+          onChange={onChange}
+          onPartialChange={onPartialChange}
+        />
+      </Grommet>,
+    );
+
+    await user.click(
+      within(screen.getByRole('listbox', { name: 'hours' })).getByRole(
+        'option',
+        { name: '14 hours' },
+      ),
+    );
+
+    expect(onPartialChange).toHaveBeenCalledWith(
+      expect.objectContaining({ hour: 14, minute: 45, second: 30 }),
+      0,
+    );
+    expect(onChange).toHaveBeenCalledWith({ value: '14:45:30' });
+  });
+
   test('updates spinbutton range metadata for the active section', async () => {
     const user = userEvent.setup();
 
@@ -1151,9 +1224,9 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
-    const minuteList = screen.getByRole('listbox', { name: 'minute' });
-    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
+    const minuteList = screen.getByRole('listbox', { name: 'minutes' });
+    const secondList = screen.getByRole('listbox', { name: 'seconds' });
 
     const selectedHourOption = within(hourList).getByRole('option', {
       name: '13 hours',
@@ -1198,7 +1271,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const minuteList = screen.getByRole('listbox', { name: 'minutes' });
     const selectedMinuteOption = within(minuteList)
       .getAllByRole('option')
       .find((option) => option.getAttribute('aria-selected') === 'true');
@@ -1226,7 +1299,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const secondList = screen.getByRole('listbox', { name: 'seconds' });
     const selectedSecondOption = within(secondList)
       .getAllByRole('option')
       .find((option) => option.getAttribute('aria-selected') === 'true');
@@ -1266,7 +1339,7 @@ describe('TimeInput', () => {
     await user.click(input);
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
     await user.click(
       within(hourList).getByRole('option', { name: '07 hours' }),
     );
@@ -1312,8 +1385,8 @@ describe('TimeInput', () => {
     await user.click(input);
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
-    const minuteList = screen.getByRole('listbox', { name: 'minute' });
-    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const minuteList = screen.getByRole('listbox', { name: 'minutes' });
+    const secondList = screen.getByRole('listbox', { name: 'seconds' });
 
     await user.click(
       within(minuteList).getByRole('option', { name: '10 minutes' }),
@@ -1343,9 +1416,9 @@ describe('TimeInput', () => {
     await user.click(input);
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
-    const minuteList = screen.getByRole('listbox', { name: 'minute' });
-    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
+    const minuteList = screen.getByRole('listbox', { name: 'minutes' });
+    const secondList = screen.getByRole('listbox', { name: 'seconds' });
 
     fireEvent.wheel(minuteList, { deltaY: 120 });
     await user.click(
@@ -1422,8 +1495,8 @@ describe('TimeInput', () => {
 
       await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-      const minuteList = screen.getByRole('listbox', { name: 'minute' });
-      const secondList = screen.getByRole('listbox', { name: 'second' });
+      const minuteList = screen.getByRole('listbox', { name: 'minutes' });
+      const secondList = screen.getByRole('listbox', { name: 'seconds' });
 
       await waitFor(() => {
         expect(minuteList.scrollTop).toBeGreaterThan(0);
@@ -1467,7 +1540,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
     const option = within(hourList).getByRole('option', { name: '01 hours' });
 
     expect(option).not.toHaveAttribute('pad');
@@ -1484,7 +1557,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
 
     await waitFor(() => {
       expect(
@@ -1504,10 +1577,10 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
-    const minuteList = screen.getByRole('listbox', { name: 'minute' });
-    const secondList = screen.getByRole('listbox', { name: 'second' });
-    const periodList = screen.getByRole('listbox', { name: 'period' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
+    const minuteList = screen.getByRole('listbox', { name: 'minutes' });
+    const secondList = screen.getByRole('listbox', { name: 'seconds' });
+    const periodList = screen.getByRole('listbox', { name: 'meridiem' });
 
     expect(
       within(hourList)
@@ -1989,13 +2062,15 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
-    expect(screen.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'hours' })).toBeInTheDocument();
     expect(
-      screen.queryByRole('listbox', { name: 'second' }),
+      screen.getByRole('listbox', { name: 'minutes' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'seconds' }),
     ).not.toBeInTheDocument();
     expect(
-      screen.queryByRole('listbox', { name: 'period' }),
+      screen.queryByRole('listbox', { name: 'meridiem' }),
     ).not.toBeInTheDocument();
   });
 
@@ -2014,8 +2089,8 @@ describe('TimeInput', () => {
 
       await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-      const minuteList = screen.getByRole('listbox', { name: 'minute' });
-      const secondList = screen.getByRole('listbox', { name: 'second' });
+      const minuteList = screen.getByRole('listbox', { name: 'minutes' });
+      const secondList = screen.getByRole('listbox', { name: 'seconds' });
 
       const selectedMinuteOption = within(minuteList).getByRole('option', {
         name: '30 minutes',
@@ -2046,7 +2121,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
     const hour4 = within(hourList).getByRole('option', { name: '04 hours' });
     const hour7 = within(hourList).getByRole('option', { name: '07 hours' });
 
@@ -2110,7 +2185,7 @@ describe('TimeInput', () => {
 
       await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-      const minuteList = screen.getByRole('listbox', { name: 'minute' });
+      const minuteList = screen.getByRole('listbox', { name: 'minutes' });
       await waitFor(() => {
         expect(minuteList.scrollTop).toBeGreaterThan(0);
       });
@@ -2219,7 +2294,7 @@ describe('TimeInput', () => {
     // open the drop to check drop.option theme tokens
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
     const selectedOption = within(hourList).getByRole('option', {
       name: '10 hours',
     });
@@ -2261,7 +2336,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hourList = screen.getByRole('listbox', { name: 'hours' });
     await user.click(
       within(hourList).getByRole('option', { name: '06 hours' }),
     );
@@ -2311,7 +2386,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const minuteList = screen.getByRole('listbox', { name: 'minutes' });
     await user.click(
       within(minuteList).getByRole('option', { name: '06 minutes' }),
     );
@@ -2361,7 +2436,7 @@ describe('TimeInput', () => {
 
     await user.click(screen.getByRole('button', { name: 'Choose time' }));
 
-    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const secondList = screen.getByRole('listbox', { name: 'seconds' });
     await user.click(
       within(secondList).getByRole('option', { name: '06 seconds' }),
     );
