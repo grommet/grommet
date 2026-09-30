@@ -2,7 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 
-export interface TimeInputProps {
+export interface TimeInputProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    'id' | 'defaultValue' | 'onChange'
+  > {
   defaultValue?: string;
   disabled?: boolean;
   format?: '12' | '24';
