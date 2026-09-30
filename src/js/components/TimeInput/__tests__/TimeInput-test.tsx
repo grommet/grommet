@@ -80,6 +80,26 @@ describe('TimeInput', () => {
     expect(document.getElementById('time-picker__drop')).toBeNull();
   });
 
+  test('ignores unsupported modifier key combinations', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="00:34:56" />
+      </Grommet>,
+    );
+
+    const minuteSegment = getSegment('minutes');
+    await user.click(minuteSegment);
+    await user.keyboard('{Control>}{ArrowUp}{/Control}');
+    await user.keyboard('{Meta>}{ArrowUp}{/Meta}');
+    await user.keyboard('{Alt>}{ArrowUp}{/Alt}');
+    await user.click(getSegment('meridiem'));
+    await user.keyboard('{Meta>}p{/Meta}');
+
+    expect(getDisplayValue()).toHaveTextContent('12:34:56 AM');
+  });
+
   test('commits a focused popup option with Enter', async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
@@ -156,6 +176,28 @@ describe('TimeInput', () => {
     await user.click(meridiemSegment);
 
     expect(meridiemSegment).toHaveFocus();
+  });
+
+  test('keeps focus within the container while moving between segments', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet theme={{ global: { colors: { focus: '#FF0000' } } }}>
+        <TimeInput format="24" defaultValue="12:34:56" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    const minuteSegment = getSegment('minutes');
+    const container = screen.getByRole('group').parentElement
+      ?.parentElement as HTMLElement;
+
+    await user.click(hourSegment);
+    expect(hourSegment).toHaveFocus();
+
+    await user.keyboard('{ArrowRight}');
+    expect(minuteSegment).toHaveFocus();
+    expect(container).toContainElement(minuteSegment);
   });
 
   test('keeps segment typing active for two-digit entry', async () => {
@@ -288,6 +330,41 @@ describe('TimeInput', () => {
     // With no preceding focusable element on the page, focus falls through
     // to document.body; onSegmentBlur must not yank it back onto the segment.
     expect(document.body).toHaveFocus();
+  });
+
+  test('does not reclaim focus after a segment blurs to the document body', async () => {
+    const user = userEvent.setup();
+    let animationFrameCallback: FrameRequestCallback | undefined;
+    const requestAnimationFrameSpy = jest
+      .spyOn(window, 'requestAnimationFrame')
+      .mockImplementation((callback) => {
+        animationFrameCallback = callback;
+        return 0;
+      });
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    try {
+      await user.click(hourSegment);
+      await user.tab({ shift: true });
+
+      expect(requestAnimationFrameSpy).toHaveBeenCalledTimes(1);
+      expect(animationFrameCallback).toBeDefined();
+
+      act(() => {
+        animationFrameCallback?.(0);
+      });
+      await waitFor(() => {
+        expect(document.body).toHaveFocus();
+      });
+    } finally {
+      requestAnimationFrameSpy.mockRestore();
+    }
   });
 
   test('updates active section via arrows and digits', async () => {
@@ -498,6 +575,133 @@ describe('TimeInput', () => {
     // the FormField label takes precedence, so no fallback aria-label
     // should be set on the group
     expect(group).not.toHaveAttribute('aria-label');
+  });
+
+  test('links FormField error text to every segment via aria-describedby/aria-invalid', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput id="appointment-time" name="value" format="24" />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    const errorMessage = screen.getByText('Time is required');
+    const errorId = errorMessage.getAttribute('id');
+    expect(errorId).toBeTruthy();
+
+    ['hours', 'minutes'].forEach((segmentName) => {
+      const segment = screen.getByRole('spinbutton', { name: segmentName });
+      expect(segment).toHaveAttribute('aria-invalid', 'true');
+      expect(segment).toHaveAttribute('aria-describedby', errorId);
+    });
+  });
+  test('links a whole-value error to every segment when the time is complete', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is unavailable"
+          >
+            <TimeInput
+              id="appointment-time"
+              name="value"
+              format="24"
+              defaultValue="14:30"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    const errorId = screen.getByText('Time is unavailable').getAttribute('id');
+    expect(errorId).toBeTruthy();
+
+    ['hours', 'minutes'].forEach((segmentName) => {
+      const segment = screen.getByRole('spinbutton', { name: segmentName });
+      expect(segment).toHaveAttribute('aria-invalid', 'true');
+      expect(segment).toHaveAttribute('aria-describedby', errorId);
+    });
+  });
+  test('scopes the FormField error to segments still missing a value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput id="appointment-time" name="value" format="24" />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('spinbutton', { name: 'minutes' }));
+    await user.keyboard('30');
+
+    const errorId = screen.getByText('Time is required').getAttribute('id');
+
+    const hoursSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hoursSegment).toHaveAttribute('aria-invalid', 'true');
+    expect(hoursSegment).toHaveAttribute('aria-describedby', errorId);
+
+    const minutesSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    expect(minutesSegment).not.toHaveAttribute('aria-invalid');
+    expect(minutesSegment).not.toHaveAttribute('aria-describedby');
+  });
+
+  test('preserves a consumer aria-describedby on every segment while scoping the FormField error id', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput
+              id="appointment-time"
+              name="value"
+              format="24"
+              aria-describedby="time-hint"
+            />
+          </FormField>
+        </Form>
+        <span id="time-hint">24-hour format</span>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('spinbutton', { name: 'minutes' }));
+    await user.keyboard('30');
+
+    const errorId = screen.getByText('Time is required').getAttribute('id');
+
+    const hoursSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hoursSegment).toHaveAttribute(
+      'aria-describedby',
+      `time-hint ${errorId}`,
+    );
+
+    const minutesSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    expect(minutesSegment).toHaveAttribute('aria-describedby', 'time-hint');
   });
 
   test('falls back to the inputLabel message when there is no FormField label', () => {
