@@ -29,6 +29,18 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
     `}
 `;
 
+// A real, labelable input so a FormField's <label htmlFor={id}> can focus
+// the field natively (a div, unlike an input, is never labelable).
+export const StyledTimeInputLabelTarget = styled.input`
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+`;
+
 export const StyledTimeInputSegmentGroup = styled.div.withConfig(
   styledComponentsConfig,
 )`

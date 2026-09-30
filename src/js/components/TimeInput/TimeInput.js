@@ -26,6 +26,7 @@ import {
   StyledTimeInputSegmentGroup,
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
+  StyledTimeInputLabelTarget,
   getSegmentCursorProps,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
@@ -720,8 +721,17 @@ const TimeInput = forwardRef(
             focusIndicator={(focusIndicatorProp ?? true) && !iconFocused}
             {...passThemeFlag}
           >
+            {id && (
+              <StyledTimeInputLabelTarget
+                id={id}
+                tabIndex={-1}
+                aria-hidden="true"
+                readOnly
+                disabled={disabled}
+                onFocus={() => focusSection(activeSection)}
+              />
+            )}
             <StyledTimeInputSegmentGroup
-              id={id}
               role="group"
               aria-label={groupLabel}
               aria-labelledby={formFieldLabelId}

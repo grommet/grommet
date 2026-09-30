@@ -577,6 +577,28 @@ describe('TimeInput', () => {
     expect(group).not.toHaveAttribute('aria-label');
   });
 
+  test('clicking the FormField label focuses the active segment', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <FormField
+          htmlFor="appointment-time"
+          label="Choose an appointment time"
+        >
+          <TimeInput id="appointment-time" format="24" />
+        </FormField>
+      </Grommet>,
+    );
+
+    // the segment group is a div, which isn't labelable, so the id must
+    // live on a real (visually hidden) input for native label-click
+    // focus-forwarding to work at all
+    await user.click(screen.getByText('Choose an appointment time'));
+
+    expect(document.activeElement).toBe(getSegment('hours'));
+  });
+
   test('links FormField error text to every segment via aria-describedby/aria-invalid', () => {
     render(
       <Grommet>
