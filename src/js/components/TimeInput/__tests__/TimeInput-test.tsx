@@ -48,6 +48,51 @@ describe('TimeInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('omits aria-valuenow on empty segments, sets it once filled', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    const minuteSegment = getSegment('minutes');
+
+    // empty: no real value yet, so aria-valuenow must be absent entirely -
+    // not defaulted to 0/min, which would misrepresent an unset value
+    expect(hourSegment).not.toHaveAttribute('aria-valuenow');
+    expect(minuteSegment).not.toHaveAttribute('aria-valuenow');
+
+    await user.click(hourSegment);
+    await user.keyboard('14');
+
+    expect(hourSegment).toHaveAttribute('aria-valuenow', '14');
+    // minutes is still empty
+    expect(minuteSegment).not.toHaveAttribute('aria-valuenow');
+  });
+
+  test('omits aria-valuenow on empty meridiem, sets it once filled', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" />
+      </Grommet>,
+    );
+
+    const meridiemSegment = getSegment('meridiem');
+
+    // empty period must also omit aria-valuenow, not default to 0 (AM)
+    expect(meridiemSegment).not.toHaveAttribute('aria-valuenow');
+
+    await user.click(meridiemSegment);
+    await user.keyboard('p');
+
+    expect(meridiemSegment).toHaveAttribute('aria-valuenow', '1');
+  });
+
   test('opens and closes picker with keyboard', async () => {
     const user = userEvent.setup();
 
@@ -805,7 +850,7 @@ describe('TimeInput', () => {
       expect(input).toHaveFocus();
     });
 
-    expect(input).toHaveAttribute('aria-valuenow', '12');
+    expect(input).not.toHaveAttribute('aria-valuenow');
     expect(input).toHaveAttribute('aria-valuemin', '1');
     expect(input).toHaveAttribute('aria-valuemax', '12');
   });
