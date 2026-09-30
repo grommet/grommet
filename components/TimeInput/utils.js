@@ -112,13 +112,14 @@ var sectionKey = exports.sectionKey = function sectionKey(section) {
   return (0, _sectionHelpers.getSectionKeyFromType)(sectionType);
 };
 var getSectionAriaMeta = exports.getSectionAriaMeta = function getSectionAriaMeta(_ref) {
-  var _sections$key;
   var section = _ref.section,
     format = _ref.format,
     sections = _ref.sections;
   if (section === SECTION_PERIOD) {
+    var _now;
+    if (sections.period !== undefined) _now = sections.period === 'PM' ? 1 : 0;
     return {
-      now: sections.period === 'PM' ? 1 : 0,
+      now: _now,
       min: 0,
       max: 1
     };
@@ -126,7 +127,10 @@ var getSectionAriaMeta = exports.getSectionAriaMeta = function getSectionAriaMet
   var key = sectionKey(section);
   var min = sectionMin(section, format);
   var max = sectionMax(section, format);
-  var now = (_sections$key = sections[key]) != null ? _sections$key : section === SECTION_HOUR ? defaultHourForFormat(format) : min;
+  // Omit aria-valuenow entirely when the section has no value yet, rather
+  // than defaulting to a real number (e.g. 0) that would misrepresent an
+  // empty segment as having an actual value (WCAG 4.1.2).
+  var now = sections[key];
   return {
     now: now,
     min: min,
