@@ -616,6 +616,7 @@ const TimeInputPopup = ({
       width={{ width: undefined, max: '100%' }}
       minHeight={theme.timeInput?.drop?.minHeight}
       {...dropContainerProps}
+      pad={inline ? 'none' : dropContainerProps.pad}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}
       onPointerCancelCapture={clearInteractionInProgress}
