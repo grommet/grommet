@@ -73,6 +73,26 @@ describe('TimeInput', () => {
     expect(minuteSegment).not.toHaveAttribute('aria-valuenow');
   });
 
+  test('omits aria-valuenow on empty meridiem, sets it once filled', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" />
+      </Grommet>,
+    );
+
+    const meridiemSegment = getSegment('meridiem');
+
+    // empty period must also omit aria-valuenow, not default to 0 (AM)
+    expect(meridiemSegment).not.toHaveAttribute('aria-valuenow');
+
+    await user.click(meridiemSegment);
+    await user.keyboard('p');
+
+    expect(meridiemSegment).toHaveAttribute('aria-valuenow', '1');
+  });
+
   test('opens and closes picker with keyboard', async () => {
     const user = userEvent.setup();
 
