@@ -678,11 +678,11 @@ const TimeInput = forwardRef(
 
     // theme icon may be a component (e.g. Clock) or an already-rendered element
     const ThemedDropButtonIcon = theme.timeInput?.dropButton?.icon;
-    let dropButtonIcon = <GrommetClockIcon />;
+    let dropButtonIcon = <GrommetClockIcon aria-hidden="true" />;
     if (ThemedDropButtonIcon) {
       dropButtonIcon = React.isValidElement(ThemedDropButtonIcon)
-        ? ThemedDropButtonIcon
-        : React.createElement(ThemedDropButtonIcon);
+        ? React.cloneElement(ThemedDropButtonIcon, { 'aria-hidden': 'true' })
+        : React.createElement(ThemedDropButtonIcon, { 'aria-hidden': 'true' });
     }
 
     if (inline) {
