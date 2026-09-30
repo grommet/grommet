@@ -2480,3 +2480,19 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('hh:00:00 aa');
   });
 });
+
+  test('renders inline as bare popup content, no button or dialog role', () => {
+    render(
+      <Grommet>
+        <TimeInput format="24" inline />
+      </Grommet>,
+    );
+
+    expect(
+      screen.queryByRole('button', { name: 'Choose time' }),
+    ).toBeNull();
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(screen.getByRole('listbox', { name: 'hour' })).toBeTruthy();
+    expect(screen.getByRole('listbox', { name: 'minute' })).toBeTruthy();
+  });
+  
