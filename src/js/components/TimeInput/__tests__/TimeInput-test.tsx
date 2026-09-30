@@ -2318,6 +2318,43 @@ describe('TimeInput', () => {
     );
   });
 
+  test('normalizes dropButton.icon (component and element) and applies dropButton style', () => {
+    const CustomIcon = (props: React.SVGProps<SVGSVGElement>) => (
+      <svg data-testid="custom-clock-icon" {...props} />
+    );
+
+    // theme icon as a component reference
+    const { rerender } = render(
+      <Grommet
+        theme={{
+          timeInput: {
+            dropButton: { background: '#123ABC', icon: CustomIcon },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    let button = screen.getByRole('button', { name: 'Choose time' });
+    expect(within(button).getByTestId('custom-clock-icon')).toBeTruthy();
+    expect(button).toHaveStyleRule('background-color', '#123ABC');
+
+    // theme icon as an already-rendered element
+    rerender(
+      <Grommet
+        theme={{
+          timeInput: { dropButton: { icon: <CustomIcon /> } },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    button = screen.getByRole('button', { name: 'Choose time' });
+    expect(within(button).getByTestId('custom-clock-icon')).toBeTruthy();
+  });
+
   test('updates displayed value when picking a new hour from the popup after a single-digit keystroke', async () => {
     const user = userEvent.setup();
 
