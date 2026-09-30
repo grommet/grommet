@@ -2235,11 +2235,14 @@ describe('TimeInput', () => {
     expect(hourSegment).toHaveStyleRule('padding-inline-start', '48px');
     expect(hourSegment).toHaveStyleRule('padding-inline-end', '48px');
 
-    // cursor.background and cursor.border.color only render on the
-    // currently focused/active segment
+    // cursor.background and cursor.border (painted as a layout-neutral
+    // inset box-shadow) only render on the currently focused/active segment
     await user.click(hourSegment);
     expect(hourSegment).toHaveStyleRule('background-color', '#FFD700');
-    expect(hourSegment).toHaveStyleRule('border-left', 'solid 12px #FF0000');
+    expect(hourSegment).toHaveStyleRule(
+      'box-shadow',
+      'inset 12px 0 0 0 #FF0000',
+    );
 
     // open the drop to check drop.option theme tokens
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
@@ -2459,6 +2462,14 @@ describe('TimeInput', () => {
     await user.click(chooseTimeButton);
     expect(getDisplayValue()).toHaveTextContent('hh:mm');
 
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
+
     await user.keyboard('{ArrowDown}');
     expect(getDisplayValue()).toHaveTextContent('00:mm');
     await user.keyboard('{ArrowDown}');
@@ -2481,6 +2492,14 @@ describe('TimeInput', () => {
     await user.click(chooseTimeButton);
     expect(getDisplayValue()).toHaveTextContent('hh:mm');
 
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
+
     await user.keyboard('{ArrowUp}');
     expect(getDisplayValue()).toHaveTextContent('00:mm');
   });
@@ -2500,6 +2519,14 @@ describe('TimeInput', () => {
 
     await user.click(chooseTimeButton);
     expect(getDisplayValue()).toHaveTextContent('hh:mm');
+
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
 
     await user.keyboard('{ArrowUp}');
     expect(getDisplayValue()).toHaveTextContent('00:mm');

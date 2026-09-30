@@ -761,6 +761,7 @@ const TimeInput = forwardRef(
                           theme,
                           showActiveSection && activeSection === section,
                         )}
+                        $active={showActiveSection && activeSection === section}
                         $filled={filled}
                         onFocus={() => onSegmentFocus(section)}
                         onBlur={onSegmentBlur}

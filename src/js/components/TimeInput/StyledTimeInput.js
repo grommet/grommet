@@ -78,9 +78,30 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
     )};
 `;
 
+// Maps a Box border `side` to the CSS offset(s) an inset box-shadow needs
+// to visually approximate that border without occupying layout space.
+const cursorBoxShadow = (theme) => {
+  const border = theme.timeInput?.cursor?.border;
+  if (!border) return '';
+
+  const size = parseMetricToNum(
+    theme.global.borderSize?.[border.size] || border.size,
+  );
+  const color = normalizeColor(border.color, theme);
+  const shadows = {
+    bottom: `inset 0 -${size}px 0 0 ${color}`,
+    top: `inset 0 ${size}px 0 0 ${color}`,
+    left: `inset ${size}px 0 0 0 ${color}`,
+    right: `inset -${size}px 0 0 0 ${color}`,
+    all: `inset 0 0 0 ${size}px ${color}`,
+  };
+
+  return `box-shadow: ${shadows[border.side || 'all']};`;
+};
+
 // Wraps Box directly (not via styledComponentsConfig/isPropValid) so
-// Box's own styling props (border, round, background) keep flowing
-// through instead of being filtered out as invalid DOM attributes.
+// Box's own styling props (round, background) keep flowing through
+// instead of being filtered out as invalid DOM attributes.
 export const StyledTimeInputSegment = styled(Box)`
   &:focus {
     outline: none;
@@ -96,12 +117,15 @@ export const StyledTimeInputSegment = styled(Box)`
       props.theme.global.input.weight || props.theme.global.input.font.weight;
     return weight && `font-weight: ${weight};`;
   }}
+  ${(props) => props.$active && cursorBoxShadow(props.theme)}
 `;
 
-// The cursor (any Box props)
-// only renders while the segment is active/focused.
+// The cursor (any Box props except `border`, which is painted as a
+// layout-neutral inset box-shadow via `$active` instead - see
+// `cursorBoxShadow` above) only renders while the segment is active/focused.
 export const getSegmentCursorProps = (theme, active) => {
   if (!active) return {};
 
-  return theme.timeInput?.cursor;
+  const { border, ...boxProps } = theme.timeInput?.cursor || {};
+  return boxProps;
 };
