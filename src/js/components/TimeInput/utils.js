@@ -131,19 +131,18 @@ export const sectionKey = (section) => {
 
 export const getSectionAriaMeta = ({ section, format, sections }) => {
   if (section === SECTION_PERIOD) {
-    return {
-      now: sections.period === 'PM' ? 1 : 0,
-      min: 0,
-      max: 1,
-    };
+    let now;
+    if (sections.period !== undefined) now = sections.period === 'PM' ? 1 : 0;
+    return { now, min: 0, max: 1 };
   }
 
   const key = sectionKey(section);
   const min = sectionMin(section, format);
   const max = sectionMax(section, format);
-  const now =
-    sections[key] ??
-    (section === SECTION_HOUR ? defaultHourForFormat(format) : min);
+  // Omit aria-valuenow entirely when the section has no value yet, rather
+  // than defaulting to a real number (e.g. 0) that would misrepresent an
+  // empty segment as having an actual value (WCAG 4.1.2).
+  const now = sections[key];
 
   return { now, min, max };
 };
