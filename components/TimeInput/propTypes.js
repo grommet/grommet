@@ -14,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
     disabled: _propTypes["default"].bool,
     format: _propTypes["default"].oneOf(['12', '24']),
     id: _propTypes["default"].string,
+    inline: _propTypes["default"].bool,
     messages: _propTypes["default"].shape({
       activePeriodValue: _propTypes["default"].string,
       activeSection: _propTypes["default"].string,

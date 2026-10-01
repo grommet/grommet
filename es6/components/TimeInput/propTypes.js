@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
     disabled: PropTypes.bool,
     format: PropTypes.oneOf(['12', '24']),
     id: PropTypes.string,
+    inline: PropTypes.bool,
     messages: PropTypes.shape({
       activePeriodValue: PropTypes.string,
       activeSection: PropTypes.string,

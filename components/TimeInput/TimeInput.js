@@ -104,6 +104,9 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
       console.warn('Warning: TimeInput is currently in beta. The API is subject ' + 'to change in future releases.');
     }
   }, []);
+  if (inline && (disabled || readOnly)) {
+    console.warn('TimeInput is rendered inline and is either disabled or read-only. ' + 'TimeInput ignores disabled and readOnly props when rendered inline.');
+  }
   var _formContext$useFormF = formContext.useFormField({}),
     inForm = _formContext$useFormF.inForm;
   var formFieldLabelId = inForm && id ? "grommet-" + id + "__label" : undefined;
