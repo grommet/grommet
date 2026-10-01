@@ -116,7 +116,6 @@ const PopupColumn = ({
   label,
   messages,
   onClickCommitOption,
-  onPointerCommitOption,
   onSetSection,
   options,
   section,
@@ -192,12 +191,6 @@ const PopupColumn = ({
             } ${getSectionName(section, format, formatMessage, messages)}`}
             $active={isActive}
             $selected={selected}
-            onMouseDown={(event) => {
-              if (event.button !== 0) return;
-              // Commit on pointer press so momentum scroll does not swallow
-              // the first click commit on some trackpad/mouse flows.
-              onPointerCommitOption(section, option);
-            }}
             onClick={() => onClickCommitOption(section, option)}
             onFocus={() => onSetSection(section)}
           >
@@ -251,7 +244,6 @@ const TimeInputPopup = ({
   const { theme } = useThemeValue();
   const dialogRef = useRef();
   const pointerDownInsideRef = useRef(false);
-  const pointerSelectionCommittedRef = useRef(false);
   const suppressNextAutoScrollRef = useRef(false);
   const wheelInteractionTimeoutRef = useRef();
   const pointerReleaseTimeoutRef = useRef();
@@ -297,25 +289,15 @@ const TimeInputPopup = ({
     [setActiveSection, setSectionValue],
   );
 
-  const commitPointerOptionSelection = useCallback(
+  // Commit on the up-event (click), not mousedown - see WCAG 2.5.2 (Pointer
+  // Cancellation). Committing on press would leave no way to abort by
+  // moving the pointer off-target before releasing.
+  const commitClickOptionSelection = useCallback(
     (section, option) => {
-      pointerSelectionCommittedRef.current = true;
       suppressNextAutoScroll();
       commitOptionSelection(section, option);
     },
     [commitOptionSelection, suppressNextAutoScroll],
-  );
-
-  const commitClickOptionSelection = useCallback(
-    (section, option) => {
-      if (pointerSelectionCommittedRef.current) {
-        pointerSelectionCommittedRef.current = false;
-        return;
-      }
-
-      commitOptionSelection(section, option);
-    },
-    [commitOptionSelection],
   );
 
   const onPopupWheelCapture = useCallback(() => {
@@ -678,7 +660,6 @@ const TimeInputPopup = ({
           label={sectionLabel}
           messages={messages}
           onClickCommitOption={commitClickOptionSelection}
-          onPointerCommitOption={commitPointerOptionSelection}
           onSetSection={setActiveSection}
           options={options}
           section={section}
