@@ -2835,11 +2835,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       content: {
-        pad: 'medium',
-        gap: 'medium',
-        background: 'background-front',
-        round: 'small',
-        margin: { top: 'medium' },
+        // pad: 'medium',
+        // gap: 'medium',
+        // background: 'background-front',
+        // round: 'small',
+        // margin: { top: 'medium' },
       },
       footer: {
         pad: { horizontal: 'large', vertical: 'small' },
