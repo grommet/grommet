@@ -3368,7 +3368,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hpe-design/icons-grommet@npm:^1.1.0":
+"@hpe-design/icons-grommet@npm:^1.1.0, @hpe-design/icons-grommet@npm:^1.2.0":
   version: 1.2.0
   resolution: "@hpe-design/icons-grommet@npm:1.2.0"
   peerDependencies:
@@ -10565,6 +10565,7 @@ __metadata:
     "@eslint/compat": "npm:^2.1.0"
     "@eslint/eslintrc": "npm:^3.3.6"
     "@eslint/js": "npm:^10.0.1"
+    "@hpe-design/icons-grommet": "npm:^1.2.0"
     "@storybook/addon-a11y": "npm:^10.5.9"
     "@storybook/addon-docs": "npm:^10.5.9"
     "@storybook/addon-webpack5-compiler-babel": "npm:^4.0.1"
@@ -10608,6 +10609,7 @@ __metadata:
     globals: "npm:^17.11.0"
     grommet-icons: "npm:^4.14.0"
     grommet-theme-hpe: "npm:^8.2.0"
+    hpe-design-tokens: "npm:^2.2.3"
     jest: "npm:^30.4.2"
     jest-axe: "npm:^11.0.0"
     jest-cli: "npm:^30.4.2"
@@ -10799,6 +10801,13 @@ __metadata:
   dependencies:
     parse-passwd: "npm:^1.0.0"
   checksum: 10c0/3c099844f94b8b438f124bd5698bdcfef32b2d455115fb8050d7148e7f7b95fc89ba9922586c491f0e1cdebf437b1053c84ecddb8d596e109e9ac69c5b4a9e27
+  languageName: node
+  linkType: hard
+
+"hpe-design-tokens@npm:^2.2.3":
+  version: 2.4.0
+  resolution: "hpe-design-tokens@npm:2.4.0"
+  checksum: 10c0/d992425d723749e3a243877f5d5b6f6d038ca9647a08ecdf2ee33965a0f2ad3bf78a1406382990b7a20be1550559b05dc8aec8265ce9f5226395390c22779e82
   languageName: node
   linkType: hard
 

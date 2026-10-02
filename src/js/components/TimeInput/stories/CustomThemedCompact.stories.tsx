@@ -11,54 +11,55 @@ const theme: ThemeType = deepMerge(grommet, {
       text: 'white',
     },
   },
-  timeInput: {
-    container: {
-      background: 'dark-2',
-      border: { color: 'dark-2' },
-      pad: { horizontal: 'xsmall', vertical: 'xxsmall' },
-      round: 'xsmall',
-    },
-    value: {
-      pad: { start: 'xxsmall', end: 'xxsmall' },
-      cursor: {
-        background: 'accent-3',
-        border: { side: 'bottom', size: 'small', color: 'accent-3' },
-        round: { size: 'full', corner: 'bottom' },
-      },
-    },
-    drop: {
-      background: 'dark-1',
-      gap: 'xxsmall',
-      pad: 'xsmall',
-      round: 'small',
-      columns: {
-        background: 'dark-2',
-        gap: 'none',
-        pad: 'none',
-        round: 'xsmall',
-      },
-      option: {
-        background: 'dark-2',
-        pad: { horizontal: 'small', vertical: 'xxsmall' },
-        text: { color: 'white', size: 'small' },
-        hover: {
-          background: 'neutral-2',
-          text: { weight: 'bold' },
-        },
-        selected: {
-          background: 'accent-3',
-          text: { color: 'black', weight: 'bold' },
-        },
-      },
-    },
-    dropButton: {
+});
+// full replace (not deepMerge) so none of grommet's default timeInput
+theme.timeInput = {
+  container: {
+    background: 'dark-2',
+    border: { color: 'dark-2' },
+    pad: { horizontal: 'xsmall', vertical: 'xxsmall' },
+    round: 'xsmall',
+  },
+  value: {
+    pad: { start: 'xxsmall', end: 'xxsmall' },
+    cursor: {
       background: 'accent-3',
-      border: { radius: 'xsmall' },
-      color: 'black',
-      padding: { horizontal: 'xxsmall', vertical: 'xxsmall' },
+      border: { side: 'bottom', size: 'small', color: 'accent-3' },
+      round: { size: 'full', corner: 'bottom' },
     },
   },
-});
+  drop: {
+    background: 'dark-1',
+    gap: 'xxsmall',
+    pad: 'xsmall',
+    round: 'small',
+    columns: {
+      background: 'dark-2',
+      gap: 'none',
+      pad: 'none',
+      round: 'xsmall',
+    },
+    option: {
+      background: 'dark-2',
+      pad: { horizontal: 'small', vertical: 'xxsmall' },
+      text: { color: 'white', size: 'small' },
+      hover: {
+        background: 'neutral-2',
+        text: { weight: 'bold' },
+      },
+      selected: {
+        background: 'accent-3',
+        text: { color: 'black', weight: 'bold' },
+      },
+    },
+  },
+  dropButton: {
+    background: 'accent-3',
+    border: { radius: 'xsmall' },
+    color: 'black',
+    padding: { horizontal: 'xxsmall', vertical: 'xxsmall' },
+  },
+};
 
 export const CustomThemedCompact = () => (
   <Grommet theme={theme}>
