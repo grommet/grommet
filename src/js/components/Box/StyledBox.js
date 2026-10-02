@@ -22,6 +22,7 @@ import {
   parseMetricToNum,
   responsiveBorderStyle,
   widthStyle,
+  getHoverIndicatorBorderStyle,
 } from '../../utils';
 
 import { roundStyle, styledComponentsConfig } from '../../utils/styles';
@@ -195,6 +196,13 @@ const interactiveStyle = css`
     ${(props) =>
       props.hoverIndicator &&
       getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+    ${(props) =>
+      props.hoverIndicator &&
+      getHoverIndicatorBorderStyle(
+        props.hoverIndicator,
+        props.responsive,
+        props.theme,
+      )}
   }
 `;
 

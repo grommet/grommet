@@ -8,7 +8,7 @@ import { Box, Text } from 'grommet';
 export const OnClickBox = () => (
   // Uncomment <Grommet> lines when using outside of storybook
   // <Grommet theme={...}>
-  <Box justify="center" align="center" pad="large">
+  <Box justify="center" align="center" pad="large" gap={{ row: 'small' }}>
     {/* eslint-disable no-alert */}
     <Box
       border
@@ -28,6 +28,27 @@ export const OnClickBox = () => (
     >
       <Attraction size="large" />
       <Text>Party</Text>
+    </Box>
+    <Box
+      border
+      pad="large"
+      align="center"
+      round
+      gap="small"
+      hoverIndicator={{
+        background: {
+          color: 'background-contrast',
+        },
+        border: {
+          color: 'status-ok',
+        },
+      }}
+      onClick={() => {
+        alert('clicked');
+      }}
+    >
+      <Attraction size="large" />
+      <Text>Party With Border</Text>
     </Box>
   </Box>
   // </Grommet>
