@@ -64,20 +64,23 @@ export const WizardProgress = ({
   const ariaLabel =
     ariaLabelProp || format({ id: 'wizard.progress', messages });
 
-  const onStepClick = clickableSteps ? (stepId) => {
-    const step = steps.find((s) => s.id === stepId);
-    if (step?.children?.length) {
-      // find the first child we are allowed to go to
-      const firstAllowedChild = step.children.find(
-        (child) => !child.disabled,
-      );
-      if (firstAllowedChild) {
-        goTo(firstAllowedChild.id);
+  const onStepClick = clickableSteps
+    ? (stepId) => {
+        // if forward and form need to do form validation
+        const step = steps.find((s) => s.id === stepId);
+        if (step?.children?.length) {
+          // find the first child we are allowed to go to
+          const firstAllowedChild = step.children.find(
+            (child) => !child.disabled,
+          );
+          if (firstAllowedChild) {
+            goTo(firstAllowedChild.id);
+          }
+        } else {
+          goTo(stepId);
+        }
       }
-    } else {
-      goTo(stepId);
-    }
-  } : undefined;
+    : undefined;
 
   return (
     <Box

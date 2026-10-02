@@ -188,13 +188,17 @@ const Wizard = forwardRef(
 
     const totalSteps = flatSteps.length;
 
-    const statusFromStep = useCallback((step) => {
-      if (step.disabled) return 'disabled';
-      if (step.id === currentStep && validationError) return 'error';
-      if (step.status) return step.status;
-      if (completedSteps.has(step.id)) return 'completed';
-      return 'pending';
-    }, [currentStep, validationError, completedSteps]);
+    const statusFromStep = useCallback(
+      (step) => {
+        if (step.disabled) return 'disabled';
+        if (step.id === currentStep && validationError !== undefined)
+          return 'error';
+        if (step.status) return step.status;
+        if (completedSteps.has(step.id)) return 'completed';
+        return 'pending';
+      },
+      [currentStep, validationError, completedSteps],
+    );
 
     // Derive step status; parents aggregate from their children.
     const getStepStatus = useCallback(
@@ -306,8 +310,22 @@ const Wizard = forwardRef(
     // Run step.validate (sync or async). Returns { ok, error }.
     const runValidation = useCallback(async () => {
       const formElement = document.getElementById(`${currentStep}-form`);
-      const formIsValid =
-        formElement?.getAttribute('data-form-valid') !== 'false';
+      let formIsValid = true;
+      if (formElement) {
+        // if the current step has a form, do a submit and wait for the
+        // validation result to be set as the data-form-valid attribute.
+        formIsValid = await new Promise((resolve) => {
+          const observer = new window.MutationObserver(() => {
+            observer.disconnect();
+            resolve(formElement.getAttribute('data-form-valid') !== 'false');
+          });
+          observer.observe(formElement, {
+            attributes: true,
+            attributeFilter: ['data-form-valid'],
+          });
+          formElement.requestSubmit();
+        });
+      }
 
       if (!formIsValid) {
         return {
@@ -357,7 +375,7 @@ const Wizard = forwardRef(
       });
       const { ok, error } = await runValidation();
       if (!ok) {
-        setValidationError(error);
+        setValidationError(error || '');
         emitStepChange({
           trigger: 'next',
           phase: 'blocked',
@@ -435,7 +453,7 @@ const Wizard = forwardRef(
           });
           const { ok, error } = await runValidation();
           if (!ok) {
-            setValidationError(error);
+            setValidationError(error || '');
             emitStepChange({
               trigger: 'goTo',
               phase: 'blocked',
@@ -509,7 +527,7 @@ const Wizard = forwardRef(
       });
       const { ok, error } = await runValidation();
       if (!ok) {
-        setValidationError(error);
+        setValidationError(error || '');
         emitStepChange({
           trigger: 'complete',
           phase: 'blocked',
@@ -595,7 +613,8 @@ const Wizard = forwardRef(
     }, [currentStep, scrollToTop, wizardRef]);
 
     const canGoNext = !currentStepObj?.disabled && !isValidating;
-    const isBlocked = !!validationError && !currentStepObj?.skippable;
+    const isBlocked =
+      validationError !== undefined && !currentStepObj?.skippable;
     const isCompleted = completedSteps.has(currentStep);
 
     const contextValue = useMemo(

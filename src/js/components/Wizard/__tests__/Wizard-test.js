@@ -301,6 +301,98 @@ describe('Wizard', () => {
     expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy();
   });
 
+  test('direct next and complete validate forms', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    const steps = [
+      { id: 'first', title: 'First' },
+      { id: 'last', title: 'Last' },
+    ];
+    render(
+      <Grommet>
+        <Wizard
+          steps={steps}
+          onComplete={onComplete}
+          renderStep={(step, wizard) => (
+            <>
+              <FormField
+                htmlFor={`${step.id}-input`}
+                label={step.title}
+                name={step.id}
+                required
+              >
+                <TextInput id={`${step.id}-input`} name={step.id} required />
+              </FormField>
+              <button
+                type="button"
+                onClick={step.id === 'first' ? wizard.next : wizard.complete}
+              >
+                Continue step
+              </button>
+            </>
+          )}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Continue step' }));
+    expect(screen.getByRole('heading', { name: 'First' })).toBeTruthy();
+    await user.type(screen.getByRole('textbox', { name: 'First' }), 'one');
+    await user.click(screen.getByRole('button', { name: 'Continue step' }));
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: 'Last' })).toBeTruthy(),
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Continue step' }));
+    expect(onComplete).not.toHaveBeenCalled();
+    await user.type(screen.getByRole('textbox', { name: 'Last' }), 'two');
+    await user.click(screen.getByRole('button', { name: 'Continue step' }));
+    await waitFor(() => expect(onComplete).toHaveBeenCalledTimes(1));
+  });
+
+  test('direct goTo validates before moving forward', async () => {
+    const user = userEvent.setup();
+    const onStepChange = jest.fn();
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          onStepChange={onStepChange}
+          renderStep={(step, wizard) => (
+            <>
+              {step.id === 'step1' && (
+                <FormField
+                  htmlFor="wizard-name"
+                  label="Name"
+                  name="name"
+                  required
+                >
+                  <TextInput id="wizard-name" name="name" />
+                </FormField>
+              )}
+              <button type="button" onClick={() => wizard.goTo('step3')}>
+                Go to final
+              </button>
+            </>
+          )}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Go to final' }));
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    expect(onStepChange).toHaveBeenCalledWith(
+      expect.objectContaining({ trigger: 'goTo', phase: 'blocked' }),
+    );
+    await user.type(screen.getByRole('textbox', { name: 'Name' }), 'Ada');
+    await user.click(screen.getByRole('button', { name: 'Go to final' }));
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: 'Step 3' })).toBeTruthy(),
+    );
+  });
+
   test('branching via nextStep(formValue) routes to declared id', async () => {
     const user = userEvent.setup();
     const steps = [

@@ -14,10 +14,8 @@ export const WizardFooter = ({ children, ...rest }) => {
   const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const {
-    currentStep,
     currentStepObj,
     currentStepIndex,
-    form,
     totalSteps,
     canGoNext,
     complete,
@@ -49,13 +47,11 @@ export const WizardFooter = ({ children, ...rest }) => {
     const CompleteIcon = footerTheme?.button?.complete?.icon;
     const CancelIcon = footerTheme?.button?.cancel?.icon;
 
-    const submit = isLastStep ? complete : next;
     const submitProps = {
       primary: true,
       disabled: !canGoNext,
-      type: form ? "submit" : undefined,
-      form: form ? `${currentStep}-form` : undefined,
-      onClick: form ? undefined : submit,
+      type: 'button',
+      onClick: isLastStep ? complete : next,
     };
 
     content = [
