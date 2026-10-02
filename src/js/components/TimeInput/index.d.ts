@@ -11,6 +11,7 @@ export interface TimeInputProps
   disabled?: boolean;
   format?: '12' | '24';
   id?: string;
+  inline?: boolean;
   messages?: {
     activePeriodValue?: string;
     activeSection?: string;

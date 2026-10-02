@@ -49,6 +49,9 @@ export const StyledTimeInputSegmentGroup = styled.div.withConfig(
   flex: 1 1 auto;
   align-items: center;
   min-width: 0;
+  // Mirrors a native text input's default sizing (~20 characters) now that
+  // there's no real <input> in the layout to drive this naturally.
+  width: 20ch;
   overflow: hidden;
   font-family: inherit;
   font-size: ${(props) =>
@@ -93,13 +96,22 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
 // Maps a Box border `side` to the CSS offset(s) an inset box-shadow needs
 // to visually approximate that border without occupying layout space.
 const cursorBoxShadow = (theme) => {
-  const border = theme.timeInput?.value?.cursor?.border;
-  if (!border) return '';
+  const borderData = theme.timeInput?.value?.cursor?.border;
+  if (!borderData) return '';
 
+  // cursor.border is typed as full BoxProps border (boolean, a side
+  // string, an object, or an array of objects) - normalize to the single
+  // side/size/color this renderer supports before reading them.
+  const border = Array.isArray(borderData) ? borderData[0] : borderData;
+  const side = typeof border === 'string' ? border : border.side || 'all';
+  const sizeToken = typeof border === 'object' ? border.size : undefined;
   const size = parseMetricToNum(
-    theme.global.borderSize?.[border.size] || border.size,
+    theme.global.borderSize?.[sizeToken] || sizeToken || 'xsmall',
   );
-  const color = normalizeColor(border.color, theme);
+  const color = normalizeColor(
+    (typeof border === 'object' && border.color) || 'border',
+    theme,
+  );
   const shadows = {
     bottom: `inset 0 -${size}px 0 0 ${color}`,
     top: `inset 0 ${size}px 0 0 ${color}`,
@@ -108,7 +120,7 @@ const cursorBoxShadow = (theme) => {
     all: `inset 0 0 0 ${size}px ${color}`,
   };
 
-  return `box-shadow: ${shadows[border.side || 'all']};`;
+  return `box-shadow: ${shadows[side] || shadows.all};`;
 };
 
 // Wraps Box directly (not via styledComponentsConfig/isPropValid) so

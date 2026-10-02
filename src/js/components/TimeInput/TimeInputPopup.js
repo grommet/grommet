@@ -5,7 +5,13 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { focusStyle, kindPartStyles, normalizeColor } from '../../utils';
+import {
+  backgroundStyle,
+  edgeStyle,
+  focusStyle,
+  normalizeColor,
+  roundStyle,
+} from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
@@ -25,6 +31,49 @@ const PopupColumnBox = styled(Box)`
   scrollbar-gutter: stable;
   scrollbar-width: thin;
 `;
+
+// `hover`/`selected` option state is typed as BoxProps (background, border,
+// round, pad), not the Button-kind schema `kindPartStyles` expects, so
+// build its CSS with the same Box-compatible helpers Box itself uses.
+// Only emits the border properties actually specified (per side, when
+// given) rather than a full border shorthand, so a hover state can tweak
+// just e.g. `border.color` without resetting width/style/radius.
+const optionBorderStyles = (border, theme) => {
+  const styles = [];
+  (Array.isArray(border) ? border : [border]).forEach((item) => {
+    if (typeof item !== 'object' || item === null) return;
+    const prefix =
+      item.side && item.side !== 'all' ? `border-${item.side}` : 'border';
+    if (item.size) {
+      styles.push(
+        `${prefix}-width: ${
+          theme.global.borderSize?.[item.size] || item.size
+        };`,
+      );
+    }
+    if (item.color) {
+      styles.push(`${prefix}-color: ${normalizeColor(item.color, theme)};`);
+    }
+    if (item.style) styles.push(`${prefix}-style: ${item.style};`);
+    if (item.radius) styles.push(`border-radius: ${item.radius};`);
+  });
+  return styles;
+};
+
+const optionStateStyles = (state, theme) => {
+  const styles = [];
+  if (state.background) {
+    styles.push(backgroundStyle(state.background, theme, state.color));
+  } else if (state.color) {
+    styles.push(`color: ${normalizeColor(state.color, theme)};`);
+  }
+  if (state.border) styles.push(optionBorderStyles(state.border, theme));
+  if (state.round) styles.push(roundStyle(state.round, false, theme));
+  if (state.pad) {
+    styles.push(edgeStyle('padding', state.pad, false, undefined, theme));
+  }
+  return styles;
+};
 
 const PopupOption = styled(Box)`
   box-sizing: border-box;
@@ -56,7 +105,7 @@ const PopupOption = styled(Box)`
 
       if (!hoverState) return '';
 
-      const hoverStyles = kindPartStyles(hoverState, props.theme);
+      const hoverStyles = optionStateStyles(hoverState, props.theme);
 
       const hoverText = hoverState.text;
       if (hoverText) {
