@@ -147,18 +147,27 @@ export const getSectionAriaMeta = ({ section, format, sections }) => {
   return { now, min, max };
 };
 
-// The cursor (any Box props except `border`, which is painted as a
-// inset box-shadow `cursorBoxShadow` in StyledTimeInput) only
-// renders while the segment is active/focused.
+const omitKeys = (obj, keys) =>
+  Object.fromEntries(
+    Object.entries(obj).filter(([key]) => !keys.includes(key)),
+  );
+
+// `border` is painted as an inset box-shadow instead of a real Box border
+// (see `cursorBoxShadow` in StyledTimeInput) so toggling the active state
+// never resizes the segment - it must never be spread as a literal Box prop.
+const CURSOR_THEME_ONLY_KEYS = ['border'];
+
+// `cursor` is a nested, active-only theme sub-object, not itself a Box prop,
+// so it must never be spread onto the always-rendered base segment.
+const VALUE_THEME_ONLY_KEYS = ['cursor'];
+
+// Active-only Box props, applied while the segment is active/focused.
 export const getSegmentCursorProps = (theme, active) => {
   if (!active) return {};
 
-  const { border, ...boxProps } = theme.timeInput?.value?.cursor || {};
-  return boxProps;
+  return omitKeys(theme.timeInput?.value?.cursor || {}, CURSOR_THEME_ONLY_KEYS);
 };
 
 // Base Box props applied to every segment regardless of active state
-export const getSegmentValueProps = (theme) => {
-  const { cursor, ...boxProps } = theme.timeInput?.value || {};
-  return boxProps;
-};
+export const getSegmentValueProps = (theme) =>
+  omitKeys(theme.timeInput?.value || {}, VALUE_THEME_ONLY_KEYS);
