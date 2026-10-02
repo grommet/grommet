@@ -408,6 +408,51 @@ describe('Drop', () => {
     { bottom: 'bottom', right: 'left' },
   ];
 
+  test('sizes to the layout width while the open animation scales it', () => {
+    render(<TestInput align={{ top: 'bottom', left: 'left' }} />);
+
+    const inputEl = screen.getByLabelText('test');
+    const dropEl = document.getElementById('drop-node') as HTMLElement;
+
+    const rect = (width: number, height: number): DOMRect =>
+      ({
+        x: 0,
+        y: 0,
+        top: 0,
+        left: 0,
+        right: width,
+        bottom: height,
+        width,
+        height,
+        toJSON: () => ({}),
+      } as DOMRect);
+    jest.spyOn(inputEl, 'getBoundingClientRect').mockReturnValue(rect(100, 40));
+    // mid-animation: the drop is drawn at scale(0.8), its layout width is 400
+    jest.spyOn(dropEl, 'getBoundingClientRect').mockReturnValue(rect(320, 240));
+    const originalGetComputedStyle = window.getComputedStyle;
+    jest
+      .spyOn(window, 'getComputedStyle')
+      .mockImplementation((element, pseudoElement) => {
+        const style = originalGetComputedStyle.call(
+          window,
+          element,
+          pseudoElement,
+        );
+        if (element === dropEl) {
+          Object.defineProperty(style, 'transform', {
+            value: 'matrix(0.8, 0, 0, 0.8, 0, 0)',
+            configurable: true,
+          });
+        }
+        return style;
+      });
+
+    fireEvent(window, new Event('resize', { bubbles: true, cancelable: true }));
+
+    expect(dropEl.style.width).toBe('400.1px');
+    jest.restoreAllMocks();
+  });
+
   describe('responsive placement when neither side fully fits', () => {
     const mockRect = (
       element: Element,
