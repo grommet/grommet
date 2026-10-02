@@ -93,7 +93,7 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
 // Maps a Box border `side` to the CSS offset(s) an inset box-shadow needs
 // to visually approximate that border without occupying layout space.
 const cursorBoxShadow = (theme) => {
-  const border = theme.timeInput?.cursor?.border;
+  const border = theme.timeInput?.value?.cursor?.border;
   if (!border) return '';
 
   const size = parseMetricToNum(
@@ -131,13 +131,3 @@ export const StyledTimeInputSegment = styled(Box)`
   }}
   ${(props) => props.$active && cursorBoxShadow(props.theme)}
 `;
-
-// The cursor (any Box props except `border`, which is painted as a
-// layout-neutral inset box-shadow via `$active` instead - see
-// `cursorBoxShadow` above) only renders while the segment is active/focused.
-export const getSegmentCursorProps = (theme, active) => {
-  if (!active) return {};
-
-  const { border, ...boxProps } = theme.timeInput?.cursor || {};
-  return boxProps;
-};

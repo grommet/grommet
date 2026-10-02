@@ -27,7 +27,6 @@ import {
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
   StyledTimeInputLabelTarget,
-  getSegmentCursorProps,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
@@ -35,6 +34,8 @@ import { useSectionedTimeField } from './useSectionedTimeField';
 import {
   getSectionAriaMeta,
   getSectionName,
+  getSegmentCursorProps,
+  getSegmentValueProps,
   pad,
   sectionTypeFromSection,
   sectionKey,
@@ -758,7 +759,6 @@ const TimeInput = forwardRef(
                         tag="span"
                         align="center"
                         justify="center"
-                        pad={theme.timeInput?.cursor?.pad}
                         ref={(segmentNode) => {
                           segmentRefs.current[section] = segmentNode;
                         }}
@@ -767,6 +767,7 @@ const TimeInput = forwardRef(
                             ? 0
                             : -1
                         }
+                        {...getSegmentValueProps(theme)}
                         {...getSegmentCursorProps(
                           theme,
                           showActiveSection && activeSection === section,

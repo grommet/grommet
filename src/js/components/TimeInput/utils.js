@@ -146,3 +146,19 @@ export const getSectionAriaMeta = ({ section, format, sections }) => {
 
   return { now, min, max };
 };
+
+// The cursor (any Box props except `border`, which is painted as a
+// inset box-shadow `cursorBoxShadow` in StyledTimeInput) only
+// renders while the segment is active/focused.
+export const getSegmentCursorProps = (theme, active) => {
+  if (!active) return {};
+
+  const { border, ...boxProps } = theme.timeInput?.value?.cursor || {};
+  return boxProps;
+};
+
+// Base Box props applied to every segment regardless of active state
+export const getSegmentValueProps = (theme) => {
+  const { cursor, ...boxProps } = theme.timeInput?.value || {};
+  return boxProps;
+};

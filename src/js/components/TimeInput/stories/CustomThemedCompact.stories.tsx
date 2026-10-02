@@ -2,9 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 
-import { Box, Grommet, Heading, ThemeType, TimeInput } from 'grommet';
+import { Box, Grommet, grommet, Heading, ThemeType, TimeInput } from 'grommet';
+import { deepMerge } from 'grommet/utils';
 
-const theme: ThemeType = {
+const theme: ThemeType = deepMerge(grommet, {
   global: {
     colors: {
       text: 'white',
@@ -17,11 +18,13 @@ const theme: ThemeType = {
       pad: { horizontal: 'xsmall', vertical: 'xxsmall' },
       round: 'xsmall',
     },
-    cursor: {
-      background: 'accent-3',
-      border: { side: 'bottom', size: 'small', color: 'accent-3' },
+    value: {
       pad: { start: 'xxsmall', end: 'xxsmall' },
-      round: { size: 'full', corner: 'bottom' },
+      cursor: {
+        background: 'accent-3',
+        border: { side: 'bottom', size: 'small', color: 'accent-3' },
+        round: { size: 'full', corner: 'bottom' },
+      },
     },
     drop: {
       background: 'dark-1',
@@ -55,7 +58,7 @@ const theme: ThemeType = {
       padding: { horizontal: 'xxsmall', vertical: 'xxsmall' },
     },
   },
-};
+});
 
 export const CustomThemedCompact = () => (
   <Grommet theme={theme}>

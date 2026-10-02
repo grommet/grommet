@@ -347,7 +347,10 @@ interface TimeInputDropOptionStateProps extends BoxProps {
   text?: TextProps;
 }
 
-export type TimeInputCursorType = BoxProps;
+export type TimeInputValueCursorType = BoxProps;
+export type TimeInputValueType = BoxProps & {
+  cursor?: TimeInputValueCursorType;
+};
 
 export interface TimeInputDropOptionType extends TimeInputDropOptionStateProps {
   hover?: TimeInputDropOptionStateProps;
@@ -2428,7 +2431,7 @@ export interface ThemeType {
   };
   timeInput?: {
     container?: BoxProps;
-    cursor?: TimeInputCursorType;
+    value?: TimeInputValueType;
     drop?: BoxProps & {
       columns?: BoxProps;
       option?: TimeInputDropOptionType;

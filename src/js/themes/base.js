@@ -2675,17 +2675,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any box props
         round: 'xxsmall',
       },
-      cursor: {
-        // any Box props; `pad` always applies, the rest only while a
-        // segment is focused
-        background: 'active-background',
-        border: {
-          side: 'bottom',
-          size: 'small',
-          color: { dark: 'white', light: 'black' },
-        },
+      value: {
+        // any Box props; applies to every segment, active or not
         pad: { start: 'xxsmall', end: 'xxsmall' },
-        round: { size: 'hair', corner: 'bottom' },
+        cursor: {
+          // any Box props; applies only while a segment is focused/active
+          background: 'active-background',
+          border: {
+            side: 'bottom',
+            size: 'small',
+            color: { dark: 'white', light: 'black' },
+          },
+          round: { size: 'hair', corner: 'bottom' },
+        },
       },
       drop: {
         columns: {
@@ -2706,6 +2708,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           text: {
             // any text props
           },
+          round: { size: 'xxsmall' },
           selected: {
             // any box props
             background: 'brand',

@@ -2271,14 +2271,16 @@ describe('TimeInput', () => {
         container: {
           round: 'large',
         },
-        cursor: {
-          background: '#FFD700',
-          border: {
-            side: 'left',
-            size: 'large',
-            color: '#FF0000',
-          },
+        value: {
           pad: { start: 'large', end: 'large' },
+          cursor: {
+            background: '#FFD700',
+            border: {
+              side: 'left',
+              size: 'large',
+              color: '#FF0000',
+            },
+          },
         },
         drop: {
           background: '#DDDDDD',
@@ -2325,13 +2327,14 @@ describe('TimeInput', () => {
     const container = screen.getByRole('group').parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
 
-    // cursor.pad applies to every segment, active or not
+    // value.pad applies to every segment, active or not
     const hourSegment = getSegment('hours');
     expect(hourSegment).toHaveStyleRule('padding-inline-start', '48px');
     expect(hourSegment).toHaveStyleRule('padding-inline-end', '48px');
 
-    // cursor.background and cursor.border (painted as a layout-neutral
-    // inset box-shadow) only render on the currently focused/active segment
+    // value.cursor.background and value.cursor.border (painted as a
+    // layout-neutral inset box-shadow) only render on the currently
+    // focused/active segment
     await user.click(hourSegment);
     expect(hourSegment).toHaveStyleRule('background-color', '#FFD700');
     expect(hourSegment).toHaveStyleRule(
