@@ -1,0 +1,124 @@
+name: Package release candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      package_name:
+        description: 'Package name to release'
+        required: true
+        type: string
+      ref:
+        description: 'Branch, tag, or commit to validate'
+        required: true
+        default: 'master'
+        type: string
+      version:
+        description: 'Exact package version to validate'
+        required: true
+        type: string
+      from_tag:
+        description: 'Starting tag for release-note generation (optional)'
+        required: false
+        type: string
+      to_tag:
+        description: 'Ending tag or ref for release-note generation'
+        required: false
+        default: 'HEAD'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    name: Build release candidate
+    runs-on: ubuntu-latest
+    # Required reviewer gate on this environment must approve before the
+    # untrusted `inputs.ref` is checked out and executed (yarn install/build).
+    environment: release-candidate-validation
+    steps:
+      - name: Check out requested ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+          fetch-depth: 0
+
+      - name: Verify clean working tree
+        run: |
+          git diff --quiet
+          git diff --cached --quiet
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Run preflight validation
+        env:
+          PACKAGE_NAME: ${{ inputs.package_name }}
+          REQUESTED_VERSION: ${{ inputs.version }}
+        run: |
+          test -n "$PACKAGE_NAME"
+          test -n "$REQUESTED_VERSION"
+
+      - name: Generate release-note draft
+        if: ${{ inputs.from_tag != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FROM_TAG: ${{ inputs.from_tag }}
+          TO_TAG: ${{ inputs.to_tag }}
+        run: |
+          yarn generate-release-notes \
+            -- \
+            --from "$FROM_TAG" \
+            --to "$TO_TAG" \
+            --output RELEASE_NOTES.md
+          echo '--- Release notes preview ---'
+          head -n 30 RELEASE_NOTES.md
+
+      - name: Run build
+        run: yarn build
+
+      - name: Create candidate tarball
+        env:
+          PACKAGE_NAME: ${{ inputs.package_name }}
+          REQUESTED_VERSION: ${{ inputs.version }}
+        run: |
+          yarn pack --filename "${PACKAGE_NAME}-${REQUESTED_VERSION}.tgz"
+
+      - name: Record candidate metadata
+        env:
+          REQUESTED_VERSION: ${{ inputs.version }}
+          PACKAGE_NAME: ${{ inputs.package_name }}
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const { execSync } = require('child_process');
+          const pkgName = process.env.PACKAGE_NAME;
+          const version = process.env.REQUESTED_VERSION;
+          const ref = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+          const metadata = {
+            package: pkgName,
+            version,
+            commit_sha: ref,
+            requested_version: version,
+            generated_at: new Date().toISOString(),
+          };
+          const dir = 'release-artifacts';
+          fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(`${dir}/release-metadata.json`, JSON.stringify(metadata, null, 2) + '\n');
+          NODE
+
+      - name: Upload release candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.package_name }}-${{ inputs.version }}-candidate
+          path: |
+            *.tgz
+            RELEASE_NOTES.md
+            release-artifacts/*.json
+          if-no-files-found: error
