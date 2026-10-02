@@ -569,7 +569,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       activeSection: activeSection,
       format: format,
       formatMessage: formatMessage,
-      focusOnOpen: focusOnOpen,
+      focusOnOpen: inline ? false : focusOnOpen,
       hoursOptions: hoursOptions,
       incrementSection: incrementSection,
       messages: messages,

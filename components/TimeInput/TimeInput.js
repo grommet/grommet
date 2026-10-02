@@ -573,7 +573,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
       activeSection: activeSection,
       format: format,
       formatMessage: formatMessage,
-      focusOnOpen: focusOnOpen,
+      focusOnOpen: inline ? false : focusOnOpen,
       hoursOptions: hoursOptions,
       incrementSection: incrementSection,
       messages: messages,
