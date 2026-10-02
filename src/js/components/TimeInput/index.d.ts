@@ -2,7 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 
-export interface TimeInputProps {
+export interface TimeInputProps
+  extends Omit<
+    React.HTMLAttributes<HTMLDivElement>,
+    'id' | 'defaultValue' | 'onChange'
+  > {
   defaultValue?: string;
   disabled?: boolean;
   format?: '12' | '24';
@@ -30,16 +34,12 @@ export interface TimeInputProps {
   value?: string;
 }
 
-export interface TimeInputExtendedProps
-  extends TimeInputProps,
-    Omit<
-      React.DetailedHTMLProps<
-        React.InputHTMLAttributes<HTMLInputElement>,
-        HTMLInputElement
-      >,
-      'defaultValue' | 'onChange' | 'onError' | 'size' | 'value'
-    > {}
+export interface TimeInputRef {
+  focus: () => void;
+}
 
-declare const TimeInput: React.FC<TimeInputExtendedProps>;
+declare const TimeInput: React.ForwardRefExoticComponent<
+  TimeInputProps & React.RefAttributes<TimeInputRef>
+>;
 
 export { TimeInput };

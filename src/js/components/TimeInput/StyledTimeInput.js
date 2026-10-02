@@ -6,10 +6,8 @@ import {
   disabledStyle,
   edgeStyle,
   focusStyle,
-  inputStyle,
   normalizeColor,
   parseMetricToNum,
-  plainInputStyle,
   readOnlyStyle,
   styledComponentsConfig,
 } from '../../utils';
@@ -31,41 +29,37 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
     `}
 `;
 
-export const StyledTimeInput = styled.input.withConfig(styledComponentsConfig)`
-  ${inputStyle}
-  ${plainInputStyle}
-  position: relative;
-  pointer-events: none;
-  color: transparent;
-  caret-color: transparent;
-  text-shadow: none;
-
-  &::selection {
-    background: transparent;
-    color: transparent;
-  }
-
-  &::placeholder {
-    color: transparent;
-  }
-`;
-
-export const StyledTimeInputField = styled.div.withConfig(
-  styledComponentsConfig,
-)`
-  position: relative;
-  flex: 1 1 auto;
-  min-width: 0;
-`;
-
-export const StyledTimeInputDisplay = styled.div.withConfig(
-  styledComponentsConfig,
-)`
+// A real, labelable input so a FormField's <label htmlFor={id}> can focus
+// the field natively (a div, unlike an input, is never labelable).
+export const StyledTimeInputLabelTarget = styled.input`
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
   overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+`;
+
+export const StyledTimeInputSegmentGroup = styled.div.withConfig(
+  styledComponentsConfig,
+)`
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: 0;
+  // Mirrors a native text input's default sizing (~20 characters) now that
+  // there's no real <input> in the layout to drive this naturally.
+  width: 20ch;
+  overflow: hidden;
+  font-family: inherit;
+  font-size: ${(props) =>
+    props.theme.global.input.font.size
+      ? props.theme.text[props.theme.global.input.font.size]?.size ||
+        props.theme.global.input.font.size
+      : 'inherit'};
+  line-height: ${(props) => props.theme.global.input.font.height || 'inherit'};
   ${(props) =>
     props.theme.global.input.padding &&
     (typeof props.theme.global.input.padding !== 'object'
@@ -82,41 +76,61 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
           props.theme.box.responsiveBreakpoint,
           props.theme,
         ))}
+  ${(props) => {
+    const weight =
+      props.theme.global.input.weight || props.theme.global.input.font.weight;
+    return weight && `font-weight: ${weight};`;
+  }}
 `;
 
 export const StyledTimeInputSeparator = styled.span.withConfig(
   styledComponentsConfig,
 )`
-  display: inline-flex;
-  align-items: center;
-  line-height: inherit;
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
       props.theme,
     )};
-  ${(props) => {
-    const weight =
-      props.theme.global.input.weight || props.theme.global.input.font.weight;
-    return weight && `font-weight: ${weight};`;
-  }}
 `;
 
-export const StyledTimeInputSegment = styled.span.withConfig(
-  styledComponentsConfig,
-)`
+// Maps a Box border `side` to the CSS offset(s) an inset box-shadow needs
+// to visually approximate that border without occupying layout space.
+const cursorBoxShadow = (theme) => {
+  const borderData = theme.timeInput?.value?.cursor?.border;
+  if (!borderData) return '';
+
+  // cursor.border is typed as full BoxProps border (boolean, a side
+  // string, an object, or an array of objects) - normalize to the single
+  // side/size/color this renderer supports before reading them.
+  const border = Array.isArray(borderData) ? borderData[0] : borderData;
+  const side = typeof border === 'string' ? border : border.side || 'all';
+  const sizeToken = typeof border === 'object' ? border.size : undefined;
+  const size = parseMetricToNum(
+    theme.global.borderSize?.[sizeToken] || sizeToken || 'xsmall',
+  );
+  const color = normalizeColor(
+    (typeof border === 'object' && border.color) || 'border',
+    theme,
+  );
+  const shadows = {
+    bottom: `inset 0 -${size}px 0 0 ${color}`,
+    top: `inset 0 ${size}px 0 0 ${color}`,
+    left: `inset ${size}px 0 0 0 ${color}`,
+    right: `inset -${size}px 0 0 0 ${color}`,
+    all: `inset 0 0 0 ${size}px ${color}`,
+  };
+
+  return `box-shadow: ${shadows[side] || shadows.all};`;
+};
+
+// Wraps Box directly (not via styledComponentsConfig/isPropValid) so
+// Box's own styling props (round, background) keep flowing through
+// instead of being filtered out as invalid DOM attributes.
+export const StyledTimeInputSegment = styled(Box)`
   &:focus {
     outline: none;
   }
   display: inline-flex;
-  align-items: center;
-  position: relative;
-  line-height: inherit;
-  padding-inline: ${(props) => {
-    const padToken = props.theme.timeInput?.active?.pad;
-
-    return props.theme.global.edgeSize?.[padToken] || padToken;
-  }};
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
@@ -127,51 +141,5 @@ export const StyledTimeInputSegment = styled.span.withConfig(
       props.theme.global.input.weight || props.theme.global.input.font.weight;
     return weight && `font-weight: ${weight};`;
   }}
-
-  ${(props) => {
-    if (!props.$active) return '';
-
-    // The active indicator's corner rounding is intentionally a fixed
-    // "hair" edge size rather than a theme-exposed value we can expose
-    // theme in future.
-    const activeRound = props.theme.global.edgeSize?.hair;
-
-    const activeBorderToken = props.theme.timeInput?.active?.indicator?.size;
-    const activeBorderSize =
-      props.theme.global.borderSize?.[activeBorderToken] ||
-      props.theme.global.edgeSize?.[activeBorderToken] ||
-      activeBorderToken ||
-      props.theme.global.borderSize.small;
-
-    return css`
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.background,
-          props.theme,
-        )};
-        border-top-left-radius: ${activeRound};
-        border-top-right-radius: ${activeRound};
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: ${activeBorderSize};
-        background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.indicator?.color || {
-            dark: 'white',
-            light: 'black',
-          },
-          props.theme,
-        )};
-        border-bottom-left-radius: ${activeRound};
-        border-bottom-right-radius: ${activeRound};
-      }
-    `;
-  }}
+  ${(props) => props.$active && cursorBoxShadow(props.theme)}
 `;

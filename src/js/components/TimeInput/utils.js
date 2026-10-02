@@ -146,3 +146,20 @@ export const getSectionAriaMeta = ({ section, format, sections }) => {
 
   return { now, min, max };
 };
+
+// `border` is painted as an inset box-shadow instead of a real Box border
+// so toggling the active state never resizes the segment
+export const getSegmentCursorProps = (theme, active) => {
+  if (!active) return {};
+
+  const { border, ...boxProps } = theme.timeInput?.value?.cursor || {};
+  return boxProps;
+};
+
+// `cursor` is a nested, active-only theme sub-object, not itself a Box prop,
+// so it must never be spread onto the always-rendered base segment.
+// Base Box props applied to every segment regardless of active state.
+export const getSegmentValueProps = (theme) => {
+  const { cursor, ...boxProps } = theme.timeInput?.value || {};
+  return boxProps;
+};
