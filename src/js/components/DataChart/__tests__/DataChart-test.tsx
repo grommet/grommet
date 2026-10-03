@@ -210,6 +210,20 @@ describe('DataChart', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('detail onMouseLeave does not throw without a prior mouse over', () => {
+    // Simulates a mouse leaving a detail hit target (or the detail Drop)
+    // when the detail was opened via keyboard navigation instead of a
+    // mouse over, so activeIndex.current was never set.
+    render(
+      <Grommet>
+        <DataChart data={data} series="a" detail />
+      </Grommet>,
+    );
+
+    const [firstItem] = screen.getAllByRole('listitem');
+    expect(() => fireEvent.mouseLeave(firstItem)).not.toThrow();
+  });
+
   test('detail pad + thickness', () => {
     const { container } = render(
       <Grommet>
