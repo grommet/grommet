@@ -12,4 +12,5 @@ export const Disabled = () => (
 
 export default {
   title: 'Input/TimeInput/Disabled',
+  component: TimeInput,
 };
