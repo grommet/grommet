@@ -17,7 +17,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 // Header above the progress track. Hosts the close (X) button which
 // invokes `cancel` from context.
 var WizardHeader = exports.WizardHeader = function WizardHeader(_ref) {
-  var _theme$wizard, _headerTheme$title, _headerTheme$close;
+  var _theme$wizard, _headerTheme$close;
   var title = _ref.title,
     children = _ref.children,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -27,15 +27,20 @@ var WizardHeader = exports.WizardHeader = function WizardHeader(_ref) {
     format = _React$useContext.format;
   var _useWizard = (0, _WizardContext.useWizard)(),
     cancel = _useWizard.cancel,
+    closable = _useWizard.closable,
     messages = _useWizard.messages;
   var headerTheme = (_theme$wizard = theme.wizard) == null ? void 0 : _theme$wizard.header;
 
   // Custom children override the themed title.
-  var content = children !== undefined ? children : title && /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
-    level: 1,
-    size: headerTheme == null || (_headerTheme$title = headerTheme.title) == null ? void 0 : _headerTheme$title.size,
-    margin: "none"
-  }, title);
+  var content = children;
+  if (children === undefined) {
+    var _headerTheme$title;
+    content = typeof title === 'string' && title ? /*#__PURE__*/_react["default"].createElement(_Heading.Heading, {
+      level: 1,
+      size: headerTheme == null || (_headerTheme$title = headerTheme.title) == null ? void 0 : _headerTheme$title.size,
+      margin: "none"
+    }, title) : title;
+  }
   var CloseIcon = headerTheme == null || (_headerTheme$close = headerTheme.close) == null ? void 0 : _headerTheme$close.icon;
   var closeLabel = format({
     id: 'wizard.close',
@@ -52,7 +57,7 @@ var WizardHeader = exports.WizardHeader = function WizardHeader(_ref) {
     direction: "row",
     align: "center",
     flex: true
-  }, content), /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+  }, content), closable && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
     "aria-label": closeLabel,
     icon: CloseIcon ? /*#__PURE__*/_react["default"].createElement(CloseIcon, {
       "aria-hidden": "true"

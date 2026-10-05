@@ -5,11 +5,14 @@ import React, { useContext } from 'react';
 // WizardContext exposes wizard state and navigation actions to descendants.
 export var WizardContext = /*#__PURE__*/React.createContext({
   steps: [],
+  clickableSteps: false,
+  closable: true,
   currentStep: '',
   currentStepIndex: 0,
   currentStepObj: undefined,
   totalSteps: 0,
   stepStates: {},
+  form: true,
   formValue: {},
   setFormValue: function setFormValue() {},
   validationError: undefined,

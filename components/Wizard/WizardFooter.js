@@ -25,11 +25,12 @@ var WizardFooter = exports.WizardFooter = function WizardFooter(_ref) {
   var _React$useContext = _react["default"].useContext(_MessageContext.MessageContext),
     format = _React$useContext.format;
   var _useWizard = (0, _WizardContext.useWizard)(),
-    currentStep = _useWizard.currentStep,
     currentStepObj = _useWizard.currentStepObj,
     currentStepIndex = _useWizard.currentStepIndex,
     totalSteps = _useWizard.totalSteps,
     canGoNext = _useWizard.canGoNext,
+    complete = _useWizard.complete,
+    next = _useWizard.next,
     previous = _useWizard.previous,
     skip = _useWizard.skip,
     cancel = _useWizard.cancel,
@@ -57,6 +58,12 @@ var WizardFooter = exports.WizardFooter = function WizardFooter(_ref) {
     var SkipIcon = footerTheme == null || (_footerTheme$button3 = footerTheme.button) == null || (_footerTheme$button3 = _footerTheme$button3.skip) == null ? void 0 : _footerTheme$button3.icon;
     var CompleteIcon = footerTheme == null || (_footerTheme$button4 = footerTheme.button) == null || (_footerTheme$button4 = _footerTheme$button4.complete) == null ? void 0 : _footerTheme$button4.icon;
     var CancelIcon = footerTheme == null || (_footerTheme$button5 = footerTheme.button) == null || (_footerTheme$button5 = _footerTheme$button5.cancel) == null ? void 0 : _footerTheme$button5.icon;
+    var submitProps = {
+      primary: true,
+      disabled: !canGoNext,
+      type: 'button',
+      onClick: isLastStep ? complete : next
+    };
     content = [hasCancelHandler && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       key: "cancel",
       label: label('cancel'),
@@ -73,7 +80,7 @@ var WizardFooter = exports.WizardFooter = function WizardFooter(_ref) {
       }) : undefined,
       disabled: !canGoPrevious,
       onClick: previous
-    }), currentStepObj.skippable && !isLastStep && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    }), currentStepObj.skippable && !currentStepObj.disabled && !isLastStep && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
       key: "skip",
       label: label('skip'),
       secondary: true,
@@ -82,28 +89,20 @@ var WizardFooter = exports.WizardFooter = function WizardFooter(_ref) {
       }) : undefined,
       reverse: true,
       onClick: skip
-    }), isLastStep ? /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+    }), isLastStep ? /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
       key: "complete",
       label: label('complete'),
       icon: CompleteIcon ? /*#__PURE__*/_react["default"].createElement(CompleteIcon, {
         "aria-hidden": "true"
-      }) : undefined,
-      primary: true,
-      disabled: !canGoNext,
-      type: "submit",
-      form: currentStep + "-form"
-    }) : /*#__PURE__*/_react["default"].createElement(_Button.Button, {
+      }) : undefined
+    }, submitProps)) : /*#__PURE__*/_react["default"].createElement(_Button.Button, _extends({
       key: "next",
       label: label('next'),
-      primary: true,
       icon: NextIcon ? /*#__PURE__*/_react["default"].createElement(NextIcon, {
         "aria-hidden": "true"
       }) : undefined,
-      reverse: true,
-      disabled: !canGoNext,
-      type: "submit",
-      form: currentStep + "-form"
-    })];
+      reverse: true
+    }, submitProps))];
   }
   return /*#__PURE__*/_react["default"].createElement(_ResponsiveContext.ResponsiveContext.Consumer, null, function (size) {
     var isSmall = size === 'small';

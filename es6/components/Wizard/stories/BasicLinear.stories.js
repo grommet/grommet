@@ -1,25 +1,25 @@
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
-import { Box, Notification, Paragraph, TextInput } from 'grommet';
+import { Box, FormField, Notification, Paragraph, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
 var steps = [{
   id: 'account',
   title: 'Account',
   description: 'Tell us about your account.',
-  render: function render(step, api) {
+  render: function render() {
     return /*#__PURE__*/React.createElement(Box, {
       gap: "small"
-    }, /*#__PURE__*/React.createElement(Paragraph, null, "Enter an email to continue."), /*#__PURE__*/React.createElement(TextInput, {
+    }, /*#__PURE__*/React.createElement(Paragraph, null, "Enter an email to continue."), /*#__PURE__*/React.createElement(FormField, {
+      label: "Email",
+      name: "email",
+      htmlFor: "email-field",
+      required: true
+    }, /*#__PURE__*/React.createElement(TextInput, {
+      id: "email-field",
       placeholder: "you@example.com",
-      value: api.formValue.email || '',
-      onChange: function onChange(event) {
-        return api.setFormValue(_extends({}, api.formValue, {
-          email: event.target.value
-        }));
-      }
-    }));
+      name: "email"
+    })));
   }
 }, {
   id: 'profile',

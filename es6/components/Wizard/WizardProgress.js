@@ -24,7 +24,9 @@ export var WizardProgress = function WizardProgress(_ref) {
     format = _React$useContext.format;
   var _useWizard = useWizard(),
     steps = _useWizard.steps,
+    clickableSteps = _useWizard.clickableSteps,
     currentStep = _useWizard.currentStep,
+    goTo = _useWizard.goTo,
     showProgress = _useWizard.showProgress,
     stepStates = _useWizard.stepStates,
     messages = _useWizard.messages;
@@ -43,6 +45,7 @@ export var WizardProgress = function WizardProgress(_ref) {
     };
     if (step.disabledReason) mapped.disabledReason = step.disabledReason;
     if (step['aria-label']) mapped['aria-label'] = step['aria-label'];
+    if (step.errorMessage) mapped.errorMessage = step.errorMessage;
     if (step.children && step.children.length) {
       mapped.children = step.children.map(function (child) {
         return _extends({
@@ -54,6 +57,8 @@ export var WizardProgress = function WizardProgress(_ref) {
           disabledReason: child.disabledReason
         } : {}, child['aria-label'] ? {
           'aria-label': child['aria-label']
+        } : {}, child.errorMessage ? {
+          errorMessage: child.errorMessage
         } : {});
       });
     }
@@ -63,6 +68,24 @@ export var WizardProgress = function WizardProgress(_ref) {
     id: 'wizard.progress',
     messages: messages
   });
+  var onStepClick = clickableSteps ? function (stepId) {
+    var _step$children;
+    // if forward and form need to do form validation
+    var step = steps.find(function (s) {
+      return s.id === stepId;
+    });
+    if (step != null && (_step$children = step.children) != null && _step$children.length) {
+      // find the first child we are allowed to go to
+      var firstAllowedChild = step.children.find(function (child) {
+        return !child.disabled;
+      });
+      if (firstAllowedChild) {
+        goTo(firstAllowedChild.id);
+      }
+    } else {
+      goTo(stepId);
+    }
+  } : undefined;
   return /*#__PURE__*/React.createElement(Box, _extends({
     pad: progressTheme == null ? void 0 : progressTheme.pad,
     width: showProgress === 'vertical' ? progressTheme == null ? void 0 : progressTheme.width : undefined,
@@ -74,7 +97,8 @@ export var WizardProgress = function WizardProgress(_ref) {
     steps: stepperSteps,
     currentStep: currentStep,
     direction: showProgress === 'vertical' ? 'vertical' : 'horizontal',
-    clickableSteps: false,
+    clickableSteps: clickableSteps,
+    onStepClick: onStepClick,
     showDescription: showDescription,
     "aria-label": ariaLabel
   }));

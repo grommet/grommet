@@ -10,11 +10,14 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 // WizardContext exposes wizard state and navigation actions to descendants.
 var WizardContext = exports.WizardContext = /*#__PURE__*/_react["default"].createContext({
   steps: [],
+  clickableSteps: false,
+  closable: true,
   currentStep: '',
   currentStepIndex: 0,
   currentStepObj: undefined,
   totalSteps: 0,
   stepStates: {},
+  form: true,
   formValue: {},
   setFormValue: function setFormValue() {},
   validationError: undefined,
