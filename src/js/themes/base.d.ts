@@ -342,7 +342,7 @@ interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
   };
 }
 
-type GroupItemThemeType = Pick<
+type GroupOptionThemeType = Pick<
   BoxProps,
   'background' | 'border' | 'pad' | 'round'
 > & {
@@ -919,7 +919,7 @@ export interface ThemeType {
   };
   checkBoxGroup?: {
     container?: BoxProps;
-    item?: GroupItemThemeType;
+    option?: GroupOptionThemeType;
   };
   clock?: {
     analog?: {
@@ -2007,7 +2007,7 @@ export interface ThemeType {
   };
   radioButtonGroup?: {
     container?: BoxProps;
-    item?: GroupItemThemeType;
+    option?: GroupOptionThemeType;
   };
   rangeInput?: {
     disabled?: {

@@ -1209,7 +1209,7 @@ describe('FormField', () => {
       });
     });
 
-    test('keeps frame and grouped item hover backgrounds independent', () => {
+    test('keeps frame and grouped option hover backgrounds independent', () => {
       const mockHpeTheme = {
         formField: {
           content: {
@@ -1218,7 +1218,7 @@ describe('FormField', () => {
           },
         },
         checkBoxGroup: {
-          item: {
+          option: {
             hover: { background: '#334455' },
           },
         },

@@ -7,7 +7,7 @@ import { normalizeColor, removeUndefined, useKeyboard } from '../../utils';
 import {
   StyledRadioButton,
   StyledRadioButtonContainer,
-  StyledRadioButtonGroupItem,
+  StyledRadioButtonGroupOption,
   StyledRadioButtonIcon,
   StyledRadioButtonInput,
   StyledRadioButtonLabel,
@@ -25,7 +25,7 @@ const RadioButton = forwardRef(
       disabled,
       focus: focusProp,
       focusIndicator = true,
-      groupItemProps, // internal only, supplied by RadioButtonGroup
+      groupOptionProps, // internal only, supplied by RadioButtonGroup
       id,
       label,
       name,
@@ -38,8 +38,8 @@ const RadioButton = forwardRef(
     const [hover, setHover] = useState();
     const [focus, setFocus] = useState(focusProp);
     const usingKeyboard = useKeyboard();
-    const RadioButtonContainer = groupItemProps
-      ? StyledRadioButtonGroupItem
+    const RadioButtonContainer = groupOptionProps
+      ? StyledRadioButtonGroupOption
       : StyledRadioButtonContainer;
     const normalizedLabel =
       typeof label === 'string' ? (
@@ -84,7 +84,7 @@ const RadioButton = forwardRef(
         onBlur={() => setFocus(false)}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        $groupItemProps={groupItemProps}
+        $groupOptionProps={groupOptionProps}
         {...passThemeFlag}
       >
         <StyledRadioButton

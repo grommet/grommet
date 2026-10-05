@@ -906,7 +906,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   extend: undefined,
         gap: 'small',
       },
-      // item: {
+      // option: {
       //   pad: undefined,
       //   border: undefined,
       //   round: undefined,
@@ -2158,7 +2158,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         gap: 'small',
       },
-      // item: {
+      // option: {
       //   pad: undefined,
       //   border: undefined,
       //   round: undefined,

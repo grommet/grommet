@@ -31,7 +31,7 @@ const CheckBoxGroup = forwardRef(
   ) => {
     const formContext = useContext(FormContext);
     const { theme, passThemeFlag } = useThemeValue();
-    const itemTheme = theme.checkBoxGroup?.item;
+    const optionTheme = theme.checkBoxGroup?.option;
 
     // In case option is a string, normalize it to be an object
     const options = optionsProp.map((option) =>
@@ -117,7 +117,7 @@ const CheckBoxGroup = forwardRef(
               // we will apply the hover treament.
               focusIndicator={focusIndicator}
               label={label}
-              groupItemProps={itemTheme}
+              groupOptionProps={optionTheme}
               onChange={(event) =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }

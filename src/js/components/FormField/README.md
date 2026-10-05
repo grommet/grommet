@@ -90,9 +90,10 @@ ReadOnly is detected on TextInput and DateInput children and their internal
 equivalents, including the default TextInput. Field or recognized child disabled
 flags suppress hover without changing field-wide disabled state inference.
 
-Child input visuals and grouped items remain owned by their input themes, not
-FormField. The HPE PartsAndStates story demonstrates transparent frame resets
-for CheckBoxGroup and RadioButtonGroup without changing their item themes.
+Child input visuals and grouped-option styling remain owned by their input
+themes, not FormField. The HPE PartsAndStates story demonstrates transparent
+frame resets for CheckBoxGroup and RadioButtonGroup without changing their
+option themes.
 
 See [THEMING-C.md](./THEMING-C.md) for the approved scope and historical design
 assessment, and [PartsAndStates](./stories/CustomThemed/PartsAndStates.stories.tsx)

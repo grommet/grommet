@@ -285,10 +285,10 @@ describe('RadioButtonGroup', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('themes item background and hover independently of RadioButton', () => {
+  test('themes option background and hover independently of RadioButton', () => {
     const customTheme = {
       radioButtonGroup: {
-        item: {
+        option: {
           background: '#112233',
           border: { color: '#334455' },
           pad: 'small',
@@ -305,19 +305,19 @@ describe('RadioButtonGroup', () => {
     );
 
     const option = screen.getByRole('radio', { name: 'First' });
-    const item = option.closest('label');
-    expect(item).toHaveStyleRule('background-color', '#112233');
-    expect(item).toHaveStyleRule('background-color', '#223344', {
+    const optionContainer = option.closest('label');
+    expect(optionContainer).toHaveStyleRule('background-color', '#112233');
+    expect(optionContainer).toHaveStyleRule('background-color', '#223344', {
       modifier: ':hover',
     });
-    expect(item).toHaveStyleRule('border', 'solid 1px #334455');
+    expect(optionContainer).toHaveStyleRule('border', 'solid 1px #334455');
   });
 
-  test('does not apply item hover background to disabled options', () => {
+  test('does not apply option hover background to disabled options', () => {
     render(
       <Grommet
         theme={{
-          radioButtonGroup: { item: { hover: { background: '#223344' } } },
+          radioButtonGroup: { option: { hover: { background: '#223344' } } },
         }}
       >
         <RadioButtonGroup
@@ -328,8 +328,8 @@ describe('RadioButtonGroup', () => {
     );
 
     const option = screen.getByRole('radio', { name: 'Disabled' });
-    const item = option.closest('label');
-    expect(item).not.toHaveStyleRule('background-color', '#223344', {
+    const optionContainer = option.closest('label');
+    expect(optionContainer).not.toHaveStyleRule('background-color', '#223344', {
       modifier: ':hover',
     });
   });

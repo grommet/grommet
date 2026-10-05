@@ -31,29 +31,32 @@ const disabledStyle = `
 
 const groupItemStyle = css`
   ${(props) =>
-    props.$groupItemProps?.background &&
-    backgroundStyle(props.$groupItemProps.background, props.theme)}
+    props.$groupOptionProps?.background &&
+    backgroundStyle(props.$groupOptionProps.background, props.theme)}
   ${(props) =>
-    props.$groupItemProps?.border &&
-    borderStyle(props.$groupItemProps.border, props.responsive, props.theme)}
+    props.$groupOptionProps?.border &&
+    borderStyle(props.$groupOptionProps.border, props.responsive, props.theme)}
   ${(props) =>
-    props.$groupItemProps?.pad &&
+    props.$groupOptionProps?.pad &&
     edgeStyle(
       'padding',
-      props.$groupItemProps.pad,
+      props.$groupOptionProps.pad,
       props.responsive,
       props.theme.box.responsiveBreakpoint,
       props.theme,
     )}
   ${(props) =>
-    props.$groupItemProps?.round &&
-    roundStyle(props.$groupItemProps.round, props.responsive, props.theme)}
+    props.$groupOptionProps?.round &&
+    roundStyle(props.$groupOptionProps.round, props.responsive, props.theme)}
   ${(props) =>
     !props.disabled &&
-    props.$groupItemProps?.hover?.background &&
+    props.$groupOptionProps?.hover?.background &&
     css`
       &:hover {
-        ${backgroundStyle(props.$groupItemProps.hover.background, props.theme)}
+        ${backgroundStyle(
+          props.$groupOptionProps.hover.background,
+          props.theme,
+        )}
       }
     `}
 `;
@@ -191,14 +194,14 @@ const StyledCheckBox = styled(Box)`
   flex-shrink: 0;
 `;
 
-const StyledCheckBoxGroupItem = styled(StyledCheckBoxContainer)`
+const StyledCheckBoxGroupOption = styled(StyledCheckBoxContainer)`
   ${groupItemStyle}
 `;
 
 export {
   StyledCheckBoxIcon,
   StyledCheckBoxContainer,
-  StyledCheckBoxGroupItem,
+  StyledCheckBoxGroupOption,
   StyledCheckBoxInput,
   StyledCheckBoxBox,
   StyledCheckBoxToggle,
