@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
+import { Interpolation } from 'styled-components';
 import { ReactComponentElement, ReactElement } from 'react';
 import { Icon } from 'grommet-icons';
 
@@ -62,7 +63,10 @@ type ExtendProps<TProps> = TProps & { theme: ThemeType };
  * styled-components interpolation. In the theme an ExtendValue can be provided
  * directly to `extend` or it can be computed as the result of an ExtendFn.
  */
-type ExtendValue<TProps> = string | readonly unknown[];
+type ExtendValue<TProps> = Exclude<
+  Interpolation<ExtendProps<TProps>>,
+  (...args: any[]) => any
+>;
 
 /**
  * ExtendFn represents a function passed to `extend`. These functions receive
@@ -275,7 +279,7 @@ interface ButtonType {
   };
 }
 interface FormFieldLabelType extends TextProps {
-  requiredIndicator?: boolean | ReactElement | string;
+  requiredIndicator?: boolean | ReactElement<unknown> | string;
 }
 
 type DigitalTexts =
