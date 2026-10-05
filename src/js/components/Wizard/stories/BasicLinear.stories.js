@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 
-import { Box, Notification, Paragraph, TextInput } from 'grommet';
+import { Box, FormField, Notification, Paragraph, TextInput } from 'grommet';
 import { Wizard } from '../Wizard';
 
 const steps = [
@@ -10,16 +10,16 @@ const steps = [
     id: 'account',
     title: 'Account',
     description: 'Tell us about your account.',
-    render: (step, api) => (
+    render: () => (
       <Box gap="small">
         <Paragraph>Enter an email to continue.</Paragraph>
-        <TextInput
-          placeholder="you@example.com"
-          value={api.formValue.email || ''}
-          onChange={(event) =>
-            api.setFormValue({ ...api.formValue, email: event.target.value })
-          }
-        />
+        <FormField label="Email" name="email" htmlFor="email-field" required>
+          <TextInput
+            id="email-field"
+            placeholder="you@example.com"
+            name="email"
+          />
+        </FormField>
       </Box>
     ),
   },
