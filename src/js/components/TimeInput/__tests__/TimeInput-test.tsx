@@ -117,7 +117,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="00:34:56" />
+        <TimeInput format="12" showSeconds defaultValue="00:34:56" />
       </Grommet>,
     );
 
@@ -567,6 +567,27 @@ describe('TimeInput', () => {
     });
   });
 
+  test('announces a completed 12-hour time with seconds hidden', async () => {
+    const user = userEvent.setup();
+    const announceSpy = jest.fn();
+
+    render(
+      <AnnounceContext.Provider value={announceSpy}>
+        <Grommet>
+          <TimeInput
+            format="12"
+            messages={{ currentValue: 'Now {hour}:{minute}:{second}{period}' }}
+          />
+        </Grommet>
+      </AnnounceContext.Provider>,
+    );
+
+    await user.click(getSegment('hours'));
+    await user.keyboard('1234p');
+
+    expect(announceSpy).toHaveBeenCalledWith('Now 12:34:0 PM', 'polite');
+  });
+
   test('uses currentValue message key without period in 24h format', async () => {
     const user = userEvent.setup();
     const announceSpy = jest.fn();
@@ -838,7 +859,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -860,7 +881,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -880,7 +901,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -898,7 +919,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -923,7 +944,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -934,7 +955,7 @@ describe('TimeInput', () => {
   test('supports uncontrolled initial value', () => {
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="13:05:09" />
+        <TimeInput format="12" showSeconds defaultValue="13:05:09" />
       </Grommet>,
     );
 
@@ -946,7 +967,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56" />
+        <TimeInput format="12" showSeconds defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -964,7 +985,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56" />
+        <TimeInput format="12" showSeconds defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -1039,7 +1060,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -1060,7 +1081,7 @@ describe('TimeInput', () => {
     render(
       <Grommet>
         <form aria-label="native-form">
-          <TimeInput format="12" name="alarmTime" />
+          <TimeInput format="12" showSeconds name="alarmTime" />
         </form>
       </Grommet>,
     );
@@ -1083,7 +1104,7 @@ describe('TimeInput', () => {
   test('disables both spinbutton and trigger button when disabled', () => {
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:45:10" disabled />
+        <TimeInput format="12" showSeconds defaultValue="09:45:10" disabled />
       </Grommet>,
     );
 
@@ -1102,6 +1123,7 @@ describe('TimeInput', () => {
         <TimeInput
           id="read-only-picker"
           format="12"
+          showSeconds
           defaultValue="00:00:00"
           readOnly
         />
@@ -1352,7 +1374,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:15:20" />
+        <TimeInput format="12" showSeconds defaultValue="07:15:20" />
       </Grommet>,
     );
 
@@ -1489,7 +1511,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -1609,7 +1631,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1652,7 +1674,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1674,7 +1696,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="02:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="02:30:00" />
       </Grommet>,
     );
 
@@ -1868,7 +1890,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -1898,7 +1920,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="09:30:00" />
       </Grommet>,
     );
 
@@ -1920,7 +1942,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="09:30:00" />
       </Grommet>,
     );
 
@@ -2072,6 +2094,29 @@ describe('TimeInput', () => {
     ).not.toBeInTheDocument();
   });
 
+  test('hides seconds by default in the 12-hour field and picker', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    expect(getDisplayInput()).toHaveValue('01:45 PM');
+    expect(getSegment('meridiem')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'seconds' }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    expect(screen.getByRole('listbox', { name: 'period' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'second' }),
+    ).not.toBeInTheDocument();
+  });
+
   test('auto-scrolls selected minute and second options on open', async () => {
     const user = userEvent.setup();
     const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
@@ -2081,7 +2126,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -2177,7 +2222,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -2558,7 +2603,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 

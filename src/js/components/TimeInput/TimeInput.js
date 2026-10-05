@@ -49,7 +49,7 @@ const getDisplaySectionPrefix = (section, index) => {
   return section === SECTION_PERIOD ? ' ' : ':';
 };
 
-const getSectionOrder = (format, showSeconds = format === '12') => {
+const getSectionOrder = (format, showSeconds) => {
   const numericSections = showSeconds
     ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND]
     : [SECTION_HOUR, SECTION_MINUTE];
@@ -102,7 +102,7 @@ const TimeInput = forwardRef(
       onChange,
       onPartialChange,
       readOnly = false,
-      showSeconds,
+      showSeconds = false,
       value: valueArg,
       ...rest
     },
@@ -182,9 +182,6 @@ const TimeInput = forwardRef(
       [minuteStep],
     );
 
-    const resolvedShowSeconds =
-      showSeconds !== undefined ? showSeconds : format === '12';
-
     const handleInvalid = useCallback(() => {
       const error = formatMessage({ id: 'timeInput.invalidTime', messages });
       announce(error, 'assertive');
@@ -194,8 +191,7 @@ const TimeInput = forwardRef(
       (nextSections) => {
         if (
           nextSections.hour === undefined ||
-          nextSections.minute === undefined ||
-          nextSections.second === undefined
+          nextSections.minute === undefined
         )
           return;
 
@@ -208,7 +204,7 @@ const TimeInput = forwardRef(
             values: {
               hour: nextSections.hour,
               minute: nextSections.minute,
-              second: nextSections.second,
+              second: nextSections.second ?? 0,
               period,
             },
           }),
@@ -219,8 +215,8 @@ const TimeInput = forwardRef(
     );
 
     const sectionOrder = useMemo(
-      () => getSectionOrder(format, resolvedShowSeconds),
-      [format, resolvedShowSeconds],
+      () => getSectionOrder(format, showSeconds),
+      [format, showSeconds],
     );
 
     const firstSection = sectionOrder[0] || SECTION_HOUR;
