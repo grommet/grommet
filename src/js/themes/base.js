@@ -2681,8 +2681,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         cursor: {
           // any Box props; applies only while a segment is focused/active
           background: 'active-background',
-          // bottom indicator line, painted via ::after rather than a real
-          // Box border; side is intentionally not themeable, only size/color
           border: {
             size: 'small',
             color: { dark: 'white', light: 'black' },
@@ -2693,7 +2691,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       drop: {
         columns: {
           // any box props
-          gap: 'xsmall',
+          gap: 'xxsmall',
           pad: { horizontal: 'xsmall' },
         },
         pad: { horizontal: 'xsmall', vertical: 'small' },
