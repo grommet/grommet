@@ -5,6 +5,7 @@ import type { StoryObj } from '@storybook/react';
 
 import {
   Box,
+  CheckBox,
   CheckBoxGroup,
   Form,
   FormField,
@@ -38,6 +39,9 @@ const formFieldBackgroundHover = {
 
 const groupedInputContent = {
   background: 'transparent',
+  border: {
+    color: 'transparent',
+  },
   error: {
     hover: {
       background: 'background-critical',
@@ -45,11 +49,15 @@ const groupedInputContent = {
   },
   hover: {
     background: 'transparent',
+    border: {
+      color: 'transparent',
+    },
   },
 };
 
 // Mock values matching hpe-design-tokens 2.4.0 semantic background roles.
 const mockHpeTheme: ThemeType = {
+  checkBox: {},
   formField: {
     content: {
       background: formFieldBackground,
@@ -72,6 +80,14 @@ const mockHpeTheme: ThemeType = {
       },
     },
     inputs: {
+      checkBox: {
+        content: {
+          background: 'transparent',
+          hover: {
+            background: 'background-contrast',
+          },
+        },
+      },
       checkBoxGroup: {
         content: groupedInputContent,
       },
@@ -82,6 +98,9 @@ const mockHpeTheme: ThemeType = {
         content: groupedInputContent,
       },
     },
+    checkBoxGroup: undefined,
+    radioButtonGroup: undefined,
+    starRating: undefined,
   },
 };
 
@@ -106,6 +125,16 @@ export const PartsAndStates: StoryObj = {
                 options={['Apples', 'Oranges', 'Bananas']}
               />
             </FormField>
+            <FormField name="checkbox-simple">
+              <CheckBox
+                name="checkbox-simple"
+                label="Choice"
+                id="simple-checkbox"
+              />
+            </FormField>
+            <FormField name="toggle">
+              <CheckBox name="toggle" label="On" id="toggle" toggle />
+            </FormField>
             <FormField label="Checkbox options">
               <CheckBoxGroup options={['First choice', 'Second choice']} />
             </FormField>
@@ -129,6 +158,13 @@ export const PartsAndStates: StoryObj = {
                 options={['Apples', 'Oranges', 'Bananas']}
               />
             </FormField>
+            <FormField name="checkbox-simple" error="Example error">
+              <CheckBox
+                name="checkbox-simple"
+                label="Choice"
+                id="simple-checkbox"
+              />
+            </FormField>
             <FormField label="Checkbox options" error="Example error">
               <CheckBoxGroup options={['First choice', 'Second choice']} />
             </FormField>
@@ -147,6 +183,14 @@ export const PartsAndStates: StoryObj = {
               <Select
                 placeholder="At-rest input fill"
                 options={['Apples', 'Oranges', 'Bananas']}
+                disabled
+              />
+            </FormField>
+            <FormField name="checkbox-simple" disabled>
+              <CheckBox
+                name="checkbox-simple"
+                label="Choice"
+                id="simple-checkbox"
                 disabled
               />
             </FormField>
