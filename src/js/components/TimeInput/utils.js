@@ -147,8 +147,6 @@ export const getSectionAriaMeta = ({ section, format, sections }) => {
   return { now, min, max };
 };
 
-// `border` is painted as an inset box-shadow instead of a real Box border
-// so toggling the active state never resizes the segment
 export const getSegmentCursorProps = (theme, active) => {
   if (!active) return {};
 

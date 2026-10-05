@@ -2276,7 +2276,6 @@ describe('TimeInput', () => {
           cursor: {
             background: '#FFD700',
             border: {
-              side: 'left',
               size: 'large',
               color: '#FF0000',
             },
@@ -2333,14 +2332,16 @@ describe('TimeInput', () => {
     expect(hourSegment).toHaveStyleRule('padding-inline-end', '48px');
 
     // value.cursor.background and value.cursor.border (painted as a
-    // layout-neutral inset box-shadow) only render on the currently
-    // focused/active segment
+    // bottom ::after strip, not a real Box border) only render on the
+    // currently focused/active segment
     await user.click(hourSegment);
     expect(hourSegment).toHaveStyleRule('background-color', '#FFD700');
-    expect(hourSegment).toHaveStyleRule(
-      'box-shadow',
-      'inset 12px 0 0 0 #FF0000',
-    );
+    expect(hourSegment).toHaveStyleRule('background-color', '#FF0000', {
+      modifier: '::after',
+    });
+    expect(hourSegment).toHaveStyleRule('height', '12px', {
+      modifier: '::after',
+    });
 
     // open the drop to check drop.option theme tokens
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');

@@ -17,7 +17,7 @@ const theme: ThemeType = {
       pad: { start: 'xsmall', end: 'xsmall' },
       cursor: {
         background: 'accent-1',
-        border: { side: 'bottom', size: 'medium', color: 'brand' },
+        border: { size: 'medium', color: 'brand' },
         round: { size: 'xsmall', corner: 'bottom' },
       },
     },

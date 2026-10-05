@@ -24,7 +24,7 @@ theme.timeInput = {
     pad: { start: 'xxsmall', end: 'xxsmall' },
     cursor: {
       background: 'accent-3',
-      border: { side: 'bottom', size: 'small', color: 'accent-3' },
+      border: { size: 'small', color: 'accent-3' },
       round: { size: 'full', corner: 'bottom' },
     },
   },

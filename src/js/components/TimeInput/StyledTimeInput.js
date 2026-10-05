@@ -93,17 +93,15 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
     )};
 `;
 
-// Maps a Box border `side` to the CSS offset(s) an inset box-shadow needs
-// to visually approximate that border without occupying layout space.
-const cursorBoxShadow = (theme) => {
-  const borderData = theme.timeInput?.value?.cursor?.border;
-  if (!borderData) return '';
+// Bottom indicator line painted as a separate ::after layer (not a real Box
+// border/box-shadow on the segment itself) so it never interacts with the
+// segment's own background fill or corner rounding. Side is intentionally
+// hardcoded to bottom - only size/color are themeable (keyed as `border`
+// to match the Box-prop-like naming elsewhere in this theme).
+const cursorIndicatorStyle = (theme) => {
+  const border = theme.timeInput?.value?.cursor?.border;
+  if (!border) return '';
 
-  // cursor.border is typed as full BoxProps border (boolean, a side
-  // string, an object, or an array of objects) - normalize to the single
-  // side/size/color this renderer supports before reading them.
-  const border = Array.isArray(borderData) ? borderData[0] : borderData;
-  const side = typeof border === 'string' ? border : border.side || 'all';
   const sizeToken = typeof border === 'object' ? border.size : undefined;
   const size = parseMetricToNum(
     theme.global.borderSize?.[sizeToken] || sizeToken || 'xsmall',
@@ -112,15 +110,18 @@ const cursorBoxShadow = (theme) => {
     (typeof border === 'object' && border.color) || 'border',
     theme,
   );
-  const shadows = {
-    bottom: `inset 0 -${size}px 0 0 ${color}`,
-    top: `inset 0 ${size}px 0 0 ${color}`,
-    left: `inset ${size}px 0 0 0 ${color}`,
-    right: `inset -${size}px 0 0 0 ${color}`,
-    all: `inset 0 0 0 ${size}px ${color}`,
-  };
 
-  return `box-shadow: ${shadows[side] || shadows.all};`;
+  return css`
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: ${size}px;
+      background-color: ${color};
+    }
+  `;
 };
 
 // Wraps Box directly (not via styledComponentsConfig/isPropValid) so
@@ -131,6 +132,7 @@ export const StyledTimeInputSegment = styled(Box)`
     outline: none;
   }
   display: inline-flex;
+  position: relative;
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
@@ -141,5 +143,5 @@ export const StyledTimeInputSegment = styled(Box)`
       props.theme.global.input.weight || props.theme.global.input.font.weight;
     return weight && `font-weight: ${weight};`;
   }}
-  ${(props) => props.$active && cursorBoxShadow(props.theme)}
+  ${(props) => props.$active && cursorIndicatorStyle(props.theme)}
 `;

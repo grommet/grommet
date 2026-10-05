@@ -36,7 +36,6 @@ theme.timeInput = {
     cursor: {
       background: 'background-active',
       border: {
-        side: 'bottom',
         size: 'small',
         color: 'focus',
       },

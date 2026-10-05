@@ -2681,8 +2681,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         cursor: {
           // any Box props; applies only while a segment is focused/active
           background: 'active-background',
+          // bottom indicator line, painted via ::after rather than a real
+          // Box border; side is intentionally not themeable, only size/color
           border: {
-            side: 'bottom',
             size: 'small',
             color: { dark: 'white', light: 'black' },
           },
