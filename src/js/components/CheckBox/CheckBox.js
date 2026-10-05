@@ -10,6 +10,7 @@ import {
   StyledCheckBox,
   StyledCheckBoxBox,
   StyledCheckBoxIcon,
+  StyledCheckBoxGroupItem,
   StyledCheckBoxContainer,
   StyledCheckBoxInput,
   StyledCheckBoxToggle,
@@ -40,6 +41,7 @@ const CheckBox = forwardRef(
       fill,
       focus: focusProp,
       focusIndicator = true,
+      groupItemProps, // internal only, supplied by CheckBoxGroup
       id,
       label,
       name,
@@ -209,9 +211,12 @@ const CheckBox = forwardRef(
 
     const first = reverse ? normalizedLabel : checkBoxNode;
     const second = reverse ? checkBoxNode : normalizedLabel;
+    const CheckBoxContainer = groupItemProps
+      ? StyledCheckBoxGroupItem
+      : StyledCheckBoxContainer;
 
     return (
-      <StyledCheckBoxContainer
+      <CheckBoxContainer
         fillProp={fill}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
@@ -226,10 +231,11 @@ const CheckBox = forwardRef(
         {...passThemeFlag}
         {...themeableProps}
         {...containerProps}
+        $groupItemProps={groupItemProps}
       >
         {first}
         {second}
-      </StyledCheckBoxContainer>
+      </CheckBoxContainer>
     );
   },
 );

@@ -14,6 +14,7 @@ import { Alert, New, StatusInfo } from 'grommet-icons';
 import { FormField } from '..';
 import { Button } from '../../Button';
 import { CheckBox } from '../../CheckBox';
+import { CheckBoxGroup } from '../../CheckBoxGroup';
 import { RadioButtonGroup } from '../../RadioButtonGroup';
 import { RangeInput } from '../../RangeInput';
 import { Form } from '../../Form';
@@ -1103,6 +1104,150 @@ describe('FormField', () => {
       expect(
         container.querySelector('[class*="FormFieldContentBox"]'),
       ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('supports content-part backgrounds and error borders', () => {
+      const partTheme = {
+        formField: {
+          content: {
+            background: '#112233',
+            hover: { background: '#223344' },
+            error: { border: { color: '#AA0033' } },
+          },
+        },
+      };
+      const { container, rerender } = render(
+        <Grommet theme={partTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      const contentBox = container.querySelector(
+        '[class*="FormFieldContentBox"]',
+      );
+      expect(contentBox).toHaveStyleRule('background-color', '#112233');
+      expect(contentBox).toHaveStyleRule('background-color', '#223344', {
+        modifier: ':hover',
+      });
+
+      rerender(
+        <Grommet theme={partTheme}>
+          <FormField label="Label" error="Invalid">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).toHaveStyleRule('border-bottom', 'solid 1px #AA0033');
+    });
+
+    test('supports per-input content background overrides', () => {
+      const partTheme = {
+        formField: {
+          content: {
+            background: '#112233',
+            hover: { background: '#223344' },
+          },
+          inputs: {
+            textInput: {
+              content: {
+                background: '#334455',
+                hover: { background: '#445566' },
+              },
+            },
+          },
+        },
+      };
+      const { container } = render(
+        <Grommet theme={partTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      const contentBox = container.querySelector(
+        '[class*="FormFieldContentBox"]',
+      );
+      expect(contentBox).toHaveStyleRule('background-color', '#334455');
+      expect(contentBox).toHaveStyleRule('background-color', '#445566', {
+        modifier: ':hover',
+      });
+    });
+
+    test('supports explicit outer container hover styles', () => {
+      const partTheme = {
+        formField: {
+          border: { position: 'outer' as const, side: 'all' as const },
+          container: {
+            hover: {
+              background: '#556677',
+              border: { color: '#667788' },
+            },
+          },
+        },
+      };
+
+      const { container } = render(
+        <Grommet theme={partTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      const root = container.querySelector('[class*="FormFieldBox"]');
+      expect(root).toHaveStyleRule('background-color', '#556677', {
+        modifier: ':hover',
+      });
+      expect(root).toHaveStyleRule('border-color', '#667788', {
+        modifier: ':hover',
+      });
+    });
+
+    test('keeps frame and grouped item hover backgrounds independent', () => {
+      const mockHpeTheme = {
+        formField: {
+          content: {
+            background: '#112233',
+            hover: { background: '#223344' },
+          },
+        },
+        checkBoxGroup: {
+          item: {
+            hover: { background: '#334455' },
+          },
+        },
+      };
+
+      const { container } = render(
+        <Grommet theme={mockHpeTheme}>
+          <FormField label="Checkbox options">
+            <CheckBoxGroup options={['First', 'Second']} />
+          </FormField>
+        </Grommet>,
+      );
+
+      const contentBox = container.querySelector(
+        '[class*="FormFieldContentBox"]',
+      );
+      const option = screen.getByRole('checkbox', { name: 'First' });
+      const optionContainer = option.closest('label');
+
+      expect(contentBox).toHaveStyleRule('background-color', '#112233');
+      expect(contentBox).toHaveStyleRule('background-color', '#223344', {
+        modifier: ':hover',
+      });
+      expect(optionContainer).toHaveStyleRule('background-color', '#334455', {
+        modifier: ':hover',
+      });
+      expect(contentBox).not.toHaveStyleRule('background-color', '#334455', {
+        modifier: ':hover',
+      });
     });
   });
 });

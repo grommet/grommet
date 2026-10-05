@@ -3,15 +3,48 @@
 import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
+  borderStyle,
+  edgeStyle,
   focusStyle,
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
+import { roundStyle } from '../../utils/styles';
 import { Box } from '../Box';
 
 const disabledStyle = `
   opacity: 0.5;
   cursor: default;
+`;
+
+const groupItemStyle = css`
+  ${(props) =>
+    props.$groupItemProps?.background &&
+    backgroundStyle(props.$groupItemProps.background, props.theme)}
+  ${(props) =>
+    props.$groupItemProps?.border &&
+    borderStyle(props.$groupItemProps.border, props.responsive, props.theme)}
+  ${(props) =>
+    props.$groupItemProps?.pad &&
+    edgeStyle(
+      'padding',
+      props.$groupItemProps.pad,
+      props.responsive,
+      props.theme.box.responsiveBreakpoint,
+      props.theme,
+    )}
+  ${(props) =>
+    props.$groupItemProps?.round &&
+    roundStyle(props.$groupItemProps.round, props.responsive, props.theme)}
+  ${(props) =>
+    !props.disabled &&
+    props.$groupItemProps?.hover?.background &&
+    css`
+      &:hover {
+        ${backgroundStyle(props.$groupItemProps.hover.background, props.theme)}
+      }
+    `}
 `;
 
 const StyledRadioButtonContainer = styled.label.withConfig(
@@ -108,8 +141,13 @@ const StyledRadioButton = styled(Box)`
   ${(props) => props.theme.radioButton && props.theme.radioButton.extend};
 `;
 
+const StyledRadioButtonGroupItem = styled(StyledRadioButtonContainer)`
+  ${groupItemStyle}
+`;
+
 export {
   StyledRadioButtonContainer,
+  StyledRadioButtonGroupItem,
   StyledRadioButtonInput,
   StyledRadioButtonLabel,
   StyledRadioButtonIcon,

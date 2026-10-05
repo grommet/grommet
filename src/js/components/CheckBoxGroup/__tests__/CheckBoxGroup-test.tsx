@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import 'jest-styled-components';
 
@@ -245,5 +245,53 @@ describe('CheckBoxGroup', () => {
     );
 
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('themes item background and hover independently of CheckBox', () => {
+    const customTheme = {
+      checkBoxGroup: {
+        item: {
+          background: '#112233',
+          border: { color: '#334455' },
+          pad: 'small',
+          round: 'small',
+          hover: { background: '#223344' },
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <CheckBoxGroup options={['First']} />
+      </Grommet>,
+    );
+
+    const option = screen.getByRole('checkbox', { name: 'First' });
+    const item = option.closest('label');
+    expect(item).toHaveStyleRule('background-color', '#112233');
+    expect(item).toHaveStyleRule('background-color', '#223344', {
+      modifier: ':hover',
+    });
+    expect(item).toHaveStyleRule('border', 'solid 1px #334455');
+  });
+
+  test('does not apply item hover background to disabled options', () => {
+    render(
+      <Grommet
+        theme={{
+          checkBoxGroup: { item: { hover: { background: '#223344' } } },
+        }}
+      >
+        <CheckBoxGroup
+          options={[{ label: 'Disabled', value: 'disabled', disabled: true }]}
+        />
+      </Grommet>,
+    );
+
+    const option = screen.getByRole('checkbox', { name: 'Disabled' });
+    const item = option.closest('label');
+    expect(item).not.toHaveStyleRule('background-color', '#223344', {
+      modifier: ':hover',
+    });
   });
 });

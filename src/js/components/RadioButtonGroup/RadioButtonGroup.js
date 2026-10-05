@@ -30,6 +30,7 @@ const RadioButtonGroup = forwardRef(
   ) => {
     const formContext = useContext(FormContext);
     const { theme } = useThemeValue();
+    const itemTheme = theme.radioButtonGroup?.item;
 
     // normalize options to always use an object
     const options = optionsProp.map((o) =>
@@ -156,7 +157,7 @@ const RadioButtonGroup = forwardRef(
                 );
               }
 
-              return (
+              const radioButton = (
                 <RadioButton
                   ref={(aRef) => {
                     optionRefs.current[index] = aRef;
@@ -180,12 +181,14 @@ const RadioButtonGroup = forwardRef(
                   onChange={(event) => onRadioButtonChange(event, optionValue)}
                   tabIndex={focusable ? '0' : '-1'} // necessary for Firefox
                   {...optionRest}
+                  groupItemProps={itemTheme}
                 >
                   {children
                     ? (state) => children(optionsProp[index], state)
                     : null}
                 </RadioButton>
               );
+              return radioButton;
             },
           )}
         </Box>

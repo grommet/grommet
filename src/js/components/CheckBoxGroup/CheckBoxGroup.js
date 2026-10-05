@@ -31,6 +31,7 @@ const CheckBoxGroup = forwardRef(
   ) => {
     const formContext = useContext(FormContext);
     const { theme, passThemeFlag } = useThemeValue();
+    const itemTheme = theme.checkBoxGroup?.item;
 
     // In case option is a string, normalize it to be an object
     const options = optionsProp.map((option) =>
@@ -103,7 +104,7 @@ const CheckBoxGroup = forwardRef(
           // value shouldn't propagate the input field and the onChange option
           const { value: omit, ...optionRest } = option;
           const optionProps = { ...optionRest, label, disabled };
-          return (
+          const checkBox = (
             <CheckBox
               key={key}
               {...optionProps}
@@ -116,6 +117,7 @@ const CheckBoxGroup = forwardRef(
               // we will apply the hover treament.
               focusIndicator={focusIndicator}
               label={label}
+              groupItemProps={itemTheme}
               onChange={(event) =>
                 onCheckBoxChange(event, valueOption, optionProps)
               }
@@ -123,6 +125,7 @@ const CheckBoxGroup = forwardRef(
               {children ? (state) => children(options[index], state) : null}
             </CheckBox>
           );
+          return checkBox;
         })}
       </StyledCheckBoxGroup>
     );

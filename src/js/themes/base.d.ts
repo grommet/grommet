@@ -342,6 +342,43 @@ interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
   };
 }
 
+type GroupItemThemeType = Pick<
+  BoxProps,
+  'background' | 'border' | 'pad' | 'round'
+> & {
+  hover?: {
+    background?: BackgroundType;
+  };
+};
+
+export type BoxPartThemeType = Pick<
+  BoxProps,
+  | 'background'
+  | 'border'
+  | 'elevation'
+  | 'height'
+  | 'margin'
+  | 'pad'
+  | 'round'
+  | 'width'
+>;
+
+export type BoxStateThemeType = Pick<
+  BoxPartThemeType,
+  'background' | 'border' | 'elevation' | 'pad' | 'round'
+>;
+
+export type FormFieldStateThemeType = BoxStateThemeType;
+
+export type FormFieldContentThemeType = BoxPartThemeType & {
+  disabled?: FormFieldStateThemeType;
+  error?: FormFieldStateThemeType & {
+    hover?: FormFieldStateThemeType | false;
+  };
+  hover?: FormFieldStateThemeType | false;
+  readOnly?: FormFieldStateThemeType;
+};
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -882,6 +919,7 @@ export interface ThemeType {
   };
   checkBoxGroup?: {
     container?: BoxProps;
+    item?: GroupItemThemeType;
   };
   clock?: {
     analog?: {
@@ -1236,9 +1274,13 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
-    content?: {
-      margin?: MarginType;
-      pad?: PadType;
+    container?: FormFieldContentThemeType;
+    content?: FormFieldContentThemeType;
+    inputs?: {
+      [inputName: string]: {
+        container?: FormFieldContentThemeType;
+        content?: FormFieldContentThemeType;
+      };
     };
     disabled?: {
       background?: BackgroundType;
@@ -1965,6 +2007,7 @@ export interface ThemeType {
   };
   radioButtonGroup?: {
     container?: BoxProps;
+    item?: GroupItemThemeType;
   };
   rangeInput?: {
     disabled?: {

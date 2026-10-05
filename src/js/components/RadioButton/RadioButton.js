@@ -7,6 +7,7 @@ import { normalizeColor, removeUndefined, useKeyboard } from '../../utils';
 import {
   StyledRadioButton,
   StyledRadioButtonContainer,
+  StyledRadioButtonGroupItem,
   StyledRadioButtonIcon,
   StyledRadioButtonInput,
   StyledRadioButtonLabel,
@@ -24,6 +25,7 @@ const RadioButton = forwardRef(
       disabled,
       focus: focusProp,
       focusIndicator = true,
+      groupItemProps, // internal only, supplied by RadioButtonGroup
       id,
       label,
       name,
@@ -36,6 +38,9 @@ const RadioButton = forwardRef(
     const [hover, setHover] = useState();
     const [focus, setFocus] = useState(focusProp);
     const usingKeyboard = useKeyboard();
+    const RadioButtonContainer = groupItemProps
+      ? StyledRadioButtonGroupItem
+      : StyledRadioButtonContainer;
     const normalizedLabel =
       typeof label === 'string' ? (
         <StyledRadioButtonLabel {...passThemeFlag}>
@@ -64,7 +69,7 @@ const RadioButton = forwardRef(
     }
 
     return (
-      <StyledRadioButtonContainer
+      <RadioButtonContainer
         {...removeUndefined({ htmlFor: id, disabled })}
         onClick={(event) => {
           // prevents clicking on the label trigging the event twice
@@ -79,6 +84,7 @@ const RadioButton = forwardRef(
         onBlur={() => setFocus(false)}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+        $groupItemProps={groupItemProps}
         {...passThemeFlag}
       >
         <StyledRadioButton
@@ -132,7 +138,7 @@ const RadioButton = forwardRef(
           )}
         </StyledRadioButton>
         {normalizedLabel}
-      </StyledRadioButtonContainer>
+      </RadioButtonContainer>
     );
   },
 );

@@ -3,11 +3,14 @@
 import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
+  borderStyle,
   edgeStyle,
   focusStyle,
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
+import { roundStyle } from '../../utils/styles';
 import { Box } from '../Box';
 
 // Note: since `fillStyle` is only used in one place, `justify-content` was
@@ -24,6 +27,35 @@ const fillStyle = () => `
 const disabledStyle = `
   opacity: 0.5;
   cursor: default;
+`;
+
+const groupItemStyle = css`
+  ${(props) =>
+    props.$groupItemProps?.background &&
+    backgroundStyle(props.$groupItemProps.background, props.theme)}
+  ${(props) =>
+    props.$groupItemProps?.border &&
+    borderStyle(props.$groupItemProps.border, props.responsive, props.theme)}
+  ${(props) =>
+    props.$groupItemProps?.pad &&
+    edgeStyle(
+      'padding',
+      props.$groupItemProps.pad,
+      props.responsive,
+      props.theme.box.responsiveBreakpoint,
+      props.theme,
+    )}
+  ${(props) =>
+    props.$groupItemProps?.round &&
+    roundStyle(props.$groupItemProps.round, props.responsive, props.theme)}
+  ${(props) =>
+    !props.disabled &&
+    props.$groupItemProps?.hover?.background &&
+    css`
+      &:hover {
+        ${backgroundStyle(props.$groupItemProps.hover.background, props.theme)}
+      }
+    `}
 `;
 
 const hoverStyle = css`
@@ -159,9 +191,14 @@ const StyledCheckBox = styled(Box)`
   flex-shrink: 0;
 `;
 
+const StyledCheckBoxGroupItem = styled(StyledCheckBoxContainer)`
+  ${groupItemStyle}
+`;
+
 export {
   StyledCheckBoxIcon,
   StyledCheckBoxContainer,
+  StyledCheckBoxGroupItem,
   StyledCheckBoxInput,
   StyledCheckBoxBox,
   StyledCheckBoxToggle,

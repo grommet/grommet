@@ -2,7 +2,82 @@
 
 This assessment synthesizes [THEMING-A.md](./THEMING-A.md) and [THEMING-B.md](./THEMING-B.md), checks their observations against the current implementation and declarations, and proposes a migration path toward an explicit part-and-state theme API.
 
-It is an architecture assessment, not an implementation specification. Statements about today's behavior are marked as current behavior; theme shapes and migration steps are proposals that require maintainer review.
+Sections 1–10 below are the historical architecture assessment, not the implemented API. Their broader proposals and descriptions of "current" behavior are retained as design context. The approved, implemented contract in section 0 takes precedence over those proposals.
+
+## 0. Approved implementation: FormField-owned Box parts only
+
+The additive implementation is intentionally narrower than the historical
+proposal: only `container`, `content`, and their `inputs.<inputName>` overrides
+are supported. No changes are made to group components, child anatomy,
+messages, label/help, kind variants, or public focus APIs.
+
+### Style vocabulary and selection
+
+- `BoxPartThemeType` picks exactly eight Box props: `background`, `border`,
+  `elevation`, `height`, `margin`, `pad`, `round`, and `width`.
+- `FormFieldStateThemeType` is a `Pick<BoxPartThemeType, ...>` of five props:
+  `background`, `border`, `elevation`, `pad`, and `round`.
+- Both named parts support `hover`, `error`, `disabled`, and `readOnly`.
+  `error.hover` uses the same five-prop state vocabulary. `hover` and
+  `error.hover` also accept `false`.
+- HPE design guidance selects **one application state: error > disabled >
+  readOnly**. This is not a merge of all active states: losing states cannot
+  contribute properties missing from the winner. The winner inherits base.
+- Focus continues to use existing global focus styles and owner/handoff
+  behavior. No named-part focus tokens are introduced.
+
+### Compatibility, inheritance, and hover
+
+The legacy resolver remains the fallback, retaining its property-specific
+priorities for legacy-only themes. Explicit new named-part styles then override
+it, independently of `border.position`, even with no legacy border. Root
+instance props and `contentProps` apply last. Base defaults are not relocated.
+
+Shared and input-specific part objects merge recursively without mutation;
+arrays/scalars replace. Missing and `undefined` mean no override and inherit
+available fallbacks, including nested values, whole state objects, `hover`, and
+`error.hover`. Nested undefined values in new part data are filtered without
+mutation. Legacy merging and own-undefined opt-outs remain unchanged.
+
+`hover: false` disables the entire part hover, including legacy fallback;
+`error.hover: false` disables it only while error is selected. Normal
+specificity applies: shared part → input part → selected `error.hover`. A
+more-specific hover object can override a less-specific `false`; undefined
+cannot. Explicit `{}` opts into named hover; undefined alone does not. Use
+defined Box resets such as `background: 'transparent'`, `border: false` or
+`[]`, `round: false`, `pad: 'none'`, and `elevation: 'none'` instead of undefined.
+
+Global `deepMerge` and theme provider behavior are intentionally unchanged.
+They can erase same-path values (including `false`) with undefined before
+FormField sees the composed theme. The local resolver inherits only fallbacks
+still available in that final theme; it does not reconstruct erased values.
+Omit undefined keys upstream if those same-path values must survive composition.
+
+Hover uses CSS selectors, not React pointer state, and reuses Box translators
+for all five props. It supports color-only borders, geometry and side changes,
+strings/booleans/arrays, border resets, and responsive/dark-light values.
+Ordinary named-part hover is inherited by error; `error.hover` overrides it.
+Editable error fields can hover. Actual disabled/readOnly flags suppress hover
+even if error is selected. Legacy hover still suppresses focused fields;
+named-part hover is independent of the existing global focus indicator.
+
+### Input identity and retained behavior
+
+Recognized child inputs, internal `component` inputs, and the internal default
+TextInput select the same camel-cased variant key. Non-input siblings do not
+overwrite a recognized key. Internal readOnly/readOnlyCopy flags are detected.
+Error description/invalid ARIA, input plain/focus defaults, FileInput border
+borrowing, TimeInput focus-within, and legacy abut behavior are retained.
+
+Shared base `content.pad` retains its legacy input-kind gate. Explicit
+input-specific and selected-state padding, plus `contentProps.pad`, can opt in
+without that gate. Only allowlisted styles travel through named part themes;
+behavioral and structural props cannot leak to the Box or DOM.
+
+The HPE story preserves its supplied light/dark background values and uses
+transparent grouped frame resets. Group item themes and components are outside
+this implementation.
+See [README.md](./README.md) for the consumer contract.
 
 ## Executive summary
 
