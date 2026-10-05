@@ -81,6 +81,17 @@ part values override those fallbacks;
 this does not reinterpret all legacy values as a single new state resolver.
 Base theme defaults and existing snapshots are not migrated to new paths.
 
+The canonical input-specific theme path is
+`formField.inputs.<inputName>.<part>`. Existing direct input wrappers such as
+`formField.textInput` and `formField.checkBoxGroup` are adapted as deprecated
+compatibility paths: their `hover.background` and `hover.border` values provide
+`inputs.<inputName>.content.hover` fallbacks. Defined values under `inputs`
+take precedence; undefined values there do not override a legacy or shared
+fallback. Direct `container.extend` remains a legacy extension, and
+`checkBox.pad` continues to be handed to the CheckBox child rather than treated
+as a FormField part style. Established FormField keys such as `border`,
+`content`, `hover`, and `error` are never treated as input names.
+
 The legacy shared `content.pad` gate is retained: it normally pads grouped and
 range inputs, or fields with `pad`. Explicit input-specific padding and selected
 state padding bypass this gate; `contentProps.pad` remains the instance escape

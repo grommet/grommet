@@ -23,6 +23,27 @@ const baseKeys = [
 const stateKeys = ['background', 'border', 'elevation', 'pad', 'round'];
 const states = ['error', 'disabled', 'readOnly'];
 
+// These are established FormField theme properties, not input names. Keep
+// this list separate from the legacy input names so future/custom input keys
+// can still be adapted without interpreting FormField's own API as an input.
+const formFieldKeys = new Set([
+  'border',
+  'container',
+  'content',
+  'disabled',
+  'error',
+  'extend',
+  'focus',
+  'help',
+  'hover',
+  'info',
+  'inputs',
+  'label',
+  'margin',
+  'round',
+  'survey',
+]);
+
 export const owns = (object, key) =>
   object != null && Object.prototype.hasOwnProperty.call(object, key);
 
@@ -60,6 +81,28 @@ const filterDefined = (value) => {
 // nested ones. This cannot recover values erased by an upstream deepMerge.
 export const mergeDefinedPart = (base, override) =>
   mergePart(filterDefined(base), filterDefined(override));
+
+// Legacy input wrappers only contributed hover, content-container extension,
+// and (for CheckBox) child padding. Do not pass the wrapper itself through the
+// Box-part resolver: in particular, container.extend is not a Box style prop.
+export const getLegacyInputTheme = (formFieldTheme, inputName) => {
+  const legacy =
+    inputName && !formFieldKeys.has(inputName)
+      ? formFieldTheme?.[inputName]
+      : undefined;
+  if (!isPlainObject(legacy))
+    return { hasHover: false, hover: undefined, content: undefined };
+  return {
+    hasHover: owns(legacy, 'hover'),
+    hover: legacy.hover,
+    content: legacy.hover === undefined ? undefined : { hover: legacy.hover },
+    containerExtend: legacy.container?.extend,
+    pad: inputName === 'checkBox' ? legacy.pad : undefined,
+  };
+};
+
+const hasHoverDefinition = (part, state) =>
+  part?.hover !== undefined || part?.[state]?.hover !== undefined;
 
 export const getPartStyleProps = (part, keys = baseKeys) => {
   const result = {};
@@ -102,6 +145,30 @@ export const resolvePart = (base, input, state) => {
         ? false
         : mergeDefinedPart(hover, selected.hover);
   return { props, hover, hasHover, hasStatePad: selected?.pad !== undefined };
+};
+
+// Adapt the old direct input wrapper before applying the canonical inputs
+// path. Defined canonical values win; undefined is filtered as no override.
+export const resolveFormFieldPart = (
+  formFieldTheme,
+  inputName,
+  partName,
+  state,
+) => {
+  const legacy = getLegacyInputTheme(formFieldTheme, inputName);
+  const canonicalInput = formFieldTheme?.inputs?.[inputName]?.[partName];
+  const adaptedLegacy = partName === 'content' ? legacy.content : undefined;
+  const input = mergeDefinedPart(adaptedLegacy, canonicalInput);
+  const resolved = resolvePart(formFieldTheme?.[partName], input, state);
+  const hasNamedHover =
+    hasHoverDefinition(formFieldTheme?.[partName], state) ||
+    hasHoverDefinition(canonicalInput, state);
+  return {
+    ...resolved,
+    // Legacy direct hover retains its old focus/error gating and border
+    // placement unless a canonical named-part hover opts into the new rules.
+    legacyHoverOnly: legacy.hasHover && !hasNamedHover,
+  };
 };
 
 // Hover uses the same Box translators as ordinary part props. Unresolved

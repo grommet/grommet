@@ -20,9 +20,11 @@ import { Select } from '../../Select';
 import { ThemeType } from '../../../themes';
 import { deepMerge } from '../../../utils';
 import {
+  getLegacyInputTheme,
   getPartStyleProps,
   mergeDefinedPart,
   mergePart,
+  resolveFormFieldPart,
   resolvePart,
 } from '../FormFieldTheme';
 
@@ -121,6 +123,84 @@ describe('FormField parts and states', () => {
     expect(borders[0]).toHaveProperty('color', undefined);
     expect(mergeDefinedPart(base, { border: [] }).border).toEqual([]);
     expect(mergeDefinedPart(base, { border: false }).border).toBe(false);
+  });
+
+  test('adapts direct input wrappers while canonical inputs take precedence', () => {
+    const theme = {
+      textInput: {
+        hover: {
+          background: '#111111',
+          border: { color: '#222222' },
+        },
+        container: { extend: 'outline: 1px solid red;' },
+      },
+      inputs: {
+        textInput: {
+          content: {
+            hover: {
+              background: '#333333',
+              border: { color: undefined },
+            },
+          },
+        },
+      },
+    };
+    expect(resolveFormFieldPart(theme, 'textInput', 'content').hover).toEqual({
+      background: '#333333',
+      border: { color: '#222222' },
+    });
+    expect(resolveFormFieldPart(theme, 'textInput', 'container').props).toEqual(
+      {},
+    );
+    expect(getLegacyInputTheme(theme, 'textInput').containerExtend).toBe(
+      'outline: 1px solid red;',
+    );
+    expect(getLegacyInputTheme({ error: { hover: {} } }, 'error')).toEqual({
+      hasHover: false,
+      hover: undefined,
+      content: undefined,
+    });
+    expect(
+      resolveFormFieldPart(
+        {
+          textInput: { hover: { background: '#111111' } },
+          inputs: { textInput: { content: { hover: false } } },
+        },
+        'textInput',
+        'content',
+      ),
+    ).toMatchObject({ hover: false, hasHover: true });
+    expect(
+      resolveFormFieldPart(
+        {
+          textInput: { hover: { background: '#111111' } },
+          inputs: {
+            textInput: {
+              content: { error: { hover: { background: '#333333' } } },
+            },
+          },
+        },
+        'textInput',
+        'content',
+        'error',
+      ).hover,
+    ).toEqual({ background: '#333333' });
+  });
+
+  test('adapts legacy CheckBox padding only for child handoff', () => {
+    expect(
+      getLegacyInputTheme(
+        { checkBox: { pad: { horizontal: 'small' } } },
+        'checkBox',
+      ).pad,
+    ).toEqual({ horizontal: 'small' });
+    expect(
+      resolveFormFieldPart(
+        { checkBox: { pad: { horizontal: 'small' } } },
+        'checkBox',
+        'content',
+      ).props,
+    ).toEqual({});
   });
 
   test('allowlists base and state props and ignores behavior/focus keys', () => {
@@ -273,6 +353,63 @@ describe('FormField parts and states', () => {
       expect(content()).toHaveStyleRule('width', '150px');
     },
   );
+
+  test('preserves direct input hover placement and behavior for legacy themes', () => {
+    const { rerender } = render(
+      <Grommet
+        theme={{
+          formField: {
+            border: { position: 'outer', side: 'all' },
+            textInput: {
+              hover: {
+                background: '#112233',
+                border: { color: '#223344' },
+              },
+            },
+          },
+        }}
+      >
+        <FormField>
+          <TextInput />
+        </FormField>
+      </Grommet>,
+    );
+    const root = document.querySelector('[class*="FormFieldBox"]');
+    expect(root).toHaveStyleRule('border-color', '#223344', {
+      modifier: ':hover',
+    });
+    expect(root).not.toHaveStyleRule('background-color', '#112233', {
+      modifier: ':hover',
+    });
+    expect(content()).toHaveStyleRule('background-color', '#112233', {
+      modifier: ':hover',
+    });
+    expect(content()).not.toHaveStyleRule('border-color', '#223344', {
+      modifier: ':hover',
+    });
+    rerender(
+      <Grommet
+        theme={{
+          formField: {
+            border: { position: 'outer', side: 'all' },
+            textInput: {
+              hover: {
+                background: '#112233',
+                border: { color: '#223344' },
+              },
+            },
+          },
+        }}
+      >
+        <FormField error="Invalid">
+          <TextInput />
+        </FormField>
+      </Grommet>,
+    );
+    expect(content()).not.toHaveStyleRule('background-color', '#112233', {
+      modifier: ':hover',
+    });
+  });
 
   test.each([
     { error: 'Invalid', disabled: true, readOnly: true, expected: '#AA0000' },

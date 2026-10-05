@@ -34,12 +34,13 @@ import { FormFieldPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import {
+  getLegacyInputTheme,
   getPartStyleProps,
   mergeDefinedPart,
   mergePart,
   owns,
   partHoverStyle,
-  resolvePart,
+  resolveFormFieldPart,
 } from './FormFieldTheme';
 
 const grommetInputFocusNames = [
@@ -105,20 +106,20 @@ const getFocusStyle = (props) => {
 const getHoverStyle = (role) => (props) => {
   const formFieldTheme = props.theme.formField;
   const hover = formFieldTheme?.hover;
-  const componentHover = formFieldTheme?.[props.componentName]?.hover;
+  const legacyInput = getLegacyInputTheme(formFieldTheme, props.componentName);
+  const componentHover = legacyInput.hover;
   if (!props.allowHover) return undefined;
   const position = formFieldTheme?.border?.position;
   const ownsBorder =
     role === 'outer' ? position === 'outer' : position === 'inner';
   const legacyHover =
-    owns(formFieldTheme?.[props.componentName], 'hover') &&
-    componentHover === undefined
+    legacyInput.hasHover && componentHover === undefined
       ? undefined
       : mergePart(hover, componentHover);
   const borderColor = ownsBorder ? legacyHover?.border?.color : undefined;
   const background = role === 'content' ? legacyHover?.background : undefined;
   const part = props.$part;
-  if (part?.hasHover) {
+  if (part?.hasHover && !part.legacyHoverOnly) {
     if (part.hover === false) return undefined;
     const legacy =
       props.$applicationState === 'error' || props.$fieldFocus
@@ -179,15 +180,15 @@ const FormFieldContentBox = styled(Box)`
     `}
   ${getHoverStyle('content')}
   ${(props) =>
-    props.theme.formField &&
-    props.theme.formField[props?.componentName]?.container?.extend}
+    getLegacyInputTheme(props.theme.formField, props?.componentName)
+      .containerExtend}
 `;
 
 const StyledContentsBox = styled(Box)`
   ${getHoverStyle('content')}
   ${(props) =>
-    props.theme.formField &&
-    props.theme.formField[props?.componentName]?.container?.extend}
+    getLegacyInputTheme(props.theme.formField, props?.componentName)
+      .containerExtend}
 `;
 
 const StyledMessageContainer = styled(Box)`
@@ -329,7 +330,7 @@ const getChildFocusProps = (
         focusIndicator: !containerFocus,
         pad:
           child.type.displayName === 'CheckBox'
-            ? formFieldTheme?.checkBox?.pad
+            ? getLegacyInputTheme(formFieldTheme, 'checkBox').pad
             : undefined,
       };
 
@@ -566,14 +567,16 @@ const FormField = forwardRef(
     const contentTheme = formFieldTheme.content || {};
     const componentContentTheme =
       formFieldTheme.inputs?.[childName]?.content || {};
-    const contentPart = resolvePart(
-      contentTheme,
-      componentContentTheme,
+    const contentPart = resolveFormFieldPart(
+      formFieldTheme,
+      childName,
+      'content',
       applicationState,
     );
-    const containerPart = resolvePart(
-      formFieldTheme.container,
-      formFieldTheme.inputs?.[childName]?.container,
+    const containerPart = resolveFormFieldPart(
+      formFieldTheme,
+      childName,
+      'container',
       applicationState,
     );
     const themeContentProps = getPartStyleProps(contentTheme);

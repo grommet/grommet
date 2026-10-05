@@ -1343,20 +1343,35 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
+    /** @deprecated Use formField.inputs.checkBox.container/content. */
     checkBox?: ContainerExtend & { pad?: PadType };
+    /** @deprecated Use formField.inputs.checkBoxGroup.container/content. */
     checkBoxGroup?: ContainerExtend;
+    /** @deprecated Use formField.inputs.textArea.container/content. */
     textArea?: ContainerExtend;
+    /** @deprecated Use formField.inputs.textInput.container/content. */
     textInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.select.container/content. */
     select?: ContainerExtend;
+    /** @deprecated Use formField.inputs.maskedInput.container/content. */
     maskedInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.selectMultiple.container/content. */
     selectMultiple?: ContainerExtend;
+    /** @deprecated Use formField.inputs.dateInput.container/content. */
     dateInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.timeInput.container/content. */
     timeInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.fileInput.container/content. */
     fileInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.radioButton.container/content. */
     radioButton?: ContainerExtend;
+    /** @deprecated Use formField.inputs.radioButtonGroup.container/content. */
     radioButtonGroup?: ContainerExtend;
+    /** @deprecated Use formField.inputs.rangeSelector.container/content. */
     rangeSelector?: ContainerExtend;
+    /** @deprecated Use formField.inputs.starRating.container/content. */
     starRating?: ContainerExtend;
+    /** @deprecated Use formField.inputs.thumbsRating.container/content. */
     thumbsRating?: ContainerExtend;
   };
   grommet?: {

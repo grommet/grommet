@@ -1294,6 +1294,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       gap: 'medium',
     },
     formField: {
+      // Deprecated - [inputname]: direct input-name keys such as textInput
+      // and checkBox are supported for compatibility. Prefer
+      // inputs.<inputName>.container and inputs.<inputName>.content so all
+      // input-specific styles share one namespace. The direct keys are adapted
+      // to these paths at runtime.
       // [inputname]: {
       //  container: {
       //    extend: undefined,

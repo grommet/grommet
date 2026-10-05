@@ -38,6 +38,14 @@ const formFieldBackgroundHover = {
 
 const groupedInputContent = {
   background: 'transparent',
+  error: {
+    hover: {
+      background: 'background-critical',
+    },
+  },
+  hover: {
+    background: 'transparent',
+  },
 };
 
 // Mock values matching hpe-design-tokens 2.4.0 semantic background roles.
@@ -49,6 +57,9 @@ const mockHpeTheme: ThemeType = {
         border: { color: 'status-critical' },
         background: {
           color: 'background-critical',
+        },
+        hover: {
+          background: 'background-critical',
         },
       },
       hover: {

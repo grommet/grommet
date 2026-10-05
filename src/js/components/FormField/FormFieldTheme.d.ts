@@ -11,6 +11,16 @@ export function mergeDefinedPart<T extends object, U extends object>(
   base: T,
   override: U,
 ): T & U;
+export function getLegacyInputTheme(
+  formFieldTheme?: object,
+  inputName?: string,
+): {
+  hasHover: boolean;
+  hover?: object | false;
+  content?: object;
+  containerExtend?: unknown;
+  pad?: unknown;
+};
 export function resolvePart(
   base?: object,
   input?: object,
@@ -21,3 +31,9 @@ export function resolvePart(
   hasHover: boolean;
   hasStatePad: boolean;
 };
+export function resolveFormFieldPart(
+  formFieldTheme: object,
+  inputName: string | undefined,
+  partName: 'container' | 'content',
+  state?: string,
+): ReturnType<typeof resolvePart> & { legacyHoverOnly: boolean };
