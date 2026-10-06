@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import { Interpolation } from 'styled-components';
-import { ReactComponentElement, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Icon } from 'grommet-icons';
 
 import {
@@ -2044,8 +2044,7 @@ export interface ThemeType {
     search?: {
       pad?: PadType;
     };
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
-    searchInput?: ReactComponentElement<any>;
+    searchInput?: ReactElement<any>;
     step?: number;
   };
   selectMultiple?: {
