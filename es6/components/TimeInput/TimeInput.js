@@ -26,9 +26,6 @@ var getDisplaySectionPrefix = function getDisplaySectionPrefix(section, index) {
   return section === SECTION_PERIOD ? ' ' : ':';
 };
 var getSectionOrder = function getSectionOrder(format, showSeconds) {
-  if (showSeconds === void 0) {
-    showSeconds = format === '12';
-  }
   var numericSections = showSeconds ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND] : [SECTION_HOUR, SECTION_MINUTE];
   if (format === '12') {
     return [].concat(numericSections, [SECTION_PERIOD]);
@@ -75,7 +72,8 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     onPartialChange = _ref.onPartialChange,
     _ref$readOnly = _ref.readOnly,
     readOnly = _ref$readOnly === void 0 ? false : _ref$readOnly,
-    showSeconds = _ref.showSeconds,
+    _ref$showSeconds = _ref.showSeconds,
+    showSeconds = _ref$showSeconds === void 0 ? false : _ref$showSeconds,
     valueArg = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = useThemeValue(),
@@ -139,7 +137,6 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var normalizedMinuteStep = useMemo(function () {
     return normalizeStep(minuteStep);
   }, [minuteStep]);
-  var resolvedShowSeconds = showSeconds !== undefined ? showSeconds : format === '12';
   var handleInvalid = useCallback(function () {
     var error = formatMessage({
       id: 'timeInput.invalidTime',
@@ -148,22 +145,25 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     announce(error, 'assertive');
   }, [announce, formatMessage, messages]);
   var announceCurrentValue = useCallback(function (nextSections) {
-    if (nextSections.hour === undefined || nextSections.minute === undefined || nextSections.second === undefined) return;
+    if (nextSections.hour === undefined || nextSections.minute === undefined || showSeconds && nextSections.second === undefined) return;
     var period = format === '12' ? " " + (nextSections.period || 'AM') : '';
+    var messageId = showSeconds ? 'timeInput.currentValue' : 'timeInput.currentValueWithoutSeconds';
     announce(formatMessage({
-      id: 'timeInput.currentValue',
+      id: messageId,
       messages: messages,
-      values: {
+      values: _extends({
         hour: nextSections.hour,
-        minute: nextSections.minute,
-        second: nextSections.second,
+        minute: nextSections.minute
+      }, showSeconds ? {
+        second: nextSections.second
+      } : {}, {
         period: period
-      }
+      })
     }), 'polite');
-  }, [announce, format, formatMessage, messages]);
+  }, [announce, format, formatMessage, messages, showSeconds]);
   var sectionOrder = useMemo(function () {
-    return getSectionOrder(format, resolvedShowSeconds);
-  }, [format, resolvedShowSeconds]);
+    return getSectionOrder(format, showSeconds);
+  }, [format, showSeconds]);
   var firstSection = sectionOrder[0] || SECTION_HOUR;
   var lastSection = sectionOrder[sectionOrder.length - 1] || SECTION_HOUR;
   var _useSectionedTimeFiel = useSectionedTimeField({

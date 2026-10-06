@@ -30,9 +30,6 @@ var getDisplaySectionPrefix = function getDisplaySectionPrefix(section, index) {
   return section === _utils2.SECTION_PERIOD ? ' ' : ':';
 };
 var getSectionOrder = function getSectionOrder(format, showSeconds) {
-  if (showSeconds === void 0) {
-    showSeconds = format === '12';
-  }
   var numericSections = showSeconds ? [_utils2.SECTION_HOUR, _utils2.SECTION_MINUTE, _utils2.SECTION_SECOND] : [_utils2.SECTION_HOUR, _utils2.SECTION_MINUTE];
   if (format === '12') {
     return [].concat(numericSections, [_utils2.SECTION_PERIOD]);
@@ -79,7 +76,8 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     onPartialChange = _ref.onPartialChange,
     _ref$readOnly = _ref.readOnly,
     readOnly = _ref$readOnly === void 0 ? false : _ref$readOnly,
-    showSeconds = _ref.showSeconds,
+    _ref$showSeconds = _ref.showSeconds,
+    showSeconds = _ref$showSeconds === void 0 ? false : _ref$showSeconds,
     valueArg = _ref.value,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
@@ -143,7 +141,6 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
   var normalizedMinuteStep = (0, _react.useMemo)(function () {
     return (0, _dates.normalizeStep)(minuteStep);
   }, [minuteStep]);
-  var resolvedShowSeconds = showSeconds !== undefined ? showSeconds : format === '12';
   var handleInvalid = (0, _react.useCallback)(function () {
     var error = formatMessage({
       id: 'timeInput.invalidTime',
@@ -152,22 +149,25 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     announce(error, 'assertive');
   }, [announce, formatMessage, messages]);
   var announceCurrentValue = (0, _react.useCallback)(function (nextSections) {
-    if (nextSections.hour === undefined || nextSections.minute === undefined || nextSections.second === undefined) return;
+    if (nextSections.hour === undefined || nextSections.minute === undefined || showSeconds && nextSections.second === undefined) return;
     var period = format === '12' ? " " + (nextSections.period || 'AM') : '';
+    var messageId = showSeconds ? 'timeInput.currentValue' : 'timeInput.currentValueWithoutSeconds';
     announce(formatMessage({
-      id: 'timeInput.currentValue',
+      id: messageId,
       messages: messages,
-      values: {
+      values: _extends({
         hour: nextSections.hour,
-        minute: nextSections.minute,
-        second: nextSections.second,
+        minute: nextSections.minute
+      }, showSeconds ? {
+        second: nextSections.second
+      } : {}, {
         period: period
-      }
+      })
     }), 'polite');
-  }, [announce, format, formatMessage, messages]);
+  }, [announce, format, formatMessage, messages, showSeconds]);
   var sectionOrder = (0, _react.useMemo)(function () {
-    return getSectionOrder(format, resolvedShowSeconds);
-  }, [format, resolvedShowSeconds]);
+    return getSectionOrder(format, showSeconds);
+  }, [format, showSeconds]);
   var firstSection = sectionOrder[0] || _utils2.SECTION_HOUR;
   var lastSection = sectionOrder[sectionOrder.length - 1] || _utils2.SECTION_HOUR;
   var _useSectionedTimeFiel = (0, _useSectionedTimeField.useSectionedTimeField)({

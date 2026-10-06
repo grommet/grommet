@@ -252,6 +252,7 @@ if (process.env.NODE_ENV !== 'production') {
           activeSectionValue: PropTypes.string,
           chooseTime: PropTypes.string,
           currentValue: PropTypes.string,
+          currentValueWithoutSeconds: PropTypes.string,
           inputLabel: PropTypes.string,
           invalidTime: PropTypes.string,
           openDrop: PropTypes.string,

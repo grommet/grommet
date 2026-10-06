@@ -21,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
       activeSectionValue: _propTypes["default"].string,
       chooseTime: _propTypes["default"].string,
       currentValue: _propTypes["default"].string,
+      currentValueWithoutSeconds: _propTypes["default"].string,
       inputLabel: _propTypes["default"].string,
       invalidTime: _propTypes["default"].string,
       openDrop: _propTypes["default"].string,
