@@ -26,6 +26,22 @@ const disabledStyle = `
   cursor: default;
 `;
 
+// Resolve the component selector at render time, keeping the existing styled
+// component declaration order (and unthemed snapshots) unchanged.
+const controlHoverStyle = (props) => {
+  const color = props.theme.checkBox.check.hover?.background?.color;
+  if (props.disabled || color === undefined) return undefined;
+  return css`
+    input:not([disabled])
+      + ${
+        // eslint-disable-next-line no-use-before-define
+        StyledCheckBoxBox
+      } {
+      background-color: ${normalizeColor(color, props.theme)};
+    }
+  `;
+};
+
 const hoverStyle = css`
   &:hover input:not([disabled]) + div,
   &:hover input:not([disabled]) + span {
@@ -95,7 +111,18 @@ const StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig)`
       !props.disabled && props.theme.checkBox.hover?.background?.color,
       props.theme,
     )};`}
-  ${(props) => props.theme.checkBox.extend}
+  ${(props) => {
+    const controlStyle = controlHoverStyle(props);
+    return controlStyle
+      ? css`
+          &:hover {
+            ${controlStyle}
+          }
+          ${props.focus && !props.focusIndicator && controlStyle}
+          ${props.theme.checkBox.extend}
+        `
+      : props.theme.checkBox.extend;
+  }}
 `;
 
 const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)`
@@ -117,7 +144,18 @@ const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)`
 
 const StyledCheckBoxBox = styled(Box)`
   ${(props) => props.focus && props.focusIndicator && focusStyle()};
-  ${(props) => props.theme.checkBox.check.extend};
+  ${(props) => {
+    const color =
+      props.checked || props.indeterminate
+        ? props.theme.checkBox.check.background?.color ??
+          props.theme.checkBox.background?.color
+        : props.theme.checkBox.background?.color;
+    if (color === undefined) return props.theme.checkBox.check.extend;
+    return css`
+      background-color: ${normalizeColor(color, props.theme)};
+      ${props.theme.checkBox.check.extend}
+    `;
+  }};
 `;
 
 const StyledCheckBoxToggle = styled.span.withConfig(styledComponentsConfig)`

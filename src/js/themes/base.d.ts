@@ -294,6 +294,7 @@ type DigitalTexts =
   | string;
 
 type ContainerExtend = {
+  background?: BackgroundType;
   container?: {
     extend?: ExtendType;
   };
@@ -835,6 +836,9 @@ export interface ThemeType {
     width?: string;
   };
   checkBox?: {
+    background?: {
+      color?: ColorType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
@@ -843,6 +847,14 @@ export interface ThemeType {
       align?: AlignContentType;
     };
     check?: {
+      background?: {
+        color?: ColorType;
+      };
+      hover?: {
+        background?: {
+          color?: ColorType;
+        };
+      };
       extend?: ExtendType;
       radius?: string;
       thickness?: string;
@@ -1231,6 +1243,7 @@ export interface ThemeType {
     gap?: GapType;
   };
   formField?: {
+    background?: BackgroundType;
     border?: BorderType & {
       error?: {
         color?: ColorType;
@@ -1912,6 +1925,11 @@ export interface ThemeType {
       radius?: string;
       background?: {
         color?: ColorType;
+      };
+      hover?: {
+        background?: {
+          color?: ColorType;
+        };
       };
     };
     color?: ColorType;

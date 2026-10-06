@@ -14,6 +14,22 @@ const disabledStyle = `
   cursor: default;
 `;
 
+// Resolve the component selector at render time without changing the existing
+// styled component declaration order or affecting custom render children.
+const controlHoverStyle = (props) => {
+  const color = props.theme.radioButton.check.hover?.background?.color;
+  if (props.disabled || color === undefined) return undefined;
+  return css`
+    input:not([disabled])
+      + ${
+        // eslint-disable-next-line no-use-before-define
+        StyledRadioButtonBox
+      } {
+      background-color: ${normalizeColor(color, props.theme)};
+    }
+  `;
+};
+
 const StyledRadioButtonContainer = styled.label.withConfig(
   styledComponentsConfig,
 )`
@@ -62,7 +78,18 @@ const StyledRadioButtonContainer = styled.label.withConfig(
       props.theme,
     )};
     `}
-  ${(props) => props.theme.radioButton.container.extend};
+  ${(props) => {
+    const controlStyle = controlHoverStyle(props);
+    return controlStyle
+      ? css`
+          &:hover {
+            ${controlStyle}
+          }
+          ${props.focus && !props.focusIndicator && controlStyle}
+          ${props.theme.radioButton.container.extend}
+        `
+      : props.theme.radioButton.container.extend;
+  }};
 `;
 
 const StyledRadioButtonInput = styled.input.withConfig(styledComponentsConfig)`

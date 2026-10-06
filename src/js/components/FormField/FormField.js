@@ -376,6 +376,13 @@ const FormField = forwardRef(
 
     const readOnlyField = useMemo(() => {
       let readOnly = false;
+      if (!children && inForm) {
+        const InputComponent = component || TextInput;
+        readOnly =
+          (rest.readOnly === true || rest.readOnlyCopy === true) &&
+          (InputComponent.displayName === 'TextInput' ||
+            InputComponent.displayName === 'DateInput');
+      }
       if (children) {
         Children.map(children, (child) => {
           if (
@@ -390,7 +397,7 @@ const FormField = forwardRef(
         });
       }
       return readOnly;
-    }, [children]);
+    }, [children, component, inForm, rest.readOnly, rest.readOnlyCopy]);
 
     const containerFocus = useMemo(() => {
       let focusIndicatorFlag = true;
@@ -506,20 +513,60 @@ const FormField = forwardRef(
       );
     }
 
+    // Only inspect direct children. Generated inputs have no child to identify.
+    let childName;
+    Children.forEach(children, (child) => {
+      if (child && child.type) childName = child.type.displayName;
+    });
+    if (!children && inForm) childName = (component || TextInput).displayName;
+    if (childName?.length > 0)
+      childName = childName.charAt(0).toLowerCase() + childName.slice(1);
+
+    let outerBackground;
+
+    if (themeBorder && themeBorder.position === 'outer') {
+      if (error && formFieldTheme.error && formFieldTheme.error.background) {
+        outerBackground = formFieldTheme.error.background;
+      } else if (
+        focus &&
+        formFieldTheme.focus &&
+        formFieldTheme.focus.background &&
+        formFieldTheme.focus.background.color
+      ) {
+        outerBackground = formFieldTheme.focus.background.color;
+      } else if (
+        disabled &&
+        formFieldTheme.disabled &&
+        formFieldTheme.disabled.background
+      ) {
+        outerBackground = formFieldTheme.disabled.background;
+      }
+    }
+
     const themeContentProps = { ...formFieldTheme.content };
+    const background =
+      formFieldTheme[childName]?.background ?? formFieldTheme.background;
+    if (background !== undefined) {
+      // Existing outer state fills must remain visible through the content.
+      themeContentProps.background =
+        outerBackground !== undefined ? undefined : background;
+    }
 
     if (!pad && !wantContentPad) {
       themeContentProps.pad = undefined;
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
+      let stateBackground;
       if (readOnlyField) {
-        themeContentProps.background = theme.global.input.readOnly?.background;
+        stateBackground = theme.global.input.readOnly?.background;
       } else if (error && formFieldTheme.error) {
-        themeContentProps.background = formFieldTheme.error.background;
+        stateBackground = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        themeContentProps.background = formFieldTheme.disabled.background;
+        stateBackground = formFieldTheme.disabled.background;
       }
+      if (stateBackground !== undefined)
+        themeContentProps.background = stateBackground;
     }
 
     // fileinput handle
@@ -540,16 +587,6 @@ const FormField = forwardRef(
       isFileInputComponent = true;
     }
 
-    let childName;
-    Children.forEach(children, (child) => {
-      if (child && child.type) {
-        childName = child.type.displayName;
-        // camelCase component name to match theme object key
-        if (childName?.length > 0)
-          childName = childName.charAt(0).toLowerCase() + childName.slice(1);
-      }
-    });
-
     const allowHover = !disabled && !readOnlyField && !error && !focus;
 
     if (!themeBorder) {
@@ -561,6 +598,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...contentProps}
           allowHover={allowHover} // internal prop
+          {...passThemeFlag}
         >
           {contents}
         </StyledContentsBox>
@@ -703,27 +741,6 @@ const FormField = forwardRef(
           zIndex: focus ? 10 : undefined,
           ...style,
         };
-      }
-    }
-
-    let outerBackground;
-
-    if (themeBorder && themeBorder.position === 'outer') {
-      if (error && formFieldTheme.error && formFieldTheme.error.background) {
-        outerBackground = formFieldTheme.error.background;
-      } else if (
-        focus &&
-        formFieldTheme.focus &&
-        formFieldTheme.focus.background &&
-        formFieldTheme.focus.background.color
-      ) {
-        outerBackground = formFieldTheme.focus.background.color;
-      } else if (
-        disabled &&
-        formFieldTheme.disabled &&
-        formFieldTheme.disabled.background
-      ) {
-        outerBackground = formFieldTheme.disabled.background;
       }
     }
 

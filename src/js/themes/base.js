@@ -848,6 +848,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     checkBox: {
+      // background: { color: undefined }, // default control fill
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
@@ -856,6 +857,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: '2px',
       },
       check: {
+        // background: { color: undefined }, // selected/indeterminate fill
+        // hover: { background: { color: undefined } }, // control-only hover
         // extend: undefined,
         radius: '4px',
         thickness: '4px',
@@ -1287,7 +1290,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       gap: 'medium',
     },
     formField: {
+      // background: undefined, // input area only, not labels or messages
       // [inputname]: {
+      //  background: undefined, // 'transparent' opts out of shared background
       //  container: {
       //    extend: undefined,
       //   },
@@ -2097,6 +2102,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       check: {
         radius: '100%',
+        // hover: { background: { color: undefined } }, // control-only hover
         // background: {
         //  color: undefined,
         // },
