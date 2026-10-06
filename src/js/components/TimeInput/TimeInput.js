@@ -678,13 +678,24 @@ const TimeInput = forwardRef(
       (segmentFocused || open) && !readOnly && !disabled;
 
     // theme icon may be a component (e.g. Clock) or an already-rendered element
-    const ThemedDropButtonIcon = theme.timeInput?.dropButton?.icon;
+    const {
+      icon: ThemedDropButtonIcon,
+      kind: dropButtonKindName,
+      ...dropButtonKindOverrides
+    } = theme.timeInput?.dropButton || {};
     let dropButtonIcon = <GrommetClockIcon aria-hidden="true" />;
     if (ThemedDropButtonIcon) {
       dropButtonIcon = React.isValidElement(ThemedDropButtonIcon)
         ? React.cloneElement(ThemedDropButtonIcon, { 'aria-hidden': 'true' })
         : React.createElement(ThemedDropButtonIcon, { 'aria-hidden': 'true' });
     }
+    // with no overrides, kind is just the named string (e.g. "toolbar");
+    // any other button props are passed through as a raw kind object instead
+    // (matches Pagination's theme.pagination.button: ButtonType | string),
+    // so kind and overrides can't be combined
+    const dropButtonKind = Object.keys(dropButtonKindOverrides).length
+      ? dropButtonKindOverrides
+      : dropButtonKindName || 'toolbar';
 
     if (inline) {
       return (
@@ -835,7 +846,7 @@ const TimeInput = forwardRef(
             {!readOnly && (
               <Button
                 icon={dropButtonIcon}
-                kind={theme.timeInput?.dropButton || 'toolbar'}
+                kind={dropButtonKind}
                 disabled={disabled}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',

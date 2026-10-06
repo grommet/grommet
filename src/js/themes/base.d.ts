@@ -2443,6 +2443,7 @@ export interface ThemeType {
     };
     dropButton?: ButtonType & {
       icon?: React.ReactNode | Icon;
+      kind?: string;
     };
   };
   tip?: {

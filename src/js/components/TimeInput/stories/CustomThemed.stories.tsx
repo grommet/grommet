@@ -58,7 +58,7 @@ const theme: ThemeType = {
     dropButton: {
       background: 'brand',
       border: { color: 'brand', radius: 'small', width: 'small' },
-      color: 'white',
+      color: 'pink',
       padding: { horizontal: 'small', vertical: 'small' },
     },
   },

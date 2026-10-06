@@ -78,10 +78,6 @@ theme.timeInput = {
   },
   dropButton: {
     icon: Clock,
-    padding: {
-      vertical: hpeComponents.button.toolbar.medium.iconOnly.paddingY,
-      horizontal: hpeComponents.button.toolbar.medium.iconOnly.paddingX,
-    },
   },
 };
 
