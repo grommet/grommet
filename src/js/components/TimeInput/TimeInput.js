@@ -49,7 +49,7 @@ const getDisplaySectionPrefix = (section, index) => {
   return section === SECTION_PERIOD ? ' ' : ':';
 };
 
-const getSectionOrder = (format, showSeconds = format === '12') => {
+const getSectionOrder = (format, showSeconds) => {
   const numericSections = showSeconds
     ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND]
     : [SECTION_HOUR, SECTION_MINUTE];
@@ -102,7 +102,7 @@ const TimeInput = forwardRef(
       onChange,
       onPartialChange,
       readOnly = false,
-      showSeconds,
+      showSeconds = false,
       value: valueArg,
       ...rest
     },
@@ -182,9 +182,6 @@ const TimeInput = forwardRef(
       [minuteStep],
     );
 
-    const resolvedShowSeconds =
-      showSeconds !== undefined ? showSeconds : format === '12';
-
     const handleInvalid = useCallback(() => {
       const error = formatMessage({ id: 'timeInput.invalidTime', messages });
       announce(error, 'assertive');
@@ -195,32 +192,35 @@ const TimeInput = forwardRef(
         if (
           nextSections.hour === undefined ||
           nextSections.minute === undefined ||
-          nextSections.second === undefined
+          (showSeconds && nextSections.second === undefined)
         )
           return;
 
         const period = format === '12' ? ` ${nextSections.period || 'AM'}` : '';
+        const messageId = showSeconds
+          ? 'timeInput.currentValue'
+          : 'timeInput.currentValueWithoutSeconds';
 
         announce(
           formatMessage({
-            id: 'timeInput.currentValue',
+            id: messageId,
             messages,
             values: {
               hour: nextSections.hour,
               minute: nextSections.minute,
-              second: nextSections.second,
+              ...(showSeconds ? { second: nextSections.second } : {}),
               period,
             },
           }),
           'polite',
         );
       },
-      [announce, format, formatMessage, messages],
+      [announce, format, formatMessage, messages, showSeconds],
     );
 
     const sectionOrder = useMemo(
-      () => getSectionOrder(format, resolvedShowSeconds),
-      [format, resolvedShowSeconds],
+      () => getSectionOrder(format, showSeconds),
+      [format, showSeconds],
     );
 
     const firstSection = sectionOrder[0] || SECTION_HOUR;
