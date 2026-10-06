@@ -2685,6 +2685,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: {
             size: 'small',
             color: { dark: 'white', light: 'black' },
+            side: 'bottom',
           },
           round: { size: 'hair', corner: 'bottom' },
         },
