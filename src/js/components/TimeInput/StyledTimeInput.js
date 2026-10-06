@@ -93,35 +93,31 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
     )};
 `;
 
-// Bottom indicator line painted as a separate ::after layer (not a real Box
-// border/box-shadow on the segment itself) so it never interacts with the
-// segment's own background fill or corner rounding. Side is intentionally
-// hardcoded to bottom - only size/color are themeable (keyed as `border`
-// to match the Box-prop-like naming elsewhere in this theme).
-const cursorIndicatorStyle = (theme) => {
+// Maps a Box border `side` to the inset box-shadow offset(s) needed to
+// visually approximate that border without occupying layout space. The
+// offset is doubled and paired with a negative spread equal to the
+// requested size; the negative spread retracts the shadow away from the
+// perpendicular edges (avoiding a thin sliver leaking in at rounded
+// corners), while the doubled offset restores the intended thickness on
+// the selected side.
+const cursorBoxShadow = (theme) => {
   const border = theme.timeInput?.value?.cursor?.border;
   if (!border) return '';
 
-  const sizeToken = typeof border === 'object' ? border.size : undefined;
   const size = parseMetricToNum(
-    theme.global.borderSize?.[sizeToken] || sizeToken || 'xsmall',
+    theme.global.borderSize?.[border.size] || border.size || 'xsmall',
   );
-  const color = normalizeColor(
-    (typeof border === 'object' && border.color) || 'border',
-    theme,
-  );
+  const color = normalizeColor(border.color || 'border', theme);
+  const offset = size * 2;
+  const shadows = {
+    bottom: `inset 0 -${offset}px 0 -${size}px ${color}`,
+    top: `inset 0 ${offset}px 0 -${size}px ${color}`,
+    left: `inset ${offset}px 0 0 -${size}px ${color}`,
+    right: `inset -${offset}px 0 0 -${size}px ${color}`,
+    all: `inset 0 0 0 ${size}px ${color}`,
+  };
 
-  return css`
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: ${size}px;
-      background-color: ${color};
-    }
-  `;
+  return `box-shadow: ${shadows[border.side] || shadows.all};`;
 };
 
 // Wraps Box directly (not via styledComponentsConfig/isPropValid) so
@@ -132,7 +128,6 @@ export const StyledTimeInputSegment = styled(Box)`
     outline: none;
   }
   display: inline-flex;
-  position: relative;
   color: ${(props) =>
     normalizeColor(
       props.$filled ? 'text' : props.theme.global.colors.placeholder,
@@ -143,5 +138,5 @@ export const StyledTimeInputSegment = styled(Box)`
       props.theme.global.input.weight || props.theme.global.input.font.weight;
     return weight && `font-weight: ${weight};`;
   }}
-  ${(props) => props.$active && cursorIndicatorStyle(props.theme)}
+  ${(props) => props.$active && cursorBoxShadow(props.theme)}
 `;
