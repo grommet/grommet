@@ -9,7 +9,7 @@ import { axe } from 'jest-axe';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { FormField, Grommet, TextInput, Wizard } from '../..';
+import { Box, FormField, Grommet, TextInput, Wizard } from '../..';
 
 const basicSteps = [
   { id: 'step1', title: 'Step 1', description: 'First step' },
@@ -19,9 +19,28 @@ const basicSteps = [
 
 const renderStep = (step) => <p>{`Content for ${step.title}`}</p>;
 
+const mockMediumContainerWidth = () =>
+  jest
+    .spyOn(window.HTMLElement.prototype, 'getBoundingClientRect')
+    .mockReturnValue({
+      width: 1280,
+      height: 0,
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      x: 0,
+      y: 0,
+      toJSON: () => {},
+    });
+
 describe('Wizard', () => {
   beforeEach(() => {
     console.warn = jest.fn();
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
   test('should have no accessibility violations', async () => {
@@ -51,6 +70,24 @@ describe('Wizard', () => {
     expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
     expect(screen.getByText('Content for Step 1')).toBeTruthy();
     expect(screen.getByText('Step 1 of 3')).toBeTruthy();
+  });
+
+  test('renders React node title without wrapping it in a heading', () => {
+    render(
+      <Grommet>
+        <Wizard
+          title={<span>Custom wizard title</span>}
+          steps={basicSteps}
+          renderStep={renderStep}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByText('Custom wizard title')).toBeTruthy();
+    expect(
+      screen.queryByRole('heading', { name: 'Custom wizard title' }),
+    ).toBeNull();
   });
 
   test('renders the step at defaultStep when provided', () => {
@@ -264,6 +301,98 @@ describe('Wizard', () => {
     expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy();
   });
 
+  test('direct next and complete validate forms', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    const steps = [
+      { id: 'first', title: 'First' },
+      { id: 'last', title: 'Last' },
+    ];
+    render(
+      <Grommet>
+        <Wizard
+          steps={steps}
+          onComplete={onComplete}
+          renderStep={(step, wizard) => (
+            <>
+              <FormField
+                htmlFor={`${step.id}-input`}
+                label={step.title}
+                name={step.id}
+                required
+              >
+                <TextInput id={`${step.id}-input`} name={step.id} required />
+              </FormField>
+              <button
+                type="button"
+                onClick={step.id === 'first' ? wizard.next : wizard.complete}
+              >
+                Continue step
+              </button>
+            </>
+          )}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Continue step' }));
+    expect(screen.getByRole('heading', { name: 'First' })).toBeTruthy();
+    await user.type(screen.getByRole('textbox', { name: 'First' }), 'one');
+    await user.click(screen.getByRole('button', { name: 'Continue step' }));
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: 'Last' })).toBeTruthy(),
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Continue step' }));
+    expect(onComplete).not.toHaveBeenCalled();
+    await user.type(screen.getByRole('textbox', { name: 'Last' }), 'two');
+    await user.click(screen.getByRole('button', { name: 'Continue step' }));
+    await waitFor(() => expect(onComplete).toHaveBeenCalledTimes(1));
+  });
+
+  test('direct goTo validates before moving forward', async () => {
+    const user = userEvent.setup();
+    const onStepChange = jest.fn();
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          onStepChange={onStepChange}
+          renderStep={(step, wizard) => (
+            <>
+              {step.id === 'step1' && (
+                <FormField
+                  htmlFor="wizard-name"
+                  label="Name"
+                  name="name"
+                  required
+                >
+                  <TextInput id="wizard-name" name="name" />
+                </FormField>
+              )}
+              <button type="button" onClick={() => wizard.goTo('step3')}>
+                Go to final
+              </button>
+            </>
+          )}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Go to final' }));
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    expect(onStepChange).toHaveBeenCalledWith(
+      expect.objectContaining({ trigger: 'goTo', phase: 'blocked' }),
+    );
+    await user.type(screen.getByRole('textbox', { name: 'Name' }), 'Ada');
+    await user.click(screen.getByRole('button', { name: 'Go to final' }));
+    await waitFor(() =>
+      expect(screen.getByRole('heading', { name: 'Step 3' })).toBeTruthy(),
+    );
+  });
+
   test('branching via nextStep(formValue) routes to declared id', async () => {
     const user = userEvent.setup();
     const steps = [
@@ -378,18 +507,44 @@ describe('Wizard', () => {
   });
 
   test('renders vertical progress track when showProgress is vertical', () => {
+    mockMediumContainerWidth();
     render(
       <Grommet>
-        <Wizard
-          steps={basicSteps}
-          showProgress="vertical"
-          renderStep={renderStep}
-          aria-label="Test wizard"
-        />
+        <Box responsive="container" width="1280px">
+          <Wizard
+            steps={basicSteps}
+            showProgress="vertical"
+            renderStep={renderStep}
+            aria-label="Test wizard"
+          />
+        </Box>
       </Grommet>,
     );
-    // Both Step 1 label (in progress bar) and heading are rendered.
-    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    expect(screen.getByRole('list', { name: 'Wizard progress' })).toBeTruthy();
+  });
+
+  test('navigates vertical progress when clickableSteps is true', async () => {
+    mockMediumContainerWidth();
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Box responsive="container" width="1280px">
+          <Wizard
+            clickableSteps
+            steps={basicSteps}
+            showProgress="vertical"
+            renderStep={renderStep}
+            aria-label="Test wizard"
+          />
+        </Box>
+      </Grommet>,
+    );
+
+    await user.click(
+      screen.getByRole('button', { name: /Step 3 of 3: Step 3/i }),
+    );
+
+    expect(screen.getByRole('heading', { name: 'Step 3' })).toBeTruthy();
   });
 
   test('falls back to vertical when horizontal has sub-steps', () => {
@@ -482,6 +637,47 @@ describe('Wizard', () => {
       </Grommet>,
     );
     expect(screen.getByRole('button', { name: /close/i })).toBeTruthy();
+  });
+
+  test('hides close button when closable is false', () => {
+    render(
+      <Grommet>
+        <Wizard
+          closable={false}
+          steps={basicSteps}
+          renderStep={renderStep}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    expect(screen.queryByRole('button', { name: /close/i })).toBeNull();
+  });
+
+  test('navigates and completes when form is false', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    const steps = basicSteps.slice(0, 2);
+    render(
+      <Grommet>
+        <Wizard
+          form={false}
+          steps={steps}
+          renderStep={renderStep}
+          onComplete={onComplete}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: /next/i }));
+    expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy();
+
+    await user.click(screen.getByRole('button', { name: /complete/i }));
+    expect(onComplete).toHaveBeenCalledWith({
+      value: {},
+      completedSteps: expect.any(Array),
+    });
   });
 
   test('X click without onCancel unmounts the wizard', async () => {
