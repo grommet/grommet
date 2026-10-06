@@ -48,6 +48,18 @@ describe('TimeInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('accepts defaultValue without seconds (HH:mm)', () => {
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="12:24" />
+      </Grommet>,
+    );
+
+    // showSeconds defaults to false, so only hour/minute are displayed;
+    // a real value here (not the "hh:mm" placeholder) confirms it parsed
+    expect(getDisplayInput()).toHaveValue('12:24');
+  });
+
   test('omits aria-valuenow on empty segments, sets it once filled', async () => {
     const user = userEvent.setup();
 

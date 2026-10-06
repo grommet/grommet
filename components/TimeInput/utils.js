@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.sectionsToIsoTime = exports.sectionTypeFromSection = exports.sectionMin = exports.sectionMax = exports.sectionKey = exports.normalizeToIsoTime = exports.isoTimeToSections = exports.hasAnyValue = exports.getSectionName = exports.getSectionAriaMeta = exports.defaultSections = exports.defaultHourForFormat = exports.SECTION_SECOND = exports.SECTION_PERIOD = exports.SECTION_MINUTE = exports.SECTION_HOUR = exports.ISO_TIME_REGEX = void 0;
+exports.sectionsToIsoTime = exports.sectionTypeFromSection = exports.sectionMin = exports.sectionMax = exports.sectionKey = exports.normalizeToIsoTime = exports.isoTimeToSections = exports.hasAnyValue = exports.getSectionName = exports.getSectionAriaMeta = exports.defaultSections = exports.defaultHourForFormat = exports.SECTION_SECOND = exports.SECTION_PERIOD = exports.SECTION_MINUTE = exports.SECTION_HOUR = exports.ISO_TIME_REGEX = exports.ISO_TIME_NO_SECONDS_REGEX = void 0;
 var _sectionHelpers = require("../../utils/sectionHelpers");
 var _dates = require("../../utils/dates");
 exports.pad = _dates.pad;
@@ -32,12 +32,16 @@ var getSectionName = exports.getSectionName = function getSectionName(section, f
 
 // TimeInput always transacts (value/defaultValue/onChange) in a canonical
 // 24-hour ISO time string ("HH:MM:SS"), regardless of the display `format`
-// prop.
+// prop. Input may also be passed as "HH:MM" (without seconds); it's
+// normalized to "HH:MM:00" so the rest of the component only ever deals
+// with one shape.
 var ISO_TIME_REGEX = exports.ISO_TIME_REGEX = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
+var ISO_TIME_NO_SECONDS_REGEX = exports.ISO_TIME_NO_SECONDS_REGEX = /^([01]\d|2[0-3]):([0-5]\d)$/;
 var normalizeToIsoTime = exports.normalizeToIsoTime = function normalizeToIsoTime(value) {
   if (typeof value !== 'string' || !value.trim()) return undefined;
   var trimmed = value.trim();
   if (ISO_TIME_REGEX.test(trimmed)) return trimmed;
+  if (ISO_TIME_NO_SECONDS_REGEX.test(trimmed)) return trimmed + ":00";
   var parsed = new Date(trimmed);
   if (Number.isNaN(parsed.getTime())) return undefined;
   return (0, _dates.pad)(parsed.getHours()) + ":" + (0, _dates.pad)(parsed.getMinutes()) + ":" + (0, _dates.pad)(parsed.getSeconds());

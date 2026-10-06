@@ -27,12 +27,16 @@ export var getSectionName = function getSectionName(section, format, formatMessa
 
 // TimeInput always transacts (value/defaultValue/onChange) in a canonical
 // 24-hour ISO time string ("HH:MM:SS"), regardless of the display `format`
-// prop.
+// prop. Input may also be passed as "HH:MM" (without seconds); it's
+// normalized to "HH:MM:00" so the rest of the component only ever deals
+// with one shape.
 export var ISO_TIME_REGEX = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
+export var ISO_TIME_NO_SECONDS_REGEX = /^([01]\d|2[0-3]):([0-5]\d)$/;
 export var normalizeToIsoTime = function normalizeToIsoTime(value) {
   if (typeof value !== 'string' || !value.trim()) return undefined;
   var trimmed = value.trim();
   if (ISO_TIME_REGEX.test(trimmed)) return trimmed;
+  if (ISO_TIME_NO_SECONDS_REGEX.test(trimmed)) return trimmed + ":00";
   var parsed = new Date(trimmed);
   if (Number.isNaN(parsed.getTime())) return undefined;
   return pad(parsed.getHours()) + ":" + pad(parsed.getMinutes()) + ":" + pad(parsed.getSeconds());
