@@ -145,6 +145,7 @@ const TimeInput = forwardRef(
       // where its description text lives.
       'aria-describedby': ariaDescribedBy,
       'aria-invalid': ariaInvalid,
+      onMouseDown: consumerOnMouseDown,
       ...inputRest
     } = rest;
 
@@ -452,6 +453,14 @@ const TimeInput = forwardRef(
       ],
     );
 
+    const onSegmentGroupMouseDown = useCallback(
+      (event) => {
+        onDisplayMouseDown(event);
+        consumerOnMouseDown?.(event);
+      },
+      [consumerOnMouseDown, onDisplayMouseDown],
+    );
+
     const openPicker = useCallback(() => {
       if (disabled || readOnly) return;
       setActiveSection(firstSection);
@@ -747,7 +756,7 @@ const TimeInput = forwardRef(
               role="group"
               aria-label={groupLabel}
               aria-labelledby={formFieldLabelId}
-              onMouseDown={onDisplayMouseDown}
+              onMouseDown={onSegmentGroupMouseDown}
               {...inputRest}
               {...passThemeFlag}
             >
