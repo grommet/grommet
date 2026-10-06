@@ -123,6 +123,12 @@ const TimeInput = forwardRef(
       }
     }, []);
 
+    if (inline && (disabled || readOnly)) {
+      console.warn(
+        'TimeInput is rendered inline and is either disabled or read-only. ' +
+          'TimeInput ignores disabled and readOnly props when rendered inline.',
+      );
+    }
     const { inForm } = formContext.useFormField({});
     const formFieldLabelId = inForm && id ? `grommet-${id}__label` : undefined;
     const groupLabel = formFieldLabelId
@@ -709,7 +715,7 @@ const TimeInput = forwardRef(
           activeSection={activeSection}
           format={format}
           formatMessage={formatMessage}
-          focusOnOpen={focusOnOpen}
+          focusOnOpen={inline ? false : focusOnOpen}
           hoursOptions={hoursOptions}
           incrementSection={incrementSection}
           messages={messages}

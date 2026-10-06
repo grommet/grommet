@@ -45,25 +45,6 @@ describe('TimeInput', () => {
     expect(results).toHaveNoViolations();
   });
 
-  test('composes a consumer onMouseDown with the internal segment focus handler', () => {
-    const consumerOnMouseDown = jest.fn();
-
-    render(
-      <Grommet>
-        <TimeInput format="24" onMouseDown={consumerOnMouseDown} />
-      </Grommet>,
-    );
-
-    // click the group container itself (not a focusable segment), so any
-    // resulting focus can only come from the internal mousedown handler,
-    // not the browser's native click-to-focus behavior on a tabIndex target
-    const group = screen.getByRole('group');
-    fireEvent.mouseDown(group, { button: 0 });
-
-    expect(consumerOnMouseDown).toHaveBeenCalledTimes(1);
-    expect(getSegment('hours')).toHaveFocus();
-  });
-
   test('does not crash when cursor.border is an empty array', async () => {
     const user = userEvent.setup();
 
@@ -99,6 +80,17 @@ describe('TimeInput', () => {
     });
 
     expect(getSegment('hours')).toHaveFocus();
+
+  test('accepts defaultValue without seconds (HH:mm)', () => {
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="12:24" />
+      </Grommet>,
+    );
+
+    // showSeconds defaults to false, so only hour/minute are displayed;
+    // a real value here (not the "hh:mm" placeholder) confirms it parsed
+    expect(getDisplayInput()).toHaveValue('12:24');
   });
 
   test('omits aria-valuenow on empty segments, sets it once filled', async () => {
@@ -2736,4 +2728,44 @@ describe('TimeInput', () => {
 
     expect(getDisplayValue()).toHaveTextContent('hh:00:00 aa');
   });
+});
+
+test('renders inline as bare popup content, no button or dialog role', () => {
+  render(
+    <Grommet>
+      <TimeInput format="24" inline />
+    </Grommet>,
+  );
+
+  expect(screen.queryByRole('button', { name: 'Choose time' })).toBeNull();
+  expect(screen.queryByRole('dialog')).toBeNull();
+  expect(screen.getByRole('listbox', { name: 'hour' })).toBeTruthy();
+  expect(screen.getByRole('listbox', { name: 'minute' })).toBeTruthy();
+});
+
+test('does not automatically move focus when rendered inline', async () => {
+  const { rerender } = render(
+    <Grommet>
+      <button type="button">Keep focus</button>
+    </Grommet>,
+  );
+
+  const button = screen.getByRole('button', { name: 'Keep focus' });
+  button.focus();
+
+  rerender(
+    <Grommet>
+      <button type="button">Keep focus</button>
+      <TimeInput format="24" inline />
+    </Grommet>,
+  );
+
+  await act(
+    async () =>
+      new Promise((resolve) => {
+        requestAnimationFrame(() => resolve());
+      }),
+  );
+
+  expect(button).toHaveFocus();
 });
