@@ -543,6 +543,7 @@ describe('TimeInput', () => {
         <Grommet>
           <TimeInput
             format="12"
+            showSeconds
             defaultValue="12:34:56"
             messages={{
               currentValue: 'Now {hour}:{minute}:{second}{period}',
@@ -567,7 +568,7 @@ describe('TimeInput', () => {
     });
   });
 
-  test('announces a completed 12-hour time with seconds hidden', async () => {
+  test('announces the current value without seconds when hidden', async () => {
     const user = userEvent.setup();
     const announceSpy = jest.fn();
 
@@ -576,7 +577,9 @@ describe('TimeInput', () => {
         <Grommet>
           <TimeInput
             format="12"
-            messages={{ currentValue: 'Now {hour}:{minute}:{second}{period}' }}
+            messages={{
+              currentValueWithoutSeconds: 'Now {hour}:{minute}{period}',
+            }}
           />
         </Grommet>
       </AnnounceContext.Provider>,
@@ -585,7 +588,7 @@ describe('TimeInput', () => {
     await user.click(getSegment('hours'));
     await user.keyboard('1234p');
 
-    expect(announceSpy).toHaveBeenCalledWith('Now 12:34:0 PM', 'polite');
+    expect(announceSpy).toHaveBeenCalledWith('Now 12:34 PM', 'polite');
   });
 
   test('uses currentValue message key without period in 24h format', async () => {
@@ -597,6 +600,7 @@ describe('TimeInput', () => {
         <Grommet>
           <TimeInput
             format="24"
+            showSeconds
             defaultValue="12:34:56"
             messages={{
               currentValue: 'Now {hour}:{minute}:{second}{period}',

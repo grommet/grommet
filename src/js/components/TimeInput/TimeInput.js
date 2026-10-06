@@ -191,27 +191,31 @@ const TimeInput = forwardRef(
       (nextSections) => {
         if (
           nextSections.hour === undefined ||
-          nextSections.minute === undefined
+          nextSections.minute === undefined ||
+          (showSeconds && nextSections.second === undefined)
         )
           return;
 
         const period = format === '12' ? ` ${nextSections.period || 'AM'}` : '';
+        const messageId = showSeconds
+          ? 'timeInput.currentValue'
+          : 'timeInput.currentValueWithoutSeconds';
 
         announce(
           formatMessage({
-            id: 'timeInput.currentValue',
+            id: messageId,
             messages,
             values: {
               hour: nextSections.hour,
               minute: nextSections.minute,
-              second: nextSections.second ?? 0,
+              ...(showSeconds ? { second: nextSections.second } : {}),
               period,
             },
           }),
           'polite',
         );
       },
-      [announce, format, formatMessage, messages],
+      [announce, format, formatMessage, messages, showSeconds],
     );
 
     const sectionOrder = useMemo(
