@@ -47,11 +47,11 @@ theme.timeInput = {
   },
   drop: {
     columns: {
+      gap: hpeDimension.spacing['4xsmall'],
       pad: { horizontal: '3xsmall' },
     },
     pad: { horizontal: '3xsmall', vertical: 'xsmall' },
     option: {
-      gap: hpeDimension.spacing['4xsmall'],
       pad: {
         vertical: hpeComponents.element.medium.paddingY,
         horizontal: hpeComponents.element.medium.paddingX.default,
