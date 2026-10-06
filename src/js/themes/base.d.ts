@@ -1,11 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import {
-  FlattenInterpolation,
-  FlattenSimpleInterpolation,
-  ThemedStyledProps,
-} from 'styled-components';
-import { ReactComponentElement } from 'react';
+import { Interpolation } from 'styled-components';
+import { ReactElement } from 'react';
 import { Icon } from 'grommet-icons';
 
 import {
@@ -60,23 +56,25 @@ export declare const generate: (
 /**
  * ExtendProps represents the props that will be provided to an ExtendType.
  */
-type ExtendProps<TProps> = ThemedStyledProps<TProps, ThemeType>;
+type ExtendProps<TProps> = TProps & { theme: ThemeType };
 
 /**
  * ExtendValue represents a valid `extend` value, which can be a CSS string or a
  * styled-components interpolation. In the theme an ExtendValue can be provided
  * directly to `extend` or it can be computed as the result of an ExtendFn.
  */
-type ExtendValue<TProps> =
-  | string
-  | FlattenSimpleInterpolation
-  | FlattenInterpolation<ExtendProps<TProps>>;
+type ExtendValue<TProps> = Exclude<
+  Interpolation<ExtendProps<TProps>>,
+  (...args: any[]) => any
+>;
 
 /**
  * ExtendFn represents a function passed to `extend`. These functions receive
  * props and produce an ExtendValue.
  */
-type ExtendFn<TProps> = (props: ExtendProps<TProps>) => ExtendValue<TProps>;
+type ExtendFn<TProps> = {
+  bivarianceHack(props: ExtendProps<TProps>): ExtendValue<TProps>;
+}['bivarianceHack'];
 
 /**
  * ExtendType represents the type for `extend` values in the theme.
@@ -281,7 +279,7 @@ interface ButtonType {
   };
 }
 interface FormFieldLabelType extends TextProps {
-  requiredIndicator?: boolean | JSX.Element | string;
+  requiredIndicator?: boolean | ReactElement<unknown> | string;
 }
 
 type DigitalTexts =
@@ -456,7 +454,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
-        [x: string]: string;
+        [x: string]: string | undefined;
       };
       dark?: {
         none?: string;
@@ -465,7 +463,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
-        [x: string]: string;
+        [x: string]: string | undefined;
       };
     };
     focus?: {
@@ -2046,8 +2044,7 @@ export interface ThemeType {
     search?: {
       pad?: PadType;
     };
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
-    searchInput?: ReactComponentElement<any>;
+    searchInput?: ReactElement<any>;
     step?: number;
   };
   selectMultiple?: {
