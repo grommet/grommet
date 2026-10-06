@@ -45,6 +45,46 @@ describe('TimeInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('composes a consumer onMouseDown with the internal segment focus handler', () => {
+    const consumerOnMouseDown = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" onMouseDown={consumerOnMouseDown} />
+      </Grommet>,
+    );
+
+    // click the group container itself (not a focusable segment), so any
+    // resulting focus can only come from the internal mousedown handler,
+    // not the browser's native click-to-focus behavior on a tabIndex target
+    const group = screen.getByRole('group');
+    fireEvent.mouseDown(group, { button: 0 });
+
+    expect(consumerOnMouseDown).toHaveBeenCalledTimes(1);
+    expect(getSegment('hours')).toHaveFocus();
+  });
+
+  test('does not crash when cursor.border is an empty array', async () => {
+    const user = userEvent.setup();
+
+    // the public type narrows border to { side?, size?, color? }, but the
+    // runtime must still defend against other BoxProps border shapes
+    // (e.g. plain-JS theme overrides that bypass TypeScript)
+    const theme = {
+      timeInput: { value: { cursor: { border: [] } } },
+    } as unknown as ThemeType;
+
+    render(
+      <Grommet theme={theme}>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    await user.click(getSegment('hours'));
+
+    expect(getSegment('hours')).toHaveFocus();
+  });
+
   test('focuses the active segment through the forwarded ref', () => {
     const ref = React.createRef<{ focus: () => void }>();
 
@@ -2276,6 +2316,7 @@ describe('TimeInput', () => {
           cursor: {
             background: '#FFD700',
             border: {
+              side: 'right',
               size: 'large',
               color: '#FF0000',
             },
@@ -2331,17 +2372,15 @@ describe('TimeInput', () => {
     expect(hourSegment).toHaveStyleRule('padding-inline-start', '48px');
     expect(hourSegment).toHaveStyleRule('padding-inline-end', '48px');
 
-    // value.cursor.background and value.cursor.border (painted as a
-    // bottom ::after strip, not a real Box border) only render on the
-    // currently focused/active segment
+    // value.cursor.background and value.cursor.border (painted as an inset
+    // box-shadow, not a real Box border, so it never affects layout) only
+    // render on the currently focused/active segment
     await user.click(hourSegment);
     expect(hourSegment).toHaveStyleRule('background-color', '#FFD700');
-    expect(hourSegment).toHaveStyleRule('background-color', '#FF0000', {
-      modifier: '::after',
-    });
-    expect(hourSegment).toHaveStyleRule('height', '12px', {
-      modifier: '::after',
-    });
+    expect(hourSegment).toHaveStyleRule(
+      'box-shadow',
+      'inset -24px 0 0 -12px #FF0000',
+    );
 
     // open the drop to check drop.option theme tokens
     await user.keyboard('{Alt>}{ArrowDown}{/Alt}');
@@ -2400,12 +2439,15 @@ describe('TimeInput', () => {
       <svg data-testid="custom-clock-icon" {...props} />
     );
 
-    // theme icon as a component reference
+    // theme icon as a component reference, plus a kind and a pass-through
+    // button prop (pad) from theme; button.default activates the kind
+    // styling path so kind/pad are actually applied
     const { rerender } = render(
       <Grommet
         theme={{
+          button: { default: {} },
           timeInput: {
-            dropButton: { background: '#123ABC', icon: CustomIcon },
+            dropButton: { kind: 'toolbar', pad: 'large', icon: CustomIcon },
           },
         }}
       >
@@ -2415,7 +2457,7 @@ describe('TimeInput', () => {
 
     let button = screen.getByRole('button', { name: 'Choose time' });
     expect(within(button).getByTestId('custom-clock-icon')).toBeTruthy();
-    expect(button).toHaveStyleRule('background-color', '#123ABC');
+    expect(button).toHaveStyleRule('padding', '48px');
 
     // theme icon as an already-rendered element
     rerender(

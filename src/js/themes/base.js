@@ -3,6 +3,7 @@
 import { Actions } from 'grommet-icons/icons/Actions';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
+import { Clock } from 'grommet-icons/icons/Clock';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
 import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
@@ -2719,10 +2720,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      // dropButton: {
-      //   any button props
-      //   icon: undefined,
-      // },
+      dropButton: {
+        // any button props
+        icon: Clock,
+      },
     },
     tip: {
       content: {

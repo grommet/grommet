@@ -698,13 +698,9 @@ const TimeInput = forwardRef(
         ? React.cloneElement(ThemedDropButtonIcon, { 'aria-hidden': 'true' })
         : React.createElement(ThemedDropButtonIcon, { 'aria-hidden': 'true' });
     }
-    // with no overrides, kind is just the named string (e.g. "toolbar");
-    // any other button props are passed through as a raw kind object instead
-    // (matches Pagination's theme.pagination.button: ButtonType | string),
-    // so kind and overrides can't be combined
-    const dropButtonKind = Object.keys(dropButtonKindOverrides).length
-      ? dropButtonKindOverrides
-      : dropButtonKindName || 'toolbar';
+    // kind is always the named string (e.g. "toolbar"); any other theme
+    // props are spread directly onto Button as real component props
+    const dropButtonKind = dropButtonKindName || 'toolbar';
 
     if (inline) {
       return (
@@ -871,6 +867,7 @@ const TimeInput = forwardRef(
                   setIconFocused(false);
                 }}
                 onClick={open ? closePicker : openPicker}
+                {...dropButtonKindOverrides}
               />
             )}
           </StyledTimeInputContainer>
