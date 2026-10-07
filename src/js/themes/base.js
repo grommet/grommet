@@ -2698,7 +2698,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       drop: {
         // any BoxPartThemeType
-        width: '1000px',
         height: 'small',
         gap: 'none',
         pad: { horizontal: 'xsmall', vertical: 'small' },
