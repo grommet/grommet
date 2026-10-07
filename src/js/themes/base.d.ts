@@ -51,6 +51,30 @@ import { HeadingProps } from '../components/Heading';
 import { ParagraphProps } from '../components/Paragraph';
 import { SkeletonProps } from '../components/Skeleton/index';
 
+/**
+ * Themeable visual properties shared by component parts rendered as a Box.
+ * Keep structural, behavioral, and accessibility props out of theme parts.
+ */
+type BoxPartThemeType = Pick<
+  BoxProps,
+  | 'background'
+  | 'border'
+  | 'elevation'
+  | 'height'
+  | 'margin'
+  | 'pad'
+  | 'round'
+  | 'width'
+>;
+
+type BoxStateThemeType = Pick<
+  BoxPartThemeType,
+  'background' | 'border' | 'elevation' | 'pad' | 'round'
+>;
+
+/** Text presentation properties shared by themeable component text parts. */
+type TextThemeType = Pick<TextProps, 'color' | 'size' | 'weight'>;
+
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
   baseSpacing?: number,
@@ -342,72 +366,31 @@ interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
   };
 }
 
-/**
- * Themeable visual properties shared by component parts rendered as a Box.
- * Keep structural, behavioral, and accessibility props out of theme parts.
- */
-type BoxPartThemeType = Pick<
-  BoxProps,
-  | 'background'
-  | 'border'
-  | 'elevation'
-  | 'height'
-  | 'margin'
-  | 'pad'
-  | 'round'
-  | 'width'
->;
-
-type BoxStateThemeType = Pick<
-  BoxPartThemeType,
-  'background' | 'border' | 'elevation' | 'pad' | 'round'
->;
-
-/** Text presentation properties shared by themeable component text parts. */
-type TextThemeType = Pick<TextProps, 'color' | 'size' | 'weight'>;
-
-type TimeInputOptionTextThemeType = TextThemeType & {
-  selected?: TextThemeType;
-};
-
-type TimeInputOptionHoverThemeType = Pick<
-  BoxStateThemeType,
-  'background' | 'elevation'
->;
-
-type TimeInputOptionContainerThemeType = BoxPartThemeType & {
-  hover?: TimeInputOptionHoverThemeType;
-  selected?: BoxStateThemeType & {
-    hover?: TimeInputOptionHoverThemeType;
-  };
-};
-
 type TimeInputOptionThemeType = {
-  container?: TimeInputOptionContainerThemeType;
-  text?: TimeInputOptionTextThemeType;
+  container?: BoxPartThemeType & {
+    hover?: BoxStateThemeType;
+    selected?: BoxStateThemeType & {
+      hover?: BoxStateThemeType;
+    };
+  };
+  text?: TextThemeType & {
+    selected?: TextThemeType;
+  };
 };
 
 type TimeInputThemeType = {
   container?: BoxPartThemeType;
-  display?: {
-    pad?: PadType;
-    lineHeight?: string;
-  };
+  value?: BoxPartThemeType;
   segment?: BoxPartThemeType &
     TextThemeType & {
       placeholder?: TextThemeType;
       active?: BoxStateThemeType & TextThemeType;
     };
-  separator?: TextThemeType & {
-    placeholder?: TextThemeType;
-  };
-  drop?: Omit<BoxPartThemeType, 'width'> & {
-    width?: string;
+  dropButton?: ButtonType | string;
+  drop?: BoxPartThemeType & {
     gap?: GapType;
-    column?: {
-      maxHeight?: string;
+    column?: BoxPartThemeType & {
       gap?: GapType;
-      pad?: PadType;
     };
     option?: TimeInputOptionThemeType;
   };

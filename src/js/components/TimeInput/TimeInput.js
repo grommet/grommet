@@ -732,6 +732,10 @@ const TimeInput = forwardRef(
           >
             <StyledTimeInputField {...passThemeFlag}>
               <StyledTimeInputDisplay
+                {...theme.timeInput?.value}
+                align="center"
+                direction="row"
+                overflow="hidden"
                 role="group"
                 aria-label={groupLabel}
                 aria-labelledby={formFieldLabelId}
@@ -835,7 +839,7 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                kind="toolbar"
+                kind={theme.timeInput?.dropButton || 'toolbar'}
                 icon={<GrommetClockIcon />}
                 disabled={disabled}
                 aria-label={formatMessage({

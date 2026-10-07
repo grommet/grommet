@@ -5,7 +5,14 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { focusStyle } from '../../utils';
+import {
+  backgroundStyle,
+  borderStyle,
+  edgeStyle,
+  elevationStyle,
+  focusStyle,
+  roundStyle,
+} from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
@@ -28,6 +35,40 @@ const PopupColumnBox = styled(Box)`
 
 const PopupOption = styled(Box)`
   cursor: pointer;
+
+  &:hover {
+    ${(props) => {
+      const { theme, $hoverState, $hoverBackground } = props;
+      const responsive =
+        props.responsive === undefined ? true : props.responsive;
+      const styles = [];
+
+      if ($hoverBackground !== undefined)
+        styles.push(backgroundStyle($hoverBackground, theme));
+      if ($hoverState?.border !== undefined)
+        styles.push(borderStyle($hoverState.border, responsive, theme));
+      if ($hoverState?.elevation !== undefined)
+        styles.push(elevationStyle($hoverState.elevation));
+      if ($hoverState?.pad !== undefined)
+        styles.push(
+          edgeStyle(
+            'padding',
+            $hoverState.pad,
+            responsive,
+            theme.box.responsiveBreakpoint,
+            theme,
+          ),
+        );
+      if ($hoverState?.round !== undefined)
+        styles.push(
+          $hoverState.round === false
+            ? 'border-radius: 0;'
+            : roundStyle($hoverState.round, responsive, theme),
+        );
+
+      return styles;
+    }}
+  }
 
   /*
    * Keep the focus indicator inset so it doesn't get clipped by the
@@ -63,25 +104,38 @@ const PopupColumn = ({
   sections,
   theme,
 }) => {
+  const columnTheme = theme.timeInput?.drop?.column || {};
   // When inline (in DateTimeInput), use 'medium' to match Calendar height.
-  // Otherwise use the TimeInput column maxHeight with a 'small' fallback.
+  // Otherwise use the default column height with a 'small' fallback.
   const maxHeightToken = inline ? 'medium' : null;
   const maxHeight =
-    theme.timeInput?.drop?.column?.maxHeight ||
+    columnTheme.height?.max ||
     (maxHeightToken && theme.global.size?.[maxHeightToken]) ||
     theme.global.size.small;
+  let columnHeight = { max: maxHeight };
+  if (columnTheme.height !== undefined) {
+    if (typeof columnTheme.height === 'object') {
+      columnHeight = { max: maxHeight, ...columnTheme.height };
+    } else {
+      columnHeight = columnTheme.height;
+    }
+  }
 
   return (
     <PopupColumnBox
       role="listbox"
       aria-label={label}
-      gap={theme.timeInput?.drop?.column?.gap || 'xxsmall'}
-      height={{
-        max: maxHeight,
-      }}
+      gap={columnTheme.gap || 'xxsmall'}
+      background={columnTheme.background}
+      border={columnTheme.border}
+      elevation={columnTheme.elevation}
+      height={columnHeight}
+      margin={columnTheme.margin}
       overflow="auto"
       flex={{ grow: 0, shrink: 0 }}
-      pad={theme.timeInput?.drop?.column?.pad || { horizontal: 'xsmall' }}
+      pad={columnTheme.pad || { horizontal: 'xsmall' }}
+      round={columnTheme.round}
+      width={columnTheme.width}
     >
       {options.map((option) => {
         const key = optionKey(label, option);
@@ -174,15 +228,9 @@ const PopupColumn = ({
             pad={optionStyles.pad}
             round={optionStyles.round}
             width={optionStyles.width}
+            $hoverState={hoverState}
+            $hoverBackground={hoverBackground}
             justify="center"
-            hoverIndicator={
-              hoverBackground || hoverState?.elevation
-                ? {
-                    background: hoverBackground,
-                    elevation: hoverState?.elevation,
-                  }
-                : false
-            }
             onClick={() => onClickCommitOption(section, option)}
             onFocus={() => onSetSection(section)}
           >
@@ -567,6 +615,11 @@ const TimeInputPopup = ({
   }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
 
   const dropTheme = theme.timeInput?.drop;
+  const dropWidth = dropTheme?.width;
+  const popupWidth =
+    typeof dropWidth === 'object'
+      ? { ...dropWidth, max: dropWidth.max ?? '100%' }
+      : { width: dropWidth, max: '100%' };
 
   const popupContent = (
     <Box
@@ -574,7 +627,7 @@ const TimeInputPopup = ({
       role={inline ? undefined : 'dialog'}
       aria-label={inline ? undefined : label}
       direction="row"
-      width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
+      width={popupWidth}
       height={dropTheme?.height}
       margin={dropTheme?.margin}
       gap={theme.timeInput?.drop?.gap}

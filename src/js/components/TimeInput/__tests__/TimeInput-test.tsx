@@ -2232,8 +2232,10 @@ describe('TimeInput', () => {
         container: {
           round: 'large',
         },
-        display: {
+        value: {
           pad: { horizontal: 'large' },
+          background: '#F8F8F8',
+          round: 'small',
         },
         segment: {
           pad: 'large',
@@ -2264,14 +2266,18 @@ describe('TimeInput', () => {
             weight: 700,
           },
         },
-        separator: {
-          color: '#667788',
+        dropButton: {
+          background: '#445566',
+          color: '#FFFFFF',
+          padding: { vertical: 'small', horizontal: 'medium' },
         },
         drop: {
-          width: '24rem',
+          width: { width: '24rem', min: '20rem', max: '100%' },
           height: { min: 'small' },
           column: {
-            maxHeight: '18rem',
+            height: { max: 'medium' },
+            background: '#FAFAFA',
+            round: 'small',
           },
           option: {
             container: {
@@ -2281,11 +2287,19 @@ describe('TimeInput', () => {
               round: 'small',
               hover: {
                 background: '#CCCCCC',
+                border: { color: '#556677', size: 'small' },
+                elevation: 'xsmall',
+                pad: 'xsmall',
+                round: 'medium',
               },
               selected: {
                 background: '#0000FF',
                 hover: {
                   background: '#00FF00',
+                  border: { color: '#778899', size: 'medium' },
+                  elevation: 'medium',
+                  pad: 'small',
+                  round: 'large',
                 },
               },
             },
@@ -2327,8 +2341,16 @@ describe('TimeInput', () => {
     expect(hourSegment).toHaveStyleRule('border-radius', '6px');
     expect(hourSegment).toHaveStyleRule('width', '768px');
     expect(hourSegment).toHaveStyleRule('color', '#112233');
-    expect(screen.getAllByText(':')[0]).toHaveStyleRule('color', '#667788');
+    expect(screen.getAllByText(':')[0]).toHaveStyleRule('color', '#112233');
     expect(screen.getByRole('group')).toHaveStyleRule('padding-left', '48px');
+    expect(screen.getByRole('group')).toHaveStyleRule(
+      'background-color',
+      '#F8F8F8',
+    );
+    expect(screen.getByRole('group')).toHaveStyleRule('border-radius', '12px');
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    expect(dropButton).toHaveStyleRule('color', '#FFFFFF');
 
     // Active Box and text styles, background, and underline only render on
     // the currently focused/active segment.
@@ -2370,8 +2392,11 @@ describe('TimeInput', () => {
     const dialog = screen.getByRole('dialog');
 
     expect(dialog).toHaveStyleRule('width', '24rem');
+    expect(dialog).toHaveStyleRule('min-width', '20rem');
     expect(dialog).toHaveStyleRule('min-height', '192px');
-    expect(hourList).toHaveStyleRule('max-height', '18rem');
+    expect(hourList).toHaveStyleRule('max-height', '384px');
+    expect(hourList).toHaveStyleRule('background-color', '#FAFAFA');
+    expect(hourList).toHaveStyleRule('border-radius', '12px');
 
     expect(unselectedOption).toHaveStyleRule('background-color', '#EEEEEE');
     expect(unselectedOption).toHaveStyleRule('padding', '12px');
@@ -2381,7 +2406,30 @@ describe('TimeInput', () => {
     expect(unselectedOption).toHaveStyleRule('background-color', '#CCCCCC', {
       modifier: ':hover',
     });
+    expect(unselectedOption).toHaveStyleRule('border', 'solid 2px #556677', {
+      modifier: ':hover',
+    });
+    expect(unselectedOption).toHaveStyleRule('padding', '6px', {
+      modifier: ':hover',
+    });
+    expect(unselectedOption).toHaveStyleRule('border-radius', '24px', {
+      modifier: ':hover',
+    });
+    expect(unselectedOption).toHaveStyleRule(
+      'box-shadow',
+      '0px 1px 2px rgba(0, 0, 0, 0.20)',
+      { modifier: ':hover' },
+    );
     expect(selectedOption).toHaveStyleRule('background-color', '#00FF00', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('border', 'solid 4px #778899', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('padding', '12px', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('border-radius', '48px', {
       modifier: ':hover',
     });
     const selectedText = within(selectedOption).getByText('10');
@@ -2402,13 +2450,6 @@ describe('TimeInput', () => {
                 weight: 700,
               },
             },
-            separator: {
-              placeholder: {
-                color: '#8899AA',
-                size: 'small',
-                weight: 300,
-              },
-            },
           },
         }}
       >
@@ -2422,9 +2463,9 @@ describe('TimeInput', () => {
     expect(hourSegment).toHaveStyleRule('font-weight', '700');
 
     const separator = screen.getAllByText(':')[0];
-    expect(separator).toHaveStyleRule('color', '#8899AA');
-    expect(separator).toHaveStyleRule('font-size', '14px');
-    expect(separator).toHaveStyleRule('font-weight', '300');
+    expect(separator).toHaveStyleRule('color', '#778899');
+    expect(separator).toHaveStyleRule('font-size', '22px');
+    expect(separator).toHaveStyleRule('font-weight', '700');
   });
 
   test('keeps default segment padding horizontal-only', () => {

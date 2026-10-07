@@ -64,20 +64,16 @@ export const StyledTimeInputField = styled.div.withConfig(
   min-width: 0;
 `;
 
-export const StyledTimeInputDisplay = styled.div.withConfig(
-  styledComponentsConfig,
-)`
+export const StyledTimeInputDisplay = styled(Box)`
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
   overflow: hidden;
   ${(props) => {
-    const displayPad = props.theme.timeInput?.display?.pad;
-    if (displayPad !== undefined) {
+    const valuePad = props.theme.timeInput?.value?.pad;
+    if (valuePad !== undefined) {
       return edgeStyle(
         'padding',
-        displayPad,
+        valuePad,
         props.responsive,
         props.theme.box.responsiveBreakpoint,
         props.theme,
@@ -99,12 +95,6 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
       props.theme,
     );
   }}
-  ${(props) => {
-    const lineHeight = props.theme.timeInput?.display?.lineHeight;
-    return css`
-      ${lineHeight && `line-height: ${lineHeight};`}
-    `;
-  }}
 `;
 
 export const StyledTimeInputSeparator = styled.span.withConfig(
@@ -116,21 +106,18 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
   color: ${(props) =>
     normalizeColor(
       props.$filled
-        ? props.theme.timeInput?.separator?.color || 'text'
-        : props.theme.timeInput?.separator?.placeholder?.color ||
+        ? props.theme.timeInput?.segment?.color || 'text'
+        : props.theme.timeInput?.segment?.placeholder?.color ||
             props.theme.global.colors.placeholder,
       props.theme,
     )};
   ${(props) => {
-    const { separator } = props.theme.timeInput || {};
+    const { segment } = props.theme.timeInput || {};
     const weight =
-      separator?.weight ||
+      segment?.weight ||
       props.theme.global.input.weight ||
       props.theme.global.input.font.weight;
-    const size =
-      separator?.size ||
-      props.theme.timeInput?.segment?.size ||
-      props.theme.global.input.font.size;
+    const size = segment?.size || props.theme.global.input.font.size;
     const fontSize = props.theme.text?.[size]?.size || size;
     return css`
       ${weight && `font-weight: ${weight};`}
@@ -138,7 +125,7 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
     `;
   }}
   ${(props) => {
-    const placeholder = props.theme.timeInput?.separator?.placeholder;
+    const placeholder = props.theme.timeInput?.segment?.placeholder;
     if (props.$filled || !placeholder) return '';
     const fontSize =
       props.theme.text?.[placeholder.size]?.size || placeholder.size;

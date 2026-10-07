@@ -2,17 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 
-import { Box, Grommet, Heading, TimeInput } from 'grommet';
+import { Box, Grommet, Heading, TimeInput, ThemeType } from 'grommet';
 
-const theme = {
+const theme: ThemeType = {
   timeInput: {
     container: {
       border: { color: 'brand', size: 'small' },
       round: 'small',
     },
-    display: {
+    value: {
       pad: { horizontal: 'small' },
-      lineHeight: '1.5',
+      background: 'background-front',
+      round: 'xsmall',
     },
     segment: {
       color: 'text',
@@ -22,11 +23,13 @@ const theme = {
       pad: 'xxsmall',
       active: {
         background: 'background-contrast',
-        border: { color: 'brand', side: 'bottom', size: 'xsmall' },
+        border: { color: 'brand', side: 'bottom', size: 'small' },
       },
     },
-    separator: {
-      color: 'text-weak',
+    dropButton: {
+      background: 'brand',
+      color: 'white',
+      padding: { vertical: 'xsmall', horizontal: 'small' },
     },
     drop: {
       background: 'background-front',
@@ -35,9 +38,10 @@ const theme = {
       pad: 'xsmall',
       width: '20rem',
       column: {
-        maxHeight: '16rem',
+        height: { max: 'medium' },
         gap: 'xxsmall',
         pad: { horizontal: 'xsmall' },
+        round: 'small',
       },
       option: {
         container: {

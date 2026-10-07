@@ -2672,12 +2672,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     timeInput: {
       container: {
+        // any BoxPartThemeType
         round: 'xxsmall',
       },
-      display: {},
+      // value: {
+      //   any BoxPartThemeType
+      // },
       segment: {
+        // any BoxPartThemeType
+        // any TextThemeType
         pad: { horizontal: 'xxsmall' },
         active: {
+          // any BoxPartThemeType
+          // any TextThemeType
           background: 'active-background',
           border: {
             color: { dark: 'white', light: 'black' },
@@ -2686,30 +2693,34 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      separator: {},
+      // dropButton: {
+      //   // any ButtonType
+      // },
       drop: {
-        // width: undefined,
-        gap: undefined,
+        // any BoxPartThemeType
+        // gap: undefined,
         pad: { horizontal: 'xsmall', vertical: 'small' },
         column: {
-          // maxHeight: undefined,
           gap: 'xxsmall',
           pad: { horizontal: 'xsmall' },
         },
         option: {
           container: {
-            // background: undefined,
+            // any BoxPartThemeType
             pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
-            // round: undefined,
             hover: {
+              // any BoxPartThemeType
               background: 'active-background',
             },
             selected: {
+              // any BoxPartThemeType
               background: 'selected',
             },
           },
           text: {
+            // any TextThemeType
             selected: {
+              // any TextThemeType
               color: 'white',
               weight: 500,
             },
