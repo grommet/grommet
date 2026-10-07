@@ -2699,6 +2699,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       drop: {
         // any BoxPartThemeType
         // gap: undefined,
+        height: 'small',
         pad: { horizontal: 'xsmall', vertical: 'small' },
         column: {
           gap: 'xxsmall',

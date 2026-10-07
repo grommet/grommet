@@ -105,21 +105,6 @@ const PopupColumn = ({
   theme,
 }) => {
   const columnTheme = theme.timeInput?.drop?.column || {};
-  // When inline (in DateTimeInput), use 'medium' to match Calendar height.
-  // Otherwise use the default column height with a 'small' fallback.
-  const maxHeightToken = inline ? 'medium' : null;
-  const maxHeight =
-    columnTheme.height?.max ||
-    (maxHeightToken && theme.global.size?.[maxHeightToken]) ||
-    theme.global.size.small;
-  let columnHeight = { max: maxHeight };
-  if (columnTheme.height !== undefined) {
-    if (typeof columnTheme.height === 'object') {
-      columnHeight = { max: maxHeight, ...columnTheme.height };
-    } else {
-      columnHeight = columnTheme.height;
-    }
-  }
 
   return (
     <PopupColumnBox
@@ -129,7 +114,6 @@ const PopupColumn = ({
       background={columnTheme.background}
       border={columnTheme.border}
       elevation={columnTheme.elevation}
-      height={columnHeight}
       margin={columnTheme.margin}
       overflow="auto"
       flex={{ grow: 0, shrink: 0 }}
@@ -220,6 +204,7 @@ const PopupColumn = ({
             aria-label={`${
               section === SECTION_PERIOD ? option : pad(option)
             } ${getSectionName(section, format, formatMessage, messages)}`}
+            flex={false}
             background={optionStyles.background}
             border={optionStyles.border}
             elevation={optionStyles.elevation}
