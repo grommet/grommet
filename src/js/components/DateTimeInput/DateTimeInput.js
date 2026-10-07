@@ -1207,7 +1207,7 @@ const DateTimeInput = forwardRef(
         direction="row"
         pad={theme.dateTimeInput?.drop?.pad}
         gap={theme.dateTimeInput?.drop?.gap}
-        height="medium"
+        height={theme.dateTimeInput?.drop?.height}
       >
         <ThemeContext.Extend
           value={{

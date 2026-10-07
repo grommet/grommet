@@ -583,6 +583,7 @@ const TimeInputPopup = ({
       direction="row"
       width={popupWidth}
       {...dropTheme}
+      height={inline ? '100%' : dropTheme.height}
       pad={inline ? 'none' : dropTheme.pad}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}

@@ -1072,6 +1072,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       drop: {
+        height: 'medium',
         pad: 'small',
         gap: 'small',
         border: {
@@ -2703,6 +2704,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'none',
         pad: { horizontal: 'xsmall', vertical: 'small' },
         column: {
+          height: '100%',
           gap: 'xxsmall',
           pad: { horizontal: 'xsmall' },
         },
