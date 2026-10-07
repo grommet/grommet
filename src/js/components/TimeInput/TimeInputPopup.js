@@ -548,11 +548,11 @@ const TimeInputPopup = ({
 
   const popupContent = (
     <Box
-      {...dropBoxTheme}
       ref={dialogRef}
       role={inline ? undefined : 'dialog'}
       aria-label={inline ? undefined : label}
       direction="row"
+      {...dropBoxTheme}
       width={{ width: dropWidthTheme, max: '100%' }}
       pad={inline ? 'none' : dropPadTheme}
       onPointerDownCapture={markInteractionInProgress}
