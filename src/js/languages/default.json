@@ -241,6 +241,7 @@
     "inputLabel": "Time input",
     "chooseTime": "Choose time",
     "currentValue": "Current time {hour}:{minute}:{second}{period}",
+    "currentValueWithoutSeconds": "Current time {hour}:{minute}{period}",
     "activeSection": "{section} selected",
     "activeSectionValue": "{value} {section}",
     "activePeriodValue": "{period} period",
