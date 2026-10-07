@@ -8,6 +8,7 @@ We encourage both internal maintainers and external contributors to update and r
 
 - **Semantic HTML & Forms:** Prefer semantic elements where practical. Grommet uses `onClick` on `<div>` elements in many places — when doing so, always pair with the appropriate ARIA role and keyboard support. Use the Grommet `<Button />` component for standalone interactive controls. Hook into the `FormField` context for state and validation. `a11yTitle` is still supported in existing components (maps to `aria-label`), but do not add it to new component APIs.
 - **Non-Destructive UX:** Never erase or revert a user's work abruptly when it fails validation. Expose errors explicitly through `FormField`.
+- **Theme API Design:** Theme parts should describe caller-visible visual anatomy and not leak rendering details. Reuse the shared Box/Text theme contracts where they fit, preserve the primitive's supported value shapes, and put component defaults in `base.js` rather than scattering fallback values through rendering code. See `.github/ai-instructions/styling.md` for the detailed rules.
 
 ## Domain-Specific Instructions
 
