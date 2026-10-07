@@ -2676,10 +2676,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // any box props
         round: 'xxsmall',
       },
-      // display: {
-      //   pad: undefined,
-      //   lineHeight: undefined,
-      // },
       value: {
         // any Box props; applies to every segment, active or not
         pad: { start: 'xxsmall', end: 'xxsmall' },
@@ -2695,6 +2691,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       drop: {
+        height: 'small',
         column: {
           // any box props
           gap: 'xxsmall',

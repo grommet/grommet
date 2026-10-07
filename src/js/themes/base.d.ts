@@ -2481,10 +2481,6 @@ export interface ThemeType {
   };
   timeInput?: {
     container?: BoxProps;
-    display?: {
-      pad?: PadType;
-      lineHeight?: string;
-    };
     value?: TimeInputValueType;
     drop?: TimeInputDropType;
     dropButton?: TimeInputDropButtonType;

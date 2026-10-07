@@ -70,16 +70,6 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
   align-items: center;
   overflow: hidden;
   ${(props) => {
-    const displayPad = props.theme.timeInput?.display?.pad;
-    if (displayPad !== undefined) {
-      return edgeStyle(
-        'padding',
-        displayPad,
-        props.responsive,
-        props.theme.box.responsiveBreakpoint,
-        props.theme,
-      );
-    }
     const inputPadding = props.theme.global.input.padding;
     if (!inputPadding) return undefined;
     if (typeof inputPadding !== 'object')
@@ -95,12 +85,6 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
       props.theme.box.responsiveBreakpoint,
       props.theme,
     );
-  }}
-  ${(props) => {
-    const lineHeight = props.theme.timeInput?.display?.lineHeight;
-    return css`
-      ${lineHeight && `line-height: ${lineHeight};`}
-    `;
   }}
 `;
 
@@ -173,9 +157,6 @@ export const getSegmentThemeProps = (theme, active) => {
   return { ...boxProps, ...cursorBoxProps };
 };
 
-// Resolves the segment text color/size/weight, in priority order: active
-// `cursor` override > filled `value` > unfilled `value.placeholder`. `size`
-// accepts either a theme text size token (e.g. 'large') or a literal CSS size.
 const segmentTextStyle = (theme, { active, filled }) => {
   const value = theme.timeInput?.value || {};
   const cursor = active ? value.cursor : undefined;
@@ -201,9 +182,7 @@ const segmentTextStyle = (theme, { active, filled }) => {
   `;
 };
 
-// Wraps Box directly (not via styledComponentsConfig/isPropValid) so
-// Box's own styling props (round, background) keep flowing through
-// instead of being filtered out as invalid DOM attributes.
+// Wraps Box directly (not via styledComponentsConfig/isPropValid)
 export const StyledTimeInputSegment = styled(Box)`
   &:focus {
     outline: none;

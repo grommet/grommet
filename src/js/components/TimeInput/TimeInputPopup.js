@@ -76,21 +76,11 @@ const PopupColumn = ({
   const { selected: selectedTextTheme, ...optionTextTheme } =
     optionTextThemeRaw || {};
 
-  // When inline (in DateTimeInput), use 'medium' to match Calendar height.
-  // Otherwise use timeInput drop maxHeight with fallback to 'small'.
-  const maxHeightToken = inline ? 'medium' : null;
-  const maxHeight =
-    (maxHeightToken && theme.global.size?.[maxHeightToken]) ||
-    theme.global.size.small;
-
   return (
     <PopupColumnBox
       role="listbox"
       aria-label={label}
       cssGap
-      height={{
-        max: maxHeight,
-      }}
       overflow="auto"
       flex={{ grow: 0, shrink: 0 }}
       {...theme.timeInput?.drop?.column}
