@@ -384,7 +384,7 @@ type TimeInputThemeType = {
       placeholder?: TextThemeType;
       active?: BoxStateThemeType & TextThemeType;
     };
-  dropButton?: ButtonType | string;
+  dropButton?: string | (ButtonType & { icon?: React.ReactNode | Icon });
   drop?: BoxPartThemeType & {
     gap?: GapType;
     column?: BoxPartThemeType & {

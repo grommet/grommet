@@ -2695,6 +2695,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // dropButton: {
       //   // any ButtonType
+      //   icon: undefined,
       // },
       drop: {
         // any BoxPartThemeType

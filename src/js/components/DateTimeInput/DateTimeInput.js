@@ -1207,6 +1207,7 @@ const DateTimeInput = forwardRef(
         direction="row"
         pad={theme.dateTimeInput?.drop?.pad}
         gap={theme.dateTimeInput?.drop?.gap}
+        height="medium"
       >
         <ThemeContext.Extend
           value={{
@@ -1250,6 +1251,9 @@ const DateTimeInput = forwardRef(
           onPartialChange={
             disabled || readOnly ? undefined : handleTimePartialChange
           }
+          // flex="grow"
+          fill
+          // height={undefined}
         />
       </Box>
     );

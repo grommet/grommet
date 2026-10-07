@@ -689,6 +689,9 @@ const TimeInput = forwardRef(
 
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
+    const dropButtonTheme = theme.timeInput?.dropButton;
+    const dropButtonIcon =
+      typeof dropButtonTheme === 'object' ? dropButtonTheme.icon : undefined;
 
     if (inline) {
       return (
@@ -839,8 +842,8 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                kind={theme.timeInput?.dropButton || 'toolbar'}
-                icon={<GrommetClockIcon />}
+                kind={dropButtonTheme || 'toolbar'}
+                icon={dropButtonIcon ?? <GrommetClockIcon />}
                 disabled={disabled}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',

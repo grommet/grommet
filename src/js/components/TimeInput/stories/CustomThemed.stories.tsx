@@ -1,8 +1,8 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-
 import { Box, Grommet, Heading, TimeInput, ThemeType } from 'grommet';
+import { FormClock } from 'grommet-icons';
 
 const theme: ThemeType = {
   timeInput: {
@@ -27,6 +27,7 @@ const theme: ThemeType = {
       },
     },
     dropButton: {
+      icon: <FormClock />,
       background: 'brand',
       color: 'white',
       padding: { vertical: 'xsmall', horizontal: 'small' },

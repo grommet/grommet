@@ -2328,6 +2328,7 @@ describe('TimeInput', () => {
           },
         },
         dropButton: {
+          icon: <span>Custom icon</span>,
           background: '#445566',
           color: '#FFFFFF',
           padding: { vertical: 'small', horizontal: 'medium' },
@@ -2412,6 +2413,7 @@ describe('TimeInput', () => {
     const dropButton = screen.getByRole('button', { name: 'Choose time' });
     expect(dropButton).toHaveStyleRule('background-color', '#445566');
     expect(dropButton).toHaveStyleRule('color', '#FFFFFF');
+    expect(within(dropButton).getByText('Custom icon')).toBeInTheDocument();
 
     // Active Box and text styles, background, and underline only render on
     // the currently focused/active segment.
