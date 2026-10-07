@@ -36,6 +36,7 @@ import {
 
 import { AnchorProps } from '../components/Anchor/index';
 import { BoxProps } from '../components/Box/index';
+import { ButtonProps } from '../components/Button/index';
 import { Anchor } from '../components/Anchor';
 import { Box } from '../components/Box';
 import { Text, TextProps } from '../components/Text';
@@ -279,6 +280,72 @@ interface ButtonType {
     duration?: number;
     properties?: string[];
   };
+}
+/**
+ * Themeable visual properties shared by component parts rendered as a Box.
+ * Keep structural, behavioral, and accessibility props out of theme parts.
+ */
+type BoxPartThemeType = Pick<
+  BoxProps,
+  | 'background'
+  | 'border'
+  | 'elevation'
+  | 'height'
+  | 'margin'
+  | 'pad'
+  | 'round'
+  | 'width'
+>;
+
+type BoxStateThemeType = Pick<
+  BoxPartThemeType,
+  'background' | 'border' | 'elevation' | 'pad' | 'round'
+>;
+
+/** Text presentation properties shared by themeable component text parts. */
+type TextThemeType = Pick<TextProps, 'color' | 'size' | 'weight'>;
+
+/** Stylistic Button props a theme override may set; excludes behavioral/
+ * content/a11y props (e.g. onClick, label, disabled, aria-*). */
+type ButtonStyleThemeType = Pick<
+  ButtonProps,
+  'color' | 'pad' | 'margin' | 'hoverIndicator' | 'size'
+>;
+
+// Matches Box's own `hoverIndicator` prop surface (background + elevation
+// only) since popup options render hover via `hoverIndicator`, not a
+// hand-rolled `&:hover` rule.
+type TimeInputOptionHoverThemeType = Pick<
+  BoxStateThemeType,
+  'background' | 'elevation'
+>;
+interface TimeInputDropOptionContainerType extends BoxPartThemeType {
+  hover?: TimeInputOptionHoverThemeType;
+  selected?: BoxStateThemeType & {
+    hover?: TimeInputOptionHoverThemeType;
+  };
+}
+type TimeInputDropOptionTextType = TextThemeType & {
+  selected?: TextThemeType;
+};
+interface TimeInputDropOptionType {
+  container?: TimeInputDropOptionContainerType;
+  text?: TimeInputDropOptionTextType;
+}
+type TimeInputValueCursorType = BoxStateThemeType & TextThemeType;
+type TimeInputValueType = BoxPartThemeType &
+  TextThemeType & {
+    placeholder?: TextThemeType;
+    cursor?: TimeInputValueCursorType;
+  };
+interface TimeInputDropButtonType extends ButtonStyleThemeType {
+  icon?: React.ReactNode | Icon;
+  kind?: string | ButtonKindType;
+}
+interface TimeInputDropType extends BoxPartThemeType {
+  gap?: GapType;
+  column?: BoxPartThemeType & { gap?: GapType };
+  option?: TimeInputDropOptionType;
 }
 interface FormFieldLabelType extends TextProps {
   requiredIndicator?: boolean | JSX.Element | string;
@@ -2413,47 +2480,14 @@ export interface ThemeType {
     };
   };
   timeInput?: {
-    button?: {
-      margin?: MarginType;
-    };
-    container?: {
-      round?: RoundType;
-    };
-    active?: {
-      background?: ColorType;
-      pad?: string;
-      indicator?: {
-        color?: ColorType;
-        size?: string;
-      };
-    };
-    drop?: {
-      gap?: GapType;
+    container?: BoxProps;
+    display?: {
       pad?: PadType;
-      option?: {
-        background?: ColorType;
-        gap?: GapType;
-        size?: string;
-        pad?: PadType;
-        round?: RoundType;
-        hover?: {
-          background?: ColorType;
-        };
-        selected?: {
-          background?: ColorType;
-          color?: ColorType;
-          text?: {
-            weight?: string | number;
-          };
-          hover?: {
-            background?: ColorType;
-          };
-        };
-      };
+      lineHeight?: string;
     };
-    icon?: {
-      clock?: React.ReactNode | Icon;
-    };
+    value?: TimeInputValueType;
+    drop?: TimeInputDropType;
+    dropButton?: TimeInputDropButtonType;
   };
   tip?: {
     content?: BoxProps;

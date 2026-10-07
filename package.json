@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
+    "@hpe-design/icons-grommet": "^1.2.0",
     "grommet-icons": "^4.14.0",
     "markdown-to-jsx": "7.4.4",
     "prop-types": "^15.8.1"

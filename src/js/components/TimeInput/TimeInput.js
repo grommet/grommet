@@ -28,6 +28,7 @@ import {
   StyledTimeInputSeparator,
   StyledTimeInputContainer,
   StyledTimeInput,
+  getSegmentThemeProps,
 } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
 import { TimeInputPropTypes } from './propTypes';
@@ -109,6 +110,13 @@ const TimeInput = forwardRef(
     refArg,
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
+    const { icon: dropButtonIconTheme, ...dropButtonTheme } =
+      theme.timeInput?.dropButton || {};
+    // dropButton.icon may be a component reference or an already-created
+    // element - normalize to an element either way.
+    const dropButtonIcon = React.isValidElement(dropButtonIconTheme)
+      ? dropButtonIconTheme
+      : React.createElement(dropButtonIconTheme || GrommetClockIcon);
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const formContext = useContext(FormContext);
@@ -720,14 +728,15 @@ const TimeInput = forwardRef(
             direction="row"
             border={!plainProp}
             fill
-            round={
-              theme.timeInput?.container?.round ||
-              theme.global?.control?.border?.radius
-            }
             disabled={disabled}
             readOnlyProp={readOnly}
             focusIndicator={(focusIndicatorProp ?? true) && !iconFocused}
             {...passThemeFlag}
+            {...theme.timeInput?.container}
+            round={
+              theme.timeInput?.container?.round ??
+              theme.global?.control?.border?.radius
+            }
           >
             <StyledTimeInputField {...passThemeFlag}>
               <StyledTimeInputDisplay
@@ -740,6 +749,8 @@ const TimeInput = forwardRef(
                 {displaySections.map(
                   ({ ariaMeta, section, prefix, text, filled }) => {
                     const describeSegment = !filled || allSectionsFilled;
+                    const isActive =
+                      showActiveSection && activeSection === section;
 
                     return (
                       <React.Fragment key={section}>
@@ -752,6 +763,7 @@ const TimeInput = forwardRef(
                           </StyledTimeInputSeparator>
                         )}
                         <StyledTimeInputSegment
+                          tag="span"
                           ref={(segmentNode) => {
                             segmentRefs.current[section] = segmentNode;
                           }}
@@ -760,9 +772,7 @@ const TimeInput = forwardRef(
                               ? 0
                               : -1
                           }
-                          $active={
-                            showActiveSection && activeSection === section
-                          }
+                          $active={isActive}
                           $filled={filled}
                           onFocus={() => onSegmentFocus(section)}
                           onBlur={onSegmentBlur}
@@ -770,9 +780,8 @@ const TimeInput = forwardRef(
                             onSegmentKeyDown(section, event)
                           }
                           onPaste={onSegmentPaste}
-                          data-active={
-                            showActiveSection && activeSection === section
-                          }
+                          data-active={isActive}
+                          {...getSegmentThemeProps(theme, isActive)}
                           data-section={section}
                           {...passThemeFlag}
                           aria-label={getSectionName(
@@ -820,6 +829,11 @@ const TimeInput = forwardRef(
                 readOnly
                 focusIndicator={false}
                 plain
+                // id lives here so a FormField <label htmlFor> can target a
+                // real (if hidden) labelable element; native label-click
+                // focus-forwarding lands here first, then redirects to the
+                // active segment, which is the actually interactive control.
+                onFocus={() => focusSection(activeSection)}
               />
             </StyledTimeInputField>
             {name && (
@@ -834,8 +848,7 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                kind="toolbar"
-                icon={<GrommetClockIcon />}
+                icon={dropButtonIcon}
                 disabled={disabled}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
@@ -851,6 +864,7 @@ const TimeInput = forwardRef(
                   setIconFocused(false);
                 }}
                 onClick={open ? closePicker : openPicker}
+                {...dropButtonTheme}
               />
             )}
           </StyledTimeInputContainer>

@@ -3,6 +3,7 @@
 import { Actions } from 'grommet-icons/icons/Actions';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
+import { Clock } from 'grommet-icons/icons/Clock';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
 import { FormCheckmark } from 'grommet-icons/icons/FormCheckmark';
@@ -2671,46 +2672,62 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     timeInput: {
-      button: {
-        margin: { right: 'small' },
-      },
       container: {
+        // any box props
         round: 'xxsmall',
       },
-      active: {
-        background: 'active-background',
-        pad: 'xxsmall',
-        indicator: {
-          color: { dark: 'white', light: 'black' },
-          size: 'small',
+      // display: {
+      //   pad: undefined,
+      //   lineHeight: undefined,
+      // },
+      value: {
+        // any Box props; applies to every segment, active or not
+        pad: { start: 'xxsmall', end: 'xxsmall' },
+        cursor: {
+          // any Box props; applies only while a segment is focused/active
+          background: 'active-background',
+          border: {
+            size: 'small',
+            color: { dark: 'white', light: 'black' },
+            side: 'bottom',
+          },
+          round: { size: 'hair', corner: 'bottom' },
         },
       },
       drop: {
-        // gap: undefined,
+        column: {
+          // any box props
+          gap: 'xxsmall',
+          pad: { horizontal: 'xsmall' },
+        },
         pad: { horizontal: 'xsmall', vertical: 'small' },
         option: {
-          // background: undefined,
-          // gap: undefined,
-          // size: undefined,
-          pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
-          // round: undefined,
-          hover: {
-            background: 'active-background',
-          },
-          selected: {
-            background: 'selected',
-            color: 'white',
-            text: {
-              weight: 500,
-            },
+          container: {
+            // any box props
+            pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+            round: { size: 'xxsmall' },
             hover: {
-              // background: undefined,
+              // background, elevation (rendered via Box's hoverIndicator)
+              background: 'active-background',
+            },
+            selected: {
+              // any box-state props
+              background: 'brand',
+            },
+          },
+          text: {
+            // any text props
+            selected: {
+              // any text props
+              color: 'white',
+              weight: 500,
             },
           },
         },
       },
-      icon: {
-        // clock: undefined,
+      dropButton: {
+        kind: 'toolbar',
+        icon: Clock,
       },
     },
     tip: {

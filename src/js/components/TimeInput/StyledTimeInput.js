@@ -3,6 +3,8 @@
 import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
+  borderStyle,
   disabledStyle,
   edgeStyle,
   focusStyle,
@@ -11,6 +13,7 @@ import {
   parseMetricToNum,
   plainInputStyle,
   readOnlyStyle,
+  roundStyle,
   styledComponentsConfig,
 } from '../../utils';
 import { Box } from '../Box';
@@ -66,22 +69,39 @@ export const StyledTimeInputDisplay = styled.div.withConfig(
   display: flex;
   align-items: center;
   overflow: hidden;
-  ${(props) =>
-    props.theme.global.input.padding &&
-    (typeof props.theme.global.input.padding !== 'object'
-      ? `padding: ${
-          parseMetricToNum(
-            props.theme.global.edgeSize[props.theme.global.input.padding] ||
-              props.theme.global.input.padding,
-          ) - parseMetricToNum(props.theme.global.control.border.width)
-        }px;`
-      : edgeStyle(
-          'padding',
-          props.theme.global.input.padding,
-          props.responsive,
-          props.theme.box.responsiveBreakpoint,
-          props.theme,
-        ))}
+  ${(props) => {
+    const displayPad = props.theme.timeInput?.display?.pad;
+    if (displayPad !== undefined) {
+      return edgeStyle(
+        'padding',
+        displayPad,
+        props.responsive,
+        props.theme.box.responsiveBreakpoint,
+        props.theme,
+      );
+    }
+    const inputPadding = props.theme.global.input.padding;
+    if (!inputPadding) return undefined;
+    if (typeof inputPadding !== 'object')
+      return `padding: ${
+        parseMetricToNum(
+          props.theme.global.edgeSize[inputPadding] || inputPadding,
+        ) - parseMetricToNum(props.theme.global.control.border.width)
+      }px;`;
+    return edgeStyle(
+      'padding',
+      inputPadding,
+      props.responsive,
+      props.theme.box.responsiveBreakpoint,
+      props.theme,
+    );
+  }}
+  ${(props) => {
+    const lineHeight = props.theme.timeInput?.display?.lineHeight;
+    return css`
+      ${lineHeight && `line-height: ${lineHeight};`}
+    `;
+  }}
 `;
 
 export const StyledTimeInputSeparator = styled.span.withConfig(
@@ -102,76 +122,102 @@ export const StyledTimeInputSeparator = styled.span.withConfig(
   }}
 `;
 
-export const StyledTimeInputSegment = styled.span.withConfig(
-  styledComponentsConfig,
-)`
+// Paints the active-segment background and border as independent ::before/
+// ::after overlays (absolutely positioned, inset: 0) rather than real Box
+// props, so the overlay's own shape/rounding never has to match - or affect
+// the layout of - the segment's own box model.
+const cursorOverlayStyle = (theme) => {
+  const { background, border, round } = theme.timeInput?.value?.cursor || {};
+  if (background === undefined && !border && round === undefined) return '';
+
+  const roundCss = round !== undefined && roundStyle(round, false, theme);
+
+  return css`
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      ${background !== undefined && backgroundStyle(background, theme, false)}
+      ${roundCss}
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      ${border && borderStyle(border, false, theme)}
+      ${roundCss}
+    }
+  `;
+};
+
+// `cursor` is a nested, active-only theme sub-object, not itself a Box prop,
+// so it must never be spread onto the always-rendered base segment. Its own
+// `background`/`border`/`round` render as ::before/::after overlays (see
+// cursorOverlayStyle) instead, so only `pad`/`elevation` (layout-neutral,
+// native Box props) get spread here.
+export const getSegmentThemeProps = (theme, active) => {
+  const {
+    cursor,
+    color: _color,
+    size: _size,
+    weight: _weight,
+    placeholder: _placeholder,
+    ...boxProps
+  } = theme.timeInput?.value || {};
+  if (!active) return boxProps;
+
+  const { background, border, round, color, size, weight, ...cursorBoxProps } =
+    cursor || {};
+  return { ...boxProps, ...cursorBoxProps };
+};
+
+// Resolves the segment text color/size/weight, in priority order: active
+// `cursor` override > filled `value` > unfilled `value.placeholder`. `size`
+// accepts either a theme text size token (e.g. 'large') or a literal CSS size.
+const segmentTextStyle = (theme, { active, filled }) => {
+  const value = theme.timeInput?.value || {};
+  const cursor = active ? value.cursor : undefined;
+  const placeholder = value.placeholder || {};
+
+  const color =
+    cursor?.color ??
+    (filled
+      ? value.color || 'text'
+      : placeholder.color || theme.global.colors.placeholder);
+  const weight =
+    cursor?.weight ??
+    (filled ? value.weight : placeholder.weight) ??
+    theme.global.input.weight ??
+    theme.global.input.font.weight;
+  const sizeToken = cursor?.size ?? (filled ? value.size : placeholder.size);
+  const fontSize = sizeToken && (theme.text?.[sizeToken]?.size || sizeToken);
+
+  return css`
+    color: ${normalizeColor(color, theme)};
+    ${weight && `font-weight: ${weight};`}
+    ${fontSize && `font-size: ${fontSize};`}
+  `;
+};
+
+// Wraps Box directly (not via styledComponentsConfig/isPropValid) so
+// Box's own styling props (round, background) keep flowing through
+// instead of being filtered out as invalid DOM attributes.
+export const StyledTimeInputSegment = styled(Box)`
   &:focus {
     outline: none;
   }
   display: inline-flex;
-  align-items: center;
   position: relative;
-  line-height: inherit;
-  padding-inline: ${(props) => {
-    const padToken = props.theme.timeInput?.active?.pad;
-
-    return props.theme.global.edgeSize?.[padToken] || padToken;
-  }};
-  color: ${(props) =>
-    normalizeColor(
-      props.$filled ? 'text' : props.theme.global.colors.placeholder,
-      props.theme,
-    )};
-  ${(props) => {
-    const weight =
-      props.theme.global.input.weight || props.theme.global.input.font.weight;
-    return weight && `font-weight: ${weight};`;
-  }}
-
-  ${(props) => {
-    if (!props.$active) return '';
-
-    // The active indicator's corner rounding is intentionally a fixed
-    // "hair" edge size rather than a theme-exposed value we can expose
-    // theme in future.
-    const activeRound = props.theme.global.edgeSize?.hair;
-
-    const activeBorderToken = props.theme.timeInput?.active?.indicator?.size;
-    const activeBorderSize =
-      props.theme.global.borderSize?.[activeBorderToken] ||
-      props.theme.global.edgeSize?.[activeBorderToken] ||
-      activeBorderToken ||
-      props.theme.global.borderSize.small;
-
-    return css`
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.background,
-          props.theme,
-        )};
-        border-top-left-radius: ${activeRound};
-        border-top-right-radius: ${activeRound};
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: ${activeBorderSize};
-        background-color: ${normalizeColor(
-          props.theme.timeInput?.active?.indicator?.color || {
-            dark: 'white',
-            light: 'black',
-          },
-          props.theme,
-        )};
-        border-bottom-left-radius: ${activeRound};
-        border-bottom-right-radius: ${activeRound};
-      }
-    `;
-  }}
+  /* Establishes a stacking context so the cursor overlay's z-index: -1
+     (see cursorOverlayStyle) stays behind this segment's own text instead
+     of leaking out to compete with unrelated siblings/ancestors. */
+  z-index: 0;
+  ${(props) =>
+    segmentTextStyle(props.theme, {
+      active: props.$active,
+      filled: props.$filled,
+    })}
+  ${(props) => props.$active && cursorOverlayStyle(props.theme)}
 `;

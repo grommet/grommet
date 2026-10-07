@@ -1,0 +1,83 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+import React from 'react';
+
+import { Box, Grommet, grommet, Heading, ThemeType, TimeInput } from 'grommet';
+import { deepMerge } from 'grommet/utils';
+
+const theme: ThemeType = deepMerge(grommet, {
+  global: {
+    colors: {
+      text: 'white',
+    },
+  },
+});
+// full replace (not deepMerge) so none of grommet's default timeInput
+theme.timeInput = {
+  container: {
+    background: 'dark-2',
+    border: { color: 'dark-2' },
+    pad: { horizontal: 'xsmall', vertical: 'xxsmall' },
+    round: 'xsmall',
+  },
+  value: {
+    pad: { start: 'xxsmall', end: 'xxsmall' },
+    cursor: {
+      background: 'accent-3',
+      border: { size: 'small', color: 'accent-3' },
+      round: { size: 'full', corner: 'bottom' },
+    },
+  },
+  drop: {
+    background: 'dark-1',
+    gap: 'xxsmall',
+    pad: 'xsmall',
+    round: 'small',
+    column: {
+      background: 'dark-2',
+      gap: 'none',
+      pad: 'none',
+      round: 'xsmall',
+    },
+    option: {
+      container: {
+        background: 'dark-2',
+        pad: { horizontal: 'small', vertical: 'xxsmall' },
+        hover: {
+          background: 'neutral-2',
+        },
+        selected: {
+          background: 'accent-3',
+        },
+      },
+      text: {
+        color: 'white',
+        size: 'small',
+        selected: { color: 'black', weight: 'bold' },
+      },
+    },
+  },
+  dropButton: {
+    kind: {
+      background: 'accent-3',
+      border: { radius: 'xsmall' },
+      color: 'black',
+      padding: { horizontal: 'xxsmall', vertical: 'xxsmall' },
+    },
+  },
+};
+
+export const CustomThemedCompact = () => (
+  <Grommet theme={theme}>
+    <Box gap="medium" pad="large" background="dark-3">
+      <Heading level={3} margin="none" color="white">
+        Compact 24-hour theme
+      </Heading>
+      <TimeInput format="24" showSeconds minuteStep={15} />
+    </Box>
+  </Grommet>
+);
+
+export default {
+  title: 'Input/TimeInput/Custom Themed/Compact',
+};
