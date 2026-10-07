@@ -9,7 +9,7 @@ export const Inline = () => {
   const [value, setValue] = React.useState('13:30');
 
   return (
-    <Box align="center" pad="large" gap="small">
+    <Box align="center" pad="large">
       <TimeInput
         id="inline-time"
         inline
