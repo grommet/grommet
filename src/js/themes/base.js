@@ -2698,8 +2698,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // },
       drop: {
         // any BoxPartThemeType
-        // gap: undefined,
+        width: '1000px',
         height: 'small',
+        gap: 'none',
         pad: { horizontal: 'xsmall', vertical: 'small' },
         column: {
           gap: 'xxsmall',
@@ -2709,6 +2710,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           container: {
             // any BoxPartThemeType
             pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+            round: `${baseSpacing / 6}px`, // 4px
             hover: {
               // any BoxPartThemeType
               background: 'active-background',
