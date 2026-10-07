@@ -342,6 +342,77 @@ interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
   };
 }
 
+/**
+ * Themeable visual properties shared by component parts rendered as a Box.
+ * Keep structural, behavioral, and accessibility props out of theme parts.
+ */
+type BoxPartThemeType = Pick<
+  BoxProps,
+  | 'background'
+  | 'border'
+  | 'elevation'
+  | 'height'
+  | 'margin'
+  | 'pad'
+  | 'round'
+  | 'width'
+>;
+
+type BoxStateThemeType = Pick<
+  BoxPartThemeType,
+  'background' | 'border' | 'elevation' | 'pad' | 'round'
+>;
+
+/** Text presentation properties shared by themeable component text parts. */
+type TextThemeType = Pick<TextProps, 'color' | 'size' | 'weight'>;
+
+type TimeInputOptionTextThemeType = TextThemeType & {
+  selected?: TextThemeType;
+};
+
+type TimeInputOptionHoverThemeType = Pick<
+  BoxStateThemeType,
+  'background' | 'elevation'
+>;
+
+type TimeInputOptionContainerThemeType = BoxPartThemeType & {
+  hover?: TimeInputOptionHoverThemeType;
+  selected?: BoxStateThemeType & {
+    hover?: TimeInputOptionHoverThemeType;
+  };
+};
+
+type TimeInputOptionThemeType = {
+  container?: TimeInputOptionContainerThemeType;
+  text?: TimeInputOptionTextThemeType;
+};
+
+type TimeInputThemeType = {
+  container?: BoxPartThemeType;
+  display?: {
+    pad?: PadType;
+    lineHeight?: string;
+  };
+  segment?: BoxPartThemeType &
+    TextThemeType & {
+      placeholder?: TextThemeType;
+      active?: BoxStateThemeType & TextThemeType;
+    };
+  separator?: TextThemeType & {
+    placeholder?: TextThemeType;
+  };
+  drop?: Omit<BoxPartThemeType, 'width'> & {
+    width?: string;
+    gap?: GapType;
+    column?: {
+      maxHeight?: string;
+      gap?: GapType;
+      pad?: PadType;
+    };
+    option?: TimeInputOptionThemeType;
+  };
+};
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -2412,49 +2483,7 @@ export interface ThemeType {
       extend?: ExtendType;
     };
   };
-  timeInput?: {
-    button?: {
-      margin?: MarginType;
-    };
-    container?: {
-      round?: RoundType;
-    };
-    active?: {
-      background?: ColorType;
-      pad?: string;
-      indicator?: {
-        color?: ColorType;
-        size?: string;
-      };
-    };
-    drop?: {
-      gap?: GapType;
-      pad?: PadType;
-      option?: {
-        background?: ColorType;
-        gap?: GapType;
-        size?: string;
-        pad?: PadType;
-        round?: RoundType;
-        hover?: {
-          background?: ColorType;
-        };
-        selected?: {
-          background?: ColorType;
-          color?: ColorType;
-          text?: {
-            weight?: string | number;
-          };
-          hover?: {
-            background?: ColorType;
-          };
-        };
-      };
-    };
-    icon?: {
-      clock?: React.ReactNode | Icon;
-    };
-  };
+  timeInput?: TimeInputThemeType;
   tip?: {
     content?: BoxProps;
     drop?: DropProps;

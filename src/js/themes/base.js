@@ -2671,46 +2671,50 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     timeInput: {
-      button: {
-        margin: { right: 'small' },
-      },
       container: {
         round: 'xxsmall',
       },
-      active: {
-        background: 'active-background',
-        pad: 'xxsmall',
-        indicator: {
-          color: { dark: 'white', light: 'black' },
-          size: 'small',
+      display: {},
+      segment: {
+        pad: { horizontal: 'xxsmall' },
+        active: {
+          background: 'active-background',
+          border: {
+            color: { dark: 'white', light: 'black' },
+            side: 'bottom',
+            size: 'small',
+          },
         },
       },
+      separator: {},
       drop: {
-        // gap: undefined,
+        // width: undefined,
+        gap: undefined,
         pad: { horizontal: 'xsmall', vertical: 'small' },
+        column: {
+          // maxHeight: undefined,
+          gap: 'xxsmall',
+          pad: { horizontal: 'xsmall' },
+        },
         option: {
-          // background: undefined,
-          // gap: undefined,
-          // size: undefined,
-          pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
-          // round: undefined,
-          hover: {
-            background: 'active-background',
+          container: {
+            // background: undefined,
+            pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+            // round: undefined,
+            hover: {
+              background: 'active-background',
+            },
+            selected: {
+              background: 'selected',
+            },
           },
-          selected: {
-            background: 'selected',
-            color: 'white',
-            text: {
+          text: {
+            selected: {
+              color: 'white',
               weight: 500,
             },
-            hover: {
-              // background: undefined,
-            },
           },
         },
-      },
-      icon: {
-        // clock: undefined,
       },
     },
     tip: {

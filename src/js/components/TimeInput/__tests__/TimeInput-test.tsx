@@ -2224,7 +2224,7 @@ describe('TimeInput', () => {
     }
   });
 
-  test('applies timeInput theme tokens across container, active segment, and drop options', async () => {
+  test('applies anatomy-based theme tokens across the field and popup', async () => {
     const user = userEvent.setup();
 
     const customTheme: ThemeType = {
@@ -2232,28 +2232,69 @@ describe('TimeInput', () => {
         container: {
           round: 'large',
         },
-        active: {
-          background: '#FFD700',
+        display: {
+          pad: { horizontal: 'large' },
+        },
+        segment: {
           pad: 'large',
-          indicator: {
-            color: '#FF0000',
+          background: '#F0F0F0',
+          border: { color: '#123456', size: 'small' },
+          elevation: 'small',
+          height: 'large',
+          margin: { left: 'xsmall' },
+          round: '6px',
+          width: 'large',
+          color: '#112233',
+          placeholder: {
+            color: '#445566',
+          },
+          active: {
+            background: '#FFD700',
+            border: {
+              color: '#FF0000',
+              side: 'bottom',
+              size: '3px',
+              style: 'dashed',
+            },
+            elevation: 'xsmall',
+            pad: 'xsmall',
+            round: '12px',
+            color: '#223344',
             size: 'large',
+            weight: 700,
           },
         },
+        separator: {
+          color: '#667788',
+        },
         drop: {
+          width: '24rem',
+          height: { min: 'small' },
+          column: {
+            maxHeight: '18rem',
+          },
           option: {
-            background: '#EEEEEE',
-            hover: {
-              background: '#CCCCCC',
-            },
-            selected: {
-              background: '#0000FF',
-              color: '#FFFFFF',
-              text: {
-                weight: 'bold',
-              },
+            container: {
+              background: '#EEEEEE',
+              border: { color: '#334455', size: '2px' },
+              pad: 'small',
+              round: 'small',
               hover: {
-                background: '#00FF00',
+                background: '#CCCCCC',
+              },
+              selected: {
+                background: '#0000FF',
+                hover: {
+                  background: '#00FF00',
+                },
+              },
+            },
+            text: {
+              size: 'medium',
+              selected: {
+                color: '#FFFFFF',
+                size: 'large',
+                weight: 'bold',
               },
             },
           },
@@ -2272,20 +2313,47 @@ describe('TimeInput', () => {
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
 
-    // active.pad applies to every segment, active or not
+    // Segment exposes Box-part styles in addition to text styles.
     const hourSegment = getSegment('hours');
-    expect(hourSegment).toHaveStyleRule('padding-inline', '48px');
+    expect(hourSegment).toHaveStyleRule('padding', '48px');
+    expect(hourSegment).toHaveStyleRule('background-color', '#F0F0F0');
+    expect(hourSegment).toHaveStyleRule('border', 'solid 2px #123456');
+    expect(hourSegment).toHaveStyleRule(
+      'box-shadow',
+      '0px 2px 4px rgba(0, 0, 0, 0.20)',
+    );
+    expect(hourSegment).toHaveStyleRule('height', '768px');
+    expect(hourSegment).toHaveStyleRule('margin-left', '6px');
+    expect(hourSegment).toHaveStyleRule('border-radius', '6px');
+    expect(hourSegment).toHaveStyleRule('width', '768px');
+    expect(hourSegment).toHaveStyleRule('color', '#112233');
+    expect(screen.getAllByText(':')[0]).toHaveStyleRule('color', '#667788');
+    expect(screen.getByRole('group')).toHaveStyleRule('padding-left', '48px');
 
-    // active.background and active.indicator only render on the
-    // currently focused/active segment
+    // Active Box and text styles, background, and underline only render on
+    // the currently focused/active segment.
     await user.click(hourSegment);
+    expect(hourSegment).toHaveStyleRule('padding', '6px');
+    expect(hourSegment).toHaveStyleRule(
+      'box-shadow',
+      '0px 1px 2px rgba(0, 0, 0, 0.20)',
+    );
+    expect(hourSegment).toHaveStyleRule('color', '#223344');
+    expect(hourSegment).toHaveStyleRule('font-size', '22px');
+    expect(hourSegment).toHaveStyleRule('font-weight', '700');
     expect(hourSegment).toHaveStyleRule('background-color', '#FFD700', {
       modifier: '::before',
     });
-    expect(hourSegment).toHaveStyleRule('background-color', '#FF0000', {
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
+      modifier: '::before',
+    });
+    expect(hourSegment).toHaveStyleRule('border-bottom', 'dashed 3px #FF0000', {
       modifier: '::after',
     });
-    expect(hourSegment).toHaveStyleRule('height', '12px', {
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
+      modifier: '::before',
+    });
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
       modifier: '::after',
     });
 
@@ -2299,19 +2367,78 @@ describe('TimeInput', () => {
     const unselectedOption = within(hourList).getByRole('option', {
       name: '11 hours',
     });
+    const dialog = screen.getByRole('dialog');
 
-    expect(unselectedOption).toHaveStyleRule('background', '#EEEEEE');
-    expect(selectedOption).toHaveStyleRule('background', '#0000FF');
-    expect(unselectedOption).toHaveStyleRule('background', '#CCCCCC', {
+    expect(dialog).toHaveStyleRule('width', '24rem');
+    expect(dialog).toHaveStyleRule('min-height', '192px');
+    expect(hourList).toHaveStyleRule('max-height', '18rem');
+
+    expect(unselectedOption).toHaveStyleRule('background-color', '#EEEEEE');
+    expect(unselectedOption).toHaveStyleRule('padding', '12px');
+    expect(unselectedOption).toHaveStyleRule('border', 'solid 2px #334455');
+    expect(unselectedOption).toHaveStyleRule('border-radius', '12px');
+    expect(selectedOption).toHaveStyleRule('background-color', '#0000FF');
+    expect(unselectedOption).toHaveStyleRule('background-color', '#CCCCCC', {
       modifier: ':hover',
     });
-    expect(selectedOption).toHaveStyleRule('background', '#00FF00', {
+    expect(selectedOption).toHaveStyleRule('background-color', '#00FF00', {
       modifier: ':hover',
     });
-    expect(within(selectedOption).getByText('10')).toHaveStyleRule(
-      'color',
-      '#FFFFFF',
+    const selectedText = within(selectedOption).getByText('10');
+    expect(selectedText).toHaveStyleRule('color', '#FFFFFF');
+    expect(selectedText).toHaveStyleRule('font-size', '22px');
+    expect(selectedText).toHaveStyleRule('font-weight', 'bold');
+  });
+
+  test('uses the segment placeholder color when the input is empty', () => {
+    render(
+      <Grommet
+        theme={{
+          timeInput: {
+            segment: {
+              placeholder: {
+                color: '#778899',
+                size: 'large',
+                weight: 700,
+              },
+            },
+            separator: {
+              placeholder: {
+                color: '#8899AA',
+                size: 'small',
+                weight: 300,
+              },
+            },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
     );
+
+    const hourSegment = getSegment('hours');
+    expect(hourSegment).toHaveStyleRule('color', '#778899');
+    expect(hourSegment).toHaveStyleRule('font-size', '22px');
+    expect(hourSegment).toHaveStyleRule('font-weight', '700');
+
+    const separator = screen.getAllByText(':')[0];
+    expect(separator).toHaveStyleRule('color', '#8899AA');
+    expect(separator).toHaveStyleRule('font-size', '14px');
+    expect(separator).toHaveStyleRule('font-weight', '300');
+  });
+
+  test('keeps default segment padding horizontal-only', () => {
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="10:15" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    expect(hourSegment).toHaveStyleRule('padding-left', '3px');
+    expect(hourSegment).toHaveStyleRule('padding-right', '3px');
+    expect(hourSegment).not.toHaveStyleRule('padding-top', '3px');
+    expect(hourSegment).not.toHaveStyleRule('padding-bottom', '3px');
   });
 
   test('updates displayed value when picking a new hour from the popup after a single-digit keystroke', async () => {

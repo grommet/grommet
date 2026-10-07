@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { edgeStyle, focusStyle, normalizeColor, roundStyle } from '../../utils';
+import { focusStyle } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
@@ -26,67 +26,8 @@ const PopupColumnBox = styled(Box)`
   scrollbar-width: thin;
 `;
 
-const PopupOption = styled.div`
-  box-sizing: border-box;
+const PopupOption = styled(Box)`
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  ${(props) => {
-    const optionPad = props.theme.timeInput?.drop?.option?.pad;
-    return (
-      optionPad &&
-      edgeStyle(
-        'padding',
-        optionPad,
-        false,
-        props.theme.box.responsiveBreakpoint,
-        props.theme,
-      )
-    );
-  }}
-  ${(props) => {
-    const round =
-      props.theme.timeInput?.drop?.option?.round ||
-      props.theme.global.control?.border?.radius;
-    return round && roundStyle(round, false, props.theme);
-  }}
-  background: ${(props) => {
-    if (props.$selected) {
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.selected?.background,
-        props.theme,
-      );
-    }
-
-    if (props.$active) {
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.hover?.background,
-        props.theme,
-      );
-    }
-
-    return normalizeColor(
-      props.theme.timeInput?.drop?.option?.background,
-      props.theme,
-    );
-  }};
-
-  &:hover {
-    background: ${(props) => {
-      if (props.$selected) {
-        return normalizeColor(
-          props.theme.timeInput?.drop?.option?.selected?.hover?.background ||
-            props.theme.timeInput?.drop?.option?.selected?.background,
-          props.theme,
-        );
-      }
-
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.hover?.background,
-        props.theme,
-      );
-    }};
-  }
 
   /*
    * Keep the focus indicator inset so it doesn't get clipped by the
@@ -123,24 +64,24 @@ const PopupColumn = ({
   theme,
 }) => {
   // When inline (in DateTimeInput), use 'medium' to match Calendar height.
-  // Otherwise use timeInput drop maxHeight with fallback to 'small'.
+  // Otherwise use the TimeInput column maxHeight with a 'small' fallback.
   const maxHeightToken = inline ? 'medium' : null;
   const maxHeight =
-    (maxHeightToken && theme.global.size?.[maxHeightToken]) ||
     theme.timeInput?.drop?.column?.maxHeight ||
+    (maxHeightToken && theme.global.size?.[maxHeightToken]) ||
     theme.global.size.small;
 
   return (
     <PopupColumnBox
       role="listbox"
       aria-label={label}
-      gap={theme.timeInput?.drop?.option?.gap || 'xxsmall'}
+      gap={theme.timeInput?.drop?.column?.gap || 'xxsmall'}
       height={{
         max: maxHeight,
       }}
       overflow="auto"
       flex={{ grow: 0, shrink: 0 }}
-      pad={{ horizontal: 'xsmall' }}
+      pad={theme.timeInput?.drop?.column?.pad || { horizontal: 'xsmall' }}
     >
       {options.map((option) => {
         const key = optionKey(label, option);
@@ -159,8 +100,44 @@ const PopupColumn = ({
           (section === SECTION_PERIOD && sections.period === option);
 
         const optionColor = selected
-          ? theme.timeInput?.drop?.option?.selected?.color || 'text'
-          : 'text';
+          ? theme.timeInput?.drop?.option?.text?.selected?.color ||
+            theme.timeInput?.drop?.option?.text?.color ||
+            'text'
+          : theme.timeInput?.drop?.option?.text?.color || 'text';
+        const optionContainer = theme.timeInput?.drop?.option?.container || {};
+        const selectedContainer = selected
+          ? optionContainer.selected || {}
+          : {};
+        const baseOptionStyles = {
+          background: optionContainer.background,
+          border: optionContainer.border,
+          elevation: optionContainer.elevation,
+          height: optionContainer.height,
+          margin: optionContainer.margin,
+          pad: optionContainer.pad,
+          round: optionContainer.round ?? theme.global.control?.border?.radius,
+          width: optionContainer.width,
+        };
+        const selectedOptionStyles = {
+          background:
+            selectedContainer.background ?? baseOptionStyles.background,
+          border: selectedContainer.border ?? baseOptionStyles.border,
+          elevation: selectedContainer.elevation ?? baseOptionStyles.elevation,
+          height: baseOptionStyles.height,
+          margin: baseOptionStyles.margin,
+          pad: selectedContainer.pad ?? baseOptionStyles.pad,
+          round: selectedContainer.round ?? baseOptionStyles.round,
+          width: baseOptionStyles.width,
+        };
+        const optionStyles = selected ? selectedOptionStyles : baseOptionStyles;
+        const hoverState = selected
+          ? selectedContainer.hover
+          : optionContainer.hover;
+        const hoverBackground = selected
+          ? hoverState?.background ??
+            selectedContainer.background ??
+            baseOptionStyles.background
+          : hoverState?.background;
         const isActive = selected && activeSection === section;
         let optionTabIndex = -1;
         if (inline) {
@@ -182,28 +159,49 @@ const PopupColumn = ({
         return (
           <PopupOption
             key={key}
-            data-option-key={key}
             role="option"
+            data-option-key={key}
             aria-selected={selected}
             tabIndex={optionTabIndex}
             aria-label={`${
               section === SECTION_PERIOD ? option : pad(option)
             } ${getSectionName(section, format, formatMessage, messages)}`}
-            $active={isActive}
-            $selected={selected}
+            background={optionStyles.background}
+            border={optionStyles.border}
+            elevation={optionStyles.elevation}
+            height={optionStyles.height}
+            margin={optionStyles.margin}
+            pad={optionStyles.pad}
+            round={optionStyles.round}
+            width={optionStyles.width}
+            justify="center"
+            hoverIndicator={
+              hoverBackground || hoverState?.elevation
+                ? {
+                    background: hoverBackground,
+                    elevation: hoverState?.elevation,
+                  }
+                : false
+            }
             onClick={() => onClickCommitOption(section, option)}
             onFocus={() => onSetSection(section)}
           >
             <Text
               size={
-                theme.timeInput?.drop?.option?.size ||
-                theme.global.input.font.size ||
-                'small'
+                selected
+                  ? theme.timeInput?.drop?.option?.text?.selected?.size ||
+                    theme.timeInput?.drop?.option?.text?.size ||
+                    theme.global.input.font.size ||
+                    'small'
+                  : theme.timeInput?.drop?.option?.text?.size ||
+                    theme.global.input.font.size ||
+                    'small'
               }
               weight={
                 selected
-                  ? theme.timeInput?.drop?.option?.selected?.text?.weight
-                  : undefined
+                  ? theme.timeInput?.drop?.option?.text?.selected?.weight ??
+                    theme.timeInput?.drop?.option?.text?.weight
+                  : theme.timeInput?.drop?.option?.text?.weight
               }
               color={optionColor}
             >
@@ -568,6 +566,8 @@ const TimeInputPopup = ({
     };
   }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
 
+  const dropTheme = theme.timeInput?.drop;
+
   const popupContent = (
     <Box
       ref={dialogRef}
@@ -575,8 +575,13 @@ const TimeInputPopup = ({
       aria-label={inline ? undefined : label}
       direction="row"
       width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
-      minHeight={theme.timeInput?.drop?.minHeight}
+      height={dropTheme?.height}
+      margin={dropTheme?.margin}
       gap={theme.timeInput?.drop?.gap}
+      background={theme.timeInput?.drop?.background}
+      border={theme.timeInput?.drop?.border}
+      elevation={theme.timeInput?.drop?.elevation}
+      round={theme.timeInput?.drop?.round}
       pad={inline ? 'none' : theme.timeInput?.drop?.pad}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}

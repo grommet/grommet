@@ -720,8 +720,9 @@ const TimeInput = forwardRef(
             direction="row"
             border={!plainProp}
             fill
+            {...theme.timeInput?.container}
             round={
-              theme.timeInput?.container?.round ||
+              theme.timeInput?.container?.round ??
               theme.global?.control?.border?.radius
             }
             disabled={disabled}
