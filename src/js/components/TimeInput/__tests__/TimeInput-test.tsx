@@ -2388,6 +2388,8 @@ describe('TimeInput', () => {
       timeInput: {
         container: {
           round: 'large',
+          height: '500px',
+          width: '500px',
         },
         value: {
           pad: { horizontal: 'large' },
@@ -2484,6 +2486,8 @@ describe('TimeInput', () => {
     const container = screen.getByRole('group').parentElement
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
+    expect(container).toHaveStyleRule('height', '500px');
+    expect(container).toHaveStyleRule('width', '500px');
 
     // Segment exposes Box-part styles in addition to text styles.
     const hourSegment = getSegment('hours');

@@ -61,6 +61,16 @@ const getSectionOrder = (format, showSeconds) => {
   return numericSections;
 };
 
+const getContainerFill = (container = {}) => {
+  const fillWidth = container.width === undefined;
+  const fillHeight = container.height === undefined;
+
+  if (fillWidth && fillHeight) return true;
+  if (fillWidth) return 'horizontal';
+  if (fillHeight) return 'vertical';
+  return false;
+};
+
 const resolveDropButtonIcon = (icon) => {
   if (React.isValidElement(icon)) return icon;
   if (typeof icon === 'function' || icon?.$$typeof)
@@ -696,6 +706,7 @@ const TimeInput = forwardRef(
 
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
+    const containerTheme = theme.timeInput?.container;
     const dropButtonTheme = theme.timeInput?.dropButton;
     let dropButtonKind = 'toolbar';
     let dropButtonIcon = <GrommetClockIcon aria-hidden="true" />;
@@ -752,8 +763,8 @@ const TimeInput = forwardRef(
             ref={containerRef}
             direction="row"
             border={!plainProp}
-            fill
-            {...theme.timeInput?.container}
+            fill={getContainerFill(containerTheme)}
+            {...containerTheme}
             round={
               theme.timeInput?.container?.round ??
               theme.global?.control?.border?.radius
