@@ -1205,6 +1205,7 @@ const DateTimeInput = forwardRef(
         aria-label={groupLabel}
         aria-labelledby={formFieldLabelId}
         direction="row"
+        cssGap
         pad={theme.dateTimeInput?.drop?.pad}
         gap={theme.dateTimeInput?.drop?.gap}
         height={theme.dateTimeInput?.drop?.height}
@@ -1222,15 +1223,17 @@ const DateTimeInput = forwardRef(
             },
           }}
         >
-          <Calendar
-            date={getCalendarDate(sections)}
-            initialFocus={inline ? undefined : 'days'}
-            onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
-          />
+          <Box width="medium" flex={false}>
+            <Calendar
+              date={getCalendarDate(sections)}
+              initialFocus={inline ? undefined : 'days'}
+              onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
+              fill
+            />
+          </Box>
         </ThemeContext.Extend>
         <Box
           alignSelf="stretch"
-          flex={false}
           border={{
             side: 'start',
             color: theme.dateTimeInput?.drop?.border?.color,
