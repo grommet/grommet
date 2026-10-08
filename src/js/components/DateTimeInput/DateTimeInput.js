@@ -1251,9 +1251,7 @@ const DateTimeInput = forwardRef(
           onPartialChange={
             disabled || readOnly ? undefined : handleTimePartialChange
           }
-          // flex="grow"
           fill
-          // height={undefined}
         />
       </Box>
     );
