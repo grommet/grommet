@@ -290,6 +290,8 @@ export const StyledTimeInputSegment = styled.span.withConfig(
         css`
           border-top-left-radius: ${activeRoundValue};
           border-top-right-radius: ${activeRoundValue};
+          border-bottom-left-radius: ${activeRoundValue};
+          border-bottom-right-radius: ${activeRoundValue};
         `}
       }
       &::after {
