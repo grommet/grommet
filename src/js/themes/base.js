@@ -2834,12 +2834,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           margin: { top: 'xsmall', bottom: 'none' },
         },
       },
+      step: {
+        gap: 'medium',
+      },
       content: {
         pad: 'medium',
         gap: 'medium',
         background: 'background-front',
         round: 'small',
-        margin: { top: 'medium' },
       },
       footer: {
         pad: { horizontal: 'large', vertical: 'small' },
