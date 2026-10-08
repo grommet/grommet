@@ -271,14 +271,7 @@ export const StyledTimeInputSegment = styled.span.withConfig(
       activeRound && roundStyle(activeRound, responsive, props.theme);
     const activeRoundValue =
       activeRound === false ? '0' : props.theme.global.edgeSize?.hair;
-    const underlineBorder = active?.border ?? {
-      side: 'bottom',
-      color: {
-        dark: 'white',
-        light: 'black',
-      },
-      size: 'small',
-    };
+    const underlineBorder = active?.border;
     const underlineBorderStyle =
       underlineBorder === false ||
       (Array.isArray(underlineBorder) && underlineBorder.length === 0)
