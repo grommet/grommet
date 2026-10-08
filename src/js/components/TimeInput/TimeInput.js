@@ -20,6 +20,7 @@ import { getSectionTokenFromType } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { FormContext } from '../Form';
+import { FormFieldContext } from '../FormField/FormFieldContext';
 import { Keyboard } from '../Keyboard';
 import {
   StyledTimeInputDisplay,
@@ -112,6 +113,8 @@ const TimeInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const formContext = useContext(FormContext);
+    const { setFocusIndicator: setFieldFocusIndicator } =
+      useContext(FormFieldContext);
     const { useFormInput } = formContext;
 
     const inputRef = useForwardedRef(refArg);
@@ -480,6 +483,7 @@ const TimeInput = forwardRef(
 
     const onSegmentFocus = useCallback(
       (section) => {
+        setFieldFocusIndicator?.(true);
         if (!segmentFocused && !readOnly && !disabled && !open) {
           announce(formatMessage({ id: 'timeInput.openDrop', messages }));
         }
@@ -495,6 +499,7 @@ const TimeInput = forwardRef(
         open,
         readOnly,
         segmentFocused,
+        setFieldFocusIndicator,
         setActiveSection,
       ],
     );
@@ -846,6 +851,7 @@ const TimeInput = forwardRef(
                 aria-controls={id ? `${id}__drop` : undefined}
                 onFocus={() => {
                   setIconFocused(true);
+                  setFieldFocusIndicator?.(false);
                 }}
                 onBlur={() => {
                   setIconFocused(false);

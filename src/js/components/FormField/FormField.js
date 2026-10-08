@@ -31,6 +31,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { FormFieldContext } from './FormFieldContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 
@@ -86,7 +87,8 @@ const getFocusStyle = (props) => {
   ) {
     return null;
   }
-  return props.focus ? focusStyle({ justBorder: true }) : undefined;
+  if (!props.focus) return undefined;
+  return focusStyle({ justBorder: true });
 };
 
 // The border color has to be painted by whichever element owns the border,
@@ -144,18 +146,6 @@ const FormFieldBox = styled(Box)`
 
 const FormFieldContentBox = styled(Box)`
   ${(props) => getFocusStyle(props)}
-  /*
- * TimeInput moves focus between multiple internal segments. The focus-within
- * fallback keeps the FormField indicator visible while focus moves between
- * those segments, without trapping focus after it leaves the field.
- */
-  ${(props) =>
-    props.componentName === 'timeInput' &&
-    css`
-      &:focus-within {
-        ${focusStyle({ justBorder: true })}
-      }
-    `}
   ${getHoverStyle('content')}
   ${(props) =>
     props.theme.formField &&
@@ -359,6 +349,9 @@ const FormField = forwardRef(
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
+    const [focusIndicator, setFocusIndicator] = useState(true);
+    const fieldFocus = focus && focusIndicator;
+    const fieldContext = useMemo(() => ({ setFocusIndicator }), []);
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
@@ -594,7 +587,7 @@ const FormField = forwardRef(
         borderColor = formFieldTheme.error.border.color || 'status-critical';
       }
     } else if (
-      focus &&
+      fieldFocus &&
       formFieldTheme.focus &&
       formFieldTheme.focus.border &&
       formFieldTheme.focus.border.color
@@ -652,7 +645,7 @@ const FormField = forwardRef(
                 color: borderColor,
               },
               round: formFieldTheme.round,
-              focus: isFileInputComponent ? undefined : focus,
+              focus: isFileInputComponent ? undefined : fieldFocus,
             }
           : {};
       contents = (
@@ -699,8 +692,8 @@ const FormField = forwardRef(
         }
 
         outerStyle = {
-          position: focus ? 'relative' : undefined,
-          zIndex: focus ? 10 : undefined,
+          position: fieldFocus ? 'relative' : undefined,
+          zIndex: fieldFocus ? 10 : undefined,
           ...style,
         };
       }
@@ -712,7 +705,7 @@ const FormField = forwardRef(
       if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
       } else if (
-        focus &&
+        fieldFocus &&
         formFieldTheme.focus &&
         formFieldTheme.focus.background &&
         formFieldTheme.focus.background.color
@@ -732,7 +725,7 @@ const FormField = forwardRef(
         ? {
             border: { ...themeBorder, color: borderColor },
             round: formFieldTheme.round,
-            focus,
+            focus: fieldFocus,
           }
         : {};
 
@@ -777,7 +770,10 @@ const FormField = forwardRef(
           const focusRemainsInside = formFieldRef.current?.contains(
             event.relatedTarget,
           );
-          if (!focusRemainsInside) setFocus(false);
+          if (!focusRemainsInside) {
+            setFocus(false);
+            setFocusIndicator(true);
+          }
 
           // if input has a drop and focus is within drop
           // prevent onBlur validation from running until
@@ -821,7 +817,9 @@ const FormField = forwardRef(
             <Message message={help} {...themeHelpProps} />
           </>
         ) : undefined}
-        {contents}
+        <FormFieldContext.Provider value={fieldContext}>
+          {contents}
+        </FormFieldContext.Provider>
         <Message
           type="error"
           message={error}
