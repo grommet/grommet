@@ -183,7 +183,6 @@ const PopupColumn = ({
             flex={false}
             $hoverState={hoverState}
             $hoverBackground={hoverBackground}
-            justify="center"
             {...optionStyles}
             // This option owns its inset :focus-visible indicator. Box's
             // focus tracking can retain state when tabIndex becomes -1.
@@ -209,6 +208,7 @@ const PopupColumn = ({
                   : theme.timeInput?.drop?.option?.text?.weight
               }
               color={optionColor}
+              textAlign="center"
             >
               {section === SECTION_PERIOD ? option : pad(option)}
             </Text>
