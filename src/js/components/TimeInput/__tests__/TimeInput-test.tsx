@@ -18,6 +18,7 @@ import '@testing-library/jest-dom';
 import { AnnounceContext } from '../../../contexts/AnnounceContext';
 import { createPortal } from '../../../utils/portal';
 import { ThemeType } from '../../../themes';
+import { Button } from '../../Button';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
 import { Grommet } from '../../Grommet';
@@ -2554,6 +2555,61 @@ describe('TimeInput', () => {
     await user.keyboard('{ArrowDown}');
     expect(getDisplayInput()).toHaveValue('01:mm');
   });
+
+  test.each(['inner', 'outer'])(
+    'FormField delegates keyboard focus to the drop button with %s borders',
+    async (position) => {
+      const user = userEvent.setup();
+      const validate = jest.fn(() => undefined);
+      render(
+        <Grommet
+          theme={
+            {
+              global: { focus: { border: { color: '#123456' } } },
+              formField: {
+                border: { position },
+                focus: { border: { color: '#123456' } },
+              },
+            } as any
+          }
+        >
+          <Form>
+            <FormField
+              name="time"
+              htmlFor="time-focus"
+              label="Time"
+              validate={validate}
+              validateOn="blur"
+            >
+              <TimeInput id="time-focus" name="time" format="24" />
+            </FormField>
+            <Button label="After field" />
+          </Form>
+        </Grommet>,
+      );
+
+      await user.tab();
+      expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveFocus();
+      const fieldContent = screen.getByRole('group', { name: 'Time' })
+        .parentElement?.parentElement?.parentElement
+        ?.parentElement as HTMLElement;
+      const indicator =
+        position === 'inner' ? fieldContent : fieldContent.parentElement;
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+      expect(validate).not.toHaveBeenCalled();
+      await user.tab({ shift: true });
+      expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'After field' })).toHaveFocus();
+      await waitFor(() => expect(validate).toHaveBeenCalled());
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+    },
+  );
 
   test('initialises hour with zero on ArrowUp in hour inside drop', async () => {
     const user = userEvent.setup();
