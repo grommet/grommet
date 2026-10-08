@@ -698,7 +698,7 @@ const TimeInput = forwardRef(
       (segmentFocused || open) && !readOnly && !disabled;
     const dropButtonTheme = theme.timeInput?.dropButton;
     let dropButtonKind = 'toolbar';
-    let dropButtonIcon = <GrommetClockIcon />;
+    let dropButtonIcon = <GrommetClockIcon aria-hidden="true" />;
 
     if (typeof dropButtonTheme === 'string') {
       dropButtonKind = dropButtonTheme;
