@@ -2725,6 +2725,52 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('01:mm');
   });
 
+  test('does not retain a Box focus shadow after arrowing to another option', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          global: {
+            focus: {
+              twoColor: true,
+              shadow: { color: '#123456', size: '2px' },
+              inset: {
+                twoColor: true,
+                shadow: { color: '#123456', size: '2px' },
+              },
+            },
+          },
+        }}
+      >
+        <TimeInput format="24" defaultValue="10:15:00" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const initialOption = within(hourList).getByRole('option', {
+      name: '10 hours',
+    });
+    const previousOption = within(hourList).getByRole('option', {
+      name: '11 hours',
+    });
+    const nextOption = within(hourList).getByRole('option', {
+      name: '12 hours',
+    });
+    await waitFor(() => expect(initialOption).toHaveFocus());
+    await user.keyboard('{ArrowDown}');
+    await waitFor(() => expect(previousOption).toHaveFocus());
+    await user.keyboard('{ArrowDown}');
+    await waitFor(() => expect(nextOption).toHaveFocus());
+
+    expect(previousOption).toHaveAttribute('tabindex', '-1');
+    expect(previousOption).not.toHaveStyleRule('box-shadow');
+    expect(nextOption).not.toHaveStyleRule('box-shadow');
+    expect(nextOption).toHaveStyleRule('box-shadow', expect.any(String), {
+      modifier: ':focus-visible',
+    });
+  });
+
   test('initialises hour with zero on ArrowUp in hour inside drop', async () => {
     const user = userEvent.setup();
 

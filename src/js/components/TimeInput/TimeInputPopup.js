@@ -185,6 +185,9 @@ const PopupColumn = ({
             $hoverBackground={hoverBackground}
             justify="center"
             {...optionStyles}
+            // This option owns its inset :focus-visible indicator. Box's
+            // focus tracking can retain state when tabIndex becomes -1.
+            focusIndicator={false}
             onClick={() => onClickCommitOption(section, option)}
             onFocus={() => onSetSection(section)}
           >
