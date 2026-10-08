@@ -15,6 +15,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import '@testing-library/jest-dom';
 
+import { Clock as GrommetClockIcon } from 'grommet-icons';
 import { AnnounceContext } from '../../../contexts/AnnounceContext';
 import { createPortal } from '../../../utils/portal';
 import { ThemeType } from '../../../themes';
@@ -46,6 +47,101 @@ describe('TimeInput', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('accepts a named drop button kind string', () => {
+    const customTheme: ThemeType = {
+      button: {
+        default: {},
+        primary: { background: '#445566', color: '#FFFFFF' },
+      },
+      timeInput: { dropButton: 'primary' },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    expect(dropButton).toHaveStyleRule('color', '#FFFFFF');
+    expect(dropButton.querySelector('svg')).toBeInTheDocument();
+  });
+
+  test('accepts a named drop button kind with a custom icon', () => {
+    const customTheme: ThemeType = {
+      button: {
+        default: {},
+        primary: { background: '#445566', color: '#FFFFFF' },
+      },
+      timeInput: {
+        dropButton: {
+          kind: 'primary',
+          icon: <span>Custom primary icon</span>,
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    expect(
+      within(dropButton).getByText('Custom primary icon'),
+    ).toBeInTheDocument();
+  });
+
+  test('accepts standalone drop button icon elements and components', () => {
+    const elementTheme: ThemeType = {
+      timeInput: { dropButton: <span>Standalone icon element</span> },
+    };
+
+    const { unmount } = render(
+      <Grommet theme={elementTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    let dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(
+      within(dropButton).getByText('Standalone icon element'),
+    ).toBeInTheDocument();
+
+    unmount();
+
+    const themedIconTheme: ThemeType = {
+      timeInput: { dropButton: { icon: GrommetClockIcon } },
+    };
+
+    const themedIconRender = render(
+      <Grommet theme={themedIconTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton.querySelector('svg')).toBeInTheDocument();
+
+    themedIconRender.unmount();
+
+    const componentTheme: ThemeType = {
+      timeInput: { dropButton: GrommetClockIcon },
+    };
+
+    render(
+      <Grommet theme={componentTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton.querySelector('svg')).toBeInTheDocument();
   });
 
   test('accepts defaultValue without seconds (HH:mm)', () => {

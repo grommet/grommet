@@ -376,6 +376,15 @@ type TimeInputOptionThemeType = {
   };
 };
 
+type TimeInputButtonIconType = React.ReactNode | Icon;
+
+type TimeInputDropButtonThemeType =
+  | string
+  | { kind: string; icon?: TimeInputButtonIconType }
+  | (ButtonType & { icon?: TimeInputButtonIconType })
+  | ReactElement
+  | Icon;
+
 type TimeInputThemeType = {
   container?: BoxPartThemeType;
   value?: BoxPartThemeType;
@@ -384,7 +393,7 @@ type TimeInputThemeType = {
       placeholder?: TextThemeType;
       active?: BoxStateThemeType & TextThemeType;
     };
-  dropButton?: string | (ButtonType & { icon?: React.ReactNode | Icon });
+  dropButton?: TimeInputDropButtonThemeType;
   drop?: BoxPartThemeType & {
     gap?: GapType;
     column?: BoxPartThemeType & {

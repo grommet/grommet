@@ -61,6 +61,13 @@ const getSectionOrder = (format, showSeconds) => {
   return numericSections;
 };
 
+const resolveDropButtonIcon = (icon) => {
+  if (React.isValidElement(icon)) return icon;
+  if (typeof icon === 'function' || icon?.$$typeof)
+    return React.createElement(icon);
+  return icon;
+};
+
 const buildPlaceholder = (sectionOrder) =>
   sectionOrder
     .map((section, index) => {
@@ -690,8 +697,31 @@ const TimeInput = forwardRef(
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
     const dropButtonTheme = theme.timeInput?.dropButton;
-    const dropButtonIcon =
-      typeof dropButtonTheme === 'object' ? dropButtonTheme.icon : undefined;
+    let dropButtonKind = 'toolbar';
+    let dropButtonIcon = <GrommetClockIcon />;
+
+    if (typeof dropButtonTheme === 'string') {
+      dropButtonKind = dropButtonTheme;
+    } else if (React.isValidElement(dropButtonTheme)) {
+      dropButtonIcon = dropButtonTheme;
+    } else if (
+      typeof dropButtonTheme === 'function' ||
+      dropButtonTheme?.$$typeof
+    ) {
+      dropButtonIcon = resolveDropButtonIcon(dropButtonTheme);
+    } else if (dropButtonTheme && typeof dropButtonTheme === 'object') {
+      const { icon, kind } = dropButtonTheme;
+      dropButtonIcon = resolveDropButtonIcon(icon ?? dropButtonIcon);
+
+      if (kind) {
+        dropButtonKind = kind;
+      } else {
+        const hasButtonTheme = Object.keys(dropButtonTheme).some(
+          (key) => key !== 'icon',
+        );
+        dropButtonKind = hasButtonTheme ? dropButtonTheme : 'toolbar';
+      }
+    }
 
     if (inline) {
       return (
@@ -842,8 +872,8 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                kind={dropButtonTheme || 'toolbar'}
-                icon={dropButtonIcon ?? <GrommetClockIcon />}
+                kind={dropButtonKind}
+                icon={dropButtonIcon}
                 disabled={disabled}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
