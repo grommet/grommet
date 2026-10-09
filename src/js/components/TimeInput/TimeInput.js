@@ -61,6 +61,23 @@ const getSectionOrder = (format, showSeconds) => {
   return numericSections;
 };
 
+const getContainerFill = (container = {}) => {
+  const fillWidth = container.width === undefined;
+  const fillHeight = container.height === undefined;
+
+  if (fillWidth && fillHeight) return true;
+  if (fillWidth) return 'horizontal';
+  if (fillHeight) return 'vertical';
+  return false;
+};
+
+const resolveDropButtonIcon = (icon) => {
+  if (React.isValidElement(icon)) return icon;
+  if (typeof icon === 'function' || icon?.$$typeof)
+    return React.createElement(icon);
+  return icon;
+};
+
 const buildPlaceholder = (sectionOrder) =>
   sectionOrder
     .map((section, index) => {
@@ -689,6 +706,33 @@ const TimeInput = forwardRef(
 
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
+    const containerTheme = theme.timeInput?.container;
+    const dropButtonTheme = theme.timeInput?.dropButton;
+    let dropButtonKind = 'toolbar';
+    let dropButtonIcon = <GrommetClockIcon aria-hidden="true" />;
+
+    if (typeof dropButtonTheme === 'string') {
+      dropButtonKind = dropButtonTheme;
+    } else if (React.isValidElement(dropButtonTheme)) {
+      dropButtonIcon = dropButtonTheme;
+    } else if (
+      typeof dropButtonTheme === 'function' ||
+      dropButtonTheme?.$$typeof
+    ) {
+      dropButtonIcon = resolveDropButtonIcon(dropButtonTheme);
+    } else if (dropButtonTheme && typeof dropButtonTheme === 'object') {
+      const { icon, kind } = dropButtonTheme;
+      dropButtonIcon = resolveDropButtonIcon(icon ?? dropButtonIcon);
+
+      if (kind) {
+        dropButtonKind = kind;
+      } else {
+        const hasButtonTheme = Object.keys(dropButtonTheme).some(
+          (key) => key !== 'icon',
+        );
+        dropButtonKind = hasButtonTheme ? dropButtonTheme : 'toolbar';
+      }
+    }
 
     if (inline) {
       return (
@@ -719,9 +763,10 @@ const TimeInput = forwardRef(
             ref={containerRef}
             direction="row"
             border={!plainProp}
-            fill
+            fill={getContainerFill(containerTheme)}
+            {...containerTheme}
             round={
-              theme.timeInput?.container?.round ||
+              theme.timeInput?.container?.round ??
               theme.global?.control?.border?.radius
             }
             disabled={disabled}
@@ -731,6 +776,10 @@ const TimeInput = forwardRef(
           >
             <StyledTimeInputField {...passThemeFlag}>
               <StyledTimeInputDisplay
+                {...theme.timeInput?.value}
+                align="center"
+                direction="row"
+                overflow="hidden"
                 role="group"
                 aria-label={groupLabel}
                 aria-labelledby={formFieldLabelId}
@@ -834,8 +883,8 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                kind="toolbar"
-                icon={<GrommetClockIcon />}
+                kind={dropButtonKind}
+                icon={dropButtonIcon}
                 disabled={disabled}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
