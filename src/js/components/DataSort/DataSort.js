@@ -28,8 +28,7 @@ const Content = ({ options: optionsArg }) => {
 
     if (optionsArg) {
       props = { options: optionsArg };
-    }
-    if (properties && Array.isArray(properties)) {
+    } else if (properties && Array.isArray(properties)) {
       props = { options: properties };
     } else if (properties && typeof properties === 'object') {
       props = {
