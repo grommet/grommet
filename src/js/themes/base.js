@@ -906,6 +906,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         //   extend: undefined,
         gap: 'small',
       },
+      // option: {
+      //   pad: undefined,
+      //   border: undefined,
+      //   round: undefined,
+      //   background: undefined,
+      //   hover: { background: undefined },
+      // },
     },
     clock: {
       analog: {
@@ -1287,6 +1294,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       gap: 'medium',
     },
     formField: {
+      // Deprecated - [inputname]: direct input-name keys such as textInput
+      // and checkBox are supported for compatibility. Prefer
+      // inputs.<inputName>.container and inputs.<inputName>.content so all
+      // input-specific styles share one namespace. The direct keys are adapted
+      // to these paths at runtime.
       // [inputname]: {
       //  container: {
       //    extend: undefined,
@@ -1314,10 +1326,25 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // checkBox: {
       //   pad: undefined,
       // },
+      // Named container/content parts accept background, border, elevation,
+      // height, margin, pad, round and width. Hover/error/disabled/readOnly
+      // states accept background, border, elevation, pad and round. Error can
+      // contain hover. Missing/undefined values inherit available fallbacks.
+      // Hover and error.hover accept false to disable the entire part hover;
+      // more-specific hover objects can override false. Upstream deepMerge
+      // can erase undefined values' fallbacks before FormField sees them.
+      // These are opt-in: keep legacy defaults below unchanged.
+      // container: {},
       content: {
         // margin: undefined,
         pad: 'small',
+        // background: undefined,
+        // hover: {},
+        // error: { hover: {} },
+        // disabled: {},
+        // readOnly: {},
       },
+      // inputs: { textInput: { container: {}, content: {} } },
       disabled: {
         background: {
           color: 'status-disabled',
@@ -2136,6 +2163,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       container: {
         gap: 'small',
       },
+      // option: {
+      //   pad: undefined,
+      //   border: undefined,
+      //   round: undefined,
+      //   background: undefined,
+      //   hover: { background: undefined },
+      // },
     },
     rangeInput: {
       disabled: {

@@ -340,6 +340,43 @@ interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
   };
 }
 
+type GroupOptionThemeType = Pick<
+  BoxProps,
+  'background' | 'border' | 'pad' | 'round'
+> & {
+  hover?: {
+    background?: BackgroundType;
+  };
+};
+
+export type BoxPartThemeType = Pick<
+  BoxProps,
+  | 'background'
+  | 'border'
+  | 'elevation'
+  | 'height'
+  | 'margin'
+  | 'pad'
+  | 'round'
+  | 'width'
+>;
+
+export type BoxStateThemeType = Pick<
+  BoxPartThemeType,
+  'background' | 'border' | 'elevation' | 'pad' | 'round'
+>;
+
+export type FormFieldStateThemeType = BoxStateThemeType;
+
+export type FormFieldContentThemeType = BoxPartThemeType & {
+  disabled?: FormFieldStateThemeType;
+  error?: FormFieldStateThemeType & {
+    hover?: FormFieldStateThemeType | false;
+  };
+  hover?: FormFieldStateThemeType | false;
+  readOnly?: FormFieldStateThemeType;
+};
+
 export interface ThemeType {
   global?: {
     active?: {
@@ -880,6 +917,7 @@ export interface ThemeType {
   };
   checkBoxGroup?: {
     container?: BoxProps;
+    option?: GroupOptionThemeType;
   };
   clock?: {
     analog?: {
@@ -1234,9 +1272,13 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
-    content?: {
-      margin?: MarginType;
-      pad?: PadType;
+    container?: FormFieldContentThemeType;
+    content?: FormFieldContentThemeType;
+    inputs?: {
+      [inputName: string]: {
+        container?: FormFieldContentThemeType;
+        content?: FormFieldContentThemeType;
+      };
     };
     disabled?: {
       background?: BackgroundType;
@@ -1299,20 +1341,35 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
+    /** @deprecated Use formField.inputs.checkBox.container/content. */
     checkBox?: ContainerExtend & { pad?: PadType };
+    /** @deprecated Use formField.inputs.checkBoxGroup.container/content. */
     checkBoxGroup?: ContainerExtend;
+    /** @deprecated Use formField.inputs.textArea.container/content. */
     textArea?: ContainerExtend;
+    /** @deprecated Use formField.inputs.textInput.container/content. */
     textInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.select.container/content. */
     select?: ContainerExtend;
+    /** @deprecated Use formField.inputs.maskedInput.container/content. */
     maskedInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.selectMultiple.container/content. */
     selectMultiple?: ContainerExtend;
+    /** @deprecated Use formField.inputs.dateInput.container/content. */
     dateInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.timeInput.container/content. */
     timeInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.fileInput.container/content. */
     fileInput?: ContainerExtend;
+    /** @deprecated Use formField.inputs.radioButton.container/content. */
     radioButton?: ContainerExtend;
+    /** @deprecated Use formField.inputs.radioButtonGroup.container/content. */
     radioButtonGroup?: ContainerExtend;
+    /** @deprecated Use formField.inputs.rangeSelector.container/content. */
     rangeSelector?: ContainerExtend;
+    /** @deprecated Use formField.inputs.starRating.container/content. */
     starRating?: ContainerExtend;
+    /** @deprecated Use formField.inputs.thumbsRating.container/content. */
     thumbsRating?: ContainerExtend;
   };
   grommet?: {
@@ -1963,6 +2020,7 @@ export interface ThemeType {
   };
   radioButtonGroup?: {
     container?: BoxProps;
+    option?: GroupOptionThemeType;
   };
   rangeInput?: {
     disabled?: {
