@@ -4577,6 +4577,7 @@ exports[`Data should render property label and return property value to view whe
                         >
                           <label
                             class="c20"
+                            for="_r_f_"
                             style="pointer-events: none;"
                           >
                             <div
@@ -4585,6 +4586,7 @@ exports[`Data should render property label and return property value to view whe
                               <input
                                 checked=""
                                 class="c23"
+                                id="_r_f_"
                                 inert=""
                                 tabindex="-1"
                                 type="checkbox"
@@ -4637,12 +4639,14 @@ exports[`Data should render property label and return property value to view whe
                   >
                     <label
                       class="c29"
+                      for="_r_g_"
                     >
                       <div
                         class="c21 c22"
                       >
                         <input
                           class="c23"
+                          id="_r_g_"
                           type="checkbox"
                         />
                         <div
@@ -4658,12 +4662,14 @@ exports[`Data should render property label and return property value to view whe
                     />
                     <label
                       class="c29"
+                      for="_r_h_"
                     >
                       <div
                         class="c21 c22"
                       >
                         <input
                           class="c23"
+                          id="_r_h_"
                           type="checkbox"
                         />
                         <div
@@ -4679,6 +4685,7 @@ exports[`Data should render property label and return property value to view whe
                     />
                     <label
                       class="c29"
+                      for="_r_i_"
                     >
                       <div
                         class="c21 c22"
@@ -4686,6 +4693,7 @@ exports[`Data should render property label and return property value to view whe
                         <input
                           checked=""
                           class="c23"
+                          id="_r_i_"
                           type="checkbox"
                         />
                         <div
@@ -4712,12 +4720,14 @@ exports[`Data should render property label and return property value to view whe
                     />
                     <label
                       class="c29"
+                      for="_r_j_"
                     >
                       <div
                         class="c21 c22"
                       >
                         <input
                           class="c23"
+                          id="_r_j_"
                           type="checkbox"
                         />
                         <div

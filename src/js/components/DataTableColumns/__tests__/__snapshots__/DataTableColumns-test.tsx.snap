@@ -436,7 +436,7 @@ exports[`DataTableColumns pinned 1`] = `
 <div
   aria-label="Order columns Tab Contents"
   class="c0"
-  id="_r_4_"
+  id="_r_d_"
   role="tabpanel"
 >
   <div
@@ -1327,7 +1327,7 @@ exports[`DataTableColumns remove column 2`] = `
 <div
   aria-label="Select columns Tab Contents"
   class="c0"
-  id="_r_2_"
+  id="_r_6_"
   role="tabpanel"
 >
   <div
@@ -1371,6 +1371,7 @@ exports[`DataTableColumns remove column 2`] = `
     >
       <label
         class="c8"
+        for="_r_7_"
       >
         <div
           class="c9 c10"
@@ -1378,6 +1379,7 @@ exports[`DataTableColumns remove column 2`] = `
           <input
             checked=""
             class="c11"
+            id="_r_7_"
             type="checkbox"
           />
           <div
@@ -1404,6 +1406,7 @@ exports[`DataTableColumns remove column 2`] = `
       />
       <label
         class="c8"
+        for="_r_8_"
       >
         <div
           class="c9 c10"
@@ -1411,6 +1414,7 @@ exports[`DataTableColumns remove column 2`] = `
           <input
             checked=""
             class="c11"
+            id="_r_8_"
             type="checkbox"
           />
           <div
@@ -1437,6 +1441,7 @@ exports[`DataTableColumns remove column 2`] = `
       />
       <label
         class="c8"
+        for="_r_9_"
       >
         <div
           class="c9 c10"
@@ -1444,6 +1449,7 @@ exports[`DataTableColumns remove column 2`] = `
           <input
             checked=""
             class="c11"
+            id="_r_9_"
             type="checkbox"
           />
           <div
@@ -2313,6 +2319,7 @@ exports[`DataTableColumns renders 2`] = `
     >
       <label
         class="c8"
+        for="_r_1_"
       >
         <div
           class="c9 c10"
@@ -2320,6 +2327,7 @@ exports[`DataTableColumns renders 2`] = `
           <input
             checked=""
             class="c11"
+            id="_r_1_"
             type="checkbox"
           />
           <div
@@ -2346,6 +2354,7 @@ exports[`DataTableColumns renders 2`] = `
       />
       <label
         class="c8"
+        for="_r_2_"
       >
         <div
           class="c9 c10"
@@ -2353,6 +2362,7 @@ exports[`DataTableColumns renders 2`] = `
           <input
             checked=""
             class="c11"
+            id="_r_2_"
             type="checkbox"
           />
           <div
@@ -3520,7 +3530,7 @@ exports[`DataTableColumns search 2`] = `
 <div
   aria-label="Select columns Tab Contents"
   class="c0"
-  id="_r_3_"
+  id="_r_a_"
   role="tabpanel"
 >
   <div
@@ -3564,6 +3574,7 @@ exports[`DataTableColumns search 2`] = `
     >
       <label
         class="c8"
+        for="_r_b_"
       >
         <div
           class="c9 c10"
@@ -3571,6 +3582,7 @@ exports[`DataTableColumns search 2`] = `
           <input
             checked=""
             class="c11"
+            id="_r_b_"
             type="checkbox"
           />
           <div
@@ -3597,6 +3609,7 @@ exports[`DataTableColumns search 2`] = `
       />
       <label
         class="c8"
+        for="_r_c_"
       >
         <div
           class="c9 c10"
@@ -3604,6 +3617,7 @@ exports[`DataTableColumns search 2`] = `
           <input
             checked=""
             class="c11"
+            id="_r_c_"
             type="checkbox"
           />
           <div
@@ -4177,7 +4191,7 @@ exports[`DataTableColumns should use theme icons 1`] = `
 <div
   aria-label="Order columns Tab Contents"
   class="c0"
-  id="_r_1_"
+  id="_r_3_"
   role="tabpanel"
 >
   <div
@@ -4594,7 +4608,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 <div
   aria-label="Select columns Tab Contents"
   class="c0"
-  id="_r_5_"
+  id="_r_k_"
   role="tabpanel"
 >
   <div
@@ -4638,6 +4652,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
     >
       <label
         class="c8"
+        for="_r_l_"
       >
         <div
           class="c9 c10"
@@ -4645,6 +4660,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
           <input
             checked=""
             class="c11"
+            id="_r_l_"
             type="checkbox"
           />
           <div
@@ -4671,6 +4687,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
       />
       <label
         class="c8"
+        for="_r_m_"
       >
         <div
           class="c9 c10"
@@ -4678,6 +4695,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
           <input
             checked=""
             class="c11"
+            id="_r_m_"
             type="checkbox"
           />
           <div
@@ -4704,6 +4722,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
       />
       <label
         class="c8"
+        for="_r_n_"
       >
         <div
           class="c9 c10"
@@ -4711,6 +4730,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
           <input
             checked=""
             class="c11"
+            id="_r_n_"
             type="checkbox"
           />
           <div
@@ -4741,7 +4761,7 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 <div
   aria-label="Order columns Tab Contents"
   class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bLejsM"
-  id="_r_5_"
+  id="_r_k_"
   role="tabpanel"
 >
   <div
