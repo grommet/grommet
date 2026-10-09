@@ -572,7 +572,8 @@ const TimeInputPopup = ({
   }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
 
   const dropTheme = theme.timeInput?.drop;
-  const dropWidth = dropTheme.width;
+  const { column, option, ...dropBoxTheme } = dropTheme;
+  const dropWidth = dropBoxTheme.width;
   const popupWidth =
     typeof dropWidth === 'object'
       ? { ...dropWidth, max: dropWidth.max ?? '100%' }
@@ -585,9 +586,9 @@ const TimeInputPopup = ({
       aria-label={inline ? undefined : label}
       direction="row"
       width={popupWidth}
-      {...dropTheme}
-      height={inline ? '100%' : dropTheme.height}
-      pad={inline ? 'none' : dropTheme.pad}
+      {...dropBoxTheme}
+      height={inline ? '100%' : dropBoxTheme.height}
+      pad={inline ? 'none' : dropBoxTheme.pad}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}
       onPointerCancelCapture={clearInteractionInProgress}
