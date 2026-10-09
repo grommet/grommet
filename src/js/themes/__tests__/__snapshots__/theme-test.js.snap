@@ -35,7 +35,9 @@ exports[`Grommet ThemeContext theme 1`] = `
   <a
     class="c1"
   >
-    Hello
+    <span>
+      Hello
+    </span>
   </a>
 </div>
 `;
@@ -339,7 +341,9 @@ exports[`Grommet custom theme 1`] = `
         <span
           class="c5"
         />
-        Add
+        <span>
+          Add
+        </span>
       </span>
     </a>
     <a
@@ -363,7 +367,9 @@ exports[`Grommet custom theme 1`] = `
         <span
           class="c5"
         />
-        Add
+        <span>
+          Add
+        </span>
       </span>
     </a>
   </div>
@@ -391,7 +397,9 @@ exports[`Grommet custom theme 1`] = `
         <span
           class="c5"
         />
-        Add
+        <span>
+          Add
+        </span>
       </span>
     </a>
     <a
@@ -415,7 +423,9 @@ exports[`Grommet custom theme 1`] = `
         <span
           class="c5"
         />
-        Add
+        <span>
+          Add
+        </span>
       </span>
     </a>
   </div>
@@ -1506,13 +1516,17 @@ exports[`Grommet grommet theme 1`] = `
     class="c1"
     type="button"
   >
-    test
+    <span>
+      test
+    </span>
   </button>
   <button
     class="c2"
     type="button"
   >
-    test
+    <span>
+      test
+    </span>
   </button>
 </div>
 `;
