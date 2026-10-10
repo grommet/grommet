@@ -77,10 +77,13 @@ const ContainerBox = styled(Box)`
   }
 `;
 
-const StyledPasswordToggleButton = styled(Button)`
+const StyledInlineActionButton = styled(Button)`
   padding-top: 0;
   padding-bottom: 0;
 `;
+
+const isEmptyValue = (value) =>
+  value === undefined || value === null || value === '';
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
 
@@ -88,6 +91,7 @@ const TextInput = forwardRef(
   (
     {
       a11yTitle,
+      clear,
       copy,
       defaultSuggestion,
       defaultValue,
@@ -143,6 +147,11 @@ const TextInput = forwardRef(
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
     const [passwordRevealed, setPasswordRevealed] = useState(false);
+    // uncontrolled inputs outside a Form don't re-render on change, so track
+    // emptiness here to toggle the clear button
+    const [uncontrolledHasValue, setUncontrolledHasValue] = useState(
+      () => !isEmptyValue(defaultValue),
+    );
 
     const handleSuggestionSelect = useMemo(
       () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
@@ -173,6 +182,10 @@ const TextInput = forwardRef(
       id: 'textInput.hidePassword',
       messages,
     });
+    const clearMessage = format({
+      id: 'textInput.clear',
+      messages,
+    });
 
     const handleCopyClick = async (event) => {
       // uncontrolled inputs keep their current text on the DOM node, not
@@ -187,6 +200,19 @@ const TextInput = forwardRef(
 
     const onBlurCopy = () => {
       if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+    };
+
+    const handleClearClick = () => {
+      // Set the value natively so React emits onChange for controlled,
+      // uncontrolled, and Form-managed inputs alike.
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value',
+      ).set;
+      nativeInputValueSetter.call(inputRef.current, '');
+      inputRef.current.dispatchEvent(new Event('input', { bubbles: true }));
+      // the clear button unmounts once the value is empty
+      inputRef.current.focus();
     };
 
     const authoredType = typeProp || (password ? 'password' : undefined);
@@ -353,6 +379,10 @@ const TextInput = forwardRef(
         handleSuggestionSelect(adjustedEvent);
       }
       setValue(suggestion);
+
+      if (clear) {
+        setUncontrolledHasValue(!isEmptyValue(suggestion));
+      }
     };
 
     const onNextSuggestion = useCallback(
@@ -528,6 +558,7 @@ const TextInput = forwardRef(
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
     const showPasswordIcon = theme.textInput?.icons?.showPassword;
     const hidePasswordIcon = theme.textInput?.icons?.hidePassword;
+    const clearIcon = theme.textInput?.icons?.clear;
     let inputType = authoredType;
     if (passwordToggle) {
       inputType = passwordRevealed ? 'text' : 'password';
@@ -546,8 +577,26 @@ const TextInput = forwardRef(
       />
     );
 
+    const clearable = clear && !readOnly;
+    const hasClearableValue =
+      value !== undefined && value !== null
+        ? value !== ''
+        : uncontrolledHasValue;
+
+    const clearButton =
+      clearable && hasClearableValue ? (
+        <StyledInlineActionButton
+          disabled={disabled}
+          kind="toolbar"
+          icon={renderIcon(clearIcon, { 'aria-hidden': true })}
+          onClick={handleClearClick}
+          aria-label={clearMessage}
+          {...passThemeFlag}
+        />
+      ) : undefined;
+
     const passwordToggleButton = passwordToggle ? (
-      <StyledPasswordToggleButton
+      <StyledInlineActionButton
         disabled={disabled}
         kind="toolbar"
         icon={
@@ -564,11 +613,13 @@ const TextInput = forwardRef(
     ) : undefined;
 
     const copyButton = readOnlyCopy || copy ? copyButtonElement : undefined;
-    // Keep state-changing password visibility before the non-destructive
-    // copy action.
+    // Order: clear sits next to the text, then password visibility, then the
+    // non-destructive copy action. A clearable input keeps the group even
+    // while empty so the field layout doesn't shift as the button toggles.
     const actionsGroup =
-      passwordToggleButton || copyButton ? (
+      clearable || passwordToggleButton || copyButton ? (
         <StyledActionsGroup {...passThemeFlag}>
+          {clearButton}
           {passwordToggleButton}
           {copyButton}
         </StyledActionsGroup>
@@ -678,6 +729,9 @@ const TextInput = forwardRef(
                       openDrop();
                     }
                     setValue(event.target.value);
+                    if (clear) {
+                      setUncontrolledHasValue(!!event.target.value);
+                    }
                     setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);
                   }
