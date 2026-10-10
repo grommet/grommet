@@ -2398,6 +2398,7 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     icons?: {
+      clear?: React.ReactNode | Icon;
       copy?: React.ReactNode | Icon;
       hidePassword?: React.ReactNode | Icon;
       showPassword?: React.ReactNode | Icon;

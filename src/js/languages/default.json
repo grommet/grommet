@@ -230,6 +230,7 @@
     }
   },
   "textInput": {
+    "clear": "Clear",
     "enterSelect": "(Press Enter to Select)",
     "hidePassword": "Hide password",
     "showPassword": "Show password",
