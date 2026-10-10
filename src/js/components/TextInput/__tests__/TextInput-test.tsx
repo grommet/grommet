@@ -14,6 +14,7 @@ import '@testing-library/jest-dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
+import { Form } from '../../Form';
 import { TextInput } from '..';
 import { Keyboard } from '../../Keyboard';
 import { Text } from '../../Text';
@@ -1119,6 +1120,150 @@ describe('TextInput', () => {
 
     await user.click(toggleButton);
     expect(input).toHaveAttribute('type', 'text');
+  });
+
+  test('clear should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput defaultValue="test" clear aria-label="Value" />
+      </Grommet>,
+    );
+
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  test('shows clear button only when the input has a value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput clear aria-label="Value" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+
+    await user.type(screen.getByLabelText('Value'), 'a');
+    expect(screen.getByRole('button', { name: 'Clear' })).toBeInTheDocument();
+
+    await user.clear(screen.getByLabelText('Value'));
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('clear empties a controlled value through onChange', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    const ControlledInput = () => {
+      const [value, setValue] = React.useState('test');
+      return (
+        <TextInput
+          value={value}
+          onChange={(event) => {
+            onChange(event.target.value);
+            setValue(event.target.value);
+          }}
+          clear
+          aria-label="Value"
+        />
+      );
+    };
+
+    render(
+      <Grommet>
+        <ControlledInput />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Clear' }));
+
+    const input = screen.getByLabelText('Value');
+    expect(onChange).toHaveBeenCalledWith('');
+    expect(input).toHaveValue('');
+    expect(input).toHaveFocus();
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('clear empties an uncontrolled value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput defaultValue="test" clear aria-label="Value" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Clear' }));
+
+    expect(screen.getByLabelText('Value')).toHaveValue('');
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('clear updates Form value', async () => {
+    const user = userEvent.setup();
+    const onFormChange = jest.fn();
+
+    render(
+      <Grommet>
+        <Form onChange={onFormChange}>
+          <TextInput name="query" clear aria-label="Query" />
+        </Form>
+      </Grommet>,
+    );
+
+    await user.type(screen.getByLabelText('Query'), 'abc');
+    await user.click(screen.getByRole('button', { name: 'Clear' }));
+
+    expect(onFormChange).toHaveBeenLastCalledWith(
+      { query: '' },
+      expect.anything(),
+    );
+    expect(screen.getByLabelText('Query')).toHaveValue('');
+  });
+
+  test('does not render clear button when read only', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" clear readOnly aria-label="Value" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('places clear before password toggle and copy', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" clear copy password aria-label="Password" />
+      </Grommet>,
+    );
+
+    const clearButton = screen.getByRole('button', { name: 'Clear' });
+    const passwordButton = screen.getByRole('button', {
+      name: 'Show password',
+    });
+    const copyButton = screen.getByRole('button', {
+      name: 'Copy to clipboard',
+    });
+
+    expect(
+      clearButton.compareDocumentPosition(passwordButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      passwordButton.compareDocumentPosition(copyButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
   });
 
   test('read only copy theme icon', async () => {
