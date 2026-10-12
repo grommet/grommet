@@ -53,6 +53,7 @@ const findStepById = (steps, id) => {
 };
 
 const formHasErrors = (result) =>
+  result?.form?.ok === false ||
   Object.keys(result?.form?.errors || {}).length > 0;
 
 const statusFromStep = (step, validation, completed) => {
