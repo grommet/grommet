@@ -72,9 +72,13 @@ const getContainerFill = (container = {}) => {
 };
 
 const resolveDropButtonIcon = (icon) => {
-  if (React.isValidElement(icon)) return icon;
+  if (React.isValidElement(icon)) {
+    return React.cloneElement(icon, {
+      'aria-hidden': icon.props['aria-hidden'] ?? true,
+    });
+  }
   if (typeof icon === 'function' || icon?.$$typeof)
-    return React.createElement(icon);
+    return React.createElement(icon, { 'aria-hidden': true });
   return icon;
 };
 

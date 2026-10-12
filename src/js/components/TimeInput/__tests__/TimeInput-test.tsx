@@ -79,7 +79,11 @@ describe('TimeInput', () => {
       timeInput: {
         dropButton: {
           kind: 'primary',
-          icon: <span>Custom primary icon</span>,
+          icon: (
+            <span aria-hidden={false} data-caller-prop="preserved">
+              Custom primary icon
+            </span>
+          ),
         },
       },
     };
@@ -92,9 +96,9 @@ describe('TimeInput', () => {
 
     const dropButton = screen.getByRole('button', { name: 'Choose time' });
     expect(dropButton).toHaveStyleRule('background-color', '#445566');
-    expect(
-      within(dropButton).getByText('Custom primary icon'),
-    ).toBeInTheDocument();
+    const customIcon = within(dropButton).getByText('Custom primary icon');
+    expect(customIcon).toHaveAttribute('aria-hidden', 'false');
+    expect(customIcon).toHaveAttribute('data-caller-prop', 'preserved');
   });
 
   test('accepts icon elements and components through dropButton.icon', () => {
@@ -111,9 +115,10 @@ describe('TimeInput', () => {
     );
 
     let dropButton = screen.getByRole('button', { name: 'Choose time' });
-    expect(
-      within(dropButton).getByText('Custom icon element'),
-    ).toBeInTheDocument();
+    const customIconElement = within(dropButton).getByText(
+      'Custom icon element',
+    );
+    expect(customIconElement).toHaveAttribute('aria-hidden', 'true');
 
     unmount();
 
@@ -128,7 +133,10 @@ describe('TimeInput', () => {
     );
 
     dropButton = screen.getByRole('button', { name: 'Choose time' });
-    expect(dropButton.querySelector('svg')).toBeInTheDocument();
+    expect(dropButton.querySelector('svg')).toHaveAttribute(
+      'aria-hidden',
+      'true',
+    );
 
     themedIconRender.unmount();
   });
