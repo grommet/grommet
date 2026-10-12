@@ -97,9 +97,11 @@ describe('TimeInput', () => {
     ).toBeInTheDocument();
   });
 
-  test('accepts standalone drop button icon elements and components', () => {
+  test('accepts icon elements and components through dropButton.icon', () => {
     const elementTheme: ThemeType = {
-      timeInput: { dropButton: <span>Standalone icon element</span> },
+      timeInput: {
+        dropButton: { icon: <span>Custom icon element</span> },
+      },
     };
 
     const { unmount } = render(
@@ -110,7 +112,7 @@ describe('TimeInput', () => {
 
     let dropButton = screen.getByRole('button', { name: 'Choose time' });
     expect(
-      within(dropButton).getByText('Standalone icon element'),
+      within(dropButton).getByText('Custom icon element'),
     ).toBeInTheDocument();
 
     unmount();
@@ -129,19 +131,6 @@ describe('TimeInput', () => {
     expect(dropButton.querySelector('svg')).toBeInTheDocument();
 
     themedIconRender.unmount();
-
-    const componentTheme: ThemeType = {
-      timeInput: { dropButton: GrommetClockIcon },
-    };
-
-    render(
-      <Grommet theme={componentTheme}>
-        <TimeInput />
-      </Grommet>,
-    );
-
-    dropButton = screen.getByRole('button', { name: 'Choose time' });
-    expect(dropButton.querySelector('svg')).toBeInTheDocument();
   });
 
   test('accepts defaultValue without seconds (HH:mm)', () => {

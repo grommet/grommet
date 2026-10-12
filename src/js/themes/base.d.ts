@@ -381,9 +381,7 @@ type TimeInputButtonIconType = React.ReactNode | Icon;
 type TimeInputDropButtonThemeType =
   | string
   | { kind: string; icon?: TimeInputButtonIconType }
-  | (ButtonType & { icon?: TimeInputButtonIconType })
-  | ReactElement
-  | Icon;
+  | (ButtonType & { icon?: TimeInputButtonIconType });
 
 type TimeInputThemeType = {
   container?: BoxPartThemeType;
