@@ -723,16 +723,14 @@ const TimeInput = forwardRef(
       !React.isValidElement(dropButtonTheme) &&
       !dropButtonTheme.$$typeof
     ) {
-      const { icon, kind } = dropButtonTheme;
+      const { icon, kind, ...buttonTheme } = dropButtonTheme;
       dropButtonIcon = resolveDropButtonIcon(icon ?? dropButtonIcon);
 
       if (kind) {
         dropButtonKind = kind;
       } else {
-        const hasButtonTheme = Object.keys(dropButtonTheme).some(
-          (key) => key !== 'icon',
-        );
-        dropButtonKind = hasButtonTheme ? dropButtonTheme : 'toolbar';
+        const hasButtonTheme = Object.keys(buttonTheme).length > 0;
+        dropButtonKind = hasButtonTheme ? buttonTheme : 'toolbar';
       }
     }
 
