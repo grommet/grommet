@@ -18,9 +18,11 @@ import '@testing-library/jest-dom';
 import { AnnounceContext } from '../../../contexts/AnnounceContext';
 import { createPortal } from '../../../utils/portal';
 import { ThemeType } from '../../../themes';
+import { Box } from '../../Box';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
 import { Grommet } from '../../Grommet';
+import { Layer } from '../../Layer';
 import { TimeInput } from '..';
 
 const getSegment = (name: 'hours' | 'minutes' | 'seconds' | 'meridiem') =>
@@ -46,6 +48,32 @@ describe('TimeInput', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('works correctly nested inside a modal Layer', async () => {
+    const user = userEvent.setup();
+
+    const { container } = render(
+      <Grommet>
+        <Layer modal>
+          <Box pad="medium" gap="medium" width="medium">
+            <TimeInput format="24" defaultValue="10:15:20" />
+          </Box>
+        </Layer>
+      </Grommet>,
+    );
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+
+    const trigger = screen.getByRole('button', { name: 'Choose time' });
+    await user.click(trigger);
+
+    const dialog = screen.getByRole('dialog', { name: 'Choose time' });
+    const hourOption = within(dialog).getByRole('option', { name: '11 hours' });
+    await user.click(hourOption);
+
+    expect(getDisplayInput()).toHaveValue('11:15');
   });
 
   test('accepts defaultValue without seconds (HH:mm)', () => {
