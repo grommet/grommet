@@ -23,6 +23,7 @@ export const WizardProgress = ({
     goTo,
     showProgress,
     stepStates,
+    stepErrorMessages,
     messages,
   } = useWizard();
 
@@ -44,7 +45,7 @@ export const WizardProgress = ({
     };
     if (step.disabledReason) mapped.disabledReason = step.disabledReason;
     if (step['aria-label']) mapped['aria-label'] = step['aria-label'];
-    if (step.errorMessage) mapped.errorMessage = step.errorMessage;
+    mapped.errorMessage = stepErrorMessages[step.id];
     if (step.children && step.children.length) {
       mapped.children = step.children.map((child) => ({
         id: child.id,
@@ -55,7 +56,7 @@ export const WizardProgress = ({
           ? { disabledReason: child.disabledReason }
           : {}),
         ...(child['aria-label'] ? { 'aria-label': child['aria-label'] } : {}),
-        ...(child.errorMessage ? { errorMessage: child.errorMessage } : {}),
+        errorMessage: stepErrorMessages[child.id],
       }));
     }
     return mapped;

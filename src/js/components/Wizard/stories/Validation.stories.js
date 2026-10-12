@@ -18,7 +18,7 @@ const validatePassword = (password) => {
   return undefined;
 };
 
-const Validation = () => {
+const ValidationExample = () => {
   const [result, setResult] = useState(null);
 
   const steps = [
@@ -83,6 +83,8 @@ const Validation = () => {
       id: 'confirm',
       title: 'Confirm',
       description: 'Ready to submit.',
+      skippable: true,
+      validate: (value) => validateEmail(value.email),
       render: (step, api) => (
         <Paragraph>Confirm sign-up for {api.formValue.email}.</Paragraph>
       ),
@@ -95,6 +97,7 @@ const Validation = () => {
         aria-label="Sign up"
         title="Create your account"
         showProgress="vertical"
+        clickableSteps
         steps={steps}
         defaultValue={{ email: '', password: '' }}
         onComplete={({ value }) => setResult({ status: 'complete', value })}
@@ -112,12 +115,11 @@ const Validation = () => {
   );
 };
 
-Validation.args = {
-  full: true,
-};
-
 export default {
   title: 'Layout/Wizard/Validation',
 };
 
-export { Validation };
+export const Validation = {
+  args: { full: true },
+  render: () => <ValidationExample />,
+};

@@ -41,10 +41,16 @@ export interface WizardStep<TValue = Record<string, any>> {
     | { error?: string }
     | Promise<boolean | string | void | { error?: string }>;
   nextStep?: (value: TValue) => string | undefined | null;
+  /** Allows forward navigation and completion after failed validation,
+   * without marking this step completed. */
   skippable?: boolean;
+  /** Overrides the displayed status, not validation or completion results.
+   * disabled: true takes precedence. */
   status?: WizardStepStatus;
   disabled?: boolean;
   disabledReason?: string;
+  /** Overrides the stepper's validation message. An empty string suppresses
+   * generated text. Form failures do not generate a stepper message. */
   errorMessage?: string;
   children?: WizardStep<TValue>[];
   'aria-label'?: string;
@@ -91,6 +97,8 @@ export interface WizardProps<TValue = Record<string, any>> {
   form?: boolean;
   showProgress?: WizardShowProgress;
   onStepChange?: (event: StepChangeEvent) => void;
+  /** completedSteps excludes failed and skipped steps. Completion validates
+   * the current step, not every earlier step. */
   onComplete?: (event: { value: TValue; completedSteps: string[] }) => void;
   onCancel?: (event: { value: TValue; reason: 'user' }) => void;
   renderStep?: (
@@ -122,6 +130,9 @@ export interface WizardContextValue<TValue = Record<string, any>> {
   currentStepObj?: WizardStep<TValue>;
   totalSteps: number;
   stepStates: Record<string, WizardStepStatus>;
+  /** Resolved stepper messages, including developer overrides, for steps
+   * whose resolved status is error. */
+  stepErrorMessages: Record<string, string | undefined>;
   form: boolean;
   formValue: TValue;
   setFormValue: (next: TValue | ((prev: TValue) => TValue)) => void;
