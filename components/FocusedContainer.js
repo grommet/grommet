@@ -5,6 +5,7 @@ exports.FocusedContainer = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _utils = require("../utils");
 var _RootsContext = require("../contexts/RootsContext");
+var _useIsomorphicLayoutEffect = require("../utils/use-isomorphic-layout-effect");
 var _excluded = ["hidden", "restrictScroll", "children", "trapFocus"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
@@ -51,7 +52,7 @@ var FocusedContainer = exports.FocusedContainer = function FocusedContainer(_ref
   // set this to true so handleTrapFocus doesn't focus the element.
   var ignoreUtilFocusRef = (0, _react.useRef)(false);
   var lastFocusRef = (0, _react.useRef)(null);
-  (0, _react.useEffect)(function () {
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
     var container = ref.current;
     var roots = contextRoots.current;
     var attemptFocus = function attemptFocus(element) {

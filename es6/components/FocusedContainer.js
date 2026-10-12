@@ -6,6 +6,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { useEffect, useRef, useState } from 'react';
 import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext, useRoots } from '../contexts/RootsContext';
+import { useLayoutEffect } from '../utils/use-isomorphic-layout-effect';
 var isFocusable = function isFocusable(element) {
   if ((element == null ? void 0 : element.tabIndex) < 0 || element != null && element.disabled) {
     return false;
@@ -47,7 +48,7 @@ export var FocusedContainer = function FocusedContainer(_ref) {
   // set this to true so handleTrapFocus doesn't focus the element.
   var ignoreUtilFocusRef = useRef(false);
   var lastFocusRef = useRef(null);
-  useEffect(function () {
+  useLayoutEffect(function () {
     var container = ref.current;
     var roots = contextRoots.current;
     var attemptFocus = function attemptFocus(element) {
