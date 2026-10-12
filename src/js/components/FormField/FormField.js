@@ -757,6 +757,7 @@ const FormField = forwardRef(
         style={outerStyle}
         containerFocus={containerFocus} // internal prop
         allowHover={allowHover} // internal prop
+        onFocusCapture={() => setFocusIndicator(true)}
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {

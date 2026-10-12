@@ -25,6 +25,7 @@ import { Form } from '../../Form';
 import { FormField } from '../../FormField';
 import { Grommet } from '../../Grommet';
 import { Layer } from '../../Layer';
+import { TextInput } from '../../TextInput';
 import { TimeInput } from '..';
 
 const getSegment = (name: 'hours' | 'minutes' | 'seconds' | 'meridiem') =>
@@ -2899,6 +2900,7 @@ describe('TimeInput', () => {
               validateOn="blur"
             >
               <TimeInput id="time-focus" name="time" format="24" />
+              <TextInput aria-label="Within field" />
             </FormField>
             <Button label="After field" />
           </Form>
@@ -2917,10 +2919,26 @@ describe('TimeInput', () => {
       expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
       expect(indicator).not.toHaveStyleRule('border-color', '#123456');
       expect(validate).not.toHaveBeenCalled();
+      await user.tab();
+      expect(
+        screen.getByRole('textbox', { name: 'Within field' }),
+      ).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      expect(validate).not.toHaveBeenCalled();
+      await user.tab({ shift: true });
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
       await user.tab({ shift: true });
       expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveFocus();
       expect(indicator).toHaveStyleRule('border-color', '#123456');
       await user.tab();
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(
+        screen.getByRole('textbox', { name: 'Within field' }),
+      ).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
       await user.tab();
       expect(screen.getByRole('button', { name: 'After field' })).toHaveFocus();
       await waitFor(() => expect(validate).toHaveBeenCalled());
