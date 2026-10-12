@@ -334,7 +334,7 @@ var formatSectionText = function formatSectionText(section, value) {
   return (0, _dates.pad)(value);
 };
 var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
-  var _theme$dateTimeInput, _theme$global$edgeSiz, _theme$global$edgeSiz2, _theme$dateTimeInput2, _theme$dateTimeInput3, _theme$dateTimeInput4, _theme$dateTimeInput5, _theme$calendar, _theme$dateTimeInput6, _theme$dateTimeInput7, _theme$dateTimeInput8, _theme$dateTimeInput9;
+  var _theme$dateTimeInput, _theme$global$edgeSiz, _theme$global$edgeSiz2, _theme$dateTimeInput2, _theme$dateTimeInput3, _theme$dateTimeInput4, _theme$dateTimeInput5, _theme$dateTimeInput6, _theme$calendar, _theme$dateTimeInput7, _theme$dateTimeInput8, _theme$dateTimeInput9, _theme$dateTimeInput0;
   var defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     format = _ref.format,
@@ -955,29 +955,34 @@ var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(
     "aria-label": groupLabel,
     "aria-labelledby": formFieldLabelId,
     direction: "row",
+    cssGap: true,
     pad: (_theme$dateTimeInput3 = theme.dateTimeInput) == null || (_theme$dateTimeInput3 = _theme$dateTimeInput3.drop) == null ? void 0 : _theme$dateTimeInput3.pad,
-    gap: (_theme$dateTimeInput4 = theme.dateTimeInput) == null || (_theme$dateTimeInput4 = _theme$dateTimeInput4.drop) == null ? void 0 : _theme$dateTimeInput4.gap
+    gap: (_theme$dateTimeInput4 = theme.dateTimeInput) == null || (_theme$dateTimeInput4 = _theme$dateTimeInput4.drop) == null ? void 0 : _theme$dateTimeInput4.gap,
+    height: (_theme$dateTimeInput5 = theme.dateTimeInput) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.drop) == null ? void 0 : _theme$dateTimeInput5.height
   }, /*#__PURE__*/_react["default"].createElement(_ThemeContext.ThemeContext.Extend, {
     value: {
       calendar: {
         day: {
           selected: {
-            background: ((_theme$dateTimeInput5 = theme.dateTimeInput) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.calendar) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.day) == null || (_theme$dateTimeInput5 = _theme$dateTimeInput5.selected) == null ? void 0 : _theme$dateTimeInput5.background) || ((_theme$calendar = theme.calendar) == null || (_theme$calendar = _theme$calendar.day) == null || (_theme$calendar = _theme$calendar.selected) == null ? void 0 : _theme$calendar.background)
+            background: ((_theme$dateTimeInput6 = theme.dateTimeInput) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.calendar) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.day) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.selected) == null ? void 0 : _theme$dateTimeInput6.background) || ((_theme$calendar = theme.calendar) == null || (_theme$calendar = _theme$calendar.day) == null || (_theme$calendar = _theme$calendar.selected) == null ? void 0 : _theme$calendar.background)
           }
         }
       }
     }
+  }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    width: "medium",
+    flex: false
   }, /*#__PURE__*/_react["default"].createElement(_Calendar2.Calendar, {
     date: getCalendarDate(sections),
     initialFocus: inline ? undefined : 'days',
-    onSelect: disabled || readOnly ? undefined : handleCalendarSelect
-  })), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    onSelect: disabled || readOnly ? undefined : handleCalendarSelect,
+    fill: true
+  }))), /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     alignSelf: "stretch",
-    flex: false,
     border: {
       side: 'start',
-      color: (_theme$dateTimeInput6 = theme.dateTimeInput) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.drop) == null || (_theme$dateTimeInput6 = _theme$dateTimeInput6.border) == null ? void 0 : _theme$dateTimeInput6.color,
-      size: (_theme$dateTimeInput7 = theme.dateTimeInput) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.drop) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.border) == null ? void 0 : _theme$dateTimeInput7.size
+      color: (_theme$dateTimeInput7 = theme.dateTimeInput) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.drop) == null || (_theme$dateTimeInput7 = _theme$dateTimeInput7.border) == null ? void 0 : _theme$dateTimeInput7.color,
+      size: (_theme$dateTimeInput8 = theme.dateTimeInput) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.drop) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.border) == null ? void 0 : _theme$dateTimeInput8.size
     }
   }), /*#__PURE__*/_react["default"].createElement(_TimeInput.TimeInput, {
     inline: true,
@@ -990,7 +995,8 @@ var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(
     disabled: disabled,
     readOnly: readOnly,
     onChange: disabled || readOnly ? undefined : handleTimeSelect,
-    onPartialChange: disabled || readOnly ? undefined : handleTimePartialChange
+    onPartialChange: disabled || readOnly ? undefined : handleTimePartialChange,
+    fill: true
   }));
   if (inline) {
     return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("input", _extends({}, rest, {
@@ -1011,7 +1017,7 @@ var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(
     direction: "row",
     border: !plainProp,
     fill: true,
-    round: (_theme$dateTimeInput8 = theme.dateTimeInput) == null || (_theme$dateTimeInput8 = _theme$dateTimeInput8.container) == null ? void 0 : _theme$dateTimeInput8.round,
+    round: (_theme$dateTimeInput9 = theme.dateTimeInput) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.container) == null ? void 0 : _theme$dateTimeInput9.round,
     disabled: disabled,
     readOnlyProp: readOnly,
     focusIndicator: focusIndicatorProp != null ? focusIndicatorProp : true
@@ -1079,7 +1085,7 @@ var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(
     icon: /*#__PURE__*/_react["default"].createElement(CalendarIcon, null),
     plain: true,
     disabled: disabled,
-    margin: (_theme$dateTimeInput9 = theme.dateTimeInput) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.button) == null ? void 0 : _theme$dateTimeInput9.margin,
+    margin: (_theme$dateTimeInput0 = theme.dateTimeInput) == null || (_theme$dateTimeInput0 = _theme$dateTimeInput0.button) == null ? void 0 : _theme$dateTimeInput0.margin,
     "aria-label": formatMessage({
       id: 'dateTimeInput.chooseDateTime',
       messages: messages

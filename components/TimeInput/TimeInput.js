@@ -20,7 +20,8 @@ var _propTypes = require("./propTypes");
 var _useSectionedTimeField = require("./useSectionedTimeField");
 var _utils2 = require("./utils");
 var _excluded = ["defaultValue", "disabled", "focusOnOpen", "format", "id", "inline", "messages", "minuteStep", "name", "onChange", "onPartialChange", "readOnly", "showSeconds", "value"],
-  _excluded2 = ["plain", "focusIndicator", "aria-describedby", "aria-invalid"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+  _excluded2 = ["plain", "focusIndicator", "aria-describedby", "aria-invalid"],
+  _excluded3 = ["icon", "kind"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -35,6 +36,29 @@ var getSectionOrder = function getSectionOrder(format, showSeconds) {
     return [].concat(numericSections, [_utils2.SECTION_PERIOD]);
   }
   return numericSections;
+};
+var getContainerFill = function getContainerFill(container) {
+  if (container === void 0) {
+    container = {};
+  }
+  var fillWidth = container.width === undefined;
+  var fillHeight = container.height === undefined;
+  if (fillWidth && fillHeight) return true;
+  if (fillWidth) return 'horizontal';
+  if (fillHeight) return 'vertical';
+  return false;
+};
+var resolveDropButtonIcon = function resolveDropButtonIcon(icon) {
+  if (/*#__PURE__*/_react["default"].isValidElement(icon)) {
+    var _icon$props$ariaHidd;
+    return /*#__PURE__*/_react["default"].cloneElement(icon, {
+      'aria-hidden': (_icon$props$ariaHidd = icon.props['aria-hidden']) != null ? _icon$props$ariaHidd : true
+    });
+  }
+  if (typeof icon === 'function' || icon != null && icon.$$typeof) return /*#__PURE__*/_react["default"].createElement(icon, {
+    'aria-hidden': true
+  });
+  return icon;
 };
 var buildPlaceholder = function buildPlaceholder(sectionOrder) {
   return sectionOrder.map(function (section, index) {
@@ -58,7 +82,7 @@ var getDefaultFormat = function getDefaultFormat() {
 };
 var DEFAULT_FORMAT = getDefaultFormat();
 var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, refArg) {
-  var _theme$timeInput, _theme$global;
+  var _theme$timeInput, _theme$timeInput2, _theme$timeInput$cont, _theme$timeInput3, _theme$global, _theme$timeInput4;
   var defaultValue = _ref.defaultValue,
     disabled = _ref.disabled,
     _ref$focusOnOpen = _ref.focusOnOpen,
@@ -567,6 +591,26 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     });
   }, []);
   var showActiveSection = (segmentFocused || open) && !readOnly && !disabled;
+  var containerTheme = (_theme$timeInput = theme.timeInput) == null ? void 0 : _theme$timeInput.container;
+  var dropButtonTheme = (_theme$timeInput2 = theme.timeInput) == null ? void 0 : _theme$timeInput2.dropButton;
+  var dropButtonKind = 'toolbar';
+  var dropButtonIcon = /*#__PURE__*/_react["default"].createElement(_Clock.Clock, {
+    "aria-hidden": "true"
+  });
+  if (typeof dropButtonTheme === 'string') {
+    dropButtonKind = dropButtonTheme;
+  } else if (dropButtonTheme && typeof dropButtonTheme === 'object' && ! /*#__PURE__*/_react["default"].isValidElement(dropButtonTheme) && !dropButtonTheme.$$typeof) {
+    var icon = dropButtonTheme.icon,
+      kind = dropButtonTheme.kind,
+      buttonTheme = _objectWithoutPropertiesLoose(dropButtonTheme, _excluded3);
+    dropButtonIcon = resolveDropButtonIcon(icon != null ? icon : dropButtonIcon);
+    if (kind) {
+      dropButtonKind = kind;
+    } else {
+      var hasButtonTheme = Object.keys(buttonTheme).length > 0;
+      dropButtonKind = hasButtonTheme ? buttonTheme : 'toolbar';
+    }
+  }
   if (inline) {
     return /*#__PURE__*/_react["default"].createElement(_TimeInputPopup.TimeInputPopup, _extends({
       inline: true,
@@ -591,12 +635,16 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     ref: containerRef,
     direction: "row",
     border: !plainProp,
-    fill: true,
-    round: ((_theme$timeInput = theme.timeInput) == null || (_theme$timeInput = _theme$timeInput.container) == null ? void 0 : _theme$timeInput.round) || ((_theme$global = theme.global) == null || (_theme$global = _theme$global.control) == null || (_theme$global = _theme$global.border) == null ? void 0 : _theme$global.radius),
+    fill: getContainerFill(containerTheme)
+  }, containerTheme, {
+    round: (_theme$timeInput$cont = (_theme$timeInput3 = theme.timeInput) == null || (_theme$timeInput3 = _theme$timeInput3.container) == null ? void 0 : _theme$timeInput3.round) != null ? _theme$timeInput$cont : (_theme$global = theme.global) == null || (_theme$global = _theme$global.control) == null || (_theme$global = _theme$global.border) == null ? void 0 : _theme$global.radius,
     disabled: disabled,
     readOnlyProp: readOnly,
     focusIndicator: (focusIndicatorProp != null ? focusIndicatorProp : true) && !iconFocused
-  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledTimeInput.StyledTimeInputField, passThemeFlag, /*#__PURE__*/_react["default"].createElement(_StyledTimeInput.StyledTimeInputDisplay, _extends({
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledTimeInput.StyledTimeInputField, passThemeFlag, /*#__PURE__*/_react["default"].createElement(_StyledTimeInput.StyledTimeInputDisplay, _extends({}, (_theme$timeInput4 = theme.timeInput) == null ? void 0 : _theme$timeInput4.value, {
+    align: "center",
+    direction: "row",
+    overflow: "hidden",
     role: "group",
     "aria-label": groupLabel,
     "aria-labelledby": formFieldLabelId,
@@ -660,8 +708,8 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     type: "hidden",
     value: value || ''
   }), !readOnly && /*#__PURE__*/_react["default"].createElement(_Button.Button, {
-    kind: "toolbar",
-    icon: /*#__PURE__*/_react["default"].createElement(_Clock.Clock, null),
+    kind: dropButtonKind,
+    icon: dropButtonIcon,
     disabled: disabled,
     "aria-label": formatMessage({
       id: 'timeInput.chooseTime',

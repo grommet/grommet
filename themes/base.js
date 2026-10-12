@@ -1152,6 +1152,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         }
       },
       drop: {
+        height: 'medium',
         pad: 'small',
         gap: 'small',
         border: {
@@ -2901,57 +2902,79 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       }
     },
     timeInput: {
-      button: {
-        margin: {
-          right: 'small'
-        }
-      },
       container: {
+        // any BoxPartThemeType
         round: 'xxsmall'
       },
-      active: {
-        background: 'active-background',
-        pad: 'xxsmall',
-        indicator: {
-          color: {
-            dark: 'white',
-            light: 'black'
-          },
-          size: 'small'
+      // value: {
+      //   any BoxPartThemeType
+      // },
+      segment: {
+        // any BoxPartThemeType
+        // any TextThemeType
+        pad: {
+          horizontal: 'xxsmall'
+        },
+        active: {
+          // any BoxPartThemeType
+          // any TextThemeType
+          background: 'active-background',
+          border: {
+            color: {
+              dark: 'white',
+              light: 'black'
+            },
+            side: 'bottom',
+            size: 'small'
+          }
         }
       },
+      // dropButton: {
+      //   // any ButtonType
+      //   icon: undefined,
+      // },
       drop: {
-        // gap: undefined,
+        // any BoxPartThemeType
+        height: 'small',
+        gap: 'none',
         pad: {
           horizontal: 'xsmall',
           vertical: 'small'
         },
-        option: {
-          // background: undefined,
-          // gap: undefined,
-          // size: undefined,
+        column: {
+          height: '100%',
+          gap: 'xxsmall',
           pad: {
-            vertical: 'xxsmall',
             horizontal: 'xsmall'
-          },
-          // round: undefined,
-          hover: {
-            background: 'active-background'
-          },
-          selected: {
-            background: 'selected',
-            color: 'white',
-            text: {
-              weight: 500
+          }
+        },
+        option: {
+          container: {
+            // any BoxPartThemeType
+            pad: {
+              vertical: 'xxsmall',
+              horizontal: 'xsmall'
             },
+            round: baseSpacing / 6 + "px",
+            // 4px
             hover: {
-              // background: undefined,
+              // any BoxPartThemeType
+              background: 'active-background'
+            },
+            selected: {
+              // any BoxPartThemeType
+              background: 'selected'
+            }
+          },
+          text: {
+            // any TextThemeType
+            selected: {
+              // any TextThemeType
+              color: 'white',
+              weight: 500
             }
           }
         }
-      },
-      icon: {
-        // clock: undefined,
       }
     },
     tip: {

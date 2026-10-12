@@ -1,4 +1,7 @@
-var _excluded = ["activeSection", "align", "format", "formatMessage", "hoursOptions", "focusOnOpen", "id", "incrementSection", "messages", "minuteOptions", "onClose", "onFocusLeave", "secondOptions", "sectionOrder", "sections", "setActiveSection", "setSectionValue", "target", "dropProps", "label", "inline", "onKeyDown"];
+var _excluded = ["hover", "selected"],
+  _excluded2 = ["hover"],
+  _excluded3 = ["activeSection", "align", "format", "formatMessage", "hoursOptions", "focusOnOpen", "id", "incrementSection", "messages", "minuteOptions", "onClose", "onFocusLeave", "secondOptions", "sectionOrder", "sections", "setActiveSection", "setSectionValue", "target", "dropProps", "label", "inline", "onKeyDown"],
+  _excluded4 = ["column", "option"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
@@ -7,7 +10,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { edgeStyle, focusStyle, normalizeColor, roundStyle } from '../../utils';
+import { backgroundStyle, borderStyle, edgeStyle, elevationStyle, focusStyle, roundStyle } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { Box } from '../Box';
 import { Drop } from '../Drop';
@@ -17,35 +20,21 @@ var PopupColumnBox = styled(Box).withConfig({
   displayName: "TimeInputPopup__PopupColumnBox",
   componentId: "sc-r2j8uh-0"
 })(["scrollbar-gutter:stable;scrollbar-width:thin;"]);
-var PopupOption = styled.div.withConfig({
+var PopupOption = styled(Box).withConfig({
   displayName: "TimeInputPopup__PopupOption",
   componentId: "sc-r2j8uh-1"
-})(["box-sizing:border-box;cursor:pointer;display:flex;justify-content:center;", " ", " background:", ";&:hover{background:", ";}&:focus-visible{", "}"], function (props) {
-  var _props$theme$timeInpu;
-  var optionPad = (_props$theme$timeInpu = props.theme.timeInput) == null || (_props$theme$timeInpu = _props$theme$timeInpu.drop) == null || (_props$theme$timeInpu = _props$theme$timeInpu.option) == null ? void 0 : _props$theme$timeInpu.pad;
-  return optionPad && edgeStyle('padding', optionPad, false, props.theme.box.responsiveBreakpoint, props.theme);
-}, function (props) {
-  var _props$theme$timeInpu2, _props$theme$global$c;
-  var round = ((_props$theme$timeInpu2 = props.theme.timeInput) == null || (_props$theme$timeInpu2 = _props$theme$timeInpu2.drop) == null || (_props$theme$timeInpu2 = _props$theme$timeInpu2.option) == null ? void 0 : _props$theme$timeInpu2.round) || ((_props$theme$global$c = props.theme.global.control) == null || (_props$theme$global$c = _props$theme$global$c.border) == null ? void 0 : _props$theme$global$c.radius);
-  return round && roundStyle(round, false, props.theme);
-}, function (props) {
-  var _props$theme$timeInpu5;
-  if (props.$selected) {
-    var _props$theme$timeInpu3;
-    return normalizeColor((_props$theme$timeInpu3 = props.theme.timeInput) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.drop) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.option) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.selected) == null ? void 0 : _props$theme$timeInpu3.background, props.theme);
-  }
-  if (props.$active) {
-    var _props$theme$timeInpu4;
-    return normalizeColor((_props$theme$timeInpu4 = props.theme.timeInput) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.drop) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.option) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.hover) == null ? void 0 : _props$theme$timeInpu4.background, props.theme);
-  }
-  return normalizeColor((_props$theme$timeInpu5 = props.theme.timeInput) == null || (_props$theme$timeInpu5 = _props$theme$timeInpu5.drop) == null || (_props$theme$timeInpu5 = _props$theme$timeInpu5.option) == null ? void 0 : _props$theme$timeInpu5.background, props.theme);
-}, function (props) {
-  var _props$theme$timeInpu8;
-  if (props.$selected) {
-    var _props$theme$timeInpu6, _props$theme$timeInpu7;
-    return normalizeColor(((_props$theme$timeInpu6 = props.theme.timeInput) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.drop) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.option) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.selected) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.hover) == null ? void 0 : _props$theme$timeInpu6.background) || ((_props$theme$timeInpu7 = props.theme.timeInput) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.drop) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.option) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.selected) == null ? void 0 : _props$theme$timeInpu7.background), props.theme);
-  }
-  return normalizeColor((_props$theme$timeInpu8 = props.theme.timeInput) == null || (_props$theme$timeInpu8 = _props$theme$timeInpu8.drop) == null || (_props$theme$timeInpu8 = _props$theme$timeInpu8.option) == null || (_props$theme$timeInpu8 = _props$theme$timeInpu8.hover) == null ? void 0 : _props$theme$timeInpu8.background, props.theme);
+})(["cursor:pointer;&:hover{", "}&:focus-visible{", "}"], function (props) {
+  var theme = props.theme,
+    $hoverState = props.$hoverState,
+    $hoverBackground = props.$hoverBackground;
+  var responsive = props.responsive === undefined ? true : props.responsive;
+  var styles = [];
+  if ($hoverBackground !== undefined) styles.push(backgroundStyle($hoverBackground, theme));
+  if (($hoverState == null ? void 0 : $hoverState.border) !== undefined) styles.push(borderStyle($hoverState.border, responsive, theme));
+  if (($hoverState == null ? void 0 : $hoverState.elevation) !== undefined) styles.push(elevationStyle($hoverState.elevation));
+  if (($hoverState == null ? void 0 : $hoverState.pad) !== undefined) styles.push(edgeStyle('padding', $hoverState.pad, responsive, theme.box.responsiveBreakpoint, theme));
+  if (($hoverState == null ? void 0 : $hoverState.round) !== undefined) styles.push($hoverState.round === false ? 'border-radius: 0;' : roundStyle($hoverState.round, responsive, theme));
+  return styles;
 }, focusStyle({
   inset: true
 }));
@@ -64,7 +53,7 @@ var getDefaultPopupOption = function getDefaultPopupOption(_ref) {
   return options[0];
 };
 var PopupColumn = function PopupColumn(_ref2) {
-  var _theme$global$size, _theme$timeInput, _theme$timeInput2;
+  var _theme$timeInput;
   var activeSection = _ref2.activeSection,
     format = _ref2.format,
     formatMessage = _ref2.formatMessage,
@@ -77,34 +66,34 @@ var PopupColumn = function PopupColumn(_ref2) {
     section = _ref2.section,
     sections = _ref2.sections,
     theme = _ref2.theme;
-  // When inline (in DateTimeInput), use 'medium' to match Calendar height.
-  // Otherwise use timeInput drop maxHeight with fallback to 'small'.
-  var maxHeightToken = inline ? 'medium' : null;
-  var maxHeight = maxHeightToken && ((_theme$global$size = theme.global.size) == null ? void 0 : _theme$global$size[maxHeightToken]) || ((_theme$timeInput = theme.timeInput) == null || (_theme$timeInput = _theme$timeInput.drop) == null || (_theme$timeInput = _theme$timeInput.column) == null ? void 0 : _theme$timeInput.maxHeight) || theme.global.size.small;
-  return /*#__PURE__*/React.createElement(PopupColumnBox, {
+  var columnTheme = ((_theme$timeInput = theme.timeInput) == null || (_theme$timeInput = _theme$timeInput.drop) == null ? void 0 : _theme$timeInput.column) || {};
+  return /*#__PURE__*/React.createElement(PopupColumnBox, _extends({
     role: "listbox",
     "aria-label": label,
-    gap: ((_theme$timeInput2 = theme.timeInput) == null || (_theme$timeInput2 = _theme$timeInput2.drop) == null || (_theme$timeInput2 = _theme$timeInput2.option) == null ? void 0 : _theme$timeInput2.gap) || 'xxsmall',
-    height: {
-      max: maxHeight
-    },
     overflow: "auto",
     flex: {
       grow: 0,
       shrink: 0
-    },
-    pad: {
-      horizontal: 'xsmall'
     }
-  }, options.map(function (option) {
-    var _theme$timeInput3, _theme$timeInput4, _theme$timeInput5;
+  }, columnTheme), options.map(function (option) {
+    var _theme$timeInput2, _theme$timeInput3, _theme$timeInput4, _theme$timeInput5, _ref3, _hoverState$backgroun, _theme$timeInput6, _theme$timeInput7, _theme$timeInput8, _theme$timeInput$drop, _theme$timeInput9, _theme$timeInput0, _theme$timeInput1;
     var key = optionKey(label, option);
     var sectionHasValue = section === SECTION_HOUR && sections.hour !== undefined || section === SECTION_MINUTE && sections.minute !== undefined || section === SECTION_SECOND && sections.second !== undefined || section === SECTION_PERIOD && sections.period !== undefined;
 
     // In empty state, keep focus defaults but avoid visually selecting
     // options until the user makes an explicit choice.
     var selected = section === SECTION_HOUR && sections.hour === option || section === SECTION_MINUTE && sections.minute === option || section === SECTION_SECOND && sections.second === option || section === SECTION_PERIOD && sections.period === option;
-    var optionColor = selected ? ((_theme$timeInput3 = theme.timeInput) == null || (_theme$timeInput3 = _theme$timeInput3.drop) == null || (_theme$timeInput3 = _theme$timeInput3.option) == null || (_theme$timeInput3 = _theme$timeInput3.selected) == null ? void 0 : _theme$timeInput3.color) || 'text' : 'text';
+    var optionColor = selected ? ((_theme$timeInput2 = theme.timeInput) == null || (_theme$timeInput2 = _theme$timeInput2.drop) == null || (_theme$timeInput2 = _theme$timeInput2.option) == null || (_theme$timeInput2 = _theme$timeInput2.text) == null || (_theme$timeInput2 = _theme$timeInput2.selected) == null ? void 0 : _theme$timeInput2.color) || ((_theme$timeInput3 = theme.timeInput) == null || (_theme$timeInput3 = _theme$timeInput3.drop) == null || (_theme$timeInput3 = _theme$timeInput3.option) == null || (_theme$timeInput3 = _theme$timeInput3.text) == null ? void 0 : _theme$timeInput3.color) || 'text' : ((_theme$timeInput4 = theme.timeInput) == null || (_theme$timeInput4 = _theme$timeInput4.drop) == null || (_theme$timeInput4 = _theme$timeInput4.option) == null || (_theme$timeInput4 = _theme$timeInput4.text) == null ? void 0 : _theme$timeInput4.color) || 'text';
+    var optionContainer = ((_theme$timeInput5 = theme.timeInput) == null || (_theme$timeInput5 = _theme$timeInput5.drop) == null || (_theme$timeInput5 = _theme$timeInput5.option) == null ? void 0 : _theme$timeInput5.container) || {};
+    var optionHover = optionContainer.hover,
+      _optionContainer$sele = optionContainer.selected,
+      selectedContainer = _optionContainer$sele === void 0 ? {} : _optionContainer$sele,
+      baseOptionStyles = _objectWithoutPropertiesLoose(optionContainer, _excluded);
+    var selectedHover = selectedContainer.hover,
+      selectedOptionStyles = _objectWithoutPropertiesLoose(selectedContainer, _excluded2);
+    var optionStyles = selected ? _extends({}, baseOptionStyles, selectedOptionStyles) : baseOptionStyles;
+    var hoverState = selected ? selectedHover : optionHover;
+    var hoverBackground = selected ? (_ref3 = (_hoverState$backgroun = hoverState == null ? void 0 : hoverState.background) != null ? _hoverState$backgroun : selectedContainer.background) != null ? _ref3 : baseOptionStyles.background : hoverState == null ? void 0 : hoverState.background;
     var isActive = selected && activeSection === section;
     var optionTabIndex = -1;
     if (inline) {
@@ -121,55 +110,61 @@ var PopupColumn = function PopupColumn(_ref2) {
     } else if (isActive) {
       optionTabIndex = 0;
     }
-    return /*#__PURE__*/React.createElement(PopupOption, {
+    return /*#__PURE__*/React.createElement(PopupOption, _extends({
       key: key,
-      "data-option-key": key,
       role: "option",
+      "data-option-key": key,
       "aria-selected": selected,
       tabIndex: optionTabIndex,
       "aria-label": (section === SECTION_PERIOD ? option : pad(option)) + " " + getSectionName(section, format, formatMessage, messages),
-      $active: isActive,
-      $selected: selected,
+      flex: false,
+      $hoverState: hoverState,
+      $hoverBackground: hoverBackground
+    }, optionStyles, {
+      // This option owns its inset :focus-visible indicator. Box's
+      // focus tracking can retain state when tabIndex becomes -1.
+      focusIndicator: false,
       onClick: function onClick() {
         return onClickCommitOption(section, option);
       },
       onFocus: function onFocus() {
         return onSetSection(section);
       }
-    }, /*#__PURE__*/React.createElement(Text, {
-      size: ((_theme$timeInput4 = theme.timeInput) == null || (_theme$timeInput4 = _theme$timeInput4.drop) == null || (_theme$timeInput4 = _theme$timeInput4.option) == null ? void 0 : _theme$timeInput4.size) || theme.global.input.font.size || 'small',
-      weight: selected ? (_theme$timeInput5 = theme.timeInput) == null || (_theme$timeInput5 = _theme$timeInput5.drop) == null || (_theme$timeInput5 = _theme$timeInput5.option) == null || (_theme$timeInput5 = _theme$timeInput5.selected) == null || (_theme$timeInput5 = _theme$timeInput5.text) == null ? void 0 : _theme$timeInput5.weight : undefined,
-      color: optionColor
+    }), /*#__PURE__*/React.createElement(Text, {
+      size: selected ? ((_theme$timeInput6 = theme.timeInput) == null || (_theme$timeInput6 = _theme$timeInput6.drop) == null || (_theme$timeInput6 = _theme$timeInput6.option) == null || (_theme$timeInput6 = _theme$timeInput6.text) == null || (_theme$timeInput6 = _theme$timeInput6.selected) == null ? void 0 : _theme$timeInput6.size) || ((_theme$timeInput7 = theme.timeInput) == null || (_theme$timeInput7 = _theme$timeInput7.drop) == null || (_theme$timeInput7 = _theme$timeInput7.option) == null || (_theme$timeInput7 = _theme$timeInput7.text) == null ? void 0 : _theme$timeInput7.size) || theme.global.input.font.size || 'small' : ((_theme$timeInput8 = theme.timeInput) == null || (_theme$timeInput8 = _theme$timeInput8.drop) == null || (_theme$timeInput8 = _theme$timeInput8.option) == null || (_theme$timeInput8 = _theme$timeInput8.text) == null ? void 0 : _theme$timeInput8.size) || theme.global.input.font.size || 'small',
+      weight: selected ? (_theme$timeInput$drop = (_theme$timeInput9 = theme.timeInput) == null || (_theme$timeInput9 = _theme$timeInput9.drop) == null || (_theme$timeInput9 = _theme$timeInput9.option) == null || (_theme$timeInput9 = _theme$timeInput9.text) == null || (_theme$timeInput9 = _theme$timeInput9.selected) == null ? void 0 : _theme$timeInput9.weight) != null ? _theme$timeInput$drop : (_theme$timeInput0 = theme.timeInput) == null || (_theme$timeInput0 = _theme$timeInput0.drop) == null || (_theme$timeInput0 = _theme$timeInput0.option) == null || (_theme$timeInput0 = _theme$timeInput0.text) == null ? void 0 : _theme$timeInput0.weight : (_theme$timeInput1 = theme.timeInput) == null || (_theme$timeInput1 = _theme$timeInput1.drop) == null || (_theme$timeInput1 = _theme$timeInput1.option) == null || (_theme$timeInput1 = _theme$timeInput1.text) == null ? void 0 : _theme$timeInput1.weight,
+      color: optionColor,
+      textAlign: "center"
     }, section === SECTION_PERIOD ? option : pad(option)));
   }));
 };
-var TimeInputPopup = function TimeInputPopup(_ref3) {
-  var _theme$timeInput6, _theme$timeInput7, _theme$timeInput8, _theme$timeInput9;
-  var activeSection = _ref3.activeSection,
-    align = _ref3.align,
-    format = _ref3.format,
-    formatMessage = _ref3.formatMessage,
-    hoursOptions = _ref3.hoursOptions,
-    _ref3$focusOnOpen = _ref3.focusOnOpen,
-    focusOnOpen = _ref3$focusOnOpen === void 0 ? true : _ref3$focusOnOpen,
-    id = _ref3.id,
-    incrementSection = _ref3.incrementSection,
-    messages = _ref3.messages,
-    minuteOptions = _ref3.minuteOptions,
-    onClose = _ref3.onClose,
-    onFocusLeave = _ref3.onFocusLeave,
-    secondOptions = _ref3.secondOptions,
-    sectionOrder = _ref3.sectionOrder,
-    sections = _ref3.sections,
-    setActiveSection = _ref3.setActiveSection,
-    setSectionValue = _ref3.setSectionValue,
-    target = _ref3.target,
-    dropProps = _ref3.dropProps,
-    label = _ref3.label,
-    _ref3$inline = _ref3.inline,
-    inline = _ref3$inline === void 0 ? false : _ref3$inline,
-    onKeyDownProp = _ref3.onKeyDown,
-    rest = _objectWithoutPropertiesLoose(_ref3, _excluded);
+var TimeInputPopup = function TimeInputPopup(_ref4) {
+  var _theme$timeInput10, _dropWidth$max;
+  var activeSection = _ref4.activeSection,
+    align = _ref4.align,
+    format = _ref4.format,
+    formatMessage = _ref4.formatMessage,
+    hoursOptions = _ref4.hoursOptions,
+    _ref4$focusOnOpen = _ref4.focusOnOpen,
+    focusOnOpen = _ref4$focusOnOpen === void 0 ? true : _ref4$focusOnOpen,
+    id = _ref4.id,
+    incrementSection = _ref4.incrementSection,
+    messages = _ref4.messages,
+    minuteOptions = _ref4.minuteOptions,
+    onClose = _ref4.onClose,
+    onFocusLeave = _ref4.onFocusLeave,
+    secondOptions = _ref4.secondOptions,
+    sectionOrder = _ref4.sectionOrder,
+    sections = _ref4.sections,
+    setActiveSection = _ref4.setActiveSection,
+    setSectionValue = _ref4.setSectionValue,
+    target = _ref4.target,
+    dropProps = _ref4.dropProps,
+    label = _ref4.label,
+    _ref4$inline = _ref4.inline,
+    inline = _ref4$inline === void 0 ? false : _ref4$inline,
+    onKeyDownProp = _ref4.onKeyDown,
+    rest = _objectWithoutPropertiesLoose(_ref4, _excluded3);
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme;
   var dialogRef = useRef();
@@ -255,8 +250,8 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
     label: 'period',
     options: ['AM', 'PM']
   }];
-  var visiblePopupSections = popupSections.filter(function (_ref4) {
-    var section = _ref4.section;
+  var visiblePopupSections = popupSections.filter(function (_ref5) {
+    var section = _ref5.section;
     return sectionOrder.includes(section);
   });
   var getSectionFromLabel = useCallback(function (listboxLabel) {
@@ -301,8 +296,8 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
       format: format,
       options: secondOptions
     }), _sectionValue[SECTION_PERIOD] = sections.period || 'AM', _sectionValue);
-    visiblePopupSections.forEach(function (_ref5) {
-      var section = _ref5.section;
+    visiblePopupSections.forEach(function (_ref6) {
+      var section = _ref6.section;
       var labelValue = sectionLabel[section];
       if (!labelValue) return;
       var listboxNode = popupNode.querySelector("[role=\"listbox\"][aria-label=\"" + labelValue + "\"]");
@@ -388,27 +383,35 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
       if (rafB) window.cancelAnimationFrame(rafB);
     };
   }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
+  var dropTheme = (_theme$timeInput10 = theme.timeInput) == null ? void 0 : _theme$timeInput10.drop;
+  var column = dropTheme.column,
+    option = dropTheme.option,
+    dropBoxTheme = _objectWithoutPropertiesLoose(dropTheme, _excluded4);
+  var dropWidth = dropBoxTheme.width;
+  var popupWidth = typeof dropWidth === 'object' ? _extends({}, dropWidth, {
+    max: (_dropWidth$max = dropWidth.max) != null ? _dropWidth$max : '100%'
+  }) : {
+    width: dropWidth,
+    max: '100%'
+  };
   var popupContent = /*#__PURE__*/React.createElement(Box, _extends({
     ref: dialogRef,
     role: inline ? undefined : 'dialog',
     "aria-label": inline ? undefined : label,
     direction: "row",
-    width: {
-      width: (_theme$timeInput6 = theme.timeInput) == null || (_theme$timeInput6 = _theme$timeInput6.drop) == null ? void 0 : _theme$timeInput6.width,
-      max: '100%'
-    },
-    minHeight: (_theme$timeInput7 = theme.timeInput) == null || (_theme$timeInput7 = _theme$timeInput7.drop) == null ? void 0 : _theme$timeInput7.minHeight,
-    gap: (_theme$timeInput8 = theme.timeInput) == null || (_theme$timeInput8 = _theme$timeInput8.drop) == null ? void 0 : _theme$timeInput8.gap,
-    pad: inline ? 'none' : (_theme$timeInput9 = theme.timeInput) == null || (_theme$timeInput9 = _theme$timeInput9.drop) == null ? void 0 : _theme$timeInput9.pad,
+    width: popupWidth
+  }, dropBoxTheme, {
+    height: inline ? '100%' : dropBoxTheme.height,
+    pad: inline ? 'none' : dropBoxTheme.pad,
     onPointerDownCapture: markInteractionInProgress,
     onPointerUpCapture: releaseInteractionAfterClick,
     onPointerCancelCapture: clearInteractionInProgress,
     onWheelCapture: onPopupWheelCapture,
     onKeyDown: function onKeyDown(event) {
-      var _ref6;
+      var _ref7;
       var eventSectionFromTarget = getSectionFromEventTarget(event.target);
       var eventSectionFromActiveElement = getSectionFromEventTarget(document.activeElement);
-      var eventSection = (_ref6 = eventSectionFromTarget != null ? eventSectionFromTarget : eventSectionFromActiveElement) != null ? _ref6 : activeSection;
+      var eventSection = (_ref7 = eventSectionFromTarget != null ? eventSectionFromTarget : eventSectionFromActiveElement) != null ? _ref7 : activeSection;
       if (event.key === 'Escape') {
         if (onClose) {
           event.preventDefault();
@@ -460,10 +463,10 @@ var TimeInputPopup = function TimeInputPopup(_ref3) {
         onFocusLeave == null || onFocusLeave();
       }
     }
-  }, rest), visiblePopupSections.map(function (_ref7) {
-    var section = _ref7.section,
-      sectionLabel = _ref7.label,
-      options = _ref7.options;
+  }, rest), visiblePopupSections.map(function (_ref8) {
+    var section = _ref8.section,
+      sectionLabel = _ref8.label,
+      options = _ref8.options;
     return /*#__PURE__*/React.createElement(PopupColumn, {
       key: sectionLabel,
       activeSection: activeSection,

@@ -32,45 +32,109 @@ var StyledTimeInputField = exports.StyledTimeInputField = _styledComponents["def
   displayName: "StyledTimeInput__StyledTimeInputField",
   componentId: "sc-xktdr3-2"
 })(["position:relative;flex:1 1 auto;min-width:0;"]);
-var StyledTimeInputDisplay = exports.StyledTimeInputDisplay = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
+var StyledTimeInputDisplay = exports.StyledTimeInputDisplay = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "StyledTimeInput__StyledTimeInputDisplay",
   componentId: "sc-xktdr3-3"
-})(["position:absolute;inset:0;display:flex;align-items:center;overflow:hidden;", ""], function (props) {
-  return props.theme.global.input.padding && (typeof props.theme.global.input.padding !== 'object' ? "padding: " + ((0, _utils.parseMetricToNum)(props.theme.global.edgeSize[props.theme.global.input.padding] || props.theme.global.input.padding) - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width)) + "px;" : (0, _utils.edgeStyle)('padding', props.theme.global.input.padding, props.responsive, props.theme.box.responsiveBreakpoint, props.theme));
+})(["position:absolute;inset:0;overflow:hidden;", ""], function (props) {
+  var _props$theme$timeInpu;
+  var valuePad = (_props$theme$timeInpu = props.theme.timeInput) == null || (_props$theme$timeInpu = _props$theme$timeInpu.value) == null ? void 0 : _props$theme$timeInpu.pad;
+  if (valuePad !== undefined) {
+    return (0, _utils.edgeStyle)('padding', valuePad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
+  }
+  var inputPadding = props.theme.global.input.padding;
+  if (!inputPadding) return undefined;
+  if (typeof inputPadding !== 'object') return "padding: " + ((0, _utils.parseMetricToNum)(props.theme.global.edgeSize[inputPadding] || inputPadding) - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width)) + "px;";
+  return (0, _utils.edgeStyle)('padding', inputPadding, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
 });
 var StyledTimeInputSeparator = exports.StyledTimeInputSeparator = _styledComponents["default"].span.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTimeInput__StyledTimeInputSeparator",
   componentId: "sc-xktdr3-4"
-})(["display:inline-flex;align-items:center;line-height:inherit;color:", ";", ""], function (props) {
-  return (0, _utils.normalizeColor)(props.$filled ? 'text' : props.theme.global.colors.placeholder, props.theme);
+})(["display:inline-flex;line-height:inherit;align-items:center;color:", ";", " ", ""], function (props) {
+  var _props$theme$timeInpu2, _props$theme$timeInpu3;
+  return (0, _utils.normalizeColor)(props.$filled ? ((_props$theme$timeInpu2 = props.theme.timeInput) == null || (_props$theme$timeInpu2 = _props$theme$timeInpu2.segment) == null ? void 0 : _props$theme$timeInpu2.color) || 'text' : ((_props$theme$timeInpu3 = props.theme.timeInput) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.segment) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.placeholder) == null ? void 0 : _props$theme$timeInpu3.color) || props.theme.global.colors.placeholder, props.theme);
 }, function (props) {
-  var weight = props.theme.global.input.weight || props.theme.global.input.font.weight;
-  return weight && "font-weight: " + weight + ";";
+  var _props$theme$text;
+  var _ref = props.theme.timeInput || {},
+    segment = _ref.segment;
+  var weight = (segment == null ? void 0 : segment.weight) || props.theme.global.input.weight || props.theme.global.input.font.weight;
+  var size = (segment == null ? void 0 : segment.size) || props.theme.global.input.font.size;
+  var fontSize = ((_props$theme$text = props.theme.text) == null || (_props$theme$text = _props$theme$text[size]) == null ? void 0 : _props$theme$text.size) || size;
+  return (0, _styledComponents.css)(["", " ", ""], weight && "font-weight: " + weight + ";", fontSize && "font-size: " + fontSize + ";");
+}, function (props) {
+  var _props$theme$timeInpu4, _props$theme$text2;
+  var placeholder = (_props$theme$timeInpu4 = props.theme.timeInput) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.segment) == null ? void 0 : _props$theme$timeInpu4.placeholder;
+  if (props.$filled || !placeholder) return '';
+  var fontSize = ((_props$theme$text2 = props.theme.text) == null || (_props$theme$text2 = _props$theme$text2[placeholder.size]) == null ? void 0 : _props$theme$text2.size) || placeholder.size;
+  return (0, _styledComponents.css)(["", " ", ""], placeholder.weight !== undefined && "font-weight: " + placeholder.weight + ";", fontSize && "font-size: " + fontSize + ";");
 });
 var StyledTimeInputSegment = exports.StyledTimeInputSegment = _styledComponents["default"].span.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTimeInput__StyledTimeInputSegment",
   componentId: "sc-xktdr3-5"
-})(["&:focus{outline:none;}display:inline-flex;align-items:center;position:relative;line-height:inherit;padding-inline:", ";color:", ";", " ", ""], function (props) {
-  var _props$theme$timeInpu, _props$theme$global$e;
-  var padToken = (_props$theme$timeInpu = props.theme.timeInput) == null || (_props$theme$timeInpu = _props$theme$timeInpu.active) == null ? void 0 : _props$theme$timeInpu.pad;
-  return ((_props$theme$global$e = props.theme.global.edgeSize) == null ? void 0 : _props$theme$global$e[padToken]) || padToken;
+})(["&:focus{outline:none;}display:inline-flex;align-items:center;position:relative;line-height:inherit;", ";color:", ";", " ", " ", " ", ""], function (props) {
+  var _props$theme$timeInpu5;
+  var segment = (_props$theme$timeInpu5 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu5.segment;
+  var responsive = props.responsive === undefined ? true : props.responsive;
+  var styles = [];
+  if ((segment == null ? void 0 : segment.background) !== undefined) styles.push((0, _utils.backgroundStyle)(segment.background, props.theme));
+  if (segment != null && segment.border) styles.push((0, _utils.borderStyle)(segment.border, responsive, props.theme));
+  if (segment != null && segment.elevation) styles.push((0, _utils.elevationStyle)(segment.elevation));
+  if (segment != null && segment.height) styles.push((0, _utils.heightStyle)(segment.height, props.theme));
+  if (segment != null && segment.margin) styles.push((0, _utils.edgeStyle)('margin', segment.margin, responsive, props.theme.box.responsiveBreakpoint, props.theme));
+  if (segment != null && segment.pad) styles.push((0, _utils.edgeStyle)('padding', segment.pad, responsive, props.theme.box.responsiveBreakpoint, props.theme));
+  if ((segment == null ? void 0 : segment.round) !== undefined) {
+    styles.push(segment.round === false ? 'border-radius: 0;' : (0, _utils.roundStyle)(segment.round, responsive, props.theme));
+  }
+  if (segment != null && segment.width) styles.push((0, _utils.widthStyle)(segment.width, props.theme));
+  return styles;
 }, function (props) {
-  return (0, _utils.normalizeColor)(props.$filled ? 'text' : props.theme.global.colors.placeholder, props.theme);
+  var _props$theme$timeInpu6, _props$theme$timeInpu7;
+  return (0, _utils.normalizeColor)(props.$filled ? ((_props$theme$timeInpu6 = props.theme.timeInput) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.segment) == null ? void 0 : _props$theme$timeInpu6.color) || 'text' : ((_props$theme$timeInpu7 = props.theme.timeInput) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.segment) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.placeholder) == null ? void 0 : _props$theme$timeInpu7.color) || props.theme.global.colors.placeholder, props.theme);
 }, function (props) {
-  var weight = props.theme.global.input.weight || props.theme.global.input.font.weight;
-  return weight && "font-weight: " + weight + ";";
+  var _props$theme$text3;
+  var _ref2 = props.theme.timeInput || {},
+    segment = _ref2.segment;
+  var weight = (segment == null ? void 0 : segment.weight) || props.theme.global.input.weight || props.theme.global.input.font.weight;
+  var size = (segment == null ? void 0 : segment.size) || props.theme.global.input.font.size;
+  var fontSize = ((_props$theme$text3 = props.theme.text) == null || (_props$theme$text3 = _props$theme$text3[size]) == null ? void 0 : _props$theme$text3.size) || size;
+  return (0, _styledComponents.css)(["", " ", ""], weight && "font-weight: " + weight + ";", fontSize && "font-size: " + fontSize + ";");
 }, function (props) {
-  var _props$theme$global$e2, _props$theme$timeInpu2, _props$theme$global$b, _props$theme$global$e3, _props$theme$timeInpu3, _props$theme$timeInpu4;
+  var _props$theme$timeInpu8, _props$theme$text4;
+  var placeholder = (_props$theme$timeInpu8 = props.theme.timeInput) == null || (_props$theme$timeInpu8 = _props$theme$timeInpu8.segment) == null ? void 0 : _props$theme$timeInpu8.placeholder;
+  if (props.$filled || !placeholder) return '';
+  var fontSize = ((_props$theme$text4 = props.theme.text) == null || (_props$theme$text4 = _props$theme$text4[placeholder.size]) == null ? void 0 : _props$theme$text4.size) || placeholder.size;
+  return (0, _styledComponents.css)(["", " ", ""], placeholder.weight !== undefined && "font-weight: " + placeholder.weight + ";", fontSize && "font-size: " + fontSize + ";");
+}, function (props) {
+  var _props$theme$timeInpu9;
   if (!props.$active) return '';
-
-  // The active indicator's corner rounding is intentionally a fixed
-  // "hair" edge size rather than a theme-exposed value we can expose
-  // theme in future.
-  var activeRound = (_props$theme$global$e2 = props.theme.global.edgeSize) == null ? void 0 : _props$theme$global$e2.hair;
-  var activeBorderToken = (_props$theme$timeInpu2 = props.theme.timeInput) == null || (_props$theme$timeInpu2 = _props$theme$timeInpu2.active) == null || (_props$theme$timeInpu2 = _props$theme$timeInpu2.indicator) == null ? void 0 : _props$theme$timeInpu2.size;
-  var activeBorderSize = ((_props$theme$global$b = props.theme.global.borderSize) == null ? void 0 : _props$theme$global$b[activeBorderToken]) || ((_props$theme$global$e3 = props.theme.global.edgeSize) == null ? void 0 : _props$theme$global$e3[activeBorderToken]) || activeBorderToken || props.theme.global.borderSize.small;
-  return (0, _styledComponents.css)(["&::before{content:'';position:absolute;inset:0;background-color:", ";border-top-left-radius:", ";border-top-right-radius:", ";}&::after{content:'';position:absolute;left:0;right:0;bottom:0;height:", ";background-color:", ";border-bottom-left-radius:", ";border-bottom-right-radius:", ";}"], (0, _utils.normalizeColor)((_props$theme$timeInpu3 = props.theme.timeInput) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.active) == null ? void 0 : _props$theme$timeInpu3.background, props.theme), activeRound, activeRound, activeBorderSize, (0, _utils.normalizeColor)(((_props$theme$timeInpu4 = props.theme.timeInput) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.active) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.indicator) == null ? void 0 : _props$theme$timeInpu4.color) || {
-    dark: 'white',
-    light: 'black'
-  }, props.theme), activeRound, activeRound);
+  var _ref3 = ((_props$theme$timeInpu9 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu9.segment) || {},
+    active = _ref3.active;
+  if (!active) return '';
+  var responsive = props.responsive === undefined ? true : props.responsive;
+  var styles = [];
+  if (active.elevation !== undefined) styles.push((0, _utils.elevationStyle)(active.elevation));
+  if (active.pad !== undefined) styles.push((0, _utils.edgeStyle)('padding', active.pad, responsive, props.theme.box.responsiveBreakpoint, props.theme));
+  if (active.round !== undefined) {
+    styles.push(active.round === false ? 'border-radius: 0;' : (0, _utils.roundStyle)(active.round, responsive, props.theme));
+  }
+  if (active.color !== undefined) styles.push("color: " + (0, _utils.normalizeColor)(active.color, props.theme) + ";");
+  if (active.size !== undefined) {
+    var _props$theme$text5;
+    var size = active.size;
+    styles.push("font-size: " + (((_props$theme$text5 = props.theme.text) == null || (_props$theme$text5 = _props$theme$text5[size]) == null ? void 0 : _props$theme$text5.size) || size) + ";");
+  }
+  if (active.weight !== undefined) styles.push("font-weight: " + active.weight + ";");
+  return styles;
+}, function (props) {
+  var _props$theme$timeInpu0, _active$round, _props$theme$global$e;
+  if (!props.$active) return '';
+  var _ref4 = ((_props$theme$timeInpu0 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu0.segment) || {},
+    active = _ref4.active,
+    segmentRound = _ref4.round;
+  var responsive = props.responsive === undefined ? true : props.responsive;
+  var activeRound = (_active$round = active == null ? void 0 : active.round) != null ? _active$round : segmentRound;
+  var activeRoundStyle = activeRound && (0, _utils.roundStyle)(activeRound, responsive, props.theme);
+  var activeRoundValue = activeRound === false ? '0' : (_props$theme$global$e = props.theme.global.edgeSize) == null ? void 0 : _props$theme$global$e.hair;
+  var underlineBorder = active == null ? void 0 : active.border;
+  var underlineBorderStyle = underlineBorder === false || Array.isArray(underlineBorder) && underlineBorder.length === 0 ? 'border: none;' : (0, _utils.borderStyle)(underlineBorder, responsive, props.theme);
+  return (0, _styledComponents.css)(["&::before{content:'';position:absolute;inset:0;", " ", "}&::after{content:'';position:absolute;inset:0;", " ", "}"], (active == null ? void 0 : active.background) !== undefined ? (0, _utils.backgroundStyle)(active.background, props.theme, false) : '', activeRoundStyle || (0, _styledComponents.css)(["border-top-left-radius:", ";border-top-right-radius:", ";border-bottom-left-radius:", ";border-bottom-right-radius:", ";"], activeRoundValue, activeRoundValue, activeRoundValue, activeRoundValue), underlineBorderStyle, activeRoundStyle || (0, _styledComponents.css)(["border-bottom-left-radius:", ";border-bottom-right-radius:", ";"], activeRoundValue, activeRoundValue));
 });
