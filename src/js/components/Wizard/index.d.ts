@@ -41,11 +41,12 @@ export interface WizardStep<TValue = Record<string, any>> {
     | { error?: string }
     | Promise<boolean | string | void | { error?: string }>;
   nextStep?: (value: TValue) => string | undefined | null;
-  /** Allows forward navigation and completion after failed validation,
-   * without marking this step completed. */
+  /** Allows goTo(), skip(), and completion after failed validation without
+   * marking this step completed. next() still requires a valid step. */
   skippable?: boolean;
   /** Overrides the displayed status, not validation or completion results.
-   * disabled: true takes precedence. */
+   * An explicit error status also blocks next(). disabled: true takes
+   * precedence. */
   status?: WizardStepStatus;
   disabled?: boolean;
   disabledReason?: string;

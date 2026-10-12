@@ -315,7 +315,78 @@ describe('Wizard', () => {
     expect(screen.getByText('Please correct step 2')).toBeTruthy();
   });
 
-  test.each(['Next', 'Direct next', 'Direct goTo', 'indicator'])(
+  test.each([
+    ['callback', undefined, false],
+    ['pending override', 'pending', false],
+    ['error status', 'error', true],
+    ['form', undefined, true],
+  ])('blocks skippable Next for %s', async (mode, status, valid) => {
+    const user = userEvent.setup();
+    const onStepChange = jest.fn();
+    const validate = jest.fn(() => valid);
+    render(
+      <Wizard
+        form={mode === 'form'}
+        steps={[
+          { ...basicSteps[0], skippable: true, status, validate },
+          basicSteps[1],
+          basicSteps[2],
+        ]}
+        onStepChange={onStepChange}
+        renderStep={(step, wizard) => (
+          <>
+            {renderStepState(step, wizard)}
+            {mode === 'form' && step.id === 'step1' && (
+              <FormField
+                name="name"
+                htmlFor="blocked-name"
+                label="Name"
+                required
+              >
+                <TextInput name="name" id="blocked-name" />
+              </FormField>
+            )}
+          </>
+        )}
+      />,
+      { wrapper: Grommet },
+    );
+    await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'Direct next' }));
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    expect(onStepChange.mock.calls.map(([event]) => event.phase)).toEqual([
+      'requested',
+      'validating',
+      'blocked',
+      'requested',
+      'validating',
+      'blocked',
+    ]);
+    await user.click(screen.getByRole('button', { name: 'Direct goTo' }));
+    expect(screen.getByRole('heading', { name: 'Step 3' })).toBeTruthy();
+  });
+
+  test('retries corrected skippable validation with Next', async () => {
+    const user = userEvent.setup();
+    const validate = jest.fn(() => 'Fix this step');
+    render(
+      <Wizard
+        form={false}
+        steps={[{ ...basicSteps[0], skippable: true, validate }, basicSteps[1]]}
+        renderStep={renderStepState}
+      />,
+      { wrapper: Grommet },
+    );
+    await user.click(screen.getByRole('button', { name: 'Direct next' }));
+    expect(wizardState().states.step1).toBe('error');
+    validate.mockReturnValue(true);
+    await user.click(screen.getByRole('button', { name: 'Direct next' }));
+    expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy();
+    expect(wizardState().states.step1).toBe('completed');
+  });
+
+  test.each(['Direct goTo', 'indicator'])(
     'allows a failing skippable step to navigate with %s',
     async (action) => {
       mockMediumContainerWidth();
@@ -354,10 +425,6 @@ describe('Wizard', () => {
       expect(screen.getByText('Unresolved callback')).toBeTruthy();
       const phases = onStepChange.mock.calls.map(([event]) => event.phase);
       expect(phases).toEqual(['requested', 'validating', 'navigated']);
-      if (action === 'Next' || action === 'Direct next')
-        await user.click(
-          screen.getByRole('button', { name: 'Next', exact: true }),
-        );
       await user.click(
         screen.getByRole('button', { name: 'Complete', exact: true }),
       );
@@ -412,6 +479,7 @@ describe('Wizard', () => {
       <Wizard
         steps={[{ ...basicSteps[0], skippable: true }, basicSteps[1]]}
         showProgress="vertical"
+        clickableSteps
         renderStep={(step, wizard) => (
           <>
             {renderStepState(step, wizard)}
@@ -432,6 +500,10 @@ describe('Wizard', () => {
       { wrapper: DesktopWizard },
     );
     await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    await user.click(
+      screen.getByRole('button', { name: /Step 2 of 2: Step 2/i }),
+    );
     expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy();
     expect(wizardState().states.step1).toBe('error');
     expect(wizardState().messages.step1).toBeUndefined();
@@ -631,12 +703,17 @@ describe('Wizard', () => {
     const props = {
       form: false,
       showProgress: 'vertical',
-      renderStep: renderStepState,
+      renderStep: (step, wizard) => (
+        <>
+          {renderStepState(step, wizard)}
+          <Button label="Leave child" onClick={() => wizard.goTo('child2')} />
+        </>
+      ),
     };
     const { rerender } = render(<Wizard {...props} steps={[parent]} />, {
       wrapper: DesktopWizard,
     });
-    await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
+    await user.click(screen.getByRole('button', { name: 'Leave child' }));
     expect(wizardState().states).toEqual({
       parent: 'error',
       child1: 'error',
@@ -878,6 +955,8 @@ describe('Wizard', () => {
     validate.mockReturnValue('Now invalid');
     await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
     expect(wizardState().states.step1).toBe('error');
+    expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'Direct skip' }));
     await user.click(
       screen.getByRole('button', { name: 'Complete', exact: true }),
     );
@@ -888,7 +967,7 @@ describe('Wizard', () => {
   });
 
   test.each(['throw', 'reject'])(
-    'records a callback %s and permits skippable navigation',
+    'records a callback %s and blocks skippable Next',
     async (mode) => {
       const user = userEvent.setup();
       render(
@@ -914,6 +993,7 @@ describe('Wizard', () => {
       );
       expect(wizardState().states.step1).toBe('error');
       expect(wizardState().messages.step1).toBe('Validation exception');
+      expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
     },
   );
 

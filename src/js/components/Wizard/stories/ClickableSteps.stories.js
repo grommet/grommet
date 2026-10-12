@@ -43,6 +43,7 @@ const ClickableSteps = () => {
       description: 'Choose configuration options.',
       status: 'error',
       errorMessage: 'Configuration requires attention.',
+      skippable: true,
       render: () => <Paragraph>Configure the resource options.</Paragraph>,
     },
     {

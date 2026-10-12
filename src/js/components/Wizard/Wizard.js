@@ -478,30 +478,29 @@ const Wizard = forwardRef(
       });
       const { ok, error, cancelled } = await runValidation();
       if (cancelled) return;
-      if (!ok && !currentStepObj?.skippable) {
+      const sourceStep = findStepById(latest.current.steps, currentStep);
+      if (!ok || sourceStep?.status === 'error') {
         emitStepChange({
           trigger: 'next',
           phase: 'blocked',
           from: currentStep,
-          error,
+          error: error ?? sourceStep?.errorMessage,
         });
         return;
       }
-      if (ok)
-        emitStepChange({
-          trigger: 'next',
-          phase: 'validated',
-          from: currentStep,
-        });
+      emitStepChange({
+        trigger: 'next',
+        phase: 'validated',
+        from: currentStep,
+      });
       const nextId = resolveNextStepId();
       if (!nextId) return;
-      applyTransition(nextId, { markCompleted: ok });
+      applyTransition(nextId, { markCompleted: true });
       emitStepChange({
         trigger: 'next',
         phase: 'navigated',
         from: currentStep,
         to: nextId,
-        ...(!ok && error ? { error } : {}),
       });
       if (sendAnalytics)
         sendAnalytics({ type: 'wizardNext', element: 'Wizard' });
