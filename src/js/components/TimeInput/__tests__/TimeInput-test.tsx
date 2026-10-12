@@ -53,7 +53,7 @@ describe('TimeInput', () => {
   test('works correctly nested inside a modal Layer', async () => {
     const user = userEvent.setup();
 
-    const { container } = render(
+    const { baseElement } = render(
       <Grommet>
         <Layer modal>
           <Box pad="medium" gap="medium" width="medium">
@@ -63,13 +63,35 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    const results = await axe(container);
+    // Layer renders through a portal, so `container` is empty - assert
+    // against baseElement to actually cover the rendered Layer content.
+    // The "region" rule is page-level (expects landmarks around all body
+    // content) and isn't meaningful for an isolated component test.
+    const results = await axe(baseElement, {
+      rules: { region: { enabled: false } },
+    });
     expect(results).toHaveNoViolations();
 
     const trigger = screen.getByRole('button', { name: 'Choose time' });
     await user.click(trigger);
 
     const dialog = screen.getByRole('dialog', { name: 'Choose time' });
+
+    // TimeInputPopup focuses the current hour option from inside a
+    // requestAnimationFrame callback; flushing one real frame here confirms
+    // that FocusedContainer's trap setup (now a layout effect) is already
+    // registered by the time that callback runs, so focus actually lands.
+    await act(
+      () =>
+        new Promise((resolve) => {
+          requestAnimationFrame(() => resolve(undefined));
+        }),
+    );
+    const initialHourOption = within(dialog).getByRole('option', {
+      name: '10 hours',
+    });
+    expect(initialHourOption).toHaveFocus();
+
     const hourOption = within(dialog).getByRole('option', { name: '11 hours' });
     await user.click(hourOption);
 
