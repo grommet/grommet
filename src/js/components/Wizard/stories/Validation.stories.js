@@ -100,7 +100,10 @@ const ValidationExample = () => {
         clickableSteps
         steps={steps}
         defaultValue={{ email: '', password: '' }}
-        onComplete={({ value }) => setResult({ status: 'complete', value })}
+        onComplete={(results) => {
+          console.log('Wizard complete with results:', results);
+          setResult({ status: 'complete', value: results.value });
+        }}
       />
       {result && (
         <Notification

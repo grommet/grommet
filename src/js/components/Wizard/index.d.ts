@@ -57,6 +57,11 @@ export interface WizardStep<TValue = Record<string, any>> {
   'aria-label'?: string;
 }
 
+export type WizardStepResult<TValue = Record<string, any>> = Omit<
+  WizardStep<TValue>,
+  'children' | 'status'
+> & { status: WizardStepStatus };
+
 // Discriminated union for onStepChange events. Consumers can narrow on
 // `trigger` + `phase` to reason about event flow without inspecting DOM.
 export interface NavigationStepChangeEvent {
@@ -99,8 +104,14 @@ export interface WizardProps<TValue = Record<string, any>> {
   showProgress?: WizardShowProgress;
   onStepChange?: (event: StepChangeEvent) => void;
   /** completedSteps excludes failed and skipped steps. Completion validates
-   * the current step, not every earlier step. */
-  onComplete?: (event: { value: TValue; completedSteps: string[] }) => void;
+   * the current step, not every earlier step. steps includes parent groups
+   * and children in depth-first order, without children arrays, with resolved
+   * statuses and error messages including the final validation result. */
+  onComplete?: (event: {
+    value: TValue;
+    completedSteps: string[];
+    steps: WizardStepResult<TValue>[];
+  }) => void;
   onCancel?: (event: { value: TValue; reason: 'user' }) => void;
   renderStep?: (
     step: WizardStep<TValue>,

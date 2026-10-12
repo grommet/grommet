@@ -199,6 +199,9 @@ describe('Wizard', () => {
     expect(onComplete).toHaveBeenCalledWith({
       value: { email: 'a@b.com' },
       completedSteps: expect.any(Array),
+      steps: expect.arrayContaining([
+        expect.objectContaining({ id: 'step3', status: 'completed' }),
+      ]),
     });
   });
 
@@ -229,6 +232,289 @@ describe('Wizard', () => {
     await user.click(screen.getByRole('button', { name: /complete/i }));
 
     expect(onComplete).not.toHaveBeenCalled();
+  });
+
+  test('completion flattens steps and retains metadata', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    const valid = Object.freeze({
+      id: 'valid',
+      title: 'Valid',
+      description: 'Step details',
+      skippable: false,
+    });
+    const invalid = Object.freeze({
+      id: 'invalid',
+      title: 'Invalid',
+      skippable: true,
+      validate: () => 'Callback detail',
+    });
+    const consumerError = Object.freeze({
+      id: 'consumer',
+      title: 'Consumer',
+      status: 'error',
+      errorMessage: 'Server detail',
+    });
+    const disabled = Object.freeze({
+      id: 'disabled',
+      title: 'Disabled',
+      disabled: true,
+      disabledReason: 'No permission',
+      skippable: true,
+    });
+    const pending = Object.freeze({ id: 'pending', title: 'Pending' });
+    const parent = Object.freeze({
+      id: 'parent',
+      title: 'Group',
+      children: Object.freeze([
+        valid,
+        invalid,
+        consumerError,
+        disabled,
+        pending,
+      ]),
+    });
+    const final = Object.freeze({ id: 'final', title: 'Final' });
+    const steps = Object.freeze([parent, final]);
+    render(
+      <Wizard
+        steps={steps}
+        form={false}
+        onComplete={onComplete}
+        renderStep={(step, wizard) => (
+          <Button label="Go to finish" onClick={() => wizard.goTo('final')} />
+        )}
+      />,
+      { wrapper: Grommet },
+    );
+    await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
+    await user.click(screen.getByRole('button', { name: 'Go to finish' }));
+    await user.click(
+      screen.getByRole('button', { name: 'Complete', exact: true }),
+    );
+    const payload = onComplete.mock.calls[0][0];
+    expect(payload.completedSteps).toEqual(['valid', 'final']);
+    expect(payload.steps).toEqual([
+      {
+        id: 'parent',
+        title: 'Group',
+        status: 'error',
+        errorMessage: undefined,
+      },
+      { ...valid, status: 'completed', errorMessage: undefined },
+      { ...invalid, status: 'error', errorMessage: 'Callback detail' },
+      { ...consumerError },
+      { ...disabled, status: 'disabled', errorMessage: undefined },
+      { ...pending, status: 'pending', errorMessage: undefined },
+      { ...final, status: 'completed', errorMessage: undefined },
+    ]);
+    expect(payload.steps.every((step) => !('children' in step))).toBe(true);
+    expect(payload.steps[1]).not.toBe(valid);
+    expect(parent.children).toEqual([
+      valid,
+      invalid,
+      consumerError,
+      disabled,
+      pending,
+    ]);
+  });
+
+  test('completion aggregates the just-completed final child', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    render(
+      <Wizard
+        form={false}
+        onComplete={onComplete}
+        steps={[
+          { id: 'group', title: 'Group', children: basicSteps.slice(0, 2) },
+        ]}
+      />,
+      { wrapper: Grommet },
+    );
+    await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
+    await user.click(
+      screen.getByRole('button', { name: 'Complete', exact: true }),
+    );
+    expect(
+      onComplete.mock.calls[0][0].steps.map((step) => step.status),
+    ).toEqual(['completed', 'completed', 'completed']);
+  });
+
+  test.each([
+    ['pending', undefined],
+    ['completed', undefined],
+    ['error', 'Consumer summary'],
+    ['error', ''],
+    ['disabled', undefined],
+  ])(
+    'completion honors explicit %s status and %p message',
+    async (status, errorMessage) => {
+      const user = userEvent.setup();
+      const onComplete = jest.fn();
+      const step = {
+        id: 'final',
+        title: 'Final',
+        status,
+        errorMessage,
+        skippable: true,
+        disabledReason: 'Consumer reason',
+        validate: () => 'Callback message',
+      };
+      render(<Wizard steps={[step]} form={false} onComplete={onComplete} />, {
+        wrapper: Grommet,
+      });
+      await user.click(
+        screen.getByRole('button', { name: 'Complete', exact: true }),
+      );
+      expect(onComplete.mock.calls[0][0]).toEqual({
+        value: {},
+        completedSteps: [],
+        steps: [
+          {
+            ...step,
+            errorMessage: status === 'error' ? errorMessage : undefined,
+          },
+        ],
+      });
+    },
+  );
+
+  test.each(['goTo', 'complete'])(
+    'does not complete an explicit error step through %s',
+    async (action) => {
+      const user = userEvent.setup();
+      const onComplete = jest.fn();
+      const errorStep = {
+        ...basicSteps[0],
+        status: 'error',
+        skippable: true,
+        errorMessage: 'Server error',
+      };
+      render(
+        <Wizard
+          form={false}
+          onComplete={onComplete}
+          steps={
+            action === 'goTo'
+              ? [errorStep, basicSteps[1], basicSteps[2]]
+              : [errorStep]
+          }
+          renderStep={renderStepState}
+        />,
+        { wrapper: Grommet },
+      );
+      if (action === 'goTo') {
+        await user.click(screen.getByRole('button', { name: 'Direct goTo' }));
+        await user.click(
+          screen.getByRole('button', { name: 'Previous', exact: true }),
+        );
+        await user.click(
+          screen.getByRole('button', { name: 'Previous', exact: true }),
+        );
+        expect(wizardState().isCompleted).toBe(false);
+        await user.click(screen.getByRole('button', { name: 'Direct goTo' }));
+      }
+      await user.click(
+        screen.getByRole('button', { name: 'Complete', exact: true }),
+      );
+      expect(onComplete.mock.calls[0][0].completedSteps).not.toContain('step1');
+      expect(onComplete.mock.calls[0][0].steps[0].status).toBe('error');
+      if (action === 'complete') expect(wizardState().isCompleted).toBe(false);
+    },
+  );
+
+  test('prop errors invalidate earlier completion', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    const props = { form: false, onComplete, renderStep: renderStepState };
+    const { rerender } = render(<Wizard {...props} steps={basicSteps} />, {
+      wrapper: Grommet,
+    });
+    await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
+    await user.click(
+      screen.getByRole('button', { name: 'Previous', exact: true }),
+    );
+    expect(wizardState().isCompleted).toBe(true);
+    const erroredSteps = [
+      { ...basicSteps[0], status: 'error', skippable: true },
+      basicSteps[1],
+      basicSteps[2],
+    ];
+    rerender(<Wizard {...props} steps={erroredSteps} />);
+    expect(wizardState().isCompleted).toBe(false);
+    rerender(<Wizard {...props} steps={basicSteps} />);
+    expect(wizardState().isCompleted).toBe(false);
+    expect(wizardState().states.step1).toBe('pending');
+    rerender(<Wizard {...props} steps={erroredSteps} />);
+    await user.click(screen.getByRole('button', { name: 'Direct goTo' }));
+    await user.click(
+      screen.getByRole('button', { name: 'Complete', exact: true }),
+    );
+    expect(onComplete.mock.calls[0][0].completedSteps).toEqual(['step3']);
+  });
+
+  test('completion reports form errors without generated text', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    render(
+      <Wizard
+        steps={[{ id: 'final', title: 'Final', skippable: true }]}
+        onComplete={onComplete}
+        renderStep={() => (
+          <FormField name="name" htmlFor="snapshot-name" label="Name" required>
+            <TextInput name="name" id="snapshot-name" />
+          </FormField>
+        )}
+      />,
+      { wrapper: Grommet },
+    );
+    await user.click(
+      screen.getByRole('button', { name: 'Complete', exact: true }),
+    );
+    expect(onComplete.mock.calls[0][0]).toEqual({
+      value: {},
+      completedSteps: [],
+      steps: [
+        {
+          id: 'final',
+          title: 'Final',
+          skippable: true,
+          status: 'error',
+          errorMessage: undefined,
+        },
+      ],
+    });
+  });
+
+  test('completion reflects final validation and corrected retry', async () => {
+    const user = userEvent.setup();
+    const onComplete = jest.fn();
+    const validate = jest.fn(() => Promise.resolve('Final error'));
+    const step = Object.freeze({
+      id: 'final',
+      title: 'Final',
+      skippable: true,
+      validate,
+    });
+    render(<Wizard steps={[step]} form={false} onComplete={onComplete} />, {
+      wrapper: Grommet,
+    });
+    await user.click(
+      screen.getByRole('button', { name: 'Complete', exact: true }),
+    );
+    expect(onComplete.mock.calls[0][0].steps).toEqual([
+      { ...step, status: 'error', errorMessage: 'Final error' },
+    ]);
+    validate.mockReturnValue(Promise.resolve(true));
+    await user.click(
+      screen.getByRole('button', { name: 'Complete', exact: true }),
+    );
+    expect(onComplete.mock.calls[1][0].steps).toEqual([
+      { ...step, status: 'completed', errorMessage: undefined },
+    ]);
+    expect(onComplete.mock.calls[0][0].steps[0].status).toBe('error');
+    expect(step.status).toBeUndefined();
   });
 
   test('blocks navigation when validate returns falsy', async () => {
@@ -462,6 +748,13 @@ describe('Wizard', () => {
       expect(onComplete).toHaveBeenCalledWith({
         value: {},
         completedSteps: [],
+        steps: [
+          expect.objectContaining({
+            id: 'final',
+            status: 'error',
+            skippable: true,
+          }),
+        ],
       });
       expect(wizardState().states.final).toBe('error');
       expect(onStepChange.mock.calls.map(([event]) => event.phase)).toEqual([
@@ -640,7 +933,17 @@ describe('Wizard', () => {
     await user.click(
       screen.getByRole('button', { name: 'Complete', exact: true }),
     );
-    expect(onComplete).toHaveBeenCalledWith({ value: {}, completedSteps: [] });
+    expect(onComplete).toHaveBeenCalledWith({
+      value: {},
+      completedSteps: [],
+      steps: [
+        expect.objectContaining({
+          id: 'final',
+          status: 'error',
+          errorMessage: 'Consumer form summary',
+        }),
+      ],
+    });
     expect(screen.getByText('Consumer form summary')).toBeTruthy();
     expect(wizardState().states.final).toBe('error');
   });
@@ -963,6 +1266,14 @@ describe('Wizard', () => {
     expect(onComplete).toHaveBeenCalledWith({
       value: {},
       completedSteps: ['step2'],
+      steps: [
+        expect.objectContaining({
+          id: 'step1',
+          status: 'error',
+          errorMessage: 'Now invalid',
+        }),
+        expect.objectContaining({ id: 'step2', status: 'completed' }),
+      ],
     });
   });
 
@@ -1399,6 +1710,10 @@ describe('Wizard', () => {
     expect(onComplete).toHaveBeenCalledWith({
       value: {},
       completedSteps: expect.any(Array),
+      steps: [
+        expect.objectContaining({ id: 'step1', status: 'completed' }),
+        expect.objectContaining({ id: 'step2', status: 'completed' }),
+      ],
     });
   });
 
