@@ -187,6 +187,30 @@ describe('DateTimeInput', () => {
     expect(screen.getByRole('listbox', { name: 'second' })).toBeInTheDocument();
   });
 
+  test('inline time columns fill the calendar-height picker and scroll overflow', () => {
+    render(
+      <Grommet>
+        <DateTimeInput
+          id="dt-inline-height"
+          inline
+          format="12"
+          showSeconds
+          value="2026-07-22T18:30:00.000Z"
+        />
+      </Grommet>,
+    );
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const pickerContent = hourList.parentElement?.parentElement;
+
+    expect(pickerContent).toHaveStyleRule('height', '384px');
+    expect(hourList).toHaveStyleRule('height', '100%');
+    expect(minuteList).toHaveStyleRule('height', '100%');
+    expect(hourList).toHaveStyleRule('overflow', 'auto');
+    expect(minuteList).toHaveStyleRule('overflow', 'auto');
+  });
+
   test('selecting a calendar day does not move focus into the hour listbox', async () => {
     const user = userEvent.setup();
 

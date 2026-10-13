@@ -10,6 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
     dir: PropTypes.oneOf(['rtl']),
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])]),
     options: PropTypes.shape({
+      legacyColorIsDark: PropTypes.bool,
       box: PropTypes.shape({ cssGap: PropTypes.bool }),
       button: PropTypes.shape({ childrenPlain: PropTypes.bool }),
       layer: PropTypes.shape({ singleId: PropTypes.bool }),
@@ -244,6 +245,7 @@ if (process.env.NODE_ENV !== 'production') {
           activeSectionValue: PropTypes.string,
           chooseTime: PropTypes.string,
           currentValue: PropTypes.string,
+          currentValueWithoutSeconds: PropTypes.string,
           inputLabel: PropTypes.string,
           invalidTime: PropTypes.string,
           openDrop: PropTypes.string,

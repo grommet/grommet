@@ -10528,17 +10528,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"grommet-theme-hpe@npm:^8.1.5":
-  version: 8.1.5
-  resolution: "grommet-theme-hpe@npm:8.1.5"
+"grommet-theme-hpe@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "grommet-theme-hpe@npm:8.2.0"
   dependencies:
     "@hpe-design/icons-grommet": "npm:^1.1.0"
-    hpe-design-tokens: "npm:^2.2.3"
+    hpe-design-tokens: "npm:^2.3.0"
   peerDependencies:
-    grommet: ^2.50.0
+    grommet: ^2.57.0
     react: ^16.13.1 || ^17.0.1 || ^18.0.0 || ^19.0.0
     styled-components: ^6.0.0
-  checksum: 10c0/891d8ced511026f31a6a7cd9aae7eabed6b52aa241b401c0339217578165eb0a91896be27dfb62a870f0e573310e329931e7b865a7c4f00a11b443cfdf4031b4
+  checksum: 10c0/8c3834bf0cbf9e46e072ff7c0805da8d8119e9017b5e5f434e0d77d6c9e427c4e27c745eb70198fd2506f9fe99a6aba698b73f551668b106efefcfdaca17d057
   languageName: node
   linkType: hard
 
@@ -10607,7 +10607,7 @@ __metadata:
     fs-extra: "npm:^11.4.0"
     globals: "npm:^17.11.0"
     grommet-icons: "npm:^4.14.0"
-    grommet-theme-hpe: "npm:^8.1.5"
+    grommet-theme-hpe: "npm:^8.2.0"
     jest: "npm:^30.4.2"
     jest-axe: "npm:^11.0.0"
     jest-cli: "npm:^30.4.2"
@@ -10802,10 +10802,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hpe-design-tokens@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "hpe-design-tokens@npm:2.2.3"
-  checksum: 10c0/3348e864d7a43e30e529730f208bd3bf09e5c9685e8d0a792e7c7d9f20fad9955bec9e6422e9ea83cb89abd6076be6b12106ae0e635efbba0fbeb5e84764ca26
+"hpe-design-tokens@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "hpe-design-tokens@npm:2.3.0"
+  checksum: 10c0/fd7956b6afd1fc90b7e160f3eea229de660052aca50c82e6be7d26007d26660009bb7b7fb5aa2bd91e0ccdb5b2d853e51d935681a3b399d91a092df824b499e6
   languageName: node
   linkType: hard
 

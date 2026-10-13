@@ -110,21 +110,21 @@ export const backgroundIsDark = (backgroundArg, theme) => {
       ) {
         const backgroundColor = normalizeColor(background.color, theme);
         if (backgroundColor) {
-          result = colorIsDark(backgroundColor);
+          result = colorIsDark(backgroundColor, theme);
         }
       }
     } else {
       const color = normalizeColor(background, theme);
       if (color) {
-        result = colorIsDark(color);
+        result = colorIsDark(color, theme);
       }
     }
   }
   return result;
 };
 
-const darkContext = (backgroundColor) => {
-  const isDark = colorIsDark(backgroundColor);
+const darkContext = (backgroundColor, theme, text) => {
+  const isDark = colorIsDark(backgroundColor, theme, text);
   if (isDark === undefined) return undefined;
   return isDark ? 'dark' : 'light';
 };
@@ -160,13 +160,19 @@ export const backgroundAndTextColors = (backgroundArg, textArg, theme) => {
       // set the textColor to have the best contrast against the background
       // color.
       if (!textColor && (opacity === undefined || opacity > 0.3)) {
-        const shade = darkContext(backgroundColor, theme);
-        textColor = normalizeColor((shade && text[shade]) || text, theme);
+        const shade = darkContext(backgroundColor, theme, text);
+        // preserve undefined (unknown shade) so normalizeColor falls back
+        // to the ambient theme.dark instead of forcing the light side
+        textColor = normalizeColor(
+          (shade && text[shade]) || text,
+          theme,
+          shade === undefined ? undefined : shade === 'dark',
+        );
       }
     }
   } else {
     backgroundColor = normalizeBackgroundColor(background, theme);
-    const shade = darkContext(backgroundColor, theme);
+    const shade = darkContext(backgroundColor, theme, text);
     let transparent;
 
     if (backgroundColor && canExtractRGBArray(backgroundColor)) {

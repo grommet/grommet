@@ -5,7 +5,14 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { edgeStyle, focusStyle, normalizeColor, roundStyle } from '../../utils';
+import {
+  backgroundStyle,
+  borderStyle,
+  edgeStyle,
+  elevationStyle,
+  focusStyle,
+  roundStyle,
+} from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
@@ -26,66 +33,41 @@ const PopupColumnBox = styled(Box)`
   scrollbar-width: thin;
 `;
 
-const PopupOption = styled.div`
-  box-sizing: border-box;
+const PopupOption = styled(Box)`
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  ${(props) => {
-    const optionPad = props.theme.timeInput?.drop?.option?.pad;
-    return (
-      optionPad &&
-      edgeStyle(
-        'padding',
-        optionPad,
-        false,
-        props.theme.box.responsiveBreakpoint,
-        props.theme,
-      )
-    );
-  }}
-  ${(props) => {
-    const round =
-      props.theme.timeInput?.drop?.option?.round ||
-      props.theme.global.control?.border?.radius;
-    return round && roundStyle(round, false, props.theme);
-  }}
-  background: ${(props) => {
-    if (props.$selected) {
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.selected?.background,
-        props.theme,
-      );
-    }
-
-    if (props.$active) {
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.hover?.background,
-        props.theme,
-      );
-    }
-
-    return normalizeColor(
-      props.theme.timeInput?.drop?.option?.background,
-      props.theme,
-    );
-  }};
 
   &:hover {
-    background: ${(props) => {
-      if (props.$selected) {
-        return normalizeColor(
-          props.theme.timeInput?.drop?.option?.selected?.hover?.background ||
-            props.theme.timeInput?.drop?.option?.selected?.background,
-          props.theme,
-        );
-      }
+    ${(props) => {
+      const { theme, $hoverState, $hoverBackground } = props;
+      const responsive =
+        props.responsive === undefined ? true : props.responsive;
+      const styles = [];
 
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.hover?.background,
-        props.theme,
-      );
-    }};
+      if ($hoverBackground !== undefined)
+        styles.push(backgroundStyle($hoverBackground, theme));
+      if ($hoverState?.border !== undefined)
+        styles.push(borderStyle($hoverState.border, responsive, theme));
+      if ($hoverState?.elevation !== undefined)
+        styles.push(elevationStyle($hoverState.elevation));
+      if ($hoverState?.pad !== undefined)
+        styles.push(
+          edgeStyle(
+            'padding',
+            $hoverState.pad,
+            responsive,
+            theme.box.responsiveBreakpoint,
+            theme,
+          ),
+        );
+      if ($hoverState?.round !== undefined)
+        styles.push(
+          $hoverState.round === false
+            ? 'border-radius: 0;'
+            : roundStyle($hoverState.round, responsive, theme),
+        );
+
+      return styles;
+    }}
   }
 
   /*
@@ -116,31 +98,21 @@ const PopupColumn = ({
   label,
   messages,
   onClickCommitOption,
-  onPointerCommitOption,
   onSetSection,
   options,
   section,
   sections,
   theme,
 }) => {
-  // When inline (in DateTimeInput), use 'medium' to match Calendar height.
-  // Otherwise use timeInput drop maxHeight with fallback to 'small'.
-  const maxHeightToken = inline ? 'medium' : null;
-  const maxHeight =
-    (maxHeightToken && theme.global.size?.[maxHeightToken]) ||
-    theme.timeInput?.drop?.column?.maxHeight ||
-    theme.global.size.small;
+  const columnTheme = theme.timeInput?.drop?.column || {};
 
   return (
     <PopupColumnBox
       role="listbox"
       aria-label={label}
-      gap={theme.timeInput?.drop?.option?.gap || 'xxsmall'}
-      height={{
-        max: maxHeight,
-      }}
       overflow="auto"
       flex={{ grow: 0, shrink: 0 }}
+      {...columnTheme}
     >
       {options.map((option) => {
         const key = optionKey(label, option);
@@ -159,8 +131,27 @@ const PopupColumn = ({
           (section === SECTION_PERIOD && sections.period === option);
 
         const optionColor = selected
-          ? theme.timeInput?.drop?.option?.selected?.color || 'text'
-          : 'text';
+          ? theme.timeInput?.drop?.option?.text?.selected?.color ||
+            theme.timeInput?.drop?.option?.text?.color ||
+            'text'
+          : theme.timeInput?.drop?.option?.text?.color || 'text';
+        const optionContainer = theme.timeInput?.drop?.option?.container || {};
+        const {
+          hover: optionHover,
+          selected: selectedContainer = {},
+          ...baseOptionStyles
+        } = optionContainer;
+        const { hover: selectedHover, ...selectedOptionStyles } =
+          selectedContainer;
+        const optionStyles = selected
+          ? { ...baseOptionStyles, ...selectedOptionStyles }
+          : baseOptionStyles;
+        const hoverState = selected ? selectedHover : optionHover;
+        const hoverBackground = selected
+          ? hoverState?.background ??
+            selectedContainer.background ??
+            baseOptionStyles.background
+          : hoverState?.background;
         const isActive = selected && activeSection === section;
         let optionTabIndex = -1;
         if (inline) {
@@ -182,36 +173,42 @@ const PopupColumn = ({
         return (
           <PopupOption
             key={key}
-            data-option-key={key}
             role="option"
+            data-option-key={key}
             aria-selected={selected}
             tabIndex={optionTabIndex}
             aria-label={`${
               section === SECTION_PERIOD ? option : pad(option)
             } ${getSectionName(section, format, formatMessage, messages)}`}
-            $active={isActive}
-            $selected={selected}
-            onMouseDown={(event) => {
-              if (event.button !== 0) return;
-              // Commit on pointer press so momentum scroll does not swallow
-              // the first click commit on some trackpad/mouse flows.
-              onPointerCommitOption(section, option);
-            }}
+            flex={false}
+            $hoverState={hoverState}
+            $hoverBackground={hoverBackground}
+            {...optionStyles}
+            // This option owns its inset :focus-visible indicator. Box's
+            // focus tracking can retain state when tabIndex becomes -1.
+            focusIndicator={false}
             onClick={() => onClickCommitOption(section, option)}
             onFocus={() => onSetSection(section)}
           >
             <Text
               size={
-                theme.timeInput?.drop?.option?.size ||
-                theme.global.input.font.size ||
-                'small'
+                selected
+                  ? theme.timeInput?.drop?.option?.text?.selected?.size ||
+                    theme.timeInput?.drop?.option?.text?.size ||
+                    theme.global.input.font.size ||
+                    'small'
+                  : theme.timeInput?.drop?.option?.text?.size ||
+                    theme.global.input.font.size ||
+                    'small'
               }
               weight={
                 selected
-                  ? theme.timeInput?.drop?.option?.selected?.text?.weight
-                  : undefined
+                  ? theme.timeInput?.drop?.option?.text?.selected?.weight ??
+                    theme.timeInput?.drop?.option?.text?.weight
+                  : theme.timeInput?.drop?.option?.text?.weight
               }
               color={optionColor}
+              textAlign="center"
             >
               {section === SECTION_PERIOD ? option : pad(option)}
             </Text>
@@ -250,7 +247,6 @@ const TimeInputPopup = ({
   const { theme } = useThemeValue();
   const dialogRef = useRef();
   const pointerDownInsideRef = useRef(false);
-  const pointerSelectionCommittedRef = useRef(false);
   const suppressNextAutoScrollRef = useRef(false);
   const wheelInteractionTimeoutRef = useRef();
   const pointerReleaseTimeoutRef = useRef();
@@ -296,25 +292,15 @@ const TimeInputPopup = ({
     [setActiveSection, setSectionValue],
   );
 
-  const commitPointerOptionSelection = useCallback(
+  // Commit on the up-event (click), not mousedown - see WCAG 2.5.2 (Pointer
+  // Cancellation). Committing on press would leave no way to abort by
+  // moving the pointer off-target before releasing.
+  const commitClickOptionSelection = useCallback(
     (section, option) => {
-      pointerSelectionCommittedRef.current = true;
       suppressNextAutoScroll();
       commitOptionSelection(section, option);
     },
     [commitOptionSelection, suppressNextAutoScroll],
-  );
-
-  const commitClickOptionSelection = useCallback(
-    (section, option) => {
-      if (pointerSelectionCommittedRef.current) {
-        pointerSelectionCommittedRef.current = false;
-        return;
-      }
-
-      commitOptionSelection(section, option);
-    },
-    [commitOptionSelection],
   );
 
   const onPopupWheelCapture = useCallback(() => {
@@ -585,16 +571,24 @@ const TimeInputPopup = ({
     };
   }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
 
+  const dropTheme = theme.timeInput?.drop;
+  const { column, option, ...dropBoxTheme } = dropTheme;
+  const dropWidth = dropBoxTheme.width;
+  const popupWidth =
+    typeof dropWidth === 'object'
+      ? { ...dropWidth, max: dropWidth.max ?? '100%' }
+      : { width: dropWidth, max: '100%' };
+
   const popupContent = (
     <Box
       ref={dialogRef}
       role={inline ? undefined : 'dialog'}
       aria-label={inline ? undefined : label}
       direction="row"
-      width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
-      minHeight={theme.timeInput?.drop?.minHeight}
-      gap={theme.timeInput?.drop?.gap || 'xsmall'}
-      pad={inline ? 'none' : theme.timeInput?.drop?.pad || 'small'}
+      width={popupWidth}
+      {...dropBoxTheme}
+      height={inline ? '100%' : dropBoxTheme.height}
+      pad={inline ? 'none' : dropBoxTheme.pad}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}
       onPointerCancelCapture={clearInteractionInProgress}
@@ -641,10 +635,10 @@ const TimeInputPopup = ({
           setActiveSection(getAdjacentSection(eventSection, 1));
         } else if (event.key === 'ArrowUp') {
           event.preventDefault();
-          incrementSection(eventSection, 1);
+          incrementSection(eventSection, -1, true);
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
-          incrementSection(eventSection, -1);
+          incrementSection(eventSection, 1, true);
         }
 
         onKeyDownProp?.(event);
@@ -677,7 +671,6 @@ const TimeInputPopup = ({
           label={sectionLabel}
           messages={messages}
           onClickCommitOption={commitClickOptionSelection}
-          onPointerCommitOption={commitPointerOptionSelection}
           onSetSection={setActiveSection}
           options={options}
           section={section}

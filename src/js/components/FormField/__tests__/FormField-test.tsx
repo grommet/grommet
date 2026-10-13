@@ -21,6 +21,7 @@ import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { TextArea } from '../../TextArea';
 import { Text } from '../../Text';
+import { TimeInput } from '../../TimeInput';
 
 const CustomFormField = styled(FormField)`
   font-size: 40px;
@@ -198,6 +199,33 @@ describe('FormField', () => {
     fireEvent.focus(screen.getByRole('slider'));
 
     expect(container).toMatchSnapshot();
+  });
+
+  test('keeps focus within a TimeInput while moving between segments', async () => {
+    const user = userEvent.setup();
+    const warn = console.warn;
+    console.warn = jest.fn();
+
+    try {
+      render(
+        <Grommet>
+          <FormField label="Time">
+            <TimeInput format="24" />
+          </FormField>
+        </Grommet>,
+      );
+
+      const hours = screen.getByRole('spinbutton', { name: 'hours' });
+      const minutes = screen.getByRole('spinbutton', { name: 'minutes' });
+
+      await user.click(hours);
+      await user.keyboard('{ArrowRight}');
+
+      expect(minutes).toHaveFocus();
+      expect(screen.getByRole('group')).toContainElement(minutes);
+    } finally {
+      console.warn = warn;
+    }
   });
 
   test('abut with margin', () => {

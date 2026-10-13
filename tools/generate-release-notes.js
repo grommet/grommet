@@ -7,11 +7,12 @@
  * Generate Grommet release notes from merged PRs between two Git tags.
  *
  * Usage:
+ *   yarn generate-release-notes
+ *     # latest tag → master, inserts a `# X.X.X` entry in CHANGELOG.md
  *   yarn generate-release-notes -- --from v2.55.0 --to v2.56.0
- *   yarn generate-release-notes -- --from v2.55.0
- *     # to defaults to HEAD
+ *   yarn generate-release-notes -- --version v2.57.0
  *   yarn generate-release-notes -- --output RELEASE_NOTES.md
- *     # auto-detects --from
+ *     # writes the file instead of touching the changelog
  *   yarn generate-release-announcement -- --from v2.55.0 --to v2.56.0
  *
  * Options:
@@ -21,7 +22,14 @@
  *                     master.
  *   --format <type>   Output type: release-notes | announcement. Defaults
  *                     by script name.
- *   --output <file>   Write markdown to file instead of stdout.
+ *   --output <file>   Write markdown to file instead of stdout. Disables the
+ *                     default changelog update.
+ *   --changelog [file] Insert the generated notes at the top of the
+ *                     changelog (defaults to CHANGELOG.md).
+ *   --no-changelog    Leave the changelog untouched.
+ *   --version <ver>   Heading used for the changelog entry. Defaults to the
+ *                     --to tag when it looks like a version, otherwise a
+ *                     `X.X.X` placeholder.
  *   --token <token>   GitHub token (falls back to GH_TOKEN env var).
  *
  * Required GitHub token scopes: public_repo (or repo for private repos).
@@ -42,6 +50,11 @@ const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
 const GH_PR_URL = `https://github.com/${OWNER}/${REPO}/pull`;
 const GH_RELEASE_URL = `https://github.com/${OWNER}/${REPO}/releases/tag`;
 const GH_COMPARE_URL = `https://github.com/${OWNER}/${REPO}/compare`;
+
+const DEFAULT_CHANGELOG_FILE = 'CHANGELOG.md';
+
+/** Used as the changelog heading when the release version isn't known yet. */
+const PLACEHOLDER_VERSION = 'X.X.X';
 
 // ── Section configuration ───────────────────────────────────────────────────
 
@@ -199,6 +212,8 @@ function parseArgs() {
       ? 'announcement'
       : 'release-notes',
     output: null,
+    changelog: null,
+    version: null,
     token: process.env.GH_TOKEN || null,
   };
   for (let i = 0; i < argv.length; i++) {
@@ -207,6 +222,12 @@ function parseArgs() {
     else if (flag === '--to') args.to = argv[++i];
     else if (flag === '--format') args.format = argv[++i];
     else if (flag === '--output') args.output = argv[++i];
+    else if (flag === '--changelog') {
+      const next = argv[i + 1];
+      args.changelog =
+        next && !next.startsWith('--') ? argv[++i] : DEFAULT_CHANGELOG_FILE;
+    } else if (flag === '--no-changelog') args.changelog = false;
+    else if (flag === '--version') args.version = argv[++i];
     else if (flag === '--token') args.token = argv[++i];
     else if (!flag.startsWith('--') && !args.from) {
       // Positional: first non-flag arg is --from, second is --to
@@ -705,6 +726,38 @@ function formatReleaseNotes(sections) {
   return lines.join('\n').trim();
 }
 
+/** Changelog headings omit the leading `v` (e.g. `# 2.56.1`). */
+function normalizeVersionHeading(version) {
+  return String(version).trim().replace(/^v/i, '');
+}
+
+/**
+ * Insert the generated notes at the top of the changelog, replacing an
+ * existing entry for the same version when one is already present.
+ */
+function updateChangelog(file, version, markdown) {
+  const heading = `# ${normalizeVersionHeading(version)}`;
+  const entry = `${heading}\n\n${markdown}\n`;
+  const existing = existsSync(file) ? readFileSync(file, 'utf8') : '';
+  const lines = existing.split('\n');
+
+  const start = lines.findIndex((line) => line.trim() === heading);
+  let updated;
+  if (start === -1) {
+    updated = `${entry}\n${existing}`;
+  } else {
+    let end = start + 1;
+    while (end < lines.length && !/^# /.test(lines[end])) end += 1;
+    const before = lines.slice(0, start).join('\n');
+    const prefix = before && !before.endsWith('\n') ? `${before}\n` : before;
+    const rest = lines.slice(end).join('\n');
+    updated = `${prefix}${entry}\n${rest}`;
+  }
+
+  writeFileSync(file, updated, 'utf8');
+  console.error(`Changelog updated at ${file} under "${heading}".`);
+}
+
 function describeHighlightGroup(components, singular, plural, article) {
   if (components.length === 0) return null;
   if (components.length === 1) {
@@ -902,6 +955,19 @@ const args = parseArgs();
     console.error(`Release notes written to ${args.output}`);
   } else {
     process.stdout.write(`${markdown}\n`);
+  }
+
+  // Updating the changelog is the default unless notes were sent elsewhere.
+  const changelogFile =
+    args.changelog === false || args.format === 'announcement'
+      ? null
+      : args.changelog || (args.output ? null : DEFAULT_CHANGELOG_FILE);
+
+  if (changelogFile) {
+    const version =
+      args.version ||
+      (/^v?\d+\.\d+\.\d+$/i.test(toValue) ? toValue : PLACEHOLDER_VERSION);
+    updateChangelog(changelogFile, version, markdown);
   }
 })().catch((err) => {
   console.error(err.message || err);
