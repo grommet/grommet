@@ -1,22 +1,26 @@
 name: Tag release on PR merge
 
 # When a "Release vX.Y.Z" PR (opened by package-release-version-pr.yml)
-# merges into the default branch, verify CI passed on the merge commit
-# and push a vX.Y.Z tag. The tag push is what triggers the actual build
-# + publish workflow (package-release-tag-publish.yml) - this workflow
-# never builds, publishes, or creates a GitHub release itself.
+# merges into the default branch, verify CI passed on the merge commit,
+# push a vX.Y.Z tag, then explicitly dispatch package-release-tag-publish.yml
+# (a plain `push: tags:` trigger on that workflow would be unreliable here,
+# since GitHub suppresses new workflow runs for pushes made with the
+# default GITHUB_TOKEN). This workflow never builds, publishes, or
+# creates a GitHub release itself.
 on:
   pull_request:
     types: [closed]
 
 permissions:
   contents: write
+  actions: write # required to dispatch package-release-tag-publish.yml
 
 jobs:
   tag:
     name: Tag merged release PR
     if: >
       github.event.pull_request.merged == true &&
+      github.event.pull_request.base.ref == github.event.repository.default_branch &&
       startsWith(github.event.pull_request.head.ref, 'release/v')
     runs-on: ubuntu-latest
     steps:
@@ -65,3 +69,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git tag -a "$TAG" -m "Release $TAG"
           git push origin "$TAG"
+
+      - name: Dispatch build-and-publish workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.pkg.outputs.version }}
+        run: |
+          gh workflow run package-release-tag-publish.yml \
+            --repo "${{ github.repository }}" \
+            --field "tag=v${VERSION}"

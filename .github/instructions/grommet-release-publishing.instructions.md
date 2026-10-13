@@ -1,6 +1,6 @@
 ---
 description: 'Release automation guidance for controlled package publishing. Use when preparing a package release, validating a candidate, approving a publish, or routing a release task through the canonical publishing capability.'
-applyTo: '**/*'
+applyTo: '.github/workflows/package-release-*.yml,.github/workflows/release-tag-on-pr-merge.yml,tools/*release*.js,package.json,CHANGELOG.md,.github/knowledge/capabilities/grommet-publishing.md,.github/skills/grommet-release-publishing/**,.github/prompts/release-publishing.prompt.md'
 ---
 
 # Release publishing instructions
