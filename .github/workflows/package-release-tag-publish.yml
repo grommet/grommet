@@ -1,0 +1,127 @@
+name: Build and publish tagged release
+
+# Triggered by a vX.Y.Z tag (pushed by release-tag-on-pr-merge.yml once CI
+# passes on the merge commit). Builds and packs the release artifact,
+# requires human approval before publishing (environment protection),
+# publishes via npm Trusted Publishing (OIDC - no long-lived NPM_TOKEN),
+# then verifies the registry and creates the GitHub release with notes
+# pulled from CHANGELOG.md and the build artifact attached.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+  id-token: write # required for npm OIDC trusted publishing
+
+jobs:
+  build:
+    name: Build release artifact
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Check out tag
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Run build
+        run: yarn build
+
+      - name: Pack artifact
+        run: yarn pack --filename "grommet-${{ steps.version.outputs.version }}.tgz"
+
+      - name: Extract changelog section for this version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const version = process.env.VERSION;
+            const changelog = fs.readFileSync('CHANGELOG.md', 'utf8');
+            const heading = '# ' + version;
+            const start = changelog.indexOf(heading);
+            if (start === -1) {
+              console.error('Could not find CHANGELOG.md section for ' + heading);
+              process.exit(1);
+            }
+            const afterHeading = start + heading.length;
+            const nextHeading = changelog.indexOf('\n# ', afterHeading);
+            const section = changelog
+              .slice(afterHeading, nextHeading === -1 ? undefined : nextHeading)
+              .trim();
+            fs.writeFileSync('RELEASE_NOTES_FOR_TAG.md', section + '\n');
+          "
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: grommet-${{ steps.version.outputs.version }}
+          path: |
+            grommet-*.tgz
+            RELEASE_NOTES_FOR_TAG.md
+          if-no-files-found: error
+
+  publish:
+    name: Publish to npm (requires approval)
+    needs: build
+    runs-on: ubuntu-latest
+    # Required reviewer gate: configure this environment with required
+    # reviewers in repo settings. This is the human-approval checkpoint
+    # for the actual `npm publish` step - keep it required, at minimum,
+    # for the first several releases through this pipeline.
+    environment: release-publish-approval
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: grommet-${{ needs.build.outputs.version }}
+
+      - name: Set up Node for publish
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          registry-url: https://registry.npmjs.org
+
+      - name: Ensure npm supports trusted publishing
+        run: npm install -g npm@latest
+
+      - name: Publish package (OIDC trusted publishing, no NPM_TOKEN)
+        run: |
+          artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
+          npm publish "$artifact" --access public --provenance
+
+      - name: Verify npm registry
+        env:
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          for attempt in 1 2 3 4 5; do
+            npm view "grommet@$VERSION" version --json && break
+            sleep 10
+          done
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
+          gh release create "v${VERSION}" \
+            --title "v${VERSION}" \
+            --notes-file RELEASE_NOTES_FOR_TAG.md \
+            "$artifact"

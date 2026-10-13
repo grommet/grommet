@@ -1,0 +1,67 @@
+name: Tag release on PR merge
+
+# When a "Release vX.Y.Z" PR (opened by package-release-version-pr.yml)
+# merges into the default branch, verify CI passed on the merge commit
+# and push a vX.Y.Z tag. The tag push is what triggers the actual build
+# + publish workflow (package-release-tag-publish.yml) - this workflow
+# never builds, publishes, or creates a GitHub release itself.
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: write
+
+jobs:
+  tag:
+    name: Tag merged release PR
+    if: >
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'release/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out merge commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          fetch-depth: 0
+
+      - name: Wait for CI to pass on the merge commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          for attempt in $(seq 1 30); do
+            state=$(gh api "repos/${{ github.repository }}/commits/$SHA/status" --jq '.state')
+            echo "Attempt $attempt: combined status = $state"
+            if [ "$state" = "success" ]; then
+              exit 0
+            fi
+            if [ "$state" = "failure" ] || [ "$state" = "error" ]; then
+              echo "CI failed on the merge commit - not tagging."
+              exit 1
+            fi
+            sleep 30
+          done
+          echo "Timed out waiting for CI to report success."
+          exit 1
+
+      - name: Read version from package.json
+        id: pkg
+        run: |
+          version=$(node -p "require('./package.json').version")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Create and push tag
+        env:
+          VERSION: ${{ steps.pkg.outputs.version }}
+        run: |
+          TAG="v${VERSION}"
+          if git ls-remote --exit-code --tags origin "$TAG" > /dev/null 2>&1; then
+            echo "Tag $TAG already exists - skipping (release likely already tagged)."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "$TAG" -m "Release $TAG"
+          git push origin "$TAG"
