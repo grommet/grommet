@@ -1241,6 +1241,20 @@ describe('TextInput', () => {
     ).not.toBeInTheDocument();
   });
 
+  test('hides native search clear button when clear is set', () => {
+    render(
+      <Grommet>
+        <TextInput type="search" value="test" clear aria-label="Search" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Search')).toHaveStyleRule(
+      'appearance',
+      'none',
+      { modifier: '::-webkit-search-cancel-button' },
+    );
+  });
+
   test('places clear before password toggle and copy', () => {
     render(
       <Grommet>
