@@ -673,6 +673,7 @@ const TextInput = forwardRef(
             focus={focus}
             hasButton={hasActionsGroup}
             hasActionsGroup={hasActionsGroup}
+            hasClear={clearable}
             hasTrailingIcon={showTrailingIcon}
             focusIndicator={focusIndicator}
             textAlign={textAlign}

@@ -39,6 +39,13 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${(props) => getPlainStyle(props.plain)}
   ${(props) => props.icon && !props.hasActionsGroup && inputPadForIcon}
   ${(props) =>
+    // avoid a second, native clear button on type="search" in WebKit/Blink
+    props.hasClear &&
+    `&::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }`}
+  ${(props) =>
     props.disabled &&
     disabledStyle(
       props.theme.textInput.disabled && props.theme.textInput.disabled.opacity,
