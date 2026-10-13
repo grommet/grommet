@@ -1,0 +1,109 @@
+name: Draft release version PR
+
+# Generates a release-notes draft from merged PRs since the last tag,
+# suggests a patch/minor version bump from that draft, updates
+# package.json + CHANGELOG.md, and opens a PR for human review.
+# This workflow never merges, tags, or publishes anything itself —
+# it only proposes the version/changelog change for a maintainer to
+# review, edit, and merge.
+on:
+  workflow_dispatch:
+    inputs:
+      from_tag:
+        description: 'Starting tag (exclusive). Auto-detected from latest tag if omitted.'
+        required: false
+        type: string
+      to_tag:
+        description: 'Ending tag or ref for release-note generation'
+        required: false
+        default: 'HEAD'
+        type: string
+      bump_override:
+        description: 'Force a version bump instead of the auto-suggested one'
+        required: false
+        type: choice
+        default: 'auto'
+        options:
+          - auto
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  draft-version-pr:
+    name: Draft release version PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.15.0'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Generate release-notes draft
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn generate-release-notes \
+            -- \
+            ${{ inputs.from_tag && format('--from {0}', inputs.from_tag) || '' }} \
+            --to "${{ inputs.to_tag }}" \
+            --output RELEASE_NOTES_DRAFT.md
+
+      - name: Suggest version bump and update package.json / CHANGELOG.md
+        id: version
+        env:
+          BUMP_OVERRIDE: ${{ inputs.bump_override }}
+        run: yarn babel-node tools/draft-release-version-pr.js
+
+      - name: Open release PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+          BUMP: ${{ steps.version.outputs.bump }}
+        run: |
+          BRANCH="release/v${VERSION}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add package.json CHANGELOG.md
+          git commit -m "Release v${VERSION}"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "Release v${VERSION}" \
+            --body "$(cat <<EOF
+          Automated release-version draft.
+
+          - **Suggested bump:** \`${BUMP}\` (auto-suggested from the release-notes
+            draft below — **please confirm this is the correct scope** before
+            merging; override by editing \`package.json\` directly in this PR).
+          - **Release notes draft:** see \`RELEASE_NOTES_DRAFT.md\` in the
+            workflow run artifacts, now incorporated into \`CHANGELOG.md\`.
+
+          ### Review checklist
+          - [ ] Version bump (\`${BUMP}\`) matches the actual scope of changes
+          - [ ] CHANGELOG.md entries are accurate and well-worded
+          - [ ] No manual edits needed before merging
+
+          Merging this PR does **not** publish anything — it only updates the
+          version and changelog for the next release candidate build.
+          EOF
+          )"
+
+      - name: Upload release-notes draft
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes-draft
+          path: RELEASE_NOTES_DRAFT.md
