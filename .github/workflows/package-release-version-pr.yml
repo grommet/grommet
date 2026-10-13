@@ -62,6 +62,16 @@ jobs:
             --to "${{ inputs.to_tag }}" \
             --output RELEASE_NOTES_DRAFT.md
 
+      - name: Generate release-announcement draft
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn generate-release-announcement \
+            -- \
+            ${{ inputs.from_tag && format('--from {0}', inputs.from_tag) || '' }} \
+            --to "${{ inputs.to_tag }}" \
+            --output RELEASE_ANNOUNCEMENT_DRAFT.md
+
       - name: Run pre-release checklist (components, missing tests, bump suggestion)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -99,6 +109,8 @@ jobs:
             echo "  this is the correct scope** before merging; override by"
             echo "  editing \`package.json\` directly in this PR)."
             echo "- **Release notes:** incorporated into \`CHANGELOG.md\` below."
+            echo "- **Release announcement draft:** see \`RELEASE_ANNOUNCEMENT_DRAFT.md\`"
+            echo "  in the workflow run artifacts (not posted automatically)."
             echo
             echo "### Review checklist"
             echo "- [ ] Version bump (\`${BUMP}\`) matches the actual scope of changes"
@@ -126,4 +138,5 @@ jobs:
           name: release-notes-draft
           path: |
             RELEASE_NOTES_DRAFT.md
+            RELEASE_ANNOUNCEMENT_DRAFT.md
             RELEASE_CHECKLIST.md
