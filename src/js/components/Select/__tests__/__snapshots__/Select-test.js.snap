@@ -3299,7 +3299,7 @@ exports[`Select complex options and children 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eKPige StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
+            class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -4986,7 +4986,7 @@ exports[`Select disabled 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eKPige StyledSelect__SelectTextInput-sc-znp66n-4 dYCnbQ"
+            class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 dYCnbQ"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -12286,7 +12286,7 @@ exports[`Select prop: onOpen 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 eKPige StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
+          class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
           id="test-select__input"
           inert=""
           placeholder="test select"
@@ -14123,7 +14123,7 @@ exports[`Select renders custom up and down icons 2`] = `
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eKPige StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
+            class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
             inert=""
             placeholder="Select..."
             readonly=""
@@ -16225,7 +16225,7 @@ exports[`Select search 4`] = `
 <input
   aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 klQGiO"
+  class="StyledTextInput-sc-1x30a0s-0 dYegJm"
   type="search"
   value=""
 />
@@ -16235,7 +16235,7 @@ exports[`Select search 5`] = `
 <input
   aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 klQGiO"
+  class="StyledTextInput-sc-1x30a0s-0 dYegJm"
   type="search"
   value="o"
 />
@@ -16901,7 +16901,7 @@ exports[`Select search and select 4`] = `
 <input
   aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 klQGiO"
+  class="StyledTextInput-sc-1x30a0s-0 dYegJm"
   type="search"
   value=""
 />
@@ -16911,7 +16911,7 @@ exports[`Select search and select 5`] = `
 <input
   aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 klQGiO"
+  class="StyledTextInput-sc-1x30a0s-0 dYegJm"
   type="search"
   value="t"
 />
@@ -18658,7 +18658,7 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 eKPige StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
+            class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
             id="test-select__input"
             inert=""
             placeholder="test select"

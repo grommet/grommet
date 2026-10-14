@@ -144,6 +144,18 @@ const FormFieldBox = styled(Box)`
 
 const FormFieldContentBox = styled(Box)`
   ${(props) => getFocusStyle(props)}
+  /*
+ * TimeInput moves focus between multiple internal segments. The focus-within
+ * fallback keeps the FormField indicator visible while focus moves between
+ * those segments, without trapping focus after it leaves the field.
+ */
+  ${(props) =>
+    props.componentName === 'timeInput' &&
+    css`
+      &:focus-within {
+        ${focusStyle({ justBorder: true })}
+      }
+    `}
   ${getHoverStyle('content')}
   ${(props) =>
     props.theme.formField &&
@@ -762,7 +774,10 @@ const FormField = forwardRef(
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
-          setFocus(false);
+          const focusRemainsInside = formFieldRef.current?.contains(
+            event.relatedTarget,
+          );
+          if (!focusRemainsInside) setFocus(false);
 
           // if input has a drop and focus is within drop
           // prevent onBlur validation from running until
