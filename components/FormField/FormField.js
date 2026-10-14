@@ -17,6 +17,7 @@ var _Text = require("../Text");
 var _TextInput = require("../TextInput");
 var _FormContext = require("../Form/FormContext");
 var _propTypes = require("./propTypes");
+var _FormFieldContext = require("./FormFieldContext");
 var _useThemeValue3 = require("../../utils/useThemeValue");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _excluded = ["message", "id"],
@@ -40,9 +41,10 @@ var getFocusStyle = function getFocusStyle(props) {
   if (props.focus && props.containerFocus === false && ((_props$theme$formFiel = props.theme.formField) == null || (_props$theme$formFiel = _props$theme$formFiel.focus) == null ? void 0 : _props$theme$formFiel.containerFocus) === false) {
     return null;
   }
-  return props.focus ? (0, _styles.focusStyle)({
+  if (!props.focus) return undefined;
+  return (0, _styles.focusStyle)({
     justBorder: true
-  }) : undefined;
+  });
 };
 
 // The border color has to be painted by whichever element owns the border,
@@ -96,12 +98,8 @@ var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
 var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
-})(["", " ", " ", " ", ""], function (props) {
+})(["", " ", " ", ""], function (props) {
   return getFocusStyle(props);
-}, function (props) {
-  return props.componentName === 'timeInput' && (0, _styledComponents.css)(["&:focus-within{", "}"], (0, _styles.focusStyle)({
-    justBorder: true
-  }));
 }, getHoverStyle('content'), function (props) {
   var _props$theme$formFiel3;
   return props.theme.formField && ((_props$theme$formFiel3 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.container) == null ? void 0 : _props$theme$formFiel3.extend);
@@ -287,6 +285,15 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   var _useState = (0, _react.useState)(),
     focus = _useState[0],
     setFocus = _useState[1];
+  var _useState2 = (0, _react.useState)(true),
+    focusIndicator = _useState2[0],
+    setFocusIndicator = _useState2[1];
+  var fieldFocus = focus && focusIndicator;
+  var fieldContext = (0, _react.useMemo)(function () {
+    return {
+      setFocusIndicator: setFocusIndicator
+    };
+  }, []);
   var formFieldRef = (0, _refs.useForwardedRef)(ref);
   var formFieldTheme = theme.formField;
   var themeBorder = formFieldTheme.border;
@@ -449,7 +456,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     } else if (formFieldTheme.error.border && formFieldTheme.error.border.color) {
       borderColor = formFieldTheme.error.border.color || 'status-critical';
     }
-  } else if (focus && formFieldTheme.focus && formFieldTheme.focus.border && formFieldTheme.focus.border.color) {
+  } else if (fieldFocus && formFieldTheme.focus && formFieldTheme.focus.border && formFieldTheme.focus.border.color) {
     borderColor = formFieldTheme.focus.border.color;
   } else {
     borderColor = themeBorder && themeBorder.color || 'border';
@@ -482,7 +489,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
         color: borderColor
       }),
       round: formFieldTheme.round,
-      focus: isFileInputComponent ? undefined : focus
+      focus: isFileInputComponent ? undefined : fieldFocus
     } : {};
     contents = /*#__PURE__*/_react["default"].createElement(FormFieldContentBox, _extends({
       disabledProp: disabled,
@@ -510,8 +517,8 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
         };
       }
       outerStyle = _extends({
-        position: focus ? 'relative' : undefined,
-        zIndex: focus ? 10 : undefined
+        position: fieldFocus ? 'relative' : undefined,
+        zIndex: fieldFocus ? 10 : undefined
       }, style);
     }
   }
@@ -519,7 +526,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   if (themeBorder && themeBorder.position === 'outer') {
     if (error && formFieldTheme.error && formFieldTheme.error.background) {
       outerBackground = formFieldTheme.error.background;
-    } else if (focus && formFieldTheme.focus && formFieldTheme.focus.background && formFieldTheme.focus.background.color) {
+    } else if (fieldFocus && formFieldTheme.focus && formFieldTheme.focus.background && formFieldTheme.focus.background.color) {
       outerBackground = formFieldTheme.focus.background.color;
     } else if (disabled && formFieldTheme.disabled && formFieldTheme.disabled.background) {
       outerBackground = formFieldTheme.disabled.background;
@@ -530,7 +537,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
       color: borderColor
     }),
     round: formFieldTheme.round,
-    focus: focus
+    focus: fieldFocus
   } : {};
   var requiredIndicator = theme.formField.label.requiredIndicator;
   if (requiredIndicator === true)
@@ -555,6 +562,9 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     ,
     allowHover: allowHover // internal prop
     ,
+    onFocusCapture: function onFocusCapture() {
+      return setFocusIndicator(true);
+    },
     onFocus: function onFocus(event) {
       var _formFieldRef$current;
       var root = (_formFieldRef$current = formFieldRef.current) == null ? void 0 : _formFieldRef$current.getRootNode();
@@ -566,7 +576,10 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     onBlur: function onBlur(event) {
       var _formFieldRef$current2;
       var focusRemainsInside = (_formFieldRef$current2 = formFieldRef.current) == null ? void 0 : _formFieldRef$current2.contains(event.relatedTarget);
-      if (!focusRemainsInside) setFocus(false);
+      if (!focusRemainsInside) {
+        setFocus(false);
+        setFocusIndicator(true);
+      }
 
       // if input has a drop and focus is within drop
       // prevent onBlur validation from running until
@@ -591,7 +604,9 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     htmlFor: adjustedHtmlFor
   }, labelStyle), label, showRequiredIndicator ? requiredIndicator : undefined), /*#__PURE__*/_react["default"].createElement(Message, _extends({
     message: help
-  }, themeHelpProps))) : undefined, contents, /*#__PURE__*/_react["default"].createElement(Message, _extends({
+  }, themeHelpProps))) : undefined, /*#__PURE__*/_react["default"].createElement(_FormFieldContext.FormFieldContext.Provider, {
+    value: fieldContext
+  }, contents), /*#__PURE__*/_react["default"].createElement(Message, _extends({
     type: "error",
     message: error
   }, formFieldTheme.error, {

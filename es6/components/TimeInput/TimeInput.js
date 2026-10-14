@@ -16,6 +16,7 @@ import { getSectionTokenFromType } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { FormContext } from '../Form';
+import { FormFieldContext } from '../FormField/FormFieldContext';
 import { Keyboard } from '../Keyboard';
 import { StyledTimeInputDisplay, StyledTimeInputField, StyledTimeInputSegment, StyledTimeInputSeparator, StyledTimeInputContainer, StyledTimeInput } from './StyledTimeInput';
 import { TimeInputPopup } from './TimeInputPopup';
@@ -107,6 +108,8 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   var _useContext = useContext(MessageContext),
     formatMessage = _useContext.format;
   var formContext = useContext(FormContext);
+  var _useContext2 = useContext(FormFieldContext),
+    setFieldFocusIndicator = _useContext2.setFocusIndicator;
   var useFormInput = formContext.useFormInput;
   var inputRef = useForwardedRef(refArg);
   var containerRef = useRef();
@@ -413,6 +416,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }, 0);
   }, [activeSection, focusSection]);
   var onSegmentFocus = useCallback(function (section) {
+    setFieldFocusIndicator == null || setFieldFocusIndicator(true);
     if (!segmentFocused && !readOnly && !disabled && !open) {
       announce(formatMessage({
         id: 'timeInput.openDrop',
@@ -422,7 +426,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     setSegmentFocused(true);
     if (readOnly || disabled) return;
     setActiveSection(section);
-  }, [announce, disabled, formatMessage, messages, open, readOnly, segmentFocused, setActiveSection]);
+  }, [announce, disabled, formatMessage, messages, open, readOnly, segmentFocused, setFieldFocusIndicator, setActiveSection]);
   var onSegmentBlur = useCallback(function () {
     requestAnimationFrame(function () {
       var _containerRef$current;
@@ -716,6 +720,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     "aria-controls": id ? id + "__drop" : undefined,
     onFocus: function onFocus() {
       setIconFocused(true);
+      setFieldFocusIndicator == null || setFieldFocusIndicator(false);
     },
     onBlur: function onBlur() {
       setIconFocused(false);

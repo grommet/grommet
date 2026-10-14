@@ -13,6 +13,7 @@ var _sectionHelpers = require("../../utils/sectionHelpers");
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _Form = require("../Form");
+var _FormFieldContext = require("../FormField/FormFieldContext");
 var _Keyboard = require("../Keyboard");
 var _StyledTimeInput = require("./StyledTimeInput");
 var _TimeInputPopup = require("./TimeInputPopup");
@@ -111,6 +112,8 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     formatMessage = _useContext.format;
   var formContext = (0, _react.useContext)(_Form.FormContext);
+  var _useContext2 = (0, _react.useContext)(_FormFieldContext.FormFieldContext),
+    setFieldFocusIndicator = _useContext2.setFocusIndicator;
   var useFormInput = formContext.useFormInput;
   var inputRef = (0, _utils.useForwardedRef)(refArg);
   var containerRef = (0, _react.useRef)();
@@ -417,6 +420,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     }, 0);
   }, [activeSection, focusSection]);
   var onSegmentFocus = (0, _react.useCallback)(function (section) {
+    setFieldFocusIndicator == null || setFieldFocusIndicator(true);
     if (!segmentFocused && !readOnly && !disabled && !open) {
       announce(formatMessage({
         id: 'timeInput.openDrop',
@@ -426,7 +430,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     setSegmentFocused(true);
     if (readOnly || disabled) return;
     setActiveSection(section);
-  }, [announce, disabled, formatMessage, messages, open, readOnly, segmentFocused, setActiveSection]);
+  }, [announce, disabled, formatMessage, messages, open, readOnly, segmentFocused, setFieldFocusIndicator, setActiveSection]);
   var onSegmentBlur = (0, _react.useCallback)(function () {
     requestAnimationFrame(function () {
       var _containerRef$current;
@@ -720,6 +724,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     "aria-controls": id ? id + "__drop" : undefined,
     onFocus: function onFocus() {
       setIconFocused(true);
+      setFieldFocusIndicator == null || setFieldFocusIndicator(false);
     },
     onBlur: function onBlur() {
       setIconFocused(false);
