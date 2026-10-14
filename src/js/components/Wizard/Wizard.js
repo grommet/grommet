@@ -364,8 +364,8 @@ const Wizard = forwardRef(
             );
           }
           return undefined;
-        }
-        return nextId;
+        }     
+        return !match.disabled ? nextId : undefined;
       }
       let nextIndex = currentStepIndex + 1;
       while (nextIndex < flatSteps.length) {
@@ -751,8 +751,7 @@ const Wizard = forwardRef(
     const canGoNext = !currentStepObj?.disabled && !isValidating;
     const isBlocked =
       (currentValidation?.form?.ok === false ||
-        currentValidation?.callback?.ok === false) &&
-      !currentStepObj?.skippable;
+        currentValidation?.callback?.ok === false);
     const isCompleted = completedSteps.has(currentStep);
 
     const contextValue = useMemo(
