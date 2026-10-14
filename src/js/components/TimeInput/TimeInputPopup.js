@@ -589,6 +589,7 @@ const TimeInputPopup = ({
       {...dropBoxTheme}
       height={inline ? '100%' : dropBoxTheme.height}
       pad={inline ? 'none' : dropBoxTheme.pad}
+      responsive={false}
       onPointerDownCapture={markInteractionInProgress}
       onPointerUpCapture={releaseInteractionAfterClick}
       onPointerCancelCapture={clearInteractionInProgress}
