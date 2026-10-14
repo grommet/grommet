@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {
@@ -16,21 +17,46 @@ import {
   Text,
 } from 'grommet';
 import { ThemeType } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
+import { hpe } from 'grommet-theme-hpe';
 
-const theme: ThemeType = {
-  radioButton: {
-    background: { color: { light: 'light-2', dark: 'dark-2' } },
-    check: {
-      background: { color: { light: 'accent-1', dark: 'accent-2' } },
-      hover: {
-        background: { color: { light: 'accent-3', dark: 'neutral-3' } },
+const hpeTheme: ThemeType = deepMerge(hpe, {
+  global: {
+    colors: {
+      'background-input': {
+        light: 'rgba(255, 255, 255, 0.72)',
+        dark: 'rgba(0, 0, 0, 0.04)',
+      },
+      'background-input-hover': {
+        light: 'rgba(255, 255, 255, 0.72)',
+        dark: 'rgba(0, 0, 0, 0.04)',
       },
     },
-    hover: {
-      background: { color: { light: 'light-1', dark: 'dark-1' } },
-    },
   },
-};
+  radioButton: {
+    control: {
+      background: 'background-input',
+      hover: {
+        background: 'background-input-hover',
+      },
+      selected: {
+        background: { color: 'background-selected-primary-strong' },
+        hover: {
+          background: { color: 'background-selected-primary-strong-hover' },
+        },
+      },
+    },
+    check: {
+      extend: undefined,
+    },
+    container: {
+      background: { color: { light: 'light-1', dark: 'dark-1' } },
+      hover: { background: { color: 'background-input-hover' } },
+      // extend: undefined,
+    },
+    extend: undefined,
+  },
+});
 
 const BackgroundExample = () => {
   const [dark, setDark] = useState(false);
@@ -39,9 +65,9 @@ const BackgroundExample = () => {
 
   return (
     <Grommet
-      theme={theme}
+      theme={hpeTheme}
       themeMode={dark ? 'dark' : 'light'}
-      background={dark ? 'dark-1' : 'light-1'}
+      background={dark ? 'dark-2' : 'light-3'}
     >
       <Box pad="large" gap="medium" width="large">
         <Heading level={2} margin="none">
@@ -49,8 +75,10 @@ const BackgroundExample = () => {
         </Heading>
         <Text>
           Hover a control or its label. The circle fill and label background use
-          independent theme tokens. Tab into the form to see the focused control
-          use its hover fill.
+          independent control and container theme tokens. Unselected controls
+          use background-input-hover; selected controls use
+          background-selected-primary-strong-hover. Tab into the form to see the
+          focused control use its state-specific hover fill.
         </Text>
         <CheckBox
           toggle

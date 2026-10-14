@@ -3,6 +3,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
   focusStyle,
   normalizeColor,
   styledComponentsConfig,
@@ -14,19 +15,88 @@ const disabledStyle = `
   cursor: default;
 `;
 
-// Resolve the component selector at render time without changing the existing
-// styled component declaration order or affecting custom render children.
 const controlHoverStyle = (props) => {
-  const color = props.theme.radioButton.check.hover?.background?.color;
-  if (props.disabled || color === undefined) return undefined;
+  const { control, check } = props.theme.radioButton;
+  if (props.disabled) return undefined;
+
+  const legacyColor = check.hover?.background?.color;
+  const hasStateHover =
+    control?.hover?.background != null ||
+    control?.selected?.hover?.background != null;
+  if (!hasStateHover) {
+    if (legacyColor === undefined) return undefined;
+    return css`
+      input:not([disabled])
+        + ${
+          // eslint-disable-next-line no-use-before-define
+          StyledRadioButtonBox
+        } {
+        background-color: ${normalizeColor(legacyColor, props.theme)};
+      }
+    `;
+  }
+
+  const stateStyle = (background) =>
+    background != null
+      ? backgroundStyle(background, props.theme, false)
+      : legacyColor !== undefined &&
+        css`
+          background-color: ${normalizeColor(legacyColor, props.theme)};
+        `;
+  const normal = stateStyle(control?.hover?.background);
+  const selected = stateStyle(control?.selected?.hover?.background);
+  if (normal === undefined && selected === undefined) return undefined;
+
   return css`
-    input:not([disabled])
-      + ${
-        // eslint-disable-next-line no-use-before-define
-        StyledRadioButtonBox
-      } {
-      background-color: ${normalizeColor(color, props.theme)};
-    }
+    ${normal &&
+    css`
+      input:not([disabled]):not(:checked)
+        + ${
+          // eslint-disable-next-line no-use-before-define
+          StyledRadioButtonBox
+        } {
+        ${normal}
+      }
+    `}
+    ${selected &&
+    css`
+      input:not([disabled]):checked
+        + ${
+          // eslint-disable-next-line no-use-before-define
+          StyledRadioButtonBox
+        } {
+        ${selected}
+      }
+    `}
+  `;
+};
+
+const containerBackgroundStyle = (props) => {
+  const { container, hover } = props.theme.radioButton;
+  if (container.background == null && container.hover?.background == null)
+    return undefined;
+
+  const hoverBackground =
+    container.hover?.background != null
+      ? backgroundStyle(container.hover.background, props.theme, false)
+      : hover?.background?.color !== undefined &&
+        css`
+          background-color: ${normalizeColor(
+            hover.background.color,
+            props.theme,
+          )};
+        `;
+
+  return css`
+    ${backgroundStyle(container.background, props.theme, false)}
+    ${!props.disabled &&
+    hoverBackground &&
+    css`
+      &:hover {
+        ${hoverBackground}
+      }
+      ${props.focus && !props.focusIndicator && hoverBackground}
+    `}
   `;
 };
 
@@ -50,6 +120,7 @@ const StyledRadioButtonContainer = styled.label.withConfig(
     background-color: ${(props) =>
       normalizeColor(
         !props.disabled &&
+          props.theme.radioButton.container.hover?.background == null &&
           props.theme.radioButton.hover &&
           props.theme.radioButton.hover.background &&
           props.theme.radioButton.hover.background.color,
@@ -72,6 +143,7 @@ const StyledRadioButtonContainer = styled.label.withConfig(
     }
     background-color: ${normalizeColor(
       !props.disabled &&
+        props.theme.radioButton.container.hover?.background == null &&
         props.theme.radioButton.hover &&
         props.theme.radioButton.hover.background &&
         props.theme.radioButton.hover.background.color,
@@ -80,6 +152,20 @@ const StyledRadioButtonContainer = styled.label.withConfig(
     `}
   ${(props) => {
     const controlStyle = controlHoverStyle(props);
+    const containerStyle = containerBackgroundStyle(props);
+    if (containerStyle) {
+      return css`
+        ${containerStyle}
+        ${controlStyle &&
+        css`
+          &:hover {
+            ${controlStyle}
+          }
+          ${props.focus && !props.focusIndicator && controlStyle}
+        `}
+        ${props.theme.radioButton.container.extend}
+      `;
+    }
     return controlStyle
       ? css`
           &:hover {
@@ -128,7 +214,13 @@ const StyledRadioButtonBox = styled(Box)`
   background-color: ${(props) => props.backgroundColor};
   transform: scale(1); // prevent misalignment in certain browsers
   ${(props) => props.focus && focusStyle()};
-  ${(props) => props.theme.radioButton.check.extend};
+  ${(props) =>
+    props.$controlBackground != null
+      ? css`
+          ${backgroundStyle(props.$controlBackground, props.theme, false)}
+          ${props.theme.radioButton.check.extend}
+        `
+      : props.theme.radioButton.check.extend};
 `;
 
 const StyledRadioButton = styled(Box)`

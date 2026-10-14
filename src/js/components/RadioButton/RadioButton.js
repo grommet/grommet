@@ -51,9 +51,15 @@ const RadioButton = forwardRef(
       theme.radioButton.background?.color,
       theme,
     );
+    let controlBackground = theme.radioButton.control?.background;
 
     if (checked) {
       borderColor = normalizeColor(theme.radioButton.color || 'control', theme);
+      controlBackground =
+        theme.radioButton.control?.selected?.background ??
+        (theme.radioButton.check?.background?.color
+          ? undefined
+          : controlBackground);
 
       if (theme.radioButton.check?.background?.color) {
         backgroundColor = normalizeColor(
@@ -112,7 +118,12 @@ const RadioButton = forwardRef(
                 size: theme.radioButton.border.width,
                 color: borderColor,
               }}
-              backgroundColor={backgroundColor}
+              backgroundColor={
+                controlBackground != null ? undefined : backgroundColor
+              }
+              {...(controlBackground != null && {
+                $controlBackground: controlBackground,
+              })}
               round={theme.radioButton.check.radius}
               {...passThemeFlag}
             >

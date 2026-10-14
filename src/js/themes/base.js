@@ -848,6 +848,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     checkBox: {
+      // control: {
+      //   background: undefined,
+      //   hover: { background: undefined }, // unselected only
+      //   selected: {
+      //     background: undefined, // checked and indeterminate
+      //     hover: { background: undefined },
+      //   },
+      // },
+      // container: {
+      //   background: undefined,
+      //   hover: { background: undefined },
+      // },
       // background: { color: undefined }, // default control fill
       border: {
         color: {
@@ -2090,6 +2102,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButton: {
+      // control: {
+      //   background: undefined,
+      //   hover: { background: undefined }, // unselected only
+      //   selected: {
+      //     background: undefined,
+      //     hover: { background: undefined },
+      //   },
+      // },
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
@@ -2134,6 +2154,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // weight: undefined,
       },
       container: {
+        // background: undefined,
+        // hover: { background: undefined },
         // extend: undefined
       },
     },

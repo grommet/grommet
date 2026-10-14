@@ -3,6 +3,7 @@
 import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
   edgeStyle,
   focusStyle,
   normalizeColor,
@@ -26,11 +27,28 @@ const disabledStyle = `
   cursor: default;
 `;
 
-// Resolve the component selector at render time, keeping the existing styled
-// component declaration order (and unthemed snapshots) unchanged.
 const controlHoverStyle = (props) => {
-  const color = props.theme.checkBox.check.hover?.background?.color;
-  if (props.disabled || color === undefined) return undefined;
+  const { control, check } = props.theme.checkBox;
+  if (props.disabled) return undefined;
+
+  const selected = props.checked || props.indeterminate;
+  const background = selected
+    ? control?.selected?.hover?.background
+    : control?.hover?.background;
+  if (background != null) {
+    return css`
+      input:not([disabled])
+        + ${
+          // eslint-disable-next-line no-use-before-define
+          StyledCheckBoxBox
+        } {
+        ${backgroundStyle(background, props.theme, false)}
+      }
+    `;
+  }
+
+  const color = check.hover?.background?.color;
+  if (color === undefined) return undefined;
   return css`
     input:not([disabled])
       + ${
@@ -39,6 +57,35 @@ const controlHoverStyle = (props) => {
       } {
       background-color: ${normalizeColor(color, props.theme)};
     }
+  `;
+};
+
+const containerBackgroundStyle = (props) => {
+  const { container, hover } = props.theme.checkBox;
+  if (container?.background == null && container?.hover?.background == null)
+    return undefined;
+
+  const hoverBackground =
+    container?.hover?.background != null
+      ? backgroundStyle(container.hover.background, props.theme, false)
+      : hover?.background?.color !== undefined &&
+        css`
+          background-color: ${normalizeColor(
+            hover.background.color,
+            props.theme,
+          )};
+        `;
+
+  return css`
+    ${backgroundStyle(container?.background, props.theme, false)}
+    ${!props.disabled &&
+    hoverBackground &&
+    css`
+      &:hover {
+        ${hoverBackground}
+      }
+      ${props.focus && !props.focusIndicator && hoverBackground}
+    `}
   `;
 };
 
@@ -52,7 +99,9 @@ const hoverStyle = css`
   &:hover {
     background-color: ${(props) =>
       normalizeColor(
-        !props.disabled && props.theme.checkBox.hover?.background?.color,
+        !props.disabled &&
+          props.theme.checkBox.container?.hover?.background == null &&
+          props.theme.checkBox.hover?.background?.color,
         props.theme,
       )};
   }
@@ -108,11 +157,27 @@ const StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig)`
     }
 
     background-color: ${normalizeColor(
-      !props.disabled && props.theme.checkBox.hover?.background?.color,
+      !props.disabled &&
+        props.theme.checkBox.container?.hover?.background == null &&
+        props.theme.checkBox.hover?.background?.color,
       props.theme,
     )};`}
   ${(props) => {
     const controlStyle = controlHoverStyle(props);
+    const containerStyle = containerBackgroundStyle(props);
+    if (containerStyle) {
+      return css`
+        ${containerStyle}
+        ${controlStyle &&
+        css`
+          &:hover {
+            ${controlStyle}
+          }
+          ${props.focus && !props.focusIndicator && controlStyle}
+        `}
+        ${props.theme.checkBox.extend}
+      `;
+    }
     return controlStyle
       ? css`
           &:hover {
@@ -145,15 +210,26 @@ const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)`
 const StyledCheckBoxBox = styled(Box)`
   ${(props) => props.focus && props.focusIndicator && focusStyle()};
   ${(props) => {
-    const color =
-      props.checked || props.indeterminate
-        ? props.theme.checkBox.check.background?.color ??
-          props.theme.checkBox.background?.color
-        : props.theme.checkBox.background?.color;
-    if (color === undefined) return props.theme.checkBox.check.extend;
+    const { control, check } = props.theme.checkBox;
+    const selected = props.checked || props.indeterminate;
+    const background = selected
+      ? control?.selected?.background ??
+        (check.background?.color == null ? control?.background : undefined)
+      : control?.background;
+    if (background != null) {
+      return css`
+        ${backgroundStyle(background, props.theme, false)}
+        ${check.extend}
+      `;
+    }
+
+    const color = selected
+      ? check.background?.color ?? props.theme.checkBox.background?.color
+      : props.theme.checkBox.background?.color;
+    if (color === undefined) return check.extend;
     return css`
       background-color: ${normalizeColor(color, props.theme)};
-      ${props.theme.checkBox.check.extend}
+      ${check.extend}
     `;
   }};
 `;

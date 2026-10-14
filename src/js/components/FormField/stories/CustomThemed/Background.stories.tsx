@@ -41,17 +41,23 @@ const theme: ThemeType = {
     },
   },
   checkBox: {
-    background: { color: 'input-surface' },
-    check: {
-      background: { color: 'control-selected' },
-      hover: { background: { color: 'control-selected-hover' } },
+    control: {
+      background: 'input-surface',
+      hover: { background: 'input-hover' },
+      selected: {
+        background: 'control-selected',
+        hover: { background: 'control-selected-hover' },
+      },
     },
   },
   radioButton: {
-    background: { color: 'input-surface' },
-    check: {
-      background: { color: 'control-selected' },
-      hover: { background: { color: 'control-selected-hover' } },
+    control: {
+      background: 'input-surface',
+      hover: { background: 'input-hover' },
+      selected: {
+        background: 'control-selected',
+        hover: { background: 'control-selected-hover' },
+      },
     },
   },
 };

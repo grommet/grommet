@@ -17,9 +17,10 @@ Documentation for this component: https://v2.grommet.io/formfield
   Hover border styling continues to follow the border position.
 - An undefined per-input background inherits the shared background. Set both
   the normal and hover per-input backgrounds to `'transparent'` to opt a group
-  out of both shared surfaces. The individual controls can still be filled via
-  `checkBox.background.color`, `checkBox.check.background.color`, and
-  `checkBox.check.hover.background.color` (or the equivalent `radioButton` tokens).
+  out of both shared surfaces. Individual controls and their labels can still
+  be themed separately: use `checkBox.control.*` or `radioButton.control.*` for
+  the control and `checkBox.container.*` or `radioButton.container.*` for its
+  label. Each control supports distinct unselected and selected hover fills.
 
 Existing state background placement and priority are unchanged: an inner border
 uses the read-only, error, then disabled background on the content; an outer

@@ -306,6 +306,19 @@ type ContainerExtend = {
   };
 };
 
+interface ControlBackgroundType {
+  background?: BackgroundType;
+  hover?: {
+    background?: BackgroundType;
+  };
+  selected?: {
+    background?: BackgroundType;
+    hover?: {
+      background?: BackgroundType;
+    };
+  };
+}
+
 interface StepperStateType {
   indicator?: {
     icon?: React.ReactNode | Icon;
@@ -836,6 +849,13 @@ export interface ThemeType {
     width?: string;
   };
   checkBox?: {
+    control?: ControlBackgroundType;
+    container?: {
+      background?: BackgroundType;
+      hover?: {
+        background?: BackgroundType;
+      };
+    };
     background?: {
       color?: ColorType;
     };
@@ -1908,8 +1928,13 @@ export interface ThemeType {
     };
   };
   radioButton?: {
+    control?: ControlBackgroundType;
     extend?: ExtendType;
     container?: {
+      background?: BackgroundType;
+      hover?: {
+        background?: BackgroundType;
+      };
       extend?: ExtendType;
     };
     background?: {
