@@ -22,7 +22,6 @@ import { AnnounceContext } from '../../contexts';
 import {
   isNodeAfterScroll,
   isNodeBeforeScroll,
-  normalizeColor,
   sizeStyle,
   useForwardedRef,
   useSizedIcon,
@@ -71,9 +70,6 @@ const ContainerBox = styled(Box)`
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
-  scrollbar-color: ${(props) =>
-    `${normalizeColor('border', props.theme)} transparent`};
-
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;

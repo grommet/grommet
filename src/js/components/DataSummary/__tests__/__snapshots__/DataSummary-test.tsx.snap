@@ -30,6 +30,8 @@ exports[`DataSummary renders 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
 }
 
 .c6 {
@@ -213,6 +215,8 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
 }
 
 .c6 {
@@ -397,6 +401,8 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
 }
 
 .c6 {
@@ -581,6 +587,8 @@ exports[`DataSummary theme separator margin and dataSummary margin 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
 }
 
 .c8 {

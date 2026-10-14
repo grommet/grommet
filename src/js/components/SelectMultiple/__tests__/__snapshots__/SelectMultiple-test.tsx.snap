@@ -6217,6 +6217,8 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -6442,8 +6444,9 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
   padding: 24px;
 }
 
@@ -7972,6 +7975,8 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -8481,8 +8486,9 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c19 {

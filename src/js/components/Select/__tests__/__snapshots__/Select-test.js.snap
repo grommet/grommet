@@ -265,6 +265,8 @@ exports[`Select Clear option renders - bottom 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -504,8 +506,9 @@ exports[`Select Clear option renders - bottom 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c10 {
@@ -650,6 +653,8 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -775,8 +780,9 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -896,6 +902,8 @@ exports[`Select Clear option renders custom label 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1021,8 +1029,9 @@ exports[`Select Clear option renders custom label 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -1134,6 +1143,8 @@ exports[`Select Clear option renders- top 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1373,8 +1384,9 @@ exports[`Select Clear option renders- top 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c14 {
@@ -3329,6 +3341,8 @@ exports[`Select complex options and children 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -3437,8 +3451,9 @@ exports[`Select complex options and children 3`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -4057,6 +4072,8 @@ exports[`Select default value clear 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -4296,8 +4313,9 @@ exports[`Select default value clear 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c10 {
@@ -5264,6 +5282,8 @@ exports[`Select disabled key 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5448,8 +5468,9 @@ exports[`Select disabled key 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -5569,6 +5590,8 @@ exports[`Select disabled option value 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5753,8 +5776,9 @@ exports[`Select disabled option value 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -6239,6 +6263,8 @@ exports[`Select large drop container height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -6364,8 +6390,9 @@ exports[`Select large drop container height 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -6468,6 +6495,8 @@ exports[`Select medium drop container height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -6593,8 +6622,9 @@ exports[`Select medium drop container height 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -7465,6 +7495,8 @@ exports[`Select onChange with valueKey object 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -7590,8 +7622,9 @@ exports[`Select onChange with valueKey object 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -8225,6 +8258,8 @@ exports[`Select onChange with valueKey string 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -8350,8 +8385,9 @@ exports[`Select onChange with valueKey string 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -8930,6 +8966,8 @@ exports[`Select onChange with valueLabel 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -9055,8 +9093,9 @@ exports[`Select onChange with valueLabel 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -9424,6 +9463,8 @@ exports[`Select onChange without labelKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -9549,8 +9590,9 @@ exports[`Select onChange without labelKey 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -10184,6 +10226,8 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -10309,8 +10353,9 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -10944,6 +10989,8 @@ exports[`Select onChange without valueKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -11069,8 +11116,9 @@ exports[`Select onChange without valueKey 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -12279,6 +12327,8 @@ exports[`Select prop: onOpen 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -12404,8 +12454,9 @@ exports[`Select prop: onOpen 3`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -12511,7 +12562,7 @@ exports[`Select prop: onOpen 4`] = `
 exports[`Select prop: onOpen 5`] = `
 <div
   aria-label="list of options"
-  class="StyledSelect__OptionsContainer-sc-znp66n-1 jJZbyW"
+  class="StyledSelect__OptionsContainer-sc-znp66n-1 iurGTJ"
   role="listbox"
   tabindex="-1"
 >
@@ -12825,6 +12876,8 @@ exports[`Select renders custom clear selection styling 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -13067,8 +13120,9 @@ exports[`Select renders custom clear selection styling 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c10 {
@@ -13479,6 +13533,8 @@ exports[`Select renders custom listbox styling 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -13661,8 +13717,9 @@ exports[`Select renders custom listbox styling 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
   padding: 24px;
 }
 
@@ -15739,6 +15796,8 @@ exports[`Select search 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -16012,8 +16071,9 @@ exports[`Select search 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c11 {
@@ -16476,6 +16536,8 @@ exports[`Select search and select 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -16692,8 +16754,9 @@ exports[`Select search and select 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c11 {
@@ -19697,6 +19760,8 @@ exports[`Select small drop container height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -19822,8 +19887,9 @@ exports[`Select small drop container height 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c6 {
@@ -19958,6 +20024,8 @@ exports[`Select theme search pad 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -20174,8 +20242,9 @@ exports[`Select theme search pad 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
-  outline: none;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
+  outline: none;
 }
 
 .c11 {

@@ -80,6 +80,7 @@ const colors = {
     dark: 'rgba(255, 255, 255, 0.33)',
     light: 'rgba(0, 0, 0, 0.33)',
   },
+  scrollbar: 'border',
   brand: brandColor,
   control: {
     dark: 'accent-1',

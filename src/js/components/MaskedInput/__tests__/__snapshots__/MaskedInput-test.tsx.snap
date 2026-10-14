@@ -960,6 +960,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -971,6 +973,8 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
 }
 
 .c4 {
@@ -1080,7 +1084,6 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
 
 .c3 {
   max-height: inherit;
-  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1596,6 +1599,8 @@ exports[`MaskedInput mask 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1607,6 +1612,8 @@ exports[`MaskedInput mask 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
 }
 
 .c4 {
@@ -1716,7 +1723,6 @@ exports[`MaskedInput mask 2`] = `
 
 .c3 {
   max-height: inherit;
-  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2461,6 +2467,8 @@ exports[`MaskedInput option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -2472,6 +2480,8 @@ exports[`MaskedInput option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
 }
 
 .c4 {
@@ -2581,7 +2591,6 @@ exports[`MaskedInput option via mouse 2`] = `
 
 .c3 {
   max-height: inherit;
-  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 @media only screen and (max-width: 768px) {
