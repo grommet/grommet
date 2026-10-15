@@ -1157,6 +1157,7 @@ exports[`Components loads 1`] = `
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
       "a11yTitle": [Function],
+      "clear": [Function],
       "copy": [Function],
       "defaultSuggestion": [Function],
       "dropAlign": [Function],
