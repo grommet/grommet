@@ -1554,6 +1554,38 @@ exports[`CheckBoxGroup options renders 1`] = `
 </div>
 `;
 
+exports[`CheckBoxGroup renders without crashing when options is omitted 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 StyledCheckBoxGroup-sc-2nhc5d-0"
+      role="group"
+    />
+  </div>
+</DocumentFragment>
+`;
+
 exports[`CheckBoxGroup renders without grommet wrapper 1`] = `
 .c0 {
   display: flex;
