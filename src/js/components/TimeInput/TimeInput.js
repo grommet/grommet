@@ -147,15 +147,6 @@ const TimeInput = forwardRef(
       initialValue: defaultValue || '',
     });
 
-    useEffect(() => {
-      if (process.env.NODE_ENV !== 'production') {
-        console.warn(
-          'Warning: TimeInput is currently in beta. The API is subject ' +
-            'to change in future releases.',
-        );
-      }
-    }, []);
-
     if (inline && (disabled || readOnly)) {
       console.warn(
         'TimeInput is rendered inline and is either disabled or read-only. ' +
