@@ -809,6 +809,7 @@ const TimeInput = forwardRef(
                           ref={(segmentNode) => {
                             segmentRefs.current[section] = segmentNode;
                           }}
+                          responsive={false}
                           tabIndex={
                             !readOnly && !disabled && activeSection === section
                               ? 0
