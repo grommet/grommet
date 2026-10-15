@@ -1,11 +1,20 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Search } from 'grommet-icons';
 import { Box, TextInput } from 'grommet';
 
-export const Clear = () => {
+const meta: Meta<typeof TextInput> = {
+  title: 'Input/TextInput/Clear',
+  component: TextInput,
+};
+
+export default meta;
+type Story = StoryObj<typeof TextInput>;
+
+const ClearExample = () => {
   const [value, setValue] = React.useState<string>('Clearable value');
 
   return (
@@ -38,6 +47,6 @@ export const Clear = () => {
   );
 };
 
-export default {
-  title: 'Input/TextInput/Clear',
+export const Clear: Story = {
+  render: () => <ClearExample />,
 };
