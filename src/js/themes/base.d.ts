@@ -2575,12 +2575,14 @@ export interface ThemeType {
         margin?: MarginType;
       };
     };
+    step?: {
+      gap?: GapType;
+    };
     content?: {
       pad?: PadType;
       gap?: GapType;
       background?: BackgroundType;
       round?: RoundType;
-      margin?: MarginType;
     };
     footer?: {
       background?: BackgroundType;
