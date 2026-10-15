@@ -664,6 +664,7 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       ref: function ref(segmentNode) {
         segmentRefs.current[section] = segmentNode;
       },
+      responsive: false,
       tabIndex: !readOnly && !disabled && activeSection === section ? 0 : -1,
       $active: showActiveSection && activeSection === section,
       $filled: filled,

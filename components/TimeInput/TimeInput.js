@@ -668,6 +668,7 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
       ref: function ref(segmentNode) {
         segmentRefs.current[section] = segmentNode;
       },
+      responsive: false,
       tabIndex: !readOnly && !disabled && activeSection === section ? 0 : -1,
       $active: showActiveSection && activeSection === section,
       $filled: filled,
