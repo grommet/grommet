@@ -223,6 +223,24 @@ const TextInput = forwardRef(
       if (!passwordToggle) setPasswordRevealed(false);
     }, [passwordToggle]);
 
+    // form reset changes the value without firing onChange
+    useEffect(() => {
+      const form = clear ? inputRef.current?.form : undefined;
+      if (!form) return undefined;
+      let timer;
+      const handleFormReset = () => {
+        // reset fires before the browser restores field values
+        timer = setTimeout(() =>
+          setUncontrolledHasValue(!!inputRef.current?.value),
+        );
+      };
+      form.addEventListener('reset', handleFormReset);
+      return () => {
+        clearTimeout(timer);
+        form.removeEventListener('reset', handleFormReset);
+      };
+    }, [clear, inputRef]);
+
     const openDrop = useCallback(() => {
       setShowDrop(true);
       announce(
