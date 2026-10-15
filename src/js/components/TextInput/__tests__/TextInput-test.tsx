@@ -1141,17 +1141,19 @@ describe('TextInput', () => {
       </Grommet>,
     );
 
+    // stays mounted while empty to reserve its space, but is hidden
+    const clearButton = screen.getByLabelText('Clear');
+    expect(clearButton).not.toBeVisible();
     expect(
       screen.queryByRole('button', { name: 'Clear' }),
     ).not.toBeInTheDocument();
 
     await user.type(screen.getByLabelText('Value'), 'a');
-    expect(screen.getByRole('button', { name: 'Clear' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Clear' })).toBe(clearButton);
+    expect(clearButton).toBeVisible();
 
     await user.clear(screen.getByLabelText('Value'));
-    expect(
-      screen.queryByRole('button', { name: 'Clear' }),
-    ).not.toBeInTheDocument();
+    expect(clearButton).not.toBeVisible();
   });
 
   test('clear empties a controlled value through onChange', async () => {
