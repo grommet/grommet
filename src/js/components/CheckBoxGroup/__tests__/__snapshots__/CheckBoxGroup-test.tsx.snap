@@ -1353,7 +1353,7 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eVypbb"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kCujUd StyledCheckBoxGroup-sc-2nhc5d-0"
+    class="StyledBox-sc-13pk1d4-0 lkuHSR StyledCheckBoxGroup-sc-2nhc5d-0"
     role="group"
     tabindex="0"
   >
