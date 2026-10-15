@@ -120,11 +120,6 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     }),
     value = _useFormInput[0],
     setValue = _useFormInput[1];
-  useEffect(function () {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn('Warning: TimeInput is currently in beta. The API is subject ' + 'to change in future releases.');
-    }
-  }, []);
   if (inline && (disabled || readOnly)) {
     console.warn('TimeInput is rendered inline and is either disabled or read-only. ' + 'TimeInput ignores disabled and readOnly props when rendered inline.');
   }

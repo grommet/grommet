@@ -124,11 +124,6 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
     }),
     value = _useFormInput[0],
     setValue = _useFormInput[1];
-  (0, _react.useEffect)(function () {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn('Warning: TimeInput is currently in beta. The API is subject ' + 'to change in future releases.');
-    }
-  }, []);
   if (inline && (disabled || readOnly)) {
     console.warn('TimeInput is rendered inline and is either disabled or read-only. ' + 'TimeInput ignores disabled and readOnly props when rendered inline.');
   }
