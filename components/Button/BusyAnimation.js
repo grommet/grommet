@@ -33,14 +33,20 @@ var EllipsisAnimation = exports.EllipsisAnimation = function EllipsisAnimation()
     alignContent: "center",
     justify: "center"
   }, /*#__PURE__*/_react["default"].createElement(_Box.Box, {
+    flex: false,
+    basis: "auto",
     alignSelf: "center",
     direction: "row",
     gap: (_theme$button = theme.button) == null || (_theme$button = _theme$button.busy) == null ? void 0 : _theme$button.gap
   }, /*#__PURE__*/_react["default"].createElement(Dot, {
+    flex: false,
     delay: "-0.32s"
   }), /*#__PURE__*/_react["default"].createElement(Dot, {
+    flex: false,
     delay: "-0.16s"
-  }), /*#__PURE__*/_react["default"].createElement(Dot, null)));
+  }), /*#__PURE__*/_react["default"].createElement(Dot, {
+    flex: false
+  })));
 };
 var grow = (0, _styledComponents.keyframes)(["0%{opacity:0;transform:scale(.3);}20%{opacity:1;transform:scale(1.15);}30%{transform:scale(.9);}45%{transform:scale(1.05);}55%{transform:scale(1);}100%{transform:scale(1);}"]);
 var GrowCheckmark = exports.GrowCheckmark = (0, _styledComponents["default"])(_Checkmark.Checkmark).withConfig({

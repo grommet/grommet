@@ -26,14 +26,20 @@ export var EllipsisAnimation = function EllipsisAnimation() {
     alignContent: "center",
     justify: "center"
   }, /*#__PURE__*/React.createElement(Box, {
+    flex: false,
+    basis: "auto",
     alignSelf: "center",
     direction: "row",
     gap: (_theme$button = theme.button) == null || (_theme$button = _theme$button.busy) == null ? void 0 : _theme$button.gap
   }, /*#__PURE__*/React.createElement(Dot, {
+    flex: false,
     delay: "-0.32s"
   }), /*#__PURE__*/React.createElement(Dot, {
+    flex: false,
     delay: "-0.16s"
-  }), /*#__PURE__*/React.createElement(Dot, null)));
+  }), /*#__PURE__*/React.createElement(Dot, {
+    flex: false
+  })));
 };
 var grow = keyframes(["0%{opacity:0;transform:scale(.3);}20%{opacity:1;transform:scale(1.15);}30%{transform:scale(.9);}45%{transform:scale(1.05);}55%{transform:scale(1);}100%{transform:scale(1);}"]);
 export var GrowCheckmark = styled(Checkmark).withConfig({
