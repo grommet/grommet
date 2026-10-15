@@ -605,17 +605,25 @@ export const inputPadForIcon = css`
   }}
 `;
 
-export const overflowStyle = (overflowProp) => {
-  if (typeof overflowProp === 'string') {
-    return css`
-      overflow: ${overflowProp};
-    `;
-  }
+export const overflowStyle = (overflowProp, theme) => {
+  const overflow =
+    typeof overflowProp === 'string'
+      ? `overflow: ${overflowProp};`
+      : [
+          overflowProp.horizontal && `overflow-x: ${overflowProp.horizontal};`,
+          overflowProp.vertical && `overflow-y: ${overflowProp.vertical};`,
+        ]
+          .filter(Boolean)
+          .join(' ');
+  const scrollable = ['auto', 'scroll', 'overlay'].some((value) =>
+    overflow.includes(`: ${value};`),
+  );
 
   return css`
-    ${overflowProp.horizontal &&
-    `overflow-x: ${overflowProp.horizontal};`} ${overflowProp.vertical &&
-    `overflow-y: ${overflowProp.vertical};`};
+    ${overflow}
+    ${scrollable &&
+    `scrollbar-color: ${normalizeColor('scrollbar', theme)} transparent;
+      scrollbar-width: thin;`}
   `;
 };
 

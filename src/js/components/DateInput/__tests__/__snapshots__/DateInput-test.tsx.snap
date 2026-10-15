@@ -16472,6 +16472,8 @@ exports[`DateInput select format 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -29077,6 +29079,8 @@ exports[`DateInput select format no timezone 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 

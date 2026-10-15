@@ -715,6 +715,8 @@ exports[`Tabs alignControls 1`] = `
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+  scrollbar-width: thin;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1119,7 +1121,7 @@ exports[`Tabs change to second tab 2`] = `
       class="StyledBox-sc-13pk1d4-0 jJjGgM"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bpGBnD StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
+        class="StyledBox-sc-13pk1d4-0 FoTKX StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
         role="tablist"
       >
         <button
@@ -2595,7 +2597,7 @@ exports[`Tabs set on hover 2`] = `
       class="StyledBox-sc-13pk1d4-0 jJjGgM"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bpGBnD StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
+        class="StyledBox-sc-13pk1d4-0 FoTKX StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
         role="tablist"
       >
         <button
@@ -2659,7 +2661,7 @@ exports[`Tabs set on hover 3`] = `
       class="StyledBox-sc-13pk1d4-0 jJjGgM"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bpGBnD StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
+        class="StyledBox-sc-13pk1d4-0 FoTKX StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
         role="tablist"
       >
         <button
@@ -2723,7 +2725,7 @@ exports[`Tabs set on hover 4`] = `
       class="StyledBox-sc-13pk1d4-0 jJjGgM"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bpGBnD StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
+        class="StyledBox-sc-13pk1d4-0 FoTKX StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
         role="tablist"
       >
         <button
@@ -2787,7 +2789,7 @@ exports[`Tabs set on hover 5`] = `
       class="StyledBox-sc-13pk1d4-0 jJjGgM"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bpGBnD StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
+        class="StyledBox-sc-13pk1d4-0 FoTKX StyledTabs__StyledTabsHeader-sc-a4fwxl-0 foGhem"
         role="tablist"
       >
         <button
