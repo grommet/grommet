@@ -80,6 +80,7 @@ const ContainerBox = styled(Box)`
 const StyledInlineActionButton = styled(Button)`
   padding-top: 0;
   padding-bottom: 0;
+  ${(props) => props.$hidden && 'visibility: hidden;'}
 `;
 
 const isEmptyValue = (value) =>
@@ -211,7 +212,7 @@ const TextInput = forwardRef(
       ).set;
       nativeInputValueSetter.call(inputRef.current, '');
       inputRef.current.dispatchEvent(new Event('input', { bubbles: true }));
-      // the clear button unmounts once the value is empty
+      // the clear button hides once the value is empty
       inputRef.current.focus();
     };
 
@@ -601,17 +602,18 @@ const TextInput = forwardRef(
         ? value !== ''
         : uncontrolledHasValue;
 
-    const clearButton =
-      clearable && hasClearableValue ? (
-        <StyledInlineActionButton
-          disabled={disabled}
-          kind="toolbar"
-          icon={renderIcon(clearIcon, { 'aria-hidden': true })}
-          onClick={handleClearClick}
-          aria-label={clearMessage}
-          {...passThemeFlag}
-        />
-      ) : undefined;
+    const clearButton = clearable ? (
+      <StyledInlineActionButton
+        disabled={disabled}
+        kind="toolbar"
+        icon={renderIcon(clearIcon, { 'aria-hidden': true })}
+        onClick={handleClearClick}
+        aria-label={clearMessage}
+        // keep the slot while empty so the input width doesn't shift
+        $hidden={!hasClearableValue}
+        {...passThemeFlag}
+      />
+    ) : undefined;
 
     const passwordToggleButton = passwordToggle ? (
       <StyledInlineActionButton
@@ -632,10 +634,9 @@ const TextInput = forwardRef(
 
     const copyButton = readOnlyCopy || copy ? copyButtonElement : undefined;
     // Order: clear sits next to the text, then password visibility, then the
-    // non-destructive copy action. A clearable input keeps the group even
-    // while empty so the field layout doesn't shift as the button toggles.
+    // non-destructive copy action.
     const actionsGroup =
-      clearable || passwordToggleButton || copyButton ? (
+      clearButton || passwordToggleButton || copyButton ? (
         <StyledActionsGroup {...passThemeFlag}>
           {clearButton}
           {passwordToggleButton}
