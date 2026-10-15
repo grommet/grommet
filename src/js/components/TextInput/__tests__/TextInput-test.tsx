@@ -1229,6 +1229,73 @@ describe('TextInput', () => {
     expect(screen.getByLabelText('Query')).toHaveValue('');
   });
 
+  test('hides clear button after native form reset empties the input', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <form>
+          <TextInput clear aria-label="Value" />
+          <button type="reset">Reset</button>
+        </form>
+      </Grommet>,
+    );
+
+    await user.type(screen.getByLabelText('Value'), 'abc');
+    await user.click(screen.getByRole('button', { name: 'Reset' }));
+
+    expect(screen.getByLabelText('Value')).toHaveValue('');
+    await waitFor(() =>
+      expect(
+        screen.queryByRole('button', { name: 'Clear' }),
+      ).not.toBeInTheDocument(),
+    );
+  });
+
+  test('shows clear button after native form reset restores the default', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <form>
+          <TextInput defaultValue="abc" clear aria-label="Value" />
+          <button type="reset">Reset</button>
+        </form>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Clear' }));
+    await user.click(screen.getByRole('button', { name: 'Reset' }));
+
+    expect(screen.getByLabelText('Value')).toHaveValue('abc');
+    expect(
+      await screen.findByRole('button', { name: 'Clear' }),
+    ).toBeInTheDocument();
+  });
+
+  test('hides clear button after Form reset', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Form>
+          <TextInput name="query" clear aria-label="Query" />
+          <button type="reset">Reset</button>
+        </Form>
+      </Grommet>,
+    );
+
+    await user.type(screen.getByLabelText('Query'), 'abc');
+    await user.click(screen.getByRole('button', { name: 'Reset' }));
+
+    expect(screen.getByLabelText('Query')).toHaveValue('');
+    await waitFor(() =>
+      expect(
+        screen.queryByRole('button', { name: 'Clear' }),
+      ).not.toBeInTheDocument(),
+    );
+  });
+
   test('does not render clear button when read only', () => {
     render(
       <Grommet>
