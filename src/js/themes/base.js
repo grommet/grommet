@@ -694,6 +694,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           //   color: undefined,
           // },
         },
+        today: {
+          color: 'text',
+          // border: {
+          //   color: undefined,
+          //   side: 'bottom',
+          //   size: 'xsmall',
+          // },
+        },
         inRange: {
           // color: undefined,
           font: {
