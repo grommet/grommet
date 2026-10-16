@@ -4228,12 +4228,14 @@ exports[`Form controlled dynamicly removed fields using blur validation\\n  don'
       >
         <label
           class="c6"
+          for="_r_0_"
         >
           <div
             class="c7 c8"
           >
             <input
               class="c9"
+              id="_r_0_"
               name="toggle"
               type="checkbox"
             />
@@ -4289,12 +4291,14 @@ exports[`Form controlled dynamicly removed fields using blur validation\\n  don'
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dOWXkA"
+          for="_r_0_"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 krZJuA StyledCheckBox-sc-1dbk5ju-6 fXQYEo"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dEyzxY"
+              id="_r_0_"
               name="toggle"
               type="checkbox"
             />
@@ -4517,12 +4521,14 @@ exports[`Form controlled dynamicly removed fields using blur validation\\n  don'
       >
         <label
           class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 NUQQS"
+          for="_r_0_"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 krZJuA StyledCheckBox-sc-1dbk5ju-6 fXQYEo"
           >
             <input
               class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dEyzxY"
+              id="_r_0_"
               name="toggle"
               type="checkbox"
             />

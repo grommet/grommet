@@ -16,7 +16,7 @@ import {
   StyledCheckBoxKnob,
 } from './StyledCheckBox';
 
-import { normalizeColor } from '../../utils';
+import { normalizeColor, useId } from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const stopLabelClick = (event) => {
@@ -60,6 +60,12 @@ const CheckBox = forwardRef(
   ) => {
     const { theme, passThemeFlag } = useThemeValue();
     const formContext = useContext(FormContext);
+
+    // Always associate the label and the input explicitly. Some voice control
+    // tools and screen readers do not recognize the implicit association of a
+    // label wrapping its input, so fall back to a generated id.
+    const generatedId = useId();
+    const resolvedId = id || generatedId;
 
     const [checked, setChecked] = formContext.useFormInput({
       name,
@@ -180,7 +186,7 @@ const CheckBox = forwardRef(
           ref={ref}
           type="checkbox"
           {...removeUndefined({
-            id,
+            id: resolvedId,
             name,
             checked,
             disabled,
@@ -214,7 +220,7 @@ const CheckBox = forwardRef(
       <StyledCheckBoxContainer
         fillProp={fill}
         reverse={reverse}
-        {...removeUndefined({ htmlFor: id, disabled })}
+        {...removeUndefined({ htmlFor: resolvedId, disabled })}
         checked={checked}
         labelProp={label}
         onClick={stopLabelClick}
