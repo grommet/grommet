@@ -776,7 +776,9 @@ exports[`DataFilter children 1`] = `
             class="c11"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>
@@ -3107,7 +3109,9 @@ exports[`DataFilter options 1`] = `
             class="c16"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>
@@ -3559,7 +3563,9 @@ exports[`DataFilter range Data 1`] = `
             class="c20"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>
@@ -4011,7 +4017,9 @@ exports[`DataFilter range prop 1`] = `
             class="c20"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>
@@ -5256,7 +5264,9 @@ exports[`DataFilter renders 1`] = `
             class="c27"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>
@@ -5660,7 +5670,9 @@ exports[`DataFilter select multiple options 1`] = `
             class="c11"
             type="button"
           >
-            Clear filters
+            <span>
+              Clear filters
+            </span>
           </button>
         </div>
       </div>
@@ -6210,7 +6222,9 @@ exports[`DataFilter should allow filtering on multiple sub-properties from same 
             class="c11"
             type="button"
           >
-            Clear filters
+            <span>
+              Clear filters
+            </span>
           </button>
         </div>
       </div>
@@ -8285,7 +8299,9 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
               class="c30"
               type="submit"
             >
-              Apply filters
+              <span>
+                Apply filters
+              </span>
             </button>
           </footer>
         </div>
@@ -8809,7 +8825,9 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
           class="c8"
           type="button"
         >
-          Select All
+          <span>
+            Select All
+          </span>
         </button>
       </div>
       <div
