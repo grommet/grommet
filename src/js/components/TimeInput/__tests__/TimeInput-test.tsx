@@ -15,12 +15,17 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import '@testing-library/jest-dom';
 
+import { Clock as GrommetClockIcon } from 'grommet-icons';
 import { AnnounceContext } from '../../../contexts/AnnounceContext';
 import { createPortal } from '../../../utils/portal';
 import { ThemeType } from '../../../themes';
+import { Button } from '../../Button';
+import { Box } from '../../Box';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
 import { Grommet } from '../../Grommet';
+import { Layer } from '../../Layer';
+import { TextInput } from '../../TextInput';
 import { TimeInput } from '..';
 
 const getSegment = (name: 'hours' | 'minutes' | 'seconds' | 'meridiem') =>
@@ -46,6 +51,158 @@ describe('TimeInput', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('works correctly nested inside a modal Layer', async () => {
+    const user = userEvent.setup();
+
+    const { baseElement } = render(
+      <Grommet>
+        <Layer modal>
+          <Box pad="medium" gap="medium" width="medium">
+            <TimeInput format="24" defaultValue="10:15:20" />
+          </Box>
+        </Layer>
+      </Grommet>,
+    );
+
+    // Layer renders through a portal, so `container` is empty - assert
+    // against baseElement to actually cover the rendered Layer content.
+    // The "region" rule is page-level (expects landmarks around all body
+    // content) and isn't meaningful for an isolated component test.
+    const results = await axe(baseElement, {
+      rules: { region: { enabled: false } },
+    });
+    expect(results).toHaveNoViolations();
+
+    const trigger = screen.getByRole('button', { name: 'Choose time' });
+    await user.click(trigger);
+
+    const dialog = screen.getByRole('dialog', { name: 'Choose time' });
+
+    // TimeInputPopup focuses the current hour option from inside a
+    // requestAnimationFrame callback; flushing one real frame here confirms
+    // that FocusedContainer's trap setup (now a layout effect) is already
+    // registered by the time that callback runs, so focus actually lands.
+    await act(
+      () =>
+        new Promise((resolve) => {
+          requestAnimationFrame(() => resolve(undefined));
+        }),
+    );
+    const initialHourOption = within(dialog).getByRole('option', {
+      name: '10 hours',
+    });
+    expect(initialHourOption).toHaveFocus();
+
+    const hourOption = within(dialog).getByRole('option', { name: '11 hours' });
+    await user.click(hourOption);
+
+    expect(getDisplayInput()).toHaveValue('11:15');
+  });
+
+  test('accepts a named drop button kind string', () => {
+    const customTheme: ThemeType = {
+      button: {
+        default: {},
+        primary: { background: '#445566', color: '#FFFFFF' },
+      },
+      timeInput: { dropButton: 'primary' },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    expect(dropButton).toHaveStyleRule('color', '#FFFFFF');
+    expect(dropButton.querySelector('svg')).toBeInTheDocument();
+  });
+
+  test('accepts a named drop button kind with a custom icon', () => {
+    const customTheme: ThemeType = {
+      button: {
+        default: {},
+        primary: { background: '#445566', color: '#FFFFFF' },
+      },
+      timeInput: {
+        dropButton: {
+          kind: 'primary',
+          icon: (
+            <span aria-hidden={false} data-caller-prop="preserved">
+              Custom primary icon
+            </span>
+          ),
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    const customIcon = within(dropButton).getByText('Custom primary icon');
+    expect(customIcon).toHaveAttribute('aria-hidden', 'false');
+    expect(customIcon).toHaveAttribute('data-caller-prop', 'preserved');
+  });
+
+  test('accepts icon elements and components through dropButton.icon', () => {
+    const elementTheme: ThemeType = {
+      timeInput: {
+        dropButton: { icon: <span>Custom icon element</span> },
+      },
+    };
+
+    const { unmount } = render(
+      <Grommet theme={elementTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    let dropButton = screen.getByRole('button', { name: 'Choose time' });
+    const customIconElement = within(dropButton).getByText(
+      'Custom icon element',
+    );
+    expect(customIconElement).toHaveAttribute('aria-hidden', 'true');
+
+    unmount();
+
+    const themedIconTheme: ThemeType = {
+      timeInput: { dropButton: { icon: GrommetClockIcon } },
+    };
+
+    const themedIconRender = render(
+      <Grommet theme={themedIconTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton.querySelector('svg')).toHaveAttribute(
+      'aria-hidden',
+      'true',
+    );
+
+    themedIconRender.unmount();
+  });
+
+  test('accepts defaultValue without seconds (HH:mm)', () => {
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="12:24" />
+      </Grommet>,
+    );
+
+    // showSeconds defaults to false, so only hour/minute are displayed;
+    // a real value here (not the "hh:mm" placeholder) confirms it parsed
+    expect(getDisplayInput()).toHaveValue('12:24');
   });
 
   test('omits aria-valuenow on empty segments, sets it once filled', async () => {
@@ -117,7 +274,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="00:34:56" />
+        <TimeInput format="12" showSeconds defaultValue="00:34:56" />
       </Grommet>,
     );
 
@@ -543,6 +700,7 @@ describe('TimeInput', () => {
         <Grommet>
           <TimeInput
             format="12"
+            showSeconds
             defaultValue="12:34:56"
             messages={{
               currentValue: 'Now {hour}:{minute}:{second}{period}',
@@ -567,6 +725,29 @@ describe('TimeInput', () => {
     });
   });
 
+  test('announces the current value without seconds when hidden', async () => {
+    const user = userEvent.setup();
+    const announceSpy = jest.fn();
+
+    render(
+      <AnnounceContext.Provider value={announceSpy}>
+        <Grommet>
+          <TimeInput
+            format="12"
+            messages={{
+              currentValueWithoutSeconds: 'Now {hour}:{minute}{period}',
+            }}
+          />
+        </Grommet>
+      </AnnounceContext.Provider>,
+    );
+
+    await user.click(getSegment('hours'));
+    await user.keyboard('1234p');
+
+    expect(announceSpy).toHaveBeenCalledWith('Now 12:34 PM', 'polite');
+  });
+
   test('uses currentValue message key without period in 24h format', async () => {
     const user = userEvent.setup();
     const announceSpy = jest.fn();
@@ -576,6 +757,7 @@ describe('TimeInput', () => {
         <Grommet>
           <TimeInput
             format="24"
+            showSeconds
             defaultValue="12:34:56"
             messages={{
               currentValue: 'Now {hour}:{minute}:{second}{period}',
@@ -838,7 +1020,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -860,7 +1042,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -880,7 +1062,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -898,7 +1080,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -923,7 +1105,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -934,7 +1116,7 @@ describe('TimeInput', () => {
   test('supports uncontrolled initial value', () => {
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="13:05:09" />
+        <TimeInput format="12" showSeconds defaultValue="13:05:09" />
       </Grommet>,
     );
 
@@ -946,7 +1128,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56" />
+        <TimeInput format="12" showSeconds defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -964,7 +1146,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56" />
+        <TimeInput format="12" showSeconds defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -1039,7 +1221,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -1060,7 +1242,7 @@ describe('TimeInput', () => {
     render(
       <Grommet>
         <form aria-label="native-form">
-          <TimeInput format="12" name="alarmTime" />
+          <TimeInput format="12" showSeconds name="alarmTime" />
         </form>
       </Grommet>,
     );
@@ -1083,7 +1265,7 @@ describe('TimeInput', () => {
   test('disables both spinbutton and trigger button when disabled', () => {
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:45:10" disabled />
+        <TimeInput format="12" showSeconds defaultValue="09:45:10" disabled />
       </Grommet>,
     );
 
@@ -1102,6 +1284,7 @@ describe('TimeInput', () => {
         <TimeInput
           id="read-only-picker"
           format="12"
+          showSeconds
           defaultValue="00:00:00"
           readOnly
         />
@@ -1352,7 +1535,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:15:20" />
+        <TimeInput format="12" showSeconds defaultValue="07:15:20" />
       </Grommet>,
     );
 
@@ -1489,7 +1672,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -1609,7 +1792,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1652,7 +1835,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1674,7 +1857,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="02:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="02:30:00" />
       </Grommet>,
     );
 
@@ -1868,7 +2051,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -1898,7 +2081,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="09:30:00" />
       </Grommet>,
     );
 
@@ -1920,7 +2103,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="09:30:00" />
       </Grommet>,
     );
 
@@ -2072,6 +2255,29 @@ describe('TimeInput', () => {
     ).not.toBeInTheDocument();
   });
 
+  test('hides seconds by default in the 12-hour field and picker', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    expect(getDisplayInput()).toHaveValue('01:45 PM');
+    expect(getSegment('meridiem')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'seconds' }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    expect(screen.getByRole('listbox', { name: 'period' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'second' }),
+    ).not.toBeInTheDocument();
+  });
+
   test('auto-scrolls selected minute and second options on open', async () => {
     const user = userEvent.setup();
     const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
@@ -2081,7 +2287,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -2177,7 +2383,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -2224,36 +2430,94 @@ describe('TimeInput', () => {
     }
   });
 
-  test('applies timeInput theme tokens across container, active segment, and drop options', async () => {
+  test('applies anatomy-based theme tokens across the field and popup', async () => {
     const user = userEvent.setup();
 
     const customTheme: ThemeType = {
       timeInput: {
         container: {
           round: 'large',
+          height: '500px',
+          width: '500px',
         },
-        active: {
-          background: '#FFD700',
+        value: {
+          pad: { horizontal: 'large' },
+          background: '#F8F8F8',
+          round: 'small',
+        },
+        segment: {
           pad: 'large',
-          indicator: {
-            color: '#FF0000',
+          background: '#F0F0F0',
+          border: { color: '#123456', size: 'small' },
+          elevation: 'small',
+          height: 'large',
+          margin: { left: 'xsmall' },
+          round: '6px',
+          width: 'large',
+          color: '#112233',
+          placeholder: {
+            color: '#445566',
+          },
+          active: {
+            background: '#FFD700',
+            border: {
+              color: '#FF0000',
+              side: 'bottom',
+              size: '3px',
+              style: 'dashed',
+            },
+            elevation: 'xsmall',
+            pad: 'xsmall',
+            round: '12px',
+            color: '#223344',
             size: 'large',
+            weight: 700,
           },
         },
+        dropButton: {
+          icon: <span>Custom icon</span>,
+          background: '#445566',
+          color: '#FFFFFF',
+          padding: { vertical: 'small', horizontal: 'medium' },
+        },
         drop: {
+          width: { width: '24rem', min: '20rem', max: '100%' },
+          height: { min: 'small' },
+          column: {
+            height: { max: 'medium' },
+            background: '#FAFAFA',
+            round: 'small',
+          },
           option: {
-            background: '#EEEEEE',
-            hover: {
-              background: '#CCCCCC',
-            },
-            selected: {
-              background: '#0000FF',
-              color: '#FFFFFF',
-              text: {
-                weight: 'bold',
-              },
+            container: {
+              background: '#EEEEEE',
+              border: { color: '#334455', size: '2px' },
+              pad: 'small',
+              round: 'small',
               hover: {
-                background: '#00FF00',
+                background: '#CCCCCC',
+                border: { color: '#556677', size: 'small' },
+                elevation: 'xsmall',
+                pad: 'xsmall',
+                round: 'medium',
+              },
+              selected: {
+                background: '#0000FF',
+                hover: {
+                  background: '#00FF00',
+                  border: { color: '#778899', size: 'medium' },
+                  elevation: 'medium',
+                  pad: 'small',
+                  round: 'large',
+                },
+              },
+            },
+            text: {
+              size: 'medium',
+              selected: {
+                color: '#FFFFFF',
+                size: 'large',
+                weight: 'bold',
               },
             },
           },
@@ -2271,21 +2535,59 @@ describe('TimeInput', () => {
     const container = screen.getByRole('group').parentElement
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
+    expect(container).toHaveStyleRule('height', '500px');
+    expect(container).toHaveStyleRule('width', '500px');
 
-    // active.pad applies to every segment, active or not
+    // Segment exposes Box-part styles in addition to text styles.
     const hourSegment = getSegment('hours');
-    expect(hourSegment).toHaveStyleRule('padding-inline', '48px');
+    expect(hourSegment).toHaveStyleRule('padding', '48px');
+    expect(hourSegment).toHaveStyleRule('background-color', '#F0F0F0');
+    expect(hourSegment).toHaveStyleRule('border', 'solid 2px #123456');
+    expect(hourSegment).toHaveStyleRule(
+      'box-shadow',
+      '0px 2px 4px rgba(0, 0, 0, 0.20)',
+    );
+    expect(hourSegment).toHaveStyleRule('height', '768px');
+    expect(hourSegment).toHaveStyleRule('margin-left', '6px');
+    expect(hourSegment).toHaveStyleRule('border-radius', '6px');
+    expect(hourSegment).toHaveStyleRule('width', '768px');
+    expect(hourSegment).toHaveStyleRule('color', '#112233');
+    expect(screen.getAllByText(':')[0]).toHaveStyleRule('color', '#112233');
+    expect(screen.getByRole('group')).toHaveStyleRule('padding-left', '48px');
+    expect(screen.getByRole('group')).toHaveStyleRule(
+      'background-color',
+      '#F8F8F8',
+    );
+    expect(screen.getByRole('group')).toHaveStyleRule('border-radius', '12px');
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    expect(dropButton).toHaveStyleRule('color', '#FFFFFF');
+    expect(within(dropButton).getByText('Custom icon')).toBeInTheDocument();
 
-    // active.background and active.indicator only render on the
-    // currently focused/active segment
+    // Active Box and text styles, background, and underline only render on
+    // the currently focused/active segment.
     await user.click(hourSegment);
+    expect(hourSegment).toHaveStyleRule('padding', '6px');
+    expect(hourSegment).toHaveStyleRule(
+      'box-shadow',
+      '0px 1px 2px rgba(0, 0, 0, 0.20)',
+    );
+    expect(hourSegment).toHaveStyleRule('color', '#223344');
+    expect(hourSegment).toHaveStyleRule('font-size', '22px');
+    expect(hourSegment).toHaveStyleRule('font-weight', '700');
     expect(hourSegment).toHaveStyleRule('background-color', '#FFD700', {
       modifier: '::before',
     });
-    expect(hourSegment).toHaveStyleRule('background-color', '#FF0000', {
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
+      modifier: '::before',
+    });
+    expect(hourSegment).toHaveStyleRule('border-bottom', 'dashed 3px #FF0000', {
       modifier: '::after',
     });
-    expect(hourSegment).toHaveStyleRule('height', '12px', {
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
+      modifier: '::before',
+    });
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
       modifier: '::after',
     });
 
@@ -2299,19 +2601,97 @@ describe('TimeInput', () => {
     const unselectedOption = within(hourList).getByRole('option', {
       name: '11 hours',
     });
+    const dialog = screen.getByRole('dialog');
 
-    expect(unselectedOption).toHaveStyleRule('background', '#EEEEEE');
-    expect(selectedOption).toHaveStyleRule('background', '#0000FF');
-    expect(unselectedOption).toHaveStyleRule('background', '#CCCCCC', {
+    expect(dialog).toHaveStyleRule('width', '24rem');
+    expect(dialog).toHaveStyleRule('min-width', '20rem');
+    expect(dialog).toHaveStyleRule('min-height', '192px');
+    expect(hourList).toHaveStyleRule('max-height', '384px');
+    expect(hourList).toHaveStyleRule('background-color', '#FAFAFA');
+    expect(hourList).toHaveStyleRule('border-radius', '12px');
+
+    expect(unselectedOption).toHaveStyleRule('background-color', '#EEEEEE');
+    expect(unselectedOption).toHaveStyleRule('padding', '12px');
+    expect(unselectedOption).toHaveStyleRule('border', 'solid 2px #334455');
+    expect(unselectedOption).toHaveStyleRule('border-radius', '12px');
+    expect(selectedOption).toHaveStyleRule('background-color', '#0000FF');
+    expect(unselectedOption).toHaveStyleRule('background-color', '#CCCCCC', {
       modifier: ':hover',
     });
-    expect(selectedOption).toHaveStyleRule('background', '#00FF00', {
+    expect(unselectedOption).toHaveStyleRule('border', 'solid 2px #556677', {
       modifier: ':hover',
     });
-    expect(within(selectedOption).getByText('10')).toHaveStyleRule(
-      'color',
-      '#FFFFFF',
+    expect(unselectedOption).toHaveStyleRule('padding', '6px', {
+      modifier: ':hover',
+    });
+    expect(unselectedOption).toHaveStyleRule('border-radius', '24px', {
+      modifier: ':hover',
+    });
+    expect(unselectedOption).toHaveStyleRule(
+      'box-shadow',
+      '0px 1px 2px rgba(0, 0, 0, 0.20)',
+      { modifier: ':hover' },
     );
+    expect(selectedOption).toHaveStyleRule('background-color', '#00FF00', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('border', 'solid 4px #778899', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('padding', '12px', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('border-radius', '48px', {
+      modifier: ':hover',
+    });
+    const selectedText = within(selectedOption).getByText('10');
+    expect(selectedText).toHaveStyleRule('color', '#FFFFFF');
+    expect(selectedText).toHaveStyleRule('font-size', '22px');
+    expect(selectedText).toHaveStyleRule('font-weight', 'bold');
+  });
+
+  test('uses the segment placeholder color when the input is empty', () => {
+    render(
+      <Grommet
+        theme={{
+          timeInput: {
+            segment: {
+              placeholder: {
+                color: '#778899',
+                size: 'large',
+                weight: 700,
+              },
+            },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    expect(hourSegment).toHaveStyleRule('color', '#778899');
+    expect(hourSegment).toHaveStyleRule('font-size', '22px');
+    expect(hourSegment).toHaveStyleRule('font-weight', '700');
+
+    const separator = screen.getAllByText(':')[0];
+    expect(separator).toHaveStyleRule('color', '#778899');
+    expect(separator).toHaveStyleRule('font-size', '22px');
+    expect(separator).toHaveStyleRule('font-weight', '700');
+  });
+
+  test('keeps default segment padding horizontal-only', () => {
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="10:15" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    expect(hourSegment).toHaveStyleRule('padding-left', '3px');
+    expect(hourSegment).toHaveStyleRule('padding-right', '3px');
+    expect(hourSegment).not.toHaveStyleRule('padding-top', '3px');
+    expect(hourSegment).not.toHaveStyleRule('padding-bottom', '3px');
   });
 
   test('updates displayed value when picking a new hour from the popup after a single-digit keystroke', async () => {
@@ -2494,6 +2874,123 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('01:mm');
   });
 
+  test.each(['inner', 'outer'])(
+    'FormField delegates keyboard focus to the drop button with %s borders',
+    async (position) => {
+      const user = userEvent.setup();
+      const validate = jest.fn(() => undefined);
+      render(
+        <Grommet
+          theme={
+            {
+              global: { focus: { border: { color: '#123456' } } },
+              formField: {
+                border: { position },
+                focus: { border: { color: '#123456' } },
+              },
+            } as any
+          }
+        >
+          <Form>
+            <FormField
+              name="time"
+              htmlFor="time-focus"
+              label="Time"
+              validate={validate}
+              validateOn="blur"
+            >
+              <TimeInput id="time-focus" name="time" format="24" />
+              <TextInput aria-label="Within field" />
+            </FormField>
+            <Button label="After field" />
+          </Form>
+        </Grommet>,
+      );
+
+      await user.tab();
+      expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveFocus();
+      const fieldContent = screen.getByRole('group', { name: 'Time' })
+        .parentElement?.parentElement?.parentElement
+        ?.parentElement as HTMLElement;
+      const indicator =
+        position === 'inner' ? fieldContent : fieldContent.parentElement;
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+      expect(validate).not.toHaveBeenCalled();
+      await user.tab();
+      expect(
+        screen.getByRole('textbox', { name: 'Within field' }),
+      ).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      expect(validate).not.toHaveBeenCalled();
+      await user.tab({ shift: true });
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+      await user.tab({ shift: true });
+      expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(
+        screen.getByRole('textbox', { name: 'Within field' }),
+      ).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'After field' })).toHaveFocus();
+      await waitFor(() => expect(validate).toHaveBeenCalled());
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+    },
+  );
+  test('does not retain a Box focus shadow after arrowing to another option', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          global: {
+            focus: {
+              twoColor: true,
+              shadow: { color: '#123456', size: '2px' },
+              inset: {
+                twoColor: true,
+                shadow: { color: '#123456', size: '2px' },
+              },
+            },
+          },
+        }}
+      >
+        <TimeInput format="24" defaultValue="10:15:00" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const initialOption = within(hourList).getByRole('option', {
+      name: '10 hours',
+    });
+    const previousOption = within(hourList).getByRole('option', {
+      name: '11 hours',
+    });
+    const nextOption = within(hourList).getByRole('option', {
+      name: '12 hours',
+    });
+    await waitFor(() => expect(initialOption).toHaveFocus());
+    await user.keyboard('{ArrowDown}');
+    await waitFor(() => expect(previousOption).toHaveFocus());
+    await user.keyboard('{ArrowDown}');
+    await waitFor(() => expect(nextOption).toHaveFocus());
+
+    expect(previousOption).toHaveAttribute('tabindex', '-1');
+    expect(previousOption).not.toHaveStyleRule('box-shadow');
+    expect(nextOption).not.toHaveStyleRule('box-shadow');
+    expect(nextOption).toHaveStyleRule('box-shadow', expect.any(String), {
+      modifier: ':focus-visible',
+    });
+  });
+
   test('initialises hour with zero on ArrowUp in hour inside drop', async () => {
     const user = userEvent.setup();
 
@@ -2558,7 +3055,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -2578,18 +3075,42 @@ describe('TimeInput', () => {
   });
 });
 
-  test('renders inline as bare popup content, no button or dialog role', () => {
-    render(
-      <Grommet>
-        <TimeInput format="24" inline />
-      </Grommet>,
-    );
+test('renders inline as bare popup content, no button or dialog role', () => {
+  render(
+    <Grommet>
+      <TimeInput format="24" inline />
+    </Grommet>,
+  );
 
-    expect(
-      screen.queryByRole('button', { name: 'Choose time' }),
-    ).toBeNull();
-    expect(screen.queryByRole('dialog')).toBeNull();
-    expect(screen.getByRole('listbox', { name: 'hour' })).toBeTruthy();
-    expect(screen.getByRole('listbox', { name: 'minute' })).toBeTruthy();
-  });
-  
+  expect(screen.queryByRole('button', { name: 'Choose time' })).toBeNull();
+  expect(screen.queryByRole('dialog')).toBeNull();
+  expect(screen.getByRole('listbox', { name: 'hour' })).toBeTruthy();
+  expect(screen.getByRole('listbox', { name: 'minute' })).toBeTruthy();
+});
+
+test('does not automatically move focus when rendered inline', async () => {
+  const { rerender } = render(
+    <Grommet>
+      <button type="button">Keep focus</button>
+    </Grommet>,
+  );
+
+  const button = screen.getByRole('button', { name: 'Keep focus' });
+  button.focus();
+
+  rerender(
+    <Grommet>
+      <button type="button">Keep focus</button>
+      <TimeInput format="24" inline />
+    </Grommet>,
+  );
+
+  await act(
+    async () =>
+      new Promise((resolve) => {
+        requestAnimationFrame(() => resolve());
+      }),
+  );
+
+  expect(button).toHaveFocus();
+});
