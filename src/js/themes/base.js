@@ -2859,7 +2859,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         gap: 'medium',
         background: 'background-front',
         round: 'small',
-        margin: { top: 'medium' },
       },
       footer: {
         pad: { horizontal: 'large', vertical: 'small' },
