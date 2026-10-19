@@ -30,6 +30,7 @@ exports[`DataFilters clear 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -1144,6 +1145,7 @@ exports[`DataFilters layer 2`] = `
   padding-right: 24px;
   padding-top: 24px;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c9 {
@@ -1872,6 +1874,7 @@ exports[`DataFilters properties array 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -2244,6 +2247,7 @@ exports[`DataFilters properties object 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -2616,6 +2620,7 @@ exports[`DataFilters renders 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -2989,6 +2994,7 @@ exports[`DataFilters should display all filter options regardless of result set 
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -3746,6 +3752,7 @@ exports[`DataFilters sub objects 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -4958,6 +4965,7 @@ exports[`DataFilters theme footer actions margin and gap 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
