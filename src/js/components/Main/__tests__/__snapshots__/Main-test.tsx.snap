@@ -12,7 +12,6 @@ exports[`Main render main outside grommet wrapper 1`] = `
   height: 100%;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 <main
@@ -32,7 +31,6 @@ exports[`Main should have no accessibility violations 1`] = `
   height: 100%;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c0 {

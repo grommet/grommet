@@ -30,7 +30,6 @@ import {
 
 const PopupColumnBox = styled(Box)`
   scrollbar-gutter: stable;
-  scrollbar-width: thin;
 `;
 
 const PopupOption = styled(Box)`

@@ -383,7 +383,6 @@ exports[`DataSearch renders 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -711,7 +710,6 @@ exports[`DataSearch theme data drop pad 1`] = `
   flex-direction: column;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 

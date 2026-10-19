@@ -473,6 +473,9 @@ export interface ThemeType {
       computer?: string;
     };
     colors?: Colors;
+    scrollbar?: {
+      width?: 'auto' | 'thin' | 'none';
+    };
     control?: {
       border?: {
         width?: string;

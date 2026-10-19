@@ -9885,7 +9885,6 @@ exports[`DataChart theme overrides 2`] = `
   flex-direction: column;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c2 {

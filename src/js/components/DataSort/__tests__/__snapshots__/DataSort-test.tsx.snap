@@ -306,7 +306,6 @@ exports[`DataSort properties 1`] = `
   scroll-behavior: smooth;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
   outline: none;
 }
 
@@ -446,7 +445,6 @@ exports[`DataSort renders 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {

@@ -31,7 +31,6 @@ exports[`DataFilters clear 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -575,9 +574,7 @@ exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
   class="StyledButton-sc-323bzc-0 dBaTMT"
-  data-g-tabindex="none"
   id="test-data--filters-control"
-  tabindex="-1"
   type="button"
 >
   <svg
@@ -1147,7 +1144,6 @@ exports[`DataFilters layer 2`] = `
   padding-top: 24px;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c9 {
@@ -1877,7 +1873,6 @@ exports[`DataFilters properties array 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -2251,7 +2246,6 @@ exports[`DataFilters properties object 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -2625,7 +2619,6 @@ exports[`DataFilters renders 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -3000,7 +2993,6 @@ exports[`DataFilters should display all filter options regardless of result set 
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -3759,7 +3751,6 @@ exports[`DataFilters sub objects 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -4973,7 +4964,6 @@ exports[`DataFilters theme footer actions margin and gap 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {

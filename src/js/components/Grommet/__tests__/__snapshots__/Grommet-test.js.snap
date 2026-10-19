@@ -55,7 +55,6 @@ exports[`Grommet background 1`] = `
   height: 100vh;
   overflow: auto;
   scrollbar-color: rgba(255, 255, 255, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 <div
@@ -155,7 +154,6 @@ exports[`Grommet full 1`] = `
   height: 100vh;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 <div
@@ -239,7 +237,6 @@ exports[`Grommet message format function 1`] = `
   height: 100vh;
   overflow: auto;
   scrollbar-color: rgba(255, 255, 255, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 <div

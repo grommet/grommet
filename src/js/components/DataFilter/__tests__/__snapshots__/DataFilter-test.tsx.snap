@@ -533,7 +533,6 @@ exports[`DataFilter children 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -819,7 +818,6 @@ exports[`DataFilter decimal values [0.1, 0.2] - no artificial range normalizatio
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -1275,7 +1273,6 @@ exports[`DataFilter high precision decimals are rounded to max 2 places 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -1731,7 +1728,6 @@ exports[`DataFilter mixed positive and negative decimals - validates step is val
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -2187,7 +2183,6 @@ exports[`DataFilter negative decimal values [-19.99, -4.859] - preserves actual 
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -2642,7 +2637,6 @@ exports[`DataFilter options 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -3159,7 +3153,6 @@ exports[`DataFilter range Data 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -3613,7 +3606,6 @@ exports[`DataFilter range prop 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -4068,7 +4060,6 @@ exports[`DataFilter render filter for single item 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -4523,7 +4514,6 @@ exports[`DataFilter renders 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -6271,7 +6261,6 @@ exports[`DataFilter single decimal value [0.1] - renders RangeSelector with matc
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -6727,7 +6716,6 @@ exports[`DataFilter single negative value [-5] - renders single negative value f
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -7183,7 +7171,6 @@ exports[`DataFilter single zero value [0] - handles zero correctly 1`] = `
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -7639,7 +7626,6 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
   flex: 1 1;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c5 {
@@ -8346,7 +8332,6 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
   flex-direction: column;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -8722,7 +8707,6 @@ exports[`DataFilter theme rangeSelector size and round, selectMultiple dropHeigh
   scroll-behavior: smooth;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
   outline: none;
 }
 

@@ -621,9 +621,18 @@ export const overflowStyle = (overflowProp, theme) => {
 
   return css`
     ${overflow}
-    ${scrollable &&
-    `scrollbar-color: ${normalizeColor('scrollbar', theme)} transparent;
-      scrollbar-width: thin;`}
+    ${scrollable && scrollbarStyle(theme)}
+  `;
+};
+
+export const scrollbarStyle = (theme) => {
+  const width = theme.global && theme.global.scrollbar?.width;
+  const color = normalizeColor('scrollbar', theme);
+  if (!color && !width) return undefined;
+
+  return css`
+    ${color && `scrollbar-color: ${color} transparent;`}
+    ${width && `scrollbar-width: ${width};`}
   `;
 };
 

@@ -27816,7 +27816,6 @@ exports[`DataTable should apply pagination styling 1`] = `
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c6 {
@@ -32813,7 +32812,6 @@ exports[`DataTable should base table body max height on css value 1`] = `
   max-height: 50px;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c7:focus {
@@ -33076,7 +33074,6 @@ exports[`DataTable should base table body max height on global size 1`] = `
   max-height: 192px;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c7:focus {
@@ -33237,7 +33234,6 @@ exports[`DataTable should not show paginate controls when data is empty array 1`
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c6 {
@@ -33377,7 +33373,6 @@ exports[`DataTable should not show paginate controls when length of data < step 
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c6 {
@@ -33733,7 +33728,6 @@ exports[`DataTable should paginate 1`] = `
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c6 {
@@ -36005,7 +35999,6 @@ exports[`DataTable should pin and paginate 1`] = `
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c7 {
@@ -38285,7 +38278,6 @@ exports[`DataTable should render correct num items per page (step) 1`] = `
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c6 {
@@ -39496,7 +39488,6 @@ exports[`DataTable should render new data when page changes 1`] = `
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c6 {
@@ -41683,7 +41674,7 @@ exports[`DataTable should render new data when page changes 2`] = `
     class="StyledBox-sc-13pk1d4-0 kbGjYV StyledDataTable__StyledContainer-sc-xrlyjm-1 gAACfp"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eTlPtT"
+      class="StyledBox-sc-13pk1d4-0 iLGfMw"
     >
       <table
         class="StyledTable-sc-1m3u5g-6 dwfXpx StyledDataTable-sc-xrlyjm-0 dmHCuf"
@@ -47269,7 +47260,6 @@ exports[`DataTable should show correct item index when "show" is a number 1`] = 
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c6 {
@@ -49541,7 +49531,6 @@ exports[`DataTable should show correct page when "show" is { page: # } 1`] = `
   flex-direction: column;
   overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 .c6 {

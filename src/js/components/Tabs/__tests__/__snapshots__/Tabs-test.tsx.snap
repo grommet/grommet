@@ -716,7 +716,6 @@ exports[`Tabs alignControls 1`] = `
   height: 100vh;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
 }
 
 @media only screen and (max-width: 768px) {

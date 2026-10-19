@@ -2087,7 +2087,6 @@ exports[`ToggleGroup icon with tooltip 1`] = `
   flex-direction: column;
   overflow: auto;
   scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
-  scrollbar-width: thin;
   box-shadow: none;
 }
 
