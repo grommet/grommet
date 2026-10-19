@@ -612,7 +612,7 @@ export const scrollbarStyle = (theme) => {
 
   return css`
     ${color && `scrollbar-color: ${color} transparent;`}
-    ${width && `scrollbar-width: ${width};`}
+    ${width !== undefined && `scrollbar-width: ${width};`}
   `;
 };
 

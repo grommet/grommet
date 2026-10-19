@@ -218,6 +218,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         computer: 'large',
       },
       colors,
+      scrollbar: {
+        // width: undefined,
+      },
       control: {
         border: {
           width: `${controlBorderWidth}px`,
