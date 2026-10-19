@@ -19,7 +19,7 @@ import { defaultHourForFormat, pad, getSectionName, SECTION_HOUR, SECTION_MINUTE
 var PopupColumnBox = styled(Box).withConfig({
   displayName: "TimeInputPopup__PopupColumnBox",
   componentId: "sc-r2j8uh-0"
-})(["scrollbar-gutter:stable;scrollbar-width:thin;"]);
+})(["scrollbar-gutter:stable;"]);
 var PopupOption = styled(Box).withConfig({
   displayName: "TimeInputPopup__PopupOption",
   componentId: "sc-r2j8uh-1"
@@ -65,7 +65,8 @@ var PopupColumn = function PopupColumn(_ref2) {
     options = _ref2.options,
     section = _ref2.section,
     sections = _ref2.sections,
-    theme = _ref2.theme;
+    theme = _ref2.theme,
+    passThemeFlag = _ref2.passThemeFlag;
   var columnTheme = ((_theme$timeInput = theme.timeInput) == null || (_theme$timeInput = _theme$timeInput.drop) == null ? void 0 : _theme$timeInput.column) || {};
   return /*#__PURE__*/React.createElement(PopupColumnBox, _extends({
     role: "listbox",
@@ -75,7 +76,7 @@ var PopupColumn = function PopupColumn(_ref2) {
       grow: 0,
       shrink: 0
     }
-  }, columnTheme), options.map(function (option) {
+  }, columnTheme, passThemeFlag), options.map(function (option) {
     var _theme$timeInput2, _theme$timeInput3, _theme$timeInput4, _theme$timeInput5, _ref3, _hoverState$backgroun, _theme$timeInput6, _theme$timeInput7, _theme$timeInput8, _theme$timeInput$drop, _theme$timeInput9, _theme$timeInput0, _theme$timeInput1;
     var key = optionKey(label, option);
     var sectionHasValue = section === SECTION_HOUR && sections.hour !== undefined || section === SECTION_MINUTE && sections.minute !== undefined || section === SECTION_SECOND && sections.second !== undefined || section === SECTION_PERIOD && sections.period !== undefined;
@@ -166,7 +167,8 @@ var TimeInputPopup = function TimeInputPopup(_ref4) {
     onKeyDownProp = _ref4.onKeyDown,
     rest = _objectWithoutPropertiesLoose(_ref4, _excluded3);
   var _useThemeValue = useThemeValue(),
-    theme = _useThemeValue.theme;
+    theme = _useThemeValue.theme,
+    passThemeFlag = _useThemeValue.passThemeFlag;
   var dialogRef = useRef();
   var pointerDownInsideRef = useRef(false);
   var suppressNextAutoScrollRef = useRef(false);
@@ -481,7 +483,8 @@ var TimeInputPopup = function TimeInputPopup(_ref4) {
       options: options,
       section: section,
       sections: sections,
-      theme: theme
+      theme: theme,
+      passThemeFlag: passThemeFlag
     });
   }));
   if (inline) return popupContent;

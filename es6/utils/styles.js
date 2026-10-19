@@ -317,11 +317,19 @@ export var inputPadForIcon = css(["", ""], function (props) {
   var pad = getInputIconPad(props);
   return props.reverse ? "padding-right: " + pad + ";" : "padding-left: " + pad + ";";
 });
-export var overflowStyle = function overflowStyle(overflowProp) {
-  if (typeof overflowProp === 'string') {
-    return css(["overflow:", ";"], overflowProp);
-  }
-  return css(["", " ", ";"], overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";");
+export var scrollbarStyle = function scrollbarStyle(theme) {
+  var _theme$global$scrollb;
+  var width = theme.global && ((_theme$global$scrollb = theme.global.scrollbar) == null ? void 0 : _theme$global$scrollb.width);
+  var color = normalizeColor('scrollbar', theme);
+  if (!color && !width) return undefined;
+  return css(["", " ", ""], color && "scrollbar-color: " + color + " transparent;", width !== undefined && "scrollbar-width: " + width + ";");
+};
+export var overflowStyle = function overflowStyle(overflowProp, theme) {
+  var overflow = typeof overflowProp === 'string' ? "overflow: " + overflowProp + ";" : [overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";"].filter(Boolean).join(' ');
+  var scrollable = ['auto', 'scroll', 'overlay'].some(function (value) {
+    return overflow.includes(": " + value + ";");
+  });
+  return css(["", " ", ""], overflow, scrollable && scrollbarStyle(theme));
 };
 var ALIGN_SELF_MAP = {
   center: 'center',

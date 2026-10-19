@@ -344,7 +344,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref3, ref) {
       return setActiveIndex(-1);
     },
     theme: theme
-  }), options.length > 0 ? /*#__PURE__*/React.createElement(OptionsContainer, {
+  }), options.length > 0 ? /*#__PURE__*/React.createElement(OptionsContainer, _extends({
     "aria-label": format({
       id: 'select.optionsA11y',
       messages: messages
@@ -356,7 +356,7 @@ var SelectContainer = /*#__PURE__*/forwardRef(function (_ref3, ref) {
     onMouseMove: function onMouseMove() {
       return setKeyboardNavigation(false);
     }
-  }, /*#__PURE__*/React.createElement(InfiniteScroll, {
+  }, passThemeFlag), /*#__PURE__*/React.createElement(InfiniteScroll, {
     items: options,
     step: theme.select.step,
     onMore: onMore,

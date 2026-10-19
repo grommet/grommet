@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
-import { getHoverIndicatorStyle, selectedStyle, controlBorderStyle, sizeStyle, styledComponentsConfig } from '../../utils';
+import { getHoverIndicatorStyle, selectedStyle, controlBorderStyle, overflowStyle, sizeStyle, styledComponentsConfig } from '../../utils';
 export var StyledContainer = styled(Box).withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"
@@ -19,7 +19,9 @@ export var StyledContainer = styled(Box).withConfig({
 export var OptionsContainer = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
-})(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;", ";"], function (props) {
+})(["position:relative;scroll-behavior:smooth;", " outline:none;", ";"], function (props) {
+  return overflowStyle('auto', props.theme);
+}, function (props) {
   if (props.selectMultiple) return props.theme.selectMultiple.listbox && props.theme.selectMultiple.listbox.extend;
   return props.theme.select.listbox && props.theme.select.listbox.extend;
 });

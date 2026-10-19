@@ -348,7 +348,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
       return setActiveIndex(-1);
     },
     theme: theme
-  }), options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, {
+  }), options.length > 0 ? /*#__PURE__*/_react["default"].createElement(_StyledSelect.OptionsContainer, _extends({
     "aria-label": format({
       id: 'select.optionsA11y',
       messages: messages
@@ -360,7 +360,7 @@ var SelectContainer = exports.SelectContainer = /*#__PURE__*/(0, _react.forwardR
     onMouseMove: function onMouseMove() {
       return setKeyboardNavigation(false);
     }
-  }, /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
+  }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: options,
     step: theme.select.step,
     onMore: onMore,

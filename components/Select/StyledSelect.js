@@ -25,7 +25,9 @@ var StyledContainer = exports.StyledContainer = (0, _styledComponents["default"]
 var OptionsContainer = exports.OptionsContainer = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledSelect__OptionsContainer",
   componentId: "sc-znp66n-1"
-})(["position:relative;scroll-behavior:smooth;overflow:auto;outline:none;", ";"], function (props) {
+})(["position:relative;scroll-behavior:smooth;", " outline:none;", ";"], function (props) {
+  return (0, _utils.overflowStyle)('auto', props.theme);
+}, function (props) {
   if (props.selectMultiple) return props.theme.selectMultiple.listbox && props.theme.selectMultiple.listbox.extend;
   return props.theme.select.listbox && props.theme.select.listbox.extend;
 });

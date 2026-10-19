@@ -8,9 +8,9 @@ function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 
-var fullStyle = function fullStyle(full) {
+var fullStyle = function fullStyle(full, theme) {
   if (full === 'min') return (0, _styledComponents.css)(["min-height:100vh;"]);
-  return (0, _styledComponents.css)(["width:100vw;height:100vh;overflow:auto;"]);
+  return (0, _styledComponents.css)(["width:100vw;height:100vh;", ""], (0, _utils.overflowStyle)('auto', theme));
 };
 var StyledGrommet = exports.StyledGrommet = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledGrommet",
@@ -18,7 +18,7 @@ var StyledGrommet = exports.StyledGrommet = _styledComponents["default"].div.wit
 })(["", " ", " ", " ", " ", ""], function (props) {
   return !props.plain && _utils.baseStyle;
 }, function (props) {
-  return props.full && fullStyle(props.full);
+  return props.full && fullStyle(props.full, props.theme);
 }, function (props) {
   return props.theme.global.font.face;
 }, function (props) {

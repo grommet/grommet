@@ -67,6 +67,7 @@ var colors = {
     dark: 'rgba(255, 255, 255, 0.33)',
     light: 'rgba(0, 0, 0, 0.33)'
   },
+  scrollbar: 'border',
   brand: brandColor,
   control: {
     dark: 'accent-1',
@@ -224,6 +225,9 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
         computer: 'large'
       },
       colors: colors,
+      scrollbar: {
+        // width: undefined,
+      },
       control: {
         border: {
           width: controlBorderWidth + "px",

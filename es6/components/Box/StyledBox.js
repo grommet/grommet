@@ -204,7 +204,7 @@ var StyledBox = styled.div.withConfig({
 }, function (props) {
   return props.wrapProp && wrapStyle;
 }, function (props) {
-  return props.overflowProp && overflowStyle(props.overflowProp);
+  return props.overflowProp && overflowStyle(props.overflowProp, props.theme);
 }, function (props) {
   return props.elevationProp && elevationStyle(props.elevationProp);
 }, function (props) {

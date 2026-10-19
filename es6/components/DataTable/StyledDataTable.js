@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
-import { backgroundStyle, fillStyle, focusStyle, unfocusStyle, genericStyles, normalizeColor, styledComponentsConfig } from '../../utils';
+import { backgroundStyle, fillStyle, focusStyle, unfocusStyle, genericStyles, overflowStyle, normalizeColor, styledComponentsConfig } from '../../utils';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
@@ -56,7 +56,7 @@ var StyledDataTableBody = styled(TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "sc-xrlyjm-4"
 })(["", " &:focus{", "}&:focus:not(:focus-visible){", "}"], function (props) {
-  return props.size && "\n    display: block;\n    width: 100%;\n    max-height: " + (props.theme.global.size[props.size] || props.size) + ";\n    overflow: auto;\n  ";
+  return props.size && css(["display:block;width:100%;max-height:", ";", ""], props.theme.global.size[props.size] || props.size, overflowStyle('auto', props.theme));
 }, focusStyle({
   skipSvgChildren: true,
   forceOutline: true

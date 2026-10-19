@@ -24,7 +24,7 @@ var resizeStyle = function resizeStyle(resize) {
 var StyledTextArea = exports.StyledTextArea = _styledComponents["default"].textarea.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
-})(["", " ", " ", " ", " ", " ", ";max-width:100%;"], _utils.inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", ";", " max-width:100%;"], _utils.inputStyle, function (props) {
   return props.resize !== undefined && resizeStyle(props.resize);
 }, function (props) {
   return props.fillArg && 'height: 100%;';
@@ -34,4 +34,6 @@ var StyledTextArea = exports.StyledTextArea = _styledComponents["default"].texta
   return props.disabled && (0, _utils.disabledStyle)(props.theme.textArea.disabled && props.theme.textArea.disabled.opacity);
 }, function (props) {
   return props.theme.textArea && props.theme.textArea.extend;
+}, function (props) {
+  return (0, _utils.scrollbarStyle)(props.theme);
 });

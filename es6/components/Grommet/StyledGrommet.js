@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
-import { baseStyle, styledComponentsConfig } from '../../utils';
-var fullStyle = function fullStyle(full) {
+import { baseStyle, overflowStyle, styledComponentsConfig } from '../../utils';
+var fullStyle = function fullStyle(full, theme) {
   if (full === 'min') return css(["min-height:100vh;"]);
-  return css(["width:100vw;height:100vh;overflow:auto;"]);
+  return css(["width:100vw;height:100vh;", ""], overflowStyle('auto', theme));
 };
 var StyledGrommet = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledGrommet",
@@ -12,7 +12,7 @@ var StyledGrommet = styled.div.withConfig(styledComponentsConfig).withConfig({
 })(["", " ", " ", " ", " ", ""], function (props) {
   return !props.plain && baseStyle;
 }, function (props) {
-  return props.full && fullStyle(props.full);
+  return props.full && fullStyle(props.full, props.theme);
 }, function (props) {
   return props.theme.global.font.face;
 }, function (props) {

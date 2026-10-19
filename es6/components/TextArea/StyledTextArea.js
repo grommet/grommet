@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
-import { disabledStyle, inputStyle, styledComponentsConfig } from '../../utils';
+import { disabledStyle, inputStyle, scrollbarStyle, styledComponentsConfig } from '../../utils';
 var plainStyle = css(["outline:none;border:none;width:100%;-webkit-appearance:none;"]);
 var resizeStyle = function resizeStyle(resize) {
   if (resize === 'horizontal') {
@@ -18,7 +18,7 @@ var resizeStyle = function resizeStyle(resize) {
 var StyledTextArea = styled.textarea.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
-})(["", " ", " ", " ", " ", " ", ";max-width:100%;"], inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", ";", " max-width:100%;"], inputStyle, function (props) {
   return props.resize !== undefined && resizeStyle(props.resize);
 }, function (props) {
   return props.fillArg && 'height: 100%;';
@@ -28,5 +28,7 @@ var StyledTextArea = styled.textarea.withConfig(styledComponentsConfig).withConf
   return props.disabled && disabledStyle(props.theme.textArea.disabled && props.theme.textArea.disabled.opacity);
 }, function (props) {
   return props.theme.textArea && props.theme.textArea.extend;
+}, function (props) {
+  return scrollbarStyle(props.theme);
 });
 export { StyledTextArea };

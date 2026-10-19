@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.styledComponentsConfig = exports.sizeStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.heightStyle = exports.getInputPadBySide = exports.getInputIconPad = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.elevationStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
+exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.styledComponentsConfig = exports.sizeStyle = exports.scrollbarStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.heightStyle = exports.getInputPadBySide = exports.getInputIconPad = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.elevationStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
 var _styledComponents = require("styled-components");
 var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _background = require("./background");
@@ -322,11 +322,19 @@ var inputPadForIcon = exports.inputPadForIcon = (0, _styledComponents.css)(["", 
   var pad = getInputIconPad(props);
   return props.reverse ? "padding-right: " + pad + ";" : "padding-left: " + pad + ";";
 });
-var overflowStyle = exports.overflowStyle = function overflowStyle(overflowProp) {
-  if (typeof overflowProp === 'string') {
-    return (0, _styledComponents.css)(["overflow:", ";"], overflowProp);
-  }
-  return (0, _styledComponents.css)(["", " ", ";"], overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";");
+var scrollbarStyle = exports.scrollbarStyle = function scrollbarStyle(theme) {
+  var _theme$global$scrollb;
+  var width = theme.global && ((_theme$global$scrollb = theme.global.scrollbar) == null ? void 0 : _theme$global$scrollb.width);
+  var color = (0, _colors.normalizeColor)('scrollbar', theme);
+  if (!color && !width) return undefined;
+  return (0, _styledComponents.css)(["", " ", ""], color && "scrollbar-color: " + color + " transparent;", width !== undefined && "scrollbar-width: " + width + ";");
+};
+var overflowStyle = exports.overflowStyle = function overflowStyle(overflowProp, theme) {
+  var overflow = typeof overflowProp === 'string' ? "overflow: " + overflowProp + ";" : [overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";"].filter(Boolean).join(' ');
+  var scrollable = ['auto', 'scroll', 'overlay'].some(function (value) {
+    return overflow.includes(": " + value + ";");
+  });
+  return (0, _styledComponents.css)(["", " ", ""], overflow, scrollable && scrollbarStyle(theme));
 };
 var ALIGN_SELF_MAP = {
   center: 'center',
