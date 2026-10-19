@@ -14,7 +14,7 @@ var validatePassword = function validatePassword(password) {
   }
   return undefined;
 };
-var Validation = function Validation() {
+var ValidationExample = function ValidationExample() {
   var _useState = useState(null),
     result = _useState[0],
     setResult = _useState[1];
@@ -75,6 +75,10 @@ var Validation = function Validation() {
     id: 'confirm',
     title: 'Confirm',
     description: 'Ready to submit.',
+    skippable: true,
+    validate: function validate(value) {
+      return validateEmail(value.email);
+    },
     render: function render(step, api) {
       return /*#__PURE__*/React.createElement(Paragraph, null, "Confirm sign-up for ", api.formValue.email, ".");
     }
@@ -85,16 +89,17 @@ var Validation = function Validation() {
     "aria-label": "Sign up",
     title: "Create your account",
     showProgress: "vertical",
+    clickableSteps: true,
     steps: steps,
     defaultValue: {
       email: '',
       password: ''
     },
-    onComplete: function onComplete(_ref) {
-      var value = _ref.value;
-      return setResult({
+    onComplete: function onComplete(results) {
+      console.log('Wizard complete with results:', results);
+      setResult({
         status: 'complete',
-        value: value
+        value: results.value
       });
     }
   }), result && /*#__PURE__*/React.createElement(Notification, {
@@ -109,10 +114,14 @@ var Validation = function Validation() {
     }
   }));
 };
-Validation.args = {
-  full: true
-};
 export default {
   title: 'Layout/Wizard/Validation'
 };
-export { Validation };
+export var Validation = {
+  args: {
+    full: true
+  },
+  render: function render() {
+    return /*#__PURE__*/React.createElement(ValidationExample, null);
+  }
+};

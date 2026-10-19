@@ -17,13 +17,14 @@ var _WizardStepHeader = require("./WizardStepHeader");
 var _WizardContent = require("./WizardContent");
 var _WizardFooter = require("./WizardFooter");
 var _propTypes = require("./propTypes");
-var _excluded = ["steps", "clickableSteps", "closable", "currentStep", "defaultStep", "form", "showProgress", "onStepChange", "onComplete", "onCancel", "renderStep", "title", "footer", "scrollToTop", "value", "defaultValue", "onChange", "id", "aria-label", "messages", "children"];
+var _excluded = ["children"],
+  _excluded2 = ["steps", "clickableSteps", "closable", "currentStep", "defaultStep", "form", "showProgress", "onStepChange", "onComplete", "onCancel", "renderStep", "title", "footer", "scrollToTop", "value", "defaultValue", "onChange", "id", "aria-label", "messages", "children"];
 function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t2 in e) "default" !== _t2 && {}.hasOwnProperty.call(e, _t2) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t2)) && (i.get || i.set) ? o(f, _t2, i) : f[_t2] = e[_t2]); return f; })(e, t); }
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _createForOfIteratorHelperLoose(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (t) return (t = t.call(r)).next.bind(t); if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var o = 0; return function () { return o >= r.length ? { done: !0 } : { done: !1, value: r[o++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -58,6 +59,62 @@ var _findStepById = function findStepById(steps, id) {
   }
   return undefined;
 };
+var formHasErrors = function formHasErrors(result) {
+  var _result$form, _result$form2;
+  return (result == null || (_result$form = result.form) == null ? void 0 : _result$form.ok) === false || Object.keys((result == null || (_result$form2 = result.form) == null ? void 0 : _result$form2.errors) || {}).length > 0;
+};
+var statusFromStep = function statusFromStep(step, validation, completed) {
+  var _validation$step$id;
+  if (!step) return 'pending';
+  if (step.disabled) return 'disabled';
+  if (step.status) return step.status;
+  if (formHasErrors(validation[step.id]) || ((_validation$step$id = validation[step.id]) == null || (_validation$step$id = _validation$step$id.callback) == null ? void 0 : _validation$step$id.ok) === false) return 'error';
+  if (completed.has(step.id)) return 'completed';
+  return 'pending';
+};
+var getStepStatus = function getStepStatus(step, validation, completed) {
+  var _step$children;
+  if (step != null && step.disabled || step != null && step.status || !(step != null && (_step$children = step.children) != null && _step$children.length)) return statusFromStep(step, validation, completed);
+  var childStatuses = step.children.map(function (child) {
+    return statusFromStep(child, validation, completed);
+  });
+  if (childStatuses.some(function (status) {
+    return status === 'error';
+  })) return 'error';
+  if (childStatuses.every(function (status) {
+    return status === 'completed';
+  })) return 'completed';
+  if (childStatuses.every(function (status) {
+    return status === 'disabled';
+  })) return 'disabled';
+  return 'pending';
+};
+var filterCompletedSteps = function filterCompletedSteps(steps, validation, completed) {
+  var remaining = Array.from(completed).filter(function (stepId) {
+    var step = _findStepById(steps, stepId);
+    return step && getStepStatus(step, validation, completed) !== 'error';
+  });
+  return remaining.length === completed.size ? completed : new Set(remaining);
+};
+var resolveStepResults = function resolveStepResults(steps, validation, completed) {
+  var results = [];
+  var _walk = function walk(nodes) {
+    return nodes.forEach(function (step) {
+      var _step$errorMessage, _validation$step$id2;
+      var childSteps = step.children,
+        details = _objectWithoutPropertiesLoose(step, _excluded);
+      var status = getStepStatus(step, validation, completed);
+      var errorMessage = status === 'error' ? (_step$errorMessage = step.errorMessage) != null ? _step$errorMessage : formHasErrors(validation[step.id]) ? undefined : (_validation$step$id2 = validation[step.id]) == null || (_validation$step$id2 = _validation$step$id2.callback) == null ? void 0 : _validation$step$id2.error : undefined;
+      results.push(_extends({}, details, {
+        status: status,
+        errorMessage: errorMessage
+      }));
+      if (childSteps != null && childSteps.length) _walk(childSteps);
+    });
+  };
+  _walk(steps);
+  return results;
+};
 
 // Nearest scrollable ancestor for scrollToTop.
 var findScrollableAncestor = function findScrollableAncestor(node) {
@@ -73,6 +130,7 @@ var findScrollableAncestor = function findScrollableAncestor(node) {
   return undefined;
 };
 var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _currentValidation$ca, _currentValidation$fo, _currentValidation$ca2;
   var steps = _ref.steps,
     _ref$clickableSteps = _ref.clickableSteps,
     clickableSteps = _ref$clickableSteps === void 0 ? false : _ref$clickableSteps,
@@ -99,7 +157,7 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     ariaLabel = _ref['aria-label'],
     messages = _ref.messages,
     children = _ref.children,
-    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded2);
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     theme = _useThemeValue.theme;
   var _React$useContext = _react["default"].useContext(_MessageContext.MessageContext),
@@ -115,8 +173,8 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
 
   // Only two levels supported (step > child); warn on deeper nesting.
   var hasDeepNesting = steps.some(function (step) {
-    var _step$children;
-    return (_step$children = step.children) == null ? void 0 : _step$children.some(function (child) {
+    var _step$children2;
+    return (_step$children2 = step.children) == null ? void 0 : _step$children2.some(function (child) {
       return child.children && child.children.length > 0;
     });
   });
@@ -145,6 +203,33 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     uncontrolledStep = _useState[0],
     setUncontrolledStep = _useState[1];
   var currentStep = isControlled ? currentStepProp : uncontrolledStep;
+  var latest = (0, _react.useRef)({
+    currentStep: currentStep,
+    steps: steps
+  });
+  latest.current = {
+    currentStep: currentStep,
+    steps: steps
+  };
+  var mounted = (0, _react.useRef)(false);
+  var navigationVersion = (0, _react.useRef)(0);
+  var validationInFlight = (0, _react.useRef)();
+  var formValidators = (0, _react.useRef)(new Map());
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    mounted.current = true;
+    return function () {
+      mounted.current = false;
+    };
+  }, []);
+  (0, _useIsomorphicLayoutEffect.useLayoutEffect)(function () {
+    navigationVersion.current += 1;
+  }, [currentStep]);
+  var registerForm = (0, _react.useCallback)(function (stepId, validateForm) {
+    formValidators.current.set(stepId, validateForm);
+    return function () {
+      if (formValidators.current.get(stepId) === validateForm) formValidators.current["delete"](stepId);
+    };
+  }, []);
   var isValueControlled = valueProp !== undefined;
   var _useState2 = (0, _react.useState)(defaultValue || {}),
     uncontrolledValue = _useState2[0],
@@ -162,9 +247,27 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     }),
     completedSteps = _useState3[0],
     setCompletedSteps = _useState3[1];
-  var _useState4 = (0, _react.useState)(undefined),
-    validationError = _useState4[0],
-    setValidationError = _useState4[1];
+  var stepValidationRef = (0, _react.useRef)({});
+  var _useState4 = (0, _react.useState)(stepValidationRef.current),
+    stepValidation = _useState4[0],
+    setStepValidation = _useState4[1];
+  var updateValidation = (0, _react.useCallback)(function (stepId, source, result) {
+    var _extends2, _extends3;
+    if (!mounted.current || !_findStepById(latest.current.steps, stepId)) return;
+    var nextResults = _extends({}, stepValidationRef.current, (_extends3 = {}, _extends3[stepId] = _extends({}, stepValidationRef.current[stepId], (_extends2 = {}, _extends2[source] = result, _extends2)), _extends3));
+    stepValidationRef.current = nextResults;
+    setStepValidation(nextResults);
+    if (result.ok === false) {
+      setCompletedSteps(function (previousCompleted) {
+        if (!previousCompleted.has(stepId)) return previousCompleted;
+        var nextCompleted = new Set(previousCompleted);
+        nextCompleted["delete"](stepId);
+        return nextCompleted;
+      });
+    }
+  }, []);
+  var currentValidation = stepValidation[currentStep];
+  var validationError = !formHasErrors(currentValidation) && (currentValidation == null || (_currentValidation$ca = currentValidation.callback) == null ? void 0 : _currentValidation$ca.ok) === false ? currentValidation.callback.error : undefined;
   var _useState5 = (0, _react.useState)(false),
     isValidating = _useState5[0],
     setIsValidating = _useState5[1];
@@ -173,6 +276,20 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     isOpen = _useState6[0],
     setIsOpen = _useState6[1];
   var hasCancelHandler = onCancel !== undefined;
+  (0, _react.useEffect)(function () {
+    if (validationInFlight.current && !_findStepById(steps, validationInFlight.current.stepId)) validationInFlight.current.removed = true;
+    var entries = Object.entries(stepValidationRef.current).filter(function (_ref2) {
+      var stepId = _ref2[0];
+      return _findStepById(steps, stepId);
+    });
+    if (entries.length !== Object.keys(stepValidationRef.current).length) {
+      stepValidationRef.current = Object.fromEntries(entries);
+      setStepValidation(stepValidationRef.current);
+    }
+    setCompletedSteps(function (previousCompleted) {
+      return filterCompletedSteps(steps, stepValidationRef.current, previousCompleted);
+    });
+  }, [steps]);
   var currentStepObj = (0, _react.useMemo)(function () {
     return _findStepById(steps, currentStep);
   }, [steps, currentStep]);
@@ -182,48 +299,21 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     });
   }, [flatSteps, currentStep]);
   var totalSteps = flatSteps.length;
-  var statusFromStep = (0, _react.useCallback)(function (step) {
-    if (step.disabled) return 'disabled';
-    if (step.id === currentStep && validationError !== undefined) return 'error';
-    if (step.status) return step.status;
-    if (completedSteps.has(step.id)) return 'completed';
-    return 'pending';
-  }, [currentStep, validationError, completedSteps]);
-
-  // Derive step status; parents aggregate from their children.
-  var getStepStatus = (0, _react.useCallback)(function (stepId) {
-    var _step$children2;
-    // Parent-with-children aggregate
-    var step = _findStepById(steps, stepId);
-    var parent = (step == null || (_step$children2 = step.children) == null ? void 0 : _step$children2.length) > 0;
-    if (parent) {
-      var childStatuses = step.children.map(statusFromStep);
-      if (childStatuses.some(function (status) {
-        return status === 'error';
-      })) return 'error';
-      if (childStatuses.every(function (status) {
-        return status === 'completed';
-      })) return 'completed';
-      if (childStatuses.every(function (status) {
-        return status === 'disabled';
-      })) return 'disabled';
-      return 'pending';
-    }
-    return statusFromStep(step);
-  }, [steps, statusFromStep]);
+  var stepResults = (0, _react.useMemo)(function () {
+    return resolveStepResults(steps, stepValidation, completedSteps);
+  }, [steps, stepValidation, completedSteps]);
 
   // Record<id, status> for every step (top-level + children).
   var stepStates = (0, _react.useMemo)(function () {
-    var record = {};
-    var _walk = function walk(nodes) {
-      nodes.forEach(function (node) {
-        record[node.id] = getStepStatus(node.id);
-        if (node.children && node.children.length) _walk(node.children);
-      });
-    };
-    _walk(steps);
-    return record;
-  }, [steps, getStepStatus]);
+    return Object.fromEntries(stepResults.map(function (step) {
+      return [step.id, step.status];
+    }));
+  }, [stepResults]);
+  var stepErrorMessages = (0, _react.useMemo)(function () {
+    return Object.fromEntries(stepResults.map(function (step) {
+      return [step.id, step.errorMessage];
+    }));
+  }, [stepResults]);
 
   // Emit a step change event to onStepChange.
   var emitStepChange = (0, _react.useCallback)(function (event) {
@@ -243,7 +333,7 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
         }
         return undefined;
       }
-      return nextId;
+      return !match.disabled ? nextId : undefined;
     }
     var nextIndex = currentStepIndex + 1;
     while (nextIndex < flatSteps.length) {
@@ -269,81 +359,49 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
 
   // Apply a navigation transition (id, history, completion, focus).
   var applyTransition = (0, _react.useCallback)(function (nextId, _temp) {
-    var _ref2 = _temp === void 0 ? {} : _temp,
-      markCompleted = _ref2.markCompleted;
+    var _ref3 = _temp === void 0 ? {} : _temp,
+      markCompleted = _ref3.markCompleted;
     if (!nextId) return;
+    navigationVersion.current += 1;
     if (markCompleted && currentStep) {
       setCompletedSteps(function (prev) {
         var next = new Set(prev);
         next.add(currentStep);
-        return next;
+        return filterCompletedSteps(latest.current.steps, stepValidationRef.current, next);
       });
     }
-    setValidationError(undefined);
     if (!isControlled) setUncontrolledStep(nextId);
   }, [currentStep, isControlled]);
 
   // Run step.validate (sync or async). Returns { ok, error }.
-  var runValidation = (0, _react.useCallback)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-    var formElement, formIsValid, result, _t;
+  var runStepValidation = (0, _react.useCallback)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+    var result, _t;
     return _regenerator().w(function (_context) {
       while (1) switch (_context.p = _context.n) {
         case 0:
-          formElement = document.getElementById(currentStep + "-form");
-          formIsValid = true;
-          if (!formElement) {
-            _context.n = 2;
+          if (!(typeof (currentStepObj == null ? void 0 : currentStepObj.validate) !== 'function')) {
+            _context.n = 1;
             break;
           }
-          _context.n = 1;
-          return new Promise(function (resolve) {
-            var observer = new window.MutationObserver(function () {
-              observer.disconnect();
-              resolve(formElement.getAttribute('data-form-valid') !== 'false');
-            });
-            observer.observe(formElement, {
-              attributes: true,
-              attributeFilter: ['data-form-valid']
-            });
-            formElement.requestSubmit();
+          return _context.a(2, {
+            ok: true
           });
         case 1:
-          formIsValid = _context.v;
+          _context.p = 1;
+          _context.n = 2;
+          return currentStepObj.validate(formValue);
         case 2:
-          if (formIsValid) {
+          result = _context.v;
+          if (!(result === true || result === undefined)) {
             _context.n = 3;
             break;
           }
           return _context.a(2, {
-            ok: false,
-            error: undefined
+            ok: true
           });
         case 3:
-          if (!(typeof (currentStepObj == null ? void 0 : currentStepObj.validate) !== 'function')) {
-            _context.n = 4;
-            break;
-          }
-          return _context.a(2, {
-            ok: true
-          });
-        case 4:
-          setIsValidating(true);
-          _context.p = 5;
-          _context.n = 6;
-          return currentStepObj.validate(formValue);
-        case 6:
-          result = _context.v;
-          setIsValidating(false);
-          if (!(result === true || result === undefined)) {
-            _context.n = 7;
-            break;
-          }
-          return _context.a(2, {
-            ok: true
-          });
-        case 7:
           if (!(result === false)) {
-            _context.n = 8;
+            _context.n = 4;
             break;
           }
           return _context.a(2, {
@@ -353,32 +411,31 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
               messages: messages
             })
           });
-        case 8:
+        case 4:
           if (!(typeof result === 'string')) {
-            _context.n = 9;
+            _context.n = 5;
             break;
           }
           return _context.a(2, {
             ok: false,
             error: result
           });
-        case 9:
-          if (!(typeof result === 'object' && result.error)) {
-            _context.n = 10;
+        case 5:
+          if (!(result && typeof result === 'object' && result.error)) {
+            _context.n = 6;
             break;
           }
           return _context.a(2, {
             ok: false,
             error: result.error
           });
-        case 10:
+        case 6:
           return _context.a(2, {
             ok: true
           });
-        case 11:
-          _context.p = 11;
+        case 7:
+          _context.p = 7;
           _t = _context.v;
-          setIsValidating(false);
           return _context.a(2, {
             ok: false,
             error: (_t == null ? void 0 : _t.message) || format({
@@ -387,18 +444,93 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
             })
           });
       }
-    }, _callee, null, [[5, 11]]);
-  })), [currentStep, currentStepObj, formValue, format, messages]);
-  var next = (0, _react.useCallback)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
-    var _yield$runValidation, ok, error, nextId;
+    }, _callee, null, [[1, 7]]);
+  })), [currentStepObj, formValue, format, messages]);
+  var runValidation = (0, _react.useCallback)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+    var attempt, isStale, validateForm, _result, result;
     return _regenerator().w(function (_context2) {
-      while (1) switch (_context2.n) {
+      while (1) switch (_context2.p = _context2.n) {
         case 0:
-          if (!isValidating) {
+          if (!validationInFlight.current) {
             _context2.n = 1;
             break;
           }
+          return _context2.a(2, {
+            cancelled: true
+          });
+        case 1:
+          attempt = {
+            stepId: currentStep,
+            version: navigationVersion.current
+          };
+          validationInFlight.current = attempt;
+          setIsValidating(true);
+          isStale = function isStale() {
+            return !mounted.current || attempt.removed || latest.current.currentStep !== attempt.stepId || navigationVersion.current !== attempt.version || !_findStepById(latest.current.steps, attempt.stepId);
+          };
+          _context2.p = 2;
+          validateForm = form && formValidators.current.get(currentStep);
+          if (!validateForm) {
+            _context2.n = 6;
+            break;
+          }
+          _context2.n = 3;
+          return validateForm();
+        case 3:
+          _result = _context2.v;
+          if (!_result.cancelled) {
+            _context2.n = 4;
+            break;
+          }
+          return _context2.a(2, {
+            cancelled: true
+          });
+        case 4:
+          if (_result.ok) {
+            _context2.n = 5;
+            break;
+          }
+          return _context2.a(2, {
+            ok: false,
+            cancelled: isStale()
+          });
+        case 5:
+          if (!isStale()) {
+            _context2.n = 6;
+            break;
+          }
+          return _context2.a(2, {
+            cancelled: true
+          });
+        case 6:
+          _context2.n = 7;
+          return runStepValidation();
+        case 7:
+          result = _context2.v;
+          if (!attempt.removed) updateValidation(attempt.stepId, 'callback', result);
+          return _context2.a(2, _extends({}, result, {
+            cancelled: isStale()
+          }));
+        case 8:
+          _context2.p = 8;
+          validationInFlight.current = undefined;
+          if (mounted.current) setIsValidating(false);
+          return _context2.f(8);
+        case 9:
           return _context2.a(2);
+      }
+    }, _callee2, null, [[2,, 8, 9]]);
+  })), [currentStep, form, runStepValidation, updateValidation]);
+  var next = (0, _react.useCallback)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
+    var _yield$runValidation, ok, error, cancelled, sourceStep, nextId;
+    return _regenerator().w(function (_context3) {
+      while (1) switch (_context3.n) {
+        case 0:
+          if (!(validationInFlight.current || currentStepObj != null && currentStepObj.disabled)) {
+            _context3.n = 1;
+            break;
+          }
+          return _context3.a(2);
         case 1:
           emitStepChange({
             trigger: 'next',
@@ -410,25 +542,32 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
             phase: 'validating',
             from: currentStep
           });
-          _context2.n = 2;
+          _context3.n = 2;
           return runValidation();
         case 2:
-          _yield$runValidation = _context2.v;
+          _yield$runValidation = _context3.v;
           ok = _yield$runValidation.ok;
           error = _yield$runValidation.error;
-          if (ok) {
-            _context2.n = 3;
+          cancelled = _yield$runValidation.cancelled;
+          if (!cancelled) {
+            _context3.n = 3;
             break;
           }
-          setValidationError(error || '');
+          return _context3.a(2);
+        case 3:
+          sourceStep = _findStepById(latest.current.steps, currentStep);
+          if (!(!ok || (sourceStep == null ? void 0 : sourceStep.status) === 'error')) {
+            _context3.n = 4;
+            break;
+          }
           emitStepChange({
             trigger: 'next',
             phase: 'blocked',
             from: currentStep,
-            error: error
+            error: error != null ? error : sourceStep == null ? void 0 : sourceStep.errorMessage
           });
-          return _context2.a(2);
-        case 3:
+          return _context3.a(2);
+        case 4:
           emitStepChange({
             trigger: 'next',
             phase: 'validated',
@@ -436,11 +575,11 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
           });
           nextId = resolveNextStepId();
           if (nextId) {
-            _context2.n = 4;
+            _context3.n = 5;
             break;
           }
-          return _context2.a(2);
-        case 4:
+          return _context3.a(2);
+        case 5:
           applyTransition(nextId, {
             markCompleted: true
           });
@@ -454,15 +593,15 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
             type: 'wizardNext',
             element: 'Wizard'
           });
-        case 5:
-          return _context2.a(2);
+        case 6:
+          return _context3.a(2);
       }
-    }, _callee2);
-  })), [sendAnalytics, applyTransition, currentStep, emitStepChange, isValidating, resolveNextStepId, runValidation]);
+    }, _callee3);
+  })), [sendAnalytics, applyTransition, currentStep, currentStepObj, emitStepChange, resolveNextStepId, runValidation]);
   var previous = (0, _react.useCallback)(function () {
     var dest = resolvePreviousStepId();
     if (!dest) return;
-    setValidationError(undefined);
+    navigationVersion.current += 1;
     if (!isControlled) setUncontrolledStep(dest);
     emitStepChange({
       trigger: 'previous',
@@ -476,28 +615,41 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     });
   }, [sendAnalytics, currentStep, resolvePreviousStepId, emitStepChange, isControlled]);
   var goTo = (0, _react.useCallback)(/*#__PURE__*/function () {
-    var _ref5 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3(stepId) {
-      var target, targetIndex, forward, _yield$runValidation2, ok, error;
-      return _regenerator().w(function (_context3) {
-        while (1) switch (_context3.n) {
+    var _ref7 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(stepId) {
+      var target, targetIndex, forward, markCompleted, navigationError, _yield$runValidation2, ok, error, cancelled;
+      return _regenerator().w(function (_context4) {
+        while (1) switch (_context4.n) {
           case 0:
             if (!(!stepId || stepId === currentStep)) {
-              _context3.n = 1;
+              _context4.n = 1;
               break;
             }
-            return _context3.a(2);
+            return _context4.a(2);
           case 1:
             target = _findStepById(steps, stepId);
             if (!(!target || target.disabled)) {
-              _context3.n = 2;
+              _context4.n = 2;
               break;
             }
-            return _context3.a(2);
+            return _context4.a(2);
           case 2:
             targetIndex = flatSteps.findIndex(function (step) {
               return step.id === stepId;
             });
+            if (!(targetIndex < 0)) {
+              _context4.n = 3;
+              break;
+            }
+            return _context4.a(2);
+          case 3:
             forward = targetIndex > currentStepIndex;
+            markCompleted = false;
+            if (!(forward && validationInFlight.current)) {
+              _context4.n = 4;
+              break;
+            }
+            return _context4.a(2);
+          case 4:
             emitStepChange({
               trigger: 'goTo',
               phase: 'requested',
@@ -505,7 +657,7 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
               to: stepId
             });
             if (!forward) {
-              _context3.n = 5;
+              _context4.n = 8;
               break;
             }
             emitStepChange({
@@ -514,17 +666,23 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
               from: currentStep,
               to: stepId
             });
-            _context3.n = 3;
+            _context4.n = 5;
             return runValidation();
-          case 3:
-            _yield$runValidation2 = _context3.v;
+          case 5:
+            _yield$runValidation2 = _context4.v;
             ok = _yield$runValidation2.ok;
             error = _yield$runValidation2.error;
-            if (ok) {
-              _context3.n = 4;
+            cancelled = _yield$runValidation2.cancelled;
+            if (!cancelled) {
+              _context4.n = 6;
               break;
             }
-            setValidationError(error || '');
+            return _context4.a(2);
+          case 6:
+            if (!(!ok && !(currentStepObj != null && currentStepObj.skippable))) {
+              _context4.n = 7;
+              break;
+            }
             emitStepChange({
               trigger: 'goTo',
               phase: 'blocked',
@@ -532,39 +690,43 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
               to: stepId,
               error: error
             });
-            return _context3.a(2);
-          case 4:
-            emitStepChange({
+            return _context4.a(2);
+          case 7:
+            markCompleted = ok;
+            navigationError = error;
+            if (ok) emitStepChange({
               trigger: 'goTo',
               phase: 'validated',
               from: currentStep,
               to: stepId
             });
-          case 5:
+          case 8:
             applyTransition(stepId, {
-              markCompleted: forward
+              markCompleted: markCompleted
             });
-            emitStepChange({
+            emitStepChange(_extends({
               trigger: 'goTo',
               phase: 'navigated',
               from: currentStep,
               to: stepId
-            });
-          case 6:
-            return _context3.a(2);
+            }, navigationError ? {
+              error: navigationError
+            } : {}));
+          case 9:
+            return _context4.a(2);
         }
-      }, _callee3);
+      }, _callee4);
     }));
     return function (_x) {
-      return _ref5.apply(this, arguments);
+      return _ref7.apply(this, arguments);
     };
-  }(), [applyTransition, currentStep, currentStepIndex, emitStepChange, flatSteps, runValidation, steps]);
+  }(), [applyTransition, currentStep, currentStepIndex, currentStepObj, emitStepChange, flatSteps, runValidation, steps]);
   var skip = (0, _react.useCallback)(function () {
     if (!(currentStepObj != null && currentStepObj.skippable)) return;
     var nextId = resolveNextStepId();
     if (!nextId) return;
     // Skip: no validation, no completion.
-    setValidationError(undefined);
+    navigationVersion.current += 1;
     if (!isControlled) setUncontrolledStep(nextId);
     emitStepChange({
       trigger: 'skip',
@@ -577,16 +739,16 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       element: 'Wizard'
     });
   }, [sendAnalytics, currentStep, currentStepObj, emitStepChange, isControlled, resolveNextStepId]);
-  var complete = (0, _react.useCallback)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
-    var _yield$runValidation3, ok, error, nextCompleted, completedStepsList;
-    return _regenerator().w(function (_context4) {
-      while (1) switch (_context4.n) {
+  var complete = (0, _react.useCallback)(/*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5() {
+    var _yield$runValidation3, ok, error, cancelled, completionCandidates, nextCompleted, completedStepsList;
+    return _regenerator().w(function (_context5) {
+      while (1) switch (_context5.n) {
         case 0:
-          if (!isValidating) {
-            _context4.n = 1;
+          if (!(validationInFlight.current || currentStepObj != null && currentStepObj.disabled)) {
+            _context5.n = 1;
             break;
           }
-          return _context4.a(2);
+          return _context5.a(2);
         case 1:
           emitStepChange({
             trigger: 'complete',
@@ -598,35 +760,40 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
             phase: 'validating',
             from: currentStep
           });
-          _context4.n = 2;
+          _context5.n = 2;
           return runValidation();
         case 2:
-          _yield$runValidation3 = _context4.v;
+          _yield$runValidation3 = _context5.v;
           ok = _yield$runValidation3.ok;
           error = _yield$runValidation3.error;
-          if (ok) {
-            _context4.n = 3;
+          cancelled = _yield$runValidation3.cancelled;
+          if (!cancelled) {
+            _context5.n = 3;
             break;
           }
-          setValidationError(error || '');
+          return _context5.a(2);
+        case 3:
+          if (!(!ok && !(currentStepObj != null && currentStepObj.skippable))) {
+            _context5.n = 4;
+            break;
+          }
           emitStepChange({
             trigger: 'complete',
             phase: 'blocked',
             from: currentStep,
             error: error
           });
-          return _context4.a(2);
-        case 3:
-          emitStepChange({
+          return _context5.a(2);
+        case 4:
+          if (ok) emitStepChange({
             trigger: 'complete',
             phase: 'validated',
             from: currentStep
           });
-          setCompletedSteps(function (prev) {
-            var nextCompleted = new Set(prev);
-            nextCompleted.add(currentStep);
-            return nextCompleted;
-          });
+          completionCandidates = new Set(completedSteps);
+          if (ok) completionCandidates.add(currentStep);else completionCandidates["delete"](currentStep);
+          nextCompleted = filterCompletedSteps(latest.current.steps, stepValidationRef.current, completionCandidates);
+          setCompletedSteps(nextCompleted);
           // Emit 'completed' before invoking onComplete.
           emitStepChange({
             trigger: 'complete',
@@ -634,26 +801,24 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
             from: currentStep
           });
           if (onComplete) {
-            // setCompletedSteps above is async; include currentStep here so the
-            // payload reflects the just-completed final step.
-            nextCompleted = new Set(completedSteps);
-            nextCompleted.add(currentStep);
             completedStepsList = Array.from(nextCompleted);
             onComplete({
               value: formValue,
-              completedSteps: completedStepsList
+              completedSteps: completedStepsList,
+              steps: resolveStepResults(latest.current.steps, stepValidationRef.current, nextCompleted)
             });
           }
           if (sendAnalytics) sendAnalytics({
             type: 'wizardComplete',
             element: 'Wizard'
           });
-        case 4:
-          return _context4.a(2);
+        case 5:
+          return _context5.a(2);
       }
-    }, _callee4);
-  })), [sendAnalytics, completedSteps, currentStep, emitStepChange, formValue, isValidating, onComplete, runValidation]);
+    }, _callee5);
+  })), [sendAnalytics, completedSteps, currentStep, currentStepObj, emitStepChange, formValue, onComplete, runValidation]);
   var cancel = (0, _react.useCallback)(function () {
+    navigationVersion.current += 1;
     emitStepChange({
       trigger: 'cancel',
       phase: 'cancelled',
@@ -701,7 +866,7 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
     if (typeof window !== 'undefined') safeScrollTo(window);
   }, [currentStep, scrollToTop, wizardRef]);
   var canGoNext = !(currentStepObj != null && currentStepObj.disabled) && !isValidating;
-  var isBlocked = validationError !== undefined && !(currentStepObj != null && currentStepObj.skippable);
+  var isBlocked = (currentValidation == null || (_currentValidation$fo = currentValidation.form) == null ? void 0 : _currentValidation$fo.ok) === false || (currentValidation == null || (_currentValidation$ca2 = currentValidation.callback) == null ? void 0 : _currentValidation$ca2.ok) === false;
   var isCompleted = completedSteps.has(currentStep);
   var contextValue = (0, _react.useMemo)(function () {
     return {
@@ -714,6 +879,10 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       currentStepObj: currentStepObj,
       totalSteps: totalSteps,
       stepStates: stepStates,
+      stepErrorMessages: stepErrorMessages,
+      stepValidation: stepValidation,
+      updateValidation: updateValidation,
+      registerForm: registerForm,
       form: form,
       formValue: formValue,
       setFormValue: setFormValue,
@@ -736,7 +905,7 @@ var Wizard = exports.Wizard = /*#__PURE__*/(0, _react.forwardRef)(function (_ref
       // (same pattern as `hasCancelHandler`).
       messages: messages
     };
-  }, [steps, flatSteps, clickableSteps, closable, currentStep, currentStepIndex, currentStepObj, totalSteps, stepStates, form, formValue, setFormValue, validationError, isValidating, isBlocked, isCompleted, canGoNext, next, previous, goTo, skip, complete, cancel, hasCancelHandler, effectiveShowProgress, renderStep, messages]);
+  }, [steps, flatSteps, clickableSteps, closable, currentStep, currentStepIndex, currentStepObj, totalSteps, stepStates, stepErrorMessages, stepValidation, updateValidation, registerForm, form, formValue, setFormValue, validationError, isValidating, isBlocked, isCompleted, canGoNext, next, previous, goTo, skip, complete, cancel, hasCancelHandler, effectiveShowProgress, renderStep, messages]);
   if (!isOpen) return null;
 
   // Custom composition: consumers supply their own tree via `children`.

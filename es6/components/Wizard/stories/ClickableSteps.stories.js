@@ -41,6 +41,7 @@ var ClickableSteps = function ClickableSteps() {
     description: 'Choose configuration options.',
     status: 'error',
     errorMessage: 'Configuration requires attention.',
+    skippable: true,
     render: function render() {
       return /*#__PURE__*/React.createElement(Paragraph, null, "Configure the resource options.");
     }
@@ -74,8 +75,9 @@ var ClickableSteps = function ClickableSteps() {
       var nextValue = _ref.value;
       return setValue(nextValue);
     },
-    onComplete: function onComplete() {
-      return setComplete(true);
+    onComplete: function onComplete(results) {
+      console.log('Wizard complete with results:', results);
+      setComplete(true);
     }
   }), complete && /*#__PURE__*/React.createElement(Notification, {
     toast: {

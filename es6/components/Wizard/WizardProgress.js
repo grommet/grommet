@@ -29,6 +29,7 @@ export var WizardProgress = function WizardProgress(_ref) {
     goTo = _useWizard.goTo,
     showProgress = _useWizard.showProgress,
     stepStates = _useWizard.stepStates,
+    stepErrorMessages = _useWizard.stepErrorMessages,
     messages = _useWizard.messages;
 
   // Opt-in: render nothing when `showProgress` is false.
@@ -45,7 +46,7 @@ export var WizardProgress = function WizardProgress(_ref) {
     };
     if (step.disabledReason) mapped.disabledReason = step.disabledReason;
     if (step['aria-label']) mapped['aria-label'] = step['aria-label'];
-    if (step.errorMessage) mapped.errorMessage = step.errorMessage;
+    mapped.errorMessage = stepErrorMessages[step.id];
     if (step.children && step.children.length) {
       mapped.children = step.children.map(function (child) {
         return _extends({
@@ -57,9 +58,9 @@ export var WizardProgress = function WizardProgress(_ref) {
           disabledReason: child.disabledReason
         } : {}, child['aria-label'] ? {
           'aria-label': child['aria-label']
-        } : {}, child.errorMessage ? {
-          errorMessage: child.errorMessage
-        } : {});
+        } : {}, {
+          errorMessage: stepErrorMessages[child.id]
+        });
       });
     }
     return mapped;
