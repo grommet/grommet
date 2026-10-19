@@ -54,6 +54,7 @@ exports[`Grommet background 1`] = `
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.33) transparent;
 }
 
 <div
@@ -92,6 +93,7 @@ exports[`Grommet cssVars 1`] = `
   --active-background: background-contrast;
   --active-text: text-strong;
   --black: #000000;
+  --scrollbar: border;
   --brand: #7D4CDB;
   --focus: #6FFFB0;
   --graph-0: accent-1;
@@ -151,6 +153,7 @@ exports[`Grommet full 1`] = `
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 <div
@@ -233,6 +236,7 @@ exports[`Grommet message format function 1`] = `
   width: 100vw;
   height: 100vh;
   overflow: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.33) transparent;
 }
 
 <div

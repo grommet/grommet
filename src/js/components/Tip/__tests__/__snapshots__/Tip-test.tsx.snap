@@ -11,6 +11,7 @@ exports[`Tip dropProps should pass props to Drop 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: none;
 }
 
@@ -217,6 +218,7 @@ exports[`Tip mouseOver and mouseOut events on the Tip's child 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: none;
 }
 
@@ -337,6 +339,7 @@ exports[`Tip plain 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: none;
 }
 
@@ -406,6 +409,7 @@ exports[`Tip should be visible by default 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: none;
 }
 
@@ -574,6 +578,7 @@ exports[`Tip themed 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.33) transparent;
   box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.40);
 }
 
@@ -678,6 +683,7 @@ exports[`Tip tip content margin overides global drop margin 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: none;
 }
 
