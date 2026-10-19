@@ -20,6 +20,7 @@ import { getSectionTokenFromType } from '../../utils/sectionHelpers';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { FormContext } from '../Form';
+import { FormFieldContext } from '../FormField/FormFieldContext';
 import { Keyboard } from '../Keyboard';
 import {
   StyledTimeInputDisplay,
@@ -49,7 +50,7 @@ const getDisplaySectionPrefix = (section, index) => {
   return section === SECTION_PERIOD ? ' ' : ':';
 };
 
-const getSectionOrder = (format, showSeconds = format === '12') => {
+const getSectionOrder = (format, showSeconds) => {
   const numericSections = showSeconds
     ? [SECTION_HOUR, SECTION_MINUTE, SECTION_SECOND]
     : [SECTION_HOUR, SECTION_MINUTE];
@@ -59,6 +60,27 @@ const getSectionOrder = (format, showSeconds = format === '12') => {
   }
 
   return numericSections;
+};
+
+const getContainerFill = (container = {}) => {
+  const fillWidth = container.width === undefined;
+  const fillHeight = container.height === undefined;
+
+  if (fillWidth && fillHeight) return true;
+  if (fillWidth) return 'horizontal';
+  if (fillHeight) return 'vertical';
+  return false;
+};
+
+const resolveDropButtonIcon = (icon) => {
+  if (React.isValidElement(icon)) {
+    return React.cloneElement(icon, {
+      'aria-hidden': icon.props['aria-hidden'] ?? true,
+    });
+  }
+  if (typeof icon === 'function' || icon?.$$typeof)
+    return React.createElement(icon, { 'aria-hidden': true });
+  return icon;
 };
 
 const buildPlaceholder = (sectionOrder) =>
@@ -102,7 +124,7 @@ const TimeInput = forwardRef(
       onChange,
       onPartialChange,
       readOnly = false,
-      showSeconds,
+      showSeconds = false,
       value: valueArg,
       ...rest
     },
@@ -112,6 +134,8 @@ const TimeInput = forwardRef(
     const announce = useContext(AnnounceContext);
     const { format: formatMessage } = useContext(MessageContext);
     const formContext = useContext(FormContext);
+    const { setFocusIndicator: setFieldFocusIndicator } =
+      useContext(FormFieldContext);
     const { useFormInput } = formContext;
 
     const inputRef = useForwardedRef(refArg);
@@ -122,15 +146,6 @@ const TimeInput = forwardRef(
       value: valueArg,
       initialValue: defaultValue || '',
     });
-
-    useEffect(() => {
-      if (process.env.NODE_ENV !== 'production') {
-        console.warn(
-          'Warning: TimeInput is currently in beta. The API is subject ' +
-            'to change in future releases.',
-        );
-      }
-    }, []);
 
     if (inline && (disabled || readOnly)) {
       console.warn(
@@ -182,9 +197,6 @@ const TimeInput = forwardRef(
       [minuteStep],
     );
 
-    const resolvedShowSeconds =
-      showSeconds !== undefined ? showSeconds : format === '12';
-
     const handleInvalid = useCallback(() => {
       const error = formatMessage({ id: 'timeInput.invalidTime', messages });
       announce(error, 'assertive');
@@ -195,32 +207,35 @@ const TimeInput = forwardRef(
         if (
           nextSections.hour === undefined ||
           nextSections.minute === undefined ||
-          nextSections.second === undefined
+          (showSeconds && nextSections.second === undefined)
         )
           return;
 
         const period = format === '12' ? ` ${nextSections.period || 'AM'}` : '';
+        const messageId = showSeconds
+          ? 'timeInput.currentValue'
+          : 'timeInput.currentValueWithoutSeconds';
 
         announce(
           formatMessage({
-            id: 'timeInput.currentValue',
+            id: messageId,
             messages,
             values: {
               hour: nextSections.hour,
               minute: nextSections.minute,
-              second: nextSections.second,
+              ...(showSeconds ? { second: nextSections.second } : {}),
               period,
             },
           }),
           'polite',
         );
       },
-      [announce, format, formatMessage, messages],
+      [announce, format, formatMessage, messages, showSeconds],
     );
 
     const sectionOrder = useMemo(
-      () => getSectionOrder(format, resolvedShowSeconds),
-      [format, resolvedShowSeconds],
+      () => getSectionOrder(format, showSeconds),
+      [format, showSeconds],
     );
 
     const firstSection = sectionOrder[0] || SECTION_HOUR;
@@ -480,6 +495,7 @@ const TimeInput = forwardRef(
 
     const onSegmentFocus = useCallback(
       (section) => {
+        setFieldFocusIndicator?.(true);
         if (!segmentFocused && !readOnly && !disabled && !open) {
           announce(formatMessage({ id: 'timeInput.openDrop', messages }));
         }
@@ -495,6 +511,7 @@ const TimeInput = forwardRef(
         open,
         readOnly,
         segmentFocused,
+        setFieldFocusIndicator,
         setActiveSection,
       ],
     );
@@ -689,6 +706,29 @@ const TimeInput = forwardRef(
 
     const showActiveSection =
       (segmentFocused || open) && !readOnly && !disabled;
+    const containerTheme = theme.timeInput?.container;
+    const dropButtonTheme = theme.timeInput?.dropButton;
+    let dropButtonKind = 'toolbar';
+    let dropButtonIcon = <GrommetClockIcon aria-hidden="true" />;
+
+    if (typeof dropButtonTheme === 'string') {
+      dropButtonKind = dropButtonTheme;
+    } else if (
+      dropButtonTheme &&
+      typeof dropButtonTheme === 'object' &&
+      !React.isValidElement(dropButtonTheme) &&
+      !dropButtonTheme.$$typeof
+    ) {
+      const { icon, kind, ...buttonTheme } = dropButtonTheme;
+      dropButtonIcon = resolveDropButtonIcon(icon ?? dropButtonIcon);
+
+      if (kind) {
+        dropButtonKind = kind;
+      } else {
+        const hasButtonTheme = Object.keys(buttonTheme).length > 0;
+        dropButtonKind = hasButtonTheme ? buttonTheme : 'toolbar';
+      }
+    }
 
     if (inline) {
       return (
@@ -719,9 +759,10 @@ const TimeInput = forwardRef(
             ref={containerRef}
             direction="row"
             border={!plainProp}
-            fill
+            fill={getContainerFill(containerTheme)}
+            {...containerTheme}
             round={
-              theme.timeInput?.container?.round ||
+              theme.timeInput?.container?.round ??
               theme.global?.control?.border?.radius
             }
             disabled={disabled}
@@ -731,6 +772,10 @@ const TimeInput = forwardRef(
           >
             <StyledTimeInputField {...passThemeFlag}>
               <StyledTimeInputDisplay
+                {...theme.timeInput?.value}
+                align="center"
+                direction="row"
+                overflow="hidden"
                 role="group"
                 aria-label={groupLabel}
                 aria-labelledby={formFieldLabelId}
@@ -755,6 +800,7 @@ const TimeInput = forwardRef(
                           ref={(segmentNode) => {
                             segmentRefs.current[section] = segmentNode;
                           }}
+                          responsive={false}
                           tabIndex={
                             !readOnly && !disabled && activeSection === section
                               ? 0
@@ -834,8 +880,8 @@ const TimeInput = forwardRef(
             )}
             {!readOnly && (
               <Button
-                kind="toolbar"
-                icon={<GrommetClockIcon />}
+                kind={dropButtonKind}
+                icon={dropButtonIcon}
                 disabled={disabled}
                 aria-label={formatMessage({
                   id: 'timeInput.chooseTime',
@@ -846,6 +892,7 @@ const TimeInput = forwardRef(
                 aria-controls={id ? `${id}__drop` : undefined}
                 onFocus={() => {
                   setIconFocused(true);
+                  setFieldFocusIndicator?.(false);
                 }}
                 onBlur={() => {
                   setIconFocused(false);
