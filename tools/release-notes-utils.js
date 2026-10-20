@@ -14,10 +14,13 @@ const EXCLUDED_LABELS = new Map([
 
 /** Extract the description without testing instructions or template answers. */
 export function getDescription(body) {
-  const cleaned = (body || '')
-    .replace(/<!--[\s\S]*?-->/g, '')
-    .replace(/\r\n/g, '\n')
-    .trim();
+  let cleaned = body || '';
+  let previous;
+  do {
+    previous = cleaned;
+    cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, '');
+  } while (cleaned !== previous);
+  cleaned = cleaned.replace(/\r\n/g, '\n').trim();
   const sections = cleaned.split(/^#{1,6}\s+(.+?)\s*#*\s*$/m);
   let description = sections[0];
   for (let i = 1; i < sections.length; i += 2) {
