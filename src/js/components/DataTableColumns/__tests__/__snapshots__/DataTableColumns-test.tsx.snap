@@ -1501,6 +1501,7 @@ exports[`DataTableColumns renders 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c7 {
