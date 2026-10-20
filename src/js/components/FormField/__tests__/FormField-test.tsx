@@ -203,26 +203,49 @@ describe('FormField', () => {
 
   test('keeps focus within a TimeInput while moving between segments', async () => {
     const user = userEvent.setup();
+    const fieldRef = React.createRef<HTMLInputElement>();
     const warn = console.warn;
     console.warn = jest.fn();
 
     try {
       render(
-        <Grommet>
-          <FormField label="Time">
+        <Grommet
+          theme={{
+            global: { colors: { focus: '#FF0000' } },
+            formField: {
+              border: { position: 'outer', side: 'all', color: '#CCCCCC' },
+            },
+          }}
+        >
+          <FormField ref={fieldRef} label="Time">
             <TimeInput format="24" />
           </FormField>
+          <Button label="After" />
         </Grommet>,
       );
 
       const hours = screen.getByRole('spinbutton', { name: 'hours' });
       const minutes = screen.getByRole('spinbutton', { name: 'minutes' });
 
-      await user.click(hours);
-      await user.keyboard('{ArrowRight}');
+      await user.tab();
+      expect(hours).toHaveFocus();
+      expect(fieldRef.current).toHaveStyleRule('border-color', '#FF0000');
 
+      await user.keyboard('{ArrowRight}');
       expect(minutes).toHaveFocus();
-      expect(screen.getByRole('group')).toContainElement(minutes);
+      expect(fieldRef.current).toHaveStyleRule('border-color', '#FF0000');
+
+      await user.keyboard('{ArrowLeft}');
+      expect(hours).toHaveFocus();
+      expect(fieldRef.current).toHaveStyleRule('border-color', '#FF0000');
+
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(fieldRef.current).not.toHaveStyleRule('border-color', '#FF0000');
+
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'After' })).toHaveFocus();
+      expect(fieldRef.current).not.toHaveStyleRule('border-color', '#FF0000');
     } finally {
       console.warn = warn;
     }

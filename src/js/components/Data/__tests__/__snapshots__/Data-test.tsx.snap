@@ -1358,6 +1358,7 @@ exports[`Data onView 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -3850,6 +3851,7 @@ exports[`Data should render property label and return property value to view whe
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {

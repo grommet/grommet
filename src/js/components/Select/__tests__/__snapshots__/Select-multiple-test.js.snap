@@ -770,6 +770,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -952,6 +953,7 @@ exports[`Select Controlled multiple onChange toggle with valueKey reduce 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -1326,6 +1328,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1451,6 +1454,7 @@ exports[`Select Controlled multiple onChange with valueKey reduce 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -1818,6 +1822,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1943,6 +1948,7 @@ exports[`Select Controlled multiple onChange with valueKey string 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -2312,6 +2318,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -2437,6 +2444,7 @@ exports[`Select Controlled multiple onChange without labelKey 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -2543,7 +2551,7 @@ exports[`Select Controlled multiple onChange without labelKey 3`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 cSMuLF StyledDrop-sc-16s5rx8-0 byxHuY"
+  class="StyledBox-sc-13pk1d4-0 XWiJH StyledDrop-sc-16s5rx8-0 byxHuY"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -2556,7 +2564,7 @@ exports[`Select Controlled multiple onChange without labelKey 4`] = `
     <div
       aria-label="list of options"
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kCVsZc"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 bnVQMi"
       role="listbox"
       tabindex="-1"
     >
@@ -2617,7 +2625,7 @@ exports[`Select Controlled multiple onChange without labelKey 5`] = `
 
 exports[`Select Controlled multiple onChange without labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 cSMuLF StyledDrop-sc-16s5rx8-0 byxHuY"
+  class="StyledBox-sc-13pk1d4-0 XWiJH StyledDrop-sc-16s5rx8-0 byxHuY"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -2630,7 +2638,7 @@ exports[`Select Controlled multiple onChange without labelKey 6`] = `
     <div
       aria-label="list of options"
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kCVsZc"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 bnVQMi"
       role="listbox"
       tabindex="-1"
     >
@@ -3220,6 +3228,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -3345,6 +3354,7 @@ exports[`Select Controlled multiple onChange without valueKey 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -3451,7 +3461,7 @@ exports[`Select Controlled multiple onChange without valueKey 3`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 cSMuLF StyledDrop-sc-16s5rx8-0 byxHuY"
+  class="StyledBox-sc-13pk1d4-0 XWiJH StyledDrop-sc-16s5rx8-0 byxHuY"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -3464,7 +3474,7 @@ exports[`Select Controlled multiple onChange without valueKey 4`] = `
     <div
       aria-label="list of options"
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kCVsZc"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 bnVQMi"
       role="listbox"
       tabindex="-1"
     >
@@ -3525,7 +3535,7 @@ exports[`Select Controlled multiple onChange without valueKey 5`] = `
 
 exports[`Select Controlled multiple onChange without valueKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 cSMuLF StyledDrop-sc-16s5rx8-0 byxHuY"
+  class="StyledBox-sc-13pk1d4-0 XWiJH StyledDrop-sc-16s5rx8-0 byxHuY"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -3538,7 +3548,7 @@ exports[`Select Controlled multiple onChange without valueKey 6`] = `
     <div
       aria-label="list of options"
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kCVsZc"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 bnVQMi"
       role="listbox"
       tabindex="-1"
     >
@@ -4130,6 +4140,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -4255,6 +4266,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 2`] = 
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -4361,7 +4373,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 3`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 cSMuLF StyledDrop-sc-16s5rx8-0 byxHuY"
+  class="StyledBox-sc-13pk1d4-0 XWiJH StyledDrop-sc-16s5rx8-0 byxHuY"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -4374,7 +4386,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 4`] = 
     <div
       aria-label="list of options"
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kCVsZc"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 bnVQMi"
       role="listbox"
       tabindex="-1"
     >
@@ -4433,7 +4445,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 5`] = 
 
 exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = `
 <div
-  class="StyledBox-sc-13pk1d4-0 cSMuLF StyledDrop-sc-16s5rx8-0 byxHuY"
+  class="StyledBox-sc-13pk1d4-0 XWiJH StyledDrop-sc-16s5rx8-0 byxHuY"
   data-g-portal-id="0"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -4446,7 +4458,7 @@ exports[`Select Controlled multiple onChange without valueKey or labelKey 6`] = 
     <div
       aria-label="list of options"
       aria-multiselectable="true"
-      class="StyledSelect__OptionsContainer-sc-znp66n-1 kCVsZc"
+      class="StyledSelect__OptionsContainer-sc-znp66n-1 bnVQMi"
       role="listbox"
       tabindex="-1"
     >
@@ -5090,6 +5102,7 @@ exports[`Select Controlled multiple values 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5215,6 +5228,7 @@ exports[`Select Controlled multiple values 3`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -5584,6 +5598,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5709,6 +5724,7 @@ exports[`Select Controlled multiple with empty results 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 

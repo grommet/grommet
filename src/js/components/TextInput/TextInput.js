@@ -70,7 +70,6 @@ const ContainerBox = styled(Box)`
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
-
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
