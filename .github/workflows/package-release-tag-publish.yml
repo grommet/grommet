@@ -116,13 +116,10 @@ jobs:
           node-version: '22.22.2'
           registry-url: https://registry.npmjs.org
 
-      - name: Ensure npm supports trusted publishing
-        run: npm install -g npm@11.21.0
-
       - name: Stage package on npm (OIDC trusted publishing)
         run: |
           artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
-          npm stage publish "$artifact" --access public --provenance
+          npx --yes --package=npm@11.21.0 -- npm stage publish "$artifact" --access public --provenance
           echo "Package staged on npm. Review it in the package's Staged Packages tab and approve it manually to publish."
 
       - name: Create GitHub release
