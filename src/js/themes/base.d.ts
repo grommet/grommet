@@ -908,15 +908,14 @@ export interface ThemeType {
     width?: string;
   };
   checkBox?: {
-    control?: ControlBackgroundType;
-    container?: {
-      background?: BackgroundType;
-      hover?: {
-        background?: BackgroundType;
+    control?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
+      selected?: BoxStateThemeType & {
+        hover?: BoxStateThemeType;
       };
     };
-    background?: {
-      color?: ColorType;
+    container?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
     };
     border?: {
       color?: ColorType;
@@ -926,15 +925,8 @@ export interface ThemeType {
       align?: AlignContentType;
     };
     check?: {
-      background?: {
-        color?: ColorType;
-      };
-      hover?: {
-        background?: {
-          color?: ColorType;
-        };
-      };
       extend?: ExtendType;
+      /** @deprecated Use checkBox.control.round instead. */
       radius?: string;
       thickness?: string;
     };
@@ -945,6 +937,7 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      /** @deprecated Use checkBox.container.hover.background instead. */
       background?: {
         color?: ColorType;
       };
@@ -958,6 +951,7 @@ export interface ThemeType {
       checked?: React.ReactNode | Icon;
       indeterminate?: any;
     };
+    /** @deprecated Use checkBox.container.pad instead. */
     pad?: PadType;
     size?: string;
     toggle?: {

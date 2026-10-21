@@ -30,10 +30,13 @@ const theme: ThemeType = {
     },
   },
   checkBox: {
-    background: { color: 'control-fill' },
-    check: {
-      background: { color: 'selected-fill' },
-      hover: { background: { color: 'hover-fill' } },
+    control: {
+      background: 'control-fill',
+      hover: { background: 'hover-fill' },
+      selected: {
+        background: 'selected-fill',
+        hover: { background: 'hover-fill' },
+      },
     },
     hover: { background: { color: '#ddeeff' } },
   },
@@ -106,6 +109,286 @@ describe('CheckBox control backgrounds', () => {
   });
 
   test.each([
+    [false, false],
+    [true, false],
+    [false, true],
+  ] as const)(
+    'control Box-part states (checked=%s, indeterminate=%s)',
+    async (checked, indeterminate) => {
+      const user = userEvent.setup();
+      const selected = checked || indeterminate;
+      render(
+        <Grommet
+          theme={{
+            checkBox: {
+              control: {
+                background: '#eeeeee',
+                border: { color: '#123456', size: '3px' },
+                elevation: 'small',
+                height: { min: '28px', height: '36px' },
+                width: { width: '40px', max: '48px' },
+                margin: { end: '4px' },
+                pad: '3px',
+                round: '6px',
+                hover: {
+                  border: { color: '#abcdef' },
+                  elevation: 'medium',
+                  pad: '5px',
+                  round: '10px',
+                },
+                selected: {
+                  border: { color: '#654321' },
+                  pad: '4px',
+                  hover: { border: false, round: false, pad: '6px' },
+                },
+              },
+            },
+          }}
+        >
+          <CheckBox
+            label="Option"
+            checked={checked}
+            indeterminate={indeterminate}
+            pad="16px"
+            {...{ focusIndicator: false }}
+          />
+        </Grommet>,
+      );
+      const { control, label } = getControl();
+      const border = selected ? '#654321' : '#123456';
+      expect(control).toHaveStyleRule('background-color', '#eeeeee');
+      expect(control).toHaveStyleRule('border', `solid 3px ${border}`);
+      expect(control).toHaveStyleRule('min-height', '28px');
+      expect(control).toHaveStyleRule('height', '36px');
+      expect(control).toHaveStyleRule('width', '40px');
+      expect(control).toHaveStyleRule('max-width', '48px');
+      expect(control).toHaveStyleRule('margin-inline-end', '4px');
+      expect(control).toHaveStyleRule('padding', selected ? '4px' : '3px');
+      expect(control).toHaveStyleRule('border-radius', '6px');
+      expect(control).toHaveStyleRule('box-shadow', expect.any(String));
+      expect(label).toHaveStyleRule('padding', '16px');
+      await user.hover(screen.getByText('Option'));
+      expect(label).toHaveStyleRule(
+        'border',
+        selected ? 'none' : 'solid 3px #abcdef',
+        { modifier: `:hover ${controlSelector}` },
+      );
+      expect(label).toHaveStyleRule('border-radius', selected ? '0' : '10px', {
+        modifier: `:hover ${controlSelector}`,
+      });
+      expect(label).toHaveStyleRule('padding', selected ? '6px' : '5px', {
+        modifier: `:hover ${controlSelector}`,
+      });
+      if (!selected)
+        expect(label).toHaveStyleRule('box-shadow', expect.any(String), {
+          modifier: `:hover ${controlSelector}`,
+        });
+      await user.unhover(screen.getByText('Option'));
+      await user.tab();
+      expect(label).toHaveStyleRule('padding', selected ? '6px' : '5px', {
+        modifier: controlSelector,
+      });
+      await user.tab();
+      expect(label).not.toHaveStyleRule('padding', undefined, {
+        modifier: controlSelector,
+      });
+    },
+  );
+
+  test('disabled controls keep part styles without state hover overrides', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          checkBox: {
+            control: {
+              border: false,
+              round: false,
+              pad: '3px',
+              selected: {
+                pad: '4px',
+                hover: { border: { color: '#abcdef' }, pad: '8px' },
+              },
+            },
+          },
+        }}
+      >
+        <CheckBox label="Option" checked disabled />
+      </Grommet>,
+    );
+    const { control, label } = getControl();
+    expect(control).toHaveStyleRule('border', 'none');
+    expect(control).toHaveStyleRule('border-radius', '0');
+    expect(control).toHaveStyleRule('padding', '4px');
+    await user.hover(screen.getByText('Option'));
+    expect(label).not.toHaveStyleRule('padding', undefined, {
+      modifier: `:hover ${controlSelector}`,
+    });
+  });
+
+  test('check.extend remains the final control styling override', () => {
+    render(
+      <Grommet
+        theme={{
+          checkBox: {
+            control: { border: false, pad: '3px', round: '6px' },
+            check: { extend: 'padding: 8px; border-radius: 2px;' },
+          },
+        }}
+      >
+        <CheckBox label="Option" />
+      </Grommet>,
+    );
+    expect(getControl().control).toHaveStyleRule('padding', '8px');
+    expect(getControl().control).toHaveStyleRule('border-radius', '2px');
+  });
+
+  test.each([false, true])(
+    'applies container Box-part styles and enabled hover (disabled=%s)',
+    async (disabled) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            checkBox: {
+              container: {
+                background: '#eeeeee',
+                border: [
+                  { side: 'top', color: '#123456', size: '2px' },
+                  { side: 'bottom', color: '#654321', size: '1px' },
+                ],
+                elevation: 'small',
+                height: { min: '40px', height: '60px' },
+                width: { min: '100px', width: '240px', max: '300px' },
+                margin: { start: '4px' },
+                pad: '8px',
+                round: '6px',
+                hover: {
+                  background: '#dddddd',
+                  border: { color: '#abcdef', size: '3px' },
+                  elevation: 'medium',
+                  pad: '12px',
+                  round: '10px',
+                },
+              },
+            },
+          }}
+        >
+          <CheckBox label="Option" disabled={disabled} />
+        </Grommet>,
+      );
+      const { label, control } = getControl();
+      expect(label).toHaveStyleRule('box-sizing', 'border-box');
+      expect(label).toHaveStyleRule('border-top', 'solid 2px #123456');
+      expect(label).toHaveStyleRule('border-bottom', 'solid 1px #654321');
+      expect(label).toHaveStyleRule('box-shadow', expect.any(String));
+      expect(label).toHaveStyleRule('min-height', '40px');
+      expect(label).toHaveStyleRule('height', '60px');
+      expect(label).toHaveStyleRule('min-width', '100px');
+      expect(label).toHaveStyleRule('width', '240px');
+      expect(label).toHaveStyleRule('max-width', '300px');
+      expect(label).toHaveStyleRule('margin-inline-start', '4px');
+      expect(label).toHaveStyleRule('padding', '8px');
+      expect(label).toHaveStyleRule('border-radius', '6px');
+      expect(control).not.toHaveStyleRule('background-color', '#eeeeee');
+      await user.hover(screen.getByText('Option'));
+      if (disabled) {
+        expect(label).not.toHaveStyleRule('padding', '12px', {
+          modifier: ':hover',
+        });
+        expect(label).not.toHaveStyleRule('border', 'solid 3px #abcdef', {
+          modifier: ':hover',
+        });
+      } else {
+        expect(label).toHaveStyleRule('padding', '12px', {
+          modifier: ':hover',
+        });
+        expect(label).toHaveStyleRule('border', 'solid 3px #abcdef', {
+          modifier: ':hover',
+        });
+        expect(label).toHaveStyleRule('border-radius', '10px', {
+          modifier: ':hover',
+        });
+        expect(label).toHaveStyleRule('box-shadow', expect.any(String), {
+          modifier: ':hover',
+        });
+      }
+    },
+  );
+
+  test.each([false, true])(
+    'container state styles follow focus indicator behavior (indicator=%s)',
+    async (focusIndicator) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            checkBox: {
+              container: {
+                pad: '8px',
+                hover: { pad: '12px', border: false, round: false },
+              },
+            },
+          }}
+        >
+          <CheckBox label="Option" {...{ focusIndicator }} />
+        </Grommet>,
+      );
+      await user.tab();
+      const { input, label } = getControl();
+      expect(document.activeElement).toBe(input);
+      expect(label).toHaveStyleRule('padding', focusIndicator ? '8px' : '12px');
+      expect(label).toHaveStyleRule('border', 'none', { modifier: ':hover' });
+      expect(label).toHaveStyleRule('border-radius', '0', {
+        modifier: ':hover',
+      });
+      await user.tab();
+      expect(label).toHaveStyleRule('padding', '8px');
+    },
+  );
+
+  test('container padding respects instance and legacy precedence', () => {
+    const content = (containerPad?: string, pad?: string) => (
+      <Grommet
+        theme={{
+          checkBox: {
+            pad: '4px',
+            container: { pad: containerPad, hover: { pad: '12px' } },
+          },
+        }}
+      >
+        <CheckBox label="Option" pad={pad} />
+      </Grommet>
+    );
+    const { rerender } = render(content('8px', '16px'));
+    expect(getControl().label).toHaveStyleRule('padding', '16px');
+    expect(getControl().label).not.toHaveStyleRule('padding', '12px', {
+      modifier: ':hover',
+    });
+    rerender(content('8px'));
+    expect(getControl().label).toHaveStyleRule('padding', '8px');
+    rerender(content());
+    expect(getControl().label).toHaveStyleRule('padding', '4px');
+  });
+
+  test('container extend can override Box-part styles', () => {
+    render(
+      <Grommet
+        theme={{
+          checkBox: {
+            container: { border: { color: '#123456' }, round: '6px' },
+            extend: 'border: none; border-radius: 2px;',
+          },
+        }}
+      >
+        <CheckBox label="Option" />
+      </Grommet>,
+    );
+    expect(getControl().label).toHaveStyleRule('border', 'none');
+    expect(getControl().label).toHaveStyleRule('border-radius', '2px');
+  });
+
+  test.each([
     [false, false, '#eeeeee'],
     [true, false, '#aaddff'],
     [false, true, '#aaddff'],
@@ -129,7 +412,7 @@ describe('CheckBox control backgrounds', () => {
     'selected fill falls back to normal (indeterminate=%s)',
     (indeterminate) => {
       render(
-        <Grommet theme={{ checkBox: { background: { color: '#eeeeee' } } }}>
+        <Grommet theme={{ checkBox: { control: { background: '#eeeeee' } } }}>
           <CheckBox
             label="Option"
             checked={!indeterminate}
@@ -149,8 +432,10 @@ describe('CheckBox control backgrounds', () => {
       <Grommet
         theme={{
           checkBox: {
-            background: { color: '#eeeeee' },
-            check: { background: { color: 'transparent' } },
+            control: {
+              background: '#eeeeee',
+              selected: { background: 'transparent' },
+            },
           },
         }}
       >
@@ -258,7 +543,7 @@ describe('CheckBox control backgrounds', () => {
       <Grommet
         theme={{
           checkBox: {
-            check: { hover: { background: { color: '#ffccaa' } } },
+            control: { hover: { background: '#ffccaa' } },
           },
         }}
       >
@@ -409,8 +694,10 @@ describe('CheckBox control backgrounds', () => {
         <Grommet
           theme={{
             checkBox: {
-              background: { color: '#eeeeee' },
-              check: { background: { color: '#aaddff' } },
+              control: {
+                background: '#eeeeee',
+                selected: { background: '#aaddff' },
+              },
             },
           }}
         >
@@ -622,7 +909,7 @@ describe('CheckBox control backgrounds', () => {
     [true, false],
     [false, true],
   ] as const)(
-    'explicit new tokens beat legacy tokens, including transparent: checked=%s indeterminate=%s',
+    'explicit transparent backgrounds: checked=%s indeterminate=%s',
     (checked, indeterminate) => {
       render(
         <Grommet
@@ -671,8 +958,8 @@ describe('CheckBox control backgrounds', () => {
     [true, false, false, '#112233', '#ffccaa'],
     [false, true, false, '#112233', '#ffccaa'],
   ] as const)(
-    'mixed fallback: checked=%s indeterminate=%s legacySelected=%s',
-    async (checked, indeterminate, legacySelected, normal, hover) => {
+    'selected fill inheritance: checked=%s indeterminate=%s selectedFill=%s',
+    async (checked, indeterminate, selectedFill, normal, hover) => {
       const user = userEvent.setup();
       render(
         <Grommet
@@ -680,15 +967,13 @@ describe('CheckBox control backgrounds', () => {
             ...theme,
             checkBox: {
               ...theme.checkBox,
-              check: {
-                ...theme.checkBox?.check,
-                background: legacySelected
-                  ? { color: 'selected-fill' }
-                  : undefined,
-              },
               control: {
                 background: '#112233',
                 hover: { background: '#445566' },
+                selected: {
+                  background: selectedFill ? 'selected-fill' : undefined,
+                  hover: { background: '#ffccaa' },
+                },
               },
               container: { background: '#f0f0f0' },
             },
@@ -783,12 +1068,18 @@ describe('CheckBox control backgrounds', () => {
     },
   );
 
-  test('new hover-only tokens retain legacy normal and selected backgrounds', () => {
+  test('hover-only overrides retain normal and selected backgrounds', () => {
     const mixedTheme: ThemeType = {
       ...theme,
       checkBox: {
         ...theme.checkBox,
-        control: { selected: { hover: { background: '#112233' } } },
+        control: {
+          ...theme.checkBox?.control,
+          selected: {
+            ...theme.checkBox?.control?.selected,
+            hover: { background: '#112233' },
+          },
+        },
       },
     };
     const { rerender } = render(

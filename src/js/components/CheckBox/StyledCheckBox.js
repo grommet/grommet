@@ -4,10 +4,15 @@ import styled, { css } from 'styled-components';
 
 import {
   backgroundStyle,
+  borderStyle,
   edgeStyle,
+  elevationStyle,
   focusStyle,
+  heightStyle,
   normalizeColor,
+  roundStyle,
   styledComponentsConfig,
+  widthStyle,
 } from '../../utils';
 import { Box } from '../Box';
 
@@ -27,42 +32,110 @@ const disabledStyle = `
   cursor: default;
 `;
 
+const boxPartStyles = (part, props, container = false) => {
+  const { theme } = props;
+  const responsive = props.responsive ?? true;
+  const styles = [];
+  if (part.border !== undefined)
+    styles.push(
+      part.border === false
+        ? 'border: none;'
+        : borderStyle(part.border, responsive, theme),
+    );
+  if (part.elevation !== undefined) styles.push(elevationStyle(part.elevation));
+  if (part.height !== undefined) styles.push(heightStyle(part.height, theme));
+  if (part.width !== undefined) styles.push(widthStyle(part.width, theme));
+  if (part.margin !== undefined)
+    styles.push(
+      edgeStyle(
+        'margin',
+        part.margin,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (part.pad !== undefined && (!container || props.pad === undefined))
+    styles.push(
+      edgeStyle(
+        'padding',
+        part.pad,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (part.round !== undefined)
+    styles.push(
+      part.round === false
+        ? 'border-radius: 0;'
+        : roundStyle(part.round, responsive, theme),
+    );
+  return styles;
+};
+
+const mergeControlBorder = (base, override) => {
+  if (override === undefined) return base;
+  if (
+    base &&
+    override &&
+    typeof base === 'object' &&
+    typeof override === 'object' &&
+    !Array.isArray(base) &&
+    !Array.isArray(override)
+  )
+    return { ...base, ...override };
+  return override;
+};
+
 const controlHoverStyle = (props) => {
-  const { control, check } = props.theme.checkBox;
+  const { control } = props.theme.checkBox;
   if (props.disabled) return undefined;
 
   const selected = props.checked || props.indeterminate;
-  const background = selected
-    ? control?.selected?.hover?.background
-    : control?.hover?.background;
-  if (background != null) {
-    return css`
-      input:not([disabled])
-        + ${
-          // eslint-disable-next-line no-use-before-define
-          StyledCheckBoxBox
-        } {
-        ${backgroundStyle(background, props.theme, false)}
-      }
-    `;
+  const state = selected ? control?.selected?.hover : control?.hover;
+  const part = { ...state };
+  if (state?.border !== undefined) {
+    const { checkBox } = props.theme;
+    const baseBorder = {
+      size: checkBox.border.width,
+      color: props.checked
+        ? checkBox.color || 'control'
+        : checkBox.border.color,
+    };
+    part.border = mergeControlBorder(
+      mergeControlBorder(
+        mergeControlBorder(baseBorder, control?.border),
+        selected ? control?.selected?.border : undefined,
+      ),
+      state.border,
+    );
   }
-
-  const color = check.hover?.background?.color;
-  if (color === undefined) return undefined;
+  const styles = boxPartStyles(part, props);
+  if (state?.background != null)
+    styles.push(backgroundStyle(state.background, props.theme, false));
+  if (styles.length === 0) return undefined;
   return css`
     input:not([disabled])
       + ${
         // eslint-disable-next-line no-use-before-define
         StyledCheckBoxBox
       } {
-      background-color: ${normalizeColor(color, props.theme)};
+      ${styles}
     }
   `;
 };
 
 const containerBackgroundStyle = (props) => {
   const { container, hover } = props.theme.checkBox;
-  if (container?.background == null && container?.hover?.background == null)
+  const normalStyles = boxPartStyles(container || {}, props, true);
+  const hoverStyles = boxPartStyles(container?.hover || {}, props, true);
+  if (
+    container?.background == null &&
+    container?.hover?.background == null &&
+    normalStyles.length === 0 &&
+    hoverStyles.length === 0
+  )
     return undefined;
 
   const hoverBackground =
@@ -77,14 +150,22 @@ const containerBackgroundStyle = (props) => {
         `;
 
   return css`
+    ${normalStyles.length > 0 && 'box-sizing: border-box;'}
+    ${normalStyles}
     ${backgroundStyle(container?.background, props.theme, false)}
     ${!props.disabled &&
-    hoverBackground &&
+    (hoverBackground || hoverStyles.length > 0) &&
     css`
       &:hover {
         ${hoverBackground}
+        ${hoverStyles}
       }
-      ${props.focus && !props.focusIndicator && hoverBackground}
+      ${props.focus &&
+      !props.focusIndicator &&
+      css`
+        ${hoverBackground}
+        ${hoverStyles}
+      `}
     `}
   `;
 };
@@ -212,23 +293,26 @@ const StyledCheckBoxBox = styled(Box)`
   ${(props) => {
     const { control, check } = props.theme.checkBox;
     const selected = props.checked || props.indeterminate;
-    const background = selected
-      ? control?.selected?.background ??
-        (check.background?.color == null ? control?.background : undefined)
-      : control?.background;
+    const selectedState = selected ? control?.selected : undefined;
+    const part = { ...control, ...selectedState };
+    if (control?.border !== undefined || selectedState?.border !== undefined)
+      part.border = mergeControlBorder(
+        mergeControlBorder(props.border, control?.border),
+        selectedState?.border,
+      );
+    const partStyles = boxPartStyles(part, props);
+    const background = selectedState?.background ?? control?.background;
     if (background != null) {
       return css`
+        ${partStyles}
         ${backgroundStyle(background, props.theme, false)}
         ${check.extend}
       `;
     }
 
-    const color = selected
-      ? check.background?.color ?? props.theme.checkBox.background?.color
-      : props.theme.checkBox.background?.color;
-    if (color === undefined) return check.extend;
+    if (partStyles.length === 0) return check.extend;
     return css`
-      background-color: ${normalizeColor(color, props.theme)};
+      ${partStyles}
       ${check.extend}
     `;
   }};
