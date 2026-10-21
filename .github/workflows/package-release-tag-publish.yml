@@ -114,9 +114,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.22.2'
-          registry-url: https://registry.npmjs.org
 
       - name: Stage package on npm (OIDC trusted publishing)
+        # Ignore any inherited token and let npm authenticate via GitHub OIDC.
+        env:
+          NODE_AUTH_TOKEN: ''
         run: |
           artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
           npx --yes --package=npm@11.21.0 -- npm stage publish "$artifact" --access public --provenance
