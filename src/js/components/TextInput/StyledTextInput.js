@@ -39,6 +39,9 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${(props) => getPlainStyle(props.plain)}
   ${(props) => props.icon && !props.hasActionsGroup && inputPadForIcon}
   ${(props) =>
+    // the static leading icon already pads its right side
+    props.hasLeadingIcon && props.hasActionsGroup && 'padding-left: 0px;'}
+  ${(props) =>
     // avoid a second, native clear button on type="search" in WebKit/Blink
     props.hasClear &&
     `&::-webkit-search-cancel-button {

@@ -41,6 +41,22 @@ const ClearExample = () => {
           clear
           aria-label="Search"
         />
+        <TextInput
+          icon={<Search />}
+          reverse
+          placeholder="Search"
+          clear
+          aria-label="Search"
+        />
+        <TextInput
+          icon={<Search />}
+          reverse
+          password
+          clear
+          copy
+          placeholder="Search"
+          aria-label="Search"
+        />
       </Box>
     </Box>
     // </Grommet>

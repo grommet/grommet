@@ -692,6 +692,7 @@ const TextInput = forwardRef(
             hasButton={hasActionsGroup}
             hasActionsGroup={hasActionsGroup}
             hasClear={clearable}
+            hasLeadingIcon={showLeadingIcon}
             hasTrailingIcon={showTrailingIcon}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
@@ -757,6 +758,7 @@ const TextInput = forwardRef(
             }
           />
         </Keyboard>
+        {actionsGroup}
         {showTrailingIcon && (
           <StyledIcon
             reverse={iconOnRight}
@@ -766,7 +768,6 @@ const TextInput = forwardRef(
             {textInputIcon}
           </StyledIcon>
         )}
-        {actionsGroup}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );
