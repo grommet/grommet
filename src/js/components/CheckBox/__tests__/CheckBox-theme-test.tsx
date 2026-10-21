@@ -69,7 +69,7 @@ const getControl = () => {
   };
 };
 
-describe('CheckBox control backgrounds', () => {
+describe('CheckBox theme', () => {
   test('overrides HPE control backgrounds with merged theme values', () => {
     const hpeTheme: ThemeType = deepMerge(hpe, {
       checkBox: {
