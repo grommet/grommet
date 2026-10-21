@@ -1063,6 +1063,24 @@ describe('TextInput', () => {
     ).toBeInTheDocument();
   });
 
+  test('zeros left padding next to a leading icon with actions', () => {
+    render(
+      <Grommet>
+        <TextInput icon={<Search />} clear aria-label="Leading" />
+        <TextInput icon={<Search />} clear reverse aria-label="Trailing" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Leading')).toHaveStyleRule(
+      'padding-left',
+      '0px',
+    );
+    expect(screen.getByLabelText('Trailing')).not.toHaveStyleRule(
+      'padding-left',
+      '0px',
+    );
+  });
+
   test('zeros right padding when copy button is reversed', () => {
     render(
       <Grommet>
@@ -1100,18 +1118,19 @@ describe('TextInput', () => {
     const icon = screen.getByLabelText('Search');
     const input = screen.getByLabelText('Password');
 
-    // reverse moves the icon after the input while the actions group stays after it
+    // reverse places the icon last, after the input and the actions group
     expect(copyButton).not.toBe(toggleButton);
     expect(icon).not.toBe(toggleButton);
-    expect(
-      input.compareDocumentPosition(icon) & Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
     expect(
       input.compareDocumentPosition(toggleButton) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
     expect(
       input.compareDocumentPosition(copyButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      copyButton.compareDocumentPosition(icon) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
 
