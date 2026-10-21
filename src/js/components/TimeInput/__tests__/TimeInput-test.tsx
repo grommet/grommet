@@ -3079,7 +3079,7 @@ describe('TimeInput', () => {
 });
 
 test('renders inline as bare popup content, no button or dialog role', () => {
-  render(
+  const { asFragment } = render(
     <Grommet>
       <TimeInput format="24" inline />
     </Grommet>,
@@ -3089,6 +3089,7 @@ test('renders inline as bare popup content, no button or dialog role', () => {
   expect(screen.queryByRole('dialog')).toBeNull();
   expect(screen.getByRole('listbox', { name: 'hour' })).toBeTruthy();
   expect(screen.getByRole('listbox', { name: 'minute' })).toBeTruthy();
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test('does not automatically move focus when rendered inline', async () => {

@@ -1090,3 +1090,1576 @@ exports[`TimeInput associates the FormField label once with the segment group vi
   </div>
 </DocumentFragment>
 `;
+
+exports[`renders inline as bare popup content, no button or dialog role 1`] = `
+<DocumentFragment>
+  .c1 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+  height: 100%;
+  max-width: 100%;
+  padding: 0px;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  height: 100%;
+  flex: 0 0 auto;
+  padding-left: 6px;
+  padding-right: 6px;
+  overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
+}
+
+.c4 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  flex: 0 0 auto;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.c7 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  height: 3px;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #444444;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  scrollbar-gutter: stable;
+}
+
+.c5 {
+  cursor: pointer;
+}
+
+.c5:hover {
+  background-color: #33333310;
+  color: #444444;
+}
+
+.c5:focus-visible {
+  outline-offset: -2px;
+  outline: 2px solid #6FFFB0;
+}
+
+.c5:focus-visible >circle,
+.c5:focus-visible >ellipse,
+.c5:focus-visible >line,
+.c5:focus-visible >path,
+.c5:focus-visible >polygon,
+.c5:focus-visible >polyline,
+.c5:focus-visible >rect {
+  outline: none;
+  box-shadow: 0 0 2px 2px #6FFFB0;
+}
+
+.c5:focus-visible ::-moz-focus-inner {
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .c2 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c4 {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c7 {
+    height: 2px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        aria-label="hour"
+        class="c2 c3"
+        role="listbox"
+      >
+        <div
+          aria-label="00 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-0"
+          role="option"
+          tabindex="0"
+        >
+          <span
+            class="c6"
+          >
+            00
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="01 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-1"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            01
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="02 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-2"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            02
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="03 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-3"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            03
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="04 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-4"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            04
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="05 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-5"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            05
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="06 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-6"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            06
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="07 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-7"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            07
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="08 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-8"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            08
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="09 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-9"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            09
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="10 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-10"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            10
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="11 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-11"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            11
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="12 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-12"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            12
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="13 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-13"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            13
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="14 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-14"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            14
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="15 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-15"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            15
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="16 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-16"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            16
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="17 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-17"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            17
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="18 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-18"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            18
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="19 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-19"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            19
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="20 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-20"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            20
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="21 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-21"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            21
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="22 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-22"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            22
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="23 hours"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="hour-23"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            23
+          </span>
+        </div>
+      </div>
+      <div
+        aria-label="minute"
+        class="c2 c3"
+        role="listbox"
+      >
+        <div
+          aria-label="00 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-0"
+          role="option"
+          tabindex="0"
+        >
+          <span
+            class="c6"
+          >
+            00
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="01 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-1"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            01
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="02 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-2"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            02
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="03 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-3"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            03
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="04 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-4"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            04
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="05 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-5"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            05
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="06 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-6"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            06
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="07 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-7"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            07
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="08 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-8"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            08
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="09 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-9"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            09
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="10 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-10"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            10
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="11 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-11"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            11
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="12 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-12"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            12
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="13 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-13"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            13
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="14 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-14"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            14
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="15 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-15"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            15
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="16 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-16"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            16
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="17 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-17"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            17
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="18 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-18"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            18
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="19 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-19"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            19
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="20 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-20"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            20
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="21 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-21"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            21
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="22 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-22"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            22
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="23 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-23"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            23
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="24 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-24"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            24
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="25 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-25"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            25
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="26 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-26"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            26
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="27 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-27"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            27
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="28 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-28"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            28
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="29 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-29"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            29
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="30 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-30"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            30
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="31 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-31"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            31
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="32 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-32"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            32
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="33 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-33"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            33
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="34 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-34"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            34
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="35 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-35"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            35
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="36 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-36"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            36
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="37 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-37"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            37
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="38 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-38"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            38
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="39 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-39"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            39
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="40 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-40"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            40
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="41 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-41"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            41
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="42 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-42"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            42
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="43 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-43"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            43
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="44 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-44"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            44
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="45 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-45"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            45
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="46 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-46"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            46
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="47 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-47"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            47
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="48 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-48"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            48
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="49 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-49"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            49
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="50 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-50"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            50
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="51 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-51"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            51
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="52 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-52"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            52
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="53 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-53"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            53
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="54 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-54"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            54
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="55 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-55"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            55
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="56 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-56"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            56
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="57 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-57"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            57
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="58 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-58"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            58
+          </span>
+        </div>
+        <div
+          class="c7"
+        />
+        <div
+          aria-label="59 minutes"
+          aria-selected="false"
+          class="c4 c5"
+          data-option-key="minute-59"
+          role="option"
+          tabindex="-1"
+        >
+          <span
+            class="c6"
+          >
+            59
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
