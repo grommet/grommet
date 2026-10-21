@@ -43,9 +43,17 @@ const customTheme: ThemeType = {
 const hpeTheme: ThemeType = deepMerge(hpe, {
   checkBox: {
     control: {
-      background: { color: 'blue' },
+      background: 'background-front',
+      border: 'blue',
+      hover: {
+        background: 'background-hover',
+      },
       selected: {
-        background: { color: 'purple' },
+        background: 'background-selected-primary-strong',
+        border: 'border-selected-primary-strong',
+        hover: {
+          background: 'background-selected-primary-strong-hover',
+        },
       },
     },
     check: { extend: undefined },
