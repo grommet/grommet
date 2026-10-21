@@ -140,7 +140,7 @@ describe('TimeInput', () => {
       },
     };
 
-    render(
+    const { asFragment } = render(
       <Grommet theme={customTheme}>
         <TimeInput />
       </Grommet>,
@@ -151,6 +151,7 @@ describe('TimeInput', () => {
     const customIcon = within(dropButton).getByText('Custom primary icon');
     expect(customIcon).toHaveAttribute('aria-hidden', 'false');
     expect(customIcon).toHaveAttribute('data-caller-prop', 'preserved');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('accepts icon elements and components through dropButton.icon', () => {
@@ -194,7 +195,7 @@ describe('TimeInput', () => {
   });
 
   test('accepts defaultValue without seconds (HH:mm)', () => {
-    render(
+    const { asFragment } = render(
       <Grommet>
         <TimeInput format="24" defaultValue="12:24" />
       </Grommet>,
@@ -203,6 +204,7 @@ describe('TimeInput', () => {
     // showSeconds defaults to false, so only hour/minute are displayed;
     // a real value here (not the "hh:mm" placeholder) confirms it parsed
     expect(getDisplayInput()).toHaveValue('12:24');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('omits aria-valuenow on empty segments, sets it once filled', async () => {
@@ -782,7 +784,7 @@ describe('TimeInput', () => {
   });
 
   test('associates the FormField label once with the segment group via aria-labelledby', () => {
-    render(
+    const { asFragment } = render(
       <Grommet>
         <Form>
           <FormField
@@ -817,6 +819,7 @@ describe('TimeInput', () => {
     // the FormField label takes precedence, so no fallback aria-label
     // should be set on the group
     expect(group).not.toHaveAttribute('aria-label');
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('links FormField error text to every segment via aria-describedby/aria-invalid', () => {
