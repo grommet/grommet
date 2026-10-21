@@ -52,7 +52,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22.15.0'
+          node-version: '22.22.2'
           cache: 'yarn'
 
       - name: Install dependencies
@@ -113,11 +113,11 @@ jobs:
       - name: Set up Node for publish
         uses: actions/setup-node@v4
         with:
-          node-version: '22.15.0'
+          node-version: '22.22.2'
           registry-url: https://registry.npmjs.org
 
       - name: Ensure npm supports trusted publishing
-        run: npm install -g npm@11.21.0
+        run: npm install -g npm@latest
 
       - name: Stage package on npm (OIDC trusted publishing)
         run: |
