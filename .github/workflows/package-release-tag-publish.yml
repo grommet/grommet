@@ -1,14 +1,12 @@
-name: Build and publish tagged release
+name: Build and stage tagged release
 
 # Triggered explicitly via workflow_dispatch (invoked by
 # release-tag-on-pr-merge.yml right after it pushes a vX.Y.Z tag - a plain
 # `push: tags:` trigger is unreliable here because GitHub suppresses new
 # workflow runs for pushes made with the default GITHUB_TOKEN). Builds and
-# packs the release artifact, requires human approval before publishing
-# (environment protection), publishes via npm Trusted Publishing (OIDC -
-# no long-lived NPM_TOKEN), then verifies the registry and creates the
-# GitHub release with notes pulled from CHANGELOG.md and the build
-# artifact attached.
+# packs the release artifact, then stages it on npm via Trusted Publishing
+# (OIDC - no long-lived NPM_TOKEN). A maintainer reviews and approves the
+# staged package on npm before it becomes publicly available.
 on:
   workflow_dispatch:
     inputs:
@@ -102,15 +100,10 @@ jobs:
             RELEASE_NOTES_FOR_TAG.md
           if-no-files-found: error
 
-  publish:
-    name: Publish to npm (requires approval)
+  stage:
+    name: Stage package on npm
     needs: build
     runs-on: ubuntu-latest
-    # Required reviewer gate: configure this environment with required
-    # reviewers in repo settings. This is the human-approval checkpoint
-    # for the actual `npm publish` step - keep it required, at minimum,
-    # for the first several releases through this pipeline.
-    environment: release-publish-approval
     steps:
       - name: Download build artifact
         uses: actions/download-artifact@v4
@@ -126,23 +119,11 @@ jobs:
       - name: Ensure npm supports trusted publishing
         run: npm install -g npm@latest
 
-      - name: Publish package (OIDC trusted publishing, no NPM_TOKEN)
+      - name: Stage package on npm (OIDC trusted publishing)
         run: |
           artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
-          npm publish "$artifact" --access public --provenance
-
-      - name: Verify npm registry
-        env:
-          VERSION: ${{ needs.build.outputs.version }}
-        run: |
-          for attempt in 1 2 3 4 5; do
-            if npm view "grommet@$VERSION" version --json; then
-              exit 0
-            fi
-            sleep 10
-          done
-          echo "grommet@$VERSION did not appear on the registry after 5 attempts."
-          exit 1
+          npm stage publish "$artifact" --access public --provenance
+          echo "Package staged on npm. Review it in the package's Staged Packages tab and approve it manually to publish."
 
       - name: Create GitHub release
         env:
