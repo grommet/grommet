@@ -113,7 +113,6 @@ export const StepperStep = ({
         direction={direction}
         isSubStep={isSubStep}
         isLast={isLast}
-        hasSubSteps={!!subSteps?.length}
         {...passThemeFlag}
       >
         <StyledStepButton
@@ -153,17 +152,18 @@ export const StepperStep = ({
             <StepperDisabledReason />
           </StyledStepContent>
         </StyledStepButton>
-        {(showConnector !== undefined ? showConnector : !isLast) &&
-          !subSteps?.length && (
-            <StyledConnector
-              direction={direction}
-              status={step.status}
-              aria-hidden="true"
-              {...passThemeFlag}
-            />
-          )}
+        {(showConnector !== undefined ? showConnector : !isLast) && (
+          // positioned relative to this li so it stays anchored to the
+          // indicator regardless of how tall the label/content grows
+          <StyledConnector
+            direction={direction}
+            status={step.status}
+            aria-hidden="true"
+            {...passThemeFlag}
+          />
+        )}
         {!!subSteps?.length && (
-          <StepConnector step={step} direction={direction}>
+          <StepConnector direction={direction}>
             <StyledSubStepsList direction={direction} {...passThemeFlag}>
               {subSteps}
             </StyledSubStepsList>
