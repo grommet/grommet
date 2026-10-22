@@ -79,6 +79,7 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
     },
     check: { extend: undefined },
     container: { extend: undefined },
+    icon: { extend: undefined },
     extend: undefined,
   },
 });

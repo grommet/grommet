@@ -1974,7 +1974,6 @@ export interface ThemeType {
         hover?: BoxStateThemeType;
       };
     };
-    extend?: ExtendType;
     container?: BoxPartThemeType & {
       hover?: BoxStateThemeType;
       extend?: ExtendType;
@@ -2026,6 +2025,7 @@ export interface ThemeType {
     font?: {
       weight?: number | string;
     };
+    extend?: ExtendType;
   };
   nameValueList?: {
     gap?: {
