@@ -11,9 +11,7 @@ import {
   FormField,
   Grommet,
   Heading,
-  Paragraph,
   RadioButtonGroup,
-  Text,
 } from 'grommet';
 import { ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -23,19 +21,37 @@ const customTheme: ThemeType = {
   checkBox: {
     control: {
       background: { color: { light: 'light-3', dark: 'dark-3' } },
+      border: { color: 'border', size: 'xsmall' },
+      height: '32px',
+      width: '32px',
+      pad: 'none',
+      round: 'xsmall',
       hover: {
         background: { color: { light: 'accent-3', dark: 'neutral-3' } },
+        border: { color: 'accent-3' },
       },
       selected: {
         background: { color: { light: 'accent-1', dark: 'accent-2' } },
+        border: { color: 'accent-1' },
         hover: {
           background: { color: { light: 'accent-4', dark: 'neutral-4' } },
+          border: { color: 'accent-4' },
         },
       },
     },
     container: {
       background: { color: { light: 'light-2', dark: 'dark-2' } },
-      hover: { background: { color: { light: 'light-4', dark: 'dark-4' } } },
+      border: { color: 'border', size: 'xsmall' },
+      elevation: 'none',
+      margin: { bottom: 'xxsmall' },
+      pad: { horizontal: 'small', vertical: 'xsmall' },
+      round: 'xsmall',
+      width: { min: '240px' },
+      hover: {
+        background: { color: { light: 'light-4', dark: 'dark-4' } },
+        border: { color: 'accent-3' },
+        elevation: 'small',
+      },
     },
   },
 };
@@ -45,24 +61,29 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
     container: {},
     control: {
       background: 'background-front',
-      border: { color: 'blue' },
       hover: {
         background: 'background-hover',
+        border: { color: 'border-strong' },
       },
       selected: {
         background: 'background-selected-primary-strong',
-        border: { color: 'border-selected-primary-strong' },
+        border: {
+          color: 'border-selected',
+        },
         hover: {
           background: 'background-selected-primary-strong-hover',
         },
       },
     },
     check: { extend: undefined },
+    hover: {
+      extend: undefined,
+    },
     extend: undefined,
   },
 });
 
-const BackgroundExample = () => {
+const AppearanceExample = () => {
   const [dark, setDark] = useState(false);
   const [value, setValue] = useState({ updates: true });
   const [theme, setTheme] = useState(hpeTheme);
@@ -75,16 +96,11 @@ const BackgroundExample = () => {
     >
       <Box pad="large" gap="medium">
         <Heading level={2} margin="none">
-          Control backgrounds
+          Preferences
         </Heading>
-        <Paragraph>
-          Hover a control or its label. Unselected and selected controls have
-          distinct hover fills, independent of the outer label background.
-          Container fills also apply to toggles without changing their tracks or
-          knobs. Tab into the form to see the current state&apos;s hover fill.
-        </Paragraph>
         <Box
           direction="row"
+          wrap
           gap="large"
           border={{ color: 'border', size: 'small', side: 'bottom' }}
           pad="small"
@@ -99,19 +115,19 @@ const BackgroundExample = () => {
           />
           <CheckBox
             toggle
-            label="Dark mode (toggle styling is unchanged)"
+            label="Dark mode"
             checked={dark}
             onChange={(event) => setDark(event.target.checked)}
           />
         </Box>
-        <Box gap="small" background="background-back" round pad="medium">
+        <Box gap="small" background="background-back" pad="medium" round>
           <CheckBox label="Unchecked" />
           <CheckBox label="Selected" defaultChecked />
           <CheckBox label="Indeterminate" indeterminate />
           <CheckBox label="Disabled unchecked" disabled />
           <CheckBox label="Disabled selected" disabled checked />
         </Box>
-        <Box gap="small" background="background-back" round pad="medium">
+        <Box gap="small" background="background-back" pad="medium" round>
           <Form value={value} onChange={setValue}>
             <FormField name="updates" htmlFor="updates" label="Notifications">
               <CheckBox
@@ -132,13 +148,13 @@ const BackgroundExample = () => {
 };
 
 const meta: Meta<typeof CheckBox> = {
-  title: 'Input/CheckBox/Custom Themed/Background',
+  title: 'Input/CheckBox/Custom Themed/Appearance',
   component: CheckBox,
 };
 
 export default meta;
 type Story = StoryObj<typeof CheckBox>;
 
-export const Background: Story = {
-  render: () => <BackgroundExample />,
+export const Appearance: Story = {
+  render: () => <AppearanceExample />,
 };
