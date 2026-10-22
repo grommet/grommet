@@ -849,18 +849,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     checkBox: {
       // control: {
-      //   background: undefined,
-      //   hover: { background: undefined }, // unselected only
+      //   // any BoxPartThemeType
+      //   hover: // any BoxStateThemeType
       //   selected: {
-      //     background: undefined, // checked and indeterminate
-      //     hover: { background: undefined },
+      //     // any BoxStateThemeType
+      //     hover: // any BoxStateThemeType,
       //   },
       // },
       // container: {
-      //   background: undefined,
-      //   hover: { background: undefined },
+      //   // any BoxPartThemeType
+      //   hover: // any BoxStateThemeType,
       // },
-      // background: { color: undefined }, // default control fill
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
@@ -869,10 +868,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: '2px',
       },
       check: {
-        // background: { color: undefined }, // selected/indeterminate fill
-        // hover: { background: { color: undefined } }, // control-only hover
         // extend: undefined,
-        radius: '4px',
+        radius: '4px' /** @deprecated Use checkBox.control.round instead. */,
         thickness: '4px',
       },
       label: {
@@ -888,6 +885,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        /** @deprecated Use checkBox.container.hover.background instead. */
         // background: undefined,
         // extend: undefined,
       },
@@ -899,6 +897,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
+      /** @deprecated Use checkBox.container.pad instead. */
       // pad: undefined,
       size: `${baseSpacing}px`,
       toggle: {
