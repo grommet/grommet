@@ -127,10 +127,13 @@ jobs:
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
           VERSION: ${{ needs.build.outputs.version }}
         run: |
           artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
           gh release create "v${VERSION}" \
+            --repo "$GH_REPO" \
+            --verify-tag \
             --title "v${VERSION}" \
             --notes-file RELEASE_NOTES_FOR_TAG.md \
             "$artifact"
