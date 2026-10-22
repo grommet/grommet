@@ -150,36 +150,46 @@ const hoverCases: {
     radioButton: {},
   },
   {
-    name: 'new unselected hover beats legacy with selected legacy fallback',
+    name: 'explicit string hover backgrounds for both states',
     radioButton: {
-      check: { hover: { background: { color: selectedHover } } },
-      control: { hover: { background: hover } },
+      control: {
+        hover: { background: hover },
+        selected: { hover: { background: selectedHover } },
+      },
     },
     normal: hover,
     selected: selectedHover,
   },
   {
-    name: 'new selected hover beats legacy with unselected legacy fallback',
+    name: 'transparent hover backgrounds for both states',
     radioButton: {
-      check: { hover: { background: { color: hover } } },
-      control: { selected: { hover: { background: selectedHover } } },
+      control: {
+        hover: { background: 'transparent' },
+        selected: { hover: { background: 'transparent' } },
+      },
     },
-    normal: hover,
-    selected: selectedHover,
+    normal: 'transparent',
+    selected: 'transparent',
   },
   {
-    name: 'both new hovers beat legacy',
+    name: 'object hover backgrounds for both states',
     radioButton: {
       ...theme.radioButton,
-      check: { hover: { background: { color: '#112233' } } },
+      control: {
+        ...theme.radioButton?.control,
+        selected: {
+          ...theme.radioButton?.control?.selected,
+          hover: { background: { color: selectedHover } },
+        },
+      },
     },
     normal: hoverRgba,
-    selected: selectedHover,
+    selected: 'rgba(170, 204, 238, 1)',
     selectedFill: selectedRgba,
   },
 ];
 
-describe('RadioButton namespaced backgrounds', () => {
+describe('RadioButton theme', () => {
   test('has no accessibility violations', async () => {
     const { container } = render(
       <Grommet theme={theme}>
@@ -187,6 +197,236 @@ describe('RadioButton namespaced backgrounds', () => {
       </Grommet>,
     );
     expect(await axe(container)).toHaveNoViolations();
+  });
+
+  test('legacy label hover does not set a control background', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          radioButton: { hover: { background: { color: containerHover } } },
+        }}
+      >
+        <RadioButton name="option" label="Option" />
+      </Grommet>,
+    );
+    await user.hover(screen.getByText('Option'));
+    const { control, label } = getControl();
+    expect(control).not.toHaveStyleRule('background-color');
+    expect(label).toHaveStyleRule('background-color', containerHover, {
+      modifier: ':hover',
+    });
+    expect(label).not.toHaveStyleRule('background-color', undefined, {
+      modifier: `:hover ${selector(false)}`,
+    });
+  });
+
+  test.each([
+    [false, false],
+    [true, false],
+    [false, true],
+    [true, true],
+  ])(
+    'Box-part styles and state overrides (checked=%s, disabled=%s)',
+    async (checked, disabled) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            radioButton: {
+              control: {
+                border: { color: '#123456', size: '3px' },
+                elevation: 'small',
+                height: { min: '28px', height: '36px' },
+                width: { width: '40px', max: '48px' },
+                margin: { end: '4px' },
+                pad: '3px',
+                round: '6px',
+                hover: {
+                  border: { color: '#abcdef' },
+                  elevation: 'medium',
+                  pad: '5px',
+                  round: '10px',
+                },
+                selected: {
+                  border: { color: '#654321' },
+                  pad: '4px',
+                  hover: { border: false, round: false, pad: '6px' },
+                },
+              },
+              container: {
+                border: [
+                  { side: 'top', color: '#112233', size: '2px' },
+                  { side: 'bottom', color: '#334455', size: '1px' },
+                ],
+                elevation: 'small',
+                height: { min: '40px', height: '60px' },
+                width: { min: '100px', width: '240px', max: '300px' },
+                margin: { start: '4px' },
+                pad: '8px',
+                round: '6px',
+                hover: {
+                  border: false,
+                  elevation: 'medium',
+                  pad: '12px',
+                  round: false,
+                },
+              },
+            },
+          }}
+        >
+          <RadioButton
+            name="example"
+            label="Option"
+            checked={checked}
+            disabled={disabled}
+            readOnly
+          />
+        </Grommet>,
+      );
+      const { control, label } = getControl();
+      expect(control).toHaveStyleRule(
+        'border',
+        `solid 3px ${checked ? '#654321' : '#123456'}`,
+      );
+      expect(control).toHaveStyleRule('min-height', '28px');
+      expect(control).toHaveStyleRule('height', '36px');
+      expect(control).toHaveStyleRule('width', '40px');
+      expect(control).toHaveStyleRule('max-width', '48px');
+      expect(control).toHaveStyleRule('margin-inline-end', '4px');
+      expect(control).toHaveStyleRule('padding', checked ? '4px' : '3px');
+      expect(control).toHaveStyleRule('border-radius', '6px');
+      expect(control).toHaveStyleRule('box-shadow', expect.any(String));
+      expect(label).toHaveStyleRule('box-sizing', 'border-box');
+      expect(label).toHaveStyleRule('border-top', 'solid 2px #112233');
+      expect(label).toHaveStyleRule('border-bottom', 'solid 1px #334455');
+      expect(label).toHaveStyleRule('min-height', '40px');
+      expect(label).toHaveStyleRule('height', '60px');
+      expect(label).toHaveStyleRule('min-width', '100px');
+      expect(label).toHaveStyleRule('width', '240px');
+      expect(label).toHaveStyleRule('max-width', '300px');
+      expect(label).toHaveStyleRule('margin-inline-start', '4px');
+      expect(label).toHaveStyleRule('padding', '8px');
+      expect(label).toHaveStyleRule('border-radius', '6px');
+      expect(label).toHaveStyleRule('box-shadow', expect.any(String));
+      await user.hover(screen.getByText('Option'));
+      if (disabled) {
+        expect(label).not.toHaveStyleRule('padding', undefined, {
+          modifier: `:hover ${selector(checked)}`,
+        });
+        expect(label).not.toHaveStyleRule('padding', undefined, {
+          modifier: ':hover',
+        });
+      } else {
+        expect(label).toHaveStyleRule(
+          'border',
+          checked ? 'none' : 'solid 3px #abcdef',
+          { modifier: `:hover ${selector(checked)}` },
+        );
+        expect(label).toHaveStyleRule('padding', checked ? '6px' : '5px', {
+          modifier: `:hover ${selector(checked)}`,
+        });
+        expect(label).toHaveStyleRule('border-radius', checked ? '0' : '10px', {
+          modifier: `:hover ${selector(checked)}`,
+        });
+        expect(label).toHaveStyleRule('padding', '12px', {
+          modifier: ':hover',
+        });
+        expect(label).toHaveStyleRule('border', 'none', { modifier: ':hover' });
+        expect(label).toHaveStyleRule('border-radius', '0', {
+          modifier: ':hover',
+        });
+        expect(label).toHaveStyleRule('box-shadow', expect.any(String), {
+          modifier: ':hover',
+        });
+      }
+      expect(control).not.toHaveAttribute('$checked');
+    },
+  );
+
+  test.each([false, true])(
+    'Box-state focus styles respect focusIndicator=%s',
+    async (focusIndicator) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            radioButton: {
+              control: {
+                border: false,
+                round: false,
+                selected: { hover: { pad: '6px' } },
+              },
+              container: { pad: '8px', hover: { pad: '12px' } },
+            },
+          }}
+        >
+          <RadioButton
+            name="example"
+            label="Option"
+            checked
+            readOnly
+            {...{ focusIndicator }}
+          />
+        </Grommet>,
+      );
+      await user.tab();
+      const { input, label, control } = getControl();
+      expect(input).toHaveFocus();
+      expect(control).toHaveStyleRule('border', 'none');
+      expect(control).toHaveStyleRule('border-radius', '0');
+      expect(label).toHaveStyleRule('padding', focusIndicator ? '8px' : '12px');
+      if (focusIndicator)
+        expect(label).not.toHaveStyleRule('padding', undefined, {
+          modifier: selector(true),
+        });
+      else
+        expect(label).toHaveStyleRule('padding', '6px', {
+          modifier: selector(true),
+        });
+      await user.tab();
+      expect(label).toHaveStyleRule('padding', '8px');
+      expect(label).not.toHaveStyleRule('padding', undefined, {
+        modifier: selector(true),
+      });
+    },
+  );
+
+  test('part styling preserves extension precedence and custom children', () => {
+    const appearanceTheme: ThemeType = {
+      radioButton: {
+        control: { pad: '3px', round: '6px' },
+        check: { extend: 'padding: 8px; border-radius: 2px;' },
+        container: {
+          pad: '4px',
+          round: '6px',
+          extend: 'padding: 12px; border-radius: 3px;',
+        },
+      },
+    };
+    const { rerender } = render(
+      <Grommet theme={appearanceTheme}>
+        <RadioButton name="example" label="Option" />
+      </Grommet>,
+    );
+    expect(getControl().control).toHaveStyleRule('padding', '8px');
+    expect(getControl().control).toHaveStyleRule('border-radius', '2px');
+    expect(getControl().label).toHaveStyleRule('padding', '12px');
+    expect(getControl().label).toHaveStyleRule('border-radius', '3px');
+    rerender(
+      <Grommet theme={appearanceTheme}>
+        <RadioButton name="example" label="Option">
+          {() => (
+            <Box pad="16px" round="10px">
+              Custom control
+            </Box>
+          )}
+        </RadioButton>
+      </Grommet>,
+    );
+    expect(getControl().control).toHaveStyleRule('padding', '16px');
+    expect(getControl().control).toHaveStyleRule('border-radius', '10px');
+    expect(getControl().label).toHaveStyleRule('padding', '12px');
   });
 
   describe.each([false, true])('checked=%s', (checked) => {

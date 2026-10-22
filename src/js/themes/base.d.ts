@@ -328,19 +328,6 @@ type ContainerExtend = {
   };
 };
 
-interface ControlBackgroundType {
-  background?: BackgroundType;
-  hover?: {
-    background?: BackgroundType;
-  };
-  selected?: {
-    background?: BackgroundType;
-    hover?: {
-      background?: BackgroundType;
-    };
-  };
-}
-
 interface StepperStateType {
   indicator?: {
     icon?: React.ReactNode | Icon;
@@ -1981,40 +1968,48 @@ export interface ThemeType {
     };
   };
   radioButton?: {
-    control?: ControlBackgroundType;
-    extend?: ExtendType;
-    container?: {
-      background?: BackgroundType;
-      hover?: {
-        background?: BackgroundType;
+    control?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
+      selected?: BoxStateThemeType & {
+        hover?: BoxStateThemeType;
       };
+    };
+    extend?: ExtendType;
+    container?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
       extend?: ExtendType;
     };
+    /** @deprecated Use radioButton.control.background instead. */
     background?: {
       color?: ColorType;
     };
     border?: {
+      /** @deprecated Use radioButton.control.border.color instead. */
       color?: ColorType;
+      /** @deprecated Use radioButton.control.border.size instead. */
       width?: string;
     };
     check?: {
       color?: ColorType;
       extend?: ExtendType;
+      /** @deprecated Use radioButton.control.round instead. */
       radius?: string;
+      /** @deprecated Use radioButton.control.selected.background instead. */
       background?: {
         color?: ColorType;
       };
-      hover?: {
-        background?: {
-          color?: ColorType;
-        };
-      };
     };
+    /** @deprecated Use radioButton.control.selected.border.color instead. */
     color?: ColorType;
     hover?: {
       border?: {
+        /**
+         * @deprecated Use radioButton.control.hover.border.color and
+         * radioButton.control.selected.hover.border.color instead.
+         */
         color?: ColorType;
       };
+      /** @deprecated Use radioButton.container.hover.background instead. */
       background?: {
         color?: ColorType;
       };

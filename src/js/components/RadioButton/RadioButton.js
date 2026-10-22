@@ -109,6 +109,7 @@ const RadioButton = forwardRef(
             children({ checked, focus: focus && focusIndicator, hover })
           ) : (
             <StyledRadioButtonBox
+              $checked={checked}
               focus={focus && focusIndicator && usingKeyboard}
               align="center"
               justify="center"
