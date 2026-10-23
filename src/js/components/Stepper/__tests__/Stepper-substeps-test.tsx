@@ -59,10 +59,18 @@ const expectRows = (titles: string[]) => {
 };
 
 const OrderingProbe = () => {
-  const { stepIndex, isPriorStep, isAfterStep } = useStepper();
+  const { steps, stepIndex, isPriorStep, isAfterStep, canNavigateTo } =
+    useStepper();
   return (
     <span>
-      {`${stepIndex('email')}:${isPriorStep('email')}:${isAfterStep('email')}`}
+      {[
+        steps.map((step) => step.id).join(','),
+        stepIndex('review'),
+        steps[stepIndex('review')]?.id,
+        canNavigateTo('email'),
+        isPriorStep('email'),
+        isAfterStep('email'),
+      ].join('|')}
     </span>
   );
 };
@@ -201,7 +209,7 @@ describe('Stepper child reveal', () => {
     },
   );
 
-  test('ordering helpers include unrevealed child steps', () => {
+  test('public context uses full step tree before revealing children', () => {
     render(
       <Grommet>
         <Stepper
@@ -214,7 +222,11 @@ describe('Stepper child reveal', () => {
         </Stepper>
       </Grommet>,
     );
-    expect(screen.getByText('2:false:true')).toBeTruthy();
+    expect(
+      screen.getByText(
+        'intro,account,email,profile,billing,card,address,review|7|review|true|false|true',
+      ),
+    ).toBeTruthy();
   });
 
   test('remembers multiple revealed parents across controlled changes', () => {

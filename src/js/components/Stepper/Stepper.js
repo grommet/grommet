@@ -239,16 +239,16 @@ const Stepper = forwardRef(
 
     const canNavigateTo = useCallback(
       (stepId) => {
-        const step = flatSteps.find((s) => s.id === stepId);
+        const step = allSteps.find((s) => s.id === stepId);
         return clickableSteps && step && step.status !== 'disabled';
       },
-      [flatSteps, clickableSteps],
+      [allSteps, clickableSteps],
     );
 
     const contextValue = useMemo(
       () => ({
         currentStep: effectiveCurrentStep,
-        steps: flatSteps,
+        steps: allSteps,
         direction,
         clickableSteps,
         onStepClick,
@@ -262,7 +262,7 @@ const Stepper = forwardRef(
       }),
       [
         effectiveCurrentStep,
-        flatSteps,
+        allSteps,
         direction,
         clickableSteps,
         onStepClick,
