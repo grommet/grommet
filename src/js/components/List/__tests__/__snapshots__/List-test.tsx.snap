@@ -3619,21 +3619,21 @@ exports[`List events Enter key 1`] = `
 
 exports[`List events Enter key 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 QrMWn"
+    class="List__StyledList-sc-130gdqg-0 katmNb"
     role="listbox"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hjepzd List__StyledItem-sc-130gdqg-1 lgldaM"
+      class="StyledBox-sc-13pk1d4-0 hGRTPJ List__StyledItem-sc-130gdqg-1 dupqME"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 eWMkPm List__StyledItem-sc-130gdqg-1 lgldaM"
+      class="StyledBox-sc-13pk1d4-0 wrFK List__StyledItem-sc-130gdqg-1 dupqME"
       role="option"
       tabindex="0"
     >
@@ -3826,21 +3826,21 @@ exports[`List events focus and blur 1`] = `
 
 exports[`List events focus and blur 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 QrMWn"
+    class="List__StyledList-sc-130gdqg-0 katmNb"
     role="listbox"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hjepzd List__StyledItem-sc-130gdqg-1 lgldaM"
+      class="StyledBox-sc-13pk1d4-0 hGRTPJ List__StyledItem-sc-130gdqg-1 dupqME"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 dkgnCT List__StyledItem-sc-130gdqg-1 lgldaM"
+      class="StyledBox-sc-13pk1d4-0 dMOrfz List__StyledItem-sc-130gdqg-1 dupqME"
       role="option"
       tabindex="0"
     >
@@ -3996,21 +3996,21 @@ exports[`List events mouse events 1`] = `
 
 exports[`List events mouse events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 QrMWn"
+    class="List__StyledList-sc-130gdqg-0 katmNb"
     role="listbox"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hjepzd List__StyledItem-sc-130gdqg-1 lgldaM"
+      class="StyledBox-sc-13pk1d4-0 hGRTPJ List__StyledItem-sc-130gdqg-1 dupqME"
       role="option"
       tabindex="0"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 gcasPz List__StyledItem-sc-130gdqg-1 lgldaM"
+      class="StyledBox-sc-13pk1d4-0 bbaXXj List__StyledItem-sc-130gdqg-1 dupqME"
       role="option"
       tabindex="-1"
     >
@@ -7576,13 +7576,13 @@ exports[`List events should render new data when page changes 1`] = `
 
 exports[`List events should render new data when page changes 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 kbGjYV List__StyledContainer-sc-130gdqg-2 cjLPCq"
+    class="StyledBox-sc-13pk1d4-0 fdzKMV List__StyledContainer-sc-130gdqg-2 jCLfIy"
   >
     <ul
-      class="List__StyledList-sc-130gdqg-0 QrMWn"
+      class="List__StyledList-sc-130gdqg-0 katmNb"
       role="list"
     >
       .c0 {
@@ -10649,29 +10649,29 @@ exports[`List events should render new data when page changes 2`] = `
       </li>
     </ul>
     <div
-      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 dwxBsf"
+      class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iJdiPj"
     />
     <div
-      class="StyledBox-sc-13pk1d4-0 ClwxQ Pagination__StyledPaginationContainer-sc-rnlw6m-0"
+      class="StyledBox-sc-13pk1d4-0 cvLpTI Pagination__StyledPaginationContainer-sc-rnlw6m-0"
     >
       <nav
         aria-label="Pagination Navigation"
-        class="StyledBox-sc-13pk1d4-0 jJjGgM"
+        class="StyledBox-sc-13pk1d4-0 EjCQw"
       >
         <ul
-          class="StyledBox-sc-13pk1d4-0 iXaCsH"
+          class="StyledBox-sc-13pk1d4-0 kDgOBn"
         >
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 ejFvnz"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jyARBH"
           >
             <button
               aria-label="Go to previous page"
-              class="StyledButtonKind-sc-1vhfpnt-0 gRbGMi StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 LAkIQ"
+              class="StyledButtonKind-sc-1vhfpnt-0 fbNyHm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bXhIgA"
               type="button"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-sc-ofa7kd-0 idbSyn"
+                class="StyledIcon-sc-ofa7kd-0 gHlsfj"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -10684,41 +10684,41 @@ exports[`List events should render new data when page changes 2`] = `
             </button>
           </li>
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 ejFvnz"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jyARBH"
           >
             <button
               aria-label="Go to page 1"
-              class="StyledButtonKind-sc-1vhfpnt-0 dDVGXm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 LAkIQ"
+              class="StyledButtonKind-sc-1vhfpnt-0 hpbpfm StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bXhIgA"
               type="button"
             >
               1
             </button>
           </li>
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 ejFvnz"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jyARBH"
           >
             <button
               aria-current="page"
               aria-label="Go to page 2"
-              class="StyledButtonKind-sc-1vhfpnt-0 foisRY StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 LAkIQ"
+              class="StyledButtonKind-sc-1vhfpnt-0 bFLeLk StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bXhIgA"
               type="button"
             >
               2
             </button>
           </li>
           <li
-            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 ejFvnz"
+            class="StyledPageControl__StyledContainer-sc-1vlfaez-1 jyARBH"
           >
             <button
               aria-disabled="true"
               aria-label="Go to next page"
-              class="StyledButtonKind-sc-1vhfpnt-0 ebTkxS StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 LAkIQ"
+              class="StyledButtonKind-sc-1vhfpnt-0 bYndCy StyledPageControl__StyledPaginationButton-sc-1vlfaez-0 bXhIgA"
               disabled=""
               type="button"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-sc-ofa7kd-0 fypPpr"
+                class="StyledIcon-sc-ofa7kd-0 eczoWn"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -13994,21 +13994,21 @@ exports[`List onClickItem 1`] = `
 
 exports[`List onClickItem 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 QrMWn"
+    class="List__StyledList-sc-130gdqg-0 katmNb"
     role="listbox"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 hjepzd List__StyledItem-sc-130gdqg-1 lgldaM"
+      class="StyledBox-sc-13pk1d4-0 hGRTPJ List__StyledItem-sc-130gdqg-1 dupqME"
       role="option"
       tabindex="-1"
     >
       alpha
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 eWMkPm List__StyledItem-sc-130gdqg-1 lgldaM"
+      class="StyledBox-sc-13pk1d4-0 wrFK List__StyledItem-sc-130gdqg-1 dupqME"
       role="option"
       tabindex="0"
     >
@@ -17405,42 +17405,42 @@ exports[`List onOrder Mouse move down 1`] = `
 
 exports[`List onOrder Mouse move down 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 QrMWn"
+    class="List__StyledList-sc-130gdqg-0 katmNb"
     role="list"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 bQIKrh List__StyledItem-sc-130gdqg-1 jGbVIe"
+      class="StyledBox-sc-13pk1d4-0 gyMFA-d List__StyledItem-sc-130gdqg-1 gbZLSC"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 ggfGAC"
+        class="StyledText-sc-1sadyjn-0 bIxMrq"
       >
         1
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCWFGn"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cAgDEv"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jyKOvn"
+        class="StyledBox-sc-13pk1d4-0 ftkLBf"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bfnOEg"
+          class="StyledText-sc-1sadyjn-0 gyWKBI"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCWFGn"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cAgDEv"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 CzvbL"
+        class="StyledBox-sc-13pk1d4-0 iIisJT"
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 iXPWzZ"
+          class="StyledButton-sc-323bzc-0 kIKQWN"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -17448,7 +17448,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 fypPpr"
+            class="StyledIcon-sc-ofa7kd-0 eczoWn"
             viewBox="0 0 24 24"
           >
             <path
@@ -17461,14 +17461,14 @@ exports[`List onOrder Mouse move down 2`] = `
         </button>
         <button
           aria-label="1 beta move down"
-          class="StyledButton-sc-323bzc-0 hbiFtj"
+          class="StyledButton-sc-323bzc-0 AjcNj"
           id="betaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 fypPpr"
+            class="StyledIcon-sc-ofa7kd-0 eczoWn"
             viewBox="0 0 24 24"
           >
             <path
@@ -17482,42 +17482,42 @@ exports[`List onOrder Mouse move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 bLPMTT List__StyledItem-sc-130gdqg-1 jGbVIe"
+      class="StyledBox-sc-13pk1d4-0 jwvGxf List__StyledItem-sc-130gdqg-1 gbZLSC"
       draggable="true"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 ggfGAC"
+        class="StyledText-sc-1sadyjn-0 bIxMrq"
       >
         2
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCWFGn"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cAgDEv"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 jyKOvn"
+        class="StyledBox-sc-13pk1d4-0 ftkLBf"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bfnOEg"
+          class="StyledText-sc-1sadyjn-0 gyWKBI"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCWFGn"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cAgDEv"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 CzvbL"
+        class="StyledBox-sc-13pk1d4-0 iIisJT"
       >
         <button
           aria-label="2 alpha move up"
-          class="StyledButton-sc-323bzc-0 hbiFtj"
+          class="StyledButton-sc-323bzc-0 AjcNj"
           id="alphaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 fypPpr"
+            class="StyledIcon-sc-ofa7kd-0 eczoWn"
             viewBox="0 0 24 24"
           >
             <path
@@ -17530,7 +17530,7 @@ exports[`List onOrder Mouse move down 2`] = `
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 iXPWzZ"
+          class="StyledButton-sc-323bzc-0 kIKQWN"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -17538,7 +17538,7 @@ exports[`List onOrder Mouse move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 fypPpr"
+            class="StyledIcon-sc-ofa7kd-0 eczoWn"
             viewBox="0 0 24 24"
           >
             <path
@@ -21347,34 +21347,34 @@ exports[`List onOrder with no-index Mouse move down 1`] = `
 
 exports[`List onOrder with no-index Mouse move down 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <ul
-    class="List__StyledList-sc-130gdqg-0 QrMWn"
+    class="List__StyledList-sc-130gdqg-0 katmNb"
     role="list"
   >
     <li
-      class="StyledBox-sc-13pk1d4-0 bQIKrh List__StyledItem-sc-130gdqg-1 jGbVIe"
+      class="StyledBox-sc-13pk1d4-0 gyMFA-d List__StyledItem-sc-130gdqg-1 gbZLSC"
       draggable="true"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jyKOvn"
+        class="StyledBox-sc-13pk1d4-0 ftkLBf"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bfnOEg"
+          class="StyledText-sc-1sadyjn-0 gyWKBI"
         >
           beta
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCWFGn"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cAgDEv"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 CzvbL"
+        class="StyledBox-sc-13pk1d4-0 iIisJT"
       >
         <button
           aria-label="1 beta move up"
-          class="StyledButton-sc-323bzc-0 iXPWzZ"
+          class="StyledButton-sc-323bzc-0 kIKQWN"
           disabled=""
           id="betaMoveUp"
           tabindex="-1"
@@ -21382,7 +21382,7 @@ exports[`List onOrder with no-index Mouse move down 2`] = `
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 fypPpr"
+            class="StyledIcon-sc-ofa7kd-0 eczoWn"
             viewBox="0 0 24 24"
           >
             <path
@@ -21395,14 +21395,14 @@ exports[`List onOrder with no-index Mouse move down 2`] = `
         </button>
         <button
           aria-label="1 beta move down"
-          class="StyledButton-sc-323bzc-0 hbiFtj"
+          class="StyledButton-sc-323bzc-0 AjcNj"
           id="betaMoveDown"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 fypPpr"
+            class="StyledIcon-sc-ofa7kd-0 eczoWn"
             viewBox="0 0 24 24"
           >
             <path
@@ -21416,34 +21416,34 @@ exports[`List onOrder with no-index Mouse move down 2`] = `
       </div>
     </li>
     <li
-      class="StyledBox-sc-13pk1d4-0 bLPMTT List__StyledItem-sc-130gdqg-1 jGbVIe"
+      class="StyledBox-sc-13pk1d4-0 jwvGxf List__StyledItem-sc-130gdqg-1 gbZLSC"
       draggable="true"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 jyKOvn"
+        class="StyledBox-sc-13pk1d4-0 ftkLBf"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bfnOEg"
+          class="StyledText-sc-1sadyjn-0 gyWKBI"
         >
           alpha
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCWFGn"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 cAgDEv"
       />
       <div
-        class="StyledBox-sc-13pk1d4-0 CzvbL"
+        class="StyledBox-sc-13pk1d4-0 iIisJT"
       >
         <button
           aria-label="2 alpha move up"
-          class="StyledButton-sc-323bzc-0 hbiFtj"
+          class="StyledButton-sc-323bzc-0 AjcNj"
           id="alphaMoveUp"
           tabindex="-1"
           type="button"
         >
           <svg
             aria-label="FormUp"
-            class="StyledIcon-sc-ofa7kd-0 fypPpr"
+            class="StyledIcon-sc-ofa7kd-0 eczoWn"
             viewBox="0 0 24 24"
           >
             <path
@@ -21456,7 +21456,7 @@ exports[`List onOrder with no-index Mouse move down 2`] = `
         </button>
         <button
           aria-label="2 alpha move down"
-          class="StyledButton-sc-323bzc-0 iXPWzZ"
+          class="StyledButton-sc-323bzc-0 kIKQWN"
           disabled=""
           id="alphaMoveDown"
           tabindex="-1"
@@ -21464,7 +21464,7 @@ exports[`List onOrder with no-index Mouse move down 2`] = `
         >
           <svg
             aria-label="FormDown"
-            class="StyledIcon-sc-ofa7kd-0 fypPpr"
+            class="StyledIcon-sc-ofa7kd-0 eczoWn"
             viewBox="0 0 24 24"
           >
             <path
