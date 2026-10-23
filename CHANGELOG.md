@@ -10,7 +10,6 @@ General:
 - Fixed errors in the base theme TypeScript declarations. (#8178)
 
 TimeInput - officially out of beta:
-
 - Added theme customization for TimeInput and improved its `inline` integration with DateTimeInput. (#8183)
 - Added support for HH:mm values in `value` and `defaultValue` without requiring seconds. (#8180)
 - Added the TimeInput `inline` prop. (#8162)
@@ -28,9 +27,8 @@ TimeInput - officially out of beta:
 - Fixed segment and popup-button padding shrinking at responsive breakpoints. (#8197)
 - Enhanced internal display formatting and accessibility metadata reuse. (#8139)
 - Enhanced internal utilities by removing unused functions. (#8137)
-
+  
 Beta - APIs are subject to change:
-
 - Enhanced Wizard with `clickableSteps`, `closable`, and `form` props, React-node titles, and improved navigation and error handling. (#8132)
 - Enhanced Wizard validation to preserve `step` validation state and improve skippable-step behavior. (#8191)
 
