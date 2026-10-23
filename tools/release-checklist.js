@@ -33,6 +33,7 @@
  */
 
 import { execSync } from 'child_process';
+import { getDescription } from './release-notes-utils';
 
 const OWNER = 'grommet';
 const REPO = 'grommet';
@@ -209,7 +210,12 @@ function suggestBump(prs) {
     (pr) =>
       pr.labels.some((l) => /^(minor|feature|new component)/i.test(l.name)) ||
       /^feat(\(|:)/i.test(pr.title || '') ||
-      /new component/i.test(pr.title || ''),
+      /\bnew component\b|\badd(?:ed|s)?\b.*\b(?:props?|support|components?|options?|capabilit(?:y|ies)|features?|theme)\b/i.test(
+        pr.title || '',
+      ) ||
+      /\b(?:adds?|introduces?)\b.*\b(?:props?|support|components?|options?|capabilit(?:y|ies)|features?|theme)\b/i.test(
+        getDescription(pr.body),
+      ),
   );
   if (minorPrs.length > 0) {
     return {
@@ -304,8 +310,11 @@ const args = parseArgs();
 
   const prNumbers = new Set();
   for (const c of compare.commits) {
-    const matches = c.commit.message.matchAll(/#(\d+)/g);
-    for (const m of matches) prNumbers.add(Number(m[1]));
+    const subject = c.commit.message.split('\n')[0];
+    const match =
+      subject.match(/\(#(\d+)\)$/) ||
+      subject.match(/^Merge pull request #(\d+)\b/);
+    if (match) prNumbers.add(Number(match[1]));
   }
 
   if (prNumbers.size === 0) {
@@ -320,9 +329,7 @@ const args = parseArgs();
   for (let i = 0; i < numbers.length; i += CONCURRENCY) {
     const batch = numbers.slice(i, i + CONCURRENCY);
     const results = await Promise.all(
-      batch.map((n) =>
-        ghGet(`${API}/pulls/${n}`, args.token).catch(() => null),
-      ),
+      batch.map((n) => ghGet(`${API}/pulls/${n}`, args.token)),
     );
     prs.push(...results.filter(Boolean));
   }
@@ -337,9 +344,10 @@ const args = parseArgs();
     const batch = codePrs.slice(i, i + CONCURRENCY);
     const results = await Promise.all(
       batch.map((pr) =>
-        getPrFiles(pr.number, args.token)
-          .then((files) => ({ number: pr.number, files }))
-          .catch(() => ({ number: pr.number, files: [] })),
+        getPrFiles(pr.number, args.token).then((files) => ({
+          number: pr.number,
+          files,
+        })),
       ),
     );
     results.forEach(({ number, files }) => prFiles.set(number, files));
