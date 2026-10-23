@@ -7,6 +7,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 
 import { Grommet, Stepper } from '../..';
+import { useStepper } from '..';
 import type { StepperProps, StepType } from '..';
 
 const steps: StepType[] = [
@@ -55,6 +56,15 @@ const expectRows = (titles: string[]) => {
     ),
   );
   expect(rows.filter((row) => row.tabIndex === 0)).toHaveLength(1);
+};
+
+const OrderingProbe = () => {
+  const { stepIndex, isPriorStep, isAfterStep } = useStepper();
+  return (
+    <span>
+      {`${stepIndex('email')}:${isPriorStep('email')}:${isAfterStep('email')}`}
+    </span>
+  );
 };
 
 describe('Stepper child reveal', () => {
@@ -164,6 +174,47 @@ describe('Stepper child reveal', () => {
     expect(button('Account').getAttribute('aria-disabled')).toBe('true');
     await user.click(button('Account'));
     expect(onStepClick).not.toHaveBeenCalled();
+  });
+
+  test.each(['email', 'removed'])(
+    'falls back to the first enabled child when currentStep is %s',
+    (currentStep) => {
+      const disabledEmail = steps.slice(1).map((step) =>
+        step.id === 'account'
+          ? {
+              ...step,
+              children: [
+                { id: 'email', title: 'Email', status: 'disabled' as const },
+                { id: 'profile', title: 'Profile' },
+              ],
+            }
+          : step,
+      );
+      render(
+        <Example
+          steps={disabledEmail}
+          currentStep={currentStep === 'removed' ? 'removed' : 'email'}
+        />,
+      );
+      expect(button('Profile').getAttribute('aria-current')).toBe('step');
+      expect(button('Email').getAttribute('aria-disabled')).toBe('true');
+    },
+  );
+
+  test('ordering helpers include unrevealed child steps', () => {
+    render(
+      <Grommet>
+        <Stepper
+          steps={steps}
+          currentStep="intro"
+          direction="vertical"
+          aria-label="Setup progress"
+        >
+          <OrderingProbe />
+        </Stepper>
+      </Grommet>,
+    );
+    expect(screen.getByText('2:false:true')).toBeTruthy();
   });
 
   test('remembers multiple revealed parents across controlled changes', () => {

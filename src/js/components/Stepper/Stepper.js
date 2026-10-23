@@ -134,11 +134,19 @@ const Stepper = forwardRef(
             (step) => step.parentId === match.id && step.status !== 'disabled',
           );
           if (firstEnabledChild) return firstEnabledChild.id;
+        } else {
+          return currentStep;
         }
-        return currentStep;
       }
-      const fallback = allSteps.find((s) => s.status !== 'disabled');
-      return fallback ? fallback.id : allSteps[0]?.id || '';
+
+      // Parent rows with children are group headings, not navigable stops.
+      // Resolve invalid/disabled currentStep values to the first enabled leaf.
+      const fallback = allSteps.find(
+        (step) =>
+          (!step.childIds.length || step.isSubStep) &&
+          step.status !== 'disabled',
+      );
+      return fallback?.id || allSteps[0]?.id || '';
     }, [currentStep, allSteps]);
 
     // Reveal a whole group on entry, not just the active child. Remember
@@ -202,8 +210,8 @@ const Stepper = forwardRef(
     );
 
     const stepIndex = useCallback(
-      (stepId) => flatSteps.findIndex((s) => s.id === stepId),
-      [flatSteps],
+      (stepId) => allSteps.findIndex((s) => s.id === stepId),
+      [allSteps],
     );
 
     const isPriorStep = useCallback(
