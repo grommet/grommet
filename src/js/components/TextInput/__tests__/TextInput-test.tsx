@@ -1081,16 +1081,70 @@ describe('TextInput', () => {
     );
   });
 
-  test('zeros right padding when copy button is reversed', () => {
+  test.each([
+    ['start', undefined],
+    ['center', undefined],
+    ['end', undefined],
+    ['start', '23px'],
+    ['center', '23px'],
+    ['end', '23px'],
+  ] as const)(
+    'preserves %s-aligned padding with clear visible and hidden (%s)',
+    async (textAlign, horizontal) => {
+      const user = userEvent.setup();
+
+      render(
+        <Grommet
+          theme={
+            horizontal
+              ? { global: { input: { padding: { horizontal } } } }
+              : undefined
+          }
+        >
+          <TextInput aria-label="Reference" textAlign={textAlign} />
+          <TextInput
+            aria-label="Clear value"
+            textAlign={textAlign}
+            defaultValue="Short value"
+            clear
+          />
+        </Grommet>,
+      );
+
+      const input = screen.getByRole('textbox', { name: 'Clear value' });
+      const reference = screen.getByRole('textbox', { name: 'Reference' });
+      const padding = window.getComputedStyle(reference).paddingRight;
+      expect(padding).not.toBe('0px');
+      expect(window.getComputedStyle(input).paddingRight).toBe(padding);
+
+      const clearButton = screen.getByRole('button', { name: 'Clear' });
+      await user.click(clearButton);
+
+      expect(clearButton).not.toBeVisible();
+      expect(input).toHaveFocus();
+      expect(window.getComputedStyle(input).paddingRight).toBe(padding);
+
+      await user.type(input, 'Short value');
+
+      expect(clearButton).toBeVisible();
+      expect(window.getComputedStyle(input).paddingRight).toBe(padding);
+    },
+  );
+
+  test('preserves right padding when copy button is reversed', () => {
     render(
       <Grommet>
+        <TextInput aria-label="Reference" />
         <TextInput value="test" copy reverse aria-label="Reversed copy" />
       </Grommet>,
     );
 
     const input = screen.getByLabelText('Reversed copy');
 
-    expect(input).toHaveStyleRule('padding-right', '0px');
+    const reference = screen.getByRole('textbox', { name: 'Reference' });
+    expect(window.getComputedStyle(input).paddingRight).toBe(
+      window.getComputedStyle(reference).paddingRight,
+    );
   });
 
   test('supports copy, password toggle, and reverse icon together', async () => {
