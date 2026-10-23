@@ -12,14 +12,16 @@ const getStateProps = (theme, effectiveState) =>
 export const StepperLabel = ({ ...rest }) => {
   const { currentStep, direction } = useStepper();
   const { theme } = useThemeValue();
-  const { step, isSubStep } = useStepItem();
+  const { step, isSubStep, isDisabled } = useStepItem();
   if (!step) return null;
 
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
     !isSubStep && step.children?.some((c) => c.id === currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
-  const effectiveState = getEffectiveState(step.status, isHighlighted);
+  const effectiveState = isDisabled
+    ? 'disabled'
+    : getEffectiveState(step.status, isHighlighted);
   const stateProps = getStateProps(theme, effectiveState);
   const size = isSubStep
     ? theme.stepper?.label?.substep?.size || 'small'

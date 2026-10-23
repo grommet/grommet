@@ -68,11 +68,17 @@ const OrderingProbe = () => {
         stepIndex('review'),
         steps[stepIndex('review')]?.id,
         canNavigateTo('email'),
+        canNavigateTo('account'),
         isPriorStep('email'),
         isAfterStep('email'),
       ].join('|')}
     </span>
   );
+};
+
+const ParentNavigationProbe = () => {
+  const { canNavigateTo } = useStepper();
+  return <span>{String(canNavigateTo('account'))}</span>;
 };
 
 describe('Stepper child reveal', () => {
@@ -224,9 +230,71 @@ describe('Stepper child reveal', () => {
     );
     expect(
       screen.getByText(
-        'intro,account,email,profile,billing,card,address,review|7|review|true|false|true',
+        'intro,account,email,profile,billing,card,address,review|7|review|true|true|false|true',
       ),
     ).toBeTruthy();
+  });
+
+  test('canNavigateTo rejects a parent with only disabled children', () => {
+    const allDisabledChildren = steps.map((step) =>
+      step.id === 'account'
+        ? {
+            ...step,
+            children: step.children?.map((child) => ({
+              ...child,
+              status: 'disabled' as const,
+            })),
+          }
+        : step,
+    );
+    render(
+      <Grommet>
+        <Stepper
+          steps={allDisabledChildren}
+          currentStep="intro"
+          direction="vertical"
+          aria-label="Setup progress"
+        >
+          <ParentNavigationProbe />
+        </Stepper>
+      </Grommet>,
+    );
+    expect(screen.getByText('false')).toBeTruthy();
+  });
+
+  test('parent with only disabled children uses disabled visuals', () => {
+    const allDisabledChildren = steps.map((step) =>
+      step.id === 'account'
+        ? {
+            ...step,
+            children: step.children?.map((child) => ({
+              ...child,
+              status: 'disabled' as const,
+            })),
+          }
+        : step,
+    );
+    render(
+      <Grommet
+        theme={{
+          stepper: {
+            pending: { label: { color: '#123456' } },
+            disabled: { label: { color: '#654321' } },
+          },
+        }}
+      >
+        <Stepper
+          steps={allDisabledChildren}
+          currentStep="intro"
+          direction="vertical"
+          aria-label="Setup progress"
+        />
+      </Grommet>,
+    );
+    const accountLabel = screen.getByText('Account');
+    expect(window.getComputedStyle(accountLabel).color).toBe(
+      'rgb(101, 67, 33)',
+    );
   });
 
   test('remembers multiple revealed parents across controlled changes', () => {

@@ -240,7 +240,15 @@ const Stepper = forwardRef(
     const canNavigateTo = useCallback(
       (stepId) => {
         const step = allSteps.find((s) => s.id === stepId);
-        return clickableSteps && step && step.status !== 'disabled';
+        if (!clickableSteps || !step || step.status === 'disabled')
+          return false;
+        if (step.childIds.length) {
+          return allSteps.some(
+            (child) =>
+              child.parentId === step.id && child.status !== 'disabled',
+          );
+        }
+        return true;
       },
       [allSteps, clickableSteps],
     );
