@@ -30,10 +30,6 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'flex: 1 1 auto;'}
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'min-width: 0;'}
-  ${(props) => {
-    if (!(props.readOnlyCopy || props.hasButton)) return '';
-    return 'padding-right: 0px;';
-  }}
   // readOnly border is handled by StyledTextInputContainer
   ${(props) => (props.readOnly || props.hasButton) && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}
