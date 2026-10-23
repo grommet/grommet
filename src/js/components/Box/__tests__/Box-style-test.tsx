@@ -324,4 +324,19 @@ describe('Box', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('hoverIndicator with border', () => {
+    const { container } = render(
+      <Grommet>
+        <Box>
+          <Box
+            onClick={() => {}}
+            hoverIndicator={{ border: { color: 'status-ok' } }}
+          ></Box>
+        </Box>
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
