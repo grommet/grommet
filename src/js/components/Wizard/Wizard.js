@@ -18,6 +18,7 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
 import { WizardContext } from './WizardContext';
+import { WizardRevealContext } from './WizardRevealContext';
 import { WizardHeader } from './WizardHeader';
 import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
@@ -211,6 +212,26 @@ const Wizard = forwardRef(
     const currentStep = isControlled ? currentStepProp : uncontrolledStep;
     const latest = useRef({ currentStep, steps });
     latest.current = { currentStep, steps };
+    const [revealedParentIds, setRevealedParentIds] = useState(() => new Set());
+    const currentParentId = useMemo(
+      () =>
+        steps.find(
+          (step) =>
+            step.children?.length &&
+            (step.id === currentStep ||
+              step.children.some((child) => child.id === currentStep)),
+        )?.id,
+      [steps, currentStep],
+    );
+    if (currentParentId && !revealedParentIds.has(currentParentId)) {
+      setRevealedParentIds(
+        new Set(Array.from(revealedParentIds).concat(currentParentId)),
+      );
+    }
+    const revealedParentIdList = useMemo(
+      () => Array.from(revealedParentIds),
+      [revealedParentIds],
+    );
     const mounted = useRef(false);
     const navigationVersion = useRef(0);
     const validationInFlight = useRef();
@@ -364,7 +385,7 @@ const Wizard = forwardRef(
             );
           }
           return undefined;
-        }     
+        }
         return !match.disabled ? nextId : undefined;
       }
       let nextIndex = currentStepIndex + 1;
@@ -750,8 +771,8 @@ const Wizard = forwardRef(
 
     const canGoNext = !currentStepObj?.disabled && !isValidating;
     const isBlocked =
-      (currentValidation?.form?.ok === false ||
-        currentValidation?.callback?.ok === false);
+      currentValidation?.form?.ok === false ||
+      currentValidation?.callback?.ok === false;
     const isCompleted = completedSteps.has(currentStep);
 
     const contextValue = useMemo(
@@ -872,18 +893,20 @@ const Wizard = forwardRef(
       );
     }
     return (
-      <WizardContext.Provider value={contextValue}>
-        <Box
-          ref={wizardRef}
-          id={id}
-          aria-label={ariaLabel}
-          role="region"
-          flex={{ grow: 1, shrink: 1 }}
-          {...rest}
-        >
-          {content}
-        </Box>
-      </WizardContext.Provider>
+      <WizardRevealContext.Provider value={revealedParentIdList}>
+        <WizardContext.Provider value={contextValue}>
+          <Box
+            ref={wizardRef}
+            id={id}
+            aria-label={ariaLabel}
+            role="region"
+            flex={{ grow: 1, shrink: 1 }}
+            {...rest}
+          >
+            {content}
+          </Box>
+        </WizardContext.Provider>
+      </WizardRevealContext.Provider>
     );
   },
 );

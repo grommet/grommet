@@ -16,6 +16,7 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { Keyboard } from '../Keyboard';
 
 import { StepperContext } from './StepperContext';
+import { StepperRevealContext } from './StepperRevealContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
 
@@ -75,10 +76,9 @@ const Stepper = forwardRef(
     ref,
   ) => {
     const { format } = useContext(MessageContext);
+    const revealedParentIds = useContext(StepperRevealContext);
     const stepRefs = useRef(new Map());
-    const flatSteps = useMemo(() => flattenSteps(steps), [steps]);
-    const stepsRef = useRef(flatSteps);
-    stepsRef.current = flatSteps;
+    const allSteps = useMemo(() => flattenSteps(steps), [steps]);
 
     useEffect(() => {
       if (process.env.NODE_ENV !== 'production') {
@@ -108,7 +108,7 @@ const Stepper = forwardRef(
         );
       }
       if (currentStep) {
-        const currentStepObj = flatSteps.find((s) => s.id === currentStep);
+        const currentStepObj = allSteps.find((s) => s.id === currentStep);
         if (!currentStepObj) {
           console.warn(
             'Stepper: currentStep "' +
@@ -127,28 +127,79 @@ const Stepper = forwardRef(
 
     // Determine effective current step (fallback to first non-disabled)
     const effectiveCurrentStep = useMemo(() => {
-      const match = flatSteps.find((s) => s.id === currentStep);
-      if (match && match.status !== 'disabled') return currentStep;
-      const fallback = flatSteps.find((s) => s.status !== 'disabled');
-      return fallback ? fallback.id : flatSteps[0]?.id || '';
-    }, [currentStep, flatSteps]);
+      const match = allSteps.find((s) => s.id === currentStep);
+      if (match && match.status !== 'disabled') {
+        if (!match.isSubStep && match.childIds.length) {
+          const firstEnabledChild = allSteps.find(
+            (step) => step.parentId === match.id && step.status !== 'disabled',
+          );
+          if (firstEnabledChild) return firstEnabledChild.id;
+        }
+        return currentStep;
+      }
+      const fallback = allSteps.find((s) => s.status !== 'disabled');
+      return fallback ? fallback.id : allSteps[0]?.id || '';
+    }, [currentStep, allSteps]);
+
+    // Reveal a whole group on entry, not just the active child. Remember
+    // groups by id so controlled changes and recreated step objects do not
+    // collapse visited children. Adjust during render so an initial
+    // current child is visible immediately, without an effect or hidden frame.
+    const currentParentId = allSteps.find(
+      (step) => step.id === effectiveCurrentStep,
+    )?.parentId;
+    const [localRevealedParents, setLocalRevealedParents] = useState(
+      () => new Set(),
+    );
+    const revealedParents = useMemo(
+      () =>
+        revealedParentIds ? new Set(revealedParentIds) : localRevealedParents,
+      [revealedParentIds, localRevealedParents],
+    );
+    if (
+      revealedParentIds === undefined &&
+      currentParentId &&
+      !localRevealedParents.has(currentParentId)
+    ) {
+      setLocalRevealedParents(
+        new Set(Array.from(localRevealedParents).concat(currentParentId)),
+      );
+    }
+    const flatSteps = useMemo(
+      () =>
+        allSteps.filter(
+          (step) =>
+            !step.isSubStep ||
+            step.parentId === currentParentId ||
+            revealedParents.has(step.parentId),
+        ),
+      [allSteps, currentParentId, revealedParents],
+    );
+    const stepsRef = useRef(flatSteps);
+    stepsRef.current = flatSteps;
 
     // Roving tabindex: only the focused step has tabIndex=0,
     // all others have tabIndex=-1. A ref keeps the index synchronous
-    // for keyboard handlers that fire before React re-renders.
+    // for keyboard handlers that fire before React re-renders. Track the
+    // step by id so inserting revealed children does not shift focus.
     const currentIndex = flatSteps.findIndex(
       (s) => s.id === effectiveCurrentStep,
     );
     const flatStepsLength = flatSteps.length;
-    const [focusedIndex, setFocusedIndex] = useState(
-      currentIndex >= 0 ? currentIndex : 0,
-    );
+    const [focusedStep, setFocusedStep] = useState(effectiveCurrentStep);
+    const focusedStepIndex = flatSteps.findIndex((s) => s.id === focusedStep);
+    const focusedIndex =
+      focusedStepIndex >= 0 ? focusedStepIndex : Math.max(currentIndex, 0);
     const focusedIndexRef = useRef(focusedIndex);
+    focusedIndexRef.current = focusedIndex;
 
-    const updateFocusedIndex = useCallback((idx) => {
-      focusedIndexRef.current = idx;
-      setFocusedIndex(idx);
-    }, []);
+    const updateFocusedIndex = useCallback(
+      (idx) => {
+        focusedIndexRef.current = idx;
+        setFocusedStep(flatSteps[idx]?.id);
+      },
+      [flatSteps],
+    );
 
     const stepIndex = useCallback(
       (stepId) => flatSteps.findIndex((s) => s.id === stepId),
@@ -221,7 +272,9 @@ const Stepper = forwardRef(
     // in the given direction (+1 forward, -1 backward).
     const findNextEnabledIndex = useCallback(
       (startIndex, delta) =>
-        (startIndex + delta + flatStepsLength) % flatStepsLength,
+        flatStepsLength
+          ? (startIndex + delta + flatStepsLength) % flatStepsLength
+          : undefined,
       [flatStepsLength],
     );
 
@@ -309,8 +362,12 @@ const Stepper = forwardRef(
       steps.forEach((step, parentIdx) => {
         const parentFlatIndex = flatIndex;
         flatIndex += 1;
-        const childElements = step.children
-          ? step.children.map((child) => {
+        const visibleChildren =
+          revealedParents.has(step.id) || step.id === currentParentId
+            ? step.children
+            : undefined;
+        const childElements = visibleChildren
+          ? visibleChildren.map((child) => {
               const childFlatIndex = flatIndex;
               flatIndex += 1;
               return (

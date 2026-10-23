@@ -6,6 +6,8 @@ import { Stepper } from '../Stepper';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useWizard } from './WizardContext';
+import { WizardRevealContext } from './WizardRevealContext';
+import { StepperRevealContext } from '../Stepper/StepperRevealContext';
 
 // WizardProgress delegates step rendering to <Stepper>. Descriptions
 // are hidden by default (WizardStepHeader shows them in the body).
@@ -16,6 +18,7 @@ export const WizardProgress = ({
 }) => {
   const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
+  const revealedParentIds = React.useContext(WizardRevealContext);
   const {
     steps,
     clickableSteps,
@@ -92,15 +95,17 @@ export const WizardProgress = ({
       alignSelf={showProgress === 'vertical' ? 'start' : undefined}
       {...rest}
     >
-      <Stepper
-        steps={stepperSteps}
-        currentStep={currentStep}
-        direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
-        clickableSteps={clickableSteps}
-        onStepClick={onStepClick}
-        showDescription={showDescription}
-        aria-label={ariaLabel}
-      />
+      <StepperRevealContext.Provider value={revealedParentIds}>
+        <Stepper
+          steps={stepperSteps}
+          currentStep={currentStep}
+          direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
+          clickableSteps={clickableSteps}
+          onStepClick={onStepClick}
+          showDescription={showDescription}
+          aria-label={ariaLabel}
+        />
+      </StepperRevealContext.Provider>
     </Box>
   );
 };
