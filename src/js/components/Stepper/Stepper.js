@@ -13,6 +13,9 @@ import React, {
 import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
 
+import { useThemeValue } from '../../utils/useThemeValue';
+import { deepMerge } from '../../utils/object';
+
 import { Keyboard } from '../Keyboard';
 
 import { StepperContext } from './StepperContext';
@@ -75,6 +78,8 @@ const Stepper = forwardRef(
     ref,
   ) => {
     const { format } = useContext(MessageContext);
+    const { theme } = useThemeValue();
+
     const stepRefs = useRef(new Map());
     const flatSteps = useMemo(() => flattenSteps(steps), [steps]);
     const stepsRef = useRef(flatSteps);
@@ -357,6 +362,9 @@ const Stepper = forwardRef(
       return elements;
     };
 
+    const stepperTheme = direction === 'horizontal'
+      ? theme.stepper
+      : deepMerge({}, theme.stepper, theme.stepper?.vertical);
     const stepperContent = (
       <Box
         ref={ref}
@@ -374,6 +382,7 @@ const Stepper = forwardRef(
         pad="none"
         margin="none"
         style={{ listStyle: 'none' }}
+        {...stepperTheme.container}
         {...rest}
       >
         {children || renderDefaultSteps()}
