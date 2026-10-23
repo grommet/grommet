@@ -33,7 +33,7 @@ Beta - APIs are subject to change:
 
 - Enhanced Wizard with `clickableSteps`, `closable`, and `form` props, React-node titles, and improved navigation and error handling. (#8132)
 - Enhanced Wizard validation to preserve `step` validation state and improve skippable-step behavior. (#8191)
-- Fixed Stepper sub-step connector line and label/indicator alignment when a parent step's title wraps to multiple lines. (#XXXX)
+- Fixed Stepper sub-step connector line and label/indicator alignment when a parent step's title wraps to multiple lines. (#8202)
 
 # 2.57.0
 
