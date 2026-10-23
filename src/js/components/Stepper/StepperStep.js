@@ -3,6 +3,7 @@
 import React, { useContext, useMemo } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { Box } from '../Box';
 import { useStepper, StepItemContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
@@ -11,11 +12,12 @@ import { StepperError, StepperDisabledReason } from './StepperHelperText';
 import { StepConnector } from './StepConnector';
 import {
   StyledStepItem,
-  StyledStepButton,
-  StyledStepContent,
+  // StyledStepButton,
+  // StyledStepContent,
   StyledConnector,
   StyledSubStepsList,
 } from './StyledStepper';
+import { deepMerge } from '../../utils';
 
 export const StepperStep = ({
   step,
@@ -27,14 +29,14 @@ export const StepperStep = ({
   index: indexProp,
   isSubStep,
   subSteps,
-  onFocusStep,
+  // onFocusStep,
   stepsRef,
   stepRefs,
 }) => {
   const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
     useStepper();
   const { format } = useContext(MessageContext);
-  const { passThemeFlag } = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const index =
     indexProp !== undefined
       ? indexProp
@@ -64,15 +66,6 @@ export const StepperStep = ({
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      if (isClickable && onStepClick) {
-        onStepClick(step.id);
-      }
-    }
-  };
-
   const totalSteps = stepsRef.current?.length || stepNumber;
   const ariaLabel =
     step['aria-label'] ||
@@ -93,30 +86,29 @@ export const StepperStep = ({
     describedBy.push(`stepper-reason-${step.id}`);
   }
 
+  const stepperTheme = deepMerge(
+    {},
+    theme.stepper,
+    direction === 'vertical' ? theme.stepper?.vertical : {},
+  );
+
   const focusableProps = isReadOnly
     ? // null rather than undefined, so Button's `type = 'button'` default
       // parameter doesn't put a type attribute on the rendered div
       { type: null }
     : {
+        // as: 'button',
         tabIndex: focusedIndex === index ? 0 : -1,
         onClick: handleClick,
-        onKeyDown: handleKeyDown,
-        onFocus: () => {
-          if (onFocusStep) onFocusStep(index);
-        },
-        type: 'button',
+        // onKeyDown: handleKeyDown,
+        // onFocus: () => {
+        //   if (onFocusStep) onFocusStep(index);
+        // },
+        // type: 'button',
       };
 
-  return (
-    <StepItemContext.Provider value={stepItemValue}>
-      <StyledStepItem
-        direction={direction}
-        isSubStep={isSubStep}
-        isLast={isLast}
-        hasSubSteps={!!subSteps?.length}
-        {...passThemeFlag}
-      >
-        <StyledStepButton
+      /*
+         <StyledStepButton
           plain
           // indicator provides focus-visible treatment; avoid a second ring
           focusIndicator={false}
@@ -140,19 +132,53 @@ export const StepperStep = ({
           direction={direction}
           {...focusableProps}
         >
-          <StepperIndicator />
           <StyledStepContent
             direction={direction}
             isSubStep={isSubStep}
             hasDescription={!!step.description}
             {...passThemeFlag}
           >
+        */
+  return (
+    <StepItemContext.Provider value={stepItemValue}>
+      <StyledStepItem
+        direction={direction}
+        isSubStep={isSubStep}
+        isLast={isLast}
+        hasSubSteps={!!subSteps?.length}
+        {...passThemeFlag}
+      >
+        <Box
+          // indicator provides focus-visible treatment; avoid a second ring
+          // focusIndicator={false}
+          // forwardedAs={isReadOnly ? 'div' : 'button'}
+          role={isReadOnly ? 'group' : undefined}
+          ref={(el) => {
+            if (stepRefs) {
+              if (el) stepRefs.current.set(index, el);
+              else stepRefs.current.delete(index);
+            }
+          }}
+          aria-current={isHighlighted ? 'step' : undefined}
+          aria-disabled={isDisabled || undefined}
+          aria-label={ariaLabel}
+          aria-describedby={
+            describedBy.length > 0 ? describedBy.join(' ') : undefined
+          }
+          // isClickable={isClickable}
+          // isDisabled={isDisabled}
+          // isSubStep={isSubStep}
+          {...focusableProps}
+          {...stepperTheme.button}
+        >
+          <StepperIndicator />
+          <Box align={ direction === 'vertical' ? 'start' : 'center' }>
             <StepperLabel />
             {showDescription && <StepperDescription />}
             <StepperError />
             <StepperDisabledReason />
-          </StyledStepContent>
-        </StyledStepButton>
+          </Box>
+        </Box>
         {(showConnector !== undefined ? showConnector : !isLast) &&
           !subSteps?.length && (
             <StyledConnector
