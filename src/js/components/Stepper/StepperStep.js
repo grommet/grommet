@@ -43,9 +43,17 @@ export const StepperStep = ({
   const hasCurrentChild =
     !isSubStep && step.children?.some((c) => c.id === currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
-  const isDisabled = step.status === 'disabled';
+  const hasChildren = !!step.children?.length;
+  const hasEnabledChild = step.children?.some(
+    (child) => child.status !== 'disabled',
+  );
+  const isDisabled =
+    step.status === 'disabled' || (hasChildren && !hasEnabledChild);
   const isClickable = clickableSteps && !isDisabled;
   const isReadOnly = !clickableSteps;
+  const navigationStepId = hasChildren
+    ? step.children.find((child) => child.status !== 'disabled')?.id
+    : step.id;
 
   const stepItemValue = useMemo(
     () => ({
@@ -54,21 +62,22 @@ export const StepperStep = ({
       isLast,
       isLabelRevealed: direction === 'vertical' || focusedIndex === index,
       isSubStep,
+      isDisabled,
     }),
-    [step, index, isLast, direction, focusedIndex, isSubStep],
+    [step, index, isLast, direction, focusedIndex, isSubStep, isDisabled],
   );
 
   const handleClick = () => {
-    if (isClickable && onStepClick) {
-      onStepClick(step.id);
+    if (isClickable && navigationStepId && onStepClick) {
+      onStepClick(navigationStepId);
     }
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      if (isClickable && onStepClick) {
-        onStepClick(step.id);
+      if (isClickable && navigationStepId && onStepClick) {
+        onStepClick(navigationStepId);
       }
     }
   };

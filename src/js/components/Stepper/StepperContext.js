@@ -24,6 +24,7 @@ export const StepItemContext = createContext({
   isLast: false,
   isLabelRevealed: false,
   isSubStep: false,
+  isDisabled: false,
 });
 
 export const useStepper = () => useContext(StepperContext);
