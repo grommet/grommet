@@ -2389,75 +2389,78 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     stepper: {
+      container: {
+
+      },
       indicator: {
         size: 'medium', // 'small' | 'medium' | 'large'
-        border: {
-          width: '2px',
-        },
+        iconSize: 'medium',
+        border: { size: 'small' },
+        round: '50%',
+        align: 'center',
+        justify: 'center',
       },
-      label: {
-        size: 'medium',
-        substep: {
-          size: 'small',
-        },
-      },
+      label: { size: 'medium' },
       connector: {
-        stroke: { width: 'small' },
+        thickness: 'small',
+        color: 'border',
+        // margin: 'xxsmall', // horizontal only
       },
       description: {
         size: 'small',
         color: 'text-weak',
       },
-      helperText: {
+      errorText: {
+        size: 'xsmall',
+        color: 'status-critical',
+      },
+      disabledReason: {
         size: 'xsmall',
         color: 'text-weak',
       },
       button: {
         pad: 'xxsmall',
-      },
-      horizontal: {
-        connector: {
-          margin: 'xxsmall',
-        },
-        button: {
-          gap: 'xsmall',
-        },
+        gap: 'xsmall',
+        direction: 'column',
+        alignItems: 'center',
+        align: 'center',
       },
       vertical: {
         button: {
           gap: 'small',
+          direction: 'row',
+          alignItems: 'start',
+          align: 'start',
         },
+      },
+      substep: {
+        indicator: {
+          size: 'small',
+          iconSize: 'small',
+        },
+        label: { size: 'small' },
       },
       // States: [component].[state].[element].[property]
       pending: {
         indicator: {
           background: 'background-front',
           color: 'text-strong',
-          border: 'text-xweak',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            background: 'background-front',
-            border: 'text-strong',
-          },
+          border: { color: 'text-xweak' },
+          // hover: {
+          //   background: 'background-front',
+          //   border: 'text-strong',
+          // },
         },
-        label: { color: 'text' },
-        connector: { color: 'border' },
       },
       current: {
         indicator: {
           icon: StatusGoodSmall,
-          iconSize: 'medium',
           background: 'brand',
           color: 'white',
-          border: 'brand',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            color: 'white',
-          },
+          border: { color: 'brand' },
+          // hover: {
+          //   color: 'white',
+          // },
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
@@ -2466,16 +2469,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       currentCompleted: {
         indicator: {
           icon: FormCheckmark,
-          iconSize: 'medium',
           background: 'brand',
           color: 'white',
-          border: 'brand',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            color: 'white',
-          },
+          border: { color: 'brand' },
+          // hover: {
+          //   color: 'white',
+          // },
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
@@ -2484,16 +2483,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       completed: {
         indicator: {
           icon: FormCheckmark,
-          iconSize: 'medium',
           background: 'background-front',
           color: 'brand',
-          border: 'brand',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            background: 'background-front',
-          },
+          border: { color: 'brand' },
+          // hover: {
+          //   background: 'background-front',
+          // },
         },
         label: { color: 'text-weak' },
         connector: { color: 'brand' },
@@ -2501,48 +2496,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       error: {
         indicator: {
           icon: StatusCriticalSmall,
+          iconSize: 'small',
           background: 'background-front',
           color: 'status-critical',
-          border: 'status-critical',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            background: 'background-front',
-          },
+          border: { color: 'status-critical' },
+          // hover: {
+          //   background: 'background-front',
+          // },
         },
-        label: { color: 'text' },
         connector: { color: 'status-critical' },
-        helperText: { color: 'status-critical' },
       },
       currentError: {
         indicator: {
           icon: StatusCriticalSmall,
+          iconSize: 'small',
           background: 'status-critical',
           color: 'white',
-          border: 'status-critical',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            color: 'white',
-          },
+          border: { color: 'status-critical' },
+          // hover: {
+          //   color: 'white',
+          // },
         },
-        label: {
-          color: 'status-critical',
-        },
+        label: { color: 'status-critical' },
       },
       disabled: {
         indicator: {
           background: 'background-contrast',
           color: 'text-weak',
-          border: 'border',
-          substep: {
-            iconSize: 'small',
-          },
+          border: { color: 'border' },
         },
         label: { color: 'text-weak' },
-        connector: { color: 'border' },
       },
     },
     table: {
