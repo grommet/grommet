@@ -21,4 +21,5 @@ export const Uncontrolled = () => {
 
 export default {
   title: 'Input/TimeInput/Uncontrolled',
+  component: TimeInput,
 };
