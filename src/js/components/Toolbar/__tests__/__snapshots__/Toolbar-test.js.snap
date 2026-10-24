@@ -485,12 +485,14 @@ exports[`DataFilters renders 1`] = `
                   >
                     <label
                       class="c14"
+                      for="_r_0_"
                     >
                       <div
                         class="c15 c16"
                       >
                         <input
                           class="c17"
+                          id="_r_0_"
                           type="checkbox"
                         />
                         <div
@@ -506,12 +508,14 @@ exports[`DataFilters renders 1`] = `
                     />
                     <label
                       class="c14"
+                      for="_r_1_"
                     >
                       <div
                         class="c15 c16"
                       >
                         <input
                           class="c17"
+                          id="_r_1_"
                           type="checkbox"
                         />
                         <div
@@ -1010,12 +1014,14 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
                 >
                   <label
                     class="c13"
+                    for="_r_2_"
                   >
                     <div
                       class="c14 c15"
                     >
                       <input
                         class="c16"
+                        id="_r_2_"
                         type="checkbox"
                       />
                       <div
@@ -1031,12 +1037,14 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
                   />
                   <label
                     class="c13"
+                    for="_r_3_"
                   >
                     <div
                       class="c14 c15"
                     >
                       <input
                         class="c16"
+                        id="_r_3_"
                         type="checkbox"
                       />
                       <div
@@ -1554,12 +1562,14 @@ exports[`DataFilters theme gap 1`] = `
                     >
                       <label
                         class="c14"
+                        for="_r_4_"
                       >
                         <div
                           class="c15 c16"
                         >
                           <input
                             class="c17"
+                            id="_r_4_"
                             type="checkbox"
                           />
                           <div
@@ -1575,12 +1585,14 @@ exports[`DataFilters theme gap 1`] = `
                       />
                       <label
                         class="c14"
+                        for="_r_5_"
                       >
                         <div
                           class="c15 c16"
                         >
                           <input
                             class="c17"
+                            id="_r_5_"
                             type="checkbox"
                           />
                           <div

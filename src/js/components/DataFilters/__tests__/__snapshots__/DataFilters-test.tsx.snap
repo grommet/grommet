@@ -344,6 +344,7 @@ exports[`DataFilters clear 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_e_"
                   >
                     <div
                       class="c10 c11"
@@ -351,6 +352,7 @@ exports[`DataFilters clear 1`] = `
                       <input
                         checked=""
                         class="c12"
+                        id="_r_e_"
                         type="checkbox"
                       />
                       <div
@@ -377,12 +379,14 @@ exports[`DataFilters clear 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_f_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_f_"
                         type="checkbox"
                       />
                       <div
@@ -1747,12 +1751,14 @@ exports[`DataFilters layer 2`] = `
                   >
                     <label
                       class="c18"
+                      for="_r_4_"
                     >
                       <div
                         class="c19 c20"
                       >
                         <input
                           class="c21"
+                          id="_r_4_"
                           type="checkbox"
                         />
                         <div
@@ -1768,12 +1774,14 @@ exports[`DataFilters layer 2`] = `
                     />
                     <label
                       class="c18"
+                      for="_r_5_"
                     >
                       <div
                         class="c19 c20"
                       >
                         <input
                           class="c21"
+                          id="_r_5_"
                           type="checkbox"
                         />
                         <div
@@ -2159,12 +2167,14 @@ exports[`DataFilters properties array 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_6_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_6_"
                         type="checkbox"
                       />
                       <div
@@ -2180,12 +2190,14 @@ exports[`DataFilters properties array 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_7_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_7_"
                         type="checkbox"
                       />
                       <div
@@ -2532,12 +2544,14 @@ exports[`DataFilters properties object 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_8_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_8_"
                         type="checkbox"
                       />
                       <div
@@ -2553,12 +2567,14 @@ exports[`DataFilters properties object 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_9_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_9_"
                         type="checkbox"
                       />
                       <div
@@ -2905,12 +2921,14 @@ exports[`DataFilters renders 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_0_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_0_"
                         type="checkbox"
                       />
                       <div
@@ -2926,12 +2944,14 @@ exports[`DataFilters renders 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_1_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_1_"
                         type="checkbox"
                       />
                       <div
@@ -3357,12 +3377,14 @@ exports[`DataFilters should display all filter options regardless of result set 
                   >
                     <label
                       class="c9"
+                      for="_r_a_"
                     >
                       <div
                         class="c10 c11"
                       >
                         <input
                           class="c12"
+                          id="_r_a_"
                           type="checkbox"
                         />
                         <div
@@ -3378,12 +3400,14 @@ exports[`DataFilters should display all filter options regardless of result set 
                     />
                     <label
                       class="c9"
+                      for="_r_b_"
                     >
                       <div
                         class="c10 c11"
                       >
                         <input
                           class="c12"
+                          id="_r_b_"
                           type="checkbox"
                         />
                         <div
@@ -3418,12 +3442,14 @@ exports[`DataFilters should display all filter options regardless of result set 
                   >
                     <label
                       class="c9"
+                      for="_r_c_"
                     >
                       <div
                         class="c10 c11"
                       >
                         <input
                           class="c12"
+                          id="_r_c_"
                           type="checkbox"
                         />
                         <div
@@ -3439,12 +3465,14 @@ exports[`DataFilters should display all filter options regardless of result set 
                     />
                     <label
                       class="c9"
+                      for="_r_d_"
                     >
                       <div
                         class="c10 c11"
                       >
                         <input
                           class="c12"
+                          id="_r_d_"
                           type="checkbox"
                         />
                         <div
@@ -4304,6 +4332,7 @@ exports[`DataFilters sub objects 1`] = `
                 >
                   <label
                     class="c9"
+                    for="_r_g_"
                   >
                     <div
                       class="c10 c11"
@@ -4311,6 +4340,7 @@ exports[`DataFilters sub objects 1`] = `
                       <input
                         checked=""
                         class="c12"
+                        id="_r_g_"
                         type="checkbox"
                       />
                       <div
@@ -4337,12 +4367,14 @@ exports[`DataFilters sub objects 1`] = `
                   />
                   <label
                     class="c9"
+                    for="_r_h_"
                   >
                     <div
                       class="c10 c11"
                     >
                       <input
                         class="c12"
+                        id="_r_h_"
                         type="checkbox"
                       />
                       <div
@@ -5279,6 +5311,7 @@ exports[`DataFilters theme footer actions margin and gap 1`] = `
                   >
                     <label
                       class="c9"
+                      for="_r_i_"
                     >
                       <div
                         class="c10 c11"
@@ -5286,6 +5319,7 @@ exports[`DataFilters theme footer actions margin and gap 1`] = `
                         <input
                           checked=""
                           class="c12"
+                          id="_r_i_"
                           type="checkbox"
                         />
                         <div
@@ -5312,12 +5346,14 @@ exports[`DataFilters theme footer actions margin and gap 1`] = `
                     />
                     <label
                       class="c9"
+                      for="_r_j_"
                     >
                       <div
                         class="c10 c11"
                       >
                         <input
                           class="c12"
+                          id="_r_j_"
                           type="checkbox"
                         />
                         <div

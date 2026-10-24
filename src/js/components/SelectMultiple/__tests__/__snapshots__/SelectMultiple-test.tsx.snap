@@ -3517,6 +3517,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            for="_r_d_"
             style="pointer-events: none;"
           >
             <div
@@ -3525,6 +3526,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                id="_r_d_"
                 inert=""
                 tabindex="-1"
                 type="checkbox"
@@ -3564,6 +3566,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            for="_r_e_"
             style="pointer-events: none;"
           >
             <div
@@ -3572,6 +3575,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                id="_r_e_"
                 inert=""
                 tabindex="-1"
                 type="checkbox"
@@ -3611,6 +3615,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
         >
           <label
             class="c14"
+            for="_r_f_"
             style="pointer-events: none;"
           >
             <div
@@ -3619,6 +3624,7 @@ exports[`SelectMultiple showSelectionInline 1`] = `
               <input
                 checked=""
                 class="c17"
+                id="_r_f_"
                 inert=""
                 tabindex="-1"
                 type="checkbox"
@@ -4679,6 +4685,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
           <label
             class="c14"
             disabled=""
+            for="_r_g_"
             style="pointer-events: none;"
           >
             <div
@@ -4689,6 +4696,7 @@ exports[`SelectMultiple showSelectionInline with disabled options 1`] = `
                 checked=""
                 class="c17"
                 disabled=""
+                id="_r_g_"
                 inert=""
                 tabindex="-1"
                 type="checkbox"
@@ -5178,6 +5186,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
         >
           <label
             class="c14"
+            for="_r_l_"
             style="pointer-events: none;"
           >
             <div
@@ -5186,6 +5195,7 @@ exports[`SelectMultiple valueKey and labelKey 1`] = `
               <input
                 checked=""
                 class="c17"
+                id="_r_l_"
                 inert=""
                 tabindex="-1"
                 type="checkbox"
@@ -6578,6 +6588,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
       >
         <label
           class="c11"
+          for="_r_26_"
           style="pointer-events: none;"
         >
           <div
@@ -6585,6 +6596,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
           >
             <input
               class="c14"
+              id="_r_26_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -6613,6 +6625,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
       >
         <label
           class="c11"
+          for="_r_27_"
           style="pointer-events: none;"
         >
           <div
@@ -6620,6 +6633,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
           >
             <input
               class="c14"
+              id="_r_27_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -6648,6 +6662,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
       >
         <label
           class="c11"
+          for="_r_28_"
           style="pointer-events: none;"
         >
           <div
@@ -6655,6 +6670,7 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
           >
             <input
               class="c14"
+              id="_r_28_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -7685,6 +7701,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
           >
             <label
               class="c14"
+              for="_r_29_"
               style="pointer-events: none;"
             >
               <div
@@ -7693,6 +7710,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
                 <input
                   checked=""
                   class="c17"
+                  id="_r_29_"
                   inert=""
                   tabindex="-1"
                   type="checkbox"
@@ -7732,6 +7750,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
           >
             <label
               class="c14"
+              for="_r_2a_"
               style="pointer-events: none;"
             >
               <div
@@ -7740,6 +7759,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
                 <input
                   checked=""
                   class="c17"
+                  id="_r_2a_"
                   inert=""
                   tabindex="-1"
                   type="checkbox"
@@ -7779,6 +7799,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
           >
             <label
               class="c14"
+              for="_r_2b_"
               style="pointer-events: none;"
             >
               <div
@@ -7787,6 +7808,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
                 <input
                   checked=""
                   class="c17"
+                  id="_r_2b_"
                   inert=""
                   tabindex="-1"
                   type="checkbox"
@@ -7826,6 +7848,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
           >
             <label
               class="c14"
+              for="_r_2c_"
               style="pointer-events: none;"
             >
               <div
@@ -7834,6 +7857,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
                 <input
                   checked=""
                   class="c17"
+                  id="_r_2c_"
                   inert=""
                   tabindex="-1"
                   type="checkbox"
@@ -7873,6 +7897,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
           >
             <label
               class="c14"
+              for="_r_2d_"
               style="pointer-events: none;"
             >
               <div
@@ -7881,6 +7906,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
                 <input
                   checked=""
                   class="c17"
+                  id="_r_2d_"
                   inert=""
                   tabindex="-1"
                   type="checkbox"
@@ -8721,6 +8747,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2e_"
           style="pointer-events: none;"
         >
           <div
@@ -8729,6 +8756,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             <input
               checked=""
               class="c23"
+              id="_r_2e_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8768,6 +8796,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2f_"
           style="pointer-events: none;"
         >
           <div
@@ -8776,6 +8805,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             <input
               checked=""
               class="c23"
+              id="_r_2f_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8815,6 +8845,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2g_"
           style="pointer-events: none;"
         >
           <div
@@ -8823,6 +8854,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             <input
               checked=""
               class="c23"
+              id="_r_2g_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8862,6 +8894,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2h_"
           style="pointer-events: none;"
         >
           <div
@@ -8870,6 +8903,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             <input
               checked=""
               class="c23"
+              id="_r_2h_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8909,6 +8943,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2i_"
           style="pointer-events: none;"
         >
           <div
@@ -8917,6 +8952,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             <input
               checked=""
               class="c23"
+              id="_r_2i_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -8956,6 +8992,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2j_"
           style="pointer-events: none;"
         >
           <div
@@ -8964,6 +9001,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
             <input
               checked=""
               class="c23"
+              id="_r_2j_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -9003,6 +9041,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2k_"
           style="pointer-events: none;"
         >
           <div
@@ -9010,6 +9049,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
           >
             <input
               class="c23"
+              id="_r_2k_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -9038,6 +9078,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2l_"
           style="pointer-events: none;"
         >
           <div
@@ -9045,6 +9086,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
           >
             <input
               class="c23"
+              id="_r_2l_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -9073,6 +9115,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2m_"
           style="pointer-events: none;"
         >
           <div
@@ -9080,6 +9123,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
           >
             <input
               class="c23"
+              id="_r_2m_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -9108,6 +9152,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2n_"
           style="pointer-events: none;"
         >
           <div
@@ -9115,6 +9160,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
           >
             <input
               class="c23"
+              id="_r_2n_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -9143,6 +9189,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2o_"
           style="pointer-events: none;"
         >
           <div
@@ -9150,6 +9197,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
           >
             <input
               class="c23"
+              id="_r_2o_"
               inert=""
               tabindex="-1"
               type="checkbox"
@@ -9178,6 +9226,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
       >
         <label
           class="c20"
+          for="_r_2p_"
           style="pointer-events: none;"
         >
           <div
@@ -9185,6 +9234,7 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
           >
             <input
               class="c23"
+              id="_r_2p_"
               inert=""
               tabindex="-1"
               type="checkbox"

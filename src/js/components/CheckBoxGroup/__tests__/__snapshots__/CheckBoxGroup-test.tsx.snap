@@ -122,12 +122,14 @@ exports[`CheckBoxGroup custom theme 1`] = `
   >
     <label
       class="c2"
+      for="_r_n_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_n_"
           type="checkbox"
         />
         <div
@@ -143,12 +145,14 @@ exports[`CheckBoxGroup custom theme 1`] = `
     />
     <label
       class="c2"
+      for="_r_o_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_o_"
           type="checkbox"
         />
         <div
@@ -306,6 +310,7 @@ exports[`CheckBoxGroup defaultValue renders 1`] = `
     >
       <label
         class="c2"
+        for="_r_t_"
       >
         <div
           class="c3 c4"
@@ -313,6 +318,7 @@ exports[`CheckBoxGroup defaultValue renders 1`] = `
           <input
             checked=""
             class="c5"
+            id="_r_t_"
             type="checkbox"
           />
           <div
@@ -339,12 +345,14 @@ exports[`CheckBoxGroup defaultValue renders 1`] = `
       />
       <label
         class="c2"
+        for="_r_u_"
       >
         <div
           class="c3 c4"
         >
           <input
             class="c5"
+            id="_r_u_"
             type="checkbox"
           />
           <div
@@ -474,6 +482,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
     <label
       class="c2"
       disabled=""
+      for="_r_b_"
     >
       <div
         class="c3 c4"
@@ -482,6 +491,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
         <input
           class="c5"
           disabled=""
+          id="_r_b_"
           type="checkbox"
         />
         <div
@@ -499,6 +509,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
     <label
       class="c2"
       disabled=""
+      for="_r_c_"
     >
       <div
         class="c3 c4"
@@ -507,6 +518,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
         <input
           class="c5"
           disabled=""
+          id="_r_c_"
           type="checkbox"
         />
         <div
@@ -526,6 +538,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
     <label
       class="c2"
       disabled=""
+      for="_r_d_"
     >
       <div
         class="c3 c4"
@@ -534,6 +547,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
         <input
           class="c5"
           disabled=""
+          id="_r_d_"
           type="checkbox"
         />
         <div
@@ -553,6 +567,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
     <label
       class="c2"
       disabled=""
+      for="_r_e_"
     >
       <div
         class="c3 c4"
@@ -561,6 +576,7 @@ exports[`CheckBoxGroup disabled renders 1`] = `
         <input
           class="c5"
           disabled=""
+          id="_r_e_"
           type="checkbox"
         />
         <div
@@ -718,12 +734,14 @@ exports[`CheckBoxGroup initial value renders 1`] = `
   >
     <label
       class="c2"
+      for="_r_8_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_8_"
           type="checkbox"
         />
         <div
@@ -739,6 +757,7 @@ exports[`CheckBoxGroup initial value renders 1`] = `
     />
     <label
       class="c2"
+      for="_r_9_"
     >
       <div
         class="c3 c4"
@@ -746,6 +765,7 @@ exports[`CheckBoxGroup initial value renders 1`] = `
         <input
           checked=""
           class="c5"
+          id="_r_9_"
           type="checkbox"
         />
         <div
@@ -772,6 +792,7 @@ exports[`CheckBoxGroup initial value renders 1`] = `
     />
     <label
       class="c2"
+      for="_r_a_"
     >
       <div
         class="c3 c4"
@@ -779,6 +800,7 @@ exports[`CheckBoxGroup initial value renders 1`] = `
         <input
           checked=""
           class="c5"
+          id="_r_a_"
           type="checkbox"
         />
         <div
@@ -917,12 +939,14 @@ exports[`CheckBoxGroup labelKey 1`] = `
   >
     <label
       class="c2"
+      for="_r_j_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_j_"
           type="checkbox"
         />
         <div
@@ -938,12 +962,14 @@ exports[`CheckBoxGroup labelKey 1`] = `
     />
     <label
       class="c2"
+      for="_r_k_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_k_"
           type="checkbox"
         />
         <div
@@ -1100,12 +1126,14 @@ exports[`CheckBoxGroup onChange 1`] = `
   >
     <label
       class="c2"
+      for="_r_f_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_f_"
           type="checkbox"
         />
         <div
@@ -1132,12 +1160,14 @@ exports[`CheckBoxGroup onChange 1`] = `
     />
     <label
       class="c2"
+      for="_r_g_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_g_"
           type="checkbox"
         />
         <div
@@ -1296,12 +1326,14 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 1`] = `
   >
     <label
       class="c2"
+      for="_r_h_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_h_"
           type="checkbox"
         />
         <div
@@ -1328,12 +1360,14 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 1`] = `
     />
     <label
       class="c2"
+      for="_r_i_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_i_"
           type="checkbox"
         />
         <div
@@ -1359,12 +1393,14 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
   >
     <label
       class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dOWXkA"
+      for="_r_h_"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 krZJuA StyledCheckBox-sc-1dbk5ju-6 fXQYEo"
       >
         <input
           class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dEyzxY"
+          id="_r_h_"
           type="checkbox"
         />
         <div
@@ -1380,12 +1416,14 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
     />
     <label
       class="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dOWXkA"
+      for="_r_i_"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 krZJuA StyledCheckBox-sc-1dbk5ju-6 fXQYEo"
       >
         <input
           class="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 dEyzxY"
+          id="_r_i_"
           type="checkbox"
         />
         <div
@@ -1513,12 +1551,14 @@ exports[`CheckBoxGroup options renders 1`] = `
   >
     <label
       class="c2"
+      for="_r_2_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_2_"
           type="checkbox"
         />
         <div
@@ -1534,12 +1574,14 @@ exports[`CheckBoxGroup options renders 1`] = `
     />
     <label
       class="c2"
+      for="_r_3_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_3_"
           type="checkbox"
         />
         <div
@@ -1654,12 +1696,14 @@ exports[`CheckBoxGroup renders without grommet wrapper 1`] = `
 >
   <label
     class="c1"
+    for="_r_4_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_4_"
         type="checkbox"
       />
       <div
@@ -1675,12 +1719,14 @@ exports[`CheckBoxGroup renders without grommet wrapper 1`] = `
   />
   <label
     class="c1"
+    for="_r_5_"
   >
     <div
       class="c2 c3"
     >
       <input
         class="c4"
+        id="_r_5_"
         type="checkbox"
       />
       <div
@@ -1808,12 +1854,14 @@ exports[`CheckBoxGroup theme container gap 1`] = `
     >
       <label
         class="c2"
+        for="_r_v_"
       >
         <div
           class="c3 c4"
         >
           <input
             class="c5"
+            id="_r_v_"
             type="checkbox"
           />
           <div
@@ -1829,12 +1877,14 @@ exports[`CheckBoxGroup theme container gap 1`] = `
       />
       <label
         class="c2"
+        for="_r_10_"
       >
         <div
           class="c3 c4"
         >
           <input
             class="c5"
+            id="_r_10_"
             type="checkbox"
           />
           <div
@@ -1850,12 +1900,14 @@ exports[`CheckBoxGroup theme container gap 1`] = `
       />
       <label
         class="c2"
+        for="_r_11_"
       >
         <div
           class="c3 c4"
         >
           <input
             class="c5"
+            id="_r_11_"
             type="checkbox"
           />
           <div
@@ -2013,6 +2065,7 @@ exports[`CheckBoxGroup value renders 1`] = `
   >
     <label
       class="c2"
+      for="_r_6_"
     >
       <div
         class="c3 c4"
@@ -2020,6 +2073,7 @@ exports[`CheckBoxGroup value renders 1`] = `
         <input
           checked=""
           class="c5"
+          id="_r_6_"
           type="checkbox"
         />
         <div
@@ -2046,12 +2100,14 @@ exports[`CheckBoxGroup value renders 1`] = `
     />
     <label
       class="c2"
+      for="_r_7_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_7_"
           type="checkbox"
         />
         <div
@@ -2179,12 +2235,14 @@ exports[`CheckBoxGroup valueKey 1`] = `
   >
     <label
       class="c2"
+      for="_r_l_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_l_"
           type="checkbox"
         />
         <div
@@ -2200,12 +2258,14 @@ exports[`CheckBoxGroup valueKey 1`] = `
     />
     <label
       class="c2"
+      for="_r_m_"
     >
       <div
         class="c3 c4"
       >
         <input
           class="c5"
+          id="_r_m_"
           type="checkbox"
         />
         <div
