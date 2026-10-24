@@ -691,7 +691,9 @@ exports[`DataSearch renders 1`] = `
             class="c13"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>

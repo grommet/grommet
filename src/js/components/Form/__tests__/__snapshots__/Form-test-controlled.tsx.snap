@@ -187,7 +187,9 @@ exports[`Form controlled controlled 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -221,7 +223,9 @@ exports[`Form controlled controlled 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -255,7 +259,9 @@ exports[`Form controlled controlled 3`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -566,7 +572,9 @@ exports[`Form controlled controlled Array of Form Fields 1`] = `
       class="c6"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -707,7 +715,9 @@ exports[`Form controlled controlled Array of Form Fields 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -848,7 +858,9 @@ exports[`Form controlled controlled Array of Form Fields 3`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1117,7 +1129,9 @@ exports[`Form controlled controlled Array of Form Fields onValidate 1`] = `
       class="c6"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1272,7 +1286,9 @@ exports[`Form controlled controlled Array of Form Fields onValidate 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1541,7 +1557,9 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
       class="c6"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1668,7 +1686,9 @@ exports[`Form controlled controlled Array of Form Fields onValidate custom error
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1877,7 +1897,9 @@ exports[`Form controlled controlled FormField deprecated 1`] = `
       class="c6"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1918,7 +1940,9 @@ exports[`Form controlled controlled FormField deprecated 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -1959,7 +1983,9 @@ exports[`Form controlled controlled FormField deprecated 3`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2152,7 +2178,9 @@ exports[`Form controlled controlled input 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2186,7 +2214,9 @@ exports[`Form controlled controlled input 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2220,7 +2250,9 @@ exports[`Form controlled controlled input 3`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2413,7 +2445,9 @@ exports[`Form controlled controlled input lazy 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2447,7 +2481,9 @@ exports[`Form controlled controlled input lazy 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2481,7 +2517,9 @@ exports[`Form controlled controlled input lazy 3`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2674,7 +2712,9 @@ exports[`Form controlled controlled lazy 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2708,7 +2748,9 @@ exports[`Form controlled controlled lazy 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2742,7 +2784,9 @@ exports[`Form controlled controlled lazy 3`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -2935,7 +2979,9 @@ exports[`Form controlled controlled onChange touched 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3128,7 +3174,9 @@ exports[`Form controlled controlled onValidate 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3190,7 +3238,9 @@ exports[`Form controlled controlled onValidate 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3383,7 +3433,9 @@ exports[`Form controlled controlled onValidate custom error 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3445,7 +3497,9 @@ exports[`Form controlled controlled onValidate custom error 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3638,7 +3692,9 @@ exports[`Form controlled controlled onValidate custom info 1`] = `
       class="c5"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -3695,7 +3751,9 @@ exports[`Form controlled controlled onValidate custom info 2`] = `
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -4251,7 +4309,9 @@ exports[`Form controlled dynamicly removed fields using blur validation\\n  don'
       class="c11"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -4479,7 +4539,9 @@ exports[`Form controlled dynamicly removed fields using blur validation\\n  don'
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -4540,7 +4602,9 @@ exports[`Form controlled dynamicly removed fields using blur validation\\n  don'
       class="StyledButton-sc-323bzc-0 ikpLTN"
       type="submit"
     >
-      Submit
+      <span>
+        Submit
+      </span>
     </button>
   </form>
 </div>
@@ -4707,13 +4771,17 @@ exports[`Form controlled lazy value 1`] = `
       class="c3"
       type="button"
     >
-      set
+      <span>
+        set
+      </span>
     </button>
     <button
       class="c3"
       type="submit"
     >
-      submit
+      <span>
+        submit
+      </span>
     </button>
   </form>
 </div>

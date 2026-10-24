@@ -52869,7 +52869,9 @@ exports[`DataTable sort controlled 1`] = `
       class="c1"
       type="button"
     >
-      Sort data
+      <span>
+        Sort data
+      </span>
     </button>
     <table
       class="c2 c3"
@@ -53401,7 +53403,9 @@ exports[`DataTable sort controlled 2`] = `
       class="c1"
       type="button"
     >
-      Sort data
+      <span>
+        Sort data
+      </span>
     </button>
     <table
       class="c2 c3"

@@ -6555,7 +6555,9 @@ exports[`SelectMultiple with portal renders custom listbox styling 1`] = `
         class="c7"
         type="button"
       >
-        Select All
+        <span>
+          Select All
+        </span>
       </button>
     </div>
     <div
@@ -7915,7 +7917,9 @@ exports[`SelectMultiple with portal theme selectMultiple test 1`] = `
             class="c22"
             type="button"
           >
-            + 1 more
+            <span>
+              + 1 more
+            </span>
           </button>
         </div>
       </div>
@@ -8639,7 +8643,9 @@ exports[`SelectMultiple with portal theme selectMultiple test 2`] = `
           class="c8"
           type="button"
         >
-          Clear All
+          <span>
+            Clear All
+          </span>
         </button>
       </div>
       <div

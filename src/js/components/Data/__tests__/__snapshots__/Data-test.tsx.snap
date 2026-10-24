@@ -1595,7 +1595,9 @@ exports[`Data onView 1`] = `
             class="c6"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>
@@ -4742,7 +4744,9 @@ exports[`Data should render property label and return property value to view whe
               class="c33"
               type="submit"
             >
-              Apply filters
+              <span>
+                Apply filters
+              </span>
             </button>
           </footer>
         </div>
@@ -11142,7 +11146,9 @@ exports[`Data view property range 1`] = `
               class="c17"
               type="button"
             >
-              Clear filters
+              <span>
+                Clear filters
+              </span>
             </button>
           </div>
         </div>

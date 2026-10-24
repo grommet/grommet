@@ -534,7 +534,9 @@ exports[`DataFilters renders 1`] = `
               class="c21"
               type="submit"
             >
-              Apply filters
+              <span>
+                Apply filters
+              </span>
             </button>
           </footer>
         </div>
@@ -1059,7 +1061,9 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
             class="c20"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>
@@ -1603,7 +1607,9 @@ exports[`DataFilters theme gap 1`] = `
                 class="c21"
                 type="submit"
               >
-                Apply filters
+                <span>
+                  Apply filters
+                </span>
               </button>
             </footer>
           </div>

@@ -174,7 +174,9 @@ exports[`DataSummary renders 1`] = `
             class="c7"
             type="submit"
           >
-            Apply filters
+            <span>
+              Apply filters
+            </span>
           </button>
         </footer>
       </div>
@@ -358,7 +360,9 @@ exports[`DataSummary renders filtered message correctly when 0 results but only 
               class="c7"
               type="submit"
             >
-              Apply filters
+              <span>
+                Apply filters
+              </span>
             </button>
           </footer>
         </div>
@@ -543,7 +547,9 @@ exports[`DataSummary renders total message correctly when only 1 item 1`] = `
               class="c7"
               type="submit"
             >
-              Apply filters
+              <span>
+                Apply filters
+              </span>
             </button>
           </footer>
         </div>
@@ -989,7 +995,9 @@ exports[`DataSummary theme separator margin and dataSummary margin 1`] = `
               class="c9"
               type="submit"
             >
-              Apply filters
+              <span>
+                Apply filters
+              </span>
             </button>
           </footer>
         </div>
