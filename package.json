@@ -57,7 +57,7 @@
   "peerDependencies": {
     "react": "^16.6.1 || ^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^16.6.1 || ^17.0.0 || ^18.0.0 || ^19.0.0",
-    "styled-components": "^5.1.0 || ^6.0.0"
+    "styled-components": "^5.1.0 || ^6.6.0"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.4.0",
@@ -145,7 +145,7 @@
     "simple-git": "^3.36.0",
     "storybook": "^10.5.9",
     "storybook-dark-mode": "^5.0.0",
-    "styled-components": "^6.5.3",
+    "styled-components": "6.6.0",
     "tarball-extract": "^0.0.6",
     "testcafe": "^3.7.6",
     "testcafe-react-selectors": "^5.0.3",
