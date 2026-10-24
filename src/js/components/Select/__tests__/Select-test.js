@@ -2021,4 +2021,32 @@ describe('Select', () => {
 
   window.scrollTo.mockRestore();
   window.HTMLElement.prototype.scrollIntoView.mockRestore();
+
+  test('focus present in search box upon mouse over on options', () => {
+    jest.useFakeTimers();
+    
+    render(
+      <Grommet>
+        <Select
+          id="test-select"
+          placeholder="test select"
+          options={['one', 'two', 'three', 'four']}
+          onSearch={() => {}}
+        />
+      </Grommet>,
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'test select' }));
+    // Allow for auto-focus to take place (not expected by test)
+    act(() => {
+      jest.advanceTimersByTime(100);
+    });
+    expect(
+      screen.getByRole('searchbox', { name: 'Search options' }),
+    ).toHaveFocus();
+    fireEvent.mouseOver(screen.getByRole('option', { name: 'three' }));
+    expect(
+      screen.getByRole('searchbox', { name: 'Search options' }),
+    ).toHaveFocus();
+  });
 });
