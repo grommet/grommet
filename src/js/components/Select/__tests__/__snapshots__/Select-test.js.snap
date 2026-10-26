@@ -265,6 +265,7 @@ exports[`Select Clear option renders - bottom 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -504,6 +505,7 @@ exports[`Select Clear option renders - bottom 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -633,7 +635,7 @@ exports[`Select Clear option renders - bottom 1`] = `
 
 exports[`Select Clear option renders - bottom 2`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -649,6 +651,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -774,6 +777,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -878,7 +882,7 @@ exports[`Select Clear option renders correct label when wrapped in FormField 1`]
 
 exports[`Select Clear option renders correct label when wrapped in FormField 2`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -894,6 +898,7 @@ exports[`Select Clear option renders custom label 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1019,6 +1024,7 @@ exports[`Select Clear option renders custom label 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -1115,7 +1121,7 @@ exports[`Select Clear option renders custom label 1`] = `
 
 exports[`Select Clear option renders custom label 2`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -1131,6 +1137,7 @@ exports[`Select Clear option renders- top 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1370,6 +1377,7 @@ exports[`Select Clear option renders- top 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -1499,7 +1507,7 @@ exports[`Select Clear option renders- top 1`] = `
 
 exports[`Select Clear option renders- top 2`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -3262,28 +3270,28 @@ exports[`Select complex options and children 1`] = `
 
 exports[`Select complex options and children 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="StyledButton-sc-323bzc-0 gylaKZ StyledSelect__StyledSelectDropButton-sc-znp66n-5 dzQAvh"
+    class="StyledButton-sc-323bzc-0 loEZph StyledSelect__StyledSelectDropButton-sc-znp66n-5 ktNrfx"
     id="test-select"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 koPUgN"
+      class="StyledBox-sc-13pk1d4-0 hRSGPR"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dfsoMb"
+        class="StyledBox-sc-13pk1d4-0 cqvGHL"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
+            class="StyledTextInput-sc-1x30a0s-0 BIrBW StyledSelect__SelectTextInput-sc-znp66n-4 edsxyU"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -3295,12 +3303,12 @@ exports[`Select complex options and children 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 frZyDS"
+        class="StyledBox-sc-13pk1d4-0 bszyhK"
         style="min-width: auto;"
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 fBKauD"
+          class="StyledIcon-sc-ofa7kd-0 efTAbz"
           viewBox="0 0 24 24"
         >
           <path
@@ -3325,6 +3333,7 @@ exports[`Select complex options and children 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -3433,6 +3442,7 @@ exports[`Select complex options and children 3`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -3511,7 +3521,7 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4052,6 +4062,7 @@ exports[`Select default value clear 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -4291,6 +4302,7 @@ exports[`Select default value clear 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -4420,7 +4432,7 @@ exports[`Select default value clear 1`] = `
 
 exports[`Select default value clear 2`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -4940,29 +4952,29 @@ exports[`Select disabled 1`] = `
 
 exports[`Select disabled 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select"
-    class="StyledButton-sc-323bzc-0 jAvxmr StyledSelect__StyledSelectDropButton-sc-znp66n-5 dzQAvh"
+    class="StyledButton-sc-323bzc-0 dMKpOH StyledSelect__StyledSelectDropButton-sc-znp66n-5 ktNrfx"
     disabled=""
     id="test-select"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 koPUgN"
+      class="StyledBox-sc-13pk1d4-0 hRSGPR"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dfsoMb"
+        class="StyledBox-sc-13pk1d4-0 cqvGHL"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 dYCnbQ"
+            class="StyledTextInput-sc-1x30a0s-0 BIrBW StyledSelect__SelectTextInput-sc-znp66n-4 ffDwyU"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -4974,12 +4986,12 @@ exports[`Select disabled 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 frZyDS"
+        class="StyledBox-sc-13pk1d4-0 bszyhK"
         style="min-width: auto;"
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 fBKauD"
+          class="StyledIcon-sc-ofa7kd-0 efTAbz"
           viewBox="0 0 24 24"
         >
           <path
@@ -5258,6 +5270,7 @@ exports[`Select disabled key 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5442,6 +5455,7 @@ exports[`Select disabled key 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -5546,7 +5560,7 @@ exports[`Select disabled key 2`] = `
 
 exports[`Select disabled key 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -5562,6 +5576,7 @@ exports[`Select disabled option value 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5746,6 +5761,7 @@ exports[`Select disabled option value 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -5850,7 +5866,7 @@ exports[`Select disabled option value 1`] = `
 
 exports[`Select disabled option value 2`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -6231,6 +6247,7 @@ exports[`Select large drop container height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -6356,6 +6373,7 @@ exports[`Select large drop container height 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -6459,6 +6477,7 @@ exports[`Select medium drop container height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -6584,6 +6603,7 @@ exports[`Select medium drop container height 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -7455,6 +7475,7 @@ exports[`Select onChange with valueKey object 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -7580,6 +7601,7 @@ exports[`Select onChange with valueKey object 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -7676,7 +7698,7 @@ exports[`Select onChange with valueKey object 2`] = `
 
 exports[`Select onChange with valueKey object 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8214,6 +8236,7 @@ exports[`Select onChange with valueKey string 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -8339,6 +8362,7 @@ exports[`Select onChange with valueKey string 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -8435,7 +8459,7 @@ exports[`Select onChange with valueKey string 2`] = `
 
 exports[`Select onChange with valueKey string 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -8918,6 +8942,7 @@ exports[`Select onChange with valueLabel 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -9043,6 +9068,7 @@ exports[`Select onChange with valueLabel 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -9139,7 +9165,7 @@ exports[`Select onChange with valueLabel 2`] = `
 
 exports[`Select onChange with valueLabel 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -9411,6 +9437,7 @@ exports[`Select onChange without labelKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -9536,6 +9563,7 @@ exports[`Select onChange without labelKey 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -9632,7 +9660,7 @@ exports[`Select onChange without labelKey 2`] = `
 
 exports[`Select onChange without labelKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -10170,6 +10198,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -10295,6 +10324,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -10391,7 +10421,7 @@ exports[`Select onChange without labelKey or valueKey 2`] = `
 
 exports[`Select onChange without labelKey or valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -10929,6 +10959,7 @@ exports[`Select onChange without valueKey 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -11054,6 +11085,7 @@ exports[`Select onChange without valueKey 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -11150,7 +11182,7 @@ exports[`Select onChange without valueKey 2`] = `
 
 exports[`Select onChange without valueKey 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12207,22 +12239,22 @@ exports[`Select prop: onOpen 2`] = `
   aria-expanded="true"
   aria-haspopup="listbox"
   aria-label="test select"
-  class="StyledButton-sc-323bzc-0 gylaKZ StyledSelect__StyledSelectDropButton-sc-znp66n-5 dzQAvh"
+  class="StyledButton-sc-323bzc-0 loEZph StyledSelect__StyledSelectDropButton-sc-znp66n-5 ktNrfx"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 koPUgN"
+    class="StyledBox-sc-13pk1d4-0 hRSGPR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dfsoMb"
+      class="StyledBox-sc-13pk1d4-0 cqvGHL"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+        class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
+          class="StyledTextInput-sc-1x30a0s-0 BIrBW StyledSelect__SelectTextInput-sc-znp66n-4 edsxyU"
           id="test-select__input"
           inert=""
           placeholder="test select"
@@ -12234,12 +12266,12 @@ exports[`Select prop: onOpen 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 frZyDS"
+      class="StyledBox-sc-13pk1d4-0 bszyhK"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 fBKauD"
+        class="StyledIcon-sc-ofa7kd-0 efTAbz"
         viewBox="0 0 24 24"
       >
         <path
@@ -12263,6 +12295,7 @@ exports[`Select prop: onOpen 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -12388,6 +12421,7 @@ exports[`Select prop: onOpen 3`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -12484,7 +12518,7 @@ exports[`Select prop: onOpen 3`] = `
 
 exports[`Select prop: onOpen 4`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -12494,7 +12528,7 @@ exports[`Select prop: onOpen 4`] = `
 exports[`Select prop: onOpen 5`] = `
 <div
   aria-label="list of options"
-  class="StyledSelect__OptionsContainer-sc-znp66n-1 kCVsZc"
+  class="StyledSelect__OptionsContainer-sc-znp66n-1 bmggbm"
   role="listbox"
   tabindex="-1"
 >
@@ -12502,16 +12536,16 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="1"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 gylaKZ StyledSelect__SelectOption-sc-znp66n-3 cwbrwL"
+    class="StyledButton-sc-323bzc-0 loEZph StyledSelect__SelectOption-sc-znp66n-3 ehrINH"
     role="option"
     tabindex="0"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eXmSWl"
+      class="StyledBox-sc-13pk1d4-0 bKhglV"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 icWJEq"
+        class="StyledText-sc-1sadyjn-0 doOnwq"
       >
         one
       </span>
@@ -12521,23 +12555,23 @@ exports[`Select prop: onOpen 5`] = `
     aria-posinset="2"
     aria-selected="false"
     aria-setsize="2"
-    class="StyledButton-sc-323bzc-0 gylaKZ StyledSelect__SelectOption-sc-znp66n-3 cwbrwL"
+    class="StyledButton-sc-323bzc-0 loEZph StyledSelect__SelectOption-sc-znp66n-3 ehrINH"
     role="option"
     tabindex="-1"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 eXmSWl"
+      class="StyledBox-sc-13pk1d4-0 bKhglV"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 icWJEq"
+        class="StyledText-sc-1sadyjn-0 doOnwq"
       >
         two
       </span>
     </div>
   </button>
   <div
-    class="StyledBox-sc-13pk1d4-0 hblHRm"
+    class="StyledBox-sc-13pk1d4-0 ewIVJm"
   />
 </div>
 `;
@@ -12808,6 +12842,7 @@ exports[`Select renders custom clear selection styling 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -13050,6 +13085,7 @@ exports[`Select renders custom clear selection styling 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -13192,7 +13228,7 @@ exports[`Select renders custom clear selection styling 2`] = `
 
 exports[`Select renders custom clear selection styling 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -13461,6 +13497,7 @@ exports[`Select renders custom listbox styling 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -13643,6 +13680,7 @@ exports[`Select renders custom listbox styling 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
   padding: 24px;
 }
@@ -13766,7 +13804,7 @@ exports[`Select renders custom listbox styling 1`] = `
 
 exports[`Select renders custom listbox styling 2`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -14027,27 +14065,27 @@ exports[`Select renders custom up and down icons 1`] = `
 
 exports[`Select renders custom up and down icons 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
     aria-expanded="true"
     aria-haspopup="listbox"
     aria-label="Select..."
-    class="StyledButton-sc-323bzc-0 gylaKZ StyledSelect__StyledSelectDropButton-sc-znp66n-5 dzQAvh"
+    class="StyledButton-sc-323bzc-0 loEZph StyledSelect__StyledSelectDropButton-sc-znp66n-5 ktNrfx"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 koPUgN"
+      class="StyledBox-sc-13pk1d4-0 hRSGPR"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dfsoMb"
+        class="StyledBox-sc-13pk1d4-0 cqvGHL"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
+            class="StyledTextInput-sc-1x30a0s-0 BIrBW StyledSelect__SelectTextInput-sc-znp66n-4 edsxyU"
             inert=""
             placeholder="Select..."
             readonly=""
@@ -14058,7 +14096,7 @@ exports[`Select renders custom up and down icons 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 frZyDS"
+        class="StyledBox-sc-13pk1d4-0 bszyhK"
         style="min-width: auto;"
       >
         .c0 {
@@ -15720,6 +15758,7 @@ exports[`Select search 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -15993,6 +16032,7 @@ exports[`Select search 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -16134,7 +16174,7 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -16145,7 +16185,7 @@ exports[`Select search 4`] = `
 <input
   aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dYegJm"
+  class="StyledTextInput-sc-1x30a0s-0 jGDnNm"
   type="search"
   value=""
 />
@@ -16155,7 +16195,7 @@ exports[`Select search 5`] = `
 <input
   aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dYegJm"
+  class="StyledTextInput-sc-1x30a0s-0 jGDnNm"
   type="search"
   value="o"
 />
@@ -16456,6 +16496,7 @@ exports[`Select search and select 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -16672,6 +16713,7 @@ exports[`Select search and select 2`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -16806,7 +16848,7 @@ exports[`Select search and select 2`] = `
 
 exports[`Select search and select 3`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }
@@ -16817,7 +16859,7 @@ exports[`Select search and select 4`] = `
 <input
   aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dYegJm"
+  class="StyledTextInput-sc-1x30a0s-0 jGDnNm"
   type="search"
   value=""
 />
@@ -16827,7 +16869,7 @@ exports[`Select search and select 5`] = `
 <input
   aria-label="Search options"
   autocomplete="off"
-  class="StyledTextInput-sc-1x30a0s-0 dYegJm"
+  class="StyledTextInput-sc-1x30a0s-0 jGDnNm"
   type="search"
   value="t"
 />
@@ -18553,28 +18595,28 @@ exports[`Select select option by typing should not break if caller passes JSX 1`
 
 exports[`Select select option by typing should not break if caller passes JSX 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-label="test select; Selected: two"
-    class="StyledButton-sc-323bzc-0 gylaKZ StyledSelect__StyledSelectDropButton-sc-znp66n-5 dzQAvh"
+    class="StyledButton-sc-323bzc-0 loEZph StyledSelect__StyledSelectDropButton-sc-znp66n-5 ktNrfx"
     id="test-select"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 koPUgN"
+      class="StyledBox-sc-13pk1d4-0 hRSGPR"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 dfsoMb"
+        class="StyledBox-sc-13pk1d4-0 cqvGHL"
       >
         <div
-          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+          class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
         >
           <input
             autocomplete="off"
-            class="StyledTextInput-sc-1x30a0s-0 fURUSS StyledSelect__SelectTextInput-sc-znp66n-4 cWrobQ"
+            class="StyledTextInput-sc-1x30a0s-0 BIrBW StyledSelect__SelectTextInput-sc-znp66n-4 edsxyU"
             id="test-select__input"
             inert=""
             placeholder="test select"
@@ -18586,12 +18628,12 @@ exports[`Select select option by typing should not break if caller passes JSX 2`
         </div>
       </div>
       <div
-        class="StyledBox-sc-13pk1d4-0 frZyDS"
+        class="StyledBox-sc-13pk1d4-0 bszyhK"
         style="min-width: auto;"
       >
         <svg
           aria-label="FormDown"
-          class="StyledIcon-sc-ofa7kd-0 fBKauD"
+          class="StyledIcon-sc-ofa7kd-0 efTAbz"
           viewBox="0 0 24 24"
         >
           <path
@@ -19676,6 +19718,7 @@ exports[`Select small drop container height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -19801,6 +19844,7 @@ exports[`Select small drop container height 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -19936,6 +19980,7 @@ exports[`Select theme search pad 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -20152,6 +20197,7 @@ exports[`Select theme search pad 1`] = `
   position: relative;
   scroll-behavior: smooth;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   outline: none;
 }
 
@@ -20286,7 +20332,7 @@ exports[`Select theme search pad 1`] = `
 
 exports[`Select theme search pad 2`] = `
 "@media only screen and (max-width: 768px) {
-  .frZyDS {
+  .bszyhK {
     margin-left: 6px;
     margin-right: 6px;
   }

@@ -1,0 +1,139 @@
+name: Build and stage tagged release
+
+# Triggered explicitly via workflow_dispatch (invoked by
+# release-tag-on-pr-merge.yml right after it pushes a vX.Y.Z tag - a plain
+# `push: tags:` trigger is unreliable here because GitHub suppresses new
+# workflow runs for pushes made with the default GITHUB_TOKEN). Builds and
+# packs the release artifact, then stages it on npm via Trusted Publishing
+# (OIDC - no long-lived NPM_TOKEN). A maintainer reviews and approves the
+# staged package on npm before it becomes publicly available.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to build and publish (e.g. v2.57.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write # required for npm OIDC trusted publishing
+
+jobs:
+  build:
+    name: Build release artifact
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Check out tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+
+      - name: Resolve and validate version from tag
+        id: version
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Tag '$TAG' is not a valid vX.Y.Z semver tag."
+            exit 1
+          fi
+          version="${TAG#v}"
+          pkg_version=$(node -p "require('./package.json').version")
+          if [ "$version" != "$pkg_version" ]; then
+            echo "Tag version ($version) does not match package.json version ($pkg_version)."
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.2'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Run build
+        run: yarn build
+
+      - name: Prepare dist/ as the package root
+        run: |
+          cp package.json dist/package.json
+          echo "**/__tests__/**" > dist/.npmignore
+
+      - name: Pack artifact
+        run: (cd dist && npm pack --pack-destination "$OLDPWD")
+
+      - name: Extract changelog section for this version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const version = process.env.VERSION;
+            const changelog = fs.readFileSync('CHANGELOG.md', 'utf8');
+            const heading = '# ' + version;
+            const start = changelog.indexOf(heading);
+            if (start === -1) {
+              console.error('Could not find CHANGELOG.md section for ' + heading);
+              process.exit(1);
+            }
+            const afterHeading = start + heading.length;
+            const nextHeading = changelog.indexOf('\n# ', afterHeading);
+            const section = changelog
+              .slice(afterHeading, nextHeading === -1 ? undefined : nextHeading)
+              .trim();
+            fs.writeFileSync('RELEASE_NOTES_FOR_TAG.md', section + '\n');
+          "
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: grommet-${{ steps.version.outputs.version }}
+          path: |
+            grommet-*.tgz
+            RELEASE_NOTES_FOR_TAG.md
+          if-no-files-found: error
+
+  stage:
+    name: Stage package on npm
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: grommet-${{ needs.build.outputs.version }}
+
+      - name: Set up Node for publish
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.2'
+
+      - name: Stage package on npm (OIDC trusted publishing)
+        # Ignore any inherited token and let npm authenticate via GitHub OIDC.
+        env:
+          NODE_AUTH_TOKEN: ''
+        run: |
+          artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
+          npx --yes --package=npm@11.21.0 -- npm stage publish "$artifact" --access public --provenance
+          echo "Package staged on npm. Review it in the package's Staged Packages tab and approve it manually to publish."
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
+          gh release create "v${VERSION}" \
+            --repo "$GH_REPO" \
+            --verify-tag \
+            --title "v${VERSION}" \
+            --notes-file RELEASE_NOTES_FOR_TAG.md \
+            "$artifact"

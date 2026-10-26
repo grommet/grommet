@@ -43,6 +43,7 @@ const ClickableSteps = () => {
       description: 'Choose configuration options.',
       status: 'error',
       errorMessage: 'Configuration requires attention.',
+      skippable: true,
       render: () => <Paragraph>Configure the resource options.</Paragraph>,
     },
     {
@@ -74,7 +75,10 @@ const ClickableSteps = () => {
         steps={steps}
         value={value}
         onChange={({ value: nextValue }) => setValue(nextValue)}
-        onComplete={() => setComplete(true)}
+        onComplete={(results) => {
+          console.log('Wizard complete with results:', results);
+          setComplete(true);
+        }}
       />
       {complete && (
         <Notification
