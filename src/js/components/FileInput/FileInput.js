@@ -1,13 +1,14 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useContext, useRef, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import {
   disabledStyle,
   focusStyle,
+  inputAppearanceStyle,
   unfocusStyle,
   useForwardedRef,
   useKeyboard,
@@ -35,7 +36,15 @@ const ContentsBox = styled(Box)`
   cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
-  ${(props) => props.theme.fileInput && props.theme.fileInput.extend};
+  ${(props) => {
+    const appearance = inputAppearanceStyle(props, { wrapper: true });
+    const extend = props.theme.fileInput && props.theme.fileInput.extend;
+    return appearance
+      ? css`
+          ${appearance}${extend}
+        `
+      : extend;
+  }};
   ${(props) =>
     props.hover &&
     props.theme.fileInput &&
@@ -292,6 +301,7 @@ const FileInput = forwardRef(
     return (
       <>
         <ContentsBox
+          $inputPlain={plain}
           theme={theme}
           flex={false}
           disabled={disabled}

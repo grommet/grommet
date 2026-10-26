@@ -10,8 +10,13 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import styled from 'styled-components';
-import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
+import styled, { css } from 'styled-components';
+import {
+  controlBorderStyle,
+  inputAppearanceStyle,
+  useKeyboard,
+  useForwardedRef,
+} from '../../utils';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
@@ -43,7 +48,15 @@ import { useThemeValue } from '../../utils/useThemeValue';
 
 const StyledSelectBox = styled(Box)`
   ${(props) => !props.plainSelect && controlBorderStyle};
-  ${(props) => props.theme.select?.control?.extend};
+  ${(props) => {
+    const appearance = inputAppearanceStyle(props, { wrapper: true });
+    const extend = props.theme.select?.control?.extend;
+    return appearance
+      ? css`
+          ${appearance}${extend}
+        `
+      : extend;
+  }};
   ${(props) => props.open && props.theme.select.control?.open};
 `;
 

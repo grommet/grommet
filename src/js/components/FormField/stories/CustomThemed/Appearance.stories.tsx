@@ -7,13 +7,19 @@ import {
   Button,
   CheckBox,
   CheckBoxGroup,
+  DateInput,
+  FileInput,
   Form,
   FormField,
   Grommet,
   Heading,
+  MaskedInput,
   Paragraph,
   RadioButtonGroup,
+  Select,
+  SelectMultiple,
   TextArea,
+  TextInput,
 } from 'grommet';
 import { ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -73,6 +79,28 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
   global: {
     colors: {
       'form-surface': 'background-back',
+    },
+    input: {
+      extend: undefined,
+      background: 'lightblue',
+      border: { color: 'red' },
+      font: {},
+      pad: { horizontal: 'small', vertical: 'xsmall' },
+      padding: {},
+      round: 'xsmall',
+      placeholder: { color: 'placeholder', weight: 400 },
+      // Application states
+      disabled: {
+        background: 'background-contrast',
+        border: { color: 'border' },
+      },
+      readOnly: { background: 'background-back', border: { color: 'border' } },
+      // Interactive states
+      hover: {
+        background: 'background-hover',
+        border: { color: 'border-strong' },
+      },
+      focus: { border: { color: 'focus' } },
     },
   },
   checkBox: {
@@ -217,77 +245,163 @@ const AppearanceStory = () => {
             toggle
           />
         </Box>
-        <Box
-          background="form-surface"
-          pad="large"
-          round="small"
-          gap="medium"
-          width="large"
-        >
-          <Box gap="small">
-            <Heading level={2} margin="none">
-              Input surfaces
-            </Heading>
-            <Paragraph>
-              Hover over each field. Labels and messages stay on the form
-              surface, while checkbox and radio groups remain transparent.
-            </Paragraph>
+        <Box direction="row" gap="medium">
+          <Box
+            background="form-surface"
+            pad="large"
+            round="small"
+            gap="medium"
+            width="large"
+          >
+            <Box gap="small">
+              <Heading level={2} margin="none">
+                Input surfaces
+              </Heading>
+              <Paragraph>
+                Hover over each field. Labels and messages stay on the form
+                surface, while checkbox and radio groups remain transparent.
+              </Paragraph>
+            </Box>
+            <Form>
+              <Box gap="medium" width="medium">
+                <>
+                  <FormField
+                    name="name"
+                    id="background-name"
+                    htmlFor="background-name"
+                    label="Name"
+                    help="A generated TextInput uses the shared surface."
+                    error={error}
+                  />
+                  <FormField
+                    name="notes"
+                    htmlFor="background-notes"
+                    label="Notes"
+                    info="TextArea overrides the normal surface per input."
+                    error={error}
+                  >
+                    <TextArea id="background-notes" name="notes" />
+                  </FormField>
+                  <FormField
+                    name="notifications"
+                    label="Notifications"
+                    error={error}
+                  >
+                    <CheckBoxGroup
+                      aria-label="Notifications"
+                      name="notifications"
+                      options={['Email', 'Text message']}
+                      defaultValue={['Email']}
+                    />
+                  </FormField>
+                  <FormField
+                    name="delivery"
+                    label="Delivery frequency"
+                    error={error}
+                  >
+                    <RadioButtonGroup
+                      aria-label="Delivery frequency"
+                      name="delivery"
+                      options={['Immediately', 'Daily digest']}
+                      defaultValue="Daily digest"
+                    />
+                  </FormField>
+                </>
+                <Button type="reset" label="Reset" alignSelf="start" />
+              </Box>
+            </Form>
+            <>
+              <Paragraph margin="none">
+                Here are some things that I want to inform you about and ensure
+                you understand before proceeding.
+              </Paragraph>
+              <CheckBox label="I agree" name="agreement" />
+            </>
           </Box>
-          <Form>
-            <Box gap="medium" width="medium">
-              <>
-                <FormField
-                  name="name"
-                  id="background-name"
-                  htmlFor="background-name"
-                  label="Name"
-                  help="A generated TextInput uses the shared surface."
-                  error={error}
-                />
-                <FormField
-                  name="notes"
-                  htmlFor="background-notes"
-                  label="Notes"
-                  info="TextArea overrides the normal surface per input."
-                  error={error}
-                >
-                  <TextArea id="background-notes" name="notes" />
-                </FormField>
-                <FormField
-                  name="notifications"
-                  label="Notifications"
-                  error={error}
-                >
+          <Box
+            background="form-surface"
+            pad="large"
+            round="small"
+            gap="medium"
+            width="large"
+          >
+            <Box gap="small">
+              <Heading level={2} margin="none">
+                Input surfaces (sans FormField)
+              </Heading>
+              <Paragraph>
+                Hover over each field. Labels and messages stay on the form
+                surface, while checkbox and radio groups remain transparent.
+              </Paragraph>
+            </Box>
+            <Form>
+              <Box gap="medium" width="medium">
+                <Box gap="xsmall">
+                  <TextInput name="name" placeholder="TextInput" />
+                  <TextInput
+                    aria-label="Disabled input"
+                    placeholder="Disabled"
+                    disabled
+                  />
+                  <TextInput
+                    aria-label="Read-only input"
+                    value="Read-only"
+                    readOnly
+                  />
+                  <TextArea name="notes" placeholder="TextArea" />
+                  <Select
+                    name="fruit"
+                    options={['Apple', 'Orange', 'Banana']}
+                    placeholder="Select a fruit"
+                  />
+                  <SelectMultiple
+                    name="fruits"
+                    options={['Apple', 'Orange', 'Banana']}
+                    placeholder="Select multiple fruits"
+                  />
+                  <DateInput
+                    name="date"
+                    format="mm/dd/yyyy"
+                    placeholder="Select a date"
+                  />
+                  <FileInput name="file" placeholder="Select a file" />
+                  <MaskedInput
+                    name="phone"
+                    mask={[
+                      { fixed: '(' },
+                      { length: 3, regexp: /^[0-9]{1,3}$/ },
+                      { fixed: ')' },
+                      { fixed: ' ' },
+                      { length: 3, regexp: /^[0-9]{1,3}$/ },
+                      { fixed: '-' },
+                      { length: 4, regexp: /^[0-9]{1,4}$/ },
+                    ]}
+                    placeholder="(123) 456-7890"
+                  />
                   <CheckBoxGroup
                     aria-label="Notifications"
                     name="notifications"
                     options={['Email', 'Text message']}
                     defaultValue={['Email']}
                   />
-                </FormField>
-                <FormField
-                  name="delivery"
-                  label="Delivery frequency"
-                  error={error}
-                >
                   <RadioButtonGroup
                     aria-label="Delivery frequency"
                     name="delivery"
                     options={['Immediately', 'Daily digest']}
                     defaultValue="Daily digest"
                   />
-                </FormField>
-              </>
-              <Button type="reset" label="Reset" alignSelf="start" />
-            </Box>
-          </Form>
-          <>
-            <Paragraph margin="none">
-              Here are some things that I want to inform you about and ensure
-              you understand before proceeding.
-            </Paragraph>
-            <CheckBox label="I agree" name="agreement" />
-          </>
+                </Box>
+                <Button type="reset" label="Reset" alignSelf="start" />
+              </Box>
+            </Form>
+            <>
+              <Paragraph margin="none">
+                Here are some things that I want to inform you about and ensure
+                you understand before proceeding.
+              </Paragraph>
+              <CheckBox label="I agree" name="agreement" />
+            </>
+          </Box>
         </Box>
       </Box>
     </Grommet>

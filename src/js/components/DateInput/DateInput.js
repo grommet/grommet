@@ -9,7 +9,7 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -25,6 +25,7 @@ import {
   useForwardedRef,
   setHoursWithOffset,
   disabledStyle,
+  inputAppearanceStyle,
   useKeyboard,
 } from '../../utils';
 import { readOnlyStyle } from '../../utils/readOnly';
@@ -46,7 +47,18 @@ const StyledDateInputContainer = styled(Box).withConfig({
   shouldForwardProp: (prop) => prop !== 'disabled',
 })`
   ${(props) => props.disabled && disabledStyle()}
-  ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}}
+  ${(props) => {
+    const appearance = inputAppearanceStyle(props, {
+      wrapper: true,
+      skipPadding: true,
+    });
+    const readOnly = props.readOnlyProp && readOnlyStyle(props.theme);
+    return appearance
+      ? css`
+          ${readOnly}${appearance}
+        `
+      : readOnly;
+  }}}
 `;
 
 const getReference = (value) => {
@@ -365,6 +377,7 @@ Use the icon prop instead.`,
           }}
         >
           <StyledDateInputContainer
+            $inputPlain={plain}
             ref={containerRef}
             border={!plain}
             round={theme.dateInput.container.round}

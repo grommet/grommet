@@ -580,6 +580,7 @@ const TextInput = forwardRef(
 
     return (
       <StyledTextInputContainer
+        $inputDisabled={disabled}
         hasButton={!!actionsGroup}
         readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
         readOnlyCopy={readOnlyCopy}
@@ -607,6 +608,7 @@ const TextInput = forwardRef(
         )}
         <Keyboard target={focus ? 'document' : undefined} {...keyboardProps}>
           <StyledTextInput
+            $inputInner={readOnly || hasActionsGroup}
             aria-label={a11yTitle}
             ref={inputRef}
             id={id}

@@ -6,6 +6,7 @@ import {
   controlBorderStyle,
   disabledStyle,
   getInputPadBySide,
+  inputAppearanceStyle,
   inputStyle,
   parseMetricToNum,
   plainInputStyle,
@@ -78,10 +79,17 @@ const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)`
 
   ${(props) => props.readOnlyProp && !props.plain && readOnlyStyle(props.theme)}
 
-  ${(props) =>
-    props.theme.textInput &&
-    props.theme.textInput.container &&
-    props.theme.textInput.container.extend};
+  ${(props) => {
+    const appearance =
+      (props.readOnlyProp || props.hasButton) &&
+      inputAppearanceStyle(props, { wrapper: true, skipPadding: true });
+    const extend = props.theme.textInput?.container?.extend;
+    return appearance
+      ? css`
+          ${appearance}${extend}
+        `
+      : extend;
+  }};
 `;
 
 const StyledPlaceholder = styled.div.withConfig(styledComponentsConfig)`

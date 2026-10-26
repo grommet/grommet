@@ -336,6 +336,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
+        // any BoxPartThemeType
+        // disabled: undefined, // any BoxStateThemeType
+        // focus: undefined, // any BoxStateThemeType
+        // hover: undefined, // any BoxStateThemeType
+        // pad: undefined,
+        // placeholder: undefined, // any TextThemeType
         padding: {
           horizontal: `${
             parseMetricToNum(`${baseSpacing / 2}px`) -
@@ -354,6 +360,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // deprecate in v3
         // weight: undefined,
         readOnly: {
+          // any BoxStateThemeType
           // background: undefined,
           // border: {
           //  color: undefined,

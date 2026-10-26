@@ -3,6 +3,8 @@
 import { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
+import { borderStyle as inputBorderStyle } from './border';
+import { isObject } from './object';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
 import { breakpointStyle, parseMetricToNum } from './mixins';
@@ -468,6 +470,15 @@ const adjustPad = (props, value) =>
   }px`;
 
 export const getInputPadBySide = (props, side) => {
+  const inputPad = props.theme.global.input.pad;
+  if (inputPad !== undefined) {
+    if (typeof inputPad === 'string')
+      return props.theme.global.edgeSize[inputPad] || inputPad;
+    const orientation =
+      side === 'left' || side === 'right' ? 'horizontal' : 'vertical';
+    const value = inputPad[side] ?? inputPad[orientation] ?? 'none';
+    return props.theme.global.edgeSize[value] || value;
+  }
   if (typeof props.theme.global.input.padding !== 'object') {
     const adjustedPad = adjustPad(props, props.theme.global.input.padding);
     return adjustedPad;
@@ -522,76 +533,6 @@ const inputSizeStyle = (props) => {
     line-height: ${data.height};
   `;
 };
-
-export const inputStyle = css`
-  box-sizing: border-box;
-  ${(props) =>
-    `font-size: ${
-      props.theme.global.input.font.size
-        ? props.theme.text[props.theme.global.input.font.size]?.size ||
-          props.theme.global.input.font.size
-        : 'inherit'
-    };`}
-  font-family: inherit;
-  border: none;
-  -webkit-appearance: none;
-  background: transparent;
-  color: inherit;
-  width: 100%;
-  ${(props) =>
-    props.theme.global.input.font.height &&
-    `line-height: ${props.theme.global.input.font.height};`}
-  ${(props) =>
-    props.theme.global.input.padding &&
-    typeof props.theme.global.input.padding !== 'object'
-      ? // On a breaking change release, this condition could be removed and
-        // just the edgeStyle could remain. Currently, this is needed for
-        // backwards compatibility since we are placing the calculation in
-        // base.js
-        `padding: ${
-          parseMetricToNum(
-            props.theme.global.edgeSize[props.theme.global.input.padding] ||
-              props.theme.global.input.padding,
-          ) - parseMetricToNum(props.theme.global.control.border.width)
-        }px;`
-      : edgeStyle(
-          'padding',
-          props.theme.global.input.padding,
-          props.responsive,
-          props.theme.box.responsiveBreakpoint,
-          props.theme,
-        )}
-  ${(props) =>
-    // for backwards compatibility, check if props.theme.global.input.weight
-    (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
-    css`
-      font-weight: ${props.theme.global.input.weight ||
-      props.theme.global.input.font.weight};
-    `} margin: 0;
-  ${(props) => props.size && inputSizeStyle(props)}
-  &:focus {
-    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()};
-  }
-  ${controlBorderStyle}
-  ${placeholderStyle}
-
-  ::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-
-  &::-moz-focus-inner {
-    border: none;
-    outline: none;
-  }
-
-  &:-moz-placeholder, // FF 18-
-  &::-moz-placeholder {
-    // FF 19+
-    opacity: 1;
-  }
-
-  ${(props) => props.theme.global.input.extend}
-`;
 
 // Apply padding on input to create space for icon.
 // When theme.icon.matchSize is true, the space for the
@@ -993,3 +934,237 @@ export const heightStyle = (height, theme) =>
   typeof height === 'object'
     ? heightObjectStyle(height, theme)
     : heightStringStyle(height, theme);
+
+const inputPartStyle = (part, props, { paddingOnly, skipPadding } = {}) => {
+  const { theme } = props;
+  const responsive = props.responsive ?? true;
+  const styles = [];
+  if (part.pad !== undefined && !skipPadding && props.plain !== 'full')
+    styles.push(
+      edgeStyle(
+        'padding',
+        part.pad,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (paddingOnly) return styles;
+  if (part.background !== undefined)
+    styles.push(backgroundStyle(part.background, theme, false));
+  if (part.border !== undefined)
+    styles.push(
+      part.border === false
+        ? 'border: none;'
+        : inputBorderStyle(part.border, responsive, theme),
+    );
+  if (part.elevation !== undefined) styles.push(elevationStyle(part.elevation));
+  if (part.height !== undefined) styles.push(heightStyle(part.height, theme));
+  if (
+    part.width !== undefined &&
+    props.widthProp === undefined &&
+    props.width === undefined
+  )
+    styles.push(widthStyle(part.width, theme));
+  if (part.margin !== undefined && props.margin === undefined)
+    styles.push(
+      edgeStyle(
+        'margin',
+        part.margin,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (part.round !== undefined)
+    styles.push(
+      part.round === false
+        ? 'border-radius: 0;'
+        : roundStyle(part.round, responsive, theme),
+    );
+  return styles;
+};
+
+const mergeInputBorder = (base, override) => {
+  if (override === undefined) return base;
+  if (Array.isArray(base) && isObject(override) && !override.side)
+    return base.map((part) => mergeInputBorder(part, override));
+  if (isObject(base) && isObject(override)) return { ...base, ...override };
+  if (typeof base === 'string' && isObject(override))
+    return { side: base, ...override };
+  return override;
+};
+
+export const inputAppearanceStyle = (
+  props,
+  { wrapper = false, skipPadding = false } = {},
+) => {
+  const { input } = props.theme.global;
+  const plain = wrapper
+    ? props.plainSelect ||
+      props.$inputPlain ||
+      ((props.readOnlyProp || props.hasButton) && props.plain)
+    : props.plain;
+  const disabled = props.disabled || props.$inputDisabled;
+  const readOnly = props.readOnly || props.readOnlyProp;
+  const options = { paddingOnly: !!plain || props.$inputInner, skipPadding };
+  const legacyBorder = {
+    size: props.theme.global.control.border.width,
+    color: props.theme.global.control.border.color,
+  };
+  const normalBorder = mergeInputBorder(legacyBorder, input.border);
+  const partStyle = (part) =>
+    inputPartStyle(
+      part.border !== undefined
+        ? {
+            ...part,
+            border: mergeInputBorder(
+              normalBorder === false ? legacyBorder : normalBorder,
+              part.border,
+            ),
+          }
+        : part,
+      props,
+      options,
+    );
+  const styles = partStyle(input);
+  const stateStyle = (part) => {
+    const stateStyles = partStyle(part);
+    if (wrapper && skipPadding && part.pad !== undefined)
+      stateStyles.push(css`
+        input:not([type='hidden']) {
+          ${inputPartStyle({ pad: part.pad }, props, { paddingOnly: true })}
+        }
+      `);
+    return stateStyles;
+  };
+  if (!plain) {
+    if (!disabled && !readOnly && input.hover)
+      styles.push(
+        css`
+          &:hover {
+            ${stateStyle(input.hover)}
+          }
+        `,
+      );
+    if (!disabled && !readOnly && input.focus)
+      styles.push(
+        wrapper
+          ? css`
+              &:focus-within {
+                ${stateStyle(input.focus)}
+              }
+            `
+          : css`
+              &:focus {
+                ${stateStyle(input.focus)}
+              }
+            `,
+      );
+    if (readOnly && input.readOnly) styles.push(stateStyle(input.readOnly));
+    if (disabled && input.disabled) styles.push(stateStyle(input.disabled));
+  }
+  if (!wrapper && input.placeholder) {
+    const { placeholder } = input;
+    const text = [];
+    if (placeholder.color !== undefined)
+      text.push(`color: ${normalizeColor(placeholder.color, props.theme)};`);
+    if (placeholder.size !== undefined)
+      text.push(
+        `font-size: ${
+          props.theme.text[placeholder.size]?.size || placeholder.size
+        };`,
+      );
+    if (placeholder.weight !== undefined)
+      text.push(`font-weight: ${placeholder.weight};`);
+    if (text.length > 0)
+      styles.push(
+        css`
+          &::placeholder {
+            ${text}
+          }
+        `,
+      );
+  }
+  return styles.length > 0
+    ? css`
+        ${styles}
+      `
+    : undefined;
+};
+
+export const inputStyle = css`
+  box-sizing: border-box;
+  ${(props) =>
+    `font-size: ${
+      props.theme.global.input.font.size
+        ? props.theme.text[props.theme.global.input.font.size]?.size ||
+          props.theme.global.input.font.size
+        : 'inherit'
+    };`}
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: inherit;
+  width: 100%;
+  ${(props) =>
+    props.theme.global.input.font.height &&
+    `line-height: ${props.theme.global.input.font.height};`}
+  ${(props) =>
+    props.theme.global.input.padding &&
+    typeof props.theme.global.input.padding !== 'object'
+      ? // On a breaking change release, this condition could be removed and
+        // just the edgeStyle could remain. Currently, this is needed for
+        // backwards compatibility since we are placing the calculation in
+        // base.js
+        `padding: ${
+          parseMetricToNum(
+            props.theme.global.edgeSize[props.theme.global.input.padding] ||
+              props.theme.global.input.padding,
+          ) - parseMetricToNum(props.theme.global.control.border.width)
+        }px;`
+      : edgeStyle(
+          'padding',
+          props.theme.global.input.padding,
+          props.responsive,
+          props.theme.box.responsiveBreakpoint,
+          props.theme,
+        )}
+  ${(props) =>
+    // for backwards compatibility, check if props.theme.global.input.weight
+    (props.theme.global.input.weight || props.theme.global.input.font.weight) &&
+    css`
+      font-weight: ${props.theme.global.input.weight ||
+      props.theme.global.input.font.weight};
+    `} margin: 0;
+  ${(props) => props.size && inputSizeStyle(props)}
+  &:focus {
+    ${(props) => (!props.plain || props.focusIndicator) && focusStyle()};
+  }
+  ${controlBorderStyle}
+  ${placeholderStyle}
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  &::-moz-focus-inner {
+    border: none;
+    outline: none;
+  }
+
+  &:-moz-placeholder,
+  &::-moz-placeholder {
+    opacity: 1;
+  }
+
+  ${(props) => {
+    const appearance = inputAppearanceStyle(props);
+    return appearance
+      ? css`
+          ${appearance}${props.theme.global.input.extend}
+        `
+      : props.theme.global.input.extend;
+  }}
+`;

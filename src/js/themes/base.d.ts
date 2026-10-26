@@ -577,8 +577,11 @@ export interface ThemeType {
       background?: BackgroundType;
       color?: ColorType;
     };
-    input?: {
+    input?: BoxPartThemeType & {
+      disabled?: BoxStateThemeType;
       extend?: ExtendType;
+      focus?: BoxStateThemeType;
+      hover?: BoxStateThemeType;
       padding?:
         | string
         | {
@@ -594,12 +597,8 @@ export interface ThemeType {
         size?: string;
         weight?: number | string;
       };
-      readOnly?: {
-        background?: BackgroundType;
-        border?: {
-          color?: ColorType;
-        };
-      };
+      placeholder?: TextThemeType;
+      readOnly?: BoxStateThemeType;
       weight?: number | string;
     };
     opacity?: {
