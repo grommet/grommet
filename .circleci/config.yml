@@ -35,7 +35,7 @@ jobs:
           command: yarn lint
   jest:
     <<: *defaults
-    resource_class: large
+    resource_class: 2xlarge
     steps:
       - attach_workspace:
           at: ~/grommet-ci
