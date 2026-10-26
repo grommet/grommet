@@ -43,6 +43,11 @@ import {
   writeFileSync,
 } from 'fs';
 import { join } from 'path';
+import {
+  formatReleaseSentence,
+  getSkipReason,
+  isTypeScriptChange,
+} from './release-notes-utils';
 
 const OWNER = 'grommet';
 const REPO = 'grommet';
@@ -136,17 +141,6 @@ const SECTION_ORDER = [
   'TypeScript',
   'Beta',
 ];
-
-/** PRs with any of these labels are silently excluded from the notes. */
-const SKIP_LABELS = new Set([
-  'skip-release-notes',
-  'no-release-notes',
-  'internal',
-  'dependencies',
-  'chore',
-  'ci',
-  'documentation',
-]);
 
 /** These labels force a PR into the Beta section. */
 const BETA_LABELS = new Set(['beta', 'Beta']);
@@ -307,74 +301,14 @@ async function getLatestTag(token) {
 // ── PR analysis ──────────────────────────────────────────────────────────────
 
 /**
- * Check the PR body's answer to the release-notes template question.
- * Returns false only when the maintainer explicitly answered no.
- */
-function includeByBody(body) {
-  if (!body) return true;
-  const lower = body.toLowerCase();
-  const marker = 'should this pr be mentioned in the release notes?';
-  const idx = lower.indexOf(marker);
-  if (idx === -1) return true; // Pre-template PR → include
-
-  // Extract the answer block between this heading and the next ####
-  const after = body.slice(idx + marker.length);
-  const nextSection = after.indexOf('####');
-  const answer = (nextSection === -1 ? after : after.slice(0, nextSection))
-    .trim()
-    .split('\n')[0]
-    .trim()
-    .toLowerCase()
-    .replace(/[.!?]+$/, '');
-
-  if (!answer) return true;
-
-  const negative = new Set(['no', 'n', 'n/a', 'na', '-', 'nope', 'false']);
-  return !negative.has(answer);
-}
-
-function shouldSkipByContent(pr) {
-  const title = (pr.title || '').toLowerCase();
-  const body = (pr.body || '').toLowerCase();
-  const combined = `${title}\n${body}`;
-
-  const dependencyPatterns = [
-    /\bupdate\b.*\bdependenc(y|ies)\b/,
-    /\bdependenc(y|ies)\b.*\bupdate\b/,
-    /\bupdate styled components\b/,
-    /\bbump\b.*\b(dependency|dependencies)\b/,
-    /\bupgrade\b.*\b(dependency|dependencies|styled-components)\b/,
-  ];
-
-  if (dependencyPatterns.some((pattern) => pattern.test(combined))) {
-    return { skip: true, reason: 'dependency' };
-  }
-
-  const chorePatterns = [/\bchore\s*[:(]/, /^new chore\b/];
-
-  if (chorePatterns.some((pattern) => pattern.test(title))) {
-    return { skip: true, reason: 'chore' };
-  }
-
-  const storybookPatterns = [/\bstorybook\b/, /\bchromatic\b/, /\bstories\b/];
-
-  if (storybookPatterns.some((pattern) => pattern.test(title))) {
-    return { skip: true, reason: 'storybook' };
-  }
-
-  return { skip: false, reason: null };
-}
-
-/**
  * Map PR labels to a release-notes section heading.
  * Falls back to title-prefix detection, then "General".
  */
 function getSection(pr) {
   const labelNames = pr.labels.map((l) => l.name);
 
+  if (isTypeScriptChange(pr)) return 'TypeScript';
   if (labelNames.some((l) => BETA_LABELS.has(l))) return 'Beta';
-  if (labelNames.some((l) => l === 'TypeScript' || l === 'typescript'))
-    return 'TypeScript';
 
   for (const label of labelNames) {
     const section = LABEL_SECTION_MAP.get(label);
@@ -410,63 +344,11 @@ function getSection(pr) {
 
 /**
  * Format a single PR as a release-notes bullet entry.
- * Uses the PR title directly (maintainers clean up titles before merging).
+ * Uses the PR description, falling back to the title for empty descriptions.
  */
 function formatEntry(pr) {
   const sentence = formatReleaseSentence(pr).replace(/[.!?]+$/, '');
-  return `- ${sentence}. [#${pr.number}](${GH_PR_URL}/${pr.number})`;
-}
-
-function lowerFirst(value) {
-  if (!value) return value;
-  return value.charAt(0).toLowerCase() + value.slice(1);
-}
-
-function formatReleaseSentence(pr) {
-  const raw = pr.title.trim().replace(/[.!?]+$/, '');
-  const fixMatch = raw.match(/^fix\(([^)]+)\):\s*(.+)$/i);
-  if (fixMatch) {
-    const [, area, detail] = fixMatch;
-    return `Fixed ${area} ${lowerFirst(detail)}`;
-  }
-
-  const featMatch = raw.match(/^feat\(([^)]+)\):\s*(.+)$/i);
-  if (featMatch) {
-    const [, area, detail] = featMatch;
-    return `Added ${area} ${lowerFirst(detail)}`;
-  }
-
-  const updateMatch = raw.match(
-    /^(enhance|enhanced|improve|improved)\(([^)]+)\):\s*(.+)$/i,
-  );
-  if (updateMatch) {
-    const [, , area, detail] = updateMatch;
-    return `Enhanced ${area} ${lowerFirst(detail)}`;
-  }
-
-  // Matches common style: "TimeInput - fix input pending"
-  const dashedMatch = raw.match(
-    /^([A-Za-z][A-Za-z0-9/\s-]*)\s*-\s*(fix|feat|add|improve|enhance)\s*(.+)$/i,
-  );
-  if (dashedMatch) {
-    const [, area, verb, detail] = dashedMatch;
-    if (/fix/i.test(verb)) return `Fixed ${area.trim()} ${detail.trim()}`;
-    if (/feat|add/i.test(verb)) return `Added ${area.trim()} ${detail.trim()}`;
-    return `Enhanced ${area.trim()} ${detail.trim()}`;
-  }
-
-  if (/^fix\b/i.test(raw)) return `Fixed ${raw.replace(/^fix\b[:\s-]*/i, '')}`;
-  if (/^feat\b/i.test(raw))
-    return `Added ${raw.replace(/^feat\b[:\s-]*/i, '')}`;
-  if (/^(add|added)\b/i.test(raw))
-    return `Added ${raw.replace(/^(add|added)\b[:\s-]*/i, '')}`;
-  if (/^(improve|improved|enhance|enhanced)\b/i.test(raw))
-    return `Enhanced ${raw.replace(
-      /^(improve|improved|enhance|enhanced)\b[:\s-]*/i,
-      '',
-    )}`;
-
-  return raw.charAt(0).toUpperCase() + raw.slice(1);
+  return `- ${sentence}. ([#${pr.number}](${GH_PR_URL}/${pr.number}))`;
 }
 
 function formatTitlePhrase(title) {
@@ -640,6 +522,7 @@ function mentionsBetaComponent(pr) {
 }
 
 function shouldForceIncludeAsBeta(pr) {
+  if (isTypeScriptChange(pr)) return false;
   if (mentionsBetaComponent(pr)) return true;
   const section = normalizeSection(getSection(pr));
   return section === 'Beta';
@@ -892,33 +775,14 @@ const args = parseArgs();
   let skipped = 0;
 
   for (const pr of prs) {
-    const labels = pr.labels.map((l) => l.name);
-
-    if (labels.some((l) => SKIP_LABELS.has(l))) {
-      console.error(`  skip [label]   #${pr.number}: ${pr.title}`);
+    const skipReason = getSkipReason(pr);
+    if (skipReason) {
+      console.error(`  skip [${skipReason}] #${pr.number}: ${pr.title}`);
       skipped++;
       continue;
     }
+
     const forceIncludeAsBeta = shouldForceIncludeAsBeta(pr);
-    if (!forceIncludeAsBeta && !includeByBody(pr.body)) {
-      console.error(`  skip [body]    #${pr.number}: ${pr.title}`);
-      skipped++;
-      continue;
-    }
-
-    const contentSkip = shouldSkipByContent(pr);
-    if (contentSkip.skip) {
-      console.error(
-        `  skip [${contentSkip.reason}] #${pr.number}: ${pr.title}`,
-      );
-      skipped++;
-      continue;
-    }
-
-    if (forceIncludeAsBeta && !includeByBody(pr.body)) {
-      console.error(`  include [beta-override] #${pr.number}: ${pr.title}`);
-    }
-
     const section = forceIncludeAsBeta ? 'Beta' : getSection(pr);
     console.error(`  include [${section}] #${pr.number}: ${pr.title}`);
 

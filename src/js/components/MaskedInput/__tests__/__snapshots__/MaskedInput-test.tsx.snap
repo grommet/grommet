@@ -960,6 +960,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -971,6 +972,7 @@ exports[`MaskedInput event target props are available option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c4 {
@@ -1155,10 +1157,10 @@ exports[`MaskedInput event target props are available option via mouse 3`] = `""
 
 exports[`MaskedInput event target props are available option via mouse 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hCWpWq"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hnuqzS"
   >
     <input
       aria-activedescendant="listbox-option--1__item"
@@ -1166,7 +1168,7 @@ exports[`MaskedInput event target props are available option via mouse 4`] = `
       aria-controls="listbox__item"
       aria-expanded="true"
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 eObdoj"
+      class="StyledMaskedInput-sc-99vkfa-0 ecNMsj"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1595,6 +1597,7 @@ exports[`MaskedInput mask 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1606,6 +1609,7 @@ exports[`MaskedInput mask 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c4 {
@@ -2228,14 +2232,14 @@ exports[`MaskedInput next and previous without options 1`] = `
 
 exports[`MaskedInput next and previous without options 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hCWpWq"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hnuqzS"
   >
     <input
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 kICQAO"
+      class="StyledMaskedInput-sc-99vkfa-0 hLqZlK"
       data-testid="test-input"
       id="item"
       name="item"
@@ -2459,6 +2463,7 @@ exports[`MaskedInput option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -2470,6 +2475,7 @@ exports[`MaskedInput option via mouse 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c4 {
@@ -2654,10 +2660,10 @@ exports[`MaskedInput option via mouse 3`] = `""`;
 
 exports[`MaskedInput option via mouse 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hCWpWq"
+    class="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 hnuqzS"
   >
     <input
       aria-activedescendant="listbox-option--1__item"
@@ -2665,7 +2671,7 @@ exports[`MaskedInput option via mouse 4`] = `
       aria-controls="listbox__item"
       aria-expanded="true"
       autocomplete="off"
-      class="StyledMaskedInput-sc-99vkfa-0 eObdoj"
+      class="StyledMaskedInput-sc-99vkfa-0 ecNMsj"
       data-testid="test-input"
       id="item"
       name="item"

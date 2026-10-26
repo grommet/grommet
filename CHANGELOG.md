@@ -1,3 +1,39 @@
+# 2.58.0
+
+General:
+
+- Added `copy` and `onClickCopy` to TextInput to support copy controls on editable inputs. (#8025)
+- Enhanced color brightness detection to use WCAG relative luminance.  (#8152)
+- Added `options.legacyColorIsDark` to Grommet to allow opting into the previous color brightness calculation. (#8157)
+- Fixed Button busy-indicator dots appearing compressed or off-center on narrow buttons. (#8198)
+- Fixed dark-mode scrollbar styling in Drop-based option and suggestion lists. (#8108)
+- Fixed errors in the base theme TypeScript declarations. (#8178)
+
+TimeInput - officially out of beta:
+
+- Added theme customization for TimeInput and improved its `inline` integration with DateTimeInput. (#8183)
+- Added support for HH:mm values in `value` and `defaultValue` without requiring seconds. (#8180)
+- Added the TimeInput `inline` prop. (#8162)
+- Enhanced TimeInput to hide seconds by default in both 12-hour and 24-hour modes. Set `showSeconds` to display them. (#8177)
+- Fixed focus-trap initialization timing in TimeInput by running setup before browser paint. (#8192)
+- Fixed TimeInput reclaiming focus after the user moves focus elsewhere. (#8107)
+- Fixed duplicate focus indicators when TimeInput is inside FormField. (#8187)
+- Fixed FormField validation errors not being associated with the appropriate TimeInput segments for screen readers. (#8144)
+- Fixed empty TimeInput segments reporting placeholder numbers as actual values to screen readers. (#8166)
+- Fixed arrow-key navigation direction in the TimeInput popup. (#8125)
+- Fixed TimeInput consuming modified keyboard shortcuts such as Cmd/Ctrl+P. (#8161)
+- Fixed popup options being selected on mouse down instead of click. (#8168)
+- Fixed clock-button sizing to use a square action area. (#8117)
+- Enhanced popup column spacing to accommodate scrollbars. (#8150)
+- Fixed segment and popup-button padding shrinking at responsive breakpoints. (#8197)
+- Enhanced internal display formatting and accessibility metadata reuse. (#8139)
+- Enhanced internal utilities by removing unused functions. (#8137)
+
+Beta - APIs are subject to change:
+
+- Enhanced Wizard with `clickableSteps`, `closable`, and `form` props, React-node titles, and improved navigation and error handling. (#8132)
+- Enhanced Wizard validation to preserve `step` validation state and improve skippable-step behavior. (#8191)
+
 # 2.57.0
 
 General:

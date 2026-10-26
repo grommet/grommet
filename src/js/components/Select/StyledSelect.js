@@ -11,6 +11,7 @@ import {
   selectedStyle,
   controlBorderStyle,
   inputAppearanceStyle,
+  overflowStyle,
   sizeStyle,
   styledComponentsConfig,
 } from '../../utils';
@@ -34,7 +35,7 @@ export const StyledContainer = styled(Box)`
 export const OptionsContainer = styled.div.withConfig(styledComponentsConfig)`
   position: relative;
   scroll-behavior: smooth;
-  overflow: auto;
+  ${(props) => overflowStyle('auto', props.theme)}
   outline: none;
   ${(props) => {
     if (props.selectMultiple)

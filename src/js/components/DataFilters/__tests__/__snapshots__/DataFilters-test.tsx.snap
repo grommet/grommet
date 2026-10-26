@@ -30,6 +30,7 @@ exports[`DataFilters clear 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -572,7 +573,7 @@ exports[`DataFilters drop 1`] = `
 exports[`DataFilters drop 2`] = `
 <button
   aria-label="Open filters"
-  class="StyledButton-sc-323bzc-0 dBaTMT"
+  class="StyledButton-sc-323bzc-0 dfUoMD"
   data-g-tabindex="none"
   id="test-data--filters-control"
   tabindex="-1"
@@ -580,7 +581,7 @@ exports[`DataFilters drop 2`] = `
 >
   <svg
     aria-label="Filter"
-    class="StyledIcon-sc-ofa7kd-0 fypPpr"
+    class="StyledIcon-sc-ofa7kd-0 eczoWn"
     viewBox="0 0 24 24"
   >
     <path
@@ -595,37 +596,37 @@ exports[`DataFilters drop 2`] = `
 
 exports[`DataFilters drop 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ijynHY {
+  .IMkNQ {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .vatJD {
+  .iqAOWP {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .vatJD {
+  .iqAOWP {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .krZJuA {
+  .gSfBpE {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ccqRMb {
+  .uaRCj {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .fOgDDZ {
+  .kMqojZ {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cdvJmn {
+  .fGmIJX {
     height: 6px;
   }
 }"
@@ -1144,6 +1145,7 @@ exports[`DataFilters layer 2`] = `
   padding-right: 24px;
   padding-top: 24px;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c9 {
@@ -1806,37 +1808,37 @@ exports[`DataFilters layer 2`] = `
 
 exports[`DataFilters layer 3`] = `
 "@media only screen and (max-width: 768px) {
-  .ijynHY {
+  .IMkNQ {
     margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .vatJD {
+  .iqAOWP {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .vatJD {
+  .iqAOWP {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .krZJuA {
+  .gSfBpE {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ccqRMb {
+  .uaRCj {
     border: solid 2px rgba(0, 0, 0, 0.15);
   }
 }
 @media only screen and (max-width: 768px) {
-  .fOgDDZ {
+  .kMqojZ {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cdvJmn {
+  .fGmIJX {
     height: 6px;
   }
 }"
@@ -1872,6 +1874,7 @@ exports[`DataFilters properties array 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -2244,6 +2247,7 @@ exports[`DataFilters properties object 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -2616,6 +2620,7 @@ exports[`DataFilters renders 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -2989,6 +2994,7 @@ exports[`DataFilters should display all filter options regardless of result set 
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -3746,6 +3752,7 @@ exports[`DataFilters sub objects 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -4958,6 +4965,7 @@ exports[`DataFilters theme footer actions margin and gap 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
