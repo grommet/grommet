@@ -1305,6 +1305,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // background: undefined, // input area only, not labels or messages
       // [inputname]: {
       //  background: undefined, // 'transparent' opts out of shared background
+      //  error: undefined, // any BoxStateThemeType
       //  container: {
       //    extend: undefined,
       //   },

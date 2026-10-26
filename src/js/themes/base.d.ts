@@ -315,17 +315,12 @@ type DigitalTexts =
   | 'xxlarge'
   | string;
 
-type ContainerExtend = {
-  background?: BackgroundType;
+type ContainerExtend = BoxPartThemeType & {
   container?: {
     extend?: ExtendType;
   };
-  hover?: {
-    background?: BackgroundType;
-    border?: {
-      color?: ColorType;
-    };
-  };
+  error?: BoxStateThemeType;
+  hover?: BoxStateThemeType;
 };
 
 interface StepperStateType {
@@ -1374,7 +1369,7 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
-    checkBox?: ContainerExtend & { pad?: PadType };
+    checkBox?: ContainerExtend;
     checkBoxGroup?: ContainerExtend;
     textArea?: ContainerExtend;
     textInput?: ContainerExtend;

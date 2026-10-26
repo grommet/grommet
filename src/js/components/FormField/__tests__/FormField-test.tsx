@@ -1031,6 +1031,141 @@ describe('FormField', () => {
       });
     });
 
+    test('applies per-input Box-part styles and hover Box-state styles', async () => {
+      const user = userEvent.setup();
+      const theme: ThemeType = {
+        formField: {
+          border: false,
+          textInput: {
+            background: normalColor,
+            border: { color: '#112233', size: '2px' },
+            elevation: 'small',
+            height: { min: '40px', height: '48px' },
+            margin: { top: '4px' },
+            pad: '8px',
+            round: '6px',
+            width: { min: '160px', width: '240px' },
+            hover: {
+              background: hoverColor,
+              border: { color: '#445566' },
+              elevation: 'medium',
+              pad: '12px',
+              round: '10px',
+            },
+          },
+        },
+      };
+      const { content } = renderBackground(theme);
+
+      expect(content).toHaveStyleRule('background-color', normalColor);
+      expect(content).toHaveStyleRule('border', 'solid 2px #112233');
+      expect(content).toHaveStyleRule('box-shadow', expect.any(String));
+      expect(content).toHaveStyleRule('min-height', '40px');
+      expect(content).toHaveStyleRule('height', '48px');
+      expect(content).toHaveStyleRule('margin-top', '4px');
+      expect(content).toHaveStyleRule('padding', '8px');
+      expect(content).toHaveStyleRule('border-radius', '6px');
+      expect(content).toHaveStyleRule('min-width', '160px');
+      expect(content).toHaveStyleRule('width', '240px');
+
+      await user.hover(content);
+      expect(content).toHaveStyleRule('background-color', hoverColor, {
+        modifier: ':hover',
+      });
+      expect(content).toHaveStyleRule('border-color', '#445566', {
+        modifier: ':hover',
+      });
+      expect(content).toHaveStyleRule('box-shadow', expect.any(String), {
+        modifier: ':hover',
+      });
+      expect(content).toHaveStyleRule('padding', '12px', {
+        modifier: ':hover',
+      });
+      expect(content).toHaveStyleRule('border-radius', '10px', {
+        modifier: ':hover',
+      });
+    });
+
+    test.each(['checkBoxGroup', 'radioButtonGroup'] as const)(
+      'applies Box-part and hover styles to the %s content wrapper',
+      async (inputName) => {
+        const user = userEvent.setup();
+        const theme: ThemeType = {
+          formField: {
+            border: false,
+            [inputName]: {
+              border: { color: '#112233', size: '2px' },
+              elevation: 'small',
+              pad: '8px',
+              round: '6px',
+              hover: {
+                background: hoverColor,
+                border: { color: '#445566' },
+                elevation: 'medium',
+                pad: '12px',
+                round: '10px',
+              },
+            },
+          },
+        };
+        const children =
+          inputName === 'checkBoxGroup' ? (
+            <CheckBoxGroup
+              aria-label="Choices"
+              name="choices"
+              options={['One', 'Two']}
+            />
+          ) : (
+            <RadioButtonGroup
+              aria-label="Choices"
+              name="choices"
+              options={['One', 'Two']}
+            />
+          );
+        const { content } = renderBackground(theme, {
+          fieldProps: { children },
+        });
+
+        expect(content).toHaveStyleRule('border', 'solid 2px #112233');
+        expect(content).toHaveStyleRule('box-shadow', expect.any(String));
+        expect(content).toHaveStyleRule('padding', '8px');
+        expect(content).toHaveStyleRule('border-radius', '6px');
+        await user.hover(content);
+        expect(content).toHaveStyleRule('background-color', hoverColor, {
+          modifier: ':hover',
+        });
+        expect(content).toHaveStyleRule('border-color', '#445566', {
+          modifier: ':hover',
+        });
+        expect(content).toHaveStyleRule('padding', '12px', {
+          modifier: ':hover',
+        });
+        expect(content).toHaveStyleRule('border-radius', '10px', {
+          modifier: ':hover',
+        });
+      },
+    );
+
+    test('keeps FormField CheckBox padding on the CheckBox label', () => {
+      render(
+        <Grommet
+          theme={{
+            formField: {
+              border: { position: 'inner', side: 'all' },
+              checkBox: { pad: '12px' },
+            },
+          }}
+        >
+          <FormField label="Label">
+            <CheckBox name="updates" label="Updates" />
+          </FormField>
+        </Grommet>,
+      );
+      expect(
+        screen.getByRole('checkbox', { name: 'Updates' }).closest('label'),
+      ).toHaveStyleRule('padding', '12px');
+    });
+
     test('undefined per-input backgrounds inherit shared surfaces', () => {
       const theme: ThemeType = {
         formField: {
@@ -1122,6 +1257,250 @@ describe('FormField', () => {
         modifier: ':hover',
       });
     });
+
+    test('per-input border false removes the default inner border', () => {
+      const theme: ThemeType = {
+        formField: {
+          border: { position: 'inner', side: 'all', color: '#123456' },
+          checkBoxGroup: { border: false },
+        },
+      };
+      const { content } = renderBackground(theme, {
+        fieldProps: {
+          children: (
+            <CheckBoxGroup
+              aria-label="Choices"
+              name="choices"
+              options={['One', 'Two']}
+            />
+          ),
+        },
+      });
+
+      expect(content).not.toHaveStyleRule('border-color', '#123456');
+    });
+
+    test.each([
+      ['checkBoxGroup', 'inner'],
+      ['checkBoxGroup', 'outer'],
+      ['checkBoxGroup', 'borderless'],
+      ['radioButtonGroup', 'inner'],
+      ['radioButtonGroup', 'outer'],
+      ['radioButtonGroup', 'borderless'],
+    ] as const)(
+      '%s error styles override normal styles with %s borders and reset',
+      async (inputName, position) => {
+        const user = userEvent.setup();
+        const theme: ThemeType = {
+          formField: {
+            border:
+              position === 'borderless' ? false : { position, side: 'all' },
+            round: '6px',
+            error: {
+              background: stateColor,
+              border: { color: '#990000' },
+            },
+            [inputName]: {
+              background: 'transparent',
+              border: { color: 'transparent', size: '3px', side: 'all' },
+              elevation: 'small',
+              pad: '8px',
+              round: '6px',
+              error: {
+                background: '#ffdddd',
+                border: { color: '#cc0000' },
+                elevation: 'medium',
+                pad: '12px',
+                round: false,
+              },
+              hover: { background: hoverColor, pad: '16px' },
+            },
+          },
+        };
+        const children =
+          inputName === 'checkBoxGroup' ? (
+            <CheckBoxGroup name="choices" options={['One', 'Two']} />
+          ) : (
+            <RadioButtonGroup name="choices" options={['One', 'Two']} />
+          );
+        const content = (error: boolean) => (
+          <Grommet theme={theme}>
+            <Form>
+              <FormField
+                name="choices"
+                label="Choices"
+                error={error}
+                contentProps={surfaceProps}
+              >
+                {children}
+              </FormField>
+            </Form>
+          </Grommet>
+        );
+        const { rerender } = render(content(false));
+        const surface = screen.getByRole('group', { name: 'Input surface' });
+        expect(surface).toHaveStyleRule('border', 'solid 3px transparent');
+        expect(surface).toHaveStyleRule('padding', '8px');
+        rerender(content(true));
+        expect(surface).toHaveStyleRule('border', 'solid 3px #cc0000');
+        expect(surface).toHaveStyleRule('background-color', '#ffdddd');
+        expect(surface).toHaveStyleRule('padding', '12px');
+        expect(surface).not.toHaveStyleRule('border-radius');
+        expect(surface).toHaveStyleRule('box-shadow', expect.any(String));
+        expect(surface).not.toHaveAttribute('error');
+        await user.hover(surface);
+        expect(surface).not.toHaveStyleRule('background-color', undefined, {
+          modifier: ':hover',
+        });
+        expect(surface).not.toHaveStyleRule('padding', undefined, {
+          modifier: ':hover',
+        });
+        rerender(content(false));
+        expect(surface).toHaveStyleRule('border', 'solid 3px transparent');
+        expect(surface).toHaveStyleRule('background-color', 'transparent');
+        expect(surface).toHaveStyleRule('padding', '8px');
+        expect(surface).toHaveStyleRule('border-radius', '6px');
+      },
+    );
+
+    test.each(['inner', 'borderless'] as const)(
+      'per-input error styling inherits shared error fill and border color with %s borders',
+      (position) => {
+        const { content } = renderBackground(
+          {
+            formField: {
+              border: position === 'inner' ? { position, side: 'all' } : false,
+              error: {
+                background: stateColor,
+                border: { color: '#cc0000' },
+              },
+              textInput: {
+                border: { color: 'transparent', size: '3px' },
+                error: { pad: '12px' },
+              },
+            },
+          },
+          { fieldProps: { error: true } },
+        );
+        expect(content).toHaveStyleRule('border', 'solid 3px #cc0000');
+        expect(content).toHaveStyleRule('background-color', stateColor);
+        expect(content).toHaveStyleRule('padding', '12px');
+      },
+    );
+
+    test('error border colors preserve normal border array sides and sizes', () => {
+      const { content } = renderBackground(
+        {
+          formField: {
+            border: false,
+            textInput: {
+              border: [
+                { side: 'top', color: 'transparent', size: '2px' },
+                { side: 'bottom', color: 'transparent', size: '3px' },
+              ],
+              error: { border: { color: '#cc0000' } },
+            },
+          },
+        },
+        { fieldProps: { error: true } },
+      );
+      expect(content).toHaveStyleRule('border-top', 'solid 2px #cc0000');
+      expect(content).toHaveStyleRule('border-bottom', 'solid 3px #cc0000');
+    });
+
+    test('error border colors preserve a normal side-string border', () => {
+      const { content } = renderBackground(
+        {
+          formField: {
+            textInput: {
+              border: 'bottom',
+              error: { border: { color: '#cc0000' } },
+            },
+          },
+        },
+        { fieldProps: { error: true } },
+      );
+      expect(content).toHaveStyleRule('border-bottom', 'solid 1px #cc0000');
+      expect(content).not.toHaveStyleRule('border');
+    });
+
+    test('generated input error styling remains visible during focus', async () => {
+      const user = userEvent.setup();
+      const { content } = renderBackground(
+        {
+          global: { focus: { border: { color: '#00ff00' } } },
+          formField: {
+            border: { position: 'inner', side: 'all' },
+            textArea: {
+              border: { color: 'transparent', size: '3px' },
+              error: { border: { color: '#cc0000' }, pad: '12px' },
+            },
+          },
+        },
+        {
+          generated: true,
+          fieldProps: { component: TextArea, error: true },
+        },
+      );
+      await user.type(screen.getByRole('textbox'), 'Keep this value');
+      expect(screen.getByRole('textbox')).toHaveValue('Keep this value');
+      expect(screen.getByRole('textbox')).toHaveAttribute(
+        'aria-invalid',
+        'true',
+      );
+      expect(content).toHaveStyleRule('border', 'solid 3px #cc0000');
+      expect(content).toHaveStyleRule('border-color', '#cc0000');
+      expect(content).toHaveStyleRule('padding', '12px');
+    });
+
+    test('per-input error styles allow false resets and contentProps overrides', () => {
+      const theme: ThemeType = {
+        formField: {
+          textInput: {
+            border: { color: '#112233' },
+            error: { border: false, round: false, pad: '12px' },
+          },
+        },
+      };
+      const { content } = renderBackground(theme, {
+        fieldProps: {
+          error: true,
+          contentProps: { background: overrideColor, pad: '16px' },
+        },
+      });
+      expect(content).not.toHaveStyleRule('border');
+      expect(content).not.toHaveStyleRule('border-radius');
+      expect(content).toHaveStyleRule('padding', '16px');
+      expect(content).toHaveStyleRule('background-color', overrideColor);
+    });
+
+    test.each([true, false])(
+      'disabled=%s preserves state priority over the per-input error part',
+      (disabled) => {
+        const { content } = renderBackground(
+          {
+            global: { input: { readOnly: { background: '#112233' } } },
+            formField: {
+              border: { position: 'inner' },
+              disabled: { background: '#223344' },
+              textInput: {
+                pad: '8px',
+                error: { background: '#ffdddd', pad: '12px' },
+              },
+            },
+          },
+          {
+            fieldProps: { disabled, error: true },
+            inputProps: { disabled, readOnly: !disabled },
+          },
+        );
+        expect(content).toHaveStyleRule(
+          'background-color',
+          disabled ? '#223344' : '#112233',
+        );
+        expect(content).toHaveStyleRule('padding', '8px');
+      },
+    );
 
     test.each(['checkBoxGroup', 'radioButtonGroup'] as const)(
       'generated %s uses its transparent normal and hover overrides',

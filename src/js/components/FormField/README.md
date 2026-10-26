@@ -11,6 +11,23 @@ Documentation for this component: https://v2.grommet.io/formfield
   are camelCase, such as `textInput`, `checkBoxGroup`, and `radioButtonGroup`.
   Generated fields without `component` use `textInput`. Wrappers are not searched
   recursively for inputs.
+- Each `formField.<inputName>` also accepts `BoxPartThemeType` properties, and
+  its `hover` and `error` accept `BoxStateThemeType`. These style the FormField content
+  wrapper; for groups, they apply to the group as a whole, not individual
+  options. Use `checkBox.container.*` or `radioButton.container.*` to style an
+  individual option label. `formField.checkBox.pad` retains its legacy behavior
+  of forwarding padding to a direct CheckBox child. An explicit per-input
+  `border` overrides the default inner FormField border; set it to `false` to
+  remove that border for a particular input type.
+- `formField.<inputName>.error` applies only while that input's FormField is in
+  error. It can override `background`, `border`, `elevation`, `pad`, and `round`
+  on the content wrapper. Normal border size and side are retained for partial
+  error border objects; shared `formField.error` border/background values remain
+  fallbacks. An explicit error border can restore a normally disabled border.
+  Omitted error parts preserve existing styling. Disabled and read-only fields
+  retain their existing state styling rather than applying the per-input error
+  part. Hover remains suppressed while invalid, and `contentProps` and existing
+  extension hooks retain their precedence.
 - `formField.hover.background` and
   `formField.<inputName>.hover.background` control the content surface on hover.
   Hover styling is suppressed while disabled, read-only, invalid, or focused.
