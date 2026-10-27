@@ -2304,93 +2304,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   unselected: undefined,
       // },
     },
-    tab: {
-      active: {
-        color: 'text',
-        // background: undefined,
-      },
-      // background: undefined,
-      border: {
-        side: 'bottom',
-        size: 'small',
-        color: {
-          dark: 'accent-1',
-          light: 'brand',
-        },
-        active: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
-        },
-        disabled: {
-          // color: undefined,
-        },
-        hover: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
-          // extend: undefined,
-        },
-      },
-      color: 'control',
-      // disabled: {
-      //   color: undefined,
-      // },
-      // extend: undefined,
-      gap: 'small',
-      hover: {
-        // background: undefined,
-        // extend: undefined,
-        color: {
-          dark: 'white',
-          light: 'black',
-        },
-      },
-      margin: {
-        vertical: 'xxsmall',
-        horizontal: 'small',
-      },
-      pad: {
-        bottom: 'xsmall',
-      },
-    },
-    tabs: {
-      // background: undefined,
-      // extend: undefined,
-      // gap: undefined,
-      header: {
-        // alignSelf: undefined,
-        // background: undefined,
-        // border: {
-        //   side: undefined,
-        //   size: undefined,
-        //   style: undefined,
-        //   color: undefined,
-        // },
-        // extend: undefined,
-        nextButton: {
-          // icon: undefined,
-          pad: { horizontal: 'small', vertical: 'xsmall' },
-        },
-        previousButton: {
-          // icon: undefined,
-          pad: { horizontal: 'small', vertical: 'xsmall' },
-        },
-      },
-      panel: {
-        // extend: undefined,
-      },
-      step: {
-        small: 1,
-        medium: 3,
-        large: 3,
-      },
-    },
     stepper: {
       container: {
-
+        gap: { row: 'medium' },
       },
       indicator: {
         size: 'medium', // 'small' | 'medium' | 'large'
@@ -2526,6 +2442,90 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: { color: 'border' },
         },
         label: { color: 'text-weak' },
+      },
+    },
+    tab: {
+      active: {
+        color: 'text',
+        // background: undefined,
+      },
+      // background: undefined,
+      border: {
+        side: 'bottom',
+        size: 'small',
+        color: {
+          dark: 'accent-1',
+          light: 'brand',
+        },
+        active: {
+          color: {
+            dark: 'white',
+            light: 'black',
+          },
+        },
+        disabled: {
+          // color: undefined,
+        },
+        hover: {
+          color: {
+            dark: 'white',
+            light: 'black',
+          },
+          // extend: undefined,
+        },
+      },
+      color: 'control',
+      // disabled: {
+      //   color: undefined,
+      // },
+      // extend: undefined,
+      gap: 'small',
+      hover: {
+        // background: undefined,
+        // extend: undefined,
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+      },
+      margin: {
+        vertical: 'xxsmall',
+        horizontal: 'small',
+      },
+      pad: {
+        bottom: 'xsmall',
+      },
+    },
+    tabs: {
+      // background: undefined,
+      // extend: undefined,
+      // gap: undefined,
+      header: {
+        // alignSelf: undefined,
+        // background: undefined,
+        // border: {
+        //   side: undefined,
+        //   size: undefined,
+        //   style: undefined,
+        //   color: undefined,
+        // },
+        // extend: undefined,
+        nextButton: {
+          // icon: undefined,
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
+        previousButton: {
+          // icon: undefined,
+          pad: { horizontal: 'small', vertical: 'xsmall' },
+        },
+      },
+      panel: {
+        // extend: undefined,
+      },
+      step: {
+        small: 1,
+        medium: 3,
+        large: 3,
       },
     },
     table: {

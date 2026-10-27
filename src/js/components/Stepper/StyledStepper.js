@@ -36,15 +36,22 @@ const getConnectorColor = (stepStatus, theme) =>
   );
 
 const StyledStepItem = styled.li.withConfig({
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+  shouldForwardProp: (prop) =>
+    isPropValid(prop) && prop !== 'direction',
 })`
   display: flex;
   position: relative;
   ${(props) => {
     if (props.direction === 'vertical') {
+      const { gap } = props.stepTheme?.container || {};
+      const gapValue =
+        gap?.[props.direction === 'vertical' ? 'row' : 'column'] ||
+        gap ||
+        '0px';
+
       let paddingBottom = '0px';
       if (!props.isSubStep && !props.isLast && !props.hasSubSteps) {
-        paddingBottom = `${props.theme.global.edgeSize.medium}`;
+        paddingBottom = getMetricSize(props.theme, gapValue);
       }
 
       return css`
@@ -81,15 +88,13 @@ const StyledStepButton = styled(Box)`
 
 // transition: transform 0.1s ease, background-color 0.15s ease,
 //   border-color 0.15s ease, color 0.15s ease;
-const StyledIndicator = styled(Box).withConfig({
-  shouldForwardProp: (prop) => prop !== 'stepperTheme',
-})`
+const StyledIndicator = styled(Box)`
   box-sizing: content-box;
 
   ${(props) =>
     (() => {
       const indicatorSizeToken =
-        props.stepperTheme?.indicator?.size || 'medium';
+        props.stepTheme?.indicator?.size || 'medium';
       const size = getMetricSize(props.theme, indicatorSizeToken);
       
       return css`
@@ -98,7 +103,7 @@ const StyledIndicator = styled(Box).withConfig({
         min-width: ${size};
         min-height: ${size};
         color: ${normalizeColor(
-          props.stepperTheme?.indicator?.color || 'text',
+          props.stepTheme?.indicator?.color || 'text',
           props.theme,
         )};
       `;

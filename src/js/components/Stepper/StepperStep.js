@@ -13,11 +13,10 @@ import { StepConnector } from './StepConnector';
 import {
   StyledStepItem,
   StyledStepButton,
-  // StyledStepContent,
   StyledConnector,
   StyledSubStepsList,
 } from './StyledStepper';
-import { deepMerge } from '../../utils';
+import { resolveStepTheme } from './utils';
 
 export const StepperStep = ({
   step,
@@ -54,10 +53,9 @@ export const StepperStep = ({
       step,
       index,
       isLast,
-      isLabelRevealed: direction === 'vertical' || focusedIndex === index,
       isSubStep,
     }),
-    [step, index, isLast, direction, focusedIndex, isSubStep],
+    [step, index, isLast, isSubStep],
   );
 
   const handleClick = () => {
@@ -86,10 +84,12 @@ export const StepperStep = ({
     describedBy.push(`stepper-reason-${step.id}`);
   }
 
-  const stepperTheme = deepMerge(
-    {},
-    theme.stepper,
-    direction === 'vertical' ? theme.stepper?.vertical : {},
+  const stepTheme = resolveStepTheme(
+    theme,
+    direction,
+    step,
+    isSubStep,
+    currentStep,
   );
 
   const focusableProps = isReadOnly
@@ -114,6 +114,7 @@ export const StepperStep = ({
         isSubStep={isSubStep}
         isLast={isLast}
         hasSubSteps={!!subSteps?.length}
+        stepTheme={stepTheme}
         {...passThemeFlag}
       >
         <StyledStepButton
@@ -131,7 +132,7 @@ export const StepperStep = ({
             describedBy.length > 0 ? describedBy.join(' ') : undefined
           }
           {...focusableProps}
-          {...stepperTheme.button}
+          {...stepTheme.button}
         >
           <StepperIndicator />
           <Box align={ direction === 'vertical' ? 'start' : 'center' }>

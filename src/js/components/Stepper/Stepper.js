@@ -14,13 +14,13 @@ import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import { useThemeValue } from '../../utils/useThemeValue';
-import { deepMerge } from '../../utils/object';
 
 import { Keyboard } from '../Keyboard';
 
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
+import { resolveStepperTheme } from './utils';
 
 // Flattens steps with parent/child relationships into a linear list
 // for keyboard navigation and index-based tracking.
@@ -362,9 +362,11 @@ const Stepper = forwardRef(
       return elements;
     };
 
-    const stepperTheme = direction === 'horizontal'
-      ? theme.stepper
-      : deepMerge({}, theme.stepper, theme.stepper?.vertical);
+    const stepperTheme = resolveStepperTheme(theme, direction);
+
+    // Extract gap from stepperTheme.container. It will be handled
+    // by the Step for now.
+    const { gap, ...containerProps } = stepperTheme.container || {};
     const stepperContent = (
       <Box
         ref={ref}
@@ -382,7 +384,7 @@ const Stepper = forwardRef(
         pad="none"
         margin="none"
         style={{ listStyle: 'none' }}
-        {...stepperTheme.container}
+        {...containerProps}
         {...rest}
       >
         {children || renderDefaultSteps()}

@@ -4,8 +4,7 @@ import React from 'react';
 import { Text } from '../Text';
 import { useStepper, useStepItem } from './StepperContext';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { deepMerge } from '../../utils/object';
-import { getEffectiveState } from './StepperIndicator';
+import { resolveStepTheme } from './utils';
 
 export const StepperDescription = ({ ...rest }) => {
   const { direction, currentStep } = useStepper();
@@ -14,24 +13,18 @@ export const StepperDescription = ({ ...rest }) => {
   const { step, isSubStep } = useStepItem();
   if (!step || !step.description) return null;
 
-  const isCurrent = currentStep === step.id;
-  const hasCurrentChild =
-    !isSubStep && step.children?.some((c) => c.id === currentStep);
-  const isHighlighted = isCurrent || hasCurrentChild;
-  const effectiveState = getEffectiveState(step.status, isHighlighted);
-
-   const stepperTheme = deepMerge(
-    {},
-    theme.stepper,
-    direction === 'vertical' ? theme.stepper?.vertical : {},
-    isSubStep ? theme.stepper?.substep : {},
-    theme.stepper?.[effectiveState],
+  const stepTheme = resolveStepTheme(
+    theme,
+    direction,
+    step,
+    isSubStep,
+    currentStep,
   );
 
   return (
     <Text
       truncate={direction === 'horizontal'}
-      {...stepperTheme.description}
+      {...stepTheme.description}
       {...rest}
     >
       {step.description}
