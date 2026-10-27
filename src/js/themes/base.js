@@ -2400,7 +2400,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         align: 'center',
         justify: 'center',
       },
-      label: { size: 'medium' },
+      label: { size: 'medium', color: 'text' },
       connector: {
         thickness: 'small',
         color: 'border',
@@ -2456,7 +2456,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         indicator: {
           icon: StatusGoodSmall,
           background: 'brand',
-          color: 'white',
+          color: 'background-front',
           border: { color: 'brand' },
           // hover: {
           //   color: 'white',

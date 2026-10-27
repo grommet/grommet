@@ -12,7 +12,7 @@ import { StepperError, StepperDisabledReason } from './StepperHelperText';
 import { StepConnector } from './StepConnector';
 import {
   StyledStepItem,
-  // StyledStepButton,
+  StyledStepButton,
   // StyledStepContent,
   StyledConnector,
   StyledSubStepsList,
@@ -29,7 +29,7 @@ export const StepperStep = ({
   index: indexProp,
   isSubStep,
   subSteps,
-  // onFocusStep,
+  onFocusStep,
   stepsRef,
   stepRefs,
 }) => {
@@ -93,52 +93,20 @@ export const StepperStep = ({
   );
 
   const focusableProps = isReadOnly
-    ? // null rather than undefined, so Button's `type = 'button'` default
-      // parameter doesn't put a type attribute on the rendered div
-      { type: null }
+    ? { }
     : {
-        // as: 'button',
+        forwardedAs: 'button',
+        background: 'none',
+        border: { size: '0px' },
         tabIndex: focusedIndex === index ? 0 : -1,
         onClick: handleClick,
-        // onKeyDown: handleKeyDown,
-        // onFocus: () => {
-        //   if (onFocusStep) onFocusStep(index);
-        // },
-        // type: 'button',
+        // indicator provides focus-visible treatment; avoid a second ring
+        focusIndicator: false,
+        onFocus: () => {
+          if (onFocusStep) onFocusStep(index);
+        },
       };
 
-      /*
-         <StyledStepButton
-          plain
-          // indicator provides focus-visible treatment; avoid a second ring
-          focusIndicator={false}
-          forwardedAs={isReadOnly ? 'div' : 'button'}
-          role={isReadOnly ? 'group' : undefined}
-          ref={(el) => {
-            if (stepRefs) {
-              if (el) stepRefs.current.set(index, el);
-              else stepRefs.current.delete(index);
-            }
-          }}
-          aria-current={isHighlighted ? 'step' : undefined}
-          aria-disabled={isDisabled || undefined}
-          aria-label={ariaLabel}
-          aria-describedby={
-            describedBy.length > 0 ? describedBy.join(' ') : undefined
-          }
-          isClickable={isClickable}
-          isDisabled={isDisabled}
-          isSubStep={isSubStep}
-          direction={direction}
-          {...focusableProps}
-        >
-          <StyledStepContent
-            direction={direction}
-            isSubStep={isSubStep}
-            hasDescription={!!step.description}
-            {...passThemeFlag}
-          >
-        */
   return (
     <StepItemContext.Provider value={stepItemValue}>
       <StyledStepItem
@@ -148,10 +116,7 @@ export const StepperStep = ({
         hasSubSteps={!!subSteps?.length}
         {...passThemeFlag}
       >
-        <Box
-          // indicator provides focus-visible treatment; avoid a second ring
-          // focusIndicator={false}
-          // forwardedAs={isReadOnly ? 'div' : 'button'}
+        <StyledStepButton
           role={isReadOnly ? 'group' : undefined}
           ref={(el) => {
             if (stepRefs) {
@@ -165,9 +130,6 @@ export const StepperStep = ({
           aria-describedby={
             describedBy.length > 0 ? describedBy.join(' ') : undefined
           }
-          // isClickable={isClickable}
-          // isDisabled={isDisabled}
-          // isSubStep={isSubStep}
           {...focusableProps}
           {...stepperTheme.button}
         >
@@ -178,7 +140,7 @@ export const StepperStep = ({
             <StepperError />
             <StepperDisabledReason />
           </Box>
-        </Box>
+        </StyledStepButton>
         {(showConnector !== undefined ? showConnector : !isLast) &&
           !subSteps?.length && (
             <StyledConnector

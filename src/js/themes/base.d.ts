@@ -351,6 +351,8 @@ interface StepType {
     thickness?: ThicknessType;
     round?: RoundType;
   }
+  // Interaction states
+  hover?: StepType;
 }
 interface StepperThemeType extends StepType {
   container?: BoxPartThemeType & {
@@ -366,8 +368,6 @@ interface StepperThemeType extends StepType {
   error?: StepType;
   currentError?: StepType;
   disabled?: StepType;
-  // Interaction states
-  hover?: StepType;
 }
 
 type TimeInputOptionThemeType = {

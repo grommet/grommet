@@ -3,14 +3,10 @@
 import React from 'react';
 
 import { useThemeValue } from '../../utils/useThemeValue';
-import { parseMetricToNum, deepMerge } from '../../utils';
-import { Box } from '../Box';
+import { deepMerge } from '../../utils';
 
 import { useStepper, useStepItem } from './StepperContext';
-// import { StyledIndicator } from './StyledStepper';
-
-const getMetricSize = (theme, size, type = 'edgeSize') =>
-  theme.global?.[type]?.[size] || theme.global?.size?.[size] || size;
+import { StyledIndicator } from './StyledStepper';
 
 const renderIcon = (Icon, props) => {
   if (!Icon) return null;
@@ -42,7 +38,7 @@ function getEffectiveState(status, isCurrent) {
 }
 
 export const StepperIndicator = ({ ...rest }) => {
-  const { currentStep, clickableSteps, direction } = useStepper();
+  const { currentStep, direction } = useStepper();
   const { theme, passThemeFlag } = useThemeValue();
 
   const { step, isSubStep } = useStepItem();
@@ -54,12 +50,6 @@ export const StepperIndicator = ({ ...rest }) => {
   const isHighlighted = isCurrent || hasCurrentChild;
   const effectiveState = getEffectiveState(step.status, isHighlighted);
   
-
-  // let stateTheme = theme.stepper?.[effectiveState]?.indicator || {};
-  // if (isSubStep && stateTheme.substep) {
-  //   stateTheme = { ...stateTheme, ...stateTheme.substep };
-  // }
-
   const stepperTheme = deepMerge(
     {},
     theme.stepper,
@@ -68,34 +58,21 @@ export const StepperIndicator = ({ ...rest }) => {
     theme.stepper?.[effectiveState],
   );
 
-  const isDisabled = step.status === 'disabled';
-  const isClickable = clickableSteps && !isDisabled;
-
+  // grab the icon pieces and size. Size will be handled
+  // in the StyledIndicator component but we pull it out
+  // here to leave other props as boxProps
   const indicatorTheme = stepperTheme?.indicator || {};
-  const { icon, iconSize, size, ...boxProps } = indicatorTheme;
-  const boxSize =
-    `${parseMetricToNum(getMetricSize(theme, size || '24px')) +
-    2 * parseMetricToNum(
-      getMetricSize(theme, boxProps?.border?.size || '2px', 'borderSize'),
-    )}px`;
+  const { color, icon, iconSize, size, ...boxProps } = indicatorTheme;
 
-  // const iconSize = stateTheme?.iconSize || (isSubStep ? 'xsmall' : 'small');
-
-  // return (
-  //   <StyledIndicator
-  //     effectiveState={effectiveState}
-  //     isSubStep={isSubStep}
-  //     isClickable={isClickable}
-  //     {...passThemeFlag}
-  //     {...rest}
-  //   >
-  //     {renderIcon(stateTheme?.icon, { size: iconSize })}
-  //   </StyledIndicator>
-  // );
   return (
-    <Box width={{ min: boxSize }} height={{ min: boxSize }} {...boxProps}>
+    <StyledIndicator
+      stepperTheme={stepperTheme}
+      {...boxProps}
+      {...passThemeFlag}
+      {...rest}
+    >
       {renderIcon(icon, { size: iconSize })}
-    </Box>
+    </StyledIndicator>
   );
 };
 
