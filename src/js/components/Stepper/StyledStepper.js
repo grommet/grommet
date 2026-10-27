@@ -133,7 +133,8 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, background-color 0.15s ease,
+    border-color 0.15s ease, color 0.15s ease;
 
   ${(props) =>
     (() => {
