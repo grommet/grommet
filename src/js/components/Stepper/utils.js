@@ -1,8 +1,6 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-
 import { deepMerge } from '../../utils';
-
 
 // Maps step status + current position to a visual state
 // used by both the indicator and label components.
@@ -18,10 +16,10 @@ export const getEffectiveState = (status, isCurrent) => {
   return 'pending';
 };
 
-export const resolveStepperTheme = (theme, direction) => 
-   direction === 'horizontal'
-      ? theme.stepper
-      : deepMerge({}, theme.stepper, theme.stepper?.vertical);
+export const resolveStepperTheme = (theme, direction) =>
+  direction === 'horizontal'
+    ? theme.stepper
+    : deepMerge({}, theme.stepper, theme.stepper?.vertical);
 
 export const resolveStepTheme = (
   theme,
