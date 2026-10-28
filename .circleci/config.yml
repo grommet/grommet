@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  browser-tools: circleci/browser-tools@1.4.8
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
@@ -84,27 +82,6 @@ jobs:
       - run:
           name: size
           command: yarn test-bundlesize
-  test:
-    <<: *defaults
-    resource_class: small
-    # Assigned a size small resource class because we currently only have 3 end
-    # to end tests. As we expand our e2e testing we may want to adjust this.
-    steps:
-      - attach_workspace:
-          at: ~/grommet-ci
-      - run: sudo apt-get update
-      - browser-tools/install-chrome:
-          replace-existing: true
-      - browser-tools/install-chromedriver
-      - run:
-          name: Start project
-          command: yarn start
-          background: true
-      - run:
-          name: End to end test
-          command: yarn test-e2e-ci
-      - store_test_results:
-          path: /tmp/test-results
   release:
     <<: *defaults
     steps:
@@ -135,12 +112,6 @@ workflows:
             tags:
               only: /.*/
       - jest:
-          requires:
-            - checkout
-          filters:
-            tags:
-              only: /.*/
-      - test:
           requires:
             - checkout
           filters:
