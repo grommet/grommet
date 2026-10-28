@@ -211,26 +211,6 @@ const Wizard = forwardRef(
     const currentStep = isControlled ? currentStepProp : uncontrolledStep;
     const latest = useRef({ currentStep, steps });
     latest.current = { currentStep, steps };
-    const [revealedParentIds, setRevealedParentIds] = useState(() => new Set());
-    const currentParentId = useMemo(
-      () =>
-        steps.find(
-          (step) =>
-            step.children?.length &&
-            (step.id === currentStep ||
-              step.children.some((child) => child.id === currentStep)),
-        )?.id,
-      [steps, currentStep],
-    );
-    if (currentParentId && !revealedParentIds.has(currentParentId)) {
-      setRevealedParentIds(
-        new Set(Array.from(revealedParentIds).concat(currentParentId)),
-      );
-    }
-    const revealedParentIdList = useMemo(
-      () => Array.from(revealedParentIds),
-      [revealedParentIds],
-    );
     const mounted = useRef(false);
     const navigationVersion = useRef(0);
     const validationInFlight = useRef();
@@ -805,7 +785,6 @@ const Wizard = forwardRef(
         cancel,
         hasCancelHandler,
         showProgress: effectiveShowProgress,
-        revealedParentIds: revealedParentIdList,
         renderStep,
         // Internal only: `messages` is not part of the public
         // WizardContextValue but is read by internal subcomponents
@@ -842,7 +821,6 @@ const Wizard = forwardRef(
         cancel,
         hasCancelHandler,
         effectiveShowProgress,
-        revealedParentIdList,
         renderStep,
         messages,
       ],
@@ -879,11 +857,11 @@ const Wizard = forwardRef(
                   effectiveShowProgress === 'vertical' ? 'row' : 'column'
                 }
               >
-                {effectiveShowProgress &&
-                  responsiveSize !== 'small' &&
-                  responsiveSize !== 'xsmall' && (
-                    <WizardProgress revealedParentIds={revealedParentIdList} />
-                  )}
+                <WizardProgress
+                  hidden={
+                    responsiveSize === 'small' || responsiveSize === 'xsmall'
+                  }
+                />
                 <Box flex="grow">
                   <WizardStepHeader />
                   <WizardContent />

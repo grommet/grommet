@@ -12,7 +12,7 @@ import { useWizard } from './WizardContext';
 export const WizardProgress = ({
   'aria-label': ariaLabelProp,
   showDescription = false,
-  revealedParentIds: revealedParentIdsProp,
+  hidden: hiddenProp,
   ...rest
 }) => {
   const { theme } = useThemeValue();
@@ -26,12 +26,7 @@ export const WizardProgress = ({
     stepStates,
     stepErrorMessages,
     messages,
-    revealedParentIds: contextRevealedParentIds,
   } = useWizard();
-  const revealedParentIds = revealedParentIdsProp ?? contextRevealedParentIds;
-
-  // Opt-in: render nothing when `showProgress` is false.
-  if (!showProgress) return null;
 
   const progressTheme =
     showProgress === 'vertical'
@@ -93,6 +88,7 @@ export const WizardProgress = ({
       flex={false}
       // Vertical rail should hug its steps, not stretch to the body height.
       alignSelf={showProgress === 'vertical' ? 'start' : undefined}
+      hidden={!showProgress || hiddenProp}
       {...rest}
     >
       <Stepper
@@ -103,7 +99,6 @@ export const WizardProgress = ({
         onStepClick={onStepClick}
         showDescription={showDescription}
         aria-label={ariaLabel}
-        revealedParentIds={revealedParentIds}
       />
     </Box>
   );

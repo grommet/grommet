@@ -70,7 +70,6 @@ const Stepper = forwardRef(
       'aria-label': ariaLabel,
       children,
       id,
-      revealedParentIds,
       ...rest
     },
     ref,
@@ -158,16 +157,8 @@ const Stepper = forwardRef(
     const [localRevealedParents, setLocalRevealedParents] = useState(
       () => new Set(),
     );
-    const revealedParents = useMemo(
-      () =>
-        revealedParentIds ? new Set(revealedParentIds) : localRevealedParents,
-      [revealedParentIds, localRevealedParents],
-    );
-    if (
-      revealedParentIds === undefined &&
-      currentParentId &&
-      !localRevealedParents.has(currentParentId)
-    ) {
+    const revealedParents = localRevealedParents;
+    if (currentParentId && !localRevealedParents.has(currentParentId)) {
       setLocalRevealedParents(
         new Set(Array.from(localRevealedParents).concat(currentParentId)),
       );

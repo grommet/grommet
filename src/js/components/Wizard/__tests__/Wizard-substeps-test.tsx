@@ -264,6 +264,9 @@ describe('Wizard progressive substeps', () => {
 
     rerender(<Example showProgress={false} />);
     expect(screen.queryByRole('list', { name: 'Setup progress' })).toBeNull();
+    expect(
+      screen.getByRole('list', { name: 'Setup progress', hidden: true }),
+    ).toBeTruthy();
     await user.click(screen.getByRole('button', { name: 'Jump to review' }));
     expectPage('Review', 6);
 
