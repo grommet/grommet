@@ -95,6 +95,7 @@ const TextInput = forwardRef(
       copy,
       defaultSuggestion,
       defaultValue,
+      dir,
       disabled,
       dropAlign = defaultDropAlign,
       dropHeight,
@@ -649,6 +650,9 @@ const TextInput = forwardRef(
 
     return (
       <StyledTextInputContainer
+        // lets the actions group follow the text direction; "auto" would
+        // resolve against the container's own (empty) text, so skip it
+        dir={dir !== 'auto' ? dir : undefined}
         hasButton={!!actionsGroup}
         readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
         readOnlyCopy={readOnlyCopy}
@@ -659,7 +663,7 @@ const TextInput = forwardRef(
         {...passThemeFlag}
       >
         {/* reverse changes the icon position; actions always stay on the */}
-        {/* right. */}
+        {/* end side (right in ltr, left in rtl). */}
         {showStyledPlaceholder && (
           <StyledPlaceholder {...passThemeFlag}>
             {placeholder}
@@ -678,6 +682,7 @@ const TextInput = forwardRef(
           <StyledTextInput
             aria-label={a11yTitle}
             ref={inputRef}
+            dir={dir}
             id={id}
             name={name}
             autoComplete="off"
