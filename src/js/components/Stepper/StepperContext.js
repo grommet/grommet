@@ -22,7 +22,6 @@ export const StepItemContext = createContext({
   step: null,
   index: 0,
   isLast: false,
-  isLabelRevealed: false,
   isSubStep: false,
   isDisabled: false,
 });

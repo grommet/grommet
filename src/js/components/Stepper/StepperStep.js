@@ -60,11 +60,10 @@ export const StepperStep = ({
       step,
       index,
       isLast,
-      isLabelRevealed: direction === 'vertical' || focusedIndex === index,
       isSubStep,
       isDisabled,
     }),
-    [step, index, isLast, direction, focusedIndex, isSubStep, isDisabled],
+    [step, index, isLast, isSubStep, isDisabled],
   );
 
   const handleClick = () => {

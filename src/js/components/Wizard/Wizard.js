@@ -18,7 +18,6 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 
 import { Box } from '../Box';
 import { WizardContext } from './WizardContext';
-import { WizardRevealContext } from './WizardRevealContext';
 import { WizardHeader } from './WizardHeader';
 import { WizardProgress } from './WizardProgress';
 import { WizardStepHeader } from './WizardStepHeader';
@@ -806,6 +805,7 @@ const Wizard = forwardRef(
         cancel,
         hasCancelHandler,
         showProgress: effectiveShowProgress,
+        revealedParentIds: revealedParentIdList,
         renderStep,
         // Internal only: `messages` is not part of the public
         // WizardContextValue but is read by internal subcomponents
@@ -842,6 +842,7 @@ const Wizard = forwardRef(
         cancel,
         hasCancelHandler,
         effectiveShowProgress,
+        revealedParentIdList,
         renderStep,
         messages,
       ],
@@ -893,20 +894,18 @@ const Wizard = forwardRef(
       );
     }
     return (
-      <WizardRevealContext.Provider value={revealedParentIdList}>
-        <WizardContext.Provider value={contextValue}>
-          <Box
-            ref={wizardRef}
-            id={id}
-            aria-label={ariaLabel}
-            role="region"
-            flex={{ grow: 1, shrink: 1 }}
-            {...rest}
-          >
-            {content}
-          </Box>
-        </WizardContext.Provider>
-      </WizardRevealContext.Provider>
+      <WizardContext.Provider value={contextValue}>
+        <Box
+          ref={wizardRef}
+          id={id}
+          aria-label={ariaLabel}
+          role="region"
+          flex={{ grow: 1, shrink: 1 }}
+          {...rest}
+        >
+          {content}
+        </Box>
+      </WizardContext.Provider>
     );
   },
 );

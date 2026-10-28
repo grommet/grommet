@@ -16,7 +16,6 @@ import { MessageContext } from '../../contexts/MessageContext';
 import { Keyboard } from '../Keyboard';
 
 import { StepperContext } from './StepperContext';
-import { StepperRevealContext } from './StepperRevealContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
 
@@ -71,12 +70,12 @@ const Stepper = forwardRef(
       'aria-label': ariaLabel,
       children,
       id,
+      revealedParentIds,
       ...rest
     },
     ref,
   ) => {
     const { format } = useContext(MessageContext);
-    const revealedParentIds = useContext(StepperRevealContext);
     const stepRefs = useRef(new Map());
     const allSteps = useMemo(() => flattenSteps(steps), [steps]);
 
