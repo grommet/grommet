@@ -30,14 +30,20 @@ const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'flex: 1 1 auto;'}
   ${(props) => (props.hasButton || props.readOnlyCopy) && 'min-width: 0;'}
-  ${(props) => {
-    if (!(props.readOnlyCopy || props.hasButton)) return '';
-    return 'padding-right: 0px;';
-  }}
   // readOnly border is handled by StyledTextInputContainer
   ${(props) => (props.readOnly || props.hasButton) && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}
   ${(props) => props.icon && !props.hasActionsGroup && inputPadForIcon}
+  ${(props) =>
+    // the static leading icon already pads its right side
+    props.hasLeadingIcon && props.hasActionsGroup && 'padding-left: 0px;'}
+  ${(props) =>
+    // avoid a second, native clear button on type="search" in WebKit/Blink
+    props.hasClear &&
+    `&::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }`}
   ${(props) =>
     props.disabled &&
     disabledStyle(
