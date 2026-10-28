@@ -3,6 +3,9 @@
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import {
+  backgroundStyle,
+  borderStyle,
+  deepMerge,
   focusStyle,
   normalizeColor,
   styledComponentsConfig,
@@ -12,22 +15,8 @@ import { Box } from '../Box';
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
 
-// const getTextMetric = (theme, size, metric) =>
-//   theme.text?.[size]?.[metric] || theme.text?.medium?.[metric];
-
 const getBorderWidth = (theme, size) =>
   theme.global?.borderSize?.[size] || size || theme.global?.borderSize?.xsmall;
-
-// const getSubStepSizeToken = (indicatorSize) => {
-//   switch (indicatorSize) {
-//     case 'large':
-//       return 'small';
-//     case 'small':
-//       return 'xsmall';
-//     default:
-//       return 'small';
-//   }
-// };
 
 const getConnectorColor = (stepStatus, theme) =>
   normalizeColor(
@@ -114,68 +103,34 @@ const StyledIndicator = styled(Box)`
   }
 
   ${(props) => {
-    // if (!props.isClickable) return '';
+    if (!props.isClickable) return '';
 
-    // const { theme } = props;
-    // const stateTheme= theme.stepper?.[props.effectiveState]?.indicator || {};
-    // const backgroundColor = stateTheme?.background
-    //   ? normalizeColor(stateTheme.background, theme)
-    //   : undefined;
-    // const borderColor = stateTheme?.border
-    //   ? normalizeColor(stateTheme.border, theme)
-    //   : undefined;
-    // const color = stateTheme?.color
-    //   ? normalizeColor(stateTheme.color, theme)
-    //   : undefined;
-
-    // const stateBackgroundHoverColor = stateTheme?.hover?.background
-    //   ? normalizeColor(stateTheme.hover.background, theme)
-    //   : undefined;
-    // const stateBorderHoverColor = stateTheme?.hover?.border
-    //   ? normalizeColor(stateTheme.hover.border, theme)
-    //   : undefined;
-    // const stateColorHoverColor = stateTheme?.hover?.color
-    //   ? normalizeColor(stateTheme.hover.color, theme)
-    //   : undefined;
-
-    // const defaultBackgroundHoverColor = backgroundColor
-    //   ? `color-mix(in srgb, ${backgroundColor} 80%, black)`
-    //   : normalizeColor(
-    //       theme.stepper?.hover?.background || 'background-contrast',
-    //       theme,
-    //     );
-    // const defaultBorderHoverColor = borderColor
-    //   ? `color-mix(in srgb, ${borderColor} 80%, black)`
-    //   : normalizeColor(theme.stepper?.hover?.border || 'text', theme);
-    // const defaultColorHoverColor = color
-    //   ? `color-mix(in srgb, ${color} 80%, black)`
-    //   : normalizeColor('text-strong', theme);
-
-    // const hoverBackgroundColor =
-    //   stateBackgroundHoverColor || defaultBackgroundHoverColor;
-    // const hoverBorderColor =stateBorderHoverColor || defaultBorderHoverColor;
-    // const hoverColor = stateColorHoverColor || defaultColorHoverColor;
-
-    // const hoverStyles = (() => css`
-    //   background: ${hoverBackgroundColor};
-    //   border-color: ${hoverBorderColor};
-    //   color: ${hoverColor};
-    // `)();
-
-    const hoverBackgroundColor = normalizeColor(
-      props.theme.stepper?.hover?.background || 'background-contrast',
-      props.theme,
+    // For hover colors we'll use the hover part of the stepper theme
+    // that resolved for the step. If there isn't one we try to
+    // just darken the various colors for the step. 
+    const { theme } = props;
+    const hoverTheme = props.stepTheme?.hover?.indicator || {};
+    const comboTheme = deepMerge(
+      {},
+      props.stepTheme?.indicator || {},
+      hoverTheme,
     );
-    const hoverBorderColor = normalizeColor(
-      props.theme.stepper?.hover?.border || 'text',
-      props.theme,
+
+    const hoverColor = normalizeColor(
+      hoverTheme?.color || theme.global?.hover?.color || 'text',
+      theme,
     );
-    const hoverColor = normalizeColor('text-strong', props.theme);
-    const hoverStyles = css`
-      background: ${hoverBackgroundColor};
-      border-color: ${hoverBorderColor};
+    const hoverBackground =
+      hoverTheme?.background ||
+      theme.global?.hover?.background ||
+      'background-contrast';
+
+    const hoverStyles = (() => css`
+      ${backgroundStyle(hoverBackground, theme)};
+      ${hoverTheme?.border ? borderStyle(comboTheme.border, false, theme) : ''};
       color: ${hoverColor};
-    `;
+    `)();
+
 
     //   ${StyledStepButton}:not([aria-disabled]):active & {
     //     transform: scale(0.95);

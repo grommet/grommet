@@ -2362,10 +2362,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           background: 'background-front',
           color: 'text-strong',
           border: { color: 'text-xweak' },
-          // hover: {
-          //   background: 'background-front',
-          //   border: 'text-strong',
-          // },
         },
       },
       current: {
@@ -2374,9 +2370,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           background: 'brand',
           color: 'background-front',
           border: { color: 'brand' },
-          // hover: {
-          //   color: 'white',
-          // },
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
@@ -2388,9 +2381,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           background: 'brand',
           color: 'white',
           border: { color: 'brand' },
-          // hover: {
-          //   color: 'white',
-          // },
         },
         label: {
           color: { dark: 'text-strong', light: 'brand' },
@@ -2399,12 +2389,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       completed: {
         indicator: {
           icon: FormCheckmark,
-          background: 'background-front',
           color: 'brand',
           border: { color: 'brand' },
-          // hover: {
-          //   background: 'background-front',
-          // },
         },
         label: { color: 'text-weak' },
         connector: { color: 'brand' },
@@ -2416,9 +2402,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           background: 'background-front',
           color: 'status-critical',
           border: { color: 'status-critical' },
-          // hover: {
-          //   background: 'background-front',
-          // },
         },
         connector: { color: 'status-critical' },
       },
@@ -2429,9 +2412,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           background: 'status-critical',
           color: 'white',
           border: { color: 'status-critical' },
-          // hover: {
-          //   color: 'white',
-          // },
         },
         label: { color: 'status-critical' },
       },
@@ -2442,6 +2422,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: { color: 'border' },
         },
         label: { color: 'text-weak' },
+      },
+      hover: {
+        indicator: {
+          border: { color: 'text-strong' },
+        },
       },
     },
     tab: {

@@ -24,11 +24,14 @@ const renderIcon = (Icon, props) => {
 };
 
 export const StepperIndicator = ({ ...rest }) => {
-  const { currentStep, direction } = useStepper();
+  const { currentStep, clickableSteps, direction } = useStepper();
   const { theme, passThemeFlag } = useThemeValue();
 
   const { step, isSubStep } = useStepItem();
   if (!step) return null;
+
+  const isDisabled = step.status === 'disabled';
+  const isClickable = clickableSteps && !isDisabled;
 
   const stepTheme = resolveStepTheme(
     theme,
@@ -47,6 +50,7 @@ export const StepperIndicator = ({ ...rest }) => {
   return (
     <StyledIndicator
       stepTheme={stepTheme}
+      isClickable={isClickable}
       {...boxProps}
       {...passThemeFlag}
       {...rest}
