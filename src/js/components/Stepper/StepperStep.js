@@ -3,7 +3,6 @@
 import React, { useContext, useMemo } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { Box } from '../Box';
 import { useStepper, StepItemContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
@@ -13,6 +12,7 @@ import { StepConnector } from './StepConnector';
 import {
   StyledStepItem,
   StyledStepButton,
+  StyledStepContent,
   StyledConnector,
   StyledSubStepsList,
 } from './StyledStepper';
@@ -135,12 +135,17 @@ export const StepperStep = ({
           {...stepTheme.button}
         >
           <StepperIndicator />
-          <Box align={ direction === 'vertical' ? 'start' : 'center' }>
+          <StyledStepContent
+            align={direction === 'vertical' ? 'start' : 'center'}
+            isVertical={direction === 'vertical'}
+            isSubStep={isSubStep}
+            hasDescription={!!step.description}
+          >
             <StepperLabel />
             {showDescription && <StepperDescription />}
             <StepperError />
             <StepperDisabledReason />
-          </Box>
+          </StyledStepContent>
         </StyledStepButton>
         {(showConnector !== undefined ? showConnector : !isLast) &&
           !subSteps?.length && (

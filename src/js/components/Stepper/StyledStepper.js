@@ -15,6 +15,9 @@ import { Box } from '../Box';
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
 
+const getTextMetric = (theme, size, metric) =>
+  theme.text?.[size]?.[metric] || theme.text?.medium?.[metric];
+
 const getBorderWidth = (theme, size) =>
   theme.global?.borderSize?.[size] || size || theme.global?.borderSize?.xsmall;
 
@@ -75,8 +78,21 @@ const StyledStepButton = styled(Box)`
   }
 `;
 
-// transition: transform 0.1s ease, background-color 0.15s ease,
-//   border-color 0.15s ease, color 0.15s ease;
+const StyledStepContent = styled(Box)`
+  ${(props) => {
+    if (props.isVertical && !props.isSubStep && !props.hasDescription) {
+      const indicatorSizeToken =
+        props.theme.stepper?.indicator?.size || 'medium';
+      const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
+      const lineHeight = getTextMetric(props.theme, 'small', 'height');
+      return css`
+        padding-top: calc((${indicatorSize} - ${lineHeight}) / 2);
+      `;
+    }
+    return '';
+  }}
+`;
+
 const StyledIndicator = styled(Box)`
   box-sizing: content-box;
 
@@ -230,6 +246,7 @@ const StyledSubStepsList = styled.ol.withConfig({
 export {
   StyledStepItem,
   StyledStepButton,
+  StyledStepContent,
   StyledIndicator,
   StyledConnector,
   StyledSubStepsList,

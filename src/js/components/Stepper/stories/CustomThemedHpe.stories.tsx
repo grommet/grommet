@@ -185,6 +185,12 @@ export const CustomThemedHpe = () => {
   const steps : StepType[] = [
     { id: 'account', title: 'Account', status: 'completed' },
     { id: 'profile', title: 'Profile', status: 'disabled', disabledReason: 'Profile step is disabled' },
+    { id: 'advanced', title: 'Advanced', status: 'error', errorMessage: 'Error in advanced step' },
+    { id: 'review', title: 'Review', status: 'pending' },
+  ];
+  const vsteps : StepType[] = [
+    { id: 'account', title: 'Account', status: 'completed' },
+    { id: 'profile', title: 'Profile', status: 'disabled', disabledReason: 'Profile step is disabled' },
     { id: 'advanced', title: 'Advanced', 
       children: [
         { id: 'advanced-a', title: 'Advanced A', status: 'error', errorMessage: 'Error in advanced step' },
@@ -230,7 +236,7 @@ export const CustomThemedHpe = () => {
         <Box fill="horizontal" gap="medium">
           <Box gap="medium" pad="large">
             <Stepper
-              steps={steps}
+              steps={vsteps}
               currentStep={currentStep}
               direction="vertical"
               onStepClick={(id) => setCurrentStep(id)}
@@ -248,7 +254,7 @@ export const CustomThemedHpe = () => {
               Dark Theme
             </Heading>
             <Stepper
-              steps={steps}
+              steps={vsteps}
               currentStep={currentStep}
               direction="vertical"
               onStepClick={(id) => setCurrentStep(id)}
