@@ -153,11 +153,12 @@ export const StepperStep = ({
               direction={direction}
               status={step.status}
               aria-hidden="true"
+              stepTheme={stepTheme}
               {...passThemeFlag}
             />
           )}
         {!!subSteps?.length && (
-          <StepConnector step={step} direction={direction}>
+          <StepConnector>
             <StyledSubStepsList direction={direction} {...passThemeFlag}>
               {subSteps}
             </StyledSubStepsList>

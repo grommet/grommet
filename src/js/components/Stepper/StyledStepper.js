@@ -21,12 +21,6 @@ const getTextMetric = (theme, size, metric) =>
 const getBorderWidth = (theme, size) =>
   theme.global?.borderSize?.[size] || size || theme.global?.borderSize?.xsmall;
 
-const getConnectorColor = (stepStatus, theme) =>
-  normalizeColor(
-    theme.stepper?.[stepStatus]?.connector?.color || 'border',
-    theme,
-  );
-
 const StyledStepItem = styled.li.withConfig({
   shouldForwardProp: (prop) =>
     isPropValid(prop) && prop !== 'direction',
@@ -165,19 +159,18 @@ const StyledIndicator = styled(Box)`
 
 const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
-    const { theme } = props;
-    const indicatorSizeToken = theme.stepper?.indicator?.size || 'medium';
+    const { theme, stepTheme } = props;
+    const indicatorSizeToken = stepTheme?.indicator?.size || 'medium';
     const parentSize = getMetricSize(theme, indicatorSizeToken);
-    const indicatorBorderWidth = getMetricSize(
+    const indicatorBorderWidth = getBorderWidth(
       theme,
-      theme.stepper?.indicator?.border?.width || '2px',
+      stepTheme?.indicator?.border?.size || '2px',
     );
     const buttonPad =
       props.theme.global?.edgeSize?.[
-        props.theme.stepper?.button?.pad || 'xxsmall'
+        stepTheme?.button?.pad || 'xxsmall'
       ];
-    const connectorStrokeToken =
-      theme.stepper?.connector?.stroke?.width || 'small';
+    const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
 
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
@@ -195,7 +188,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
             right: calc(-50% + ${connectorOffset});
             height: ${connectorThickness};
             margin-inline: ${props.theme.global.edgeSize[
-              props.theme.stepper?.horizontal?.connector?.margin || 'xxsmall'
+              stepTheme?.connector?.margin || 'xxsmall'
             ]};
           `
         : css`
@@ -215,7 +208,8 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     `;
   }}
   position: absolute;
-  background: ${(props) => getConnectorColor(props.status, props.theme)};
+  background: ${(props) =>
+    normalizeColor(props.stepTheme?.connector?.color || 'border', props.theme)};
 `;
 
 const StyledSubStepsList = styled.ol.withConfig({

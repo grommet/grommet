@@ -350,6 +350,7 @@ interface StepType {
     color?: ColorType;
     thickness?: ThicknessType;
     round?: RoundType;
+    margin?: string;
   }
   // Interaction states
   hover?: StepType;
