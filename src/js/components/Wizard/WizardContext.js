@@ -29,7 +29,6 @@ export const WizardContext = React.createContext({
   // True when `onCancel` was provided; drives the footer Cancel button.
   hasCancelHandler: false,
   showProgress: false,
-  revealedParentIds: [],
   renderStep: undefined,
 });
 

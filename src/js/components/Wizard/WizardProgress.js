@@ -12,6 +12,7 @@ import { useWizard } from './WizardContext';
 export const WizardProgress = ({
   'aria-label': ariaLabelProp,
   showDescription = false,
+  revealedParentIds: revealedParentIdsProp,
   ...rest
 }) => {
   const { theme } = useThemeValue();
@@ -25,8 +26,9 @@ export const WizardProgress = ({
     stepStates,
     stepErrorMessages,
     messages,
-    revealedParentIds,
+    revealedParentIds: contextRevealedParentIds,
   } = useWizard();
+  const revealedParentIds = revealedParentIdsProp ?? contextRevealedParentIds;
 
   // Opt-in: render nothing when `showProgress` is false.
   if (!showProgress) return null;
