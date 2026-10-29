@@ -47,7 +47,6 @@ import {
 import { HeadingProps } from '../components/Heading';
 import { ParagraphProps } from '../components/Paragraph';
 import { SkeletonProps } from '../components/Skeleton/index';
-import { Bo } from 'node_modules/storybook/dist/chunk-BoIbUcxL';
 
 /**
  * Themeable visual properties shared by component parts rendered as a Box.
