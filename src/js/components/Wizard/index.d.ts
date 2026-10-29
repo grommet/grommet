@@ -98,6 +98,12 @@ export interface WizardProps<TValue = Record<string, any>> {
   steps: WizardStep<TValue>[];
   clickableSteps?: boolean;
   closable?: boolean;
+  /** Maximum width of the centered middle (including progress) and footer
+   * content. The footer background spans the full width. Accepts Box width
+   * tokens or CSS widths in the default composition.
+   * Regions fill available space up to this limit. Omitted means no limit.
+   * Does not affect the header or custom children. */
+  contentMaxWidth?: Extract<BoxExtendedProps['width'], string>;
   currentStep?: string;
   defaultStep?: string;
   form?: boolean;

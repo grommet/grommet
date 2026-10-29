@@ -132,6 +132,7 @@ const Wizard = forwardRef(
       steps,
       clickableSteps = false,
       closable = true,
+      contentMaxWidth,
       currentStep: currentStepProp,
       defaultStep,
       form = true,
@@ -364,7 +365,7 @@ const Wizard = forwardRef(
             );
           }
           return undefined;
-        }     
+        }
         return !match.disabled ? nextId : undefined;
       }
       let nextIndex = currentStepIndex + 1;
@@ -750,8 +751,8 @@ const Wizard = forwardRef(
 
     const canGoNext = !currentStepObj?.disabled && !isValidating;
     const isBlocked =
-      (currentValidation?.form?.ok === false ||
-        currentValidation?.callback?.ok === false);
+      currentValidation?.form?.ok === false ||
+      currentValidation?.callback?.ok === false;
     const isCompleted = completedSteps.has(currentStep);
 
     const contextValue = useMemo(
@@ -832,9 +833,17 @@ const Wizard = forwardRef(
     let content = children;
 
     if (!content) {
-      const footerNode = footer ?? <WizardFooter />;
+      const footerNode = footer ?? (
+        <WizardFooter
+          {...(contentMaxWidth ? { background: undefined, border: false } : {})}
+        />
+      );
 
       const bodyTheme = theme.wizard?.body;
+      const footerTheme = theme.wizard?.footer;
+      const contentWidth = contentMaxWidth
+        ? { max: contentMaxWidth }
+        : undefined;
 
       // Default layout: header + middle (progress + step body) + footer.
       // Header/footer stay pinned; only WizardContent scrolls internally.
@@ -853,6 +862,7 @@ const Wizard = forwardRef(
                 gap={bodyTheme?.gap}
                 flex="grow"
                 fill="horizontal"
+                width={contentWidth}
                 direction={
                   effectiveShowProgress === 'vertical' ? 'row' : 'column'
                 }
@@ -866,7 +876,21 @@ const Wizard = forwardRef(
                 </Box>
               </Box>
             </Box>
-            {footerNode}
+            {contentMaxWidth ? (
+              <Box
+                fill="horizontal"
+                background={footerTheme?.background}
+                border={footerTheme?.border}
+                align="center"
+                flex={false}
+              >
+                <Box fill="horizontal" width={contentWidth}>
+                  {footerNode}
+                </Box>
+              </Box>
+            ) : (
+              footerNode
+            )}
           </>
         </Box>
       );
