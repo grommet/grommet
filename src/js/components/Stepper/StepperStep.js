@@ -96,6 +96,7 @@ export const StepperStep = ({
     ? { }
     : {
         forwardedAs: 'button',
+        type: 'button',
         background: 'none',
         border: { size: '0px' },
         tabIndex: focusedIndex === index ? 0 : -1,
