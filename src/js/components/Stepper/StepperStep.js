@@ -100,7 +100,10 @@ export const StepperStep = ({
         background: 'none',
         border: { size: '0px' },
         tabIndex: focusedIndex === index ? 0 : -1,
-        onClick: handleClick,
+        onClick: (event) => {
+          if (event.type === 'keydown') event.preventDefault();
+          handleClick();
+        },
         // indicator provides focus-visible treatment; avoid a second ring
         focusIndicator: false,
         onFocus: () => {
