@@ -2385,6 +2385,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         label: {
           color: { dark: 'text-strong', light: 'brand' },
         },
+        connector: { color: 'brand' },
       },
       completed: {
         indicator: {
@@ -2414,6 +2415,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           border: { color: 'status-critical' },
         },
         label: { color: 'status-critical' },
+        connector: { color: 'status-critical' },
       },
       disabled: {
         indicator: {

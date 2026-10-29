@@ -43,21 +43,13 @@ const theme: ThemeType = deepMerge({}, hpe, {
       color: 'border-default',
       margin: '5xsmall',
     },
-    // horizontal: {
-    //   connector: {
-    //     margin: '5xsmall',
-    //   },
-    //   button: {
-    //     gap: '3xsmall',
-    //   },
-    // },
     vertical: {
       button: {
         gap: 'xsmall',
       },
       connector: {
-        margin: '0px', 
-      }
+        margin: '0px',
+      },
     },
     substep: {
       indicator: {
@@ -89,7 +81,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
           background: 'background-selected-primary-strong-hover',
           color: iconOnSelectedPrimaryStrong,
           border: { color: 'transparent' },
-        }
+        },
       },
     },
     currentCompleted: {
@@ -98,10 +90,12 @@ const theme: ThemeType = deepMerge({}, hpe, {
         background: 'background-selected-primary-strong',
         color: iconOnSelectedPrimaryStrong,
         border: { color: 'transparent' },
-       
       },
       label: {
         color: 'text-primary',
+      },
+      connector: {
+        color: 'foreground-primary',
       },
       hover: {
         indicator: {
@@ -127,7 +121,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
         indicator: {
           border: { color: 'icon-primary-hover' },
           color: 'icon-primary-hover',
-        }
+        },
       },
     },
     error: {
@@ -170,7 +164,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
       indicator: {
         border: { color: 'icon-disabled' },
         background: 'transparent',
-      },  
+      },
       label: {
         color: 'text-default',
       },
