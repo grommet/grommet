@@ -380,7 +380,7 @@ const Stepper = forwardRef(
         direction={direction === 'horizontal' ? 'row' : 'column'}
         fill={direction}
         id={id}
-        overflow="hidden"
+        overflow="visible"
         pad="none"
         margin="none"
         style={{ listStyle: 'none' }}

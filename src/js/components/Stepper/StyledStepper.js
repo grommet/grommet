@@ -22,8 +22,7 @@ const getBorderWidth = (theme, size) =>
   theme.global?.borderSize?.[size] || size || theme.global?.borderSize?.xsmall;
 
 const StyledStepItem = styled.li.withConfig({
-  shouldForwardProp: (prop) =>
-    isPropValid(prop) && prop !== 'direction',
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
 })`
   display: flex;
   position: relative;
@@ -73,6 +72,15 @@ const StyledStepButton = styled(Box)`
 `;
 
 const StyledStepContent = styled(Box)`
+  overflow: hidden;
+  ${(props) => {
+    if (props.isVertical) {
+      return css`
+        text-align: start;
+      `;
+    }
+    return '';
+  }}
   ${(props) => {
     if (props.isVertical && !props.isSubStep && !props.hasDescription) {
       const indicatorSizeToken =
@@ -92,10 +100,9 @@ const StyledIndicator = styled(Box)`
 
   ${(props) =>
     (() => {
-      const indicatorSizeToken =
-        props.stepTheme?.indicator?.size || 'medium';
+      const indicatorSizeToken = props.stepTheme?.indicator?.size || 'medium';
       const size = getMetricSize(props.theme, indicatorSizeToken);
-      
+
       return css`
         width: ${size};
         height: ${size};
@@ -117,7 +124,7 @@ const StyledIndicator = styled(Box)`
 
     // For hover colors we'll use the hover part of the stepper theme
     // that resolved for the step. If there isn't one we try to
-    // just darken the various colors for the step. 
+    // just darken the various colors for the step.
     const { theme } = props;
     const hoverTheme = props.stepTheme?.hover?.indicator || {};
     const comboTheme = deepMerge(
@@ -141,11 +148,10 @@ const StyledIndicator = styled(Box)`
       color: ${hoverColor};
     `)();
 
-
-    //   ${StyledStepButton}:not([aria-disabled]):active & {
-    //     transform: scale(0.95);
-    //   }
     return css`
+      ${StyledStepButton}:not([aria-disabled]):active & {
+        transform: scale(0.95);
+      }
       /* Hover: darkens state-specific colors via color-mix.
          Uses the parent button selector so sub-step children (which rely on
          currentColor) inherit the hover color automatically.
@@ -167,9 +173,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       stepTheme?.indicator?.border?.size || '2px',
     );
     const buttonPad =
-      props.theme.global?.edgeSize?.[
-        stepTheme?.button?.pad || 'xxsmall'
-      ];
+      props.theme.global?.edgeSize?.[stepTheme?.button?.pad || 'xxsmall'];
     const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
 
