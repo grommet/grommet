@@ -10,6 +10,7 @@ import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Box, Button, FormField, Grommet, TextInput, Wizard } from '../..';
+import { ResponsiveContext } from '../../../contexts/ResponsiveContext';
 
 const basicSteps = [
   { id: 'step1', title: 'Step 1', description: 'First step' },
@@ -62,6 +63,21 @@ const renderStepState = (step, wizard) => (
 const wizardState = () =>
   JSON.parse(screen.getByLabelText('Wizard state').textContent);
 
+const wizardLayout = ({ constrained = false } = {}) => {
+  const wizard = screen.getByRole('region', { name: 'Test wizard' });
+  const layout = wizard.firstElementChild;
+  const [header, viewport, footerBand] = layout.children;
+  return {
+    wizard,
+    layout,
+    header,
+    viewport,
+    middle: viewport.firstElementChild,
+    footer: constrained ? footerBand.firstElementChild : footerBand,
+    footerBand,
+  };
+};
+
 describe('Wizard', () => {
   beforeEach(() => {
     console.warn = jest.fn();
@@ -83,6 +99,196 @@ describe('Wizard', () => {
     );
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('constrained layout has no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          contentMaxWidth="xlarge"
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  test('omitting contentMaxWidth preserves the uncapped layout', () => {
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    const { middle, footer, viewport, layout } = wizardLayout();
+    expect(middle).toHaveStyleRule('width', '100%');
+    expect(middle).toHaveStyleRule('max-width', '100%');
+    expect(footer).toHaveStyleRule('max-width', '100%');
+    expect(footer).toHaveStyleRule('flex-direction', 'row');
+    expect(footer.parentElement).toBe(layout);
+    expect(viewport).toHaveStyleRule('overflow', 'auto');
+  });
+
+  test.each([false, 'horizontal', 'vertical'])(
+    'caps the entire middle and footer with %s progress',
+    (showProgress) => {
+      render(
+        <Grommet theme={{ global: { size: { xlarge: '72rem' } } }}>
+          <ResponsiveContext.Provider value="large">
+            <Wizard
+              title="Setup"
+              steps={basicSteps}
+              renderStep={renderStep}
+              showProgress={showProgress}
+              contentMaxWidth="xlarge"
+              aria-label="Test wizard"
+            />
+          </ResponsiveContext.Provider>
+        </Grommet>,
+      );
+      const { wizard, header, viewport, middle, footer, footerBand, layout } =
+        wizardLayout({ constrained: true });
+      [middle, footer].forEach((region) => {
+        expect(region).toHaveStyleRule('width', '100%');
+        expect(region).toHaveStyleRule('max-width', '72rem');
+        expect(region).toHaveStyleRule('min-width', '0');
+      });
+      expect(wizard.hasAttribute('contentMaxWidth')).toBe(false);
+      expect(header).toHaveStyleRule('max-width', '100%');
+      expect(wizard).toHaveStyleRule('max-width', '100%');
+      expect(viewport).toHaveStyleRule('align-items', 'center');
+      expect(viewport).toHaveStyleRule('overflow', 'auto');
+      expect(middle).toHaveStyleRule('flex', '1 0 auto');
+      expect(middle).toHaveStyleRule(
+        'flex-direction',
+        showProgress === 'vertical' ? 'row' : 'column',
+      );
+      expect(footerBand).toHaveStyleRule('align-items', 'center');
+      expect(footerBand).toHaveStyleRule('width', '100%');
+      expect(footerBand).toHaveStyleRule('max-width', '100%');
+      expect(footerBand.parentElement).toBe(layout);
+      expect(footer.parentElement).toBe(footerBand);
+      expect(viewport.contains(footerBand)).toBe(false);
+      const actions = screen.getByRole('button', {
+        name: /next/i,
+      }).parentElement;
+      expect(actions.parentElement).toBe(footer);
+      expect(actions).toHaveStyleRule('justify-content', 'flex-end');
+      if (showProgress) {
+        expect(
+          middle.contains(
+            screen.getByRole('list', { name: 'Wizard progress' }),
+          ),
+        ).toBe(true);
+      } else {
+        expect(
+          screen.queryByRole('list', { name: 'Wizard progress' }),
+        ).toBeNull();
+      }
+    },
+  );
+
+  test('CSS caps preserve footer wrapping and navigation', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          contentMaxWidth="48rem"
+          showProgress="vertical"
+          onCancel={() => {}}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    const { middle, footer } = wizardLayout({ constrained: true });
+    expect(middle).toHaveStyleRule('width', '100%');
+    expect(middle).toHaveStyleRule('max-width', '48rem');
+    expect(footer).toHaveStyleRule('width', '100%');
+    expect(footer).toHaveStyleRule('max-width', '48rem');
+    expect(screen.queryByRole('list', { name: 'Wizard progress' })).toBeNull();
+    expect(
+      screen.getByRole('button', { name: /next/i }).parentElement,
+    ).toHaveStyleRule('flex-wrap', 'wrap');
+    await user.click(screen.getByRole('button', { name: /next/i }));
+    expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /previous/i })).toBeTruthy();
+  });
+
+  test('constrains a custom footer without replacing it', () => {
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          contentMaxWidth="50%"
+          footer={<Button label="Custom action" />}
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    const { footer, middle } = wizardLayout({ constrained: true });
+    expect(middle).toHaveStyleRule('max-width', '50%');
+    expect(footer).toHaveStyleRule('max-width', '50%');
+    expect(
+      screen.getByRole('button', { name: 'Custom action' }).parentElement,
+    ).toBe(footer);
+    expect(screen.queryByRole('button', { name: /next/i })).toBeNull();
+  });
+
+  test('paints the footer surface on the full-width band only', () => {
+    render(
+      <Grommet
+        theme={{
+          wizard: {
+            footer: {
+              background: '#eeeeee',
+              border: { side: 'top', color: '#111111', size: '1px' },
+            },
+          },
+        }}
+      >
+        <Wizard
+          steps={basicSteps}
+          renderStep={renderStep}
+          contentMaxWidth="xlarge"
+          aria-label="Test wizard"
+        />
+      </Grommet>,
+    );
+    const { footerBand, footer } = wizardLayout({ constrained: true });
+    const actions = screen.getByRole('button', { name: /next/i }).parentElement;
+    expect(footerBand).toHaveStyleRule('background-color', '#eeeeee');
+    expect(footerBand).toHaveStyleRule('border-top', 'solid 1px #111111');
+    expect(footer).not.toHaveStyleRule('background-color');
+    expect(actions).not.toHaveStyleRule('background-color');
+    expect(actions).not.toHaveStyleRule('border-top');
+  });
+
+  test('contentMaxWidth does not wrap or size custom children', () => {
+    render(
+      <Grommet>
+        <Wizard
+          steps={basicSteps}
+          contentMaxWidth="xlarge"
+          aria-label="Test wizard"
+        >
+          <Box aria-label="Custom layout" width="small">
+            Custom composition
+          </Box>
+        </Wizard>
+      </Grommet>,
+    );
+    const wizard = screen.getByRole('region', { name: 'Test wizard' });
+    expect(screen.getByLabelText('Custom layout').parentElement).toBe(wizard);
+    expect(wizard.hasAttribute('contentMaxWidth')).toBe(false);
+    expect(screen.queryByRole('button', { name: /next/i })).toBeNull();
   });
 
   test('renders first step by default', () => {

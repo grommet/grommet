@@ -29,6 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
     steps: PropTypes.arrayOf(PropTypes.shape(nestedStepShape)).isRequired,
     clickableSteps: PropTypes.bool,
     closable: PropTypes.bool,
+    contentMaxWidth: PropTypes.string,
     currentStep: PropTypes.string,
     defaultStep: PropTypes.string,
     form: PropTypes.bool,
