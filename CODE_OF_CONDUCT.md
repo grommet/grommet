@@ -60,7 +60,6 @@ representative at an online or offline event.
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported either through Github or by reaching out to one of the following workspace admins on [Slack](https://slack-invite.grommet.io/):
 
-- Jessica Filben (@Jessica Filben on Slack)
 - Matt Glissmann (@gliss on Slack)
 
 All complaints will be reviewed and investigated promptly and fairly.
