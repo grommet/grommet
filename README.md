@@ -7,7 +7,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/grommet.svg?color=3d138d)][npm]
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)][prettier]
 
-<img align="right" height="260" src="https://v2.grommet.io/img/stak-hurrah.svg">
+<img align="right" height="260" src="https://v2.grommet.io/img/stak-hurrah.svg" style="float: right; margin: 10px; z-index: 10; position: relative;">
 
 ## Documentation
 
