@@ -57,6 +57,38 @@ const flattenSteps = (steps) => {
   return flat;
 };
 
+const isEnabledLeaf = (step) =>
+  step.status !== 'disabled' && (!step.childIds.length || step.isSubStep);
+
+const findFirstEnabledChild = (steps, parentId) =>
+  steps.find(
+    (step) => step.parentId === parentId && step.status !== 'disabled',
+  );
+
+const findFirstEnabledLeaf = (steps, startIndex = 0) =>
+  steps.slice(startIndex).find(isEnabledLeaf) || steps.find(isEnabledLeaf);
+
+const resolveCurrentStep = (steps, currentStepId) => {
+  const requestedIndex = steps.findIndex((step) => step.id === currentStepId);
+  const requestedStep = steps[requestedIndex];
+  const canUseRequestedStep =
+    requestedStep && requestedStep.status !== 'disabled';
+  let requestedTarget;
+  if (canUseRequestedStep) {
+    requestedTarget = requestedStep.childIds.length
+      ? findFirstEnabledChild(steps, requestedStep.id)
+      : requestedStep;
+  }
+
+  // Parents with children are headings, not navigation stops. If the
+  // requested group has no enabled child, scan in input order for an enabled
+  // leaf, matching Wizard's forward-order navigation policy.
+  const fallback =
+    requestedTarget ||
+    findFirstEnabledLeaf(steps, requestedIndex >= 0 ? requestedIndex + 1 : 0);
+  return fallback?.id || steps[0]?.id || '';
+};
+
 const Stepper = forwardRef(
   (
     {
@@ -124,28 +156,10 @@ const Stepper = forwardRef(
     }
 
     // Determine effective current step (fallback to first non-disabled)
-    const effectiveCurrentStep = useMemo(() => {
-      const match = allSteps.find((s) => s.id === currentStep);
-      if (match && match.status !== 'disabled') {
-        if (!match.isSubStep && match.childIds.length) {
-          const firstEnabledChild = allSteps.find(
-            (step) => step.parentId === match.id && step.status !== 'disabled',
-          );
-          if (firstEnabledChild) return firstEnabledChild.id;
-        } else {
-          return currentStep;
-        }
-      }
-
-      // Parent rows with children are group headings, not navigable stops.
-      // Resolve invalid/disabled currentStep values to the first enabled leaf.
-      const fallback = allSteps.find(
-        (step) =>
-          (!step.childIds.length || step.isSubStep) &&
-          step.status !== 'disabled',
-      );
-      return fallback?.id || allSteps[0]?.id || '';
-    }, [currentStep, allSteps]);
+    const effectiveCurrentStep = useMemo(
+      () => resolveCurrentStep(allSteps, currentStep),
+      [currentStep, allSteps],
+    );
 
     // Reveal a whole group on entry, not just the active child. Remember
     // groups by id so controlled changes and recreated step objects do not

@@ -1,23 +1,17 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-import styled from 'styled-components';
 import { Box } from '../Box';
 import { Stepper } from '../Stepper';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useWizard } from './WizardContext';
 
-const StyledProgress = styled.div`
-  display: ${(props) => (props.$hidden ? 'none' : 'contents')};
-`;
-
 // WizardProgress delegates step rendering to <Stepper>. Descriptions
 // are hidden by default (WizardStepHeader shows them in the body).
 export const WizardProgress = ({
   'aria-label': ariaLabelProp,
   showDescription = false,
-  hidden: hiddenProp,
   ...rest
 }) => {
   const { theme, passThemeFlag } = useThemeValue();
@@ -87,27 +81,25 @@ export const WizardProgress = ({
     : undefined;
 
   return (
-    <StyledProgress $hidden={!showProgress || hiddenProp}>
-      <Box
-        pad={progressTheme?.pad}
-        width={showProgress === 'vertical' ? progressTheme?.width : undefined}
-        flex={false}
-        // Vertical rail should hug its steps, not stretch to the body height.
-        alignSelf={showProgress === 'vertical' ? 'start' : undefined}
-        {...passThemeFlag}
-        {...rest}
-      >
-        <Stepper
-          steps={stepperSteps}
-          currentStep={currentStep}
-          direction={showProgress === 'horizontal' ? 'horizontal' : 'vertical'}
-          clickableSteps={clickableSteps}
-          onStepClick={onStepClick}
-          showDescription={showDescription}
-          aria-label={ariaLabel}
-        />
-      </Box>
-    </StyledProgress>
+    <Box
+      pad={progressTheme?.pad}
+      width={showProgress === 'vertical' ? progressTheme?.width : undefined}
+      flex={false}
+      // Vertical rail should hug its steps, not stretch to the body height.
+      alignSelf={showProgress === 'vertical' ? 'start' : undefined}
+      {...passThemeFlag}
+      {...rest}
+    >
+      <Stepper
+        steps={stepperSteps}
+        currentStep={currentStep}
+        direction={showProgress === 'horizontal' ? 'horizontal' : 'vertical'}
+        clickableSteps={clickableSteps}
+        onStepClick={onStepClick}
+        showDescription={showDescription}
+        aria-label={ariaLabel}
+      />
+    </Box>
   );
 };
 

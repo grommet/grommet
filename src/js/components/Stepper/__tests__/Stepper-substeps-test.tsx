@@ -262,7 +262,24 @@ describe('Stepper child reveal', () => {
     expect(screen.getByText('false')).toBeTruthy();
   });
 
-  test('parent with only disabled children uses disabled visuals', () => {
+  test('current parent with only disabled children scans forward to an enabled leaf', () => {
+    const allDisabledChildren = steps.map((step) =>
+      step.id === 'account'
+        ? {
+            ...step,
+            children: step.children?.map((child) => ({
+              ...child,
+              status: 'disabled' as const,
+            })),
+          }
+        : step,
+    );
+    render(<Example steps={allDisabledChildren} currentStep="account" />);
+    expect(button('Card').getAttribute('aria-current')).toBe('step');
+    expect(button('Account').getAttribute('aria-current')).toBeNull();
+  });
+
+  test('parent with only disabled children is not clickable but keeps its status theme', () => {
     const allDisabledChildren = steps.map((step) =>
       step.id === 'account'
         ? {
@@ -292,9 +309,8 @@ describe('Stepper child reveal', () => {
       </Grommet>,
     );
     const accountLabel = screen.getByText('Account');
-    expect(window.getComputedStyle(accountLabel).color).toBe(
-      'rgb(101, 67, 33)',
-    );
+    expect(window.getComputedStyle(accountLabel).color).toBe('rgb(18, 52, 86)');
+    expect(button('Account').getAttribute('aria-disabled')).toBe('true');
   });
 
   test('remembers multiple revealed parents across controlled changes', () => {

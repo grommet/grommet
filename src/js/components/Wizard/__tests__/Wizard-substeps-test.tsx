@@ -16,6 +16,7 @@ import {
   WizardStepHeader,
 } from '../..';
 import type { WizardProps, WizardStep } from '..';
+import { ResponsiveContext } from '../../../contexts/ResponsiveContext';
 
 const steps: WizardStep[] = [
   { id: 'intro', title: 'Introduction', skippable: true },
@@ -72,7 +73,27 @@ const Example = (props: Partial<WizardProps>) => (
   </Grommet>
 );
 
+const DefaultLayoutExample = (props: Partial<WizardProps>) => (
+  <Grommet>
+    <ResponsiveContext.Provider value="large">
+      <Wizard
+        steps={steps}
+        form={false}
+        scrollToTop={false}
+        closable={false}
+        clickableSteps
+        showProgress="vertical"
+        aria-label="Setup wizard"
+        renderStep={(step) => <p>{`Content for ${step.title}`}</p>}
+        {...props}
+      />
+    </ResponsiveContext.Provider>
+  </Grommet>
+);
+
 const rail = () => within(screen.getByRole('list', { name: 'Setup progress' }));
+const defaultRail = () =>
+  within(screen.getByRole('list', { name: 'Wizard progress' }));
 
 const expectPage = (title: string, index: number) => {
   expect(screen.getByRole('heading', { name: title })).toBeTruthy();
@@ -258,26 +279,30 @@ describe('Wizard progressive substeps', () => {
 
   test('revealed groups persist when progress is hidden and shown again', async () => {
     const user = userEvent.setup();
-    const { rerender } = render(<Example />);
-    await user.click(screen.getByRole('button', { name: 'Jump to profile' }));
-    expect(rail().getAllByRole('button')).toHaveLength(6);
+    const { rerender } = render(<DefaultLayoutExample />);
+    await user.click(screen.getByRole('button', { name: 'Next' }));
+    expect(defaultRail().getAllByRole('button')).toHaveLength(6);
 
-    rerender(<Example showProgress={false} />);
-    expect(screen.queryByRole('list', { name: 'Setup progress' })).toBeNull();
+    rerender(<DefaultLayoutExample showProgress={false} />);
+    expect(screen.queryByRole('list', { name: 'Wizard progress' })).toBeNull();
     const hiddenProgress = screen.getByRole('list', {
-      name: 'Setup progress',
+      name: 'Wizard progress',
       hidden: true,
     });
     expect(
       getComputedStyle(hiddenProgress.parentElement!.parentElement!).display,
     ).toBe('none');
-    await user.click(screen.getByRole('button', { name: 'Jump to review' }));
-    expectPage('Review', 6);
+    await user.click(screen.getByRole('button', { name: 'Next' }));
+    expectPage('Profile', 3);
 
-    rerender(<Example showProgress="vertical" />);
-    expect(rail().getAllByRole('button')).toHaveLength(6);
-    expect(rail().getByRole('button', { name: /: Email$/ })).toBeTruthy();
-    expect(rail().getByRole('button', { name: /: Profile$/ })).toBeTruthy();
+    rerender(<DefaultLayoutExample showProgress="vertical" />);
+    expect(defaultRail().getAllByRole('button')).toHaveLength(6);
+    expect(
+      defaultRail().getByRole('button', { name: /: Email$/ }),
+    ).toBeTruthy();
+    expect(
+      defaultRail().getByRole('button', { name: /: Profile$/ }),
+    ).toBeTruthy();
   });
 
   test('non-clickable progress also reveals on navigation', async () => {
