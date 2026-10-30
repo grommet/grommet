@@ -14,7 +14,7 @@ export const WizardProgress = ({
   showDescription = false,
   ...rest
 }) => {
-  const { theme } = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const {
     steps,
@@ -26,9 +26,6 @@ export const WizardProgress = ({
     stepErrorMessages,
     messages,
   } = useWizard();
-
-  // Opt-in: render nothing when `showProgress` is false.
-  if (!showProgress) return null;
 
   const progressTheme =
     showProgress === 'vertical'
@@ -90,12 +87,13 @@ export const WizardProgress = ({
       flex={false}
       // Vertical rail should hug its steps, not stretch to the body height.
       alignSelf={showProgress === 'vertical' ? 'start' : undefined}
+      {...passThemeFlag}
       {...rest}
     >
       <Stepper
         steps={stepperSteps}
         currentStep={currentStep}
-        direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
+        direction={showProgress === 'horizontal' ? 'horizontal' : 'vertical'}
         clickableSteps={clickableSteps}
         onStepClick={onStepClick}
         showDescription={showDescription}

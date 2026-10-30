@@ -43,8 +43,13 @@ export const StepperStep = ({
   const hasCurrentChild =
     !isSubStep && step.children?.some((c) => c.id === currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
+  const hasChildren = !!step.children?.length;
+  const navigationStepId = hasChildren
+    ? step.children.find((child) => child.status !== 'disabled')?.id
+    : step.id;
   const isDisabled = step.status === 'disabled';
-  const isClickable = clickableSteps && !isDisabled;
+  const isNavigable = !isDisabled && !!navigationStepId;
+  const isClickable = clickableSteps && isNavigable;
   const isReadOnly = !clickableSteps;
 
   const stepItemValue = useMemo(
@@ -52,23 +57,23 @@ export const StepperStep = ({
       step,
       index,
       isLast,
-      isLabelRevealed: direction === 'vertical' || focusedIndex === index,
       isSubStep,
+      isDisabled,
     }),
-    [step, index, isLast, direction, focusedIndex, isSubStep],
+    [step, index, isLast, isSubStep, isDisabled],
   );
 
   const handleClick = () => {
-    if (isClickable && onStepClick) {
-      onStepClick(step.id);
+    if (isClickable && navigationStepId && onStepClick) {
+      onStepClick(navigationStepId);
     }
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      if (isClickable && onStepClick) {
-        onStepClick(step.id);
+      if (isClickable && navigationStepId && onStepClick) {
+        onStepClick(navigationStepId);
       }
     }
   };
@@ -129,7 +134,9 @@ export const StepperStep = ({
             }
           }}
           aria-current={isHighlighted ? 'step' : undefined}
-          aria-disabled={isDisabled || undefined}
+          aria-disabled={
+            isDisabled || (clickableSteps && !isNavigable) || undefined
+          }
           aria-label={ariaLabel}
           aria-describedby={
             describedBy.length > 0 ? describedBy.join(' ') : undefined
