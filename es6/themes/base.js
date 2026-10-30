@@ -2897,6 +2897,7 @@ export var generate = function generate(baseSpacing, scale) {
       // extend: undefined,
       // disabled: { opacity: undefined },
       icons: {
+        clear: FormClose,
         // copy: undefined,
         hidePassword: Hide,
         showPassword: View

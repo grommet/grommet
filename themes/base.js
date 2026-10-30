@@ -2900,6 +2900,7 @@ var generate = exports.generate = function generate(baseSpacing, scale) {
       // extend: undefined,
       // disabled: { opacity: undefined },
       icons: {
+        clear: _FormClose.FormClose,
         // copy: undefined,
         hidePassword: _Hide.Hide,
         showPassword: _View.View

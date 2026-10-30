@@ -6,6 +6,7 @@ var PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
     a11yTitle: PropTypes.string,
+    clear: PropTypes.bool,
     defaultSuggestion: PropTypes.number,
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
     id: PropTypes.string,
     focusIndicator: PropTypes.bool,
     messages: PropTypes.shape({
+      clear: PropTypes.string,
       enterSelect: PropTypes.string,
       hidePassword: PropTypes.string,
       showPassword: PropTypes.string,

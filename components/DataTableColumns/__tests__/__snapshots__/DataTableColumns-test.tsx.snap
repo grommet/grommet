@@ -2383,12 +2383,12 @@ exports[`DataTableColumns renders 2`] = `
 exports[`DataTableColumns renders 3`] = `
 <div
   aria-label="Order columns Tab Contents"
-  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bLejsM"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 kAnqBI"
   id="_r_0_"
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 edRpCw"
+    class="StyledBox-sc-13pk1d4-0 ihktRk"
   >
     .c1 {
   display: flex;
@@ -3634,7 +3634,7 @@ exports[`DataTableColumns search 2`] = `
 exports[`DataTableColumns search 3`] = `
 <button
   aria-label="Open column selector"
-  class="StyledButton-sc-323bzc-0 dBaTMT"
+  class="StyledButton-sc-323bzc-0 dfUoMD"
   data-g-tabindex="none"
   id="test-data--columns-control"
   tabindex="-1"
@@ -3642,7 +3642,7 @@ exports[`DataTableColumns search 3`] = `
 >
   <svg
     aria-label="Splits"
-    class="StyledIcon-sc-ofa7kd-0 fypPpr"
+    class="StyledIcon-sc-ofa7kd-0 eczoWn"
     viewBox="0 0 24 24"
   >
     <path
@@ -3657,123 +3657,123 @@ exports[`DataTableColumns search 3`] = `
 
 exports[`DataTableColumns search 4`] = `
 "@media only screen and (max-width: 768px) {
-  .fOgDDZ {
+  .kMqojZ {
     margin-top: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .ibAVrs {
+  .gzVOpQ {
     padding: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .erCSwb {
+  .fVLaNn {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .erCSwb {
+  .fVLaNn {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .erCSwb {
+  .fVLaNn {
     border-bottom: solid 2px #000000;
   }
 }
 @media only screen and (max-width: 768px) {
-  .erCSwb {
+  .fVLaNn {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hlBRYH {
+  .iPKapT {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hlBRYH {
+  .iPKapT {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hlBRYH {
+  .iPKapT {
     border-bottom: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .hlBRYH {
+  .iPKapT {
     padding-bottom: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kcEjhT {
+  .knGRSj {
     padding-top: 6px;
     padding-bottom: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .krZJuA {
+  .gSfBpE {
     margin-right: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .kAPuez {
+  .kltlFT {
     border: solid 2px #7d4cdb;
   }
 }
 @media only screen and (max-width: 768px) {
-  .edRpCw {
+  .ihktRk {
     padding-top: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cSSeeV {
+  .kjOIaF {
     border-top: solid 1px rgba(0, 0, 0, 0.33);
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .cSSeeV {
+  .kjOIaF {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .gPRdXr {
+  .fdwBRj {
     border-bottom: solid 1px rgba(0, 0, 0, 0.33);
   }
 }
 @media only screen and (max-width: 768px) {
-  .gPRdXr {
+  .fdwBRj {
     padding: 0px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .dwxBsf {
+  .iJdiPj {
     height: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .cdvJmn {
+  .fGmIJX {
     height: 6px;
   }
 }
 @media only screen and (max-width: 768px) {
-  .iCWFGn {
+  .cAgDEv {
     width: 12px;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .byxHuY {
+  .chukNg {
     display: flex;
     align-items: stretch;
   }
 }
-.dBaTMT {
+.dfUoMD {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3791,38 +3791,38 @@ exports[`DataTableColumns search 4`] = `
   line-height: 0;
   padding: 12px;
 }
-.dBaTMT:focus {
+.dfUoMD:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dBaTMT:focus > circle,
-.dBaTMT:focus > ellipse,
-.dBaTMT:focus > line,
-.dBaTMT:focus > path,
-.dBaTMT:focus > polygon,
-.dBaTMT:focus > polyline,
-.dBaTMT:focus > rect {
+.dfUoMD:focus > circle,
+.dfUoMD:focus > ellipse,
+.dfUoMD:focus > line,
+.dfUoMD:focus > path,
+.dfUoMD:focus > polygon,
+.dfUoMD:focus > polyline,
+.dfUoMD:focus > rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6fffb0;
 }
-.dBaTMT:focus ::-moz-focus-inner {
+.dfUoMD:focus ::-moz-focus-inner {
   border: 0;
 }
-.dBaTMT:focus:not(:focus-visible) {
+.dfUoMD:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-.dBaTMT:focus:not(:focus-visible) > circle,
-.dBaTMT:focus:not(:focus-visible) > ellipse,
-.dBaTMT:focus:not(:focus-visible) > line,
-.dBaTMT:focus:not(:focus-visible) > path,
-.dBaTMT:focus:not(:focus-visible) > polygon,
-.dBaTMT:focus:not(:focus-visible) > polyline,
-.dBaTMT:focus:not(:focus-visible) > rect {
+.dfUoMD:focus:not(:focus-visible) > circle,
+.dfUoMD:focus:not(:focus-visible) > ellipse,
+.dfUoMD:focus:not(:focus-visible) > line,
+.dfUoMD:focus:not(:focus-visible) > path,
+.dfUoMD:focus:not(:focus-visible) > polygon,
+.dfUoMD:focus:not(:focus-visible) > polyline,
+.dfUoMD:focus:not(:focus-visible) > rect {
   outline: none;
   box-shadow: none;
 }
-.dBaTMT:focus:not(:focus-visible) ::-moz-focus-inner {
+.dfUoMD:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }"
 `;
@@ -4741,12 +4741,12 @@ exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumn
 exports[`DataTableColumns theme tabs pad, selectColumns pad and gap, orderColumns pad 2`] = `
 <div
   aria-label="Order columns Tab Contents"
-  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 bLejsM"
+  class="StyledTabs__StyledTabPanel-sc-a4fwxl-1 kAnqBI"
   id="_r_5_"
   role="tabpanel"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 eAzHlD"
+    class="StyledBox-sc-13pk1d4-0 deFiRT"
   >
     .c1 {
   display: flex;

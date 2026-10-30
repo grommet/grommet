@@ -13,19 +13,26 @@ var getPlainStyle = function getPlainStyle(plain) {
 var StyledTextInput = styled.input.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ";"], inputStyle, function (props) {
   return (props.hasButton || props.readOnlyCopy) && 'flex: 1 1 auto;';
 }, function (props) {
   return (props.hasButton || props.readOnlyCopy) && 'min-width: 0;';
-}, function (props) {
-  if (!(props.readOnlyCopy || props.hasButton)) return '';
-  return 'padding-right: 0px;';
 }, function (props) {
   return (props.readOnly || props.hasButton) && "border: none;";
 }, function (props) {
   return getPlainStyle(props.plain);
 }, function (props) {
   return props.icon && !props.hasActionsGroup && inputPadForIcon;
+}, function (props) {
+  return (
+    // the static leading icon already pads its right side
+    props.hasLeadingIcon && props.hasActionsGroup && 'padding-left: 0px;'
+  );
+}, function (props) {
+  return (
+    // avoid a second, native clear button on type="search" in WebKit/Blink
+    props.hasClear && "&::-webkit-search-cancel-button {\n      -webkit-appearance: none;\n      appearance: none;\n    }"
+  );
 }, function (props) {
   return props.disabled && disabledStyle(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
 }, function (props) {

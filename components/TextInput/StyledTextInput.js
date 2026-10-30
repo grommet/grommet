@@ -6,7 +6,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _styles = require("../../utils/styles");
 var _readOnly = require("../../utils/readOnly");
-function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
+var cache;
+function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 
@@ -19,19 +20,26 @@ var getPlainStyle = function getPlainStyle(plain) {
 var StyledTextInput = exports.StyledTextInput = _styledComponents["default"].input.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ";"], _utils.inputStyle, function (props) {
   return (props.hasButton || props.readOnlyCopy) && 'flex: 1 1 auto;';
 }, function (props) {
   return (props.hasButton || props.readOnlyCopy) && 'min-width: 0;';
-}, function (props) {
-  if (!(props.readOnlyCopy || props.hasButton)) return '';
-  return 'padding-right: 0px;';
 }, function (props) {
   return (props.readOnly || props.hasButton) && "border: none;";
 }, function (props) {
   return getPlainStyle(props.plain);
 }, function (props) {
   return props.icon && !props.hasActionsGroup && _styles.inputPadForIcon;
+}, function (props) {
+  return (
+    // the static leading icon already pads its right side
+    props.hasLeadingIcon && props.hasActionsGroup && 'padding-left: 0px;'
+  );
+}, function (props) {
+  return (
+    // avoid a second, native clear button on type="search" in WebKit/Blink
+    props.hasClear && "&::-webkit-search-cancel-button {\n      -webkit-appearance: none;\n      appearance: none;\n    }"
+  );
 }, function (props) {
   return props.disabled && (0, _utils.disabledStyle)(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
 }, function (props) {
