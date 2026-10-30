@@ -4481,7 +4481,7 @@ exports[`Data should render property label and return property value to view whe
                           inert=""
                           name="selectMultiple"
                           readonly=""
-                          type="text"
+                          type="hidden"
                         />
                       </button>
                     </div>
@@ -4557,7 +4557,7 @@ exports[`Data should render property label and return property value to view whe
                           inert=""
                           name="selectMultipleSimple"
                           readonly=""
-                          type="text"
+                          type="hidden"
                         />
                       </button>
                       <div
