@@ -920,8 +920,8 @@ exports[`Anchor renders size specific theming 1`] = `
 .c20 {
   display: inline-block;
   flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -945,6 +945,38 @@ exports[`Anchor renders size specific theming 1`] = `
 .c20 *[FILL-RULE],
 .c20 *[fill*='#'],
 .c20 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c22 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c22 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c22 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c22 *[stroke*='#'],
+.c22 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*='#'],
+.c22 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -990,7 +1022,7 @@ exports[`Anchor renders size specific theming 1`] = `
   width: 6px;
 }
 
-.c22 {
+.c23 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 48px;
@@ -1347,7 +1379,7 @@ exports[`Anchor renders size specific theming 1`] = `
       >
         <svg
           aria-label="LinkNext"
-          class="c20"
+          class="c22"
           viewBox="0 0 24 24"
         >
           <path
@@ -1358,7 +1390,7 @@ exports[`Anchor renders size specific theming 1`] = `
           />
         </svg>
         <span
-          class="c22"
+          class="c23"
         />
         Large anchor with icon should receive color on icon
       </span>
@@ -1729,6 +1761,112 @@ exports[`Anchor renders with children 1`] = `
   >
     children
   </a>
+</div>
+`;
+
+exports[`Anchor respects icon size prop when provided 1`] = `
+.c3 {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill='none'] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*='#'],
+.c3 *[STROKE*='#'] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*='#'],
+.c3 *[FILL*='#'] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: row;
+}
+
+.c4 {
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 12px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7D4CDB;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <a
+      class="c1"
+    >
+      <span
+        class="c2"
+      >
+        <svg
+          aria-label="LinkNext"
+          class="c3"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M2 12h20m-9-9 9 9-9 9"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+        <span
+          class="c4"
+        />
+        Anchor with icon prop should respect icon size prop
+      </span>
+    </a>
+  </div>
 </div>
 `;
 
