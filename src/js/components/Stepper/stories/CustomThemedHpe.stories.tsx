@@ -153,12 +153,6 @@ const theme: ThemeType = deepMerge({}, hpe, {
       description: {
         color: 'text-critical',
       },
-      hover: {
-        indicator: {
-          background: 'icon-strong',
-          color: 'icon-onStrong',
-        },
-      },
     },
     disabled: {
       indicator: {
@@ -174,9 +168,6 @@ const theme: ThemeType = deepMerge({}, hpe, {
     },
   },
 });
-// theme.stepper = {
-//
-// };
 
 export const CustomThemedHpe = () => {
   const [currentStep, setCurrentStep] = useState('profile');

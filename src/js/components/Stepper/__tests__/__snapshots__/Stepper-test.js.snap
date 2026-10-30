@@ -188,10 +188,9 @@ exports[`Stepper renders horizontal steps 1`] = `
 }
 
 .c4:not([aria-disabled]):hover .c7 {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #444444;
-  border: solid 2px #000000;
-  color: #000000;
+  background: color-mix(in srgb, #7D4CDB 90%, black 10%);
+  border: solid 2px color-mix(in srgb, #7D4CDB 90%, black 10%);
+  color: #FFFFFF;
 }
 
 .c15 {
@@ -228,9 +227,8 @@ exports[`Stepper renders horizontal steps 1`] = `
 }
 
 .c4:not([aria-disabled]):hover .c15 {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #444444;
-  border: solid 2px #000000;
+  background: color-mix(in srgb, #FFFFFF 90%, black 10%);
+  border: solid 2px color-mix(in srgb, #666666 90%, black 10%);
   color: #000000;
 }
 
@@ -581,10 +579,9 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 }
 
 .c3:not([aria-disabled]):hover .c6 {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #444444;
-  border: solid 2px #000000;
-  color: #000000;
+  background: color-mix(in srgb, #7D4CDB 90%, black 10%);
+  border: solid 2px color-mix(in srgb, #7D4CDB 90%, black 10%);
+  color: #FFFFFF;
 }
 
 .c14 {
@@ -621,9 +618,8 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 }
 
 .c3:not([aria-disabled]):hover .c14 {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #444444;
-  border: solid 2px #000000;
+  background: color-mix(in srgb, #FFFFFF 90%, black 10%);
+  border: solid 2px color-mix(in srgb, #666666 90%, black 10%);
   color: #000000;
 }
 
@@ -980,9 +976,8 @@ exports[`Stepper renders vertical steps 1`] = `
 }
 
 .c4:not([aria-disabled]):hover .c7 {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #444444;
-  border: solid 2px #000000;
+  background: color-mix(in srgb, #FFFFFF 90%, black 10%);
+  border: solid 2px color-mix(in srgb, #666666 90%, black 10%);
   color: #000000;
 }
 
@@ -1020,10 +1015,9 @@ exports[`Stepper renders vertical steps 1`] = `
 }
 
 .c4:not([aria-disabled]):hover .c14 {
-  background-color: rgba(221, 221, 221, 0.4);
-  color: #444444;
-  border: solid 2px #000000;
-  color: #000000;
+  background: color-mix(in srgb, #7D4CDB 90%, black 10%);
+  border: solid 2px color-mix(in srgb, #7D4CDB 90%, black 10%);
+  color: #FFFFFF;
 }
 
 .c12 {

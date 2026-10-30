@@ -2428,11 +2428,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: { color: 'text-weak' },
       },
-      hover: {
-        indicator: {
-          border: { color: 'text-strong' },
-        },
-      },
     },
     tab: {
       active: {
