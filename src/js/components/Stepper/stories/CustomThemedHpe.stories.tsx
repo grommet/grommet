@@ -51,7 +51,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
         margin: '0px',
       },
     },
-    substep: {
+    subStep: {
       indicator: {
         iconSize: 'xsmall',
       },

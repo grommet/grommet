@@ -2349,7 +2349,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           align: 'start',
         },
       },
-      substep: {
+      subStep: {
         indicator: {
           size: 'small',
           iconSize: 'small',

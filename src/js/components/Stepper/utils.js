@@ -38,7 +38,7 @@ export const resolveStepTheme = (
     {},
     theme.stepper,
     direction === 'vertical' ? theme.stepper?.vertical : {},
-    isSubStep ? theme.stepper?.substep : {},
+    isSubStep ? theme.stepper?.subStep : {},
     theme.stepper?.[effectiveState],
   );
 };
