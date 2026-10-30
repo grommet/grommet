@@ -3,11 +3,13 @@
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import {
+  backgroundStyle,
+  borderStyle,
   focusStyle,
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
-import { Button } from '../Button';
+import { Box } from '../Box';
 
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
@@ -18,22 +20,10 @@ const getTextMetric = (theme, size, metric) =>
 const getBorderWidth = (theme, size) =>
   theme.global?.borderSize?.[size] || size || theme.global?.borderSize?.xsmall;
 
-const getSubStepSizeToken = (indicatorSize) => {
-  switch (indicatorSize) {
-    case 'large':
-      return 'small';
-    case 'small':
-      return 'xsmall';
-    default:
-      return 'small';
-  }
-};
-
-const getConnectorColor = (stepStatus, theme) =>
-  normalizeColor(
-    theme.stepper?.[stepStatus]?.connector?.color || 'border',
-    theme,
-  );
+const adjustHoverColor = (color, theme) =>
+  `color-mix(in srgb, ${normalizeColor(color, theme)} 90%, ${
+    theme.dark ? 'white' : 'black'
+  } 10%)`;
 
 const StyledStepItem = styled.li.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
@@ -42,9 +32,15 @@ const StyledStepItem = styled.li.withConfig({
   position: relative;
   ${(props) => {
     if (props.direction === 'vertical') {
+      const { gap } = props.stepTheme?.container || {};
+      const gapValue =
+        gap?.[props.direction === 'vertical' ? 'row' : 'column'] ||
+        gap ||
+        '0px';
+
       let paddingBottom = '0px';
       if (!props.isSubStep && !props.isLast && !props.hasSubSteps) {
-        paddingBottom = `${props.theme.global.edgeSize.medium}`;
+        paddingBottom = getMetricSize(props.theme, gapValue);
       }
 
       return css`
@@ -73,49 +69,24 @@ const StyledStepItem = styled.li.withConfig({
   }}
 `;
 
-// Button is rendered `plain`, which already clears border, outline and padding.
-// `direction` is stripped because isPropValid lets it reach the DOM.
-const StyledStepButton = styled(Button).withConfig({
-  shouldForwardProp: (prop) => prop !== 'direction',
-})`
-  display: flex;
-  padding: ${(props) =>
-    props.theme.global?.edgeSize?.[
-      props.theme.stepper?.button?.pad || 'xxsmall'
-    ]};
-  cursor: ${(props) => (props.isClickable ? 'pointer' : 'default')};
-  ${(props) =>
-    props.direction === 'vertical'
-      ? css`
-          flex-direction: row;
-          align-items: flex-start;
-          gap: ${props.theme.global?.edgeSize?.[
-            props.theme.stepper?.vertical?.button?.gap || 'small'
-          ]};
-          text-align: left;
-        `
-      : css`
-          flex-direction: column;
-          align-items: center;
-          gap: ${props.theme.global?.edgeSize?.[
-            props.theme.stepper?.horizontal?.button?.gap || 'xxsmall'
-          ]};
-          text-align: center;
-          width: 100%;
-        `}
+const StyledStepButton = styled(Box)`
+  &:focus-visible {
+    outline: none;
+  }
 `;
 
-const StyledStepContent = styled.span.withConfig({
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
-})`
-  display: flex;
-  flex-direction: column;
+const StyledStepContent = styled(Box)`
+  overflow: hidden;
   ${(props) => {
-    if (
-      props.direction === 'vertical' &&
-      !props.isSubStep &&
-      !props.hasDescription
-    ) {
+    if (props.isVertical) {
+      return css`
+        text-align: start;
+      `;
+    }
+    return '';
+  }}
+  ${(props) => {
+    if (props.isVertical && !props.isSubStep && !props.hasDescription) {
       const indicatorSizeToken =
         props.theme.stepper?.indicator?.size || 'medium';
       const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
@@ -128,50 +99,25 @@ const StyledStepContent = styled.span.withConfig({
   }}
 `;
 
-const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: transform 0.1s ease, background-color 0.15s ease,
-    border-color 0.15s ease, color 0.15s ease;
+const StyledIndicator = styled(Box)`
+  box-sizing: content-box;
 
   ${(props) =>
     (() => {
-      const indicatorSizeToken =
-        props.theme.stepper?.indicator?.size || 'medium';
-      const parentSize = getMetricSize(props.theme, indicatorSizeToken);
-      const subStepSize = getMetricSize(
-        props.theme,
-        getSubStepSizeToken(indicatorSizeToken),
-      );
-      const size = props.isSubStep ? subStepSize : parentSize;
-      const borderWidth =
-        props.theme.stepper?.indicator?.border?.width ||
-        props.theme.global?.borderSize?.small ||
-        '2px';
+      const indicatorSizeToken = props.stepTheme?.indicator?.size || 'medium';
+      const size = getMetricSize(props.theme, indicatorSizeToken);
 
       return css`
         width: ${size};
         height: ${size};
         min-width: ${size};
         min-height: ${size};
-        border: ${borderWidth} solid;
+        color: ${normalizeColor(
+          props.stepTheme?.indicator?.color || 'text',
+          props.theme,
+        )};
       `;
     })()}
-
-  ${(props) => {
-    const { theme } = props;
-    const stateTheme = theme.stepper?.[props.effectiveState]?.indicator || {};
-    return css`
-      background: ${normalizeColor(
-        stateTheme?.background || 'transparent',
-        theme,
-      )};
-      color: ${normalizeColor(stateTheme?.color || 'text-weak', theme)};
-      border-color: ${normalizeColor(stateTheme?.border || 'border', theme)};
-    `;
-  }}
 
   ${StyledStepButton}:focus-visible & {
     ${focusStyle()}
@@ -180,57 +126,44 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
     if (!props.isClickable) return '';
 
+    // For hover colors we'll use the hover part of the stepper theme
+    // that resolved for the step. If there isn't one we try to
+    // just darken the various colors for the step.
     const { theme } = props;
-    const stateTheme = theme.stepper?.[props.effectiveState]?.indicator || {};
-    const backgroundColor = stateTheme?.background
-      ? normalizeColor(stateTheme.background, theme)
-      : undefined;
-    const borderColor = stateTheme?.border
-      ? normalizeColor(stateTheme.border, theme)
-      : undefined;
-    const color = stateTheme?.color
-      ? normalizeColor(stateTheme.color, theme)
-      : undefined;
+    const indicatorTheme = props.stepTheme?.indicator || {};
+    const hoverTheme = props.stepTheme?.hover?.indicator || {};
 
-    const stateBackgroundHoverColor = stateTheme?.hover?.background
-      ? normalizeColor(stateTheme.hover.background, theme)
-      : undefined;
-    const stateBorderHoverColor = stateTheme?.hover?.border
-      ? normalizeColor(stateTheme.hover.border, theme)
-      : undefined;
-    const stateColorHoverColor = stateTheme?.hover?.color
-      ? normalizeColor(stateTheme.hover.color, theme)
-      : undefined;
+    const hoverBackground =
+      hoverTheme.background ??
+    (indicatorTheme.background
+      ? adjustHoverColor(indicatorTheme.background, theme)
+      : undefined);
 
-    const defaultBackgroundHoverColor = backgroundColor
-      ? `color-mix(in srgb, ${backgroundColor} 80%, black)`
-      : normalizeColor(
-          theme.stepper?.hover?.background || 'background-contrast',
-          theme,
-        );
-    const defaultBorderHoverColor = borderColor
-      ? `color-mix(in srgb, ${borderColor} 80%, black)`
-      : normalizeColor(theme.stepper?.hover?.border || 'text', theme);
-    const defaultColorHoverColor = color
-      ? `color-mix(in srgb, ${color} 80%, black)`
-      : normalizeColor('text-strong', theme);
-
-    const hoverBackgroundColor =
-      stateBackgroundHoverColor || defaultBackgroundHoverColor;
-    const hoverBorderColor = stateBorderHoverColor || defaultBorderHoverColor;
-    const hoverColor = stateColorHoverColor || defaultColorHoverColor;
+    const hoverBorder = indicatorTheme.border
+      ? {
+          ...indicatorTheme.border,
+          ...hoverTheme.border,
+          color:
+            hoverTheme.border?.color ??
+            adjustHoverColor(indicatorTheme.border.color || 'border', theme),
+        }
+      : hoverTheme.border;
+    
+    const hoverColor = normalizeColor(
+      hoverTheme?.color ?? indicatorTheme?.color ?? 'text',
+      theme,
+    );
 
     const hoverStyles = (() => css`
-      background: ${hoverBackgroundColor};
-      border-color: ${hoverBorderColor};
+      ${backgroundStyle(hoverBackground, theme)};
+      ${hoverBorder ? borderStyle(hoverBorder, false, theme) : ''};
       color: ${hoverColor};
     `)();
-
-    return css`
+      
+      return css`
       ${StyledStepButton}:not([aria-disabled]):active & {
         transform: scale(0.95);
       }
-
       /* Hover: darkens state-specific colors via color-mix.
          Uses the parent button selector so sub-step children (which rely on
          currentColor) inherit the hover color automatically.
@@ -244,19 +177,16 @@ const StyledIndicator = styled.span.withConfig(styledComponentsConfig)`
 
 const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
-    const { theme } = props;
-    const indicatorSizeToken = theme.stepper?.indicator?.size || 'medium';
+    const { theme, stepTheme } = props;
+    const indicatorSizeToken = stepTheme?.indicator?.size || 'medium';
     const parentSize = getMetricSize(theme, indicatorSizeToken);
-    const indicatorBorderWidth = getMetricSize(
+    const indicatorBorderWidth = getBorderWidth(
       theme,
-      theme.stepper?.indicator?.border?.width || '2px',
+      stepTheme?.indicator?.border?.size || '2px',
     );
     const buttonPad =
-      props.theme.global?.edgeSize?.[
-        props.theme.stepper?.button?.pad || 'xxsmall'
-      ];
-    const connectorStrokeToken =
-      theme.stepper?.connector?.stroke?.width || 'small';
+      props.theme.global?.edgeSize?.[stepTheme?.button?.pad || 'xxsmall'];
+    const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
 
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
@@ -274,7 +204,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
             right: calc(-50% + ${connectorOffset});
             height: ${connectorThickness};
             margin-inline: ${props.theme.global.edgeSize[
-              props.theme.stepper?.horizontal?.connector?.margin || 'xxsmall'
+              stepTheme?.connector?.margin || 'xxsmall'
             ]};
           `
         : css`
@@ -294,30 +224,30 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     `;
   }}
   position: absolute;
-  background: ${(props) => getConnectorColor(props.status, props.theme)};
+  background: ${(props) =>
+    normalizeColor(props.stepTheme?.connector?.color || 'border', props.theme)};
 `;
 
-const StyledSubStepsList = styled.ol.withConfig({
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+const StyledSubStepsList = styled(Box).withConfig({
+  shouldForwardProp: (prop) => prop !== 'isVertical' && prop !== 'stepTheme',
 })`
   list-style: none;
-  margin: 0;
-  padding: 0;
+  position: relative;
   ${(props) => {
-    if (props.direction !== 'vertical') return '';
+    if (!props.isVertical) return '';
 
-    const indicatorSizeToken = props.theme.stepper?.indicator?.size || 'medium';
+    const indicatorSizeToken = props.stepTheme.indicator?.size || 'medium';
     const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
     const textGap =
       props.theme.global?.edgeSize?.[
-        props.theme.stepper?.vertical?.button?.gap || 'small'
+        props.stepTheme?.button?.gap || 'small'
       ];
     const buttonPad =
       props.theme.global?.edgeSize?.[
-        props.theme.stepper?.button?.pad || 'xxsmall'
+        props.stepTheme?.button?.pad || 'xxsmall'
       ];
     return css`
-      padding-inline-start: calc(${indicatorSize} + ${textGap} + ${buttonPad});
+      left: calc(${indicatorSize} + ${textGap} + ${buttonPad});
     `;
   }}
 `;

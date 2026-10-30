@@ -4,16 +4,23 @@ import React from 'react';
 import { Text } from '../Text';
 import { useStepItem, useStepper } from './StepperContext';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { resolveStepTheme } from './utils';
 
 const StepperHelperText = ({ variant, ...rest }) => {
+  const { currentStep, direction } = useStepper();
   const { theme } = useThemeValue();
+  const { step, isSubStep } = useStepItem();
+  if (!step) return null;
 
-  const helperTextProps = theme.stepper?.helperText;
-  const variantProps = variant
-    ? theme.stepper?.[variant]?.helperText || {}
-    : {};
+  const stepTheme = resolveStepTheme(
+    theme,
+    direction,
+    step,
+    isSubStep,
+    currentStep,
+  );
 
-  return <Text {...helperTextProps} {...variantProps} {...rest} />;
+  return <Text {...stepTheme[variant]} {...rest} />;
 };
 
 export const StepperError = ({ ...rest }) => {
@@ -27,7 +34,7 @@ export const StepperError = ({ ...rest }) => {
     <StepperHelperText
       id={`stepper-error-${step.id}`}
       role={role}
-      variant="error"
+      variant="errorText"
       {...rest}
     >
       {step.errorMessage}
@@ -41,7 +48,7 @@ export const StepperDisabledReason = ({ ...rest }) => {
   return (
     <StepperHelperText
       id={`stepper-reason-${step.id}`}
-      variant="disabled"
+      variant="disabledReason"
       {...rest}
     >
       {step.disabledReason}

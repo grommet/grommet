@@ -4,7 +4,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useStepper, useStepItem } from './StepperContext';
 import { StyledConnector } from './StyledStepper';
+import { resolveStepTheme } from './utils';
 
 const StyledStepConnectorGroup = styled.div.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
@@ -21,8 +23,20 @@ const StyledStepConnectorGroup = styled.div.withConfig({
     `}
 `;
 
-export const StepConnector = ({ step, direction, children }) => {
-  const { passThemeFlag } = useThemeValue();
+export const StepConnector = ({ children }) => {
+  const { currentStep, direction } = useStepper();
+  const { theme, passThemeFlag } = useThemeValue();
+
+  const { step, isSubStep } = useStepItem();
+  if (!step) return null;
+
+  const stepTheme = resolveStepTheme(
+    theme,
+    direction,
+    step,
+    isSubStep,
+    currentStep,
+  );
 
   return (
     <StyledStepConnectorGroup direction={direction} {...passThemeFlag}>
@@ -31,6 +45,7 @@ export const StepConnector = ({ step, direction, children }) => {
         status={step.status}
         aria-hidden="true"
         isBetween
+        stepTheme={stepTheme}
         {...passThemeFlag}
       />
       {children}

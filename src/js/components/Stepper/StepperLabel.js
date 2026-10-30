@@ -3,11 +3,8 @@
 import React from 'react';
 import { Text } from '../Text';
 import { useStepper, useStepItem } from './StepperContext';
-import { getEffectiveState } from './StepperIndicator';
 import { useThemeValue } from '../../utils/useThemeValue';
-
-const getStateProps = (theme, effectiveState) =>
-  theme.stepper?.[effectiveState]?.label || {};
+import { resolveStepTheme } from './utils';
 
 export const StepperLabel = ({ ...rest }) => {
   const { currentStep, direction } = useStepper();
@@ -15,20 +12,17 @@ export const StepperLabel = ({ ...rest }) => {
   const { step, isSubStep } = useStepItem();
   if (!step) return null;
 
-  const isCurrent = currentStep === step.id;
-  const hasCurrentChild =
-    !isSubStep && step.children?.some((c) => c.id === currentStep);
-  const isHighlighted = isCurrent || hasCurrentChild;
-  const effectiveState = getEffectiveState(step.status, isHighlighted);
-  const stateProps = getStateProps(theme, effectiveState);
-  const size = isSubStep
-    ? theme.stepper?.label?.substep?.size || 'small'
-    : theme.stepper?.label?.size || 'medium';
+  const stepTheme = resolveStepTheme(
+    theme,
+    direction,
+    step,
+    isSubStep,
+    currentStep,
+  );
   return (
     <Text
-      size={size}
+      {...stepTheme.label}
       truncate={direction === 'horizontal'}
-      {...stateProps}
       {...rest}
     >
       {step.title}

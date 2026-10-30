@@ -4,18 +4,29 @@ import React from 'react';
 import { Text } from '../Text';
 import { useStepper, useStepItem } from './StepperContext';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { resolveStepTheme } from './utils';
 
 export const StepperDescription = ({ ...rest }) => {
-  const { direction } = useStepper();
+  const { direction, currentStep } = useStepper();
   const { theme } = useThemeValue();
 
-  const { step } = useStepItem();
+  const { step, isSubStep } = useStepItem();
   if (!step || !step.description) return null;
 
-  const descriptionProps = theme.stepper?.description;
+  const stepTheme = resolveStepTheme(
+    theme,
+    direction,
+    step,
+    isSubStep,
+    currentStep,
+  );
 
   return (
-    <Text {...descriptionProps} truncate={direction === 'horizontal'} {...rest}>
+    <Text
+      truncate={direction === 'horizontal'}
+      {...stepTheme.description}
+      {...rest}
+    >
       {step.description}
     </Text>
   );

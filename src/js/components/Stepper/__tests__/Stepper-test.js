@@ -202,7 +202,7 @@ describe('Stepper', () => {
       <Grommet
         theme={{
           global: { borderSize: { small: '2px', large: '8px' } },
-          stepper: { connector: { stroke: { width: 'large' } } },
+          stepper: { connector: { thickness: 'large' } },
         }}
       >
         <Stepper
@@ -221,7 +221,7 @@ describe('Stepper', () => {
     const { container } = render(
       <Grommet
         theme={{
-          stepper: { connector: { stroke: { width: '5px' } } },
+          stepper: { connector: { thickness: '5px' } },
         }}
       >
         <Stepper
@@ -352,42 +352,6 @@ describe('Stepper', () => {
     fireEvent.keyDown(step3, { key: 'Home' });
     const step1 = getByLabelText(/Step 1 of 3/);
     expect(document.activeElement).toBe(step1);
-  });
-
-  test('Enter activates focused step', () => {
-    const onStepClick = jest.fn();
-    const { getByLabelText } = render(
-      <Grommet>
-        <Stepper
-          steps={basicSteps}
-          currentStep="step1"
-          onStepClick={onStepClick}
-        />
-      </Grommet>,
-    );
-
-    const step2 = getByLabelText(/Step 2 of 3/);
-    act(() => step2.focus());
-    fireEvent.keyDown(step2, { key: 'Enter' });
-    expect(onStepClick).toHaveBeenCalledWith('step2');
-  });
-
-  test('Space activates focused step', () => {
-    const onStepClick = jest.fn();
-    const { getByLabelText } = render(
-      <Grommet>
-        <Stepper
-          steps={basicSteps}
-          currentStep="step1"
-          onStepClick={onStepClick}
-        />
-      </Grommet>,
-    );
-
-    const step2 = getByLabelText(/Step 2 of 3/);
-    act(() => step2.focus());
-    fireEvent.keyDown(step2, { key: ' ' });
-    expect(onStepClick).toHaveBeenCalledWith('step2');
   });
 
   test('aria-current is set on current step', () => {
