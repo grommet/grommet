@@ -163,7 +163,12 @@ export const StepperStep = ({
           )}
         {!!subSteps?.length && (
           <StepConnector>
-            <StyledSubStepsList direction={direction} {...passThemeFlag}>
+            <StyledSubStepsList
+              forwardedAs="ol"
+              isVertical={direction === 'vertical'}
+              stepTheme={stepTheme}
+              {...stepTheme?.children}
+            >
               {subSteps}
             </StyledSubStepsList>
           </StepConnector>

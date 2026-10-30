@@ -216,27 +216,26 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     normalizeColor(props.stepTheme?.connector?.color || 'border', props.theme)};
 `;
 
-const StyledSubStepsList = styled.ol.withConfig({
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
+const StyledSubStepsList = styled(Box).withConfig({
+  shouldForwardProp: (prop) => prop !== 'isVertical' && prop !== 'stepTheme',
 })`
   list-style: none;
-  margin: 0;
-  padding: 0;
+  position: relative;
   ${(props) => {
-    if (props.direction !== 'vertical') return '';
+    if (!props.isVertical) return '';
 
-    const indicatorSizeToken = props.theme.stepper?.indicator?.size || 'medium';
+    const indicatorSizeToken = props.stepTheme.indicator?.size || 'medium';
     const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
     const textGap =
       props.theme.global?.edgeSize?.[
-        props.theme.stepper?.vertical?.button?.gap || 'small'
+        props.stepTheme?.button?.gap || 'small'
       ];
     const buttonPad =
       props.theme.global?.edgeSize?.[
-        props.theme.stepper?.button?.pad || 'xxsmall'
+        props.stepTheme?.button?.pad || 'xxsmall'
       ];
     return css`
-      padding-inline-start: calc(${indicatorSize} + ${textGap} + ${buttonPad});
+      left: calc(${indicatorSize} + ${textGap} + ${buttonPad});
     `;
   }}
 `;
