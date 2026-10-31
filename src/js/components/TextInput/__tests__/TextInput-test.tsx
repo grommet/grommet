@@ -1063,7 +1063,7 @@ describe('TextInput', () => {
     ).toBeInTheDocument();
   });
 
-  test('zeros left padding next to a leading icon with actions', () => {
+  test('zeros start padding next to a leading icon with actions', () => {
     render(
       <Grommet>
         <TextInput icon={<Search />} clear aria-label="Leading" />
@@ -1071,14 +1071,63 @@ describe('TextInput', () => {
       </Grommet>,
     );
 
+    // a logical property, so it lands on the icon side in rtl as well
     expect(screen.getByLabelText('Leading')).toHaveStyleRule(
-      'padding-left',
+      'padding-inline-start',
       '0px',
     );
     expect(screen.getByLabelText('Trailing')).not.toHaveStyleRule(
-      'padding-left',
+      'padding-inline-start',
       '0px',
     );
+  });
+
+  test.each([
+    ['clear', { clear: true }],
+    ['copy', { copy: true }],
+    ['password', { password: true }],
+    ['readOnlyCopy', { readOnlyCopy: true }],
+  ] as const)('applies dir to the container with %s', (_, props) => {
+    render(
+      <Grommet>
+        <TextInput
+          dir="rtl"
+          defaultValue="test"
+          aria-label="Value"
+          {...props}
+        />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Value');
+    expect(input).toHaveAttribute('dir', 'rtl');
+    // the container is the flex row that holds the input and the actions,
+    // so its direction decides which side the actions sit on
+    expect(input.parentElement).toHaveAttribute('dir', 'rtl');
+  });
+
+  test('does not set dir on the container by default', () => {
+    render(
+      <Grommet>
+        <TextInput defaultValue="test" clear aria-label="Value" />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Value');
+    expect(input).not.toHaveAttribute('dir');
+    expect(input.parentElement).not.toHaveAttribute('dir');
+  });
+
+  test('keeps dir="auto" on the input only', () => {
+    render(
+      <Grommet dir="rtl">
+        <TextInput dir="auto" defaultValue="test" clear aria-label="Value" />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Value');
+    expect(input).toHaveAttribute('dir', 'auto');
+    expect(input.parentElement).not.toHaveAttribute('dir');
   });
 
   test.each([
