@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -412,12 +414,7 @@ const Tabs = forwardRef(
       onResize();
       window.addEventListener('resize', onResize);
       return () => window.removeEventListener('resize', onResize);
-    }, [
-      tabRefs,
-      activeIndex,
-      headerRef,
-      updateArrowState,
-    ]);
+    }, [tabRefs, activeIndex, headerRef, updateArrowState]);
 
     useLayoutEffect(() => {
       if (focusIndex === -1 || !headerRef.current) return;

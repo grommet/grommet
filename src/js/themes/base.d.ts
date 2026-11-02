@@ -1,11 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import {
-  FlattenInterpolation,
-  FlattenSimpleInterpolation,
-  ThemedStyledProps,
-} from 'styled-components';
-import { ReactComponentElement } from 'react';
+import { Interpolation } from 'styled-components';
+import { ReactElement } from 'react';
 import { Icon } from 'grommet-icons';
 
 import {
@@ -51,6 +47,30 @@ import { HeadingProps } from '../components/Heading';
 import { ParagraphProps } from '../components/Paragraph';
 import { SkeletonProps } from '../components/Skeleton/index';
 
+/**
+ * Themeable visual properties shared by component parts rendered as a Box.
+ * Keep structural, behavioral, and accessibility props out of theme parts.
+ */
+type BoxPartThemeType = Pick<
+  BoxProps,
+  | 'background'
+  | 'border'
+  | 'elevation'
+  | 'height'
+  | 'margin'
+  | 'pad'
+  | 'round'
+  | 'width'
+>;
+
+type BoxStateThemeType = Pick<
+  BoxPartThemeType,
+  'background' | 'border' | 'elevation' | 'pad' | 'round'
+>;
+
+/** Text presentation properties shared by themeable component text parts. */
+type TextThemeType = Pick<TextProps, 'color' | 'size' | 'weight'>;
+
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
   baseSpacing?: number,
@@ -60,23 +80,25 @@ export declare const generate: (
 /**
  * ExtendProps represents the props that will be provided to an ExtendType.
  */
-type ExtendProps<TProps> = ThemedStyledProps<TProps, ThemeType>;
+type ExtendProps<TProps> = TProps & { theme: ThemeType };
 
 /**
  * ExtendValue represents a valid `extend` value, which can be a CSS string or a
  * styled-components interpolation. In the theme an ExtendValue can be provided
  * directly to `extend` or it can be computed as the result of an ExtendFn.
  */
-type ExtendValue<TProps> =
-  | string
-  | FlattenSimpleInterpolation
-  | FlattenInterpolation<ExtendProps<TProps>>;
+type ExtendValue<TProps> = Exclude<
+  Interpolation<ExtendProps<TProps>>,
+  (...args: any[]) => any
+>;
 
 /**
  * ExtendFn represents a function passed to `extend`. These functions receive
  * props and produce an ExtendValue.
  */
-type ExtendFn<TProps> = (props: ExtendProps<TProps>) => ExtendValue<TProps>;
+type ExtendFn<TProps> = {
+  bivarianceHack(props: ExtendProps<TProps>): ExtendValue<TProps>;
+}['bivarianceHack'];
 
 /**
  * ExtendType represents the type for `extend` values in the theme.
@@ -281,7 +303,7 @@ interface ButtonType {
   };
 }
 interface FormFieldLabelType extends TextProps {
-  requiredIndicator?: boolean | JSX.Element | string;
+  requiredIndicator?: boolean | ReactElement<unknown> | string;
 }
 
 type DigitalTexts =
@@ -296,6 +318,12 @@ type DigitalTexts =
 type ContainerExtend = {
   container?: {
     extend?: ExtendType;
+  };
+  hover?: {
+    background?: BackgroundType;
+    border?: {
+      color?: ColorType;
+    };
   };
 };
 
@@ -335,6 +363,43 @@ interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
     color?: ColorType;
   };
 }
+
+type TimeInputOptionThemeType = {
+  container?: BoxPartThemeType & {
+    hover?: BoxStateThemeType;
+    selected?: BoxStateThemeType & {
+      hover?: BoxStateThemeType;
+    };
+  };
+  text?: TextThemeType & {
+    selected?: TextThemeType;
+  };
+};
+
+type TimeInputButtonIconType = React.ReactNode | Icon;
+
+type TimeInputDropButtonThemeType =
+  | string
+  | { kind: string; icon?: TimeInputButtonIconType }
+  | (ButtonType & { icon?: TimeInputButtonIconType });
+
+type TimeInputThemeType = {
+  container?: BoxPartThemeType;
+  value?: BoxPartThemeType;
+  segment?: BoxPartThemeType &
+    TextThemeType & {
+      placeholder?: TextThemeType;
+      active?: BoxStateThemeType & TextThemeType;
+    };
+  dropButton?: TimeInputDropButtonThemeType;
+  drop?: BoxPartThemeType & {
+    gap?: GapType;
+    column?: BoxPartThemeType & {
+      gap?: GapType;
+    };
+    option?: TimeInputOptionThemeType;
+  };
+};
 
 export interface ThemeType {
   global?: {
@@ -408,6 +473,9 @@ export interface ThemeType {
       computer?: string;
     };
     colors?: Colors;
+    scrollbar?: {
+      width?: 'auto' | 'thin' | 'none';
+    };
     control?: {
       border?: {
         width?: string;
@@ -450,7 +518,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
-        [x: string]: string;
+        [x: string]: string | undefined;
       };
       dark?: {
         none?: string;
@@ -459,7 +527,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
-        [x: string]: string;
+        [x: string]: string | undefined;
       };
     };
     focus?: {
@@ -1027,6 +1095,43 @@ export interface ThemeType {
       size?: string;
     };
   };
+  dateTimeInput?: {
+    button?: {
+      margin?: string | object;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    drop?: {
+      pad?: PadType;
+      gap?: GapType;
+      border?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    calendar?: {
+      day?: {
+        selected?: {
+          background?: BackgroundType;
+        };
+      };
+    };
+    icon?: {
+      calendar?: React.ReactNode | Icon;
+    };
+    separator?: {
+      pad?: GapType;
+    };
+  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
@@ -1230,6 +1335,12 @@ export interface ThemeType {
       margin?: MarginType;
       container?: BoxProps;
       icon?: any;
+    };
+    hover?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
     };
     help?: {
       color?: ColorType;
@@ -1997,8 +2108,7 @@ export interface ThemeType {
     search?: {
       pad?: PadType;
     };
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
-    searchInput?: ReactComponentElement<any>;
+    searchInput?: ReactElement<any>;
     step?: number;
   };
   selectMultiple?: {
@@ -2352,7 +2462,10 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     icons?: {
+      clear?: React.ReactNode | Icon;
       copy?: React.ReactNode | Icon;
+      hidePassword?: React.ReactNode | Icon;
+      showPassword?: React.ReactNode | Icon;
     };
     placeholder?: {
       extend?: ExtendType;
@@ -2361,40 +2474,7 @@ export interface ThemeType {
       extend?: ExtendType;
     };
   };
-  timeInput?: {
-    button?: {
-      margin?: MarginType;
-    };
-    container?: {
-      round?: RoundType;
-    };
-    active?: {
-      background?: ColorType;
-      pad?: string;
-      indicator?: {
-        color?: ColorType;
-        size?: string;
-      };
-    };
-    drop?: {
-      option?: {
-        background?: ColorType;
-        hover?: {
-          background?: ColorType;
-        };
-        selected?: {
-          background?: ColorType;
-          color?: ColorType;
-          hover?: {
-            background?: ColorType;
-          };
-        };
-      };
-    };
-    icon?: {
-      clock?: React.ReactNode | Icon;
-    };
-  };
+  timeInput?: TimeInputThemeType;
   tip?: {
     content?: BoxProps;
     drop?: DropProps;

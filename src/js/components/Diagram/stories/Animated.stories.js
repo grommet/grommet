@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useReducer, useEffect } from 'react';
 
 import { Box, Diagram, Stack, Text } from 'grommet';

@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  browser-tools: circleci/browser-tools@1.4.8
 defaults: &defaults
   working_directory: ~/grommet-ci
   docker:
@@ -84,27 +82,6 @@ jobs:
       - run:
           name: size
           command: yarn test-bundlesize
-  test:
-    <<: *defaults
-    resource_class: small
-    # Assigned a size small resource class because we currently only have 3 end
-    # to end tests. As we expand our e2e testing we may want to adjust this.
-    steps:
-      - attach_workspace:
-          at: ~/grommet-ci
-      - run: sudo apt-get update
-      - browser-tools/install-chrome:
-          replace-existing: true
-      - browser-tools/install-chromedriver
-      - run:
-          name: Start project
-          command: yarn start
-          background: true
-      - run:
-          name: End to end test
-          command: yarn test-e2e-ci
-      - store_test_results:
-          path: /tmp/test-results
   release:
     <<: *defaults
     steps:
@@ -115,20 +92,12 @@ jobs:
             git config --global user.name "Grommet Community Bot"
             git config --global user.email "grommet@hpe.com"
             yarn release-stable
-  publish:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/grommet-ci
-      - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/grommet-ci/dist/.npmrc
-      - run:
-          name: Add npmignore
-          command: echo "**/__tests__/**" > ~/grommet-ci/dist/.npmignore
-      - run:
-          name: Publish package
-          command: cd dist && npm publish
+  # NOTE: the `publish` job (ungated `npm publish` on any v* tag push,
+  # authenticated via the long-lived NPM_TOKEN secret) was removed in favor
+  # of .github/workflows/package-release-tag-publish.yml, which requires
+  # human approval (the release-publish-approval environment) and uses npm
+  # OIDC Trusted Publishing instead of a long-lived token. Re-adding a
+  # tag-triggered publish job here would race ahead of that approval gate.
 workflows:
   build_test:
     jobs:
@@ -148,22 +117,34 @@ workflows:
           filters:
             tags:
               only: /.*/
-      - test:
+      # requires a maintainer to apply chromatic-approved on the PR before
+      # GitHub Actions approves it and spends Chromatic snapshot quota
+      # excluded from tag pipelines: release tags are cut from master, which
+      # is already snapshotted/accepted by chromatic-accept
+      - hold-chromatic:
+          type: approval
           requires:
             - checkout
           filters:
             tags:
-              only: /.*/
+              ignore: /.*/
+            branches:
+              ignore:
+                - master
       - chromatic:
+          context:
+            - chromatic
           requires:
-            - checkout
+            - hold-chromatic
           filters:
             tags:
-              only: /.*/
+              ignore: /.*/
             branches:
               ignore:
                 - master
       - chromatic-accept:
+          context:
+            - chromatic
           requires:
             - checkout
           filters:
@@ -187,23 +168,10 @@ workflows:
             - grommet
           requires:
             - jest
-            - chromatic
+            - chromatic-accept
             - lint
             - build
           filters:
             branches:
               only:
                 - master
-      - publish:
-          context:
-            - grommet
-          requires:
-            - jest
-            - chromatic
-            - lint
-            - build
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/

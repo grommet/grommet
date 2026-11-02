@@ -18,10 +18,10 @@ export const WizardFooter = ({ children, ...rest }) => {
     currentStepIndex,
     totalSteps,
     canGoNext,
+    complete,
     next,
     previous,
     skip,
-    complete,
     cancel,
     hasCancelHandler,
     messages,
@@ -47,6 +47,13 @@ export const WizardFooter = ({ children, ...rest }) => {
     const CompleteIcon = footerTheme?.button?.complete?.icon;
     const CancelIcon = footerTheme?.button?.cancel?.icon;
 
+    const submitProps = {
+      primary: true,
+      disabled: !canGoNext,
+      type: 'button',
+      onClick: isLastStep ? complete : next,
+    };
+
     content = [
       hasCancelHandler && (
         <Button
@@ -66,7 +73,7 @@ export const WizardFooter = ({ children, ...rest }) => {
           onClick={previous}
         />
       ),
-      currentStepObj.skippable && !isLastStep && (
+      currentStepObj.skippable && !currentStepObj.disabled && !isLastStep && (
         <Button
           key="skip"
           label={label('skip')}
@@ -81,19 +88,15 @@ export const WizardFooter = ({ children, ...rest }) => {
           key="complete"
           label={label('complete')}
           icon={CompleteIcon ? <CompleteIcon aria-hidden="true" /> : undefined}
-          primary
-          disabled={!canGoNext}
-          onClick={complete}
+          {...submitProps}
         />
       ) : (
         <Button
           key="next"
           label={label('next')}
-          primary
           icon={NextIcon ? <NextIcon aria-hidden="true" /> : undefined}
           reverse
-          disabled={!canGoNext}
-          onClick={next}
+          {...submitProps}
         />
       ),
     ];

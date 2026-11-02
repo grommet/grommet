@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useMemo, useState } from 'react';
 
 import { Box, Chart, Keyboard, Stack, Text } from 'grommet';

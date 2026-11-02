@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   useRef,
   forwardRef,
@@ -314,7 +316,7 @@ Use the icon prop instead.`,
       );
     }
 
-    const onClickCopy = () => {
+    const onCopy = () => {
       navigator.clipboard.writeText(textValue);
       announce(readOnlyCopyValidation, 'assertive');
       setTip(readOnlyCopyValidation);
@@ -327,9 +329,9 @@ Use the icon prop instead.`,
     const DateInputButton = readOnlyCopy ? (
       <CopyButton
         disabled={disabled}
+        messages={messages}
         onBlurCopy={onBlurCopy}
-        onClickCopy={onClickCopy}
-        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        onCopy={onCopy}
         tip={tip}
         value={value}
       />

@@ -39,6 +39,7 @@ exports[`DataFilters renders 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c11 {
@@ -594,6 +595,7 @@ exports[`DataFilters renders outside grommet wrapper 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c10 {
@@ -1106,6 +1108,7 @@ exports[`DataFilters theme gap 1`] = `
   flex-direction: column;
   flex: 1 1;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c11 {

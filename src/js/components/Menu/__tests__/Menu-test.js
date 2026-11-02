@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { getByText as getByTextDOM } from '@testing-library/dom';

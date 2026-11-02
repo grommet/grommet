@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 
 export type StepStatus = 'pending' | 'completed' | 'error' | 'disabled';
@@ -20,6 +22,7 @@ export interface StepperProps
   direction?: 'horizontal' | 'vertical';
   clickableSteps?: boolean;
   showDescription?: boolean;
+  errorAnnouncement?: 'assertive' | 'polite' | false;
   onStepClick?: (stepId: string) => void;
   id?: string;
   'aria-label'?: string;
@@ -32,6 +35,7 @@ export interface StepperContextValue {
   direction: 'horizontal' | 'vertical';
   clickableSteps: boolean;
   showDescription: boolean;
+  errorAnnouncement: 'assertive' | 'polite' | false;
   onStepClick?: (stepId: string) => void;
   stepIndex: (stepId: string) => number;
   isPriorStep: (stepId: string) => boolean;

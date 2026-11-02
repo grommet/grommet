@@ -5,6 +5,7 @@ import React, {
   useCallback,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 
@@ -44,11 +45,69 @@ const findStepById = (steps, id) => {
   for (const step of steps) {
     if (step.id === id) return step;
     if (step.children) {
-      const match = step.children.find((child) => child.id === id);
+      const match = findStepById(step.children, id);
       if (match) return match;
     }
   }
   return undefined;
+};
+
+const formHasErrors = (result) =>
+  result?.form?.ok === false ||
+  Object.keys(result?.form?.errors || {}).length > 0;
+
+const statusFromStep = (step, validation, completed) => {
+  if (!step) return 'pending';
+  if (step.disabled) return 'disabled';
+  if (step.status) return step.status;
+  if (
+    formHasErrors(validation[step.id]) ||
+    validation[step.id]?.callback?.ok === false
+  )
+    return 'error';
+  if (completed.has(step.id)) return 'completed';
+  return 'pending';
+};
+
+const getStepStatus = (step, validation, completed) => {
+  if (step?.disabled || step?.status || !step?.children?.length)
+    return statusFromStep(step, validation, completed);
+  const childStatuses = step.children.map((child) =>
+    statusFromStep(child, validation, completed),
+  );
+  if (childStatuses.some((status) => status === 'error')) return 'error';
+  if (childStatuses.every((status) => status === 'completed'))
+    return 'completed';
+  if (childStatuses.every((status) => status === 'disabled')) return 'disabled';
+  return 'pending';
+};
+
+const filterCompletedSteps = (steps, validation, completed) => {
+  const remaining = Array.from(completed).filter((stepId) => {
+    const step = findStepById(steps, stepId);
+    return step && getStepStatus(step, validation, completed) !== 'error';
+  });
+  return remaining.length === completed.size ? completed : new Set(remaining);
+};
+
+const resolveStepResults = (steps, validation, completed) => {
+  const results = [];
+  const walk = (nodes) =>
+    nodes.forEach((step) => {
+      const { children: childSteps, ...details } = step;
+      const status = getStepStatus(step, validation, completed);
+      const errorMessage =
+        status === 'error'
+          ? step.errorMessage ??
+            (formHasErrors(validation[step.id])
+              ? undefined
+              : validation[step.id]?.callback?.error)
+          : undefined;
+      results.push({ ...details, status, errorMessage });
+      if (childSteps?.length) walk(childSteps);
+    });
+  walk(steps);
+  return results;
 };
 
 // Nearest scrollable ancestor for scrollToTop.
@@ -71,8 +130,11 @@ const Wizard = forwardRef(
   (
     {
       steps,
+      clickableSteps = false,
+      closable = true,
       currentStep: currentStepProp,
       defaultStep,
+      form = true,
       showProgress = false,
       onStepChange,
       onComplete,
@@ -147,6 +209,31 @@ const Wizard = forwardRef(
       defaultStep || firstEnabled?.id,
     );
     const currentStep = isControlled ? currentStepProp : uncontrolledStep;
+    const latest = useRef({ currentStep, steps });
+    latest.current = { currentStep, steps };
+    const mounted = useRef(false);
+    const navigationVersion = useRef(0);
+    const validationInFlight = useRef();
+    const formValidators = useRef(new Map());
+
+    useLayoutEffect(() => {
+      mounted.current = true;
+      return () => {
+        mounted.current = false;
+      };
+    }, []);
+
+    useLayoutEffect(() => {
+      navigationVersion.current += 1;
+    }, [currentStep]);
+
+    const registerForm = useCallback((stepId, validateForm) => {
+      formValidators.current.set(stepId, validateForm);
+      return () => {
+        if (formValidators.current.get(stepId) === validateForm)
+          formValidators.current.delete(stepId);
+      };
+    }, []);
 
     const isValueControlled = valueProp !== undefined;
     const [uncontrolledValue, setUncontrolledValue] = useState(
@@ -166,20 +253,61 @@ const Wizard = forwardRef(
       [formValue, isValueControlled, onChange],
     );
 
-    const [visitedSteps, setVisitedSteps] = useState([currentStep]);
     const [completedSteps, setCompletedSteps] = useState(() => new Set());
-    const [validationError, setValidationError] = useState(undefined);
+    const stepValidationRef = useRef({});
+    const [stepValidation, setStepValidation] = useState(
+      stepValidationRef.current,
+    );
+    const updateValidation = useCallback((stepId, source, result) => {
+      if (!mounted.current || !findStepById(latest.current.steps, stepId))
+        return;
+      const nextResults = {
+        ...stepValidationRef.current,
+        [stepId]: { ...stepValidationRef.current[stepId], [source]: result },
+      };
+      stepValidationRef.current = nextResults;
+      setStepValidation(nextResults);
+      if (result.ok === false) {
+        setCompletedSteps((previousCompleted) => {
+          if (!previousCompleted.has(stepId)) return previousCompleted;
+          const nextCompleted = new Set(previousCompleted);
+          nextCompleted.delete(stepId);
+          return nextCompleted;
+        });
+      }
+    }, []);
+    const currentValidation = stepValidation[currentStep];
+    const validationError =
+      !formHasErrors(currentValidation) &&
+      currentValidation?.callback?.ok === false
+        ? currentValidation.callback.error
+        : undefined;
     const [isValidating, setIsValidating] = useState(false);
     // Without `onCancel`, cancel self-closes the wizard.
     const [isOpen, setIsOpen] = useState(true);
     const hasCancelHandler = onCancel !== undefined;
 
-    // Keep visited history in sync when currentStep is externally set.
     useEffect(() => {
-      setVisitedSteps((prev) =>
-        prev[prev.length - 1] === currentStep ? prev : [...prev, currentStep],
+      if (
+        validationInFlight.current &&
+        !findStepById(steps, validationInFlight.current.stepId)
+      )
+        validationInFlight.current.removed = true;
+      const entries = Object.entries(stepValidationRef.current).filter(
+        ([stepId]) => findStepById(steps, stepId),
       );
-    }, [currentStep]);
+      if (entries.length !== Object.keys(stepValidationRef.current).length) {
+        stepValidationRef.current = Object.fromEntries(entries);
+        setStepValidation(stepValidationRef.current);
+      }
+      setCompletedSteps((previousCompleted) =>
+        filterCompletedSteps(
+          steps,
+          stepValidationRef.current,
+          previousCompleted,
+        ),
+      );
+    }, [steps]);
 
     const currentStepObj = useMemo(
       () => findStepById(steps, currentStep),
@@ -193,50 +321,25 @@ const Wizard = forwardRef(
 
     const totalSteps = flatSteps.length;
 
-    // Derive step status; parents aggregate from their children.
-    const getStepStatus = useCallback(
-      (stepId) => {
-        // Parent-with-children aggregate
-        const parent = steps.find(
-          (step) => step.id === stepId && step.children && step.children.length,
-        );
-        if (parent) {
-          const childStatuses = parent.children.map((child) => {
-            if (child.disabled) return 'disabled';
-            if (child.id === currentStep && validationError) return 'error';
-            if (completedSteps.has(child.id)) return 'completed';
-            return 'pending';
-          });
-          if (childStatuses.some((status) => status === 'error'))
-            return 'error';
-          if (childStatuses.every((status) => status === 'completed'))
-            return 'completed';
-          if (childStatuses.every((status) => status === 'disabled'))
-            return 'disabled';
-          return 'pending';
-        }
-        const step = findStepById(steps, stepId);
-        if (!step) return 'pending';
-        if (step.disabled) return 'disabled';
-        if (stepId === currentStep && validationError) return 'error';
-        if (completedSteps.has(stepId)) return 'completed';
-        return 'pending';
-      },
-      [steps, currentStep, completedSteps, validationError],
+    const stepResults = useMemo(
+      () => resolveStepResults(steps, stepValidation, completedSteps),
+      [steps, stepValidation, completedSteps],
     );
 
     // Record<id, status> for every step (top-level + children).
-    const stepStates = useMemo(() => {
-      const record = {};
-      const walk = (nodes) => {
-        nodes.forEach((node) => {
-          record[node.id] = getStepStatus(node.id);
-          if (node.children && node.children.length) walk(node.children);
-        });
-      };
-      walk(steps);
-      return record;
-    }, [steps, getStepStatus]);
+    const stepStates = useMemo(
+      () =>
+        Object.fromEntries(stepResults.map((step) => [step.id, step.status])),
+      [stepResults],
+    );
+
+    const stepErrorMessages = useMemo(
+      () =>
+        Object.fromEntries(
+          stepResults.map((step) => [step.id, step.errorMessage]),
+        ),
+      [stepResults],
+    );
 
     // Emit a step change event to onStepChange.
     const emitStepChange = useCallback(
@@ -261,40 +364,67 @@ const Wizard = forwardRef(
             );
           }
           return undefined;
-        }
-        return nextId;
+        }     
+        return !match.disabled ? nextId : undefined;
       }
-      const nextIndex = currentStepIndex + 1;
-      return flatSteps[nextIndex]?.id;
-    }, [currentStepObj, currentStepIndex, flatSteps, formValue, steps]);
+      let nextIndex = currentStepIndex + 1;
+      while (nextIndex < flatSteps.length) {
+        const nextStep = flatSteps[nextIndex];
+        if (!nextStep?.disabled) return nextStep.id;
+        if (nextStep?.disabled && (clickableSteps || nextStep?.skippable)) {
+          nextIndex += 1;
+        } else {
+          return undefined;
+        }
+      }
+      return undefined;
+    }, [
+      clickableSteps,
+      currentStepObj,
+      currentStepIndex,
+      flatSteps,
+      formValue,
+      steps,
+    ]);
+
+    const resolvePreviousStepId = useCallback(() => {
+      let prevIndex = currentStepIndex - 1;
+      while (prevIndex >= 0) {
+        const prevStep = flatSteps[prevIndex];
+        if (!prevStep?.disabled) return prevStep.id;
+        prevIndex -= 1;
+      }
+      return undefined;
+    }, [currentStepIndex, flatSteps]);
 
     // Apply a navigation transition (id, history, completion, focus).
     const applyTransition = useCallback(
       (nextId, { markCompleted } = {}) => {
         if (!nextId) return;
+        navigationVersion.current += 1;
         if (markCompleted && currentStep) {
           setCompletedSteps((prev) => {
             const next = new Set(prev);
             next.add(currentStep);
-            return next;
+            return filterCompletedSteps(
+              latest.current.steps,
+              stepValidationRef.current,
+              next,
+            );
           });
         }
-        setValidationError(undefined);
-        setVisitedSteps((prev) => [...prev, nextId]);
         if (!isControlled) setUncontrolledStep(nextId);
       },
       [currentStep, isControlled],
     );
 
     // Run step.validate (sync or async). Returns { ok, error }.
-    const runValidation = useCallback(async () => {
+    const runStepValidation = useCallback(async () => {
       if (typeof currentStepObj?.validate !== 'function') {
         return { ok: true };
       }
-      setIsValidating(true);
       try {
         const result = await currentStepObj.validate(formValue);
-        setIsValidating(false);
         if (result === true || result === undefined) return { ok: true };
         if (result === false) {
           return {
@@ -303,11 +433,10 @@ const Wizard = forwardRef(
           };
         }
         if (typeof result === 'string') return { ok: false, error: result };
-        if (typeof result === 'object' && result.error)
+        if (result && typeof result === 'object' && result.error)
           return { ok: false, error: result.error };
         return { ok: true };
       } catch (err) {
-        setIsValidating(false);
         return {
           ok: false,
           error:
@@ -316,8 +445,40 @@ const Wizard = forwardRef(
       }
     }, [currentStepObj, formValue, format, messages]);
 
+    const runValidation = useCallback(async () => {
+      if (validationInFlight.current) return { cancelled: true };
+      const attempt = {
+        stepId: currentStep,
+        version: navigationVersion.current,
+      };
+      validationInFlight.current = attempt;
+      setIsValidating(true);
+      const isStale = () =>
+        !mounted.current ||
+        attempt.removed ||
+        latest.current.currentStep !== attempt.stepId ||
+        navigationVersion.current !== attempt.version ||
+        !findStepById(latest.current.steps, attempt.stepId);
+      try {
+        const validateForm = form && formValidators.current.get(currentStep);
+        if (validateForm) {
+          const result = await validateForm();
+          if (result.cancelled) return { cancelled: true };
+          if (!result.ok) return { ok: false, cancelled: isStale() };
+          if (isStale()) return { cancelled: true };
+        }
+        const result = await runStepValidation();
+        if (!attempt.removed)
+          updateValidation(attempt.stepId, 'callback', result);
+        return { ...result, cancelled: isStale() };
+      } finally {
+        validationInFlight.current = undefined;
+        if (mounted.current) setIsValidating(false);
+      }
+    }, [currentStep, form, runStepValidation, updateValidation]);
+
     const next = useCallback(async () => {
-      if (isValidating) return;
+      if (validationInFlight.current || currentStepObj?.disabled) return;
       emitStepChange({
         trigger: 'next',
         phase: 'requested',
@@ -328,14 +489,15 @@ const Wizard = forwardRef(
         phase: 'validating',
         from: currentStep,
       });
-      const { ok, error } = await runValidation();
-      if (!ok) {
-        setValidationError(error);
+      const { ok, error, cancelled } = await runValidation();
+      if (cancelled) return;
+      const sourceStep = findStepById(latest.current.steps, currentStep);
+      if (!ok || sourceStep?.status === 'error') {
         emitStepChange({
           trigger: 'next',
           phase: 'blocked',
           from: currentStep,
-          error,
+          error: error ?? sourceStep?.errorMessage,
         });
         return;
       }
@@ -359,23 +521,16 @@ const Wizard = forwardRef(
       sendAnalytics,
       applyTransition,
       currentStep,
+      currentStepObj,
       emitStepChange,
-      isValidating,
       resolveNextStepId,
       runValidation,
     ]);
 
     const previous = useCallback(() => {
-      // History-aware; falls back to the linear predecessor.
-      const historyDest =
-        visitedSteps.length > 1
-          ? visitedSteps[visitedSteps.length - 2]
-          : undefined;
-      const fallbackDest = flatSteps[currentStepIndex - 1]?.id;
-      const dest = historyDest || fallbackDest;
+      const dest = resolvePreviousStepId();
       if (!dest) return;
-      setVisitedSteps((prev) => prev.slice(0, -1));
-      setValidationError(undefined);
+      navigationVersion.current += 1;
       if (!isControlled) setUncontrolledStep(dest);
       emitStepChange({
         trigger: 'previous',
@@ -388,11 +543,9 @@ const Wizard = forwardRef(
     }, [
       sendAnalytics,
       currentStep,
-      currentStepIndex,
+      resolvePreviousStepId,
       emitStepChange,
-      flatSteps,
       isControlled,
-      visitedSteps,
     ]);
 
     const goTo = useCallback(
@@ -401,7 +554,11 @@ const Wizard = forwardRef(
         const target = findStepById(steps, stepId);
         if (!target || target.disabled) return;
         const targetIndex = flatSteps.findIndex((step) => step.id === stepId);
+        if (targetIndex < 0) return;
         const forward = targetIndex > currentStepIndex;
+        let markCompleted = false;
+        let navigationError;
+        if (forward && validationInFlight.current) return;
         emitStepChange({
           trigger: 'goTo',
           phase: 'requested',
@@ -415,9 +572,9 @@ const Wizard = forwardRef(
             from: currentStep,
             to: stepId,
           });
-          const { ok, error } = await runValidation();
-          if (!ok) {
-            setValidationError(error);
+          const { ok, error, cancelled } = await runValidation();
+          if (cancelled) return;
+          if (!ok && !currentStepObj?.skippable) {
             emitStepChange({
               trigger: 'goTo',
               phase: 'blocked',
@@ -427,25 +584,30 @@ const Wizard = forwardRef(
             });
             return;
           }
-          emitStepChange({
-            trigger: 'goTo',
-            phase: 'validated',
-            from: currentStep,
-            to: stepId,
-          });
+          markCompleted = ok;
+          navigationError = error;
+          if (ok)
+            emitStepChange({
+              trigger: 'goTo',
+              phase: 'validated',
+              from: currentStep,
+              to: stepId,
+            });
         }
-        applyTransition(stepId, { markCompleted: forward });
+        applyTransition(stepId, { markCompleted });
         emitStepChange({
           trigger: 'goTo',
           phase: 'navigated',
           from: currentStep,
           to: stepId,
+          ...(navigationError ? { error: navigationError } : {}),
         });
       },
       [
         applyTransition,
         currentStep,
         currentStepIndex,
+        currentStepObj,
         emitStepChange,
         flatSteps,
         runValidation,
@@ -458,8 +620,7 @@ const Wizard = forwardRef(
       const nextId = resolveNextStepId();
       if (!nextId) return;
       // Skip: no validation, no completion.
-      setValidationError(undefined);
-      setVisitedSteps((prev) => [...prev, nextId]);
+      navigationVersion.current += 1;
       if (!isControlled) setUncontrolledStep(nextId);
       emitStepChange({
         trigger: 'skip',
@@ -479,7 +640,7 @@ const Wizard = forwardRef(
     ]);
 
     const complete = useCallback(async () => {
-      if (isValidating) return;
+      if (validationInFlight.current || currentStepObj?.disabled) return;
       emitStepChange({
         trigger: 'complete',
         phase: 'requested',
@@ -490,9 +651,9 @@ const Wizard = forwardRef(
         phase: 'validating',
         from: currentStep,
       });
-      const { ok, error } = await runValidation();
-      if (!ok) {
-        setValidationError(error);
+      const { ok, error, cancelled } = await runValidation();
+      if (cancelled) return;
+      if (!ok && !currentStepObj?.skippable) {
         emitStepChange({
           trigger: 'complete',
           phase: 'blocked',
@@ -501,16 +662,21 @@ const Wizard = forwardRef(
         });
         return;
       }
-      emitStepChange({
-        trigger: 'complete',
-        phase: 'validated',
-        from: currentStep,
-      });
-      setCompletedSteps((prev) => {
-        const nextCompleted = new Set(prev);
-        nextCompleted.add(currentStep);
-        return nextCompleted;
-      });
+      if (ok)
+        emitStepChange({
+          trigger: 'complete',
+          phase: 'validated',
+          from: currentStep,
+        });
+      const completionCandidates = new Set(completedSteps);
+      if (ok) completionCandidates.add(currentStep);
+      else completionCandidates.delete(currentStep);
+      const nextCompleted = filterCompletedSteps(
+        latest.current.steps,
+        stepValidationRef.current,
+        completionCandidates,
+      );
+      setCompletedSteps(nextCompleted);
       // Emit 'completed' before invoking onComplete.
       emitStepChange({
         trigger: 'complete',
@@ -518,10 +684,16 @@ const Wizard = forwardRef(
         from: currentStep,
       });
       if (onComplete) {
-        // setCompletedSteps above is async; include currentStep here so the
-        // payload reflects the just-completed final step.
-        const completedStepsList = [...completedSteps, currentStep];
-        onComplete({ value: formValue, completedSteps: completedStepsList });
+        const completedStepsList = Array.from(nextCompleted);
+        onComplete({
+          value: formValue,
+          completedSteps: completedStepsList,
+          steps: resolveStepResults(
+            latest.current.steps,
+            stepValidationRef.current,
+            nextCompleted,
+          ),
+        });
       }
       if (sendAnalytics)
         sendAnalytics({ type: 'wizardComplete', element: 'Wizard' });
@@ -529,14 +701,15 @@ const Wizard = forwardRef(
       sendAnalytics,
       completedSteps,
       currentStep,
+      currentStepObj,
       emitStepChange,
       formValue,
-      isValidating,
       onComplete,
       runValidation,
     ]);
 
     const cancel = useCallback(() => {
+      navigationVersion.current += 1;
       emitStepChange({
         trigger: 'cancel',
         phase: 'cancelled',
@@ -576,18 +749,27 @@ const Wizard = forwardRef(
     }, [currentStep, scrollToTop, wizardRef]);
 
     const canGoNext = !currentStepObj?.disabled && !isValidating;
-    const isBlocked = !!validationError && !currentStepObj?.skippable;
+    const isBlocked =
+      (currentValidation?.form?.ok === false ||
+        currentValidation?.callback?.ok === false);
     const isCompleted = completedSteps.has(currentStep);
 
     const contextValue = useMemo(
       () => ({
         steps,
         flatSteps,
+        clickableSteps,
+        closable,
         currentStep,
         currentStepIndex,
         currentStepObj,
         totalSteps,
         stepStates,
+        stepErrorMessages,
+        stepValidation,
+        updateValidation,
+        registerForm,
+        form,
         formValue,
         setFormValue,
         validationError,
@@ -612,11 +794,18 @@ const Wizard = forwardRef(
       [
         steps,
         flatSteps,
+        clickableSteps,
+        closable,
         currentStep,
         currentStepIndex,
         currentStepObj,
         totalSteps,
         stepStates,
+        stepErrorMessages,
+        stepValidation,
+        updateValidation,
+        registerForm,
+        form,
         formValue,
         setFormValue,
         validationError,

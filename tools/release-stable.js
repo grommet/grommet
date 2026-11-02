@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import del from 'del';
 import fs from 'fs-extra';
 import git from 'simple-git';

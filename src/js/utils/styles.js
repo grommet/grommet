@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
@@ -39,6 +41,19 @@ export const controlBorderStyle = css`
       )};
   border-radius: ${(props) => props.theme.global.control.border.radius};
 `;
+
+export const getInputIconPad = (props) => {
+  const matchedIconSize = props.theme?.icon?.size?.[props?.size || 'medium'];
+
+  if (props.theme?.icon?.matchSize && matchedIconSize) {
+    return `${
+      parseMetricToNum(matchedIconSize) +
+      parseMetricToNum(props.theme.global.edgeSize.medium)
+    }px`;
+  }
+
+  return props.theme.global.edgeSize.large;
+};
 
 export const edgeStyle = (
   kind,
@@ -584,28 +599,40 @@ export const inputStyle = css`
 // to ensure there is reasonable space between the icon and value or placeholder
 export const inputPadForIcon = css`
   ${(props) => {
-    const pad = props.theme?.icon?.matchSize
-      ? `${
-          parseMetricToNum(props.theme.icon?.size?.[props?.size || 'medium']) +
-          parseMetricToNum(props.theme.global.edgeSize.medium)
-        }px`
-      : props.theme.global.edgeSize.large;
+    const pad = getInputIconPad(props);
 
     return props.reverse ? `padding-right: ${pad};` : `padding-left: ${pad};`;
   }}
 `;
 
-export const overflowStyle = (overflowProp) => {
-  if (typeof overflowProp === 'string') {
-    return css`
-      overflow: ${overflowProp};
-    `;
-  }
+export const scrollbarStyle = (theme) => {
+  const width = theme.global && theme.global.scrollbar?.width;
+  const color = normalizeColor('scrollbar', theme);
+  if (!color && !width) return undefined;
 
   return css`
-    ${overflowProp.horizontal &&
-    `overflow-x: ${overflowProp.horizontal};`} ${overflowProp.vertical &&
-    `overflow-y: ${overflowProp.vertical};`};
+    ${color && `scrollbar-color: ${color} transparent;`}
+    ${width !== undefined && `scrollbar-width: ${width};`}
+  `;
+};
+
+export const overflowStyle = (overflowProp, theme) => {
+  const overflow =
+    typeof overflowProp === 'string'
+      ? `overflow: ${overflowProp};`
+      : [
+          overflowProp.horizontal && `overflow-x: ${overflowProp.horizontal};`,
+          overflowProp.vertical && `overflow-y: ${overflowProp.vertical};`,
+        ]
+          .filter(Boolean)
+          .join(' ');
+  const scrollable = ['auto', 'scroll', 'overlay'].some((value) =>
+    overflow.includes(`: ${value};`),
+  );
+
+  return css`
+    ${overflow}
+    ${scrollable && scrollbarStyle(theme)}
   `;
 };
 

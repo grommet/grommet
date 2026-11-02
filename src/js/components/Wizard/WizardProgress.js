@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box } from '../Box';
 import { Stepper } from '../Stepper';
@@ -14,8 +16,16 @@ export const WizardProgress = ({
 }) => {
   const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
-  const { steps, currentStep, showProgress, stepStates, messages } =
-    useWizard();
+  const {
+    steps,
+    clickableSteps,
+    currentStep,
+    goTo,
+    showProgress,
+    stepStates,
+    stepErrorMessages,
+    messages,
+  } = useWizard();
 
   // Opt-in: render nothing when `showProgress` is false.
   if (!showProgress) return null;
@@ -35,6 +45,7 @@ export const WizardProgress = ({
     };
     if (step.disabledReason) mapped.disabledReason = step.disabledReason;
     if (step['aria-label']) mapped['aria-label'] = step['aria-label'];
+    mapped.errorMessage = stepErrorMessages[step.id];
     if (step.children && step.children.length) {
       mapped.children = step.children.map((child) => ({
         id: child.id,
@@ -45,6 +56,7 @@ export const WizardProgress = ({
           ? { disabledReason: child.disabledReason }
           : {}),
         ...(child['aria-label'] ? { 'aria-label': child['aria-label'] } : {}),
+        errorMessage: stepErrorMessages[child.id],
       }));
     }
     return mapped;
@@ -52,6 +64,24 @@ export const WizardProgress = ({
 
   const ariaLabel =
     ariaLabelProp || format({ id: 'wizard.progress', messages });
+
+  const onStepClick = clickableSteps
+    ? (stepId) => {
+        // if forward and form need to do form validation
+        const step = steps.find((s) => s.id === stepId);
+        if (step?.children?.length) {
+          // find the first child we are allowed to go to
+          const firstAllowedChild = step.children.find(
+            (child) => !child.disabled,
+          );
+          if (firstAllowedChild) {
+            goTo(firstAllowedChild.id);
+          }
+        } else {
+          goTo(stepId);
+        }
+      }
+    : undefined;
 
   return (
     <Box
@@ -66,7 +96,8 @@ export const WizardProgress = ({
         steps={stepperSteps}
         currentStep={currentStep}
         direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
-        clickableSteps={false}
+        clickableSteps={clickableSteps}
+        onStepClick={onStepClick}
         showDescription={showDescription}
         aria-label={ariaLabel}
       />

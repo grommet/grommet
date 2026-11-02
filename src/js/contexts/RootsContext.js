@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useMemo, useRef } from 'react';
 
 // When toggling aria-hidden values, we only want to affect elements

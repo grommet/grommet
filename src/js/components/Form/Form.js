@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -545,8 +547,9 @@ const Form = forwardRef(
           // form drives, pattern #1
           useValue = formValue;
         else if (formValue === undefined && name)
-          // form has reset, so reset input value as well
-          useValue = initialValue;
+          // controlled form: keep input controlled; uncontrolled: reset
+          useValue =
+            valueProp !== undefined ? initialValue ?? '' : initialValue;
         else useValue = inputValue;
 
         return [
@@ -751,7 +754,8 @@ const Form = forwardRef(
                 // Show form's validity when clicking on Submit
                 valid: buildValid(nextErrors),
               };
-              if (onValidate) onValidate(nextValidationResults);
+              if (onValidate)
+                onValidate({ submitting: true, ...nextValidationResults });
               validationResultsRef.current = nextValidationResults;
               updateAnalytics();
               return nextValidationResults;

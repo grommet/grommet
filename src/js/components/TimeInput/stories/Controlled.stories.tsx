@@ -1,9 +1,11 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 
 import { Box, Button, Text, TimeInput } from 'grommet';
 
 export const Controlled = () => {
-  const [value, setValue] = React.useState('12:34:56');
+  const [value, setValue] = React.useState('12:34');
 
   const onChange = ({ value: next }: { value?: string }) => {
     console.log('onChange iso time:', next);
@@ -17,7 +19,7 @@ export const Controlled = () => {
       </Text>
       <TimeInput format="12" value={value} onChange={onChange} />
       <Box direction="row" gap="small">
-        <Button label="Set 01:02:03 PM" onClick={() => setValue('13:02:03')} />
+        <Button label="Set 01:02 PM" onClick={() => setValue('13:02')} />
         <Button label="Clear" onClick={() => setValue('')} />
       </Box>
     </Box>

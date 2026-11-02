@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import { Gremlin, Grommet as GrommetIcon } from 'grommet-icons';
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';

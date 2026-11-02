@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { createContext, useContext } from 'react';
 
 export const StepperContext = createContext({
@@ -7,6 +9,7 @@ export const StepperContext = createContext({
   clickableSteps: true,
   onStepClick: undefined,
   showDescription: true,
+  errorAnnouncement: 'polite',
   stepIndex: () => -1,
   isPriorStep: () => false,
   isAfterStep: () => false,

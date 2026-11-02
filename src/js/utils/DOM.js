@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 export const findScrollParent = (element, horizontal) => {
   let result;
   if (element) {
@@ -87,10 +89,22 @@ export const withinDropPortal = (node, portalContext) => {
   return true;
 };
 
-// Check if the element.tagName is an input, select or textarea
-export const isFocusable = (element) => {
+// FormField focus-styling predicate, not a general DOM focusability check.
+// Excludes buttons and links so they retain their own focus indicators.
+// Include negative tabIndex when checking an already-focused element;
+// descendant discovery requires a non-negative tabIndex.
+export const isFocusable = (element, includeNegativeTabIndex = false) => {
+  if (!element || element.disabled) return false;
   const tagName = element.tagName.toLowerCase();
-  return tagName === 'input' || tagName === 'select' || tagName === 'textarea';
+  if (tagName === 'input' || tagName === 'select' || tagName === 'textarea')
+    return true;
+  // Only non-native-interactive elements with an explicit tabindex attribute
+  const isNativeInteractive = tagName === 'button' || tagName === 'a';
+  return (
+    !isNativeInteractive &&
+    (includeNegativeTabIndex || element.tabIndex >= 0) &&
+    element.hasAttribute('tabindex')
+  );
 };
 
 // Get the first element that can receive focus
@@ -107,7 +121,7 @@ export const getFirstFocusableDescendant = (element) => {
 
 export const shouldKeepFocus = (root) => {
   const element = root.activeElement;
-  if (isFocusable(element)) return true;
+  if (isFocusable(element, true)) return true;
   return !!getFirstFocusableDescendant(element);
 };
 

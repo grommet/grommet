@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // TODO: share with DataTable, List, Cards, etc.
 const datumValue = (datum, property) => {
   if (!property) return undefined;

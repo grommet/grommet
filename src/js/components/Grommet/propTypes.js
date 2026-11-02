@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import PropTypes from 'prop-types';
 import { backgroundDoc } from '../../utils/general-prop-types';
 
@@ -8,6 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
     dir: PropTypes.oneOf(['rtl']),
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])]),
     options: PropTypes.shape({
+      legacyColorIsDark: PropTypes.bool,
       box: PropTypes.shape({ cssGap: PropTypes.bool }),
       button: PropTypes.shape({ childrenPlain: PropTypes.bool }),
       layer: PropTypes.shape({ singleId: PropTypes.bool }),
@@ -98,6 +101,7 @@ if (process.env.NODE_ENV !== 'production') {
           rowsChanged: PropTypes.string,
           rowsSingle: PropTypes.string,
           searchBy: PropTypes.string,
+          sortable: PropTypes.string,
           total: PropTypes.string,
           totalSingle: PropTypes.string,
         }),
@@ -241,6 +245,7 @@ if (process.env.NODE_ENV !== 'production') {
           activeSectionValue: PropTypes.string,
           chooseTime: PropTypes.string,
           currentValue: PropTypes.string,
+          currentValueWithoutSeconds: PropTypes.string,
           inputLabel: PropTypes.string,
           invalidTime: PropTypes.string,
           openDrop: PropTypes.string,

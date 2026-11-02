@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 
 import {
@@ -17,7 +19,8 @@ import { readOnlyStyle } from '../../utils/readOnly';
 const getPlainStyle = (plain) => {
   if (plain === 'full') {
     return css`
-      ${plainInputStyle} padding: 0;
+      ${plainInputStyle};
+      padding: 0;
     `;
   }
   return plain && plainInputStyle;
@@ -25,14 +28,22 @@ const getPlainStyle = (plain) => {
 
 const StyledTextInput = styled.input.withConfig(styledComponentsConfig)`
   ${inputStyle}
-  ${(props) =>
-    props.readOnlyCopy
-      ? `padding-${props.reverse ? 'left' : 'right'}: 0px;`
-      : ''}
+  ${(props) => (props.hasButton || props.readOnlyCopy) && 'flex: 1 1 auto;'}
+  ${(props) => (props.hasButton || props.readOnlyCopy) && 'min-width: 0;'}
   // readOnly border is handled by StyledTextInputContainer
-  ${(props) => props.readOnly && `border: none;`}
+  ${(props) => (props.readOnly || props.hasButton) && `border: none;`}
   ${(props) => getPlainStyle(props.plain)}
-  ${(props) => props.icon && inputPadForIcon}
+  ${(props) => props.icon && !props.hasActionsGroup && inputPadForIcon}
+  ${(props) =>
+    // the static leading icon already pads its right side
+    props.hasLeadingIcon && props.hasActionsGroup && 'padding-left: 0px;'}
+  ${(props) =>
+    // avoid a second, native clear button on type="search" in WebKit/Blink
+    props.hasClear &&
+    `&::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      appearance: none;
+    }`}
   ${(props) =>
     props.disabled &&
     disabledStyle(
@@ -55,14 +66,20 @@ const StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig)`
     props.readOnlyProp &&
     widthStyle(props.widthProp, props.theme)}
 
-  ${(props) => props.readOnlyProp && !props.plain && controlBorderStyle};
+  ${(props) =>
+    // The container owns the border so the actions group remains inside
+    // the field.
+    (props.readOnlyProp || props.hasButton) &&
+    !props.plain &&
+    controlBorderStyle};
 
   ${(props) =>
-    props.readOnlyCopy &&
+    (props.readOnlyCopy || props.hasButton) &&
     `
     box-sizing: border-box;
     flex-direction: row;
     display: flex;
+    align-items: stretch;
   `};
 
   ${(props) => props.readOnlyProp && !props.plain && readOnlyStyle(props.theme)}
@@ -97,10 +114,26 @@ const StyledIcon = styled.div.withConfig(styledComponentsConfig)`
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  ${(props) =>
-    props.reverse
+  ${(props) => {
+    if (props.hasActionsGroup) {
+      return `
+        position: static;
+        align-items: center;
+        transform: none;
+        padding-left: ${getInputPadBySide(props, 'left')};
+        padding-right: ${getInputPadBySide(props, 'right')};
+      `;
+    }
+    return props.reverse
       ? `right: ${getInputPadBySide(props, 'right')};`
-      : `left: ${getInputPadBySide(props, 'left')};`}
+      : `left: ${getInputPadBySide(props, 'left')};`;
+  }}
+`;
+
+const StyledActionsGroup = styled.div.withConfig(styledComponentsConfig)`
+  display: flex;
+  align-items: stretch;
+  z-index: 1;
 `;
 
 const StyledSuggestions = styled.ol.withConfig(styledComponentsConfig)`
@@ -121,5 +154,6 @@ export {
   StyledTextInputContainer,
   StyledPlaceholder,
   StyledIcon,
+  StyledActionsGroup,
   StyledSuggestions,
 };

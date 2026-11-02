@@ -1,7 +1,10 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useEffect, useRef, useState } from 'react';
 
 import { makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 import { RootsContext, useRoots } from '../contexts/RootsContext';
+import { useLayoutEffect } from '../utils/use-isomorphic-layout-effect';
 
 const isFocusable = (element) => {
   if (element?.tabIndex < 0 || element?.disabled) {
@@ -42,7 +45,7 @@ export const FocusedContainer = ({
   const ignoreUtilFocusRef = useRef(false);
   const lastFocusRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const container = ref.current;
     const roots = contextRoots.current;
 

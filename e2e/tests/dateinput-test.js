@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { screen } from '@testing-library/testcafe';
 
 fixture('DateInput').page(`http://localhost:8080/`);

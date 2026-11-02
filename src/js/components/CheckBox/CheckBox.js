@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 
 import { removeUndefined } from '../../utils/object';

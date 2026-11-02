@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 const POST_DECIMAL_DIGITS = 10;
 
 export const baseUnit = 24;

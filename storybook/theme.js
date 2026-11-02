@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { create } from 'storybook/internal/theming';
 
 // https://storybook.js.org/docs/configurations/theming/

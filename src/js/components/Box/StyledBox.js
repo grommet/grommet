@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 
@@ -329,7 +331,8 @@ const StyledBox = styled.div.withConfig({
   ${(props) =>
     props.round && roundStyle(props.round, props.responsive, props.theme)}
   ${(props) => props.wrapProp && wrapStyle}
-  ${(props) => props.overflowProp && overflowStyle(props.overflowProp)}
+  ${(props) =>
+    props.overflowProp && overflowStyle(props.overflowProp, props.theme)}
   ${(props) => props.elevationProp && elevationStyle(props.elevationProp)}
   ${(props) =>
     props.gap &&

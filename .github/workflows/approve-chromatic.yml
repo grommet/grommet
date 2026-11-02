@@ -1,0 +1,116 @@
+name: Approve Chromatic
+
+# This runs the workflow from the trusted default branch. Never check out or
+# execute code from the pull request in this workflow.
+on:
+  pull_request_target:
+    types: [labeled, synchronize]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  approve:
+    if: >-
+      github.event.pull_request.state == 'open' &&
+      contains(github.event.pull_request.labels.*.name, 'chromatic-approved') &&
+      (github.event.action == 'synchronize' ||
+      github.event.label.name == 'chromatic-approved')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify approval label access
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          labeler="$(curl --fail --silent --show-error \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/$REPOSITORY/issues/$PR_NUMBER/events?per_page=100" \
+            | jq --raw-output \
+              '[.[] | select(.event == "labeled" and .label.name == "chromatic-approved")] | max_by(.id).actor.login // empty')"
+
+          if [ -z "$labeler" ]; then
+            echo 'Could not identify who applied the chromatic-approved label.'
+            exit 1
+          fi
+
+          permission="$(curl --fail --silent --show-error \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/$REPOSITORY/collaborators/$labeler/permission" \
+            | jq --raw-output '.permission')"
+
+          case "$permission" in
+            admin|maintain|write) ;;
+            *)
+              echo "Only maintainers can approve Chromatic runs; $labeler has $permission access."
+              exit 1
+              ;;
+          esac
+
+      - name: Approve matching CircleCI workflow
+        env:
+          CIRCLECI_TOKEN: ${{ secrets.CIRCLECI_TOKEN }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PROJECT_SLUG: gh/${{ github.repository }}
+        run: |
+          set -euo pipefail
+          api='https://circleci.com/api/v2'
+
+          if [ -z "$CIRCLECI_TOKEN" ]; then
+            echo 'CIRCLECI_TOKEN is not configured.'
+            exit 1
+          fi
+
+          circleci_get() {
+            curl --fail --silent --show-error \
+              --header "Circle-Token: $CIRCLECI_TOKEN" \
+              "$1"
+          }
+
+          for attempt in $(seq 1 12); do
+            pipelines="$(circleci_get "$api/project/$PROJECT_SLUG/pipeline")"
+            pipeline_id="$(jq --raw-output --arg sha "$HEAD_SHA" \
+              '.items[] | select(.vcs.revision == $sha) | .id' <<< "$pipelines" \
+              | head --lines=1)"
+
+            if [ -n "$pipeline_id" ]; then
+              workflows="$(circleci_get "$api/pipeline/$pipeline_id/workflow")"
+              workflow_id="$(jq --raw-output \
+                '.items[] | select(.name == "build_test") | .id' <<< "$workflows" \
+                | head --lines=1)"
+
+              if [ -n "$workflow_id" ]; then
+                jobs="$(circleci_get "$api/workflow/$workflow_id/job")"
+                approval_job="$(jq --compact-output \
+                  '.items[] | select(.name == "hold-chromatic")' <<< "$jobs" \
+                  | head --lines=1)"
+
+                if [ -n "$approval_job" ]; then
+                  status="$(jq --raw-output '.status' <<< "$approval_job")"
+                  if [ "$status" != 'on_hold' ]; then
+                    echo "Chromatic approval is already $status for $HEAD_SHA."
+                    exit 0
+                  fi
+
+                  approval_request_id="$(jq --raw-output '.approval_request_id' <<< "$approval_job")"
+                  curl --fail --silent --show-error --request POST \
+                    --header "Circle-Token: $CIRCLECI_TOKEN" \
+                    "$api/workflow/$workflow_id/approve/$approval_request_id"
+                  echo "Approved Chromatic for $HEAD_SHA."
+                  exit 0
+                fi
+              fi
+            fi
+
+            echo "Waiting for CircleCI workflow for $HEAD_SHA (attempt $attempt of 12)."
+            sleep 10
+          done
+
+          echo "No pending hold-chromatic approval found for $HEAD_SHA."
+          exit 1

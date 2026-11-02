@@ -3,6 +3,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import {
+  act,
   fireEvent,
   render,
   screen,
@@ -14,12 +15,17 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 import '@testing-library/jest-dom';
 
+import { Clock as GrommetClockIcon } from 'grommet-icons';
 import { AnnounceContext } from '../../../contexts/AnnounceContext';
 import { createPortal } from '../../../utils/portal';
 import { ThemeType } from '../../../themes';
+import { Button } from '../../Button';
+import { Box } from '../../Box';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
 import { Grommet } from '../../Grommet';
+import { Layer } from '../../Layer';
+import { TextInput } from '../../TextInput';
 import { TimeInput } from '..';
 
 const getSegment = (name: 'hours' | 'minutes' | 'seconds' | 'meridiem') =>
@@ -47,6 +53,205 @@ describe('TimeInput', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('works correctly nested inside a modal Layer', async () => {
+    const user = userEvent.setup();
+
+    const { baseElement } = render(
+      <Grommet>
+        <Layer modal>
+          <Box pad="medium" gap="medium" width="medium">
+            <TimeInput format="24" defaultValue="10:15:20" />
+          </Box>
+        </Layer>
+      </Grommet>,
+    );
+
+    // Layer renders through a portal, so `container` is empty - assert
+    // against baseElement to actually cover the rendered Layer content.
+    // The "region" rule is page-level (expects landmarks around all body
+    // content) and isn't meaningful for an isolated component test.
+    const results = await axe(baseElement, {
+      rules: { region: { enabled: false } },
+    });
+    expect(results).toHaveNoViolations();
+
+    const trigger = screen.getByRole('button', { name: 'Choose time' });
+    await user.click(trigger);
+
+    const dialog = screen.getByRole('dialog', { name: 'Choose time' });
+
+    // TimeInputPopup focuses the current hour option from inside a
+    // requestAnimationFrame callback; flushing one real frame here confirms
+    // that FocusedContainer's trap setup (now a layout effect) is already
+    // registered by the time that callback runs, so focus actually lands.
+    await act(
+      () =>
+        new Promise((resolve) => {
+          requestAnimationFrame(() => resolve(undefined));
+        }),
+    );
+    const initialHourOption = within(dialog).getByRole('option', {
+      name: '10 hours',
+    });
+    expect(initialHourOption).toHaveFocus();
+
+    const hourOption = within(dialog).getByRole('option', { name: '11 hours' });
+    await user.click(hourOption);
+
+    expect(getDisplayInput()).toHaveValue('11:15');
+  });
+
+  test('accepts a named drop button kind string', () => {
+    const customTheme: ThemeType = {
+      button: {
+        default: {},
+        primary: { background: '#445566', color: '#FFFFFF' },
+      },
+      timeInput: { dropButton: 'primary' },
+    };
+
+    render(
+      <Grommet theme={customTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    expect(dropButton).toHaveStyleRule('color', '#FFFFFF');
+    expect(dropButton.querySelector('svg')).toBeInTheDocument();
+  });
+
+  test('accepts a named drop button kind with a custom icon', () => {
+    const customTheme: ThemeType = {
+      button: {
+        default: {},
+        primary: { background: '#445566', color: '#FFFFFF' },
+      },
+      timeInput: {
+        dropButton: {
+          kind: 'primary',
+          icon: (
+            <span aria-hidden={false} data-caller-prop="preserved">
+              Custom primary icon
+            </span>
+          ),
+        },
+      },
+    };
+
+    const { asFragment } = render(
+      <Grommet theme={customTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    const customIcon = within(dropButton).getByText('Custom primary icon');
+    expect(customIcon).toHaveAttribute('aria-hidden', 'false');
+    expect(customIcon).toHaveAttribute('data-caller-prop', 'preserved');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('accepts icon elements and components through dropButton.icon', () => {
+    const elementTheme: ThemeType = {
+      timeInput: {
+        dropButton: { icon: <span>Custom icon element</span> },
+      },
+    };
+
+    const { unmount } = render(
+      <Grommet theme={elementTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    let dropButton = screen.getByRole('button', { name: 'Choose time' });
+    const customIconElement = within(dropButton).getByText(
+      'Custom icon element',
+    );
+    expect(customIconElement).toHaveAttribute('aria-hidden', 'true');
+
+    unmount();
+
+    const themedIconTheme: ThemeType = {
+      timeInput: { dropButton: { icon: GrommetClockIcon } },
+    };
+
+    const themedIconRender = render(
+      <Grommet theme={themedIconTheme}>
+        <TimeInput />
+      </Grommet>,
+    );
+
+    dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton.querySelector('svg')).toHaveAttribute(
+      'aria-hidden',
+      'true',
+    );
+
+    themedIconRender.unmount();
+  });
+
+  test('accepts defaultValue without seconds (HH:mm)', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="12:24" />
+      </Grommet>,
+    );
+
+    // showSeconds defaults to false, so only hour/minute are displayed;
+    // a real value here (not the "hh:mm" placeholder) confirms it parsed
+    expect(getDisplayInput()).toHaveValue('12:24');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('omits aria-valuenow on empty segments, sets it once filled', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    const minuteSegment = getSegment('minutes');
+
+    // empty: no real value yet, so aria-valuenow must be absent entirely -
+    // not defaulted to 0/min, which would misrepresent an unset value
+    expect(hourSegment).not.toHaveAttribute('aria-valuenow');
+    expect(minuteSegment).not.toHaveAttribute('aria-valuenow');
+
+    await user.click(hourSegment);
+    await user.keyboard('14');
+
+    expect(hourSegment).toHaveAttribute('aria-valuenow', '14');
+    // minutes is still empty
+    expect(minuteSegment).not.toHaveAttribute('aria-valuenow');
+  });
+
+  test('omits aria-valuenow on empty meridiem, sets it once filled', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" />
+      </Grommet>,
+    );
+
+    const meridiemSegment = getSegment('meridiem');
+
+    // empty period must also omit aria-valuenow, not default to 0 (AM)
+    expect(meridiemSegment).not.toHaveAttribute('aria-valuenow');
+
+    await user.click(meridiemSegment);
+    await user.keyboard('p');
+
+    expect(meridiemSegment).toHaveAttribute('aria-valuenow', '1');
+  });
+
   test('opens and closes picker with keyboard', async () => {
     const user = userEvent.setup();
 
@@ -64,6 +269,84 @@ describe('TimeInput', () => {
 
     await user.keyboard('{Escape}');
     expect(document.getElementById('time-picker__drop')).toBeNull();
+  });
+
+  test('ignores unsupported modifier key combinations', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" showSeconds defaultValue="00:34:56" />
+      </Grommet>,
+    );
+
+    const minuteSegment = getSegment('minutes');
+    await user.click(minuteSegment);
+    await user.keyboard('{Control>}{ArrowUp}{/Control}');
+    await user.keyboard('{Meta>}{ArrowUp}{/Meta}');
+    await user.keyboard('{Alt>}{ArrowUp}{/Alt}');
+    await user.click(getSegment('meridiem'));
+    await user.keyboard('{Meta>}p{/Meta}');
+
+    expect(getDisplayInput()).toHaveValue('12:34:56 AM');
+  });
+
+  test('commits a focused popup option with Enter', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput
+          id="time-enter-option"
+          format="24"
+          defaultValue="13:45:30"
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const drop = document.getElementById('time-enter-option__drop');
+    const hourList = within(drop as HTMLElement).getByRole('listbox', {
+      name: 'hour',
+    });
+    const hourOption = within(hourList).getByRole('option', {
+      name: '13 hours',
+    });
+
+    fireEvent.focus(hourOption);
+    await user.keyboard('{Enter}');
+
+    expect(onChange).toHaveBeenLastCalledWith({ value: '13:45:30' });
+  });
+
+  test('does not commit a popup option on mousedown alone (WCAG 2.5.2)', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    render(
+      <Grommet>
+        <TimeInput id="time-pointer-cancel" format="24" onChange={onChange} />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const drop = document.getElementById('time-pointer-cancel__drop');
+    const hourList = within(drop as HTMLElement).getByRole('listbox', {
+      name: 'hour',
+    });
+    const hourOption = within(hourList).getByRole('option', {
+      name: '05 hours',
+    });
+
+    // Press down on the option without releasing - must NOT commit.
+    fireEvent.mouseDown(hourOption, { button: 0 });
+    expect(onChange).not.toHaveBeenCalled();
+
+    // A real click (down + up on the same element) must commit.
+    await user.click(hourOption);
+    expect(onChange).toHaveBeenCalled();
   });
 
   test('links trigger aria-controls to popup id when id is provided', async () => {
@@ -94,7 +377,9 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
+    screen.getAllByRole('spinbutton').forEach((segment) => {
+      expect(segment).toHaveAttribute('data-active', 'false');
+    });
   });
 
   test('allows clicking directly on a non-first segment to focus it', async () => {
@@ -112,12 +397,34 @@ describe('TimeInput', () => {
     expect(meridiemSegment).toHaveFocus();
   });
 
+  test('keeps focus within the container while moving between segments', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet theme={{ global: { colors: { focus: '#FF0000' } } }}>
+        <TimeInput format="24" defaultValue="12:34:56" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    const minuteSegment = getSegment('minutes');
+    const container = screen.getByRole('group').parentElement
+      ?.parentElement as HTMLElement;
+
+    await user.click(hourSegment);
+    expect(hourSegment).toHaveFocus();
+
+    await user.keyboard('{ArrowRight}');
+    expect(minuteSegment).toHaveFocus();
+    expect(container).toContainElement(minuteSegment);
+  });
+
   test('keeps segment typing active for two-digit entry', async () => {
     const user = userEvent.setup();
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -136,7 +443,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -155,7 +462,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -183,7 +490,7 @@ describe('TimeInput', () => {
     render(
       <Grommet>
         <div>
-          <TimeInput format="24" defaultValue="00:00:00" />
+          <TimeInput format="24" showSeconds defaultValue="00:00:00" />
           <button type="button">after</button>
         </div>
       </Grommet>,
@@ -210,7 +517,7 @@ describe('TimeInput', () => {
       <Grommet>
         <div>
           <button type="button">before</button>
-          <TimeInput format="24" defaultValue="00:00:00" />
+          <TimeInput format="24" showSeconds defaultValue="00:00:00" />
         </div>
       </Grommet>,
     );
@@ -229,7 +536,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -244,12 +551,47 @@ describe('TimeInput', () => {
     expect(document.body).toHaveFocus();
   });
 
+  test('does not reclaim focus after a segment blurs to the document body', async () => {
+    const user = userEvent.setup();
+    let animationFrameCallback: FrameRequestCallback | undefined;
+    const requestAnimationFrameSpy = jest
+      .spyOn(window, 'requestAnimationFrame')
+      .mockImplementation((callback) => {
+        animationFrameCallback = callback;
+        return 0;
+      });
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
+      </Grommet>,
+    );
+
+    const hourSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    try {
+      await user.click(hourSegment);
+      await user.tab({ shift: true });
+
+      expect(requestAnimationFrameSpy).toHaveBeenCalledTimes(1);
+      expect(animationFrameCallback).toBeDefined();
+
+      act(() => {
+        animationFrameCallback?.(0);
+      });
+      await waitFor(() => {
+        expect(document.body).toHaveFocus();
+      });
+    } finally {
+      requestAnimationFrameSpy.mockRestore();
+    }
+  });
+
   test('updates active section via arrows and digits', async () => {
     const user = userEvent.setup();
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -360,6 +702,7 @@ describe('TimeInput', () => {
         <Grommet>
           <TimeInput
             format="12"
+            showSeconds
             defaultValue="12:34:56"
             messages={{
               currentValue: 'Now {hour}:{minute}:{second}{period}',
@@ -384,6 +727,29 @@ describe('TimeInput', () => {
     });
   });
 
+  test('announces the current value without seconds when hidden', async () => {
+    const user = userEvent.setup();
+    const announceSpy = jest.fn();
+
+    render(
+      <AnnounceContext.Provider value={announceSpy}>
+        <Grommet>
+          <TimeInput
+            format="12"
+            messages={{
+              currentValueWithoutSeconds: 'Now {hour}:{minute}{period}',
+            }}
+          />
+        </Grommet>
+      </AnnounceContext.Provider>,
+    );
+
+    await user.click(getSegment('hours'));
+    await user.keyboard('1234p');
+
+    expect(announceSpy).toHaveBeenCalledWith('Now 12:34 PM', 'polite');
+  });
+
   test('uses currentValue message key without period in 24h format', async () => {
     const user = userEvent.setup();
     const announceSpy = jest.fn();
@@ -393,6 +759,7 @@ describe('TimeInput', () => {
         <Grommet>
           <TimeInput
             format="24"
+            showSeconds
             defaultValue="12:34:56"
             messages={{
               currentValue: 'Now {hour}:{minute}:{second}{period}',
@@ -417,7 +784,7 @@ describe('TimeInput', () => {
   });
 
   test('associates the FormField label once with the segment group via aria-labelledby', () => {
-    render(
+    const { asFragment } = render(
       <Grommet>
         <Form>
           <FormField
@@ -452,12 +819,140 @@ describe('TimeInput', () => {
     // the FormField label takes precedence, so no fallback aria-label
     // should be set on the group
     expect(group).not.toHaveAttribute('aria-label');
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('links FormField error text to every segment via aria-describedby/aria-invalid', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput id="appointment-time" name="value" format="24" />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    const errorMessage = screen.getByText('Time is required');
+    const errorId = errorMessage.getAttribute('id');
+    expect(errorId).toBeTruthy();
+
+    ['hours', 'minutes'].forEach((segmentName) => {
+      const segment = screen.getByRole('spinbutton', { name: segmentName });
+      expect(segment).toHaveAttribute('aria-invalid', 'true');
+      expect(segment).toHaveAttribute('aria-describedby', errorId);
+    });
+  });
+  test('links a whole-value error to every segment when the time is complete', () => {
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is unavailable"
+          >
+            <TimeInput
+              id="appointment-time"
+              name="value"
+              format="24"
+              defaultValue="14:30"
+            />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    const errorId = screen.getByText('Time is unavailable').getAttribute('id');
+    expect(errorId).toBeTruthy();
+
+    ['hours', 'minutes'].forEach((segmentName) => {
+      const segment = screen.getByRole('spinbutton', { name: segmentName });
+      expect(segment).toHaveAttribute('aria-invalid', 'true');
+      expect(segment).toHaveAttribute('aria-describedby', errorId);
+    });
+  });
+  test('scopes the FormField error to segments still missing a value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput id="appointment-time" name="value" format="24" />
+          </FormField>
+        </Form>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('spinbutton', { name: 'minutes' }));
+    await user.keyboard('30');
+
+    const errorId = screen.getByText('Time is required').getAttribute('id');
+
+    const hoursSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hoursSegment).toHaveAttribute('aria-invalid', 'true');
+    expect(hoursSegment).toHaveAttribute('aria-describedby', errorId);
+
+    const minutesSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    expect(minutesSegment).not.toHaveAttribute('aria-invalid');
+    expect(minutesSegment).not.toHaveAttribute('aria-describedby');
+  });
+
+  test('preserves a consumer aria-describedby on every segment while scoping the FormField error id', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Form>
+          <FormField
+            htmlFor="appointment-time"
+            name="value"
+            label="Choose an appointment time"
+            error="Time is required"
+          >
+            <TimeInput
+              id="appointment-time"
+              name="value"
+              format="24"
+              aria-describedby="time-hint"
+            />
+          </FormField>
+        </Form>
+        <span id="time-hint">24-hour format</span>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('spinbutton', { name: 'minutes' }));
+    await user.keyboard('30');
+
+    const errorId = screen.getByText('Time is required').getAttribute('id');
+
+    const hoursSegment = screen.getByRole('spinbutton', { name: 'hours' });
+    expect(hoursSegment).toHaveAttribute(
+      'aria-describedby',
+      `time-hint ${errorId}`,
+    );
+
+    const minutesSegment = screen.getByRole('spinbutton', { name: 'minutes' });
+    expect(minutesSegment).toHaveAttribute('aria-describedby', 'time-hint');
   });
 
   test('falls back to the inputLabel message when there is no FormField label', () => {
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -528,7 +1023,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -540,7 +1035,7 @@ describe('TimeInput', () => {
       expect(input).toHaveFocus();
     });
 
-    expect(input).toHaveAttribute('aria-valuenow', '1');
+    expect(input).not.toHaveAttribute('aria-valuenow');
     expect(input).toHaveAttribute('aria-valuemin', '1');
     expect(input).toHaveAttribute('aria-valuemax', '12');
   });
@@ -550,7 +1045,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -570,7 +1065,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -588,7 +1083,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -613,7 +1108,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -624,7 +1119,7 @@ describe('TimeInput', () => {
   test('supports uncontrolled initial value', () => {
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="13:05:09" />
+        <TimeInput format="12" showSeconds defaultValue="13:05:09" />
       </Grommet>,
     );
 
@@ -636,7 +1131,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56" />
+        <TimeInput format="12" showSeconds defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -654,7 +1149,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="12:34:56" />
+        <TimeInput format="12" showSeconds defaultValue="12:34:56" />
       </Grommet>,
     );
 
@@ -683,7 +1178,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:30:00" minuteStep={15} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:30:00"
+          minuteStep={15}
+        />
       </Grommet>,
     );
 
@@ -699,13 +1199,53 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('10:00:00');
   });
 
+  test('initializes empty 24-hour sections based on arrow direction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourInput = getSegment('hours');
+    await user.click(hourInput);
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+
+    const minuteInput = getSegment('minutes');
+    await user.click(minuteInput);
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('00:59');
+  });
+
+  test('initializes empty 12-hour sections based on arrow direction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" showSeconds />
+      </Grommet>,
+    );
+
+    const hourInput = getSegment('hours');
+    await user.click(hourInput);
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('12:mm:ss aa');
+
+    const minuteInput = getSegment('minutes');
+    await user.click(minuteInput);
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('12:00:ss aa');
+  });
+
   test('submits only committed value and never section placeholders', async () => {
     const user = userEvent.setup();
 
     render(
       <Grommet>
         <form aria-label="native-form">
-          <TimeInput format="12" name="alarmTime" />
+          <TimeInput format="12" showSeconds name="alarmTime" />
         </form>
       </Grommet>,
     );
@@ -728,7 +1268,7 @@ describe('TimeInput', () => {
   test('disables both spinbutton and trigger button when disabled', () => {
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:45:10" disabled />
+        <TimeInput format="12" showSeconds defaultValue="09:45:10" disabled />
       </Grommet>,
     );
 
@@ -747,6 +1287,7 @@ describe('TimeInput', () => {
         <TimeInput
           id="read-only-picker"
           format="12"
+          showSeconds
           defaultValue="00:00:00"
           readOnly
         />
@@ -773,9 +1314,10 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    await user.click(getSegment('hours'));
+    const hourSegment = getSegment('hours');
+    await user.click(hourSegment);
 
-    expect(screen.queryByTestId('time-input-active-section')).toBeNull();
+    expect(hourSegment).toHaveAttribute('data-active', 'false');
   });
 
   test('supports controlled updates', async () => {
@@ -788,6 +1330,7 @@ describe('TimeInput', () => {
         <>
           <TimeInput
             format="24"
+            showSeconds
             value={value}
             onChange={({ value: nextValue }) => {
               onChange(nextValue);
@@ -856,7 +1399,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput id="tab-cycle-picker" format="24" defaultValue="13:45:30" />
+        <TimeInput
+          id="tab-cycle-picker"
+          format="24"
+          showSeconds
+          defaultValue="13:45:30"
+        />
       </Grommet>,
     );
 
@@ -898,12 +1446,78 @@ describe('TimeInput', () => {
     expect(document.getElementById('tab-cycle-picker__drop')).toBeTruthy();
   });
 
+  test('moves from minute to hour with ArrowLeft in popup', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const selectedMinuteOption = within(minuteList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+
+    expect(selectedMinuteOption).toBeTruthy();
+    fireEvent.keyDown(selectedMinuteOption as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /hours/,
+      );
+    });
+  });
+
+  test('moves from second to minute to hour with ArrowLeft in popup', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" showSeconds defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const selectedSecondOption = within(secondList)
+      .getAllByRole('option')
+      .find((option) => option.getAttribute('aria-selected') === 'true');
+
+    expect(selectedSecondOption).toBeTruthy();
+    fireEvent.keyDown(selectedSecondOption as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /minutes/,
+      );
+    });
+
+    fireEvent.keyDown(document.activeElement as HTMLElement, {
+      key: 'ArrowLeft',
+    });
+
+    await waitFor(() => {
+      expect(document.activeElement?.getAttribute('aria-label')).toMatch(
+        /hours/,
+      );
+    });
+  });
+
   test('supports option selection by click for touch-like interactions', async () => {
     const user = userEvent.setup();
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="01:00:00" />
       </Grommet>,
     );
 
@@ -924,7 +1538,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:15:20" />
+        <TimeInput format="12" showSeconds defaultValue="07:15:20" />
       </Grommet>,
     );
 
@@ -949,7 +1563,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:45:50" />
+        <TimeInput format="24" showSeconds defaultValue="01:45:50" />
       </Grommet>,
     );
 
@@ -980,7 +1594,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="05:55:55" />
+        <TimeInput format="24" showSeconds defaultValue="05:55:55" />
       </Grommet>,
     );
 
@@ -1061,7 +1675,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -1106,7 +1720,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="01:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="01:00:00" />
       </Grommet>,
     );
 
@@ -1118,7 +1732,7 @@ describe('TimeInput', () => {
     expect(option).not.toHaveAttribute('pad');
   });
 
-  test('moves focus to hour-01 when opened via icon from placeholder state', async () => {
+  test('moves focus to hour-12 when opened via icon from placeholder state', async () => {
     const user = userEvent.setup();
 
     render(
@@ -1133,9 +1747,47 @@ describe('TimeInput', () => {
 
     await waitFor(() => {
       expect(
-        within(hourList).getByRole('option', { name: '01 hours' }),
+        within(hourList).getByRole('option', { name: '12 hours' }),
       ).toHaveFocus();
     });
+  });
+
+  test('does not mark options selected when opened from placeholder state', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" showSeconds />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const minuteList = screen.getByRole('listbox', { name: 'minute' });
+    const secondList = screen.getByRole('listbox', { name: 'second' });
+    const periodList = screen.getByRole('listbox', { name: 'period' });
+
+    expect(
+      within(hourList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(minuteList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(secondList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
+    expect(
+      within(periodList)
+        .getAllByRole('option')
+        .some((option) => option.getAttribute('aria-selected') === 'true'),
+    ).toBe(false);
   });
 
   test('allows replacing hour with leading zero in 12-hour format', async () => {
@@ -1143,7 +1795,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1162,7 +1814,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" onChange={onChange} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="00:00:00"
+          onChange={onChange}
+        />
       </Grommet>,
     );
 
@@ -1181,7 +1838,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="07:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1203,7 +1860,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="02:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="02:30:00" />
       </Grommet>,
     );
 
@@ -1227,7 +1884,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="07:30:00" />
+        <TimeInput format="24" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1249,7 +1906,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="07:30:00" />
+        <TimeInput format="24" showSeconds defaultValue="07:30:00" />
       </Grommet>,
     );
 
@@ -1272,7 +1929,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="00:00:00" />
+        <TimeInput format="24" showSeconds defaultValue="00:00:00" />
       </Grommet>,
     );
 
@@ -1310,7 +1967,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1329,7 +1986,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1348,7 +2005,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" minuteStep={15} />
+        <TimeInput format="24" showSeconds minuteStep={15} />
       </Grommet>,
     );
 
@@ -1367,7 +2024,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1397,7 +2054,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" />
+        <TimeInput format="12" showSeconds />
       </Grommet>,
     );
 
@@ -1427,7 +2084,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="09:30:00" />
       </Grommet>,
     );
 
@@ -1449,7 +2106,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="12" defaultValue="09:30:00" />
+        <TimeInput format="12" showSeconds defaultValue="09:30:00" />
       </Grommet>,
     );
 
@@ -1479,7 +2136,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={15} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={15}
+        />
       </Grommet>,
     );
 
@@ -1513,7 +2175,12 @@ describe('TimeInput', () => {
     // by rendering with a controlled default value and arrow-keying through
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={20} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={20}
+        />
       </Grommet>,
     );
 
@@ -1540,7 +2207,12 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" defaultValue="10:00:00" minuteStep={0} />
+        <TimeInput
+          format="24"
+          showSeconds
+          defaultValue="10:00:00"
+          minuteStep={0}
+        />
       </Grommet>,
     );
 
@@ -1552,6 +2224,63 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('10:01:00');
   });
 
+  test('in 24-hour mode without showSeconds, only hour and minute are interactive', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.getByRole('spinbutton', { name: 'hours' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('spinbutton', { name: 'minutes' }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'seconds' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'meridiem' }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    expect(screen.getByRole('listbox', { name: 'hour' })).toBeInTheDocument();
+    expect(screen.getByRole('listbox', { name: 'minute' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'second' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'period' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('hides seconds by default in the 12-hour field and picker', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" defaultValue="13:45:30" />
+      </Grommet>,
+    );
+
+    expect(getDisplayInput()).toHaveValue('01:45 PM');
+    expect(getSegment('meridiem')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('spinbutton', { name: 'seconds' }),
+    ).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    expect(screen.getByRole('listbox', { name: 'period' })).toBeInTheDocument();
+    expect(
+      screen.queryByRole('listbox', { name: 'second' }),
+    ).not.toBeInTheDocument();
+  });
+
   test('auto-scrolls selected minute and second options on open', async () => {
     const user = userEvent.setup();
     const originalScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
@@ -1561,7 +2290,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -1586,6 +2315,31 @@ describe('TimeInput', () => {
     } finally {
       window.HTMLElement.prototype.scrollIntoView = originalScrollIntoView;
     }
+  });
+
+  test('keyboard focus ring clears when switching to mouse interaction', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="04:30:00" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const hour4 = within(hourList).getByRole('option', { name: '04 hours' });
+    const hour7 = within(hourList).getByRole('option', { name: '07 hours' });
+
+    // Simulate prior keyboard focus (programmatic focus, as in a real
+    // keyboard session where the option was navigated to via arrow keys).
+    fireEvent.focus(hour4);
+    expect(hour4).toHaveFocus();
+    // Mouse click — keyboard ring should dismiss (focus leaves hour 4)
+    await user.click(hour7);
+
+    expect(document.activeElement).not.toBe(hour4);
   });
 
   test('does not scroll popup options after clicking to select one', async () => {
@@ -1632,7 +2386,7 @@ describe('TimeInput', () => {
     try {
       render(
         <Grommet>
-          <TimeInput format="12" defaultValue="00:30:20" />
+          <TimeInput format="12" showSeconds defaultValue="00:30:20" />
         </Grommet>,
       );
 
@@ -1679,36 +2433,94 @@ describe('TimeInput', () => {
     }
   });
 
-  test('applies timeInput theme tokens across container, active segment, and drop options', async () => {
+  test('applies anatomy-based theme tokens across the field and popup', async () => {
     const user = userEvent.setup();
 
     const customTheme: ThemeType = {
       timeInput: {
-        button: {
-          margin: { right: 'large' },
-        },
         container: {
           round: 'large',
+          height: '500px',
+          width: '500px',
         },
-        active: {
-          background: '#FFD700',
+        value: {
+          pad: { horizontal: 'large' },
+          background: '#F8F8F8',
+          round: 'small',
+        },
+        segment: {
           pad: 'large',
-          indicator: {
-            color: '#FF0000',
+          background: '#F0F0F0',
+          border: { color: '#123456', size: 'small' },
+          elevation: 'small',
+          height: 'large',
+          margin: { left: 'xsmall' },
+          round: '6px',
+          width: 'large',
+          color: '#112233',
+          placeholder: {
+            color: '#445566',
+          },
+          active: {
+            background: '#FFD700',
+            border: {
+              color: '#FF0000',
+              side: 'bottom',
+              size: '3px',
+              style: 'dashed',
+            },
+            elevation: 'xsmall',
+            pad: 'xsmall',
+            round: '12px',
+            color: '#223344',
             size: 'large',
+            weight: 700,
           },
         },
+        dropButton: {
+          icon: <span>Custom icon</span>,
+          background: '#445566',
+          color: '#FFFFFF',
+          padding: { vertical: 'small', horizontal: 'medium' },
+        },
         drop: {
+          width: { width: '24rem', min: '20rem', max: '100%' },
+          height: { min: 'small' },
+          column: {
+            height: { max: 'medium' },
+            background: '#FAFAFA',
+            round: 'small',
+          },
           option: {
-            background: '#EEEEEE',
-            hover: {
-              background: '#CCCCCC',
-            },
-            selected: {
-              background: '#0000FF',
-              color: '#FFFFFF',
+            container: {
+              background: '#EEEEEE',
+              border: { color: '#334455', size: '2px' },
+              pad: 'small',
+              round: 'small',
               hover: {
-                background: '#00FF00',
+                background: '#CCCCCC',
+                border: { color: '#556677', size: 'small' },
+                elevation: 'xsmall',
+                pad: 'xsmall',
+                round: 'medium',
+              },
+              selected: {
+                background: '#0000FF',
+                hover: {
+                  background: '#00FF00',
+                  border: { color: '#778899', size: 'medium' },
+                  elevation: 'medium',
+                  pad: 'small',
+                  round: 'large',
+                },
+              },
+            },
+            text: {
+              size: 'medium',
+              selected: {
+                color: '#FFFFFF',
+                size: 'large',
+                weight: 'bold',
               },
             },
           },
@@ -1718,7 +2530,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet theme={customTheme}>
-        <TimeInput format="24" defaultValue="10:15:20" />
+        <TimeInput format="24" showSeconds defaultValue="10:15:20" />
       </Grommet>,
     );
 
@@ -1726,25 +2538,59 @@ describe('TimeInput', () => {
     const container = screen.getByRole('group').parentElement
       ?.parentElement as HTMLElement;
     expect(container).toHaveStyleRule('border-radius', '48px');
+    expect(container).toHaveStyleRule('height', '500px');
+    expect(container).toHaveStyleRule('width', '500px');
 
-    // button.margin
-    const trigger = screen.getByRole('button', { name: 'Choose time' });
-    expect(trigger).toHaveStyleRule('margin-right', '48px');
-
-    // active.pad applies to every segment, active or not
+    // Segment exposes Box-part styles in addition to text styles.
     const hourSegment = getSegment('hours');
-    expect(hourSegment).toHaveStyleRule('padding-inline', '48px');
+    expect(hourSegment).toHaveStyleRule('padding', '48px');
+    expect(hourSegment).toHaveStyleRule('background-color', '#F0F0F0');
+    expect(hourSegment).toHaveStyleRule('border', 'solid 2px #123456');
+    expect(hourSegment).toHaveStyleRule(
+      'box-shadow',
+      '0px 2px 4px rgba(0, 0, 0, 0.20)',
+    );
+    expect(hourSegment).toHaveStyleRule('height', '768px');
+    expect(hourSegment).toHaveStyleRule('margin-left', '6px');
+    expect(hourSegment).toHaveStyleRule('border-radius', '6px');
+    expect(hourSegment).toHaveStyleRule('width', '768px');
+    expect(hourSegment).toHaveStyleRule('color', '#112233');
+    expect(screen.getAllByText(':')[0]).toHaveStyleRule('color', '#112233');
+    expect(screen.getByRole('group')).toHaveStyleRule('padding-left', '48px');
+    expect(screen.getByRole('group')).toHaveStyleRule(
+      'background-color',
+      '#F8F8F8',
+    );
+    expect(screen.getByRole('group')).toHaveStyleRule('border-radius', '12px');
+    const dropButton = screen.getByRole('button', { name: 'Choose time' });
+    expect(dropButton).toHaveStyleRule('background-color', '#445566');
+    expect(dropButton).toHaveStyleRule('color', '#FFFFFF');
+    expect(within(dropButton).getByText('Custom icon')).toBeInTheDocument();
 
-    // active.background and active.indicator only render on the
-    // currently focused/active segment
+    // Active Box and text styles, background, and underline only render on
+    // the currently focused/active segment.
     await user.click(hourSegment);
+    expect(hourSegment).toHaveStyleRule('padding', '6px');
+    expect(hourSegment).toHaveStyleRule(
+      'box-shadow',
+      '0px 1px 2px rgba(0, 0, 0, 0.20)',
+    );
+    expect(hourSegment).toHaveStyleRule('color', '#223344');
+    expect(hourSegment).toHaveStyleRule('font-size', '22px');
+    expect(hourSegment).toHaveStyleRule('font-weight', '700');
     expect(hourSegment).toHaveStyleRule('background-color', '#FFD700', {
       modifier: '::before',
     });
-    expect(hourSegment).toHaveStyleRule('background-color', '#FF0000', {
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
+      modifier: '::before',
+    });
+    expect(hourSegment).toHaveStyleRule('border-bottom', 'dashed 3px #FF0000', {
       modifier: '::after',
     });
-    expect(hourSegment).toHaveStyleRule('height', '12px', {
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
+      modifier: '::before',
+    });
+    expect(hourSegment).toHaveStyleRule('border-radius', '12px', {
       modifier: '::after',
     });
 
@@ -1758,19 +2604,97 @@ describe('TimeInput', () => {
     const unselectedOption = within(hourList).getByRole('option', {
       name: '11 hours',
     });
+    const dialog = screen.getByRole('dialog');
 
-    expect(unselectedOption).toHaveStyleRule('background', '#EEEEEE');
-    expect(selectedOption).toHaveStyleRule('background', '#0000FF');
-    expect(unselectedOption).toHaveStyleRule('background', '#CCCCCC', {
+    expect(dialog).toHaveStyleRule('width', '24rem');
+    expect(dialog).toHaveStyleRule('min-width', '20rem');
+    expect(dialog).toHaveStyleRule('min-height', '192px');
+    expect(hourList).toHaveStyleRule('max-height', '384px');
+    expect(hourList).toHaveStyleRule('background-color', '#FAFAFA');
+    expect(hourList).toHaveStyleRule('border-radius', '12px');
+
+    expect(unselectedOption).toHaveStyleRule('background-color', '#EEEEEE');
+    expect(unselectedOption).toHaveStyleRule('padding', '12px');
+    expect(unselectedOption).toHaveStyleRule('border', 'solid 2px #334455');
+    expect(unselectedOption).toHaveStyleRule('border-radius', '12px');
+    expect(selectedOption).toHaveStyleRule('background-color', '#0000FF');
+    expect(unselectedOption).toHaveStyleRule('background-color', '#CCCCCC', {
       modifier: ':hover',
     });
-    expect(selectedOption).toHaveStyleRule('background', '#00FF00', {
+    expect(unselectedOption).toHaveStyleRule('border', 'solid 2px #556677', {
       modifier: ':hover',
     });
-    expect(within(selectedOption).getByText('10')).toHaveStyleRule(
-      'color',
-      '#FFFFFF',
+    expect(unselectedOption).toHaveStyleRule('padding', '6px', {
+      modifier: ':hover',
+    });
+    expect(unselectedOption).toHaveStyleRule('border-radius', '24px', {
+      modifier: ':hover',
+    });
+    expect(unselectedOption).toHaveStyleRule(
+      'box-shadow',
+      '0px 1px 2px rgba(0, 0, 0, 0.20)',
+      { modifier: ':hover' },
     );
+    expect(selectedOption).toHaveStyleRule('background-color', '#00FF00', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('border', 'solid 4px #778899', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('padding', '12px', {
+      modifier: ':hover',
+    });
+    expect(selectedOption).toHaveStyleRule('border-radius', '48px', {
+      modifier: ':hover',
+    });
+    const selectedText = within(selectedOption).getByText('10');
+    expect(selectedText).toHaveStyleRule('color', '#FFFFFF');
+    expect(selectedText).toHaveStyleRule('font-size', '22px');
+    expect(selectedText).toHaveStyleRule('font-weight', 'bold');
+  });
+
+  test('uses the segment placeholder color when the input is empty', () => {
+    render(
+      <Grommet
+        theme={{
+          timeInput: {
+            segment: {
+              placeholder: {
+                color: '#778899',
+                size: 'large',
+                weight: 700,
+              },
+            },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    expect(hourSegment).toHaveStyleRule('color', '#778899');
+    expect(hourSegment).toHaveStyleRule('font-size', '22px');
+    expect(hourSegment).toHaveStyleRule('font-weight', '700');
+
+    const separator = screen.getAllByText(':')[0];
+    expect(separator).toHaveStyleRule('color', '#778899');
+    expect(separator).toHaveStyleRule('font-size', '22px');
+    expect(separator).toHaveStyleRule('font-weight', '700');
+  });
+
+  test('keeps default segment padding horizontal-only', () => {
+    render(
+      <Grommet>
+        <TimeInput format="24" defaultValue="10:15" />
+      </Grommet>,
+    );
+
+    const hourSegment = getSegment('hours');
+    expect(hourSegment).toHaveStyleRule('padding-left', '3px');
+    expect(hourSegment).toHaveStyleRule('padding-right', '3px');
+    expect(hourSegment).not.toHaveStyleRule('padding-top', '3px');
+    expect(hourSegment).not.toHaveStyleRule('padding-bottom', '3px');
   });
 
   test('updates displayed value when picking a new hour from the popup after a single-digit keystroke', async () => {
@@ -1778,7 +2702,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1809,7 +2733,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1829,7 +2753,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1859,7 +2783,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1879,7 +2803,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1909,7 +2833,7 @@ describe('TimeInput', () => {
 
     render(
       <Grommet>
-        <TimeInput format="24" />
+        <TimeInput format="24" showSeconds />
       </Grommet>,
     );
 
@@ -1923,4 +2847,274 @@ describe('TimeInput', () => {
     expect(getDisplayInput()).toHaveValue('hh:mm:02');
     expect(secondSegment).toHaveTextContent('02');
   });
+
+  test('updates displayed value on ArrowDown in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+    await user.click(chooseTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
+
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+    await user.keyboard('{ArrowDown}');
+    expect(getDisplayInput()).toHaveValue('01:mm');
+  });
+
+  test.each(['inner', 'outer'])(
+    'FormField delegates keyboard focus to the drop button with %s borders',
+    async (position) => {
+      const user = userEvent.setup();
+      const validate = jest.fn(() => undefined);
+      render(
+        <Grommet
+          theme={
+            {
+              global: { focus: { border: { color: '#123456' } } },
+              formField: {
+                border: { position },
+                focus: { border: { color: '#123456' } },
+              },
+            } as any
+          }
+        >
+          <Form>
+            <FormField
+              name="time"
+              htmlFor="time-focus"
+              label="Time"
+              validate={validate}
+              validateOn="blur"
+            >
+              <TimeInput id="time-focus" name="time" format="24" />
+              <TextInput aria-label="Within field" />
+            </FormField>
+            <Button label="After field" />
+          </Form>
+        </Grommet>,
+      );
+
+      await user.tab();
+      expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveFocus();
+      const fieldContent = screen.getByRole('group', { name: 'Time' })
+        .parentElement?.parentElement?.parentElement
+        ?.parentElement as HTMLElement;
+      const indicator =
+        position === 'inner' ? fieldContent : fieldContent.parentElement;
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+      expect(validate).not.toHaveBeenCalled();
+      await user.tab();
+      expect(
+        screen.getByRole('textbox', { name: 'Within field' }),
+      ).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      expect(validate).not.toHaveBeenCalled();
+      await user.tab({ shift: true });
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+      await user.tab({ shift: true });
+      expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(
+        screen.getByRole('textbox', { name: 'Within field' }),
+      ).toHaveFocus();
+      expect(indicator).toHaveStyleRule('border-color', '#123456');
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'After field' })).toHaveFocus();
+      await waitFor(() => expect(validate).toHaveBeenCalled());
+      expect(indicator).not.toHaveStyleRule('border-color', '#123456');
+    },
+  );
+  test('does not retain a Box focus shadow after arrowing to another option', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          global: {
+            focus: {
+              twoColor: true,
+              shadow: { color: '#123456', size: '2px' },
+              inset: {
+                twoColor: true,
+                shadow: { color: '#123456', size: '2px' },
+              },
+            },
+          },
+        }}
+      >
+        <TimeInput format="24" defaultValue="10:15:00" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Choose time' }));
+    const hourList = screen.getByRole('listbox', { name: 'hour' });
+    const initialOption = within(hourList).getByRole('option', {
+      name: '10 hours',
+    });
+    const previousOption = within(hourList).getByRole('option', {
+      name: '11 hours',
+    });
+    const nextOption = within(hourList).getByRole('option', {
+      name: '12 hours',
+    });
+    await waitFor(() => expect(initialOption).toHaveFocus());
+    await user.keyboard('{ArrowDown}');
+    await waitFor(() => expect(previousOption).toHaveFocus());
+    await user.keyboard('{ArrowDown}');
+    await waitFor(() => expect(nextOption).toHaveFocus());
+
+    expect(previousOption).toHaveAttribute('tabindex', '-1');
+    expect(previousOption).not.toHaveStyleRule('box-shadow');
+    expect(nextOption).not.toHaveStyleRule('box-shadow');
+    expect(nextOption).toHaveStyleRule('box-shadow', expect.any(String), {
+      modifier: ':focus-visible',
+    });
+  });
+
+  test('initialises hour with zero on ArrowUp in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+
+    await user.click(chooseTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+  });
+
+  test('updates displayed value on ArrowUp in hour inside drop', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const chooseTimeButton = screen.getByRole('button', {
+      name: 'Choose time',
+    });
+
+    await user.click(chooseTimeButton);
+    expect(getDisplayInput()).toHaveValue('hh:mm');
+
+    // Focus moves into the drop asynchronously (rAF-scheduled); wait for it
+    // to land before sending arrow keys, or the first one has nothing to
+    // bubble to and is silently dropped.
+    const dialog = screen.getByRole('dialog');
+    await waitFor(() => {
+      expect(dialog.contains(document.activeElement)).toBe(true);
+    });
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('00:mm');
+
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('23:mm');
+  });
+
+  test('initializes minutes and seconds with zero on ArrowUp', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TimeInput format="12" showSeconds />
+      </Grommet>,
+    );
+
+    expect(getDisplayInput()).toHaveValue('hh:mm:ss aa');
+
+    const minutesSegment = getSegment('minutes');
+    await user.click(minutesSegment);
+    await user.keyboard('{ArrowUp}');
+    expect(getDisplayInput()).toHaveValue('hh:00:ss aa');
+
+    const secondsSegment = getSegment('seconds');
+
+    await user.click(secondsSegment);
+    await user.keyboard('{ArrowUp}');
+
+    expect(getDisplayInput()).toHaveValue('hh:00:00 aa');
+  });
+});
+
+test('renders inline as bare popup content, no button or dialog role', () => {
+  const { asFragment } = render(
+    <Grommet>
+      <TimeInput format="24" inline />
+    </Grommet>,
+  );
+
+  expect(screen.queryByRole('button', { name: 'Choose time' })).toBeNull();
+  expect(screen.queryByRole('dialog')).toBeNull();
+  expect(screen.getByRole('listbox', { name: 'hour' })).toBeTruthy();
+  expect(screen.getByRole('listbox', { name: 'minute' })).toBeTruthy();
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test('does not automatically move focus when rendered inline', async () => {
+  const { rerender } = render(
+    <Grommet>
+      <button type="button">Keep focus</button>
+    </Grommet>,
+  );
+
+  const button = screen.getByRole('button', { name: 'Keep focus' });
+  button.focus();
+
+  rerender(
+    <Grommet>
+      <button type="button">Keep focus</button>
+      <TimeInput format="24" inline />
+    </Grommet>,
+  );
+
+  await act(
+    async () =>
+      new Promise((resolve) => {
+        requestAnimationFrame(() => resolve());
+      }),
+  );
+
+  expect(button).toHaveFocus();
 });

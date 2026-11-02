@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 import { ThemeType } from '../../themes';
 import { BackgroundType } from '../../utils';
@@ -9,6 +11,11 @@ export interface GrommetProps {
   dir?: 'rtl';
   full?: boolean | 'min';
   options?: {
+    /**
+     * Legacy compatibility fallback: restores the pre-WCAG color heuristic,
+     * which may select foreground colors that fail WCAG contrast requirements.
+     */
+    legacyColorIsDark?: boolean;
     button?: { childrenPlain?: boolean };
     box?: {
       cssGap?: boolean;
@@ -98,6 +105,7 @@ export interface GrommetProps {
         rowsChanged?: string;
         rowsSingle?: string;
         searchBy?: string;
+        sortable?: string;
         total?: string;
         totalSingle?: string;
       };
@@ -235,6 +243,7 @@ export interface GrommetProps {
         activeSectionValue?: string;
         chooseTime?: string;
         currentValue?: string;
+        currentValueWithoutSeconds?: string;
         inputLabel?: string;
         invalidTime?: string;
         openDrop?: string;
@@ -244,7 +253,10 @@ export interface GrommetProps {
         sectionSeconds?: string;
       };
       textInput?: {
+        clear?: string;
         enterSelect?: string;
+        hidePassword?: string;
+        showPassword?: string;
         suggestionsCount?: string;
         suggestionsExist?: string;
         suggestionIsOpen?: string;

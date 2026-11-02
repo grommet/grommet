@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
 
 import { normalizeColor, parseMetricToNum, useId } from '../../utils';

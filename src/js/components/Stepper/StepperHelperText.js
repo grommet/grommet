@@ -1,6 +1,8 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Text } from '../Text';
-import { useStepItem } from './StepperContext';
+import { useStepItem, useStepper } from './StepperContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 const StepperHelperText = ({ variant, ...rest }) => {
@@ -16,11 +18,15 @@ const StepperHelperText = ({ variant, ...rest }) => {
 
 export const StepperError = ({ ...rest }) => {
   const { step } = useStepItem();
+  const { errorAnnouncement } = useStepper();
   if (!step || step.status !== 'error' || !step.errorMessage) return null;
+  let role;
+  if (errorAnnouncement === 'polite') role = 'status';
+  if (errorAnnouncement === 'assertive') role = 'alert';
   return (
     <StepperHelperText
       id={`stepper-error-${step.id}`}
-      role="alert"
+      role={role}
       variant="error"
       {...rest}
     >

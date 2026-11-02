@@ -16,11 +16,13 @@ import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
+import { Hide } from 'grommet-icons/icons/Hide';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
 import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
 import { StatusUnknownSmall } from 'grommet-icons/icons/StatusUnknownSmall';
 import { Subtract } from 'grommet-icons/icons/Subtract';
+import { View } from 'grommet-icons/icons/View';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
@@ -78,6 +80,7 @@ const colors = {
     dark: 'rgba(255, 255, 255, 0.33)',
     light: 'rgba(0, 0, 0, 0.33)',
   },
+  scrollbar: 'border',
   brand: brandColor,
   control: {
     dark: 'accent-1',
@@ -215,6 +218,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         computer: 'large',
       },
       colors,
+      scrollbar: {
+        // width: undefined,
+      },
       control: {
         border: {
           width: `${controlBorderWidth}px`,
@@ -1054,6 +1060,44 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'medium',
       },
     },
+    dateTimeInput: {
+      button: {
+        margin: { right: 'small' },
+      },
+      container: {
+        round: 'xxsmall',
+      },
+      active: {
+        background: 'active-background',
+        pad: 'xxsmall',
+        indicator: {
+          color: { dark: 'white', light: 'black' },
+          size: 'small',
+        },
+      },
+      drop: {
+        height: 'medium',
+        pad: 'small',
+        gap: 'small',
+        border: {
+          color: 'border',
+          size: 'xsmall',
+        },
+      },
+      calendar: {
+        day: {
+          selected: {
+            background: 'selected',
+          },
+        },
+      },
+      icon: {
+        calendar: undefined,
+      },
+      separator: {
+        pad: 'xxsmall',
+      },
+    },
     dataSearch: {
       // icons: {
       //   search: undefined,
@@ -1251,7 +1295,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // [inputname]: {
       //  container: {
       //    extend: undefined,
-      //   }
+      //   },
+      //   hover: {
+      //     background: {
+      //       color: undefined,
+      //     },
+      //     border: {
+      //       color: undefined,
+      //     },
+      //   },
       // }
       border: {
         color: 'border',
@@ -1305,6 +1357,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // container: {}, // any Box props
         // icon: undefined,
       },
+      // hover: {
+      //   background: {
+      //     color: undefined,
+      //   },
+      //   border: {
+      //     color: undefined,
+      //   },
+      // },
       // extend: undefined,
       help: {
         color: 'dark-2',
@@ -2342,7 +2402,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       connector: {
-        stroke: { width: '2px' },
+        stroke: { width: 'small' },
       },
       description: {
         size: 'small',
@@ -2609,42 +2669,73 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     textInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
-      // icons: {
-      //   copy: undefined,
-      // },
+      icons: {
+        clear: FormClose,
+        // copy: undefined,
+        hidePassword: Hide,
+        showPassword: View,
+      },
     },
     timeInput: {
-      button: {
-        margin: { right: 'small' },
-      },
       container: {
+        // any BoxPartThemeType
         round: 'xxsmall',
       },
-      active: {
-        background: 'active-background',
-        pad: 'xxsmall',
-        indicator: {
-          color: { dark: 'white', light: 'black' },
-          size: 'small',
+      // value: {
+      //   any BoxPartThemeType
+      // },
+      segment: {
+        // any BoxPartThemeType
+        // any TextThemeType
+        pad: { horizontal: 'xxsmall' },
+        active: {
+          // any BoxPartThemeType
+          // any TextThemeType
+          background: 'active-background',
+          border: {
+            color: { dark: 'white', light: 'black' },
+            side: 'bottom',
+            size: 'small',
+          },
         },
       },
+      // dropButton: {
+      //   // any ButtonType
+      //   icon: undefined,
+      // },
       drop: {
+        // any BoxPartThemeType
+        height: 'small',
+        gap: 'none',
+        pad: { horizontal: 'xsmall', vertical: 'small' },
+        column: {
+          height: '100%',
+          gap: 'xxsmall',
+          pad: { horizontal: 'xsmall' },
+        },
         option: {
-          // background: undefined,
-          hover: {
-            background: 'active-background',
-          },
-          selected: {
-            background: 'selected',
-            color: 'white',
+          container: {
+            // any BoxPartThemeType
+            pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+            round: `${baseSpacing / 6}px`, // 4px
             hover: {
-              // background: undefined,
+              // any BoxPartThemeType
+              background: 'active-background',
+            },
+            selected: {
+              // any BoxPartThemeType
+              background: 'selected',
+            },
+          },
+          text: {
+            // any TextThemeType
+            selected: {
+              // any TextThemeType
+              color: 'white',
+              weight: 500,
             },
           },
         },
-      },
-      icon: {
-        // clock: undefined,
       },
     },
     tip: {

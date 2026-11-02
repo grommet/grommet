@@ -21,6 +21,7 @@ import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { TextArea } from '../../TextArea';
 import { Text } from '../../Text';
+import { TimeInput } from '../../TimeInput';
 
 const CustomFormField = styled(FormField)`
   font-size: 40px;
@@ -198,6 +199,56 @@ describe('FormField', () => {
     fireEvent.focus(screen.getByRole('slider'));
 
     expect(container).toMatchSnapshot();
+  });
+
+  test('keeps focus within a TimeInput while moving between segments', async () => {
+    const user = userEvent.setup();
+    const fieldRef = React.createRef<HTMLInputElement>();
+    const warn = console.warn;
+    console.warn = jest.fn();
+
+    try {
+      render(
+        <Grommet
+          theme={{
+            global: { colors: { focus: '#FF0000' } },
+            formField: {
+              border: { position: 'outer', side: 'all', color: '#CCCCCC' },
+            },
+          }}
+        >
+          <FormField ref={fieldRef} label="Time">
+            <TimeInput format="24" />
+          </FormField>
+          <Button label="After" />
+        </Grommet>,
+      );
+
+      const hours = screen.getByRole('spinbutton', { name: 'hours' });
+      const minutes = screen.getByRole('spinbutton', { name: 'minutes' });
+
+      await user.tab();
+      expect(hours).toHaveFocus();
+      expect(fieldRef.current).toHaveStyleRule('border-color', '#FF0000');
+
+      await user.keyboard('{ArrowRight}');
+      expect(minutes).toHaveFocus();
+      expect(fieldRef.current).toHaveStyleRule('border-color', '#FF0000');
+
+      await user.keyboard('{ArrowLeft}');
+      expect(hours).toHaveFocus();
+      expect(fieldRef.current).toHaveStyleRule('border-color', '#FF0000');
+
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'Choose time' })).toHaveFocus();
+      expect(fieldRef.current).not.toHaveStyleRule('border-color', '#FF0000');
+
+      await user.tab();
+      expect(screen.getByRole('button', { name: 'After' })).toHaveFocus();
+      expect(fieldRef.current).not.toHaveStyleRule('border-color', '#FF0000');
+    } finally {
+      console.warn = warn;
+    }
   });
 
   test('abut with margin', () => {
@@ -855,5 +906,226 @@ describe('FormField', () => {
       '[class*="FormFieldContentBox"]',
     );
     expect(textContentBox).not.toHaveStyleRule('background-color', '#123456');
+  });
+
+  describe('hover', () => {
+    const hoverTheme = {
+      formField: {
+        hover: {
+          background: '#654321',
+          border: { color: '#AAFF00' },
+        },
+      },
+    };
+
+    const outerHoverTheme = {
+      formField: {
+        ...hoverTheme.formField,
+        border: { position: 'outer' as const, side: 'all' as const },
+      },
+    };
+
+    test('applies theme hover border and background to inner border', () => {
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      const contentBox = container.querySelector(
+        '[class*="FormFieldContentBox"]',
+      );
+      expect(contentBox).toHaveStyleRule('border-color', '#AAFF00', {
+        modifier: ':hover',
+      });
+      expect(contentBox).toHaveStyleRule('background-color', '#654321', {
+        modifier: ':hover',
+      });
+    });
+
+    test('applies theme hover border to outer border', () => {
+      const { container } = render(
+        <Grommet theme={outerHoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldBox"]'),
+      ).toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('keeps hover background off the outer box so it does not cover the label', () => {
+      const { container } = render(
+        <Grommet theme={outerHoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldBox"]'),
+      ).not.toHaveStyleRule('background-color', '#654321', {
+        modifier: ':hover',
+      });
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).toHaveStyleRule('background-color', '#654321', { modifier: ':hover' });
+    });
+
+    test('applies theme hover background when theme has no border', () => {
+      const { container } = render(
+        <Grommet
+          theme={{ formField: { ...hoverTheme.formField, border: false } }}
+        >
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="StyledContentsBox"]'),
+      ).toHaveStyleRule('background-color', '#654321', { modifier: ':hover' });
+    });
+
+    test('allows a child input to opt out of the shared hover border color', () => {
+      const { container } = render(
+        <Grommet
+          theme={{
+            formField: {
+              ...hoverTheme.formField,
+              radioButtonGroup: {
+                hover: {
+                  border: { color: undefined },
+                },
+              },
+            },
+          }}
+        >
+          <FormField label="Label">
+            <RadioButtonGroup name="test" options={['One', 'Two']} />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('allows a child input to override the shared hover border color', () => {
+      const { container } = render(
+        <Grommet
+          theme={{
+            formField: {
+              ...hoverTheme.formField,
+              radioButtonGroup: {
+                hover: {
+                  border: { color: '#112233' },
+                },
+              },
+            },
+          }}
+        >
+          <FormField label="Label">
+            <RadioButtonGroup name="test" options={['One', 'Two']} />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).toHaveStyleRule('border-color', '#112233', { modifier: ':hover' });
+    });
+
+    test('allows a child input to override the shared hover background color', () => {
+      const { container } = render(
+        <Grommet
+          theme={{
+            formField: {
+              ...hoverTheme.formField,
+              radioButtonGroup: {
+                hover: {
+                  background: '#223344',
+                },
+              },
+            },
+          }}
+        >
+          <FormField label="Label">
+            <RadioButtonGroup name="test" options={['One', 'Two']} />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).toHaveStyleRule('background-color', '#223344', { modifier: ':hover' });
+    });
+
+    test('does not apply hover styling when disabled', () => {
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label" disabled>
+            <TextInput disabled />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('does not apply hover styling when readOnly', () => {
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label">
+            <TextInput readOnly />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('does not apply hover styling when there is an error', () => {
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label" error="Required">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
+
+    test('does not apply hover styling when focused', async () => {
+      const user = userEvent.setup();
+      const { container } = render(
+        <Grommet theme={hoverTheme}>
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      await user.click(screen.getByRole('textbox'));
+
+      expect(
+        container.querySelector('[class*="FormFieldContentBox"]'),
+      ).not.toHaveStyleRule('border-color', '#AAFF00', { modifier: ':hover' });
+    });
   });
 });
