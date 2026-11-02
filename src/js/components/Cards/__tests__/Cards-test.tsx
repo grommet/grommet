@@ -5,11 +5,12 @@ import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 import '@testing-library/jest-dom';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { axe } from 'jest-axe';
 import { Grommet } from '../../Grommet';
 import { Cards } from '..';
+import type { CardsProps } from '..';
 import { Card } from '../../Card';
 import { CardHeader } from '../../CardHeader';
 
@@ -213,5 +214,75 @@ describe('Cards', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('accepts Grid props through CardsProps and forwards them to Grid', () => {
+    const props: CardsProps<string> = {
+      data: ['one', 'two'],
+      columns: ['flex', 'flex'],
+      rows: 'xsmall',
+      gap: { row: 'small', column: 'medium' },
+      justifyContent: 'center',
+      responsive: false,
+      children: (item) => (
+        <Card as="li" key={item}>
+          {item}
+        </Card>
+      ),
+    };
+
+    render(
+      <Grommet>
+        <Cards {...props} aria-label="Dashboard cards" />
+      </Grommet>,
+    );
+
+    const cards = screen.getByRole('list', { name: 'Dashboard cards' });
+    expect(cards).toHaveStyleRule('grid-template-columns', '1fr 1fr');
+    expect(cards).toHaveStyleRule('justify-content', 'center');
+    expect(screen.getAllByRole('listitem')).toHaveLength(2);
+  });
+
+  test('accepts dashboard auto-fit columns with typed device data', () => {
+    interface Device {
+      id: string;
+      name: string;
+    }
+    const devices: Device[] = [
+      { id: 'device-1', name: 'Device one' },
+      { id: 'device-2', name: 'Device two' },
+    ];
+    const props: CardsProps<Device> = {
+      as: 'ul',
+      data: devices,
+      columns: { count: 'fit', size: ['small', 'medium'] },
+      gap: 'medium',
+    };
+
+    render(
+      <Grommet>
+        <h2 id="devices-heading">Devices</h2>
+        <Cards
+          {...props}
+          aria-label="Devices"
+          aria-describedby="devices-heading"
+        >
+          {(datum: Device) => (
+            <Card as="li" key={datum.id}>
+              <CardHeader>{datum.name}</CardHeader>
+            </Card>
+          )}
+        </Cards>
+      </Grommet>,
+    );
+
+    const cards = screen.getByRole('list', { name: 'Devices' });
+    expect(cards).toHaveAttribute('aria-describedby', 'devices-heading');
+    expect(cards).toHaveStyleRule(
+      'grid-template-columns',
+      'repeat( auto-fit,minmax(min(192px, 100%), 384px) )',
+    );
+    expect(screen.getAllByRole('listitem')).toHaveLength(2);
+    expect(screen.getByText('Device one')).toBeInTheDocument();
   });
 });
