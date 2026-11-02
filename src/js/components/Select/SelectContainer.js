@@ -394,8 +394,8 @@ const SelectContainer = forwardRef(
 
     return (
       <Keyboard
-        onEnter={onSelectOption}
-        onSpace={onSelectOption}
+        onEnter={disabled === true ? undefined : onSelectOption}
+        onSpace={disabled === true ? undefined : onSelectOption}
         onUp={onPreviousOption}
         onDown={onNextOption}
         onKeyDown={onKeyDownOption}
