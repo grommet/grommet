@@ -23,7 +23,7 @@ const CheckBoxGroup = forwardRef(
       labelKey,
       valueKey,
       onChange,
-      options: optionsProp,
+      options: optionsProp = [],
       name,
       ...rest
     },
