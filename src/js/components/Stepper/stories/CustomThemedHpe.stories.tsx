@@ -31,6 +31,32 @@ const iconOnSelectedPrimaryStrong = {
   };
 
 const theme: ThemeType = deepMerge({}, hpe, {
+  global: {
+    colors: {
+      'background-critical-strong-hover': {
+        light: '#a3140f', // red.900 NEW
+        dark: '#ff7b7b', // red.400
+      },
+      'background-critical-strong': { // icon-critical
+        light: '#cc1f1a', // red.800
+        dark: '#fc6161', // red.500
+      },
+      'background-selected-critical-strong': { // icon-critical
+        light: '#cc1f1a', // red.800
+        dark: '#fc6161', // red.500
+      },
+      'background-selected-critical-strong-hover': {
+        light: '#a3140f', // red.900 NEW
+        dark: '#ff7b7b', // red.400
+      },
+      'icon-onSelectedCriticalStrong': { light: '#ffffff', dark: '#292d3a' },
+      'icon-onCriticalStrong': { light: '#ffffff', dark: '#292d3a' },
+      'icon-critical-hover': {
+        light: '#a3140f', // red.900 NEW
+        dark: '#ff7b7b', // red.400
+      },
+    },
+  },
   stepper: {
     button: {
       pad: '5xsmall',
@@ -63,6 +89,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
       hover: {
         indicator: {
           border: { color: 'icon-strong' },
+          background: 'transparent',
         },
       },
     },
@@ -136,13 +163,20 @@ const theme: ThemeType = deepMerge({}, hpe, {
       connector: {
         color: 'border-critical',
       },
+      hover: {
+        indicator: {
+          border: { color: 'icon-critical-hover' },
+          color: 'icon-critical-hover',
+          background: 'transparent',
+        }
+      }
     },
     currentError: {
       indicator: {
         icon: StatusCritical,
         border: { color: 'transparent' },
-        background: 'icon-critical',
-        color: 'icon-onStrong',
+        background: 'background-selected-critical-strong',
+        color: 'icon-onCriticalStrong',
       },
       label: {
         color: 'text-critical',
@@ -153,6 +187,13 @@ const theme: ThemeType = deepMerge({}, hpe, {
       description: {
         color: 'text-critical',
       },
+      hover: {
+        indicator: {
+          border: { color: 'background-selected-critical-strong-hover' },
+          color: 'icon-onCriticalStrong',
+          background: 'background-selected-critical-strong-hover',
+        }
+      }
     },
     disabled: {
       indicator: {
