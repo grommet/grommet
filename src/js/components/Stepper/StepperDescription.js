@@ -3,23 +3,14 @@
 import React from 'react';
 import { Text } from '../Text';
 import { useStepper, useStepItem } from './StepperContext';
-import { useThemeValue } from '../../utils/useThemeValue';
-import { resolveStepTheme } from './utils';
+import { useStepTheme } from './utils';
 
 export const StepperDescription = ({ ...rest }) => {
-  const { direction, currentStep } = useStepper();
-  const { theme } = useThemeValue();
+  const { direction } = useStepper();
 
   const { step, isSubStep } = useStepItem();
+  const stepTheme = useStepTheme(step, isSubStep);
   if (!step || !step.description) return null;
-
-  const stepTheme = resolveStepTheme(
-    theme,
-    direction,
-    step,
-    isSubStep,
-    currentStep,
-  );
 
   return (
     <Text

@@ -3,28 +3,16 @@
 import React from 'react';
 import { Text } from '../Text';
 import { useStepper, useStepItem } from './StepperContext';
-import { useThemeValue } from '../../utils/useThemeValue';
-import { resolveStepTheme } from './utils';
+import { useStepTheme } from './utils';
 
 export const StepperLabel = ({ ...rest }) => {
-  const { currentStep, direction } = useStepper();
-  const { theme } = useThemeValue();
+  const { direction } = useStepper();
   const { step, isSubStep } = useStepItem();
+  const stepTheme = useStepTheme(step, isSubStep);
   if (!step) return null;
 
-  const stepTheme = resolveStepTheme(
-    theme,
-    direction,
-    step,
-    isSubStep,
-    currentStep,
-  );
   return (
-    <Text
-      {...stepTheme.label}
-      truncate={direction === 'horizontal'}
-      {...rest}
-    >
+    <Text {...stepTheme.label} truncate={direction === 'horizontal'} {...rest}>
       {step.title}
     </Text>
   );

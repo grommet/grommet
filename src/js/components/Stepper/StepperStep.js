@@ -16,7 +16,7 @@ import {
   StyledConnector,
   StyledSubStepsList,
 } from './StyledStepper';
-import { resolveStepTheme } from './utils';
+import { useStepTheme } from './utils';
 
 export const StepperStep = ({
   step,
@@ -35,7 +35,7 @@ export const StepperStep = ({
   const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
     useStepper();
   const { format } = useContext(MessageContext);
-  const { theme, passThemeFlag } = useThemeValue();
+  const { passThemeFlag } = useThemeValue();
   const index =
     indexProp !== undefined
       ? indexProp
@@ -47,6 +47,8 @@ export const StepperStep = ({
   const isDisabled = step.status === 'disabled';
   const isClickable = clickableSteps && !isDisabled;
   const isReadOnly = !clickableSteps;
+
+  const stepTheme = useStepTheme(step, isSubStep);
 
   const stepItemValue = useMemo(
     () => ({
@@ -84,16 +86,8 @@ export const StepperStep = ({
     describedBy.push(`stepper-reason-${step.id}`);
   }
 
-  const stepTheme = resolveStepTheme(
-    theme,
-    direction,
-    step,
-    isSubStep,
-    currentStep,
-  );
-
   const focusableProps = isReadOnly
-    ? { }
+    ? {}
     : {
         forwardedAs: 'button',
         type: 'button',

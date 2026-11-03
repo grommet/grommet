@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { useThemeValue } from '../../utils/useThemeValue';
-import { resolveStepTheme } from './utils';
+import { useStepTheme } from './utils';
 
 import { useStepper, useStepItem } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
@@ -24,22 +24,15 @@ const renderIcon = (Icon, props) => {
 };
 
 export const StepperIndicator = ({ ...rest }) => {
-  const { currentStep, clickableSteps, direction } = useStepper();
-  const { theme, passThemeFlag } = useThemeValue();
+  const { clickableSteps } = useStepper();
+  const { passThemeFlag } = useThemeValue();
 
   const { step, isSubStep } = useStepItem();
+  const stepTheme = useStepTheme(step, isSubStep);
   if (!step) return null;
 
   const isDisabled = step.status === 'disabled';
   const isClickable = clickableSteps && !isDisabled;
-
-  const stepTheme = resolveStepTheme(
-    theme,
-    direction,
-    step,
-    isSubStep,
-    currentStep,
-  );
 
   // grab the icon pieces and size. Size will be handled
   // in the StyledIndicator component but we pull it out
