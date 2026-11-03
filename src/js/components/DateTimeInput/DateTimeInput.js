@@ -382,8 +382,10 @@ const formatSectionText = (section, value) => {
 const DateTimeInput = forwardRef(
   (
     {
+      calendarProps,
       defaultValue,
       disabled,
+      dropProps,
       format,
       id,
       inline = false,
@@ -1229,6 +1231,8 @@ const DateTimeInput = forwardRef(
               initialFocus={inline ? undefined : 'days'}
               onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
               fill
+              locale={locale}
+              {...calendarProps}
             />
           </Box>
         </ThemeContext.Extend>
@@ -1401,6 +1405,7 @@ const DateTimeInput = forwardRef(
               align={{ top: 'bottom', left: 'left' }}
               onEsc={closePicker}
               onClickOutside={closePicker}
+              {...dropProps}
             >
               {pickerContent}
             </Drop>
