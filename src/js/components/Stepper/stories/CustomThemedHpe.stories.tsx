@@ -91,6 +91,9 @@ const theme: ThemeType = deepMerge({}, hpe, {
           border: { color: 'icon-strong' },
           background: 'transparent',
         },
+        label: {
+          color: 'text-strong',
+        }
       },
     },
     current: {
@@ -208,7 +211,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
       },
     },
   },
-});
+} satisfies ThemeType);
 
 export const CustomThemedHpe = () => {
   const [currentStep, setCurrentStep] = useState('profile');

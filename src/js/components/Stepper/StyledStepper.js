@@ -10,6 +10,7 @@ import {
   styledComponentsConfig,
 } from '../../utils';
 import { Box } from '../Box';
+import { Text } from '../Text';
 
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
@@ -24,6 +25,21 @@ const adjustHoverColor = (color, theme) =>
   `color-mix(in srgb, ${normalizeColor(color, theme)} 90%, ${
     theme.dark ? 'white' : 'black'
   } 10%)`;
+
+const sizeStyle = (sizeProp, theme) => {
+  const size = sizeProp || 'medium';
+  const data = theme.text[size];
+  if (data) {
+    return css`
+      font-size: ${data.size};
+      line-height: ${data.height};
+    `;
+  }
+  return css`
+    font-size: ${size};
+    line-height: normal;
+  `;
+};
 
 const StyledStepItem = styled.li.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
@@ -96,6 +112,27 @@ const StyledStepContent = styled(Box)`
       `;
     }
     return '';
+  }}
+`;
+
+const StyledStepLabel = styled(Text)`
+  ${(props) => {
+    if (!props.isClickable || !props.stepTheme?.hover?.label) return '';
+
+    // For hover colors we'll use the hover part of the stepper theme
+    // that resolved for the step.
+    const { theme } = props;
+    const hoverTheme = props.stepTheme?.hover?.label;
+
+    return css`
+      ${StyledStepButton}:not([aria-disabled]):hover & {
+        ${hoverTheme?.color
+          ? `color: ${normalizeColor(hoverTheme?.color, theme)};`
+          : ''}
+        ${hoverTheme?.weight ? `font-weight: ${hoverTheme?.weight};` : ''}
+        ${hoverTheme?.size ? sizeStyle(hoverTheme?.size, theme) : ''}
+      }
+    `;
   }}
 `;
 
@@ -256,6 +293,7 @@ export {
   StyledStepItem,
   StyledStepButton,
   StyledStepContent,
+  StyledStepLabel,
   StyledIndicator,
   StyledConnector,
   StyledSubStepsList,
