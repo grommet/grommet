@@ -36,8 +36,8 @@ var StepItemContext = exports.StepItemContext = /*#__PURE__*/(0, _react.createCo
   step: null,
   index: 0,
   isLast: false,
-  isLabelRevealed: false,
-  isSubStep: false
+  isSubStep: false,
+  isDisabled: false
 });
 var useStepper = exports.useStepper = function useStepper() {
   return (0, _react.useContext)(StepperContext);

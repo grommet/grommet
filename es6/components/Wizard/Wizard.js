@@ -12,6 +12,7 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
 import { ResponsiveContext } from '../../contexts/ResponsiveContext';
@@ -60,6 +61,12 @@ var formHasErrors = function formHasErrors(result) {
   var _result$form, _result$form2;
   return (result == null || (_result$form = result.form) == null ? void 0 : _result$form.ok) === false || Object.keys((result == null || (_result$form2 = result.form) == null ? void 0 : _result$form2.errors) || {}).length > 0;
 };
+var StyledWizardProgress = styled.div.withConfig({
+  displayName: "Wizard__StyledWizardProgress",
+  componentId: "sc-uqfco5-0"
+})(["display:", ";"], function (props) {
+  return props.$hidden ? 'none' : 'contents';
+});
 var statusFromStep = function statusFromStep(step, validation, completed) {
   var _validation$step$id;
   if (!step) return 'pending';
@@ -932,7 +939,9 @@ var Wizard = /*#__PURE__*/forwardRef(function (_ref, ref) {
       flex: "grow",
       fill: "horizontal",
       direction: effectiveShowProgress === 'vertical' ? 'row' : 'column'
-    }, effectiveShowProgress && responsiveSize !== 'small' && responsiveSize !== 'xsmall' && /*#__PURE__*/React.createElement(WizardProgress, null), /*#__PURE__*/React.createElement(Box, {
+    }, /*#__PURE__*/React.createElement(StyledWizardProgress, {
+      $hidden: !effectiveShowProgress || responsiveSize === 'small' || responsiveSize === 'xsmall'
+    }, /*#__PURE__*/React.createElement(WizardProgress, null)), /*#__PURE__*/React.createElement(Box, {
       flex: "grow"
     }, /*#__PURE__*/React.createElement(WizardStepHeader, null), /*#__PURE__*/React.createElement(WizardContent, null)))), footerNode));
   }

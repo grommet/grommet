@@ -31,8 +31,8 @@ export var StepItemContext = /*#__PURE__*/createContext({
   step: null,
   index: 0,
   isLast: false,
-  isLabelRevealed: false,
-  isSubStep: false
+  isSubStep: false,
+  isDisabled: false
 });
 export var useStepper = function useStepper() {
   return useContext(StepperContext);

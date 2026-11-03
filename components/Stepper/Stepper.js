@@ -49,7 +49,40 @@ var flattenSteps = function flattenSteps(steps) {
   }
   return flat;
 };
+var isEnabledLeaf = function isEnabledLeaf(step) {
+  return step.status !== 'disabled' && (!step.childIds.length || step.isSubStep);
+};
+var findFirstEnabledChild = function findFirstEnabledChild(steps, parentId) {
+  return steps.find(function (step) {
+    return step.parentId === parentId && step.status !== 'disabled';
+  });
+};
+var findFirstEnabledLeaf = function findFirstEnabledLeaf(steps, startIndex) {
+  if (startIndex === void 0) {
+    startIndex = 0;
+  }
+  return steps.slice(startIndex).find(isEnabledLeaf) || steps.find(isEnabledLeaf);
+};
+var resolveCurrentStep = function resolveCurrentStep(steps, currentStepId) {
+  var _steps$;
+  var requestedIndex = steps.findIndex(function (step) {
+    return step.id === currentStepId;
+  });
+  var requestedStep = steps[requestedIndex];
+  var canUseRequestedStep = requestedStep && requestedStep.status !== 'disabled';
+  var requestedTarget;
+  if (canUseRequestedStep) {
+    requestedTarget = requestedStep.childIds.length ? findFirstEnabledChild(steps, requestedStep.id) : requestedStep;
+  }
+
+  // Parents with children are headings, not navigation stops. If the
+  // requested group has no enabled child, scan in input order for an enabled
+  // leaf, matching Wizard's forward-order navigation policy.
+  var fallback = requestedTarget || findFirstEnabledLeaf(steps, requestedIndex >= 0 ? requestedIndex + 1 : 0);
+  return (fallback == null ? void 0 : fallback.id) || ((_steps$ = steps[0]) == null ? void 0 : _steps$.id) || '';
+};
 var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_ref, ref) {
+  var _allSteps$find;
   var _ref$steps = _ref.steps,
     steps = _ref$steps === void 0 ? [] : _ref$steps,
     currentStep = _ref.currentStep,
@@ -69,11 +102,9 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
   var stepRefs = (0, _react.useRef)(new Map());
-  var flatSteps = (0, _react.useMemo)(function () {
+  var allSteps = (0, _react.useMemo)(function () {
     return flattenSteps(steps);
   }, [steps]);
-  var stepsRef = (0, _react.useRef)(flatSteps);
-  stepsRef.current = flatSteps;
   (0, _react.useEffect)(function () {
     if (process.env.NODE_ENV !== 'production') {
       console.warn('Warning: Stepper is currently in beta. The API is subject ' + 'to change in future releases.');
@@ -93,7 +124,7 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
       console.warn('Stepper: horizontal direction with sub-steps is not supported. ' + 'Falling back to vertical.');
     }
     if (currentStep) {
-      var currentStepObj = flatSteps.find(function (s) {
+      var currentStepObj = allSteps.find(function (s) {
         return s.id === currentStep;
       });
       if (!currentStepObj) {
@@ -106,37 +137,60 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
 
   // Determine effective current step (fallback to first non-disabled)
   var effectiveCurrentStep = (0, _react.useMemo)(function () {
-    var _flatSteps$;
-    var match = flatSteps.find(function (s) {
-      return s.id === currentStep;
+    return resolveCurrentStep(allSteps, currentStep);
+  }, [currentStep, allSteps]);
+
+  // Reveal a whole group on entry, not just the active child. Remember
+  // groups by id so controlled changes and recreated step objects do not
+  // collapse visited children. Adjust during render so an initial
+  // current child is visible immediately, without an effect or hidden frame.
+  var currentParentId = (_allSteps$find = allSteps.find(function (step) {
+    return step.id === effectiveCurrentStep;
+  })) == null ? void 0 : _allSteps$find.parentId;
+  var _useState = (0, _react.useState)(function () {
+      return new Set();
+    }),
+    localRevealedParents = _useState[0],
+    setLocalRevealedParents = _useState[1];
+  var revealedParents = localRevealedParents;
+  if (currentParentId && !localRevealedParents.has(currentParentId)) {
+    setLocalRevealedParents(new Set(Array.from(localRevealedParents).concat(currentParentId)));
+  }
+  var flatSteps = (0, _react.useMemo)(function () {
+    return allSteps.filter(function (step) {
+      return !step.isSubStep || step.parentId === currentParentId || revealedParents.has(step.parentId);
     });
-    if (match && match.status !== 'disabled') return currentStep;
-    var fallback = flatSteps.find(function (s) {
-      return s.status !== 'disabled';
-    });
-    return fallback ? fallback.id : ((_flatSteps$ = flatSteps[0]) == null ? void 0 : _flatSteps$.id) || '';
-  }, [currentStep, flatSteps]);
+  }, [allSteps, currentParentId, revealedParents]);
+  var stepsRef = (0, _react.useRef)(flatSteps);
+  stepsRef.current = flatSteps;
 
   // Roving tabindex: only the focused step has tabIndex=0,
   // all others have tabIndex=-1. A ref keeps the index synchronous
-  // for keyboard handlers that fire before React re-renders.
+  // for keyboard handlers that fire before React re-renders. Track the
+  // step by id so inserting revealed children does not shift focus.
   var currentIndex = flatSteps.findIndex(function (s) {
     return s.id === effectiveCurrentStep;
   });
   var flatStepsLength = flatSteps.length;
-  var _useState = (0, _react.useState)(currentIndex >= 0 ? currentIndex : 0),
-    focusedIndex = _useState[0],
-    setFocusedIndex = _useState[1];
+  var _useState2 = (0, _react.useState)(effectiveCurrentStep),
+    focusedStep = _useState2[0],
+    setFocusedStep = _useState2[1];
+  var focusedStepIndex = flatSteps.findIndex(function (s) {
+    return s.id === focusedStep;
+  });
+  var focusedIndex = focusedStepIndex >= 0 ? focusedStepIndex : Math.max(currentIndex, 0);
   var focusedIndexRef = (0, _react.useRef)(focusedIndex);
+  focusedIndexRef.current = focusedIndex;
   var updateFocusedIndex = (0, _react.useCallback)(function (idx) {
+    var _flatSteps$idx;
     focusedIndexRef.current = idx;
-    setFocusedIndex(idx);
-  }, []);
+    setFocusedStep((_flatSteps$idx = flatSteps[idx]) == null ? void 0 : _flatSteps$idx.id);
+  }, [flatSteps]);
   var stepIndex = (0, _react.useCallback)(function (stepId) {
-    return flatSteps.findIndex(function (s) {
+    return allSteps.findIndex(function (s) {
       return s.id === stepId;
     });
-  }, [flatSteps]);
+  }, [allSteps]);
   var isPriorStep = (0, _react.useCallback)(function (stepId) {
     var idx = stepIndex(stepId);
     var curIdx = stepIndex(effectiveCurrentStep);
@@ -151,15 +205,21 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
     return stepId === effectiveCurrentStep;
   }, [effectiveCurrentStep]);
   var canNavigateTo = (0, _react.useCallback)(function (stepId) {
-    var step = flatSteps.find(function (s) {
+    var step = allSteps.find(function (s) {
       return s.id === stepId;
     });
-    return clickableSteps && step && step.status !== 'disabled';
-  }, [flatSteps, clickableSteps]);
+    if (!clickableSteps || !step || step.status === 'disabled') return false;
+    if (step.childIds.length) {
+      return allSteps.some(function (child) {
+        return child.parentId === step.id && child.status !== 'disabled';
+      });
+    }
+    return true;
+  }, [allSteps, clickableSteps]);
   var contextValue = (0, _react.useMemo)(function () {
     return {
       currentStep: effectiveCurrentStep,
-      steps: flatSteps,
+      steps: allSteps,
       direction: direction,
       clickableSteps: clickableSteps,
       onStepClick: onStepClick,
@@ -171,12 +231,12 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
       isCurrentStep: isCurrentStep,
       canNavigateTo: canNavigateTo
     };
-  }, [effectiveCurrentStep, flatSteps, direction, clickableSteps, onStepClick, showDescription, errorAnnouncement, stepIndex, isPriorStep, isAfterStep, isCurrentStep, canNavigateTo]);
+  }, [effectiveCurrentStep, allSteps, direction, clickableSteps, onStepClick, showDescription, errorAnnouncement, stepIndex, isPriorStep, isAfterStep, isCurrentStep, canNavigateTo]);
 
   // Wraps around the step list to find the next step
   // in the given direction (+1 forward, -1 backward).
   var findNextEnabledIndex = (0, _react.useCallback)(function (startIndex, delta) {
-    return (startIndex + delta + flatStepsLength) % flatStepsLength;
+    return flatStepsLength ? (startIndex + delta + flatStepsLength) % flatStepsLength : undefined;
   }, [flatStepsLength]);
   var findFirstEnabledIndex = (0, _react.useCallback)(function () {
     return 0;
@@ -244,7 +304,8 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
     steps.forEach(function (step, parentIdx) {
       var parentFlatIndex = flatIndex;
       flatIndex += 1;
-      var childElements = step.children ? step.children.map(function (child) {
+      var visibleChildren = revealedParents.has(step.id) || step.id === currentParentId ? step.children : undefined;
+      var childElements = visibleChildren ? visibleChildren.map(function (child) {
         var childFlatIndex = flatIndex;
         flatIndex += 1;
         return /*#__PURE__*/_react["default"].createElement(_StepperStep.StepperStep, {

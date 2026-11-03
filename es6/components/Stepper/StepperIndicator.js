@@ -45,7 +45,8 @@ export var StepperIndicator = function StepperIndicator(_ref) {
     passThemeFlag = _useThemeValue.passThemeFlag;
   var _useStepItem = useStepItem(),
     step = _useStepItem.step,
-    isSubStep = _useStepItem.isSubStep;
+    isSubStep = _useStepItem.isSubStep,
+    isDisabled = _useStepItem.isDisabled;
   if (!step) return null;
   var isCurrent = currentStep === step.id;
   var hasCurrentChild = !isSubStep && ((_step$children = step.children) == null ? void 0 : _step$children.some(function (c) {
@@ -57,7 +58,6 @@ export var StepperIndicator = function StepperIndicator(_ref) {
   if (isSubStep && stateTheme.substep) {
     stateTheme = _extends({}, stateTheme, stateTheme.substep);
   }
-  var isDisabled = step.status === 'disabled';
   var isClickable = clickableSteps && !isDisabled;
   var iconSize = ((_stateTheme = stateTheme) == null ? void 0 : _stateTheme.iconSize) || (isSubStep ? 'xsmall' : 'small');
   return /*#__PURE__*/React.createElement(StyledIndicator, _extends({

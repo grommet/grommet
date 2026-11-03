@@ -12,7 +12,7 @@ import { StepperError, StepperDisabledReason } from './StepperHelperText';
 import { StepConnector } from './StepConnector';
 import { StyledStepItem, StyledStepButton, StyledStepContent, StyledConnector, StyledSubStepsList } from './StyledStepper';
 export var StepperStep = function StepperStep(_ref) {
-  var _step$children, _stepsRef$current;
+  var _step$children, _step$children2, _step$children$find, _stepsRef$current;
   var step = _ref.step,
     stepNumber = _ref.stepNumber,
     isLast = _ref.isLast,
@@ -43,28 +43,33 @@ export var StepperStep = function StepperStep(_ref) {
     return c.id === currentStep;
   }));
   var isHighlighted = isCurrent || hasCurrentChild;
+  var hasChildren = !!((_step$children2 = step.children) != null && _step$children2.length);
+  var navigationStepId = hasChildren ? (_step$children$find = step.children.find(function (child) {
+    return child.status !== 'disabled';
+  })) == null ? void 0 : _step$children$find.id : step.id;
   var isDisabled = step.status === 'disabled';
-  var isClickable = clickableSteps && !isDisabled;
+  var isNavigable = !isDisabled && !!navigationStepId;
+  var isClickable = clickableSteps && isNavigable;
   var isReadOnly = !clickableSteps;
   var stepItemValue = useMemo(function () {
     return {
       step: step,
       index: index,
       isLast: isLast,
-      isLabelRevealed: direction === 'vertical' || focusedIndex === index,
-      isSubStep: isSubStep
+      isSubStep: isSubStep,
+      isDisabled: isDisabled
     };
-  }, [step, index, isLast, direction, focusedIndex, isSubStep]);
+  }, [step, index, isLast, isSubStep, isDisabled]);
   var handleClick = function handleClick() {
-    if (isClickable && onStepClick) {
-      onStepClick(step.id);
+    if (isClickable && navigationStepId && onStepClick) {
+      onStepClick(navigationStepId);
     }
   };
   var handleKeyDown = function handleKeyDown(e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      if (isClickable && onStepClick) {
-        onStepClick(step.id);
+      if (isClickable && navigationStepId && onStepClick) {
+        onStepClick(navigationStepId);
       }
     }
   };
@@ -118,7 +123,7 @@ export var StepperStep = function StepperStep(_ref) {
       }
     },
     "aria-current": isHighlighted ? 'step' : undefined,
-    "aria-disabled": isDisabled || undefined,
+    "aria-disabled": isDisabled || clickableSteps && !isNavigable || undefined,
     "aria-label": ariaLabel,
     "aria-describedby": describedBy.length > 0 ? describedBy.join(' ') : undefined,
     isClickable: isClickable,

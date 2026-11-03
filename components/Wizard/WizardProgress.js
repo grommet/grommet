@@ -34,9 +34,6 @@ var WizardProgress = exports.WizardProgress = function WizardProgress(_ref) {
     stepStates = _useWizard.stepStates,
     stepErrorMessages = _useWizard.stepErrorMessages,
     messages = _useWizard.messages;
-
-  // Opt-in: render nothing when `showProgress` is false.
-  if (!showProgress) return null;
   var progressTheme = showProgress === 'vertical' ? (_theme$wizard = theme.wizard) == null || (_theme$wizard = _theme$wizard.progress) == null ? void 0 : _theme$wizard.vertical : (_theme$wizard2 = theme.wizard) == null || (_theme$wizard2 = _theme$wizard2.progress) == null ? void 0 : _theme$wizard2.horizontal;
 
   // Map wizard steps (with optional children) into Stepper's step model.
@@ -100,7 +97,7 @@ var WizardProgress = exports.WizardProgress = function WizardProgress(_ref) {
   }, rest), /*#__PURE__*/_react["default"].createElement(_Stepper.Stepper, {
     steps: stepperSteps,
     currentStep: currentStep,
-    direction: showProgress === 'vertical' ? 'vertical' : 'horizontal',
+    direction: showProgress === 'horizontal' ? 'horizontal' : 'vertical',
     clickableSteps: clickableSteps,
     onStepClick: onStepClick,
     showDescription: showDescription,
