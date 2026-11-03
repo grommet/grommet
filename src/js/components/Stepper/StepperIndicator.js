@@ -40,7 +40,7 @@ export const StepperIndicator = ({ ...rest }) => {
   const { currentStep, clickableSteps } = useStepper();
   const { theme, passThemeFlag } = useThemeValue();
 
-  const { step, isSubStep } = useStepItem();
+  const { step, isSubStep, isDisabled } = useStepItem();
   if (!step) return null;
 
   const isCurrent = currentStep === step.id;
@@ -53,7 +53,6 @@ export const StepperIndicator = ({ ...rest }) => {
     stateTheme = { ...stateTheme, ...stateTheme.substep };
   }
 
-  const isDisabled = step.status === 'disabled';
   const isClickable = clickableSteps && !isDisabled;
 
   const iconSize = stateTheme?.iconSize || (isSubStep ? 'xsmall' : 'small');
