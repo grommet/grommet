@@ -295,7 +295,7 @@ exports[`TimeInput accepts a named drop button kind with a custom icon 1`] = `
             <span
               class="c8"
             >
-               
+               
             </span>
             <span
               aria-label="meridiem"
@@ -316,7 +316,7 @@ exports[`TimeInput accepts a named drop button kind with a custom icon 1`] = `
             class="c9"
             readonly=""
             tabindex="-1"
-            value="hh:mm aa"
+            value="hh:mm aa"
           />
         </div>
         <button

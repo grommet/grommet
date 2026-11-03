@@ -1031,7 +1031,7 @@ describe('TimeInput', () => {
     await user.click(input);
 
     await waitFor(() => {
-      expect(getDisplayInput()).toHaveValue('hh:mm:ss aa');
+      expect(getDisplayInput()).toHaveValue('hh:mm:ss\u00A0aa');
       expect(input).toHaveFocus();
     });
 
@@ -3062,7 +3062,7 @@ describe('TimeInput', () => {
       </Grommet>,
     );
 
-    expect(getDisplayInput()).toHaveValue('hh:mm:ss aa');
+    expect(getDisplayInput()).toHaveValue('hh:mm:ss\u00A0aa');
 
     const minutesSegment = getSegment('minutes');
     await user.click(minutesSegment);

@@ -45,9 +45,11 @@ import {
   SECTION_SECOND,
 } from './utils';
 
+const NBSP = '\u00A0';
+
 const getDisplaySectionPrefix = (section, index) => {
   if (index === 0) return '';
-  return section === SECTION_PERIOD ? ' ' : ':';
+  return section === SECTION_PERIOD ? NBSP : ':';
 };
 
 const getSectionOrder = (format, showSeconds) => {
