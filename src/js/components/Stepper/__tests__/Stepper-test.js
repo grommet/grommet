@@ -443,6 +443,29 @@ describe('Stepper', () => {
     expect(getByText('Confirm')).toBeTruthy();
   });
 
+  test('sub-step connector stays anchored to indicator if label wraps', () => {
+    const steps = [
+      {
+        id: 'parent',
+        title: 'Parent with a label long enough to wrap across multiple lines',
+        children: [{ id: 'child', title: 'Child', status: 'pending' }],
+      },
+    ];
+    const { container } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="child" direction="vertical" />
+      </Grommet>,
+    );
+
+    // Same content-independent offset as the regular (non-substep) connector:
+    // it must not start at the bottom of the (now taller, wrapped) label.
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule(
+      'top',
+      'calc(24px + 3px +       (2px * 2) + 4px)',
+    );
+  });
+
   test('parent step is highlighted when a child is current', () => {
     const steps = [
       {

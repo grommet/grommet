@@ -43,7 +43,7 @@ const StyledStepItem = styled.li.withConfig({
   ${(props) => {
     if (props.direction === 'vertical') {
       let paddingBottom = '0px';
-      if (!props.isSubStep && !props.isLast && !props.hasSubSteps) {
+      if (!props.isSubStep && !props.isLast) {
         paddingBottom = `${props.theme.global.edgeSize.medium}`;
       }
 
@@ -116,6 +116,9 @@ const StyledStepContent = styled.span.withConfig({
       !props.isSubStep &&
       !props.hasDescription
     ) {
+      // nudges only the first line down to the indicator's vertical
+      // center; independent of how many lines follow, so it holds for
+      // wrapped labels too.
       const indicatorSizeToken =
         props.theme.stepper?.indicator?.size || 'medium';
       const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
@@ -262,7 +265,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
     const connectorOffset = `calc(${parentSize} / 2 + ${buttonPad})`;
     const connectorGap = '4px';
-    const nonBetweenTop = `calc(${parentSize} + ${buttonPad} +
+    const connectorTop = `calc(${parentSize} + ${buttonPad} +
       (${indicatorBorderWidth} * 2) + ${connectorGap})`;
 
     return css`
@@ -270,7 +273,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       ${props.direction === 'horizontal'
         ? css`
             top: ${connectorOffset};
-            left: calc(${props.isBetween ? '-' : ''}50% + ${connectorOffset});
+            left: calc(50% + ${connectorOffset});
             right: calc(-50% + ${connectorOffset});
             height: ${connectorThickness};
             margin-inline: ${props.theme.global.edgeSize[
@@ -282,12 +285,9 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
               ${connectorOffset} + ${indicatorBorderWidth} -
                 ${connectorThickness} / 2
             );
-            top: ${props.isBetween ? 0 : nonBetweenTop};
+            top: ${connectorTop};
             bottom: 0;
-            ${!props.isBetween &&
-            css`
-              min-height: 12px;
-            `}
+            min-height: 12px;
             width: ${connectorThickness};
             margin-block: 0;
           `}

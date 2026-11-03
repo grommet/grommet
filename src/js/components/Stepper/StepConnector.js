@@ -4,7 +4,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { useThemeValue } from '../../utils/useThemeValue';
-import { StyledConnector } from './StyledStepper';
 
 const StyledStepConnectorGroup = styled.div.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
@@ -21,18 +20,15 @@ const StyledStepConnectorGroup = styled.div.withConfig({
     `}
 `;
 
-export const StepConnector = ({ step, direction, children }) => {
+// Layout wrapper for a parent step's sub-steps list. The connecting line
+// into the sub-steps is rendered by the parent's own StyledConnector
+// (sibling in StepperStep), which stays anchored to the indicator
+// regardless of how tall this group's content grows.
+export const StepConnector = ({ direction, children }) => {
   const { passThemeFlag } = useThemeValue();
 
   return (
     <StyledStepConnectorGroup direction={direction} {...passThemeFlag}>
-      <StyledConnector
-        direction={direction}
-        status={step.status}
-        aria-hidden="true"
-        isBetween
-        {...passThemeFlag}
-      />
       {children}
     </StyledStepConnectorGroup>
   );
