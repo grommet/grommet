@@ -14,7 +14,7 @@ export const WizardProgress = ({
   showDescription = false,
   ...rest
 }) => {
-  const { theme, passThemeFlag } = useThemeValue();
+  const { theme } = useThemeValue();
   const { format } = React.useContext(MessageContext);
   const {
     steps,
@@ -87,7 +87,6 @@ export const WizardProgress = ({
       flex={false}
       // Vertical rail should hug its steps, not stretch to the body height.
       alignSelf={showProgress === 'vertical' ? 'start' : undefined}
-      {...passThemeFlag}
       {...rest}
     >
       <Stepper
