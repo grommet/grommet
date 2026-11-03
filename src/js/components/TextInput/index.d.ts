@@ -13,6 +13,7 @@ export interface TextInputProps
     'onSelect' | 'size' | 'placeholder' | 'width'
   > {
   a11yTitle?: A11yTitleType;
+  clear?: boolean;
   copy?: boolean;
   defaultSuggestion?: number;
   dropAlign?: {
@@ -28,6 +29,7 @@ export interface TextInputProps
   icon?: React.ReactNode;
   id?: string;
   messages?: {
+    clear?: string;
     enterSelect?: string;
     hidePassword?: string;
     showPassword?: string;

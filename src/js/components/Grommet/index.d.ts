@@ -253,6 +253,7 @@ export interface GrommetProps {
         sectionSeconds?: string;
       };
       textInput?: {
+        clear?: string;
         enterSelect?: string;
         hidePassword?: string;
         showPassword?: string;

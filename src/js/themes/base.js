@@ -2670,6 +2670,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
       // disabled: { opacity: undefined },
       icons: {
+        clear: FormClose,
         // copy: undefined,
         hidePassword: Hide,
         showPassword: View,

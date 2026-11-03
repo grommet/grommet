@@ -61,6 +61,22 @@ jobs:
       - name: Run build
         run: yarn build
 
+      - name: Generate source archive and license report
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          npm run pack
+          test -s "grommet-${VERSION}-src-with-dependecies.tgz"
+          test -s "grommet-${VERSION}-licenses.json"
+          node -e '
+            const fs = require("fs");
+            const version = process.env.VERSION;
+            const report = JSON.parse(fs.readFileSync(`grommet-${version}-licenses.json`, "utf8"));
+            if (report.name !== "grommet" || report.version !== version || !report.dependencies) {
+              throw new Error("License report does not match the release package");
+            }
+          '
+
       - name: Prepare dist/ as the package root
         run: |
           cp package.json dist/package.json
@@ -96,7 +112,9 @@ jobs:
         with:
           name: grommet-${{ steps.version.outputs.version }}
           path: |
-            grommet-*.tgz
+            grommet-${{ steps.version.outputs.version }}.tgz
+            grommet-${{ steps.version.outputs.version }}-src-with-dependecies.tgz
+            grommet-${{ steps.version.outputs.version }}-licenses.json
             RELEASE_NOTES_FOR_TAG.md
           if-no-files-found: error
 
@@ -119,8 +137,10 @@ jobs:
         # Ignore any inherited token and let npm authenticate via GitHub OIDC.
         env:
           NODE_AUTH_TOKEN: ''
+          VERSION: ${{ needs.build.outputs.version }}
         run: |
-          artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
+          artifact="./grommet-${VERSION}.tgz"
+          test -s "$artifact"
           npx --yes --package=npm@11.21.0 -- npm stage publish "$artifact" --access public --provenance
           echo "Package staged on npm. Review it in the package's Staged Packages tab and approve it manually to publish."
 
@@ -130,10 +150,15 @@ jobs:
           GH_REPO: ${{ github.repository }}
           VERSION: ${{ needs.build.outputs.version }}
         run: |
-          artifact=$(find . -maxdepth 1 -name '*.tgz' -print -quit)
+          artifact="./grommet-${VERSION}.tgz"
+          source_archive="./grommet-${VERSION}-src-with-dependecies.tgz"
+          licenses="./grommet-${VERSION}-licenses.json"
+          test -s "$artifact"
+          test -s "$source_archive"
+          test -s "$licenses"
           gh release create "v${VERSION}" \
             --repo "$GH_REPO" \
             --verify-tag \
             --title "v${VERSION}" \
             --notes-file RELEASE_NOTES_FOR_TAG.md \
-            "$artifact"
+            "$artifact" "$source_archive" "$licenses"
