@@ -229,6 +229,7 @@ const CalendarDay = forwardRef(
       size,
       isInRange,
       isSelected,
+      isToday,
       otherMonth,
       rangePosition,
       buttonProps = {},
@@ -243,6 +244,7 @@ const CalendarDay = forwardRef(
         aria-selected={isSelected}
         inRange={isInRange}
         isSelected={isSelected}
+        isToday={isToday}
         rangePosition={rangePosition}
         sizeProp={size}
         fillContainer={fill}
@@ -264,6 +266,7 @@ const CalendarDay = forwardRef(
               hover={hover}
               inRange={isInRange}
               isSelected={isSelected}
+              isToday={isToday}
               otherMonth={otherMonth}
               sizeProp={size}
               fillContainer={fill}
@@ -795,6 +798,9 @@ const Calendar = forwardRef(
     let firstDayInMonth;
     let blankWeek = false;
 
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
@@ -860,6 +866,7 @@ const Calendar = forwardRef(
       } else {
         const dateObject = day;
         // this.dayRefs[dateObject] = React.createRef();
+        const isToday = day.getTime() === today.getTime();
         let selected = false;
         let inRange = false;
         let rangePosition;
@@ -905,6 +912,7 @@ const Calendar = forwardRef(
               }}
               isInRange={inRange}
               isSelected={selected}
+              isToday={isToday}
               otherMonth={day.getMonth() !== reference.getMonth()}
               rangePosition={rangePosition}
               size={size}
