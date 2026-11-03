@@ -2513,7 +2513,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         label: { color: 'text' },
         connector: { color: 'status-critical' },
-        helperText: { color: 'status-critical' },
+        helperText: { color: { dark: 'text', light: 'status-error' } },
       },
       currentError: {
         indicator: {
@@ -2529,7 +2529,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
         label: {
-          color: 'status-critical',
+          color: { dark: 'text', light: 'status-error' },
         },
       },
       disabled: {
