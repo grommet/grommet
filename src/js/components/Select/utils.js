@@ -57,7 +57,7 @@ export const useDisabled = (disabled, disabledKey, options, valueKey) =>
             getOptionIndex(disabled, optionVal, valueKey) !== -1;
         }
       }
-      return result;
+      return disabled === true || result;
     },
     [disabled, disabledKey, options, valueKey],
   );
