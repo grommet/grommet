@@ -328,7 +328,7 @@ exports[`Stepper renders horizontal steps 1`] = `
           class="c10 c11"
         >
           <span
-            class="c12"
+            class="c12 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
           >
             Step 1
           </span>
@@ -359,7 +359,7 @@ exports[`Stepper renders horizontal steps 1`] = `
           class="c10 c11"
         >
           <span
-            class="c16"
+            class="c16 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
           >
             Step 2
           </span>
@@ -390,7 +390,7 @@ exports[`Stepper renders horizontal steps 1`] = `
           class="c10 c11"
         >
           <span
-            class="c16"
+            class="c16 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
           >
             Step 3
           </span>
@@ -716,7 +716,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
         class="c9 c10"
       >
         <span
-          class="c11"
+          class="c11 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
         >
           Step 1
         </span>
@@ -747,7 +747,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
         class="c9 c10"
       >
         <span
-          class="c15"
+          class="c15 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
         >
           Step 2
         </span>
@@ -778,7 +778,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
         class="c9 c10"
       >
         <span
-          class="c15"
+          class="c15 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
         >
           Step 3
         </span>
@@ -1101,7 +1101,7 @@ exports[`Stepper renders vertical steps 1`] = `
           class="c9 c10"
         >
           <span
-            class="c11"
+            class="c11 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
           >
             Step 1
           </span>
@@ -1148,7 +1148,7 @@ exports[`Stepper renders vertical steps 1`] = `
           class="c9 c10"
         >
           <span
-            class="c16"
+            class="c16 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
           >
             Step 2
           </span>
@@ -1179,7 +1179,7 @@ exports[`Stepper renders vertical steps 1`] = `
           class="c9 c10"
         >
           <span
-            class="c11"
+            class="c11 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
           >
             Step 3
           </span>
