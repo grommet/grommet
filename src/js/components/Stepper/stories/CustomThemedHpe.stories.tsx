@@ -34,7 +34,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
   global: {
     colors: {
       'background-critical-strong-hover': {
-        light: '#a3140f', // red.900 NEW
+        light: '#9c0f0b', // red.900 NEW
         dark: '#ff7b7b', // red.400
       },
       'background-critical-strong': { // icon-critical
@@ -46,13 +46,13 @@ const theme: ThemeType = deepMerge({}, hpe, {
         dark: '#fc6161', // red.500
       },
       'background-selected-critical-strong-hover': {
-        light: '#a3140f', // red.900 NEW
+        light: '#9c0f0b', // red.900 NEW
         dark: '#ff7b7b', // red.400
       },
       'icon-onSelectedCriticalStrong': { light: '#ffffff', dark: '#292d3a' },
       'icon-onCriticalStrong': { light: '#ffffff', dark: '#292d3a' },
       'icon-critical-hover': {
-        light: '#a3140f', // red.900 NEW
+        light: '#9c0f0b', // red.900 NEW
         dark: '#ff7b7b', // red.400
       },
     },
