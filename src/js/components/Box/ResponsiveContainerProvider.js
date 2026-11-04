@@ -11,8 +11,10 @@ const responsiveContainerValue = true;
 export const ResponsiveContainerProvider = ({ container, theme, children }) => {
   const [value, setValue] = useState(
     () =>
-      deviceResponsive(navigator.userAgent, theme) ||
-      theme?.global?.deviceBreakpoints.tablet,
+      deviceResponsive(
+        typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+        theme,
+      ) || theme?.global?.deviceBreakpoints.tablet,
   );
 
   useEffect(() => {
