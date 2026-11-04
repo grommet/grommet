@@ -15,6 +15,21 @@ import { Text } from '../Text';
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
 
+const getPadSize = (theme, pad = 'xxsmall', side) => {
+  let value = pad;
+  if (typeof pad === 'object' && pad !== null) {
+    const axis =
+      side === 'top' || side === 'bottom' ? 'vertical' : 'horizontal';
+    let logicalSide;
+    if (side === 'left') logicalSide = theme.dir === 'rtl' ? 'end' : 'start';
+    if (side === 'right') logicalSide = theme.dir === 'rtl' ? 'start' : 'end';
+
+    // Match Box's edgeStyle: logical sides override physical sides and axes.
+    value = pad[logicalSide] ?? pad[side] ?? pad[axis] ?? 'none';
+  }
+  return theme.global?.edgeSize?.[value] || (value === 'none' ? '0px' : value);
+};
+
 const getTextMetric = (theme, size, metric) =>
   theme.text?.[size]?.[metric] || theme.text?.medium?.[metric];
 
@@ -221,24 +236,28 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       theme,
       stepTheme?.indicator?.border?.size || '2px',
     );
-    const buttonPad =
-      props.theme.global?.edgeSize?.[stepTheme?.button?.pad || 'xxsmall'];
+    const buttonPad = stepTheme?.button?.pad;
+    const padTop = getPadSize(theme, buttonPad, 'top');
+    const padLeft = getPadSize(theme, buttonPad, 'left');
+    const padRight = getPadSize(theme, buttonPad, 'right');
     const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
 
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
-    const connectorOffset = `calc(${parentSize} / 2 + ${buttonPad})`;
+    const connectorTop = `calc(${parentSize} / 2 + ${padTop})`;
+    const connectorLeft = `calc(${parentSize} / 2 + ${padLeft})`;
+    const connectorRight = `calc(${parentSize} / 2 + ${padRight})`;
     const connectorGap = '4px';
-    const nonBetweenTop = `calc(${parentSize} + ${buttonPad} +
+    const nonBetweenTop = `calc(${parentSize} + ${padTop} +
       (${indicatorBorderWidth} * 2) + ${connectorGap})`;
 
     return css`
       border-radius: ${connectorRadius};
       ${props.direction === 'horizontal'
         ? css`
-            top: ${connectorOffset};
-            left: calc(${props.isBetween ? '-' : ''}50% + ${connectorOffset});
-            right: calc(-50% + ${connectorOffset});
+            top: ${connectorTop};
+            left: calc(${props.isBetween ? '-' : ''}50% + ${connectorLeft});
+            right: calc(-50% + ${connectorRight});
             height: ${connectorThickness};
             margin-inline: ${props.theme.global.edgeSize[
               stepTheme?.connector?.margin || 'xxsmall'
@@ -246,7 +265,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
           `
         : css`
             left: calc(
-              ${connectorOffset} + ${indicatorBorderWidth} -
+              ${connectorLeft} + ${indicatorBorderWidth} -
                 ${connectorThickness} / 2
             );
             top: ${props.isBetween ? 0 : nonBetweenTop};
@@ -279,10 +298,11 @@ const StyledSubStepsList = styled(Box).withConfig({
       props.theme.global?.edgeSize?.[
         props.stepTheme?.button?.gap || 'small'
       ];
-    const buttonPad =
-      props.theme.global?.edgeSize?.[
-        props.stepTheme?.button?.pad || 'xxsmall'
-      ];
+    const buttonPad = getPadSize(
+      props.theme,
+      props.stepTheme?.button?.pad,
+      'left',
+    );
     return css`
       left: calc(${indicatorSize} + ${textGap} + ${buttonPad});
     `;
