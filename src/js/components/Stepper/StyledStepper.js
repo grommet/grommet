@@ -297,7 +297,7 @@ const StyledSubStepsList = styled(Box).withConfig({
     const textGap =
       props.theme.global?.edgeSize?.[
         props.stepTheme?.button?.gap || 'small'
-      ];
+      ] || props.stepTheme?.button?.gap;
     const buttonPad = getPadSize(
       props.theme,
       props.stepTheme?.button?.pad,
