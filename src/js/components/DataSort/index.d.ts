@@ -4,6 +4,7 @@ import * as React from 'react';
 
 export interface DataSortProps {
   drop?: boolean;
+  options?: any[];
 }
 
 export interface DataSortExtendedProps extends DataSortProps {}
