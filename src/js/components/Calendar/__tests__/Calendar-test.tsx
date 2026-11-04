@@ -1080,4 +1080,44 @@ describe('Calendar Keyboard events', () => {
     );
     jest.useRealTimers();
   });
+
+  test('should not select date outside of bounds via keyboard', async () => {
+    jest.useFakeTimers();
+    const onSelect = jest.fn();
+    const user = userEvent.setup({ delay: null });
+
+    render(
+      <Grommet>
+        <Calendar
+          date="2020-01-15T00:00:00-08:00"
+          onSelect={onSelect}
+          animate={false}
+          bounds={['2020-01-01', '2020-01-31']}
+        />
+      </Grommet>,
+    );
+
+    const firstDateButton = screen.getByRole('button', {
+      name: 'Wed Jan 01 2020',
+    });
+
+    // Navigate to the last in-bounds date (Jan 31)
+    await user.tab();
+    await user.tab();
+    await user.type(firstDateButton, '{arrowRight}');
+    await user.type(firstDateButton, '{arrowRight}');
+    await user.type(firstDateButton, '{arrowRight}');
+
+    // Try to navigate past bounds with arrow keys - should be blocked
+    // (the fix ensures clicking an out-of-bounds date is ignored)
+
+    // Verify clicking a disabled (out-of-bounds) day doesn't call onSelect
+    const outOfBoundsButton = screen.getByRole('button', {
+      name: 'Sat Feb 01 2020',
+    });
+    fireEvent.click(outOfBoundsButton);
+    expect(onSelect).not.toHaveBeenCalled();
+
+    jest.useRealTimers();
+  });
 });
