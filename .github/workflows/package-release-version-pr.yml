@@ -1,30 +1,34 @@
 name: Draft release version PR
 
-# Generates a release-notes draft from merged PRs since the last tag,
-# suggests a patch/minor version bump from that draft, updates
-# package.json + CHANGELOG.md, and opens a PR for human review.
-# This workflow never merges, tags, or publishes anything itself —
-# it only proposes the version/changelog change for a maintainer to
-# review, edit, and merge.
+# First run prepares artifacts only. A second run creates the PR after review.
 on:
   workflow_dispatch:
     inputs:
       from_tag:
-        description: 'Starting tag (exclusive). Auto-detected from latest tag if omitted.'
+        description: 'Review phase: starting tag; latest tag if omitted'
         required: false
         type: string
       to_tag:
-        description: 'Ending tag or ref for release-note generation'
+        description: 'Review phase: ending ref; must resolve to current master'
         required: false
         default: 'HEAD'
         type: string
+      reviewed_run_id:
+        description: 'PR phase: successful review run ID; leave empty to prepare checklist and notes'
+        required: false
+        type: string
+      checklist_reviewed:
+        description: 'I reviewed this candidate’s checklist, notes, missing-test findings, and version scope'
+        required: false
+        default: false
+        type: boolean
       bump_override:
-        description: 'Force a version bump instead of the auto-suggested one'
+        description: 'Patch = fixes; minor = new functionality; major = breaking changes'
         required: false
         type: choice
-        default: 'auto'
+        default: 'review'
         options:
-          - auto
+          - review
           - patch
           - minor
           - major
@@ -32,67 +36,137 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: read
+
+concurrency:
+  group: release-preparation
+  cancel-in-progress: false
 
 jobs:
   draft-version-pr:
-    name: Draft release version PR
+    name: Review candidate or create release PR
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: master
           fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22.15.0'
+          node-version: '22.22.2'
           cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install --immutable
 
-      - name: Generate release-notes draft
+      - name: Resolve immutable candidate range
+        if: ${{ inputs.reviewed_run_id == '' }}
+        env:
+          FROM_TAG: ${{ inputs.from_tag }}
+          TO_TAG: ${{ inputs.to_tag }}
+        run: |
+          FROM_REF="${FROM_TAG:-$(git describe --tags --abbrev=0)}"
+          TO_REF="${TO_TAG:-HEAD}"
+          CANDIDATE_SHA=$(git rev-parse --verify "${TO_REF}^{commit}")
+          test "$CANDIDATE_SHA" = "$(git rev-parse HEAD)"
+          FROM_SHA=$(git rev-parse --verify "${FROM_REF}^{commit}")
+          echo "FROM_SHA=$FROM_SHA" >> "$GITHUB_ENV"
+          echo "CANDIDATE_SHA=$CANDIDATE_SHA" >> "$GITHUB_ENV"
+
+      - name: Run pre-release checklist before generating files
+        if: ${{ inputs.reviewed_run_id == '' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          yarn generate-release-notes \
-            -- \
-            ${{ inputs.from_tag && format('--from {0}', inputs.from_tag) || '' }} \
-            --to "${{ inputs.to_tag }}" \
-            --output RELEASE_NOTES_DRAFT.md
+          yarn release-checklist -- --from "$FROM_SHA" --to "$CANDIDATE_SHA" > "$RUNNER_TEMP/release-checklist.md"
+          if grep -q '^WARNING:' "$RUNNER_TEMP/release-checklist.md"; then
+            cat "$RUNNER_TEMP/release-checklist.md"
+            exit 1
+          fi
+          mv "$RUNNER_TEMP/release-checklist.md" RELEASE_CHECKLIST.md
 
-      - name: Generate release-announcement draft
+      - name: Generate release drafts
+        if: ${{ inputs.reviewed_run_id == '' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          yarn generate-release-announcement \
-            -- \
-            ${{ inputs.from_tag && format('--from {0}', inputs.from_tag) || '' }} \
-            --to "${{ inputs.to_tag }}" \
-            --output RELEASE_ANNOUNCEMENT_DRAFT.md
+          yarn generate-release-notes -- --from "$FROM_SHA" --to "$CANDIDATE_SHA" --output RELEASE_NOTES_DRAFT.md
+          yarn generate-release-announcement -- --from "$FROM_SHA" --to "$CANDIDATE_SHA" --output RELEASE_ANNOUNCEMENT_DRAFT.md
+          printf '%s\n' "$CANDIDATE_SHA" > RELEASE_CANDIDATE_SHA.txt
 
-      - name: Run pre-release checklist (components, missing tests, bump suggestion)
+      - name: Upload candidate for human review
+        if: ${{ inputs.reviewed_run_id == '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes-draft
+          path: |
+            RELEASE_NOTES_DRAFT.md
+            RELEASE_ANNOUNCEMENT_DRAFT.md
+            RELEASE_CHECKLIST.md
+            RELEASE_CANDIDATE_SHA.txt
+          if-no-files-found: error
+
+      - name: Explain next review step
+        if: ${{ inputs.reviewed_run_id == '' }}
+        run: |
+          {
+            echo '## Release candidate ready for review — no PR created'
+            echo 'Review the checklist and notes in the release-notes-draft artifact.'
+            echo 'Patch: compatible fixes. Minor: new compatible functionality (components, props, theme capabilities). Major: incompatible public changes.'
+            echo 'Resolve or accept missing-test findings and plan required browser QA.'
+            echo "Run again with reviewed_run_id=${GITHUB_RUN_ID}, checklist_reviewed=true, and an explicit bump."
+            echo 'The candidate must still be current master; otherwise prepare a fresh review.'
+            cat RELEASE_CHECKLIST.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify review authorization and run identity
+        if: ${{ inputs.reviewed_run_id != '' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEW_RUN: ${{ inputs.reviewed_run_id }}
+          REVIEWED: ${{ inputs.checklist_reviewed }}
+          BUMP: ${{ inputs.bump_override }}
         run: |
-          yarn release-checklist \
-            -- \
-            ${{ inputs.from_tag && format('--from {0}', inputs.from_tag) || '' }} \
-            --to "${{ inputs.to_tag }}" \
-            > RELEASE_CHECKLIST.md
+          [[ "$REVIEW_RUN" =~ ^[0-9]+$ ]] || exit 1
+          test "$REVIEWED" = 'true' || exit 1
+          [[ "$BUMP" =~ ^(patch|minor|major)$ ]] || exit 1
+          WORKFLOW_ID=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/package-release-version-pr.yml" --jq '.id')
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$REVIEW_RUN" > "$RUNNER_TEMP/review-run.json"
+          jq -e --argjson workflow "$WORKFLOW_ID" --arg sha "$(git rev-parse HEAD)" \
+            '.workflow_id == $workflow and .conclusion == "success" and .event == "workflow_dispatch" and .head_branch == "master" and .head_sha == $sha' \
+            "$RUNNER_TEMP/review-run.json"
 
-      - name: Suggest version bump and update package.json / CHANGELOG.md
+      - name: Download reviewed candidate
+        if: ${{ inputs.reviewed_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: release-notes-draft
+          run-id: ${{ inputs.reviewed_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify reviewed candidate is still current
+        if: ${{ inputs.reviewed_run_id != '' }}
+        run: |
+          test "$(cat RELEASE_CANDIDATE_SHA.txt)" = "$(git rev-parse HEAD)"
+          git fetch origin master
+          test "$(cat RELEASE_CANDIDATE_SHA.txt)" = "$(git rev-parse origin/master)"
+
+      - name: Update version and changelog from reviewed notes
+        if: ${{ inputs.reviewed_run_id != '' }}
         id: version
         env:
           BUMP_OVERRIDE: ${{ inputs.bump_override }}
+          CHECKLIST_REVIEWED: ${{ inputs.checklist_reviewed }}
         run: yarn babel-node tools/draft-release-version-pr.js
 
-      - name: Open release PR
+      - name: Open release PR using Grommet template
+        if: ${{ inputs.reviewed_run_id != '' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.version.outputs.version }}
-          BUMP: ${{ steps.version.outputs.bump }}
         run: |
           BRANCH="release/v${VERSION}"
           git config user.name "github-actions[bot]"
@@ -101,42 +175,4 @@ jobs:
           git add package.json CHANGELOG.md
           git commit -m "Release v${VERSION}"
           git push origin "$BRANCH"
-          {
-            echo "Automated release-version draft."
-            echo
-            echo "- **Suggested bump:** \`${BUMP}\` (from \`release-checklist\`'s"
-            echo "  PR-label/breaking-change analysis below — **please confirm"
-            echo "  this is the correct scope** before merging; override by"
-            echo "  editing \`package.json\` directly in this PR)."
-            echo "- **Release notes:** incorporated into \`CHANGELOG.md\` below."
-            echo "- **Release announcement draft:** see \`RELEASE_ANNOUNCEMENT_DRAFT.md\`"
-            echo "  in the workflow run artifacts (not posted automatically)."
-            echo
-            echo "### Review checklist"
-            echo "- [ ] Version bump (\`${BUMP}\`) matches the actual scope of changes"
-            echo "- [ ] CHANGELOG.md entries are accurate and well-worded"
-            echo "- [ ] Manually verify each touched component in Storybook (below)"
-            echo "- [ ] No manual edits needed before merging"
-            echo
-            echo "Merging this PR does **not** publish anything — it only updates"
-            echo "the version and changelog for the next release candidate build."
-            echo
-            echo '<details><summary>Pre-release checklist (release-checklist output)</summary>'
-            echo
-            echo '```'
-            cat RELEASE_CHECKLIST.md
-            echo '```'
-            echo '</details>'
-          } > PR_BODY.md
-          gh pr create \
-            --title "Release v${VERSION}" \
-            --body-file PR_BODY.md
-
-      - name: Upload release-notes draft
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-notes-draft
-          path: |
-            RELEASE_NOTES_DRAFT.md
-            RELEASE_ANNOUNCEMENT_DRAFT.md
-            RELEASE_CHECKLIST.md
+          gh pr create --base master --head "$BRANCH" --title "Release v${VERSION}" --body-file PR_BODY.md

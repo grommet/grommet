@@ -30,11 +30,10 @@ export const StepperIndicator = ({ ...rest }) => {
   const { clickableSteps } = useStepper();
   const { theme, passThemeFlag } = useThemeValue();
 
-  const { step, isSubStep } = useStepItem();
+  const { step, isSubStep, isDisabled } = useStepItem();
   const stepTheme = useStepTheme(step, isSubStep);
   if (!step) return null;
 
-  const isDisabled = step.status === 'disabled';
   const isClickable = clickableSteps && !isDisabled;
 
   // grab the icon pieces and size. Size will be handled

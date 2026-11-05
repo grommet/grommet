@@ -1,27 +1,14 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
-import {
-  A11yTitleType,
-  AlignSelfType,
-  GridAreaType,
-  MarginType,
-  PadType,
-} from '../../utils';
 import { GridProps, GridSizeType } from '../Grid';
 import { PaginationType } from '../Pagination';
 
-export interface CardsProps<CardType = any> {
-  a11yTitle?: A11yTitleType;
-  alignSelf?: AlignSelfType;
-  as?: string;
-  children?: (item: CardType, index: number) => JSX.Element;
+export interface CardsProps<CardType = any> extends GridProps {
+  children?: (item: CardType, index: number) => React.ReactElement;
   data?: CardType[];
-  gridArea?: GridAreaType;
-  margin?: MarginType;
   onMore?: () => void;
   onOrder?: () => void;
-  pad?: PadType;
   paginate?: boolean | PaginationType;
   show?: number | { page?: number };
   size?: GridSizeType;
@@ -39,7 +26,6 @@ type ulProps = Omit<
 
 export interface CardsExtendedProps<CardType>
   extends CardsProps<CardType>,
-    Omit<GridProps, keyof CardsProps<CardType>>,
     ulProps {}
 
 declare class Cards<CardType = any> extends React.Component<

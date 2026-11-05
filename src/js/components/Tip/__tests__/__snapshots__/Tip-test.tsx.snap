@@ -196,10 +196,10 @@ exports[`Tip focus and blur events on the Tip's child 1`] = `
 
 exports[`Tip focus and blur events on the Tip's child 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
-    class="StyledButton-sc-323bzc-0 gqNXtr"
+    class="StyledButton-sc-323bzc-0 eaJnfP"
     type="button"
   >
     Test Events

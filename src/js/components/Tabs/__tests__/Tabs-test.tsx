@@ -419,8 +419,7 @@ describe('Tabs', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     const plainTab = getByText('Title 1').parentElement!;
-    const plainTabStyle = window.getComputedStyle(plainTab);
-    expect(['', 'ButtonText']).toContain(plainTabStyle.borderBottom);
+    expect(plainTab).toHaveStyleRule('border', 'none');
   });
 
   test('should allow to extend tab styles', () => {

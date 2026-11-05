@@ -23,6 +23,7 @@ export const StepItemContext = createContext({
   index: 0,
   isLast: false,
   isSubStep: false,
+  isDisabled: false,
 });
 
 export const useStepper = () => useContext(StepperContext);
