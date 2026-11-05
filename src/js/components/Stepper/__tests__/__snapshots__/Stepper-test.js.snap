@@ -43,6 +43,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   height: 24px;
   max-width: 24px;
   width: 24px;
+  flex: 0 0 auto;
   justify-content: center;
   border-radius: 50%;
 }
@@ -72,6 +73,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   height: 24px;
   max-width: 24px;
   width: 24px;
+  flex: 0 0 auto;
   justify-content: center;
   border-radius: 50%;
 }
@@ -445,6 +447,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   height: 24px;
   max-width: 24px;
   width: 24px;
+  flex: 0 0 auto;
   justify-content: center;
   border-radius: 50%;
 }
@@ -474,6 +477,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   height: 24px;
   max-width: 24px;
   width: 24px;
+  flex: 0 0 auto;
   justify-content: center;
   border-radius: 50%;
 }
@@ -833,6 +837,7 @@ exports[`Stepper renders vertical steps 1`] = `
   height: 24px;
   max-width: 24px;
   width: 24px;
+  flex: 0 0 auto;
   justify-content: center;
   border-radius: 50%;
 }
@@ -862,6 +867,7 @@ exports[`Stepper renders vertical steps 1`] = `
   height: 24px;
   max-width: 24px;
   width: 24px;
+  flex: 0 0 auto;
   justify-content: center;
   border-radius: 50%;
 }

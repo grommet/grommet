@@ -50,6 +50,7 @@ export const StepperIndicator = ({ ...rest }) => {
   return (
     <StyledIndicator
       stepTheme={stepTheme}
+      flex={false}
       isClickable={isClickable}
       width={{ width: sizeMetric, max: sizeMetric }}
       height={{ height: sizeMetric, max: sizeMetric }}

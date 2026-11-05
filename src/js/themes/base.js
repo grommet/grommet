@@ -2345,7 +2345,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         button: {
           gap: 'small',
           direction: 'row',
-          alignItems: 'start',
           align: 'start',
         },
       },
