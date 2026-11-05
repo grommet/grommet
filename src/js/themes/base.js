@@ -2337,8 +2337,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       button: {
         pad: 'xxsmall',
         gap: 'xsmall',
-        direction: 'column',
-        alignItems: 'center',
         align: 'center',
       },
       children: {
