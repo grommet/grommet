@@ -334,6 +334,15 @@ interface StepType {
     iconSize?: string;
     size?: string;
     color?: ColorType;
+    align?: AlignType;
+    justify?:
+        | 'around'
+        | 'between'
+        | 'center'
+        | 'end'
+        | 'evenly'
+        | 'start'
+        | 'stretch';
   }
   button?: BoxPartThemeType & {
     gap?: GapType;
@@ -348,14 +357,13 @@ interface StepType {
   connector?: { // line type?
     color?: ColorType;
     thickness?: ThicknessType;
-    round?: RoundType;
   }
   // Interaction states
   hover?: StepType;
 }
 interface StepperThemeType extends StepType {
   container?: BoxPartThemeType & {
-    gap?: GapType;
+    gap?: GapType | { row?: GapType; column?: GapType };
   };
   subStep?: StepType;
   vertical?: StepType;
