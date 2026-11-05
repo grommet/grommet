@@ -309,9 +309,8 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
             left: calc(${props.isBetween ? '-' : ''}50% + ${connectorLeft});
             right: calc(-50% + ${connectorRight});
             height: ${connectorThickness};
-            margin-inline: ${props.theme.global.edgeSize[
-              stepTheme?.connector?.margin || 'xxsmall'
-            ]};
+            margin-inline-start: ${padLeft};
+            margin-inline-end: ${padRight};
           `
         : css`
             left: calc(

@@ -67,14 +67,10 @@ const theme: ThemeType = deepMerge({}, hpe, {
     disabledReason: { color: 'text-default' },
     connector: {
       color: 'border-default',
-      margin: '5xsmall',
     },
     vertical: {
       button: {
         gap: 'xsmall',
-      },
-      connector: {
-        margin: '0px',
       },
     },
     subStep: {

@@ -2320,7 +2320,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       connector: {
         thickness: 'small',
         color: 'border',
-        margin: 'xxsmall',
       },
       description: {
         size: 'small',
