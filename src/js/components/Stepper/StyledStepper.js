@@ -8,9 +8,17 @@ import {
   focusStyle,
   normalizeColor,
   styledComponentsConfig,
+  heightStyle,
+  widthStyle,
+  edgeStyle,
+  elevationStyle,
+  roundStyle,
 } from '../../utils';
 import { Box } from '../Box';
 import { Text } from '../Text';
+
+const getIconSize = (theme, size) =>
+  theme.global?.edgeSize?.[size] || size;
 
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
@@ -53,6 +61,16 @@ const sizeStyle = (sizeProp, theme) => {
   return css`
     font-size: ${size};
     line-height: normal;
+  `;
+};
+
+const iconSizeStyle = (sizeProp, theme) => {
+  const size = getIconSize(theme, sizeProp);
+  return css`
+    width: ${size};
+    max-width: ${size};
+    height: ${size};
+    max-height: ${size};
   `;
 };
 
@@ -118,12 +136,21 @@ const StyledStepContent = styled(Box)`
   }}
   ${(props) => {
     if (props.isVertical && !props.isSubStep && !props.hasDescription) {
-      const indicatorSizeToken =
-        props.theme.stepper?.indicator?.size || 'medium';
-      const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
-      const lineHeight = getTextMetric(props.theme, 'small', 'height');
+      const indicator = props.stepTheme?.indicator;
+      const indicatorBorderWidth = getBorderWidth(
+        props.theme,
+        indicator?.border?.size || '2px',
+      );
+      const indicatorHeight = indicator?.height?.height || indicator?.height;
+      const indicatorSize = indicatorHeight
+        ? (props.theme.global.size[indicatorHeight] || indicatorHeight)
+        : getIconSize(props.theme, indicator?.size || 'medium');
+      const lineHeight = getTextMetric(props.theme,
+        props.stepTheme?.label?.size || 'medium', 'height');
       return css`
-        padding-top: calc((${indicatorSize} - ${lineHeight}) / 2);
+        padding-top: calc(
+          (${indicatorSize} - ${lineHeight}) / 2 + ${indicatorBorderWidth}
+        );
       `;
     }
     return '';
@@ -155,21 +182,12 @@ const StyledIndicator = styled(Box)`
   box-sizing: content-box;
 
   ${(props) =>
-    (() => {
-      const indicatorSizeToken = props.stepTheme?.indicator?.size || 'medium';
-      const size = getMetricSize(props.theme, indicatorSizeToken);
-
-      return css`
-        width: ${size};
-        height: ${size};
-        min-width: ${size};
-        min-height: ${size};
+    (() => css`
         color: ${normalizeColor(
           props.stepTheme?.indicator?.color || 'text',
           props.theme,
         )};
-      `;
-    })()}
+      `)()}
 
   ${StyledStepButton}:focus-visible & {
     ${focusStyle()}
@@ -177,7 +195,6 @@ const StyledIndicator = styled(Box)`
 
   ${(props) => {
     if (!props.isClickable) return '';
-
     // For hover colors we'll use the hover part of the stepper theme
     // that resolved for the step. If there isn't one we try to
     // just darken the various colors for the step.
@@ -210,6 +227,27 @@ const StyledIndicator = styled(Box)`
       ${backgroundStyle(hoverBackground, theme)};
       ${hoverBorder ? borderStyle(hoverBorder, false, theme) : ''};
       color: ${hoverColor};
+      ${hoverTheme.size && iconSizeStyle(hoverTheme.size, theme)}
+      ${hoverTheme.height && heightStyle(hoverTheme.height, theme)}
+      ${hoverTheme.width && widthStyle(hoverTheme.width, theme)}
+      ${hoverTheme.margin &&
+        edgeStyle(
+          'margin',
+          hoverTheme.margin,
+          false,
+          props?.theme?.box?.responsiveBreakpoint,
+          theme,
+        )}
+      ${hoverTheme.pad &&
+        edgeStyle(
+          'padding',
+          hoverTheme.pad,
+          false,
+          props?.theme?.box?.responsiveBreakpoint,
+          theme,
+        )}
+      ${hoverTheme.round && roundStyle(hoverTheme.round, false, theme)}
+      ${hoverTheme.elevation && elevationStyle(hoverTheme.elevation, theme)}
     `)();
       
       return css`
@@ -230,11 +268,23 @@ const StyledIndicator = styled(Box)`
 const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
     const { theme, stepTheme } = props;
-    const indicatorSizeToken = stepTheme?.indicator?.size || 'medium';
-    const parentSize = getMetricSize(theme, indicatorSizeToken);
+    const indicator = stepTheme?.indicator;
+
+    // width and height could be specified as box props in which case
+    // the t-shirt values will be from theme.global.size.
+    // But use the size from the theme if available. In that case
+    // the t-shirt values are icon sizes. 
+    const indicatorWidth = indicator?.width?.width || indicator?.width;
+    const indicatorHeight = indicator?.height?.height || indicator?.height;
+    const width = indicatorWidth
+      ? (theme.global.size[indicatorWidth] || indicatorWidth)
+      : getIconSize(theme, indicator?.size || 'medium');
+    const height = indicatorHeight
+      ? (theme.global.size[indicatorHeight] || indicatorHeight)
+      : getIconSize(theme, indicator?.size || 'medium');
     const indicatorBorderWidth = getBorderWidth(
       theme,
-      stepTheme?.indicator?.border?.size || '2px',
+      indicator?.border?.size || '2px',
     );
     const buttonPad = stepTheme?.button?.pad;
     const padTop = getPadSize(theme, buttonPad, 'top');
@@ -244,11 +294,11 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
 
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
-    const connectorTop = `calc(${parentSize} / 2 + ${padTop})`;
-    const connectorLeft = `calc(${parentSize} / 2 + ${padLeft})`;
-    const connectorRight = `calc(${parentSize} / 2 + ${padRight})`;
+    const connectorTop = `calc(${height} / 2 + ${padTop})`;
+    const connectorLeft = `calc(${width} / 2 + ${padLeft})`;
+    const connectorRight = `calc(${width} / 2 + ${padRight})`;
     const connectorGap = '4px';
-    const nonBetweenTop = `calc(${parentSize} + ${padTop} +
+    const nonBetweenTop = `calc(${height} + ${padTop} +
       (${indicatorBorderWidth} * 2) + ${connectorGap})`;
 
     return css`
@@ -292,8 +342,11 @@ const StyledSubStepsList = styled(Box).withConfig({
   ${(props) => {
     if (!props.isVertical) return '';
 
-    const indicatorSizeToken = props.stepTheme.indicator?.size || 'medium';
-    const indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
+    const indicator = props.stepTheme?.indicator || {};
+    const indicatorWidth = indicator?.width?.width || indicator?.width;
+    const indicatorSize = indicatorWidth
+      ? (props.theme.global.size[indicatorWidth] || indicatorWidth)
+      : getIconSize(props.theme, indicator?.size || 'medium');
     const textGap =
       props.theme.global?.edgeSize?.[
         props.stepTheme?.button?.gap || 'small'

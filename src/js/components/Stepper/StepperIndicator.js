@@ -8,6 +8,9 @@ import { useStepTheme } from './utils';
 import { useStepper, useStepItem } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
 
+const getMetricSize = (theme, size) =>
+  theme.global?.edgeSize?.[size] || size;
+
 const renderIcon = (Icon, props) => {
   if (!Icon) return null;
   const iconProps = {
@@ -25,7 +28,7 @@ const renderIcon = (Icon, props) => {
 
 export const StepperIndicator = ({ ...rest }) => {
   const { clickableSteps } = useStepper();
-  const { passThemeFlag } = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
 
   const { step, isSubStep } = useStepItem();
   const stepTheme = useStepTheme(step, isSubStep);
@@ -40,10 +43,17 @@ export const StepperIndicator = ({ ...rest }) => {
   const indicatorTheme = stepTheme?.indicator || {};
   const { color, icon, iconSize, size, ...boxProps } = indicatorTheme;
 
+  // Convert the icon-related size to a width and height for a box.
+  // T-shirt sizes for Box are
+  const indicatorSizeToken = indicatorTheme?.size || 'medium';
+  const sizeMetric = getMetricSize(theme, indicatorSizeToken);
+
   return (
     <StyledIndicator
       stepTheme={stepTheme}
       isClickable={isClickable}
+      width={{ width: sizeMetric, max: sizeMetric }}
+      height={{ height: sizeMetric, max: sizeMetric }}
       {...boxProps}
       {...passThemeFlag}
       {...rest}

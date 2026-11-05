@@ -138,6 +138,7 @@ export const StepperStep = ({
             isVertical={direction === 'vertical'}
             isSubStep={isSubStep}
             hasDescription={!!step.description}
+            stepTheme={stepTheme}
           >
             <StepperLabel />
             {showDescription && <StepperDescription />}
