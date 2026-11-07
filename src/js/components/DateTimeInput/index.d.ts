@@ -4,6 +4,7 @@ import * as React from 'react';
 
 import { CalendarType } from '../Calendar/index';
 import { DropType } from '../Drop';
+import { TimeInputExtendedProps } from '../TimeInput';
 
 export interface DateTimeInputProps {
   calendarProps?: CalendarType;
@@ -34,6 +35,7 @@ export interface DateTimeInputProps {
   onChange?: (event: { value?: string }) => void;
   readOnly?: boolean;
   showSeconds?: boolean;
+  timeInputProps?: TimeInputExtendedProps;
   value?: string;
 }
 

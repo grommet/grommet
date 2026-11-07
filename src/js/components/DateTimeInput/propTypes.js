@@ -33,6 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
     onChange: PropTypes.func,
     readOnly: PropTypes.bool,
     showSeconds: PropTypes.bool,
+    timeInputProps: PropTypes.shape({}),
     value: PropTypes.string,
   };
 }

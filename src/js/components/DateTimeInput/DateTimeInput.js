@@ -398,6 +398,7 @@ const DateTimeInput = forwardRef(
       focusIndicator: focusIndicatorProp,
       readOnly = false,
       showSeconds = false,
+      timeInputProps,
       value: valueArg,
       ...rest
     },
@@ -1259,6 +1260,7 @@ const DateTimeInput = forwardRef(
             disabled || readOnly ? undefined : handleTimePartialChange
           }
           fill
+          {...timeInputProps}
         />
       </Box>
     );

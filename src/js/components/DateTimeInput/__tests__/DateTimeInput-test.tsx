@@ -1269,6 +1269,48 @@ describe('DateTimeInput', () => {
     });
   });
 
+  describe('timeInputProps', () => {
+    test('messages label the time picker options', async () => {
+      const user = userEvent.setup();
+      render(
+        <Grommet>
+          <DateTimeInput
+            format="24"
+            value="2026-07-22T18:30:00.000Z"
+            timeInputProps={{ messages: { sectionMinutes: 'Minuten' } }}
+          />
+        </Grommet>,
+      );
+      const trigger = screen.getByRole('button', { name: /date and time/i });
+      await user.click(trigger);
+
+      const minuteList = within(getDropFromTrigger(trigger)).getByRole(
+        'listbox',
+        { name: 'minute' },
+      );
+      expect(
+        within(minuteList).getByRole('option', { name: '45 Minuten' }),
+      ).toBeInTheDocument();
+    });
+
+    test('applies in inline mode', () => {
+      render(
+        <Grommet>
+          <DateTimeInput
+            inline
+            format="24"
+            value="2026-07-22T18:30:00.000Z"
+            timeInputProps={{ messages: { sectionMinutes: 'Minuten' } }}
+          />
+        </Grommet>,
+      );
+
+      expect(
+        screen.getByRole('option', { name: '45 Minuten' }),
+      ).toBeInTheDocument();
+    });
+  });
+
   describe('dropProps', () => {
     beforeEach(() => {
       jest.spyOn(Element.prototype, 'getBoundingClientRect').mockReturnValue({
