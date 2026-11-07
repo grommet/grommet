@@ -1147,4 +1147,218 @@ describe('DateTimeInput', () => {
     const dayCircle = selectedDayButton.querySelector('div');
     expect(dayCircle).toHaveStyleRule('background-color', '#ABCDEF');
   });
+
+  describe('calendarProps', () => {
+    const openDrop = async (ui: React.ReactElement) => {
+      const user = userEvent.setup();
+      render(<Grommet>{ui}</Grommet>);
+      const trigger = screen.getByRole('button', { name: /date and time/i });
+      await user.click(trigger);
+      return { user, drop: getDropFromTrigger(trigger) };
+    };
+
+    test('firstDayOfWeek starts the calendar grid on Monday', async () => {
+      const { drop } = await openDrop(
+        <DateTimeInput
+          format="24"
+          value="2026-07-22T18:30:00.000Z"
+          calendarProps={{ firstDayOfWeek: 1 }}
+        />,
+      );
+
+      const firstDay = within(within(drop).getByRole('grid')).getAllByRole(
+        'button',
+      )[0];
+      expect(firstDay).toHaveAccessibleName(/^Mon /);
+    });
+
+    test('daysOfWeek renders the weekday header row', async () => {
+      const { drop } = await openDrop(
+        <DateTimeInput
+          format="24"
+          value="2026-07-22T18:30:00.000Z"
+          calendarProps={{ daysOfWeek: true, locale: 'en-US' }}
+        />,
+      );
+
+      expect(within(drop).getAllByRole('row')[0]).toHaveTextContent('SMTWTFS');
+    });
+
+    test('calendar uses the DateTimeInput locale', async () => {
+      const { drop } = await openDrop(
+        <DateTimeInput
+          locale="de-DE"
+          value="2026-07-22T18:30:00.000Z"
+          calendarProps={{ daysOfWeek: true }}
+        />,
+      );
+
+      expect(within(drop).getAllByRole('row')[0]).toHaveTextContent('SMDMDFS');
+    });
+
+    test('calendarProps.locale overrides the DateTimeInput locale', async () => {
+      const { drop } = await openDrop(
+        <DateTimeInput
+          locale="de-DE"
+          value="2026-07-22T18:30:00.000Z"
+          calendarProps={{ daysOfWeek: true, locale: 'en-US' }}
+        />,
+      );
+
+      expect(within(drop).getAllByRole('row')[0]).toHaveTextContent('SMTWTFS');
+    });
+
+    test('bounds disables days outside the range and allows days inside', async () => {
+      const onChange = jest.fn();
+      const { user, drop } = await openDrop(
+        <DateTimeInput
+          format="24"
+          onChange={onChange}
+          calendarProps={{
+            bounds: ['2030-03-10', '2030-03-20'],
+            reference: '2030-03-15',
+          }}
+        />,
+      );
+
+      const outside = within(drop).getByRole('button', { name: /Mar 05 2030/ });
+      expect(outside).toHaveAttribute('aria-disabled', 'true');
+      await user.click(outside);
+      expect(onChange).not.toHaveBeenCalled();
+
+      await user.click(
+        within(drop).getByRole('button', { name: /Mar 12 2030/ }),
+      );
+      expect(onChange).toHaveBeenCalledWith({
+        value: new Date(2030, 2, 12, 0, 0, 0).toISOString(),
+      });
+    });
+
+    test('reference opens an empty calendar on the reference month', async () => {
+      const { drop } = await openDrop(
+        <DateTimeInput
+          format="24"
+          calendarProps={{ reference: '2030-03-15' }}
+        />,
+      );
+
+      expect(
+        within(drop).getByRole('button', { name: /Mar 15 2030/ }),
+      ).toBeInTheDocument();
+    });
+
+    test('fill: false sizes days from theme calendar daySize', async () => {
+      const user = userEvent.setup();
+      render(
+        <Grommet theme={{ calendar: { medium: { daySize: '40px' } } }}>
+          <DateTimeInput
+            format="24"
+            value="2026-07-22T18:30:00.000Z"
+            calendarProps={{ fill: false }}
+          />
+        </Grommet>,
+      );
+      const trigger = screen.getByRole('button', { name: /date and time/i });
+      await user.click(trigger);
+
+      const day = within(getDropFromTrigger(trigger))
+        .getByRole('button', { name: /Jul 22 2026/ })
+        .querySelector('div');
+      expect(day).toHaveStyleRule('width', '40px');
+      expect(day).toHaveStyleRule('height', '40px');
+    });
+  });
+
+  describe('timeInputProps', () => {
+    test('messages label the time picker options', async () => {
+      const user = userEvent.setup();
+      render(
+        <Grommet>
+          <DateTimeInput
+            format="24"
+            value="2026-07-22T18:30:00.000Z"
+            timeInputProps={{ messages: { sectionMinutes: 'Minuten' } }}
+          />
+        </Grommet>,
+      );
+      const trigger = screen.getByRole('button', { name: /date and time/i });
+      await user.click(trigger);
+
+      const minuteList = within(getDropFromTrigger(trigger)).getByRole(
+        'listbox',
+        { name: 'minute' },
+      );
+      expect(
+        within(minuteList).getByRole('option', { name: '45 Minuten' }),
+      ).toBeInTheDocument();
+    });
+
+    test('applies in inline mode', () => {
+      render(
+        <Grommet>
+          <DateTimeInput
+            inline
+            format="24"
+            value="2026-07-22T18:30:00.000Z"
+            timeInputProps={{ messages: { sectionMinutes: 'Minuten' } }}
+          />
+        </Grommet>,
+      );
+
+      expect(
+        screen.getByRole('option', { name: '45 Minuten' }),
+      ).toBeInTheDocument();
+    });
+  });
+
+  describe('dropProps', () => {
+    beforeEach(() => {
+      jest.spyOn(Element.prototype, 'getBoundingClientRect').mockReturnValue({
+        top: 100,
+        bottom: 140,
+        left: 10,
+        right: 310,
+        width: 300,
+        height: 40,
+        x: 10,
+        y: 100,
+        toJSON: () => {},
+      });
+    });
+
+    const openDrop = async (ui: React.ReactElement) => {
+      const user = userEvent.setup();
+      render(<Grommet>{ui}</Grommet>);
+      const trigger = screen.getByRole('button', { name: /date and time/i });
+      await user.click(trigger);
+      return getDropFromTrigger(trigger);
+    };
+
+    test('defaults to stretching below the input', async () => {
+      const drop = await openDrop(<DateTimeInput format="24" />);
+
+      expect(drop.style.width).toBe('300.1px');
+      expect(drop.style.top).toBe('140px');
+    });
+
+    test('stretch: false does not stretch the drop to the input width', async () => {
+      const drop = await openDrop(
+        <DateTimeInput format="24" dropProps={{ stretch: false }} />,
+      );
+
+      expect(drop.style.width).toBe('');
+    });
+
+    test('align positions the drop', async () => {
+      const drop = await openDrop(
+        <DateTimeInput
+          format="24"
+          dropProps={{ align: { bottom: 'top', left: 'left' } }}
+        />,
+      );
+
+      expect(drop.style.top).toBe('');
+      expect(drop.style.bottom).toBe(`${window.innerHeight - 100}px`);
+    });
+  });
 });

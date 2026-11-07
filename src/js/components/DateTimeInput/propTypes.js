@@ -5,8 +5,10 @@ import PropTypes from 'prop-types';
 let PropType = {};
 if (process.env.NODE_ENV !== 'production') {
   PropType = {
+    calendarProps: PropTypes.shape({}),
     defaultValue: PropTypes.string,
     disabled: PropTypes.bool,
+    dropProps: PropTypes.shape({}),
     format: PropTypes.oneOf(['12', '24']),
     id: PropTypes.string,
     locale: PropTypes.string,
@@ -31,6 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
     onChange: PropTypes.func,
     readOnly: PropTypes.bool,
     showSeconds: PropTypes.bool,
+    timeInputProps: PropTypes.shape({}),
     value: PropTypes.string,
   };
 }
