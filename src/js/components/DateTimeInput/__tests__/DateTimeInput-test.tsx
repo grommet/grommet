@@ -81,6 +81,31 @@ describe('DateTimeInput', () => {
     });
   });
 
+  test('FormField plain suppresses global input appearance on the child field', () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: {
+              background: '#eeeeee',
+              hover: { background: '#dddddd' },
+            },
+          },
+        }}
+      >
+        <FormField label="Date and time">
+          <DateTimeInput format="12" />
+        </FormField>
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).not.toHaveStyleRule('background-color', '#eeeeee');
+    expect(container).not.toHaveStyleRule('background-color', '#dddddd', {
+      modifier: ':hover',
+    });
+  });
+
   test('applies canonical and hover input padding to the visible display', async () => {
     const user = userEvent.setup();
     const theme: ThemeType = {

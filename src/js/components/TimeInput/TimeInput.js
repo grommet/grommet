@@ -767,6 +767,7 @@ const TimeInput = forwardRef(
             }
             disabled={disabled}
             plain={plainProp}
+            $inputPlain={plainProp}
             readOnlyProp={readOnly}
             focusIndicator={(focusIndicatorProp ?? true) && !iconFocused}
             {...passThemeFlag}

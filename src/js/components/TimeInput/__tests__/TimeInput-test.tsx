@@ -83,6 +83,31 @@ describe('TimeInput', () => {
     });
   });
 
+  test('FormField plain suppresses global input appearance on the child field', () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: {
+              background: '#eeeeee',
+              hover: { background: '#dddddd' },
+            },
+          },
+        }}
+      >
+        <FormField label="Time">
+          <TimeInput format="24" />
+        </FormField>
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).not.toHaveStyleRule('background-color', '#eeeeee');
+    expect(container).not.toHaveStyleRule('background-color', '#dddddd', {
+      modifier: ':hover',
+    });
+  });
+
   test('works correctly nested inside a modal Layer', async () => {
     const user = userEvent.setup();
 
