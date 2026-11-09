@@ -1029,6 +1029,12 @@ export const inputAppearanceStyle = (
   const disabled = props.disabled || props.$inputDisabled;
   const readOnly = props.readOnly || props.readOnlyProp;
   const options = { paddingOnly: !!plain || props.$inputInner, skipPadding };
+  const iconPadding =
+    props.icon && !props.hasActionsGroup
+      ? `padding-${props.reverse ? 'right' : 'left'}: ${getInputIconPad(
+          props,
+        )};`
+      : undefined;
   const legacyBorder = {
     size: props.theme.global.control.border.width,
     color: props.theme.global.control.border.color,
@@ -1053,6 +1059,7 @@ export const inputAppearanceStyle = (
     return css`
       input:not([type='hidden']) {
         ${styles}
+        ${iconPadding}
       }
       ${padSelector &&
       css`
@@ -1074,9 +1081,13 @@ export const inputAppearanceStyle = (
                 ${inputPartStyle({ pad: part.pad }, props, {
                   paddingOnly: true,
                 })}
+                ${iconPadding}
               }
             `,
       );
+    else if (part.pad !== undefined && iconPadding) {
+      stateStyles.push(iconPadding);
+    }
     return stateStyles;
   };
   if (!plain) {

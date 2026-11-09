@@ -125,6 +125,52 @@ describe('TextInput', () => {
       },
     );
 
+    test.each([
+      ['textInput', false],
+      ['textInput', true],
+      ['maskedInput', false],
+      ['maskedInput', true],
+    ] as const)(
+      'preserves the %s icon offset during state padding (reverse=%s)',
+      async (kind, reverse) => {
+        const user = userEvent.setup();
+        const theme: ThemeType = {
+          global: {
+            edgeSize: { large: '28px' },
+            input: {
+              hover: { pad: '4px' },
+              focus: { pad: '6px' },
+            },
+          },
+        };
+        const props = {
+          'aria-label': 'Entry',
+          icon: <Search />,
+          reverse,
+        };
+        const input =
+          kind === 'maskedInput' ? (
+            <MaskedInput {...props} mask={[]} />
+          ) : (
+            <TextInput {...props} />
+          );
+
+        render(<Grommet theme={theme}>{input}</Grommet>);
+
+        const control = screen.getByRole('textbox', { name: 'Entry' });
+        const iconSide = reverse ? 'right' : 'left';
+        await user.hover(control);
+        expect(control).toHaveStyleRule(`padding-${iconSide}`, '28px', {
+          modifier: ':hover',
+        });
+        await user.click(control);
+        expect(control).toHaveFocus();
+        expect(control).toHaveStyleRule(`padding-${iconSide}`, '28px', {
+          modifier: ':focus',
+        });
+      },
+    );
+
     test('disabled input keeps its application state without hover or focus overrides', () => {
       render(
         <Grommet theme={appearanceTheme}>
