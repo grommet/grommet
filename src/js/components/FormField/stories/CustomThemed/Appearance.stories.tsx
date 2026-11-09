@@ -8,6 +8,7 @@ import {
   CheckBox,
   CheckBoxGroup,
   DateInput,
+  DateTimeInput,
   FileInput,
   Form,
   FormField,
@@ -16,10 +17,15 @@ import {
   MaskedInput,
   Paragraph,
   RadioButtonGroup,
+  RangeInput,
+  RangeSelector,
   Select,
   SelectMultiple,
+  StarRating,
   TextArea,
   TextInput,
+  ThumbsRating,
+  TimeInput,
 } from 'grommet';
 import { ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -82,25 +88,28 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
     },
     input: {
       extend: undefined,
-      background: 'lightblue',
-      border: { color: 'red' },
+      background: 'background-front',
+      border: { color: 'border' },
       font: {},
-      pad: { horizontal: 'small', vertical: 'xsmall' },
-      padding: {},
-      round: 'xsmall',
-      placeholder: { color: 'placeholder', weight: 400 },
+      pad: { horizontal: 'xxsmall', vertical: '3xsmall' },
+      // padding: {},
+      round: 'small',
+      placeholder: {
+        color: 'placeholder',
+        // weight: 700
+      },
       // Application states
       disabled: {
-        background: 'background-contrast',
-        border: { color: 'border' },
+        // background: 'background-contrast',
+        // border: { color: 'blue' },
       },
       readOnly: { background: 'background-back', border: { color: 'border' } },
       // Interactive states
       hover: {
-        background: 'background-hover',
+        // background: 'background-hover',
         border: { color: 'border-strong' },
       },
-      focus: { border: { color: 'focus' } },
+      // focus: { border: { color: 'focus' } },
     },
   },
   checkBox: {
@@ -203,6 +212,13 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
     },
     extend: undefined,
   },
+  // These do not seem to apply the global.input defaults like other inputs
+  timeInput: {
+    container: {
+      background: 'background-front',
+    },
+  },
+  dateTimeInput: {},
 });
 
 const AppearanceStory = () => {
@@ -272,6 +288,26 @@ const AppearanceStory = () => {
                     label="Name"
                     help="A generated TextInput uses the shared surface."
                     error={error}
+                  />
+                  <FormField
+                    name="disabled"
+                    id="disabled"
+                    htmlFor="disabled"
+                    label="Name (disabled)"
+                    help="A generated TextInput uses the shared surface."
+                    error={error}
+                    disabled
+                    value="Disabled"
+                  />
+                  <FormField
+                    name="read-only"
+                    id="background-read-only"
+                    htmlFor="background-read-only"
+                    label="Name (read-only)"
+                    help="A generated TextInput uses the shared surface."
+                    error={error}
+                    readOnly
+                    value="Read-only"
                   />
                   <FormField
                     name="notes"
@@ -364,6 +400,11 @@ const AppearanceStory = () => {
                     format="mm/dd/yyyy"
                     placeholder="Select a date"
                   />
+                  <DateTimeInput
+                    name="datetime"
+                    format="12"
+                    placeholder="Select date and time"
+                  />
                   <FileInput name="file" placeholder="Select a file" />
                   <MaskedInput
                     name="phone"
@@ -378,6 +419,13 @@ const AppearanceStory = () => {
                     ]}
                     placeholder="(123) 456-7890"
                   />
+                  <TimeInput
+                    name="time"
+                    format="12"
+                    placeholder="Select a time"
+                  />
+                  <RangeInput name="range" min={0} max={100} step={1} />
+                  <RangeSelector min={0} max={100} step={1} />
                   <CheckBoxGroup
                     aria-label="Notifications"
                     name="notifications"
@@ -390,6 +438,8 @@ const AppearanceStory = () => {
                     options={['Immediately', 'Daily digest']}
                     defaultValue="Daily digest"
                   />
+                  <StarRating name="rating" />
+                  <ThumbsRating name="thumbs" />
                 </Box>
                 <Button type="reset" label="Reset" alignSelf="start" />
               </Box>
