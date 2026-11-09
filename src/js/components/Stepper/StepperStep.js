@@ -169,6 +169,7 @@ export const StepperStep = ({
             <StyledSubStepsList
               forwardedAs="ol"
               isVertical={direction === 'vertical'}
+              cssGap
               stepTheme={stepTheme}
               {...stepTheme?.children}
             >

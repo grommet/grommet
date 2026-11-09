@@ -83,7 +83,7 @@ const StyledStepItem = styled.li.withConfig({
     if (props.direction === 'vertical') {
       const { gap } = props.stepTheme?.container || {};
       const gapValue =
-        gap?.[props.direction === 'vertical' ? 'row' : 'column'] ||
+        gap?.row ||
         gap ||
         '0px';
 
