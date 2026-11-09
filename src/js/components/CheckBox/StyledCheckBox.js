@@ -8,6 +8,7 @@ import {
   edgeStyle,
   elevationStyle,
   focusStyle,
+  hasSideSpecificBorder,
   heightStyle,
   normalizeColor,
   roundStyle,
@@ -36,12 +37,13 @@ const boxPartStyles = (part, props, container = false) => {
   const { theme } = props;
   const responsive = props.responsive ?? true;
   const styles = [];
-  if (part.border !== undefined)
-    styles.push(
-      part.border === false
-        ? 'border: none;'
-        : borderStyle(part.border, responsive, theme),
-    );
+  if (part.border !== undefined) {
+    if (part.border === false) styles.push('border: none;');
+    else {
+      if (hasSideSpecificBorder(part.border)) styles.push('border: none;');
+      styles.push(borderStyle(part.border, responsive, theme));
+    }
+  }
   if (part.elevation !== undefined) styles.push(elevationStyle(part.elevation));
   if (part.height !== undefined) styles.push(heightStyle(part.height, theme));
   if (part.width !== undefined) styles.push(widthStyle(part.width, theme));

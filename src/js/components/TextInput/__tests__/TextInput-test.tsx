@@ -213,6 +213,26 @@ describe('TextInput', () => {
       expect(control).toHaveStyleRule('width', '120px');
     });
 
+    test('side-specific global input border replaces the legacy all-side border', () => {
+      render(
+        <Grommet
+          theme={{
+            global: {
+              input: {
+                border: 'bottom',
+              },
+            },
+          }}
+        >
+          <TextInput aria-label="Entry" />
+        </Grommet>,
+      );
+
+      const control = screen.getByRole('textbox', { name: 'Entry' });
+      expect(control).toHaveStyleRule('border', 'none');
+      expect(control).toHaveStyleRule('border-bottom', expect.any(String));
+    });
+
     test('global input extend remains the final native input override', () => {
       render(
         <Grommet

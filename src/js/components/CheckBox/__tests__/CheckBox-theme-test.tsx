@@ -268,6 +268,26 @@ describe('CheckBox theme', () => {
     expect(control).not.toHaveStyleRule('border', 'solid 1px #abcdef');
   });
 
+  test('side-specific control border replaces the all-side border', () => {
+    render(
+      <Grommet
+        theme={{
+          checkBox: {
+            control: {
+              border: { side: 'bottom', size: '2px', color: '#123456' },
+            },
+          },
+        }}
+      >
+        <CheckBox label="Option" />
+      </Grommet>,
+    );
+
+    const { control } = getControl();
+    expect(control).toHaveStyleRule('border', 'none');
+    expect(control).toHaveStyleRule('border-bottom', 'solid 2px #123456');
+  });
+
   test('hover partial border preserves side-string geometry', async () => {
     const user = userEvent.setup();
     render(
@@ -289,6 +309,9 @@ describe('CheckBox theme', () => {
     const { label } = getControl();
     await user.hover(screen.getByText('Option'));
     expect(label).toHaveStyleRule('border-left', 'solid 1px #abcdef', {
+      modifier: `:hover ${controlSelector}`,
+    });
+    expect(label).toHaveStyleRule('border', 'none', {
       modifier: `:hover ${controlSelector}`,
     });
     expect(label).not.toHaveStyleRule('border', 'solid 1px #abcdef', {

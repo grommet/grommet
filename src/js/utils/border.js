@@ -4,6 +4,14 @@ import { css } from 'styled-components';
 import { normalizeColor } from './colors';
 import { breakpointStyle } from './mixins';
 
+export const hasSideSpecificBorder = (borderData) => {
+  const borders = Array.isArray(borderData) ? borderData : [borderData];
+  return borders.some((data) => {
+    const side = typeof data === 'string' ? data : data?.side;
+    return side !== undefined && side !== 'all';
+  });
+};
+
 export const responsiveBorderStyle = (data, theme) => {
   const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';

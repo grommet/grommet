@@ -2727,6 +2727,56 @@ describe('TimeInput', () => {
     expect(hourSegment).not.toHaveStyleRule('padding-bottom', '3px');
   });
 
+  test('applies canonical and hover input padding to the visible display', async () => {
+    const user = userEvent.setup();
+    const theme: ThemeType = {
+      global: {
+        input: {
+          pad: { horizontal: '5px', vertical: '7px' },
+          hover: { pad: { horizontal: '9px', vertical: '11px' } },
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const display = screen.getByRole('group');
+    const container = getInputContainer();
+    expect(getComputedStyle(display).paddingLeft).toBe('5px');
+    expect(getComputedStyle(display).paddingTop).toBe('7px');
+
+    await user.hover(display);
+    expect(container).toHaveStyleRule('padding-left', '9px', {
+      modifier: ':hover [role="group"]',
+    });
+    expect(container).toHaveStyleRule('padding-top', '11px', {
+      modifier: ':hover [role="group"]',
+    });
+  });
+
+  test('timeInput.value.pad overrides global input padding on the display', () => {
+    render(
+      <Grommet
+        theme={{
+          global: { input: { pad: { horizontal: '5px', vertical: '7px' } } },
+          timeInput: {
+            value: { pad: { horizontal: '2px', vertical: '3px' } },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const display = screen.getByRole('group');
+    expect(getComputedStyle(display).paddingLeft).toBe('2px');
+    expect(getComputedStyle(display).paddingTop).toBe('3px');
+  });
+
   test('updates displayed value when picking a new hour from the popup after a single-digit keystroke', async () => {
     const user = userEvent.setup();
 

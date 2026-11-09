@@ -3,7 +3,10 @@
 import { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { backgroundStyle } from './background';
-import { borderStyle as inputBorderStyle } from './border';
+import {
+  borderStyle as inputBorderStyle,
+  hasSideSpecificBorder,
+} from './border';
 import { isObject } from './object';
 import { normalizeColor } from './colors';
 import { getBreakpointStyle } from './responsive';
@@ -969,12 +972,13 @@ const inputPartStyle = (part, props, { paddingOnly, skipPadding } = {}) => {
   if (paddingOnly) return styles;
   if (part.background !== undefined)
     styles.push(backgroundStyle(part.background, theme, false));
-  if (part.border !== undefined)
-    styles.push(
-      part.border === false
-        ? 'border: none;'
-        : inputBorderStyle(part.border, responsive, theme),
-    );
+  if (part.border !== undefined) {
+    if (part.border === false) styles.push('border: none;');
+    else {
+      if (hasSideSpecificBorder(part.border)) styles.push('border: none;');
+      styles.push(inputBorderStyle(part.border, responsive, theme));
+    }
+  }
   if (part.elevation !== undefined) styles.push(elevationStyle(part.elevation));
   if (part.height !== undefined) styles.push(heightStyle(part.height, theme));
   if (
@@ -1014,7 +1018,7 @@ const mergeInputBorder = (base, override) => {
 
 export const inputAppearanceStyle = (
   props,
-  { wrapper = false, skipPadding = false } = {},
+  { wrapper = false, skipPadding = false, padSelector } = {},
 ) => {
   const { input } = props.theme.global;
   const plain = wrapper
@@ -1044,15 +1048,35 @@ export const inputAppearanceStyle = (
       props,
       options,
     );
+  const padStyle = (pad) => {
+    const styles = inputPartStyle({ pad }, props, { paddingOnly: true });
+    return css`
+      input:not([type='hidden']) {
+        ${styles}
+      }
+      ${padSelector &&
+      css`
+        ${padSelector} {
+          ${styles}
+        }
+      `}
+    `;
+  };
   const styles = partStyle(input);
   const stateStyle = (part) => {
     const stateStyles = partStyle(part);
     if (wrapper && skipPadding && part.pad !== undefined)
-      stateStyles.push(css`
-        input:not([type='hidden']) {
-          ${inputPartStyle({ pad: part.pad }, props, { paddingOnly: true })}
-        }
-      `);
+      stateStyles.push(
+        padSelector
+          ? padStyle(part.pad)
+          : css`
+              input:not([type='hidden']) {
+                ${inputPartStyle({ pad: part.pad }, props, {
+                  paddingOnly: true,
+                })}
+              }
+            `,
+      );
     return stateStyles;
   };
   if (!plain) {
