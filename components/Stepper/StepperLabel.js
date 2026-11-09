@@ -3,40 +3,28 @@
 exports.__esModule = true;
 exports.StepperLabel = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _Text = require("../Text");
 var _StepperContext = require("./StepperContext");
-var _StepperIndicator = require("./StepperIndicator");
-var _useThemeValue2 = require("../../utils/useThemeValue");
+var _utils = require("./utils");
+var _StyledStepper = require("./StyledStepper");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-var getStateProps = function getStateProps(theme, effectiveState) {
-  var _theme$stepper;
-  return ((_theme$stepper = theme.stepper) == null || (_theme$stepper = _theme$stepper[effectiveState]) == null ? void 0 : _theme$stepper.label) || {};
-};
 var StepperLabel = exports.StepperLabel = function StepperLabel(_ref) {
-  var _step$children, _theme$stepper2, _theme$stepper3;
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   var _useStepper = (0, _StepperContext.useStepper)(),
-    currentStep = _useStepper.currentStep,
+    clickableSteps = _useStepper.clickableSteps,
     direction = _useStepper.direction;
-  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
-    theme = _useThemeValue.theme;
   var _useStepItem = (0, _StepperContext.useStepItem)(),
     step = _useStepItem.step,
     isSubStep = _useStepItem.isSubStep;
+  var stepTheme = (0, _utils.useStepTheme)(step, isSubStep);
   if (!step) return null;
-  var isCurrent = currentStep === step.id;
-  var hasCurrentChild = !isSubStep && ((_step$children = step.children) == null ? void 0 : _step$children.some(function (c) {
-    return c.id === currentStep;
-  }));
-  var isHighlighted = isCurrent || hasCurrentChild;
-  var effectiveState = (0, _StepperIndicator.getEffectiveState)(step.status, isHighlighted);
-  var stateProps = getStateProps(theme, effectiveState);
-  var size = isSubStep ? ((_theme$stepper2 = theme.stepper) == null || (_theme$stepper2 = _theme$stepper2.label) == null || (_theme$stepper2 = _theme$stepper2.substep) == null ? void 0 : _theme$stepper2.size) || 'small' : ((_theme$stepper3 = theme.stepper) == null || (_theme$stepper3 = _theme$stepper3.label) == null ? void 0 : _theme$stepper3.size) || 'medium';
-  return /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
-    size: size,
-    truncate: direction === 'horizontal'
-  }, stateProps, rest), step.title);
+  var isDisabled = step.status === 'disabled';
+  var isClickable = clickableSteps && !isDisabled;
+  return /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledStepLabel, _extends({}, stepTheme.label, {
+    truncate: direction === 'horizontal',
+    stepTheme: stepTheme,
+    isClickable: isClickable
+  }, rest), step.title);
 };

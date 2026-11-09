@@ -3,36 +3,24 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-import { Text } from '../Text';
 import { useStepper, useStepItem } from './StepperContext';
-import { getEffectiveState } from './StepperIndicator';
-import { useThemeValue } from '../../utils/useThemeValue';
-var getStateProps = function getStateProps(theme, effectiveState) {
-  var _theme$stepper;
-  return ((_theme$stepper = theme.stepper) == null || (_theme$stepper = _theme$stepper[effectiveState]) == null ? void 0 : _theme$stepper.label) || {};
-};
+import { useStepTheme } from './utils';
+import { StyledStepLabel } from './StyledStepper';
 export var StepperLabel = function StepperLabel(_ref) {
-  var _step$children, _theme$stepper2, _theme$stepper3;
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   var _useStepper = useStepper(),
-    currentStep = _useStepper.currentStep,
+    clickableSteps = _useStepper.clickableSteps,
     direction = _useStepper.direction;
-  var _useThemeValue = useThemeValue(),
-    theme = _useThemeValue.theme;
   var _useStepItem = useStepItem(),
     step = _useStepItem.step,
     isSubStep = _useStepItem.isSubStep;
+  var stepTheme = useStepTheme(step, isSubStep);
   if (!step) return null;
-  var isCurrent = currentStep === step.id;
-  var hasCurrentChild = !isSubStep && ((_step$children = step.children) == null ? void 0 : _step$children.some(function (c) {
-    return c.id === currentStep;
-  }));
-  var isHighlighted = isCurrent || hasCurrentChild;
-  var effectiveState = getEffectiveState(step.status, isHighlighted);
-  var stateProps = getStateProps(theme, effectiveState);
-  var size = isSubStep ? ((_theme$stepper2 = theme.stepper) == null || (_theme$stepper2 = _theme$stepper2.label) == null || (_theme$stepper2 = _theme$stepper2.substep) == null ? void 0 : _theme$stepper2.size) || 'small' : ((_theme$stepper3 = theme.stepper) == null || (_theme$stepper3 = _theme$stepper3.label) == null ? void 0 : _theme$stepper3.size) || 'medium';
-  return /*#__PURE__*/React.createElement(Text, _extends({
-    size: size,
-    truncate: direction === 'horizontal'
-  }, stateProps, rest), step.title);
+  var isDisabled = step.status === 'disabled';
+  var isClickable = clickableSteps && !isDisabled;
+  return /*#__PURE__*/React.createElement(StyledStepLabel, _extends({}, stepTheme.label, {
+    truncate: direction === 'horizontal',
+    stepTheme: stepTheme,
+    isClickable: isClickable
+  }, rest), step.title);
 };

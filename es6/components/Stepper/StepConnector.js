@@ -5,7 +5,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useStepper, useStepItem } from './StepperContext';
 import { StyledConnector } from './StyledStepper';
+import { useStepTheme } from './utils';
 var StyledStepConnectorGroup = styled.div.withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
     return isPropValid(prop) && prop !== 'direction';
@@ -17,17 +19,23 @@ var StyledStepConnectorGroup = styled.div.withConfig({
   return props.direction === 'horizontal' && css(["align-items:center;"]);
 });
 export var StepConnector = function StepConnector(_ref) {
-  var step = _ref.step,
-    direction = _ref.direction,
-    children = _ref.children;
+  var children = _ref.children;
+  var _useStepper = useStepper(),
+    direction = _useStepper.direction;
   var _useThemeValue = useThemeValue(),
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var _useStepItem = useStepItem(),
+    step = _useStepItem.step,
+    isSubStep = _useStepItem.isSubStep;
+  var stepTheme = useStepTheme(step, isSubStep);
+  if (!step) return null;
   return /*#__PURE__*/React.createElement(StyledStepConnectorGroup, _extends({
     direction: direction
   }, passThemeFlag), /*#__PURE__*/React.createElement(StyledConnector, _extends({
     direction: direction,
     status: step.status,
     "aria-hidden": "true",
-    isBetween: true
+    isBetween: true,
+    stepTheme: stepTheme
   }, passThemeFlag)), children);
 };

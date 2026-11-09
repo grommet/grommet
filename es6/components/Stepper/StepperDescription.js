@@ -5,19 +5,17 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import React from 'react';
 import { Text } from '../Text';
 import { useStepper, useStepItem } from './StepperContext';
-import { useThemeValue } from '../../utils/useThemeValue';
+import { useStepTheme } from './utils';
 export var StepperDescription = function StepperDescription(_ref) {
-  var _theme$stepper;
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   var _useStepper = useStepper(),
     direction = _useStepper.direction;
-  var _useThemeValue = useThemeValue(),
-    theme = _useThemeValue.theme;
   var _useStepItem = useStepItem(),
-    step = _useStepItem.step;
+    step = _useStepItem.step,
+    isSubStep = _useStepItem.isSubStep;
+  var stepTheme = useStepTheme(step, isSubStep);
   if (!step || !step.description) return null;
-  var descriptionProps = (_theme$stepper = theme.stepper) == null ? void 0 : _theme$stepper.description;
-  return /*#__PURE__*/React.createElement(Text, _extends({}, descriptionProps, {
+  return /*#__PURE__*/React.createElement(Text, _extends({
     truncate: direction === 'horizontal'
-  }, rest), step.description);
+  }, stepTheme.description, rest), step.description);
 };

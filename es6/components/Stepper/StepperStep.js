@@ -11,6 +11,7 @@ import { StepperDescription } from './StepperDescription';
 import { StepperError, StepperDisabledReason } from './StepperHelperText';
 import { StepConnector } from './StepConnector';
 import { StyledStepItem, StyledStepButton, StyledStepContent, StyledConnector, StyledSubStepsList } from './StyledStepper';
+import { useStepTheme } from './utils';
 export var StepperStep = function StepperStep(_ref) {
   var _step$children, _step$children2, _step$children$find, _stepsRef$current;
   var step = _ref.step,
@@ -51,6 +52,7 @@ export var StepperStep = function StepperStep(_ref) {
   var isNavigable = !isDisabled && !!navigationStepId;
   var isClickable = clickableSteps && isNavigable;
   var isReadOnly = !clickableSteps;
+  var stepTheme = useStepTheme(step, isSubStep);
   var stepItemValue = useMemo(function () {
     return {
       step: step,
@@ -63,14 +65,6 @@ export var StepperStep = function StepperStep(_ref) {
   var handleClick = function handleClick() {
     if (isClickable && navigationStepId && onStepClick) {
       onStepClick(navigationStepId);
-    }
-  };
-  var handleKeyDown = function handleKeyDown(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      if (isClickable && navigationStepId && onStepClick) {
-        onStepClick(navigationStepId);
-      }
     }
   };
   var totalSteps = ((_stepsRef$current = stepsRef.current) == null ? void 0 : _stepsRef$current.length) || stepNumber;
@@ -89,19 +83,23 @@ export var StepperStep = function StepperStep(_ref) {
   if (step.disabledReason && step.status === 'disabled') {
     describedBy.push("stepper-reason-" + step.id);
   }
-  var focusableProps = isReadOnly ?
-  // null rather than undefined, so Button's `type = 'button'` default
-  // parameter doesn't put a type attribute on the rendered div
-  {
-    type: null
-  } : {
+  var focusableProps = isReadOnly ? {} : {
+    forwardedAs: 'button',
+    type: 'button',
+    background: 'none',
+    border: {
+      size: '0px'
+    },
     tabIndex: focusedIndex === index ? 0 : -1,
-    onClick: handleClick,
-    onKeyDown: handleKeyDown,
+    onClick: function onClick(event) {
+      if (event.type === 'keydown') event.preventDefault();
+      handleClick();
+    },
+    // indicator provides focus-visible treatment; avoid a second ring
+    focusIndicator: false,
     onFocus: function onFocus() {
       if (onFocusStep) onFocusStep(index);
-    },
-    type: 'button'
+    }
   };
   return /*#__PURE__*/React.createElement(StepItemContext.Provider, {
     value: stepItemValue
@@ -109,13 +107,9 @@ export var StepperStep = function StepperStep(_ref) {
     direction: direction,
     isSubStep: isSubStep,
     isLast: isLast,
-    hasSubSteps: !!(subSteps != null && subSteps.length)
+    hasSubSteps: !!(subSteps != null && subSteps.length),
+    stepTheme: stepTheme
   }, passThemeFlag), /*#__PURE__*/React.createElement(StyledStepButton, _extends({
-    plain: true
-    // indicator provides focus-visible treatment; avoid a second ring
-    ,
-    focusIndicator: false,
-    forwardedAs: isReadOnly ? 'div' : 'button',
     role: isReadOnly ? 'group' : undefined,
     ref: function ref(el) {
       if (stepRefs) {
@@ -125,23 +119,22 @@ export var StepperStep = function StepperStep(_ref) {
     "aria-current": isHighlighted ? 'step' : undefined,
     "aria-disabled": isDisabled || clickableSteps && !isNavigable || undefined,
     "aria-label": ariaLabel,
-    "aria-describedby": describedBy.length > 0 ? describedBy.join(' ') : undefined,
-    isClickable: isClickable,
-    isDisabled: isDisabled,
+    "aria-describedby": describedBy.length > 0 ? describedBy.join(' ') : undefined
+  }, focusableProps, stepTheme.button), /*#__PURE__*/React.createElement(StepperIndicator, null), /*#__PURE__*/React.createElement(StyledStepContent, {
+    align: direction === 'vertical' ? 'start' : 'center',
+    isVertical: direction === 'vertical',
     isSubStep: isSubStep,
-    direction: direction
-  }, focusableProps), /*#__PURE__*/React.createElement(StepperIndicator, null), /*#__PURE__*/React.createElement(StyledStepContent, _extends({
-    direction: direction,
-    isSubStep: isSubStep,
-    hasDescription: !!step.description
-  }, passThemeFlag), /*#__PURE__*/React.createElement(StepperLabel, null), showDescription && /*#__PURE__*/React.createElement(StepperDescription, null), /*#__PURE__*/React.createElement(StepperError, null), /*#__PURE__*/React.createElement(StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) && !(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StyledConnector, _extends({
+    hasDescription: !!step.description,
+    stepTheme: stepTheme
+  }, /*#__PURE__*/React.createElement(StepperLabel, null), showDescription && /*#__PURE__*/React.createElement(StepperDescription, null), /*#__PURE__*/React.createElement(StepperError, null), /*#__PURE__*/React.createElement(StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) && !(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StyledConnector, _extends({
     direction: direction,
     status: step.status,
-    "aria-hidden": "true"
-  }, passThemeFlag)), !!(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StepConnector, {
-    step: step,
-    direction: direction
-  }, /*#__PURE__*/React.createElement(StyledSubStepsList, _extends({
-    direction: direction
-  }, passThemeFlag), subSteps))));
+    "aria-hidden": "true",
+    stepTheme: stepTheme
+  }, passThemeFlag)), !!(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StepConnector, null, /*#__PURE__*/React.createElement(StyledSubStepsList, _extends({
+    forwardedAs: "ol",
+    isVertical: direction === 'vertical',
+    cssGap: true,
+    stepTheme: stepTheme
+  }, stepTheme == null ? void 0 : stepTheme.children), subSteps))));
 };

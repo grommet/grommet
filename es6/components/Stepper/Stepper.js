@@ -1,4 +1,5 @@
-var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "errorAnnouncement", "onStepClick", "aria-label", "children", "id"];
+var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "errorAnnouncement", "onStepClick", "aria-label", "children", "id"],
+  _excluded2 = ["gap"];
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
@@ -6,10 +7,12 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
+import { useThemeValue } from '../../utils/useThemeValue';
 import { Keyboard } from '../Keyboard';
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
+import { resolveStepperTheme } from './utils';
 
 // Flattens steps with parent/child relationships into a linear list
 // for keyboard navigation and index-based tracking.
@@ -97,6 +100,8 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
+  var _useThemeValue = useThemeValue(),
+    theme = _useThemeValue.theme;
   var stepRefs = useRef(new Map());
   var allSteps = useMemo(function () {
     return flattenSteps(steps);
@@ -338,6 +343,13 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
     return elements;
   };
+  var stepperTheme = resolveStepperTheme(theme, direction);
+
+  // Extract gap from stepperTheme.container. It will be handled
+  // by the Step for now.
+  var _ref2 = stepperTheme.container || {},
+    gap = _ref2.gap,
+    containerProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   var stepperContent = /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref,
     as: "ol",
@@ -347,13 +359,13 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
     direction: direction === 'horizontal' ? 'row' : 'column',
     fill: direction,
     id: id,
-    overflow: "hidden",
+    overflow: "visible",
     pad: "none",
     margin: "none",
     style: {
       listStyle: 'none'
     }
-  }, rest), children || renderDefaultSteps());
+  }, containerProps, rest), children || renderDefaultSteps());
   return /*#__PURE__*/React.createElement(StepperContext.Provider, {
     value: contextValue
   }, clickableSteps ? /*#__PURE__*/React.createElement(Keyboard, {

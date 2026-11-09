@@ -1,11 +1,18 @@
+var _excluded = ["color", "icon", "iconSize", "size"];
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _objectDestructuringEmpty(t) { if (null == t) throw new TypeError("Cannot destructure " + t); }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useStepTheme } from './utils';
 import { useStepper, useStepItem } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
+var getMetricSize = function getMetricSize(theme, size) {
+  var _theme$global;
+  return ((_theme$global = theme.global) == null || (_theme$global = _theme$global.edgeSize) == null ? void 0 : _theme$global[size]) || size;
+};
 var renderIcon = function renderIcon(Icon, props) {
   if (!Icon) return null;
   var iconProps = _extends({
@@ -20,25 +27,9 @@ var renderIcon = function renderIcon(Icon, props) {
     "aria-hidden": true
   }));
 };
-
-// Maps step status + current position to a visual state
-// used by both the indicator and label components.
-function getEffectiveState(status, isCurrent) {
-  if (status === 'disabled') return 'disabled';
-  if (isCurrent) {
-    if (status === 'completed') return 'currentCompleted';
-    if (status === 'error') return 'currentError';
-    return 'current';
-  }
-  if (status === 'completed') return 'completed';
-  if (status === 'error') return 'error';
-  return 'pending';
-}
 export var StepperIndicator = function StepperIndicator(_ref) {
-  var _step$children, _theme$stepper, _stateTheme, _stateTheme2;
   var rest = _extends({}, (_objectDestructuringEmpty(_ref), _ref));
   var _useStepper = useStepper(),
-    currentStep = _useStepper.currentStep,
     clickableSteps = _useStepper.clickableSteps;
   var _useThemeValue = useThemeValue(),
     theme = _useThemeValue.theme,
@@ -47,25 +38,37 @@ export var StepperIndicator = function StepperIndicator(_ref) {
     step = _useStepItem.step,
     isSubStep = _useStepItem.isSubStep,
     isDisabled = _useStepItem.isDisabled;
+  var stepTheme = useStepTheme(step, isSubStep);
   if (!step) return null;
-  var isCurrent = currentStep === step.id;
-  var hasCurrentChild = !isSubStep && ((_step$children = step.children) == null ? void 0 : _step$children.some(function (c) {
-    return c.id === currentStep;
-  }));
-  var isHighlighted = isCurrent || hasCurrentChild;
-  var effectiveState = getEffectiveState(step.status, isHighlighted);
-  var stateTheme = ((_theme$stepper = theme.stepper) == null || (_theme$stepper = _theme$stepper[effectiveState]) == null ? void 0 : _theme$stepper.indicator) || {};
-  if (isSubStep && stateTheme.substep) {
-    stateTheme = _extends({}, stateTheme, stateTheme.substep);
-  }
   var isClickable = clickableSteps && !isDisabled;
-  var iconSize = ((_stateTheme = stateTheme) == null ? void 0 : _stateTheme.iconSize) || (isSubStep ? 'xsmall' : 'small');
+
+  // grab the icon pieces and size. Size will be handled
+  // in the StyledIndicator component but we pull it out
+  // here to leave other props as boxProps
+  var indicatorTheme = (stepTheme == null ? void 0 : stepTheme.indicator) || {};
+  var color = indicatorTheme.color,
+    icon = indicatorTheme.icon,
+    iconSize = indicatorTheme.iconSize,
+    size = indicatorTheme.size,
+    boxProps = _objectWithoutPropertiesLoose(indicatorTheme, _excluded);
+
+  // Convert the icon-related size to a width and height for a box.
+  // T-shirt sizes for Box are
+  var indicatorSizeToken = (indicatorTheme == null ? void 0 : indicatorTheme.size) || 'medium';
+  var sizeMetric = getMetricSize(theme, indicatorSizeToken);
   return /*#__PURE__*/React.createElement(StyledIndicator, _extends({
-    effectiveState: effectiveState,
-    isSubStep: isSubStep,
-    isClickable: isClickable
-  }, passThemeFlag, rest), renderIcon((_stateTheme2 = stateTheme) == null ? void 0 : _stateTheme2.icon, {
+    stepTheme: stepTheme,
+    flex: false,
+    isClickable: isClickable,
+    width: {
+      width: sizeMetric,
+      max: sizeMetric
+    },
+    height: {
+      height: sizeMetric,
+      max: sizeMetric
+    }
+  }, boxProps, passThemeFlag, rest), renderIcon(icon, {
     size: iconSize
   }));
 };
-export { getEffectiveState };

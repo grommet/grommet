@@ -7,21 +7,21 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 import React from 'react';
 import { Text } from '../Text';
 import { useStepItem, useStepper } from './StepperContext';
-import { useThemeValue } from '../../utils/useThemeValue';
+import { useStepTheme } from './utils';
 var StepperHelperText = function StepperHelperText(_ref) {
-  var _theme$stepper, _theme$stepper2;
   var variant = _ref.variant,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
-  var _useThemeValue = useThemeValue(),
-    theme = _useThemeValue.theme;
-  var helperTextProps = (_theme$stepper = theme.stepper) == null ? void 0 : _theme$stepper.helperText;
-  var variantProps = variant ? ((_theme$stepper2 = theme.stepper) == null || (_theme$stepper2 = _theme$stepper2[variant]) == null ? void 0 : _theme$stepper2.helperText) || {} : {};
-  return /*#__PURE__*/React.createElement(Text, _extends({}, helperTextProps, variantProps, rest));
+  var _useStepItem = useStepItem(),
+    step = _useStepItem.step,
+    isSubStep = _useStepItem.isSubStep;
+  var stepTheme = useStepTheme(step, isSubStep);
+  if (!step) return null;
+  return /*#__PURE__*/React.createElement(Text, _extends({}, stepTheme[variant], rest));
 };
 export var StepperError = function StepperError(_ref2) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref2), _ref2));
-  var _useStepItem = useStepItem(),
-    step = _useStepItem.step;
+  var _useStepItem2 = useStepItem(),
+    step = _useStepItem2.step;
   var _useStepper = useStepper(),
     errorAnnouncement = _useStepper.errorAnnouncement;
   if (!step || step.status !== 'error' || !step.errorMessage) return null;
@@ -31,16 +31,16 @@ export var StepperError = function StepperError(_ref2) {
   return /*#__PURE__*/React.createElement(StepperHelperText, _extends({
     id: "stepper-error-" + step.id,
     role: role,
-    variant: "error"
+    variant: "errorText"
   }, rest), step.errorMessage);
 };
 export var StepperDisabledReason = function StepperDisabledReason(_ref3) {
   var rest = _extends({}, (_objectDestructuringEmpty(_ref3), _ref3));
-  var _useStepItem2 = useStepItem(),
-    step = _useStepItem2.step;
+  var _useStepItem3 = useStepItem(),
+    step = _useStepItem3.step;
   if (!step || step.status !== 'disabled' || !step.disabledReason) return null;
   return /*#__PURE__*/React.createElement(StepperHelperText, _extends({
     id: "stepper-reason-" + step.id,
-    variant: "disabled"
+    variant: "disabledReason"
   }, rest), step.disabledReason);
 };

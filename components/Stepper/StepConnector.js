@@ -6,7 +6,9 @@ var _react = _interopRequireDefault(require("react"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _useThemeValue2 = require("../../utils/useThemeValue");
+var _StepperContext = require("./StepperContext");
 var _StyledStepper = require("./StyledStepper");
+var _utils = require("./utils");
 var cache;
 function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -23,17 +25,23 @@ var StyledStepConnectorGroup = _styledComponents["default"].div.withConfig({
   return props.direction === 'horizontal' && (0, _styledComponents.css)(["align-items:center;"]);
 });
 var StepConnector = exports.StepConnector = function StepConnector(_ref) {
-  var step = _ref.step,
-    direction = _ref.direction,
-    children = _ref.children;
+  var children = _ref.children;
+  var _useStepper = (0, _StepperContext.useStepper)(),
+    direction = _useStepper.direction;
   var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var _useStepItem = (0, _StepperContext.useStepItem)(),
+    step = _useStepItem.step,
+    isSubStep = _useStepItem.isSubStep;
+  var stepTheme = (0, _utils.useStepTheme)(step, isSubStep);
+  if (!step) return null;
   return /*#__PURE__*/_react["default"].createElement(StyledStepConnectorGroup, _extends({
     direction: direction
   }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledConnector, _extends({
     direction: direction,
     status: step.status,
     "aria-hidden": "true",
-    isBetween: true
+    isBetween: true,
+    stepTheme: stepTheme
   }, passThemeFlag)), children);
 };

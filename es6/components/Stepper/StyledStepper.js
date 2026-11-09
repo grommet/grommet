@@ -1,34 +1,59 @@
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 import isPropValid from '@emotion/is-prop-valid';
-import { focusStyle, normalizeColor, styledComponentsConfig } from '../../utils';
-import { Button } from '../Button';
+import { backgroundStyle, borderStyle, focusStyle, normalizeColor, styledComponentsConfig, heightStyle, widthStyle, edgeStyle, elevationStyle, roundStyle } from '../../utils';
+import { Box } from '../Box';
+import { Text } from '../Text';
+var getIconSize = function getIconSize(theme, size) {
+  var _theme$global;
+  return ((_theme$global = theme.global) == null || (_theme$global = _theme$global.edgeSize) == null ? void 0 : _theme$global[size]) || size;
+};
 var getMetricSize = function getMetricSize(theme, size) {
-  var _theme$global, _theme$global2;
-  return ((_theme$global = theme.global) == null || (_theme$global = _theme$global.edgeSize) == null ? void 0 : _theme$global[size]) || ((_theme$global2 = theme.global) == null || (_theme$global2 = _theme$global2.size) == null ? void 0 : _theme$global2[size]) || size;
+  var _theme$global2, _theme$global3;
+  return ((_theme$global2 = theme.global) == null || (_theme$global2 = _theme$global2.edgeSize) == null ? void 0 : _theme$global2[size]) || ((_theme$global3 = theme.global) == null || (_theme$global3 = _theme$global3.size) == null ? void 0 : _theme$global3[size]) || size;
+};
+var getPadSize = function getPadSize(theme, pad, side) {
+  var _theme$global4;
+  if (pad === void 0) {
+    pad = 'xxsmall';
+  }
+  var value = pad;
+  if (typeof pad === 'object' && pad !== null) {
+    var _ref, _ref2, _pad$logicalSide;
+    var axis = side === 'top' || side === 'bottom' ? 'vertical' : 'horizontal';
+    var logicalSide;
+    if (side === 'left') logicalSide = theme.dir === 'rtl' ? 'end' : 'start';
+    if (side === 'right') logicalSide = theme.dir === 'rtl' ? 'start' : 'end';
+
+    // Match Box's edgeStyle: logical sides override physical sides and axes.
+    value = (_ref = (_ref2 = (_pad$logicalSide = pad[logicalSide]) != null ? _pad$logicalSide : pad[side]) != null ? _ref2 : pad[axis]) != null ? _ref : 'none';
+  }
+  return ((_theme$global4 = theme.global) == null || (_theme$global4 = _theme$global4.edgeSize) == null ? void 0 : _theme$global4[value]) || (value === 'none' ? '0px' : value);
 };
 var getTextMetric = function getTextMetric(theme, size, metric) {
   var _theme$text, _theme$text2;
   return ((_theme$text = theme.text) == null || (_theme$text = _theme$text[size]) == null ? void 0 : _theme$text[metric]) || ((_theme$text2 = theme.text) == null || (_theme$text2 = _theme$text2.medium) == null ? void 0 : _theme$text2[metric]);
 };
 var getBorderWidth = function getBorderWidth(theme, size) {
-  var _theme$global3, _theme$global4;
-  return ((_theme$global3 = theme.global) == null || (_theme$global3 = _theme$global3.borderSize) == null ? void 0 : _theme$global3[size]) || size || ((_theme$global4 = theme.global) == null || (_theme$global4 = _theme$global4.borderSize) == null ? void 0 : _theme$global4.xsmall);
+  var _theme$global5, _theme$global6;
+  return ((_theme$global5 = theme.global) == null || (_theme$global5 = _theme$global5.borderSize) == null ? void 0 : _theme$global5[size]) || size || ((_theme$global6 = theme.global) == null || (_theme$global6 = _theme$global6.borderSize) == null ? void 0 : _theme$global6.xsmall);
 };
-var getSubStepSizeToken = function getSubStepSizeToken(indicatorSize) {
-  switch (indicatorSize) {
-    case 'large':
-      return 'small';
-    case 'small':
-      return 'xsmall';
-    default:
-      return 'small';
+var adjustHoverColor = function adjustHoverColor(color, theme) {
+  return "color-mix(in srgb, " + normalizeColor(color, theme) + " 90%, " + (theme.dark ? 'white' : 'black') + " 10%)";
+};
+var sizeStyle = function sizeStyle(sizeProp, theme) {
+  var size = sizeProp || 'medium';
+  var data = theme.text[size];
+  if (data) {
+    return css(["font-size:", ";line-height:", ";"], data.size, data.height);
   }
+  return css(["font-size:", ";line-height:normal;"], size);
 };
-var getConnectorColor = function getConnectorColor(stepStatus, theme) {
-  var _theme$stepper;
-  return normalizeColor(((_theme$stepper = theme.stepper) == null || (_theme$stepper = _theme$stepper[stepStatus]) == null || (_theme$stepper = _theme$stepper.connector) == null ? void 0 : _theme$stepper.color) || 'border', theme);
+var iconSizeStyle = function iconSizeStyle(sizeProp, theme) {
+  var size = getIconSize(theme, sizeProp);
+  return css(["width:", ";max-width:", ";height:", ";max-height:", ";"], size, size, size, size);
 };
 var StyledStepItem = styled.li.withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
@@ -39,9 +64,13 @@ var StyledStepItem = styled.li.withConfig({
   componentId: "sc-gmpe0p-0"
 })(["display:flex;position:relative;", ""], function (props) {
   if (props.direction === 'vertical') {
+    var _props$stepTheme;
+    var _ref3 = ((_props$stepTheme = props.stepTheme) == null ? void 0 : _props$stepTheme.container) || {},
+      gap = _ref3.gap;
+    var gapValue = (gap == null ? void 0 : gap.row) || gap || '0px';
     var paddingBottom = '0px';
     if (!props.isSubStep && !props.isLast && !props.hasSubSteps) {
-      paddingBottom = "" + props.theme.global.edgeSize.medium;
+      paddingBottom = getMetricSize(props.theme, gapValue);
     }
     return css(["flex-direction:column;align-items:flex-start;padding-bottom:", ";"], paddingBottom);
   }
@@ -51,115 +80,119 @@ var StyledStepItem = styled.li.withConfig({
   }
   return css(["flex-direction:column;align-items:center;flex:1;min-width:0;overflow:visible;"]);
 });
-
-// Button is rendered `plain`, which already clears border, outline and padding.
-// `direction` is stripped because isPropValid lets it reach the DOM.
-var StyledStepButton = styled(Button).withConfig({
-  shouldForwardProp: function shouldForwardProp(prop) {
-    return prop !== 'direction';
-  }
-}).withConfig({
+var StyledStepButton = styled(Box).withConfig({
   displayName: "StyledStepper__StyledStepButton",
   componentId: "sc-gmpe0p-1"
-})(["display:flex;padding:", ";cursor:", ";", ""], function (props) {
-  var _props$theme$global, _props$theme$stepper;
-  return (_props$theme$global = props.theme.global) == null || (_props$theme$global = _props$theme$global.edgeSize) == null ? void 0 : _props$theme$global[((_props$theme$stepper = props.theme.stepper) == null || (_props$theme$stepper = _props$theme$stepper.button) == null ? void 0 : _props$theme$stepper.pad) || 'xxsmall'];
-}, function (props) {
-  return props.isClickable ? 'pointer' : 'default';
-}, function (props) {
-  var _props$theme$global2, _props$theme$stepper2, _props$theme$global3, _props$theme$stepper3;
-  return props.direction === 'vertical' ? css(["flex-direction:row;align-items:flex-start;gap:", ";text-align:left;"], (_props$theme$global2 = props.theme.global) == null || (_props$theme$global2 = _props$theme$global2.edgeSize) == null ? void 0 : _props$theme$global2[((_props$theme$stepper2 = props.theme.stepper) == null || (_props$theme$stepper2 = _props$theme$stepper2.vertical) == null || (_props$theme$stepper2 = _props$theme$stepper2.button) == null ? void 0 : _props$theme$stepper2.gap) || 'small']) : css(["flex-direction:column;align-items:center;gap:", ";text-align:center;width:100%;"], (_props$theme$global3 = props.theme.global) == null || (_props$theme$global3 = _props$theme$global3.edgeSize) == null ? void 0 : _props$theme$global3[((_props$theme$stepper3 = props.theme.stepper) == null || (_props$theme$stepper3 = _props$theme$stepper3.horizontal) == null || (_props$theme$stepper3 = _props$theme$stepper3.button) == null ? void 0 : _props$theme$stepper3.gap) || 'xxsmall']);
-});
-var StyledStepContent = styled.span.withConfig({
-  shouldForwardProp: function shouldForwardProp(prop) {
-    return isPropValid(prop) && prop !== 'direction';
-  }
-}).withConfig({
+})(["&:focus-visible{outline:none;}"]);
+var StyledStepContent = styled(Box).withConfig({
   displayName: "StyledStepper__StyledStepContent",
   componentId: "sc-gmpe0p-2"
-})(["display:flex;flex-direction:column;", ""], function (props) {
-  if (props.direction === 'vertical' && !props.isSubStep && !props.hasDescription) {
-    var _props$theme$stepper4;
-    var indicatorSizeToken = ((_props$theme$stepper4 = props.theme.stepper) == null || (_props$theme$stepper4 = _props$theme$stepper4.indicator) == null ? void 0 : _props$theme$stepper4.size) || 'medium';
-    var indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
-    var lineHeight = getTextMetric(props.theme, 'small', 'height');
-    return css(["padding-top:calc((", " - ", ") / 2);"], indicatorSize, lineHeight);
+})(["overflow:hidden;", " ", ""], function (props) {
+  if (props.isVertical) {
+    return css(["text-align:start;"]);
+  }
+  return '';
+}, function (props) {
+  if (props.isVertical && !props.isSubStep && !props.hasDescription) {
+    var _props$stepTheme2, _indicator$border, _indicator$height, _props$stepTheme3;
+    var indicator = (_props$stepTheme2 = props.stepTheme) == null ? void 0 : _props$stepTheme2.indicator;
+    var indicatorBorderWidth = getBorderWidth(props.theme, (indicator == null || (_indicator$border = indicator.border) == null ? void 0 : _indicator$border.size) || '2px');
+    var indicatorHeight = (indicator == null || (_indicator$height = indicator.height) == null ? void 0 : _indicator$height.height) || (indicator == null ? void 0 : indicator.height);
+    var indicatorSize = indicatorHeight ? props.theme.global.size[indicatorHeight] || indicatorHeight : getIconSize(props.theme, (indicator == null ? void 0 : indicator.size) || 'medium');
+    var lineHeight = getTextMetric(props.theme, ((_props$stepTheme3 = props.stepTheme) == null || (_props$stepTheme3 = _props$stepTheme3.label) == null ? void 0 : _props$stepTheme3.size) || 'medium', 'height');
+    return css(["padding-top:calc( (", " - ", ") / 2 + ", " );"], indicatorSize, lineHeight, indicatorBorderWidth);
   }
   return '';
 });
-var StyledIndicator = styled.span.withConfig(styledComponentsConfig).withConfig({
-  displayName: "StyledStepper__StyledIndicator",
+var StyledStepLabel = styled(Text).withConfig({
+  displayName: "StyledStepper__StyledStepLabel",
   componentId: "sc-gmpe0p-3"
-})(["display:flex;align-items:center;justify-content:center;border-radius:50%;transition:transform 0.1s ease,background-color 0.15s ease,border-color 0.15s ease,color 0.15s ease;", " ", " ", ":focus-visible &{", "}", ""], function (props) {
-  return function (_props$theme$stepper5, _props$theme$stepper6, _props$theme$global4) {
-    var indicatorSizeToken = ((_props$theme$stepper5 = props.theme.stepper) == null || (_props$theme$stepper5 = _props$theme$stepper5.indicator) == null ? void 0 : _props$theme$stepper5.size) || 'medium';
-    var parentSize = getMetricSize(props.theme, indicatorSizeToken);
-    var subStepSize = getMetricSize(props.theme, getSubStepSizeToken(indicatorSizeToken));
-    var size = props.isSubStep ? subStepSize : parentSize;
-    var borderWidth = ((_props$theme$stepper6 = props.theme.stepper) == null || (_props$theme$stepper6 = _props$theme$stepper6.indicator) == null || (_props$theme$stepper6 = _props$theme$stepper6.border) == null ? void 0 : _props$theme$stepper6.width) || ((_props$theme$global4 = props.theme.global) == null || (_props$theme$global4 = _props$theme$global4.borderSize) == null ? void 0 : _props$theme$global4.small) || '2px';
-    return css(["width:", ";height:", ";min-width:", ";min-height:", ";border:", " solid;"], size, size, size, size, borderWidth);
+})(["", ""], function (props) {
+  var _props$stepTheme4, _props$stepTheme5;
+  if (!props.isClickable || !((_props$stepTheme4 = props.stepTheme) != null && (_props$stepTheme4 = _props$stepTheme4.hover) != null && _props$stepTheme4.label)) return '';
+
+  // For hover colors we'll use the hover part of the stepper theme
+  // that resolved for the step.
+  var theme = props.theme;
+  var hoverTheme = (_props$stepTheme5 = props.stepTheme) == null || (_props$stepTheme5 = _props$stepTheme5.hover) == null ? void 0 : _props$stepTheme5.label;
+  return css(["", ":not([aria-disabled]):hover &{", " ", " ", "}"], StyledStepButton, hoverTheme != null && hoverTheme.color ? "color: " + normalizeColor(hoverTheme == null ? void 0 : hoverTheme.color, theme) + ";" : '', hoverTheme != null && hoverTheme.weight ? "font-weight: " + (hoverTheme == null ? void 0 : hoverTheme.weight) + ";" : '', hoverTheme != null && hoverTheme.size ? sizeStyle(hoverTheme == null ? void 0 : hoverTheme.size, theme) : '');
+});
+var StyledIndicator = styled(Box).withConfig({
+  displayName: "StyledStepper__StyledIndicator",
+  componentId: "sc-gmpe0p-4"
+})(["box-sizing:content-box;", " ", ":focus-visible &{", "}", ""], function (props) {
+  return function (_props$stepTheme6) {
+    return css(["color:", ";"], normalizeColor(((_props$stepTheme6 = props.stepTheme) == null || (_props$stepTheme6 = _props$stepTheme6.indicator) == null ? void 0 : _props$stepTheme6.color) || 'text', props.theme));
   }();
-}, function (props) {
-  var _theme$stepper2;
-  var theme = props.theme;
-  var stateTheme = ((_theme$stepper2 = theme.stepper) == null || (_theme$stepper2 = _theme$stepper2[props.effectiveState]) == null ? void 0 : _theme$stepper2.indicator) || {};
-  return css(["background:", ";color:", ";border-color:", ";"], normalizeColor((stateTheme == null ? void 0 : stateTheme.background) || 'transparent', theme), normalizeColor((stateTheme == null ? void 0 : stateTheme.color) || 'text-weak', theme), normalizeColor((stateTheme == null ? void 0 : stateTheme.border) || 'border', theme));
 }, StyledStepButton, focusStyle(), function (props) {
-  var _theme$stepper3, _stateTheme$hover, _stateTheme$hover2, _stateTheme$hover3, _theme$stepper4, _theme$stepper5;
+  var _props$stepTheme7, _props$stepTheme8, _hoverTheme$backgroun, _hoverTheme$border$co, _hoverTheme$border, _ref4, _hoverTheme$color;
   if (!props.isClickable) return '';
+  // For hover colors we'll use the hover part of the stepper theme
+  // that resolved for the step. If there isn't one we try to
+  // just darken the various colors for the step.
   var theme = props.theme;
-  var stateTheme = ((_theme$stepper3 = theme.stepper) == null || (_theme$stepper3 = _theme$stepper3[props.effectiveState]) == null ? void 0 : _theme$stepper3.indicator) || {};
-  var backgroundColor = stateTheme != null && stateTheme.background ? normalizeColor(stateTheme.background, theme) : undefined;
-  var borderColor = stateTheme != null && stateTheme.border ? normalizeColor(stateTheme.border, theme) : undefined;
-  var color = stateTheme != null && stateTheme.color ? normalizeColor(stateTheme.color, theme) : undefined;
-  var stateBackgroundHoverColor = stateTheme != null && (_stateTheme$hover = stateTheme.hover) != null && _stateTheme$hover.background ? normalizeColor(stateTheme.hover.background, theme) : undefined;
-  var stateBorderHoverColor = stateTheme != null && (_stateTheme$hover2 = stateTheme.hover) != null && _stateTheme$hover2.border ? normalizeColor(stateTheme.hover.border, theme) : undefined;
-  var stateColorHoverColor = stateTheme != null && (_stateTheme$hover3 = stateTheme.hover) != null && _stateTheme$hover3.color ? normalizeColor(stateTheme.hover.color, theme) : undefined;
-  var defaultBackgroundHoverColor = backgroundColor ? "color-mix(in srgb, " + backgroundColor + " 80%, black)" : normalizeColor(((_theme$stepper4 = theme.stepper) == null || (_theme$stepper4 = _theme$stepper4.hover) == null ? void 0 : _theme$stepper4.background) || 'background-contrast', theme);
-  var defaultBorderHoverColor = borderColor ? "color-mix(in srgb, " + borderColor + " 80%, black)" : normalizeColor(((_theme$stepper5 = theme.stepper) == null || (_theme$stepper5 = _theme$stepper5.hover) == null ? void 0 : _theme$stepper5.border) || 'text', theme);
-  var defaultColorHoverColor = color ? "color-mix(in srgb, " + color + " 80%, black)" : normalizeColor('text-strong', theme);
-  var hoverBackgroundColor = stateBackgroundHoverColor || defaultBackgroundHoverColor;
-  var hoverBorderColor = stateBorderHoverColor || defaultBorderHoverColor;
-  var hoverColor = stateColorHoverColor || defaultColorHoverColor;
-  var hoverStyles = function () {
-    return css(["background:", ";border-color:", ";color:", ";"], hoverBackgroundColor, hoverBorderColor, hoverColor);
+  var indicatorTheme = ((_props$stepTheme7 = props.stepTheme) == null ? void 0 : _props$stepTheme7.indicator) || {};
+  var hoverTheme = ((_props$stepTheme8 = props.stepTheme) == null || (_props$stepTheme8 = _props$stepTheme8.hover) == null ? void 0 : _props$stepTheme8.indicator) || {};
+  var hoverBackground = (_hoverTheme$backgroun = hoverTheme.background) != null ? _hoverTheme$backgroun : indicatorTheme.background ? adjustHoverColor(indicatorTheme.background, theme) : undefined;
+  var hoverBorder = indicatorTheme.border ? _extends({}, indicatorTheme.border, hoverTheme.border, {
+    color: (_hoverTheme$border$co = (_hoverTheme$border = hoverTheme.border) == null ? void 0 : _hoverTheme$border.color) != null ? _hoverTheme$border$co : adjustHoverColor(indicatorTheme.border.color || 'border', theme)
+  }) : hoverTheme.border;
+  var hoverColor = normalizeColor((_ref4 = (_hoverTheme$color = hoverTheme == null ? void 0 : hoverTheme.color) != null ? _hoverTheme$color : indicatorTheme == null ? void 0 : indicatorTheme.color) != null ? _ref4 : 'text', theme);
+  var hoverStyles = function (_props$theme, _props$theme2) {
+    return css(["", ";", ";color:", ";", " ", " ", " ", " ", " ", " ", ""], backgroundStyle(hoverBackground, theme), hoverBorder ? borderStyle(hoverBorder, false, theme) : '', hoverColor, hoverTheme.size && iconSizeStyle(hoverTheme.size, theme), hoverTheme.height && heightStyle(hoverTheme.height, theme), hoverTheme.width && widthStyle(hoverTheme.width, theme), hoverTheme.margin && edgeStyle('margin', hoverTheme.margin, false, props == null || (_props$theme = props.theme) == null || (_props$theme = _props$theme.box) == null ? void 0 : _props$theme.responsiveBreakpoint, theme), hoverTheme.pad && edgeStyle('padding', hoverTheme.pad, false, props == null || (_props$theme2 = props.theme) == null || (_props$theme2 = _props$theme2.box) == null ? void 0 : _props$theme2.responsiveBreakpoint, theme), hoverTheme.round && roundStyle(hoverTheme.round, false, theme), hoverTheme.elevation && elevationStyle(hoverTheme.elevation, theme));
   }();
   return css(["", ":not([aria-disabled]):active &{transform:scale(0.95);}", ":not([aria-disabled]):hover &{", "}"], StyledStepButton, StyledStepButton, hoverStyles);
 });
 var StyledConnector = styled.span.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledStepper__StyledConnector",
-  componentId: "sc-gmpe0p-4"
+  componentId: "sc-gmpe0p-5"
 })(["", " position:absolute;background:", ";"], function (props) {
-  var _theme$stepper6, _theme$stepper7, _props$theme$global5, _props$theme$stepper7, _theme$stepper8, _theme$global5, _props$theme$stepper8;
-  var theme = props.theme;
-  var indicatorSizeToken = ((_theme$stepper6 = theme.stepper) == null || (_theme$stepper6 = _theme$stepper6.indicator) == null ? void 0 : _theme$stepper6.size) || 'medium';
-  var parentSize = getMetricSize(theme, indicatorSizeToken);
-  var indicatorBorderWidth = getMetricSize(theme, ((_theme$stepper7 = theme.stepper) == null || (_theme$stepper7 = _theme$stepper7.indicator) == null || (_theme$stepper7 = _theme$stepper7.border) == null ? void 0 : _theme$stepper7.width) || '2px');
-  var buttonPad = (_props$theme$global5 = props.theme.global) == null || (_props$theme$global5 = _props$theme$global5.edgeSize) == null ? void 0 : _props$theme$global5[((_props$theme$stepper7 = props.theme.stepper) == null || (_props$theme$stepper7 = _props$theme$stepper7.button) == null ? void 0 : _props$theme$stepper7.pad) || 'xxsmall'];
-  var connectorStrokeToken = ((_theme$stepper8 = theme.stepper) == null || (_theme$stepper8 = _theme$stepper8.connector) == null || (_theme$stepper8 = _theme$stepper8.stroke) == null ? void 0 : _theme$stepper8.width) || 'small';
+  var _indicator$width, _indicator$height2, _indicator$border2, _stepTheme$button, _stepTheme$connector, _theme$global7;
+  var theme = props.theme,
+    stepTheme = props.stepTheme;
+  var indicator = stepTheme == null ? void 0 : stepTheme.indicator;
+
+  // width and height could be specified as box props in which case
+  // the t-shirt values will be from theme.global.size.
+  // But use the size from the theme if available. In that case
+  // the t-shirt values are icon sizes. 
+  var indicatorWidth = (indicator == null || (_indicator$width = indicator.width) == null ? void 0 : _indicator$width.width) || (indicator == null ? void 0 : indicator.width);
+  var indicatorHeight = (indicator == null || (_indicator$height2 = indicator.height) == null ? void 0 : _indicator$height2.height) || (indicator == null ? void 0 : indicator.height);
+  var width = indicatorWidth ? theme.global.size[indicatorWidth] || indicatorWidth : getIconSize(theme, (indicator == null ? void 0 : indicator.size) || 'medium');
+  var height = indicatorHeight ? theme.global.size[indicatorHeight] || indicatorHeight : getIconSize(theme, (indicator == null ? void 0 : indicator.size) || 'medium');
+  var indicatorBorderWidth = getBorderWidth(theme, (indicator == null || (_indicator$border2 = indicator.border) == null ? void 0 : _indicator$border2.size) || '2px');
+  var buttonPad = stepTheme == null || (_stepTheme$button = stepTheme.button) == null ? void 0 : _stepTheme$button.pad;
+  var padTop = getPadSize(theme, buttonPad, 'top');
+  var padLeft = getPadSize(theme, buttonPad, 'left');
+  var padRight = getPadSize(theme, buttonPad, 'right');
+  var connectorStrokeToken = (stepTheme == null || (_stepTheme$connector = stepTheme.connector) == null ? void 0 : _stepTheme$connector.thickness) || 'small';
   var connectorThickness = getBorderWidth(theme, connectorStrokeToken);
-  var connectorRadius = ((_theme$global5 = theme.global) == null || (_theme$global5 = _theme$global5.edgeSize) == null ? void 0 : _theme$global5.xsmall) || '4px';
-  var connectorOffset = "calc(" + parentSize + " / 2 + " + buttonPad + ")";
+  var connectorRadius = ((_theme$global7 = theme.global) == null || (_theme$global7 = _theme$global7.edgeSize) == null ? void 0 : _theme$global7.xsmall) || '4px';
+  var connectorTop = "calc(" + height + " / 2 + " + padTop + ")";
+  var connectorLeft = "calc(" + width + " / 2 + " + padLeft + ")";
+  var connectorRight = "calc(" + width + " / 2 + " + padRight + ")";
   var connectorGap = '4px';
-  var nonBetweenTop = "calc(" + parentSize + " + " + buttonPad + " +\n      (" + indicatorBorderWidth + " * 2) + " + connectorGap + ")";
-  return css(["border-radius:", ";", ""], connectorRadius, props.direction === 'horizontal' ? css(["top:", ";left:calc(", "50% + ", ");right:calc(-50% + ", ");height:", ";margin-inline:", ";"], connectorOffset, props.isBetween ? '-' : '', connectorOffset, connectorOffset, connectorThickness, props.theme.global.edgeSize[((_props$theme$stepper8 = props.theme.stepper) == null || (_props$theme$stepper8 = _props$theme$stepper8.horizontal) == null || (_props$theme$stepper8 = _props$theme$stepper8.connector) == null ? void 0 : _props$theme$stepper8.margin) || 'xxsmall']) : css(["left:calc( ", " + ", " - ", " / 2 );top:", ";bottom:0;", " width:", ";margin-block:0;"], connectorOffset, indicatorBorderWidth, connectorThickness, props.isBetween ? 0 : nonBetweenTop, !props.isBetween && css(["min-height:12px;"]), connectorThickness));
+  var nonBetweenTop = "calc(" + height + " + " + padTop + " +\n      (" + indicatorBorderWidth + " * 2) + " + connectorGap + ")";
+  return css(["border-radius:", ";", ""], connectorRadius, props.direction === 'horizontal' ? css(["top:", ";left:calc(", "50% + ", ");right:calc(-50% + ", ");height:", ";margin-inline-start:", ";margin-inline-end:", ";"], connectorTop, props.isBetween ? '-' : '', connectorLeft, connectorRight, connectorThickness, padLeft, padRight) : css(["left:calc( ", " + ", " - ", " / 2 );top:", ";bottom:0;", " width:", ";margin-block:0;"], connectorLeft, indicatorBorderWidth, connectorThickness, props.isBetween ? 0 : nonBetweenTop, !props.isBetween && css(["min-height:12px;"]), connectorThickness));
 }, function (props) {
-  return getConnectorColor(props.status, props.theme);
+  var _props$stepTheme9;
+  return normalizeColor(((_props$stepTheme9 = props.stepTheme) == null || (_props$stepTheme9 = _props$stepTheme9.connector) == null ? void 0 : _props$stepTheme9.color) || 'border', props.theme);
 });
-var StyledSubStepsList = styled.ol.withConfig({
+var StyledSubStepsList = styled(Box).withConfig({
   shouldForwardProp: function shouldForwardProp(prop) {
-    return isPropValid(prop) && prop !== 'direction';
+    return prop !== 'isVertical' && prop !== 'stepTheme';
   }
 }).withConfig({
   displayName: "StyledStepper__StyledSubStepsList",
-  componentId: "sc-gmpe0p-5"
-})(["list-style:none;margin:0;padding:0;", ""], function (props) {
-  var _props$theme$stepper9, _props$theme$global6, _props$theme$stepper0, _props$theme$global7, _props$theme$stepper1;
-  if (props.direction !== 'vertical') return '';
-  var indicatorSizeToken = ((_props$theme$stepper9 = props.theme.stepper) == null || (_props$theme$stepper9 = _props$theme$stepper9.indicator) == null ? void 0 : _props$theme$stepper9.size) || 'medium';
-  var indicatorSize = getMetricSize(props.theme, indicatorSizeToken);
-  var textGap = (_props$theme$global6 = props.theme.global) == null || (_props$theme$global6 = _props$theme$global6.edgeSize) == null ? void 0 : _props$theme$global6[((_props$theme$stepper0 = props.theme.stepper) == null || (_props$theme$stepper0 = _props$theme$stepper0.vertical) == null || (_props$theme$stepper0 = _props$theme$stepper0.button) == null ? void 0 : _props$theme$stepper0.gap) || 'small'];
-  var buttonPad = (_props$theme$global7 = props.theme.global) == null || (_props$theme$global7 = _props$theme$global7.edgeSize) == null ? void 0 : _props$theme$global7[((_props$theme$stepper1 = props.theme.stepper) == null || (_props$theme$stepper1 = _props$theme$stepper1.button) == null ? void 0 : _props$theme$stepper1.pad) || 'xxsmall'];
-  return css(["padding-inline-start:calc(", " + ", " + ", ");"], indicatorSize, textGap, buttonPad);
+  componentId: "sc-gmpe0p-6"
+})(["list-style:none;position:relative;", ""], function (props) {
+  var _props$stepTheme0, _indicator$width2, _props$theme$global, _props$stepTheme1, _props$stepTheme10, _props$stepTheme11;
+  if (!props.isVertical) return '';
+  var indicator = ((_props$stepTheme0 = props.stepTheme) == null ? void 0 : _props$stepTheme0.indicator) || {};
+  var indicatorWidth = (indicator == null || (_indicator$width2 = indicator.width) == null ? void 0 : _indicator$width2.width) || (indicator == null ? void 0 : indicator.width);
+  var indicatorSize = indicatorWidth ? props.theme.global.size[indicatorWidth] || indicatorWidth : getIconSize(props.theme, (indicator == null ? void 0 : indicator.size) || 'medium');
+  var textGap = ((_props$theme$global = props.theme.global) == null || (_props$theme$global = _props$theme$global.edgeSize) == null ? void 0 : _props$theme$global[((_props$stepTheme1 = props.stepTheme) == null || (_props$stepTheme1 = _props$stepTheme1.button) == null ? void 0 : _props$stepTheme1.gap) || 'small']) || ((_props$stepTheme10 = props.stepTheme) == null || (_props$stepTheme10 = _props$stepTheme10.button) == null ? void 0 : _props$stepTheme10.gap);
+  var buttonPad = getPadSize(props.theme, (_props$stepTheme11 = props.stepTheme) == null || (_props$stepTheme11 = _props$stepTheme11.button) == null ? void 0 : _props$stepTheme11.pad, 'left');
+  return css(["left:calc(", " + ", " + ", ");"], indicatorSize, textGap, buttonPad);
 });
-export { StyledStepItem, StyledStepButton, StyledStepContent, StyledIndicator, StyledConnector, StyledSubStepsList };
+export { StyledStepItem, StyledStepButton, StyledStepContent, StyledStepLabel, StyledIndicator, StyledConnector, StyledSubStepsList };

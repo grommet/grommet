@@ -5,11 +5,14 @@ exports.Stepper = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _Box = require("../Box");
 var _MessageContext = require("../../contexts/MessageContext");
+var _useThemeValue2 = require("../../utils/useThemeValue");
 var _Keyboard = require("../Keyboard");
 var _StepperContext = require("./StepperContext");
 var _StepperStep = require("./StepperStep");
 var _propTypes = require("./propTypes");
-var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "errorAnnouncement", "onStepClick", "aria-label", "children", "id"];
+var _utils = require("./utils");
+var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "errorAnnouncement", "onStepClick", "aria-label", "children", "id"],
+  _excluded2 = ["gap"];
 var cache;
 function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
@@ -101,6 +104,8 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
   var _useContext = (0, _react.useContext)(_MessageContext.MessageContext),
     format = _useContext.format;
+  var _useThemeValue = (0, _useThemeValue2.useThemeValue)(),
+    theme = _useThemeValue.theme;
   var stepRefs = (0, _react.useRef)(new Map());
   var allSteps = (0, _react.useMemo)(function () {
     return flattenSteps(steps);
@@ -342,6 +347,13 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
     });
     return elements;
   };
+  var stepperTheme = (0, _utils.resolveStepperTheme)(theme, direction);
+
+  // Extract gap from stepperTheme.container. It will be handled
+  // by the Step for now.
+  var _ref2 = stepperTheme.container || {},
+    gap = _ref2.gap,
+    containerProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   var stepperContent = /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
     ref: ref,
     as: "ol",
@@ -351,13 +363,13 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
     direction: direction === 'horizontal' ? 'row' : 'column',
     fill: direction,
     id: id,
-    overflow: "hidden",
+    overflow: "visible",
     pad: "none",
     margin: "none",
     style: {
       listStyle: 'none'
     }
-  }, rest), children || renderDefaultSteps());
+  }, containerProps, rest), children || renderDefaultSteps());
   return /*#__PURE__*/_react["default"].createElement(_StepperContext.StepperContext.Provider, {
     value: contextValue
   }, clickableSteps ? /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, {
