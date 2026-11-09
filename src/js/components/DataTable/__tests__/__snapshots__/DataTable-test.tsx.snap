@@ -4183,7 +4183,7 @@ exports[`DataTable custom theme 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                   disabled=""
                 >
                   <svg
@@ -4247,7 +4247,7 @@ exports[`DataTable custom theme 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                   disabled=""
                 />
               </div>
@@ -15194,7 +15194,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -15324,7 +15324,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -15441,7 +15441,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 2`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -15574,7 +15574,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 />
               </div>
             </label>
@@ -15669,7 +15669,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 />
               </div>
             </label>
@@ -15751,7 +15751,7 @@ exports[`DataTable onSelect + groupBy should select/deselect all when grouped 3`
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 />
               </div>
             </label>
@@ -16345,7 +16345,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -16435,7 +16435,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -16518,7 +16518,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -16601,7 +16601,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -16684,7 +16684,7 @@ exports[`DataTable onSelect select/unselect all 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -16783,7 +16783,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 />
               </div>
             </label>
@@ -16846,7 +16846,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 />
               </div>
             </label>
@@ -16902,7 +16902,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 />
               </div>
             </label>
@@ -16958,7 +16958,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 />
               </div>
             </label>
@@ -17014,7 +17014,7 @@ exports[`DataTable onSelect select/unselect all 3`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 />
               </div>
             </label>
@@ -26475,7 +26475,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -26551,7 +26551,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   <svg
                     class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 coYvJW"
@@ -26605,7 +26605,7 @@ exports[`DataTable select 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;
@@ -27112,7 +27112,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   <svg
                     class="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 coYvJW"
@@ -27166,7 +27166,7 @@ exports[`DataTable select with allowSelectAll={false} 2`] = `
                   type="checkbox"
                 />
                 <div
-                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+                  class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
                 >
                   .c0 {
   box-sizing: border-box;

@@ -344,6 +344,58 @@ describe('RadioButton theme', () => {
     },
   );
 
+  test('selected partial border preserves array border geometry', () => {
+    render(
+      <Grommet
+        theme={{
+          radioButton: {
+            control: {
+              border: [
+                { side: 'top', color: '#123456', size: '2px' },
+                { side: 'bottom', color: '#654321', size: '1px' },
+              ],
+              selected: { border: { color: '#abcdef' } },
+            },
+          },
+        }}
+      >
+        <RadioButton name="example" label="Option" checked readOnly />
+      </Grommet>,
+    );
+
+    const { control } = getControl();
+    expect(control).toHaveStyleRule('border-top', 'solid 2px #abcdef');
+    expect(control).toHaveStyleRule('border-bottom', 'solid 1px #abcdef');
+    expect(control).not.toHaveStyleRule('border', 'solid 1px #abcdef');
+  });
+
+  test('hover partial border preserves side-string geometry', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          radioButton: {
+            control: {
+              border: 'left',
+              hover: { border: { color: '#abcdef' } },
+            },
+          },
+        }}
+      >
+        <RadioButton name="example" label="Option" />
+      </Grommet>,
+    );
+
+    const { label } = getControl();
+    await user.hover(screen.getByText('Option'));
+    expect(label).toHaveStyleRule('border-left', 'solid 1px #abcdef', {
+      modifier: `:hover ${selector(false)}`,
+    });
+    expect(label).not.toHaveStyleRule('border', 'solid 1px #abcdef', {
+      modifier: `:hover ${selector(false)}`,
+    });
+  });
+
   test.each([false, true])(
     'Box-state focus styles respect focusIndicator=%s',
     async (focusIndicator) => {
@@ -389,6 +441,39 @@ describe('RadioButton theme', () => {
       expect(label).not.toHaveStyleRule('padding', undefined, {
         modifier: selector(true),
       });
+    },
+  );
+
+  test.each([false, true])(
+    'keeps the keyboard focus shadow with no elevation (checked=%s)',
+    async (checked) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            global: {
+              focus: {
+                outline: { color: 'transparent', size: '0px' },
+                shadow: '0 0 0 3px red',
+                twoColor: true,
+              },
+            },
+            radioButton: {
+              control: {
+                elevation: 'none',
+                selected: { elevation: 'none' },
+              },
+            },
+          }}
+        >
+          <RadioButton name="example" label="Option" defaultChecked={checked} />
+        </Grommet>,
+      );
+
+      await user.tab();
+      const { control, input } = getControl();
+      expect(input).toHaveFocus();
+      expect(getComputedStyle(control).boxShadow).toBe('0 0 0 3px red');
     },
   );
 

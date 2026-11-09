@@ -243,6 +243,59 @@ describe('CheckBox theme', () => {
     expect(getControl().control).toHaveStyleRule('border-radius', '2px');
   });
 
+  test('selected partial border preserves array border geometry', () => {
+    render(
+      <Grommet
+        theme={{
+          checkBox: {
+            control: {
+              border: [
+                { side: 'top', color: '#123456', size: '2px' },
+                { side: 'bottom', color: '#654321', size: '1px' },
+              ],
+              selected: { border: { color: '#abcdef' } },
+            },
+          },
+        }}
+      >
+        <CheckBox label="Option" checked />
+      </Grommet>,
+    );
+
+    const { control } = getControl();
+    expect(control).toHaveStyleRule('border-top', 'solid 2px #abcdef');
+    expect(control).toHaveStyleRule('border-bottom', 'solid 1px #abcdef');
+    expect(control).not.toHaveStyleRule('border', 'solid 1px #abcdef');
+  });
+
+  test('hover partial border preserves side-string geometry', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          checkBox: {
+            border: { width: '2px', color: '#123456' },
+            control: {
+              border: 'left',
+              hover: { border: { color: '#abcdef' } },
+            },
+          },
+        }}
+      >
+        <CheckBox label="Option" />
+      </Grommet>,
+    );
+
+    const { label } = getControl();
+    await user.hover(screen.getByText('Option'));
+    expect(label).toHaveStyleRule('border-left', 'solid 1px #abcdef', {
+      modifier: `:hover ${controlSelector}`,
+    });
+    expect(label).not.toHaveStyleRule('border', 'solid 1px #abcdef', {
+      modifier: `:hover ${controlSelector}`,
+    });
+  });
+
   test.each([false, true])(
     'applies container Box-part styles and enabled hover (disabled=%s)',
     async (disabled) => {
@@ -616,6 +669,39 @@ describe('CheckBox theme', () => {
       expect(label).not.toHaveStyleRule('background-color', '#ffccaa', {
         modifier: controlSelector,
       });
+    },
+  );
+
+  test.each([false, true])(
+    'keeps the keyboard focus shadow with no elevation (checked=%s)',
+    async (checked) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            global: {
+              focus: {
+                outline: { color: 'transparent', size: '0px' },
+                shadow: '0 0 0 3px red',
+                twoColor: true,
+              },
+            },
+            checkBox: {
+              control: {
+                elevation: 'none',
+                selected: { elevation: 'none' },
+              },
+            },
+          }}
+        >
+          <CheckBox label="Option" checked={checked} />
+        </Grommet>,
+      );
+
+      await user.tab();
+      const { control, input } = getControl();
+      expect(document.activeElement).toBe(input);
+      expect(getComputedStyle(control).boxShadow).toBe('0 0 0 3px red');
     },
   );
 

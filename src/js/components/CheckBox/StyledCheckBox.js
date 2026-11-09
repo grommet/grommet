@@ -77,6 +77,14 @@ const boxPartStyles = (part, props, container = false) => {
 const mergeControlBorder = (base, override) => {
   if (override === undefined) return base;
   if (
+    Array.isArray(base) &&
+    override &&
+    typeof override === 'object' &&
+    !Array.isArray(override) &&
+    !override.side
+  )
+    return base.map((part) => mergeControlBorder(part, override));
+  if (
     base &&
     override &&
     typeof base === 'object' &&
@@ -85,6 +93,13 @@ const mergeControlBorder = (base, override) => {
     !Array.isArray(override)
   )
     return { ...base, ...override };
+  if (
+    typeof base === 'string' &&
+    override &&
+    typeof override === 'object' &&
+    !Array.isArray(override)
+  )
+    return { side: base, ...override };
   return override;
 };
 
@@ -289,11 +304,11 @@ const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)`
 `;
 
 const StyledCheckBoxBox = styled(Box)`
-  ${(props) => props.focus && props.focusIndicator && focusStyle()};
   ${(props) => {
     const { control, check } = props.theme.checkBox;
     const selected = props.checked || props.indeterminate;
     const selectedState = selected ? control?.selected : undefined;
+    const focus = props.focus && props.focusIndicator && focusStyle();
     const part = { ...control, ...selectedState };
     if (control?.border !== undefined || selectedState?.border !== undefined)
       part.border = mergeControlBorder(
@@ -306,13 +321,21 @@ const StyledCheckBoxBox = styled(Box)`
       return css`
         ${partStyles}
         ${backgroundStyle(background, props.theme, false)}
+        ${focus}
         ${check.extend}
       `;
     }
 
-    if (partStyles.length === 0) return check.extend;
+    if (partStyles.length === 0)
+      return focus
+        ? css`
+            ${focus}
+            ${check.extend}
+          `
+        : check.extend;
     return css`
       ${partStyles}
+      ${focus}
       ${check.extend}
     `;
   }};

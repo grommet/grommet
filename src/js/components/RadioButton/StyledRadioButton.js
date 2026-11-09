@@ -66,6 +66,14 @@ const boxPartStyles = (part, props) => {
 const mergeControlBorder = (base, override) => {
   if (override === undefined) return base;
   if (
+    Array.isArray(base) &&
+    override &&
+    typeof override === 'object' &&
+    !Array.isArray(override) &&
+    !override.side
+  )
+    return base.map((part) => mergeControlBorder(part, override));
+  if (
     base &&
     override &&
     typeof base === 'object' &&
@@ -74,6 +82,13 @@ const mergeControlBorder = (base, override) => {
     !Array.isArray(override)
   )
     return { ...base, ...override };
+  if (
+    typeof base === 'string' &&
+    override &&
+    typeof override === 'object' &&
+    !Array.isArray(override)
+  )
+    return { side: base, ...override };
   return override;
 };
 
@@ -293,10 +308,10 @@ const StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig)`
 const StyledRadioButtonBox = styled(Box)`
   background-color: ${(props) => props.backgroundColor};
   transform: scale(1); // prevent misalignment in certain browsers
-  ${(props) => props.focus && focusStyle()};
   ${(props) => {
     const { control, check } = props.theme.radioButton;
     const selected = props.$checked ? control?.selected : undefined;
+    const focus = props.focus && focusStyle();
     const part = { ...control, ...selected };
     if (control?.border !== undefined || selected?.border !== undefined)
       part.border = mergeControlBorder(
@@ -308,11 +323,19 @@ const StyledRadioButtonBox = styled(Box)`
       return css`
         ${styles}
         ${backgroundStyle(props.$controlBackground, props.theme, false)}
+        ${focus}
         ${check.extend}
       `;
-    if (styles.length === 0) return check.extend;
+    if (styles.length === 0)
+      return focus
+        ? css`
+            ${focus}
+            ${check.extend}
+          `
+        : check.extend;
     return css`
       ${styles}
+      ${focus}
       ${check.extend}
     `;
   }};

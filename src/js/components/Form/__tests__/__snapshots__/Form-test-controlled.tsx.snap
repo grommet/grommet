@@ -4299,7 +4299,7 @@ exports[`Form controlled dynamicly removed fields using blur validation\\n  don'
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+              class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
             >
               .c0 {
   box-sizing: border-box;
@@ -4527,7 +4527,7 @@ exports[`Form controlled dynamicly removed fields using blur validation\\n  don'
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+              class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
             />
           </div>
           <span>
