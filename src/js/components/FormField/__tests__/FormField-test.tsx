@@ -1086,6 +1086,30 @@ describe('FormField', () => {
       });
     });
 
+    test.each([
+      [false, '4px'],
+      [true, '8px'],
+    ])(
+      'inner borders preserve the per-input round with error=%s',
+      (error, expectedRound) => {
+        const theme: ThemeType = {
+          formField: {
+            border: { position: 'inner' },
+            round: '12px',
+            textInput: {
+              round: '4px',
+              error: { round: '8px' },
+            },
+          },
+        };
+        const { content } = renderBackground(theme, {
+          fieldProps: { error },
+        });
+
+        expect(content).toHaveStyleRule('border-radius', expectedRound);
+      },
+    );
+
     test.each(['checkBoxGroup', 'radioButtonGroup'] as const)(
       'applies Box-part and hover styles to the %s content wrapper',
       async (inputName) => {
@@ -1388,6 +1412,101 @@ describe('FormField', () => {
       },
     );
 
+    test('shared error color applies to a normal per-input border', () => {
+      const { content } = renderBackground(
+        {
+          formField: {
+            border: { position: 'inner' },
+            error: { border: { color: '#cc0000' } },
+            textInput: { border: { size: '3px' } },
+          },
+        },
+        {
+          generated: true,
+          fieldProps: { component: TextInput, error: true },
+        },
+      );
+
+      expect(content).toHaveStyleRule('border', 'solid 3px #cc0000');
+    });
+
+    test('shared disabled color applies to a side-specific per-input border', () => {
+      const { content } = renderBackground(
+        {
+          formField: {
+            border: { position: 'inner' },
+            disabled: { border: { color: '#777777' } },
+            textInput: { border: { side: 'bottom', size: '3px' } },
+          },
+        },
+        {
+          generated: true,
+          fieldProps: { component: TextInput, disabled: true },
+        },
+      );
+
+      expect(content).toHaveStyleRule('border-bottom', 'solid 3px #777777');
+      expect(content).not.toHaveStyleRule('border');
+    });
+
+    test('read-only color applies to a side-specific per-input border', () => {
+      const { content } = renderBackground(
+        {
+          global: { input: { readOnly: { border: { color: '#777777' } } } },
+          formField: {
+            border: { position: 'inner' },
+            textInput: { border: { side: 'left', size: '3px' } },
+          },
+        },
+        {
+          generated: true,
+          fieldProps: { component: TextInput, readOnly: true },
+        },
+      );
+
+      expect(content).toHaveStyleRule('border-left', 'solid 3px #777777');
+      expect(content).not.toHaveStyleRule('border');
+    });
+
+    test('shared error color preserves explicit false and per-input error borders', () => {
+      const sharedError = { color: '#cc0000' };
+      const { content, unmount } = renderBackground(
+        {
+          formField: {
+            border: { position: 'inner' },
+            error: { border: sharedError },
+            textInput: { border: false },
+          },
+        },
+        {
+          generated: true,
+          fieldProps: { component: TextInput, error: true },
+        },
+      );
+
+      expect(content).not.toHaveStyleRule('border');
+      unmount();
+
+      const { content: overriddenContent } = renderBackground(
+        {
+          formField: {
+            border: { position: 'inner' },
+            error: { border: sharedError },
+            textInput: {
+              border: { size: '3px' },
+              error: { border: { color: '#0000ff' } },
+            },
+          },
+        },
+        {
+          generated: true,
+          fieldProps: { component: TextInput, error: true },
+        },
+      );
+
+      expect(overriddenContent).toHaveStyleRule('border', 'solid 3px #0000ff');
+    });
+
     test('error border colors preserve normal border array sides and sizes', () => {
       const { content } = renderBackground(
         {
@@ -1451,6 +1570,32 @@ describe('FormField', () => {
       expect(content).toHaveStyleRule('border', 'solid 3px #cc0000');
       expect(content).toHaveStyleRule('border-color', '#cc0000');
       expect(content).toHaveStyleRule('padding', '12px');
+    });
+
+    test('focused error styling accepts an explicitly removed content border', async () => {
+      const user = userEvent.setup();
+      const { content } = renderBackground(
+        {
+          formField: {
+            border: { position: 'inner' },
+            textArea: {
+              error: { border: { color: '#cc0000' } },
+            },
+          },
+        },
+        {
+          generated: true,
+          fieldProps: {
+            component: TextArea,
+            contentProps: { border: undefined },
+            error: true,
+          },
+        },
+      );
+
+      await user.tab();
+      expect(screen.getByRole('textbox')).toHaveFocus();
+      expect(content).toHaveStyleRule('border', 'none');
     });
 
     test('per-input error styles allow false resets and contentProps overrides', () => {

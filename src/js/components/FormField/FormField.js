@@ -110,7 +110,7 @@ const getFocusStyle = (props, content = false) => {
   )
     return css`
       ${focusStyle({ justBorder: true })}
-      ${props.border === false
+      ${props.border === false || props.border === undefined
         ? 'border: none;'
         : borderStyle(props.border, props.responsive ?? true, props.theme)}
       ${isObject(props.border) &&
@@ -738,6 +738,7 @@ const FormField = forwardRef(
     }
 
     let borderColor;
+    let hasSharedStateBorderColor = false;
 
     if (
       disabled &&
@@ -745,8 +746,10 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
+      hasSharedStateBorderColor = true;
     } else if (readOnlyField && theme.global.input?.readOnly?.border?.color) {
       borderColor = theme.global.input?.readOnly?.border?.color;
+      hasSharedStateBorderColor = true;
     } else if (
       // backward compatibility check
       (error && themeBorder?.error?.color) ||
@@ -757,11 +760,13 @@ const FormField = forwardRef(
         formFieldTheme.error.border === undefined
       ) {
         borderColor = themeBorder.error.color || 'status-critical';
+        hasSharedStateBorderColor = true;
       } else if (
         formFieldTheme.error.border &&
         formFieldTheme.error.border.color
       ) {
         borderColor = formFieldTheme.error.border.color || 'status-critical';
+        hasSharedStateBorderColor = true;
       }
     } else if (
       fieldFocus &&
@@ -770,6 +775,7 @@ const FormField = forwardRef(
       formFieldTheme.focus.border.color
     ) {
       borderColor = formFieldTheme.focus.border.color;
+      hasSharedStateBorderColor = true;
     } else {
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
@@ -799,6 +805,15 @@ const FormField = forwardRef(
     let abutMargin;
     let outerStyle = style;
 
+    const resolvedComponentBorder =
+      componentBorder === undefined ||
+      componentBorder === false ||
+      componentError?.border !== undefined ||
+      !hasSharedStateBorderColor ||
+      borderColor === undefined
+        ? componentBorder
+        : mergePartBorder(componentBorder, { color: borderColor });
+
     // If fileinput is wrapped in a formfield we want to use
     // the border style from the fileInput.theme. We also do not
     // want the foocus around the formfield since the the focus
@@ -809,8 +824,8 @@ const FormField = forwardRef(
         themeBorder.position === 'inner'
           ? {
               border:
-                componentBorder !== undefined
-                  ? componentBorder
+                resolvedComponentBorder !== undefined
+                  ? resolvedComponentBorder
                   : {
                       ...themeBorder,
                       size: isFileInputComponent
@@ -824,7 +839,10 @@ const FormField = forwardRef(
                         : themeBorder.side || 'bottom',
                       color: borderColor,
                     },
-              round: componentError?.round ?? formFieldTheme.round,
+              round:
+                componentError?.round ??
+                componentBoxProps.round ??
+                formFieldTheme.round,
               focus: isFileInputComponent ? undefined : fieldFocus,
             }
           : {};
