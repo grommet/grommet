@@ -766,6 +766,7 @@ const TimeInput = forwardRef(
               theme.global?.control?.border?.radius
             }
             disabled={disabled}
+            plain={plainProp}
             readOnlyProp={readOnly}
             focusIndicator={(focusIndicatorProp ?? true) && !iconFocused}
             {...passThemeFlag}

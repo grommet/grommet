@@ -6,6 +6,7 @@ import {
   disabledStyle,
   edgeStyle,
   focusStyle,
+  inputAppearanceStyle,
   inputStyle,
   normalizeColor,
   parseMetricToNum,
@@ -23,6 +24,8 @@ export const StyledDateTimeInputContainer = styled(Box).withConfig({
 })`
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
+  ${(props) =>
+    inputAppearanceStyle(props, { wrapper: true, skipPadding: true })}
   ${(props) =>
     props.focusIndicator !== false &&
     css`

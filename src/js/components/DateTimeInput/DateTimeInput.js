@@ -1288,6 +1288,7 @@ const DateTimeInput = forwardRef(
             fill
             round={theme.dateTimeInput?.container?.round}
             disabled={disabled}
+            plain={plainProp}
             readOnlyProp={readOnly}
             focusIndicator={focusIndicatorProp ?? true}
             {...passThemeFlag}

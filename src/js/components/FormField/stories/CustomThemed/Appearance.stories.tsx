@@ -212,13 +212,6 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
     },
     extend: undefined,
   },
-  // These do not seem to apply the global.input defaults like other inputs
-  timeInput: {
-    container: {
-      background: 'background-front',
-    },
-  },
-  dateTimeInput: {},
 });
 
 const AppearanceStory = () => {

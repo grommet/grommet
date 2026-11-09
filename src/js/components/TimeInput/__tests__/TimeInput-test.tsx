@@ -36,6 +36,9 @@ const getDisplayInput = () =>
     'input[aria-hidden="true"]:not([type="hidden"])',
   ) as HTMLInputElement;
 
+const getInputContainer = () =>
+  screen.getByRole('group').parentElement?.parentElement as HTMLElement;
+
 describe('TimeInput', () => {
   beforeEach(() => {
     createPortal();
@@ -51,6 +54,33 @@ describe('TimeInput', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('applies global input appearance to the visible field container', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: {
+              background: '#eeeeee',
+              hover: { background: '#dddddd' },
+            },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).toHaveStyleRule('background-color', '#eeeeee');
+
+    await user.hover(container);
+    expect(container).toHaveStyleRule('background-color', '#dddddd', {
+      modifier: ':hover',
+    });
   });
 
   test('works correctly nested inside a modal Layer', async () => {

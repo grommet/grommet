@@ -15,6 +15,7 @@ import 'jest-axe/extend-expect';
 import '@testing-library/jest-dom';
 
 import { createPortal } from '../../../utils/portal';
+import { ThemeType } from '../../../themes';
 import { Button } from '../../Button';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
@@ -30,6 +31,9 @@ const getDropFromTrigger = (trigger: HTMLElement) => {
 
   return drop as HTMLElement;
 };
+
+const getInputContainer = () =>
+  screen.getByRole('group').parentElement?.parentElement as HTMLElement;
 
 describe('DateTimeInput', () => {
   beforeEach(() => {
@@ -49,6 +53,32 @@ describe('DateTimeInput', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('applies global input appearance to the visible field container', async () => {
+    const user = userEvent.setup();
+    const theme: ThemeType = {
+      global: {
+        input: {
+          background: '#eeeeee',
+          hover: { background: '#dddddd' },
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <DateTimeInput format="12" />
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).toHaveStyleRule('background-color', '#eeeeee');
+
+    await user.hover(container);
+    expect(container).toHaveStyleRule('background-color', '#dddddd', {
+      modifier: ':hover',
+    });
   });
 
   test('does not emit onChange for partial section entry', async () => {

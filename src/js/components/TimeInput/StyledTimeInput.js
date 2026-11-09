@@ -10,6 +10,7 @@ import {
   elevationStyle,
   focusStyle,
   heightStyle,
+  inputAppearanceStyle,
   inputStyle,
   normalizeColor,
   parseMetricToNum,
@@ -28,6 +29,8 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
+  ${(props) =>
+    inputAppearanceStyle(props, { wrapper: true, skipPadding: true })}
   ${(props) =>
     props.focusIndicator !== false &&
     css`
