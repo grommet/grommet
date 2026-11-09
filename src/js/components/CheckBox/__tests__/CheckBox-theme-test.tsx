@@ -70,6 +70,15 @@ const getControl = () => {
 };
 
 describe('CheckBox theme', () => {
+  test('has no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet theme={theme}>
+        <CheckBox label="Option" />
+      </Grommet>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
   test('overrides HPE control backgrounds with merged theme values', () => {
     const hpeTheme: ThemeType = deepMerge(hpe, {
       checkBox: {
@@ -97,15 +106,6 @@ describe('CheckBox theme', () => {
       'background-color',
       'rgba(119, 100, 252, 1)',
     );
-  });
-
-  test('has no accessibility violations', async () => {
-    const { container } = render(
-      <Grommet theme={theme}>
-        <CheckBox label="Option" />
-      </Grommet>,
-    );
-    expect(await axe(container)).toHaveNoViolations();
   });
 
   test.each([
