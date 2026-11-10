@@ -651,6 +651,9 @@ const TextInput = forwardRef(
       <StyledTextInputContainer
         $inputDisabled={disabled}
         hasButton={!!actionsGroup}
+        icon={showTextInputIcon && !hasActionsGroup ? icon : undefined}
+        reverse={iconOnRight}
+        size={rest.size}
         readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
         readOnlyCopy={readOnlyCopy}
         plain={plain}

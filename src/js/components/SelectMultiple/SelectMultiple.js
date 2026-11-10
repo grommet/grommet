@@ -49,7 +49,10 @@ import { useThemeValue } from '../../utils/useThemeValue';
 const StyledSelectBox = styled(Box)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => {
-    const appearance = inputAppearanceStyle(props, { wrapper: true });
+    const appearance = inputAppearanceStyle(props, {
+      wrapper: true,
+      skipPadding: true,
+    });
     const extend = props.theme.select?.control?.extend;
     return appearance
       ? css`

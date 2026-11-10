@@ -131,6 +131,7 @@ const controlHoverStyle = (props) => {
   const styles = boxPartStyles(part, props);
   if (state?.background != null)
     styles.push(backgroundStyle(state.background, props.theme, false));
+  if (props.focus && props.focusIndicator) styles.push(focusStyle());
   if (styles.length === 0) return undefined;
   return css`
     input:not([disabled])

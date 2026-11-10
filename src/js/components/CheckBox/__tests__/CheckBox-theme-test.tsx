@@ -728,6 +728,44 @@ describe('CheckBox theme', () => {
     },
   );
 
+  test.each([false, true])(
+    'keeps the keyboard focus shadow while hovered (checked=%s)',
+    async (checked) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            global: {
+              focus: {
+                outline: { color: 'transparent', size: '0px' },
+                shadow: '0 0 0 3px red',
+                twoColor: true,
+              },
+            },
+            checkBox: {
+              control: {
+                elevation: 'none',
+                hover: { elevation: 'none' },
+                selected: {
+                  elevation: 'none',
+                  hover: { elevation: 'none' },
+                },
+              },
+            },
+          }}
+        >
+          <CheckBox label="Option" checked={checked} />
+        </Grommet>,
+      );
+
+      await user.tab();
+      await user.hover(screen.getByText('Option'));
+      const { control, input } = getControl();
+      expect(document.activeElement).toBe(input);
+      expect(getComputedStyle(control).boxShadow).toBe('0 0 0 3px red');
+    },
+  );
+
   test('custom children keep their fill on hover and focus', async () => {
     const user = userEvent.setup();
     render(

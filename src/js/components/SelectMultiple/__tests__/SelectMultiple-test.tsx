@@ -118,6 +118,57 @@ describe('SelectMultiple', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test.each([false, true])(
+    'keeps canonical and state padding on the input (showSelectedInline=%s)',
+    async (showSelectedInline) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            global: {
+              input: {
+                pad: '8px',
+                hover: { pad: '4px' },
+                focus: { pad: '6px' },
+              },
+            },
+          }}
+        >
+          <SelectMultiple
+            options={['one', 'two']}
+            placeholder="Choose options"
+            showSelectedInline={showSelectedInline}
+          />
+        </Grommet>,
+      );
+
+      const input = screen.getByPlaceholderText('Choose options');
+      const trigger = input.closest('button') as HTMLElement;
+      const surface = showSelectedInline
+        ? (trigger.parentElement?.parentElement as HTMLElement)
+        : trigger;
+      expect(input).toHaveStyleRule('padding', '8px');
+      expect(surface).not.toHaveStyleRule('padding', '8px');
+
+      await user.hover(trigger);
+      expect(surface).not.toHaveStyleRule('padding', '4px', {
+        modifier: ':hover',
+      });
+      expect(surface).toHaveStyleRule('padding', '4px', {
+        modifier: ':hover input:not([type="hidden"])',
+      });
+
+      await user.tab();
+      expect(trigger).toHaveFocus();
+      expect(surface).not.toHaveStyleRule('padding', '6px', {
+        modifier: ':focus-within',
+      });
+      expect(surface).toHaveStyleRule('padding', '6px', {
+        modifier: ':focus-within input:not([type="hidden"])',
+      });
+    },
+  );
+
   test('defaultValue', () => {
     const { container } = render(
       <Grommet>

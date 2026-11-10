@@ -500,6 +500,93 @@ describe('RadioButton theme', () => {
     },
   );
 
+  test.each([
+    [false, true],
+    [true, true],
+    [false, false],
+    [true, false],
+  ])(
+    'preserves keyboard focus while hovered (checked=%s, indicator=%s)',
+    async (checked, focusIndicator) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            global: {
+              focus: {
+                outline: { color: 'transparent', size: '0px' },
+                shadow: '0 0 0 3px red',
+                twoColor: true,
+              },
+            },
+            radioButton: {
+              control: {
+                elevation: 'none',
+                hover: { elevation: 'none' },
+                selected: { hover: { elevation: 'none' } },
+              },
+            },
+          }}
+        >
+          <RadioButton
+            name="example"
+            label="Option"
+            defaultChecked={checked}
+            {...{ focusIndicator }}
+          />
+        </Grommet>,
+      );
+
+      await user.tab();
+      await user.hover(screen.getByText('Option'));
+      const { control, input, label } = getControl();
+      expect(input).toHaveFocus();
+      expect(label).toHaveStyleRule(
+        'box-shadow',
+        focusIndicator ? '0 0 0 3px red' : 'none',
+        { modifier: `:hover ${selector(checked)}` },
+      );
+      expect(getComputedStyle(control).boxShadow).toBe(
+        focusIndicator ? '0 0 0 3px red' : 'none',
+      );
+    },
+  );
+
+  test.each([false, true])(
+    'pointer focus while hovered does not add a keyboard ring (checked=%s)',
+    async (checked) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            global: {
+              focus: { shadow: '0 0 0 3px red' },
+            },
+            radioButton: {
+              control: {
+                elevation: 'none',
+                hover: { elevation: 'none' },
+                selected: { hover: { elevation: 'none' } },
+              },
+            },
+          }}
+        >
+          <RadioButton
+            name="example"
+            label="Option"
+            checked={checked}
+            readOnly
+          />
+        </Grommet>,
+      );
+
+      const { input, control } = getControl();
+      await user.click(input);
+      expect(input).toHaveFocus();
+      expect(getComputedStyle(control).boxShadow).toBe('none');
+    },
+  );
+
   test('part styling preserves extension precedence and custom children', () => {
     const appearanceTheme: ThemeType = {
       radioButton: {
@@ -857,6 +944,69 @@ describe('RadioButton theme', () => {
       modifier: ':hover',
     });
   });
+
+  test.each([false, true])(
+    'uncontrolled selected appearance follows native group selection (defaultChecked=%s)',
+    async (defaultChecked) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            radioButton: {
+              control: {
+                background: '#eeeeee',
+                border: { color: '#112233', size: '2px' },
+                pad: '3px',
+                selected: {
+                  background: '#aaddff',
+                  border: { color: '#445566' },
+                  pad: '5px',
+                  hover: { background: '#ffccaa' },
+                },
+              },
+            },
+          }}
+        >
+          <RadioButton name="example" label="Option" {...{ defaultChecked }} />
+          <RadioButton name="example" label="Other option" />
+        </Grommet>,
+      );
+
+      const input = screen.getByRole('radio', { name: 'Option' });
+      const control = input.nextElementSibling as HTMLElement;
+      if (defaultChecked) {
+        expect(input).toBeChecked();
+        expect(getComputedStyle(control).backgroundColor).toBe(
+          'rgb(170, 221, 255)',
+        );
+        expect(getComputedStyle(control).padding).toBe('5px');
+      }
+
+      await user.click(input);
+      await user.unhover(input.closest('label') as HTMLElement);
+      expect(input).toBeChecked();
+      expect(getComputedStyle(control).backgroundColor).toBe(
+        'rgb(170, 221, 255)',
+      );
+      expect(getComputedStyle(control).borderTopColor).toBe('rgb(68, 85, 102)');
+      expect(getComputedStyle(control).borderTopWidth).toBe('2px');
+      expect(getComputedStyle(control).padding).toBe('5px');
+
+      const other = screen.getByRole('radio', { name: 'Other option' });
+      await user.click(other);
+      await user.unhover(other.closest('label') as HTMLElement);
+      expect(other).toBeChecked();
+      expect(input).not.toBeChecked();
+      expect(getComputedStyle(control).backgroundColor).toBe(
+        'rgb(238, 238, 238)',
+      );
+      expect(getComputedStyle(control).borderTopColor).toBe('rgb(17, 34, 51)');
+      expect(getComputedStyle(control).padding).toBe('3px');
+      expect(
+        getComputedStyle(other.nextElementSibling as HTMLElement).padding,
+      ).toBe('5px');
+    },
+  );
 
   test('hover selectors follow native uncontrolled selection', async () => {
     const user = userEvent.setup();

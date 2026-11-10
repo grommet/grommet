@@ -17,6 +17,7 @@ import {
   containsFocus,
   edgeStyle,
   elevationStyle,
+  hasSideSpecificBorder,
   isObject,
   normalizeColor,
   roundStyle,
@@ -195,6 +196,8 @@ const getHoverStyle = (role) => (props) => {
           )};`,
         );
     } else {
+      if (hasSideSpecificBorder(componentHoverBorder))
+        styles.push('border: none;');
       styles.push(
         borderStyle(
           componentHoverBorder,
@@ -599,7 +602,7 @@ const FormField = forwardRef(
       if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
       } else if (
-        focus &&
+        fieldFocus &&
         formFieldTheme.focus &&
         formFieldTheme.focus.background &&
         formFieldTheme.focus.background.color

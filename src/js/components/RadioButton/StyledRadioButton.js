@@ -119,6 +119,7 @@ const controlHoverStyle = (props) => {
     const styles = boxPartStyles(part, props);
     if (state?.background != null)
       styles.push(backgroundStyle(state.background, props.theme, false));
+    if (props.$keyboardFocus) styles.push(focusStyle());
     return styles.length > 0
       ? css`
           ${styles}
@@ -321,6 +322,27 @@ const StyledRadioButtonBox = styled(Box)`
         selected?.border,
       );
     const styles = boxPartStyles(part, props);
+    if (props.$checked === undefined && control?.selected) {
+      const selectedPart = { ...control, ...control.selected };
+      if (control.border !== undefined || control.selected.border !== undefined)
+        selectedPart.border = mergeControlBorder(
+          mergeControlBorder(props.border, control.border),
+          control.selected.border,
+        );
+      const selectedBackground =
+        control.selected.background ??
+        check.background?.color ??
+        control.background;
+      styles.push(css`
+        input:checked + & {
+          ${boxPartStyles(selectedPart, props)}
+          ${selectedBackground != null &&
+          backgroundStyle(selectedBackground, props.theme, false)}
+          ${focus}
+          ${check.extend}
+        }
+      `);
+    }
     if (props.$controlBackground != null)
       return css`
         ${styles}

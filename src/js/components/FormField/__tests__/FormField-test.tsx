@@ -963,6 +963,33 @@ describe('FormField', () => {
       return { ...result, content, outer: content.parentElement };
     };
 
+    test('TimeInput button focus restores the normal content background', async () => {
+      const user = userEvent.setup();
+      const { content } = renderBackground(
+        {
+          formField: {
+            border: { position: 'outer', side: 'all' },
+            background: normalColor,
+            focus: { background: { color: stateColor } },
+          },
+        },
+        {
+          fieldProps: {
+            children: <TimeInput id="background-input" format="24" />,
+          },
+        },
+      );
+
+      await user.tab();
+      expect(screen.getByRole('spinbutton', { name: 'hours' })).toHaveFocus();
+      await user.tab();
+
+      const trigger = screen.getByRole('button', { name: 'Choose time' });
+      expect(document.activeElement).toBe(trigger);
+      expect(content).toHaveStyleRule('background-color', normalColor);
+      expect(content).not.toHaveStyleRule('background-color', stateColor);
+    });
+
     test.each(positions)(
       'paints only normal and hover content with %s borders',
       (_, border) => {
@@ -2082,6 +2109,40 @@ describe('FormField', () => {
         modifier: ':hover',
       });
       expect(contentBox).toHaveStyleRule('background-color', '#654321', {
+        modifier: ':hover',
+      });
+    });
+
+    test('side-specific component hover border replaces the normal border', async () => {
+      const user = userEvent.setup();
+      const { container } = render(
+        <Grommet
+          theme={{
+            formField: {
+              border: { position: 'inner' },
+              textInput: {
+                border: { color: '#112233', size: '3px' },
+                hover: {
+                  border: { side: 'bottom', color: '#445566', size: '2px' },
+                },
+              },
+            },
+          }}
+        >
+          <FormField label="Label">
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+
+      const contentBox = container.querySelector(
+        '[class*="FormFieldContentBox"]',
+      ) as HTMLElement;
+      await user.hover(contentBox);
+      expect(contentBox).toHaveStyleRule('border', 'none', {
+        modifier: ':hover',
+      });
+      expect(contentBox).toHaveStyleRule('border-bottom', 'solid 2px #445566', {
         modifier: ':hover',
       });
     });

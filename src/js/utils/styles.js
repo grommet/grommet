@@ -479,7 +479,15 @@ export const getInputPadBySide = (props, side) => {
       return props.theme.global.edgeSize[inputPad] || inputPad;
     const orientation =
       side === 'left' || side === 'right' ? 'horizontal' : 'vertical';
-    const value = inputPad[side] ?? inputPad[orientation] ?? 'none';
+    let logicalSide;
+    if (orientation === 'horizontal')
+      logicalSide =
+        (side === 'left') !== (props.theme.dir === 'rtl') ? 'start' : 'end';
+    const value =
+      inputPad[logicalSide] ??
+      inputPad[side] ??
+      inputPad[orientation] ??
+      'none';
     return props.theme.global.edgeSize[value] || value;
   }
   if (typeof props.theme.global.input.padding !== 'object') {
@@ -1215,7 +1223,15 @@ export const inputStyle = css`
     const appearance = inputAppearanceStyle(props);
     return appearance
       ? css`
-          ${appearance}${props.theme.global.input.extend}
+          ${appearance}
+          ${!props.$inputInner &&
+          (!props.plain || props.focusIndicator) &&
+          css`
+            &:focus {
+              ${focusStyle()}
+            }
+          `}
+          ${props.theme.global.input.extend}
         `
       : props.theme.global.input.extend;
   }}

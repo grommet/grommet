@@ -81,6 +81,7 @@ const RadioButton = forwardRef(
         }}
         focus={focus}
         focusIndicator={focusIndicator}
+        $keyboardFocus={focus && focusIndicator && usingKeyboard}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         onMouseEnter={() => setHover(true)}
