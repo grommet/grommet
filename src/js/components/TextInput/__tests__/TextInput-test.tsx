@@ -424,6 +424,142 @@ describe('TextInput', () => {
       },
     );
 
+    test.each(['select', 'selectMultiple'] as const)(
+      '%s restores keyboard-visible trigger focus after appearance elevation',
+      async (kind) => {
+        const user = userEvent.setup();
+        const props = { 'aria-label': 'Entry', options: ['One', 'Two'] };
+        const input =
+          kind === 'selectMultiple' ? (
+            <SelectMultiple {...props} />
+          ) : (
+            <Select {...props} />
+          );
+        const theme: ThemeType = {
+          global: {
+            focus: {
+              outline: { size: '0px', color: 'transparent' },
+              shadow: '0 0 0 3px red',
+              twoColor: true,
+            },
+            input: {
+              hover: { elevation: 'none' },
+              focus: { elevation: 'none' },
+            },
+          },
+        };
+        const { rerender } = render(<Grommet theme={theme}>{input}</Grommet>);
+        const trigger = screen.getByRole('button');
+
+        await user.tab();
+        expect(trigger).toHaveFocus();
+        await user.hover(trigger);
+        expect(trigger).toHaveFocus();
+        expect(trigger).toHaveStyleRule('box-shadow', '0 0 0 3px red', {
+          modifier: ':focus:focus-visible',
+        });
+        expect(trigger).not.toHaveStyleRule('box-shadow', '0 0 0 3px red', {
+          modifier: ':focus-within',
+        });
+
+        rerender(
+          <Grommet
+            theme={{
+              ...theme,
+              select: {
+                control: {
+                  extend:
+                    '&:focus:focus-visible { box-shadow: 0 0 0 5px blue; }',
+                },
+              },
+            }}
+          >
+            {input}
+          </Grommet>,
+        );
+        expect(trigger).toHaveStyleRule('box-shadow', '0 0 0 5px blue', {
+          modifier: ':focus:focus-visible',
+        });
+      },
+    );
+
+    test.each(['select', 'selectMultiple'] as const)(
+      '%s plain trigger does not restore a disabled focus indicator',
+      async (kind) => {
+        const user = userEvent.setup();
+        const props = {
+          'aria-label': 'Entry',
+          options: ['One', 'Two'],
+          plain: true,
+          focusIndicator: false,
+        };
+        render(
+          <Grommet
+            theme={{
+              global: {
+                focus: { shadow: '0 0 0 3px red' },
+                input: { focus: { elevation: 'none' } },
+              },
+            }}
+          >
+            {kind === 'selectMultiple' ? (
+              <SelectMultiple {...props} />
+            ) : (
+              <Select {...props} />
+            )}
+          </Grommet>,
+        );
+
+        const trigger = screen.getByRole('button');
+        await user.tab();
+        expect(trigger).toHaveFocus();
+        expect(trigger).not.toHaveStyleRule('box-shadow', undefined, {
+          modifier: ':focus:focus-visible',
+        });
+      },
+    );
+
+    test.each(['select', 'selectMultiple'] as const)(
+      '%s retains the pointer-focus shadow reset with appearance states',
+      async (kind) => {
+        const user = userEvent.setup();
+        const scrollTo = jest
+          .spyOn(window, 'scrollTo')
+          .mockImplementation(() => {});
+        const props = { 'aria-label': 'Entry', options: ['One', 'Two'] };
+        const { unmount } = render(
+          <Grommet
+            theme={{
+              global: {
+                focus: { shadow: '0 0 0 3px red' },
+                input: {
+                  hover: { elevation: 'none' },
+                  focus: { elevation: 'none' },
+                },
+              },
+            }}
+          >
+            {kind === 'selectMultiple' ? (
+              <SelectMultiple {...props} />
+            ) : (
+              <Select {...props} />
+            )}
+          </Grommet>,
+        );
+
+        const trigger = screen.getByRole('button');
+        await user.click(trigger);
+        expect(trigger).toHaveStyleRule('box-shadow', 'none', {
+          modifier: ':focus:not(:focus-visible)',
+        });
+        expect(trigger).toHaveStyleRule('box-shadow', '0 0 0 3px red', {
+          modifier: ':focus:focus-visible',
+        });
+        unmount();
+        scrollTo.mockRestore();
+      },
+    );
+
     test('disabled input keeps its application state without hover or focus overrides', () => {
       render(
         <Grommet theme={appearanceTheme}>

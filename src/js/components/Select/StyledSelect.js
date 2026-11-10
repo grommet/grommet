@@ -10,6 +10,7 @@ import {
   getHoverIndicatorStyle,
   selectedStyle,
   controlBorderStyle,
+  focusStyle,
   inputAppearanceStyle,
   overflowStyle,
   sizeStyle,
@@ -92,7 +93,14 @@ export const StyledSelectDropButton = styled(DropButton)`
     const extend = props.theme.select?.control?.extend;
     return appearance
       ? css`
-          ${appearance}${extend}
+          ${appearance}
+          ${(!props.plain || props.focusIndicator) &&
+          css`
+            &:focus:focus-visible {
+              ${focusStyle({ inset: props.focusIndicator === 'inset' })}
+            }
+          `}
+          ${extend}
         `
       : extend;
   }};
