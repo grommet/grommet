@@ -13,11 +13,14 @@ import React, {
 import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
 
+import { useThemeValue } from '../../utils/useThemeValue';
+
 import { Keyboard } from '../Keyboard';
 
 import { StepperContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
+import { resolveStepperTheme } from './utils';
 
 // Flattens steps with parent/child relationships into a linear list
 // for keyboard navigation and index-based tracking.
@@ -107,6 +110,8 @@ const Stepper = forwardRef(
     ref,
   ) => {
     const { format } = useContext(MessageContext);
+    const { theme } = useThemeValue();
+
     const stepRefs = useRef(new Map());
     const allSteps = useMemo(() => flattenSteps(steps), [steps]);
 
@@ -434,6 +439,11 @@ const Stepper = forwardRef(
       return elements;
     };
 
+    const stepperTheme = resolveStepperTheme(theme, direction);
+
+    // Extract gap from stepperTheme.container. It will be handled
+    // by the Step for now.
+    const { gap, ...containerProps } = stepperTheme.container || {};
     const stepperContent = (
       <Box
         ref={ref}
@@ -447,10 +457,11 @@ const Stepper = forwardRef(
         direction={direction === 'horizontal' ? 'row' : 'column'}
         fill={direction}
         id={id}
-        overflow="hidden"
+        overflow="visible"
         pad="none"
         margin="none"
         style={{ listStyle: 'none' }}
+        {...containerProps}
         {...rest}
       >
         {children || renderDefaultSteps()}
