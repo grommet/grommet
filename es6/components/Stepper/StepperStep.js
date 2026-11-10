@@ -76,6 +76,12 @@ export var StepperStep = function StepperStep(_ref) {
       title: step.title
     }
   });
+  var accessibleLabel = step.status === 'completed' ? format({
+    id: 'stepper.completed',
+    values: {
+      step: ariaLabel
+    }
+  }) : ariaLabel;
   var describedBy = [];
   if (step.errorMessage && step.status === 'error') {
     describedBy.push("stepper-error-" + step.id);
@@ -118,7 +124,7 @@ export var StepperStep = function StepperStep(_ref) {
     },
     "aria-current": isHighlighted ? 'step' : undefined,
     "aria-disabled": isDisabled || clickableSteps && !isNavigable || undefined,
-    "aria-label": ariaLabel,
+    "aria-label": accessibleLabel,
     "aria-describedby": describedBy.length > 0 ? describedBy.join(' ') : undefined
   }, focusableProps, stepTheme.button), /*#__PURE__*/React.createElement(StepperIndicator, null), /*#__PURE__*/React.createElement(StyledStepContent, {
     align: direction === 'vertical' ? 'start' : 'center',

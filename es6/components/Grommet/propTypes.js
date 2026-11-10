@@ -226,6 +226,7 @@ if (process.env.NODE_ENV !== 'production') {
           skipTo: PropTypes.string
         }),
         stepper: PropTypes.shape({
+          completed: PropTypes.string,
           progress: PropTypes.string,
           step: PropTypes.string
         }),

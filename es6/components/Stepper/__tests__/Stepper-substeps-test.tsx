@@ -97,6 +97,24 @@ describe('Stepper child reveal', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
+  test('includes completed status in the step accessible name', () => {
+    render(
+      <Example
+        steps={[
+          { id: 'account', title: 'Account', status: 'completed' },
+          { id: 'billing', title: 'Billing' },
+        ]}
+        currentStep="billing"
+      />,
+    );
+
+    expect(
+      screen.getByRole('button', {
+        name: 'Step 1 of 2: Account, completed',
+      }),
+    ).toBeTruthy();
+  });
+
   test('shows every parent but no children before entering a child', () => {
     const { rerender } = render(<Example />);
     expectRows(['Introduction', 'Account', 'Billing', 'Review']);

@@ -232,6 +232,7 @@ if (process.env.NODE_ENV !== 'production') {
           skipTo: _propTypes["default"].string
         }),
         stepper: _propTypes["default"].shape({
+          completed: _propTypes["default"].string,
           progress: _propTypes["default"].string,
           step: _propTypes["default"].string
         }),
