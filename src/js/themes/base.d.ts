@@ -332,14 +332,14 @@ interface StepType {
     color?: ColorType;
     align?: AlignType;
     justify?:
-        | 'around'
-        | 'between'
-        | 'center'
-        | 'end'
-        | 'evenly'
-        | 'start'
-        | 'stretch';
-  }
+      | 'around'
+      | 'between'
+      | 'center'
+      | 'end'
+      | 'evenly'
+      | 'start'
+      | 'stretch';
+  };
   button?: BoxPartThemeType & {
     gap?: GapType;
   };
@@ -350,10 +350,11 @@ interface StepType {
   children?: BoxPartThemeType & {
     gap?: GapType;
   };
-  connector?: { // line type?
+  connector?: {
+    // line type?
     color?: ColorType;
     thickness?: ThicknessType;
-  }
+  };
   // Interaction states
   hover?: StepType;
 }
@@ -1392,10 +1393,12 @@ export interface ThemeType {
     maskedInput?: ContainerExtend;
     selectMultiple?: ContainerExtend;
     dateInput?: ContainerExtend;
+    dateTimeInput?: ContainerExtend;
     timeInput?: ContainerExtend;
     fileInput?: ContainerExtend;
     radioButton?: ContainerExtend;
     radioButtonGroup?: ContainerExtend;
+    rangeInput?: ContainerExtend;
     rangeSelector?: ContainerExtend;
     starRating?: ContainerExtend;
     thumbsRating?: ContainerExtend;
