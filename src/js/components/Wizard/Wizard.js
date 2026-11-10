@@ -8,6 +8,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import styled from 'styled-components';
 
 import { useAnalytics } from '../../contexts';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -55,6 +56,10 @@ const findStepById = (steps, id) => {
 const formHasErrors = (result) =>
   result?.form?.ok === false ||
   Object.keys(result?.form?.errors || {}).length > 0;
+
+const StyledWizardProgress = styled.div`
+  display: ${(props) => (props.$hidden ? 'none' : 'contents')};
+`;
 
 const statusFromStep = (step, validation, completed) => {
   if (!step) return 'pending';
@@ -364,7 +369,7 @@ const Wizard = forwardRef(
             );
           }
           return undefined;
-        }     
+        }
         return !match.disabled ? nextId : undefined;
       }
       let nextIndex = currentStepIndex + 1;
@@ -750,8 +755,8 @@ const Wizard = forwardRef(
 
     const canGoNext = !currentStepObj?.disabled && !isValidating;
     const isBlocked =
-      (currentValidation?.form?.ok === false ||
-        currentValidation?.callback?.ok === false);
+      currentValidation?.form?.ok === false ||
+      currentValidation?.callback?.ok === false;
     const isCompleted = completedSteps.has(currentStep);
 
     const contextValue = useMemo(
@@ -857,9 +862,15 @@ const Wizard = forwardRef(
                   effectiveShowProgress === 'vertical' ? 'row' : 'column'
                 }
               >
-                {effectiveShowProgress &&
-                  responsiveSize !== 'small' &&
-                  responsiveSize !== 'xsmall' && <WizardProgress />}
+                <StyledWizardProgress
+                  $hidden={
+                    !effectiveShowProgress ||
+                    responsiveSize === 'small' ||
+                    responsiveSize === 'xsmall'
+                  }
+                >
+                  <WizardProgress />
+                </StyledWizardProgress>
                 <Box flex="grow">
                   <WizardStepHeader />
                   <WizardContent />

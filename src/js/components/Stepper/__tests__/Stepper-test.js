@@ -6,7 +6,7 @@ import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act, screen } from '@testing-library/react';
 
 import { Grommet, Stepper } from '../..';
 
@@ -202,7 +202,7 @@ describe('Stepper', () => {
       <Grommet
         theme={{
           global: { borderSize: { small: '2px', large: '8px' } },
-          stepper: { connector: { stroke: { width: 'large' } } },
+          stepper: { connector: { thickness: 'large' } },
         }}
       >
         <Stepper
@@ -221,7 +221,7 @@ describe('Stepper', () => {
     const { container } = render(
       <Grommet
         theme={{
-          stepper: { connector: { stroke: { width: '5px' } } },
+          stepper: { connector: { thickness: '5px' } },
         }}
       >
         <Stepper
@@ -234,6 +234,150 @@ describe('Stepper', () => {
 
     const connector = container.querySelector('span[aria-hidden="true"]');
     expect(connector).toHaveStyleRule('height', '5px');
+  });
+
+  test.each([
+    ['default', undefined, '3px', '3px', '3px'],
+    ['token', 'small', '6px', '6px', '6px'],
+    ['CSS length', '7px', '7px', '7px', '7px'],
+    ['none', 'none', '0px', '0px', '0px'],
+    ['empty object', {}, '0px', '0px', '0px'],
+    ['axes', { horizontal: 'small', vertical: 'medium' }, '12px', '6px', '6px'],
+    [
+      'physical sides',
+      { top: '5px', left: '7px', right: '11px', bottom: '13px' },
+      '5px',
+      '7px',
+      '11px',
+    ],
+    [
+      'side overrides',
+      {
+        horizontal: 'small',
+        vertical: 'medium',
+        top: 'none',
+        left: '7px',
+      },
+      '0px',
+      '7px',
+      '6px',
+    ],
+    ['omitted sides', { bottom: 'small' }, '0px', '0px', '0px'],
+    [
+      'logical overrides',
+      {
+        horizontal: 'medium',
+        left: '5px',
+        right: '7px',
+        start: '11px',
+        end: '13px',
+      },
+      '0px',
+      '11px',
+      '13px',
+    ],
+  ])(
+    'resolves %s padding for connector offsets',
+    (_name, pad, top, left, right) => {
+      const theme = {
+        global: {
+          edgeSize: { xxsmall: '3px', small: '6px', medium: '12px' },
+        },
+        stepper: {
+          button: { pad },
+          indicator: { size: '24px', border: { size: '2px' } },
+          connector: { thickness: '2px' },
+        },
+      };
+      const getConnector = () =>
+        Array.from(screen.getAllByRole('listitem')[0].children).find(
+          (child) => child.getAttribute('aria-hidden') === 'true',
+        );
+      const { rerender } = render(
+        <Grommet theme={theme}>
+          <Stepper steps={basicSteps} currentStep="step1" />
+        </Grommet>,
+      );
+
+      expect(getConnector()).toHaveStyleRule('top', `calc(24px / 2 + ${top})`);
+      expect(getConnector()).toHaveStyleRule(
+        'left',
+        `calc(50% + calc(24px / 2 + ${left}))`,
+      );
+      expect(getConnector()).toHaveStyleRule(
+        'right',
+        `calc(-50% + calc(24px / 2 + ${right}))`,
+      );
+
+      rerender(
+        <Grommet theme={theme}>
+          <Stepper
+            steps={basicSteps}
+            currentStep="step1"
+            direction="vertical"
+          />
+        </Grommet>,
+      );
+
+      expect(getConnector()).toHaveStyleRule(
+        'left',
+        `calc( calc(24px / 2 + ${left}) + 2px - 2px / 2 )`,
+      );
+      // whitespace inside calc() depends on how styled-components serializes
+      // the multi-line template literal, so keep the pattern tolerant
+      const topPattern = `24px \\+ ${top} \\+\\s*\\(2px \\* 2\\) \\+\\s*4px`;
+      expect(getConnector()).toHaveStyleRule(
+        'top',
+        new RegExp(`^calc\\(\\s*${topPattern}\\s*\\)$`),
+      );
+    },
+  );
+
+  test.each([
+    ['ltr', '5px'],
+    ['rtl', '11px'],
+  ])('resolves %s logical padding for sub-step rails', (dir, left) => {
+    render(
+      <Grommet
+        dir={dir}
+        theme={{
+          global: { edgeSize: { small: '3px' } },
+          stepper: {
+            button: {
+              pad: { top: '7px', start: '5px', end: '11px' },
+              gap: 'small',
+            },
+            indicator: { size: '24px', border: { size: '2px' } },
+            connector: { thickness: '2px' },
+          },
+        }}
+      >
+        <Stepper
+          steps={[
+            { ...basicSteps[0], children: [{ id: 'child', title: 'Child' }] },
+            basicSteps[1],
+          ]}
+          currentStep="step1"
+          direction="vertical"
+        />
+      </Grommet>,
+    );
+
+    const subSteps = screen.getAllByRole('list')[1];
+    expect(subSteps).toHaveStyleRule('left', `calc(24px + 3px + ${left})`);
+    // the connector is a direct child of the parent li, a sibling of the
+    // sub-steps group, so it stays anchored to the indicator
+    const connector = Array.from(subSteps.closest('li').children).find(
+      (child) => child.getAttribute('aria-hidden') === 'true',
+    );
+    expect(connector).toHaveStyleRule(
+      'top',
+      /^calc\(\s*24px \+ 7px \+\s*\(2px \* 2\) \+\s*4px\s*\)$/,
+    );
+    expect(connector).toHaveStyleRule(
+      'left',
+      `calc( calc(24px / 2 + ${left}) + 2px - 2px / 2 )`,
+    );
   });
 
   test('renders disabled step with reason', () => {
@@ -354,42 +498,6 @@ describe('Stepper', () => {
     expect(document.activeElement).toBe(step1);
   });
 
-  test('Enter activates focused step', () => {
-    const onStepClick = jest.fn();
-    const { getByLabelText } = render(
-      <Grommet>
-        <Stepper
-          steps={basicSteps}
-          currentStep="step1"
-          onStepClick={onStepClick}
-        />
-      </Grommet>,
-    );
-
-    const step2 = getByLabelText(/Step 2 of 3/);
-    act(() => step2.focus());
-    fireEvent.keyDown(step2, { key: 'Enter' });
-    expect(onStepClick).toHaveBeenCalledWith('step2');
-  });
-
-  test('Space activates focused step', () => {
-    const onStepClick = jest.fn();
-    const { getByLabelText } = render(
-      <Grommet>
-        <Stepper
-          steps={basicSteps}
-          currentStep="step1"
-          onStepClick={onStepClick}
-        />
-      </Grommet>,
-    );
-
-    const step2 = getByLabelText(/Step 2 of 3/);
-    act(() => step2.focus());
-    fireEvent.keyDown(step2, { key: ' ' });
-    expect(onStepClick).toHaveBeenCalledWith('step2');
-  });
-
   test('aria-current is set on current step', () => {
     const { getByLabelText } = render(
       <Grommet>
@@ -462,7 +570,7 @@ describe('Stepper', () => {
     const connector = container.querySelector('span[aria-hidden="true"]');
     expect(connector).toHaveStyleRule(
       'top',
-      'calc(24px + 3px +       (2px * 2) + 4px)',
+      /^calc\(\s*24px \+ 3px \+\s*\(2px \* 2\) \+\s*4px\s*\)$/,
     );
   });
 

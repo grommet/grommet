@@ -14,6 +14,7 @@ import '@testing-library/jest-dom';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
+import { Form } from '../../Form';
 import { TextInput } from '..';
 import { Keyboard } from '../../Keyboard';
 import { Text } from '../../Text';
@@ -1062,16 +1063,88 @@ describe('TextInput', () => {
     ).toBeInTheDocument();
   });
 
-  test('zeros right padding when copy button is reversed', () => {
+  test('zeros left padding next to a leading icon with actions', () => {
     render(
       <Grommet>
+        <TextInput icon={<Search />} clear aria-label="Leading" />
+        <TextInput icon={<Search />} clear reverse aria-label="Trailing" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Leading')).toHaveStyleRule(
+      'padding-left',
+      '0px',
+    );
+    expect(screen.getByLabelText('Trailing')).not.toHaveStyleRule(
+      'padding-left',
+      '0px',
+    );
+  });
+
+  test.each([
+    ['start', undefined],
+    ['center', undefined],
+    ['end', undefined],
+    ['start', '23px'],
+    ['center', '23px'],
+    ['end', '23px'],
+  ] as const)(
+    'preserves %s-aligned padding with clear visible and hidden (%s)',
+    async (textAlign, horizontal) => {
+      const user = userEvent.setup();
+
+      render(
+        <Grommet
+          theme={
+            horizontal
+              ? { global: { input: { padding: { horizontal } } } }
+              : undefined
+          }
+        >
+          <TextInput aria-label="Reference" textAlign={textAlign} />
+          <TextInput
+            aria-label="Clear value"
+            textAlign={textAlign}
+            defaultValue="Short value"
+            clear
+          />
+        </Grommet>,
+      );
+
+      const input = screen.getByRole('textbox', { name: 'Clear value' });
+      const reference = screen.getByRole('textbox', { name: 'Reference' });
+      const padding = window.getComputedStyle(reference).paddingRight;
+      expect(padding).not.toBe('0px');
+      expect(window.getComputedStyle(input).paddingRight).toBe(padding);
+
+      const clearButton = screen.getByRole('button', { name: 'Clear' });
+      await user.click(clearButton);
+
+      expect(clearButton).not.toBeVisible();
+      expect(input).toHaveFocus();
+      expect(window.getComputedStyle(input).paddingRight).toBe(padding);
+
+      await user.type(input, 'Short value');
+
+      expect(clearButton).toBeVisible();
+      expect(window.getComputedStyle(input).paddingRight).toBe(padding);
+    },
+  );
+
+  test('preserves right padding when copy button is reversed', () => {
+    render(
+      <Grommet>
+        <TextInput aria-label="Reference" />
         <TextInput value="test" copy reverse aria-label="Reversed copy" />
       </Grommet>,
     );
 
     const input = screen.getByLabelText('Reversed copy');
 
-    expect(input).toHaveStyleRule('padding-right', '0px');
+    const reference = screen.getByRole('textbox', { name: 'Reference' });
+    expect(window.getComputedStyle(input).paddingRight).toBe(
+      window.getComputedStyle(reference).paddingRight,
+    );
   });
 
   test('supports copy, password toggle, and reverse icon together', async () => {
@@ -1099,12 +1172,9 @@ describe('TextInput', () => {
     const icon = screen.getByLabelText('Search');
     const input = screen.getByLabelText('Password');
 
-    // reverse moves the icon after the input while the actions group stays after it
+    // reverse places the icon last, after the input and the actions group
     expect(copyButton).not.toBe(toggleButton);
     expect(icon).not.toBe(toggleButton);
-    expect(
-      input.compareDocumentPosition(icon) & Node.DOCUMENT_POSITION_FOLLOWING,
-    ).toBeTruthy();
     expect(
       input.compareDocumentPosition(toggleButton) &
         Node.DOCUMENT_POSITION_FOLLOWING,
@@ -1113,12 +1183,243 @@ describe('TextInput', () => {
       input.compareDocumentPosition(copyButton) &
         Node.DOCUMENT_POSITION_FOLLOWING,
     ).toBeTruthy();
+    expect(
+      copyButton.compareDocumentPosition(icon) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
 
     await user.click(copyButton);
     expect(await navigator.clipboard.readText()).toBe('test');
 
     await user.click(toggleButton);
     expect(input).toHaveAttribute('type', 'text');
+  });
+
+  test('clear should not have accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <TextInput defaultValue="test" clear aria-label="Value" />
+      </Grommet>,
+    );
+
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  test('shows clear button only when the input has a value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput clear aria-label="Value" />
+      </Grommet>,
+    );
+
+    // stays mounted while empty to reserve its space, but is hidden
+    const clearButton = screen.getByLabelText('Clear');
+    expect(clearButton).not.toBeVisible();
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+
+    await user.type(screen.getByLabelText('Value'), 'a');
+    expect(screen.getByRole('button', { name: 'Clear' })).toBe(clearButton);
+    expect(clearButton).toBeVisible();
+
+    await user.clear(screen.getByLabelText('Value'));
+    expect(clearButton).not.toBeVisible();
+  });
+
+  test('clear empties a controlled value through onChange', async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+
+    const ControlledInput = () => {
+      const [value, setValue] = React.useState('test');
+      return (
+        <TextInput
+          value={value}
+          onChange={(event) => {
+            onChange(event.target.value);
+            setValue(event.target.value);
+          }}
+          clear
+          aria-label="Value"
+        />
+      );
+    };
+
+    render(
+      <Grommet>
+        <ControlledInput />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Clear' }));
+
+    const input = screen.getByLabelText('Value');
+    expect(onChange).toHaveBeenCalledWith('');
+    expect(input).toHaveValue('');
+    expect(input).toHaveFocus();
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('clear empties an uncontrolled value', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <TextInput defaultValue="test" clear aria-label="Value" />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Clear' }));
+
+    expect(screen.getByLabelText('Value')).toHaveValue('');
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('clear updates Form value', async () => {
+    const user = userEvent.setup();
+    const onFormChange = jest.fn();
+
+    render(
+      <Grommet>
+        <Form onChange={onFormChange}>
+          <TextInput name="query" clear aria-label="Query" />
+        </Form>
+      </Grommet>,
+    );
+
+    await user.type(screen.getByLabelText('Query'), 'abc');
+    await user.click(screen.getByRole('button', { name: 'Clear' }));
+
+    expect(onFormChange).toHaveBeenLastCalledWith(
+      { query: '' },
+      expect.anything(),
+    );
+    expect(screen.getByLabelText('Query')).toHaveValue('');
+  });
+
+  test('hides clear button after native form reset empties the input', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <form>
+          <TextInput clear aria-label="Value" />
+          <button type="reset">Reset</button>
+        </form>
+      </Grommet>,
+    );
+
+    await user.type(screen.getByLabelText('Value'), 'abc');
+    await user.click(screen.getByRole('button', { name: 'Reset' }));
+
+    expect(screen.getByLabelText('Value')).toHaveValue('');
+    await waitFor(() =>
+      expect(
+        screen.queryByRole('button', { name: 'Clear' }),
+      ).not.toBeInTheDocument(),
+    );
+  });
+
+  test('shows clear button after native form reset restores the default', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <form>
+          <TextInput defaultValue="abc" clear aria-label="Value" />
+          <button type="reset">Reset</button>
+        </form>
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: 'Clear' }));
+    await user.click(screen.getByRole('button', { name: 'Reset' }));
+
+    expect(screen.getByLabelText('Value')).toHaveValue('abc');
+    expect(
+      await screen.findByRole('button', { name: 'Clear' }),
+    ).toBeInTheDocument();
+  });
+
+  test('hides clear button after Form reset', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet>
+        <Form>
+          <TextInput name="query" clear aria-label="Query" />
+          <button type="reset">Reset</button>
+        </Form>
+      </Grommet>,
+    );
+
+    await user.type(screen.getByLabelText('Query'), 'abc');
+    await user.click(screen.getByRole('button', { name: 'Reset' }));
+
+    expect(screen.getByLabelText('Query')).toHaveValue('');
+    await waitFor(() =>
+      expect(
+        screen.queryByRole('button', { name: 'Clear' }),
+      ).not.toBeInTheDocument(),
+    );
+  });
+
+  test('does not render clear button when read only', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" clear readOnly aria-label="Value" />
+      </Grommet>,
+    );
+
+    expect(
+      screen.queryByRole('button', { name: 'Clear' }),
+    ).not.toBeInTheDocument();
+  });
+
+  test('hides native search clear button when clear is set', () => {
+    render(
+      <Grommet>
+        <TextInput type="search" value="test" clear aria-label="Search" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Search')).toHaveStyleRule(
+      'appearance',
+      'none',
+      { modifier: '::-webkit-search-cancel-button' },
+    );
+  });
+
+  test('places clear before password toggle and copy', () => {
+    render(
+      <Grommet>
+        <TextInput value="test" clear copy password aria-label="Password" />
+      </Grommet>,
+    );
+
+    const clearButton = screen.getByRole('button', { name: 'Clear' });
+    const passwordButton = screen.getByRole('button', {
+      name: 'Show password',
+    });
+    const copyButton = screen.getByRole('button', {
+      name: 'Copy to clipboard',
+    });
+
+    expect(
+      clearButton.compareDocumentPosition(passwordButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
+    expect(
+      passwordButton.compareDocumentPosition(copyButton) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy();
   });
 
   test('read only copy theme icon', async () => {

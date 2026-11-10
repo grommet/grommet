@@ -27,9 +27,6 @@ export const WizardProgress = ({
     messages,
   } = useWizard();
 
-  // Opt-in: render nothing when `showProgress` is false.
-  if (!showProgress) return null;
-
   const progressTheme =
     showProgress === 'vertical'
       ? theme.wizard?.progress?.vertical
@@ -95,7 +92,7 @@ export const WizardProgress = ({
       <Stepper
         steps={stepperSteps}
         currentStep={currentStep}
-        direction={showProgress === 'vertical' ? 'vertical' : 'horizontal'}
+        direction={showProgress === 'horizontal' ? 'horizontal' : 'vertical'}
         clickableSteps={clickableSteps}
         onStepClick={onStepClick}
         showDescription={showDescription}

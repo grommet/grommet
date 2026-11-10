@@ -28,6 +28,7 @@ import {
   AlignType,
   WidthType,
   HeightType,
+  ThicknessType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -327,41 +328,54 @@ type ContainerExtend = {
   };
 };
 
-interface StepperStateType {
-  indicator?: {
+interface StepType {
+  indicator?: BoxPartThemeType & {
     icon?: React.ReactNode | Icon;
     iconSize?: string;
-    background?: BackgroundType;
+    size?: string;
     color?: ColorType;
-    border?: ColorType;
-    substep?: {
-      iconSize?: string;
-    };
-    hover?: {
-      background?: BackgroundType;
-      border?: ColorType;
-      color?: ColorType;
-    };
+    align?: AlignType;
+    justify?:
+      | 'around'
+      | 'between'
+      | 'center'
+      | 'end'
+      | 'evenly'
+      | 'start'
+      | 'stretch';
   };
-  label?: TextProps;
-}
-
-interface StepperHelperTextStateType extends StepperStateType {
-  helperText?: {
-    color?: ColorType;
+  button?: BoxPartThemeType & {
+    gap?: GapType;
   };
-}
-
-interface StepperStatusStateType extends StepperStateType {
+  label?: TextThemeType;
+  description?: TextThemeType;
+  errorText?: TextThemeType;
+  disabledReason?: TextThemeType;
+  children?: BoxPartThemeType & {
+    gap?: GapType;
+  };
   connector?: {
+    // line type?
     color?: ColorType;
+    thickness?: ThicknessType;
   };
+  // Interaction states
+  hover?: StepType;
 }
-
-interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
-  helperText?: {
-    color?: ColorType;
+interface StepperThemeType extends StepType {
+  container?: BoxPartThemeType & {
+    gap?: GapType | { row?: GapType; column?: GapType };
   };
+  subStep?: StepType;
+  vertical?: StepType;
+  // Application States
+  pending?: StepType;
+  current?: StepType;
+  currentCompleted?: StepType;
+  completed?: StepType;
+  error?: StepType;
+  currentError?: StepType;
+  disabled?: StepType;
 }
 
 type TimeInputOptionThemeType = {
@@ -2169,6 +2183,7 @@ export interface ThemeType {
       unselected?: React.ReactNode | Icon;
     };
   };
+  stepper?: StepperThemeType;
   thumbsRating?: {
     dislike?: {
       color?: ColorType;
@@ -2249,58 +2264,6 @@ export interface ThemeType {
       medium?: number;
       large?: number;
     };
-  };
-  stepper?: {
-    indicator?: {
-      size?: string;
-      border?: {
-        width?: string;
-      };
-    };
-    label?: {
-      size?: string;
-      substep?: {
-        size?: string;
-      };
-    };
-    connector?: {
-      stroke?: {
-        width?: string;
-      };
-    };
-    description?: TextProps;
-    helperText?: {
-      size?: string;
-      color?: ColorType;
-    };
-    button?: {
-      pad?: EdgeSizeType;
-    };
-    horizontal?: {
-      connector?: {
-        margin?: EdgeSizeType;
-      };
-      button?: {
-        gap?: GapType;
-      };
-    };
-    vertical?: {
-      button?: {
-        gap?: GapType;
-      };
-    };
-    hover?: {
-      background?: BackgroundType;
-      border?: ColorType;
-    };
-    // States: [component].[state].[element].[property]
-    pending?: StepperStatusStateType;
-    current?: StepperStateType;
-    currentCompleted?: StepperStateType;
-    completed?: StepperStatusStateType;
-    error?: StepperStatusWithHelperTextStateType;
-    currentError?: StepperHelperTextStateType;
-    disabled?: StepperStatusWithHelperTextStateType;
   };
   table?: {
     caption?: {
@@ -2462,6 +2425,7 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     icons?: {
+      clear?: React.ReactNode | Icon;
       copy?: React.ReactNode | Icon;
       hidePassword?: React.ReactNode | Icon;
       showPassword?: React.ReactNode | Icon;
