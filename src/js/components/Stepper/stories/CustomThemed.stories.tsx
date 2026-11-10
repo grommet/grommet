@@ -35,16 +35,16 @@ const customTheme = {
       weight: 600,
     },
     description: {
-      color: '#6B7280',
+      color: '#4c505a',
       size: 'small',
     },
     errorText: {
-      color: '#B91C1C',
+      color: '#961515',
       size: 'small',
       weight: 600,
     },
     disabledReason: {
-      color: '#6B7280',
+      color: '#4c505a',
       size: 'small',
     },
     connector: {
@@ -125,10 +125,10 @@ const customTheme = {
         icon: StatusCritical,
         background: '#FEF2F2',
         border: { color: '#DC2626' },
-        color: '#B91C1C',
+        color: '#961515',
       },
       label: {
-        color: '#B91C1C',
+        color: '#961515',
       },
       connector: {
         color: '#FCA5A5',
@@ -136,19 +136,19 @@ const customTheme = {
       hover: {
         indicator: {
           background: '#FEE2E2',
-          border: { color: '#B91C1C' },
+          border: { color: '#961515' },
         },
       },
     },
     currentError: {
       indicator: {
         icon: StatusCritical,
-        background: '#B91C1C',
-        border: { color: '#B91C1C' },
+        background: '#961515',
+        border: { color: '#961515' },
         color: '#FFFFFF',
       },
       label: {
-        color: '#B91C1C',
+        color: '#961515',
       },
       description: {
         color: '#7F1D1D',
@@ -164,7 +164,7 @@ const customTheme = {
         color: '#9CA3AF',
       },
       label: {
-        color: '#6B7280',
+        color: '#4c505a',
       },
       connector: {
         color: '#D1D5DB',
