@@ -83,6 +83,59 @@ describe('TimeInput', () => {
     });
   });
 
+  test.each([
+    '60px',
+    { height: '60px', min: '50px', max: '70px' },
+    { min: '50px', max: '70px' },
+  ])(
+    'explicit container height wins over shared input height (%j)',
+    (height) => {
+      const theme: ThemeType = {
+        global: {
+          input: { height: { height: '40px', min: '30px', max: '45px' } },
+        },
+        timeInput: { container: { height } },
+      };
+      render(
+        <Grommet theme={theme}>
+          <TimeInput format="24" />
+        </Grommet>,
+      );
+
+      const container = getInputContainer();
+      expect(container).not.toHaveStyleRule('height', '40px');
+      expect(container).not.toHaveStyleRule('min-height', '30px');
+      expect(container).not.toHaveStyleRule('max-height', '45px');
+      if (typeof height === 'string') {
+        expect(container).toHaveStyleRule('height', '60px');
+      } else {
+        expect(container).toHaveStyleRule('min-height', '50px');
+        expect(container).toHaveStyleRule('max-height', '70px');
+        if (height.height !== undefined)
+          expect(container).toHaveStyleRule('height', '60px');
+      }
+    },
+  );
+
+  test('shared input height remains the fallback without a container height', () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: { height: { height: '40px', min: '30px', max: '45px' } },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).toHaveStyleRule('height', '40px');
+    expect(container).toHaveStyleRule('min-height', '30px');
+    expect(container).toHaveStyleRule('max-height', '45px');
+  });
+
   test('FormField plain suppresses global input appearance on the child field', () => {
     render(
       <Grommet

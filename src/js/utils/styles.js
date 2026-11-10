@@ -988,7 +988,8 @@ const inputPartStyle = (part, props, { paddingOnly, skipPadding } = {}) => {
     }
   }
   if (part.elevation !== undefined) styles.push(elevationStyle(part.elevation));
-  if (part.height !== undefined) styles.push(heightStyle(part.height, theme));
+  if (part.height !== undefined && props.height === undefined)
+    styles.push(heightStyle(part.height, theme));
   if (
     part.width !== undefined &&
     props.widthProp === undefined &&
