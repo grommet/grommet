@@ -16,6 +16,7 @@ export const TimeForm = () => {
         value={value}
         onChange={onChange}
         onSubmit={() => {
+          console.log('Form submitted with value:', value);
           setValue({ value: '' });
         }}
       >

@@ -290,6 +290,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -301,6 +302,7 @@ exports[`TextInput calls onSuggestionsClose 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {
@@ -477,16 +479,16 @@ exports[`TextInput calls onSuggestionsClose 3`] = `""`;
 
 exports[`TextInput calls onSuggestionsClose 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kVnLzg"
+      class="StyledTextInput-sc-1x30a0s-0 jYXmzw"
       data-testid="test-input"
       id="item"
       name="item"
@@ -505,6 +507,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -516,6 +519,7 @@ exports[`TextInput calls onSuggestionsOpen 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {
@@ -797,6 +801,7 @@ exports[`TextInput close suggestion drop 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -808,6 +813,7 @@ exports[`TextInput close suggestion drop 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {
@@ -984,16 +990,16 @@ exports[`TextInput close suggestion drop 3`] = `""`;
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kVnLzg"
+      class="StyledTextInput-sc-1x30a0s-0 jYXmzw"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1110,6 +1116,7 @@ exports[`TextInput complex suggestions 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1121,6 +1128,7 @@ exports[`TextInput complex suggestions 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {
@@ -1566,14 +1574,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kVnLzg"
+      class="StyledTextInput-sc-1x30a0s-0 jYXmzw"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1867,6 +1875,7 @@ exports[`TextInput large drop height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -1878,6 +1887,7 @@ exports[`TextInput large drop height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {
@@ -2458,6 +2468,7 @@ exports[`TextInput medium drop height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -2469,6 +2480,7 @@ exports[`TextInput medium drop height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {
@@ -2745,7 +2757,7 @@ exports[`TextInput read only 1`] = `
 
 exports[`TextInput read only copy 1`] = `
 <DocumentFragment>
-  .c5 {
+  .c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -2754,25 +2766,25 @@ exports[`TextInput read only copy 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -2787,7 +2799,7 @@ exports[`TextInput read only copy 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2805,43 +2817,43 @@ exports[`TextInput read only copy 1`] = `
   line-height: 0;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c4:focus:not(:focus-visible) >circle,
+.c4:focus:not(:focus-visible) >ellipse,
+.c4:focus:not(:focus-visible) >line,
+.c4:focus:not(:focus-visible) >path,
+.c4:focus:not(:focus-visible) >polygon,
+.c4:focus:not(:focus-visible) >polyline,
+.c4:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -2861,7 +2873,6 @@ exports[`TextInput read only copy 1`] = `
   border-radius: 4px;
   flex: 1 1 auto;
   min-width: 0;
-  padding-right: 0px;
   border: none;
 }
 
@@ -2922,7 +2933,13 @@ exports[`TextInput read only copy 1`] = `
   align-items: stretch;
 }
 
-.c4 {
+.c3 {
+  display: flex;
+  align-items: stretch;
+  z-index: 1;
+}
+
+.c5 {
   border-radius: 4px;
   padding-left: 11px;
   padding-right: 11px;
@@ -2967,24 +2984,28 @@ exports[`TextInput read only copy 1`] = `
         readonly=""
         value="test"
       />
-      <button
-        aria-label="Copy to clipboard test"
-        class="c3 c4"
-        type="button"
+      <div
+        class="c3"
       >
-        <svg
-          aria-label="Copy"
-          class="c5"
-          viewBox="0 0 24 24"
+        <button
+          aria-label="Copy to clipboard test"
+          class="c4 c5"
+          type="button"
         >
-          <path
-            d="M9 15h8-8zm0-4h10H9zm0-4h4-4zm7-6v6h6M6 5H2v18h16v-4m4 0H6V1h11l5 5v13z"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </button>
+          <svg
+            aria-label="Copy"
+            class="c6"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 15h8-8zm0-4h10H9zm0-4h4-4zm7-6v6h6M6 5H2v18h16v-4m4 0H6V1h11l5 5v13z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -2992,7 +3013,7 @@ exports[`TextInput read only copy 1`] = `
 
 exports[`TextInput read only copy with width 1`] = `
 <DocumentFragment>
-  .c5 {
+  .c6 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -3001,25 +3022,25 @@ exports[`TextInput read only copy with width 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill='none'] {
+.c6 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*='#'],
-.c5 *[STROKE*='#'] {
+.c6 *[stroke*='#'],
+.c6 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*='#'],
-.c5 *[FILL*='#'] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*='#'],
+.c6 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -3034,7 +3055,7 @@ exports[`TextInput read only copy with width 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c3 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3052,43 +3073,43 @@ exports[`TextInput read only copy with width 1`] = `
   line-height: 0;
 }
 
-.c3:focus {
+.c4:focus {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus >circle,
-.c3:focus >ellipse,
-.c3:focus >line,
-.c3:focus >path,
-.c3:focus >polygon,
-.c3:focus >polyline,
-.c3:focus >rect {
+.c4:focus >circle,
+.c4:focus >ellipse,
+.c4:focus >line,
+.c4:focus >path,
+.c4:focus >polygon,
+.c4:focus >polyline,
+.c4:focus >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c3:focus ::-moz-focus-inner {
+.c4:focus ::-moz-focus-inner {
   border: 0;
 }
 
-.c3:focus:not(:focus-visible) {
+.c4:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) >circle,
-.c3:focus:not(:focus-visible) >ellipse,
-.c3:focus:not(:focus-visible) >line,
-.c3:focus:not(:focus-visible) >path,
-.c3:focus:not(:focus-visible) >polygon,
-.c3:focus:not(:focus-visible) >polyline,
-.c3:focus:not(:focus-visible) >rect {
+.c4:focus:not(:focus-visible) >circle,
+.c4:focus:not(:focus-visible) >ellipse,
+.c4:focus:not(:focus-visible) >line,
+.c4:focus:not(:focus-visible) >path,
+.c4:focus:not(:focus-visible) >polygon,
+.c4:focus:not(:focus-visible) >polyline,
+.c4:focus:not(:focus-visible) >rect {
   outline: none;
   box-shadow: none;
 }
 
-.c3:focus:not(:focus-visible) ::-moz-focus-inner {
+.c4:focus:not(:focus-visible) ::-moz-focus-inner {
   border: 0;
 }
 
@@ -3108,7 +3129,6 @@ exports[`TextInput read only copy with width 1`] = `
   border-radius: 4px;
   flex: 1 1 auto;
   min-width: 0;
-  padding-right: 0px;
   border: none;
 }
 
@@ -3170,7 +3190,13 @@ exports[`TextInput read only copy with width 1`] = `
   align-items: stretch;
 }
 
-.c4 {
+.c3 {
+  display: flex;
+  align-items: stretch;
+  z-index: 1;
+}
+
+.c5 {
   border-radius: 4px;
   padding-left: 11px;
   padding-right: 11px;
@@ -3215,24 +3241,28 @@ exports[`TextInput read only copy with width 1`] = `
         readonly=""
         value="test"
       />
-      <button
-        aria-label="Copy to clipboard test"
-        class="c3 c4"
-        type="button"
+      <div
+        class="c3"
       >
-        <svg
-          aria-label="Copy"
-          class="c5"
-          viewBox="0 0 24 24"
+        <button
+          aria-label="Copy to clipboard test"
+          class="c4 c5"
+          type="button"
         >
-          <path
-            d="M9 15h8-8zm0-4h10H9zm0-4h4-4zm7-6v6h6M6 5H2v18h16v-4m4 0H6V1h11l5 5v13z"
-            fill="none"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
-      </button>
+          <svg
+            aria-label="Copy"
+            class="c6"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 15h8-8zm0-4h10H9zm0-4h4-4zm7-6v6h6M6 5H2v18h16v-4m4 0H6V1h11l5 5v13z"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -4611,6 +4641,7 @@ exports[`TextInput select suggestion 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -4622,6 +4653,7 @@ exports[`TextInput select suggestion 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {
@@ -4798,16 +4830,16 @@ exports[`TextInput select suggestion 3`] = `""`;
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
   >
     <input
       aria-autocomplete="list"
       aria-expanded="false"
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 abVHh"
+      class="StyledTextInput-sc-1x30a0s-0 kaXxuR"
       data-testid="test-input"
       id="item"
       name="item"
@@ -5396,14 +5428,14 @@ exports[`TextInput should only show default placeholder when placeholder is a\\n
 
 exports[`TextInput should only show default placeholder when placeholder is a\\n  string 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 cJjrXo"
+    class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 efRuiY"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 kVnLzg"
+      class="StyledTextInput-sc-1x30a0s-0 jYXmzw"
       data-testid="placeholder"
       id="placeholder"
       name="placeholder"
@@ -5541,6 +5573,7 @@ exports[`TextInput small drop height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5552,6 +5585,7 @@ exports[`TextInput small drop height 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {
@@ -5819,6 +5853,7 @@ exports[`TextInput suggestions 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5830,6 +5865,7 @@ exports[`TextInput suggestions 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c6 {

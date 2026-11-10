@@ -9,6 +9,7 @@ export const StepperContext = createContext({
   clickableSteps: true,
   onStepClick: undefined,
   showDescription: true,
+  errorAnnouncement: 'polite',
   stepIndex: () => -1,
   isPriorStep: () => false,
   isAfterStep: () => false,
@@ -21,8 +22,8 @@ export const StepItemContext = createContext({
   step: null,
   index: 0,
   isLast: false,
-  isLabelRevealed: false,
   isSubStep: false,
+  isDisabled: false,
 });
 
 export const useStepper = () => useContext(StepperContext);

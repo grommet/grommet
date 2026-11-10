@@ -9,10 +9,12 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
   containsFocus,
+  normalizeColor,
   shouldKeepFocus,
   withinDropPortal,
   PortalContext,
@@ -29,6 +31,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { FormFieldContext } from './FormFieldContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 
@@ -84,22 +87,73 @@ const getFocusStyle = (props) => {
   ) {
     return null;
   }
-  return props.focus ? focusStyle({ justBorder: true }) : undefined;
+  if (!props.focus) return undefined;
+  return focusStyle({ justBorder: true });
+};
+
+// The border color has to be painted by whichever element owns the border,
+// but the background belongs on the content element so it doesn't bleed
+// behind the label and messages when the border is positioned 'outer'.
+// FormField sets allowHover only when no higher priority state (disabled,
+// readOnly, error, focus) applies.
+const getHoverStyle = (role) => (props) => {
+  const formFieldTheme = props.theme.formField;
+  const hover = formFieldTheme?.hover;
+  const componentHover = formFieldTheme?.[props.componentName]?.hover;
+  if (!props.allowHover || (!hover && !componentHover)) return undefined;
+  const position = formFieldTheme?.border?.position;
+  const ownsBorder =
+    role === 'outer' ? position === 'outer' : position === 'inner';
+
+  const componentHoverBorder = componentHover?.border ?? undefined;
+  const componentHoverBackground = componentHover?.background ?? undefined;
+
+  const hasComponentBorderOverride = componentHoverBorder !== undefined;
+  const hasComponentBackgroundOverride = componentHoverBackground !== undefined;
+
+  let borderColor;
+  if (ownsBorder) {
+    if (hasComponentBorderOverride) {
+      borderColor = componentHoverBorder.color;
+    } else {
+      borderColor = hover?.border?.color;
+    }
+  }
+
+  let background;
+  if (role === 'content') {
+    if (hasComponentBackgroundOverride) {
+      background = componentHoverBackground;
+    } else {
+      background = hover?.background;
+    }
+  }
+  if (!borderColor && background === undefined) return undefined;
+  return css`
+    &:hover {
+      ${borderColor !== undefined &&
+      `border-color: ${normalizeColor(borderColor, props.theme)};`}
+      ${backgroundStyle(background, props.theme, false)}
+    }
+  `;
 };
 
 const FormFieldBox = styled(Box)`
   ${(props) => getFocusStyle(props)}
+  ${getHoverStyle('outer')}
   ${(props) => props.theme.formField?.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
   ${(props) => getFocusStyle(props)}
+  ${getHoverStyle('content')}
   ${(props) =>
     props.theme.formField &&
     props.theme.formField[props?.componentName]?.container?.extend}
 `;
 
 const StyledContentsBox = styled(Box)`
+  ${getHoverStyle('content')}
   ${(props) =>
     props.theme.formField &&
     props.theme.formField[props?.componentName]?.container?.extend}
@@ -295,6 +349,9 @@ const FormField = forwardRef(
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
+    const [focusIndicator, setFocusIndicator] = useState(true);
+    const fieldFocus = focus && focusIndicator;
+    const fieldContext = useMemo(() => ({ setFocusIndicator }), []);
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
@@ -486,6 +543,8 @@ const FormField = forwardRef(
       }
     });
 
+    const allowHover = !disabled && !readOnlyField && !error && !focus;
+
     if (!themeBorder) {
       contents = (
         <StyledContentsBox
@@ -494,6 +553,7 @@ const FormField = forwardRef(
           componentName={childName}
           {...themeContentProps}
           {...contentProps}
+          allowHover={allowHover} // internal prop
         >
           {contents}
         </StyledContentsBox>
@@ -527,7 +587,7 @@ const FormField = forwardRef(
         borderColor = formFieldTheme.error.border.color || 'status-critical';
       }
     } else if (
-      focus &&
+      fieldFocus &&
       formFieldTheme.focus &&
       formFieldTheme.focus.border &&
       formFieldTheme.focus.border.color
@@ -585,7 +645,7 @@ const FormField = forwardRef(
                 color: borderColor,
               },
               round: formFieldTheme.round,
-              focus: isFileInputComponent ? undefined : focus,
+              focus: isFileInputComponent ? undefined : fieldFocus,
             }
           : {};
       contents = (
@@ -597,6 +657,7 @@ const FormField = forwardRef(
           {...innerProps}
           {...contentProps}
           containerFocus={containerFocus} // internal prop
+          allowHover={allowHover} // internal prop
           {...passThemeFlag}
         >
           {contents}
@@ -631,8 +692,8 @@ const FormField = forwardRef(
         }
 
         outerStyle = {
-          position: focus ? 'relative' : undefined,
-          zIndex: focus ? 10 : undefined,
+          position: fieldFocus ? 'relative' : undefined,
+          zIndex: fieldFocus ? 10 : undefined,
           ...style,
         };
       }
@@ -644,7 +705,7 @@ const FormField = forwardRef(
       if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
       } else if (
-        focus &&
+        fieldFocus &&
         formFieldTheme.focus &&
         formFieldTheme.focus.background &&
         formFieldTheme.focus.background.color
@@ -664,7 +725,7 @@ const FormField = forwardRef(
         ? {
             border: { ...themeBorder, color: borderColor },
             round: formFieldTheme.round,
-            focus,
+            focus: fieldFocus,
           }
         : {};
 
@@ -695,6 +756,8 @@ const FormField = forwardRef(
         {...outerProps}
         style={outerStyle}
         containerFocus={containerFocus} // internal prop
+        allowHover={allowHover} // internal prop
+        onFocusCapture={() => setFocusIndicator(true)}
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {
@@ -705,7 +768,13 @@ const FormField = forwardRef(
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
-          setFocus(false);
+          const focusRemainsInside = formFieldRef.current?.contains(
+            event.relatedTarget,
+          );
+          if (!focusRemainsInside) {
+            setFocus(false);
+            setFocusIndicator(true);
+          }
 
           // if input has a drop and focus is within drop
           // prevent onBlur validation from running until
@@ -749,7 +818,9 @@ const FormField = forwardRef(
             <Message message={help} {...themeHelpProps} />
           </>
         ) : undefined}
-        {contents}
+        <FormFieldContext.Provider value={fieldContext}>
+          {contents}
+        </FormFieldContext.Provider>
         <Message
           type="error"
           message={error}

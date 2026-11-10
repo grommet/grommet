@@ -2048,10 +2048,10 @@ exports[`Button kind disabled with hoverIndicator should not hover 1`] = `
 
 exports[`Button kind disabled with hoverIndicator should not hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 dJAYTx"
+    class="StyledButtonKind-sc-1vhfpnt-0 hRgNlV"
     disabled=""
     type="button"
   >
@@ -2717,10 +2717,10 @@ exports[`Button kind hover secondary with color and background 1`] = `
 
 exports[`Button kind hover secondary with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hkLgJu"
+    class="StyledButtonKind-sc-1vhfpnt-0 kMDODS"
     type="button"
   >
     Button
@@ -2819,10 +2819,10 @@ exports[`Button kind hoverIndicator with color and background 1`] = `
 
 exports[`Button kind hoverIndicator with color and background 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 hxYeNV"
+    class="StyledButtonKind-sc-1vhfpnt-0 hyPTTN"
     type="button"
   >
     Button
@@ -4152,18 +4152,18 @@ exports[`Button kind mouseOver and mouseOut events 1`] = `
 
 exports[`Button kind mouseOver and mouseOut events 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
-    class="StyledButtonKind-sc-1vhfpnt-0 jauMtm"
+    class="StyledButtonKind-sc-1vhfpnt-0 fxrgne"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hPXuHd"
+      class="StyledBox-sc-13pk1d4-0 lzxoV"
     >
       <svg
         aria-label="Add"
-        class="StyledIcon-sc-ofa7kd-0 kQSilX"
+        class="StyledIcon-sc-ofa7kd-0 jvbHST"
         viewBox="0 0 24 24"
       >
         <path
@@ -4174,7 +4174,7 @@ exports[`Button kind mouseOver and mouseOut events 2`] = `
         />
       </svg>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 eSieUZ"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 klRaSB"
       />
       label
     </div>
@@ -6340,7 +6340,7 @@ exports[`Button kind size of default button 1`] = `
 `;
 
 exports[`Button kind theme busy gap 1`] = `
-.c12 {
+.c11 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -6349,25 +6349,25 @@ exports[`Button kind theme busy gap 1`] = `
   stroke: #666666;
 }
 
-.c12 g {
+.c11 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c12 *:not([stroke])[fill='none'] {
+.c11 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c12 *[stroke*='#'],
-.c12 *[STROKE*='#'] {
+.c11 *[stroke*='#'],
+.c11 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c12 *[fill-rule],
-.c12 *[FILL-RULE],
-.c12 *[fill*='#'],
-.c12 *[FILL*='#'] {
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*='#'],
+.c11 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
@@ -6398,23 +6398,15 @@ exports[`Button kind theme busy gap 1`] = `
 .c5 {
   display: flex;
   box-sizing: border-box;
-  max-width: 100%;
   align-self: center;
   min-width: 0;
   min-height: 0;
   flex-direction: row;
+  flex: 0 0;
+  flex-basis: auto;
 }
 
-.c6 {
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  flex-direction: column;
-}
-
-.c8 {
+.c7 {
   flex: 0 0 auto;
   align-self: stretch;
   width: 48px;
@@ -6482,7 +6474,7 @@ exports[`Button kind theme busy gap 1`] = `
   border: 0;
 }
 
-.c7 {
+.c6 {
   background-color: currentColor;
   width: 8px;
   height: 8px;
@@ -6492,7 +6484,7 @@ exports[`Button kind theme busy gap 1`] = `
   animation-delay: -0.32s;
 }
 
-.c9 {
+.c8 {
   background-color: currentColor;
   width: 8px;
   height: 8px;
@@ -6502,7 +6494,7 @@ exports[`Button kind theme busy gap 1`] = `
   animation-delay: -0.16s;
 }
 
-.c10 {
+.c9 {
   background-color: currentColor;
   width: 8px;
   height: 8px;
@@ -6511,13 +6503,13 @@ exports[`Button kind theme busy gap 1`] = `
   animation: jjaoCu 1.4s infinite ease-in-out both;
 }
 
-.c13 {
+.c12 {
   position: absolute;
   align-self: center;
   animation: cqeQpI 0.9s ease-in-out;
 }
 
-.c11 {
+.c10 {
   opacity: 0;
 }
 
@@ -6536,7 +6528,7 @@ exports[`Button kind theme busy gap 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c8 {
+  .c7 {
     width: 24px;
   }
 }
@@ -6559,24 +6551,24 @@ exports[`Button kind theme busy gap 1`] = `
           class="c5"
         >
           <div
-            class="c6 c7"
+            class="c2 c6"
           />
           <div
-            class="c8"
+            class="c7"
           />
           <div
-            class="c6 c9"
+            class="c2 c8"
           />
           <div
-            class="c8"
+            class="c7"
           />
           <div
-            class="c6 c10"
+            class="c2 c9"
           />
         </div>
       </div>
       <div
-        class="c11"
+        class="c10"
       >
         Loading
       </div>
@@ -6596,7 +6588,7 @@ exports[`Button kind theme busy gap 1`] = `
         <svg
           aria-hidden="true"
           aria-label="Checkmark"
-          class="c12 c13"
+          class="c11 c12"
           viewBox="0 0 24 24"
         >
           <path
@@ -6608,7 +6600,7 @@ exports[`Button kind theme busy gap 1`] = `
         </svg>
       </div>
       <div
-        class="c11"
+        class="c10"
       >
         Success
       </div>

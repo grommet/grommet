@@ -3067,7 +3067,7 @@ exports[`FormField pad with border undefined 1`] = `
         label
       </label>
       <div
-        class="c3 FormField__StyledContentsBox-sc-m9hood-2"
+        class="c3 "
       >
         <div
           class="c4"

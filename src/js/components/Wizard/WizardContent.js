@@ -1,10 +1,11 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Form } from '../Form';
 import { Box } from '../Box';
 import { Notification } from '../Notification';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { useWizard } from './WizardContext';
 
 // WizardContent renders the current step body and any wizard-level
@@ -14,51 +15,70 @@ export const WizardContent = ({ ...rest }) => {
   const wizard = useWizard();
   const {
     currentStep,
-    currentStepIndex,
     currentStepObj,
-    totalSteps,
+    form,
     formValue,
-    complete,
-    next,
     renderStep,
     setFormValue,
     validationError,
+    stepValidation,
+    updateValidation,
+    registerForm,
   } = wizard;
 
+  const formRef = useRef(null);
+  const pendingSubmission = useRef();
+
   const contentTheme = theme.wizard?.content;
-  const submit = currentStepIndex >= totalSteps - 1 ? complete : next;
+
+  useLayoutEffect(() => {
+    if (!form || !formRef.current) return undefined;
+    const unregister = registerForm(
+      currentStep,
+      () =>
+        new Promise((resolve) => {
+          pendingSubmission.current = { stepId: currentStep, resolve };
+          formRef.current.requestSubmit();
+        }),
+    );
+    return () => {
+      unregister();
+      if (pendingSubmission.current?.stepId === currentStep) {
+        pendingSubmission.current.resolve({ cancelled: true });
+        pendingSubmission.current = undefined;
+      }
+    };
+  }, [currentStep, form, registerForm]);
 
   const onValidate = useCallback(
     ({ valid, errors, submitting }) => {
-      const formElement = document.getElementById(`${currentStep}-form`);
-      if (formElement) {
-        formElement.setAttribute('data-form-valid', String(valid));
-      }
+      const formElement = formRef.current;
+      const result = { ok: valid, errors: { ...errors } };
+      Promise.resolve().then(() => {
+        updateValidation(currentStep, 'form', result);
+        if (submitting && pendingSubmission.current?.stepId === currentStep) {
+          pendingSubmission.current.resolve(result);
+          pendingSubmission.current = undefined;
+        }
+      });
 
-      if (submitting) {
+      if (submitting && !valid) {
         // focus the first error field that exists in the DOM
         const names = Object.keys(errors || {});
         const firstInvalid = names.reduce((found, name) => {
           if (found) return found;
-          const matches = document.getElementsByName(name);
-          return matches.length > 0 ? matches[0] : null;
+          const matches = formElement?.elements.namedItem(name);
+          return matches?.focus ? matches : matches?.[0] || null;
         }, null);
         if (firstInvalid) {
-          setTimeout(() => firstInvalid.focus(), 0);
-        }
-        if (!valid) {
-          // Since onSubmit won't get called in this case, go ahead and
-          // call submit() to trigger wizard-level state changes. It will
-          // get to the runValidation step, see that
-          // the form is invalid from the data-form-valid attribute and set
-          // the appropriate blocked state.
-          // TODO: consider a method on the wizard context to set the
-          //       blocked state directly instead of calling submit()
-          submit();
+          setTimeout(() => {
+            if (formElement?.isConnected && formRef.current === formElement)
+              firstInvalid.focus();
+          }, 0);
         }
       }
     },
-    [currentStep, submit],
+    [currentStep, updateValidation],
   );
 
   if (!currentStepObj) return null;
@@ -66,24 +86,32 @@ export const WizardContent = ({ ...rest }) => {
   const stepRender = currentStepObj.render || renderStep;
   const body = stepRender ? stepRender(currentStepObj, wizard) : null;
 
-  return (
+  const content = (
+    <Box {...contentTheme} flex="grow" {...rest}>
+      {body}
+      {validationError && (
+        <Notification status="critical" message={validationError} />
+      )}
+    </Box>
+  );
+
+  return form ? (
     <Form
+      key={currentStep}
       id={`${currentStep}-form`}
+      ref={formRef}
       value={formValue}
       onChange={setFormValue}
-      onSubmit={submit}
       onValidate={onValidate}
+      errors={stepValidation[currentStep]?.form?.errors}
       method="post"
-      data-form-valid="true"
+      noValidate
       style={{ display: 'flex', flex: '1 1 auto' }}
     >
-      <Box {...contentTheme} flex="grow" {...rest}>
-        {body}
-        {validationError && (
-          <Notification status="critical" message={validationError} />
-        )}
-      </Box>
+      {content}
     </Form>
+  ) : (
+    content
   );
 };
 

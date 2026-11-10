@@ -33,32 +33,20 @@ export const getSectionName = (section, format, formatMessage, messages) => {
   return sectionName;
 };
 
-export const getRanges = (format) => {
-  if (format === '12') {
-    return [
-      [0, 2],
-      [3, 5],
-      [6, 8],
-      [9, 11],
-    ];
-  }
-  return [
-    [0, 2],
-    [3, 5],
-    [6, 8],
-  ];
-};
-
 // TimeInput always transacts (value/defaultValue/onChange) in a canonical
 // 24-hour ISO time string ("HH:MM:SS"), regardless of the display `format`
-// prop.
+// prop. Input may also be passed as "HH:MM" (without seconds); it's
+// normalized to "HH:MM:00" so the rest of the component only ever deals
+// with one shape.
 export const ISO_TIME_REGEX = /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/;
+export const ISO_TIME_NO_SECONDS_REGEX = /^([01]\d|2[0-3]):([0-5]\d)$/;
 
 export const normalizeToIsoTime = (value) => {
   if (typeof value !== 'string' || !value.trim()) return undefined;
 
   const trimmed = value.trim();
   if (ISO_TIME_REGEX.test(trimmed)) return trimmed;
+  if (ISO_TIME_NO_SECONDS_REGEX.test(trimmed)) return `${trimmed}:00`;
 
   const parsed = new Date(trimmed);
   if (Number.isNaN(parsed.getTime())) return undefined;
@@ -108,70 +96,6 @@ export const sectionsToIsoTime = (sections, format) => {
   return `${pad(hour24)}:${pad(sections.minute)}:${pad(sections.second)}`;
 };
 
-export const parseTime = (value, format) => {
-  if (!value || typeof value !== 'string') return undefined;
-  const trimmed = value.trim().toUpperCase();
-
-  if (format === '12') {
-    const match = trimmed.match(/^(\d{1,2}):(\d{2}):(\d{2})\s*(AM|PM)$/);
-    if (!match) return undefined;
-
-    const hour = Number(match[1]);
-    const minute = Number(match[2]);
-    const second = Number(match[3]);
-    const period = match[4];
-
-    if (
-      Number.isNaN(hour) ||
-      Number.isNaN(minute) ||
-      Number.isNaN(second) ||
-      hour < 1 ||
-      hour > 12 ||
-      minute < 0 ||
-      minute > 59 ||
-      second < 0 ||
-      second > 59
-    ) {
-      return undefined;
-    }
-
-    return { hour, minute, second, period };
-  }
-
-  const match = trimmed.match(/^(\d{1,2}):(\d{2}):(\d{2})$/);
-  if (!match) return undefined;
-
-  const hour = Number(match[1]);
-  const minute = Number(match[2]);
-  const second = Number(match[3]);
-
-  if (
-    Number.isNaN(hour) ||
-    Number.isNaN(minute) ||
-    Number.isNaN(second) ||
-    hour < 0 ||
-    hour > 23 ||
-    minute < 0 ||
-    minute > 59 ||
-    second < 0 ||
-    second > 59
-  ) {
-    return undefined;
-  }
-
-  return { hour, minute, second };
-};
-
-export const formatTime = (time, format) => {
-  if (!time) return undefined;
-  if (format === '12') {
-    return `${pad(time.hour)}:${pad(time.minute)}:${pad(time.second)} ${
-      time.period || 'AM'
-    }`;
-  }
-  return `${pad(time.hour)}:${pad(time.minute)}:${pad(time.second)}`;
-};
-
 export const defaultSections = (format) =>
   format === '12'
     ? {
@@ -211,22 +135,18 @@ export const sectionKey = (section) => {
 
 export const getSectionAriaMeta = ({ section, format, sections }) => {
   if (section === SECTION_PERIOD) {
-    return {
-      now: sections.period === 'PM' ? 1 : 0,
-      min: 0,
-      max: 1,
-    };
+    let now;
+    if (sections.period !== undefined) now = sections.period === 'PM' ? 1 : 0;
+    return { now, min: 0, max: 1 };
   }
 
   const key = sectionKey(section);
   const min = sectionMin(section, format);
   const max = sectionMax(section, format);
-  const now =
-    sections[key] ??
-    (section === SECTION_HOUR ? defaultHourForFormat(format) : min);
+  // Omit aria-valuenow entirely when the section has no value yet, rather
+  // than defaulting to a real number (e.g. 0) that would misrepresent an
+  // empty segment as having an actual value (WCAG 4.1.2).
+  const now = sections[key];
 
   return { now, min, max };
 };
-
-export const getActiveSectionAriaMeta = ({ activeSection, format, sections }) =>
-  getSectionAriaMeta({ section: activeSection, format, sections });

@@ -3,9 +3,13 @@
 import React from 'react';
 
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useStepTheme } from './utils';
 
 import { useStepper, useStepItem } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
+
+const getMetricSize = (theme, size) =>
+  theme.global?.edgeSize?.[size] || size;
 
 const renderIcon = (Icon, props) => {
   if (!Icon) return null;
@@ -22,53 +26,39 @@ const renderIcon = (Icon, props) => {
   return <Icon {...iconProps} aria-hidden />;
 };
 
-// Maps step status + current position to a visual state
-// used by both the indicator and label components.
-function getEffectiveState(status, isCurrent) {
-  if (status === 'disabled') return 'disabled';
-  if (isCurrent) {
-    if (status === 'completed') return 'currentCompleted';
-    if (status === 'error') return 'currentError';
-    return 'current';
-  }
-  if (status === 'completed') return 'completed';
-  if (status === 'error') return 'error';
-  return 'pending';
-}
-
 export const StepperIndicator = ({ ...rest }) => {
-  const { currentStep, clickableSteps } = useStepper();
+  const { clickableSteps } = useStepper();
   const { theme, passThemeFlag } = useThemeValue();
 
-  const { step, isSubStep } = useStepItem();
+  const { step, isSubStep, isDisabled } = useStepItem();
+  const stepTheme = useStepTheme(step, isSubStep);
   if (!step) return null;
 
-  const isCurrent = currentStep === step.id;
-  const hasCurrentChild =
-    !isSubStep && step.children?.some((c) => c.id === currentStep);
-  const isHighlighted = isCurrent || hasCurrentChild;
-  const effectiveState = getEffectiveState(step.status, isHighlighted);
-  let stateTheme = theme.stepper?.[effectiveState]?.indicator || {};
-  if (isSubStep && stateTheme.substep) {
-    stateTheme = { ...stateTheme, ...stateTheme.substep };
-  }
-
-  const isDisabled = step.status === 'disabled';
   const isClickable = clickableSteps && !isDisabled;
 
-  const iconSize = stateTheme?.iconSize || (isSubStep ? 'xsmall' : 'small');
+  // grab the icon pieces and size. Size will be handled
+  // in the StyledIndicator component but we pull it out
+  // here to leave other props as boxProps
+  const indicatorTheme = stepTheme?.indicator || {};
+  const { color, icon, iconSize, size, ...boxProps } = indicatorTheme;
+
+  // Convert the icon-related size to a width and height for a box.
+  // T-shirt sizes for Box are
+  const indicatorSizeToken = indicatorTheme?.size || 'medium';
+  const sizeMetric = getMetricSize(theme, indicatorSizeToken);
 
   return (
     <StyledIndicator
-      effectiveState={effectiveState}
-      isSubStep={isSubStep}
+      stepTheme={stepTheme}
+      flex={false}
       isClickable={isClickable}
+      width={{ width: sizeMetric, max: sizeMetric }}
+      height={{ height: sizeMetric, max: sizeMetric }}
+      {...boxProps}
       {...passThemeFlag}
       {...rest}
     >
-      {renderIcon(stateTheme?.icon, { size: iconSize })}
+      {renderIcon(icon, { size: iconSize })}
     </StyledIndicator>
   );
 };
-
-export { getEffectiveState };

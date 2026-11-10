@@ -443,6 +443,7 @@ exports[`Menu close by clicking outside 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -463,6 +464,7 @@ exports[`Menu close by clicking outside 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c4 {
@@ -719,7 +721,7 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jWxojd {
+  .dLcnih {
     padding: 6px;
   }
 }"
@@ -3193,30 +3195,30 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 eVypbb"
+  class="StyledGrommet-sc-19lkkz7-0 gqJZzH"
 >
   <button
     aria-expanded="true"
     aria-haspopup="menu"
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 gylaKZ"
+    class="StyledButton-sc-323bzc-0 loEZph"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 jWxojd"
+      class="StyledBox-sc-13pk1d4-0 dLcnih"
     >
       <span
-        class="StyledText-sc-1sadyjn-0 ggfGAC"
+        class="StyledText-sc-1sadyjn-0 bIxMrq"
       >
         Test
       </span>
       <div
-        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 erdzmT"
+        class="StyledBox__StyledBoxGap-sc-13pk1d4-1 fALWuD"
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-sc-ofa7kd-0 fBKauD"
+        class="StyledIcon-sc-ofa7kd-0 efTAbz"
         viewBox="0 0 24 24"
       >
         <path
@@ -3252,6 +3254,7 @@ exports[`Menu open and close on click 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -3272,6 +3275,7 @@ exports[`Menu open and close on click 3`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c4 {
@@ -3544,7 +3548,7 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width: 768px) {
-  .jWxojd {
+  .dLcnih {
     padding: 6px;
   }
 }"
@@ -3919,6 +3923,7 @@ exports[`Menu open on up close on esc 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -3939,6 +3944,7 @@ exports[`Menu open on up close on esc 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c4 {
@@ -4195,7 +4201,7 @@ exports[`Menu open on up close on esc 2`] = `
 
 exports[`Menu open on up close on esc 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jWxojd {
+  .dLcnih {
     padding: 6px;
   }
 }"
@@ -4745,6 +4751,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.20);
 }
 
@@ -4766,6 +4773,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
   flex-direction: column;
   padding: 6px;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -4961,7 +4969,7 @@ exports[`Menu should apply theme.menu.container 1`] = `
 
 exports[`Menu should apply theme.menu.container 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jWxojd {
+  .dLcnih {
     padding: 6px;
   }
 }"
@@ -5181,6 +5189,7 @@ exports[`Menu should group items 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -5201,6 +5210,7 @@ exports[`Menu should group items 1`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c4 {
@@ -5548,7 +5558,7 @@ exports[`Menu should group items 1`] = `
 
 exports[`Menu should group items 2`] = `
 "@media only screen and (max-width: 768px) {
-  .jWxojd {
+  .dLcnih {
     padding: 6px;
   }
 }"
@@ -6081,6 +6091,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -6101,6 +6112,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c5 {
@@ -6357,7 +6369,7 @@ exports[`Menu with dropAlign bottom renders 2`] = `
 
 exports[`Menu with dropAlign bottom renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jWxojd {
+  .dLcnih {
     padding: 6px;
   }
 }"
@@ -6558,6 +6570,7 @@ exports[`Menu with dropAlign top renders 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.20);
 }
 
@@ -6578,6 +6591,7 @@ exports[`Menu with dropAlign top renders 2`] = `
   min-height: 0;
   flex-direction: column;
   overflow: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
 }
 
 .c4 {
@@ -6834,7 +6848,7 @@ exports[`Menu with dropAlign top renders 2`] = `
 
 exports[`Menu with dropAlign top renders 3`] = `
 "@media only screen and (max-width: 768px) {
-  .jWxojd {
+  .dLcnih {
     padding: 6px;
   }
 }"

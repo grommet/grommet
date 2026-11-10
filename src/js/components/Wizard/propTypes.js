@@ -9,10 +9,12 @@ if (process.env.NODE_ENV !== 'production') {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.node,
+    errorMessage: PropTypes.string,
     render: PropTypes.func,
     validate: PropTypes.func,
     nextStep: PropTypes.func,
     skippable: PropTypes.bool,
+    status: PropTypes.oneOf(['pending', 'completed', 'error', 'disabled']),
     disabled: PropTypes.bool,
     disabledReason: PropTypes.string,
     'aria-label': PropTypes.string,
@@ -25,8 +27,11 @@ if (process.env.NODE_ENV !== 'production') {
 
   propType = {
     steps: PropTypes.arrayOf(PropTypes.shape(nestedStepShape)).isRequired,
+    clickableSteps: PropTypes.bool,
+    closable: PropTypes.bool,
     currentStep: PropTypes.string,
     defaultStep: PropTypes.string,
+    form: PropTypes.bool,
     showProgress: PropTypes.oneOfType([
       PropTypes.oneOf(['horizontal', 'vertical']),
       PropTypes.bool,
@@ -35,7 +40,7 @@ if (process.env.NODE_ENV !== 'production') {
     onComplete: PropTypes.func,
     onCancel: PropTypes.func,
     renderStep: PropTypes.func,
-    title: PropTypes.string,
+    title: PropTypes.node,
     footer: PropTypes.node,
     scrollToTop: PropTypes.bool,
     value: PropTypes.object,

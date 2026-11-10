@@ -38,12 +38,18 @@ export const EllipsisAnimation = () => {
       alignContent="center"
       justify="center"
     >
-      <Box alignSelf="center" direction="row" gap={theme.button?.busy?.gap}>
+      <Box
+        flex={false}
+        basis="auto"
+        alignSelf="center"
+        direction="row"
+        gap={theme.button?.busy?.gap}
+      >
         {/* A negative delay starts the animation sooner. The first dot
       should begin animating before the second and so on. */}
-        <Dot delay="-0.32s" />
-        <Dot delay="-0.16s" />
-        <Dot />
+        <Dot flex={false} delay="-0.32s" />
+        <Dot flex={false} delay="-0.16s" />
+        <Dot flex={false} />
       </Box>
     </Box>
   );

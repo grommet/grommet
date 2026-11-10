@@ -472,6 +472,7 @@ const Menu = forwardRef((props, ref) => {
                 role="menu"
                 a11yTitle={a11y}
                 {...(!grouped ? theme.menu.container : {})}
+                {...passThemeFlag}
               >
                 {menuContent}
               </Box>

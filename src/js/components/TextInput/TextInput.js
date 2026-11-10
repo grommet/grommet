@@ -32,8 +32,7 @@ import {
   StyledTextInputContainer,
   StyledPlaceholder,
   StyledIcon,
-  StyledInlineButton,
-  StyledInlineIcon,
+  StyledActionsGroup,
   StyledSuggestions,
 } from './StyledTextInput';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -58,11 +57,12 @@ const stringLabel = (suggestion) => {
   return suggestion;
 };
 
-const renderIcon = (iconValue) => {
-  if (React.isValidElement(iconValue)) return iconValue;
+const renderIcon = (iconValue, props) => {
+  if (React.isValidElement(iconValue))
+    return React.cloneElement(iconValue, props);
 
   const IconComponent = iconValue;
-  return IconComponent ? <IconComponent /> : undefined;
+  return IconComponent ? <IconComponent {...props} /> : undefined;
 };
 
 const ContainerBox = styled(Box)`
@@ -70,12 +70,20 @@ const ContainerBox = styled(Box)`
     props.dropHeight
       ? sizeStyle('max-height', props.dropHeight, props.theme)
       : 'max-height: inherit;'};
-
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
   }
 `;
+
+const StyledInlineActionButton = styled(Button)`
+  padding-top: 0;
+  padding-bottom: 0;
+  ${(props) => props.$hidden && 'visibility: hidden;'}
+`;
+
+const isEmptyValue = (value) =>
+  value === undefined || value === null || value === '';
 
 const defaultDropAlign = { top: 'bottom', left: 'left' };
 
@@ -83,13 +91,15 @@ const TextInput = forwardRef(
   (
     {
       a11yTitle,
+      clear,
+      copy,
       defaultSuggestion,
       defaultValue,
       disabled,
       dropAlign = defaultDropAlign,
       dropHeight,
-      dropTarget,
       dropProps,
+      dropTarget,
       focusIndicator = true,
       icon,
       id,
@@ -97,6 +107,7 @@ const TextInput = forwardRef(
       name,
       onBlur,
       onChange,
+      onClickCopy,
       onFocus,
       onKeyDown,
       onSelect,
@@ -136,6 +147,11 @@ const TextInput = forwardRef(
     const [focus, setFocus] = useState();
     const [showDrop, setShowDrop] = useState(false);
     const [passwordRevealed, setPasswordRevealed] = useState(false);
+    // uncontrolled inputs outside a Form don't re-render on change, so track
+    // emptiness here to toggle the clear button
+    const [uncontrolledHasValue, setUncontrolledHasValue] = useState(
+      () => !isEmptyValue(defaultValue),
+    );
 
     const handleSuggestionSelect = useMemo(
       () => (onSelect && !onSuggestionSelect ? onSelect : onSuggestionSelect),
@@ -166,15 +182,37 @@ const TextInput = forwardRef(
       id: 'textInput.hidePassword',
       messages,
     });
+    const clearMessage = format({
+      id: 'textInput.clear',
+      messages,
+    });
 
-    const onClickCopy = () => {
-      navigator.clipboard.writeText(value);
+    const handleCopyClick = async (event) => {
+      // uncontrolled inputs keep their current text on the DOM node, not
+      // in `value`, which stays undefined outside a Form
+      const currentValue = inputRef.current?.value ?? value ?? '';
+      if (onClickCopy) await onClickCopy(event, currentValue);
+      else await navigator.clipboard.writeText(currentValue);
+
       announce(readOnlyCopyValidation, 'assertive');
       setTip(readOnlyCopyValidation);
     };
 
     const onBlurCopy = () => {
       if (tip === readOnlyCopyValidation) setTip(readOnlyCopyPrompt);
+    };
+
+    const handleClearClick = () => {
+      // Set the value natively so React emits onChange for controlled,
+      // uncontrolled, and Form-managed inputs alike.
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'value',
+      ).set;
+      nativeInputValueSetter.call(inputRef.current, '');
+      inputRef.current.dispatchEvent(new Event('input', { bubbles: true }));
+      // the clear button hides once the value is empty
+      inputRef.current.focus();
     };
 
     const authoredType = typeProp || (password ? 'password' : undefined);
@@ -185,6 +223,24 @@ const TextInput = forwardRef(
       // When the toggle stops applying, return the input to its authored type.
       if (!passwordToggle) setPasswordRevealed(false);
     }, [passwordToggle]);
+
+    // form reset changes the value without firing onChange
+    useEffect(() => {
+      const form = clear ? inputRef.current?.form : undefined;
+      if (!form) return undefined;
+      let timer;
+      const handleFormReset = () => {
+        // reset fires before the browser restores field values
+        timer = setTimeout(() =>
+          setUncontrolledHasValue(!!inputRef.current?.value),
+        );
+      };
+      form.addEventListener('reset', handleFormReset);
+      return () => {
+        clearTimeout(timer);
+        form.removeEventListener('reset', handleFormReset);
+      };
+    }, [clear, inputRef]);
 
     const openDrop = useCallback(() => {
       setShowDrop(true);
@@ -341,6 +397,10 @@ const TextInput = forwardRef(
         handleSuggestionSelect(adjustedEvent);
       }
       setValue(suggestion);
+
+      if (clear) {
+        setUncontrolledHasValue(!isEmptyValue(suggestion));
+      }
     };
 
     const onNextSuggestion = useCallback(
@@ -516,46 +576,80 @@ const TextInput = forwardRef(
     const textInputIcon = useSizedIcon(icon, rest.size, theme);
     const showPasswordIcon = theme.textInput?.icons?.showPassword;
     const hidePasswordIcon = theme.textInput?.icons?.hidePassword;
+    const clearIcon = theme.textInput?.icons?.clear;
     let inputType = authoredType;
     if (passwordToggle) {
       inputType = passwordRevealed ? 'text' : 'password';
     }
     const showTextInputIcon = !!textInputIcon && !readOnlyCopy;
-    const showLeadingIcon = showTextInputIcon && !reverse;
-    const showTrailingIcon = showTextInputIcon && reverse;
 
-    const ReadOnlyCopyButton = (
+    const copyButtonElement = (
       <CopyButton
+        authoredType={authoredType}
         disabled={disabled}
+        messages={messages}
         onBlurCopy={onBlurCopy}
-        onClickCopy={onClickCopy}
-        readOnlyCopyPrompt={readOnlyCopyPrompt}
+        onCopy={handleCopyClick}
         tip={tip}
         value={value}
       />
     );
 
-    const PasswordToggleButton = passwordToggle ? (
-      <Button
+    const clearable = clear && !readOnly;
+    const hasClearableValue =
+      value !== undefined && value !== null
+        ? value !== ''
+        : uncontrolledHasValue;
+
+    const clearButton = clearable ? (
+      <StyledInlineActionButton
+        disabled={disabled}
+        kind="toolbar"
+        icon={renderIcon(clearIcon, { 'aria-hidden': true })}
+        onClick={handleClearClick}
+        aria-label={clearMessage}
+        // keep the slot while empty so the input width doesn't shift
+        $hidden={!hasClearableValue}
+        {...passThemeFlag}
+      />
+    ) : undefined;
+
+    const passwordToggleButton = passwordToggle ? (
+      <StyledInlineActionButton
         disabled={disabled}
         kind="toolbar"
         icon={
           passwordRevealed
-            ? renderIcon(showPasswordIcon)
-            : renderIcon(hidePasswordIcon)
+            ? renderIcon(hidePasswordIcon, { 'aria-hidden': true })
+            : renderIcon(showPasswordIcon, { 'aria-hidden': true })
         }
         onClick={() => setPasswordRevealed((current) => !current)}
         aria-label={
           passwordRevealed ? hidePasswordMessage : showPasswordMessage
         }
+        {...passThemeFlag}
       />
     ) : undefined;
 
-    const textInputButton = readOnlyCopy ? ReadOnlyCopyButton : undefined;
+    const copyButton = readOnlyCopy || copy ? copyButtonElement : undefined;
+    // Order: clear sits next to the text, then password visibility, then the
+    // non-destructive copy action.
+    const actionsGroup =
+      clearButton || passwordToggleButton || copyButton ? (
+        <StyledActionsGroup {...passThemeFlag}>
+          {clearButton}
+          {passwordToggleButton}
+          {copyButton}
+        </StyledActionsGroup>
+      ) : undefined;
+    const hasActionsGroup = !!actionsGroup;
+    const iconOnRight = reverse;
+    const showLeadingIcon = showTextInputIcon && !iconOnRight;
+    const showTrailingIcon = showTextInputIcon && iconOnRight;
 
     return (
       <StyledTextInputContainer
-        hasButton={!!textInputButton}
+        hasButton={!!actionsGroup}
         readOnlyProp={readOnly} // readOnlyProp to avoid passing to DOM
         readOnlyCopy={readOnlyCopy}
         plain={plain}
@@ -564,14 +658,19 @@ const TextInput = forwardRef(
         onMouseMove={() => setMouseMovedSinceLastKey(true)}
         {...passThemeFlag}
       >
-        {reverse && textInputButton}
+        {/* reverse changes the icon position; actions always stay on the */}
+        {/* right. */}
         {showStyledPlaceholder && (
           <StyledPlaceholder {...passThemeFlag}>
             {placeholder}
           </StyledPlaceholder>
         )}
         {showLeadingIcon && (
-          <StyledIcon reverse={reverse} theme={theme}>
+          <StyledIcon
+            reverse={iconOnRight}
+            hasActionsGroup={hasActionsGroup}
+            theme={theme}
+          >
             {textInputIcon}
           </StyledIcon>
         )}
@@ -587,11 +686,13 @@ const TextInput = forwardRef(
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            icon={showTextInputIcon ? icon : undefined}
-            reverse={reverse}
+            icon={showTextInputIcon && !hasActionsGroup ? icon : undefined}
+            reverse={iconOnRight}
             focus={focus}
-            hasButton={!!textInputButton}
-            hasInlineButton={passwordToggle}
+            hasButton={hasActionsGroup}
+            hasActionsGroup={hasActionsGroup}
+            hasClear={clearable}
+            hasLeadingIcon={showLeadingIcon}
             hasTrailingIcon={showTrailingIcon}
             focusIndicator={focusIndicator}
             textAlign={textAlign}
@@ -648,28 +749,25 @@ const TextInput = forwardRef(
                       openDrop();
                     }
                     setValue(event.target.value);
+                    if (clear) {
+                      setUncontrolledHasValue(!!event.target.value);
+                    }
                     setActiveSuggestionIndex(resetSuggestionIndex);
                     if (onChange) onChange(event);
                   }
             }
           />
         </Keyboard>
-        {PasswordToggleButton && !readOnlyCopy && (
-          <StyledInlineButton {...passThemeFlag}>
-            {showTrailingIcon && (
-              <StyledInlineIcon {...passThemeFlag}>
-                {textInputIcon}
-              </StyledInlineIcon>
-            )}
-            {PasswordToggleButton}
-          </StyledInlineButton>
-        )}
-        {showTrailingIcon && !PasswordToggleButton && (
-          <StyledIcon reverse={reverse} theme={theme}>
+        {actionsGroup}
+        {showTrailingIcon && (
+          <StyledIcon
+            reverse={iconOnRight}
+            hasActionsGroup={hasActionsGroup}
+            theme={theme}
+          >
             {textInputIcon}
           </StyledIcon>
         )}
-        {!reverse && textInputButton}
         {!readOnly && drop}
       </StyledTextInputContainer>
     );

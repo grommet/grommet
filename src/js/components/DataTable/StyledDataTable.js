@@ -8,6 +8,7 @@ import {
   focusStyle,
   unfocusStyle,
   genericStyles,
+  overflowStyle,
   normalizeColor,
   styledComponentsConfig,
 } from '../../utils';
@@ -94,12 +95,12 @@ const StyledDataTableRowHeader = styled(TableRow)`
 const StyledDataTableBody = styled(TableBody)`
   ${(props) =>
     props.size &&
-    `
-    display: block;
-    width: 100%;
-    max-height: ${props.theme.global.size[props.size] || props.size};
-    overflow: auto;
-  `}
+    css`
+      display: block;
+      width: 100%;
+      max-height: ${props.theme.global.size[props.size] || props.size};
+      ${overflowStyle('auto', props.theme)}
+    `}
 
   &:focus {
     ${focusStyle({ skipSvgChildren: true, forceOutline: true })}

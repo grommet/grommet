@@ -13,6 +13,9 @@ export interface TextInputProps
     'onSelect' | 'size' | 'placeholder' | 'width'
   > {
   a11yTitle?: A11yTitleType;
+  clear?: boolean;
+  copy?: boolean;
+  defaultSuggestion?: number;
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -20,13 +23,13 @@ export interface TextInputProps
     left?: 'left' | 'right';
   };
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  dropTarget?: object;
   dropProps?: DropType;
+  dropTarget?: object;
   focusIndicator?: boolean;
-  defaultSuggestion?: number;
   icon?: React.ReactNode;
   id?: string;
   messages?: {
+    clear?: string;
     enterSelect?: string;
     hidePassword?: string;
     showPassword?: string;
@@ -35,6 +38,14 @@ export interface TextInputProps
     suggestionIsOpen?: string;
   };
   name?: string;
+  /**
+   * Called when the copy button is activated. The value is unmasked; do not
+   * log, persist, or transmit it unless explicitly required.
+   */
+  onClickCopy?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    value: string,
+  ) => void | Promise<void>;
   onSelect?: (x: {
     target: React.RefObject<HTMLElement | null>['current'];
     suggestion: any;
@@ -43,8 +54,8 @@ export interface TextInputProps
     target: React.RefObject<HTMLElement | null>['current'];
     suggestion: any;
   }) => void;
-  onSuggestionsOpen?: () => void;
   onSuggestionsClose?: () => void;
+  onSuggestionsOpen?: () => void;
   password?: boolean;
   placeholder?: string | React.ReactNode;
   plain?: boolean | 'full';

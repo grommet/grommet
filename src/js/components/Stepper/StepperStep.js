@@ -16,6 +16,7 @@ import {
   StyledConnector,
   StyledSubStepsList,
 } from './StyledStepper';
+import { useStepTheme } from './utils';
 
 export const StepperStep = ({
   step,
@@ -43,33 +44,31 @@ export const StepperStep = ({
   const hasCurrentChild =
     !isSubStep && step.children?.some((c) => c.id === currentStep);
   const isHighlighted = isCurrent || hasCurrentChild;
+  const hasChildren = !!step.children?.length;
+  const navigationStepId = hasChildren
+    ? step.children.find((child) => child.status !== 'disabled')?.id
+    : step.id;
   const isDisabled = step.status === 'disabled';
-  const isClickable = clickableSteps && !isDisabled;
+  const isNavigable = !isDisabled && !!navigationStepId;
+  const isClickable = clickableSteps && isNavigable;
   const isReadOnly = !clickableSteps;
+
+  const stepTheme = useStepTheme(step, isSubStep);
 
   const stepItemValue = useMemo(
     () => ({
       step,
       index,
       isLast,
-      isLabelRevealed: direction === 'vertical' || focusedIndex === index,
       isSubStep,
+      isDisabled,
     }),
-    [step, index, isLast, direction, focusedIndex, isSubStep],
+    [step, index, isLast, isSubStep, isDisabled],
   );
 
   const handleClick = () => {
-    if (isClickable && onStepClick) {
-      onStepClick(step.id);
-    }
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      if (isClickable && onStepClick) {
-        onStepClick(step.id);
-      }
+    if (isClickable && navigationStepId && onStepClick) {
+      onStepClick(navigationStepId);
     }
   };
 
@@ -96,13 +95,20 @@ export const StepperStep = ({
   const focusableProps = isReadOnly
     ? {}
     : {
+        forwardedAs: 'button',
+        type: 'button',
+        background: 'none',
+        border: { size: '0px' },
         tabIndex: focusedIndex === index ? 0 : -1,
-        onClick: handleClick,
-        onKeyDown: handleKeyDown,
+        onClick: (event) => {
+          if (event.type === 'keydown') event.preventDefault();
+          handleClick();
+        },
+        // indicator provides focus-visible treatment; avoid a second ring
+        focusIndicator: false,
         onFocus: () => {
           if (onFocusStep) onFocusStep(index);
         },
-        type: 'button',
       };
 
   return (
@@ -112,10 +118,10 @@ export const StepperStep = ({
         isSubStep={isSubStep}
         isLast={isLast}
         hasSubSteps={!!subSteps?.length}
+        stepTheme={stepTheme}
         {...passThemeFlag}
       >
         <StyledStepButton
-          as={isReadOnly ? 'div' : 'button'}
           role={isReadOnly ? 'group' : undefined}
           ref={(el) => {
             if (stepRefs) {
@@ -124,24 +130,23 @@ export const StepperStep = ({
             }
           }}
           aria-current={isHighlighted ? 'step' : undefined}
-          aria-disabled={isDisabled || undefined}
+          aria-disabled={
+            isDisabled || (clickableSteps && !isNavigable) || undefined
+          }
           aria-label={ariaLabel}
           aria-describedby={
             describedBy.length > 0 ? describedBy.join(' ') : undefined
           }
-          isClickable={isClickable}
-          isDisabled={isDisabled}
-          isSubStep={isSubStep}
-          direction={direction}
           {...focusableProps}
-          {...passThemeFlag}
+          {...stepTheme.button}
         >
           <StepperIndicator />
           <StyledStepContent
-            direction={direction}
+            align={direction === 'vertical' ? 'start' : 'center'}
+            isVertical={direction === 'vertical'}
             isSubStep={isSubStep}
             hasDescription={!!step.description}
-            {...passThemeFlag}
+            stepTheme={stepTheme}
           >
             <StepperLabel />
             {showDescription && <StepperDescription />}
@@ -155,12 +160,19 @@ export const StepperStep = ({
               direction={direction}
               status={step.status}
               aria-hidden="true"
+              stepTheme={stepTheme}
               {...passThemeFlag}
             />
           )}
         {!!subSteps?.length && (
-          <StepConnector step={step} direction={direction}>
-            <StyledSubStepsList direction={direction} {...passThemeFlag}>
+          <StepConnector>
+            <StyledSubStepsList
+              forwardedAs="ol"
+              isVertical={direction === 'vertical'}
+              cssGap
+              stepTheme={stepTheme}
+              {...stepTheme?.children}
+            >
               {subSteps}
             </StyledSubStepsList>
           </StepConnector>

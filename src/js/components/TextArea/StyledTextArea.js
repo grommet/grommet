@@ -2,7 +2,12 @@
 // SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 
-import { disabledStyle, inputStyle, styledComponentsConfig } from '../../utils';
+import {
+  disabledStyle,
+  inputStyle,
+  scrollbarStyle,
+  styledComponentsConfig,
+} from '../../utils';
 
 const plainStyle = css`
   outline: none;
@@ -35,6 +40,7 @@ const StyledTextArea = styled.textarea.withConfig(styledComponentsConfig)`
       props.theme.textArea.disabled && props.theme.textArea.disabled.opacity,
     )}
   ${(props) => props.theme.textArea && props.theme.textArea.extend};
+  ${(props) => scrollbarStyle(props.theme)}
   max-width: 100%;
 `;
 

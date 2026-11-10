@@ -344,7 +344,7 @@ exports[`Box background 1`] = `
   box-sizing: border-box;
   max-width: 100%;
   background-color: rgba(200, 100, 150, 0.8);
-  color: #444444;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   flex-direction: column;

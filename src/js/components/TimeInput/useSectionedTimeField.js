@@ -18,7 +18,6 @@ import {
   SECTION_MINUTE,
   SECTION_PERIOD,
   SECTION_SECOND,
-  defaultHourForFormat,
 } from './utils';
 
 const separatorBeforeSection = (section) =>
@@ -230,7 +229,7 @@ export const useSectionedTimeField = ({
   );
 
   const incrementSection = useCallback(
-    (section, delta) => {
+    (section, delta, isDrop) => {
       if (section === SECTION_PERIOD) {
         setSectionValue(section, sections.period === 'AM' ? 'PM' : 'AM');
         return;
@@ -240,6 +239,14 @@ export const useSectionedTimeField = ({
       const maxValue = sectionMax(section, format);
       const key = sectionKey(section);
       const current = sections[key];
+
+      if (current === undefined) {
+        setSectionValue(
+          section,
+          isDrop ? minValue : delta > 0 ? minValue : maxValue,
+        );
+        return;
+      }
 
       const step =
         section === SECTION_MINUTE
@@ -276,13 +283,7 @@ export const useSectionedTimeField = ({
             options[options.length - 1];
         }
       } else {
-        const base =
-          current === undefined
-            ? section === SECTION_HOUR
-              ? defaultHourForFormat(format)
-              : minValue
-            : current;
-        next = base + delta;
+        next = current + delta;
         if (next > maxValue) next = minValue;
         if (next < minValue) next = maxValue;
       }

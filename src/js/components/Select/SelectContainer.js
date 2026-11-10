@@ -455,6 +455,7 @@ const SelectContainer = forwardRef(
               ref={optionsRef}
               aria-multiselectable={multiple}
               onMouseMove={() => setKeyboardNavigation(false)}
+              {...passThemeFlag}
             >
               <InfiniteScroll
                 items={options}

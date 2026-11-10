@@ -89,11 +89,11 @@ export const withinDropPortal = (node, portalContext) => {
   return true;
 };
 
-// Check if an element can receive focus: native form inputs, or non-native
-// interactive elements with an explicit tabIndex attribute
-// (e.g. span[role="spinbutton"]). Excludes native interactive elements
-// (button, a) so they don't trigger FormField focus state.
-export const isFocusable = (element) => {
+// FormField focus-styling predicate, not a general DOM focusability check.
+// Excludes buttons and links so they retain their own focus indicators.
+// Include negative tabIndex when checking an already-focused element;
+// descendant discovery requires a non-negative tabIndex.
+export const isFocusable = (element, includeNegativeTabIndex = false) => {
   if (!element || element.disabled) return false;
   const tagName = element.tagName.toLowerCase();
   if (tagName === 'input' || tagName === 'select' || tagName === 'textarea')
@@ -102,7 +102,7 @@ export const isFocusable = (element) => {
   const isNativeInteractive = tagName === 'button' || tagName === 'a';
   return (
     !isNativeInteractive &&
-    element.tabIndex >= 0 &&
+    (includeNegativeTabIndex || element.tabIndex >= 0) &&
     element.hasAttribute('tabindex')
   );
 };
@@ -121,7 +121,7 @@ export const getFirstFocusableDescendant = (element) => {
 
 export const shouldKeepFocus = (root) => {
   const element = root.activeElement;
-  if (isFocusable(element)) return true;
+  if (isFocusable(element, true)) return true;
   return !!getFirstFocusableDescendant(element);
 };
 

@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
 
-import { baseStyle, styledComponentsConfig } from '../../utils';
+import { baseStyle, overflowStyle, styledComponentsConfig } from '../../utils';
 
-const fullStyle = (full) => {
+const fullStyle = (full, theme) => {
   if (full === 'min')
     return css`
       min-height: 100vh;
@@ -12,13 +12,13 @@ const fullStyle = (full) => {
   return css`
     width: 100vw;
     height: 100vh;
-    overflow: auto;
+    ${overflowStyle('auto', theme)}
   `;
 };
 
 const StyledGrommet = styled.div.withConfig(styledComponentsConfig)`
   ${(props) => !props.plain && baseStyle}
-  ${(props) => props.full && fullStyle(props.full)}
+  ${(props) => props.full && fullStyle(props.full, props.theme)}
   ${(props) => props.theme.global.font.face}
   ${(props) => props.theme.grommet.extend}
   ${(props) =>
