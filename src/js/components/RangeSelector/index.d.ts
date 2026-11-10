@@ -38,15 +38,6 @@ export interface RangeSelectorExtendedProps
       'color' | 'onChange'
     > {}
 
-declare const RangeSelector: React.FC<
-  RangeSelectorProps &
-    Omit<
-      React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLDivElement>,
-        HTMLDivElement
-      >,
-      'color'
-    >
->;
+declare const RangeSelector: React.FC<RangeSelectorExtendedProps>;
 
 export { RangeSelector };
