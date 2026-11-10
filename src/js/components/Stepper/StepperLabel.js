@@ -1,37 +1,28 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React from 'react';
-import { Text } from '../Text';
 import { useStepper, useStepItem } from './StepperContext';
-import { getEffectiveState } from './StepperIndicator';
-import { useThemeValue } from '../../utils/useThemeValue';
-
-const getStateProps = (theme, effectiveState) =>
-  theme.stepper?.[effectiveState]?.label || {};
+import { useStepTheme } from './utils';
+import { StyledStepLabel } from './StyledStepper';
 
 export const StepperLabel = ({ ...rest }) => {
-  const { currentStep, direction } = useStepper();
-  const { theme } = useThemeValue();
+  const { clickableSteps, direction } = useStepper();
   const { step, isSubStep } = useStepItem();
+  const stepTheme = useStepTheme(step, isSubStep);
   if (!step) return null;
 
-  const isCurrent = currentStep === step.id;
-  const hasCurrentChild =
-    !isSubStep && step.children?.some((c) => c.id === currentStep);
-  const isHighlighted = isCurrent || hasCurrentChild;
-  const effectiveState = getEffectiveState(step.status, isHighlighted);
-  const stateProps = getStateProps(theme, effectiveState);
-  const size = isSubStep
-    ? theme.stepper?.label?.substep?.size || 'small'
-    : theme.stepper?.label?.size || 'medium';
+  const isDisabled = step.status === 'disabled';
+  const isClickable = clickableSteps && !isDisabled;
+
   return (
-    <Text
-      size={size}
+    <StyledStepLabel
+      {...stepTheme.label}
       truncate={direction === 'horizontal'}
-      {...stateProps}
+      stepTheme={stepTheme}
+      isClickable={isClickable}
       {...rest}
     >
       {step.title}
-    </Text>
+    </StyledStepLabel>
   );
 };
