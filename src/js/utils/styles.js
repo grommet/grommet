@@ -992,6 +992,7 @@ const inputPartStyle = (part, props, { paddingOnly, skipPadding } = {}) => {
   if (
     part.width !== undefined &&
     props.widthProp === undefined &&
+    props.$inputWidth === undefined &&
     props.width === undefined
   )
     styles.push(widthStyle(part.width, theme));

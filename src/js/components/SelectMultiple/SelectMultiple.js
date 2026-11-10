@@ -575,6 +575,7 @@ const SelectMultiple = forwardRef(
           <Box width={width}>
             <StyledSelectDropButton
               {...dropButtonProps}
+              $inputWidth={width}
               dropAlign={dropAlign}
               dropTarget={dropTarget}
               alignSelf={alignSelf}

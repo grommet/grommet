@@ -169,6 +169,51 @@ describe('SelectMultiple', () => {
     },
   );
 
+  test.each(['120px', { width: '120px', min: '100px', max: '120px' }])(
+    'explicit wrapper width suppresses shared trigger width (%j)',
+    (width) => {
+      render(
+        <Grommet
+          theme={{
+            global: {
+              input: {
+                width: { width: '240px', min: '160px', max: '300px' },
+              },
+            },
+          }}
+        >
+          <SelectMultiple
+            options={['one', 'two']}
+            width={
+              width as React.ComponentProps<typeof SelectMultiple>['width']
+            }
+          />
+        </Grommet>,
+      );
+
+      const trigger = screen.getByRole('button');
+      expect(trigger.parentElement).toHaveStyleRule('width', '120px');
+      if (typeof width === 'object') {
+        expect(trigger.parentElement).toHaveStyleRule('min-width', '100px');
+        expect(trigger.parentElement).toHaveStyleRule('max-width', '120px');
+      }
+      expect(trigger).not.toHaveStyleRule('width', '240px');
+      expect(trigger).not.toHaveStyleRule('min-width', '160px');
+      expect(trigger).not.toHaveStyleRule('max-width', '300px');
+      expect(trigger).not.toHaveAttribute('$inputWidth');
+    },
+  );
+
+  test('shared trigger width remains the fallback without explicit sizing', () => {
+    render(
+      <Grommet theme={{ global: { input: { width: '240px' } } }}>
+        <SelectMultiple options={['one', 'two']} />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('button')).toHaveStyleRule('width', '240px');
+  });
+
   test('defaultValue', () => {
     const { container } = render(
       <Grommet>
