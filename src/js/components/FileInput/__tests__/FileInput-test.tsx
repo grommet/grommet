@@ -106,6 +106,79 @@ describe('FileInput', () => {
     },
   );
 
+  test.each(['hover', 'focus', 'both'] as const)(
+    'keyboard focus shadow wins over %s elevation',
+    async (state) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            global: {
+              focus: {
+                outline: { size: '0px', color: 'transparent' },
+                shadow: '0 0 0 3px red',
+                twoColor: true,
+              },
+              input: {
+                hover: state !== 'focus' ? { elevation: 'none' } : undefined,
+                focus: state !== 'hover' ? { elevation: 'none' } : undefined,
+              },
+            },
+          }}
+        >
+          <FileInput aria-label="Upload files" />
+        </Grommet>,
+      );
+
+      const input = screen.getByLabelText('Upload files');
+      const surface = input.parentElement as HTMLElement;
+      await user.tab();
+      expect(input).toHaveFocus();
+      await user.hover(input);
+      expect(input).toHaveFocus();
+      expect(getComputedStyle(surface).boxShadow).toBe('0 0 0 3px red');
+
+      const focusRules = Array.from(document.styleSheets).flatMap((sheet) =>
+        Array.from(sheet.cssRules),
+      ) as CSSStyleRule[];
+      expect(
+        focusRules.some(
+          (rule) =>
+            rule.style?.getPropertyValue('box-shadow') === '0 0 0 3px red' &&
+            Array.from(surface.classList).some((className) =>
+              rule.selectorText?.includes(`.${className}.${className}`),
+            ),
+        ),
+      ).toBe(true);
+    },
+  );
+
+  test('pointer focus does not add a keyboard shadow with appearance elevation', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          global: {
+            focus: { shadow: '0 0 0 3px red' },
+            input: {
+              hover: { elevation: 'none' },
+              focus: { elevation: 'none' },
+            },
+          },
+        }}
+      >
+        <FileInput aria-label="Upload files" />
+      </Grommet>,
+    );
+
+    const input = screen.getByLabelText('Upload files');
+    await user.click(input);
+    expect(input).toHaveFocus();
+    expect(getComputedStyle(input.parentElement as HTMLElement).boxShadow).toBe(
+      'none',
+    );
+  });
+
   test('basic', () => {
     const { container } = render(
       <Grommet>

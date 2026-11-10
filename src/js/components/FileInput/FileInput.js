@@ -56,7 +56,13 @@ const ContentsBox = styled(Box)`
     props.theme.fileInput &&
     props.theme.fileInput.dragOver &&
     props.theme.fileInput.dragOver.extend};
-  ${(props) => props.focus && focusStyle()};
+  ${(props) =>
+    props.focus &&
+    css`
+      && {
+        ${focusStyle()}
+      }
+    `};
   ${(props) => !props.focus && unfocusStyle()};
 `;
 
