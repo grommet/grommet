@@ -193,9 +193,6 @@ const customTheme = {
         color: '#4C1D95',
         size: 'small',
       },
-      // children: {
-      //   gap: 'xlarge',
-      // }
     },
   },
 } satisfies ThemeType;
