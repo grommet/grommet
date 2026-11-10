@@ -3,6 +3,7 @@
 import React, { forwardRef, useContext, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import {
@@ -112,8 +113,10 @@ const FileInput = forwardRef(
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
     const max = multiple?.max;
     const inputRef = useForwardedRef(ref);
+    const containerRef = useRef();
     const controlRef = useRef();
     const removeRef = useRef();
+    const [measuredRightOffset, setMeasuredRightOffset] = useState();
     const ConfirmRemove = confirmRemove;
     const RemoveIcon = theme.fileInput.icons.remove;
     const ErrorIcon = theme.fileInput?.icons?.error || CircleAlert;
@@ -167,6 +170,44 @@ const FileInput = forwardRef(
           : '',
       ],
     });
+
+    // Measure after layout so shared/state padding is included before paint.
+    // Keep the transparent file input off the action controls as bounds change,
+    // otherwise it intercepts Remove clicks and opens the file picker instead.
+    useLayoutEffect(() => {
+      const container = containerRef.current;
+      const controls = [
+        removeRef.current,
+        files.length <= 1 ? controlRef.current : undefined,
+      ].filter(Boolean);
+      const measure = () => {
+        const containerBounds = container.getBoundingClientRect();
+        const bounds = controls
+          .map((control) => control.getBoundingClientRect())
+          .filter((rect) => rect.width > 0);
+        if (containerBounds.width > 0 && bounds.length > 0)
+          setMeasuredRightOffset(
+            Math.max(
+              0,
+              containerBounds.right -
+                Math.min(...bounds.map((rect) => rect.left)),
+            ),
+          );
+        else setMeasuredRightOffset(undefined);
+      };
+      measure();
+      const observer =
+        typeof window.ResizeObserver !== 'undefined'
+          ? new window.ResizeObserver(measure)
+          : undefined;
+      observer?.observe(container);
+      controls.forEach((control) => observer?.observe(control));
+      window.addEventListener('resize', measure);
+      return () => {
+        observer?.disconnect();
+        window.removeEventListener('resize', measure);
+      };
+    }, [files, theme, hover, dragOver, focus, disabled, plain, multiple]);
 
     const mergeTheme = (propertyName, defaultKey) => {
       let result = {};
@@ -301,6 +342,7 @@ const FileInput = forwardRef(
     return (
       <>
         <ContentsBox
+          ref={containerRef}
           $inputPlain={plain}
           theme={theme}
           flex={false}
@@ -332,7 +374,7 @@ const FileInput = forwardRef(
               (maxSize && files.some((f) => f.size > maxSize)) ||
               (max != null && files.length > max)
             }
-            rightOffset={rightOffset || undefined}
+            rightOffset={measuredRightOffset ?? (rightOffset || undefined)}
             {...passThemeFlag}
             {...rest}
             onDragOver={() => setDragOver(true)}

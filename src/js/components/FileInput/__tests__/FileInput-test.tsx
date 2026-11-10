@@ -5,6 +5,8 @@ import 'jest-styled-components';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
 
 import { Grommet } from '../../Grommet';
 import { FileInput } from '..';
@@ -13,6 +15,97 @@ import { FormField } from '../../FormField';
 import { Alert } from 'grommet-icons';
 
 describe('FileInput', () => {
+  test('has no accessibility violations', async () => {
+    const { container } = render(
+      <Grommet>
+        <FileInput aria-label="Upload files" />
+      </Grommet>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  test.each([1, 2, 11])(
+    'overlay exclusion follows action bounds across padding changes (%s files)',
+    async (count) => {
+      const user = userEvent.setup();
+      let rightInset = 40;
+      const removeWidth = 30;
+      const browseWidth = 60;
+      const rect = (left: number, width: number) =>
+        ({
+          left,
+          right: left + width,
+          width,
+          top: 0,
+          bottom: 40,
+          height: 40,
+          x: left,
+          y: 0,
+          toJSON: () => ({}),
+        } as DOMRect);
+      const bounds = jest
+        .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+        .mockImplementation(function getBounds(this: HTMLElement) {
+          if (this.firstElementChild?.getAttribute('type') === 'file')
+            return rect(0, 500);
+          if (this.getAttribute('aria-label')?.startsWith('remove'))
+            return rect(
+              500 - rightInset - removeWidth - (count === 1 ? browseWidth : 0),
+              removeWidth,
+            );
+          if (this.textContent === 'Browse' && this.tagName === 'A')
+            return rect(500 - rightInset - browseWidth, browseWidth);
+          return rect(0, 0);
+        });
+
+      try {
+        render(
+          <Grommet
+            theme={{
+              global: {
+                input: {
+                  pad: { right: '40px' },
+                  hover: { pad: { right: '64px' } },
+                  focus: { pad: { right: '80px' } },
+                },
+              },
+            }}
+          >
+            <Form
+              value={{
+                uploads: Array.from(
+                  { length: count },
+                  (_, index) => new File(['hello'], `file-${index}.txt`),
+                ),
+              }}
+            >
+              <FileInput aria-label="Upload files" name="uploads" multiple />
+            </Form>
+          </Grommet>,
+        );
+
+        const input = screen.getByLabelText('Upload files');
+        const excludedControls = removeWidth + (count === 1 ? browseWidth : 0);
+        expect(input).toHaveStyleRule('right', `${40 + excludedControls}px`);
+
+        rightInset = 64;
+        await user.hover(input);
+        expect(input).toHaveStyleRule('right', `${64 + excludedControls}px`);
+
+        rightInset = 80;
+        await user.tab();
+        expect(input).toHaveFocus();
+        expect(input).toHaveStyleRule('right', `${80 + excludedControls}px`);
+
+        rightInset = 96;
+        fireEvent(window, new Event('resize'));
+        expect(input).toHaveStyleRule('right', `${96 + excludedControls}px`);
+      } finally {
+        bounds.mockRestore();
+      }
+    },
+  );
+
   test('basic', () => {
     const { container } = render(
       <Grommet>
