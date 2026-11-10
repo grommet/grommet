@@ -110,7 +110,7 @@ const getFocusStyle = (props, content = false) => {
     props.theme.formField[props.componentName]?.error?.border !== undefined
   )
     return css`
-      ${focusStyle({ justBorder: true })}
+      ${focusStyle({ forceOutline: true })}
       ${props.border === false || props.border === undefined
         ? 'border: none;'
         : borderStyle(props.border, props.responsive ?? true, props.theme)}

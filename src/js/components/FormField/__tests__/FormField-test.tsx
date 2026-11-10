@@ -1599,6 +1599,49 @@ describe('FormField', () => {
       expect(content).toHaveStyleRule('padding', '12px');
     });
 
+    test.each([false, true])(
+      'invalid TextArea keeps its error border and adds a keyboard focus outline (generated=%s)',
+      async (generated) => {
+        const user = userEvent.setup();
+        const { content } = renderBackground(
+          {
+            global: { colors: { focus: '#00ff00' } },
+            formField: {
+              border: { position: 'inner', side: 'all' },
+              textArea: {
+                border: { color: 'transparent', size: '3px' },
+                error: { border: { color: '#cc0000' } },
+              },
+            },
+          },
+          {
+            generated,
+            fieldProps: {
+              component: TextArea,
+              error: 'Invalid value',
+              children: generated ? undefined : (
+                <TextArea id="background-input" />
+              ),
+            },
+          },
+        );
+
+        expect(content).toHaveStyleRule('border', 'solid 3px #cc0000');
+        expect(content).not.toHaveStyleRule('outline');
+
+        await user.tab();
+        expect(screen.getByRole('textbox')).toHaveFocus();
+        expect(content).toHaveStyleRule('border', 'solid 3px #cc0000');
+        expect(content).toHaveStyleRule('border-color', '#cc0000');
+        expect(content).toHaveStyleRule('outline', '2px solid #00ff00');
+
+        await user.tab();
+        expect(screen.getByRole('textbox')).not.toHaveFocus();
+        expect(content).toHaveStyleRule('border', 'solid 3px #cc0000');
+        expect(content).not.toHaveStyleRule('outline');
+      },
+    );
+
     test('focused error styling accepts an explicitly removed content border', async () => {
       const user = userEvent.setup();
       const { content } = renderBackground(
