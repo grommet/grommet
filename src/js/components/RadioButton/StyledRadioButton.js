@@ -322,17 +322,23 @@ const StyledRadioButtonBox = styled(Box)`
         selected?.border,
       );
     const styles = boxPartStyles(part, props);
-    if (props.$checked === undefined && control?.selected) {
-      const selectedPart = { ...control, ...control.selected };
-      if (control.border !== undefined || control.selected.border !== undefined)
+    if (
+      props.$checked === undefined &&
+      (control?.selected || check.background?.color)
+    ) {
+      const selectedPart = { ...control, ...control?.selected };
+      if (
+        control?.border !== undefined ||
+        control?.selected?.border !== undefined
+      )
         selectedPart.border = mergeControlBorder(
-          mergeControlBorder(props.border, control.border),
-          control.selected.border,
+          mergeControlBorder(props.border, control?.border),
+          control?.selected?.border,
         );
       const selectedBackground =
-        control.selected.background ??
+        control?.selected?.background ??
         check.background?.color ??
-        control.background;
+        control?.background;
       styles.push(css`
         input:checked + & {
           ${boxPartStyles(selectedPart, props)}

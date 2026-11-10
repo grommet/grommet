@@ -1008,6 +1008,73 @@ describe('RadioButton theme', () => {
     },
   );
 
+  test.each([false, true])(
+    'legacy selected fill follows uncontrolled selection (defaultChecked=%s)',
+    async (defaultChecked) => {
+      const user = userEvent.setup();
+      render(
+        <Grommet
+          theme={{
+            radioButton: {
+              control: { background: '#eeeeee' },
+              check: { background: { color: '#aaddff' } },
+            },
+          }}
+        >
+          <RadioButton name="example" label="Option" {...{ defaultChecked }} />
+          <RadioButton name="example" label="Other option" />
+        </Grommet>,
+      );
+
+      const input = screen.getByRole('radio', { name: 'Option' });
+      const control = input.nextElementSibling as HTMLElement;
+      expect(getComputedStyle(control).backgroundColor).toBe(
+        defaultChecked ? 'rgb(170, 221, 255)' : 'rgb(238, 238, 238)',
+      );
+
+      await user.click(input);
+      await user.unhover(input.closest('label') as HTMLElement);
+      expect(input).toBeChecked();
+      expect(getComputedStyle(control).backgroundColor).toBe(
+        'rgb(170, 221, 255)',
+      );
+
+      const other = screen.getByRole('radio', { name: 'Other option' });
+      await user.click(other);
+      await user.unhover(other.closest('label') as HTMLElement);
+      expect(input).not.toBeChecked();
+      expect(getComputedStyle(control).backgroundColor).toBe(
+        'rgb(238, 238, 238)',
+      );
+      expect(other).toBeChecked();
+      expect(
+        getComputedStyle(other.nextElementSibling as HTMLElement)
+          .backgroundColor,
+      ).toBe('rgb(170, 221, 255)');
+    },
+  );
+
+  test('uncontrolled legacy selected fill works without a control part', () => {
+    render(
+      <Grommet
+        theme={{
+          radioButton: {
+            control: undefined,
+            check: { background: { color: '#aaddff' } },
+          },
+        }}
+      >
+        <RadioButton name="example" label="Option" defaultChecked />
+      </Grommet>,
+    );
+
+    const { input, control } = getControl();
+    expect(input).toBeChecked();
+    expect(getComputedStyle(control).backgroundColor).toBe(
+      'rgb(170, 221, 255)',
+    );
+  });
+
   test('hover selectors follow native uncontrolled selection', async () => {
     const user = userEvent.setup();
     render(
