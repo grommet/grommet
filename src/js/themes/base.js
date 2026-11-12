@@ -2345,7 +2345,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         button: {
           gap: 'small',
           direction: 'row',
-          align: 'start',
+          // baseline pairs with the StyledIndicator baseline strut to
+          // center the label's first line against the indicator
+          align: 'baseline',
         },
       },
       subStep: {

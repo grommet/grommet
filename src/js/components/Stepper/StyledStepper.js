@@ -118,43 +118,85 @@ const StyledStepItem = styled.li.withConfig({
   }}
 `;
 
+// Groups the step button with its supporting content (description, error,
+// disabled reason) while keeping connectors and sub-steps outside. In
+// vertical direction it is a two-column grid (indicator | text); the step
+// button subgrids these columns so the label (inside the button) and the
+// supporting content (outside the button) share the text column and stay
+// left aligned. max-content (not auto) keeps the indicator column from
+// absorbing free space, and minmax(0, max-content) keeps the button's
+// click target at content width while allowing long text to wrap instead
+// of overflowing.
+const StyledStepMain = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'isVertical',
+})`
+  display: flex;
+  min-width: 0;
+  ${(props) => {
+    if (props.isVertical) {
+      const columnGap = getMetricSize(
+        props.theme,
+        props.stepTheme?.button?.gap || 'small',
+      );
+      return css`
+        display: grid;
+        grid-template-columns: max-content minmax(0, max-content);
+        column-gap: ${columnGap};
+      `;
+    }
+    return css`
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+    `;
+  }}
+`;
+
 const StyledStepButton = styled(Box)`
   &:focus-visible {
     outline: none;
   }
+  ${(props) =>
+    props.isVertical &&
+    css`
+      /* span and subgrid the step main grid's indicator/text columns so
+         the label aligns with the supporting content rendered below */
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: subgrid;
+    `}
 `;
 
 const StyledStepContent = styled(Box)`
+  ${(props) =>
+    props.isVertical
+      ? css`
+          /* no overflow:hidden here: a non-visible overflow would turn
+             this into a scroll container whose baseline is synthesized
+             from its border box, breaking the button's baseline
+             alignment of label and indicator */
+          text-align: start;
+        `
+      : css`
+          overflow: hidden;
+        `}
+`;
+
+// Description, error and disabled reason live outside the step button but
+// must left align with the label in vertical direction (text column of the
+// step main grid) and center under the button in horizontal direction.
+const StyledStepSupportingContent = styled(Box)`
   overflow: hidden;
-  ${(props) => {
-    if (props.isVertical) {
-      return css`
-        text-align: start;
-      `;
-    }
-    return '';
-  }}
-  ${(props) => {
-    if (props.isVertical && !props.isSubStep && !props.hasDescription) {
-      const indicator = props.stepTheme?.indicator;
-      const indicatorBorderWidth = getBorderWidth(
-        props.theme,
-        indicator?.border?.size || '2px',
-      );
-      const indicatorHeight = indicator?.height?.height || indicator?.height;
-      const indicatorSize = indicatorHeight
-        ? (props.theme.global.size[indicatorHeight] || indicatorHeight)
-        : getIconSize(props.theme, indicator?.size || 'medium');
-      const lineHeight = getTextMetric(props.theme,
-        props.stepTheme?.label?.size || 'medium', 'height');
-      return css`
-        padding-top: calc(
-          (${indicatorSize} - ${lineHeight}) / 2 + ${indicatorBorderWidth}
-        );
-      `;
-    }
-    return '';
-  }}
+  ${(props) =>
+    props.isVertical
+      ? css`
+          grid-column: 2;
+          text-align: start;
+        `
+      : css`
+          max-width: 100%;
+          text-align: center;
+        `}
 `;
 
 const StyledStepLabel = styled(Text)`
@@ -180,6 +222,26 @@ const StyledStepLabel = styled(Text)`
 
 const StyledIndicator = styled(Box)`
   box-sizing: content-box;
+
+  /* Expose a text baseline at the indicator's visual center (the Box
+     centers its content) so the vertical step button can baseline-align
+     the label's first line with the indicator, regardless of indicator
+     size or how many lines the label wraps to. The zero-width space
+     takes no horizontal space; matching the label's font metrics makes
+     the indicator center coincide exactly with the first line center.
+     row direction keeps the strut beside the icon: stacked in a column
+     the icon would push the strut (and the exported baseline) upward. */
+  flex-direction: row;
+  &::before {
+    content: '\\200b';
+    ${(props) => {
+      const labelSize = props.stepTheme?.label?.size || 'medium';
+      return css`
+        font-size: ${getTextMetric(props.theme, labelSize, 'size')};
+        line-height: ${getTextMetric(props.theme, labelSize, 'height')};
+      `;
+    }}
+  }
 
   ${(props) =>
     (() => css`
@@ -363,8 +425,10 @@ const StyledSubStepsList = styled(Box).withConfig({
 
 export {
   StyledStepItem,
+  StyledStepMain,
   StyledStepButton,
   StyledStepContent,
+  StyledStepSupportingContent,
   StyledStepLabel,
   StyledIndicator,
   StyledConnector,
