@@ -314,7 +314,39 @@ describe('FileInput', () => {
         <FileInput name="file" />
       </Grommet>,
     );
+
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('fileInput padding takes precedence over global input padding', () => {
+    render(
+      <Grommet
+        theme={{
+          global: { input: { pad: 'small' } },
+          fileInput: { pad: 'large' },
+        }}
+      >
+        <FileInput aria-label="Upload files" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Upload files').parentElement).toHaveStyleRule(
+      'padding',
+      '48px',
+    );
+  });
+
+  test('uses the global input padding when fileInput padding is not set', () => {
+    render(
+      <Grommet theme={{ global: { input: { pad: 'small' } } }}>
+        <FileInput aria-label="Upload files" />
+      </Grommet>,
+    );
+
+    expect(screen.getByLabelText('Upload files').parentElement).toHaveStyleRule(
+      'padding',
+      '12px',
+    );
   });
 
   test('margin', () => {

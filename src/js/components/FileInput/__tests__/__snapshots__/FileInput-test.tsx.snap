@@ -2753,6 +2753,8 @@ exports[`FileInput pad 1`] = `
   opacity: 0;
   border: none;
   cursor: pointer;
+  width: calc(100% - 12px);
+  right: 12px;
 }
 
 .c3::-webkit-input-placeholder {

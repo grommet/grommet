@@ -38,7 +38,10 @@ const ContentsBox = styled(Box)`
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => {
-    const appearance = inputAppearanceStyle(props, { wrapper: true });
+    const appearance = inputAppearanceStyle(props, {
+      wrapper: true,
+      skipBasePadding: true,
+    });
     const extend = props.theme.fileInput && props.theme.fileInput.extend;
     return appearance
       ? css`
@@ -285,17 +288,18 @@ const FileInput = forwardRef(
       inputRef.current.focus();
     };
 
+    const fileInputPad = mergeTheme('pad') ?? theme.global.input.pad;
+
     // rightPad needs to be included in the rightOffset
     // otherwise input may cover the RemoveButton, making it
     // unreachable by mouse click.
     let rightPad = '0px';
-    if (mergeTheme('pad')) {
-      const { horizontal, right } = mergeTheme('pad');
-      if (right) {
-        rightPad = theme.global.edgeSize[right] || right;
-      } else if (horizontal) {
-        rightPad = theme.global.edgeSize[horizontal] || horizontal;
-      }
+    const rightPadValue =
+      typeof fileInputPad === 'string'
+        ? fileInputPad
+        : fileInputPad?.right || fileInputPad?.horizontal;
+    if (rightPadValue) {
+      rightPad = theme.global.edgeSize[rightPadValue] || rightPadValue;
     }
 
     const removeWidth = removeRef.current
@@ -356,7 +360,7 @@ const FileInput = forwardRef(
           background={mergeTheme('background', 'color')}
           border={!plain ? mergeTheme('border', 'side') : undefined}
           margin={mergeTheme('margin')}
-          pad={mergeTheme('pad')}
+          pad={fileInputPad}
           round={mergeTheme('round', 'size')}
           align={files.length ? 'stretch' : 'center'}
           justify="center"

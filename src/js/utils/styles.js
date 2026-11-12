@@ -1028,7 +1028,12 @@ const mergeInputBorder = (base, override) => {
 
 export const inputAppearanceStyle = (
   props,
-  { wrapper = false, skipPadding = false, padSelector } = {},
+  {
+    wrapper = false,
+    skipPadding = false,
+    skipBasePadding = false,
+    padSelector,
+  } = {},
 ) => {
   const { input } = props.theme.global;
   const plain = wrapper
@@ -1079,7 +1084,9 @@ export const inputAppearanceStyle = (
       `}
     `;
   };
-  const styles = partStyle(input);
+  const styles = partStyle(
+    skipBasePadding ? { ...input, pad: undefined } : input,
+  );
   const stateStyle = (part) => {
     const stateStyles = partStyle(part);
     if (wrapper && skipPadding && part.pad !== undefined)
