@@ -147,7 +147,13 @@ const controlHoverStyle = (props) => {
 const containerBackgroundStyle = (props) => {
   const { container, hover } = props.theme.checkBox;
   const normalStyles = boxPartStyles(container || {}, props, true);
-  const hoverStyles = boxPartStyles(container?.hover || {}, props, true);
+  const hoverContainer = { ...container?.hover };
+  if (hoverContainer.border !== undefined)
+    hoverContainer.border = mergeControlBorder(
+      Array.isArray(container?.border) ? undefined : container?.border,
+      hoverContainer.border,
+    );
+  const hoverStyles = boxPartStyles(hoverContainer, props, true);
   if (
     container?.background == null &&
     container?.hover?.background == null &&

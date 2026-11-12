@@ -392,6 +392,31 @@ describe('CheckBox theme', () => {
     },
   );
 
+  test('container hover border preserves unspecified normal border properties', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          global: { colors: { 'status-critical': '#ff0000' } },
+          checkBox: {
+            container: {
+              border: { color: 'border', size: '4px' },
+              hover: { border: { color: 'status-critical' } },
+            },
+          },
+        }}
+      >
+        <CheckBox label="Option" />
+      </Grommet>,
+    );
+
+    const { label } = getControl();
+    await user.hover(label);
+    expect(label).toHaveStyleRule('border', 'solid 4px #ff0000', {
+      modifier: ':hover',
+    });
+  });
+
   test.each([false, true])(
     'container state styles follow focus indicator behavior (indicator=%s)',
     async (focusIndicator) => {
