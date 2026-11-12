@@ -8,7 +8,6 @@ import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
 import { StepperDescription } from './StepperDescription';
 import { StepperError, StepperDisabledReason } from './StepperHelperText';
-import { StepConnector } from './StepConnector';
 import {
   StyledStepItem,
   StyledStepButton,
@@ -170,17 +169,15 @@ export const StepperStep = ({
           />
         )}
         {!!subSteps?.length && (
-          <StepConnector>
-            <StyledSubStepsList
-              forwardedAs="ol"
-              isVertical={direction === 'vertical'}
-              cssGap
-              stepTheme={stepTheme}
-              {...stepTheme?.children}
-            >
-              {subSteps}
-            </StyledSubStepsList>
-          </StepConnector>
+          <StyledSubStepsList
+            forwardedAs="ol"
+            isVertical={direction === 'vertical'}
+            cssGap
+            stepTheme={stepTheme}
+            {...stepTheme?.children}
+          >
+            {subSteps}
+          </StyledSubStepsList>
         )}
       </StyledStepItem>
     </StepItemContext.Provider>
