@@ -24,6 +24,9 @@ import { Form } from '../../Form';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../../TextInput';
 import { TextArea } from '../../TextArea';
+import { MaskedInput } from '../../MaskedInput';
+import { DateInput } from '../../DateInput';
+import { DateTimeInput } from '../../DateTimeInput';
 import { Text } from '../../Text';
 import { TimeInput } from '../../TimeInput';
 
@@ -912,6 +915,15 @@ describe('FormField', () => {
     expect(textContentBox).not.toHaveStyleRule('background-color', '#123456');
   });
 
+  test('accepts a plain text child when checking readOnly state', () => {
+    render(
+      <Grommet>
+        <FormField>Static content</FormField>
+      </Grommet>,
+    );
+    expect(screen.getByText('Static content')).toBeInTheDocument();
+  });
+
   describe('background', () => {
     type FieldTheme = NonNullable<ThemeType['formField']>;
     type BackgroundOptions = {
@@ -1716,6 +1728,159 @@ describe('FormField', () => {
         expect(content).toHaveStyleRule('padding', '8px');
       },
     );
+
+    test.each([
+      ['textInput', TextInput],
+      ['maskedInput', MaskedInput],
+      ['textArea', TextArea],
+      ['dateInput', DateInput],
+      ['dateTimeInput', DateTimeInput],
+      ['timeInput', TimeInput],
+    ] as const)(
+      '%s readOnly keeps state styling and suppresses per-input error and hover',
+      (inputName, InputComponent) => {
+        const warn =
+          inputName === 'dateTimeInput'
+            ? jest.spyOn(console, 'warn').mockImplementation(() => {})
+            : undefined;
+        try {
+          [false, true].forEach((generated) => {
+            const theme: ThemeType = {
+              global: {
+                input: {
+                  readOnly: {
+                    background: '#112233',
+                    border: { color: '#334455' },
+                  },
+                },
+              },
+              formField: {
+                border: { position: 'inner', side: 'all', size: '4px' },
+                [inputName]: {
+                  pad: '8px',
+                  hover: { background: '#abcdef' },
+                  error: {
+                    background: '#ffdddd',
+                    border: { color: '#ff0000' },
+                    pad: '12px',
+                  },
+                },
+              },
+            };
+            const { content, unmount } = renderBackground(theme, {
+              generated,
+              fieldProps: {
+                error: 'Invalid value',
+                ...(generated
+                  ? { component: InputComponent, readOnly: true }
+                  : {
+                      children: (
+                        <InputComponent id="background-input" readOnly />
+                      ),
+                    }),
+              },
+            });
+            expect(content).toHaveStyleRule('background-color', '#112233');
+            expect(content).toHaveStyleRule('border', 'solid 1px #334455');
+            expect(content).toHaveStyleRule('padding', '8px');
+            expect(content).not.toHaveStyleRule('background-color', '#abcdef', {
+              modifier: ':hover',
+            });
+            expect(screen.getByText('Invalid value')).toBeInTheDocument();
+            unmount();
+          });
+        } finally {
+          warn?.mockRestore();
+        }
+      },
+    );
+
+    test.each([
+      ['textInput', TextInput],
+      ['dateInput', DateInput],
+    ] as const)(
+      '%s readOnlyCopy suppresses per-input error styles',
+      (inputName, InputComponent) => {
+        [false, true].forEach((generated) => {
+          const { content, unmount } = renderBackground(
+            {
+              formField: {
+                [inputName]: { pad: '8px', error: { pad: '12px' } },
+              },
+            },
+            {
+              generated,
+              fieldProps: {
+                error: 'Invalid value',
+                ...(generated
+                  ? { component: InputComponent, readOnlyCopy: true }
+                  : {
+                      children: (
+                        <InputComponent id="background-input" readOnlyCopy />
+                      ),
+                    }),
+              },
+            },
+          );
+          expect(content).toHaveStyleRule('padding', '8px');
+          unmount();
+        });
+      },
+    );
+
+    test('inline TimeInput ignores readOnly for per-input error styling', () => {
+      const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+      try {
+        const { content } = renderBackground(
+          {
+            formField: {
+              timeInput: { pad: '8px', error: { pad: '12px' } },
+            },
+          },
+          {
+            fieldProps: {
+              error: 'Invalid value',
+              children: <TimeInput inline readOnly />,
+            },
+          },
+        );
+        expect(content).toHaveStyleRule('padding', '12px');
+        expect(warn).toHaveBeenCalledWith(
+          expect.stringContaining('ignores disabled and readOnly'),
+        );
+      } finally {
+        warn.mockRestore();
+      }
+    });
+
+    test('focused readOnly inputs do not use the per-input error focus style', async () => {
+      const user = userEvent.setup();
+      const { content } = renderBackground(
+        {
+          global: {
+            colors: { focus: '#00ff00' },
+            input: { readOnly: { border: { color: '#334455' } } },
+          },
+          formField: {
+            border: { position: 'inner', side: 'all' },
+            textArea: {
+              border: { color: '#334455', size: '3px' },
+              error: { border: { color: '#cc0000' } },
+            },
+          },
+        },
+        {
+          fieldProps: {
+            error: 'Invalid value',
+            children: <TextArea id="background-input" readOnly />,
+          },
+        },
+      );
+      await user.tab();
+      expect(screen.getByRole('textbox')).toHaveFocus();
+      expect(content).not.toHaveStyleRule('outline', '2px solid #00ff00');
+      expect(content).not.toHaveStyleRule('border-color', '#cc0000');
+    });
 
     test.each(['checkBoxGroup', 'radioButtonGroup'] as const)(
       'generated %s uses its transparent normal and hover overrides',

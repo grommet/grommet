@@ -80,6 +80,25 @@ const grommetInputPadNames = [
   'RangeSelector',
 ];
 
+const readOnlyInputNames = [
+  'TextInput',
+  'MaskedInput',
+  'TextArea',
+  'DateInput',
+  'DateTimeInput',
+  'TimeInput',
+];
+
+const isReadOnlyInput = (component, readOnly, readOnlyCopy, inline) => {
+  const name = component?.displayName;
+  return (
+    readOnlyInputNames.includes(name) &&
+    !(name === 'TimeInput' && inline) &&
+    (readOnly === true ||
+      ((name === 'TextInput' || name === 'DateInput') && readOnlyCopy === true))
+  );
+};
+
 const isGrommetInput = (comp) =>
   comp &&
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
@@ -104,11 +123,7 @@ const getFocusStyle = (props, content = false) => {
     return null;
   }
   if (!props.focus) return undefined;
-  if (
-    content &&
-    props.error &&
-    props.theme.formField[props.componentName]?.error?.border !== undefined
-  )
+  if (content && props.$componentErrorBorder)
     return css`
       ${focusStyle({ forceOutline: true })}
       ${props.border === false || props.border === undefined
@@ -451,27 +466,37 @@ const FormField = forwardRef(
     const readOnlyField = useMemo(() => {
       let readOnly = false;
       if (!children && inForm) {
-        const InputComponent = component || TextInput;
-        readOnly =
-          (rest.readOnly === true || rest.readOnlyCopy === true) &&
-          (InputComponent.displayName === 'TextInput' ||
-            InputComponent.displayName === 'DateInput');
+        readOnly = isReadOnlyInput(
+          component || TextInput,
+          rest.readOnly,
+          rest.readOnlyCopy,
+          rest.inline,
+        );
       }
       if (children) {
-        Children.map(children, (child) => {
+        Children.forEach(children, (child) => {
           if (
-            (child?.props?.readOnly === true ||
-              child?.props?.readOnlyCopy === true) &&
-            child.type &&
-            (child.type.displayName === 'TextInput' ||
-              child.type.displayName === 'DateInput')
+            child &&
+            isReadOnlyInput(
+              child.type,
+              child.props?.readOnly,
+              child.props?.readOnlyCopy,
+              child.props?.inline,
+            )
           ) {
             readOnly = true;
           }
         });
       }
       return readOnly;
-    }, [children, component, inForm, rest.readOnly, rest.readOnlyCopy]);
+    }, [
+      children,
+      component,
+      inForm,
+      rest.inline,
+      rest.readOnly,
+      rest.readOnlyCopy,
+    ]);
 
     const containerFocus = useMemo(() => {
       let focusIndicatorFlag = true;
@@ -853,6 +878,7 @@ const FormField = forwardRef(
         <FormFieldContentBox
           disabledProp={disabled}
           error={error}
+          $componentErrorBorder={componentError?.border !== undefined}
           componentName={childName}
           {...themeContentProps}
           {...innerProps}

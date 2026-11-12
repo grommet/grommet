@@ -26,8 +26,10 @@ Documentation for this component: https://v2.grommet.io/formfield
   fallbacks. An explicit error border can restore a normally disabled border.
   Omitted error parts preserve existing styling. Disabled and read-only fields
   retain their existing state styling rather than applying the per-input error
-  part. Hover remains suppressed while invalid, and `contentProps` and existing
-  extension hooks retain their precedence.
+  part. Read-only detection covers direct or generated TextInput, MaskedInput,
+  TextArea, DateInput, DateTimeInput, and non-inline TimeInput. TextInput and
+  DateInput also support `readOnlyCopy`. Hover remains suppressed while invalid,
+  and `contentProps` and existing extension hooks retain their precedence.
 - `formField.hover.background` and
   `formField.<inputName>.hover.background` control the content surface on hover.
   Hover styling is suppressed while disabled, read-only, invalid, or focused.
