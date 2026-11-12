@@ -83,6 +83,10 @@ export const StepperStep = ({
         title: step.title,
       },
     });
+  const accessibleLabel =
+    step.status === 'completed'
+      ? format({ id: 'stepper.completed', values: { step: ariaLabel } })
+      : ariaLabel;
 
   const describedBy = [];
   if (step.errorMessage && step.status === 'error') {
@@ -133,7 +137,7 @@ export const StepperStep = ({
           aria-disabled={
             isDisabled || (clickableSteps && !isNavigable) || undefined
           }
-          aria-label={ariaLabel}
+          aria-label={accessibleLabel}
           aria-describedby={
             describedBy.length > 0 ? describedBy.join(' ') : undefined
           }
