@@ -211,14 +211,10 @@ const getHoverStyle = (role) => (props) => {
           )};`,
         );
     } else {
-      if (hasSideSpecificBorder(componentHoverBorder))
-        styles.push('border: none;');
+      const hoverBorder = mergePartBorder(props.border, componentHoverBorder);
+      if (hasSideSpecificBorder(hoverBorder)) styles.push('border: none;');
       styles.push(
-        borderStyle(
-          componentHoverBorder,
-          props.responsive ?? true,
-          props.theme,
-        ),
+        borderStyle(hoverBorder, props.responsive ?? true, props.theme),
       );
     }
   } else if (ownsBorder && hover?.border?.color !== undefined) {
@@ -980,6 +976,9 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
+        componentName={
+          themeBorder?.position === 'outer' ? childName : undefined
+        }
         containerFocus={containerFocus} // internal prop
         allowHover={allowHover} // internal prop
         onFocusCapture={() => setFocusIndicator(true)}

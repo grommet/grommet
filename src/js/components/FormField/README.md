@@ -33,7 +33,10 @@ Documentation for this component: https://v2.grommet.io/formfield
 - `formField.hover.background` and
   `formField.<inputName>.hover.background` control the content surface on hover.
   Hover styling is suppressed while disabled, read-only, invalid, or focused.
-  Hover border styling continues to follow the border position.
+  Hover border styling follows the border position. Partial per-input hover
+  border objects inherit unspecified fields from the actual normal border,
+  including a `contentProps.border` override on the content surface. Explicit
+  non-object borders replace the normal border; `false` removes it.
 - An undefined per-input background inherits the shared background. Set both
   the normal and hover per-input backgrounds to `'transparent'` to opt a group
   out of both shared surfaces. Individual controls and their labels can still

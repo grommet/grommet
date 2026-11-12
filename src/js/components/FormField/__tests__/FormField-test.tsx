@@ -2355,6 +2355,170 @@ describe('FormField', () => {
       });
     });
 
+    test.each(['inner', 'outer', 'borderless'] as const)(
+      '%s partial hover border inherits the actual normal border',
+      (position) => {
+        const theme: ThemeType = {
+          formField: {
+            border:
+              position === 'borderless'
+                ? false
+                : { position, side: 'bottom', color: '#1122ff' },
+            textInput: {
+              ...(position === 'borderless' && {
+                border: { side: 'bottom', color: '#1122ff', size: '2px' },
+              }),
+              hover: { border: { size: '4px' } },
+            },
+          },
+        };
+        render(
+          <Grommet theme={theme}>
+            <FormField
+              label="Label"
+              contentProps={{ role: 'group', 'aria-label': 'Input surface' }}
+            >
+              <TextInput />
+            </FormField>
+          </Grommet>,
+        );
+        const content = screen.getByRole('group', { name: 'Input surface' });
+        const surface = position === 'outer' ? content.parentElement : content;
+        expect(surface).toHaveStyleRule('border-bottom', 'solid 4px #1122ff', {
+          modifier: ':hover',
+        });
+        expect(surface).not.toHaveStyleRule('border', 'solid 4px #1122ff', {
+          modifier: ':hover',
+        });
+      },
+    );
+
+    test('partial hover border inherits the contentProps border override', () => {
+      render(
+        <Grommet
+          theme={{
+            formField: {
+              textInput: {
+                border: { side: 'bottom', color: '#112233', size: '2px' },
+                hover: { border: { size: '4px' } },
+              },
+            },
+          }}
+        >
+          <FormField
+            contentProps={{
+              role: 'group',
+              'aria-label': 'Input surface',
+              border: { side: 'left', color: '#445566', size: '3px' },
+            }}
+          >
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+      expect(
+        screen.getByRole('group', { name: 'Input surface' }),
+      ).toHaveStyleRule('border-left', 'solid 4px #445566', {
+        modifier: ':hover',
+      });
+    });
+
+    test('partial hover border inherits each normal border side', () => {
+      render(
+        <Grommet
+          theme={{
+            formField: {
+              textInput: {
+                border: [
+                  { side: 'top', color: '#112233', size: '2px' },
+                  { side: 'bottom', color: '#445566', size: '3px' },
+                ],
+                hover: { border: { size: '4px' } },
+              },
+            },
+          }}
+        >
+          <FormField
+            contentProps={{ role: 'group', 'aria-label': 'Input surface' }}
+          >
+            <TextInput />
+          </FormField>
+        </Grommet>,
+      );
+      const surface = screen.getByRole('group', { name: 'Input surface' });
+      expect(surface).toHaveStyleRule('border-top', 'solid 4px #112233', {
+        modifier: ':hover',
+      });
+      expect(surface).toHaveStyleRule('border-bottom', 'solid 4px #445566', {
+        modifier: ':hover',
+      });
+    });
+
+    test.each([false, true])(
+      'partial hover border inherits a generated or direct input border (generated=%s)',
+      (generated) => {
+        render(
+          <Grommet
+            theme={{
+              formField: {
+                textInput: {
+                  border: { side: 'left', style: 'dashed', color: '#112233' },
+                  hover: { border: { size: '4px' } },
+                },
+              },
+            }}
+          >
+            <Form>
+              <FormField
+                name="input"
+                component={generated ? TextInput : undefined}
+                contentProps={{ role: 'group', 'aria-label': 'Input surface' }}
+              >
+                {generated ? undefined : <TextInput name="input" />}
+              </FormField>
+            </Form>
+          </Grommet>,
+        );
+        expect(
+          screen.getByRole('group', { name: 'Input surface' }),
+        ).toHaveStyleRule('border-left', 'dashed 4px #112233', {
+          modifier: ':hover',
+        });
+      },
+    );
+
+    test.each([false, 'left'] as const)(
+      'explicit hover border %s replaces the normal border',
+      (border) => {
+        render(
+          <Grommet
+            theme={{
+              formField: {
+                textInput: {
+                  border: { side: 'bottom', color: '#112233', size: '3px' },
+                  hover: { border },
+                },
+              },
+            }}
+          >
+            <FormField
+              contentProps={{ role: 'group', 'aria-label': 'Input surface' }}
+            >
+              <TextInput />
+            </FormField>
+          </Grommet>,
+        );
+        const surface = screen.getByRole('group', { name: 'Input surface' });
+        expect(surface).toHaveStyleRule('border', 'none', {
+          modifier: ':hover',
+        });
+        if (border === 'left')
+          expect(surface).toHaveStyleRule('border-left', expect.any(String), {
+            modifier: ':hover',
+          });
+      },
+    );
+
     test('applies theme hover border to outer border', () => {
       const { container } = render(
         <Grommet theme={outerHoverTheme}>
