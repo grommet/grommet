@@ -1031,8 +1031,8 @@ exports[`Stepper renders vertical steps 1`] = `
 .c12 {
   border-radius: 6px;
   left: calc( calc(24px / 2 + 3px) + 2px - 2px / 2 );
-  top: calc(24px + 3px +       (2px * 2) + 4px);
-  bottom: 0;
+  top: calc( 24px + 3px + (2px * 2) + 4px );
+  bottom: calc(4px - 3px);
   min-height: 12px;
   width: 2px;
   margin-block: 0;

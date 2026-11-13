@@ -8,8 +8,7 @@ import { useStepTheme } from './utils';
 import { useStepper, useStepItem } from './StepperContext';
 import { StyledIndicator } from './StyledStepper';
 
-const getMetricSize = (theme, size) =>
-  theme.global?.edgeSize?.[size] || size;
+const getMetricSize = (theme, size) => theme.global?.edgeSize?.[size] || size;
 
 const renderIcon = (Icon, props) => {
   if (!Icon) return null;
