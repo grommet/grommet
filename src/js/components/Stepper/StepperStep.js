@@ -132,9 +132,6 @@ export const StepperStep = ({
       <StyledStepItem
         direction={direction}
         isSubStep={isSubStep}
-        isLast={isLast}
-        hasSubSteps={!!subSteps?.length}
-        stepTheme={stepTheme}
         {...passThemeFlag}
       >
         <StyledStepMain

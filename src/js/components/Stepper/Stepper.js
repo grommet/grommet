@@ -441,9 +441,6 @@ const Stepper = forwardRef(
 
     const stepperTheme = resolveStepperTheme(theme, direction);
 
-    // Extract gap from stepperTheme.container. It will be handled
-    // by the Step for now.
-    const { gap, ...containerProps } = stepperTheme.container || {};
     const stepperContent = (
       <Box
         ref={ref}
@@ -456,12 +453,16 @@ const Stepper = forwardRef(
         }
         direction={direction === 'horizontal' ? 'row' : 'column'}
         fill={direction}
+        // string gaps must still render as CSS gap, never spacer divs,
+        // to keep the list's li-only children
+        cssGap
+        responsive={false}
         id={id}
         overflow="visible"
         pad="none"
         margin="none"
         style={{ listStyle: 'none' }}
-        {...containerProps}
+        {...stepperTheme.container}
         {...rest}
       >
         {children || renderDefaultSteps()}

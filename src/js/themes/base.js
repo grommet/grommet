@@ -2306,7 +2306,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     stepper: {
       container: {
-        gap: { row: 'medium' },
+        gap: { row: 'medium', column: 'small' },
       },
       indicator: {
         size: 'medium', // 'small' | 'medium' | 'large'

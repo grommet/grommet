@@ -304,9 +304,11 @@ describe('Stepper', () => {
         'left',
         `calc(50% + calc(24px / 2 + ${left}))`,
       );
+      // base container gap column (small: 6px here) separates the steps;
+      // the connector extends across it to reach the adjacent step
       expect(getConnector()).toHaveStyleRule(
         'right',
-        `calc(-50% + calc(24px / 2 + ${right}))`,
+        `calc(-50% - 6px + calc(24px / 2 + ${right}))`,
       );
 
       rerender(
@@ -374,6 +376,33 @@ describe('Stepper', () => {
     );
     expect(connector).toHaveStyleRule('margin-inline-start', left);
     expect(connector).toHaveStyleRule('grid-column', '1');
+  });
+
+  test('applies container column gap between horizontal steps', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          global: { edgeSize: { small: '10px' } },
+          stepper: { container: { gap: { column: 'small' } } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
+    );
+
+    // row gap (24px) merges in from the base theme; column gap resolves
+    // from this theme's small (10px)
+    expect(screen.getByRole('list')).toHaveStyleRule('gap', '24px 10px');
+    // the connector extends across the gap to reach the adjacent step
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule(
+      'right',
+      'calc(-50% - 10px + calc(24px / 2 + 3px))',
+    );
   });
 
   test('renders disabled step with reason', () => {

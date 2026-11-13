@@ -12,6 +12,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   width: 100%;
   padding: 0px;
   overflow: visible;
+  gap: 24px 12px;
 }
 
 .c4 {
@@ -261,23 +262,11 @@ exports[`Stepper renders horizontal steps 1`] = `
   border-radius: 6px;
   top: calc(24px / 2 + 3px);
   left: calc(50% + calc(24px / 2 + 3px));
-  right: calc(-50% + calc(24px / 2 + 3px));
+  right: calc(-50% - 12px + calc(24px / 2 + 3px));
   height: 2px;
   margin-inline-start: 3px;
   margin-inline-end: 3px;
   background: rgba(0, 0, 0, 0.33);
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -450,6 +439,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   width: 100%;
   padding: 0px;
   overflow: visible;
+  gap: 24px 12px;
 }
 
 .c3 {
@@ -689,23 +679,11 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   border-radius: 6px;
   top: calc(24px / 2 + 3px);
   left: calc(50% + calc(24px / 2 + 3px));
-  right: calc(-50% + calc(24px / 2 + 3px));
+  right: calc(-50% - 12px + calc(24px / 2 + 3px));
   height: 2px;
   margin-inline-start: 3px;
   margin-inline-end: 3px;
   background: rgba(0, 0, 0, 0.33);
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -874,6 +852,7 @@ exports[`Stepper renders vertical steps 1`] = `
   height: 100%;
   padding: 0px;
   overflow: visible;
+  gap: 24px 12px;
 }
 
 .c4 {
@@ -999,15 +978,6 @@ exports[`Stepper renders vertical steps 1`] = `
   position: relative;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 24px;
-}
-
-.c17 {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-bottom: 0px;
 }
 
 .c3 {
@@ -1132,18 +1102,6 @@ exports[`Stepper renders vertical steps 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
   .c4 {
     border: solid 0px rgba(0, 0, 0, 0.33);
   }
@@ -1256,7 +1214,7 @@ exports[`Stepper renders vertical steps 1`] = `
       </div>
     </li>
     <li
-      class="c17"
+      class="c2"
     >
       <div
         class="c3"

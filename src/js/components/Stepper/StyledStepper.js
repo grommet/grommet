@@ -80,18 +80,9 @@ const StyledStepItem = styled.li.withConfig({
   position: relative;
   ${(props) => {
     if (props.direction === 'vertical') {
-      const { gap } = props.stepTheme?.container || {};
-      const gapValue = gap?.row || gap || '0px';
-
-      let paddingBottom = '0px';
-      if (!props.isSubStep && !props.isLast) {
-        paddingBottom = getMetricSize(props.theme, gapValue);
-      }
-
       return css`
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: ${paddingBottom};
       `;
     }
     if (props.isSubStep) {
@@ -354,6 +345,11 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       const centerTop = `calc(${height} / 2 + ${padTop})`;
       const centerLeft = `calc(${width} / 2 + ${padLeft})`;
       const centerRight = `calc(${width} / 2 + ${padRight})`;
+      // the container's column gap separates the steps; extend across it
+      // to reach the adjacent step
+      const { gap } = stepTheme?.container || {};
+      const gapValue = (typeof gap === 'object' ? gap?.column : gap) || '0px';
+      const columnGap = getMetricSize(theme, gapValue);
       // positioned relative to the step item so it can span across to
       // the adjacent step
       return css`
@@ -361,7 +357,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
         border-radius: ${connectorRadius};
         top: ${centerTop};
         left: calc(50% + ${centerLeft});
-        right: calc(-50% + ${centerRight});
+        right: calc(-50% - ${columnGap} + ${centerRight});
         height: ${connectorThickness};
         margin-inline-start: ${padLeft};
         margin-inline-end: ${padRight};
