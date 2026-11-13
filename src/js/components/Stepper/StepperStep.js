@@ -19,7 +19,6 @@ import { useStepTheme } from './utils';
 
 export const StepperStep = ({
   step,
-  stepNumber,
   isLast,
   showConnector,
   direction,
@@ -28,7 +27,6 @@ export const StepperStep = ({
   isSubStep,
   subSteps,
   onFocusStep,
-  stepsRef,
   stepRefs,
 }) => {
   const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
@@ -71,21 +69,41 @@ export const StepperStep = ({
     }
   };
 
-  const totalSteps = stepsRef.current?.length || stepNumber;
-  const ariaLabel =
-    step['aria-label'] ||
-    format({
-      id: 'stepper.step',
-      values: {
-        step: stepNumber,
-        total: totalSteps,
-        title: step.title,
-      },
-    });
-  const accessibleLabel =
-    step.status === 'completed'
-      ? format({ id: 'stepper.completed', values: { step: ariaLabel } })
-      : ariaLabel;
+  const topLevelSteps = steps.filter((item) => !item.isSubStep);
+  const currentStepData = steps.find((item) => item.id === step.id);
+  const parentStep = isSubStep
+    ? topLevelSteps.find((item) => item.id === currentStepData.parentId)
+    : undefined;
+  const topLevelIndex = topLevelSteps.findIndex(
+    (item) => item.id === (isSubStep ? parentStep.id : step.id),
+  );
+  let ariaLabel = step['aria-label'];
+  if (!ariaLabel) {
+    ariaLabel = isSubStep
+      ? format({
+          id: 'stepper.subStep',
+          values: {
+            step: topLevelIndex + 1,
+            subStep: parentStep.childIds.indexOf(step.id) + 1,
+            total: parentStep.childIds.length,
+            title: step.title,
+          },
+        })
+      : format({
+          id: 'stepper.step',
+          values: {
+            step: topLevelIndex + 1,
+            total: topLevelSteps.length,
+            title: step.title,
+          },
+        });
+  }
+  let statusId;
+  if (step.status === 'completed') statusId = 'stepper.completed';
+  if (step.status === 'error') statusId = 'stepper.error';
+  const accessibleLabel = statusId
+    ? format({ id: statusId, values: { step: ariaLabel } })
+    : ariaLabel;
 
   const describedBy = [];
   if (step.errorMessage && step.status === 'error') {
