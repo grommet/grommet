@@ -20,17 +20,12 @@ import { useStepTheme } from './utils';
 
 export const StepperStep = ({
   step,
-  stepNumber,
-  totalSteps,
   isLast,
   showConnector,
   direction,
   focusedIndex,
   index: indexProp,
   isSubStep,
-  parentStepNumber,
-  subStepNumber,
-  subStepTotal,
   subSteps,
   onFocusStep,
   stepRefs,
@@ -75,23 +70,31 @@ export const StepperStep = ({
     }
   };
 
+  const topLevelSteps = steps.filter((item) => !item.isSubStep);
+  const currentStepData = steps.find((item) => item.id === step.id);
+  const parentStep = isSubStep
+    ? topLevelSteps.find((item) => item.id === currentStepData.parentId)
+    : undefined;
+  const topLevelIndex = topLevelSteps.findIndex(
+    (item) => item.id === (isSubStep ? parentStep.id : step.id),
+  );
   let ariaLabel = step['aria-label'];
   if (!ariaLabel) {
     ariaLabel = isSubStep
       ? format({
           id: 'stepper.subStep',
           values: {
-            step: parentStepNumber,
-            subStep: subStepNumber,
-            total: subStepTotal,
+            step: topLevelIndex + 1,
+            subStep: parentStep.childIds.indexOf(step.id) + 1,
+            total: parentStep.childIds.length,
             title: step.title,
           },
         })
       : format({
           id: 'stepper.step',
           values: {
-            step: stepNumber,
-            total: totalSteps,
+            step: topLevelIndex + 1,
+            total: topLevelSteps.length,
             title: step.title,
           },
         });

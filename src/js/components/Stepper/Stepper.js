@@ -192,6 +192,9 @@ const Stepper = forwardRef(
         ),
       [allSteps, currentParentId, revealedParents],
     );
+    const stepsRef = useRef(flatSteps);
+    stepsRef.current = flatSteps;
+
     // Roving tabindex: only the focused step has tabIndex=0,
     // all others have tabIndex=-1. A ref keeps the index synchronous
     // for keyboard handlers that fire before React re-renders. Track the
@@ -389,7 +392,7 @@ const Stepper = forwardRef(
             ? step.children
             : undefined;
         const childElements = visibleChildren
-          ? visibleChildren.map((child, childIdx) => {
+          ? visibleChildren.map((child) => {
               const childFlatIndex = flatIndex;
               flatIndex += 1;
               return (
@@ -397,17 +400,14 @@ const Stepper = forwardRef(
                   key={child.id}
                   step={child}
                   stepNumber={childFlatIndex + 1}
-                  totalSteps={steps.length}
                   isLast={false}
                   showConnector={false}
                   direction={direction}
                   focusedIndex={focusedIndex}
                   index={childFlatIndex}
                   isSubStep
-                  parentStepNumber={parentIdx + 1}
-                  subStepNumber={childIdx + 1}
-                  subStepTotal={step.children.length}
                   onFocusStep={updateFocusedIndex}
+                  stepsRef={stepsRef}
                   stepRefs={stepRefs}
                 />
               );
@@ -418,8 +418,7 @@ const Stepper = forwardRef(
           <StepperStep
             key={step.id}
             step={step}
-            stepNumber={parentIdx + 1}
-            totalSteps={steps.length}
+            stepNumber={parentFlatIndex + 1}
             isLast={isLastParent}
             showConnector={
               direction === 'horizontal'
@@ -431,6 +430,7 @@ const Stepper = forwardRef(
             index={parentFlatIndex}
             isSubStep={false}
             onFocusStep={updateFocusedIndex}
+            stepsRef={stepsRef}
             stepRefs={stepRefs}
             subSteps={childElements}
           />,
