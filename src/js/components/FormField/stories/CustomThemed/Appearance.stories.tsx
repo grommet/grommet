@@ -30,6 +30,7 @@ import {
 import { ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
+import { F } from 'node_modules/storybook/dist/chunk-DY6-qCWl';
 
 const customTheme: ThemeType = {
   global: {
@@ -153,6 +154,16 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
     },
     extend: undefined,
   },
+  fileInput: {
+    border: { style: 'dashed' as const },
+    hover: {
+      border: { color: 'border-strong' },
+    },
+    dragOver: {
+      background: 'background-hover',
+      border: { color: 'border-strong' },
+    },
+  },
   formField: {
     background: 'background-front',
     checkBoxGroup: {
@@ -178,6 +189,26 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
       container: {
         extend: undefined,
       },
+    },
+    starRating: {
+      container: {
+        extend: undefined,
+      },
+      background: 'transparent',
+      border: {
+        color: 'transparent',
+      },
+      extend: undefined,
+    },
+    thumbsRating: {
+      container: {
+        extend: undefined,
+      },
+      background: 'transparent',
+      border: {
+        color: 'transparent',
+      },
+      extend: undefined,
     },
     extend: undefined,
   },
@@ -312,6 +343,98 @@ const AppearanceStory = () => {
                     <TextArea id="background-notes" name="notes" />
                   </FormField>
                   <FormField
+                    name="fruit"
+                    htmlFor="background-fruit"
+                    label="Fruit"
+                    error={error}
+                  >
+                    <Select
+                      id="background-fruit"
+                      name="fruit"
+                      options={['Apple', 'Banana', 'Cherry']}
+                      placeholder="Select a fruit"
+                    />
+                  </FormField>
+                  <FormField
+                    name="fruits"
+                    htmlFor="background-fruits"
+                    label="Fruits"
+                    error={error}
+                  >
+                    <SelectMultiple
+                      id="background-fruits"
+                      name="fruits"
+                      options={['Apple', 'Banana', 'Cherry']}
+                      placeholder="Select fruits"
+                      showSelectedInline
+                    />
+                  </FormField>
+                  <FormField
+                    name="date"
+                    htmlFor="background-date"
+                    label="Date"
+                    error={error}
+                  >
+                    <DateInput
+                      id="background-date"
+                      name="date"
+                      format="mm/dd/yyyy"
+                      placeholder="Select a date"
+                    />
+                  </FormField>
+                  <FormField
+                    name="date-time"
+                    htmlFor="background-date-time"
+                    label="Date & Time"
+                    error={error}
+                  >
+                    <DateTimeInput
+                      id="background-date-time"
+                      name="date-time"
+                      format="12"
+                      placeholder="Select a date and time"
+                    />
+                  </FormField>
+                  <FormField
+                    name="file"
+                    htmlFor="background-file"
+                    label="File"
+                    error={error}
+                  >
+                    <FileInput id="background-file" name="file" />
+                  </FormField>
+                  <FormField
+                    name="masked-input"
+                    htmlFor="background-masked-input"
+                    label="Masked Input"
+                    error={error}
+                  >
+                    <MaskedInput
+                      id="background-masked-input"
+                      name="masked-input"
+                      mask={[
+                        {
+                          length: 3,
+                          options: ['123', '456', '789'],
+                          placeholder: 'xxx',
+                        },
+                      ]}
+                    />
+                  </FormField>
+                  <FormField
+                    name="time"
+                    htmlFor="background-time"
+                    label="Time"
+                    error={error}
+                  >
+                    <TimeInput
+                      id="background-time"
+                      name="time"
+                      format="12"
+                      placeholder="Select a time"
+                    />
+                  </FormField>
+                  <FormField
                     name="notifications"
                     label="Notifications"
                     error={error}
@@ -334,6 +457,25 @@ const AppearanceStory = () => {
                       options={['Immediately', 'Daily digest']}
                       defaultValue="Daily digest"
                     />
+                  </FormField>
+                  <FormField
+                    name="experience-rating"
+                    htmlFor="background-experience-rating"
+                    label="Experience Rating"
+                    error={error}
+                  >
+                    <StarRating
+                      id="background-experience-rating"
+                      name="experience-rating"
+                    />
+                  </FormField>
+                  <FormField
+                    name="like"
+                    htmlFor="background-like"
+                    label="Do you like this?"
+                    error={error}
+                  >
+                    <ThumbsRating name="like" />
                   </FormField>
                 </>
                 <Button type="reset" label="Reset" alignSelf="start" />
