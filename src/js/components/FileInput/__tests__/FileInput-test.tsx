@@ -13,6 +13,8 @@ import { FileInput } from '..';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
 import { Alert } from 'grommet-icons';
+import { hpe } from 'grommet-theme-hpe';
+import { deepMerge } from '../../../utils';
 
 describe('FileInput', () => {
   test('has no accessibility violations', async () => {
@@ -23,6 +25,173 @@ describe('FileInput', () => {
     );
     expect(await axe(container)).toHaveNoViolations();
   });
+
+  test.each([false, true])(
+    'HPE drag-over appearance is visible with shared defaults (wrapped=%s)',
+    (wrapped) => {
+      const theme = deepMerge(hpe, {
+        global: {
+          input: {
+            background: '#ffffff',
+            border: { color: '#123456' },
+            hover: { background: '#eeeeee', border: { color: '#654321' } },
+          },
+        },
+      });
+      render(
+        <Grommet theme={theme} themeMode="light">
+          {wrapped ? (
+            <FormField label="Upload">
+              <FileInput aria-label="Upload files" />
+            </FormField>
+          ) : (
+            <FileInput aria-label="Upload files" />
+          )}
+        </Grommet>,
+      );
+      const input = screen.getByLabelText('Upload files');
+      const surface = input.parentElement as HTMLElement;
+      fireEvent.dragOver(input);
+      expect(getComputedStyle(surface).backgroundColor).toBe(
+        'rgba(0, 0, 0, 0.04)',
+      );
+      if (!wrapped) {
+        const rules = Array.from(document.styleSheets).flatMap((sheet) =>
+          Array.from(sheet.cssRules),
+        ) as CSSStyleRule[];
+        expect(
+          rules.some(
+            (rule) =>
+              rule.style?.border === 'none' &&
+              Array.from(surface.classList).some((className) =>
+                rule.selectorText?.includes(`.${className}.${className}`),
+              ),
+          ),
+        ).toBe(true);
+      } else expect(surface.parentElement).not.toHaveStyleRule('border');
+      fireEvent.dragLeave(input);
+      expect(getComputedStyle(surface).backgroundColor).not.toBe(
+        'rgba(0, 0, 0, 0.04)',
+      );
+    },
+  );
+
+  test('component backgrounds and border states override shared input appearance', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: {
+              background: '#111111',
+              border: { color: '#222222' },
+              hover: {
+                background: '#333333',
+                border: { color: '#444444' },
+              },
+            },
+          },
+          fileInput: {
+            background: '#555555',
+            border: { color: '#666666', size: '2px' },
+            hover: {
+              background: '#777777',
+              border: { color: '#888888' },
+            },
+            dragOver: {
+              background: '#999999',
+              border: { color: '#aaaaaa' },
+            },
+          },
+        }}
+      >
+        <FileInput aria-label="Upload files" />
+      </Grommet>,
+    );
+    const input = screen.getByLabelText('Upload files');
+    const surface = input.parentElement as HTMLElement;
+    expect(getComputedStyle(surface).backgroundColor).toBe('rgb(85, 85, 85)');
+    expect(getComputedStyle(surface).borderColor).toBe('rgb(102, 102, 102)');
+    await user.hover(input);
+    expect(getComputedStyle(surface).backgroundColor).toBe(
+      'rgb(119, 119, 119)',
+    );
+    expect(getComputedStyle(surface).borderColor).toBe('rgb(136, 136, 136)');
+    fireEvent.dragOver(input);
+    expect(getComputedStyle(surface).backgroundColor).toBe(
+      'rgb(153, 153, 153)',
+    );
+    expect(getComputedStyle(surface).borderColor).toBe('rgb(170, 170, 170)');
+    fireEvent.drop(input);
+    expect(getComputedStyle(surface).backgroundColor).toBe(
+      'rgb(119, 119, 119)',
+    );
+  });
+
+  test.each(['inner', 'outer'] as const)(
+    'FormField %s border follows FileInput drag-over and restores on drop',
+    (position) => {
+      const onDragOverCapture = jest.fn();
+      const onDropCapture = jest.fn();
+      render(
+        <Grommet
+          theme={deepMerge(hpe, {
+            formField: { border: { position, side: 'all' as const } },
+          })}
+        >
+          <FormField
+            label="Upload"
+            contentProps={{ role: 'group', 'aria-label': 'Input surface' }}
+            onDragOverCapture={onDragOverCapture}
+            onDropCapture={onDropCapture}
+          >
+            <FileInput aria-label="Upload files" />
+          </FormField>
+        </Grommet>,
+      );
+      const input = screen.getByLabelText('Upload files');
+      const content = screen.getByRole('group', { name: 'Input surface' });
+      const owner = position === 'inner' ? content : content.parentElement;
+      expect(owner).toHaveStyleRule('border', expect.any(String));
+      fireEvent.dragOver(input);
+      expect(onDragOverCapture).toHaveBeenCalledTimes(1);
+      expect(owner).not.toHaveStyleRule('border');
+      fireEvent.drop(input);
+      expect(onDropCapture).toHaveBeenCalledTimes(1);
+      expect(owner).toHaveStyleRule('border', expect.any(String));
+    },
+  );
+
+  test.each([false, true])(
+    'FormField drag border respects invalid state (error=%s)',
+    (error) => {
+      render(
+        <Grommet
+          theme={{
+            formField: {
+              border: { position: 'inner', side: 'all' },
+              error: { border: { color: '#cc0000' } },
+            },
+            fileInput: { dragOver: { border: { color: '#00aa00' } } },
+          }}
+        >
+          <FormField
+            label="Upload"
+            error={error ? 'Invalid' : undefined}
+            contentProps={{ role: 'group', 'aria-label': 'Input surface' }}
+          >
+            <FileInput aria-label="Upload files" />
+          </FormField>
+        </Grommet>,
+      );
+      const surface = screen.getByRole('group', { name: 'Input surface' });
+      fireEvent.dragOver(screen.getByLabelText('Upload files'));
+      expect(surface).toHaveStyleRule(
+        'border',
+        expect.stringContaining(error ? '#cc0000' : '#00aa00'),
+      );
+    },
+  );
 
   test.each([1, 2, 11])(
     'overlay exclusion follows action bounds across padding changes (%s files)',

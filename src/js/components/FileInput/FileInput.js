@@ -7,6 +7,8 @@ import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import {
+  backgroundStyle,
+  borderStyle,
   disabledStyle,
   focusStyle,
   inputAppearanceStyle,
@@ -37,18 +39,47 @@ const ContentsBox = styled(Box)`
   cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
-  ${(props) => {
-    const appearance = inputAppearanceStyle(props, {
+  ${(props) =>
+    inputAppearanceStyle(props, {
       wrapper: true,
       skipBasePadding: true,
-    });
-    const extend = props.theme.fileInput && props.theme.fileInput.extend;
-    return appearance
-      ? css`
-          ${appearance}${extend}
-        `
-      : extend;
-  }};
+    })};
+  ${(props) => {
+    const shared = props.theme.global.input;
+    const sharedBackground =
+      shared.background !== undefined ||
+      shared.hover?.background !== undefined ||
+      shared.focus?.background !== undefined;
+    const sharedBorder =
+      shared.border !== undefined ||
+      shared.hover?.border !== undefined ||
+      shared.focus?.border !== undefined;
+    const background =
+      props.$fileBackground !== undefined &&
+      !props.disabled &&
+      (props.$backgroundState || sharedBackground) &&
+      backgroundStyle(props.$fileBackground, props.theme, false);
+    const border =
+      props.$fileBorder === false
+        ? 'border: none;'
+        : props.$fileBorder !== undefined &&
+          !props.disabled &&
+          (props.$borderState || sharedBorder) &&
+          borderStyle(props.$fileBorder, props.responsive ?? true, props.theme);
+    return css`
+      ${(background || border) &&
+      css`
+        && {
+          ${background}
+          ${border}
+          ${props.theme.fileInput?.extend}
+          ${props.hover && props.theme.fileInput?.hover?.extend}
+          ${props.dragOver && props.theme.fileInput?.dragOver?.extend}
+        }
+      `}
+    `;
+  }}
+  ${(props) => props.theme.fileInput?.extend}
   ${(props) =>
     props.hover &&
     props.theme.fileInput &&
@@ -233,6 +264,8 @@ const FileInput = forwardRef(
           else result = hoverThemeProp;
         else result = { ...result, ...hoverThemeProp };
       const dragOverThemeProp = theme.fileInput.dragOver[propertyName];
+      if (propertyName === 'border' && dragOver && dragOverThemeProp === 'none')
+        return false;
       if (dragOver && dragOverThemeProp)
         if (typeof dragOverThemeProp !== 'object')
           if (defaultKey) result[defaultKey] = dragOverThemeProp;
@@ -289,6 +322,8 @@ const FileInput = forwardRef(
     };
 
     const fileInputPad = mergeTheme('pad') ?? theme.global.input.pad;
+    const fileBackground = mergeTheme('background', 'color');
+    const fileBorder = !plain ? mergeTheme('border', 'side') : undefined;
 
     // rightPad needs to be included in the rightOffset
     // otherwise input may cover the RemoveButton, making it
@@ -357,8 +392,18 @@ const FileInput = forwardRef(
           theme={theme}
           flex={false}
           disabled={disabled}
-          background={mergeTheme('background', 'color')}
-          border={!plain ? mergeTheme('border', 'side') : undefined}
+          background={fileBackground}
+          border={fileBorder}
+          $fileBackground={fileBackground}
+          $fileBorder={fileBorder}
+          $backgroundState={
+            (dragOver && theme.fileInput.dragOver.background !== undefined) ||
+            (hover && theme.fileInput.hover.background !== undefined)
+          }
+          $borderState={
+            (dragOver && theme.fileInput.dragOver.border !== undefined) ||
+            (hover && theme.fileInput.hover.border !== undefined)
+          }
           margin={mergeTheme('margin')}
           pad={fileInputPad}
           round={mergeTheme('round', 'size')}
@@ -387,8 +432,14 @@ const FileInput = forwardRef(
             rightOffset={measuredRightOffset ?? (rightOffset || undefined)}
             {...passThemeFlag}
             {...rest}
-            onDragOver={() => setDragOver(true)}
+            onDragOver={() => {
+              if (!disabled) setDragOver(true);
+            }}
             onDragLeave={() => setDragOver(false)}
+            onDrop={(event) => {
+              setDragOver(false);
+              if (rest.onDrop) rest.onDrop(event);
+            }}
             onChange={(event) => {
               event.persist();
               const fileList = event.target.files;

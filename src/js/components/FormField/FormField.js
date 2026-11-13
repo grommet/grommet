@@ -80,6 +80,9 @@ const grommetInputPadNames = [
   'RangeSelector',
 ];
 
+// Ideally FormField should not need to know about which inputs are read-only
+// Consider FormFieldContext to establish an internal contract for inputs
+// See https://github.com/grommet/grommet/issues/8237
 const readOnlyInputNames = [
   'TextInput',
   'MaskedInput',
@@ -441,6 +444,7 @@ const FormField = forwardRef(
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
+    const [fileDragOver, setFileDragOver] = useState(false);
     const [focusIndicator, setFocusIndicator] = useState(true);
     const fieldFocus = focus && focusIndicator;
     const fieldContext = useMemo(() => ({ setFocusIndicator }), []);
@@ -838,6 +842,16 @@ const FormField = forwardRef(
         ? componentBorder
         : mergePartBorder(componentBorder, { color: borderColor });
 
+    const fileDragBorder =
+      isFileInputComponent && fileDragOver && !disabled && !error
+        ? theme.fileInput.dragOver?.border
+        : undefined;
+    const withFileDragBorder = (border) => {
+      if (fileDragBorder === undefined) return border;
+      if (fileDragBorder === 'none' || fileDragBorder === false) return false;
+      return mergePartBorder(border, fileDragBorder);
+    };
+
     // If fileinput is wrapped in a formfield we want to use
     // the border style from the fileInput.theme. We also do not
     // want the foocus around the formfield since the the focus
@@ -847,7 +861,7 @@ const FormField = forwardRef(
       const innerProps =
         themeBorder.position === 'inner'
           ? {
-              border:
+              border: withFileDragBorder(
                 resolvedComponentBorder !== undefined
                   ? resolvedComponentBorder
                   : {
@@ -863,6 +877,7 @@ const FormField = forwardRef(
                         : themeBorder.side || 'bottom',
                       color: borderColor,
                     },
+              ),
               round:
                 componentError?.round ??
                 componentBoxProps.round ??
@@ -944,7 +959,7 @@ const FormField = forwardRef(
     const outerProps =
       themeBorder && themeBorder.position === 'outer'
         ? {
-            border: { ...themeBorder, color: borderColor },
+            border: withFileDragBorder({ ...themeBorder, color: borderColor }),
             round: formFieldTheme.round,
             focus: fieldFocus,
           }
@@ -1024,6 +1039,21 @@ const FormField = forwardRef(
             : undefined
         }
         {...containerRest}
+        onDragOverCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file' && !disabled)
+            setFileDragOver(true);
+          containerRest.onDragOverCapture?.(event);
+        }}
+        onDragLeaveCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file')
+            setFileDragOver(false);
+          containerRest.onDragLeaveCapture?.(event);
+        }}
+        onDropCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file')
+            setFileDragOver(false);
+          containerRest.onDropCapture?.(event);
+        }}
         {...passThemeFlag}
       >
         {(label && component !== CheckBox) || help ? (
