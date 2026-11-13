@@ -17,8 +17,7 @@ import {
 import { Box } from '../Box';
 import { Text } from '../Text';
 
-const getIconSize = (theme, size) =>
-  theme.global?.edgeSize?.[size] || size;
+const getIconSize = (theme, size) => theme.global?.edgeSize?.[size] || size;
 
 const getMetricSize = (theme, size) =>
   theme.global?.edgeSize?.[size] || theme.global?.size?.[size] || size;
@@ -82,13 +81,10 @@ const StyledStepItem = styled.li.withConfig({
   ${(props) => {
     if (props.direction === 'vertical') {
       const { gap } = props.stepTheme?.container || {};
-      const gapValue =
-        gap?.row ||
-        gap ||
-        '0px';
+      const gapValue = gap?.row || gap || '0px';
 
       let paddingBottom = '0px';
-      if (!props.isSubStep && !props.isLast && !props.hasSubSteps) {
+      if (!props.isSubStep && !props.isLast) {
         paddingBottom = getMetricSize(props.theme, gapValue);
       }
 
@@ -339,10 +335,10 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     const indicatorWidth = indicator?.width?.width || indicator?.width;
     const indicatorHeight = indicator?.height?.height || indicator?.height;
     const width = indicatorWidth
-      ? (theme.global.size[indicatorWidth] || indicatorWidth)
+      ? theme.global.size[indicatorWidth] || indicatorWidth
       : getIconSize(theme, indicator?.size || 'medium');
     const height = indicatorHeight
-      ? (theme.global.size[indicatorHeight] || indicatorHeight)
+      ? theme.global.size[indicatorHeight] || indicatorHeight
       : getIconSize(theme, indicator?.size || 'medium');
     const indicatorBorderWidth = getBorderWidth(
       theme,
@@ -356,35 +352,33 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
 
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
-    const connectorTop = `calc(${height} / 2 + ${padTop})`;
-    const connectorLeft = `calc(${width} / 2 + ${padLeft})`;
-    const connectorRight = `calc(${width} / 2 + ${padRight})`;
+    const centerTop = `calc(${height} / 2 + ${padTop})`;
+    const centerLeft = `calc(${width} / 2 + ${padLeft})`;
+    const centerRight = `calc(${width} / 2 + ${padRight})`
     const connectorGap = '4px';
-    const nonBetweenTop = `calc(${height} + ${padTop} +
-      (${indicatorBorderWidth} * 2) + ${connectorGap})`;
 
     return css`
       border-radius: ${connectorRadius};
       ${props.direction === 'horizontal'
         ? css`
-            top: ${connectorTop};
-            left: calc(${props.isBetween ? '-' : ''}50% + ${connectorLeft});
-            right: calc(-50% + ${connectorRight});
+            top: ${centerTop};
+            left: calc(50% + ${centerLeft});
+            right: calc(-50% + ${centerRight});
             height: ${connectorThickness};
             margin-inline-start: ${padLeft};
             margin-inline-end: ${padRight};
           `
         : css`
             left: calc(
-              ${connectorLeft} + ${indicatorBorderWidth} -
-                ${connectorThickness} / 2
+              ${centerLeft} + ${indicatorBorderWidth} - ${connectorThickness} /
+                2
             );
-            top: ${props.isBetween ? 0 : nonBetweenTop};
-            bottom: 0;
-            ${!props.isBetween &&
-            css`
-              min-height: 12px;
-            `}
+            top: calc(
+              ${height} + ${padTop} + (${indicatorBorderWidth} * 2) +
+                ${connectorGap}
+            );
+            bottom: calc(${connectorGap} - ${padTop});
+            min-height: 12px;
             width: ${connectorThickness};
             margin-block: 0;
           `}
@@ -406,12 +400,11 @@ const StyledSubStepsList = styled(Box).withConfig({
     const indicator = props.stepTheme?.indicator || {};
     const indicatorWidth = indicator?.width?.width || indicator?.width;
     const indicatorSize = indicatorWidth
-      ? (props.theme.global.size[indicatorWidth] || indicatorWidth)
+      ? props.theme.global.size[indicatorWidth] || indicatorWidth
       : getIconSize(props.theme, indicator?.size || 'medium');
     const textGap =
-      props.theme.global?.edgeSize?.[
-        props.stepTheme?.button?.gap || 'small'
-      ] || props.stepTheme?.button?.gap;
+      props.theme.global?.edgeSize?.[props.stepTheme?.button?.gap || 'small'] ||
+      props.stepTheme?.button?.gap;
     const buttonPad = getPadSize(
       props.theme,
       props.stepTheme?.button?.pad,
