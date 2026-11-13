@@ -182,27 +182,28 @@ export const StepperStep = ({
               <StepperDisabledReason />
             </StyledStepSupportingContent>
           )}
+          {!!subSteps?.length && (
+            <StyledSubStepsList
+              forwardedAs="ol"
+              isVertical={isVertical}
+              cssGap
+              stepTheme={stepTheme}
+              {...stepTheme?.children}
+            >
+              {subSteps}
+            </StyledSubStepsList>
+          )}
+          {(showConnector !== undefined ? showConnector : !isLast) && (
+            <StyledConnector
+              direction={direction}
+              status={step.status}
+              aria-hidden="true"
+              stepTheme={stepTheme}
+              spansStepGap={!isSubStep && !isLast}
+              {...passThemeFlag}
+            />
+          )}
         </StyledStepMain>
-        {(showConnector !== undefined ? showConnector : !isLast) && (
-          <StyledConnector
-            direction={direction}
-            status={step.status}
-            aria-hidden="true"
-            stepTheme={stepTheme}
-            {...passThemeFlag}
-          />
-        )}
-        {!!subSteps?.length && (
-          <StyledSubStepsList
-            forwardedAs="ol"
-            isVertical={direction === 'vertical'}
-            cssGap
-            stepTheme={stepTheme}
-            {...stepTheme?.children}
-          >
-            {subSteps}
-          </StyledSubStepsList>
-        )}
       </StyledStepItem>
     </StepItemContext.Provider>
   );

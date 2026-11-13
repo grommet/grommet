@@ -257,6 +257,7 @@ exports[`Stepper renders horizontal steps 1`] = `
 }
 
 .c14 {
+  position: absolute;
   border-radius: 6px;
   top: calc(24px / 2 + 3px);
   left: calc(50% + calc(24px / 2 + 3px));
@@ -264,7 +265,6 @@ exports[`Stepper renders horizontal steps 1`] = `
   height: 2px;
   margin-inline-start: 3px;
   margin-inline-end: 3px;
-  position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
 
@@ -362,12 +362,12 @@ exports[`Stepper renders horizontal steps 1`] = `
             </span>
           </div>
         </button>
+        <span
+          aria-hidden="true"
+          class="c14"
+          direction="horizontal"
+        />
       </div>
-      <span
-        aria-hidden="true"
-        class="c14"
-        direction="horizontal"
-      />
     </li>
     <li
       class="c2"
@@ -397,12 +397,12 @@ exports[`Stepper renders horizontal steps 1`] = `
             </span>
           </div>
         </button>
+        <span
+          aria-hidden="true"
+          class="c14"
+          direction="horizontal"
+        />
       </div>
-      <span
-        aria-hidden="true"
-        class="c14"
-        direction="horizontal"
-      />
     </li>
     <li
       class="c2"
@@ -685,6 +685,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 }
 
 .c13 {
+  position: absolute;
   border-radius: 6px;
   top: calc(24px / 2 + 3px);
   left: calc(50% + calc(24px / 2 + 3px));
@@ -692,7 +693,6 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   height: 2px;
   margin-inline-start: 3px;
   margin-inline-end: 3px;
-  position: absolute;
   background: rgba(0, 0, 0, 0.33);
 }
 
@@ -787,12 +787,12 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
           </span>
         </div>
       </button>
+      <span
+        aria-hidden="true"
+        class="c13"
+        direction="horizontal"
+      />
     </div>
-    <span
-      aria-hidden="true"
-      class="c13"
-      direction="horizontal"
-    />
   </li>
   <li
     class="c1"
@@ -822,12 +822,12 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
           </span>
         </div>
       </button>
+      <span
+        aria-hidden="true"
+        class="c13"
+        direction="horizontal"
+      />
     </div>
-    <span
-      aria-hidden="true"
-      class="c13"
-      direction="horizontal"
-    />
   </li>
   <li
     class="c1"
@@ -1020,6 +1020,7 @@ exports[`Stepper renders vertical steps 1`] = `
 
 .c6 {
   grid-column: 1/-1;
+  grid-row: 1;
   display: grid;
   grid-template-columns: subgrid;
 }
@@ -1117,14 +1118,16 @@ exports[`Stepper renders vertical steps 1`] = `
 }
 
 .c12 {
-  border-radius: 6px;
-  left: calc( calc(24px / 2 + 3px) + 2px - 2px / 2 );
-  top: calc(24px + 3px +       (2px * 2) + 4px);
-  bottom: 0;
-  min-height: 12px;
+  grid-column: 1;
+  grid-row: 1/span 3;
+  align-self: stretch;
   width: 2px;
-  margin-block: 0;
-  position: absolute;
+  border-radius: 6px;
+  pointer-events: none;
+  justify-self: center;
+  margin-inline-start: 3px;
+  margin-top: calc(3px + 24px + 2px * 2 + 4px);
+  margin-bottom: calc(4px - 3px - 24px);
   background: rgba(0, 0, 0, 0.33);
 }
 
@@ -1197,12 +1200,12 @@ exports[`Stepper renders vertical steps 1`] = `
             </span>
           </div>
         </button>
+        <span
+          aria-hidden="true"
+          class="c12"
+          direction="vertical"
+        />
       </div>
-      <span
-        aria-hidden="true"
-        class="c12"
-        direction="vertical"
-      />
     </li>
     <li
       class="c2"
@@ -1245,12 +1248,12 @@ exports[`Stepper renders vertical steps 1`] = `
             </span>
           </div>
         </button>
+        <span
+          aria-hidden="true"
+          class="c12"
+          direction="vertical"
+        />
       </div>
-      <span
-        aria-hidden="true"
-        class="c12"
-        direction="vertical"
-      />
     </li>
     <li
       class="c17"

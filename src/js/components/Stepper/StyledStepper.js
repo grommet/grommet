@@ -158,6 +158,7 @@ const StyledStepButton = styled(Box)`
       /* span and subgrid the step main grid's indicator/text columns so
          the label aligns with the supporting content rendered below */
       grid-column: 1 / -1;
+      grid-row: 1;
       display: grid;
       grid-template-columns: subgrid;
     `}
@@ -187,6 +188,7 @@ const StyledStepSupportingContent = styled(Box)`
     props.isVertical
       ? css`
           grid-column: 2;
+          grid-row: 2;
           text-align: start;
         `
       : css`
@@ -327,64 +329,81 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
     const { theme, stepTheme } = props;
     const indicator = stepTheme?.indicator;
+    const buttonPad = stepTheme?.button?.pad;
+    const padTop = getPadSize(theme, buttonPad, 'top');
+    const padLeft = getPadSize(theme, buttonPad, 'left');
+    const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
+    const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
+    const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
+    const connectorGap = '4px';
 
-    // width and height could be specified as box props in which case
-    // the t-shirt values will be from theme.global.size.
-    // But use the size from the theme if available. In that case
-    // the t-shirt values are icon sizes. 
-    const indicatorWidth = indicator?.width?.width || indicator?.width;
+    // height could be specified as a box prop in which case the t-shirt
+    // values will be from theme.global.size. But use the size from the
+    // theme if available. In that case the t-shirt values are icon sizes.
     const indicatorHeight = indicator?.height?.height || indicator?.height;
-    const width = indicatorWidth
-      ? theme.global.size[indicatorWidth] || indicatorWidth
-      : getIconSize(theme, indicator?.size || 'medium');
     const height = indicatorHeight
       ? theme.global.size[indicatorHeight] || indicatorHeight
       : getIconSize(theme, indicator?.size || 'medium');
+
+    if (props.direction === 'horizontal') {
+      const indicatorWidth = indicator?.width?.width || indicator?.width;
+      const width = indicatorWidth
+        ? theme.global.size[indicatorWidth] || indicatorWidth
+        : getIconSize(theme, indicator?.size || 'medium');
+      const padRight = getPadSize(theme, buttonPad, 'right');
+      const centerTop = `calc(${height} / 2 + ${padTop})`;
+      const centerLeft = `calc(${width} / 2 + ${padLeft})`;
+      const centerRight = `calc(${width} / 2 + ${padRight})`;
+      // positioned relative to the step item so it can span across to
+      // the adjacent step
+      return css`
+        position: absolute;
+        border-radius: ${connectorRadius};
+        top: ${centerTop};
+        left: calc(50% + ${centerLeft});
+        right: calc(-50% + ${centerRight});
+        height: ${connectorThickness};
+        margin-inline-start: ${padLeft};
+        margin-inline-end: ${padRight};
+      `;
+    }
+
+    // Vertical: an in-flow grid item in the indicator column of the step
+    // main grid. It is anchored to the first row (the button row) and
+    // cleared past the indicator with margin-top so that a label wrapping
+    // to multiple lines cannot push the connector away from the indicator,
+    // then stretches through the supporting content and sub-steps rows.
     const indicatorBorderWidth = getBorderWidth(
       theme,
       indicator?.border?.size || '2px',
     );
-    const buttonPad = stepTheme?.button?.pad;
-    const padTop = getPadSize(theme, buttonPad, 'top');
-    const padLeft = getPadSize(theme, buttonPad, 'left');
-    const padRight = getPadSize(theme, buttonPad, 'right');
-    const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
-    const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
-
-    const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
-    const centerTop = `calc(${height} / 2 + ${padTop})`;
-    const centerLeft = `calc(${width} / 2 + ${padLeft})`;
-    const centerRight = `calc(${width} / 2 + ${padRight})`
-    const connectorGap = '4px';
-
+    // indicator is box-sizing: content-box, so its borders add to height
+    const indicatorBox = `${height} + ${indicatorBorderWidth} * 2`;
+    const { gap } = stepTheme?.container || {};
+    const gapValue = gap?.row || gap || '0px';
+    // when there is a following step, extend through the step item's
+    // bottom padding so the line approaches the next step's indicator
+    const stepGap = props.spansStepGap ? getMetricSize(theme, gapValue) : '0px';
     return css`
+      grid-column: 1;
+      grid-row: 1 / span 3;
+      align-self: stretch;
+      width: ${connectorThickness};
       border-radius: ${connectorRadius};
-      ${props.direction === 'horizontal'
-        ? css`
-            top: ${centerTop};
-            left: calc(50% + ${centerLeft});
-            right: calc(-50% + ${centerRight});
-            height: ${connectorThickness};
-            margin-inline-start: ${padLeft};
-            margin-inline-end: ${padRight};
-          `
-        : css`
-            left: calc(
-              ${centerLeft} + ${indicatorBorderWidth} - ${connectorThickness} /
-                2
-            );
-            top: calc(
-              ${height} + ${padTop} + (${indicatorBorderWidth} * 2) +
-                ${connectorGap}
-            );
-            bottom: calc(${connectorGap} - ${padTop});
-            min-height: 12px;
-            width: ${connectorThickness};
-            margin-block: 0;
-          `}
+      /* decorative; never steal clicks from the overlapping button row */
+      pointer-events: none;
+      /* the button's inline-start edge padding is part of the indicator
+         column; offset the centered connector by it so it lines up with
+         the center of the indicator */
+      justify-self: center;
+      margin-inline-start: ${padLeft};
+      /* start connectorGap below the indicator, and end the same gap
+         short of the next step's indicator (padTop supplies part of
+         that gap) */
+      margin-top: calc(${padTop} + ${indicatorBox} + ${connectorGap});
+      margin-bottom: calc(${connectorGap} - ${padTop} - ${stepGap});
     `;
   }}
-  position: absolute;
   background: ${(props) =>
     normalizeColor(props.stepTheme?.connector?.color || 'border', props.theme)};
 `;
@@ -393,27 +412,15 @@ const StyledSubStepsList = styled(Box).withConfig({
   shouldForwardProp: (prop) => prop !== 'isVertical' && prop !== 'stepTheme',
 })`
   list-style: none;
-  position: relative;
-  ${(props) => {
-    if (!props.isVertical) return '';
-
-    const indicator = props.stepTheme?.indicator || {};
-    const indicatorWidth = indicator?.width?.width || indicator?.width;
-    const indicatorSize = indicatorWidth
-      ? props.theme.global.size[indicatorWidth] || indicatorWidth
-      : getIconSize(props.theme, indicator?.size || 'medium');
-    const textGap =
-      props.theme.global?.edgeSize?.[props.stepTheme?.button?.gap || 'small'] ||
-      props.stepTheme?.button?.gap;
-    const buttonPad = getPadSize(
-      props.theme,
-      props.stepTheme?.button?.pad,
-      'left',
-    );
-    return css`
-      left: calc(${indicatorSize} + ${textGap} + ${buttonPad});
-    `;
-  }}
+  ${(props) =>
+    props.isVertical
+      ? css`
+          /* text column of the step main grid, below the supporting
+             content, so sub-steps left align with the label */
+          grid-column: 2;
+          grid-row: 3;
+        `
+      : ''}
 `;
 
 export {

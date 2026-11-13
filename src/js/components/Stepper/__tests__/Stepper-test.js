@@ -290,9 +290,9 @@ describe('Stepper', () => {
         },
       };
       const getConnector = () =>
-        Array.from(screen.getAllByRole('listitem')[0].children).find(
-          (child) => child.getAttribute('aria-hidden') === 'true',
-        );
+        screen
+          .getAllByRole('listitem')[0]
+          .querySelector('span[aria-hidden="true"]');
       const { rerender } = render(
         <Grommet theme={theme}>
           <Stepper steps={basicSteps} currentStep="step1" />
@@ -319,14 +319,18 @@ describe('Stepper', () => {
         </Grommet>,
       );
 
+      // in-flow grid item centered on the indicator column; the button's
+      // edge padding offsets the centering, and margin-top anchors the
+      // connector just below the indicator regardless of label height
+      expect(getConnector()).toHaveStyleRule('margin-inline-start', left);
       expect(getConnector()).toHaveStyleRule(
-        'left',
-        `calc( calc(24px / 2 + ${left}) + 2px - 2px / 2 )`,
+        'margin-top',
+        `calc(${top} + 24px + 2px * 2 + 4px)`,
       );
-      const topPattern = `24px \\+ ${top} \\+\\s+\\(2px \\* 2\\) \\+ 4px`;
+      // container gap row defaults to medium (12px in this theme)
       expect(getConnector()).toHaveStyleRule(
-        'top',
-        new RegExp(`^calc\\(${topPattern}\\)$`),
+        'margin-bottom',
+        `calc(4px - ${top} - 12px)`,
       );
     },
   );
@@ -334,7 +338,7 @@ describe('Stepper', () => {
   test.each([
     ['ltr', '5px'],
     ['rtl', '11px'],
-  ])('resolves %s logical padding for sub-step rails', (dir, left) => {
+  ])('resolves %s logical padding for the vertical connector', (dir, left) => {
     render(
       <Grommet
         dir={dir}
@@ -361,16 +365,15 @@ describe('Stepper', () => {
       </Grommet>,
     );
 
+    // sub-steps sit in the text column of the step grid
     const subSteps = screen.getAllByRole('list')[1];
-    expect(subSteps).toHaveStyleRule('left', `calc(24px + 3px + ${left})`);
+    expect(subSteps).toHaveStyleRule('grid-column', '2');
+    expect(subSteps).toHaveStyleRule('grid-row', '3');
     const connector = Array.from(subSteps.parentElement.children).find(
       (child) => child.getAttribute('aria-hidden') === 'true',
     );
-    expect(connector).toHaveStyleRule('top', '0');
-    expect(connector).toHaveStyleRule(
-      'left',
-      `calc( calc(24px / 2 + ${left}) + 2px - 2px / 2 )`,
-    );
+    expect(connector).toHaveStyleRule('margin-inline-start', left);
+    expect(connector).toHaveStyleRule('grid-column', '1');
   });
 
   test('renders disabled step with reason', () => {
