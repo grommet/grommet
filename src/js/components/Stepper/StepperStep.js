@@ -10,7 +10,6 @@ import { StepperDescription } from './StepperDescription';
 import { StepperError, StepperDisabledReason } from './StepperHelperText';
 import {
   StyledStepItem,
-  StyledStepMain,
   StyledStepButton,
   StyledStepContent,
   StyledStepSupportingContent,
@@ -132,75 +131,70 @@ export const StepperStep = ({
       <StyledStepItem
         direction={direction}
         isSubStep={isSubStep}
+        stepTheme={stepTheme}
         {...passThemeFlag}
       >
-        <StyledStepMain
+        <StyledStepButton
+          role={isReadOnly ? 'group' : undefined}
+          ref={(el) => {
+            if (stepRefs) {
+              if (el) stepRefs.current.set(index, el);
+              else stepRefs.current.delete(index);
+            }
+          }}
+          aria-current={isHighlighted ? 'step' : undefined}
+          aria-disabled={
+            isDisabled || (clickableSteps && !isNavigable) || undefined
+          }
+          aria-label={ariaLabel}
+          aria-describedby={
+            describedBy.length > 0 ? describedBy.join(' ') : undefined
+          }
           isVertical={isVertical}
-          stepTheme={stepTheme}
-          {...passThemeFlag}
+          {...focusableProps}
+          {...buttonThemeProps}
         >
-          <StyledStepButton
-            role={isReadOnly ? 'group' : undefined}
-            ref={(el) => {
-              if (stepRefs) {
-                if (el) stepRefs.current.set(index, el);
-                else stepRefs.current.delete(index);
-              }
-            }}
-            aria-current={isHighlighted ? 'step' : undefined}
-            aria-disabled={
-              isDisabled || (clickableSteps && !isNavigable) || undefined
-            }
-            aria-label={ariaLabel}
-            aria-describedby={
-              describedBy.length > 0 ? describedBy.join(' ') : undefined
-            }
+          <StepperIndicator />
+          <StyledStepContent
+            align={isVertical ? 'start' : 'center'}
             isVertical={isVertical}
-            {...focusableProps}
-            {...buttonThemeProps}
+            stepTheme={stepTheme}
           >
-            <StepperIndicator />
-            <StyledStepContent
-              align={isVertical ? 'start' : 'center'}
-              isVertical={isVertical}
-              stepTheme={stepTheme}
-            >
-              <StepperLabel />
-            </StyledStepContent>
-          </StyledStepButton>
-          {hasSupportingContent && (
-            <StyledStepSupportingContent
-              align={isVertical ? 'start' : 'center'}
-              isVertical={isVertical}
-              {...passThemeFlag}
-            >
-              {showDescription && <StepperDescription />}
-              <StepperError />
-              <StepperDisabledReason />
-            </StyledStepSupportingContent>
-          )}
-          {!!subSteps?.length && (
-            <StyledSubStepsList
-              forwardedAs="ol"
-              isVertical={isVertical}
-              cssGap
-              stepTheme={stepTheme}
-              {...stepTheme?.children}
-            >
-              {subSteps}
-            </StyledSubStepsList>
-          )}
-          {(showConnector !== undefined ? showConnector : !isLast) && (
-            <StyledConnector
-              direction={direction}
-              status={step.status}
-              aria-hidden="true"
-              stepTheme={stepTheme}
-              spansStepGap={!isSubStep && !isLast}
-              {...passThemeFlag}
-            />
-          )}
-        </StyledStepMain>
+            <StepperLabel />
+          </StyledStepContent>
+        </StyledStepButton>
+        {hasSupportingContent && (
+          <StyledStepSupportingContent
+            align={isVertical ? 'start' : 'center'}
+            isVertical={isVertical}
+            {...passThemeFlag}
+          >
+            {showDescription && <StepperDescription />}
+            <StepperError />
+            <StepperDisabledReason />
+          </StyledStepSupportingContent>
+        )}
+        {!!subSteps?.length && (
+          <StyledSubStepsList
+            forwardedAs="ol"
+            isVertical={isVertical}
+            cssGap
+            stepTheme={stepTheme}
+            {...stepTheme?.children}
+          >
+            {subSteps}
+          </StyledSubStepsList>
+        )}
+        {(showConnector !== undefined ? showConnector : !isLast) && (
+          <StyledConnector
+            direction={direction}
+            status={step.status}
+            aria-hidden="true"
+            stepTheme={stepTheme}
+            spansStepGap={!isSubStep && !isLast}
+            {...passThemeFlag}
+          />
+        )}
       </StyledStepItem>
     </StepItemContext.Provider>
   );

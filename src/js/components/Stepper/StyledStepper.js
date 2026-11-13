@@ -73,54 +73,22 @@ const iconSizeStyle = (sizeProp, theme) => {
   `;
 };
 
+// In vertical direction the step item is a two-column grid
+// (indicator | text); the step button subgrids these columns so the label
+// (inside the button) and the supporting content and sub-steps (outside
+// the button) share the text column and stay left aligned, while the
+// connector fills the indicator column. max-content (not auto) keeps the
+// indicator column from absorbing free space, and minmax(0, max-content)
+// keeps the button's click target at content width while allowing long
+// text to wrap instead of overflowing.
 const StyledStepItem = styled.li.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
 })`
   display: flex;
   position: relative;
-  ${(props) => {
-    if (props.direction === 'vertical') {
-      return css`
-        flex-direction: column;
-        align-items: flex-start;
-      `;
-    }
-    if (props.isSubStep) {
-      // horizontal and sub-steps isn't supported
-      return css`
-        flex-direction: row;
-        align-items: center;
-        flex: none;
-        min-width: 0;
-        overflow: hidden;
-      `;
-    }
-    return css`
-      flex-direction: column;
-      align-items: center;
-      flex: 1;
-      min-width: 0;
-      overflow: visible;
-    `;
-  }}
-`;
-
-// Groups the step button with its supporting content (description, error,
-// disabled reason) while keeping connectors and sub-steps outside. In
-// vertical direction it is a two-column grid (indicator | text); the step
-// button subgrids these columns so the label (inside the button) and the
-// supporting content (outside the button) share the text column and stay
-// left aligned. max-content (not auto) keeps the indicator column from
-// absorbing free space, and minmax(0, max-content) keeps the button's
-// click target at content width while allowing long text to wrap instead
-// of overflowing.
-const StyledStepMain = styled.div.withConfig({
-  shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'isVertical',
-})`
-  display: flex;
   min-width: 0;
   ${(props) => {
-    if (props.isVertical) {
+    if (props.direction === 'vertical') {
       const columnGap = getMetricSize(
         props.theme,
         props.stepTheme?.button?.gap || 'small',
@@ -131,10 +99,20 @@ const StyledStepMain = styled.div.withConfig({
         column-gap: ${columnGap};
       `;
     }
+    if (props.isSubStep) {
+      // horizontal and sub-steps isn't supported
+      return css`
+        flex-direction: row;
+        align-items: center;
+        flex: none;
+        overflow: hidden;
+      `;
+    }
     return css`
       flex-direction: column;
       align-items: center;
-      max-width: 100%;
+      flex: 1;
+      overflow: visible;
     `;
   }}
 `;
@@ -146,7 +124,7 @@ const StyledStepButton = styled(Box)`
   ${(props) =>
     props.isVertical &&
     css`
-      /* span and subgrid the step main grid's indicator/text columns so
+      /* span and subgrid the step item grid's indicator/text columns so
          the label aligns with the supporting content rendered below */
       grid-column: 1 / -1;
       grid-row: 1;
@@ -172,7 +150,7 @@ const StyledStepContent = styled(Box)`
 
 // Description, error and disabled reason live outside the step button but
 // must left align with the label in vertical direction (text column of the
-// step main grid) and center under the button in horizontal direction.
+// step item grid) and center under the button in horizontal direction.
 const StyledStepSupportingContent = styled(Box)`
   overflow: hidden;
   ${(props) =>
@@ -365,7 +343,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     }
 
     // Vertical: an in-flow grid item in the indicator column of the step
-    // main grid. It is anchored to the first row (the button row) and
+    // item grid. It is anchored to the first row (the button row) and
     // cleared past the indicator with margin-top so that a label wrapping
     // to multiple lines cannot push the connector away from the indicator,
     // then stretches through the supporting content and sub-steps rows.
@@ -411,7 +389,7 @@ const StyledSubStepsList = styled(Box).withConfig({
   ${(props) =>
     props.isVertical
       ? css`
-          /* text column of the step main grid, below the supporting
+          /* text column of the step item grid, below the supporting
              content, so sub-steps left align with the label */
           grid-column: 2;
           grid-row: 3;
@@ -421,7 +399,6 @@ const StyledSubStepsList = styled(Box).withConfig({
 
 export {
   StyledStepItem,
-  StyledStepMain,
   StyledStepButton,
   StyledStepContent,
   StyledStepSupportingContent,
