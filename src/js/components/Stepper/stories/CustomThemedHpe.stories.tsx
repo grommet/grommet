@@ -20,15 +20,19 @@ import {
   // dimension,
   // global as globalTokens,
 } from 'hpe-design-tokens/grommet';
-import { CircleFill, Checkmark, StatusCritical } from '@hpe-design/icons-grommet';
+import {
+  CircleFill,
+  Checkmark,
+  StatusCritical,
+} from '@hpe-design/icons-grommet';
 
 // const { hpe: hpeComponents } = components;
 // const { hpe: hpeDimension } = dimension;
 // const { hpe: hpeGlobal } = globalTokens;
 const iconOnSelectedPrimaryStrong = {
-    light: light.hpe.color.icon.onSelectedPrimaryStrong,
-    dark: dark.hpe.color.icon.onSelectedPrimaryStrong,
-  };
+  light: light.hpe.color.icon.onSelectedPrimaryStrong,
+  dark: dark.hpe.color.icon.onSelectedPrimaryStrong,
+};
 
 const theme: ThemeType = deepMerge({}, hpe, {
   global: {
@@ -37,11 +41,13 @@ const theme: ThemeType = deepMerge({}, hpe, {
         light: '#9c0f0b', // red.900 NEW
         dark: '#ff7b7b', // red.400
       },
-      'background-critical-strong': { // icon-critical
+      'background-critical-strong': {
+        // icon-critical
         light: '#cc1f1a', // red.800
         dark: '#fc6161', // red.500
       },
-      'background-selected-critical-strong': { // icon-critical
+      'background-selected-critical-strong': {
+        // icon-critical
         light: '#cc1f1a', // red.800
         dark: '#fc6161', // red.500
       },
@@ -89,7 +95,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
         },
         label: {
           color: 'text-strong',
-        }
+        },
       },
     },
     current: {
@@ -167,8 +173,8 @@ const theme: ThemeType = deepMerge({}, hpe, {
           border: { color: 'icon-critical-hover' },
           color: 'icon-critical-hover',
           background: 'transparent',
-        }
-      }
+        },
+      },
     },
     currentError: {
       indicator: {
@@ -191,8 +197,8 @@ const theme: ThemeType = deepMerge({}, hpe, {
           border: { color: 'background-selected-critical-strong-hover' },
           color: 'icon-onCriticalStrong',
           background: 'background-selected-critical-strong-hover',
-        }
-      }
+        },
+      },
     },
     disabled: {
       indicator: {
@@ -211,18 +217,40 @@ const theme: ThemeType = deepMerge({}, hpe, {
 
 export const CustomThemedHpe = () => {
   const [currentStep, setCurrentStep] = useState('profile');
-  const steps : StepType[] = [
+  const steps: StepType[] = [
     { id: 'account', title: 'Account', status: 'completed' },
-    { id: 'profile', title: 'Profile', status: 'disabled', disabledReason: 'Profile step is disabled' },
-    { id: 'advanced', title: 'Advanced', status: 'error', errorMessage: 'Error in advanced step' },
+    {
+      id: 'profile',
+      title: 'Profile',
+      status: 'disabled',
+      disabledReason: 'Profile step is disabled',
+    },
+    {
+      id: 'advanced',
+      title: 'Advanced',
+      status: 'error',
+      errorMessage: 'Error in advanced step',
+    },
     { id: 'review', title: 'Review', status: 'pending' },
   ];
-  const vsteps : StepType[] = [
+  const vsteps: StepType[] = [
     { id: 'account', title: 'Account', status: 'completed' },
-    { id: 'profile', title: 'Profile', status: 'disabled', disabledReason: 'Profile step is disabled' },
-    { id: 'advanced', title: 'Advanced', 
+    {
+      id: 'profile',
+      title: 'Profile',
+      status: 'disabled',
+      disabledReason: 'Profile step is disabled',
+    },
+    {
+      id: 'advanced',
+      title: 'Advanced',
       children: [
-        { id: 'advanced-a', title: 'Advanced A', status: 'error', errorMessage: 'Error in advanced step' },
+        {
+          id: 'advanced-a',
+          title: 'Advanced A',
+          status: 'error',
+          errorMessage: 'Error in advanced step',
+        },
         { id: 'advanced-b', title: 'Advanced B', status: 'pending' },
       ],
     },
