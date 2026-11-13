@@ -36,6 +36,9 @@ const getDisplayInput = () =>
     'input[aria-hidden="true"]:not([type="hidden"])',
   ) as HTMLInputElement;
 
+const getInputContainer = () =>
+  screen.getByRole('group').parentElement?.parentElement as HTMLElement;
+
 describe('TimeInput', () => {
   beforeEach(() => {
     createPortal();
@@ -51,6 +54,111 @@ describe('TimeInput', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('applies global input appearance to the visible field container', async () => {
+    const user = userEvent.setup();
+
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: {
+              background: '#eeeeee',
+              hover: { background: '#dddddd' },
+            },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).toHaveStyleRule('background-color', '#eeeeee');
+
+    await user.hover(container);
+    expect(container).toHaveStyleRule('background-color', '#dddddd', {
+      modifier: ':hover',
+    });
+  });
+
+  test.each([
+    '60px',
+    { height: '60px', min: '50px', max: '70px' },
+    { min: '50px', max: '70px' },
+  ])(
+    'explicit container height wins over shared input height (%j)',
+    (height) => {
+      const theme: ThemeType = {
+        global: {
+          input: { height: { height: '40px', min: '30px', max: '45px' } },
+        },
+        timeInput: { container: { height } },
+      };
+      render(
+        <Grommet theme={theme}>
+          <TimeInput format="24" />
+        </Grommet>,
+      );
+
+      const container = getInputContainer();
+      expect(container).not.toHaveStyleRule('height', '40px');
+      expect(container).not.toHaveStyleRule('min-height', '30px');
+      expect(container).not.toHaveStyleRule('max-height', '45px');
+      if (typeof height === 'string') {
+        expect(container).toHaveStyleRule('height', '60px');
+      } else {
+        expect(container).toHaveStyleRule('min-height', '50px');
+        expect(container).toHaveStyleRule('max-height', '70px');
+        if (height.height !== undefined)
+          expect(container).toHaveStyleRule('height', '60px');
+      }
+    },
+  );
+
+  test('shared input height remains the fallback without a container height', () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: { height: { height: '40px', min: '30px', max: '45px' } },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).toHaveStyleRule('height', '40px');
+    expect(container).toHaveStyleRule('min-height', '30px');
+    expect(container).toHaveStyleRule('max-height', '45px');
+  });
+
+  test('FormField plain suppresses global input appearance on the child field', () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: {
+              background: '#eeeeee',
+              hover: { background: '#dddddd' },
+            },
+          },
+        }}
+      >
+        <FormField label="Time">
+          <TimeInput format="24" />
+        </FormField>
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).not.toHaveStyleRule('background-color', '#eeeeee');
+    expect(container).not.toHaveStyleRule('background-color', '#dddddd', {
+      modifier: ':hover',
+    });
   });
 
   test('works correctly nested inside a modal Layer', async () => {
@@ -2695,6 +2803,56 @@ describe('TimeInput', () => {
     expect(hourSegment).toHaveStyleRule('padding-right', '3px');
     expect(hourSegment).not.toHaveStyleRule('padding-top', '3px');
     expect(hourSegment).not.toHaveStyleRule('padding-bottom', '3px');
+  });
+
+  test('applies canonical and hover input padding to the visible display', async () => {
+    const user = userEvent.setup();
+    const theme: ThemeType = {
+      global: {
+        input: {
+          pad: { horizontal: '5px', vertical: '7px' },
+          hover: { pad: { horizontal: '9px', vertical: '11px' } },
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const display = screen.getByRole('group');
+    const container = getInputContainer();
+    expect(getComputedStyle(display).paddingLeft).toBe('5px');
+    expect(getComputedStyle(display).paddingTop).toBe('7px');
+
+    await user.hover(display);
+    expect(container).toHaveStyleRule('padding-left', '9px', {
+      modifier: ':hover [role="group"]',
+    });
+    expect(container).toHaveStyleRule('padding-top', '11px', {
+      modifier: ':hover [role="group"]',
+    });
+  });
+
+  test('timeInput.value.pad overrides global input padding on the display', () => {
+    render(
+      <Grommet
+        theme={{
+          global: { input: { pad: { horizontal: '5px', vertical: '7px' } } },
+          timeInput: {
+            value: { pad: { horizontal: '2px', vertical: '3px' } },
+          },
+        }}
+      >
+        <TimeInput format="24" />
+      </Grommet>,
+    );
+
+    const display = screen.getByRole('group');
+    expect(getComputedStyle(display).paddingLeft).toBe('2px');
+    expect(getComputedStyle(display).paddingTop).toBe('3px');
   });
 
   test('updates displayed value when picking a new hour from the popup after a single-digit keystroke', async () => {

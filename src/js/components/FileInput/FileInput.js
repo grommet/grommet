@@ -1,13 +1,17 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useContext, useRef, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { MessageContext } from '../../contexts/MessageContext';
 
 import {
+  backgroundStyle,
+  borderStyle,
   disabledStyle,
   focusStyle,
+  inputAppearanceStyle,
   unfocusStyle,
   useForwardedRef,
   useKeyboard,
@@ -35,7 +39,47 @@ const ContentsBox = styled(Box)`
   cursor: pointer;
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
-  ${(props) => props.theme.fileInput && props.theme.fileInput.extend};
+  ${(props) =>
+    inputAppearanceStyle(props, {
+      wrapper: true,
+      skipBasePadding: true,
+    })};
+  ${(props) => {
+    const shared = props.theme.global.input;
+    const sharedBackground =
+      shared.background !== undefined ||
+      shared.hover?.background !== undefined ||
+      shared.focus?.background !== undefined;
+    const sharedBorder =
+      shared.border !== undefined ||
+      shared.hover?.border !== undefined ||
+      shared.focus?.border !== undefined;
+    const background =
+      props.$fileBackground !== undefined &&
+      !props.disabled &&
+      (props.$backgroundState || sharedBackground) &&
+      backgroundStyle(props.$fileBackground, props.theme, false);
+    const border =
+      props.$fileBorder === false
+        ? 'border: none;'
+        : props.$fileBorder !== undefined &&
+          !props.disabled &&
+          (props.$borderState || sharedBorder) &&
+          borderStyle(props.$fileBorder, props.responsive ?? true, props.theme);
+    return css`
+      ${(background || border) &&
+      css`
+        && {
+          ${background}
+          ${border}
+          ${props.theme.fileInput?.extend}
+          ${props.hover && props.theme.fileInput?.hover?.extend}
+          ${props.dragOver && props.theme.fileInput?.dragOver?.extend}
+        }
+      `}
+    `;
+  }}
+  ${(props) => props.theme.fileInput?.extend}
   ${(props) =>
     props.hover &&
     props.theme.fileInput &&
@@ -46,7 +90,13 @@ const ContentsBox = styled(Box)`
     props.theme.fileInput &&
     props.theme.fileInput.dragOver &&
     props.theme.fileInput.dragOver.extend};
-  ${(props) => props.focus && focusStyle()};
+  ${(props) =>
+    props.focus &&
+    css`
+      && {
+        ${focusStyle()}
+      }
+    `};
   ${(props) => !props.focus && unfocusStyle()};
 `;
 
@@ -103,8 +153,10 @@ const FileInput = forwardRef(
     const aggregateThreshold = (multiple && multiple.aggregateThreshold) || 10;
     const max = multiple?.max;
     const inputRef = useForwardedRef(ref);
+    const containerRef = useRef();
     const controlRef = useRef();
     const removeRef = useRef();
+    const [measuredRightOffset, setMeasuredRightOffset] = useState();
     const ConfirmRemove = confirmRemove;
     const RemoveIcon = theme.fileInput.icons.remove;
     const ErrorIcon = theme.fileInput?.icons?.error || CircleAlert;
@@ -159,6 +211,44 @@ const FileInput = forwardRef(
       ],
     });
 
+    // Measure after layout so shared/state padding is included before paint.
+    // Keep the transparent file input off the action controls as bounds change,
+    // otherwise it intercepts Remove clicks and opens the file picker instead.
+    useLayoutEffect(() => {
+      const container = containerRef.current;
+      const controls = [
+        removeRef.current,
+        files.length <= 1 ? controlRef.current : undefined,
+      ].filter(Boolean);
+      const measure = () => {
+        const containerBounds = container.getBoundingClientRect();
+        const bounds = controls
+          .map((control) => control.getBoundingClientRect())
+          .filter((rect) => rect.width > 0);
+        if (containerBounds.width > 0 && bounds.length > 0)
+          setMeasuredRightOffset(
+            Math.max(
+              0,
+              containerBounds.right -
+                Math.min(...bounds.map((rect) => rect.left)),
+            ),
+          );
+        else setMeasuredRightOffset(undefined);
+      };
+      measure();
+      const observer =
+        typeof window.ResizeObserver !== 'undefined'
+          ? new window.ResizeObserver(measure)
+          : undefined;
+      observer?.observe(container);
+      controls.forEach((control) => observer?.observe(control));
+      window.addEventListener('resize', measure);
+      return () => {
+        observer?.disconnect();
+        window.removeEventListener('resize', measure);
+      };
+    }, [files, theme, hover, dragOver, focus, disabled, plain, multiple]);
+
     const mergeTheme = (propertyName, defaultKey) => {
       let result = {};
       const themeProp = theme.fileInput[propertyName];
@@ -174,6 +264,8 @@ const FileInput = forwardRef(
           else result = hoverThemeProp;
         else result = { ...result, ...hoverThemeProp };
       const dragOverThemeProp = theme.fileInput.dragOver[propertyName];
+      if (propertyName === 'border' && dragOver && dragOverThemeProp === 'none')
+        return false;
       if (dragOver && dragOverThemeProp)
         if (typeof dragOverThemeProp !== 'object')
           if (defaultKey) result[defaultKey] = dragOverThemeProp;
@@ -229,17 +321,20 @@ const FileInput = forwardRef(
       inputRef.current.focus();
     };
 
+    const fileInputPad = mergeTheme('pad') ?? theme.global.input.pad;
+    const fileBackground = mergeTheme('background', 'color');
+    const fileBorder = !plain ? mergeTheme('border', 'side') : undefined;
+
     // rightPad needs to be included in the rightOffset
     // otherwise input may cover the RemoveButton, making it
     // unreachable by mouse click.
     let rightPad = '0px';
-    if (mergeTheme('pad')) {
-      const { horizontal, right } = mergeTheme('pad');
-      if (right) {
-        rightPad = theme.global.edgeSize[right] || right;
-      } else if (horizontal) {
-        rightPad = theme.global.edgeSize[horizontal] || horizontal;
-      }
+    const rightPadValue =
+      typeof fileInputPad === 'string'
+        ? fileInputPad
+        : fileInputPad?.right || fileInputPad?.horizontal;
+    if (rightPadValue) {
+      rightPad = theme.global.edgeSize[rightPadValue] || rightPadValue;
     }
 
     const removeWidth = removeRef.current
@@ -292,13 +387,25 @@ const FileInput = forwardRef(
     return (
       <>
         <ContentsBox
+          ref={containerRef}
+          $inputPlain={plain}
           theme={theme}
           flex={false}
           disabled={disabled}
-          background={mergeTheme('background', 'color')}
-          border={!plain ? mergeTheme('border', 'side') : undefined}
+          background={fileBackground}
+          border={fileBorder}
+          $fileBackground={fileBackground}
+          $fileBorder={fileBorder}
+          $backgroundState={
+            (dragOver && theme.fileInput.dragOver.background !== undefined) ||
+            (hover && theme.fileInput.hover.background !== undefined)
+          }
+          $borderState={
+            (dragOver && theme.fileInput.dragOver.border !== undefined) ||
+            (hover && theme.fileInput.hover.border !== undefined)
+          }
           margin={mergeTheme('margin')}
-          pad={mergeTheme('pad')}
+          pad={fileInputPad}
           round={mergeTheme('round', 'size')}
           align={files.length ? 'stretch' : 'center'}
           justify="center"
@@ -322,11 +429,17 @@ const FileInput = forwardRef(
               (maxSize && files.some((f) => f.size > maxSize)) ||
               (max != null && files.length > max)
             }
-            rightOffset={rightOffset || undefined}
+            rightOffset={measuredRightOffset ?? (rightOffset || undefined)}
             {...passThemeFlag}
             {...rest}
-            onDragOver={() => setDragOver(true)}
+            onDragOver={() => {
+              if (!disabled) setDragOver(true);
+            }}
             onDragLeave={() => setDragOver(false)}
+            onDrop={(event) => {
+              setDragOver(false);
+              if (rest.onDrop) rest.onDrop(event);
+            }}
             onChange={(event) => {
               event.persist();
               const fileList = event.target.files;

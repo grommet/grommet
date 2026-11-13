@@ -3,10 +3,17 @@
 import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
+  borderStyle,
   edgeStyle,
+  elevationStyle,
   focusStyle,
+  hasSideSpecificBorder,
+  heightStyle,
   normalizeColor,
+  roundStyle,
   styledComponentsConfig,
+  widthStyle,
 } from '../../utils';
 import { Box } from '../Box';
 
@@ -26,6 +33,167 @@ const disabledStyle = `
   cursor: default;
 `;
 
+const boxPartStyles = (part, props, container = false) => {
+  const { theme } = props;
+  const responsive = props.responsive ?? true;
+  const styles = [];
+  if (part.border !== undefined) {
+    if (part.border === false) styles.push('border: none;');
+    else {
+      if (hasSideSpecificBorder(part.border)) styles.push('border: none;');
+      styles.push(borderStyle(part.border, responsive, theme));
+    }
+  }
+  if (part.elevation !== undefined) styles.push(elevationStyle(part.elevation));
+  if (part.height !== undefined) styles.push(heightStyle(part.height, theme));
+  if (part.width !== undefined) styles.push(widthStyle(part.width, theme));
+  if (part.margin !== undefined)
+    styles.push(
+      edgeStyle(
+        'margin',
+        part.margin,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (part.pad !== undefined && (!container || props.pad === undefined))
+    styles.push(
+      edgeStyle(
+        'padding',
+        part.pad,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (part.round !== undefined)
+    styles.push(
+      part.round === false
+        ? 'border-radius: 0;'
+        : roundStyle(part.round, responsive, theme),
+    );
+  return styles;
+};
+
+const mergeControlBorder = (base, override) => {
+  if (override === undefined) return base;
+  if (
+    Array.isArray(base) &&
+    override &&
+    typeof override === 'object' &&
+    !Array.isArray(override) &&
+    !override.side
+  )
+    return base.map((part) => mergeControlBorder(part, override));
+  if (
+    base &&
+    override &&
+    typeof base === 'object' &&
+    typeof override === 'object' &&
+    !Array.isArray(base) &&
+    !Array.isArray(override)
+  )
+    return { ...base, ...override };
+  if (
+    typeof base === 'string' &&
+    override &&
+    typeof override === 'object' &&
+    !Array.isArray(override)
+  )
+    return { side: base, ...override };
+  return override;
+};
+
+const controlHoverStyle = (props) => {
+  const { control } = props.theme.checkBox;
+  if (props.disabled) return undefined;
+
+  const selected = props.checked || props.indeterminate;
+  const state = selected ? control?.selected?.hover : control?.hover;
+  const part = { ...state };
+  if (state?.border !== undefined) {
+    const { checkBox } = props.theme;
+    const baseBorder = {
+      size: checkBox.border.width,
+      color: props.checked
+        ? checkBox.color || 'control'
+        : checkBox.border.color,
+    };
+    part.border = mergeControlBorder(
+      mergeControlBorder(
+        mergeControlBorder(baseBorder, control?.border),
+        selected ? control?.selected?.border : undefined,
+      ),
+      state.border,
+    );
+  }
+  const styles = boxPartStyles(part, props);
+  if (state?.background != null)
+    styles.push(backgroundStyle(state.background, props.theme, false));
+  if (props.focus && props.focusIndicator) styles.push(focusStyle());
+  if (styles.length === 0) return undefined;
+  return css`
+    input:not([disabled])
+      + ${
+        // eslint-disable-next-line no-use-before-define
+        StyledCheckBoxBox
+      } {
+      ${styles}
+    }
+  `;
+};
+
+const containerBackgroundStyle = (props) => {
+  const { container, hover } = props.theme.checkBox;
+  const normalStyles = boxPartStyles(container || {}, props, true);
+  const hoverContainer = { ...container?.hover };
+  if (hoverContainer.border !== undefined)
+    hoverContainer.border = mergeControlBorder(
+      Array.isArray(container?.border) ? undefined : container?.border,
+      hoverContainer.border,
+    );
+  const hoverStyles = boxPartStyles(hoverContainer, props, true);
+  if (
+    container?.background == null &&
+    container?.hover?.background == null &&
+    normalStyles.length === 0 &&
+    hoverStyles.length === 0
+  )
+    return undefined;
+
+  const hoverBackground =
+    container?.hover?.background != null
+      ? backgroundStyle(container.hover.background, props.theme, false)
+      : hover?.background?.color !== undefined &&
+        css`
+          background-color: ${normalizeColor(
+            hover.background.color,
+            props.theme,
+          )};
+        `;
+
+  return css`
+    ${normalStyles.length > 0 && 'box-sizing: border-box;'}
+    ${normalStyles}
+    ${backgroundStyle(container?.background, props.theme, false)}
+    ${!props.disabled &&
+    (hoverBackground || hoverStyles.length > 0) &&
+    css`
+      &:hover {
+        ${hoverBackground}
+        ${hoverStyles}
+      }
+      ${props.focus &&
+      !props.focusIndicator &&
+      css`
+        ${hoverBackground}
+        ${hoverStyles}
+      `}
+    `}
+  `;
+};
+
 const hoverStyle = css`
   &:hover input:not([disabled]) + div,
   &:hover input:not([disabled]) + span {
@@ -36,7 +204,9 @@ const hoverStyle = css`
   &:hover {
     background-color: ${(props) =>
       normalizeColor(
-        !props.disabled && props.theme.checkBox.hover?.background?.color,
+        !props.disabled &&
+          props.theme.checkBox.container?.hover?.background == null &&
+          props.theme.checkBox.hover?.background?.color,
         props.theme,
       )};
   }
@@ -92,10 +262,37 @@ const StyledCheckBoxContainer = styled.label.withConfig(styledComponentsConfig)`
     }
 
     background-color: ${normalizeColor(
-      !props.disabled && props.theme.checkBox.hover?.background?.color,
+      !props.disabled &&
+        props.theme.checkBox.container?.hover?.background == null &&
+        props.theme.checkBox.hover?.background?.color,
       props.theme,
     )};`}
-  ${(props) => props.theme.checkBox.extend}
+  ${(props) => {
+    const controlStyle = controlHoverStyle(props);
+    const containerStyle = containerBackgroundStyle(props);
+    if (containerStyle) {
+      return css`
+        ${containerStyle}
+        ${controlStyle &&
+        css`
+          &:hover {
+            ${controlStyle}
+          }
+          ${props.focus && !props.focusIndicator && controlStyle}
+        `}
+        ${props.theme.checkBox.extend}
+      `;
+    }
+    return controlStyle
+      ? css`
+          &:hover {
+            ${controlStyle}
+          }
+          ${props.focus && !props.focusIndicator && controlStyle}
+          ${props.theme.checkBox.extend}
+        `
+      : props.theme.checkBox.extend;
+  }}
 `;
 
 const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)`
@@ -116,8 +313,41 @@ const StyledCheckBoxInput = styled.input.withConfig(styledComponentsConfig)`
 `;
 
 const StyledCheckBoxBox = styled(Box)`
-  ${(props) => props.focus && props.focusIndicator && focusStyle()};
-  ${(props) => props.theme.checkBox.check.extend};
+  ${(props) => {
+    const { control, check } = props.theme.checkBox;
+    const selected = props.checked || props.indeterminate;
+    const selectedState = selected ? control?.selected : undefined;
+    const focus = props.focus && props.focusIndicator && focusStyle();
+    const part = { ...control, ...selectedState };
+    if (control?.border !== undefined || selectedState?.border !== undefined)
+      part.border = mergeControlBorder(
+        mergeControlBorder(props.border, control?.border),
+        selectedState?.border,
+      );
+    const partStyles = boxPartStyles(part, props);
+    const background = selectedState?.background ?? control?.background;
+    if (background != null) {
+      return css`
+        ${partStyles}
+        ${backgroundStyle(background, props.theme, false)}
+        ${focus}
+        ${check.extend}
+      `;
+    }
+
+    if (partStyles.length === 0)
+      return focus
+        ? css`
+            ${focus}
+            ${check.extend}
+          `
+        : check.extend;
+    return css`
+      ${partStyles}
+      ${focus}
+      ${check.extend}
+    `;
+  }};
 `;
 
 const StyledCheckBoxToggle = styled.span.withConfig(styledComponentsConfig)`

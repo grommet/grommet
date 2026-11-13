@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -10,6 +10,8 @@ import {
   getHoverIndicatorStyle,
   selectedStyle,
   controlBorderStyle,
+  focusStyle,
+  inputAppearanceStyle,
   overflowStyle,
   sizeStyle,
   styledComponentsConfig,
@@ -83,6 +85,24 @@ export const SelectTextInput = styled(TextInput)`
 
 export const StyledSelectDropButton = styled(DropButton)`
   ${(props) => !props.plainSelect && controlBorderStyle};
-  ${(props) => props.theme.select?.control?.extend};
+  ${(props) => {
+    const appearance = inputAppearanceStyle(props, {
+      wrapper: true,
+      skipPadding: true,
+    });
+    const extend = props.theme.select?.control?.extend;
+    return appearance
+      ? css`
+          ${appearance}
+          ${(!props.plain || props.focusIndicator) &&
+          css`
+            &:focus:focus-visible {
+              ${focusStyle({ inset: props.focusIndicator === 'inset' })}
+            }
+          `}
+          ${extend}
+        `
+      : extend;
+  }};
   ${(props) => props.open && props.theme.select?.control?.open};
 `;

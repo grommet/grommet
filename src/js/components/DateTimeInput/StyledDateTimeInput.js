@@ -6,6 +6,7 @@ import {
   disabledStyle,
   edgeStyle,
   focusStyle,
+  inputAppearanceStyle,
   inputStyle,
   normalizeColor,
   parseMetricToNum,
@@ -23,6 +24,12 @@ export const StyledDateTimeInputContainer = styled(Box).withConfig({
 })`
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
+  ${(props) =>
+    inputAppearanceStyle(props, {
+      wrapper: true,
+      skipPadding: true,
+      padSelector: '[role="group"]',
+    })}
   ${(props) =>
     props.focusIndicator !== false &&
     css`
@@ -71,22 +78,34 @@ export const StyledDateTimeInputDisplay = styled.div.withConfig(
   display: flex;
   align-items: center;
   overflow: hidden;
-  ${(props) =>
-    props.theme.global.input.padding &&
-    (typeof props.theme.global.input.padding !== 'object'
-      ? `padding: ${
-          parseMetricToNum(
-            props.theme.global.edgeSize[props.theme.global.input.padding] ||
-              props.theme.global.input.padding,
-          ) - parseMetricToNum(props.theme.global.control.border.width)
-        }px;`
-      : edgeStyle(
-          'padding',
-          props.theme.global.input.padding,
-          props.responsive,
-          props.theme.box.responsiveBreakpoint,
-          props.theme,
-        ))}
+  ${(props) => {
+    const inputPad = props.theme.global.input.pad;
+    if (inputPad !== undefined)
+      return edgeStyle(
+        'padding',
+        inputPad,
+        props.responsive,
+        props.theme.box.responsiveBreakpoint,
+        props.theme,
+      );
+    return (
+      props.theme.global.input.padding &&
+      (typeof props.theme.global.input.padding !== 'object'
+        ? `padding: ${
+            parseMetricToNum(
+              props.theme.global.edgeSize[props.theme.global.input.padding] ||
+                props.theme.global.input.padding,
+            ) - parseMetricToNum(props.theme.global.control.border.width)
+          }px;`
+        : edgeStyle(
+            'padding',
+            props.theme.global.input.padding,
+            props.responsive,
+            props.theme.box.responsiveBreakpoint,
+            props.theme,
+          ))
+    );
+  }}
 `;
 
 export const StyledDateTimeInputSeparator = styled.span.withConfig(

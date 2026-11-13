@@ -1162,7 +1162,7 @@ exports[`Form uncontrolled dynamically removed fields should be removed from for
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+              class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
             />
           </div>
           <span>
@@ -1536,7 +1536,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation\\n  do
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+              class="StyledBox-sc-13pk1d4-0 kltlFT StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
             >
               .c0 {
   box-sizing: border-box;
@@ -1762,7 +1762,7 @@ exports[`Form uncontrolled dynamicly removed fields using blur validation\\n  do
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+              class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
             />
           </div>
           <span>
@@ -3032,7 +3032,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
               type="checkbox"
             />
             <div
-              class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+              class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
             />
           </div>
           <span>
@@ -3076,7 +3076,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="one"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 dWsHkP StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fEpxmD"
+                class="StyledBox-sc-13pk1d4-0 dWsHkP StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 iXbKg"
               />
             </div>
             <span
@@ -3104,7 +3104,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="two"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 dWsHkP StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fEpxmD"
+                class="StyledBox-sc-13pk1d4-0 dWsHkP StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 iXbKg"
               />
             </div>
             <span
@@ -3132,7 +3132,7 @@ exports[`Form uncontrolled reset clears select, checkbox, radiobuttongroup 2`] =
                 value="three"
               />
               <div
-                class="StyledBox-sc-13pk1d4-0 dWsHkP StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 fEpxmD"
+                class="StyledBox-sc-13pk1d4-0 dWsHkP StyledRadioButton__StyledRadioButtonBox-sc-g1f6ld-4 iXbKg"
               />
             </div>
             <span

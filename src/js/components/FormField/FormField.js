@@ -13,8 +13,14 @@ import styled, { css } from 'styled-components';
 
 import {
   backgroundStyle,
+  borderStyle,
   containsFocus,
+  edgeStyle,
+  elevationStyle,
+  hasSideSpecificBorder,
+  isObject,
   normalizeColor,
+  roundStyle,
   shouldKeepFocus,
   withinDropPortal,
   PortalContext,
@@ -74,12 +80,44 @@ const grommetInputPadNames = [
   'RangeSelector',
 ];
 
+// Ideally FormField should not need to know about which inputs are read-only
+// Consider FormFieldContext to establish an internal contract for inputs
+// See https://github.com/grommet/grommet/issues/8237
+const readOnlyInputNames = [
+  'TextInput',
+  'MaskedInput',
+  'TextArea',
+  'DateInput',
+  'DateTimeInput',
+  'TimeInput',
+];
+
+const isReadOnlyInput = (component, readOnly, readOnlyCopy, inline) => {
+  const name = component?.displayName;
+  return (
+    readOnlyInputNames.includes(name) &&
+    !(name === 'TimeInput' && inline) &&
+    (readOnly === true ||
+      ((name === 'TextInput' || name === 'DateInput') && readOnlyCopy === true))
+  );
+};
+
 const isGrommetInput = (comp) =>
   comp &&
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
-const getFocusStyle = (props) => {
+const mergePartBorder = (border, override) => {
+  if (override === undefined) return border;
+  if (Array.isArray(border) && isObject(override) && !override.side)
+    return border.map((part) => mergePartBorder(part, override));
+  if (isObject(border) && isObject(override)) return { ...border, ...override };
+  if (typeof border === 'string' && isObject(override))
+    return { side: border, ...override };
+  return override;
+};
+
+const getFocusStyle = (props, content = false) => {
   if (
     props.focus &&
     props.containerFocus === false &&
@@ -88,7 +126,42 @@ const getFocusStyle = (props) => {
     return null;
   }
   if (!props.focus) return undefined;
+  if (content && props.$componentErrorBorder)
+    return css`
+      ${focusStyle({ forceOutline: true })}
+      ${props.border === false || props.border === undefined
+        ? 'border: none;'
+        : borderStyle(props.border, props.responsive ?? true, props.theme)}
+      ${isObject(props.border) &&
+      props.border.color !== undefined &&
+      `border-color: ${normalizeColor(props.border.color, props.theme)};`}
+    `;
   return focusStyle({ justBorder: true });
+};
+
+const boxStateStyles = (state, props) => {
+  const { theme } = props;
+  const responsive = props.responsive ?? true;
+  const styles = [];
+  if (state.elevation !== undefined)
+    styles.push(elevationStyle(state.elevation));
+  if (state.pad !== undefined)
+    styles.push(
+      edgeStyle(
+        'padding',
+        state.pad,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (state.round !== undefined)
+    styles.push(
+      state.round === false
+        ? 'border-radius: 0;'
+        : roundStyle(state.round, responsive, theme),
+    );
+  return styles;
 };
 
 // The border color has to be painted by whichever element owns the border,
@@ -104,36 +177,58 @@ const getHoverStyle = (role) => (props) => {
   const position = formFieldTheme?.border?.position;
   const ownsBorder =
     role === 'outer' ? position === 'outer' : position === 'inner';
+  const componentOwnsBorder =
+    role === 'outer' ? position === 'outer' : position !== 'outer';
 
   const componentHoverBorder = componentHover?.border ?? undefined;
   const componentHoverBackground = componentHover?.background ?? undefined;
-
-  const hasComponentBorderOverride = componentHoverBorder !== undefined;
-  const hasComponentBackgroundOverride = componentHoverBackground !== undefined;
-
-  let borderColor;
-  if (ownsBorder) {
-    if (hasComponentBorderOverride) {
-      borderColor = componentHoverBorder.color;
-    } else {
-      borderColor = hover?.border?.color;
-    }
-  }
-
-  let background;
+  const styles = [];
   if (role === 'content') {
-    if (hasComponentBackgroundOverride) {
-      background = componentHoverBackground;
-    } else {
-      background = hover?.background;
-    }
+    const background = componentHoverBackground ?? hover?.background;
+    if (background !== undefined)
+      styles.push(backgroundStyle(background, props.theme, false));
+    styles.push(
+      ...boxStateStyles(
+        {
+          elevation: componentHover?.elevation,
+          pad: componentHover?.pad,
+          round: componentHover?.round,
+        },
+        props,
+      ),
+    );
   }
-  if (!borderColor && background === undefined) return undefined;
+  if (componentOwnsBorder && componentHoverBorder !== undefined) {
+    if (componentHoverBorder === false) styles.push('border: none;');
+    else if (
+      componentHoverBorder &&
+      typeof componentHoverBorder === 'object' &&
+      !Array.isArray(componentHoverBorder) &&
+      Object.keys(componentHoverBorder).every((key) => key === 'color')
+    ) {
+      if (componentHoverBorder.color !== undefined)
+        styles.push(
+          `border-color: ${normalizeColor(
+            componentHoverBorder.color,
+            props.theme,
+          )};`,
+        );
+    } else {
+      const hoverBorder = mergePartBorder(props.border, componentHoverBorder);
+      if (hasSideSpecificBorder(hoverBorder)) styles.push('border: none;');
+      styles.push(
+        borderStyle(hoverBorder, props.responsive ?? true, props.theme),
+      );
+    }
+  } else if (ownsBorder && hover?.border?.color !== undefined) {
+    styles.push(
+      `border-color: ${normalizeColor(hover.border.color, props.theme)};`,
+    );
+  }
+  if (styles.length === 0) return undefined;
   return css`
     &:hover {
-      ${borderColor !== undefined &&
-      `border-color: ${normalizeColor(borderColor, props.theme)};`}
-      ${backgroundStyle(background, props.theme, false)}
+      ${styles}
     }
   `;
 };
@@ -145,7 +240,7 @@ const FormFieldBox = styled(Box)`
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${(props) => getFocusStyle(props)}
+  ${(props) => getFocusStyle(props, true)}
   ${getHoverStyle('content')}
   ${(props) =>
     props.theme.formField &&
@@ -349,6 +444,7 @@ const FormField = forwardRef(
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
+    const [fileDragOver, setFileDragOver] = useState(false);
     const [focusIndicator, setFocusIndicator] = useState(true);
     const fieldFocus = focus && focusIndicator;
     const fieldContext = useMemo(() => ({ setFocusIndicator }), []);
@@ -369,21 +465,38 @@ const FormField = forwardRef(
 
     const readOnlyField = useMemo(() => {
       let readOnly = false;
+      if (!children && inForm) {
+        readOnly = isReadOnlyInput(
+          component || TextInput,
+          rest.readOnly,
+          rest.readOnlyCopy,
+          rest.inline,
+        );
+      }
       if (children) {
-        Children.map(children, (child) => {
+        Children.forEach(children, (child) => {
           if (
-            (child?.props?.readOnly === true ||
-              child?.props?.readOnlyCopy === true) &&
-            child.type &&
-            (child.type.displayName === 'TextInput' ||
-              child.type.displayName === 'DateInput')
+            child &&
+            isReadOnlyInput(
+              child.type,
+              child.props?.readOnly,
+              child.props?.readOnlyCopy,
+              child.props?.inline,
+            )
           ) {
             readOnly = true;
           }
         });
       }
       return readOnly;
-    }, [children]);
+    }, [
+      children,
+      component,
+      inForm,
+      rest.inline,
+      rest.readOnly,
+      rest.readOnlyCopy,
+    ]);
 
     const containerFocus = useMemo(() => {
       let focusIndicatorFlag = true;
@@ -499,20 +612,121 @@ const FormField = forwardRef(
       );
     }
 
-    const themeContentProps = { ...formFieldTheme.content };
+    // Only inspect direct children. Generated inputs have no child to identify.
+    let childName;
+    Children.forEach(children, (child) => {
+      if (child && child.type) childName = child.type.displayName;
+    });
+    if (!children && inForm) childName = (component || TextInput).displayName;
+    if (childName?.length > 0)
+      childName = childName.charAt(0).toLowerCase() + childName.slice(1);
 
-    if (!pad && !wantContentPad) {
+    let outerBackground;
+
+    if (themeBorder && themeBorder.position === 'outer') {
+      if (error && formFieldTheme.error && formFieldTheme.error.background) {
+        outerBackground = formFieldTheme.error.background;
+      } else if (
+        fieldFocus &&
+        formFieldTheme.focus &&
+        formFieldTheme.focus.background &&
+        formFieldTheme.focus.background.color
+      ) {
+        outerBackground = formFieldTheme.focus.background.color;
+      } else if (
+        disabled &&
+        formFieldTheme.disabled &&
+        formFieldTheme.disabled.background
+      ) {
+        outerBackground = formFieldTheme.disabled.background;
+      }
+    }
+
+    const componentBoxProps = { ...(formFieldTheme[childName] || {}) };
+    const componentError =
+      error && !disabled && !readOnlyField
+        ? componentBoxProps.error
+        : undefined;
+    const componentBackground = componentBoxProps.background;
+    delete componentBoxProps.background;
+    delete componentBoxProps.container;
+    delete componentBoxProps.error;
+    delete componentBoxProps.hover;
+    if (childName === 'checkBox') delete componentBoxProps.pad;
+    const themeContentProps = {
+      ...formFieldTheme.content,
+      ...componentBoxProps,
+    };
+    if (componentError) {
+      ['elevation', 'pad', 'round'].forEach((property) => {
+        if (componentError[property] !== undefined)
+          themeContentProps[property] = componentError[property];
+      });
+    }
+    let componentBorder = componentBoxProps.border;
+    if (
+      componentError &&
+      (componentError.border !== undefined ||
+        componentBorder !== undefined ||
+        themeBorder?.position === 'inner')
+    ) {
+      const defaultBorder = themeBorder
+        ? { ...themeBorder, side: themeBorder.side || 'bottom' }
+        : undefined;
+      const normalBorder = componentBorder ?? defaultBorder;
+      const sharedErrorBorder =
+        formFieldTheme.error?.border ??
+        (themeBorder?.error?.color !== undefined
+          ? { color: themeBorder.error.color }
+          : undefined);
+      componentBorder =
+        normalBorder === false && componentError.border === undefined
+          ? false
+          : mergePartBorder(
+              mergePartBorder(
+                normalBorder === false ? defaultBorder : normalBorder,
+                sharedErrorBorder,
+              ),
+              componentError.border,
+            );
+      themeContentProps.border = componentBorder;
+    }
+    const background = componentBackground ?? formFieldTheme.background;
+    if (background !== undefined) {
+      // Existing outer state fills must remain visible through the content.
+      themeContentProps.background =
+        outerBackground !== undefined ? undefined : background;
+    }
+
+    if (
+      !pad &&
+      !wantContentPad &&
+      componentBoxProps.pad === undefined &&
+      componentError?.pad === undefined
+    ) {
       themeContentProps.pad = undefined;
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
+      let stateBackground;
       if (readOnlyField) {
-        themeContentProps.background = theme.global.input.readOnly?.background;
+        stateBackground = theme.global.input.readOnly?.background;
       } else if (error && formFieldTheme.error) {
-        themeContentProps.background = formFieldTheme.error.background;
+        stateBackground = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        themeContentProps.background = formFieldTheme.disabled.background;
+        stateBackground = formFieldTheme.disabled.background;
       }
+      if (stateBackground !== undefined)
+        themeContentProps.background = stateBackground;
+    }
+    if (componentError) {
+      const errorBackground =
+        componentError.background ??
+        (themeBorder?.position !== 'outer'
+          ? formFieldTheme.error?.background
+          : undefined);
+      if (errorBackground !== undefined)
+        themeContentProps.background = errorBackground;
     }
 
     // fileinput handle
@@ -533,16 +747,6 @@ const FormField = forwardRef(
       isFileInputComponent = true;
     }
 
-    let childName;
-    Children.forEach(children, (child) => {
-      if (child && child.type) {
-        childName = child.type.displayName;
-        // camelCase component name to match theme object key
-        if (childName?.length > 0)
-          childName = childName.charAt(0).toLowerCase() + childName.slice(1);
-      }
-    });
-
     const allowHover = !disabled && !readOnlyField && !error && !focus;
 
     if (!themeBorder) {
@@ -554,6 +758,7 @@ const FormField = forwardRef(
           {...themeContentProps}
           {...contentProps}
           allowHover={allowHover} // internal prop
+          {...passThemeFlag}
         >
           {contents}
         </StyledContentsBox>
@@ -561,6 +766,7 @@ const FormField = forwardRef(
     }
 
     let borderColor;
+    let hasSharedStateBorderColor = false;
 
     if (
       disabled &&
@@ -568,23 +774,27 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
+      hasSharedStateBorderColor = true;
     } else if (readOnlyField && theme.global.input?.readOnly?.border?.color) {
       borderColor = theme.global.input?.readOnly?.border?.color;
+      hasSharedStateBorderColor = true;
     } else if (
       // backward compatibility check
-      (error && themeBorder && themeBorder.error.color) ||
+      (error && themeBorder?.error?.color) ||
       (error && formFieldTheme.error && formFieldTheme.error.border)
     ) {
       if (
-        themeBorder.error.color &&
+        themeBorder?.error?.color &&
         formFieldTheme.error.border === undefined
       ) {
         borderColor = themeBorder.error.color || 'status-critical';
+        hasSharedStateBorderColor = true;
       } else if (
         formFieldTheme.error.border &&
         formFieldTheme.error.border.color
       ) {
         borderColor = formFieldTheme.error.border.color || 'status-critical';
+        hasSharedStateBorderColor = true;
       }
     } else if (
       fieldFocus &&
@@ -593,6 +803,7 @@ const FormField = forwardRef(
       formFieldTheme.focus.border.color
     ) {
       borderColor = formFieldTheme.focus.border.color;
+      hasSharedStateBorderColor = true;
     } else {
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
@@ -622,6 +833,25 @@ const FormField = forwardRef(
     let abutMargin;
     let outerStyle = style;
 
+    const resolvedComponentBorder =
+      componentBorder === undefined ||
+      componentBorder === false ||
+      componentError?.border !== undefined ||
+      !hasSharedStateBorderColor ||
+      borderColor === undefined
+        ? componentBorder
+        : mergePartBorder(componentBorder, { color: borderColor });
+
+    const fileDragBorder =
+      isFileInputComponent && fileDragOver && !disabled && !error
+        ? theme.fileInput.dragOver?.border
+        : undefined;
+    const withFileDragBorder = (border) => {
+      if (fileDragBorder === undefined) return border;
+      if (fileDragBorder === 'none' || fileDragBorder === false) return false;
+      return mergePartBorder(border, fileDragBorder);
+    };
+
     // If fileinput is wrapped in a formfield we want to use
     // the border style from the fileInput.theme. We also do not
     // want the foocus around the formfield since the the focus
@@ -631,20 +861,27 @@ const FormField = forwardRef(
       const innerProps =
         themeBorder.position === 'inner'
           ? {
-              border: {
-                ...themeBorder,
-                size: isFileInputComponent
-                  ? theme.fileInput.border.size
-                  : undefined,
-                style: isFileInputComponent
-                  ? theme.fileInput.border.style
-                  : undefined,
-                side: isFileInputComponent
-                  ? theme.fileInput.border.side
-                  : themeBorder.side || 'bottom',
-                color: borderColor,
-              },
-              round: formFieldTheme.round,
+              border: withFileDragBorder(
+                resolvedComponentBorder !== undefined
+                  ? resolvedComponentBorder
+                  : {
+                      ...themeBorder,
+                      size: isFileInputComponent
+                        ? theme.fileInput.border.size
+                        : undefined,
+                      style: isFileInputComponent
+                        ? theme.fileInput.border.style
+                        : undefined,
+                      side: isFileInputComponent
+                        ? theme.fileInput.border.side
+                        : themeBorder.side || 'bottom',
+                      color: borderColor,
+                    },
+              ),
+              round:
+                componentError?.round ??
+                componentBoxProps.round ??
+                formFieldTheme.round,
               focus: isFileInputComponent ? undefined : fieldFocus,
             }
           : {};
@@ -652,6 +889,7 @@ const FormField = forwardRef(
         <FormFieldContentBox
           disabledProp={disabled}
           error={error}
+          $componentErrorBorder={componentError?.border !== undefined}
           componentName={childName}
           {...themeContentProps}
           {...innerProps}
@@ -699,8 +937,6 @@ const FormField = forwardRef(
       }
     }
 
-    let outerBackground;
-
     if (themeBorder && themeBorder.position === 'outer') {
       if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
@@ -723,7 +959,7 @@ const FormField = forwardRef(
     const outerProps =
       themeBorder && themeBorder.position === 'outer'
         ? {
-            border: { ...themeBorder, color: borderColor },
+            border: withFileDragBorder({ ...themeBorder, color: borderColor }),
             round: formFieldTheme.round,
             focus: fieldFocus,
           }
@@ -755,6 +991,9 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
+        componentName={
+          themeBorder?.position === 'outer' ? childName : undefined
+        }
         containerFocus={containerFocus} // internal prop
         allowHover={allowHover} // internal prop
         onFocusCapture={() => setFocusIndicator(true)}
@@ -800,6 +1039,21 @@ const FormField = forwardRef(
             : undefined
         }
         {...containerRest}
+        onDragOverCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file' && !disabled)
+            setFileDragOver(true);
+          containerRest.onDragOverCapture?.(event);
+        }}
+        onDragLeaveCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file')
+            setFileDragOver(false);
+          containerRest.onDragLeaveCapture?.(event);
+        }}
+        onDropCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file')
+            setFileDragOver(false);
+          containerRest.onDropCapture?.(event);
+        }}
         {...passThemeFlag}
       >
         {(label && component !== CheckBox) || help ? (
