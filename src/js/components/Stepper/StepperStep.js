@@ -21,15 +21,18 @@ import { useStepTheme } from './utils';
 export const StepperStep = ({
   step,
   stepNumber,
+  totalSteps,
   isLast,
   showConnector,
   direction,
   focusedIndex,
   index: indexProp,
   isSubStep,
+  parentStepNumber,
+  subStepNumber,
+  subStepTotal,
   subSteps,
   onFocusStep,
-  stepsRef,
   stepRefs,
 }) => {
   const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
@@ -72,21 +75,33 @@ export const StepperStep = ({
     }
   };
 
-  const totalSteps = stepsRef.current?.length || stepNumber;
-  const ariaLabel =
-    step['aria-label'] ||
-    format({
-      id: 'stepper.step',
-      values: {
-        step: stepNumber,
-        total: totalSteps,
-        title: step.title,
-      },
-    });
-  const accessibleLabel =
-    step.status === 'completed'
-      ? format({ id: 'stepper.completed', values: { step: ariaLabel } })
-      : ariaLabel;
+  let ariaLabel = step['aria-label'];
+  if (!ariaLabel) {
+    ariaLabel = isSubStep
+      ? format({
+          id: 'stepper.subStep',
+          values: {
+            step: parentStepNumber,
+            subStep: subStepNumber,
+            total: subStepTotal,
+            title: step.title,
+          },
+        })
+      : format({
+          id: 'stepper.step',
+          values: {
+            step: stepNumber,
+            total: totalSteps,
+            title: step.title,
+          },
+        });
+  }
+  let statusId;
+  if (step.status === 'completed') statusId = 'stepper.completed';
+  if (step.status === 'error') statusId = 'stepper.error';
+  const accessibleLabel = statusId
+    ? format({ id: statusId, values: { step: ariaLabel } })
+    : ariaLabel;
 
   const describedBy = [];
   if (step.errorMessage && step.status === 'error') {
