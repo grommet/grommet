@@ -9,7 +9,6 @@ import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
 import { StepperDescription } from './StepperDescription';
 import { StepperError, StepperDisabledReason } from './StepperHelperText';
-import { StepConnector } from './StepConnector';
 import { StyledStepItem, StyledStepButton, StyledStepContent, StyledConnector, StyledSubStepsList } from './StyledStepper';
 import { useStepTheme } from './utils';
 export var StepperStep = function StepperStep(_ref) {
@@ -132,15 +131,19 @@ export var StepperStep = function StepperStep(_ref) {
     isSubStep: isSubStep,
     hasDescription: !!step.description,
     stepTheme: stepTheme
-  }, /*#__PURE__*/React.createElement(StepperLabel, null), showDescription && /*#__PURE__*/React.createElement(StepperDescription, null), /*#__PURE__*/React.createElement(StepperError, null), /*#__PURE__*/React.createElement(StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) && !(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StyledConnector, _extends({
+  }, /*#__PURE__*/React.createElement(StepperLabel, null), showDescription && /*#__PURE__*/React.createElement(StepperDescription, null), /*#__PURE__*/React.createElement(StepperError, null), /*#__PURE__*/React.createElement(StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) &&
+  /*#__PURE__*/
+  // positioned relative to this li so it stays anchored to the
+  // indicator regardless of how tall the label/content grows
+  React.createElement(StyledConnector, _extends({
     direction: direction,
     status: step.status,
     "aria-hidden": "true",
     stepTheme: stepTheme
-  }, passThemeFlag)), !!(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StepConnector, null, /*#__PURE__*/React.createElement(StyledSubStepsList, _extends({
+  }, passThemeFlag)), !!(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StyledSubStepsList, _extends({
     forwardedAs: "ol",
     isVertical: direction === 'vertical',
     cssGap: true,
     stepTheme: stepTheme
-  }, stepTheme == null ? void 0 : stepTheme.children), subSteps))));
+  }, stepTheme == null ? void 0 : stepTheme.children), subSteps)));
 };

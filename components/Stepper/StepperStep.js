@@ -10,7 +10,6 @@ var _StepperIndicator = require("./StepperIndicator");
 var _StepperLabel = require("./StepperLabel");
 var _StepperDescription = require("./StepperDescription");
 var _StepperHelperText = require("./StepperHelperText");
-var _StepConnector = require("./StepConnector");
 var _StyledStepper = require("./StyledStepper");
 var _utils = require("./utils");
 var cache;
@@ -137,15 +136,19 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
     isSubStep: isSubStep,
     hasDescription: !!step.description,
     stepTheme: stepTheme
-  }, /*#__PURE__*/_react["default"].createElement(_StepperLabel.StepperLabel, null), showDescription && /*#__PURE__*/_react["default"].createElement(_StepperDescription.StepperDescription, null), /*#__PURE__*/_react["default"].createElement(_StepperHelperText.StepperError, null), /*#__PURE__*/_react["default"].createElement(_StepperHelperText.StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) && !(subSteps != null && subSteps.length) && /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledConnector, _extends({
+  }, /*#__PURE__*/_react["default"].createElement(_StepperLabel.StepperLabel, null), showDescription && /*#__PURE__*/_react["default"].createElement(_StepperDescription.StepperDescription, null), /*#__PURE__*/_react["default"].createElement(_StepperHelperText.StepperError, null), /*#__PURE__*/_react["default"].createElement(_StepperHelperText.StepperDisabledReason, null))), (showConnector !== undefined ? showConnector : !isLast) &&
+  /*#__PURE__*/
+  // positioned relative to this li so it stays anchored to the
+  // indicator regardless of how tall the label/content grows
+  _react["default"].createElement(_StyledStepper.StyledConnector, _extends({
     direction: direction,
     status: step.status,
     "aria-hidden": "true",
     stepTheme: stepTheme
-  }, passThemeFlag)), !!(subSteps != null && subSteps.length) && /*#__PURE__*/_react["default"].createElement(_StepConnector.StepConnector, null, /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledSubStepsList, _extends({
+  }, passThemeFlag)), !!(subSteps != null && subSteps.length) && /*#__PURE__*/_react["default"].createElement(_StyledStepper.StyledSubStepsList, _extends({
     forwardedAs: "ol",
     isVertical: direction === 'vertical',
     cssGap: true,
     stepTheme: stepTheme
-  }, stepTheme == null ? void 0 : stepTheme.children), subSteps))));
+  }, stepTheme == null ? void 0 : stepTheme.children), subSteps)));
 };

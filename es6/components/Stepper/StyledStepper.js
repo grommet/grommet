@@ -69,7 +69,7 @@ var StyledStepItem = styled.li.withConfig({
       gap = _ref3.gap;
     var gapValue = (gap == null ? void 0 : gap.row) || gap || '0px';
     var paddingBottom = '0px';
-    if (!props.isSubStep && !props.isLast && !props.hasSubSteps) {
+    if (!props.isSubStep && !props.isLast) {
       paddingBottom = getMetricSize(props.theme, gapValue);
     }
     return css(["flex-direction:column;align-items:flex-start;padding-bottom:", ";"], paddingBottom);
@@ -155,7 +155,7 @@ var StyledConnector = styled.span.withConfig(styledComponentsConfig).withConfig(
   // width and height could be specified as box props in which case
   // the t-shirt values will be from theme.global.size.
   // But use the size from the theme if available. In that case
-  // the t-shirt values are icon sizes. 
+  // the t-shirt values are icon sizes.
   var indicatorWidth = (indicator == null || (_indicator$width = indicator.width) == null ? void 0 : _indicator$width.width) || (indicator == null ? void 0 : indicator.width);
   var indicatorHeight = (indicator == null || (_indicator$height2 = indicator.height) == null ? void 0 : _indicator$height2.height) || (indicator == null ? void 0 : indicator.height);
   var width = indicatorWidth ? theme.global.size[indicatorWidth] || indicatorWidth : getIconSize(theme, (indicator == null ? void 0 : indicator.size) || 'medium');
@@ -168,12 +168,11 @@ var StyledConnector = styled.span.withConfig(styledComponentsConfig).withConfig(
   var connectorStrokeToken = (stepTheme == null || (_stepTheme$connector = stepTheme.connector) == null ? void 0 : _stepTheme$connector.thickness) || 'small';
   var connectorThickness = getBorderWidth(theme, connectorStrokeToken);
   var connectorRadius = ((_theme$global7 = theme.global) == null || (_theme$global7 = _theme$global7.edgeSize) == null ? void 0 : _theme$global7.xsmall) || '4px';
-  var connectorTop = "calc(" + height + " / 2 + " + padTop + ")";
-  var connectorLeft = "calc(" + width + " / 2 + " + padLeft + ")";
-  var connectorRight = "calc(" + width + " / 2 + " + padRight + ")";
+  var centerTop = "calc(" + height + " / 2 + " + padTop + ")";
+  var centerLeft = "calc(" + width + " / 2 + " + padLeft + ")";
+  var centerRight = "calc(" + width + " / 2 + " + padRight + ")";
   var connectorGap = '4px';
-  var nonBetweenTop = "calc(" + height + " + " + padTop + " +\n      (" + indicatorBorderWidth + " * 2) + " + connectorGap + ")";
-  return css(["border-radius:", ";", ""], connectorRadius, props.direction === 'horizontal' ? css(["top:", ";left:calc(", "50% + ", ");right:calc(-50% + ", ");height:", ";margin-inline-start:", ";margin-inline-end:", ";"], connectorTop, props.isBetween ? '-' : '', connectorLeft, connectorRight, connectorThickness, padLeft, padRight) : css(["left:calc( ", " + ", " - ", " / 2 );top:", ";bottom:0;", " width:", ";margin-block:0;"], connectorLeft, indicatorBorderWidth, connectorThickness, props.isBetween ? 0 : nonBetweenTop, !props.isBetween && css(["min-height:12px;"]), connectorThickness));
+  return css(["border-radius:", ";", ""], connectorRadius, props.direction === 'horizontal' ? css(["top:", ";left:calc(50% + ", ");right:calc(-50% + ", ");height:", ";margin-inline-start:", ";margin-inline-end:", ";"], centerTop, centerLeft, centerRight, connectorThickness, padLeft, padRight) : css(["left:calc( ", " + ", " - ", " / 2 );top:calc( ", " + ", " + (", " * 2) + ", " );bottom:calc(", " - ", ");min-height:12px;width:", ";margin-block:0;"], centerLeft, indicatorBorderWidth, connectorThickness, height, padTop, indicatorBorderWidth, connectorGap, connectorGap, padTop, connectorThickness));
 }, function (props) {
   var _props$stepTheme9;
   return normalizeColor(((_props$stepTheme9 = props.stepTheme) == null || (_props$stepTheme9 = _props$stepTheme9.connector) == null ? void 0 : _props$stepTheme9.color) || 'border', props.theme);
