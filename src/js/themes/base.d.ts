@@ -416,6 +416,7 @@ type TimeInputThemeType = {
 };
 
 export interface ThemeType {
+  defaultMode?: 'dark' | 'light' | 'auto';
   global?: {
     active?: {
       background?:
