@@ -6,7 +6,7 @@ import { CheckBoxProps } from '../CheckBox/index';
 import { Omit } from '../../utils';
 
 interface OnChangeEvent {
-  value: string;
+  value: (string | number)[];
   option: string | CheckBoxProps;
 }
 
@@ -29,7 +29,7 @@ export interface CheckBoxGroupProps {
   labelKey?: string;
   name?: string;
   onChange?: (event?: OnChangeEvent) => void;
-  options: (CheckBoxType | string)[];
+  options?: (CheckBoxType | string)[];
   valueKey?: string;
 }
 
