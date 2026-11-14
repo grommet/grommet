@@ -900,6 +900,51 @@ describe('List disabled', () => {
     expect(onClickItem).toHaveBeenCalledTimes(2);
   });
 
+  test('disabled matches an item whose itemKey resolves to an empty string', async () => {
+    const user = userEvent.setup();
+    const onClickItem = jest.fn();
+    render(
+      <Grommet>
+        <List
+          data={[
+            { id: 'one', name: 'alpha' },
+            { id: '', name: 'beta' },
+          ]}
+          itemKey="id"
+          primaryKey="name"
+          disabled={['']}
+          onClickItem={onClickItem}
+        />
+      </Grommet>,
+    );
+    await user.click(screen.getByText('beta'));
+    expect(onClickItem).not.toHaveBeenCalled();
+  });
+
+  test('disabled matches an item whose itemKey resolves to 0', async () => {
+    const user = userEvent.setup();
+    const onClickItem = jest.fn();
+    render(
+      <Grommet>
+        <List
+          data={[
+            { id: 1, name: 'alpha' },
+            { id: 0, name: 'beta' },
+          ]}
+          itemKey="id"
+          primaryKey="name"
+          // disabled is typed as string[], but runtime matching is a
+          // plain equality check against the resolved itemKey value,
+          // so a numeric id should still match.
+          disabled={[0] as unknown as string[]}
+          onClickItem={onClickItem}
+        />
+      </Grommet>,
+    );
+    await user.click(screen.getByText('beta'));
+    expect(onClickItem).not.toHaveBeenCalled();
+  });
+
   test('Disabled items should not call onClickItem with keyboard', async () => {
     const onClickItem = jest.fn();
     const user = userEvent.setup();
