@@ -269,4 +269,111 @@ describe('FileInput', () => {
     expect(screen.getByText('hello.txt')).toBeInTheDocument();
     expect(onChange).toHaveBeenCalledTimes(1);
   });
+
+  describe('native FileList sync across multiple browses', () => {
+    // jsdom doesn't implement DataTransfer, and its native
+    // HTMLInputElement#files setter only accepts a real (unconstructable
+    // in jsdom) FileList. Stand in for both so the component's actual
+    // DataTransfer-based sync codepath can run in tests, the same way it
+    // does in real browsers.
+    class FakeDataTransfer {
+      fileArr: File[] = [];
+
+      items = {
+        add: (file: File) => {
+          this.fileArr.push(file);
+        },
+      };
+
+      get files() {
+        return this.fileArr;
+      }
+    }
+
+    let originalFilesDescriptor: PropertyDescriptor;
+
+    beforeEach(() => {
+      originalFilesDescriptor = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype,
+        'files',
+      ) as PropertyDescriptor;
+      (global as { DataTransfer?: unknown }).DataTransfer = FakeDataTransfer;
+      Object.defineProperty(window.HTMLInputElement.prototype, 'files', {
+        configurable: true,
+        get(this: HTMLInputElement & { __fakeFiles?: File[] }) {
+          return this.__fakeFiles ?? originalFilesDescriptor.get?.call(this);
+        },
+        set(this: HTMLInputElement & { __fakeFiles?: File[] }, value: File[]) {
+          this.__fakeFiles = value;
+        },
+      });
+    });
+
+    afterEach(() => {
+      Object.defineProperty(
+        window.HTMLInputElement.prototype,
+        'files',
+        originalFilesDescriptor,
+      );
+      delete (global as { DataTransfer?: unknown }).DataTransfer;
+    });
+
+    test('native input keeps files selected across separate browses', () => {
+      render(
+        <Grommet>
+          <FileInput name="file" multiple />
+        </Grommet>,
+      );
+
+      const input = document.querySelector(
+        'input[type="file"]',
+      ) as HTMLInputElement;
+
+      const fileA = new File(['a'], 'a.txt', { type: 'text/plain' });
+      const fileB = new File(['b'], 'b.txt', { type: 'text/plain' });
+
+      fireEvent.change(input, { target: { files: [fileA] } });
+      fireEvent.change(input, { target: { files: [fileB] } });
+
+      expect(screen.getByText('a.txt')).toBeInTheDocument();
+      expect(screen.getByText('b.txt')).toBeInTheDocument();
+
+      // the native input's own FileList should reflect both selections,
+      // not just the most recent browse, so a real <form> submission
+      // would include every file shown in the UI.
+      // fireEvent.change shadows the prototype accessor with its own
+      // instance property, so remove that to read back what the
+      // component actually synced onto the native input.
+      delete (input as unknown as { files?: unknown }).files;
+      const nativeFiles = Array.from(input.files || []);
+      expect(nativeFiles.map((f) => f.name).sort()).toEqual(['a.txt', 'b.txt']);
+    });
+
+    test('native input reflects remaining files after removeFile', () => {
+      render(
+        <Grommet>
+          <FileInput name="file" multiple />
+        </Grommet>,
+      );
+
+      const input = document.querySelector(
+        'input[type="file"]',
+      ) as HTMLInputElement;
+
+      const fileA = new File(['a'], 'a.txt', { type: 'text/plain' });
+      const fileB = new File(['b'], 'b.txt', { type: 'text/plain' });
+
+      fireEvent.change(input, { target: { files: [fileA] } });
+      fireEvent.change(input, { target: { files: [fileB] } });
+
+      fireEvent.click(screen.getByLabelText(/a\.txt/i));
+
+      expect(screen.queryByText('a.txt')).not.toBeInTheDocument();
+      expect(screen.getByText('b.txt')).toBeInTheDocument();
+
+      delete (input as unknown as { files?: unknown }).files;
+      const nativeFiles = Array.from(input.files || []);
+      expect(nativeFiles.map((f) => f.name)).toEqual(['b.txt']);
+    });
+  });
 });
