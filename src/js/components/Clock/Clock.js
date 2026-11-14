@@ -120,8 +120,10 @@ const Clock = forwardRef(
             nextElements.hours += Math.floor(nextElements.minutes / 60);
             nextElements.minutes = 59;
           }
-          if (nextElements.hours >= 24 || nextElements.hours < 0) {
+          if (nextElements.hours >= 24) {
             nextElements.hours = 0;
+          } else if (nextElements.hours < 0) {
+            nextElements.hours = 23;
           }
           if (hourLimit === 12) {
             nextElements.hours12 =

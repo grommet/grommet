@@ -142,4 +142,25 @@ describe('Clock', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  test('run backward wraps hours around midnight', () => {
+    jest.useFakeTimers();
+    const onChange = jest.fn();
+    render(
+      <Grommet>
+        <Clock
+          type="digital"
+          run="backward"
+          time="T00:00:00"
+          onChange={onChange}
+        />
+      </Grommet>,
+    );
+
+    act(() => {
+      jest.advanceTimersByTime(1000);
+    });
+
+    expect(onChange).toHaveBeenCalledWith('T23:59:59');
+  });
 });
