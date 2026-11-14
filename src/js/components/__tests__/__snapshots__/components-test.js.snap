@@ -1243,6 +1243,7 @@ exports[`Components loads 1`] = `
       "children": [Function],
       "clickableSteps": [Function],
       "closable": [Function],
+      "contentMaxWidth": [Function],
       "currentStep": [Function],
       "defaultStep": [Function],
       "defaultValue": [Function],
