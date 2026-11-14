@@ -164,7 +164,7 @@ const Carousel = ({
       timerRef.current = timer;
 
       return () => {
-        clearTimeout(timer);
+        clearInterval(timer);
       };
     }
     return () => {};
