@@ -362,8 +362,10 @@ exports[`Components loads 1`] = `
   "DateTimeInput": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
+      "calendarProps": [Function],
       "defaultValue": [Function],
       "disabled": [Function],
+      "dropProps": [Function],
       "format": [Function],
       "id": [Function],
       "inline": [Function],
@@ -374,6 +376,7 @@ exports[`Components loads 1`] = `
       "onChange": [Function],
       "readOnly": [Function],
       "showSeconds": [Function],
+      "timeInputProps": [Function],
       "value": [Function],
     },
     "render": [Function],
