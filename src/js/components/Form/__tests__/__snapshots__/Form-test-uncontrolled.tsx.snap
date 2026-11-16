@@ -4424,14 +4424,6 @@ exports[`Form uncontrolled validate 2`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
 <span
   class="c0"
 >
@@ -4462,14 +4454,6 @@ exports[`Form uncontrolled validate 3`] = `
 
 }
 
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
 <span
   class="c0"
 >
@@ -4486,14 +4470,6 @@ exports[`Form uncontrolled validate 4`] = `
   font-size: 18px;
   line-height: 24px;
   color: #666666;
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 @media only screen and (max-width: 768px) {

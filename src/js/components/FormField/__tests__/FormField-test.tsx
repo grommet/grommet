@@ -95,6 +95,52 @@ describe('FormField', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test.each([false, true])(
+    'non-string errors apply theme color without leaking it (icon: %s)',
+    (withIcon) => {
+      render(
+        <Grommet
+          theme={{
+            formField: {
+              error: {
+                color: '#cc0000',
+                ...(withIcon && {
+                  icon: <Alert />,
+                  container: { gap: 'small' },
+                }),
+              },
+            },
+          }}
+        >
+          <FormField htmlFor="boolean-error" error>
+            <TextInput id="boolean-error" aria-label="Boolean error" />
+          </FormField>
+          <FormField
+            htmlFor="node-error"
+            error={<div>Please review this value.</div>}
+          >
+            <TextInput id="node-error" aria-label="Node error" />
+          </FormField>
+        </Grommet>,
+      );
+
+      ['Boolean error', 'Node error'].forEach((name) => {
+        const input = screen.getByRole('textbox', { name });
+        const message = document.getElementById(
+          input.getAttribute('aria-describedby')!,
+        );
+        const content = withIcon ? message?.lastElementChild : message;
+        expect(content).not.toHaveAttribute('color');
+        expect(content).toHaveStyleRule('color', '#cc0000');
+        expect(content).toHaveStyleRule('display', 'flex');
+        expect(input).toHaveAttribute('aria-invalid', 'true');
+      });
+      expect(
+        document.getElementById('grommet-node-error__error'),
+      ).toHaveTextContent('Please review this value.');
+    },
+  );
+
   test('info', () => {
     const { container } = render(
       <Grommet>

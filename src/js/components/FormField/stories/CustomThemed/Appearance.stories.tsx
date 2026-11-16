@@ -257,11 +257,13 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
 });
 
 const AppearanceStory = () => {
-  const [theme, setTheme] = React.useState(hpeTheme);
+  const [theme, setTheme] = React.useState(customTheme);
   const [themeMode, setThemeMode] = React.useState<'auto' | 'light' | 'dark'>(
     'auto',
   );
-  const [error, setError] = React.useState(false);
+  const [error, setError] = React.useState<string | undefined>(
+    'Please review this value.',
+  );
 
   return (
     <Grommet theme={theme} themeMode={themeMode}>
@@ -291,8 +293,12 @@ const AppearanceStory = () => {
           <CheckBox
             label="Error"
             name="error"
-            checked={error}
-            onChange={(event) => setError(event.target.checked)}
+            checked={!!error}
+            onChange={(event) =>
+              setError(
+                event.target.checked ? 'Please review this value.' : undefined,
+              )
+            }
             toggle
           />
         </Box>

@@ -22,6 +22,7 @@ import {
   normalizeColor,
   roundStyle,
   shouldKeepFocus,
+  styledComponentsConfig,
   withinDropPortal,
   PortalContext,
 } from '../../utils';
@@ -278,16 +279,23 @@ const ScreenReaderOnly = styled(Text)`
   border: 0;
 `;
 
-const MessageContent = ({ message, id, ...rest }) =>
-  typeof message === 'string' ? (
-    <Text id={id} {...rest}>
+const StyledMessageContent = styled(Box).withConfig(styledComponentsConfig)`
+  ${(props) =>
+    props.$color && `color: ${normalizeColor(props.$color, props.theme)};`}
+`;
+
+const MessageContent = ({ message, id, color, ...rest }) => {
+  const { passThemeFlag } = useThemeValue();
+  return typeof message === 'string' ? (
+    <Text id={id} color={color} {...rest}>
       {message}
     </Text>
   ) : (
-    <Box id={id} {...rest}>
+    <StyledMessageContent id={id} $color={color} {...rest} {...passThemeFlag}>
       {message}
-    </Box>
+    </StyledMessageContent>
   );
+};
 
 const Message = ({ error, info, message, type, ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
