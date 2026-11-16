@@ -8,7 +8,6 @@ import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
 import { StepperDescription } from './StepperDescription';
 import { StepperError, StepperDisabledReason } from './StepperHelperText';
-import { StepConnector } from './StepConnector';
 import {
   StyledStepItem,
   StyledStepButton,
@@ -158,28 +157,27 @@ export const StepperStep = ({
             <StepperDisabledReason />
           </StyledStepContent>
         </StyledStepButton>
-        {(showConnector !== undefined ? showConnector : !isLast) &&
-          !subSteps?.length && (
-            <StyledConnector
-              direction={direction}
-              status={step.status}
-              aria-hidden="true"
-              stepTheme={stepTheme}
-              {...passThemeFlag}
-            />
-          )}
+        {(showConnector !== undefined ? showConnector : !isLast) && (
+          // positioned relative to this li so it stays anchored to the
+          // indicator regardless of how tall the label/content grows
+          <StyledConnector
+            direction={direction}
+            status={step.status}
+            aria-hidden="true"
+            stepTheme={stepTheme}
+            {...passThemeFlag}
+          />
+        )}
         {!!subSteps?.length && (
-          <StepConnector>
-            <StyledSubStepsList
-              forwardedAs="ol"
-              isVertical={direction === 'vertical'}
-              cssGap
-              stepTheme={stepTheme}
-              {...stepTheme?.children}
-            >
-              {subSteps}
-            </StyledSubStepsList>
-          </StepConnector>
+          <StyledSubStepsList
+            forwardedAs="ol"
+            isVertical={direction === 'vertical'}
+            cssGap
+            stepTheme={stepTheme}
+            {...stepTheme?.children}
+          >
+            {subSteps}
+          </StyledSubStepsList>
         )}
       </StyledStepItem>
     </StepItemContext.Provider>
