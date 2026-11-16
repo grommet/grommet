@@ -159,8 +159,12 @@ describe('Stepper', () => {
     expect(getByText('Card invalid')).toBeTruthy();
     expect(queryByRole('alert')).toBeNull();
     expect(queryByRole('status')).toBeNull();
-    expect(getByLabelText(/Step 1 of 1/).getAttribute('aria-describedby')).toBe(
-      'stepper-error-step1',
+    const describedBy =
+      getByLabelText(/Step 1 of 1/).getAttribute('aria-describedby');
+    // id is prefixed with a useId-generated value
+    expect(describedBy).toMatch(/-stepper-error-step1$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Card invalid',
     );
   });
 
@@ -423,7 +427,12 @@ describe('Stepper', () => {
 
     expect(getByText('Complete step 1 first')).toBeTruthy();
     const step2 = getByLabelText(/Step 2 of 2/);
-    expect(step2.getAttribute('aria-describedby')).toBe('stepper-reason-step2');
+    const describedBy = step2.getAttribute('aria-describedby');
+    // id is prefixed with a useId-generated value
+    expect(describedBy).toMatch(/-stepper-reason-step2$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Complete step 1 first',
+    );
   });
 
   test('fires onStepClick when clicking enabled step', () => {

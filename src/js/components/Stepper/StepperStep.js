@@ -3,6 +3,7 @@
 import React, { useContext, useMemo } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useId } from '../../utils/useId';
 import { useStepper, StepItemContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
@@ -36,6 +37,10 @@ export const StepperStep = ({
     useStepper();
   const { format } = useContext(MessageContext);
   const { passThemeFlag } = useThemeValue();
+  const baseId = useId();
+  const descriptionId = `${baseId}-stepper-description-${step.id}`;
+  const errorId = `${baseId}-stepper-error-${step.id}`;
+  const reasonId = `${baseId}-stepper-reason-${step.id}`;
   const index =
     indexProp !== undefined
       ? indexProp
@@ -86,13 +91,13 @@ export const StepperStep = ({
 
   const describedBy = [];
   if (showDescription && step.description) {
-    describedBy.push(`stepper-description-${step.id}`);
+    describedBy.push(descriptionId);
   }
   if (step.errorMessage && step.status === 'error') {
-    describedBy.push(`stepper-error-${step.id}`);
+    describedBy.push(errorId);
   }
   if (step.disabledReason && step.status === 'disabled') {
-    describedBy.push(`stepper-reason-${step.id}`);
+    describedBy.push(reasonId);
   }
 
   const hasSupportingContent =
@@ -169,9 +174,9 @@ export const StepperStep = ({
             isVertical={isVertical}
             {...passThemeFlag}
           >
-            {showDescription && <StepperDescription />}
-            <StepperError />
-            <StepperDisabledReason />
+            {showDescription && <StepperDescription id={descriptionId} />}
+            <StepperError id={errorId} />
+            <StepperDisabledReason id={reasonId} />
           </StyledStepSupportingContent>
         )}
         {!!subSteps?.length && (

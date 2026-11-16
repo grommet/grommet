@@ -14,7 +14,6 @@ export const StepperDescription = ({ ...rest }) => {
 
   return (
     <Text
-      id={`stepper-description-${step.id}`}
       truncate={direction === 'horizontal'}
       {...stepTheme.description}
       {...rest}
