@@ -963,7 +963,11 @@ export const heightStyle = (height, theme) =>
     ? heightObjectStyle(height, theme)
     : heightStringStyle(height, theme);
 
-const inputPartStyle = (part, props, { paddingOnly, skipPadding } = {}) => {
+const inputPartStyle = (
+  part,
+  props,
+  { paddingOnly, skipPadding, skipRound } = {},
+) => {
   const { theme } = props;
   const responsive = props.responsive ?? true;
   const styles = [];
@@ -1007,7 +1011,7 @@ const inputPartStyle = (part, props, { paddingOnly, skipPadding } = {}) => {
         theme,
       ),
     );
-  if (part.round !== undefined)
+  if (part.round !== undefined && !skipRound)
     styles.push(
       part.round === false
         ? 'border-radius: 0;'
@@ -1032,6 +1036,7 @@ export const inputAppearanceStyle = (
     wrapper = false,
     skipPadding = false,
     skipBasePadding = false,
+    skipRound = false,
     padSelector,
   } = {},
 ) => {
@@ -1043,7 +1048,11 @@ export const inputAppearanceStyle = (
     : props.plain;
   const disabled = props.disabled || props.$inputDisabled;
   const readOnly = props.readOnly || props.readOnlyProp;
-  const options = { paddingOnly: !!plain || props.$inputInner, skipPadding };
+  const options = {
+    paddingOnly: !!plain || props.$inputInner,
+    skipPadding,
+    skipRound,
+  };
   const iconPadding =
     props.icon && !props.hasActionsGroup
       ? `padding-${props.reverse ? 'right' : 'left'}: ${getInputIconPad(

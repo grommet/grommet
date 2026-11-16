@@ -94,7 +94,7 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
       font: {},
       pad: { horizontal: 'xxsmall', vertical: '3xsmall' },
       // padding: {},
-      round: 'small',
+      round: 'none',
       placeholder: {
         color: 'placeholder',
         // weight: 700
@@ -154,6 +154,11 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
     },
     extend: undefined,
   },
+  dateInput: {
+    container: {
+      round: 'large',
+    },
+  },
   fileInput: {
     border: { style: 'dashed' as const },
     hover: {
@@ -179,6 +184,12 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
           color: 'border-critical',
         },
       },
+    },
+    dateInput: {
+      container: {
+        // round: 'large',
+      },
+      round: 'large',
     },
     radioButtonGroup: {
       background: 'transparent',

@@ -51,6 +51,7 @@ const StyledDateInputContainer = styled(Box).withConfig({
     const appearance = inputAppearanceStyle(props, {
       wrapper: true,
       skipPadding: true,
+      skipRound: true,
     });
     const readOnly = props.readOnlyProp && readOnlyStyle(props.theme);
     return appearance
