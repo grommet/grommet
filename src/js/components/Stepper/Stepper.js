@@ -4,7 +4,6 @@ import React, {
   forwardRef,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
   useRef,
   useState,
@@ -114,15 +113,6 @@ const Stepper = forwardRef(
 
     const stepRefs = useRef(new Map());
     const allSteps = useMemo(() => flattenSteps(steps), [steps]);
-
-    useEffect(() => {
-      if (process.env.NODE_ENV !== 'production') {
-        console.warn(
-          'Warning: Stepper is currently in beta. The API is subject ' +
-            'to change in future releases.',
-        );
-      }
-    }, []);
 
     // Force vertical if steps have children
     // (horizontal substeps not supported)
