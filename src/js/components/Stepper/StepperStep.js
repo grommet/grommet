@@ -3,6 +3,7 @@
 import React, { useContext, useMemo } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
+import { useId } from '../../utils/useId';
 import { useStepper, StepItemContext } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
@@ -12,6 +13,7 @@ import {
   StyledStepItem,
   StyledStepButton,
   StyledStepContent,
+  StyledStepSupportingContent,
   StyledConnector,
   StyledSubStepsList,
 } from './StyledStepper';
@@ -35,6 +37,10 @@ export const StepperStep = ({
     useStepper();
   const { format } = useContext(MessageContext);
   const { passThemeFlag } = useThemeValue();
+  const baseId = useId();
+  const descriptionId = `${baseId}-stepper-description-${step.id}`;
+  const errorId = `${baseId}-stepper-error-${step.id}`;
+  const reasonId = `${baseId}-stepper-reason-${step.id}`;
   const index =
     indexProp !== undefined
       ? indexProp
@@ -88,12 +94,27 @@ export const StepperStep = ({
       : ariaLabel;
 
   const describedBy = [];
+  if (showDescription && step.description) {
+    describedBy.push(descriptionId);
+  }
   if (step.errorMessage && step.status === 'error') {
-    describedBy.push(`stepper-error-${step.id}`);
+    describedBy.push(errorId);
   }
   if (step.disabledReason && step.status === 'disabled') {
-    describedBy.push(`stepper-reason-${step.id}`);
+    describedBy.push(reasonId);
   }
+
+  const hasSupportingContent =
+    (showDescription && !!step.description) ||
+    (step.status === 'error' && !!step.errorMessage) ||
+    (step.status === 'disabled' && !!step.disabledReason);
+
+  const isVertical = direction === 'vertical';
+  // In vertical direction the gap between indicator and label is
+  // applied as column-gap on the step item grid (shared with the
+  // supporting content), not as a Box gap on the button.
+  const { gap, ...buttonThemeRest } = stepTheme.button || {};
+  const buttonThemeProps = isVertical ? buttonThemeRest : stepTheme.button;
 
   const focusableProps = isReadOnly
     ? {}
@@ -119,8 +140,6 @@ export const StepperStep = ({
       <StyledStepItem
         direction={direction}
         isSubStep={isSubStep}
-        isLast={isLast}
-        hasSubSteps={!!subSteps?.length}
         stepTheme={stepTheme}
         {...passThemeFlag}
       >
@@ -140,44 +159,50 @@ export const StepperStep = ({
           aria-describedby={
             describedBy.length > 0 ? describedBy.join(' ') : undefined
           }
+          isVertical={isVertical}
           {...focusableProps}
-          {...stepTheme.button}
+          {...buttonThemeProps}
         >
           <StepperIndicator />
           <StyledStepContent
-            align={direction === 'vertical' ? 'start' : 'center'}
-            isVertical={direction === 'vertical'}
-            isSubStep={isSubStep}
-            hasDescription={!!step.description}
+            align={isVertical ? 'start' : 'center'}
+            isVertical={isVertical}
             stepTheme={stepTheme}
           >
             <StepperLabel />
-            {showDescription && <StepperDescription />}
-            <StepperError />
-            <StepperDisabledReason />
           </StyledStepContent>
         </StyledStepButton>
-        {(showConnector !== undefined ? showConnector : !isLast) && (
-          // positioned relative to this li so it stays anchored to the
-          // indicator regardless of how tall the label/content grows
-          <StyledConnector
-            direction={direction}
-            status={step.status}
-            aria-hidden="true"
-            stepTheme={stepTheme}
+        {hasSupportingContent && (
+          <StyledStepSupportingContent
+            align={isVertical ? 'start' : 'center'}
+            isVertical={isVertical}
             {...passThemeFlag}
-          />
+          >
+            {showDescription && <StepperDescription id={descriptionId} />}
+            <StepperError id={errorId} />
+            <StepperDisabledReason id={reasonId} />
+          </StyledStepSupportingContent>
         )}
         {!!subSteps?.length && (
           <StyledSubStepsList
             forwardedAs="ol"
-            isVertical={direction === 'vertical'}
+            isVertical={isVertical}
             cssGap
             stepTheme={stepTheme}
             {...stepTheme?.children}
           >
             {subSteps}
           </StyledSubStepsList>
+        )}
+        {(showConnector !== undefined ? showConnector : !isLast) && (
+          <StyledConnector
+            direction={direction}
+            status={step.status}
+            aria-hidden="true"
+            stepTheme={stepTheme}
+            spansStepGap={!isSubStep && !isLast}
+            {...passThemeFlag}
+          />
         )}
       </StyledStepItem>
     </StepItemContext.Provider>

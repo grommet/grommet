@@ -159,8 +159,35 @@ describe('Stepper', () => {
     expect(getByText('Card invalid')).toBeTruthy();
     expect(queryByRole('alert')).toBeNull();
     expect(queryByRole('status')).toBeNull();
-    expect(getByLabelText(/Step 1 of 1/).getAttribute('aria-describedby')).toBe(
-      'stepper-error-step1',
+    const describedBy =
+      getByLabelText(/Step 1 of 1/).getAttribute('aria-describedby');
+    // id is prefixed with a useId-generated value
+    expect(describedBy).toMatch(/-stepper-error-step1$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Card invalid',
+    );
+  });
+
+  test('uses the useId prefix for the description id', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        description: 'Enter your account information',
+      },
+    ];
+    const { getByLabelText } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="step1" />
+      </Grommet>,
+    );
+
+    const describedBy = getByLabelText(/Step 1 of 1/).getAttribute(
+      'aria-describedby',
+    );
+    expect(describedBy).toMatch(/-stepper-description-step1$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Enter your account information',
     );
   });
 
@@ -290,9 +317,9 @@ describe('Stepper', () => {
         },
       };
       const getConnector = () =>
-        Array.from(screen.getAllByRole('listitem')[0].children).find(
-          (child) => child.getAttribute('aria-hidden') === 'true',
-        );
+        screen
+          .getAllByRole('listitem')[0]
+          .querySelector('span[aria-hidden="true"]');
       const { rerender } = render(
         <Grommet theme={theme}>
           <Stepper steps={basicSteps} currentStep="step1" />
@@ -304,9 +331,11 @@ describe('Stepper', () => {
         'left',
         `calc(50% + calc(24px / 2 + ${left}))`,
       );
+      // base container gap column (small: 6px here) separates the steps;
+      // the connector extends across it to reach the adjacent step
       expect(getConnector()).toHaveStyleRule(
         'right',
-        `calc(-50% + calc(24px / 2 + ${right}))`,
+        `calc(-50% - 6px + calc(24px / 2 + ${right}))`,
       );
 
       rerender(
@@ -319,24 +348,26 @@ describe('Stepper', () => {
         </Grommet>,
       );
 
+      // in-flow grid item centered on the indicator column; the button's
+      // edge padding offsets the centering, and margin-top anchors the
+      // connector just below the indicator regardless of label height
+      expect(getConnector()).toHaveStyleRule('margin-inline-start', left);
       expect(getConnector()).toHaveStyleRule(
-        'left',
-        `calc( calc(24px / 2 + ${left}) + 2px - 2px / 2 )`,
+        'margin-top',
+        `calc(${top} + 24px + 2px * 2 + 4px)`,
       );
-      // whitespace inside calc() depends on how styled-components serializes
-      // the multi-line template literal, so keep the pattern tolerant
-      const topPattern = `24px \\+ ${top} \\+\\s*\\(2px \\* 2\\) \\+\\s*4px`;
+      // container gap row defaults to medium (12px in this theme)
       expect(getConnector()).toHaveStyleRule(
-        'top',
-        new RegExp(`^calc\\(\\s*${topPattern}\\s*\\)$`),
+        'margin-bottom',
+        `calc(4px - ${top} - 12px)`,
       );
     },
   );
 
   test.each([
     ['ltr', '5px'],
-    ['rtl', '11px'],
-  ])('resolves %s logical padding for sub-step rails', (dir, left) => {
+    ['rtl', '5px'],
+  ])('resolves %s logical padding for the vertical connector', (dir, left) => {
     render(
       <Grommet
         dir={dir}
@@ -363,20 +394,41 @@ describe('Stepper', () => {
       </Grommet>,
     );
 
+    // sub-steps sit in the text column of the step grid
     const subSteps = screen.getAllByRole('list')[1];
-    expect(subSteps).toHaveStyleRule('left', `calc(24px + 3px + ${left})`);
-    // the connector is a direct child of the parent li, a sibling of the
-    // sub-steps group, so it stays anchored to the indicator
-    const connector = Array.from(subSteps.closest('li').children).find(
+    expect(subSteps).toHaveStyleRule('grid-column', '2');
+    expect(subSteps).toHaveStyleRule('grid-row', '3');
+    const connector = Array.from(subSteps.parentElement.children).find(
       (child) => child.getAttribute('aria-hidden') === 'true',
     );
-    expect(connector).toHaveStyleRule(
-      'top',
-      /^calc\(\s*24px \+ 7px \+\s*\(2px \* 2\) \+\s*4px\s*\)$/,
+    expect(connector).toHaveStyleRule('margin-inline-start', left);
+    expect(connector).toHaveStyleRule('grid-column', '1');
+  });
+
+  test('applies container column gap between horizontal steps', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          global: { edgeSize: { small: '10px' } },
+          stepper: { container: { gap: { column: 'small' } } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
     );
+
+    // row gap (24px) merges in from the base theme; column gap resolves
+    // from this theme's small (10px)
+    expect(screen.getByRole('list')).toHaveStyleRule('gap', '24px 10px');
+    // the connector extends across the gap to reach the adjacent step
+    const connector = container.querySelector('span[aria-hidden="true"]');
     expect(connector).toHaveStyleRule(
-      'left',
-      `calc( calc(24px / 2 + ${left}) + 2px - 2px / 2 )`,
+      'right',
+      'calc(-50% - 10px + calc(24px / 2 + 3px))',
     );
   });
 
@@ -398,7 +450,12 @@ describe('Stepper', () => {
 
     expect(getByText('Complete step 1 first')).toBeTruthy();
     const step2 = getByLabelText(/Step 2 of 2/);
-    expect(step2.getAttribute('aria-describedby')).toBe('stepper-reason-step2');
+    const describedBy = step2.getAttribute('aria-describedby');
+    // id is prefixed with a useId-generated value
+    expect(describedBy).toMatch(/-stepper-reason-step2$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Complete step 1 first',
+    );
   });
 
   test('fires onStepClick when clicking enabled step', () => {
@@ -565,12 +622,11 @@ describe('Stepper', () => {
       </Grommet>,
     );
 
-    // Same content-independent offset as the regular (non-substep) connector:
-    // it must not start at the bottom of the (now taller, wrapped) label.
+    // The connector offset is independent of the (now taller, wrapped) label.
     const connector = container.querySelector('span[aria-hidden="true"]');
     expect(connector).toHaveStyleRule(
-      'top',
-      /^calc\(\s*24px \+ 3px \+\s*\(2px \* 2\) \+\s*4px\s*\)$/,
+      'margin-top',
+      'calc(3px + 24px + 2px * 2 + 4px)',
     );
   });
 
