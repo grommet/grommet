@@ -44,7 +44,7 @@ const Example = (props: Partial<StepperProps>) => (
 );
 
 const button = (title: string) =>
-  screen.getByRole('button', { name: new RegExp(`(^|: )${title}$`) });
+  screen.getByRole('button', { name: new RegExp(`(^|[.:] )${title}$`) });
 
 const expectRows = (titles: string[]) => {
   const rows = within(
@@ -52,7 +52,10 @@ const expectRows = (titles: string[]) => {
   ).getAllByRole('button');
   expect(
     rows.map((row) =>
-      (row.getAttribute('aria-label') ?? '').replace(/^Step .*?: /, ''),
+      (row.getAttribute('aria-label') ?? '').replace(
+        /^Step \d+ of \d+\. (?:.*: )?/,
+        '',
+      ),
     ),
   ).toEqual(titles);
   expect(rows.filter((row) => row.tabIndex === 0)).toHaveLength(1);
@@ -110,7 +113,7 @@ describe('Stepper child reveal', () => {
 
     expect(
       screen.getByRole('button', {
-        name: 'Step 1 of 2: Account, completed',
+        name: 'Step 1 of 2. Account, completed',
       }),
     ).toBeTruthy();
   });
@@ -444,7 +447,7 @@ describe('Stepper child reveal', () => {
     expect(screen.queryByRole('button')).toBeNull();
     expect(
       screen.getByRole('group', {
-        name: 'Step 3 of 6: Profile',
+        name: 'Step 3 of 6. Account: Profile',
       }),
     ).toBeTruthy();
     expect(screen.queryByText('Card')).toBeNull();
@@ -470,20 +473,53 @@ describe('Stepper child reveal', () => {
     );
 
     expect(
-      screen.getByRole('button', { name: 'Step 1 of 4: Introduction' }),
+      screen.getByRole('button', { name: 'Step 1 of 4. Introduction' }),
     ).toBeTruthy();
     expect(screen.getByRole('button', { name: 'Account' })).toBeTruthy();
     expect(
-      screen.getByRole('button', { name: 'Step 4 of 4: Confirm' }),
+      screen.getByRole('button', { name: 'Step 4 of 4. Confirm' }),
     ).toBeTruthy();
     expect(
       screen.getByRole('button', {
-        name: 'Step 2 of 4: Email, completed',
+        name: 'Step 2 of 4. Account: Email, completed',
       }),
     ).toBeTruthy();
     expect(
       screen.getByRole('button', {
-        name: 'Step 3 of 4: Profile, error',
+        name: 'Step 3 of 4. Account: Profile, error',
+      }),
+    ).toBeTruthy();
+  });
+
+  test('announces the parent title for a completed first sub-step', () => {
+    render(
+      <Example
+        currentStep="email"
+        steps={[
+          {
+            id: 'account',
+            title: 'Account Setup',
+            children: [
+              { id: 'email', title: 'Email', status: 'completed' },
+              { id: 'password', title: 'Password' },
+            ],
+          },
+          {
+            id: 'profile',
+            title: 'Profile Setup',
+            children: [
+              { id: 'name', title: 'Name' },
+              { id: 'photo', title: 'Photo' },
+            ],
+          },
+          { id: 'confirm', title: 'Confirm' },
+        ]}
+      />,
+    );
+
+    expect(
+      screen.getByRole('button', {
+        name: 'Step 1 of 5. Account Setup: Email, completed',
       }),
     ).toBeTruthy();
   });
@@ -491,35 +527,35 @@ describe('Stepper child reveal', () => {
   test('keeps positions and totals stable as groups reveal, including disabled leaves', () => {
     const { rerender } = render(<Example />);
     expect(button('Introduction').getAttribute('aria-label')).toBe(
-      'Step 1 of 6: Introduction',
+      'Step 1 of 6. Introduction',
     );
     expect(button('Review').getAttribute('aria-label')).toBe(
-      'Step 6 of 6: Review',
+      'Step 6 of 6. Review',
     );
 
     rerender(<Example currentStep="profile" />);
     expect(button('Profile').getAttribute('aria-label')).toBe(
-      'Step 3 of 6: Profile',
+      'Step 3 of 6. Account: Profile',
     );
     expect(button('Review').getAttribute('aria-label')).toBe(
-      'Step 6 of 6: Review',
+      'Step 6 of 6. Review',
     );
 
     rerender(<Example currentStep="card" />);
     expect(button('Profile').getAttribute('aria-label')).toBe(
-      'Step 3 of 6: Profile',
+      'Step 3 of 6. Account: Profile',
     );
     expect(button('Address').getAttribute('aria-label')).toBe(
-      'Step 5 of 6: Address',
+      'Step 5 of 6. Billing: Address',
     );
     expect(button('Address').getAttribute('aria-disabled')).toBe('true');
     expect(button('Review').getAttribute('aria-label')).toBe(
-      'Step 6 of 6: Review',
+      'Step 6 of 6. Review',
     );
 
     rerender(<Example steps={steps.filter((step) => step.id !== 'account')} />);
     expect(button('Review').getAttribute('aria-label')).toBe(
-      'Step 4 of 4: Review',
+      'Step 4 of 4. Review',
     );
   });
 
@@ -549,6 +585,25 @@ describe('Stepper child reveal', () => {
     ).toBeTruthy();
     expect(
       screen.getByRole('button', { name: 'Your email address, error' }),
+    ).toBeTruthy();
+  });
+
+  test('uses the existing localized step message for parent and child', () => {
+    render(
+      <Grommet
+        messages={{
+          messages: {
+            stepper: {
+              step: '{title} ({step}/{total})',
+            },
+          },
+        }}
+      >
+        <Stepper steps={steps} currentStep="profile" direction="vertical" />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', { name: 'Account: Profile (3/6)' }),
     ).toBeTruthy();
   });
 });

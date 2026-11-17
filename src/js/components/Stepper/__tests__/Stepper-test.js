@@ -594,7 +594,7 @@ describe('Stepper', () => {
     );
 
     // Parent should have aria-current="step" when child is current
-    const parent = getByLabelText(/Setup/);
+    const parent = getByLabelText('Setup');
     expect(parent.getAttribute('aria-current')).toBe('step');
 
     // The current child should also have aria-current

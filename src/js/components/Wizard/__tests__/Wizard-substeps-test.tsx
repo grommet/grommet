@@ -123,7 +123,7 @@ describe('Wizard progressive substeps', () => {
     render(<Example />);
     expectPage('Introduction', 1);
     expect(
-      rail().getByRole('button', { name: 'Step 1 of 6: Introduction' }),
+      rail().getByRole('button', { name: 'Step 1 of 6. Introduction' }),
     ).toBeTruthy();
     expect(rail().getAllByRole('button')).toHaveLength(4);
     expect(rail().queryByRole('button', { name: /: Email$/ })).toBeNull();
@@ -133,7 +133,7 @@ describe('Wizard progressive substeps', () => {
     expectPage('Email', 2);
     expect(rail().getByRole('button', { name: 'Account' })).toBeTruthy();
     expect(
-      rail().getByRole('button', { name: 'Step 2 of 6: Email' }),
+      rail().getByRole('button', { name: 'Step 2 of 6. Account: Email' }),
     ).toBeTruthy();
     expect(rail().getByRole('button', { name: /: Profile$/ })).toBeTruthy();
     expect(rail().queryByRole('button', { name: /: Card$/ })).toBeNull();
@@ -169,7 +169,7 @@ describe('Wizard progressive substeps', () => {
     ).toBeTruthy();
     await user.click(
       rail().getByRole('button', {
-        name: /: Introduction(?:, completed)?$/,
+        name: /\. Introduction(?:, completed)?$/,
       }),
     );
     expectPage('Introduction', 1);
@@ -213,7 +213,7 @@ describe('Wizard progressive substeps', () => {
     expectPage('Address', 5);
     expect(
       rail()
-        .getByRole('button', { name: 'Step 4 of 6: Card' })
+        .getByRole('button', { name: 'Step 4 of 6. Billing: Card' })
         .getAttribute('aria-disabled'),
     ).toBe('true');
     expect(rail().queryByRole('button', { name: /: Email$/ })).toBeNull();
