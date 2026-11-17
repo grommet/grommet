@@ -192,9 +192,6 @@ const Stepper = forwardRef(
         ),
       [allSteps, currentParentId, revealedParents],
     );
-    const stepsRef = useRef(flatSteps);
-    stepsRef.current = flatSteps;
-
     // Roving tabindex: only the focused step has tabIndex=0,
     // all others have tabIndex=-1. A ref keeps the index synchronous
     // for keyboard handlers that fire before React re-renders. Track the
@@ -399,7 +396,6 @@ const Stepper = forwardRef(
                 <StepperStep
                   key={child.id}
                   step={child}
-                  stepNumber={childFlatIndex + 1}
                   isLast={false}
                   showConnector={false}
                   direction={direction}
@@ -407,7 +403,6 @@ const Stepper = forwardRef(
                   index={childFlatIndex}
                   isSubStep
                   onFocusStep={updateFocusedIndex}
-                  stepsRef={stepsRef}
                   stepRefs={stepRefs}
                 />
               );
@@ -418,7 +413,6 @@ const Stepper = forwardRef(
           <StepperStep
             key={step.id}
             step={step}
-            stepNumber={parentFlatIndex + 1}
             isLast={isLastParent}
             showConnector={
               direction === 'horizontal'
@@ -430,7 +424,6 @@ const Stepper = forwardRef(
             index={parentFlatIndex}
             isSubStep={false}
             onFocusStep={updateFocusedIndex}
-            stepsRef={stepsRef}
             stepRefs={stepRefs}
             subSteps={childElements}
           />,
