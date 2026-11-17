@@ -229,6 +229,7 @@ export interface GrommetProps {
         skipTo?: string;
       };
       stepper?: {
+        completed?: string;
         progress?: string;
         step?: string;
       };

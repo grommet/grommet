@@ -215,6 +215,7 @@
     "skipTo": "Skip To:"
   },
   "stepper": {
+    "completed": "{step}, completed",
     "progress": "Progress",
     "step": "Step {step} of {total}: {title}"
   },

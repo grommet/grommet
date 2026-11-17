@@ -214,7 +214,9 @@ describe('RangeSelector', () => {
     const setValues = (newValues: number[]) => {
       values = newValues;
     };
-    const onChange = jest.fn((nextValues) => setValues(nextValues));
+    const onChange = jest.fn((nextValues: [number, number]) =>
+      setValues(nextValues),
+    );
     const { container } = render(
       <Grommet>
         <RangeSelector values={[0, 100]} step={3} onChange={onChange} />

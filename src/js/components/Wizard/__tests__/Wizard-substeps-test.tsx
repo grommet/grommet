@@ -137,7 +137,9 @@ describe('Wizard progressive substeps', () => {
     await user.click(screen.getByRole('button', { name: 'Next' }));
     expectPage('Card', 4);
     expect(rail().getAllByRole('button')).toHaveLength(8);
-    expect(rail().getByRole('button', { name: /: Email$/ })).toBeTruthy();
+    expect(
+      rail().getByRole('button', { name: /: Email(?:, completed)?$/ }),
+    ).toBeTruthy();
     expect(rail().getByRole('button', { name: /: Billing$/ })).toBeTruthy();
     expect(rail().getByRole('button', { name: /: Address$/ })).toBeTruthy();
 
@@ -156,8 +158,14 @@ describe('Wizard progressive substeps', () => {
     await user.click(screen.getByRole('button', { name: 'Jump to profile' }));
     expectPage('Profile', 3);
     expect(rail().getAllByRole('button')).toHaveLength(6);
-    expect(rail().getByRole('button', { name: /: Email$/ })).toBeTruthy();
-    await user.click(rail().getByRole('button', { name: /: Introduction$/ }));
+    expect(
+      rail().getByRole('button', { name: /: Email(?:, completed)?$/ }),
+    ).toBeTruthy();
+    await user.click(
+      rail().getByRole('button', {
+        name: /: Introduction(?:, completed)?$/,
+      }),
+    );
     expectPage('Introduction', 1);
     expect(rail().getAllByRole('button')).toHaveLength(6);
     await user.click(screen.getByRole('button', { name: 'Next' }));
@@ -298,7 +306,9 @@ describe('Wizard progressive substeps', () => {
     rerender(<DefaultLayoutExample showProgress="vertical" />);
     expect(defaultRail().getAllByRole('button')).toHaveLength(6);
     expect(
-      defaultRail().getByRole('button', { name: /: Email$/ }),
+      defaultRail().getByRole('button', {
+        name: /: Email(?:, completed)?$/,
+      }),
     ).toBeTruthy();
     expect(
       defaultRail().getByRole('button', { name: /: Profile$/ }),

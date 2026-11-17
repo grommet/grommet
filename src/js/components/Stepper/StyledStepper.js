@@ -212,11 +212,11 @@ const StyledIndicator = styled(Box)`
 
   ${(props) =>
     (() => css`
-        color: ${normalizeColor(
-          props.stepTheme?.indicator?.color || 'text',
-          props.theme,
-        )};
-      `)()}
+      color: ${normalizeColor(
+        props.stepTheme?.indicator?.color || 'text',
+        props.theme,
+      )};
+    `)()}
 
   ${StyledStepButton}:focus-visible & {
     ${focusStyle()}
@@ -233,9 +233,9 @@ const StyledIndicator = styled(Box)`
 
     const hoverBackground =
       hoverTheme.background ??
-    (indicatorTheme.background
-      ? adjustHoverColor(indicatorTheme.background, theme)
-      : undefined);
+      (indicatorTheme.background
+        ? adjustHoverColor(indicatorTheme.background, theme)
+        : undefined);
 
     const hoverBorder = indicatorTheme.border
       ? {
@@ -246,7 +246,7 @@ const StyledIndicator = styled(Box)`
             adjustHoverColor(indicatorTheme.border.color || 'border', theme),
         }
       : hoverTheme.border;
-    
+
     const hoverColor = normalizeColor(
       hoverTheme?.color ?? indicatorTheme?.color ?? 'text',
       theme,
@@ -260,26 +260,26 @@ const StyledIndicator = styled(Box)`
       ${hoverTheme.height && heightStyle(hoverTheme.height, theme)}
       ${hoverTheme.width && widthStyle(hoverTheme.width, theme)}
       ${hoverTheme.margin &&
-        edgeStyle(
-          'margin',
-          hoverTheme.margin,
-          false,
-          props?.theme?.box?.responsiveBreakpoint,
-          theme,
-        )}
+      edgeStyle(
+        'margin',
+        hoverTheme.margin,
+        false,
+        props?.theme?.box?.responsiveBreakpoint,
+        theme,
+      )}
       ${hoverTheme.pad &&
-        edgeStyle(
-          'padding',
-          hoverTheme.pad,
-          false,
-          props?.theme?.box?.responsiveBreakpoint,
-          theme,
-        )}
+      edgeStyle(
+        'padding',
+        hoverTheme.pad,
+        false,
+        props?.theme?.box?.responsiveBreakpoint,
+        theme,
+      )}
       ${hoverTheme.round && roundStyle(hoverTheme.round, false, theme)}
       ${hoverTheme.elevation && elevationStyle(hoverTheme.elevation, theme)}
     `)();
-      
-      return css`
+
+    return css`
       ${StyledStepButton}:not([aria-disabled]):active & {
         transform: scale(0.95);
       }
