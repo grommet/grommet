@@ -340,6 +340,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
+        // any BoxPartThemeType
+        // disabled: undefined, // any BoxStateThemeType
+        // focus: undefined, // any BoxStateThemeType
+        // hover: undefined, // any BoxStateThemeType
+        // pad: undefined,
+        // placeholder: undefined, // any TextThemeType
         padding: {
           horizontal: `${
             parseMetricToNum(`${baseSpacing / 2}px`) -
@@ -358,6 +364,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // deprecate in v3
         // weight: undefined,
         readOnly: {
+          // any BoxStateThemeType
           // background: undefined,
           // border: {
           //  color: undefined,
@@ -852,6 +859,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     checkBox: {
+      // control: {
+      //   // any BoxPartThemeType
+      //   hover: // any BoxStateThemeType
+      //   selected: {
+      //     // any BoxStateThemeType
+      //     hover: // any BoxStateThemeType,
+      //   },
+      // },
+      // container: {
+      //   // any BoxPartThemeType
+      //   hover: // any BoxStateThemeType,
+      // },
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
@@ -861,7 +880,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       check: {
         // extend: undefined,
-        radius: '4px',
+        radius: '4px' /** @deprecated Use checkBox.control.round instead. */,
         thickness: '4px',
       },
       label: {
@@ -877,6 +896,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        /** @deprecated Use checkBox.container.hover.background instead. */
         // background: undefined,
         // extend: undefined,
       },
@@ -888,6 +908,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
+      /** @deprecated Use checkBox.container.pad instead. */
       // pad: undefined,
       size: `${baseSpacing}px`,
       toggle: {
@@ -1292,7 +1313,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       gap: 'medium',
     },
     formField: {
+      // background: undefined, // input area only, not labels or messages
       // [inputname]: {
+      //  background: undefined, // 'transparent' opts out of shared background
+      //  error: undefined, // any BoxStateThemeType
       //  container: {
       //    extend: undefined,
       //   },
@@ -2090,30 +2114,49 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButton: {
+      // control: {
+      //   // any BoxPartThemeType
+      //   hover: // any BoxStateThemeType
+      //   selected: {
+      //     // any BoxStateThemeType
+      //     hover: // any BoxStateThemeType,
+      //   },
+      // },
       border: {
+        /** @deprecated Use radioButton.control.border.color instead. */
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
           light: 'rgba(0, 0, 0, 0.15)',
         },
+        /** @deprecated Use radioButton.control.border.size instead. */
         width: '2px',
       },
+      /** @deprecated Use radioButton.control.background instead. */
       // background: {
       //   color: undefined,
       // },
       check: {
+        /** @deprecated Use radioButton.control.round instead. */
         radius: '100%',
+        /** @deprecated Use radioButton.control.selected.background instead. */
         // background: {
         //  color: undefined,
         // },
         // color: { dark: undefined, light: undefined },
         // extend: undefined,
       },
+      /** @deprecated Use radioButton.control.selected.border.color instead. */
       // color: undefined,
       hover: {
+        /** @deprecated Use radioButton.container.hover.background instead. */
         // background: {
         //   color: undefined,
         // },
         border: {
+          /**
+           * @deprecated Use radioButton.control.hover.border.color and
+           * radioButton.control.selected.hover.border.color instead.
+           */
           color: {
             dark: 'white',
             light: 'black',
@@ -2133,6 +2176,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // weight: undefined,
       },
       container: {
+        // any BoxPartThemeType
+        // hover: // any BoxStateThemeType,
         // extend: undefined
       },
     },

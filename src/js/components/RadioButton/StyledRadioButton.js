@@ -3,9 +3,17 @@
 import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
+  borderStyle,
+  edgeStyle,
+  elevationStyle,
   focusStyle,
+  hasSideSpecificBorder,
+  heightStyle,
   normalizeColor,
+  roundStyle,
   styledComponentsConfig,
+  widthStyle,
 } from '../../utils';
 import { Box } from '../Box';
 
@@ -13,6 +21,182 @@ const disabledStyle = `
   opacity: 0.5;
   cursor: default;
 `;
+
+const boxPartStyles = (part, props) => {
+  const { theme } = props;
+  const responsive = props.responsive ?? true;
+  const styles = [];
+  if (part.border !== undefined) {
+    if (part.border === false) styles.push('border: none;');
+    else {
+      if (hasSideSpecificBorder(part.border)) styles.push('border: none;');
+      styles.push(borderStyle(part.border, responsive, theme));
+    }
+  }
+  if (part.elevation !== undefined) styles.push(elevationStyle(part.elevation));
+  if (part.height !== undefined) styles.push(heightStyle(part.height, theme));
+  if (part.width !== undefined) styles.push(widthStyle(part.width, theme));
+  if (part.margin !== undefined)
+    styles.push(
+      edgeStyle(
+        'margin',
+        part.margin,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (part.pad !== undefined)
+    styles.push(
+      edgeStyle(
+        'padding',
+        part.pad,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (part.round !== undefined)
+    styles.push(
+      part.round === false
+        ? 'border-radius: 0;'
+        : roundStyle(part.round, responsive, theme),
+    );
+  return styles;
+};
+
+const mergeControlBorder = (base, override) => {
+  if (override === undefined) return base;
+  if (
+    Array.isArray(base) &&
+    override &&
+    typeof override === 'object' &&
+    !Array.isArray(override) &&
+    !override.side
+  )
+    return base.map((part) => mergeControlBorder(part, override));
+  if (
+    base &&
+    override &&
+    typeof base === 'object' &&
+    typeof override === 'object' &&
+    !Array.isArray(base) &&
+    !Array.isArray(override)
+  )
+    return { ...base, ...override };
+  if (
+    typeof base === 'string' &&
+    override &&
+    typeof override === 'object' &&
+    !Array.isArray(override)
+  )
+    return { side: base, ...override };
+  return override;
+};
+
+const controlHoverStyle = (props) => {
+  const { control } = props.theme.radioButton;
+  if (props.disabled) return undefined;
+
+  const stateStyle = (state, checked) => {
+    const part = { ...state };
+    if (state?.border !== undefined) {
+      const { radioButton } = props.theme;
+      const baseBorder = {
+        size: radioButton.border.width,
+        color: checked
+          ? radioButton.color || 'control'
+          : radioButton.border.color,
+      };
+      part.border = mergeControlBorder(
+        mergeControlBorder(
+          mergeControlBorder(baseBorder, control?.border),
+          checked ? control?.selected?.border : undefined,
+        ),
+        state.border,
+      );
+    }
+    const styles = boxPartStyles(part, props);
+    if (state?.background != null)
+      styles.push(backgroundStyle(state.background, props.theme, false));
+    if (props.$keyboardFocus) styles.push(focusStyle());
+    return styles.length > 0
+      ? css`
+          ${styles}
+        `
+      : undefined;
+  };
+  const normal = stateStyle(control?.hover, false);
+  const selected = stateStyle(control?.selected?.hover, true);
+  if (normal === undefined && selected === undefined) return undefined;
+
+  return css`
+    ${normal &&
+    css`
+      input:not([disabled]):not(:checked)
+        + ${
+          // eslint-disable-next-line no-use-before-define
+          StyledRadioButtonBox
+        } {
+        ${normal}
+      }
+    `}
+    ${selected &&
+    css`
+      input:not([disabled]):checked
+        + ${
+          // eslint-disable-next-line no-use-before-define
+          StyledRadioButtonBox
+        } {
+        ${selected}
+      }
+    `}
+  `;
+};
+
+const containerBackgroundStyle = (props) => {
+  const { container, hover } = props.theme.radioButton;
+  const normalStyles = boxPartStyles(container, props);
+  const hoverStyles = boxPartStyles(container.hover || {}, props);
+  if (
+    container.background == null &&
+    container.hover?.background == null &&
+    normalStyles.length === 0 &&
+    hoverStyles.length === 0
+  )
+    return undefined;
+
+  const hoverBackground =
+    container.hover?.background != null
+      ? backgroundStyle(container.hover.background, props.theme, false)
+      : hover?.background?.color !== undefined &&
+        css`
+          background-color: ${normalizeColor(
+            hover.background.color,
+            props.theme,
+          )};
+        `;
+
+  return css`
+    ${normalStyles.length > 0 && 'box-sizing: border-box;'}
+    ${normalStyles}
+    ${backgroundStyle(container.background, props.theme, false)}
+    ${!props.disabled &&
+    (hoverBackground || hoverStyles.length > 0) &&
+    css`
+      &:hover {
+        ${hoverBackground}
+        ${hoverStyles}
+      }
+      ${props.focus &&
+      !props.focusIndicator &&
+      css`
+        ${hoverBackground}
+        ${hoverStyles}
+      `}
+    `}
+  `;
+};
 
 const StyledRadioButtonContainer = styled.label.withConfig(
   styledComponentsConfig,
@@ -34,6 +218,7 @@ const StyledRadioButtonContainer = styled.label.withConfig(
     background-color: ${(props) =>
       normalizeColor(
         !props.disabled &&
+          props.theme.radioButton.container.hover?.background == null &&
           props.theme.radioButton.hover &&
           props.theme.radioButton.hover.background &&
           props.theme.radioButton.hover.background.color,
@@ -56,13 +241,39 @@ const StyledRadioButtonContainer = styled.label.withConfig(
     }
     background-color: ${normalizeColor(
       !props.disabled &&
+        props.theme.radioButton.container.hover?.background == null &&
         props.theme.radioButton.hover &&
         props.theme.radioButton.hover.background &&
         props.theme.radioButton.hover.background.color,
       props.theme,
     )};
     `}
-  ${(props) => props.theme.radioButton.container.extend};
+  ${(props) => {
+    const controlStyle = controlHoverStyle(props);
+    const containerStyle = containerBackgroundStyle(props);
+    if (containerStyle) {
+      return css`
+        ${containerStyle}
+        ${controlStyle &&
+        css`
+          &:hover {
+            ${controlStyle}
+          }
+          ${props.focus && !props.focusIndicator && controlStyle}
+        `}
+        ${props.theme.radioButton.container.extend}
+      `;
+    }
+    return controlStyle
+      ? css`
+          &:hover {
+            ${controlStyle}
+          }
+          ${props.focus && !props.focusIndicator && controlStyle}
+          ${props.theme.radioButton.container.extend}
+        `
+      : props.theme.radioButton.container.extend;
+  }};
 `;
 
 const StyledRadioButtonInput = styled.input.withConfig(styledComponentsConfig)`
@@ -100,8 +311,64 @@ const StyledRadioButtonIcon = styled.svg.withConfig(styledComponentsConfig)`
 const StyledRadioButtonBox = styled(Box)`
   background-color: ${(props) => props.backgroundColor};
   transform: scale(1); // prevent misalignment in certain browsers
-  ${(props) => props.focus && focusStyle()};
-  ${(props) => props.theme.radioButton.check.extend};
+  ${(props) => {
+    const { control, check } = props.theme.radioButton;
+    const selected = props.$checked ? control?.selected : undefined;
+    const focus = props.focus && focusStyle();
+    const part = { ...control, ...selected };
+    if (control?.border !== undefined || selected?.border !== undefined)
+      part.border = mergeControlBorder(
+        mergeControlBorder(props.border, control?.border),
+        selected?.border,
+      );
+    const styles = boxPartStyles(part, props);
+    if (
+      props.$checked === undefined &&
+      (control?.selected || check.background?.color)
+    ) {
+      const selectedPart = { ...control, ...control?.selected };
+      if (
+        control?.border !== undefined ||
+        control?.selected?.border !== undefined
+      )
+        selectedPart.border = mergeControlBorder(
+          mergeControlBorder(props.border, control?.border),
+          control?.selected?.border,
+        );
+      const selectedBackground =
+        control?.selected?.background ??
+        check.background?.color ??
+        control?.background;
+      styles.push(css`
+        input:checked + & {
+          ${boxPartStyles(selectedPart, props)}
+          ${selectedBackground != null &&
+          backgroundStyle(selectedBackground, props.theme, false)}
+          ${focus}
+          ${check.extend}
+        }
+      `);
+    }
+    if (props.$controlBackground != null)
+      return css`
+        ${styles}
+        ${backgroundStyle(props.$controlBackground, props.theme, false)}
+        ${focus}
+        ${check.extend}
+      `;
+    if (styles.length === 0)
+      return focus
+        ? css`
+            ${focus}
+            ${check.extend}
+          `
+        : check.extend;
+    return css`
+      ${styles}
+      ${focus}
+      ${check.extend}
+    `;
+  }};
 `;
 
 const StyledRadioButton = styled(Box)`
