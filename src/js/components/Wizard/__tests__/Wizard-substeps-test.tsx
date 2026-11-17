@@ -122,13 +122,19 @@ describe('Wizard progressive substeps', () => {
     const user = userEvent.setup();
     render(<Example />);
     expectPage('Introduction', 1);
+    expect(
+      rail().getByRole('button', { name: 'Step 1 of 6: Introduction' }),
+    ).toBeTruthy();
     expect(rail().getAllByRole('button')).toHaveLength(4);
     expect(rail().queryByRole('button', { name: /: Email$/ })).toBeNull();
     expect(rail().queryByRole('button', { name: /: Card$/ })).toBeNull();
 
     await user.click(screen.getByRole('button', { name: 'Next' }));
     expectPage('Email', 2);
-    expect(rail().getByRole('button', { name: /: Account$/ })).toBeTruthy();
+    expect(rail().getByRole('button', { name: 'Account' })).toBeTruthy();
+    expect(
+      rail().getByRole('button', { name: 'Step 2 of 6: Email' }),
+    ).toBeTruthy();
     expect(rail().getByRole('button', { name: /: Profile$/ })).toBeTruthy();
     expect(rail().queryByRole('button', { name: /: Card$/ })).toBeNull();
 
@@ -140,7 +146,7 @@ describe('Wizard progressive substeps', () => {
     expect(
       rail().getByRole('button', { name: /: Email(?:, completed)?$/ }),
     ).toBeTruthy();
-    expect(rail().getByRole('button', { name: /: Billing$/ })).toBeTruthy();
+    expect(rail().getByRole('button', { name: 'Billing' })).toBeTruthy();
     expect(rail().getByRole('button', { name: /: Address$/ })).toBeTruthy();
 
     await user.click(screen.getByRole('button', { name: 'Next' }));
@@ -179,7 +185,7 @@ describe('Wizard progressive substeps', () => {
     await user.click(screen.getByRole('button', { name: 'Skip' }));
     expectPage('Email', 2);
     expect(rail().getAllByRole('button')).toHaveLength(6);
-    expect(rail().getByRole('button', { name: /: Account$/ })).toBeTruthy();
+    expect(rail().getByRole('button', { name: 'Account' })).toBeTruthy();
     expect(rail().getByRole('button', { name: /: Profile$/ })).toBeTruthy();
     expect(onStepChange).toHaveBeenCalledWith({
       trigger: 'skip',
@@ -203,11 +209,11 @@ describe('Wizard progressive substeps', () => {
         : step,
     );
     render(<Example steps={withDisabledChild} />);
-    await user.click(rail().getByRole('button', { name: /: Billing$/ }));
+    await user.click(rail().getByRole('button', { name: 'Billing' }));
     expectPage('Address', 5);
     expect(
       rail()
-        .getByRole('button', { name: /: Card$/ })
+        .getByRole('button', { name: 'Step 4 of 6: Card' })
         .getAttribute('aria-disabled'),
     ).toBe('true');
     expect(rail().queryByRole('button', { name: /: Email$/ })).toBeNull();

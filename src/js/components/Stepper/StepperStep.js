@@ -69,31 +69,18 @@ export const StepperStep = ({
     }
   };
 
-  const topLevelSteps = steps.filter((item) => !item.isSubStep);
-  const currentStepData = steps.find((item) => item.id === step.id);
-  const parentStep = isSubStep
-    ? topLevelSteps.find((item) => item.id === currentStepData.parentId)
-    : undefined;
-  const topLevelIndex = topLevelSteps.findIndex(
-    (item) => item.id === (isSubStep ? parentStep.id : step.id),
-  );
+  // Count every configured leaf, including unrevealed and disabled steps.
+  const progressSteps = steps.filter((item) => item.childIds.length === 0);
+  const progressIndex = progressSteps.findIndex((item) => item.id === step.id);
   let ariaLabel = step['aria-label'];
   if (!ariaLabel) {
-    ariaLabel = isSubStep
-      ? format({
-          id: 'stepper.subStep',
-          values: {
-            step: topLevelIndex + 1,
-            subStep: parentStep.childIds.indexOf(step.id) + 1,
-            total: parentStep.childIds.length,
-            title: step.title,
-          },
-        })
+    ariaLabel = hasChildren
+      ? step.title
       : format({
           id: 'stepper.step',
           values: {
-            step: topLevelIndex + 1,
-            total: topLevelSteps.length,
+            step: progressIndex + 1,
+            total: progressSteps.length,
             title: step.title,
           },
         });

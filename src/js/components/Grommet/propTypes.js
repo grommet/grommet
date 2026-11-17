@@ -223,7 +223,6 @@ if (process.env.NODE_ENV !== 'production') {
           error: PropTypes.string,
           progress: PropTypes.string,
           step: PropTypes.string,
-          subStep: PropTypes.string,
         }),
         tabs: PropTypes.shape({
           nextTab: PropTypes.string,

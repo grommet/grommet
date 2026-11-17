@@ -233,7 +233,6 @@ export interface GrommetProps {
         error?: string;
         progress?: string;
         step?: string;
-        subStep?: string;
       };
       tabs?: {
         nextTab?: string;
