@@ -216,7 +216,7 @@ const theme: ThemeType = deepMerge({}, hpe, {
 } satisfies ThemeType);
 
 export const CustomThemedHpe = () => {
-  const [currentStep, setCurrentStep] = useState('profile');
+  const [currentStep, setCurrentStep] = useState('account');
   const steps: StepType[] = [
     { id: 'account', title: 'Account', status: 'completed' },
     {
