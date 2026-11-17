@@ -37,6 +37,7 @@ if (process.env.NODE_ENV !== 'production') {
       summarizedValue: PropTypes.string,
     }),
     showSelectedInline: PropTypes.bool,
+    optionsPresentation: PropTypes.oneOf(['drop', 'inline']),
     sortSelectedOnClose: PropTypes.bool,
     value: PropTypes.arrayOf(
       PropTypes.oneOfType([
