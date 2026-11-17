@@ -30,7 +30,6 @@ import {
 import { ThemeType } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 import { hpe } from 'grommet-theme-hpe';
-import { F } from 'node_modules/storybook/dist/chunk-DY6-qCWl';
 
 const customTheme: ThemeType = {
   global: {
@@ -61,6 +60,13 @@ const customTheme: ThemeType = {
     },
   },
   checkBox: {
+    container: {
+      border: [
+        { side: 'top', color: 'blue', size: '4px' },
+        { side: 'bottom', color: 'orange', size: '2px' },
+      ],
+      hover: { border: { color: 'red' } },
+    },
     control: {
       background: 'input-surface',
       hover: { background: 'input-hover' },
@@ -257,7 +263,7 @@ const hpeTheme: ThemeType = deepMerge(hpe, {
 });
 
 const AppearanceStory = () => {
-  const [theme, setTheme] = React.useState(customTheme);
+  const [theme, setTheme] = React.useState(hpeTheme);
   const [themeMode, setThemeMode] = React.useState<'auto' | 'light' | 'dark'>(
     'auto',
   );

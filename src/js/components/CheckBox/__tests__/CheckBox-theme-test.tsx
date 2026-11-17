@@ -319,6 +319,43 @@ describe('CheckBox theme', () => {
     });
   });
 
+  test('container hover color preserves array border geometry', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet
+        theme={{
+          checkBox: {
+            container: {
+              border: [
+                { side: 'top', color: '#0000ff', size: '4px', style: 'dashed' },
+                { side: 'bottom', color: '#ff8800', size: '2px' },
+              ],
+              hover: { border: { color: '#ff0000' } },
+            },
+          },
+        }}
+      >
+        <CheckBox label="Option" {...{ focusIndicator: false }} />
+      </Grommet>,
+    );
+
+    const { label } = getControl();
+    await user.hover(label);
+    expect(label).toHaveStyleRule('border-top', 'dashed 4px #ff0000', {
+      modifier: ':hover',
+    });
+    expect(label).toHaveStyleRule('border-bottom', 'solid 2px #ff0000', {
+      modifier: ':hover',
+    });
+    expect(label).toHaveStyleRule('border', 'none', { modifier: ':hover' });
+
+    await user.unhover(label);
+    await user.tab();
+    expect(label).toHaveStyleRule('border-top', 'dashed 4px #ff0000');
+    expect(label).toHaveStyleRule('border-bottom', 'solid 2px #ff0000');
+    expect(label).toHaveStyleRule('border', 'none');
+  });
+
   test.each([false, true])(
     'applies container Box-part styles and enabled hover (disabled=%s)',
     async (disabled) => {
@@ -372,16 +409,22 @@ describe('CheckBox theme', () => {
         expect(label).not.toHaveStyleRule('padding', '12px', {
           modifier: ':hover',
         });
-        expect(label).not.toHaveStyleRule('border', 'solid 3px #abcdef', {
-          modifier: ':hover',
-        });
+        ['top', 'bottom'].forEach((side) =>
+          expect(label).not.toHaveStyleRule(
+            `border-${side}`,
+            'solid 3px #abcdef',
+            { modifier: ':hover' },
+          ),
+        );
       } else {
         expect(label).toHaveStyleRule('padding', '12px', {
           modifier: ':hover',
         });
-        expect(label).toHaveStyleRule('border', 'solid 3px #abcdef', {
-          modifier: ':hover',
-        });
+        ['top', 'bottom'].forEach((side) =>
+          expect(label).toHaveStyleRule(`border-${side}`, 'solid 3px #abcdef', {
+            modifier: ':hover',
+          }),
+        );
         expect(label).toHaveStyleRule('border-radius', '10px', {
           modifier: ':hover',
         });

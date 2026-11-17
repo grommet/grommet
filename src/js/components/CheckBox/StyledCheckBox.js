@@ -150,7 +150,7 @@ const containerBackgroundStyle = (props) => {
   const hoverContainer = { ...container?.hover };
   if (hoverContainer.border !== undefined)
     hoverContainer.border = mergeControlBorder(
-      Array.isArray(container?.border) ? undefined : container?.border,
+      container?.border,
       hoverContainer.border,
     );
   const hoverStyles = boxPartStyles(hoverContainer, props, true);

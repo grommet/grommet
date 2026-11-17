@@ -54,6 +54,10 @@ string and min/max object values as Box; border accepts the same boolean,
 side, object, and array values. Use `border: false` or `round: false` to remove
 the corresponding treatment.
 
+Partial hover border objects inherit unspecified properties from the normal
+container border. With a normal border array, a hover object without `side`
+overrides each entry while preserving its side, width, and style.
+
 Hover styles also apply during focus when `focusIndicator` is false. Disabled
 containers retain their normal styles without hover or focus-as-hover styling.
 An explicit CheckBox `pad` prop takes precedence over both normal and hover
