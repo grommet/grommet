@@ -1,5 +1,4 @@
-var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "errorAnnouncement", "onStepClick", "aria-label", "children", "id"],
-  _excluded2 = ["gap"];
+var _excluded = ["steps", "currentStep", "direction", "clickableSteps", "showDescription", "errorAnnouncement", "onStepClick", "aria-label", "children", "id"];
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
@@ -344,12 +343,6 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
     return elements;
   };
   var stepperTheme = resolveStepperTheme(theme, direction);
-
-  // Extract gap from stepperTheme.container. It will be handled
-  // by the Step for now.
-  var _ref2 = stepperTheme.container || {},
-    gap = _ref2.gap,
-    containerProps = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   var stepperContent = /*#__PURE__*/React.createElement(Box, _extends({
     ref: ref,
     as: "ol",
@@ -357,7 +350,14 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
       id: 'stepper.progress'
     }),
     direction: direction === 'horizontal' ? 'row' : 'column',
-    fill: direction,
+    fill: direction
+    // string gaps must still render as CSS gap, never spacer divs,
+    // to keep the list's li-only children
+    ,
+    cssGap: true
+    // avoiding letting the pad shrink for now
+    ,
+    responsive: false,
     id: id,
     overflow: "visible",
     pad: "none",
@@ -365,7 +365,7 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
     style: {
       listStyle: 'none'
     }
-  }, containerProps, rest), children || renderDefaultSteps());
+  }, stepperTheme.container, rest), children || renderDefaultSteps());
   return /*#__PURE__*/React.createElement(StepperContext.Provider, {
     value: contextValue
   }, clickableSteps ? /*#__PURE__*/React.createElement(Keyboard, {

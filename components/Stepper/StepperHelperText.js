@@ -33,7 +33,6 @@ var StepperError = exports.StepperError = function StepperError(_ref2) {
   if (errorAnnouncement === 'polite') role = 'status';
   if (errorAnnouncement === 'assertive') role = 'alert';
   return /*#__PURE__*/_react["default"].createElement(StepperHelperText, _extends({
-    id: "stepper-error-" + step.id,
     role: role,
     variant: "errorText"
   }, rest), step.errorMessage);
@@ -44,7 +43,6 @@ var StepperDisabledReason = exports.StepperDisabledReason = function StepperDisa
     step = _useStepItem3.step;
   if (!step || step.status !== 'disabled' || !step.disabledReason) return null;
   return /*#__PURE__*/_react["default"].createElement(StepperHelperText, _extends({
-    id: "stepper-reason-" + step.id,
     variant: "disabledReason"
   }, rest), step.disabledReason);
 };

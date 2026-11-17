@@ -2461,7 +2461,8 @@ export var generate = function generate(baseSpacing, scale) {
     stepper: {
       container: {
         gap: {
-          row: 'medium'
+          row: 'medium',
+          column: 'small'
         }
       },
       indicator: {
@@ -2507,7 +2508,9 @@ export var generate = function generate(baseSpacing, scale) {
         button: {
           gap: 'small',
           direction: 'row',
-          align: 'start'
+          // baseline pairs with the StyledIndicator baseline strut to
+          // center the label's first line against the indicator
+          align: 'baseline'
         }
       },
       subStep: {
