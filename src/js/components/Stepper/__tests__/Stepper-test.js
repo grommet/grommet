@@ -168,6 +168,29 @@ describe('Stepper', () => {
     );
   });
 
+  test('uses the useId prefix for the description id', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        description: 'Enter your account information',
+      },
+    ];
+    const { getByLabelText } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="step1" />
+      </Grommet>,
+    );
+
+    const describedBy = getByLabelText(/Step 1 of 1/).getAttribute(
+      'aria-describedby',
+    );
+    expect(describedBy).toMatch(/-stepper-description-step1$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Enter your account information',
+    );
+  });
+
   test('uses theme-provided Stepper icons', () => {
     const CompletedIcon = () => <svg data-testid="custom-completed-icon" />;
     const ErrorIcon = () => <svg data-testid="custom-error-icon" />;
@@ -343,7 +366,7 @@ describe('Stepper', () => {
 
   test.each([
     ['ltr', '5px'],
-    ['rtl', '11px'],
+    ['rtl', '5px'],
   ])('resolves %s logical padding for the vertical connector', (dir, left) => {
     render(
       <Grommet

@@ -301,6 +301,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     const buttonPad = stepTheme?.button?.pad;
     const padTop = getPadSize(theme, buttonPad, 'top');
     const padLeft = getPadSize(theme, buttonPad, 'left');
+    const padRight = getPadSize(theme, buttonPad, 'right');
     const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
@@ -319,7 +320,6 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       const width = indicatorWidth
         ? theme.global.size[indicatorWidth] || indicatorWidth
         : getIconSize(theme, indicator?.size || 'medium');
-      const padRight = getPadSize(theme, buttonPad, 'right');
       const centerTop = `calc(${height} / 2 + ${padTop})`;
       const centerLeft = `calc(${width} / 2 + ${padLeft})`;
       const centerRight = `calc(${width} / 2 + ${padRight})`;
@@ -370,7 +370,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
          column; offset the centered connector by it so it lines up with
          the center of the indicator */
       justify-self: center;
-      margin-inline-start: ${padLeft};
+      margin-inline-start: ${theme.dir === 'rtl' ? padRight : padLeft};
       /* start connectorGap below the indicator, and end the same gap
          short of the next step's indicator (padTop supplies part of
          that gap) */

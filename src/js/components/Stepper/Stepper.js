@@ -456,6 +456,7 @@ const Stepper = forwardRef(
         // string gaps must still render as CSS gap, never spacer divs,
         // to keep the list's li-only children
         cssGap
+        // avoiding letting the pad shrink for now
         responsive={false}
         id={id}
         overflow="visible"
