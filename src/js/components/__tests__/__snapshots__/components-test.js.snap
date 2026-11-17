@@ -904,6 +904,7 @@ exports[`Components loads 1`] = `
       "onSearch": [Function],
       "open": [Function],
       "options": [Function],
+      "optionsPresentation": [Function],
       "placeholder": [Function],
       "plain": [Function],
       "replace": [Function],

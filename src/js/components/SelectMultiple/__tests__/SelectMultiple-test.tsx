@@ -12,6 +12,7 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../..';
 import { Box } from '../../Box';
+import { Button } from '../../Button';
 import { Text } from '../../Text';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
@@ -116,6 +117,73 @@ describe('SelectMultiple', () => {
     });
     expect(container.firstChild).toMatchSnapshot();
     expect(results).toHaveNoViolations();
+  });
+
+  test('inline options remain expanded through selection and form interaction', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <SelectMultiple
+          a11yTitle="Choices"
+          options={['one', 'two']}
+          optionsPresentation="inline"
+        />
+        <Button label="Continue" />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: /Choices/ });
+    await user.click(trigger);
+
+    const listbox = screen.getByRole('listbox');
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    expect(trigger).toHaveAttribute('aria-controls', listbox.id);
+
+    await user.click(screen.getByRole('option', { name: /one not selected/ }));
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    expect(
+      screen.getByRole('option', { name: /one selected/ }),
+    ).toHaveAttribute('aria-selected', 'true');
+
+    await user.click(screen.getByRole('button', { name: 'Continue' }));
+    expect(screen.getByRole('listbox')).toBeVisible();
+
+    await user.click(screen.getByRole('option', { name: /two not selected/ }));
+    const selectedOption = screen.getByRole('option', { name: /two selected/ });
+    fireEvent.keyDown(selectedOption, {
+      key: 'Escape',
+      keyCode: 27,
+      which: 27,
+    });
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    expect(document.activeElement).toBe(trigger);
+
+    await user.click(trigger);
+    expect(
+      screen.getByRole('option', { name: /one selected/ }),
+    ).toHaveAttribute('aria-selected', 'true');
+  });
+
+  test('showSelectedInline remains independent of inline option presentation', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <SelectMultiple
+          a11yTitle="Choices"
+          options={['one', 'two']}
+          optionsPresentation="inline"
+          showSelectedInline
+          value={['one']}
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('option', { name: /one selected/ })).toBeVisible();
+    await user.click(screen.getByRole('button', { name: /Choices/ }));
+    expect(
+      screen.getByRole('listbox', { name: 'list of options' }),
+    ).toBeVisible();
   });
 
   test('defaultValue', () => {

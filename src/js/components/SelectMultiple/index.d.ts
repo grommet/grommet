@@ -9,6 +9,7 @@ export interface SelectMultipleProps extends BasicSelectProps {
   limit?: number;
   value?: (string | number | object)[];
   showSelectedInline?: boolean;
+  optionsPresentation?: 'drop' | 'inline';
   sortSelectedOnClose?: boolean;
   messages?: {
     clearAll?: string;

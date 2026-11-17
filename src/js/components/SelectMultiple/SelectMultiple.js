@@ -11,9 +11,15 @@ import React, {
   useEffect,
 } from 'react';
 import styled from 'styled-components';
-import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
+import {
+  controlBorderStyle,
+  useKeyboard,
+  useForwardedRef,
+  useId,
+} from '../../utils';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
@@ -45,6 +51,12 @@ const StyledSelectBox = styled(Box)`
   ${(props) => !props.plainSelect && controlBorderStyle};
   ${(props) => props.theme.select?.control?.extend};
   ${(props) => props.open && props.theme.select.control?.open};
+`;
+
+const StyledSelectInlineButton = styled(Button)`
+  ${(props) => !props.plainSelect && controlBorderStyle};
+  ${(props) => props.theme.select?.control?.extend};
+  ${(props) => props['aria-expanded'] && props.theme.select?.control?.open};
 `;
 
 const SelectMultiple = forwardRef(
@@ -83,6 +95,7 @@ const SelectMultiple = forwardRef(
       onOpen,
       onSearch,
       open: openProp,
+      optionsPresentation = 'drop',
       options: optionsProp,
       placeholder,
       plain,
@@ -105,6 +118,8 @@ const SelectMultiple = forwardRef(
     const { format } = useContext(MessageContext);
     const selectBoxRef = useRef();
     const dropButtonRef = useForwardedRef(ref);
+    const generatedId = useId();
+    const optionsId = `${id || generatedId}__options`;
     const usingKeyboard = useKeyboard();
     const formFieldData = formContext?.useFormField({});
 
@@ -236,6 +251,30 @@ const SelectMultiple = forwardRef(
       if (onClose) onClose();
       setSearch();
     }, [onClose]);
+
+    const onInlineClose = useCallback(() => {
+      onRequestClose();
+      dropButtonRef.current?.focus();
+    }, [dropButtonRef, onRequestClose]);
+
+    const onInlineToggle = useCallback(
+      (event) => {
+        if (open) onRequestClose();
+        else onRequestOpen();
+        if (onClick) onClick(event);
+      },
+      [onClick, onRequestClose, onRequestOpen, open],
+    );
+
+    const onInlineEsc = useCallback(
+      (event) => {
+        if (open) {
+          event.preventDefault();
+          onInlineClose();
+        }
+      },
+      [onInlineClose, open],
+    );
 
     const triggerChangeEvent = useCallback(
       (nextValue) => changeEvent(inputRef, nextValue),
@@ -407,7 +446,9 @@ const SelectMultiple = forwardRef(
         limit={limit}
         messages={messages}
         onChange={onSelectChange}
-        onClose={onRequestClose}
+        onClose={
+          optionsPresentation === 'inline' ? onInlineClose : onRequestClose
+        }
         onKeyDown={onKeyDown}
         onMore={onMore}
         onSearch={onSearch}
@@ -421,6 +462,8 @@ const SelectMultiple = forwardRef(
         value={value}
         valueKey={valueKey}
         showSelectedInline={showSelectedInline}
+        optionsId={optionsPresentation === 'inline' ? optionsId : undefined}
+        focusOnMount={optionsPresentation === 'drop' || usingKeyboard}
       >
         {children}
       </SelectMultipleContainer>
@@ -463,6 +506,199 @@ const SelectMultiple = forwardRef(
       theme,
     };
 
+    const showSelectedInlineContent =
+      selectValue || displayLabelKey ? (
+        <>
+          <Box direction="row">
+            <SelectTextInput
+              a11yTitle={ariaLabel || a11yTitle}
+              defaultCursor={disabled === true || undefined}
+              focusIndicator={false}
+              id={id ? selectInputId(id) : undefined}
+              inert={inertTrueValue}
+              name={name}
+              width="100%"
+              {...rest}
+              tabIndex="-1"
+              type="text"
+              placeholder={
+                !value || value?.length === 0
+                  ? placeholder || selectValue || displayLabelKey
+                  : format({
+                      id: onMore
+                        ? 'selectMultiple.selected'
+                        : 'selectMultiple.selectedOfTotal',
+                      messages,
+                      values: {
+                        selected: value?.length || 0,
+                        ...(!onMore ? { total: allOptions.length } : {}),
+                      },
+                    })
+              }
+              plain
+              readOnly
+              value=""
+              theme={theme}
+            />
+            {displaySelectIcon}
+          </Box>
+          <HiddenInput
+            type="text"
+            name={name}
+            id={id ? selectInputId(id) : undefined}
+            inert={inertTrueValue}
+            value={inputValue}
+            ref={inputRef}
+            readOnly
+          />
+        </>
+      ) : (
+        <Box direction="row">
+          <DefaultSelectTextInput
+            a11yTitle={ariaLabel || a11yTitle}
+            disabled={disabled}
+            id={id}
+            inert={inertTrueValue}
+            name={name}
+            ref={inputRef}
+            placeholder={placeholder || 'Select'}
+            value={inputValue}
+            size={size}
+            theme={theme}
+            {...rest}
+          />
+          {displaySelectIcon}
+        </Box>
+      );
+
+    const defaultTriggerContent = (
+      <Box
+        align="center"
+        direction="row"
+        justify="between"
+        background={theme.select.background}
+      >
+        <Box direction="row" flex basis="auto">
+          {selectValue || displayLabelKey ? (
+            <>
+              {selectValue || displayLabelKey}
+              <HiddenInput
+                type="text"
+                name={name}
+                id={id ? selectInputId(id) : undefined}
+                inert={inertTrueValue}
+                value={inputValue}
+                ref={inputRef}
+                readOnly
+              />
+            </>
+          ) : (
+            <DefaultSelectTextInput
+              a11yTitle={ariaLabel || a11yTitle}
+              disabled={disabled}
+              id={id}
+              inert={inertTrueValue}
+              name={name}
+              ref={inputRef}
+              placeholder={placeholder}
+              value={inputValue}
+              size={size}
+              theme={theme}
+              {...rest}
+            />
+          )}
+        </Box>
+        {displaySelectIcon}
+      </Box>
+    );
+
+    const triggerContent = showSelectedInline
+      ? showSelectedInlineContent
+      : defaultTriggerContent;
+
+    if (optionsPresentation === 'inline') {
+      const inlineButtonProps = {
+        ref: dropButtonRef,
+        a11yTitle: `${
+          ariaLabel ||
+          a11yTitle ||
+          placeholder ||
+          format({
+            id: 'selectMultiple.open',
+            messages,
+          })
+        }. ${format({
+          id: 'selectMultiple.selected',
+          values: {
+            selected: value?.length || 0,
+            total: allOptions.length,
+          },
+        })}`,
+        'aria-expanded': Boolean(open),
+        'aria-controls': optionsId,
+        id,
+        disabled: disabled === true || undefined,
+        focusIndicator,
+        onFocus,
+        onBlur,
+        gridArea,
+        margin,
+        onClick: onInlineToggle,
+        plainSelect: plain,
+        plain,
+        theme,
+      };
+
+      const inlineTrigger = showSelectedInline ? (
+        <StyledSelectBox
+          disabled={disabled === true || undefined}
+          alignSelf={alignSelf}
+          direction="row"
+          alignContent="start"
+          background={theme.select.background}
+          ref={selectBoxRef}
+          flex={false}
+          plainSelect={plain}
+          width={width}
+          {...passThemeFlag}
+        >
+          <Box width="100%">
+            <Keyboard onEsc={onInlineEsc}>
+              <StyledSelectInlineButton
+                fill="horizontal"
+                alignSelf="start"
+                {...inlineButtonProps}
+              >
+                {triggerContent}
+              </StyledSelectInlineButton>
+            </Keyboard>
+            {!open && value?.length > 0 && (selectValue || displayLabelKey)}
+          </Box>
+        </StyledSelectBox>
+      ) : (
+        <Box width={width}>
+          <Keyboard onEsc={onInlineEsc}>
+            <StyledSelectInlineButton
+              {...inlineButtonProps}
+              tabIndex="0"
+              aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
+            >
+              {triggerContent}
+            </StyledSelectInlineButton>
+          </Keyboard>
+        </Box>
+      );
+
+      return (
+        <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
+          <Box width={width}>
+            {inlineTrigger}
+            {open && dropContent}
+          </Box>
+        </Keyboard>
+      );
+    }
+
     return (
       <Keyboard onDown={onRequestOpen} onUp={onRequestOpen}>
         {showSelectedInline ? (
@@ -486,71 +722,7 @@ const SelectMultiple = forwardRef(
                 dropAlign={dropAlign}
                 dropTarget={dropTarget || selectBoxRef.current}
               >
-                {selectValue || displayLabelKey ? (
-                  <>
-                    <Box direction="row">
-                      <SelectTextInput
-                        a11yTitle={ariaLabel || a11yTitle}
-                        defaultCursor={disabled === true || undefined}
-                        focusIndicator={false}
-                        id={id ? selectInputId(id) : undefined}
-                        inert={inertTrueValue}
-                        name={name}
-                        width="100%"
-                        {...rest}
-                        tabIndex="-1"
-                        type="text"
-                        placeholder={
-                          !value || value?.length === 0
-                            ? placeholder || selectValue || displayLabelKey
-                            : format({
-                                id: onMore
-                                  ? 'selectMultiple.selected'
-                                  : 'selectMultiple.selectedOfTotal',
-                                messages,
-                                values: {
-                                  selected: value?.length || 0,
-                                  ...(!onMore
-                                    ? { total: allOptions.length }
-                                    : {}),
-                                },
-                              })
-                        }
-                        plain
-                        readOnly
-                        value=""
-                        theme={theme}
-                      />
-                      {displaySelectIcon}
-                    </Box>
-                    <HiddenInput
-                      type="text"
-                      name={name}
-                      id={id ? selectInputId(id) : undefined}
-                      inert={inertTrueValue}
-                      value={inputValue}
-                      ref={inputRef}
-                      readOnly
-                    />
-                  </>
-                ) : (
-                  <Box direction="row">
-                    <DefaultSelectTextInput
-                      a11yTitle={ariaLabel || a11yTitle}
-                      disabled={disabled}
-                      id={id}
-                      inert={inertTrueValue}
-                      name={name}
-                      ref={inputRef}
-                      placeholder={placeholder || 'Select'}
-                      value={inputValue}
-                      size={size}
-                      theme={theme}
-                      {...rest}
-                    />
-                    {displaySelectIcon}
-                  </Box>
-                )}
+                {triggerContent}
               </DropButton>
               {!open && value?.length > 0 && (selectValue || displayLabelKey)}
             </Box>
@@ -565,44 +737,7 @@ const SelectMultiple = forwardRef(
               tabIndex="0"
               aria-labelledby={ariaLabelledByProp || ariaLabelledBy}
             >
-              <Box
-                align="center"
-                direction="row"
-                justify="between"
-                background={theme.select.background}
-              >
-                <Box direction="row" flex basis="auto">
-                  {selectValue || displayLabelKey ? (
-                    <>
-                      {selectValue || displayLabelKey}
-                      <HiddenInput
-                        type="text"
-                        name={name}
-                        id={id ? selectInputId(id) : undefined}
-                        inert={inertTrueValue}
-                        value={inputValue}
-                        ref={inputRef}
-                        readOnly
-                      />
-                    </>
-                  ) : (
-                    <DefaultSelectTextInput
-                      a11yTitle={ariaLabel || a11yTitle}
-                      disabled={disabled}
-                      id={id}
-                      inert={inertTrueValue}
-                      name={name}
-                      ref={inputRef}
-                      placeholder={placeholder}
-                      value={inputValue}
-                      size={size}
-                      theme={theme}
-                      {...rest}
-                    />
-                  )}
-                </Box>
-                {displaySelectIcon}
-              </Box>
+              {triggerContent}
             </StyledSelectDropButton>
           </Box>
         )}

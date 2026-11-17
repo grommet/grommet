@@ -46,6 +46,7 @@ const SelectMultipleContainer = forwardRef(
       disabled: disabledProp,
       disabledKey,
       dropHeight,
+      focusOnMount = true,
       emptySearchMessage = 'No matches found',
       help,
       icon,
@@ -60,6 +61,7 @@ const SelectMultipleContainer = forwardRef(
       onSearch,
       optionIndexesInValue,
       options,
+      optionsId,
       replace = true,
       searchPlaceholder,
       search,
@@ -102,6 +104,7 @@ const SelectMultipleContainer = forwardRef(
 
     // set initial focus
     useEffect(() => {
+      if (!focusOnMount) return undefined;
       // need to wait for Drop to be ready
       const timer = setTimeout(() => {
         const clearButton = clearRef.current;
@@ -119,7 +122,7 @@ const SelectMultipleContainer = forwardRef(
         }
       }, 100); // Drop should be open after 100ms
       return () => clearTimeout(timer);
-    }, []);
+    }, [focusOnMount]);
 
     useEffect(() => {
       const optionsNode = optionsRef.current;
@@ -452,6 +455,7 @@ const SelectMultipleContainer = forwardRef(
                 messages,
               })}
               role="listbox"
+              id={optionsId}
               tabIndex="-1"
               ref={optionsRef}
               aria-multiselectable
