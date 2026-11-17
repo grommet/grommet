@@ -18,6 +18,14 @@ import { Form } from '../../Form';
 import { TextInput } from '..';
 import { Keyboard } from '../../Keyboard';
 import { Text } from '../../Text';
+import { TextArea } from '../../TextArea';
+import { MaskedInput } from '../../MaskedInput';
+import { Select } from '../../Select';
+import { SelectMultiple } from '../../SelectMultiple';
+import { DateInput } from '../../DateInput';
+import { FileInput } from '../../FileInput';
+import { FormField } from '../../FormField';
+import { ThemeType } from '../../../themes';
 
 describe('TextInput', () => {
   beforeEach(createPortal);
@@ -36,6 +44,680 @@ describe('TextInput', () => {
   test('basic', () => {
     const { container } = render(<TextInput name="item" />);
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  describe('global input appearance', () => {
+    const appearanceTheme: ThemeType = {
+      global: {
+        input: {
+          background: '#eeeeee',
+          border: { color: '#123456', size: '3px' },
+          elevation: 'small',
+          height: { min: '40px' },
+          width: { min: '160px', width: '240px' },
+          margin: { bottom: '4px' },
+          pad: '8px',
+          round: '6px',
+          hover: {
+            background: '#dddddd',
+            border: { color: '#abcdef' },
+            pad: '10px',
+            round: '8px',
+          },
+          focus: { border: { color: '#654321' }, pad: '12px' },
+          disabled: { background: '#bbbbbb', border: false, round: false },
+          readOnly: {
+            background: '#cccccc',
+            border: { color: '#334455' },
+            pad: '14px',
+            round: '10px',
+          },
+          placeholder: { color: '#778899', size: 'small', weight: 500 },
+        },
+      },
+    };
+
+    test.each(['textInput', 'textArea', 'maskedInput'] as const)(
+      'applies Box-part and state styles to %s',
+      async (kind) => {
+        const user = userEvent.setup();
+        const props = { 'aria-label': 'Entry' };
+        const input =
+          kind === 'textArea' ? (
+            <TextArea {...props} />
+          ) : kind === 'maskedInput' ? (
+            <MaskedInput {...props} mask={[]} />
+          ) : (
+            <TextInput {...props} />
+          );
+        render(<Grommet theme={appearanceTheme}>{input}</Grommet>);
+        const control = screen.getByRole('textbox', { name: 'Entry' });
+        expect(control).toHaveStyleRule('background-color', '#eeeeee');
+        expect(control).toHaveStyleRule('border', 'solid 3px #123456');
+        expect(control).toHaveStyleRule('min-height', '40px');
+        expect(control).toHaveStyleRule('min-width', '160px');
+        expect(control).toHaveStyleRule('width', '240px');
+        expect(control).toHaveStyleRule('margin-bottom', '4px');
+        expect(control).toHaveStyleRule('padding', '8px');
+        expect(control).toHaveStyleRule('border-radius', '6px');
+        expect(control).toHaveStyleRule('box-shadow', expect.any(String));
+        expect(control).toHaveStyleRule('color', '#778899', {
+          modifier: '::placeholder',
+        });
+        expect(control).toHaveStyleRule('font-weight', '500', {
+          modifier: '::placeholder',
+        });
+        await user.hover(control);
+        expect(control).toHaveStyleRule('background-color', '#dddddd', {
+          modifier: ':hover',
+        });
+        expect(control).toHaveStyleRule('border', 'solid 3px #abcdef', {
+          modifier: ':hover',
+        });
+        await user.click(control);
+        expect(control).toHaveFocus();
+        expect(control).toHaveStyleRule('border', 'solid 3px #654321', {
+          modifier: ':focus',
+        });
+        expect(control).toHaveStyleRule('padding', '12px', {
+          modifier: ':focus',
+        });
+      },
+    );
+
+    test.each([
+      ['textInput', false],
+      ['textInput', true],
+      ['maskedInput', false],
+      ['maskedInput', true],
+    ] as const)(
+      'preserves the %s icon offset during state padding (reverse=%s)',
+      async (kind, reverse) => {
+        const user = userEvent.setup();
+        const theme: ThemeType = {
+          global: {
+            edgeSize: { large: '28px' },
+            input: {
+              hover: { pad: '4px' },
+              focus: { pad: '6px' },
+            },
+          },
+        };
+        const props = {
+          'aria-label': 'Entry',
+          icon: <Search />,
+          reverse,
+        };
+        const input =
+          kind === 'maskedInput' ? (
+            <MaskedInput {...props} mask={[]} />
+          ) : (
+            <TextInput {...props} />
+          );
+
+        render(<Grommet theme={theme}>{input}</Grommet>);
+
+        const control = screen.getByRole('textbox', { name: 'Entry' });
+        const iconSide = reverse ? 'right' : 'left';
+        await user.hover(control);
+        expect(control).toHaveStyleRule(`padding-${iconSide}`, '28px', {
+          modifier: ':hover',
+        });
+        await user.click(control);
+        expect(control).toHaveFocus();
+        expect(control).toHaveStyleRule(`padding-${iconSide}`, '28px', {
+          modifier: ':focus',
+        });
+      },
+    );
+
+    test.each([
+      [false, false],
+      [true, false],
+      [false, true],
+      [true, true],
+    ])(
+      'read-only padding preserves icon clearance (reverse=%s, matchSize=%s)',
+      (reverse, matchSize) => {
+        render(
+          <Grommet
+            theme={{
+              icon: { matchSize, size: { large: '40px' } },
+              global: {
+                edgeSize: { large: '28px', medium: '10px' },
+                input: { readOnly: { pad: '4px' } },
+              },
+            }}
+          >
+            <TextInput
+              aria-label="Entry"
+              icon={<Search />}
+              reverse={reverse}
+              size="large"
+              readOnly
+              value="Read-only value"
+            />
+          </Grommet>,
+        );
+
+        const control = screen.getByRole('textbox', { name: 'Entry' });
+        const surface = control.parentElement;
+        expect(surface).toHaveStyleRule(
+          `padding-${reverse ? 'right' : 'left'}`,
+          matchSize ? '50px' : '28px',
+          { modifier: 'input:not([type="hidden"])' },
+        );
+        const styles = getComputedStyle(control);
+        expect(reverse ? styles.paddingRight : styles.paddingLeft).toBe(
+          matchSize ? '50px' : '28px',
+        );
+        expect(reverse ? styles.paddingLeft : styles.paddingRight).toBe('4px');
+      },
+    );
+
+    test('read-only padding does not add icon clearance for an actions group', () => {
+      render(
+        <Grommet theme={{ global: { input: { readOnly: { pad: '4px' } } } }}>
+          <TextInput
+            aria-label="Entry"
+            icon={<Search />}
+            readOnly
+            copy
+            value="Read-only value"
+          />
+        </Grommet>,
+      );
+
+      const control = screen.getByRole('textbox', { name: 'Entry' });
+      expect(control.parentElement).not.toHaveStyleRule(
+        'padding-left',
+        undefined,
+        { modifier: 'input:not([type="hidden"])' },
+      );
+      expect(control.parentElement).toHaveStyleRule('padding', '4px', {
+        modifier: 'input:not([type="hidden"])',
+      });
+    });
+
+    test.each([
+      ['textInput', 'ltr', false, '16px'],
+      ['textInput', 'ltr', true, '24px'],
+      ['textInput', 'rtl', false, '24px'],
+      ['textInput', 'rtl', true, '16px'],
+      ['maskedInput', 'ltr', false, '16px'],
+      ['maskedInput', 'ltr', true, '24px'],
+      ['maskedInput', 'rtl', false, '24px'],
+      ['maskedInput', 'rtl', true, '16px'],
+    ] as const)(
+      '%s icon uses logical padding (dir=%s, reverse=%s)',
+      (kind, dir, reverse, expectedInset) => {
+        const props = {
+          'aria-label': 'Entry',
+          icon: <Search role="img" aria-label="Search icon" />,
+          reverse,
+        };
+        render(
+          <Grommet
+            dir={dir === 'rtl' ? 'rtl' : undefined}
+            theme={{
+              global: {
+                input: {
+                  pad: {
+                    start: '16px',
+                    end: '24px',
+                    left: '2px',
+                    right: '3px',
+                    horizontal: '4px',
+                  },
+                },
+              },
+            }}
+          >
+            {kind === 'maskedInput' ? (
+              <MaskedInput {...props} mask={[]} />
+            ) : (
+              <TextInput {...props} />
+            )}
+          </Grommet>,
+        );
+
+        const icon = screen.getByRole('img', { name: 'Search icon' });
+        expect(icon.parentElement).toHaveStyleRule(
+          reverse ? 'right' : 'left',
+          expectedInset,
+        );
+      },
+    );
+
+    test.each([
+      ['ltr', '16px', '3px'],
+      ['rtl', '4px', '16px'],
+    ] as const)(
+      'actions-group icon spacing resolves logical and fallback padding (dir=%s)',
+      (dir, left, right) => {
+        render(
+          <Grommet
+            dir={dir === 'rtl' ? 'rtl' : undefined}
+            theme={{
+              global: {
+                input: {
+                  pad: { start: '16px', horizontal: '4px', right: '3px' },
+                },
+              },
+            }}
+          >
+            <TextInput
+              aria-label="Entry"
+              icon={<Search role="img" aria-label="Search icon" />}
+              copy
+              value="Copy this value"
+            />
+          </Grommet>,
+        );
+
+        const icon = screen.getByRole('img', { name: 'Search icon' });
+        expect(icon.parentElement).toHaveStyleRule('padding-left', left);
+        expect(icon.parentElement).toHaveStyleRule('padding-right', right);
+      },
+    );
+
+    test.each(['textInput', 'textArea', 'maskedInput'] as const)(
+      '%s focus shadow survives appearance elevation and respects extensions',
+      async (kind) => {
+        const user = userEvent.setup();
+        const props = { 'aria-label': 'Entry' };
+        const input =
+          kind === 'textArea' ? (
+            <TextArea {...props} />
+          ) : kind === 'maskedInput' ? (
+            <MaskedInput {...props} mask={[]} />
+          ) : (
+            <TextInput {...props} />
+          );
+        const theme: ThemeType = {
+          global: {
+            focus: {
+              outline: { size: '0px', color: 'transparent' },
+              shadow: '0 0 0 3px red',
+              twoColor: true,
+            },
+            input: {
+              hover: { elevation: 'none' },
+              focus: { elevation: 'none' },
+            },
+          },
+        };
+        const { rerender } = render(<Grommet theme={theme}>{input}</Grommet>);
+        const control = screen.getByRole('textbox', { name: 'Entry' });
+
+        await user.tab();
+        expect(control).toHaveFocus();
+        expect(control).toHaveStyleRule('box-shadow', '0 0 0 3px red', {
+          modifier: ':focus',
+        });
+
+        await user.hover(control);
+        expect(control).toHaveFocus();
+        expect(control).toHaveStyleRule('box-shadow', '0 0 0 3px red', {
+          modifier: ':focus',
+        });
+
+        rerender(
+          <Grommet
+            theme={{
+              ...theme,
+              global: {
+                ...theme.global,
+                input: {
+                  ...theme.global?.input,
+                  extend: '&:focus { box-shadow: 0 0 0 5px blue; }',
+                },
+              },
+            }}
+          >
+            {input}
+          </Grommet>,
+        );
+        expect(control).toHaveFocus();
+        expect(control).toHaveStyleRule('box-shadow', '0 0 0 5px blue', {
+          modifier: ':focus',
+        });
+      },
+    );
+
+    test.each(['textInput', 'textArea', 'maskedInput'] as const)(
+      '%s plain mode does not restore a disabled focus indicator',
+      async (kind) => {
+        const user = userEvent.setup();
+        const props = {
+          'aria-label': 'Entry',
+          plain: true,
+          focusIndicator: false,
+        };
+        const input =
+          kind === 'textArea' ? (
+            <TextArea {...props} />
+          ) : kind === 'maskedInput' ? (
+            <MaskedInput {...props} mask={[]} />
+          ) : (
+            <TextInput {...props} />
+          );
+        render(
+          <Grommet
+            theme={{
+              global: {
+                focus: { shadow: '0 0 0 3px red' },
+                input: { pad: '8px', focus: { elevation: 'none' } },
+              },
+            }}
+          >
+            {input}
+          </Grommet>,
+        );
+
+        const control = screen.getByRole('textbox', { name: 'Entry' });
+        await user.tab();
+        expect(control).toHaveFocus();
+        expect(control).not.toHaveStyleRule('box-shadow', undefined, {
+          modifier: ':focus',
+        });
+      },
+    );
+
+    test.each(['select', 'selectMultiple'] as const)(
+      '%s restores keyboard-visible trigger focus after appearance elevation',
+      async (kind) => {
+        const user = userEvent.setup();
+        const props = { 'aria-label': 'Entry', options: ['One', 'Two'] };
+        const input =
+          kind === 'selectMultiple' ? (
+            <SelectMultiple {...props} />
+          ) : (
+            <Select {...props} />
+          );
+        const theme: ThemeType = {
+          global: {
+            focus: {
+              outline: { size: '0px', color: 'transparent' },
+              shadow: '0 0 0 3px red',
+              twoColor: true,
+            },
+            input: {
+              hover: { elevation: 'none' },
+              focus: { elevation: 'none' },
+            },
+          },
+        };
+        const { rerender } = render(<Grommet theme={theme}>{input}</Grommet>);
+        const trigger = screen.getByRole('button');
+
+        await user.tab();
+        expect(trigger).toHaveFocus();
+        await user.hover(trigger);
+        expect(trigger).toHaveFocus();
+        expect(trigger).toHaveStyleRule('box-shadow', '0 0 0 3px red', {
+          modifier: ':focus:focus-visible',
+        });
+        expect(trigger).not.toHaveStyleRule('box-shadow', '0 0 0 3px red', {
+          modifier: ':focus-within',
+        });
+
+        rerender(
+          <Grommet
+            theme={{
+              ...theme,
+              select: {
+                control: {
+                  extend:
+                    '&:focus:focus-visible { box-shadow: 0 0 0 5px blue; }',
+                },
+              },
+            }}
+          >
+            {input}
+          </Grommet>,
+        );
+        expect(trigger).toHaveStyleRule('box-shadow', '0 0 0 5px blue', {
+          modifier: ':focus:focus-visible',
+        });
+      },
+    );
+
+    test.each(['select', 'selectMultiple'] as const)(
+      '%s plain trigger does not restore a disabled focus indicator',
+      async (kind) => {
+        const user = userEvent.setup();
+        const props = {
+          'aria-label': 'Entry',
+          options: ['One', 'Two'],
+          plain: true,
+          focusIndicator: false,
+        };
+        render(
+          <Grommet
+            theme={{
+              global: {
+                focus: { shadow: '0 0 0 3px red' },
+                input: { focus: { elevation: 'none' } },
+              },
+            }}
+          >
+            {kind === 'selectMultiple' ? (
+              <SelectMultiple {...props} />
+            ) : (
+              <Select {...props} />
+            )}
+          </Grommet>,
+        );
+
+        const trigger = screen.getByRole('button');
+        await user.tab();
+        expect(trigger).toHaveFocus();
+        expect(trigger).not.toHaveStyleRule('box-shadow', undefined, {
+          modifier: ':focus:focus-visible',
+        });
+      },
+    );
+
+    test.each(['select', 'selectMultiple'] as const)(
+      '%s retains the pointer-focus shadow reset with appearance states',
+      async (kind) => {
+        const user = userEvent.setup();
+        const scrollTo = jest
+          .spyOn(window, 'scrollTo')
+          .mockImplementation(() => {});
+        const props = { 'aria-label': 'Entry', options: ['One', 'Two'] };
+        const { unmount } = render(
+          <Grommet
+            theme={{
+              global: {
+                focus: { shadow: '0 0 0 3px red' },
+                input: {
+                  hover: { elevation: 'none' },
+                  focus: { elevation: 'none' },
+                },
+              },
+            }}
+          >
+            {kind === 'selectMultiple' ? (
+              <SelectMultiple {...props} />
+            ) : (
+              <Select {...props} />
+            )}
+          </Grommet>,
+        );
+
+        const trigger = screen.getByRole('button');
+        await user.click(trigger);
+        expect(trigger).toHaveStyleRule('box-shadow', 'none', {
+          modifier: ':focus:not(:focus-visible)',
+        });
+        expect(trigger).toHaveStyleRule('box-shadow', '0 0 0 3px red', {
+          modifier: ':focus:focus-visible',
+        });
+        unmount();
+        scrollTo.mockRestore();
+      },
+    );
+
+    test('disabled input keeps its application state without hover or focus overrides', () => {
+      render(
+        <Grommet theme={appearanceTheme}>
+          <TextInput aria-label="Entry" disabled />
+        </Grommet>,
+      );
+      const control = screen.getByRole('textbox', { name: 'Entry' });
+      expect(control).toHaveStyleRule('background-color', '#bbbbbb');
+      expect(control).toHaveStyleRule('border', 'none');
+      expect(control).toHaveStyleRule('border-radius', '0');
+      expect(control).not.toHaveStyleRule('background-color', undefined, {
+        modifier: ':hover',
+      });
+      expect(control).not.toHaveStyleRule('border', undefined, {
+        modifier: ':focus',
+      });
+    });
+
+    test.each([false, true])(
+      'TextInput wrapper owns the surface (readOnly=%s)',
+      (readOnly) => {
+        render(
+          <Grommet theme={appearanceTheme}>
+            <TextInput
+              aria-label="Entry"
+              readOnly={readOnly}
+              type={readOnly ? 'text' : 'password'}
+              password={!readOnly}
+            />
+          </Grommet>,
+        );
+        const control = screen.getByLabelText('Entry');
+        const surface = control.parentElement;
+        expect(surface).toHaveStyleRule(
+          'background-color',
+          readOnly ? '#cccccc' : '#eeeeee',
+        );
+        expect(surface).toHaveStyleRule(
+          'border',
+          readOnly ? 'solid 3px #334455' : 'solid 3px #123456',
+        );
+        expect(control).toHaveStyleRule('background', 'transparent');
+        expect(control).not.toHaveStyleRule('background-color');
+        expect(control).toHaveStyleRule('padding', readOnly ? '14px' : '8px');
+        expect(surface).not.toHaveStyleRule('padding');
+        if (readOnly) {
+          expect(surface).not.toHaveStyleRule('background-color', undefined, {
+            modifier: ':hover',
+          });
+          expect(surface).not.toHaveStyleRule('border', undefined, {
+            modifier: ':focus-within',
+          });
+        }
+      },
+    );
+
+    test('plain controls retain FormField surfaces without a second border or fill', () => {
+      render(
+        <Grommet theme={appearanceTheme}>
+          <FormField label="Entry">
+            <TextInput id="entry" aria-label="Entry" />
+          </FormField>
+        </Grommet>,
+      );
+      const control = screen.getByRole('textbox', { name: 'Entry' });
+      expect(control).not.toHaveStyleRule('background-color');
+      expect(control).toHaveStyleRule('border', 'none');
+      expect(control).not.toHaveStyleRule('box-shadow');
+      expect(control).not.toHaveStyleRule('background-color', undefined, {
+        modifier: ':hover',
+      });
+    });
+
+    test('canonical pad overrides legacy padding and explicit width remains authoritative', () => {
+      render(
+        <Grommet
+          theme={{
+            global: { input: { padding: '24px', pad: '6px', width: '240px' } },
+          }}
+        >
+          <TextInput aria-label="Entry" width="120px" icon={<Search />} />
+        </Grommet>,
+      );
+      const control = screen.getByRole('textbox', { name: 'Entry' });
+      expect(control).toHaveStyleRule('padding', '6px');
+      expect(control).toHaveStyleRule('width', '120px');
+    });
+
+    test('side-specific global input border replaces the legacy all-side border', () => {
+      render(
+        <Grommet
+          theme={{
+            global: {
+              input: {
+                border: 'bottom',
+              },
+            },
+          }}
+        >
+          <TextInput aria-label="Entry" />
+        </Grommet>,
+      );
+
+      const control = screen.getByRole('textbox', { name: 'Entry' });
+      expect(control).toHaveStyleRule('border', 'none');
+      expect(control).toHaveStyleRule('border-bottom', expect.any(String));
+    });
+
+    test('global input extend remains the final native input override', () => {
+      render(
+        <Grommet
+          theme={{
+            global: {
+              input: {
+                background: '#eeeeee',
+                extend: 'background-color: #112233;',
+              },
+            },
+          }}
+        >
+          <TextInput aria-label="Entry" />
+        </Grommet>,
+      );
+      expect(screen.getByRole('textbox', { name: 'Entry' })).toHaveStyleRule(
+        'background-color',
+        '#112233',
+      );
+    });
+
+    test('composite controls apply appearance to the visible surface only', () => {
+      render(
+        <Grommet theme={appearanceTheme}>
+          <Select aria-label="Single" options={['One', 'Two']} />
+          <SelectMultiple aria-label="Multiple" options={['One', 'Two']} />
+          <DateInput aria-label="Date" format="mm/dd/yyyy" />
+          <FileInput aria-label="File" name="file" />
+        </Grommet>,
+      );
+      const single = screen.getByRole('button', { name: /Single/ });
+      const multiple = screen.getByRole('button', { name: /Multiple/ });
+      [single, multiple].forEach((surface) => {
+        expect(surface).toHaveStyleRule('background-color', '#eeeeee');
+        expect(surface).toHaveStyleRule('border', 'solid 3px #123456');
+      });
+      const date = screen.getByRole('textbox', { name: 'Date' });
+      expect(date).not.toHaveStyleRule('background-color');
+      expect(date.parentElement?.parentElement).toHaveStyleRule(
+        'background-color',
+        '#eeeeee',
+      );
+      expect(date.parentElement?.parentElement).toHaveStyleRule(
+        'border',
+        'solid 3px #123456',
+      );
+      const file = screen.getByLabelText('File');
+      expect(file.parentElement).toHaveStyleRule('background-color', '#eeeeee');
+      expect(file.parentElement).toHaveStyleRule('border', 'solid 3px #123456');
+    });
   });
 
   test('a11yTitle or aria-label', () => {

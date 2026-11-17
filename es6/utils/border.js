@@ -3,6 +3,13 @@
 import { css } from 'styled-components';
 import { normalizeColor } from './colors';
 import { breakpointStyle } from './mixins';
+export var hasSideSpecificBorder = function hasSideSpecificBorder(borderData) {
+  var borders = Array.isArray(borderData) ? borderData : [borderData];
+  return borders.some(function (data) {
+    var side = typeof data === 'string' ? data : data == null ? void 0 : data.side;
+    return side !== undefined && side !== 'all';
+  });
+};
 export var responsiveBorderStyle = function responsiveBorderStyle(data, theme) {
   var color = normalizeColor(data.color || 'border', theme);
   var borderSize = data.size || 'xsmall';

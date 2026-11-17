@@ -1,17 +1,18 @@
 "use strict";
 
 exports.__esModule = true;
-exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.styledComponentsConfig = exports.sizeStyle = exports.scrollbarStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.heightStyle = exports.getInputPadBySide = exports.getInputIconPad = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.elevationStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
+exports.widthStyle = exports.unfocusStyle = exports.textAlignStyle = exports.styledComponentsConfig = exports.sizeStyle = exports.scrollbarStyle = exports.roundStyle = exports.plainInputStyle = exports.overflowStyle = exports.kindPartStyles = exports.inputStyle = exports.inputPadForIcon = exports.inputAppearanceStyle = exports.heightStyle = exports.getInputPadBySide = exports.getInputIconPad = exports.genericStyles = exports.focusStyle = exports.fillStyle = exports.elevationStyle = exports.edgeStyle = exports.disabledStyle = exports.controlBorderStyle = exports.baseStyle = exports.alignStyle = exports.alignContentStyle = void 0;
 var _styledComponents = require("styled-components");
 var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
 var _background = require("./background");
+var _border = require("./border");
+var _object = require("./object");
 var _colors = require("./colors");
 var _responsive = require("./responsive");
 var _mixins = require("./mixins");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-
 // ensure only valid DOM attributes are forwarded onto DOM
 var styledComponentsConfig = exports.styledComponentsConfig = {
   shouldForwardProp: _isPropValid["default"]
@@ -266,6 +267,16 @@ var adjustPad = function adjustPad(props, value) {
   return (0, _mixins.parseMetricToNum)((props.theme.global.edgeSize[value] || value) + "px") + (0, _mixins.parseMetricToNum)(props.theme.global.control.border.width + "px") + "px";
 };
 var getInputPadBySide = exports.getInputPadBySide = function getInputPadBySide(props, side) {
+  var inputPad = props.theme.global.input.pad;
+  if (inputPad !== undefined) {
+    var _ref5, _ref6, _inputPad$logicalSide;
+    if (typeof inputPad === 'string') return props.theme.global.edgeSize[inputPad] || inputPad;
+    var _orientation = side === 'left' || side === 'right' ? 'horizontal' : 'vertical';
+    var logicalSide;
+    if (_orientation === 'horizontal') logicalSide = side === 'left' !== (props.theme.dir === 'rtl') ? 'start' : 'end';
+    var value = (_ref5 = (_ref6 = (_inputPad$logicalSide = inputPad[logicalSide]) != null ? _inputPad$logicalSide : inputPad[side]) != null ? _ref6 : inputPad[_orientation]) != null ? _ref5 : 'none';
+    return props.theme.global.edgeSize[value] || value;
+  }
   if (typeof props.theme.global.input.padding !== 'object') {
     var _adjustedPad = adjustPad(props, props.theme.global.input.padding);
     return _adjustedPad;
@@ -290,29 +301,6 @@ var inputSizeStyle = function inputSizeStyle(props) {
   }
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
-var inputStyle = exports.inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;width:100%;", " ", " ", " margin:0;", " &:focus{", ";}", " ", " ::-webkit-search-decoration{-webkit-appearance:none;}&::-moz-focus-inner{border:none;outline:none;}&:-moz-placeholder,&::-moz-placeholder{opacity:1;}", ""], function (props) {
-  var _props$theme$text$pro;
-  return "font-size: " + (props.theme.global.input.font.size ? ((_props$theme$text$pro = props.theme.text[props.theme.global.input.font.size]) == null ? void 0 : _props$theme$text$pro.size) || props.theme.global.input.font.size : 'inherit') + ";";
-}, function (props) {
-  return props.theme.global.input.font.height && "line-height: " + props.theme.global.input.font.height + ";";
-}, function (props) {
-  return props.theme.global.input.padding && typeof props.theme.global.input.padding !== 'object' ? // On a breaking change release, this condition could be removed and
-  // just the edgeStyle could remain. Currently, this is needed for
-  // backwards compatibility since we are placing the calculation in
-  // base.js
-  "padding: " + ((0, _mixins.parseMetricToNum)(props.theme.global.edgeSize[props.theme.global.input.padding] || props.theme.global.input.padding) - (0, _mixins.parseMetricToNum)(props.theme.global.control.border.width)) + "px;" : edgeStyle('padding', props.theme.global.input.padding, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
-}, function (props) {
-  return (
-    // for backwards compatibility, check if props.theme.global.input.weight
-    (props.theme.global.input.weight || props.theme.global.input.font.weight) && (0, _styledComponents.css)(["font-weight:", ";"], props.theme.global.input.weight || props.theme.global.input.font.weight)
-  );
-}, function (props) {
-  return props.size && inputSizeStyle(props);
-}, function (props) {
-  return (!props.plain || props.focusIndicator) && focusStyle();
-}, controlBorderStyle, placeholderStyle, function (props) {
-  return props.theme.global.input.extend;
-});
 
 // Apply padding on input to create space for icon.
 // When theme.icon.matchSize is true, the space for the
@@ -520,3 +508,133 @@ var heightStringStyle = function heightStringStyle(height, theme) {
 var heightStyle = exports.heightStyle = function heightStyle(height, theme) {
   return typeof height === 'object' ? heightObjectStyle(height, theme) : heightStringStyle(height, theme);
 };
+var inputPartStyle = function inputPartStyle(part, props, _temp5) {
+  var _props$responsive;
+  var _ref7 = _temp5 === void 0 ? {} : _temp5,
+    paddingOnly = _ref7.paddingOnly,
+    skipPadding = _ref7.skipPadding,
+    skipRound = _ref7.skipRound;
+  var theme = props.theme;
+  var responsive = (_props$responsive = props.responsive) != null ? _props$responsive : true;
+  var styles = [];
+  if (part.pad !== undefined && !skipPadding && props.plain !== 'full') styles.push(edgeStyle('padding', part.pad, responsive, theme.box.responsiveBreakpoint, theme));
+  if (paddingOnly) return styles;
+  if (part.background !== undefined) styles.push((0, _background.backgroundStyle)(part.background, theme, false));
+  if (part.border !== undefined) {
+    if (part.border === false) styles.push('border: none;');else {
+      if ((0, _border.hasSideSpecificBorder)(part.border)) styles.push('border: none;');
+      styles.push((0, _border.borderStyle)(part.border, responsive, theme));
+    }
+  }
+  if (part.elevation !== undefined) styles.push(elevationStyle(part.elevation));
+  if (part.height !== undefined && props.height === undefined) styles.push(heightStyle(part.height, theme));
+  if (part.width !== undefined && props.widthProp === undefined && props.$inputWidth === undefined && props.width === undefined) styles.push(widthStyle(part.width, theme));
+  if (part.margin !== undefined && props.margin === undefined) styles.push(edgeStyle('margin', part.margin, responsive, theme.box.responsiveBreakpoint, theme));
+  if (part.round !== undefined && !skipRound) styles.push(part.round === false ? 'border-radius: 0;' : roundStyle(part.round, responsive, theme));
+  return styles;
+};
+var _mergeInputBorder = function mergeInputBorder(base, override) {
+  if (override === undefined) return base;
+  if (Array.isArray(base) && (0, _object.isObject)(override) && !override.side) return base.map(function (part) {
+    return _mergeInputBorder(part, override);
+  });
+  if ((0, _object.isObject)(base) && (0, _object.isObject)(override)) return _extends({}, base, override);
+  if (typeof base === 'string' && (0, _object.isObject)(override)) return _extends({
+    side: base
+  }, override);
+  return override;
+};
+var inputAppearanceStyle = exports.inputAppearanceStyle = function inputAppearanceStyle(props, _temp6) {
+  var _ref8 = _temp6 === void 0 ? {} : _temp6,
+    _ref8$wrapper = _ref8.wrapper,
+    wrapper = _ref8$wrapper === void 0 ? false : _ref8$wrapper,
+    _ref8$skipPadding = _ref8.skipPadding,
+    skipPadding = _ref8$skipPadding === void 0 ? false : _ref8$skipPadding,
+    _ref8$skipBasePadding = _ref8.skipBasePadding,
+    skipBasePadding = _ref8$skipBasePadding === void 0 ? false : _ref8$skipBasePadding,
+    _ref8$skipRound = _ref8.skipRound,
+    skipRound = _ref8$skipRound === void 0 ? false : _ref8$skipRound,
+    padSelector = _ref8.padSelector;
+  var input = props.theme.global.input;
+  var plain = wrapper ? props.plainSelect || props.$inputPlain || (props.readOnlyProp || props.hasButton) && props.plain : props.plain;
+  var disabled = props.disabled || props.$inputDisabled;
+  var readOnly = props.readOnly || props.readOnlyProp;
+  var options = {
+    paddingOnly: !!plain || props.$inputInner,
+    skipPadding: skipPadding,
+    skipRound: skipRound
+  };
+  var iconPadding = props.icon && !props.hasActionsGroup ? "padding-" + (props.reverse ? 'right' : 'left') + ": " + getInputIconPad(props) + ";" : undefined;
+  var legacyBorder = {
+    size: props.theme.global.control.border.width,
+    color: props.theme.global.control.border.color
+  };
+  var normalBorder = _mergeInputBorder(legacyBorder, input.border);
+  var partStyle = function partStyle(part) {
+    return inputPartStyle(part.border !== undefined ? _extends({}, part, {
+      border: _mergeInputBorder(normalBorder === false ? legacyBorder : normalBorder, part.border)
+    }) : part, props, options);
+  };
+  var padStyle = function padStyle(pad) {
+    var styles = inputPartStyle({
+      pad: pad
+    }, props, {
+      paddingOnly: true
+    });
+    return (0, _styledComponents.css)(["input:not([type='hidden']){", " ", "}", ""], styles, iconPadding, padSelector && (0, _styledComponents.css)(["", "{", "}"], padSelector, styles));
+  };
+  var styles = partStyle(skipBasePadding ? _extends({}, input, {
+    pad: undefined
+  }) : input);
+  var stateStyle = function stateStyle(part) {
+    var stateStyles = partStyle(part);
+    if (wrapper && skipPadding && part.pad !== undefined) stateStyles.push(padSelector ? padStyle(part.pad) : (0, _styledComponents.css)(["input:not([type='hidden']){", " ", "}"], inputPartStyle({
+      pad: part.pad
+    }, props, {
+      paddingOnly: true
+    }), iconPadding));else if (part.pad !== undefined && iconPadding) {
+      stateStyles.push(iconPadding);
+    }
+    return stateStyles;
+  };
+  if (!plain) {
+    if (!disabled && !readOnly && input.hover) styles.push((0, _styledComponents.css)(["&:hover{", "}"], stateStyle(input.hover)));
+    if (!disabled && !readOnly && input.focus) styles.push(wrapper ? (0, _styledComponents.css)(["&:focus-within{", "}"], stateStyle(input.focus)) : (0, _styledComponents.css)(["&:focus{", "}"], stateStyle(input.focus)));
+    if (readOnly && input.readOnly) styles.push(stateStyle(input.readOnly));
+    if (disabled && input.disabled) styles.push(stateStyle(input.disabled));
+  }
+  if (!wrapper && input.placeholder) {
+    var _props$theme$text$pla;
+    var placeholder = input.placeholder;
+    var text = [];
+    if (placeholder.color !== undefined) text.push("color: " + (0, _colors.normalizeColor)(placeholder.color, props.theme) + ";");
+    if (placeholder.size !== undefined) text.push("font-size: " + (((_props$theme$text$pla = props.theme.text[placeholder.size]) == null ? void 0 : _props$theme$text$pla.size) || placeholder.size) + ";");
+    if (placeholder.weight !== undefined) text.push("font-weight: " + placeholder.weight + ";");
+    if (text.length > 0) styles.push((0, _styledComponents.css)(["&::placeholder{", "}"], text));
+  }
+  return styles.length > 0 ? (0, _styledComponents.css)(["", ""], styles) : undefined;
+};
+var inputStyle = exports.inputStyle = (0, _styledComponents.css)(["box-sizing:border-box;", " font-family:inherit;border:none;-webkit-appearance:none;background:transparent;color:inherit;width:100%;", " ", " ", " margin:0;", " &:focus{", ";}", " ", " ::-webkit-search-decoration{-webkit-appearance:none;}&::-moz-focus-inner{border:none;outline:none;}&:-moz-placeholder,&::-moz-placeholder{opacity:1;}", ""], function (props) {
+  var _props$theme$text$pro;
+  return "font-size: " + (props.theme.global.input.font.size ? ((_props$theme$text$pro = props.theme.text[props.theme.global.input.font.size]) == null ? void 0 : _props$theme$text$pro.size) || props.theme.global.input.font.size : 'inherit') + ";";
+}, function (props) {
+  return props.theme.global.input.font.height && "line-height: " + props.theme.global.input.font.height + ";";
+}, function (props) {
+  return props.theme.global.input.padding && typeof props.theme.global.input.padding !== 'object' ? // On a breaking change release, this condition could be removed and
+  // just the edgeStyle could remain. Currently, this is needed for
+  // backwards compatibility since we are placing the calculation in
+  // base.js
+  "padding: " + ((0, _mixins.parseMetricToNum)(props.theme.global.edgeSize[props.theme.global.input.padding] || props.theme.global.input.padding) - (0, _mixins.parseMetricToNum)(props.theme.global.control.border.width)) + "px;" : edgeStyle('padding', props.theme.global.input.padding, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
+}, function (props) {
+  return (
+    // for backwards compatibility, check if props.theme.global.input.weight
+    (props.theme.global.input.weight || props.theme.global.input.font.weight) && (0, _styledComponents.css)(["font-weight:", ";"], props.theme.global.input.weight || props.theme.global.input.font.weight)
+  );
+}, function (props) {
+  return props.size && inputSizeStyle(props);
+}, function (props) {
+  return (!props.plain || props.focusIndicator) && focusStyle();
+}, controlBorderStyle, placeholderStyle, function (props) {
+  var appearance = inputAppearanceStyle(props);
+  return appearance ? (0, _styledComponents.css)(["", " ", " ", ""], appearance, !props.$inputInner && (!props.plain || props.focusIndicator) && (0, _styledComponents.css)(["&:focus{", "}"], focusStyle()), props.theme.global.input.extend) : props.theme.global.input.extend;
+});

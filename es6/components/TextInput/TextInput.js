@@ -556,7 +556,11 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var showLeadingIcon = showTextInputIcon && !iconOnRight;
   var showTrailingIcon = showTextInputIcon && iconOnRight;
   return /*#__PURE__*/React.createElement(StyledTextInputContainer, _extends({
+    $inputDisabled: disabled,
     hasButton: !!actionsGroup,
+    icon: showTextInputIcon && !hasActionsGroup ? icon : undefined,
+    reverse: iconOnRight,
+    size: rest.size,
     readOnlyProp: readOnly // readOnlyProp to avoid passing to DOM
     ,
     readOnlyCopy: readOnlyCopy,
@@ -573,6 +577,7 @@ var TextInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, textInputIcon), /*#__PURE__*/React.createElement(Keyboard, _extends({
     target: focus ? 'document' : undefined
   }, keyboardProps), /*#__PURE__*/React.createElement(StyledTextInput, _extends({
+    $inputInner: readOnly || hasActionsGroup,
     "aria-label": a11yTitle,
     ref: inputRef,
     id: id,

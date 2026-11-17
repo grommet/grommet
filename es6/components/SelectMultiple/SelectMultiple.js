@@ -4,8 +4,8 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, isValidElement, useCallback, useContext, useMemo, useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import { controlBorderStyle, useKeyboard, useForwardedRef } from '../../utils';
+import styled, { css } from 'styled-components';
+import { controlBorderStyle, inputAppearanceStyle, useKeyboard, useForwardedRef } from '../../utils';
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
@@ -25,7 +25,12 @@ var StyledSelectBox = styled(Box).withConfig({
   return !props.plainSelect && controlBorderStyle;
 }, function (props) {
   var _props$theme$select;
-  return (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
+  var appearance = inputAppearanceStyle(props, {
+    wrapper: true,
+    skipPadding: true
+  });
+  var extend = (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
+  return appearance ? css(["", "", ""], appearance, extend) : extend;
 }, function (props) {
   var _props$theme$select$c;
   return props.open && ((_props$theme$select$c = props.theme.select.control) == null ? void 0 : _props$theme$select$c.open);
@@ -460,6 +465,7 @@ var SelectMultiple = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }, rest)), displaySelectIcon)), !open && (value == null ? void 0 : value.length) > 0 && (selectValue || displayLabelKey))) : /*#__PURE__*/React.createElement(Box, {
     width: width
   }, /*#__PURE__*/React.createElement(StyledSelectDropButton, _extends({}, dropButtonProps, {
+    $inputWidth: width,
     dropAlign: dropAlign,
     dropTarget: dropTarget,
     alignSelf: alignSelf,

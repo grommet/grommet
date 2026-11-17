@@ -1,11 +1,11 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
-import { getHoverIndicatorStyle, selectedStyle, controlBorderStyle, overflowStyle, sizeStyle, styledComponentsConfig } from '../../utils';
+import { getHoverIndicatorStyle, selectedStyle, controlBorderStyle, focusStyle, inputAppearanceStyle, overflowStyle, sizeStyle, styledComponentsConfig } from '../../utils';
 export var StyledContainer = styled(Box).withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "sc-znp66n-0"
@@ -54,7 +54,14 @@ export var StyledSelectDropButton = styled(DropButton).withConfig({
   return !props.plainSelect && controlBorderStyle;
 }, function (props) {
   var _props$theme$select;
-  return (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
+  var appearance = inputAppearanceStyle(props, {
+    wrapper: true,
+    skipPadding: true
+  });
+  var extend = (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
+  return appearance ? css(["", " ", " ", ""], appearance, (!props.plain || props.focusIndicator) && css(["&:focus:focus-visible{", "}"], focusStyle({
+    inset: props.focusIndicator === 'inset'
+  })), extend) : extend;
 }, function (props) {
   var _props$theme$select2;
   return props.open && ((_props$theme$select2 = props.theme.select) == null || (_props$theme$select2 = _props$theme$select2.control) == null ? void 0 : _props$theme$select2.open);

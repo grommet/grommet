@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.DateInput = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _Calendar = require("grommet-icons/icons/Calendar");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
 var _MessageContext = require("../../contexts/MessageContext");
@@ -25,7 +25,6 @@ var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["buttonProps", "calendarProps", "defaultValue", "disabled", "dropProps", "format", "id", "icon", "inline", "inputProps", "name", "onChange", "onFocus", "plain", "readOnly", "readOnlyCopy", "reverse", "value", "messages"],
   _excluded2 = ["icon"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var cache;
 function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -41,7 +40,13 @@ var StyledDateInputContainer = (0, _styledComponents["default"])(_Box.Box).withC
 })(["", " ", "}"], function (props) {
   return props.disabled && (0, _utils.disabledStyle)();
 }, function (props) {
-  return props.readOnlyProp && (0, _readOnly.readOnlyStyle)(props.theme);
+  var appearance = (0, _utils.inputAppearanceStyle)(props, {
+    wrapper: true,
+    skipPadding: true,
+    skipRound: true
+  });
+  var readOnly = props.readOnlyProp && (0, _readOnly.readOnlyStyle)(props.theme);
+  return appearance ? (0, _styledComponents.css)(["", "", ""], readOnly, appearance) : readOnly;
 });
 var getReference = function getReference(value) {
   var adjustedDate;
@@ -355,6 +360,7 @@ var DateInput = exports.DateInput = /*#__PURE__*/(0, _react.forwardRef)(function
       }
     }
   }, /*#__PURE__*/_react["default"].createElement(StyledDateInputContainer, _extends({
+    $inputPlain: plain,
     ref: containerRef,
     border: !plain,
     round: theme.dateInput.container.round,

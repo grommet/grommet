@@ -18,34 +18,70 @@ var _TextInput = require("../TextInput");
 var _FormContext = require("../Form/FormContext");
 var _propTypes = require("./propTypes");
 var _FormFieldContext = require("./FormFieldContext");
-var _useThemeValue3 = require("../../utils/useThemeValue");
+var _useThemeValue4 = require("../../utils/useThemeValue");
 var _AnnounceContext = require("../../contexts/AnnounceContext");
-var _excluded = ["message", "id"],
+var _excluded = ["message", "id", "color"],
   _excluded2 = ["error", "info", "message", "type"],
   _excluded3 = ["id"],
   _excluded4 = ["component", "disabled", "invalid", "name", "onChange"],
   _excluded5 = ["children", "className", "component", "contentProps", "disabled", "error", "help", "htmlFor", "info", "label", "margin", "name", "onBlur", "onChange", "onFocus", "pad", "required", "style", "validate", "validateOn"],
-  _excluded6 = ["aria-describedby"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
-// SPDX-License-Identifier: Apache-2.0
+  _excluded6 = ["aria-describedby"];
 var cache;
 function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); } // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 var grommetInputFocusNames = ['CheckBox', 'CheckBoxGroup', 'RadioButton', 'RadioButtonGroup', 'RangeInput', 'RangeSelector', 'StarRating', 'ThumbsRating'];
 var grommetInputNames = ['CheckBox', 'CheckBoxGroup', 'TextInput', 'Select', 'MaskedInput', 'SelectMultiple', 'TextArea', 'DateInput', 'DateTimeInput', 'TimeInput', 'FileInput', 'RadioButton', 'RadioButtonGroup', 'RangeInput', 'RangeSelector', 'StarRating', 'ThumbsRating'];
 var grommetInputPadNames = ['CheckBox', 'CheckBoxGroup', 'RadioButton', 'RadioButtonGroup', 'RangeInput', 'RangeSelector'];
+
+// Ideally FormField should not need to know about which inputs are read-only
+// Consider FormFieldContext to establish an internal contract for inputs
+// See https://github.com/grommet/grommet/issues/8237
+var readOnlyInputNames = ['TextInput', 'MaskedInput', 'TextArea', 'DateInput', 'DateTimeInput', 'TimeInput'];
+var isReadOnlyInput = function isReadOnlyInput(component, readOnly, readOnlyCopy, inline) {
+  var name = component == null ? void 0 : component.displayName;
+  return readOnlyInputNames.includes(name) && !(name === 'TimeInput' && inline) && (readOnly === true || (name === 'TextInput' || name === 'DateInput') && readOnlyCopy === true);
+};
 var isGrommetInput = function isGrommetInput(comp) {
   return comp && (grommetInputNames.indexOf(comp.displayName) !== -1 || grommetInputPadNames.indexOf(comp.displayName) !== -1);
 };
-var getFocusStyle = function getFocusStyle(props) {
-  var _props$theme$formFiel;
+var _mergePartBorder = function mergePartBorder(border, override) {
+  if (override === undefined) return border;
+  if (Array.isArray(border) && (0, _utils.isObject)(override) && !override.side) return border.map(function (part) {
+    return _mergePartBorder(part, override);
+  });
+  if ((0, _utils.isObject)(border) && (0, _utils.isObject)(override)) return _extends({}, border, override);
+  if (typeof border === 'string' && (0, _utils.isObject)(override)) return _extends({
+    side: border
+  }, override);
+  return override;
+};
+var getFocusStyle = function getFocusStyle(props, content) {
+  var _props$theme$formFiel, _props$responsive;
+  if (content === void 0) {
+    content = false;
+  }
   if (props.focus && props.containerFocus === false && ((_props$theme$formFiel = props.theme.formField) == null || (_props$theme$formFiel = _props$theme$formFiel.focus) == null ? void 0 : _props$theme$formFiel.containerFocus) === false) {
     return null;
   }
   if (!props.focus) return undefined;
+  if (content && props.$componentErrorBorder) return (0, _styledComponents.css)(["", " ", " ", ""], (0, _styles.focusStyle)({
+    forceOutline: true
+  }), props.border === false || props.border === undefined ? 'border: none;' : (0, _utils.borderStyle)(props.border, (_props$responsive = props.responsive) != null ? _props$responsive : true, props.theme), (0, _utils.isObject)(props.border) && props.border.color !== undefined && "border-color: " + (0, _utils.normalizeColor)(props.border.color, props.theme) + ";");
   return (0, _styles.focusStyle)({
     justBorder: true
   });
+};
+var boxStateStyles = function boxStateStyles(state, props) {
+  var _props$responsive2;
+  var theme = props.theme;
+  var responsive = (_props$responsive2 = props.responsive) != null ? _props$responsive2 : true;
+  var styles = [];
+  if (state.elevation !== undefined) styles.push((0, _utils.elevationStyle)(state.elevation));
+  if (state.pad !== undefined) styles.push((0, _utils.edgeStyle)('padding', state.pad, responsive, theme.box.responsiveBreakpoint, theme));
+  if (state.round !== undefined) styles.push(state.round === false ? 'border-radius: 0;' : (0, _utils.roundStyle)(state.round, responsive, theme));
+  return styles;
 };
 
 // The border color has to be painted by whichever element owns the border,
@@ -55,36 +91,42 @@ var getFocusStyle = function getFocusStyle(props) {
 // readOnly, error, focus) applies.
 var getHoverStyle = function getHoverStyle(role) {
   return function (props) {
-    var _formFieldTheme$props, _formFieldTheme$borde, _componentHover$borde, _componentHover$backg;
+    var _formFieldTheme$props, _formFieldTheme$borde, _componentHover$borde, _componentHover$backg, _hover$border;
     var formFieldTheme = props.theme.formField;
     var hover = formFieldTheme == null ? void 0 : formFieldTheme.hover;
     var componentHover = formFieldTheme == null || (_formFieldTheme$props = formFieldTheme[props.componentName]) == null ? void 0 : _formFieldTheme$props.hover;
     if (!props.allowHover || !hover && !componentHover) return undefined;
     var position = formFieldTheme == null || (_formFieldTheme$borde = formFieldTheme.border) == null ? void 0 : _formFieldTheme$borde.position;
     var ownsBorder = role === 'outer' ? position === 'outer' : position === 'inner';
+    var componentOwnsBorder = role === 'outer' ? position === 'outer' : position !== 'outer';
     var componentHoverBorder = (_componentHover$borde = componentHover == null ? void 0 : componentHover.border) != null ? _componentHover$borde : undefined;
     var componentHoverBackground = (_componentHover$backg = componentHover == null ? void 0 : componentHover.background) != null ? _componentHover$backg : undefined;
-    var hasComponentBorderOverride = componentHoverBorder !== undefined;
-    var hasComponentBackgroundOverride = componentHoverBackground !== undefined;
-    var borderColor;
-    if (ownsBorder) {
-      if (hasComponentBorderOverride) {
-        borderColor = componentHoverBorder.color;
-      } else {
-        var _hover$border;
-        borderColor = hover == null || (_hover$border = hover.border) == null ? void 0 : _hover$border.color;
-      }
-    }
-    var background;
+    var styles = [];
     if (role === 'content') {
-      if (hasComponentBackgroundOverride) {
-        background = componentHoverBackground;
-      } else {
-        background = hover == null ? void 0 : hover.background;
-      }
+      var background = componentHoverBackground != null ? componentHoverBackground : hover == null ? void 0 : hover.background;
+      if (background !== undefined) styles.push((0, _utils.backgroundStyle)(background, props.theme, false));
+      styles.push.apply(styles, boxStateStyles({
+        elevation: componentHover == null ? void 0 : componentHover.elevation,
+        pad: componentHover == null ? void 0 : componentHover.pad,
+        round: componentHover == null ? void 0 : componentHover.round
+      }, props));
     }
-    if (!borderColor && background === undefined) return undefined;
-    return (0, _styledComponents.css)(["&:hover{", " ", "}"], borderColor !== undefined && "border-color: " + (0, _utils.normalizeColor)(borderColor, props.theme) + ";", (0, _utils.backgroundStyle)(background, props.theme, false));
+    if (componentOwnsBorder && componentHoverBorder !== undefined) {
+      if (componentHoverBorder === false) styles.push('border: none;');else if (componentHoverBorder && typeof componentHoverBorder === 'object' && !Array.isArray(componentHoverBorder) && Object.keys(componentHoverBorder).every(function (key) {
+        return key === 'color';
+      })) {
+        if (componentHoverBorder.color !== undefined) styles.push("border-color: " + (0, _utils.normalizeColor)(componentHoverBorder.color, props.theme) + ";");
+      } else {
+        var _props$responsive3;
+        var hoverBorder = _mergePartBorder(props.border, componentHoverBorder);
+        if ((0, _utils.hasSideSpecificBorder)(hoverBorder)) styles.push('border: none;');
+        styles.push((0, _utils.borderStyle)(hoverBorder, (_props$responsive3 = props.responsive) != null ? _props$responsive3 : true, props.theme));
+      }
+    } else if (ownsBorder && (hover == null || (_hover$border = hover.border) == null ? void 0 : _hover$border.color) !== undefined) {
+      styles.push("border-color: " + (0, _utils.normalizeColor)(hover.border.color, props.theme) + ";");
+    }
+    if (styles.length === 0) return undefined;
+    return (0, _styledComponents.css)(["&:hover{", "}"], styles);
   };
 };
 var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
@@ -100,7 +142,7 @@ var FormFieldContentBox = (0, _styledComponents["default"])(_Box.Box).withConfig
   displayName: "FormField__FormFieldContentBox",
   componentId: "sc-m9hood-1"
 })(["", " ", " ", ""], function (props) {
-  return getFocusStyle(props);
+  return getFocusStyle(props, true);
 }, getHoverStyle('content'), function (props) {
   var _props$theme$formFiel3;
   return props.theme.formField && ((_props$theme$formFiel3 = props.theme.formField[props == null ? void 0 : props.componentName]) == null || (_props$theme$formFiel3 = _props$theme$formFiel3.container) == null ? void 0 : _props$theme$formFiel3.extend);
@@ -126,15 +168,26 @@ var ScreenReaderOnly = (0, _styledComponents["default"])(_Text.Text).withConfig(
   displayName: "FormField__ScreenReaderOnly",
   componentId: "sc-m9hood-5"
 })(["position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;"]);
+var StyledMessageContent = (0, _styledComponents["default"])(_Box.Box).withConfig(_utils.styledComponentsConfig).withConfig({
+  displayName: "FormField__StyledMessageContent",
+  componentId: "sc-m9hood-6"
+})(["", ""], function (props) {
+  return props.$color && "color: " + (0, _utils.normalizeColor)(props.$color, props.theme) + ";";
+});
 var MessageContent = function MessageContent(_ref) {
   var message = _ref.message,
     id = _ref.id,
+    color = _ref.color,
     rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var _useThemeValue = (0, _useThemeValue4.useThemeValue)(),
+    passThemeFlag = _useThemeValue.passThemeFlag;
   return typeof message === 'string' ? /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
-    id: id
-  }, rest), message) : /*#__PURE__*/_react["default"].createElement(_Box.Box, _extends({
-    id: id
-  }, rest), message);
+    id: id,
+    color: color
+  }, rest), message) : /*#__PURE__*/_react["default"].createElement(StyledMessageContent, _extends({
+    id: id,
+    $color: color
+  }, rest, passThemeFlag), message);
 };
 var Message = function Message(_ref2) {
   var error = _ref2.error,
@@ -142,9 +195,9 @@ var Message = function Message(_ref2) {
     message = _ref2.message,
     type = _ref2.type,
     rest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
-  var _useThemeValue = (0, _useThemeValue3.useThemeValue)(),
-    theme = _useThemeValue.theme,
-    passThemeFlag = _useThemeValue.passThemeFlag;
+  var _useThemeValue2 = (0, _useThemeValue4.useThemeValue)(),
+    theme = _useThemeValue2.theme,
+    passThemeFlag = _useThemeValue2.passThemeFlag;
   if (message) {
     var icon;
     var containerProps;
@@ -242,7 +295,7 @@ var getChildFocusProps = function getChildFocusProps(child, themeBorder, contain
   };
 };
 var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function (_ref4, ref) {
-  var _theme$formField2, _theme$global$input, _formFieldTheme$disab, _formFieldTheme$disab2;
+  var _theme$formField2, _childName, _theme$global$input, _themeBorder$error2, _formFieldTheme$disab, _formFieldTheme$disab2, _theme$fileInput$drag;
   var children = _ref4.children,
     className = _ref4.className,
     component = _ref4.component,
@@ -264,9 +317,9 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     validate = _ref4.validate,
     validateOn = _ref4.validateOn,
     rest = _objectWithoutPropertiesLoose(_ref4, _excluded5);
-  var _useThemeValue2 = (0, _useThemeValue3.useThemeValue)(),
-    theme = _useThemeValue2.theme,
-    passThemeFlag = _useThemeValue2.passThemeFlag;
+  var _useThemeValue3 = (0, _useThemeValue4.useThemeValue)(),
+    theme = _useThemeValue3.theme,
+    passThemeFlag = _useThemeValue3.passThemeFlag;
   var formContext = (0, _react.useContext)(_FormContext.FormContext);
   var _formContext$useFormF = formContext.useFormField({
       disabled: disabled,
@@ -286,9 +339,12 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   var _useState = (0, _react.useState)(),
     focus = _useState[0],
     setFocus = _useState[1];
-  var _useState2 = (0, _react.useState)(true),
-    focusIndicator = _useState2[0],
-    setFocusIndicator = _useState2[1];
+  var _useState2 = (0, _react.useState)(false),
+    fileDragOver = _useState2[0],
+    setFileDragOver = _useState2[1];
+  var _useState3 = (0, _react.useState)(true),
+    focusIndicator = _useState3[0],
+    setFocusIndicator = _useState3[1];
   var fieldFocus = focus && focusIndicator;
   var fieldContext = (0, _react.useMemo)(function () {
     return {
@@ -308,16 +364,19 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   }, [error, announce, validate == null ? void 0 : validate.max]);
   var readOnlyField = (0, _react.useMemo)(function () {
     var readOnly = false;
+    if (!children && inForm) {
+      readOnly = isReadOnlyInput(component || _TextInput.TextInput, rest.readOnly, rest.readOnlyCopy, rest.inline);
+    }
     if (children) {
-      _react.Children.map(children, function (child) {
-        var _child$props, _child$props2;
-        if (((child == null || (_child$props = child.props) == null ? void 0 : _child$props.readOnly) === true || (child == null || (_child$props2 = child.props) == null ? void 0 : _child$props2.readOnlyCopy) === true) && child.type && (child.type.displayName === 'TextInput' || child.type.displayName === 'DateInput')) {
+      _react.Children.forEach(children, function (child) {
+        var _child$props, _child$props2, _child$props3;
+        if (child && isReadOnlyInput(child.type, (_child$props = child.props) == null ? void 0 : _child$props.readOnly, (_child$props2 = child.props) == null ? void 0 : _child$props2.readOnlyCopy, (_child$props3 = child.props) == null ? void 0 : _child$props3.inline)) {
           readOnly = true;
         }
       });
     }
     return readOnly;
-  }, [children]);
+  }, [children, component, inForm, rest.inline, rest.readOnly, rest.readOnlyCopy]);
   var containerFocus = (0, _react.useMemo)(function () {
     var focusIndicatorFlag = true;
     _react.Children.forEach(children, function (child) {
@@ -398,19 +457,75 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
       "aria-describedby": combinedAriaDescribedBy || undefined
     }));
   }
-  var themeContentProps = _extends({}, formFieldTheme.content);
-  if (!pad && !wantContentPad) {
+
+  // Only inspect direct children. Generated inputs have no child to identify.
+  var childName;
+  _react.Children.forEach(children, function (child) {
+    if (child && child.type) childName = child.type.displayName;
+  });
+  if (!children && inForm) childName = (component || _TextInput.TextInput).displayName;
+  if (((_childName = childName) == null ? void 0 : _childName.length) > 0) childName = childName.charAt(0).toLowerCase() + childName.slice(1);
+  var outerBackground;
+  if (themeBorder && themeBorder.position === 'outer') {
+    if (error && formFieldTheme.error && formFieldTheme.error.background) {
+      outerBackground = formFieldTheme.error.background;
+    } else if (fieldFocus && formFieldTheme.focus && formFieldTheme.focus.background && formFieldTheme.focus.background.color) {
+      outerBackground = formFieldTheme.focus.background.color;
+    } else if (disabled && formFieldTheme.disabled && formFieldTheme.disabled.background) {
+      outerBackground = formFieldTheme.disabled.background;
+    }
+  }
+  var componentBoxProps = _extends({}, formFieldTheme[childName] || {});
+  var componentError = error && !disabled && !readOnlyField ? componentBoxProps.error : undefined;
+  var componentBackground = componentBoxProps.background;
+  delete componentBoxProps.background;
+  delete componentBoxProps.container;
+  delete componentBoxProps.error;
+  delete componentBoxProps.hover;
+  if (childName === 'checkBox') delete componentBoxProps.pad;
+  var themeContentProps = _extends({}, formFieldTheme.content, componentBoxProps);
+  if (componentError) {
+    ['elevation', 'pad', 'round'].forEach(function (property) {
+      if (componentError[property] !== undefined) themeContentProps[property] = componentError[property];
+    });
+  }
+  var componentBorder = componentBoxProps.border;
+  if (componentError && (componentError.border !== undefined || componentBorder !== undefined || (themeBorder == null ? void 0 : themeBorder.position) === 'inner')) {
+    var _formFieldTheme$error, _formFieldTheme$error2, _themeBorder$error;
+    var defaultBorder = themeBorder ? _extends({}, themeBorder, {
+      side: themeBorder.side || 'bottom'
+    }) : undefined;
+    var normalBorder = componentBorder != null ? componentBorder : defaultBorder;
+    var sharedErrorBorder = (_formFieldTheme$error = (_formFieldTheme$error2 = formFieldTheme.error) == null ? void 0 : _formFieldTheme$error2.border) != null ? _formFieldTheme$error : (themeBorder == null || (_themeBorder$error = themeBorder.error) == null ? void 0 : _themeBorder$error.color) !== undefined ? {
+      color: themeBorder.error.color
+    } : undefined;
+    componentBorder = normalBorder === false && componentError.border === undefined ? false : _mergePartBorder(_mergePartBorder(normalBorder === false ? defaultBorder : normalBorder, sharedErrorBorder), componentError.border);
+    themeContentProps.border = componentBorder;
+  }
+  var background = componentBackground != null ? componentBackground : formFieldTheme.background;
+  if (background !== undefined) {
+    // Existing outer state fills must remain visible through the content.
+    themeContentProps.background = outerBackground !== undefined ? undefined : background;
+  }
+  if (!pad && !wantContentPad && componentBoxProps.pad === undefined && (componentError == null ? void 0 : componentError.pad) === undefined) {
     themeContentProps.pad = undefined;
   }
   if (themeBorder && themeBorder.position === 'inner') {
+    var stateBackground;
     if (readOnlyField) {
       var _theme$global$input$r;
-      themeContentProps.background = (_theme$global$input$r = theme.global.input.readOnly) == null ? void 0 : _theme$global$input$r.background;
+      stateBackground = (_theme$global$input$r = theme.global.input.readOnly) == null ? void 0 : _theme$global$input$r.background;
     } else if (error && formFieldTheme.error) {
-      themeContentProps.background = formFieldTheme.error.background;
+      stateBackground = formFieldTheme.error.background;
     } else if (disabled && formFieldTheme.disabled) {
-      themeContentProps.background = formFieldTheme.disabled.background;
+      stateBackground = formFieldTheme.disabled.background;
     }
+    if (stateBackground !== undefined) themeContentProps.background = stateBackground;
+  }
+  if (componentError) {
+    var _componentError$backg, _formFieldTheme$error3;
+    var errorBackground = (_componentError$backg = componentError.background) != null ? _componentError$backg : (themeBorder == null ? void 0 : themeBorder.position) !== 'outer' ? (_formFieldTheme$error3 = formFieldTheme.error) == null ? void 0 : _formFieldTheme$error3.background : undefined;
+    if (errorBackground !== undefined) themeContentProps.background = errorBackground;
   }
 
   // fileinput handle
@@ -424,15 +539,6 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   if (component && component.displayName === 'FileInput' && !isFileInputComponent) {
     isFileInputComponent = true;
   }
-  var childName;
-  _react.Children.forEach(children, function (child) {
-    if (child && child.type) {
-      var _childName;
-      childName = child.type.displayName;
-      // camelCase component name to match theme object key
-      if (((_childName = childName) == null ? void 0 : _childName.length) > 0) childName = childName.charAt(0).toLowerCase() + childName.slice(1);
-    }
-  });
   var allowHover = !disabled && !readOnlyField && !error && !focus;
   if (!themeBorder) {
     contents = /*#__PURE__*/_react["default"].createElement(StyledContentsBox, _extends({
@@ -441,24 +547,31 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
       componentName: childName
     }, themeContentProps, contentProps, {
       allowHover: allowHover // internal prop
-    }), contents);
+    }, passThemeFlag), contents);
   }
   var borderColor;
+  var hasSharedStateBorderColor = false;
   if (disabled && formFieldTheme.disabled.border && formFieldTheme.disabled.border.color) {
     borderColor = formFieldTheme.disabled.border.color;
+    hasSharedStateBorderColor = true;
   } else if (readOnlyField && (_theme$global$input = theme.global.input) != null && (_theme$global$input = _theme$global$input.readOnly) != null && (_theme$global$input = _theme$global$input.border) != null && _theme$global$input.color) {
     var _theme$global$input2;
     borderColor = (_theme$global$input2 = theme.global.input) == null || (_theme$global$input2 = _theme$global$input2.readOnly) == null || (_theme$global$input2 = _theme$global$input2.border) == null ? void 0 : _theme$global$input2.color;
+    hasSharedStateBorderColor = true;
   } else if (
   // backward compatibility check
-  error && themeBorder && themeBorder.error.color || error && formFieldTheme.error && formFieldTheme.error.border) {
-    if (themeBorder.error.color && formFieldTheme.error.border === undefined) {
+  error && themeBorder != null && (_themeBorder$error2 = themeBorder.error) != null && _themeBorder$error2.color || error && formFieldTheme.error && formFieldTheme.error.border) {
+    var _themeBorder$error3;
+    if (themeBorder != null && (_themeBorder$error3 = themeBorder.error) != null && _themeBorder$error3.color && formFieldTheme.error.border === undefined) {
       borderColor = themeBorder.error.color || 'status-critical';
+      hasSharedStateBorderColor = true;
     } else if (formFieldTheme.error.border && formFieldTheme.error.border.color) {
       borderColor = formFieldTheme.error.border.color || 'status-critical';
+      hasSharedStateBorderColor = true;
     }
   } else if (fieldFocus && formFieldTheme.focus && formFieldTheme.focus.border && formFieldTheme.focus.border.color) {
     borderColor = formFieldTheme.focus.border.color;
+    hasSharedStateBorderColor = true;
   } else {
     borderColor = themeBorder && themeBorder.color || 'border';
   }
@@ -475,6 +588,15 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   var abut;
   var abutMargin;
   var outerStyle = style;
+  var resolvedComponentBorder = componentBorder === undefined || componentBorder === false || (componentError == null ? void 0 : componentError.border) !== undefined || !hasSharedStateBorderColor || borderColor === undefined ? componentBorder : _mergePartBorder(componentBorder, {
+    color: borderColor
+  });
+  var fileDragBorder = isFileInputComponent && fileDragOver && !disabled && !error ? (_theme$fileInput$drag = theme.fileInput.dragOver) == null ? void 0 : _theme$fileInput$drag.border : undefined;
+  var withFileDragBorder = function withFileDragBorder(border) {
+    if (fileDragBorder === undefined) return border;
+    if (fileDragBorder === 'none' || fileDragBorder === false) return false;
+    return _mergePartBorder(border, fileDragBorder);
+  };
 
   // If fileinput is wrapped in a formfield we want to use
   // the border style from the fileInput.theme. We also do not
@@ -482,19 +604,21 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
   // is on the anchor/button inside fileinput
 
   if (themeBorder) {
+    var _ref5, _componentError$round;
     var innerProps = themeBorder.position === 'inner' ? {
-      border: _extends({}, themeBorder, {
+      border: withFileDragBorder(resolvedComponentBorder !== undefined ? resolvedComponentBorder : _extends({}, themeBorder, {
         size: isFileInputComponent ? theme.fileInput.border.size : undefined,
         style: isFileInputComponent ? theme.fileInput.border.style : undefined,
         side: isFileInputComponent ? theme.fileInput.border.side : themeBorder.side || 'bottom',
         color: borderColor
-      }),
-      round: formFieldTheme.round,
+      })),
+      round: (_ref5 = (_componentError$round = componentError == null ? void 0 : componentError.round) != null ? _componentError$round : componentBoxProps.round) != null ? _ref5 : formFieldTheme.round,
       focus: isFileInputComponent ? undefined : fieldFocus
     } : {};
     contents = /*#__PURE__*/_react["default"].createElement(FormFieldContentBox, _extends({
       disabledProp: disabled,
       error: error,
+      $componentErrorBorder: (componentError == null ? void 0 : componentError.border) !== undefined,
       componentName: childName
     }, themeContentProps, innerProps, contentProps, {
       containerFocus: containerFocus // internal prop
@@ -523,7 +647,6 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
       }, style);
     }
   }
-  var outerBackground;
   if (themeBorder && themeBorder.position === 'outer') {
     if (error && formFieldTheme.error && formFieldTheme.error.background) {
       outerBackground = formFieldTheme.error.background;
@@ -534,9 +657,9 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     }
   }
   var outerProps = themeBorder && themeBorder.position === 'outer' ? {
-    border: _extends({}, themeBorder, {
+    border: withFileDragBorder(_extends({}, themeBorder, {
       color: borderColor
-    }),
+    })),
     round: formFieldTheme.round,
     focus: fieldFocus
   } : {};
@@ -559,6 +682,7 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
     margin: abut ? abutMargin : margin || _extends({}, formFieldTheme.margin)
   }, outerProps, {
     style: outerStyle,
+    componentName: (themeBorder == null ? void 0 : themeBorder.position) === 'outer' ? childName : undefined,
     containerFocus: containerFocus // internal prop
     ,
     allowHover: allowHover // internal prop
@@ -599,7 +723,20 @@ var FormField = exports.FormField = /*#__PURE__*/(0, _react.forwardRef)(function
         };
       });
     } : undefined
-  }, containerRest, passThemeFlag), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
+  }, containerRest, {
+    onDragOverCapture: function onDragOverCapture(event) {
+      if (isFileInputComponent && event.target.type === 'file' && !disabled) setFileDragOver(true);
+      containerRest.onDragOverCapture == null || containerRest.onDragOverCapture(event);
+    },
+    onDragLeaveCapture: function onDragLeaveCapture(event) {
+      if (isFileInputComponent && event.target.type === 'file') setFileDragOver(false);
+      containerRest.onDragLeaveCapture == null || containerRest.onDragLeaveCapture(event);
+    },
+    onDropCapture: function onDropCapture(event) {
+      if (isFileInputComponent && event.target.type === 'file') setFileDragOver(false);
+      containerRest.onDropCapture == null || containerRest.onDropCapture(event);
+    }
+  }, passThemeFlag), label && component !== _CheckBox.CheckBox || help ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && /*#__PURE__*/_react["default"].createElement(_Text.Text, _extends({
     as: "label",
     id: htmlFor ? "grommet-" + adjustedHtmlFor + "__label" : undefined,
     htmlFor: adjustedHtmlFor

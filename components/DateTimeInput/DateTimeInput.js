@@ -1020,6 +1020,8 @@ var DateTimeInput = exports.DateTimeInput = /*#__PURE__*/(0, _react.forwardRef)(
     fill: true,
     round: (_theme$dateTimeInput9 = theme.dateTimeInput) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.container) == null ? void 0 : _theme$dateTimeInput9.round,
     disabled: disabled,
+    plain: plainProp,
+    $inputPlain: plainProp,
     readOnlyProp: readOnly,
     focusIndicator: focusIndicatorProp != null ? focusIndicatorProp : true
   }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledDateTimeInput.StyledDateTimeInputField, passThemeFlag, /*#__PURE__*/_react["default"].createElement(_StyledDateTimeInput.StyledDateTimeInputDisplay, _extends({

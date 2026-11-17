@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
-import { disabledStyle, edgeStyle, focusStyle, inputStyle, normalizeColor, parseMetricToNum, plainInputStyle, readOnlyStyle, styledComponentsConfig } from '../../utils';
+import { disabledStyle, edgeStyle, focusStyle, inputAppearanceStyle, inputStyle, normalizeColor, parseMetricToNum, plainInputStyle, readOnlyStyle, styledComponentsConfig } from '../../utils';
 import { Box } from '../Box';
 var getActiveTokens = function getActiveTokens(theme) {
   var _theme$dateTimeInput, _theme$timeInput;
@@ -14,10 +14,16 @@ export var StyledDateTimeInputContainer = styled(Box).withConfig({
 }).withConfig({
   displayName: "StyledDateTimeInput__StyledDateTimeInputContainer",
   componentId: "sc-d6m1ya-0"
-})(["", " ", " ", ""], function (props) {
+})(["", " ", " ", " ", ""], function (props) {
   return props.disabled && disabledStyle();
 }, function (props) {
   return props.readOnlyProp && readOnlyStyle(props.theme);
+}, function (props) {
+  return inputAppearanceStyle(props, {
+    wrapper: true,
+    skipPadding: true,
+    padSelector: '[role="group"]'
+  });
 }, function (props) {
   return props.focusIndicator !== false && css(["&:focus-within:not(:has(button:focus-visible)){", "}"], focusStyle());
 });
@@ -33,6 +39,8 @@ export var StyledDateTimeInputDisplay = styled.div.withConfig(styledComponentsCo
   displayName: "StyledDateTimeInput__StyledDateTimeInputDisplay",
   componentId: "sc-d6m1ya-3"
 })(["position:absolute;inset:0;display:flex;align-items:center;overflow:hidden;", ""], function (props) {
+  var inputPad = props.theme.global.input.pad;
+  if (inputPad !== undefined) return edgeStyle('padding', inputPad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
   return props.theme.global.input.padding && (typeof props.theme.global.input.padding !== 'object' ? "padding: " + (parseMetricToNum(props.theme.global.edgeSize[props.theme.global.input.padding] || props.theme.global.input.padding) - parseMetricToNum(props.theme.global.control.border.width)) + "px;" : edgeStyle('padding', props.theme.global.input.padding, props.responsive, props.theme.box.responsiveBreakpoint, props.theme));
 });
 export var StyledDateTimeInputSeparator = styled.span.withConfig(styledComponentsConfig).withConfig({

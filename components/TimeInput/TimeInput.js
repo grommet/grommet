@@ -639,6 +639,8 @@ var TimeInput = exports.TimeInput = /*#__PURE__*/(0, _react.forwardRef)(function
   }, containerTheme, {
     round: (_theme$timeInput$cont = (_theme$timeInput3 = theme.timeInput) == null || (_theme$timeInput3 = _theme$timeInput3.container) == null ? void 0 : _theme$timeInput3.round) != null ? _theme$timeInput$cont : (_theme$global = theme.global) == null || (_theme$global = _theme$global.control) == null || (_theme$global = _theme$global.border) == null ? void 0 : _theme$global.radius,
     disabled: disabled,
+    plain: plainProp,
+    $inputPlain: plainProp,
     readOnlyProp: readOnly,
     focusIndicator: (focusIndicatorProp != null ? focusIndicatorProp : true) && !iconFocused
   }, passThemeFlag), /*#__PURE__*/_react["default"].createElement(_StyledTimeInput.StyledTimeInputField, passThemeFlag, /*#__PURE__*/_react["default"].createElement(_StyledTimeInput.StyledTimeInputDisplay, _extends({}, (_theme$timeInput4 = theme.timeInput) == null ? void 0 : _theme$timeInput4.value, {

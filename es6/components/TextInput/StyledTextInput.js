@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import styled, { css } from 'styled-components';
-import { controlBorderStyle, disabledStyle, getInputPadBySide, inputStyle, parseMetricToNum, plainInputStyle, textAlignStyle, widthStyle, styledComponentsConfig } from '../../utils';
+import { controlBorderStyle, disabledStyle, getInputPadBySide, inputAppearanceStyle, inputStyle, parseMetricToNum, plainInputStyle, textAlignStyle, widthStyle, styledComponentsConfig } from '../../utils';
 import { inputPadForIcon } from '../../utils/styles';
 import { readOnlyStyle } from '../../utils/readOnly';
 var getPlainStyle = function getPlainStyle(plain) {
@@ -58,7 +58,13 @@ var StyledTextInputContainer = styled.div.withConfig(styledComponentsConfig).wit
 }, function (props) {
   return props.readOnlyProp && !props.plain && readOnlyStyle(props.theme);
 }, function (props) {
-  return props.theme.textInput && props.theme.textInput.container && props.theme.textInput.container.extend;
+  var _props$theme$textInpu;
+  var appearance = (props.readOnlyProp || props.hasButton) && inputAppearanceStyle(props, {
+    wrapper: true,
+    skipPadding: true
+  });
+  var extend = (_props$theme$textInpu = props.theme.textInput) == null || (_props$theme$textInpu = _props$theme$textInpu.container) == null ? void 0 : _props$theme$textInpu.extend;
+  return appearance ? css(["", "", ""], appearance, extend) : extend;
 });
 var StyledPlaceholder = styled.div.withConfig(styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",

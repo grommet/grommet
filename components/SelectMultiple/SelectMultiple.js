@@ -3,7 +3,7 @@
 exports.__esModule = true;
 exports.SelectMultiple = void 0;
 var _react = _interopRequireWildcard(require("react"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _utils = require("../../utils");
 var _Box = require("../Box");
 var _DropButton = require("../DropButton");
@@ -19,7 +19,6 @@ var _propTypes = require("./propTypes");
 var _useThemeValue2 = require("../../utils/useThemeValue");
 var _excluded = ["a11yTitle", "aria-label", "aria-labelledby", "alignSelf", "children", "defaultValue", "disabled", "disabledKey", "dropAlign", "dropHeight", "dropProps", "dropTarget", "emptySearchMessage", "focusIndicator", "gridArea", "help", "id", "icon", "labelKey", "limit", "margin", "messages", "name", "onBlur", "onChange", "onClick", "onClose", "onFocus", "onKeyDown", "onMore", "onOpen", "onSearch", "open", "options", "placeholder", "plain", "replace", "searchPlaceholder", "size", "sortSelectedOnClose", "value", "valueKey", "valueLabel", "showSelectedInline", "width"]; // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var cache;
 function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
@@ -31,7 +30,12 @@ var StyledSelectBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   return !props.plainSelect && _utils.controlBorderStyle;
 }, function (props) {
   var _props$theme$select;
-  return (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
+  var appearance = (0, _utils.inputAppearanceStyle)(props, {
+    wrapper: true,
+    skipPadding: true
+  });
+  var extend = (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
+  return appearance ? (0, _styledComponents.css)(["", "", ""], appearance, extend) : extend;
 }, function (props) {
   var _props$theme$select$c;
   return props.open && ((_props$theme$select$c = props.theme.select.control) == null ? void 0 : _props$theme$select$c.open);
@@ -466,6 +470,7 @@ var SelectMultiple = exports.SelectMultiple = /*#__PURE__*/(0, _react.forwardRef
   }, rest)), displaySelectIcon)), !open && (value == null ? void 0 : value.length) > 0 && (selectValue || displayLabelKey))) : /*#__PURE__*/_react["default"].createElement(_Box.Box, {
     width: width
   }, /*#__PURE__*/_react["default"].createElement(_StyledSelect.StyledSelectDropButton, _extends({}, dropButtonProps, {
+    $inputWidth: width,
     dropAlign: dropAlign,
     dropTarget: dropTarget,
     alignSelf: alignSelf,

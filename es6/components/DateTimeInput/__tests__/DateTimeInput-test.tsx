@@ -15,6 +15,7 @@ import 'jest-axe/extend-expect';
 import '@testing-library/jest-dom';
 
 import { createPortal } from '../../../utils/portal';
+import { ThemeType } from '../../../themes';
 import { Button } from '../../Button';
 import { Form } from '../../Form';
 import { FormField } from '../../FormField';
@@ -30,6 +31,9 @@ const getDropFromTrigger = (trigger: HTMLElement) => {
 
   return drop as HTMLElement;
 };
+
+const getInputContainer = () =>
+  screen.getByRole('group').parentElement?.parentElement as HTMLElement;
 
 describe('DateTimeInput', () => {
   beforeEach(() => {
@@ -49,6 +53,88 @@ describe('DateTimeInput', () => {
 
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+
+  test('applies global input appearance to the visible field container', async () => {
+    const user = userEvent.setup();
+    const theme: ThemeType = {
+      global: {
+        input: {
+          background: '#eeeeee',
+          hover: { background: '#dddddd' },
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <DateTimeInput format="12" />
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).toHaveStyleRule('background-color', '#eeeeee');
+
+    await user.hover(container);
+    expect(container).toHaveStyleRule('background-color', '#dddddd', {
+      modifier: ':hover',
+    });
+  });
+
+  test('FormField plain suppresses global input appearance on the child field', () => {
+    render(
+      <Grommet
+        theme={{
+          global: {
+            input: {
+              background: '#eeeeee',
+              hover: { background: '#dddddd' },
+            },
+          },
+        }}
+      >
+        <FormField label="Date and time">
+          <DateTimeInput format="12" />
+        </FormField>
+      </Grommet>,
+    );
+
+    const container = getInputContainer();
+    expect(container).not.toHaveStyleRule('background-color', '#eeeeee');
+    expect(container).not.toHaveStyleRule('background-color', '#dddddd', {
+      modifier: ':hover',
+    });
+  });
+
+  test('applies canonical and hover input padding to the visible display', async () => {
+    const user = userEvent.setup();
+    const theme: ThemeType = {
+      global: {
+        input: {
+          pad: { horizontal: '5px', vertical: '7px' },
+          hover: { pad: { horizontal: '9px', vertical: '11px' } },
+        },
+      },
+    };
+
+    render(
+      <Grommet theme={theme}>
+        <DateTimeInput format="12" />
+      </Grommet>,
+    );
+
+    const display = screen.getByRole('group');
+    const container = getInputContainer();
+    expect(getComputedStyle(display).paddingLeft).toBe('5px');
+    expect(getComputedStyle(display).paddingTop).toBe('7px');
+
+    await user.hover(display);
+    expect(container).toHaveStyleRule('padding-left', '9px', {
+      modifier: ':hover [role="group"]',
+    });
+    expect(container).toHaveStyleRule('padding-top', '11px', {
+      modifier: ':hover [role="group"]',
+    });
   });
 
   test('does not emit onChange for partial section entry', async () => {

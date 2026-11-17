@@ -1015,6 +1015,8 @@ var DateTimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
     fill: true,
     round: (_theme$dateTimeInput9 = theme.dateTimeInput) == null || (_theme$dateTimeInput9 = _theme$dateTimeInput9.container) == null ? void 0 : _theme$dateTimeInput9.round,
     disabled: disabled,
+    plain: plainProp,
+    $inputPlain: plainProp,
     readOnlyProp: readOnly,
     focusIndicator: focusIndicatorProp != null ? focusIndicatorProp : true
   }, passThemeFlag), /*#__PURE__*/React.createElement(StyledDateTimeInputField, passThemeFlag, /*#__PURE__*/React.createElement(StyledDateTimeInputDisplay, _extends({

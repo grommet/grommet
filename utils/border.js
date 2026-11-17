@@ -1,13 +1,20 @@
 "use strict";
 
 exports.__esModule = true;
-exports.responsiveBorderStyle = exports.borderStyle = void 0;
+exports.responsiveBorderStyle = exports.hasSideSpecificBorder = exports.borderStyle = void 0;
 var _styledComponents = require("styled-components");
 var _colors = require("./colors");
 var _mixins = require("./mixins");
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 
+var hasSideSpecificBorder = exports.hasSideSpecificBorder = function hasSideSpecificBorder(borderData) {
+  var borders = Array.isArray(borderData) ? borderData : [borderData];
+  return borders.some(function (data) {
+    var side = typeof data === 'string' ? data : data == null ? void 0 : data.side;
+    return side !== undefined && side !== 'all';
+  });
+};
 var responsiveBorderStyle = exports.responsiveBorderStyle = function responsiveBorderStyle(data, theme) {
   var color = (0, _colors.normalizeColor)(data.color || 'border', theme);
   var borderSize = data.size || 'xsmall';

@@ -634,6 +634,8 @@ var TimeInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
   }, containerTheme, {
     round: (_theme$timeInput$cont = (_theme$timeInput3 = theme.timeInput) == null || (_theme$timeInput3 = _theme$timeInput3.container) == null ? void 0 : _theme$timeInput3.round) != null ? _theme$timeInput$cont : (_theme$global = theme.global) == null || (_theme$global = _theme$global.control) == null || (_theme$global = _theme$global.border) == null ? void 0 : _theme$global.radius,
     disabled: disabled,
+    plain: plainProp,
+    $inputPlain: plainProp,
     readOnlyProp: readOnly,
     focusIndicator: (focusIndicatorProp != null ? focusIndicatorProp : true) && !iconFocused
   }, passThemeFlag), /*#__PURE__*/React.createElement(StyledTimeInputField, passThemeFlag, /*#__PURE__*/React.createElement(StyledTimeInputDisplay, _extends({}, (_theme$timeInput4 = theme.timeInput) == null ? void 0 : _theme$timeInput4.value, {

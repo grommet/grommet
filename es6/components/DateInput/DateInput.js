@@ -5,7 +5,7 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { useRef, forwardRef, useContext, useEffect, useMemo, useState, useCallback } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Calendar as GrommetCalendarIcon } from 'grommet-icons/icons/Calendar';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 import { MessageContext } from '../../contexts/MessageContext';
@@ -17,7 +17,7 @@ import { DropButton } from '../DropButton';
 import { FormContext } from '../Form';
 import { Keyboard } from '../Keyboard';
 import { MaskedInput } from '../MaskedInput';
-import { useForwardedRef, setHoursWithOffset, disabledStyle, useKeyboard } from '../../utils';
+import { useForwardedRef, setHoursWithOffset, disabledStyle, inputAppearanceStyle, useKeyboard } from '../../utils';
 import { readOnlyStyle } from '../../utils/readOnly';
 import { formatToSchema, schemaToMask, valuesAreEqual, valueToText, textToValue, validateBounds } from './utils';
 import { DateInputPropTypes } from './propTypes';
@@ -35,7 +35,13 @@ var StyledDateInputContainer = styled(Box).withConfig({
 })(["", " ", "}"], function (props) {
   return props.disabled && disabledStyle();
 }, function (props) {
-  return props.readOnlyProp && readOnlyStyle(props.theme);
+  var appearance = inputAppearanceStyle(props, {
+    wrapper: true,
+    skipPadding: true,
+    skipRound: true
+  });
+  var readOnly = props.readOnlyProp && readOnlyStyle(props.theme);
+  return appearance ? css(["", "", ""], readOnly, appearance) : readOnly;
 });
 var getReference = function getReference(value) {
   var adjustedDate;
@@ -349,6 +355,7 @@ var DateInput = /*#__PURE__*/forwardRef(function (_ref, refArg) {
       }
     }
   }, /*#__PURE__*/React.createElement(StyledDateInputContainer, _extends({
+    $inputPlain: plain,
     ref: containerRef,
     border: !plain,
     round: theme.dateInput.container.round,

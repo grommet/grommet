@@ -562,7 +562,11 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
   var showLeadingIcon = showTextInputIcon && !iconOnRight;
   var showTrailingIcon = showTextInputIcon && iconOnRight;
   return /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInputContainer, _extends({
+    $inputDisabled: disabled,
     hasButton: !!actionsGroup,
+    icon: showTextInputIcon && !hasActionsGroup ? icon : undefined,
+    reverse: iconOnRight,
+    size: rest.size,
     readOnlyProp: readOnly // readOnlyProp to avoid passing to DOM
     ,
     readOnlyCopy: readOnlyCopy,
@@ -579,6 +583,7 @@ var TextInput = exports.TextInput = /*#__PURE__*/(0, _react.forwardRef)(function
   }, textInputIcon), /*#__PURE__*/_react["default"].createElement(_Keyboard.Keyboard, _extends({
     target: focus ? 'document' : undefined
   }, keyboardProps), /*#__PURE__*/_react["default"].createElement(_StyledTextInput.StyledTextInput, _extends({
+    $inputInner: readOnly || hasActionsGroup,
     "aria-label": a11yTitle,
     ref: inputRef,
     id: id,

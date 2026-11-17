@@ -9,7 +9,7 @@ import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, S
 import { RadioButtonPropTypes } from './propTypes';
 import { useThemeValue } from '../../utils/useThemeValue';
 var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$radioButton$ba;
+  var _theme$radioButton$ba, _theme$radioButton$co;
   var a11yTitle = _ref.a11yTitle,
     checked = _ref.checked,
     children = _ref.children,
@@ -36,10 +36,12 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var Icon = theme.radioButton.icons.circle;
   var borderColor = normalizeColor(theme.radioButton.border.color, theme);
   var backgroundColor = normalizeColor((_theme$radioButton$ba = theme.radioButton.background) == null ? void 0 : _theme$radioButton$ba.color, theme);
+  var controlBackground = (_theme$radioButton$co = theme.radioButton.control) == null ? void 0 : _theme$radioButton$co.background;
   if (checked) {
-    var _theme$radioButton$ch;
+    var _theme$radioButton$co2, _theme$radioButton$co3, _theme$radioButton$ch, _theme$radioButton$ch2;
     borderColor = normalizeColor(theme.radioButton.color || 'control', theme);
-    if ((_theme$radioButton$ch = theme.radioButton.check) != null && (_theme$radioButton$ch = _theme$radioButton$ch.background) != null && _theme$radioButton$ch.color) {
+    controlBackground = (_theme$radioButton$co2 = (_theme$radioButton$co3 = theme.radioButton.control) == null || (_theme$radioButton$co3 = _theme$radioButton$co3.selected) == null ? void 0 : _theme$radioButton$co3.background) != null ? _theme$radioButton$co2 : (_theme$radioButton$ch = theme.radioButton.check) != null && (_theme$radioButton$ch = _theme$radioButton$ch.background) != null && _theme$radioButton$ch.color ? undefined : controlBackground;
+    if ((_theme$radioButton$ch2 = theme.radioButton.check) != null && (_theme$radioButton$ch2 = _theme$radioButton$ch2.background) != null && _theme$radioButton$ch2.color) {
       backgroundColor = normalizeColor(theme.radioButton.check.background.color, theme);
     }
   }
@@ -56,6 +58,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     },
     focus: focus,
     focusIndicator: focusIndicator,
+    $keyboardFocus: focus && focusIndicator && usingKeyboard,
     onFocus: function onFocus() {
       return setFocus(true);
     },
@@ -89,6 +92,7 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
     focus: focus && focusIndicator,
     hover: hover
   }) : /*#__PURE__*/React.createElement(StyledRadioButtonBox, _extends({
+    $checked: checked,
     focus: focus && focusIndicator && usingKeyboard,
     align: "center",
     justify: "center",
@@ -98,7 +102,10 @@ var RadioButton = /*#__PURE__*/forwardRef(function (_ref, ref) {
       size: theme.radioButton.border.width,
       color: borderColor
     },
-    backgroundColor: backgroundColor,
+    backgroundColor: controlBackground != null ? undefined : backgroundColor
+  }, controlBackground != null && {
+    $controlBackground: controlBackground
+  }, {
     round: theme.radioButton.check.radius
   }, passThemeFlag), checked && (Icon ? /*#__PURE__*/React.createElement(Icon, {
     theme: theme,

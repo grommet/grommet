@@ -18,10 +18,17 @@ var StyledTimeInputContainer = exports.StyledTimeInputContainer = (0, _styledCom
 }).withConfig({
   displayName: "StyledTimeInput__StyledTimeInputContainer",
   componentId: "sc-xktdr3-0"
-})(["position:relative;", " ", " ", ""], function (props) {
+})(["position:relative;", " ", " ", " ", ""], function (props) {
   return props.disabled && (0, _utils.disabledStyle)();
 }, function (props) {
   return props.readOnlyProp && (0, _utils.readOnlyStyle)(props.theme);
+}, function (props) {
+  var _props$theme$timeInpu;
+  return (0, _utils.inputAppearanceStyle)(props, {
+    wrapper: true,
+    skipPadding: true,
+    padSelector: ((_props$theme$timeInpu = props.theme.timeInput) == null || (_props$theme$timeInpu = _props$theme$timeInpu.value) == null ? void 0 : _props$theme$timeInpu.pad) === undefined ? '[role="group"]' : undefined
+  });
 }, function (props) {
   return props.focusIndicator !== false && (0, _styledComponents.css)(["&:focus-within{", "}"], (0, _utils.focusStyle)());
 });
@@ -37,11 +44,13 @@ var StyledTimeInputDisplay = exports.StyledTimeInputDisplay = (0, _styledCompone
   displayName: "StyledTimeInput__StyledTimeInputDisplay",
   componentId: "sc-xktdr3-3"
 })(["position:absolute;inset:0;overflow:hidden;", ""], function (props) {
-  var _props$theme$timeInpu;
-  var valuePad = (_props$theme$timeInpu = props.theme.timeInput) == null || (_props$theme$timeInpu = _props$theme$timeInpu.value) == null ? void 0 : _props$theme$timeInpu.pad;
+  var _props$theme$timeInpu2;
+  var valuePad = (_props$theme$timeInpu2 = props.theme.timeInput) == null || (_props$theme$timeInpu2 = _props$theme$timeInpu2.value) == null ? void 0 : _props$theme$timeInpu2.pad;
   if (valuePad !== undefined) {
     return (0, _utils.edgeStyle)('padding', valuePad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
   }
+  var inputPad = props.theme.global.input.pad;
+  if (inputPad !== undefined) return (0, _utils.edgeStyle)('padding', inputPad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
   var inputPadding = props.theme.global.input.padding;
   if (!inputPadding) return undefined;
   if (typeof inputPadding !== 'object') return "padding: " + ((0, _utils.parseMetricToNum)(props.theme.global.edgeSize[inputPadding] || inputPadding) - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width)) + "px;";
@@ -51,8 +60,8 @@ var StyledTimeInputSeparator = exports.StyledTimeInputSeparator = _styledCompone
   displayName: "StyledTimeInput__StyledTimeInputSeparator",
   componentId: "sc-xktdr3-4"
 })(["display:inline-flex;line-height:inherit;align-items:center;color:", ";", " ", ""], function (props) {
-  var _props$theme$timeInpu2, _props$theme$timeInpu3;
-  return (0, _utils.normalizeColor)(props.$filled ? ((_props$theme$timeInpu2 = props.theme.timeInput) == null || (_props$theme$timeInpu2 = _props$theme$timeInpu2.segment) == null ? void 0 : _props$theme$timeInpu2.color) || 'text' : ((_props$theme$timeInpu3 = props.theme.timeInput) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.segment) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.placeholder) == null ? void 0 : _props$theme$timeInpu3.color) || props.theme.global.colors.placeholder, props.theme);
+  var _props$theme$timeInpu3, _props$theme$timeInpu4;
+  return (0, _utils.normalizeColor)(props.$filled ? ((_props$theme$timeInpu3 = props.theme.timeInput) == null || (_props$theme$timeInpu3 = _props$theme$timeInpu3.segment) == null ? void 0 : _props$theme$timeInpu3.color) || 'text' : ((_props$theme$timeInpu4 = props.theme.timeInput) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.segment) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.placeholder) == null ? void 0 : _props$theme$timeInpu4.color) || props.theme.global.colors.placeholder, props.theme);
 }, function (props) {
   var _props$theme$text;
   var _ref = props.theme.timeInput || {},
@@ -62,8 +71,8 @@ var StyledTimeInputSeparator = exports.StyledTimeInputSeparator = _styledCompone
   var fontSize = ((_props$theme$text = props.theme.text) == null || (_props$theme$text = _props$theme$text[size]) == null ? void 0 : _props$theme$text.size) || size;
   return (0, _styledComponents.css)(["", " ", ""], weight && "font-weight: " + weight + ";", fontSize && "font-size: " + fontSize + ";");
 }, function (props) {
-  var _props$theme$timeInpu4, _props$theme$text2;
-  var placeholder = (_props$theme$timeInpu4 = props.theme.timeInput) == null || (_props$theme$timeInpu4 = _props$theme$timeInpu4.segment) == null ? void 0 : _props$theme$timeInpu4.placeholder;
+  var _props$theme$timeInpu5, _props$theme$text2;
+  var placeholder = (_props$theme$timeInpu5 = props.theme.timeInput) == null || (_props$theme$timeInpu5 = _props$theme$timeInpu5.segment) == null ? void 0 : _props$theme$timeInpu5.placeholder;
   if (props.$filled || !placeholder) return '';
   var fontSize = ((_props$theme$text2 = props.theme.text) == null || (_props$theme$text2 = _props$theme$text2[placeholder.size]) == null ? void 0 : _props$theme$text2.size) || placeholder.size;
   return (0, _styledComponents.css)(["", " ", ""], placeholder.weight !== undefined && "font-weight: " + placeholder.weight + ";", fontSize && "font-size: " + fontSize + ";");
@@ -72,8 +81,8 @@ var StyledTimeInputSegment = exports.StyledTimeInputSegment = _styledComponents[
   displayName: "StyledTimeInput__StyledTimeInputSegment",
   componentId: "sc-xktdr3-5"
 })(["&:focus{outline:none;}display:inline-flex;align-items:center;position:relative;line-height:inherit;", ";color:", ";", " ", " ", " ", ""], function (props) {
-  var _props$theme$timeInpu5;
-  var segment = (_props$theme$timeInpu5 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu5.segment;
+  var _props$theme$timeInpu6;
+  var segment = (_props$theme$timeInpu6 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu6.segment;
   var responsive = props.responsive === undefined ? true : props.responsive;
   var styles = [];
   if ((segment == null ? void 0 : segment.background) !== undefined) styles.push((0, _utils.backgroundStyle)(segment.background, props.theme));
@@ -88,8 +97,8 @@ var StyledTimeInputSegment = exports.StyledTimeInputSegment = _styledComponents[
   if (segment != null && segment.width) styles.push((0, _utils.widthStyle)(segment.width, props.theme));
   return styles;
 }, function (props) {
-  var _props$theme$timeInpu6, _props$theme$timeInpu7;
-  return (0, _utils.normalizeColor)(props.$filled ? ((_props$theme$timeInpu6 = props.theme.timeInput) == null || (_props$theme$timeInpu6 = _props$theme$timeInpu6.segment) == null ? void 0 : _props$theme$timeInpu6.color) || 'text' : ((_props$theme$timeInpu7 = props.theme.timeInput) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.segment) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.placeholder) == null ? void 0 : _props$theme$timeInpu7.color) || props.theme.global.colors.placeholder, props.theme);
+  var _props$theme$timeInpu7, _props$theme$timeInpu8;
+  return (0, _utils.normalizeColor)(props.$filled ? ((_props$theme$timeInpu7 = props.theme.timeInput) == null || (_props$theme$timeInpu7 = _props$theme$timeInpu7.segment) == null ? void 0 : _props$theme$timeInpu7.color) || 'text' : ((_props$theme$timeInpu8 = props.theme.timeInput) == null || (_props$theme$timeInpu8 = _props$theme$timeInpu8.segment) == null || (_props$theme$timeInpu8 = _props$theme$timeInpu8.placeholder) == null ? void 0 : _props$theme$timeInpu8.color) || props.theme.global.colors.placeholder, props.theme);
 }, function (props) {
   var _props$theme$text3;
   var _ref2 = props.theme.timeInput || {},
@@ -99,15 +108,15 @@ var StyledTimeInputSegment = exports.StyledTimeInputSegment = _styledComponents[
   var fontSize = ((_props$theme$text3 = props.theme.text) == null || (_props$theme$text3 = _props$theme$text3[size]) == null ? void 0 : _props$theme$text3.size) || size;
   return (0, _styledComponents.css)(["", " ", ""], weight && "font-weight: " + weight + ";", fontSize && "font-size: " + fontSize + ";");
 }, function (props) {
-  var _props$theme$timeInpu8, _props$theme$text4;
-  var placeholder = (_props$theme$timeInpu8 = props.theme.timeInput) == null || (_props$theme$timeInpu8 = _props$theme$timeInpu8.segment) == null ? void 0 : _props$theme$timeInpu8.placeholder;
+  var _props$theme$timeInpu9, _props$theme$text4;
+  var placeholder = (_props$theme$timeInpu9 = props.theme.timeInput) == null || (_props$theme$timeInpu9 = _props$theme$timeInpu9.segment) == null ? void 0 : _props$theme$timeInpu9.placeholder;
   if (props.$filled || !placeholder) return '';
   var fontSize = ((_props$theme$text4 = props.theme.text) == null || (_props$theme$text4 = _props$theme$text4[placeholder.size]) == null ? void 0 : _props$theme$text4.size) || placeholder.size;
   return (0, _styledComponents.css)(["", " ", ""], placeholder.weight !== undefined && "font-weight: " + placeholder.weight + ";", fontSize && "font-size: " + fontSize + ";");
 }, function (props) {
-  var _props$theme$timeInpu9;
+  var _props$theme$timeInpu0;
   if (!props.$active) return '';
-  var _ref3 = ((_props$theme$timeInpu9 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu9.segment) || {},
+  var _ref3 = ((_props$theme$timeInpu0 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu0.segment) || {},
     active = _ref3.active;
   if (!active) return '';
   var responsive = props.responsive === undefined ? true : props.responsive;
@@ -126,9 +135,9 @@ var StyledTimeInputSegment = exports.StyledTimeInputSegment = _styledComponents[
   if (active.weight !== undefined) styles.push("font-weight: " + active.weight + ";");
   return styles;
 }, function (props) {
-  var _props$theme$timeInpu0, _active$round, _props$theme$global$e;
+  var _props$theme$timeInpu1, _active$round, _props$theme$global$e;
   if (!props.$active) return '';
-  var _ref4 = ((_props$theme$timeInpu0 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu0.segment) || {},
+  var _ref4 = ((_props$theme$timeInpu1 = props.theme.timeInput) == null ? void 0 : _props$theme$timeInpu1.segment) || {},
     active = _ref4.active,
     segmentRound = _ref4.round;
   var responsive = props.responsive === undefined ? true : props.responsive;

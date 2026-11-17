@@ -21,10 +21,16 @@ var StyledDateTimeInputContainer = exports.StyledDateTimeInputContainer = (0, _s
 }).withConfig({
   displayName: "StyledDateTimeInput__StyledDateTimeInputContainer",
   componentId: "sc-d6m1ya-0"
-})(["", " ", " ", ""], function (props) {
+})(["", " ", " ", " ", ""], function (props) {
   return props.disabled && (0, _utils.disabledStyle)();
 }, function (props) {
   return props.readOnlyProp && (0, _utils.readOnlyStyle)(props.theme);
+}, function (props) {
+  return (0, _utils.inputAppearanceStyle)(props, {
+    wrapper: true,
+    skipPadding: true,
+    padSelector: '[role="group"]'
+  });
 }, function (props) {
   return props.focusIndicator !== false && (0, _styledComponents.css)(["&:focus-within:not(:has(button:focus-visible)){", "}"], (0, _utils.focusStyle)());
 });
@@ -40,6 +46,8 @@ var StyledDateTimeInputDisplay = exports.StyledDateTimeInputDisplay = _styledCom
   displayName: "StyledDateTimeInput__StyledDateTimeInputDisplay",
   componentId: "sc-d6m1ya-3"
 })(["position:absolute;inset:0;display:flex;align-items:center;overflow:hidden;", ""], function (props) {
+  var inputPad = props.theme.global.input.pad;
+  if (inputPad !== undefined) return (0, _utils.edgeStyle)('padding', inputPad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme);
   return props.theme.global.input.padding && (typeof props.theme.global.input.padding !== 'object' ? "padding: " + ((0, _utils.parseMetricToNum)(props.theme.global.edgeSize[props.theme.global.input.padding] || props.theme.global.input.padding) - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width)) + "px;" : (0, _utils.edgeStyle)('padding', props.theme.global.input.padding, props.responsive, props.theme.box.responsiveBreakpoint, props.theme));
 });
 var StyledDateTimeInputSeparator = exports.StyledDateTimeInputSeparator = _styledComponents["default"].span.withConfig(_utils.styledComponentsConfig).withConfig({

@@ -4,10 +4,11 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useContext, useRef, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CircleAlert } from 'grommet-icons/icons/CircleAlert';
+import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
 import { MessageContext } from '../../contexts/MessageContext';
-import { disabledStyle, focusStyle, unfocusStyle, useForwardedRef, useKeyboard } from '../../utils';
+import { backgroundStyle, borderStyle, disabledStyle, focusStyle, inputAppearanceStyle, unfocusStyle, useForwardedRef, useKeyboard } from '../../utils';
 import { Anchor } from '../Anchor';
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -28,16 +29,30 @@ import { useThemeValue } from '../../utils/useThemeValue';
 var ContentsBox = styled(Box).withConfig({
   displayName: "FileInput__ContentsBox",
   componentId: "sc-1jzq7im-0"
-})(["cursor:pointer;position:relative;", " ", ";", ";", ";", ";", ";"], function (props) {
+})(["cursor:pointer;position:relative;", " ", ";", " ", " ", ";", ";", ";", ";"], function (props) {
   return props.disabled && disabledStyle();
 }, function (props) {
-  return props.theme.fileInput && props.theme.fileInput.extend;
+  return inputAppearanceStyle(props, {
+    wrapper: true,
+    skipBasePadding: true
+  });
+}, function (props) {
+  var _shared$hover, _shared$focus, _shared$hover2, _shared$focus2, _props$responsive, _props$theme$fileInpu, _props$theme$fileInpu2, _props$theme$fileInpu3;
+  var shared = props.theme.global.input;
+  var sharedBackground = shared.background !== undefined || ((_shared$hover = shared.hover) == null ? void 0 : _shared$hover.background) !== undefined || ((_shared$focus = shared.focus) == null ? void 0 : _shared$focus.background) !== undefined;
+  var sharedBorder = shared.border !== undefined || ((_shared$hover2 = shared.hover) == null ? void 0 : _shared$hover2.border) !== undefined || ((_shared$focus2 = shared.focus) == null ? void 0 : _shared$focus2.border) !== undefined;
+  var background = props.$fileBackground !== undefined && !props.disabled && (props.$backgroundState || sharedBackground) && backgroundStyle(props.$fileBackground, props.theme, false);
+  var border = props.$fileBorder === false ? 'border: none;' : props.$fileBorder !== undefined && !props.disabled && (props.$borderState || sharedBorder) && borderStyle(props.$fileBorder, (_props$responsive = props.responsive) != null ? _props$responsive : true, props.theme);
+  return css(["", ""], (background || border) && css(["&&{", " ", " ", " ", " ", "}"], background, border, (_props$theme$fileInpu = props.theme.fileInput) == null ? void 0 : _props$theme$fileInpu.extend, props.hover && ((_props$theme$fileInpu2 = props.theme.fileInput) == null || (_props$theme$fileInpu2 = _props$theme$fileInpu2.hover) == null ? void 0 : _props$theme$fileInpu2.extend), props.dragOver && ((_props$theme$fileInpu3 = props.theme.fileInput) == null || (_props$theme$fileInpu3 = _props$theme$fileInpu3.dragOver) == null ? void 0 : _props$theme$fileInpu3.extend)));
+}, function (props) {
+  var _props$theme$fileInpu4;
+  return (_props$theme$fileInpu4 = props.theme.fileInput) == null ? void 0 : _props$theme$fileInpu4.extend;
 }, function (props) {
   return props.hover && props.theme.fileInput && props.theme.fileInput.hover && props.theme.fileInput.hover.extend;
 }, function (props) {
   return props.dragOver && props.theme.fileInput && props.theme.fileInput.dragOver && props.theme.fileInput.dragOver.extend;
 }, function (props) {
-  return props.focus && focusStyle();
+  return props.focus && css(["&&{", "}"], focusStyle());
 }, function (props) {
   return !props.focus && unfocusStyle();
 });
@@ -58,7 +73,7 @@ var defaultPendingRemoval = {
   index: undefined
 };
 var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
-  var _theme$fileInput, _theme$fileInput$anch;
+  var _theme$fileInput, _mergeTheme, _theme$fileInput$anch;
   var a11yTitle = _ref.a11yTitle,
     background = _ref.background,
     border = _ref.border,
@@ -100,8 +115,12 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var aggregateThreshold = multiple && multiple.aggregateThreshold || 10;
   var max = multiple == null ? void 0 : multiple.max;
   var inputRef = useForwardedRef(ref);
+  var containerRef = useRef();
   var controlRef = useRef();
   var removeRef = useRef();
+  var _useState3 = useState(),
+    measuredRightOffset = _useState3[0],
+    setMeasuredRightOffset = _useState3[1];
   var ConfirmRemove = confirmRemove;
   var RemoveIcon = theme.fileInput.icons.remove;
   var ErrorIcon = ((_theme$fileInput = theme.fileInput) == null || (_theme$fileInput = _theme$fileInput.icons) == null ? void 0 : _theme$fileInput.error) || CircleAlert;
@@ -154,6 +173,36 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     }),
     files = _formContext$useFormI[0],
     setFiles = _formContext$useFormI[1];
+
+  // Measure after layout so shared/state padding is included before paint.
+  // Keep the transparent file input off the action controls as bounds change,
+  // otherwise it intercepts Remove clicks and opens the file picker instead.
+  useLayoutEffect(function () {
+    var container = containerRef.current;
+    var controls = [removeRef.current, files.length <= 1 ? controlRef.current : undefined].filter(Boolean);
+    var measure = function measure() {
+      var containerBounds = container.getBoundingClientRect();
+      var bounds = controls.map(function (control) {
+        return control.getBoundingClientRect();
+      }).filter(function (rect) {
+        return rect.width > 0;
+      });
+      if (containerBounds.width > 0 && bounds.length > 0) setMeasuredRightOffset(Math.max(0, containerBounds.right - Math.min.apply(Math, bounds.map(function (rect) {
+        return rect.left;
+      }))));else setMeasuredRightOffset(undefined);
+    };
+    measure();
+    var observer = typeof window.ResizeObserver !== 'undefined' ? new window.ResizeObserver(measure) : undefined;
+    observer == null || observer.observe(container);
+    controls.forEach(function (control) {
+      return observer == null ? void 0 : observer.observe(control);
+    });
+    window.addEventListener('resize', measure);
+    return function () {
+      observer == null || observer.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  }, [files, theme, hover, dragOver, focus, disabled, plain, multiple]);
   var mergeTheme = function mergeTheme(propertyName, defaultKey) {
     var result = {};
     var themeProp = theme.fileInput[propertyName];
@@ -165,6 +214,7 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
       if (defaultKey) result[defaultKey] = hoverThemeProp;else result = hoverThemeProp;
     } else result = _extends({}, result, hoverThemeProp);
     var dragOverThemeProp = theme.fileInput.dragOver[propertyName];
+    if (propertyName === 'border' && dragOver && dragOverThemeProp === 'none') return false;
     if (dragOver && dragOverThemeProp) if (typeof dragOverThemeProp !== 'object') {
       if (defaultKey) result[defaultKey] = dragOverThemeProp;else result = dragOverThemeProp;
     } else result = _extends({}, result, dragOverThemeProp);
@@ -212,20 +262,17 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
     inputRef.current.focus();
   };
+  var fileInputPad = (_mergeTheme = mergeTheme('pad')) != null ? _mergeTheme : theme.global.input.pad;
+  var fileBackground = mergeTheme('background', 'color');
+  var fileBorder = !plain ? mergeTheme('border', 'side') : undefined;
 
   // rightPad needs to be included in the rightOffset
   // otherwise input may cover the RemoveButton, making it
   // unreachable by mouse click.
   var rightPad = '0px';
-  if (mergeTheme('pad')) {
-    var _mergeTheme = mergeTheme('pad'),
-      horizontal = _mergeTheme.horizontal,
-      right = _mergeTheme.right;
-    if (right) {
-      rightPad = theme.global.edgeSize[right] || right;
-    } else if (horizontal) {
-      rightPad = theme.global.edgeSize[horizontal] || horizontal;
-    }
+  var rightPadValue = typeof fileInputPad === 'string' ? fileInputPad : (fileInputPad == null ? void 0 : fileInputPad.right) || (fileInputPad == null ? void 0 : fileInputPad.horizontal);
+  if (rightPadValue) {
+    rightPad = theme.global.edgeSize[rightPadValue] || rightPadValue;
   }
   var removeWidth = removeRef.current ? removeRef.current.getBoundingClientRect().width : 0;
   var controlWidth = controlRef.current ? controlRef.current.getBoundingClientRect().width : 0;
@@ -247,13 +294,19 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
   }
   var rightOffset = files.length > 1 ? removeWidth + parseInt(rightPad, 10) : removeWidth + controlWidth + parseInt(rightPad, 10);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ContentsBox, _extends({
+    ref: containerRef,
+    $inputPlain: plain,
     theme: theme,
     flex: false,
     disabled: disabled,
-    background: mergeTheme('background', 'color'),
-    border: !plain ? mergeTheme('border', 'side') : undefined,
+    background: fileBackground,
+    border: fileBorder,
+    $fileBackground: fileBackground,
+    $fileBorder: fileBorder,
+    $backgroundState: dragOver && theme.fileInput.dragOver.background !== undefined || hover && theme.fileInput.hover.background !== undefined,
+    $borderState: dragOver && theme.fileInput.dragOver.border !== undefined || hover && theme.fileInput.hover.border !== undefined,
     margin: mergeTheme('margin'),
-    pad: mergeTheme('pad'),
+    pad: fileInputPad,
     round: mergeTheme('round', 'size'),
     align: files.length ? 'stretch' : 'center',
     justify: "center",
@@ -278,13 +331,17 @@ var FileInput = /*#__PURE__*/forwardRef(function (_ref, ref) {
     "aria-invalid": maxSize && files.some(function (f) {
       return f.size > maxSize;
     }) || max != null && files.length > max,
-    rightOffset: rightOffset || undefined
+    rightOffset: measuredRightOffset != null ? measuredRightOffset : rightOffset || undefined
   }, passThemeFlag, rest, {
     onDragOver: function onDragOver() {
-      return setDragOver(true);
+      if (!disabled) setDragOver(true);
     },
     onDragLeave: function onDragLeave() {
       return setDragOver(false);
+    },
+    onDrop: function onDrop(event) {
+      setDragOver(false);
+      if (rest.onDrop) rest.onDrop(event);
     },
     onChange: function onChange(event) {
       event.persist();

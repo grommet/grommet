@@ -1368,7 +1368,7 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+          class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
         />
       </div>
       <span>
@@ -1389,7 +1389,7 @@ exports[`CheckBoxGroup onClick for check and uncheck a CheckBox 2`] = `
           type="checkbox"
         />
         <div
-          class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 dgWEbe"
+          class="StyledBox-sc-13pk1d4-0 uaRCj StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 gWXoBN"
         />
       </div>
       <span>

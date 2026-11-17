@@ -2,13 +2,14 @@
 
 exports.__esModule = true;
 exports.StyledSelectDropButton = exports.StyledContainer = exports.SelectTextInput = exports.SelectOption = exports.OptionsContainer = exports.HiddenInput = void 0;
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _Box = require("../Box");
 var _Button = require("../Button");
 var _DropButton = require("../DropButton");
 var _TextInput = require("../TextInput");
 var _utils = require("../../utils");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var cache;
+function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var r, c, a = Object.defineProperty, n = { __proto__: null, "default": e }; if (Object(e) !== e) return n; if (cache || "function" != typeof WeakMap || (cache = new WeakMap()), cache) { if (cache.has(e)) return cache.get(e); cache.set(e, n); } for (c in e) "default" !== c && {}.hasOwnProperty.call(e, c) && ((r = a && Object.getOwnPropertyDescriptor(e, c)) && (r.get || r.set) ? a(n, c, r) : n[c] = e[c]); return n; }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 
@@ -60,7 +61,14 @@ var StyledSelectDropButton = exports.StyledSelectDropButton = (0, _styledCompone
   return !props.plainSelect && _utils.controlBorderStyle;
 }, function (props) {
   var _props$theme$select;
-  return (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
+  var appearance = (0, _utils.inputAppearanceStyle)(props, {
+    wrapper: true,
+    skipPadding: true
+  });
+  var extend = (_props$theme$select = props.theme.select) == null || (_props$theme$select = _props$theme$select.control) == null ? void 0 : _props$theme$select.extend;
+  return appearance ? (0, _styledComponents.css)(["", " ", " ", ""], appearance, (!props.plain || props.focusIndicator) && (0, _styledComponents.css)(["&:focus:focus-visible{", "}"], (0, _utils.focusStyle)({
+    inset: props.focusIndicator === 'inset'
+  })), extend) : extend;
 }, function (props) {
   var _props$theme$select2;
   return props.open && ((_props$theme$select2 = props.theme.select) == null || (_props$theme$select2 = _props$theme$select2.control) == null ? void 0 : _props$theme$select2.open);

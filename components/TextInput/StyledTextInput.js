@@ -65,7 +65,13 @@ var StyledTextInputContainer = exports.StyledTextInputContainer = _styledCompone
 }, function (props) {
   return props.readOnlyProp && !props.plain && (0, _readOnly.readOnlyStyle)(props.theme);
 }, function (props) {
-  return props.theme.textInput && props.theme.textInput.container && props.theme.textInput.container.extend;
+  var _props$theme$textInpu;
+  var appearance = (props.readOnlyProp || props.hasButton) && (0, _utils.inputAppearanceStyle)(props, {
+    wrapper: true,
+    skipPadding: true
+  });
+  var extend = (_props$theme$textInpu = props.theme.textInput) == null || (_props$theme$textInpu = _props$theme$textInpu.container) == null ? void 0 : _props$theme$textInpu.extend;
+  return appearance ? (0, _styledComponents.css)(["", "", ""], appearance, extend) : extend;
 });
 var StyledPlaceholder = exports.StyledPlaceholder = _styledComponents["default"].div.withConfig(_utils.styledComponentsConfig).withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
