@@ -22,7 +22,6 @@ import {
   StyledSubStepsList,
 } from './StyledStepper';
 import { useStepTheme } from './utils';
-import { StepperStepPropTypes } from './propTypes';
 
 const EMPTY_STEP = { id: '', title: '', status: 'disabled' };
 
@@ -267,4 +266,3 @@ export const StepperStep = forwardRef(({ stepId, children }, forwardedRef) => {
 });
 
 StepperStep.displayName = 'StepperStep';
-StepperStep.propTypes = StepperStepPropTypes;

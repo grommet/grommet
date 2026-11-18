@@ -45,13 +45,3 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export const StepperPropTypes = PropType;
-
-let StepperStepPropType = {};
-if (process.env.NODE_ENV !== 'production') {
-  StepperStepPropType = {
-    stepId: PropTypes.string.isRequired,
-    children: PropTypes.node,
-  };
-}
-
-export const StepperStepPropTypes = StepperStepPropType;

@@ -1070,10 +1070,6 @@ exports[`Components loads 1`] = `
   "StepperLabel": [Function],
   "StepperStep": {
     "$$typeof": Symbol(react.forward_ref),
-    "propTypes": {
-      "children": [Function],
-      "stepId": [Function],
-    },
     "render": [Function],
   },
   "Tab": {
