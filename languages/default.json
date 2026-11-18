@@ -216,8 +216,10 @@
   },
   "stepper": {
     "completed": "{step}, completed",
+    "error": "{step}, error",
     "progress": "Progress",
-    "step": "Step {step} of {total}: {title}"
+    "step": "Step {step} of {total}. {title}",
+    "subStep": "Step {step} of {total}. {parent}: {title}"
   },
   "tabs": {
     "nextTab": "Next Tab",

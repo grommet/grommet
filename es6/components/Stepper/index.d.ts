@@ -53,7 +53,6 @@ declare const useStepper: () => StepperContextValue;
 
 export interface StepperStepProps {
   step: StepType;
-  stepNumber: number;
   isLast: boolean;
   showConnector?: boolean;
   direction: 'horizontal' | 'vertical';
@@ -61,7 +60,6 @@ export interface StepperStepProps {
   index: number;
   isSubStep?: boolean;
   onKeyDown?: (event: React.KeyboardEvent, index: number) => void;
-  stepsRef: React.MutableRefObject<StepType[] | null>;
   stepRefs?: React.MutableRefObject<Map<number, HTMLButtonElement>>;
 }
 

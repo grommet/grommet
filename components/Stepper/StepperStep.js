@@ -20,9 +20,8 @@ function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; 
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 var StepperStep = exports.StepperStep = function StepperStep(_ref) {
-  var _step$children, _step$children2, _step$children$find, _stepsRef$current;
+  var _step$children, _step$children2, _step$children$find;
   var step = _ref.step,
-    stepNumber = _ref.stepNumber,
     isLast = _ref.isLast,
     showConnector = _ref.showConnector,
     direction = _ref.direction,
@@ -31,7 +30,6 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
     isSubStep = _ref.isSubStep,
     subSteps = _ref.subSteps,
     onFocusStep = _ref.onFocusStep,
-    stepsRef = _ref.stepsRef,
     stepRefs = _ref.stepRefs;
   var _useStepper = (0, _StepperContext.useStepper)(),
     currentStep = _useStepper.currentStep,
@@ -78,17 +76,44 @@ var StepperStep = exports.StepperStep = function StepperStep(_ref) {
       onStepClick(navigationStepId);
     }
   };
-  var totalSteps = ((_stepsRef$current = stepsRef.current) == null ? void 0 : _stepsRef$current.length) || stepNumber;
-  var ariaLabel = step['aria-label'] || format({
-    id: 'stepper.step',
-    values: {
-      step: stepNumber,
-      total: totalSteps,
-      title: step.title
-    }
+
+  // Count every configured leaf, including unrevealed and disabled steps.
+  var progressSteps = steps.filter(function (item) {
+    return item.childIds.length === 0;
   });
-  var accessibleLabel = step.status === 'completed' ? format({
-    id: 'stepper.completed',
+  var progressIndex = progressSteps.findIndex(function (item) {
+    return item.id === step.id;
+  });
+  var ariaLabel = step['aria-label'];
+  if (!ariaLabel) {
+    if (hasChildren) {
+      ariaLabel = step.title;
+    } else {
+      var values = {
+        step: progressIndex + 1,
+        total: progressSteps.length,
+        title: step.title
+      };
+      if (isSubStep) {
+        var currentStepData = steps.find(function (item) {
+          return item.id === step.id;
+        });
+        var parentStep = steps.find(function (item) {
+          return item.id === currentStepData.parentId;
+        });
+        values.parent = parentStep.title;
+      }
+      ariaLabel = format({
+        id: isSubStep ? 'stepper.subStep' : 'stepper.step',
+        values: values
+      });
+    }
+  }
+  var statusId;
+  if (step.status === 'completed') statusId = 'stepper.completed';
+  if (step.status === 'error') statusId = 'stepper.error';
+  var accessibleLabel = statusId ? format({
+    id: statusId,
     values: {
       step: ariaLabel
     }

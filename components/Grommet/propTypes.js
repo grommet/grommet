@@ -233,8 +233,10 @@ if (process.env.NODE_ENV !== 'production') {
         }),
         stepper: _propTypes["default"].shape({
           completed: _propTypes["default"].string,
+          error: _propTypes["default"].string,
           progress: _propTypes["default"].string,
-          step: _propTypes["default"].string
+          step: _propTypes["default"].string,
+          subStep: _propTypes["default"].string
         }),
         tabs: _propTypes["default"].shape({
           nextTab: _propTypes["default"].string,

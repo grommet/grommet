@@ -161,9 +161,6 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
       return !step.isSubStep || step.parentId === currentParentId || revealedParents.has(step.parentId);
     });
   }, [allSteps, currentParentId, revealedParents]);
-  var stepsRef = useRef(flatSteps);
-  stepsRef.current = flatSteps;
-
   // Roving tabindex: only the focused step has tabIndex=0,
   // all others have tabIndex=-1. A ref keeps the index synchronous
   // for keyboard handlers that fire before React re-renders. Track the
@@ -311,7 +308,6 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
         return /*#__PURE__*/React.createElement(StepperStep, {
           key: child.id,
           step: child,
-          stepNumber: childFlatIndex + 1,
           isLast: false,
           showConnector: false,
           direction: direction,
@@ -319,7 +315,6 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
           index: childFlatIndex,
           isSubStep: true,
           onFocusStep: updateFocusedIndex,
-          stepsRef: stepsRef,
           stepRefs: stepRefs
         });
       }) : null;
@@ -327,7 +322,6 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
       elements.push(/*#__PURE__*/React.createElement(StepperStep, {
         key: step.id,
         step: step,
-        stepNumber: parentFlatIndex + 1,
         isLast: isLastParent,
         showConnector: direction === 'horizontal' ? !isLastParent : !isLastParent || !!childElements,
         direction: direction,
@@ -335,7 +329,6 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
         index: parentFlatIndex,
         isSubStep: false,
         onFocusStep: updateFocusedIndex,
-        stepsRef: stepsRef,
         stepRefs: stepRefs,
         subSteps: childElements
       }));
