@@ -22,7 +22,6 @@ export const StepperError = ({ ...rest }) => {
   if (errorAnnouncement === 'assertive') role = 'alert';
   return (
     <StepperHelperText
-      id={`stepper-error-${step.id}`}
       role={role}
       variant="errorText"
       {...rest}
@@ -37,7 +36,6 @@ export const StepperDisabledReason = ({ ...rest }) => {
   if (!step || step.status !== 'disabled' || !step.disabledReason) return null;
   return (
     <StepperHelperText
-      id={`stepper-reason-${step.id}`}
       variant="disabledReason"
       {...rest}
     >

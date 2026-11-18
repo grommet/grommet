@@ -1197,6 +1197,23 @@ describe('DateInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('container round overrides global input round', () => {
+    render(
+      <Grommet
+        theme={{
+          global: { input: { round: '40px' } },
+          dateInput: { container: { round: '2px' } },
+        }}
+      >
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    const dateInputContainer = input.parentElement?.parentElement;
+    expect(dateInputContainer).toHaveStyleRule('border-radius', '2px');
+  });
+
   test('matches icon size to size prop when theme.icon.matchSize is true', () => {
     const theme = {
       icon: {
