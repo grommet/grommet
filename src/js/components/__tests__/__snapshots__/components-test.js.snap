@@ -1063,18 +1063,9 @@ exports[`Components loads 1`] = `
     },
     "_threadCount": 0,
   },
-  "StepperDescription": {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
-  },
-  "StepperDisabledReason": {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
-  },
-  "StepperError": {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
-  },
+  "StepperDescription": [Function],
+  "StepperDisabledReason": [Function],
+  "StepperError": [Function],
   "StepperIndicator": [Function],
   "StepperLabel": [Function],
   "StepperStep": {

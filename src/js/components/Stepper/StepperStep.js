@@ -1,19 +1,12 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import React, {
-  forwardRef,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react';
+import React, { forwardRef, useContext, useMemo } from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useId } from '../../utils/useId';
 import {
   useStepper,
   StepItemContext,
-  StepperHelperContext,
   StepperRenderContext,
 } from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
@@ -73,21 +66,6 @@ export const StepperStep = forwardRef(({ stepId, children }, forwardedRef) => {
   const descriptionId = `${baseId}-stepper-description-${step.id}`;
   const errorId = `${baseId}-stepper-error-${step.id}`;
   const reasonId = `${baseId}-stepper-reason-${step.id}`;
-  const [helpers, setHelpers] = useState(() => new Map());
-  const registerHelper = useCallback((token, variant, id) => {
-    setHelpers((previous) => {
-      const current = previous.get(token);
-      if (
-        (!id && !current) ||
-        (current?.variant === variant && current.id === id)
-      )
-        return previous;
-      const next = new Map(previous);
-      if (id) next.set(token, { variant, id });
-      else next.delete(token);
-      return next;
-    });
-  }, []);
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
     !isSubStep && step.children?.some((c) => c.id === currentStep);
@@ -166,29 +144,22 @@ export const StepperStep = forwardRef(({ stepId, children }, forwardedRef) => {
     ? format({ id: statusId, values: { step: ariaLabel } })
     : ariaLabel;
 
-  const hasCustomChildren = children != null;
-  const helperConditions = {
-    description: showDescription && !!step.description,
-    error: step.status === 'error' && !!step.errorMessage,
-    reason: step.status === 'disabled' && !!step.disabledReason,
-  };
-  const describedBy = hasCustomChildren
-    ? ['description', 'error', 'reason'].flatMap((variant) =>
-        helperConditions[variant]
-          ? Array.from(helpers.values())
-              .filter((helper) => helper.variant === variant)
-              .map((helper) => helper.id)
-          : [],
-      )
-    : [
-        helperConditions.description && descriptionId,
-        helperConditions.error && errorId,
-        helperConditions.reason && reasonId,
-      ].filter(Boolean);
+  const describedBy = [];
+  if (showDescription && step.description) {
+    describedBy.push(descriptionId);
+  }
+  if (step.errorMessage && step.status === 'error') {
+    describedBy.push(errorId);
+  }
+  if (step.disabledReason && step.status === 'disabled') {
+    describedBy.push(reasonId);
+  }
+
   const hasSupportingContent =
-    helperConditions.description ||
-    helperConditions.error ||
-    helperConditions.reason;
+    (showDescription && !!step.description) ||
+    (step.status === 'error' && !!step.errorMessage) ||
+    (step.status === 'disabled' && !!step.disabledReason);
+  const hasCustomChildren = children != null;
 
   const isVertical = direction === 'vertical';
   // In vertical direction the gap between indicator and label is
@@ -247,9 +218,7 @@ export const StepperStep = forwardRef(({ stepId, children }, forwardedRef) => {
         >
           {!hasCustomChildren && <StepperIndicator />}
           {hasCustomChildren ? (
-            <StepperHelperContext.Provider value={registerHelper}>
-              {children}
-            </StepperHelperContext.Provider>
+            children
           ) : (
             <StyledStepContent
               align={isVertical ? 'start' : 'center'}

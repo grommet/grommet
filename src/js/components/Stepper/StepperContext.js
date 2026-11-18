@@ -1,6 +1,6 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import { createContext, useCallback, useContext, useRef } from 'react';
+import { createContext, useContext } from 'react';
 
 export const StepperContext = createContext({
   currentStep: '',
@@ -39,28 +39,6 @@ export const StepItemContext = createContext({
   errorId: undefined,
   reasonId: undefined,
 });
-
-// Internal registration is separate from the public step item context.
-export const StepperHelperContext = createContext(null);
-
-export const useStepperHelperRef = (variant, id, forwardedRef) => {
-  const register = useContext(StepperHelperContext);
-  const token = useRef({});
-
-  return useCallback(
-    (element) => {
-      if (register)
-        register(
-          token.current,
-          variant,
-          element ? element.id || id : undefined,
-        );
-      if (typeof forwardedRef === 'function') forwardedRef(element);
-      else if (forwardedRef) Object.assign(forwardedRef, { current: element });
-    },
-    [register, variant, id, forwardedRef],
-  );
-};
 
 export const useStepper = () => useContext(StepperContext);
 export const useStepItem = () => useContext(StepItemContext);
