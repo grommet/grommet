@@ -1,10 +1,21 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import React, { useContext, useMemo } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 import { MessageContext } from '../../contexts/MessageContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { useId } from '../../utils/useId';
-import { useStepper, StepItemContext } from './StepperContext';
+import {
+  useStepper,
+  StepItemContext,
+  StepperHelperContext,
+  StepperRenderContext,
+} from './StepperContext';
 import { StepperIndicator } from './StepperIndicator';
 import { StepperLabel } from './StepperLabel';
 import { StepperDescription } from './StepperDescription';
@@ -18,31 +29,65 @@ import {
   StyledSubStepsList,
 } from './StyledStepper';
 import { useStepTheme } from './utils';
+import { StepperStepPropTypes } from './propTypes';
 
-export const StepperStep = ({
-  step,
-  isLast,
-  showConnector,
-  direction,
-  focusedIndex,
-  index: indexProp,
-  isSubStep,
-  subSteps,
-  onFocusStep,
-  stepRefs,
-}) => {
-  const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
-    useStepper();
+const EMPTY_STEP = { id: '', title: '', status: 'disabled' };
+
+export const StepperStep = forwardRef(({ stepId, children }, forwardedRef) => {
+  const {
+    currentStep,
+    clickableSteps,
+    direction: contextDirection,
+    showDescription,
+    onStepClick,
+    steps,
+  } = useStepper();
+  const renderContext = useContext(StepperRenderContext);
   const { format } = useContext(MessageContext);
   const { passThemeFlag } = useThemeValue();
+  const resolvedStep = steps.find((item) => item.id === stepId);
+  const hasStep = !!resolvedStep;
+  const step = useMemo(
+    () => resolvedStep || { ...EMPTY_STEP, id: stepId || '' },
+    [resolvedStep, stepId],
+  );
+  const visibleIndex = renderContext.flatSteps.findIndex(
+    (item) => item.id === step.id,
+  );
+  const isHiddenStep = visibleIndex < 0;
+  const index = visibleIndex;
+  const direction = contextDirection;
+  const isSubStep = !!step.isSubStep;
+  const subSteps = renderContext.defaultLayout
+    ? renderContext.defaultSubSteps[step.id]
+    : undefined;
+  const topLevelSteps = steps.filter((item) => !item.isSubStep);
+  const isLast = renderContext.defaultLayout
+    ? !isSubStep && topLevelSteps[topLevelSteps.length - 1]?.id === step.id
+    : index === renderContext.flatSteps.length - 1;
+  const showConnector = renderContext.defaultLayout
+    ? !isSubStep && (!isLast || !!subSteps?.length)
+    : !isLast;
+  const { focusedIndex } = renderContext;
   const baseId = useId();
   const descriptionId = `${baseId}-stepper-description-${step.id}`;
   const errorId = `${baseId}-stepper-error-${step.id}`;
   const reasonId = `${baseId}-stepper-reason-${step.id}`;
-  const index =
-    indexProp !== undefined
-      ? indexProp
-      : steps.findIndex((s) => s.id === step.id);
+  const [helpers, setHelpers] = useState(() => new Map());
+  const registerHelper = useCallback((token, variant, id) => {
+    setHelpers((previous) => {
+      const current = previous.get(token);
+      if (
+        (!id && !current) ||
+        (current?.variant === variant && current.id === id)
+      )
+        return previous;
+      const next = new Map(previous);
+      if (id) next.set(token, { variant, id });
+      else next.delete(token);
+      return next;
+    });
+  }, []);
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
     !isSubStep && step.children?.some((c) => c.id === currentStep);
@@ -65,8 +110,20 @@ export const StepperStep = ({
       isLast,
       isSubStep,
       isDisabled,
+      descriptionId,
+      errorId,
+      reasonId,
     }),
-    [step, index, isLast, isSubStep, isDisabled],
+    [
+      step,
+      index,
+      isLast,
+      isSubStep,
+      isDisabled,
+      descriptionId,
+      errorId,
+      reasonId,
+    ],
   );
 
   const handleClick = () => {
@@ -101,6 +158,7 @@ export const StepperStep = ({
       });
     }
   }
+  if (!hasStep || isHiddenStep) return null;
   let statusId;
   if (step.status === 'completed') statusId = 'stepper.completed';
   if (step.status === 'error') statusId = 'stepper.error';
@@ -108,21 +166,29 @@ export const StepperStep = ({
     ? format({ id: statusId, values: { step: ariaLabel } })
     : ariaLabel;
 
-  const describedBy = [];
-  if (showDescription && step.description) {
-    describedBy.push(descriptionId);
-  }
-  if (step.errorMessage && step.status === 'error') {
-    describedBy.push(errorId);
-  }
-  if (step.disabledReason && step.status === 'disabled') {
-    describedBy.push(reasonId);
-  }
-
+  const hasCustomChildren = children != null;
+  const helperConditions = {
+    description: showDescription && !!step.description,
+    error: step.status === 'error' && !!step.errorMessage,
+    reason: step.status === 'disabled' && !!step.disabledReason,
+  };
+  const describedBy = hasCustomChildren
+    ? ['description', 'error', 'reason'].flatMap((variant) =>
+        helperConditions[variant]
+          ? Array.from(helpers.values())
+              .filter((helper) => helper.variant === variant)
+              .map((helper) => helper.id)
+          : [],
+      )
+    : [
+        helperConditions.description && descriptionId,
+        helperConditions.error && errorId,
+        helperConditions.reason && reasonId,
+      ].filter(Boolean);
   const hasSupportingContent =
-    (showDescription && !!step.description) ||
-    (step.status === 'error' && !!step.errorMessage) ||
-    (step.status === 'disabled' && !!step.disabledReason);
+    helperConditions.description ||
+    helperConditions.error ||
+    helperConditions.reason;
 
   const isVertical = direction === 'vertical';
   // In vertical direction the gap between indicator and label is
@@ -145,10 +211,16 @@ export const StepperStep = ({
         },
         // indicator provides focus-visible treatment; avoid a second ring
         focusIndicator: false,
-        onFocus: () => {
-          if (onFocusStep) onFocusStep(index);
-        },
+        onFocus: () => renderContext.updateFocusedIndex(index),
       };
+
+  const setStepRef = (element) => {
+    renderContext.registerStepRef(index, element);
+    if (typeof forwardedRef === 'function') forwardedRef(element);
+    else if (forwardedRef) {
+      Object.assign(forwardedRef, { current: element });
+    }
+  };
 
   return (
     <StepItemContext.Provider value={stepItemValue}>
@@ -160,12 +232,7 @@ export const StepperStep = ({
       >
         <StyledStepButton
           role={isReadOnly ? 'group' : undefined}
-          ref={(el) => {
-            if (stepRefs) {
-              if (el) stepRefs.current.set(index, el);
-              else stepRefs.current.delete(index);
-            }
-          }}
+          ref={setStepRef}
           aria-current={isHighlighted ? 'step' : undefined}
           aria-disabled={
             isDisabled || (clickableSteps && !isNavigable) || undefined
@@ -178,16 +245,22 @@ export const StepperStep = ({
           {...focusableProps}
           {...buttonThemeProps}
         >
-          <StepperIndicator />
-          <StyledStepContent
-            align={isVertical ? 'start' : 'center'}
-            isVertical={isVertical}
-            stepTheme={stepTheme}
-          >
-            <StepperLabel />
-          </StyledStepContent>
+          {!hasCustomChildren && <StepperIndicator />}
+          {hasCustomChildren ? (
+            <StepperHelperContext.Provider value={registerHelper}>
+              {children}
+            </StepperHelperContext.Provider>
+          ) : (
+            <StyledStepContent
+              align={isVertical ? 'start' : 'center'}
+              isVertical={isVertical}
+              stepTheme={stepTheme}
+            >
+              <StepperLabel />
+            </StyledStepContent>
+          )}
         </StyledStepButton>
-        {hasSupportingContent && (
+        {!hasCustomChildren && hasSupportingContent && (
           <StyledStepSupportingContent
             align={isVertical ? 'start' : 'center'}
             isVertical={isVertical}
@@ -209,7 +282,7 @@ export const StepperStep = ({
             {subSteps}
           </StyledSubStepsList>
         )}
-        {(showConnector !== undefined ? showConnector : !isLast) && (
+        {showConnector && (
           <StyledConnector
             direction={direction}
             status={step.status}
@@ -222,4 +295,7 @@ export const StepperStep = ({
       </StyledStepItem>
     </StepItemContext.Provider>
   );
-};
+});
+
+StepperStep.displayName = 'StepperStep';
+StepperStep.propTypes = StepperStepPropTypes;

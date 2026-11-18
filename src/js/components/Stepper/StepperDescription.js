@@ -1,24 +1,33 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Text } from '../Text';
-import { useStepper, useStepItem } from './StepperContext';
+import { useStepper, useStepItem, useStepperHelperRef } from './StepperContext';
 import { useStepTheme } from './utils';
 
-export const StepperDescription = ({ ...rest }) => {
-  const { direction } = useStepper();
+export const StepperDescription = forwardRef(({ ...rest }, forwardedRef) => {
+  const { direction, showDescription } = useStepper();
 
-  const { step, isSubStep } = useStepItem();
+  const { step, isSubStep, descriptionId } = useStepItem();
   const stepTheme = useStepTheme(step, isSubStep);
-  if (!step || !step.description) return null;
+  const ref = useStepperHelperRef(
+    'description',
+    'id' in rest ? rest.id : descriptionId,
+    forwardedRef,
+  );
+  if (!step || !step.description || !showDescription) return null;
 
   return (
     <Text
+      ref={ref}
       truncate={direction === 'horizontal'}
       {...stepTheme.description}
+      id={descriptionId}
       {...rest}
     >
       {step.description}
     </Text>
   );
-};
+});
+
+StepperDescription.displayName = 'StepperDescription';

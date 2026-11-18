@@ -44,26 +44,34 @@ export interface StepperContextValue {
   canNavigateTo: (stepId: string) => boolean;
 }
 
+export interface StepItemContextValue {
+  step: StepType | null;
+  index: number;
+  isLast: boolean;
+  isSubStep: boolean;
+  isDisabled: boolean;
+  descriptionId?: string;
+  errorId?: string;
+  reasonId?: string;
+}
+
 declare const Stepper: React.ForwardRefExoticComponent<
   StepperProps & React.RefAttributes<HTMLOListElement>
 >;
 
 declare const StepperContext: React.Context<StepperContextValue>;
 declare const useStepper: () => StepperContextValue;
+declare const StepItemContext: React.Context<StepItemContextValue>;
+declare const useStepItem: () => StepItemContextValue;
 
 export interface StepperStepProps {
-  step: StepType;
-  isLast: boolean;
-  showConnector?: boolean;
-  direction: 'horizontal' | 'vertical';
-  focusedIndex: number;
-  index: number;
-  isSubStep?: boolean;
-  onKeyDown?: (event: React.KeyboardEvent, index: number) => void;
-  stepRefs?: React.MutableRefObject<Map<number, HTMLButtonElement>>;
+  stepId: string;
+  children?: React.ReactNode;
 }
 
-declare const StepperStep: React.FC<StepperStepProps>;
+declare const StepperStep: React.ForwardRefExoticComponent<
+  StepperStepProps & React.RefAttributes<HTMLElement>
+>;
 declare const StepperIndicator: React.FC<{}>;
 declare const StepperLabel: React.FC<{}>;
 declare const StepperDescription: React.FC<{}>;
@@ -73,7 +81,10 @@ declare const StepperDisabledReason: React.FC<{}>;
 export {
   Stepper,
   StepperContext,
+  StepItemContext,
   useStepper,
+  useStepItem,
+  StepperStep,
   StepperIndicator,
   StepperLabel,
   StepperDescription,

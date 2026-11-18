@@ -12,12 +12,11 @@ import React, {
 
 import { Box } from '../Box';
 import { MessageContext } from '../../contexts/MessageContext';
-
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Keyboard } from '../Keyboard';
 
-import { StepperContext } from './StepperContext';
+import { StepperContext, StepperRenderContext } from './StepperContext';
 import { StepperStep } from './StepperStep';
 import { StepperPropTypes } from './propTypes';
 import { resolveStepperTheme } from './utils';
@@ -215,6 +214,11 @@ const Stepper = forwardRef(
       [flatSteps],
     );
 
+    const registerStepRef = useCallback((index, element) => {
+      if (element) stepRefs.current.set(index, element);
+      else stepRefs.current.delete(index);
+    }, []);
+
     const stepIndex = useCallback(
       (stepId) => allSteps.findIndex((s) => s.id === stepId),
       [allSteps],
@@ -287,6 +291,38 @@ const Stepper = forwardRef(
         isAfterStep,
         isCurrentStep,
         canNavigateTo,
+      ],
+    );
+
+    const defaultSubSteps = useMemo(() => {
+      const byParent = {};
+      flatSteps.forEach((step) => {
+        if (step.isSubStep) {
+          if (!byParent[step.parentId]) byParent[step.parentId] = [];
+          byParent[step.parentId].push(
+            <StepperStep key={step.id} stepId={step.id} />,
+          );
+        }
+      });
+      return byParent;
+    }, [flatSteps]);
+
+    const renderContextValue = useMemo(
+      () => ({
+        flatSteps,
+        focusedIndex,
+        defaultSubSteps,
+        defaultLayout: !children,
+        registerStepRef,
+        updateFocusedIndex,
+      }),
+      [
+        flatSteps,
+        focusedIndex,
+        defaultSubSteps,
+        children,
+        registerStepRef,
+        updateFocusedIndex,
       ],
     );
 
@@ -378,59 +414,8 @@ const Stepper = forwardRef(
       ],
     );
 
-    const renderDefaultSteps = () => {
-      let flatIndex = 0;
-      const elements = [];
-      steps.forEach((step, parentIdx) => {
-        const parentFlatIndex = flatIndex;
-        flatIndex += 1;
-        const visibleChildren =
-          revealedParents.has(step.id) || step.id === currentParentId
-            ? step.children
-            : undefined;
-        const childElements = visibleChildren
-          ? visibleChildren.map((child) => {
-              const childFlatIndex = flatIndex;
-              flatIndex += 1;
-              return (
-                <StepperStep
-                  key={child.id}
-                  step={child}
-                  isLast={false}
-                  showConnector={false}
-                  direction={direction}
-                  focusedIndex={focusedIndex}
-                  index={childFlatIndex}
-                  isSubStep
-                  onFocusStep={updateFocusedIndex}
-                  stepRefs={stepRefs}
-                />
-              );
-            })
-          : null;
-        const isLastParent = parentIdx === steps.length - 1;
-        elements.push(
-          <StepperStep
-            key={step.id}
-            step={step}
-            isLast={isLastParent}
-            showConnector={
-              direction === 'horizontal'
-                ? !isLastParent
-                : !isLastParent || !!childElements
-            }
-            direction={direction}
-            focusedIndex={focusedIndex}
-            index={parentFlatIndex}
-            isSubStep={false}
-            onFocusStep={updateFocusedIndex}
-            stepRefs={stepRefs}
-            subSteps={childElements}
-          />,
-        );
-      });
-      return elements;
-    };
+    const renderDefaultSteps = () =>
+      steps.map((step) => <StepperStep key={step.id} stepId={step.id} />);
 
     const stepperTheme = resolveStepperTheme(theme, direction);
 
@@ -465,11 +450,13 @@ const Stepper = forwardRef(
 
     return (
       <StepperContext.Provider value={contextValue}>
-        {clickableSteps ? (
-          <Keyboard onKeyDown={handleKeyDown}>{stepperContent}</Keyboard>
-        ) : (
-          stepperContent
-        )}
+        <StepperRenderContext.Provider value={renderContextValue}>
+          {clickableSteps ? (
+            <Keyboard onKeyDown={handleKeyDown}>{stepperContent}</Keyboard>
+          ) : (
+            stepperContent
+          )}
+        </StepperRenderContext.Provider>
       </StepperContext.Provider>
     );
   },

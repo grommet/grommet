@@ -6,8 +6,18 @@ import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 
-import { Grommet, Stepper } from '../..';
-import { useStepper } from '..';
+import {
+  Grommet,
+  Stepper,
+  StepItemContext,
+  StepperDescription,
+  StepperError,
+  StepperIndicator,
+  StepperLabel,
+  StepperStep,
+  useStepItem,
+  useStepper,
+} from '../..';
 import type { StepperProps, StepType } from '..';
 
 const steps: StepType[] = [
@@ -82,6 +92,16 @@ const OrderingProbe = () => {
 const ParentNavigationProbe = () => {
   const { canNavigateTo } = useStepper();
   return <span>{String(canNavigateTo('account'))}</span>;
+};
+
+const CustomStepIndicator = () => {
+  const { step, index, isSubStep } = useStepItem();
+  if (!step) return null;
+  return (
+    <span aria-hidden="true" data-testid={`custom-${step.id}`}>
+      {`${index + 1}${isSubStep ? 'a' : ''}`}
+    </span>
+  );
 };
 
 describe('Stepper child reveal', () => {
@@ -609,5 +629,62 @@ describe('Stepper child reveal', () => {
     expect(
       screen.getByRole('button', { name: 'Introduction (1/6)' }),
     ).toBeTruthy();
+  });
+
+  test('supports composing exported step subcomponents by stepId', async () => {
+    const user = userEvent.setup();
+    const customSteps: StepType[] = [
+      { id: 'start', title: 'Start', status: 'completed' },
+      {
+        id: 'details',
+        title: 'Details',
+        description: 'Enter the details.',
+        status: 'error',
+        errorMessage: 'Some details are missing.',
+      },
+    ];
+    const onStepClick = jest.fn();
+    const stepRef = React.createRef<HTMLElement>();
+    expect(StepItemContext.Provider).toBeTruthy();
+
+    render(
+      <Grommet>
+        <Stepper
+          steps={customSteps}
+          currentStep="details"
+          direction="vertical"
+          onStepClick={onStepClick}
+          aria-label="Custom progress"
+        >
+          {customSteps.map((step) => (
+            <StepperStep
+              key={step.id}
+              stepId={step.id}
+              ref={step.id === 'start' ? stepRef : undefined}
+            >
+              <CustomStepIndicator />
+              <StepperIndicator />
+              <StepperLabel />
+              <StepperDescription />
+              <StepperError />
+            </StepperStep>
+          ))}
+        </Stepper>
+      </Grommet>,
+    );
+
+    expect(screen.getByTestId('custom-start').textContent).toBe('1');
+    expect(screen.getByTestId('custom-details').textContent).toBe('2');
+    expect(stepRef.current).toBe(screen.getByRole('button', { name: /Start/ }));
+    expect(
+      screen
+        .getByRole('button', { name: /Details.*error/i })
+        .getAttribute('aria-current'),
+    ).toBe('step');
+    expect(screen.getByText('Enter the details.')).toBeTruthy();
+    expect(screen.getByText('Some details are missing.')).toBeTruthy();
+
+    await user.click(screen.getByRole('button', { name: /Start/ }));
+    expect(onStepClick).toHaveBeenCalledWith('start');
   });
 });

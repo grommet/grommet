@@ -977,9 +977,41 @@ exports[`Components loads 1`] = `
     "render": [Function],
   },
   "StarRating": [Function],
+  "StepItemContext": {
+    "$$typeof": Symbol(react.context),
+    "Consumer": {
+      "$$typeof": Symbol(react.consumer),
+      "_context": [Circular],
+    },
+    "Provider": [Circular],
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": {
+      "descriptionId": undefined,
+      "errorId": undefined,
+      "index": 0,
+      "isDisabled": false,
+      "isLast": false,
+      "isSubStep": false,
+      "reasonId": undefined,
+      "step": null,
+    },
+    "_currentValue2": {
+      "descriptionId": undefined,
+      "errorId": undefined,
+      "index": 0,
+      "isDisabled": false,
+      "isLast": false,
+      "isSubStep": false,
+      "reasonId": undefined,
+      "step": null,
+    },
+    "_threadCount": 0,
+  },
   "Stepper": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
+      "aria-label": [Function],
       "children": [Function],
       "clickableSteps": [Function],
       "currentStep": [Function],
@@ -1031,11 +1063,28 @@ exports[`Components loads 1`] = `
     },
     "_threadCount": 0,
   },
-  "StepperDescription": [Function],
-  "StepperDisabledReason": [Function],
-  "StepperError": [Function],
+  "StepperDescription": {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "StepperDisabledReason": {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "StepperError": {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "StepperIndicator": [Function],
   "StepperLabel": [Function],
+  "StepperStep": {
+    "$$typeof": Symbol(react.forward_ref),
+    "propTypes": {
+      "children": [Function],
+      "stepId": [Function],
+    },
+    "render": [Function],
+  },
   "Tab": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
@@ -1358,6 +1407,7 @@ exports[`Components loads 1`] = `
   "formSortKey": "_sort",
   "round": [Function],
   "useSkeleton": [Function],
+  "useStepItem": [Function],
   "useStepper": [Function],
   "useWizard": [Function],
 }
