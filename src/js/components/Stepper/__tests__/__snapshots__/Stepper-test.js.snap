@@ -304,7 +304,7 @@ exports[`Stepper renders horizontal steps 1`] = `
     >
       <button
         aria-current="step"
-        aria-label="Step 1 of 3: Step 1"
+        aria-label="Step 1 of 3. Step 1"
         class="c3 c4 c5"
         tabindex="0"
         type="button"
@@ -350,7 +350,7 @@ exports[`Stepper renders horizontal steps 1`] = `
       class="c2"
     >
       <button
-        aria-label="Step 2 of 3: Step 2"
+        aria-label="Step 2 of 3. Step 2"
         class="c3 c4 c5"
         tabindex="-1"
         type="button"
@@ -381,7 +381,7 @@ exports[`Stepper renders horizontal steps 1`] = `
       class="c2"
     >
       <button
-        aria-label="Step 3 of 3: Step 3"
+        aria-label="Step 3 of 3. Step 3"
         class="c3 c4 c5"
         tabindex="-1"
         type="button"
@@ -698,7 +698,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   >
     <button
       aria-current="step"
-      aria-label="Step 1 of 3: Step 1"
+      aria-label="Step 1 of 3. Step 1"
       class="c2 c3 c4"
       tabindex="0"
       type="button"
@@ -744,7 +744,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
     class="c1"
   >
     <button
-      aria-label="Step 2 of 3: Step 2"
+      aria-label="Step 2 of 3. Step 2"
       class="c2 c3 c4"
       tabindex="-1"
       type="button"
@@ -775,7 +775,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
     class="c1"
   >
     <button
-      aria-label="Step 3 of 3: Step 3"
+      aria-label="Step 3 of 3. Step 3"
       class="c2 c3 c4"
       tabindex="-1"
       type="button"
@@ -1091,7 +1091,7 @@ exports[`Stepper renders vertical steps 1`] = `
       class="c2"
     >
       <button
-        aria-label="Step 1 of 3: Step 1"
+        aria-label="Step 1 of 3. Step 1"
         class="c3 c4 c5"
         tabindex="-1"
         type="button"
@@ -1120,7 +1120,7 @@ exports[`Stepper renders vertical steps 1`] = `
     >
       <button
         aria-current="step"
-        aria-label="Step 2 of 3: Step 2"
+        aria-label="Step 2 of 3. Step 2"
         class="c3 c4 c5"
         tabindex="0"
         type="button"
@@ -1163,7 +1163,7 @@ exports[`Stepper renders vertical steps 1`] = `
       class="c2"
     >
       <button
-        aria-label="Step 3 of 3: Step 3"
+        aria-label="Step 3 of 3. Step 3"
         class="c3 c4 c5"
         tabindex="-1"
         type="button"
