@@ -87,10 +87,10 @@ export const StepperStep = ({
         const parentStep = steps.find(
           (item) => item.id === currentStepData.parentId,
         );
-        values.title = `${parentStep.title}: ${step.title}`;
+        values.parent = parentStep.title;
       }
       ariaLabel = format({
-        id: 'stepper.step',
+        id: isSubStep ? 'stepper.subStep' : 'stepper.step',
         values,
       });
     }

@@ -588,13 +588,14 @@ describe('Stepper child reveal', () => {
     ).toBeTruthy();
   });
 
-  test('uses the existing localized step message for parent and child', () => {
+  test('allows localized sub-step messages to reorder parent, child, and progress', () => {
     render(
       <Grommet
         messages={{
           messages: {
             stepper: {
               step: '{title} ({step}/{total})',
+              subStep: '{title} ({step}/{total}) - {parent}',
             },
           },
         }}
@@ -603,7 +604,10 @@ describe('Stepper child reveal', () => {
       </Grommet>,
     );
     expect(
-      screen.getByRole('button', { name: 'Account: Profile (3/6)' }),
+      screen.getByRole('button', { name: 'Profile (3/6) - Account' }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('button', { name: 'Introduction (1/6)' }),
     ).toBeTruthy();
   });
 });
