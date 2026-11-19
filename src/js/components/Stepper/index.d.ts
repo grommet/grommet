@@ -29,9 +29,16 @@ export interface StepperProps
   children?: React.ReactNode;
 }
 
+export interface StepperContextStep extends StepType {
+  isSubStep: boolean;
+  showConnector: boolean;
+  childIds: string[];
+  parentId?: string;
+}
+
 export interface StepperContextValue {
   currentStep: string;
-  steps: StepType[];
+  steps: StepperContextStep[];
   direction: 'horizontal' | 'vertical';
   clickableSteps: boolean;
   showDescription: boolean;
@@ -51,16 +58,13 @@ declare const Stepper: React.ForwardRefExoticComponent<
 declare const StepperContext: React.Context<StepperContextValue>;
 declare const useStepper: () => StepperContextValue;
 
-export interface StepperStepProps {
-  step: StepType;
-  isLast: boolean;
-  showConnector?: boolean;
-  direction: 'horizontal' | 'vertical';
+export interface StepperStepProps 
+  extends React.LiHTMLAttributes<HTMLLIElement> {
+  stepId: string;
   focusedIndex: number;
   index: number;
-  isSubStep?: boolean;
-  onKeyDown?: (event: React.KeyboardEvent, index: number) => void;
   stepRefs?: React.MutableRefObject<Map<number, HTMLButtonElement>>;
+  children?: React.ReactNode;
 }
 
 declare const StepperStep: React.FC<StepperStepProps>;
@@ -72,6 +76,7 @@ declare const StepperDisabledReason: React.FC<{}>;
 
 export {
   Stepper,
+  StepperStep,
   StepperContext,
   useStepper,
   StepperIndicator,
