@@ -6,17 +6,16 @@ import { useStepper, useStepItem } from './StepperContext';
 import { useStepTheme } from './utils';
 
 export const StepperDescription = ({ ...rest }) => {
-  const { direction, showDescription } = useStepper();
+  const { direction } = useStepper();
 
-  const { step, isSubStep, descriptionId } = useStepItem();
+  const { step, isSubStep } = useStepItem();
   const stepTheme = useStepTheme(step, isSubStep);
-  if (!step || !step.description || !showDescription) return null;
+  if (!step || !step.description) return null;
 
   return (
     <Text
       truncate={direction === 'horizontal'}
       {...stepTheme.description}
-      id={descriptionId}
       {...rest}
     >
       {step.description}

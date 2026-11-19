@@ -17,26 +17,13 @@ export const StepperContext = createContext({
   canNavigateTo: () => false,
 });
 
-// Rendering details stay internal while public StepperStep items use them
-// to preserve roving focus when composed by consumers.
-export const StepperRenderContext = createContext({
-  flatSteps: [],
-  focusedIndex: 0,
-  defaultLayout: false,
-  registerStepRef: () => {},
-  updateFocusedIndex: () => {},
-});
-
-// Step-level context: provides the current step's data to subcomponents.
+// Step-level context: provides the current step's data to subcomponents
 export const StepItemContext = createContext({
   step: null,
   index: 0,
   isLast: false,
   isSubStep: false,
   isDisabled: false,
-  descriptionId: undefined,
-  errorId: undefined,
-  reasonId: undefined,
 });
 
 export const useStepper = () => useContext(StepperContext);

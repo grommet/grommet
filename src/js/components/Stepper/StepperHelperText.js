@@ -14,24 +14,24 @@ const StepperHelperText = ({ variant, ...rest }) => {
 };
 
 export const StepperError = ({ ...rest }) => {
-  const { step, errorId } = useStepItem();
+  const { step } = useStepItem();
   const { errorAnnouncement } = useStepper();
   if (!step || step.status !== 'error' || !step.errorMessage) return null;
   let role;
   if (errorAnnouncement === 'polite') role = 'status';
   if (errorAnnouncement === 'assertive') role = 'alert';
   return (
-    <StepperHelperText role={role} variant="errorText" id={errorId} {...rest}>
+    <StepperHelperText role={role} variant="errorText" {...rest}>
       {step.errorMessage}
     </StepperHelperText>
   );
 };
 
 export const StepperDisabledReason = ({ ...rest }) => {
-  const { step, reasonId } = useStepItem();
+  const { step } = useStepItem();
   if (!step || step.status !== 'disabled' || !step.disabledReason) return null;
   return (
-    <StepperHelperText variant="disabledReason" id={reasonId} {...rest}>
+    <StepperHelperText variant="disabledReason" {...rest}>
       {step.disabledReason}
     </StepperHelperText>
   );

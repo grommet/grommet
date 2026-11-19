@@ -987,23 +987,17 @@ exports[`Components loads 1`] = `
     "_currentRenderer": null,
     "_currentRenderer2": null,
     "_currentValue": {
-      "descriptionId": undefined,
-      "errorId": undefined,
       "index": 0,
       "isDisabled": false,
       "isLast": false,
       "isSubStep": false,
-      "reasonId": undefined,
       "step": null,
     },
     "_currentValue2": {
-      "descriptionId": undefined,
-      "errorId": undefined,
       "index": 0,
       "isDisabled": false,
       "isLast": false,
       "isSubStep": false,
-      "reasonId": undefined,
       "step": null,
     },
     "_threadCount": 0,
@@ -1068,10 +1062,7 @@ exports[`Components loads 1`] = `
   "StepperError": [Function],
   "StepperIndicator": [Function],
   "StepperLabel": [Function],
-  "StepperStep": {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
-  },
+  "StepperStep": [Function],
   "Tab": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {

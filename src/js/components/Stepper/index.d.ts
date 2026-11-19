@@ -50,9 +50,6 @@ export interface StepItemContextValue {
   isLast: boolean;
   isSubStep: boolean;
   isDisabled: boolean;
-  descriptionId?: string;
-  errorId?: string;
-  reasonId?: string;
 }
 
 declare const Stepper: React.ForwardRefExoticComponent<
@@ -76,18 +73,12 @@ export interface StepperStepProps {
   stepRefs?: React.MutableRefObject<Map<number, HTMLButtonElement>>;
 }
 
-declare const StepperStep: React.ForwardRefExoticComponent<
-  {
-    stepId: string;
-    children?: React.ReactNode;
-    'aria-describedby'?: string;
-  } & React.RefAttributes<HTMLElement>
->;
+declare const StepperStep: React.FC<StepperStepProps>;
 declare const StepperIndicator: React.FC<{}>;
 declare const StepperLabel: React.FC<{}>;
-declare const StepperDescription: React.FC<{ id?: string }>;
-declare const StepperError: React.FC<{ id?: string }>;
-declare const StepperDisabledReason: React.FC<{ id?: string }>;
+declare const StepperDescription: React.FC<{}>;
+declare const StepperError: React.FC<{}>;
+declare const StepperDisabledReason: React.FC<{}>;
 
 export {
   Stepper,
