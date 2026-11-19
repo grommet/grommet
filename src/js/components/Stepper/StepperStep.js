@@ -20,25 +20,35 @@ import {
 import { useStepTheme } from './utils';
 
 export const StepperStep = ({
-  step,
-  isLast,
-  showConnector,
-  direction,
+  stepId,
   focusedIndex,
   index: indexProp,
-  isSubStep,
-  subSteps,
   onFocusStep,
   stepRefs,
+  children,
+  ...rest
 }) => {
-  const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
-    useStepper();
+  const {
+    currentStep,
+    clickableSteps,
+    direction,
+    showDescription,
+    onStepClick,
+    steps,
+  } = useStepper();
   const { format } = useContext(MessageContext);
   const { passThemeFlag } = useThemeValue();
+  const step = steps.find((s) => s.id === stepId);
+
+  const { isSubStep } = step;
+
+  const isLastParent =
+    steps.filter((s) => !s.parentId).slice(-1)[0]?.id === step.id;
   const baseId = useId();
   const descriptionId = `${baseId}-stepper-description-${step.id}`;
   const errorId = `${baseId}-stepper-error-${step.id}`;
   const reasonId = `${baseId}-stepper-reason-${step.id}`;
+  
   const index =
     indexProp !== undefined
       ? indexProp
@@ -55,18 +65,21 @@ export const StepperStep = ({
   const isNavigable = !isDisabled && !!navigationStepId;
   const isClickable = clickableSteps && isNavigable;
   const isReadOnly = !clickableSteps;
+  const isVertical = direction === 'vertical';
 
+  const showConnector =
+    !isSubStep && (!isLastParent || (isVertical && children?.length));
+ 
   const stepTheme = useStepTheme(step, isSubStep);
 
   const stepItemValue = useMemo(
     () => ({
       step,
       index,
-      isLast,
       isSubStep,
       isDisabled,
     }),
-    [step, index, isLast, isSubStep, isDisabled],
+    [step, index, isSubStep, isDisabled],
   );
 
   const handleClick = () => {
@@ -124,7 +137,6 @@ export const StepperStep = ({
     (step.status === 'error' && !!step.errorMessage) ||
     (step.status === 'disabled' && !!step.disabledReason);
 
-  const isVertical = direction === 'vertical';
   // In vertical direction the gap between indicator and label is
   // applied as column-gap on the step item grid (shared with the
   // supporting content), not as a Box gap on the button.
@@ -157,6 +169,7 @@ export const StepperStep = ({
         isSubStep={isSubStep}
         stepTheme={stepTheme}
         {...passThemeFlag}
+        {...rest}
       >
         <StyledStepButton
           role={isReadOnly ? 'group' : undefined}
@@ -198,7 +211,7 @@ export const StepperStep = ({
             <StepperDisabledReason id={reasonId} />
           </StyledStepSupportingContent>
         )}
-        {!!subSteps?.length && (
+        {!!children?.length && (
           <StyledSubStepsList
             forwardedAs="ol"
             isVertical={isVertical}
@@ -206,16 +219,16 @@ export const StepperStep = ({
             stepTheme={stepTheme}
             {...stepTheme?.children}
           >
-            {subSteps}
+            {children}
           </StyledSubStepsList>
         )}
-        {(showConnector !== undefined ? showConnector : !isLast) && (
+        {(showConnector !== undefined ? showConnector : !isLastParent) && (
           <StyledConnector
             direction={direction}
             status={step.status}
             aria-hidden="true"
             stepTheme={stepTheme}
-            spansStepGap={!isSubStep && !isLast}
+            spansStepGap={!isSubStep && !isLastParent}
             {...passThemeFlag}
           />
         )}

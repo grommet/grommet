@@ -381,7 +381,7 @@ const Stepper = forwardRef(
     const renderDefaultSteps = () => {
       let flatIndex = 0;
       const elements = [];
-      steps.forEach((step, parentIdx) => {
+      steps.forEach((step) => {
         const parentFlatIndex = flatIndex;
         flatIndex += 1;
         const visibleChildren =
@@ -395,38 +395,26 @@ const Stepper = forwardRef(
               return (
                 <StepperStep
                   key={child.id}
-                  step={child}
-                  isLast={false}
-                  showConnector={false}
-                  direction={direction}
+                  stepId={child.id}
                   focusedIndex={focusedIndex}
                   index={childFlatIndex}
-                  isSubStep
                   onFocusStep={updateFocusedIndex}
                   stepRefs={stepRefs}
                 />
               );
             })
           : null;
-        const isLastParent = parentIdx === steps.length - 1;
         elements.push(
           <StepperStep
             key={step.id}
-            step={step}
-            isLast={isLastParent}
-            showConnector={
-              direction === 'horizontal'
-                ? !isLastParent
-                : !isLastParent || !!childElements
-            }
-            direction={direction}
+            stepId={step.id}
             focusedIndex={focusedIndex}
             index={parentFlatIndex}
-            isSubStep={false}
             onFocusStep={updateFocusedIndex}
             stepRefs={stepRefs}
-            subSteps={childElements}
-          />,
+          >
+            {childElements}
+          </StepperStep>,
         );
       });
       return elements;
