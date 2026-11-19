@@ -311,6 +311,11 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     // values will be from theme.global.size. But use the size from the
     // theme if available. In that case the t-shirt values are icon sizes.
     const indicatorHeight = indicator?.height?.height || indicator?.height;
+    const indicatorBorder = getBorderWidth(
+      theme,
+      indicator?.border?.size || '2px',
+    );
+
     const height = indicatorHeight
       ? theme.global.size[indicatorHeight] || indicatorHeight
       : getIconSize(theme, indicator?.size || 'medium');
@@ -320,9 +325,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       const width = indicatorWidth
         ? theme.global.size[indicatorWidth] || indicatorWidth
         : getIconSize(theme, indicator?.size || 'medium');
-      const centerTop = `calc(${height} / 2 + ${padTop})`;
-      const centerLeft = `calc(${width} / 2 + ${padLeft})`;
-      const centerRight = `calc(${width} / 2 + ${padRight})`;
+    
       // the container's column gap separates the steps; extend across it
       // to reach the adjacent step
       const { gap } = stepTheme?.container || {};
@@ -330,15 +333,17 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
       const columnGap = getMetricSize(theme, gapValue);
       // positioned relative to the step item so it can span across to
       // the adjacent step
+      const indicatorCenter = `calc(${width} / 2 + ${indicatorBorder})`;
       return css`
         position: absolute;
         border-radius: ${connectorRadius};
-        top: ${centerTop};
-        left: calc(50% + ${centerLeft});
-        right: calc(-50% - ${columnGap} + ${centerRight});
+        top: calc(
+          ${height} / 2 - ${connectorThickness} / 2 + ${padTop} +
+            ${indicatorBorder}
+        );
+        left: calc(50% + ${indicatorCenter} + ${connectorGap});
+        right: calc(-50% - ${columnGap} + ${indicatorCenter} + ${connectorGap});
         height: ${connectorThickness};
-        margin-inline-start: ${padLeft};
-        margin-inline-end: ${padRight};
       `;
     }
 
@@ -347,12 +352,8 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     // cleared past the indicator with margin-top so that a label wrapping
     // to multiple lines cannot push the connector away from the indicator,
     // then stretches through the supporting content and sub-steps rows.
-    const indicatorBorderWidth = getBorderWidth(
-      theme,
-      indicator?.border?.size || '2px',
-    );
     // indicator is box-sizing: content-box, so its borders add to height
-    const indicatorBox = `${height} + ${indicatorBorderWidth} * 2`;
+    const indicatorBox = `${height} + ${indicatorBorder} * 2`;
     const { gap } = stepTheme?.container || {};
     const gapValue = gap?.row || gap || '0px';
     // when there is a following step, extend through the step item's
