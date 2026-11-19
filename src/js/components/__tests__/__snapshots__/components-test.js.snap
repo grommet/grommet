@@ -977,9 +977,35 @@ exports[`Components loads 1`] = `
     "render": [Function],
   },
   "StarRating": [Function],
+  "StepItemContext": {
+    "$$typeof": Symbol(react.context),
+    "Consumer": {
+      "$$typeof": Symbol(react.consumer),
+      "_context": [Circular],
+    },
+    "Provider": [Circular],
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": {
+      "index": 0,
+      "isDisabled": false,
+      "isLast": false,
+      "isSubStep": false,
+      "step": null,
+    },
+    "_currentValue2": {
+      "index": 0,
+      "isDisabled": false,
+      "isLast": false,
+      "isSubStep": false,
+      "step": null,
+    },
+    "_threadCount": 0,
+  },
   "Stepper": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
+      "aria-label": [Function],
       "children": [Function],
       "clickableSteps": [Function],
       "currentStep": [Function],
@@ -1036,6 +1062,7 @@ exports[`Components loads 1`] = `
   "StepperError": [Function],
   "StepperIndicator": [Function],
   "StepperLabel": [Function],
+  "StepperStep": [Function],
   "Tab": {
     "$$typeof": Symbol(react.forward_ref),
     "propTypes": {
@@ -1358,6 +1385,7 @@ exports[`Components loads 1`] = `
   "formSortKey": "_sort",
   "round": [Function],
   "useSkeleton": [Function],
+  "useStepItem": [Function],
   "useStepper": [Function],
   "useWizard": [Function],
 }

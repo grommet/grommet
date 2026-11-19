@@ -182,9 +182,8 @@ describe('Stepper', () => {
       </Grommet>,
     );
 
-    const describedBy = getByLabelText(/Step 1 of 1/).getAttribute(
-      'aria-describedby',
-    );
+    const describedBy =
+      getByLabelText(/Step 1 of 1/).getAttribute('aria-describedby');
     expect(describedBy).toMatch(/-stepper-description-step1$/);
     expect(document.getElementById(describedBy).textContent).toBe(
       'Enter your account information',
