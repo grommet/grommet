@@ -25,7 +25,8 @@ import { useStepTheme } from './utils';
 
 const EMPTY_STEP = { id: '', title: '', status: 'disabled' };
 
-export const StepperStep = forwardRef(({ stepId, children }, forwardedRef) => {
+export const StepperStep = forwardRef((props, forwardedRef) => {
+  const { stepId, children, 'aria-describedby': ariaDescribedBy } = props;
   const {
     currentStep,
     clickableSteps,
@@ -212,7 +213,10 @@ export const StepperStep = forwardRef(({ stepId, children }, forwardedRef) => {
           }
           aria-label={accessibleLabel}
           aria-describedby={
-            describedBy.length > 0 ? describedBy.join(' ') : undefined
+            ariaDescribedBy ??
+            (!hasCustomChildren && describedBy.length > 0
+              ? describedBy.join(' ')
+              : undefined)
           }
           isVertical={isVertical}
           {...focusableProps}

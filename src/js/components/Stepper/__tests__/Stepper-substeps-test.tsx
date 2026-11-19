@@ -633,7 +633,7 @@ describe('Stepper child reveal', () => {
       },
       { id: 'finish', title: 'Finish' },
     ];
-    const composition = (showDescription: boolean) => (
+    const composition = (showDescription: boolean, showError = true) => (
       <Grommet>
         <Stepper
           steps={composedSteps}
@@ -643,11 +643,24 @@ describe('Stepper child reveal', () => {
           showDescription={showDescription}
         >
           {composedSteps.map((step) => (
-            <StepperStep key={step.id} stepId={step.id}>
+            <StepperStep
+              key={step.id}
+              stepId={step.id}
+              aria-describedby={
+                [
+                  showDescription &&
+                    step.description &&
+                    `${step.id}-description`,
+                  showError && step.errorMessage && `${step.id}-error`,
+                ]
+                  .filter(Boolean)
+                  .join(' ') || undefined
+              }
+            >
               <StepperIndicator />
               <StepperLabel />
-              <StepperDescription />
-              <StepperError />
+              <StepperDescription id={`${step.id}-description`} />
+              {showError && <StepperError id={`${step.id}-error`} />}
             </StepperStep>
           ))}
         </Stepper>
@@ -684,5 +697,9 @@ describe('Stepper child reveal', () => {
         description: 'Details error',
       }),
     ).toBe(details);
+
+    rerender(composition(false, false));
+    expect(screen.queryByText('Details error')).toBeNull();
+    expect(details.getAttribute('aria-describedby')).toBeNull();
   });
 });

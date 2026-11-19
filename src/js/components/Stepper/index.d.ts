@@ -80,13 +80,14 @@ declare const StepperStep: React.ForwardRefExoticComponent<
   {
     stepId: string;
     children?: React.ReactNode;
+    'aria-describedby'?: string;
   } & React.RefAttributes<HTMLElement>
 >;
 declare const StepperIndicator: React.FC<{}>;
 declare const StepperLabel: React.FC<{}>;
-declare const StepperDescription: React.FC<{}>;
-declare const StepperError: React.FC<{}>;
-declare const StepperDisabledReason: React.FC<{}>;
+declare const StepperDescription: React.FC<{ id?: string }>;
+declare const StepperError: React.FC<{ id?: string }>;
+declare const StepperDisabledReason: React.FC<{ id?: string }>;
 
 export {
   Stepper,
