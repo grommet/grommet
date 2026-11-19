@@ -1,12 +1,16 @@
 "use strict";
 
 exports.__esModule = true;
-exports.useStepper = exports.StepperLabel = exports.StepperIndicator = exports.StepperError = exports.StepperDisabledReason = exports.StepperDescription = exports.StepperContext = exports.Stepper = void 0;
+exports.useStepper = exports.useStepItem = exports.StepperStep = exports.StepperLabel = exports.StepperIndicator = exports.StepperError = exports.StepperDisabledReason = exports.StepperDescription = exports.StepperContext = exports.Stepper = exports.StepItemContext = void 0;
 var _Stepper = require("./Stepper");
 exports.Stepper = _Stepper.Stepper;
 var _StepperContext = require("./StepperContext");
 exports.StepperContext = _StepperContext.StepperContext;
+exports.StepItemContext = _StepperContext.StepItemContext;
 exports.useStepper = _StepperContext.useStepper;
+exports.useStepItem = _StepperContext.useStepItem;
+var _StepperStep = require("./StepperStep");
+exports.StepperStep = _StepperStep.StepperStep;
 var _StepperIndicator = require("./StepperIndicator");
 exports.StepperIndicator = _StepperIndicator.StepperIndicator;
 var _StepperDescription = require("./StepperDescription");

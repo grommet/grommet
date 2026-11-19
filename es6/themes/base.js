@@ -2527,7 +2527,8 @@ export var generate = function generate(baseSpacing, scale) {
       },
       connector: {
         thickness: 'small',
-        color: 'border'
+        color: 'border',
+        gap: baseSpacing / 6 + "px" // 4,
       },
       description: {
         size: 'small',

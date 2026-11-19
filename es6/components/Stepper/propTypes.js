@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
     steps: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
+      'aria-label': PropTypes.string,
       description: PropTypes.string,
       status: PropTypes.oneOf(['pending', 'completed', 'error', 'disabled']),
       disabledReason: PropTypes.string,
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
       children: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
+        'aria-label': PropTypes.string,
         description: PropTypes.string,
         status: PropTypes.oneOf(['pending', 'completed', 'error', 'disabled']),
         disabledReason: PropTypes.string,
@@ -27,6 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
     errorAnnouncement: PropTypes.oneOf(['assertive', 'polite', false]),
     onStepClick: PropTypes.func,
     id: PropTypes.string,
+    'aria-label': PropTypes.string,
     children: PropTypes.node
   };
 }

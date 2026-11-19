@@ -13,6 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
     steps: _propTypes["default"].arrayOf(_propTypes["default"].shape({
       id: _propTypes["default"].string.isRequired,
       title: _propTypes["default"].string.isRequired,
+      'aria-label': _propTypes["default"].string,
       description: _propTypes["default"].string,
       status: _propTypes["default"].oneOf(['pending', 'completed', 'error', 'disabled']),
       disabledReason: _propTypes["default"].string,
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
       children: _propTypes["default"].arrayOf(_propTypes["default"].shape({
         id: _propTypes["default"].string.isRequired,
         title: _propTypes["default"].string.isRequired,
+        'aria-label': _propTypes["default"].string,
         description: _propTypes["default"].string,
         status: _propTypes["default"].oneOf(['pending', 'completed', 'error', 'disabled']),
         disabledReason: _propTypes["default"].string,
@@ -33,6 +35,7 @@ if (process.env.NODE_ENV !== 'production') {
     errorAnnouncement: _propTypes["default"].oneOf(['assertive', 'polite', false]),
     onStepClick: _propTypes["default"].func,
     id: _propTypes["default"].string,
+    'aria-label': _propTypes["default"].string,
     children: _propTypes["default"].node
   };
 }

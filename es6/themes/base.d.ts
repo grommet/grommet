@@ -354,6 +354,7 @@ interface StepType {
     // line type?
     color?: ColorType;
     thickness?: ThicknessType;
+    gap?: GapType;
   };
   // Interaction states
   hover?: StepType;
@@ -362,7 +363,7 @@ interface StepperThemeType extends StepType {
   container?: BoxPartThemeType & {
     gap?: GapType | { row?: GapType; column?: GapType };
   };
-  subStep?: StepType;
+  subStep?: Omit<StepType, 'children'>;
   vertical?: StepType;
   // Application States
   pending?: StepType;

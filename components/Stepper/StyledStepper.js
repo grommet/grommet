@@ -158,7 +158,7 @@ var StyledConnector = exports.StyledConnector = _styledComponents["default"].spa
   displayName: "StyledStepper__StyledConnector",
   componentId: "sc-gmpe0p-6"
 })(["", " background:", ";"], function (props) {
-  var _stepTheme$button, _stepTheme$connector, _theme$global7, _indicator$height, _indicator$border;
+  var _stepTheme$button, _stepTheme$connector, _theme$global7, _stepTheme$connector2, _indicator$height, _indicator$border;
   var theme = props.theme,
     stepTheme = props.stepTheme;
   var indicator = stepTheme == null ? void 0 : stepTheme.indicator;
@@ -169,7 +169,7 @@ var StyledConnector = exports.StyledConnector = _styledComponents["default"].spa
   var connectorStrokeToken = (stepTheme == null || (_stepTheme$connector = stepTheme.connector) == null ? void 0 : _stepTheme$connector.thickness) || 'small';
   var connectorThickness = getBorderWidth(theme, connectorStrokeToken);
   var connectorRadius = ((_theme$global7 = theme.global) == null || (_theme$global7 = _theme$global7.edgeSize) == null ? void 0 : _theme$global7.xsmall) || '4px';
-  var connectorGap = '4px';
+  var connectorGap = getMetricSize(theme, stepTheme == null || (_stepTheme$connector2 = stepTheme.connector) == null ? void 0 : _stepTheme$connector2.gap);
 
   // height could be specified as a box prop in which case the t-shirt
   // values will be from theme.global.size. But use the size from the
