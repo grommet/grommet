@@ -6,7 +6,15 @@ import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 
-import { Grommet, Stepper } from '../..';
+import {
+  Grommet,
+  Stepper,
+  StepperDescription,
+  StepperError,
+  StepperIndicator,
+  StepperLabel,
+  StepperStep,
+} from '../..';
 import { useStepper } from '..';
 import type { StepperProps, StepType } from '..';
 
@@ -609,5 +617,72 @@ describe('Stepper child reveal', () => {
     expect(
       screen.getByRole('button', { name: 'Introduction (1/6)' }),
     ).toBeTruthy();
+  });
+
+  test('supports keyboard navigation and helper text in composed steps', async () => {
+    const user = userEvent.setup();
+    const onStepClick = jest.fn();
+    const composedSteps: StepType[] = [
+      { id: 'start', title: 'Start', description: 'Start description' },
+      {
+        id: 'details',
+        title: 'Details',
+        description: 'Details description',
+        status: 'error',
+        errorMessage: 'Details error',
+      },
+      { id: 'finish', title: 'Finish' },
+    ];
+    const composition = (showDescription: boolean) => (
+      <Grommet>
+        <Stepper
+          steps={composedSteps}
+          currentStep="start"
+          direction="vertical"
+          onStepClick={onStepClick}
+          showDescription={showDescription}
+        >
+          {composedSteps.map((step) => (
+            <StepperStep key={step.id} stepId={step.id}>
+              <StepperIndicator />
+              <StepperLabel />
+              <StepperDescription />
+              <StepperError />
+            </StepperStep>
+          ))}
+        </Stepper>
+      </Grommet>
+    );
+
+    const { rerender } = render(composition(true));
+    const start = screen.getByRole('button', {
+      name: /Start/,
+      description: 'Start description',
+    });
+    const details = screen.getByRole('button', {
+      name: /Details.*error/i,
+      description: 'Details description Details error',
+    });
+    const finish = screen.getByRole('button', { name: /Finish/ });
+
+    await user.tab();
+    expect(document.activeElement).toBe(start);
+    await user.keyboard('{ArrowDown}');
+    expect(document.activeElement).toBe(details);
+    await user.keyboard('{End}');
+    expect(document.activeElement).toBe(finish);
+    await user.keyboard('{Home}');
+    expect(document.activeElement).toBe(start);
+    await user.keyboard('{Enter}');
+    expect(onStepClick).toHaveBeenCalledWith('start');
+
+    rerender(composition(false));
+    expect(screen.queryByText('Details description')).toBeNull();
+    expect(
+      screen.getByRole('button', {
+        name: /Details.*error/i,
+        description: 'Details error',
+      }),
+    ).toBe(details);
   });
 });
