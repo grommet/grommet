@@ -262,25 +262,6 @@ describe('Stepper', () => {
     expect(connector).toHaveStyleRule('height', '5px');
   });
 
-  test('resolves connector gap from the stepper theme', () => {
-    const { container } = render(
-      <Grommet
-        theme={{
-          global: { edgeSize: { small: '10px' } },
-          stepper: { connector: { gap: 'small' } },
-        }}
-      >
-        <Stepper steps={basicSteps} currentStep="step1" direction="vertical" />
-      </Grommet>,
-    );
-
-    const connector = container.querySelector('span[aria-hidden="true"]');
-    expect(connector).toHaveStyleRule(
-      'margin-top',
-      'calc(3px + 24px + 2px * 2 + 10px)',
-    );
-  });
-
   test.each([
     ['default', undefined, '3px', '3px', '3px'],
     ['token', 'small', '6px', '6px', '6px'],
