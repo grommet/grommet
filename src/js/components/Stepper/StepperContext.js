@@ -22,7 +22,6 @@ export const StepperContext = createContext({
 export const StepperRenderContext = createContext({
   flatSteps: [],
   focusedIndex: 0,
-  defaultSubSteps: {},
   defaultLayout: false,
   registerStepRef: () => {},
   updateFocusedIndex: () => {},

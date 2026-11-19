@@ -65,12 +65,22 @@ declare const StepItemContext: React.Context<StepItemContextValue>;
 declare const useStepItem: () => StepItemContextValue;
 
 export interface StepperStepProps {
-  stepId: string;
-  children?: React.ReactNode;
+  step: StepType;
+  isLast: boolean;
+  showConnector?: boolean;
+  direction: 'horizontal' | 'vertical';
+  focusedIndex: number;
+  index: number;
+  isSubStep?: boolean;
+  onKeyDown?: (event: React.KeyboardEvent, index: number) => void;
+  stepRefs?: React.MutableRefObject<Map<number, HTMLButtonElement>>;
 }
 
 declare const StepperStep: React.ForwardRefExoticComponent<
-  StepperStepProps & React.RefAttributes<HTMLElement>
+  {
+    stepId: string;
+    children?: React.ReactNode;
+  } & React.RefAttributes<HTMLElement>
 >;
 declare const StepperIndicator: React.FC<{}>;
 declare const StepperLabel: React.FC<{}>;

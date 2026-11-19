@@ -50,9 +50,12 @@ export const StepperStep = forwardRef(({ stepId, children }, forwardedRef) => {
   const index = visibleIndex;
   const direction = contextDirection;
   const isSubStep = !!step.isSubStep;
-  const subSteps = renderContext.defaultLayout
-    ? renderContext.defaultSubSteps[step.id]
-    : undefined;
+  const subSteps =
+    renderContext.defaultLayout && !isSubStep
+      ? renderContext.flatSteps
+          .filter((item) => item.parentId === step.id)
+          .map((item) => <StepperStep key={item.id} stepId={item.id} />)
+      : undefined;
   const topLevelSteps = steps.filter((item) => !item.isSubStep);
   const isLast = renderContext.defaultLayout
     ? !isSubStep && topLevelSteps[topLevelSteps.length - 1]?.id === step.id

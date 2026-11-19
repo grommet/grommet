@@ -294,36 +294,15 @@ const Stepper = forwardRef(
       ],
     );
 
-    const defaultSubSteps = useMemo(() => {
-      const byParent = {};
-      flatSteps.forEach((step) => {
-        if (step.isSubStep) {
-          if (!byParent[step.parentId]) byParent[step.parentId] = [];
-          byParent[step.parentId].push(
-            <StepperStep key={step.id} stepId={step.id} />,
-          );
-        }
-      });
-      return byParent;
-    }, [flatSteps]);
-
     const renderContextValue = useMemo(
       () => ({
         flatSteps,
         focusedIndex,
-        defaultSubSteps,
         defaultLayout: !children,
         registerStepRef,
         updateFocusedIndex,
       }),
-      [
-        flatSteps,
-        focusedIndex,
-        defaultSubSteps,
-        children,
-        registerStepRef,
-        updateFocusedIndex,
-      ],
+      [flatSteps, focusedIndex, children, registerStepRef, updateFocusedIndex],
     );
 
     // Wraps around the step list to find the next step
