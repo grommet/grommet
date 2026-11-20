@@ -19,30 +19,31 @@ import {
 } from './StyledStepper';
 import { useStepTheme } from './utils';
 
-export const StepperStep = ({
-  step,
-  isLast,
-  showConnector,
-  direction,
-  focusedIndex,
-  index: indexProp,
-  isSubStep,
-  subSteps,
-  onFocusStep,
-  stepRefs,
-}) => {
-  const { currentStep, clickableSteps, showDescription, onStepClick, steps } =
-    useStepper();
+export const StepperStep = ({ stepId, children, ...rest }) => {
+  const {
+    currentStep,
+    clickableSteps,
+    direction,
+    showDescription,
+    onStepClick,
+    focusedStepId,
+    onFocusStep,
+    registerStepRef,
+    steps,
+  } = useStepper();
   const { format } = useContext(MessageContext);
   const { passThemeFlag } = useThemeValue();
+  const step = steps.find((s) => s.id === stepId);
+
+  const { isSubStep } = step;
+
+  const isLastParent =
+    steps.filter((s) => !s.parentId).slice(-1)[0]?.id === step.id;
   const baseId = useId();
   const descriptionId = `${baseId}-stepper-description-${step.id}`;
   const errorId = `${baseId}-stepper-error-${step.id}`;
   const reasonId = `${baseId}-stepper-reason-${step.id}`;
-  const index =
-    indexProp !== undefined
-      ? indexProp
-      : steps.findIndex((s) => s.id === step.id);
+
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
     !isSubStep && step.children?.some((c) => c.id === currentStep);
@@ -55,18 +56,20 @@ export const StepperStep = ({
   const isNavigable = !isDisabled && !!navigationStepId;
   const isClickable = clickableSteps && isNavigable;
   const isReadOnly = !clickableSteps;
+  const isVertical = direction === 'vertical';
+
+  const showConnector =
+    !isSubStep && (!isLastParent || (isVertical && children?.length));
 
   const stepTheme = useStepTheme(step, isSubStep);
 
   const stepItemValue = useMemo(
     () => ({
       step,
-      index,
-      isLast,
       isSubStep,
       isDisabled,
     }),
-    [step, index, isLast, isSubStep, isDisabled],
+    [step, isSubStep, isDisabled],
   );
 
   const handleClick = () => {
@@ -124,7 +127,6 @@ export const StepperStep = ({
     (step.status === 'error' && !!step.errorMessage) ||
     (step.status === 'disabled' && !!step.disabledReason);
 
-  const isVertical = direction === 'vertical';
   // In vertical direction the gap between indicator and label is
   // applied as column-gap on the step item grid (shared with the
   // supporting content), not as a Box gap on the button.
@@ -138,7 +140,7 @@ export const StepperStep = ({
         type: 'button',
         background: 'none',
         border: { size: '0px' },
-        tabIndex: focusedIndex === index ? 0 : -1,
+        tabIndex: focusedStepId === step.id ? 0 : -1,
         onClick: (event) => {
           if (event.type === 'keydown') event.preventDefault();
           handleClick();
@@ -146,7 +148,7 @@ export const StepperStep = ({
         // indicator provides focus-visible treatment; avoid a second ring
         focusIndicator: false,
         onFocus: () => {
-          if (onFocusStep) onFocusStep(index);
+          onFocusStep?.(step.id);
         },
       };
 
@@ -157,15 +159,11 @@ export const StepperStep = ({
         isSubStep={isSubStep}
         stepTheme={stepTheme}
         {...passThemeFlag}
+        {...rest}
       >
         <StyledStepButton
           role={isReadOnly ? 'group' : undefined}
-          ref={(el) => {
-            if (stepRefs) {
-              if (el) stepRefs.current.set(index, el);
-              else stepRefs.current.delete(index);
-            }
-          }}
+          ref={(el) => registerStepRef?.(step.id, el)}
           aria-current={isHighlighted ? 'step' : undefined}
           aria-disabled={
             isDisabled || (clickableSteps && !isNavigable) || undefined
@@ -198,7 +196,7 @@ export const StepperStep = ({
             <StepperDisabledReason id={reasonId} />
           </StyledStepSupportingContent>
         )}
-        {!!subSteps?.length && (
+        {!!children?.length && (
           <StyledSubStepsList
             forwardedAs="ol"
             isVertical={isVertical}
@@ -206,16 +204,16 @@ export const StepperStep = ({
             stepTheme={stepTheme}
             {...stepTheme?.children}
           >
-            {subSteps}
+            {children}
           </StyledSubStepsList>
         )}
-        {(showConnector !== undefined ? showConnector : !isLast) && (
+        {(showConnector !== undefined ? showConnector : !isLastParent) && (
           <StyledConnector
             direction={direction}
             status={step.status}
             aria-hidden="true"
             stepTheme={stepTheme}
-            spansStepGap={!isSubStep && !isLast}
+            spansStepGap={!isSubStep && !isLastParent}
             {...passThemeFlag}
           />
         )}
