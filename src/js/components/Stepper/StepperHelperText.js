@@ -21,11 +21,7 @@ export const StepperError = ({ ...rest }) => {
   if (errorAnnouncement === 'polite') role = 'status';
   if (errorAnnouncement === 'assertive') role = 'alert';
   return (
-    <StepperHelperText
-      role={role}
-      variant="errorText"
-      {...rest}
-    >
+    <StepperHelperText role={role} variant="errorText" {...rest}>
       {step.errorMessage}
     </StepperHelperText>
   );
@@ -35,10 +31,7 @@ export const StepperDisabledReason = ({ ...rest }) => {
   const { step } = useStepItem();
   if (!step || step.status !== 'disabled' || !step.disabledReason) return null;
   return (
-    <StepperHelperText
-      variant="disabledReason"
-      {...rest}
-    >
+    <StepperHelperText variant="disabledReason" {...rest}>
       {step.disabledReason}
     </StepperHelperText>
   );

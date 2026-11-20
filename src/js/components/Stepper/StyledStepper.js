@@ -305,7 +305,7 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
-    const connectorGap = '4px';
+    const connectorGap = getMetricSize(theme, stepTheme?.connector?.gap);
 
     // height could be specified as a box prop in which case the t-shirt
     // values will be from theme.global.size. But use the size from the

@@ -51,12 +51,22 @@ export interface StepperContextValue {
   canNavigateTo: (stepId: string) => boolean;
 }
 
+export interface StepItemContextValue {
+  step: StepType | null;
+  index: number;
+  isLast: boolean;
+  isSubStep: boolean;
+  isDisabled: boolean;
+}
+
 declare const Stepper: React.ForwardRefExoticComponent<
   StepperProps & React.RefAttributes<HTMLOListElement>
 >;
 
 declare const StepperContext: React.Context<StepperContextValue>;
 declare const useStepper: () => StepperContextValue;
+declare const StepItemContext: React.Context<StepItemContextValue>;
+declare const useStepItem: () => StepItemContextValue;
 
 export interface StepperStepProps 
   extends React.LiHTMLAttributes<HTMLLIElement> {
@@ -78,7 +88,10 @@ export {
   Stepper,
   StepperStep,
   StepperContext,
+  StepItemContext,
   useStepper,
+  useStepItem,
+  StepperStep,
   StepperIndicator,
   StepperLabel,
   StepperDescription,
