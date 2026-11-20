@@ -53,8 +53,6 @@ export interface StepperContextValue {
 
 export interface StepItemContextValue {
   step: StepType | null;
-  index: number;
-  isLast: boolean;
   isSubStep: boolean;
   isDisabled: boolean;
 }

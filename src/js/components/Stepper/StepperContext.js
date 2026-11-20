@@ -20,7 +20,6 @@ export const StepperContext = createContext({
 // Step-level context: provides the current step's data to subcomponents
 export const StepItemContext = createContext({
   step: null,
-  index: 0,
   isSubStep: false,
   isDisabled: false,
 });

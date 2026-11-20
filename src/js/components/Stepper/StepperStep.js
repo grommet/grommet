@@ -75,11 +75,10 @@ export const StepperStep = ({
   const stepItemValue = useMemo(
     () => ({
       step,
-      index,
       isSubStep,
       isDisabled,
     }),
-    [step, index, isSubStep, isDisabled],
+    [step, isSubStep, isDisabled],
   );
 
   const handleClick = () => {
