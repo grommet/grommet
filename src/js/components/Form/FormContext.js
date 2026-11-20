@@ -21,7 +21,15 @@ const useFormInput = ({ value: valueProp, initialValue }) => {
   ];
 };
 
-const useFormField = ({ error, info, disabled }) => ({ error, info, disabled });
+// When a FormField is disabled, its error should be suppressed. This mirrors
+// the behavior of the useFormField() provided by Form, so that a disabled
+// FormField behaves the same whether or not it is inside a Form. The info is
+// intentionally left alone.
+const useFormField = ({ error, info, disabled }) => ({
+  error: disabled ? undefined : error,
+  info,
+  disabled,
+});
 
 export const FormContext = React.createContext({
   useFormField,
