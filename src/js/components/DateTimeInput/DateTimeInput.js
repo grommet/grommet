@@ -49,6 +49,7 @@ const SECTION_HOUR = 3;
 const SECTION_MINUTE = 4;
 const SECTION_SECOND = 5;
 const SECTION_PERIOD = 6;
+const NBSP = '\u00A0';
 
 const pad4 = (value) => String(value).padStart(4, '0');
 
@@ -121,9 +122,9 @@ const getSectionOrder = (format, showSeconds) => {
 
 const separatorBeforeSection = (section) => {
   if (section === SECTION_MONTH || section === SECTION_YEAR) return '/';
-  if (section === SECTION_HOUR) return ' ';
+  if (section === SECTION_HOUR) return NBSP;
   if (section === SECTION_MINUTE || section === SECTION_SECOND) return ':';
-  return ' ';
+  return NBSP;
 };
 
 const getLocaleSectionLayout = (format, showSeconds, locale) => {
@@ -166,10 +167,11 @@ const getLocaleSectionLayout = (format, showSeconds, locale) => {
         // Normalize the date/time boundary separator: strip commas (e.g. ", "
         // from en-US) so the display matches the design spec (space only).
         const raw = sectionOrder.length === 0 ? '' : pendingLiteral;
-        separatorMap[section] =
+        const separator =
           section === SECTION_HOUR
             ? raw.replace(/,/g, '').trimStart() || ' '
             : raw;
+        separatorMap[section] = separator.replace(/ /g, NBSP);
         sectionOrder.push(section);
         seen.add(section);
       }
