@@ -86,7 +86,6 @@ declare const StepperDisabledReason: React.FC<{}>;
 
 export {
   Stepper,
-  StepperStep,
   StepperContext,
   StepItemContext,
   useStepper,
