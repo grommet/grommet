@@ -311,10 +311,10 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
     // values will be from theme.global.size. But use the size from the
     // theme if available. In that case the t-shirt values are icon sizes.
     const indicatorHeight = indicator?.height?.height || indicator?.height;
-    const indicatorBorder = getBorderWidth(
-      theme,
-      indicator?.border?.size || '2px',
-    );
+    const indicatorBorder =
+      indicator?.border === false
+        ? '0px'
+        : getBorderWidth(theme, indicator?.border?.size || '2px');
 
     const height = indicatorHeight
       ? theme.global.size[indicatorHeight] || indicatorHeight
