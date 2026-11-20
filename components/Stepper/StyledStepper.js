@@ -175,14 +175,13 @@ var StyledConnector = exports.StyledConnector = _styledComponents["default"].spa
   // values will be from theme.global.size. But use the size from the
   // theme if available. In that case the t-shirt values are icon sizes.
   var indicatorHeight = (indicator == null || (_indicator$height = indicator.height) == null ? void 0 : _indicator$height.height) || (indicator == null ? void 0 : indicator.height);
+  var indicatorBorder = (indicator == null ? void 0 : indicator.border) === false ? '0px' : getBorderWidth(theme, (indicator == null || (_indicator$border = indicator.border) == null ? void 0 : _indicator$border.size) || '2px');
   var height = indicatorHeight ? theme.global.size[indicatorHeight] || indicatorHeight : getIconSize(theme, (indicator == null ? void 0 : indicator.size) || 'medium');
   if (props.direction === 'horizontal') {
     var _indicator$width;
     var indicatorWidth = (indicator == null || (_indicator$width = indicator.width) == null ? void 0 : _indicator$width.width) || (indicator == null ? void 0 : indicator.width);
     var width = indicatorWidth ? theme.global.size[indicatorWidth] || indicatorWidth : getIconSize(theme, (indicator == null ? void 0 : indicator.size) || 'medium');
-    var centerTop = "calc(" + height + " / 2 + " + padTop + ")";
-    var centerLeft = "calc(" + width + " / 2 + " + padLeft + ")";
-    var centerRight = "calc(" + width + " / 2 + " + padRight + ")";
+
     // the container's column gap separates the steps; extend across it
     // to reach the adjacent step
     var _ref4 = (stepTheme == null ? void 0 : stepTheme.container) || {},
@@ -191,7 +190,8 @@ var StyledConnector = exports.StyledConnector = _styledComponents["default"].spa
     var columnGap = getMetricSize(theme, _gapValue);
     // positioned relative to the step item so it can span across to
     // the adjacent step
-    return (0, _styledComponents.css)(["position:absolute;border-radius:", ";top:", ";left:calc(50% + ", ");right:calc(-50% - ", " + ", ");height:", ";margin-inline-start:", ";margin-inline-end:", ";"], connectorRadius, centerTop, centerLeft, columnGap, centerRight, connectorThickness, padLeft, padRight);
+    var indicatorCenter = "calc(" + width + " / 2 + " + indicatorBorder + ")";
+    return (0, _styledComponents.css)(["position:absolute;border-radius:", ";top:calc( ", " / 2 - ", " / 2 + ", " + ", " );left:calc(50% + ", " + ", ");right:calc(-50% - ", " + ", " + ", ");height:", ";"], connectorRadius, height, connectorThickness, padTop, indicatorBorder, indicatorCenter, connectorGap, columnGap, indicatorCenter, connectorGap, connectorThickness);
   }
 
   // Vertical: an in-flow grid item in the indicator column of the step
@@ -199,9 +199,8 @@ var StyledConnector = exports.StyledConnector = _styledComponents["default"].spa
   // cleared past the indicator with margin-top so that a label wrapping
   // to multiple lines cannot push the connector away from the indicator,
   // then stretches through the supporting content and sub-steps rows.
-  var indicatorBorderWidth = getBorderWidth(theme, (indicator == null || (_indicator$border = indicator.border) == null ? void 0 : _indicator$border.size) || '2px');
   // indicator is box-sizing: content-box, so its borders add to height
-  var indicatorBox = height + " + " + indicatorBorderWidth + " * 2";
+  var indicatorBox = height + " + " + indicatorBorder + " * 2";
   var _ref5 = (stepTheme == null ? void 0 : stepTheme.container) || {},
     gap = _ref5.gap;
   var gapValue = (gap == null ? void 0 : gap.row) || gap || '0px';
