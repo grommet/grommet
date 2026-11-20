@@ -341,14 +341,8 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
           ${height} / 2 - ${connectorThickness} / 2 + ${padTop} +
             ${indicatorBorder}
         );
-        left: calc(
-          50% + ${indicatorCenter} + ${connectorGap} +
-            (${padLeft} - ${padRight}) / 2
-        );
-        right: calc(
-          -50% - ${columnGap} + ${indicatorCenter} + ${connectorGap} -
-            (${padLeft} - ${padRight}) / 2
-        );
+        left: calc(50% + ${indicatorCenter} + ${connectorGap});
+        right: calc(-50% - ${columnGap} + ${indicatorCenter} + ${connectorGap});
         height: ${connectorThickness};
       `;
     }
