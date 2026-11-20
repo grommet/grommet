@@ -4,10 +4,13 @@ import { createContext, useContext } from 'react';
 
 export const StepperContext = createContext({
   currentStep: '',
+  focusedStepId: '',
   steps: [],
   direction: 'horizontal',
   clickableSteps: true,
   onStepClick: undefined,
+  onFocusStep: () => {},
+  registerStepRef: () => {},
   showDescription: true,
   errorAnnouncement: 'polite',
   stepIndex: () => -1,

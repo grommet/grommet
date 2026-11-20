@@ -38,12 +38,15 @@ export interface StepperContextStep extends StepType {
 
 export interface StepperContextValue {
   currentStep: string;
+  focusedStepId?: string;
   steps: StepperContextStep[];
   direction: 'horizontal' | 'vertical';
   clickableSteps: boolean;
   showDescription: boolean;
   errorAnnouncement: 'assertive' | 'polite' | false;
   onStepClick?: (stepId: string) => void;
+  onFocusStep?: (stepId: string) => void;
+  registerStepRef?: (stepId: string, element: HTMLElement | null) => void;
   stepIndex: (stepId: string) => number;
   isPriorStep: (stepId: string) => boolean;
   isAfterStep: (stepId: string) => boolean;
@@ -66,12 +69,9 @@ declare const useStepper: () => StepperContextValue;
 declare const StepItemContext: React.Context<StepItemContextValue>;
 declare const useStepItem: () => StepItemContextValue;
 
-export interface StepperStepProps 
+export interface StepperStepProps
   extends React.LiHTMLAttributes<HTMLLIElement> {
   stepId: string;
-  focusedIndex: number;
-  index: number;
-  stepRefs?: React.MutableRefObject<Map<number, HTMLButtonElement>>;
   children?: React.ReactNode;
 }
 

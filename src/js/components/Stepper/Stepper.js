@@ -23,7 +23,7 @@ import { StepperPropTypes } from './propTypes';
 import { resolveStepperTheme } from './utils';
 
 // Flattens steps with parent/child relationships into a linear list
-// for keyboard navigation and index-based tracking.
+// for keyboard navigation.
 const flattenSteps = (steps) => {
   const flat = [];
   let hasSubSubSteps = false;
@@ -193,27 +193,24 @@ const Stepper = forwardRef(
       [allSteps, currentParentId, revealedParents],
     );
     // Roving tabindex: only the focused step has tabIndex=0,
-    // all others have tabIndex=-1. A ref keeps the index synchronous
-    // for keyboard handlers that fire before React re-renders. Track the
-    // step by id so inserting revealed children does not shift focus.
-    const currentIndex = flatSteps.findIndex(
-      (s) => s.id === effectiveCurrentStep,
-    );
-    const flatStepsLength = flatSteps.length;
+    // all others have tabIndex=-1. Track focus by id so inserting
+    // revealed children does not shift focus.
     const [focusedStep, setFocusedStep] = useState(effectiveCurrentStep);
-    const focusedStepIndex = flatSteps.findIndex((s) => s.id === focusedStep);
-    const focusedIndex =
-      focusedStepIndex >= 0 ? focusedStepIndex : Math.max(currentIndex, 0);
-    const focusedIndexRef = useRef(focusedIndex);
-    focusedIndexRef.current = focusedIndex;
+    const focusedStepId = flatSteps.some((s) => s.id === focusedStep)
+      ? focusedStep
+      : effectiveCurrentStep;
+    const focusedStepRef = useRef(focusedStepId);
+    focusedStepRef.current = focusedStepId;
 
-    const updateFocusedIndex = useCallback(
-      (idx) => {
-        focusedIndexRef.current = idx;
-        setFocusedStep(flatSteps[idx]?.id);
-      },
-      [flatSteps],
-    );
+    const updateFocusedStep = useCallback((stepId) => {
+      focusedStepRef.current = stepId;
+      setFocusedStep(stepId);
+    }, []);
+
+    const registerStepRef = useCallback((stepId, element) => {
+      if (element) stepRefs.current.set(stepId, element);
+      else stepRefs.current.delete(stepId);
+    }, []);
 
     const stepIndex = useCallback(
       (stepId) => allSteps.findIndex((s) => s.id === stepId),
@@ -262,10 +259,13 @@ const Stepper = forwardRef(
     const contextValue = useMemo(
       () => ({
         currentStep: effectiveCurrentStep,
+        focusedStepId,
         steps: allSteps,
         direction,
         clickableSteps,
         onStepClick,
+        onFocusStep: updateFocusedStep,
+        registerStepRef,
         showDescription,
         errorAnnouncement,
         stepIndex,
@@ -276,10 +276,13 @@ const Stepper = forwardRef(
       }),
       [
         effectiveCurrentStep,
+        focusedStepId,
         allSteps,
         direction,
         clickableSteps,
         onStepClick,
+        updateFocusedStep,
+        registerStepRef,
         showDescription,
         errorAnnouncement,
         stepIndex,
@@ -292,41 +295,40 @@ const Stepper = forwardRef(
 
     // Wraps around the step list to find the next step
     // in the given direction (+1 forward, -1 backward).
-    const findNextEnabledIndex = useCallback(
-      (startIndex, delta) =>
-        flatStepsLength
-          ? (startIndex + delta + flatStepsLength) % flatStepsLength
-          : undefined,
-      [flatStepsLength],
-    );
-
-    const findFirstEnabledIndex = useCallback(() => 0, []);
-
-    const findLastEnabledIndex = useCallback(
-      () => flatStepsLength - 1,
-      [flatStepsLength],
+    const findNextStepId = useCallback(
+      (delta) => {
+        if (!flatSteps.length) return undefined;
+        const index = flatSteps.findIndex(
+          (step) => step.id === focusedStepRef.current,
+        );
+        const startIndex = index >= 0 ? index : 0;
+        const nextIndex =
+          (startIndex + delta + flatSteps.length) % flatSteps.length;
+        return flatSteps[nextIndex]?.id;
+      },
+      [flatSteps],
     );
 
     const moveFocus = useCallback(
-      (nextIndex) => {
-        if (nextIndex !== undefined && nextIndex !== focusedIndexRef.current) {
-          updateFocusedIndex(nextIndex);
-          const nextButton = stepRefs.current.get(nextIndex);
+      (nextStepId) => {
+        if (nextStepId && nextStepId !== focusedStepRef.current) {
+          updateFocusedStep(nextStepId);
+          const nextButton = stepRefs.current.get(nextStepId);
           if (nextButton) {
             nextButton.focus();
           }
         }
       },
-      [updateFocusedIndex],
+      [updateFocusedStep],
     );
 
     const onNext = useCallback(() => {
-      moveFocus(findNextEnabledIndex(focusedIndexRef.current, 1));
-    }, [findNextEnabledIndex, moveFocus]);
+      moveFocus(findNextStepId(1));
+    }, [findNextStepId, moveFocus]);
 
     const onPrevious = useCallback(() => {
-      moveFocus(findNextEnabledIndex(focusedIndexRef.current, -1));
-    }, [findNextEnabledIndex, moveFocus]);
+      moveFocus(findNextStepId(-1));
+    }, [findNextStepId, moveFocus]);
 
     const handleKeyDown = useCallback(
       (event) => {
@@ -358,61 +360,33 @@ const Stepper = forwardRef(
             break;
           case 'Home':
             event.preventDefault();
-            moveFocus(findFirstEnabledIndex());
+            moveFocus(flatSteps[0]?.id);
             break;
           case 'End':
             event.preventDefault();
-            moveFocus(findLastEnabledIndex());
+            moveFocus(flatSteps[flatSteps.length - 1]?.id);
             break;
           default:
             break;
         }
       },
-      [
-        direction,
-        onNext,
-        onPrevious,
-        findFirstEnabledIndex,
-        findLastEnabledIndex,
-        moveFocus,
-      ],
+      [direction, onNext, onPrevious, flatSteps, moveFocus],
     );
 
     const renderDefaultSteps = () => {
-      let flatIndex = 0;
       const elements = [];
       steps.forEach((step) => {
-        const parentFlatIndex = flatIndex;
-        flatIndex += 1;
         const visibleChildren =
           revealedParents.has(step.id) || step.id === currentParentId
             ? step.children
             : undefined;
         const childElements = visibleChildren
-          ? visibleChildren.map((child) => {
-              const childFlatIndex = flatIndex;
-              flatIndex += 1;
-              return (
-                <StepperStep
-                  key={child.id}
-                  stepId={child.id}
-                  focusedIndex={focusedIndex}
-                  index={childFlatIndex}
-                  onFocusStep={updateFocusedIndex}
-                  stepRefs={stepRefs}
-                />
-              );
-            })
+          ? visibleChildren.map((child) => (
+              <StepperStep key={child.id} stepId={child.id} />
+            ))
           : null;
         elements.push(
-          <StepperStep
-            key={step.id}
-            stepId={step.id}
-            focusedIndex={focusedIndex}
-            index={parentFlatIndex}
-            onFocusStep={updateFocusedIndex}
-            stepRefs={stepRefs}
-          >
+          <StepperStep key={step.id} stepId={step.id}>
             {childElements}
           </StepperStep>,
         );

@@ -19,21 +19,16 @@ import {
 } from './StyledStepper';
 import { useStepTheme } from './utils';
 
-export const StepperStep = ({
-  stepId,
-  focusedIndex,
-  index: indexProp,
-  onFocusStep,
-  stepRefs,
-  children,
-  ...rest
-}) => {
+export const StepperStep = ({ stepId, children, ...rest }) => {
   const {
     currentStep,
     clickableSteps,
     direction,
     showDescription,
     onStepClick,
+    focusedStepId,
+    onFocusStep,
+    registerStepRef,
     steps,
   } = useStepper();
   const { format } = useContext(MessageContext);
@@ -48,11 +43,7 @@ export const StepperStep = ({
   const descriptionId = `${baseId}-stepper-description-${step.id}`;
   const errorId = `${baseId}-stepper-error-${step.id}`;
   const reasonId = `${baseId}-stepper-reason-${step.id}`;
-  
-  const index =
-    indexProp !== undefined
-      ? indexProp
-      : steps.findIndex((s) => s.id === step.id);
+
   const isCurrent = currentStep === step.id;
   const hasCurrentChild =
     !isSubStep && step.children?.some((c) => c.id === currentStep);
@@ -69,7 +60,7 @@ export const StepperStep = ({
 
   const showConnector =
     !isSubStep && (!isLastParent || (isVertical && children?.length));
- 
+
   const stepTheme = useStepTheme(step, isSubStep);
 
   const stepItemValue = useMemo(
@@ -149,7 +140,7 @@ export const StepperStep = ({
         type: 'button',
         background: 'none',
         border: { size: '0px' },
-        tabIndex: focusedIndex === index ? 0 : -1,
+        tabIndex: focusedStepId === step.id ? 0 : -1,
         onClick: (event) => {
           if (event.type === 'keydown') event.preventDefault();
           handleClick();
@@ -157,7 +148,7 @@ export const StepperStep = ({
         // indicator provides focus-visible treatment; avoid a second ring
         focusIndicator: false,
         onFocus: () => {
-          if (onFocusStep) onFocusStep(index);
+          onFocusStep?.(step.id);
         },
       };
 
@@ -172,12 +163,7 @@ export const StepperStep = ({
       >
         <StyledStepButton
           role={isReadOnly ? 'group' : undefined}
-          ref={(el) => {
-            if (stepRefs) {
-              if (el) stepRefs.current.set(index, el);
-              else stepRefs.current.delete(index);
-            }
-          }}
+          ref={(el) => registerStepRef?.(step.id, el)}
           aria-current={isHighlighted ? 'step' : undefined}
           aria-disabled={
             isDisabled || (clickableSteps && !isNavigable) || undefined
