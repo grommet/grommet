@@ -57,16 +57,40 @@ const Layer = forwardRef((props, ref) => {
       setLayerContainer(getNewContainer(containerTarget, targetChildPosition)),
     [containerTarget, targetChildPosition],
   );
-  // just a few things to clean up when the Layer is unmounted
+
+  // Keep the latest prop/state values available to the unmount-only
+  // cleanup effect below without making it re-fire on every change to
+  // them (see cleanupPropsRef usage).
+  const cleanupPropsRef = useRef();
+  cleanupPropsRef.current = {
+    animate,
+    animation,
+    containerTarget,
+    layerContainer,
+    modal,
+  };
+
+  // just a few things to clean up when the Layer is unmounted.
+  // Deps are intentionally empty so this only runs on unmount rather
+  // than on every change to the values it reads, which would otherwise
+  // tear down an open Layer whenever modal/animate/animation/
+  // containerTarget changed.
   useLayoutEffect(
     () => () => {
+      const {
+        animate: cleanupAnimate,
+        animation: cleanupAnimation,
+        containerTarget: cleanupContainerTarget,
+        layerContainer: cleanupLayerContainer,
+        modal: cleanupModal,
+      } = cleanupPropsRef.current;
       const originalFocusedElement = originalFocusedElementRef.current;
       if (originalFocusedElement) {
         // Restore focus if:
         // - modal layer (always restore), or
         // - non-modal layer that had focus when it closed
         const shouldRestoreFocus =
-          modal || (!modal && focusWithinLayerRef.current);
+          cleanupModal || (!cleanupModal && focusWithinLayerRef.current);
         if (shouldRestoreFocus && originalFocusedElement.focus) {
           // wait for the fixed positioning to come back to normal
           // see layer styling for reference
@@ -79,14 +103,15 @@ const Layer = forwardRef((props, ref) => {
           originalFocusedElement.parentNode.focus();
         }
       }
-      if (layerContainer) {
-        const activeAnimation = animation !== undefined ? animation : animate;
+      if (cleanupLayerContainer) {
+        const activeAnimation =
+          cleanupAnimation !== undefined ? cleanupAnimation : cleanupAnimate;
         if (activeAnimation !== false) {
           // undefined uses 'slide' as the default
           // animate out and remove later
-          const layerClone = layerContainer.cloneNode(true);
+          const layerClone = cleanupLayerContainer.cloneNode(true);
           layerClone.id = 'layerClone';
-          containerTarget.appendChild(layerClone);
+          cleanupContainerTarget.appendChild(layerClone);
           const clonedContainer = layerClone.querySelector(
             '[class*="StyledLayer__StyledContainer"]',
           );
@@ -95,25 +120,25 @@ const Layer = forwardRef((props, ref) => {
           }
           setTimeout(() => {
             // we add the id and query here so the unit tests work
-            const rootNode = containerTarget.getRootNode();
+            const rootNode = cleanupContainerTarget.getRootNode();
             // Not all root nodes (ShadowRoot, DocumentFragment)
             //  have getElementById.
             if (rootNode && typeof rootNode.getElementById === 'function') {
               const clone = rootNode.getElementById('layerClone');
               if (clone) {
-                if (containerTarget.contains(clone)) {
-                  containerTarget.removeChild(clone);
+                if (cleanupContainerTarget.contains(clone)) {
+                  cleanupContainerTarget.removeChild(clone);
                 }
-                layerContainer.remove();
+                cleanupLayerContainer.remove();
               }
             }
           }, animationDuration);
-        } else if (containerTarget.contains(layerContainer)) {
-          containerTarget.removeChild(layerContainer);
+        } else if (cleanupContainerTarget.contains(cleanupLayerContainer)) {
+          cleanupContainerTarget.removeChild(cleanupLayerContainer);
         }
       }
     },
-    [animate, animation, containerTarget, layerContainer, modal],
+    [],
   );
 
   return layerContainer
