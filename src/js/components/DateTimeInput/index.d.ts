@@ -2,9 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 
+import { CalendarType } from '../Calendar/index';
+import { DropType } from '../Drop';
+import { TimeInputExtendedProps } from '../TimeInput';
+
 export interface DateTimeInputProps {
+  calendarProps?: CalendarType;
   defaultValue?: string;
   disabled?: boolean;
+  dropProps?: DropType;
   format?: '12' | '24';
   id?: string;
   locale?: string;
@@ -29,6 +35,7 @@ export interface DateTimeInputProps {
   onChange?: (event: { value?: string }) => void;
   readOnly?: boolean;
   showSeconds?: boolean;
+  timeInputProps?: TimeInputExtendedProps;
   value?: string;
 }
 
