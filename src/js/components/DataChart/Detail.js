@@ -65,6 +65,12 @@ const Detail = ({
   }, [padProp, theme.global.edgeSize, thickness]);
 
   const onMouseLeave = useCallback((event) => {
+    // activeIndex.current is only set on mouse hover. If detail was
+    // opened via keyboard navigation, it may be unset here.
+    if (!activeIndex.current) {
+      setDetailIndex(undefined);
+      return;
+    }
     // Only remove detail if the mouse isn't over the active index.
     // This helps distinguish leaving the drop on the edge where it is
     // anchored.
