@@ -272,10 +272,15 @@ const Form = forwardRef(
         let valid = false;
         valid = requiredFields.current
           .filter((n) => Object.keys(validationRulesRef.current).includes(n))
-          .every(
-            (field) =>
-              value[field] && (value[field] !== '' || value[field] !== false),
-          );
+          .every((field) => {
+            const fieldValue = value[field];
+            return (
+              fieldValue !== undefined &&
+              fieldValue !== '' &&
+              fieldValue !== false &&
+              !(Array.isArray(fieldValue) && !fieldValue.length)
+            );
+          });
 
         if (Object.keys(nextErrors).length > 0) valid = false;
         return valid;
