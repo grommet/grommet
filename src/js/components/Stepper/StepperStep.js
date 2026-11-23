@@ -19,7 +19,9 @@ import {
 } from './StyledStepper';
 import { useStepTheme } from './utils';
 
-export const StepperStep = ({ stepId, children, ...rest }) => {
+export const StepperStep = ({ stepId, children: childrenProp, ...rest }) => {
+  const childElements = React.Children.toArray(childrenProp);
+  const children = childElements.length ? childElements : undefined;
   const {
     currentStep,
     clickableSteps,
