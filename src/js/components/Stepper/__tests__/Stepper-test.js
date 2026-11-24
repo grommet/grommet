@@ -263,18 +263,17 @@ describe('Stepper', () => {
   });
 
   test.each([
-    ['default', undefined, '3px', '3px', '3px'],
-    ['token', 'small', '6px', '6px', '6px'],
-    ['CSS length', '7px', '7px', '7px', '7px'],
-    ['none', 'none', '0px', '0px', '0px'],
-    ['empty object', {}, '0px', '0px', '0px'],
-    ['axes', { horizontal: 'small', vertical: 'medium' }, '12px', '6px', '6px'],
+    ['default', undefined, '3px', '3px'],
+    ['token', 'small', '6px', '6px'],
+    ['CSS length', '7px', '7px', '7px'],
+    ['none', 'none', '0px', '0px'],
+    ['empty object', {}, '0px', '0px'],
+    ['axes', { horizontal: 'small', vertical: 'medium' }, '12px', '6px'],
     [
       'physical sides',
       { top: '5px', left: '7px', right: '11px', bottom: '13px' },
       '5px',
       '7px',
-      '11px',
     ],
     [
       'side overrides',
@@ -286,9 +285,8 @@ describe('Stepper', () => {
       },
       '0px',
       '7px',
-      '6px',
     ],
-    ['omitted sides', { bottom: 'small' }, '0px', '0px', '0px'],
+    ['omitted sides', { bottom: 'small' }, '0px', '0px'],
     [
       'logical overrides',
       {
@@ -300,11 +298,10 @@ describe('Stepper', () => {
       },
       '0px',
       '11px',
-      '13px',
     ],
   ])(
     'resolves %s padding for connector offsets',
-    (_name, pad, top, left, right) => {
+    (_name, pad, top, left) => {
       const theme = {
         global: {
           edgeSize: { xxsmall: '3px', small: '6px', medium: '12px' },
@@ -312,7 +309,7 @@ describe('Stepper', () => {
         stepper: {
           button: { pad },
           indicator: { size: '24px', border: { size: '2px' } },
-          connector: { thickness: '2px' },
+          connector: { thickness: '2px', gap: 'xxsmall' },
         },
       };
       const getConnector = () =>
@@ -325,16 +322,19 @@ describe('Stepper', () => {
         </Grommet>,
       );
 
-      expect(getConnector()).toHaveStyleRule('top', `calc(24px / 2 + ${top})`);
+      expect(getConnector()).toHaveStyleRule(
+        'top',
+        `calc( 24px / 2 - 2px / 2 + ${top} + 2px )`,
+      );
       expect(getConnector()).toHaveStyleRule(
         'left',
-        `calc(50% + calc(24px / 2 + ${left}))`,
+        `calc(50% + calc(24px / 2 + 2px) + 3px)`,
       );
       // base container gap column (small: 6px here) separates the steps;
-      // the connector extends across it to reach the adjacent step
+      // the connector extends across it and uses the theme connector gap
       expect(getConnector()).toHaveStyleRule(
         'right',
-        `calc(-50% - 6px + calc(24px / 2 + ${right}))`,
+        'calc(-50% - 6px + calc(24px / 2 + 2px) + 3px)',
       );
 
       rerender(
@@ -353,12 +353,12 @@ describe('Stepper', () => {
       expect(getConnector()).toHaveStyleRule('margin-inline-start', left);
       expect(getConnector()).toHaveStyleRule(
         'margin-top',
-        `calc(${top} + 24px + 2px * 2 + 4px)`,
+        `calc(${top} + 24px + 2px * 2 + 3px)`,
       );
       // container gap row defaults to medium (12px in this theme)
       expect(getConnector()).toHaveStyleRule(
         'margin-bottom',
-        `calc(4px - ${top} - 12px)`,
+        `calc(3px - ${top} - 12px)`,
       );
     },
   );
@@ -423,11 +423,11 @@ describe('Stepper', () => {
     // row gap (24px) merges in from the base theme; column gap resolves
     // from this theme's small (10px)
     expect(screen.getByRole('list')).toHaveStyleRule('gap', '24px 10px');
-    // the connector extends across the gap to reach the adjacent step
+    // the connector spans the gap and includes the default connector gap
     const connector = container.querySelector('span[aria-hidden="true"]');
     expect(connector).toHaveStyleRule(
       'right',
-      'calc(-50% - 10px + calc(24px / 2 + 3px))',
+      'calc(-50% - 10px + calc(24px / 2 + 2px) + 4px)',
     );
   });
 
