@@ -18,6 +18,10 @@ const longOptions = Array.from(
   { length: 50 },
   (_, index) => `Option ${index + 1}`,
 );
+const shortOptions = Array.from(
+  { length: 5 },
+  (_, index) => `Option ${index + 1}`,
+);
 
 const OptionsPresentationExample = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -68,11 +72,11 @@ const OptionsPresentationExample = () => {
         <FormField
           label="Option B - Inline presentation"
           name="inline"
-          help="8 options, using open prop to control visibility on load"
+          help="5 options, using open prop to control visibility on load"
         >
           <SelectMultiple
             name="inline"
-            options={options}
+            options={shortOptions}
             optionsPresentation="inline"
             placeholder="Choose options"
             open

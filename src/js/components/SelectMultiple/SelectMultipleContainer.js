@@ -657,6 +657,7 @@ const SelectMultipleContainer = forwardRef(
           {onDone && (
             <Box flex={false} pad={theme.selectMultiple?.summary?.pad}>
               <Button
+                secondary
                 label={format({ id: 'selectMultiple.done', messages })}
                 onClick={onDone}
                 onFocus={() => setActiveIndex(-1)}
