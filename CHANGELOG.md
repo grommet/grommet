@@ -23,6 +23,7 @@ General:
 
 - Added `copy` and `onClickCopy` to TextInput to support copy controls on editable inputs. (#8025)
 - Enhanced color brightness detection to use WCAG relative luminance.  (#8152)
+- Enhanced Stepper theme support to improve consistency and support general Box and Text properties. (#8215)
 - Added `options.legacyColorIsDark` to Grommet to allow opting into the previous color brightness calculation. (#8157)
 - Fixed Button busy-indicator dots appearing compressed or off-center on narrow buttons. (#8198)
 - Fixed dark-mode scrollbar styling in Drop-based option and suggestion lists. (#8108)
