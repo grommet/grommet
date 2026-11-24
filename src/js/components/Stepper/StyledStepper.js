@@ -73,25 +73,30 @@ const iconSizeStyle = (sizeProp, theme) => {
   `;
 };
 
+// In vertical direction the step item is a two-column grid
+// (indicator | text); the step button subgrids these columns so the label
+// (inside the button) and the supporting content and sub-steps (outside
+// the button) share the text column and stay left aligned, while the
+// connector fills the indicator column. max-content (not auto) keeps the
+// indicator column from absorbing free space, and minmax(0, max-content)
+// keeps the button's click target at content width while allowing long
+// text to wrap instead of overflowing.
 const StyledStepItem = styled.li.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== 'direction',
 })`
   display: flex;
   position: relative;
+  min-width: 0;
   ${(props) => {
     if (props.direction === 'vertical') {
-      const { gap } = props.stepTheme?.container || {};
-      const gapValue = gap?.row || gap || '0px';
-
-      let paddingBottom = '0px';
-      if (!props.isSubStep && !props.isLast) {
-        paddingBottom = getMetricSize(props.theme, gapValue);
-      }
-
+      const columnGap = getMetricSize(
+        props.theme,
+        props.stepTheme?.button?.gap || 'small',
+      );
       return css`
-        flex-direction: column;
-        align-items: flex-start;
-        padding-bottom: ${paddingBottom};
+        display: grid;
+        grid-template-columns: max-content minmax(0, max-content);
+        column-gap: ${columnGap};
       `;
     }
     if (props.isSubStep) {
@@ -100,7 +105,6 @@ const StyledStepItem = styled.li.withConfig({
         flex-direction: row;
         align-items: center;
         flex: none;
-        min-width: 0;
         overflow: hidden;
       `;
     }
@@ -108,7 +112,6 @@ const StyledStepItem = styled.li.withConfig({
       flex-direction: column;
       align-items: center;
       flex: 1;
-      min-width: 0;
       overflow: visible;
     `;
   }}
@@ -118,42 +121,49 @@ const StyledStepButton = styled(Box)`
   &:focus-visible {
     outline: none;
   }
+  ${(props) =>
+    props.isVertical &&
+    css`
+      /* span and subgrid the step item grid's indicator/text columns so
+         the label aligns with the supporting content rendered below */
+      grid-column: 1 / -1;
+      grid-row: 1;
+      display: grid;
+      grid-template-columns: subgrid;
+    `}
 `;
 
 const StyledStepContent = styled(Box)`
+  ${(props) =>
+    props.isVertical
+      ? css`
+          /* no overflow:hidden here: a non-visible overflow would turn
+             this into a scroll container whose baseline is synthesized
+             from its border box, breaking the button's baseline
+             alignment of label and indicator */
+          text-align: start;
+        `
+      : css`
+          overflow: hidden;
+        `}
+`;
+
+// Description, error and disabled reason live outside the step button but
+// must left align with the label in vertical direction (text column of the
+// step item grid) and center under the button in horizontal direction.
+const StyledStepSupportingContent = styled(Box)`
   overflow: hidden;
-  ${(props) => {
-    if (props.isVertical) {
-      return css`
-        text-align: start;
-      `;
-    }
-    return '';
-  }}
-  ${(props) => {
-    if (props.isVertical && !props.isSubStep && !props.hasDescription) {
-      const indicator = props.stepTheme?.indicator;
-      const indicatorBorderWidth = getBorderWidth(
-        props.theme,
-        indicator?.border?.size || '2px',
-      );
-      const indicatorHeight = indicator?.height?.height || indicator?.height;
-      const indicatorSize = indicatorHeight
-        ? props.theme.global.size[indicatorHeight] || indicatorHeight
-        : getIconSize(props.theme, indicator?.size || 'medium');
-      const lineHeight = getTextMetric(
-        props.theme,
-        props.stepTheme?.label?.size || 'medium',
-        'height',
-      );
-      return css`
-        padding-top: calc(
-          (${indicatorSize} - ${lineHeight}) / 2 + ${indicatorBorderWidth}
-        );
-      `;
-    }
-    return '';
-  }}
+  ${(props) =>
+    props.isVertical
+      ? css`
+          grid-column: 2;
+          grid-row: 2;
+          text-align: start;
+        `
+      : css`
+          max-width: 100%;
+          text-align: center;
+        `}
 `;
 
 const StyledStepLabel = styled(Text)`
@@ -179,6 +189,26 @@ const StyledStepLabel = styled(Text)`
 
 const StyledIndicator = styled(Box)`
   box-sizing: content-box;
+
+  /* Expose a text baseline at the indicator's visual center (the Box
+     centers its content) so the vertical step button can baseline-align
+     the label's first line with the indicator, regardless of indicator
+     size or how many lines the label wraps to. The zero-width space
+     takes no horizontal space; matching the label's font metrics makes
+     the indicator center coincide exactly with the first line center.
+     row direction keeps the strut beside the icon: stacked in a column
+     the icon would push the strut (and the exported baseline) upward. */
+  flex-direction: row;
+  &::before {
+    content: '\\200b';
+    ${(props) => {
+      const labelSize = props.stepTheme?.label?.size || 'medium';
+      return css`
+        font-size: ${getTextMetric(props.theme, labelSize, 'size')};
+        line-height: ${getTextMetric(props.theme, labelSize, 'height')};
+      `;
+    }}
+  }
 
   ${(props) =>
     (() => css`
@@ -268,64 +298,87 @@ const StyledConnector = styled.span.withConfig(styledComponentsConfig)`
   ${(props) => {
     const { theme, stepTheme } = props;
     const indicator = stepTheme?.indicator;
-
-    // width and height could be specified as box props in which case
-    // the t-shirt values will be from theme.global.size.
-    // But use the size from the theme if available. In that case
-    // the t-shirt values are icon sizes.
-    const indicatorWidth = indicator?.width?.width || indicator?.width;
-    const indicatorHeight = indicator?.height?.height || indicator?.height;
-    const width = indicatorWidth
-      ? theme.global.size[indicatorWidth] || indicatorWidth
-      : getIconSize(theme, indicator?.size || 'medium');
-    const height = indicatorHeight
-      ? theme.global.size[indicatorHeight] || indicatorHeight
-      : getIconSize(theme, indicator?.size || 'medium');
-    const indicatorBorderWidth = getBorderWidth(
-      theme,
-      indicator?.border?.size || '2px',
-    );
     const buttonPad = stepTheme?.button?.pad;
     const padTop = getPadSize(theme, buttonPad, 'top');
     const padLeft = getPadSize(theme, buttonPad, 'left');
     const padRight = getPadSize(theme, buttonPad, 'right');
     const connectorStrokeToken = stepTheme?.connector?.thickness || 'small';
     const connectorThickness = getBorderWidth(theme, connectorStrokeToken);
-
     const connectorRadius = theme.global?.edgeSize?.xsmall || '4px';
-    const centerTop = `calc(${height} / 2 + ${padTop})`;
-    const centerLeft = `calc(${width} / 2 + ${padLeft})`;
-    const centerRight = `calc(${width} / 2 + ${padRight})`;
-    const connectorGap = '4px';
+    const connectorGap = getMetricSize(theme, stepTheme?.connector?.gap);
 
+    // height could be specified as a box prop in which case the t-shirt
+    // values will be from theme.global.size. But use the size from the
+    // theme if available. In that case the t-shirt values are icon sizes.
+    const indicatorHeight = indicator?.height?.height || indicator?.height;
+    const indicatorBorder =
+      indicator?.border === false
+        ? '0px'
+        : getBorderWidth(theme, indicator?.border?.size || '2px');
+
+    const height = indicatorHeight
+      ? theme.global.size[indicatorHeight] || indicatorHeight
+      : getIconSize(theme, indicator?.size || 'medium');
+
+    if (props.direction === 'horizontal') {
+      const indicatorWidth = indicator?.width?.width || indicator?.width;
+      const width = indicatorWidth
+        ? theme.global.size[indicatorWidth] || indicatorWidth
+        : getIconSize(theme, indicator?.size || 'medium');
+    
+      // the container's column gap separates the steps; extend across it
+      // to reach the adjacent step
+      const { gap } = stepTheme?.container || {};
+      const gapValue = (typeof gap === 'object' ? gap?.column : gap) || '0px';
+      const columnGap = getMetricSize(theme, gapValue);
+      // positioned relative to the step item so it can span across to
+      // the adjacent step
+      const indicatorCenter = `calc(${width} / 2 + ${indicatorBorder})`;
+      return css`
+        position: absolute;
+        border-radius: ${connectorRadius};
+        top: calc(
+          ${height} / 2 - ${connectorThickness} / 2 + ${padTop} +
+            ${indicatorBorder}
+        );
+        left: calc(50% + ${indicatorCenter} + ${connectorGap});
+        right: calc(-50% - ${columnGap} + ${indicatorCenter} + ${connectorGap});
+        height: ${connectorThickness};
+      `;
+    }
+
+    // Vertical: an in-flow grid item in the indicator column of the step
+    // item grid. It is anchored to the first row (the button row) and
+    // cleared past the indicator with margin-top so that a label wrapping
+    // to multiple lines cannot push the connector away from the indicator,
+    // then stretches through the supporting content and sub-steps rows.
+    // indicator is box-sizing: content-box, so its borders add to height
+    const indicatorBox = `${height} + ${indicatorBorder} * 2`;
+    const { gap } = stepTheme?.container || {};
+    const gapValue = gap?.row || gap || '0px';
+    // when there is a following step, extend through the step item's
+    // bottom padding so the line approaches the next step's indicator
+    const stepGap = props.spansStepGap ? getMetricSize(theme, gapValue) : '0px';
     return css`
+      grid-column: 1;
+      grid-row: 1 / span 3;
+      align-self: stretch;
+      width: ${connectorThickness};
       border-radius: ${connectorRadius};
-      ${props.direction === 'horizontal'
-        ? css`
-            top: ${centerTop};
-            left: calc(50% + ${centerLeft});
-            right: calc(-50% + ${centerRight});
-            height: ${connectorThickness};
-            margin-inline-start: ${padLeft};
-            margin-inline-end: ${padRight};
-          `
-        : css`
-            left: calc(
-              ${centerLeft} + ${indicatorBorderWidth} - ${connectorThickness} /
-                2
-            );
-            top: calc(
-              ${height} + ${padTop} + (${indicatorBorderWidth} * 2) +
-                ${connectorGap}
-            );
-            bottom: calc(${connectorGap} - ${padTop});
-            min-height: 12px;
-            width: ${connectorThickness};
-            margin-block: 0;
-          `}
+      /* decorative; never steal clicks from the overlapping button row */
+      pointer-events: none;
+      /* the button's inline-start edge padding is part of the indicator
+         column; offset the centered connector by it so it lines up with
+         the center of the indicator */
+      justify-self: center;
+      margin-inline-start: ${theme.dir === 'rtl' ? padRight : padLeft};
+      /* start connectorGap below the indicator, and end the same gap
+         short of the next step's indicator (padTop supplies part of
+         that gap) */
+      margin-top: calc(${padTop} + ${indicatorBox} + ${connectorGap});
+      margin-bottom: calc(${connectorGap} - ${padTop} - ${stepGap});
     `;
   }}
-  position: absolute;
   background: ${(props) =>
     normalizeColor(props.stepTheme?.connector?.color || 'border', props.theme)};
 `;
@@ -334,33 +387,22 @@ const StyledSubStepsList = styled(Box).withConfig({
   shouldForwardProp: (prop) => prop !== 'isVertical' && prop !== 'stepTheme',
 })`
   list-style: none;
-  position: relative;
-  ${(props) => {
-    if (!props.isVertical) return '';
-
-    const indicator = props.stepTheme?.indicator || {};
-    const indicatorWidth = indicator?.width?.width || indicator?.width;
-    const indicatorSize = indicatorWidth
-      ? props.theme.global.size[indicatorWidth] || indicatorWidth
-      : getIconSize(props.theme, indicator?.size || 'medium');
-    const textGap =
-      props.theme.global?.edgeSize?.[props.stepTheme?.button?.gap || 'small'] ||
-      props.stepTheme?.button?.gap;
-    const buttonPad = getPadSize(
-      props.theme,
-      props.stepTheme?.button?.pad,
-      'left',
-    );
-    return css`
-      left: calc(${indicatorSize} + ${textGap} + ${buttonPad});
-    `;
-  }}
+  ${(props) =>
+    props.isVertical
+      ? css`
+          /* text column of the step item grid, below the supporting
+             content, so sub-steps left align with the label */
+          grid-column: 2;
+          grid-row: 3;
+        `
+      : ''}
 `;
 
 export {
   StyledStepItem,
   StyledStepButton,
   StyledStepContent,
+  StyledStepSupportingContent,
   StyledStepLabel,
   StyledIndicator,
   StyledConnector,

@@ -220,8 +220,10 @@ if (process.env.NODE_ENV !== 'production') {
         }),
         stepper: PropTypes.shape({
           completed: PropTypes.string,
+          error: PropTypes.string,
           progress: PropTypes.string,
           step: PropTypes.string,
+          subStep: PropTypes.string,
         }),
         tabs: PropTypes.shape({
           nextTab: PropTypes.string,
