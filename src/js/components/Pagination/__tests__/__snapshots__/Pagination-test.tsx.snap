@@ -1195,7 +1195,8 @@ exports[`Pagination should apply a select component with default values for step
                   class="c13"
                   inert=""
                   readonly=""
-                  type="text"
+                  type="hidden"
+                  value="50"
                 />
               </div>
               <div
@@ -14228,7 +14229,7 @@ exports[`Pagination theme container gap and step container gap 1`] = `
                   class="c14"
                   inert=""
                   readonly=""
-                  type="text"
+                  type="hidden"
                 />
               </div>
               <div

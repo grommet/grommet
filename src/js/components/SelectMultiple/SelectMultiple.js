@@ -540,7 +540,7 @@ const SelectMultiple = forwardRef(
                       {displaySelectIcon}
                     </Box>
                     <HiddenInput
-                      type="text"
+                      type="hidden"
                       name={name}
                       id={id ? selectInputId(id) : undefined}
                       inert={inertTrueValue}
@@ -593,7 +593,7 @@ const SelectMultiple = forwardRef(
                     <>
                       {selectValue || displayLabelKey}
                       <HiddenInput
-                        type="text"
+                        type="hidden"
                         name={name}
                         id={id ? selectInputId(id) : undefined}
                         inert={inertTrueValue}
