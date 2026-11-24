@@ -9,11 +9,9 @@ General:
 Stepper - officially out of beta:
 - Added progressive reveal for nested Stepper sub-steps. (#8212)
 - Added a localized “completed” status to Stepper. (#8233)
-- Added support for exporting StepperStep, useStepItem, and StepItemContext with types. (#8243)
-- Enhanced Stepper keyboard navigation and dynamic step focus handling. (#8244)
+- Enhanced Stepper APIs and theming with exported StepperStep, clearer composable step props, StepperStep type exports, configurable connector gaps, and broader Box and Text theme support. (#8215, #8243, #8244)
 - Enhanced Stepper layout, connector positioning, alignment, and accessibility for nested and vertical steppers. (#8239)
 - Enhanced Stepper connector alignment for indicator border widths and configurable gaps. (#8246)
-- Enhanced Stepper theme support to improve consistency and support general Box and Text properties. (#8215)
 - Fixed Stepper screen-reader announcements for nested hierarchy, parent numbering, and error status. (#8238)
 - Fixed Stepper connector rendering for wrapped labels and nested sub-steps. (#8208)
 
