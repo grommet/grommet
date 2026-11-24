@@ -13,6 +13,7 @@ Stepper - officially out of beta:
 - Enhanced Stepper keyboard navigation and dynamic step focus handling. (#8244)
 - Enhanced Stepper layout, connector positioning, alignment, and accessibility for nested and vertical steppers. (#8239)
 - Enhanced Stepper connector alignment for indicator border widths and configurable gaps. (#8246)
+- Enhanced Stepper theme support to improve consistency and support general Box and Text properties. (#8215)
 - Fixed Stepper screen-reader announcements for nested hierarchy, parent numbering, and error status. (#8238)
 - Fixed Stepper connector rendering for wrapped labels and nested sub-steps. (#8208)
 
@@ -23,7 +24,6 @@ General:
 
 - Added `copy` and `onClickCopy` to TextInput to support copy controls on editable inputs. (#8025)
 - Enhanced color brightness detection to use WCAG relative luminance.  (#8152)
-- Enhanced Stepper theme support to improve consistency and support general Box and Text properties. (#8215)
 - Added `options.legacyColorIsDark` to Grommet to allow opting into the previous color brightness calculation. (#8157)
 - Fixed Button busy-indicator dots appearing compressed or off-center on narrow buttons. (#8198)
 - Fixed dark-mode scrollbar styling in Drop-based option and suggestion lists. (#8108)
