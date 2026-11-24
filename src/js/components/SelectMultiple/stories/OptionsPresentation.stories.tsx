@@ -13,7 +13,11 @@ import {
   TextInput,
 } from 'grommet';
 
-const options = Array.from({ length: 10 }, (_, index) => `Option ${index + 1}`);
+const options = Array.from({ length: 8 }, (_, index) => `Option ${index + 1}`);
+const longOptions = Array.from(
+  { length: 50 },
+  (_, index) => `Option ${index + 1}`,
+);
 
 const OptionsPresentationExample = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -32,11 +36,28 @@ const OptionsPresentationExample = () => {
             placeholder="Choose options"
           />
         </FormField>
-        <FormField label="Inline presentation" name="inline">
+        <FormField
+          label="Inline presentation 8 options"
+          name="inline"
+          help="Hugs inline content"
+        >
           <SelectMultiple
             name="inline"
             options={options}
             optionsPresentation="inline"
+            placeholder="Choose options"
+          />
+        </FormField>
+        <FormField
+          label="Inline presentation with 50 options"
+          name="inlineLong"
+          help="Fixed height + overflow scroll"
+        >
+          <SelectMultiple
+            name="inlineLong"
+            options={longOptions}
+            optionsPresentation="inline"
+            dropHeight="medium"
             placeholder="Choose options"
           />
         </FormField>
