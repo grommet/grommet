@@ -28,7 +28,11 @@ const OptionsPresentationExample = () => {
         onChange={() => setSubmitted(false)}
         onSubmit={() => setSubmitted(true)}
       >
-        <FormField label="Drop presentation" name="drop">
+        <FormField
+          label="Current behaviour"
+          name="drop"
+          help="Selections inside drop"
+        >
           <SelectMultiple
             name="drop"
             options={options}
@@ -37,9 +41,22 @@ const OptionsPresentationExample = () => {
           />
         </FormField>
         <FormField
-          label="Inline presentation 8 options"
+          label="Option D"
+          name="dropDone"
+          help="Drop with Done button"
+        >
+          <SelectMultiple
+            name="dropDone"
+            options={longOptions}
+            dropHeight="medium"
+            showDoneButton
+            placeholder="Choose options"
+          />
+        </FormField>
+        <FormField
+          label="Option B - Inline presentation"
           name="inline"
-          help="Hugs inline content"
+          help="8 options, hugs inline content"
         >
           <SelectMultiple
             name="inline"
@@ -49,9 +66,22 @@ const OptionsPresentationExample = () => {
           />
         </FormField>
         <FormField
-          label="Inline presentation with 50 options"
+          label="Option B - Inline presentation"
+          name="inline"
+          help="8 options, using open prop to control visibility on load"
+        >
+          <SelectMultiple
+            name="inline"
+            options={options}
+            optionsPresentation="inline"
+            placeholder="Choose options"
+            open
+          />
+        </FormField>
+        <FormField
+          label="Option B - Inline presentation"
           name="inlineLong"
-          help="Fixed height + overflow scroll"
+          help="50 options, fixed height + overflow scroll"
         >
           <SelectMultiple
             name="inlineLong"

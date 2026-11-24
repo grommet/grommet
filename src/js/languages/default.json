@@ -197,6 +197,7 @@
   "selectMultiple": {
     "clearAll": "Clear All",
     "clearAllA11y": "{selected} options selected. Clear all?",
+    "done": "Done with selections",
     "open": "Open drop",
     "optionNotSelected": "{optionLabel} not selected",
     "optionsA11y": "list of options",

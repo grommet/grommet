@@ -56,6 +56,7 @@ const SelectMultipleContainer = forwardRef(
       messages,
       onChange,
       onClose,
+      onDone,
       onKeyDown,
       onMore,
       onSearch,
@@ -652,6 +653,15 @@ const SelectMultipleContainer = forwardRef(
               selectOptionsStyle={selectOptionsStyle}
               theme={theme}
             />
+          )}
+          {onDone && (
+            <Box flex={false} pad={theme.selectMultiple?.summary?.pad}>
+              <Button
+                label={format({ id: 'selectMultiple.done', messages })}
+                onClick={onDone}
+                onFocus={() => setActiveIndex(-1)}
+              />
+            </Box>
           )}
           {usingKeyboard && showA11yLimit && (
             <Box

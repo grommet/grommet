@@ -909,6 +909,7 @@ exports[`Components loads 1`] = `
       "plain": [Function],
       "replace": [Function],
       "searchPlaceholder": [Function],
+      "showDoneButton": [Function],
       "showSelectedInline": [Function],
       "size": [Function],
       "sortSelectedOnClose": [Function],

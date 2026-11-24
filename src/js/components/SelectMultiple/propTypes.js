@@ -19,6 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
     messages: PropTypes.shape({
       clearAll: PropTypes.string,
       clearAllA11y: PropTypes.string,
+      done: PropTypes.string,
       // "multiple" kept for backwards compatibility,
       // but summarizedValue should be used instead
       multiple: PropTypes.string,
@@ -36,6 +37,7 @@ if (process.env.NODE_ENV !== 'production') {
       showMore: PropTypes.string,
       summarizedValue: PropTypes.string,
     }),
+    showDoneButton: PropTypes.bool,
     showSelectedInline: PropTypes.bool,
     optionsPresentation: PropTypes.oneOf(['drop', 'inline']),
     sortSelectedOnClose: PropTypes.bool,

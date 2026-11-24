@@ -101,6 +101,7 @@ const SelectMultiple = forwardRef(
       plain,
       replace,
       searchPlaceholder,
+      showDoneButton = false,
       size,
       sortSelectedOnClose = true,
       value: valueProp,
@@ -255,6 +256,11 @@ const SelectMultiple = forwardRef(
     const onInlineClose = useCallback(() => {
       onRequestClose();
       dropButtonRef.current?.focus();
+    }, [dropButtonRef, onRequestClose]);
+
+    const onDone = useCallback(() => {
+      onRequestClose();
+      requestAnimationFrame(() => dropButtonRef.current?.focus());
     }, [dropButtonRef, onRequestClose]);
 
     const onInlineToggle = useCallback(
@@ -462,6 +468,9 @@ const SelectMultiple = forwardRef(
         value={value}
         valueKey={valueKey}
         showSelectedInline={showSelectedInline}
+        onDone={
+          optionsPresentation === 'drop' && showDoneButton ? onDone : undefined
+        }
         optionsId={optionsPresentation === 'inline' ? optionsId : undefined}
         focusOnMount={optionsPresentation === 'drop' || usingKeyboard}
       >

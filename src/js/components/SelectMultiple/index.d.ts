@@ -8,12 +8,14 @@ export interface SelectMultipleProps extends BasicSelectProps {
   help?: string | React.ReactNode;
   limit?: number;
   value?: (string | number | object)[];
+  showDoneButton?: boolean;
   showSelectedInline?: boolean;
   optionsPresentation?: 'drop' | 'inline';
   sortSelectedOnClose?: boolean;
   messages?: {
     clearAll?: string;
     clearAllA11y?: string;
+    done?: string;
     multiple?: string; // kept for backwards compatibility, but summarizedValue should be used instead
     open?: string;
     optionNotSelected?: string;

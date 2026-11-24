@@ -5,3 +5,7 @@ Use `optionsPresentation="inline"` to expand the available options in document
 flow. The default, `optionsPresentation="drop"`, preserves the existing Drop
 behavior. `showSelectedInline` independently controls how selected values are
 displayed in the collapsed control.
+
+Use `showDoneButton` to add a close button below the options in Drop mode.
+Selections are applied immediately; the button only closes the Drop. Customize
+its label with `messages.done`. The button is not shown in inline mode.

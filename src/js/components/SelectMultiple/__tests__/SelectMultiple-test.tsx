@@ -1,7 +1,13 @@
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
 // SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
-import { act, render, screen, fireEvent } from '@testing-library/react';
+import {
+  act,
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
@@ -119,6 +125,55 @@ describe('SelectMultiple', () => {
     expect(results).toHaveNoViolations();
   });
 
+  test('drop Done button closes and preserves selections', async () => {
+    const user = userEvent.setup();
+    const onClose = jest.fn();
+    render(
+      <Grommet>
+        <SelectMultiple
+          a11yTitle="Choices"
+          options={['one', 'two']}
+          showDoneButton
+          onClose={onClose}
+        />
+      </Grommet>,
+    );
+
+    const trigger = screen.getByRole('button', { name: /Choices/ });
+    await user.click(trigger);
+    const listbox = await screen.findByRole('listbox');
+    const done = screen.getByRole('button', { name: 'Done with selections' });
+    expect(listbox).not.toContainElement(done);
+    await user.click(screen.getByRole('option', { name: /one not selected/ }));
+    await user.click(done);
+    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    await waitFor(() => expect(trigger).toHaveFocus());
+    await user.click(trigger);
+    expect(
+      await screen.findByRole('option', { name: /one selected/ }),
+    ).toHaveAttribute('aria-selected', 'true');
+  });
+
+  test('drop Done button supports a custom message', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <SelectMultiple
+          a11yTitle="Choices"
+          options={['one', 'two']}
+          showDoneButton
+          messages={{ done: 'Finish' }}
+        />
+      </Grommet>,
+    );
+
+    await user.click(screen.getByRole('button', { name: /Choices/ }));
+    const done = await screen.findByRole('button', { name: 'Finish' });
+    await user.click(done);
+    expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+  });
+
   test('inline options remain expanded through selection and form interaction', async () => {
     const user = userEvent.setup();
     render(
@@ -127,6 +182,7 @@ describe('SelectMultiple', () => {
           a11yTitle="Choices"
           options={['one', 'two']}
           optionsPresentation="inline"
+          showDoneButton
         />
         <Button label="Continue" />
       </Grommet>,
@@ -136,6 +192,9 @@ describe('SelectMultiple', () => {
     await user.click(trigger);
 
     const listbox = screen.getByRole('listbox');
+    expect(
+      screen.queryByRole('button', { name: 'Done with selections' }),
+    ).not.toBeInTheDocument();
     expect(trigger).toHaveAttribute('aria-expanded', 'true');
     expect(trigger).toHaveAttribute('aria-controls', listbox.id);
 
