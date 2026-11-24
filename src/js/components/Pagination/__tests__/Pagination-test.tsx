@@ -161,7 +161,7 @@ describe('Pagination', () => {
     );
 
     const expectedPage = `${Math.ceil(numberItems / step)}`;
-    fireEvent.click(getByText(expectedPage));
+    expect(getByText(expectedPage)).toBeTruthy();
     const activePage = (
       container.querySelector(`[aria-current="page"]`) as HTMLButtonElement
     ).innerHTML;
@@ -506,6 +506,61 @@ describe('Pagination', () => {
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('should keep summary in range when page prop > total pages', () => {
+    render(
+      <Grommet>
+        <Pagination numberItems={500} step={50} page={700} summary />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', { name: 'Go to page 10' }),
+    ).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByText('Showing 451-500 of 500')).toBeTruthy();
+  });
+
+  test('should move to last page when step prop increase reduces total pages', () => {
+    const { rerender } = render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={24} step={10} summary />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', { name: 'Go to page 24' }),
+    ).toHaveAttribute('aria-current', 'page');
+
+    rerender(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={24} step={100} summary />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', { name: 'Go to page 3' }),
+    ).toHaveAttribute('aria-current', 'page');
+    expect(
+      screen.queryByRole('button', { name: 'Go to page 24' }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText(`Showing 201-237 of ${NUM_ITEMS}`)).toBeTruthy();
+  });
+
+  test('should move to last page when stepOptions increase reduces total pages', async () => {
+    window.scrollTo = jest.fn();
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Pagination numberItems={NUM_ITEMS} page={24} stepOptions summary />
+      </Grommet>,
+    );
+    await user.click(
+      screen.getByRole('button', { name: 'Items per page; Selected: 10' }),
+    );
+    await user.click(screen.getByRole('option', { name: '100' }));
+
+    expect(
+      screen.getByRole('button', { name: 'Go to page 3' }),
+    ).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByText(`Showing 201-237 of ${NUM_ITEMS}`)).toBeTruthy();
   });
 
   test('should update summary when page changes', () => {
