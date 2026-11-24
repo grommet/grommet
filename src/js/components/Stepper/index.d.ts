@@ -31,7 +31,6 @@ export interface StepperProps
 
 export interface StepperContextStep extends StepType {
   isSubStep: boolean;
-  showConnector: boolean;
   childIds: string[];
   parentId?: string;
 }

@@ -28,13 +28,11 @@ const flattenSteps = (steps) => {
   const flat = [];
   let hasSubSubSteps = false;
 
-  steps.forEach((step, parentIdx) => {
+  steps.forEach((step) => {
     const hasChildren = step.children && step.children.length > 0;
-    const isLastParent = parentIdx === steps.length - 1;
     flat.push({
       ...step,
       isSubStep: false,
-      showConnector: !isLastParent,
       childIds: hasChildren ? step.children.map((c) => c.id) : [],
     });
     if (hasChildren) {
@@ -42,7 +40,6 @@ const flattenSteps = (steps) => {
         flat.push({
           ...child,
           isSubStep: true,
-          showConnector: false,
           parentId: step.id,
           childIds: [],
         });
