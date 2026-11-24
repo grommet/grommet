@@ -106,11 +106,6 @@ var Stepper = exports.Stepper = /*#__PURE__*/(0, _react.forwardRef)(function (_r
   var allSteps = (0, _react.useMemo)(function () {
     return flattenSteps(steps);
   }, [steps]);
-  (0, _react.useEffect)(function () {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn('Warning: Stepper is currently in beta. The API is subject ' + 'to change in future releases.');
-    }
-  }, []);
 
   // Force vertical if steps have children
   // (horizontal substeps not supported)
