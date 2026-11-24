@@ -67,6 +67,15 @@ const Pagination = forwardRef(
     }, [page]);
 
     useEffect(() => {
+      // keep the active page within range when the page prop or step
+      // results in fewer total pages than the current active page.
+      // Skip when inside Data, which manages its own view and may only
+      // know about the current page of items (e.g. server side paging).
+      if (!onView && totalPages > 0 && activePage > totalPages)
+        setActivePage(totalPages);
+    }, [activePage, onView, totalPages]);
+
+    useEffect(() => {
       // if we are getting the step or page from outside the view,
       // update the Data's view in case it needs to filter.
       if (onView && (view?.step !== step || view?.page !== page))
