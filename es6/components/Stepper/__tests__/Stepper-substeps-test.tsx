@@ -7,7 +7,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 
 import { Grommet, Stepper } from '../..';
-import { useStepper } from '..';
+import { StepperStep, useStepper } from '..';
 import type { StepperProps, StepType } from '..';
 
 const steps: StepType[] = [
@@ -389,6 +389,35 @@ describe('Stepper child reveal', () => {
     expect(document.activeElement).toBe(button('Review'));
     expect(onStepClick).not.toHaveBeenCalled();
     expectRows(['Introduction', 'Account', 'Billing', 'Review']);
+  });
+
+  test('custom StepperStep children use context for roving focus', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Stepper
+          steps={[
+            { id: 'intro', title: 'Introduction' },
+            { id: 'account', title: 'Account' },
+          ]}
+          currentStep="intro"
+          direction="vertical"
+          aria-label="Custom setup"
+        >
+          <StepperStep stepId="intro" />
+          <StepperStep stepId="account" />
+        </Stepper>
+      </Grommet>,
+    );
+
+    await user.tab();
+    expect(document.activeElement).toBe(button('Introduction'));
+    expect(button('Introduction').tabIndex).toBe(0);
+    expect(button('Account').tabIndex).toBe(-1);
+    await user.keyboard('{ArrowDown}');
+    expect(document.activeElement).toBe(button('Account'));
+    expect(button('Introduction').tabIndex).toBe(-1);
+    expect(button('Account').tabIndex).toBe(0);
   });
 
   test('keeps the roving target by id when earlier groups reveal children', async () => {

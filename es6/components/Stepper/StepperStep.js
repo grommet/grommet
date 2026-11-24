@@ -1,4 +1,5 @@
-var _excluded = ["gap"];
+var _excluded = ["stepId", "children"],
+  _excluded2 = ["gap"];
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
 // SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
@@ -15,34 +16,37 @@ import { StepperError, StepperDisabledReason } from './StepperHelperText';
 import { StyledStepItem, StyledStepButton, StyledStepContent, StyledStepSupportingContent, StyledConnector, StyledSubStepsList } from './StyledStepper';
 import { useStepTheme } from './utils';
 export var StepperStep = function StepperStep(_ref) {
-  var _step$children, _step$children2, _step$children$find;
-  var step = _ref.step,
-    isLast = _ref.isLast,
-    showConnector = _ref.showConnector,
-    direction = _ref.direction,
-    focusedIndex = _ref.focusedIndex,
-    indexProp = _ref.index,
-    isSubStep = _ref.isSubStep,
-    subSteps = _ref.subSteps,
-    onFocusStep = _ref.onFocusStep,
-    stepRefs = _ref.stepRefs;
+  var _steps$filter$slice$, _step$children, _step$children2, _step$children$find;
+  var stepId = _ref.stepId,
+    childrenProp = _ref.children,
+    rest = _objectWithoutPropertiesLoose(_ref, _excluded);
+  var childElements = React.Children.toArray(childrenProp);
+  var children = childElements.length ? childElements : undefined;
   var _useStepper = useStepper(),
     currentStep = _useStepper.currentStep,
     clickableSteps = _useStepper.clickableSteps,
+    direction = _useStepper.direction,
     showDescription = _useStepper.showDescription,
     onStepClick = _useStepper.onStepClick,
+    focusedStepId = _useStepper.focusedStepId,
+    onFocusStep = _useStepper.onFocusStep,
+    registerStepRef = _useStepper.registerStepRef,
     steps = _useStepper.steps;
   var _useContext = useContext(MessageContext),
     format = _useContext.format;
   var _useThemeValue = useThemeValue(),
     passThemeFlag = _useThemeValue.passThemeFlag;
+  var step = steps.find(function (s) {
+    return s.id === stepId;
+  });
+  var isSubStep = step.isSubStep;
+  var isLastParent = ((_steps$filter$slice$ = steps.filter(function (s) {
+    return !s.parentId;
+  }).slice(-1)[0]) == null ? void 0 : _steps$filter$slice$.id) === step.id;
   var baseId = useId();
   var descriptionId = baseId + "-stepper-description-" + step.id;
   var errorId = baseId + "-stepper-error-" + step.id;
   var reasonId = baseId + "-stepper-reason-" + step.id;
-  var index = indexProp !== undefined ? indexProp : steps.findIndex(function (s) {
-    return s.id === step.id;
-  });
   var isCurrent = currentStep === step.id;
   var hasCurrentChild = !isSubStep && ((_step$children = step.children) == null ? void 0 : _step$children.some(function (c) {
     return c.id === currentStep;
@@ -56,16 +60,16 @@ export var StepperStep = function StepperStep(_ref) {
   var isNavigable = !isDisabled && !!navigationStepId;
   var isClickable = clickableSteps && isNavigable;
   var isReadOnly = !clickableSteps;
+  var isVertical = direction === 'vertical';
+  var showConnector = !isSubStep && (!isLastParent || isVertical && (children == null ? void 0 : children.length));
   var stepTheme = useStepTheme(step, isSubStep);
   var stepItemValue = useMemo(function () {
     return {
       step: step,
-      index: index,
-      isLast: isLast,
       isSubStep: isSubStep,
       isDisabled: isDisabled
     };
-  }, [step, index, isLast, isSubStep, isDisabled]);
+  }, [step, isSubStep, isDisabled]);
   var handleClick = function handleClick() {
     if (isClickable && navigationStepId && onStepClick) {
       onStepClick(navigationStepId);
@@ -124,13 +128,13 @@ export var StepperStep = function StepperStep(_ref) {
     describedBy.push(reasonId);
   }
   var hasSupportingContent = showDescription && !!step.description || step.status === 'error' && !!step.errorMessage || step.status === 'disabled' && !!step.disabledReason;
-  var isVertical = direction === 'vertical';
+
   // In vertical direction the gap between indicator and label is
   // applied as column-gap on the step item grid (shared with the
   // supporting content), not as a Box gap on the button.
   var _ref2 = stepTheme.button || {},
     gap = _ref2.gap,
-    buttonThemeRest = _objectWithoutPropertiesLoose(_ref2, _excluded);
+    buttonThemeRest = _objectWithoutPropertiesLoose(_ref2, _excluded2);
   var buttonThemeProps = isVertical ? buttonThemeRest : stepTheme.button;
   var focusableProps = isReadOnly ? {} : {
     forwardedAs: 'button',
@@ -139,7 +143,7 @@ export var StepperStep = function StepperStep(_ref) {
     border: {
       size: '0px'
     },
-    tabIndex: focusedIndex === index ? 0 : -1,
+    tabIndex: focusedStepId === step.id ? 0 : -1,
     onClick: function onClick(event) {
       if (event.type === 'keydown') event.preventDefault();
       handleClick();
@@ -147,7 +151,7 @@ export var StepperStep = function StepperStep(_ref) {
     // indicator provides focus-visible treatment; avoid a second ring
     focusIndicator: false,
     onFocus: function onFocus() {
-      if (onFocusStep) onFocusStep(index);
+      onFocusStep == null || onFocusStep(step.id);
     }
   };
   return /*#__PURE__*/React.createElement(StepItemContext.Provider, {
@@ -156,12 +160,10 @@ export var StepperStep = function StepperStep(_ref) {
     direction: direction,
     isSubStep: isSubStep,
     stepTheme: stepTheme
-  }, passThemeFlag), /*#__PURE__*/React.createElement(StyledStepButton, _extends({
+  }, passThemeFlag, rest), /*#__PURE__*/React.createElement(StyledStepButton, _extends({
     role: isReadOnly ? 'group' : undefined,
     ref: function ref(el) {
-      if (stepRefs) {
-        if (el) stepRefs.current.set(index, el);else stepRefs.current["delete"](index);
-      }
+      return registerStepRef == null ? void 0 : registerStepRef(step.id, el);
     },
     "aria-current": isHighlighted ? 'step' : undefined,
     "aria-disabled": isDisabled || clickableSteps && !isNavigable || undefined,
@@ -181,16 +183,16 @@ export var StepperStep = function StepperStep(_ref) {
     id: errorId
   }), /*#__PURE__*/React.createElement(StepperDisabledReason, {
     id: reasonId
-  })), !!(subSteps != null && subSteps.length) && /*#__PURE__*/React.createElement(StyledSubStepsList, _extends({
+  })), !!(children != null && children.length) && /*#__PURE__*/React.createElement(StyledSubStepsList, _extends({
     forwardedAs: "ol",
     isVertical: isVertical,
     cssGap: true,
     stepTheme: stepTheme
-  }, stepTheme == null ? void 0 : stepTheme.children), subSteps), (showConnector !== undefined ? showConnector : !isLast) && /*#__PURE__*/React.createElement(StyledConnector, _extends({
+  }, stepTheme == null ? void 0 : stepTheme.children), children), (showConnector !== undefined ? showConnector : !isLastParent) && /*#__PURE__*/React.createElement(StyledConnector, _extends({
     direction: direction,
     status: step.status,
     "aria-hidden": "true",
     stepTheme: stepTheme,
-    spansStepGap: !isSubStep && !isLast
+    spansStepGap: !isSubStep && !isLastParent
   }, passThemeFlag))));
 };

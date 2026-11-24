@@ -8,10 +8,13 @@ var _react = require("react");
 
 var StepperContext = exports.StepperContext = /*#__PURE__*/(0, _react.createContext)({
   currentStep: '',
+  focusedStepId: '',
   steps: [],
   direction: 'horizontal',
   clickableSteps: true,
   onStepClick: undefined,
+  onFocusStep: function onFocusStep() {},
+  registerStepRef: function registerStepRef() {},
   showDescription: true,
   errorAnnouncement: 'polite',
   stepIndex: function stepIndex() {
@@ -34,8 +37,6 @@ var StepperContext = exports.StepperContext = /*#__PURE__*/(0, _react.createCont
 // Step-level context: provides the current step's data to subcomponents
 var StepItemContext = exports.StepItemContext = /*#__PURE__*/(0, _react.createContext)({
   step: null,
-  index: 0,
-  isLast: false,
   isSubStep: false,
   isDisabled: false
 });

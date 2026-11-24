@@ -14,16 +14,14 @@ import { StepperPropTypes } from './propTypes';
 import { resolveStepperTheme } from './utils';
 
 // Flattens steps with parent/child relationships into a linear list
-// for keyboard navigation and index-based tracking.
+// for keyboard navigation.
 var flattenSteps = function flattenSteps(steps) {
   var flat = [];
   var hasSubSubSteps = false;
-  steps.forEach(function (step, parentIdx) {
+  steps.forEach(function (step) {
     var hasChildren = step.children && step.children.length > 0;
-    var isLastParent = parentIdx === steps.length - 1;
     flat.push(_extends({}, step, {
       isSubStep: false,
-      showConnector: !isLastParent,
       childIds: hasChildren ? step.children.map(function (c) {
         return c.id;
       }) : []
@@ -32,7 +30,6 @@ var flattenSteps = function flattenSteps(steps) {
       step.children.forEach(function (child) {
         flat.push(_extends({}, child, {
           isSubStep: true,
-          showConnector: false,
           parentId: step.id,
           childIds: []
         }));
@@ -162,27 +159,23 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
     });
   }, [allSteps, currentParentId, revealedParents]);
   // Roving tabindex: only the focused step has tabIndex=0,
-  // all others have tabIndex=-1. A ref keeps the index synchronous
-  // for keyboard handlers that fire before React re-renders. Track the
-  // step by id so inserting revealed children does not shift focus.
-  var currentIndex = flatSteps.findIndex(function (s) {
-    return s.id === effectiveCurrentStep;
-  });
-  var flatStepsLength = flatSteps.length;
+  // all others have tabIndex=-1. Track focus by id so inserting
+  // revealed children does not shift focus.
   var _useState2 = useState(effectiveCurrentStep),
     focusedStep = _useState2[0],
     setFocusedStep = _useState2[1];
-  var focusedStepIndex = flatSteps.findIndex(function (s) {
+  var focusedStepId = flatSteps.some(function (s) {
     return s.id === focusedStep;
-  });
-  var focusedIndex = focusedStepIndex >= 0 ? focusedStepIndex : Math.max(currentIndex, 0);
-  var focusedIndexRef = useRef(focusedIndex);
-  focusedIndexRef.current = focusedIndex;
-  var updateFocusedIndex = useCallback(function (idx) {
-    var _flatSteps$idx;
-    focusedIndexRef.current = idx;
-    setFocusedStep((_flatSteps$idx = flatSteps[idx]) == null ? void 0 : _flatSteps$idx.id);
-  }, [flatSteps]);
+  }) ? focusedStep : effectiveCurrentStep;
+  var focusedStepRef = useRef(focusedStepId);
+  focusedStepRef.current = focusedStepId;
+  var updateFocusedStep = useCallback(function (stepId) {
+    focusedStepRef.current = stepId;
+    setFocusedStep(stepId);
+  }, []);
+  var registerStepRef = useCallback(function (stepId, element) {
+    if (element) stepRefs.current.set(stepId, element);else stepRefs.current["delete"](stepId);
+  }, []);
   var stepIndex = useCallback(function (stepId) {
     return allSteps.findIndex(function (s) {
       return s.id === stepId;
@@ -216,10 +209,13 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
   var contextValue = useMemo(function () {
     return {
       currentStep: effectiveCurrentStep,
+      focusedStepId: focusedStepId,
       steps: allSteps,
       direction: direction,
       clickableSteps: clickableSteps,
       onStepClick: onStepClick,
+      onFocusStep: updateFocusedStep,
+      registerStepRef: registerStepRef,
       showDescription: showDescription,
       errorAnnouncement: errorAnnouncement,
       stepIndex: stepIndex,
@@ -228,35 +224,37 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
       isCurrentStep: isCurrentStep,
       canNavigateTo: canNavigateTo
     };
-  }, [effectiveCurrentStep, allSteps, direction, clickableSteps, onStepClick, showDescription, errorAnnouncement, stepIndex, isPriorStep, isAfterStep, isCurrentStep, canNavigateTo]);
+  }, [effectiveCurrentStep, focusedStepId, allSteps, direction, clickableSteps, onStepClick, updateFocusedStep, registerStepRef, showDescription, errorAnnouncement, stepIndex, isPriorStep, isAfterStep, isCurrentStep, canNavigateTo]);
 
   // Wraps around the step list to find the next step
   // in the given direction (+1 forward, -1 backward).
-  var findNextEnabledIndex = useCallback(function (startIndex, delta) {
-    return flatStepsLength ? (startIndex + delta + flatStepsLength) % flatStepsLength : undefined;
-  }, [flatStepsLength]);
-  var findFirstEnabledIndex = useCallback(function () {
-    return 0;
-  }, []);
-  var findLastEnabledIndex = useCallback(function () {
-    return flatStepsLength - 1;
-  }, [flatStepsLength]);
-  var moveFocus = useCallback(function (nextIndex) {
-    if (nextIndex !== undefined && nextIndex !== focusedIndexRef.current) {
-      updateFocusedIndex(nextIndex);
-      var nextButton = stepRefs.current.get(nextIndex);
+  var findNextStepId = useCallback(function (delta) {
+    var _flatSteps$nextIndex;
+    if (!flatSteps.length) return undefined;
+    var index = flatSteps.findIndex(function (step) {
+      return step.id === focusedStepRef.current;
+    });
+    var startIndex = index >= 0 ? index : 0;
+    var nextIndex = (startIndex + delta + flatSteps.length) % flatSteps.length;
+    return (_flatSteps$nextIndex = flatSteps[nextIndex]) == null ? void 0 : _flatSteps$nextIndex.id;
+  }, [flatSteps]);
+  var moveFocus = useCallback(function (nextStepId) {
+    if (nextStepId && nextStepId !== focusedStepRef.current) {
+      updateFocusedStep(nextStepId);
+      var nextButton = stepRefs.current.get(nextStepId);
       if (nextButton) {
         nextButton.focus();
       }
     }
-  }, [updateFocusedIndex]);
+  }, [updateFocusedStep]);
   var onNext = useCallback(function () {
-    moveFocus(findNextEnabledIndex(focusedIndexRef.current, 1));
-  }, [findNextEnabledIndex, moveFocus]);
+    moveFocus(findNextStepId(1));
+  }, [findNextStepId, moveFocus]);
   var onPrevious = useCallback(function () {
-    moveFocus(findNextEnabledIndex(focusedIndexRef.current, -1));
-  }, [findNextEnabledIndex, moveFocus]);
+    moveFocus(findNextStepId(-1));
+  }, [findNextStepId, moveFocus]);
   var handleKeyDown = useCallback(function (event) {
+    var _flatSteps$, _flatSteps;
     var isHorizontal = direction === 'horizontal';
     switch (event.key) {
       case 'ArrowRight':
@@ -285,53 +283,30 @@ var Stepper = /*#__PURE__*/forwardRef(function (_ref, ref) {
         break;
       case 'Home':
         event.preventDefault();
-        moveFocus(findFirstEnabledIndex());
+        moveFocus((_flatSteps$ = flatSteps[0]) == null ? void 0 : _flatSteps$.id);
         break;
       case 'End':
         event.preventDefault();
-        moveFocus(findLastEnabledIndex());
+        moveFocus((_flatSteps = flatSteps[flatSteps.length - 1]) == null ? void 0 : _flatSteps.id);
         break;
       default:
         break;
     }
-  }, [direction, onNext, onPrevious, findFirstEnabledIndex, findLastEnabledIndex, moveFocus]);
+  }, [direction, onNext, onPrevious, flatSteps, moveFocus]);
   var renderDefaultSteps = function renderDefaultSteps() {
-    var flatIndex = 0;
     var elements = [];
-    steps.forEach(function (step, parentIdx) {
-      var parentFlatIndex = flatIndex;
-      flatIndex += 1;
+    steps.forEach(function (step) {
       var visibleChildren = revealedParents.has(step.id) || step.id === currentParentId ? step.children : undefined;
       var childElements = visibleChildren ? visibleChildren.map(function (child) {
-        var childFlatIndex = flatIndex;
-        flatIndex += 1;
         return /*#__PURE__*/React.createElement(StepperStep, {
           key: child.id,
-          step: child,
-          isLast: false,
-          showConnector: false,
-          direction: direction,
-          focusedIndex: focusedIndex,
-          index: childFlatIndex,
-          isSubStep: true,
-          onFocusStep: updateFocusedIndex,
-          stepRefs: stepRefs
+          stepId: child.id
         });
       }) : null;
-      var isLastParent = parentIdx === steps.length - 1;
       elements.push(/*#__PURE__*/React.createElement(StepperStep, {
         key: step.id,
-        step: step,
-        isLast: isLastParent,
-        showConnector: direction === 'horizontal' ? !isLastParent : !isLastParent || !!childElements,
-        direction: direction,
-        focusedIndex: focusedIndex,
-        index: parentFlatIndex,
-        isSubStep: false,
-        onFocusStep: updateFocusedIndex,
-        stepRefs: stepRefs,
-        subSteps: childElements
-      }));
+        stepId: step.id
+      }, childElements));
     });
     return elements;
   };

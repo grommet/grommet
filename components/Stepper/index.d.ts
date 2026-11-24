@@ -29,14 +29,23 @@ export interface StepperProps
   children?: React.ReactNode;
 }
 
+export interface StepperContextStep extends StepType {
+  isSubStep: boolean;
+  childIds: string[];
+  parentId?: string;
+}
+
 export interface StepperContextValue {
   currentStep: string;
-  steps: StepType[];
+  focusedStepId?: string;
+  steps: StepperContextStep[];
   direction: 'horizontal' | 'vertical';
   clickableSteps: boolean;
   showDescription: boolean;
   errorAnnouncement: 'assertive' | 'polite' | false;
   onStepClick?: (stepId: string) => void;
+  onFocusStep?: (stepId: string) => void;
+  registerStepRef?: (stepId: string, element: HTMLElement | null) => void;
   stepIndex: (stepId: string) => number;
   isPriorStep: (stepId: string) => boolean;
   isAfterStep: (stepId: string) => boolean;
@@ -46,8 +55,6 @@ export interface StepperContextValue {
 
 export interface StepItemContextValue {
   step: StepType | null;
-  index: number;
-  isLast: boolean;
   isSubStep: boolean;
   isDisabled: boolean;
 }
@@ -61,16 +68,10 @@ declare const useStepper: () => StepperContextValue;
 declare const StepItemContext: React.Context<StepItemContextValue>;
 declare const useStepItem: () => StepItemContextValue;
 
-export interface StepperStepProps {
-  step: StepType;
-  isLast: boolean;
-  showConnector?: boolean;
-  direction: 'horizontal' | 'vertical';
-  focusedIndex: number;
-  index: number;
-  isSubStep?: boolean;
-  onKeyDown?: (event: React.KeyboardEvent, index: number) => void;
-  stepRefs?: React.MutableRefObject<Map<number, HTMLButtonElement>>;
+export interface StepperStepProps
+  extends React.LiHTMLAttributes<HTMLLIElement> {
+  stepId: string;
+  children?: React.ReactNode;
 }
 
 declare const StepperStep: React.FC<StepperStepProps>;
