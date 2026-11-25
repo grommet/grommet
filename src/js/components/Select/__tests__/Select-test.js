@@ -523,6 +523,25 @@ describe('Select', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('does not select an option when disabled while open', () => {
+    const onChange = jest.fn();
+    const props = {
+      id: 'test-select',
+      placeholder: 'test select',
+      options: ['one', 'two'],
+      value: 'one',
+      onChange,
+    };
+    const { getByPlaceholderText, getByText, rerender } = render(
+      <Grommet><Select {...props} /></Grommet>,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+    rerender(<Grommet><Select {...props} disabled /></Grommet>);
+    fireEvent.click(getByText('two'));
+    fireEvent.keyDown(getByText('two'), { key: 'Enter', keyCode: 13 });
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   test('disabled key', () => {
     jest.useFakeTimers();
     const Test = () => {
