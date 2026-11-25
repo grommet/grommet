@@ -24,6 +24,7 @@ import { Button } from '../Button';
 import { Calendar } from '../Calendar';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form';
+import { Grid } from '../Grid';
 import { Keyboard } from '../Keyboard';
 import { TimeInput } from '../TimeInput';
 import { defaultHourForFormat } from '../TimeInput/utils';
@@ -39,6 +40,7 @@ import {
   StyledDateTimeInputField,
   StyledDateTimeInputSegment,
   StyledDateTimeInputSeparator,
+  StyledDateTimeInputTimeCell,
 } from './StyledDateTimeInput';
 import { DateTimeInputPropTypes } from './propTypes';
 
@@ -382,8 +384,10 @@ const formatSectionText = (section, value) => {
 const DateTimeInput = forwardRef(
   (
     {
+      calendarProps,
       defaultValue,
       disabled,
+      dropProps,
       format,
       id,
       inline = false,
@@ -1200,12 +1204,11 @@ const DateTimeInput = forwardRef(
     ) : null;
 
     const pickerContent = (
-      <Box
+      <Grid
         role="group"
         aria-label={groupLabel}
         aria-labelledby={formFieldLabelId}
-        direction="row"
-        cssGap
+        columns={['auto', 'auto', 'auto']}
         pad={theme.dateTimeInput?.drop?.pad}
         gap={theme.dateTimeInput?.drop?.gap}
         height={theme.dateTimeInput?.drop?.height}
@@ -1223,12 +1226,13 @@ const DateTimeInput = forwardRef(
             },
           }}
         >
-          <Box width="medium" flex={false}>
+          <Box flex={false}>
             <Calendar
               date={getCalendarDate(sections)}
               initialFocus={inline ? undefined : 'days'}
               onSelect={disabled || readOnly ? undefined : handleCalendarSelect}
-              fill
+              locale={locale}
+              {...calendarProps}
             />
           </Box>
         </ThemeContext.Extend>
@@ -1240,23 +1244,24 @@ const DateTimeInput = forwardRef(
             size: theme.dateTimeInput?.drop?.border?.size,
           }}
         />
-        <TimeInput
-          inline
-          format={resolvedFormat}
-          focusOnOpen={false}
-          value={timeValue}
-          showSeconds={showSeconds}
-          messages={messages}
-          minuteStep={normalizedMinuteStep}
-          disabled={disabled}
-          readOnly={readOnly}
-          onChange={disabled || readOnly ? undefined : handleTimeSelect}
-          onPartialChange={
-            disabled || readOnly ? undefined : handleTimePartialChange
-          }
-          fill
-        />
-      </Box>
+        <StyledDateTimeInputTimeCell {...passThemeFlag}>
+          <TimeInput
+            inline
+            format={resolvedFormat}
+            focusOnOpen={false}
+            value={timeValue}
+            showSeconds={showSeconds}
+            messages={messages}
+            minuteStep={normalizedMinuteStep}
+            disabled={disabled}
+            readOnly={readOnly}
+            onChange={disabled || readOnly ? undefined : handleTimeSelect}
+            onPartialChange={
+              disabled || readOnly ? undefined : handleTimePartialChange
+            }
+          />
+        </StyledDateTimeInputTimeCell>
+      </Grid>
     );
 
     if (inline) {
@@ -1403,6 +1408,7 @@ const DateTimeInput = forwardRef(
               align={{ top: 'bottom', left: 'left' }}
               onEsc={closePicker}
               onClickOutside={closePicker}
+              {...dropProps}
             >
               {pickerContent}
             </Drop>

@@ -1133,6 +1133,7 @@ export interface ThemeType {
       };
     };
     drop?: {
+      height?: string;
       pad?: PadType;
       gap?: GapType;
       border?: {

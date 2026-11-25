@@ -1097,7 +1097,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       drop: {
-        height: 'medium',
         pad: 'small',
         gap: 'small',
         border: {

@@ -41,6 +41,13 @@ export const StyledDateTimeInputContainer = styled(Box).withConfig({
     `}
 `;
 
+// Adds no height to the picker row, so the calendar sets it; the time
+// columns fill and scroll within it.
+export const StyledDateTimeInputTimeCell = styled(Box)`
+  height: 0;
+  min-height: max(100%, ${(props) => props.theme.global.size.xsmall});
+`;
+
 export const StyledDateTimeInput = styled.input.withConfig(
   styledComponentsConfig,
 )`
