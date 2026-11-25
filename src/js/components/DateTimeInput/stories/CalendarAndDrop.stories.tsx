@@ -47,6 +47,19 @@ export const CalendarAndDrop = () => {
           }}
         />
       </Box>
+      <Box gap="xsmall">
+        <Text size="small" weight="bold">
+          Small calendar, the drop follows its height
+        </Text>
+        <DateTimeInput
+          locale="en-US"
+          value={value}
+          onChange={({ value: next }: { value?: string }) =>
+            setValue(next || '')
+          }
+          calendarProps={{ size: 'small' }}
+        />
+      </Box>
     </Box>
   );
 };

@@ -288,13 +288,27 @@ describe('DateTimeInput', () => {
 
     const hourList = screen.getByRole('listbox', { name: 'hour' });
     const minuteList = screen.getByRole('listbox', { name: 'minute' });
-    const pickerContent = hourList.parentElement?.parentElement;
+    const timeCell = hourList.parentElement?.parentElement;
+    const pickerContent = screen.getByRole('group');
 
-    expect(pickerContent).toHaveStyleRule('height', '384px');
+    expect(pickerContent).toHaveStyleRule('display', 'grid');
+    expect(pickerContent).not.toHaveStyleRule('height', expect.any(String));
+    expect(timeCell).toHaveStyleRule('height', '0');
+    expect(timeCell).toHaveStyleRule('min-height', 'max(100%,96px)');
     expect(hourList).toHaveStyleRule('height', '100%');
     expect(minuteList).toHaveStyleRule('height', '100%');
     expect(hourList).toHaveStyleRule('overflow', 'auto');
     expect(minuteList).toHaveStyleRule('overflow', 'auto');
+  });
+
+  test('theme dateTimeInput.drop.height fixes the picker height', () => {
+    render(
+      <Grommet theme={{ dateTimeInput: { drop: { height: '300px' } } }}>
+        <DateTimeInput inline format="24" value="2026-07-22T18:30:00.000Z" />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('group')).toHaveStyleRule('height', '300px');
   });
 
   test('selecting a calendar day does not move focus into the hour listbox', async () => {
@@ -1333,15 +1347,11 @@ describe('DateTimeInput', () => {
       ).toBeInTheDocument();
     });
 
-    test('fill: false sizes days from theme calendar daySize', async () => {
+    test('days use the theme calendar daySize', async () => {
       const user = userEvent.setup();
       render(
         <Grommet theme={{ calendar: { medium: { daySize: '40px' } } }}>
-          <DateTimeInput
-            format="24"
-            value="2026-07-22T18:30:00.000Z"
-            calendarProps={{ fill: false }}
-          />
+          <DateTimeInput format="24" value="2026-07-22T18:30:00.000Z" />
         </Grommet>,
       );
       const trigger = screen.getByRole('button', { name: /date and time/i });
@@ -1352,6 +1362,26 @@ describe('DateTimeInput', () => {
         .querySelector('div');
       expect(day).toHaveStyleRule('width', '40px');
       expect(day).toHaveStyleRule('height', '40px');
+    });
+
+    test('size picks the theme daySize for that calendar size', async () => {
+      const user = userEvent.setup();
+      render(
+        <Grommet theme={{ calendar: { small: { daySize: '30px' } } }}>
+          <DateTimeInput
+            format="24"
+            value="2026-07-22T18:30:00.000Z"
+            calendarProps={{ size: 'small' }}
+          />
+        </Grommet>,
+      );
+      const trigger = screen.getByRole('button', { name: /date and time/i });
+      await user.click(trigger);
+
+      const day = within(getDropFromTrigger(trigger))
+        .getByRole('button', { name: /Jul 22 2026/ })
+        .querySelector('div');
+      expect(day).toHaveStyleRule('width', '30px');
     });
   });
 
