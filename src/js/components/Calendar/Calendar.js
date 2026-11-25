@@ -279,15 +279,32 @@ const CalendarDay = forwardRef(
   },
 );
 
-const CalendarCustomDay = ({
-  'aria-selected': ariaSelected,
-  children,
-  fill,
-  size,
-  buttonProps,
-  responsive,
-}) => {
-  if (!buttonProps) {
+const CalendarCustomDay = forwardRef(
+  (
+    {
+      'aria-selected': ariaSelected,
+      children,
+      fill,
+      size,
+      buttonProps,
+      responsive,
+    },
+    ref,
+  ) => {
+    if (!buttonProps) {
+      return (
+        <StyledDayContainer
+          aria-selected={ariaSelected}
+          role="gridcell"
+          sizeProp={size}
+          fillContainer={fill}
+          responsive={responsive}
+        >
+          {children}
+        </StyledDayContainer>
+      );
+    }
+
     return (
       <StyledDayContainer
         aria-selected={ariaSelected}
@@ -296,25 +313,18 @@ const CalendarCustomDay = ({
         fillContainer={fill}
         responsive={responsive}
       >
-        {children}
+        <StyledDayButton
+          fill={fill}
+          responsive={responsive}
+          {...buttonProps}
+          ref={ref}
+        >
+          {children}
+        </StyledDayButton>
       </StyledDayContainer>
     );
-  }
-
-  return (
-    <StyledDayContainer
-      aria-selected={ariaSelected}
-      role="gridcell"
-      sizeProp={size}
-      fillContainer={fill}
-      responsive={responsive}
-    >
-      <StyledDayButton fill={fill} responsive={responsive} {...buttonProps}>
-        {children}
-      </StyledDayButton>
-    </StyledDayContainer>
-  );
-};
+  },
+);
 
 const Calendar = forwardRef(
   (
@@ -916,19 +926,28 @@ const Calendar = forwardRef(
             </CalendarDay>,
           );
         } else {
+          const isActive = !!active && active.getTime() === day.getTime();
           days.push(
             <CalendarCustomDay
               key={day.getTime()}
               aria-selected={selected}
+              // only the active day is in the tab order, the other days are
+              // reached with the arrow keys, same as the default days
+              ref={onSelect && isActive ? focusableDateRef : undefined}
               buttonProps={{
                 a11yTitle: day.toDateString(),
                 ...(onSelect
                   ? {
-                      active: active && active.getTime() === day.getTime(),
-                      disabled: dayDisabled,
+                      active: isActive,
+                      // aria-disabled, instead of disabled, keeps a disabled
+                      // day focusable so arrow key navigation can move
+                      // through it
+                      'aria-disabled': dayDisabled,
+                      disabledProp: dayDisabled,
                       onClick: dayDisabled
                         ? () => {}
                         : () => onClick(dateObject),
+                      tabIndex: isActive ? 0 : -1,
                     }
                   : {}),
               }}

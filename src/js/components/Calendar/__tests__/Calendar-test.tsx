@@ -9,7 +9,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 
 import { axe } from 'jest-axe';
-import { fireEvent, render, act, screen } from '@testing-library/react';
+import { fireEvent, render, act, screen, waitFor } from '@testing-library/react';
 import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text, CalendarProps } from '../..';
 
@@ -1079,5 +1079,69 @@ describe('Calendar Keyboard events', () => {
       'true',
     );
     jest.useRealTimers();
+  });
+
+  describe('custom day keyboard navigation', () => {
+    const renderCustom = (props: Partial<CalendarProps> = {}) =>
+      render(
+        <Grommet>
+          <Calendar
+            date={DATE}
+            onSelect={() => {}}
+            animate={false}
+            showAdjacentDays={false}
+            {...props}
+          >
+            {({ day }) => <Box>{day}</Box>}
+          </Calendar>
+        </Grommet>,
+      );
+
+    const dayButton = (name: string) => screen.getByRole('button', { name });
+
+    // userEvent does not provide the keyCode that Keyboard relies on
+    const press = (key: string, keyCode: number) =>
+      fireEvent.keyDown(document.activeElement as Element, { key, keyCode });
+
+    test('only the active day is in the tab order', () => {
+      renderCustom();
+      const dayButtons = screen
+        .getAllByRole('button')
+        .filter((button) =>
+          /^\w{3} \w{3} \d{2} 2020$/.test(
+            button.getAttribute('aria-label') || '',
+          ),
+        );
+      expect(dayButtons.filter((button) => button.tabIndex === 0)).toEqual([
+        dayButton('Wed Jan 01 2020'),
+      ]);
+      expect(dayButton('Thu Jan 02 2020')).toHaveAttribute('tabindex', '-1');
+    });
+
+    test('arrow keys move focus between days', async () => {
+      renderCustom();
+      act(() => dayButton('Wed Jan 01 2020').focus());
+      press('ArrowRight', 39);
+      await waitFor(() => expect(dayButton('Thu Jan 02 2020')).toHaveFocus());
+      press('ArrowDown', 40);
+      await waitFor(() => expect(dayButton('Thu Jan 09 2020')).toHaveFocus());
+      press('ArrowLeft', 37);
+      await waitFor(() => expect(dayButton('Wed Jan 08 2020')).toHaveFocus());
+      press('ArrowUp', 38);
+      await waitFor(() => expect(dayButton('Wed Jan 01 2020')).toHaveFocus());
+    });
+
+    test('focus moves through disabled days', async () => {
+      renderCustom({ disabled: ['2020-01-02T00:00:00-08:00'] });
+      act(() => dayButton('Wed Jan 01 2020').focus());
+      press('ArrowRight', 39);
+      await waitFor(() => expect(dayButton('Thu Jan 02 2020')).toHaveFocus());
+      expect(dayButton('Thu Jan 02 2020')).toHaveAttribute(
+        'aria-disabled',
+        'true',
+      );
+      press('ArrowRight', 39);
+      await waitFor(() => expect(dayButton('Fri Jan 03 2020')).toHaveFocus());
+    });
   });
 });
