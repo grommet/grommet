@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 import { BoxExtendedProps } from '../Box';
 
@@ -23,7 +25,9 @@ export interface TagProps {
   value?: string | number | React.ReactNode;
 }
 
-export interface TagExtendedProps extends Omit<BoxExtendedProps, keyof TagProps>, TagProps {}
+export interface TagExtendedProps
+  extends Omit<BoxExtendedProps, keyof TagProps>,
+    TagProps {}
 
 // Keep type alias for backwards compatibility.
 export type TagType = TagProps;

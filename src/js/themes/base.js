@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import { Actions } from 'grommet-icons/icons/Actions';
 import { AssistListening } from 'grommet-icons/icons/AssistListening';
 import { CircleInformation } from 'grommet-icons/icons/CircleInformation';
@@ -14,11 +16,13 @@ import { Pause } from 'grommet-icons/icons/Pause';
 import { Play } from 'grommet-icons/icons/Play';
 import { FormPin } from 'grommet-icons/icons/FormPin';
 import { Previous } from 'grommet-icons/icons/Previous';
+import { Hide } from 'grommet-icons/icons/Hide';
 import { StatusCriticalSmall } from 'grommet-icons/icons/StatusCriticalSmall';
 import { StatusGoodSmall } from 'grommet-icons/icons/StatusGoodSmall';
 import { StatusWarningSmall } from 'grommet-icons/icons/StatusWarningSmall';
 import { StatusUnknownSmall } from 'grommet-icons/icons/StatusUnknownSmall';
 import { Subtract } from 'grommet-icons/icons/Subtract';
+import { View } from 'grommet-icons/icons/View';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
@@ -76,6 +80,7 @@ const colors = {
     dark: 'rgba(255, 255, 255, 0.33)',
     light: 'rgba(0, 0, 0, 0.33)',
   },
+  scrollbar: 'border',
   brand: brandColor,
   control: {
     dark: 'accent-1',
@@ -213,6 +218,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         computer: 'large',
       },
       colors,
+      scrollbar: {
+        // width: undefined,
+      },
       control: {
         border: {
           width: `${controlBorderWidth}px`,
@@ -332,6 +340,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
+        // any BoxPartThemeType
+        // disabled: undefined, // any BoxStateThemeType
+        // focus: undefined, // any BoxStateThemeType
+        // hover: undefined, // any BoxStateThemeType
+        // pad: undefined,
+        // placeholder: undefined, // any TextThemeType
         padding: {
           horizontal: `${
             parseMetricToNum(`${baseSpacing / 2}px`) -
@@ -350,6 +364,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // deprecate in v3
         // weight: undefined,
         readOnly: {
+          // any BoxStateThemeType
           // background: undefined,
           // border: {
           //  color: undefined,
@@ -844,6 +859,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     checkBox: {
+      // control: {
+      //   // any BoxPartThemeType
+      //   hover: // any BoxStateThemeType
+      //   selected: {
+      //     // any BoxStateThemeType
+      //     hover: // any BoxStateThemeType,
+      //   },
+      // },
+      // container: {
+      //   // any BoxPartThemeType
+      //   hover: // any BoxStateThemeType,
+      // },
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
@@ -853,7 +880,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       check: {
         // extend: undefined,
-        radius: '4px',
+        radius: '4px' /** @deprecated Use checkBox.control.round instead. */,
         thickness: '4px',
       },
       label: {
@@ -869,6 +896,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             light: 'black',
           },
         },
+        /** @deprecated Use checkBox.container.hover.background instead. */
         // background: undefined,
         // extend: undefined,
       },
@@ -880,6 +908,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
+      /** @deprecated Use checkBox.container.pad instead. */
       // pad: undefined,
       size: `${baseSpacing}px`,
       toggle: {
@@ -1052,7 +1081,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         size: 'medium',
       },
     },
-    timeInput: {
+    dateTimeInput: {
       button: {
         margin: { right: 'small' },
       },
@@ -1068,22 +1097,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       drop: {
-        option: {
-          hover: {
-            background: 'active-background',
-          },
+        height: 'medium',
+        pad: 'small',
+        gap: 'small',
+        border: {
+          color: 'border',
+          size: 'xsmall',
+        },
+      },
+      calendar: {
+        day: {
           selected: {
             background: 'selected',
-            color: 'white',
-            hover: {
-              // background: undefined,
-            },
-            // extend: undefined,
           },
         },
       },
       icon: {
-        // clock: undefined,
+        calendar: undefined,
+      },
+      separator: {
+        pad: 'xxsmall',
       },
     },
     dataSearch: {
@@ -1280,10 +1313,21 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       gap: 'medium',
     },
     formField: {
+      // background: undefined, // input area only, not labels or messages
       // [inputname]: {
+      //  background: undefined, // 'transparent' opts out of shared background
+      //  error: undefined, // any BoxStateThemeType
       //  container: {
       //    extend: undefined,
-      //   }
+      //   },
+      //   hover: {
+      //     background: {
+      //       color: undefined,
+      //     },
+      //     border: {
+      //       color: undefined,
+      //     },
+      //   },
       // }
       border: {
         color: 'border',
@@ -1337,6 +1381,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // container: {}, // any Box props
         // icon: undefined,
       },
+      // hover: {
+      //   background: {
+      //     color: undefined,
+      //   },
+      //   border: {
+      //     color: undefined,
+      //   },
+      // },
       // extend: undefined,
       help: {
         color: 'dark-2',
@@ -2062,30 +2114,49 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     radioButton: {
+      // control: {
+      //   // any BoxPartThemeType
+      //   hover: // any BoxStateThemeType
+      //   selected: {
+      //     // any BoxStateThemeType
+      //     hover: // any BoxStateThemeType,
+      //   },
+      // },
       border: {
+        /** @deprecated Use radioButton.control.border.color instead. */
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
           light: 'rgba(0, 0, 0, 0.15)',
         },
+        /** @deprecated Use radioButton.control.border.size instead. */
         width: '2px',
       },
+      /** @deprecated Use radioButton.control.background instead. */
       // background: {
       //   color: undefined,
       // },
       check: {
+        /** @deprecated Use radioButton.control.round instead. */
         radius: '100%',
+        /** @deprecated Use radioButton.control.selected.background instead. */
         // background: {
         //  color: undefined,
         // },
         // color: { dark: undefined, light: undefined },
         // extend: undefined,
       },
+      /** @deprecated Use radioButton.control.selected.border.color instead. */
       // color: undefined,
       hover: {
+        /** @deprecated Use radioButton.container.hover.background instead. */
         // background: {
         //   color: undefined,
         // },
         border: {
+          /**
+           * @deprecated Use radioButton.control.hover.border.color and
+           * radioButton.control.selected.hover.border.color instead.
+           */
           color: {
             dark: 'white',
             light: 'black',
@@ -2105,6 +2176,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // weight: undefined,
       },
       container: {
+        // any BoxPartThemeType
+        // hover: // any BoxStateThemeType,
         // extend: undefined
       },
     },
@@ -2276,6 +2349,130 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       //   unselected: undefined,
       // },
     },
+    stepper: {
+      container: {
+        gap: { row: 'medium', column: 'small' },
+      },
+      indicator: {
+        size: 'medium', // 'small' | 'medium' | 'large'
+        iconSize: 'medium',
+        border: { size: 'small' },
+        round: '50%',
+        align: 'center',
+        justify: 'center',
+      },
+      label: { size: 'medium', color: 'text' },
+      connector: {
+        thickness: 'small',
+        color: 'border',
+        gap: `${baseSpacing / 6}px`, // 4,
+      },
+      description: {
+        size: 'small',
+        color: 'text-weak',
+      },
+      errorText: {
+        size: 'xsmall',
+        color: 'status-critical',
+      },
+      disabledReason: {
+        size: 'xsmall',
+        color: 'text-weak',
+      },
+      button: {
+        pad: 'xxsmall',
+        gap: 'xsmall',
+        align: 'center',
+      },
+      children: {
+        pad: 'none',
+      },
+      vertical: {
+        button: {
+          gap: 'small',
+          direction: 'row',
+          // baseline pairs with the StyledIndicator baseline strut to
+          // center the label's first line against the indicator
+          align: 'baseline',
+        },
+      },
+      subStep: {
+        indicator: {
+          size: 'small',
+          iconSize: 'small',
+        },
+        label: { size: 'small' },
+      },
+      // States: [component].[state].[element].[property]
+      pending: {
+        indicator: {
+          background: 'background-front',
+          color: 'text-strong',
+          border: { color: 'text-xweak' },
+        },
+      },
+      current: {
+        indicator: {
+          icon: StatusGoodSmall,
+          background: 'brand',
+          color: 'background-front',
+          border: { color: 'brand' },
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+        },
+      },
+      currentCompleted: {
+        indicator: {
+          icon: FormCheckmark,
+          background: 'brand',
+          color: 'white',
+          border: { color: 'brand' },
+        },
+        label: {
+          color: { dark: 'text-strong', light: 'brand' },
+        },
+        connector: { color: 'brand' },
+      },
+      completed: {
+        indicator: {
+          icon: FormCheckmark,
+          color: 'brand',
+          border: { color: 'brand' },
+        },
+        label: { color: 'text-weak' },
+        connector: { color: 'brand' },
+      },
+      error: {
+        indicator: {
+          icon: StatusCriticalSmall,
+          iconSize: 'small',
+          background: 'background-front',
+          color: 'status-critical',
+          border: { color: 'status-critical' },
+        },
+        connector: { color: 'status-critical' },
+      },
+      currentError: {
+        indicator: {
+          icon: StatusCriticalSmall,
+          iconSize: 'small',
+          background: 'status-critical',
+          color: 'white',
+          border: { color: 'status-critical' },
+        },
+        label: { color: 'status-critical' },
+        connector: { color: 'status-critical' },
+      },
+      disabled: {
+        indicator: {
+          background: 'background-contrast',
+          color: 'text-weak',
+          border: { color: 'border' },
+        },
+        label: { color: 'text-weak' },
+      },
+    },
     tab: {
       active: {
         color: 'text',
@@ -2358,147 +2555,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         small: 1,
         medium: 3,
         large: 3,
-      },
-    },
-    stepper: {
-      indicator: {
-        size: 'medium', // 'small' | 'medium' | 'large'
-        border: {
-          width: '2px',
-        },
-      },
-      label: {
-        size: 'medium',
-        substep: {
-          size: 'small',
-        },
-      },
-      connector: {
-        stroke: { width: '2px' },
-      },
-      description: {
-        size: 'small',
-        color: 'text-weak',
-      },
-      helperText: {
-        size: 'xsmall',
-        color: 'text-weak',
-      },
-      // States: [component].[state].[element].[property]
-      pending: {
-        indicator: {
-          background: 'background-front',
-          color: 'text-strong',
-          border: 'text-xweak',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            background: 'background-front',
-            border: 'text-strong',
-          },
-        },
-        label: { color: 'text' },
-        connector: { color: 'border' },
-      },
-      current: {
-        indicator: {
-          icon: StatusGoodSmall,
-          iconSize: 'medium',
-          background: 'brand',
-          color: 'white',
-          border: 'brand',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            color: 'white',
-          },
-        },
-        label: {
-          color: { dark: 'text-strong', light: 'brand' },
-        },
-      },
-      currentCompleted: {
-        indicator: {
-          icon: FormCheckmark,
-          iconSize: 'medium',
-          background: 'brand',
-          color: 'white',
-          border: 'brand',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            color: 'white',
-          },
-        },
-        label: {
-          color: { dark: 'text-strong', light: 'brand' },
-        },
-      },
-      completed: {
-        indicator: {
-          icon: FormCheckmark,
-          iconSize: 'medium',
-          background: 'background-front',
-          color: 'brand',
-          border: 'brand',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            background: 'background-front',
-          },
-        },
-        label: { color: 'text-weak' },
-        connector: { color: 'brand' },
-      },
-      error: {
-        indicator: {
-          icon: StatusCriticalSmall,
-          background: 'background-front',
-          color: 'status-critical',
-          border: 'status-critical',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            background: 'background-front',
-          },
-        },
-        label: { color: 'text' },
-        connector: { color: 'status-critical' },
-        helperText: { color: 'status-critical' },
-      },
-      currentError: {
-        indicator: {
-          icon: StatusCriticalSmall,
-          background: 'status-critical',
-          color: 'white',
-          border: 'status-critical',
-          substep: {
-            iconSize: 'small',
-          },
-          hover: {
-            color: 'white',
-          },
-        },
-        label: {
-          color: 'status-critical',
-        },
-      },
-      disabled: {
-        indicator: {
-          background: 'background-contrast',
-          color: 'text-weak',
-          border: 'border',
-          substep: {
-            iconSize: 'small',
-          },
-        },
-        label: { color: 'text-weak' },
-        connector: { color: 'border' },
       },
     },
     table: {
@@ -2625,9 +2681,74 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     textInput: {
       // extend: undefined,
       // disabled: { opacity: undefined },
-      // icons: {
-      //   copy: undefined,
+      icons: {
+        clear: FormClose,
+        // copy: undefined,
+        hidePassword: Hide,
+        showPassword: View,
+      },
+    },
+    timeInput: {
+      container: {
+        // any BoxPartThemeType
+        round: 'xxsmall',
+      },
+      // value: {
+      //   any BoxPartThemeType
       // },
+      segment: {
+        // any BoxPartThemeType
+        // any TextThemeType
+        pad: { horizontal: 'xxsmall' },
+        active: {
+          // any BoxPartThemeType
+          // any TextThemeType
+          background: 'active-background',
+          border: {
+            color: { dark: 'white', light: 'black' },
+            side: 'bottom',
+            size: 'small',
+          },
+        },
+      },
+      // dropButton: {
+      //   // any ButtonType
+      //   icon: undefined,
+      // },
+      drop: {
+        // any BoxPartThemeType
+        height: 'small',
+        gap: 'none',
+        pad: { horizontal: 'xsmall', vertical: 'small' },
+        column: {
+          height: '100%',
+          gap: 'xxsmall',
+          pad: { horizontal: 'xsmall' },
+        },
+        option: {
+          container: {
+            // any BoxPartThemeType
+            pad: { vertical: 'xxsmall', horizontal: 'xsmall' },
+            round: `${baseSpacing / 6}px`, // 4px
+            hover: {
+              // any BoxPartThemeType
+              background: 'active-background',
+            },
+            selected: {
+              // any BoxPartThemeType
+              background: 'selected',
+            },
+          },
+          text: {
+            // any TextThemeType
+            selected: {
+              // any TextThemeType
+              color: 'white',
+              weight: 500,
+            },
+          },
+        },
+      },
     },
     tip: {
       content: {
@@ -2702,6 +2823,72 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           pad: {
             horizontal: 'small',
           },
+        },
+      },
+    },
+    wizard: {
+      container: {
+        gap: 'none',
+        background: 'background-back',
+      },
+      body: {
+        pad: { horizontal: 'large', vertical: 'large' },
+        gap: { row: 'none', column: 'medium' },
+      },
+      header: {
+        pad: { horizontal: 'large', vertical: 'small' },
+        background: 'background-front',
+        title: {
+          size: 'small',
+        },
+        close: {
+          icon: FormClose,
+        },
+      },
+      progress: {
+        horizontal: {
+          pad: { horizontal: 'none', vertical: 'none' },
+        },
+        vertical: {
+          // Fixed rail width so the column doesn't collapse to label text.
+          width: 'small',
+          // pad: undefined,
+        },
+      },
+      stepHeader: {
+        pad: { horizontal: 'none', vertical: 'none' },
+        counter: {
+          size: 'small',
+          color: 'text',
+        },
+        title: {
+          size: 'large',
+          margin: 'none',
+        },
+        description: {
+          size: 'medium',
+          color: 'text-weak',
+          margin: { top: 'xsmall', bottom: 'none' },
+        },
+      },
+      content: {
+        pad: 'medium',
+        gap: 'medium',
+        background: 'background-front',
+        round: 'small',
+        margin: { top: 'medium' },
+      },
+      footer: {
+        pad: { horizontal: 'large', vertical: 'small' },
+        gap: { row: 'xsmall', column: 'small' },
+        background: 'background-front',
+        justify: 'end',
+        button: {
+          next: { icon: FormNext },
+          complete: { icon: undefined },
+          previous: { icon: FormPrevious },
+          cancel: { icon: undefined },
+          skip: { icon: FormNext },
         },
       },
     },

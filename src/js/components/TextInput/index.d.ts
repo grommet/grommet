@@ -1,12 +1,8 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
-import {
-  A11yTitleType,
-  Omit,
-  PlaceHolderType,
-  TextAlignType,
-  WidthType,
-} from '../../utils';
 import { DropType } from '../Drop';
+import { A11yTitleType, TextAlignType, WidthType } from '../../utils';
 
 export interface TextInputProps
   extends Omit<
@@ -17,6 +13,9 @@ export interface TextInputProps
     'onSelect' | 'size' | 'placeholder' | 'width'
   > {
   a11yTitle?: A11yTitleType;
+  clear?: boolean;
+  copy?: boolean;
+  defaultSuggestion?: number;
   dropAlign?: {
     top?: 'top' | 'bottom';
     bottom?: 'top' | 'bottom';
@@ -24,19 +23,29 @@ export interface TextInputProps
     left?: 'left' | 'right';
   };
   dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
-  dropTarget?: object;
   dropProps?: DropType;
+  dropTarget?: object;
   focusIndicator?: boolean;
-  defaultSuggestion?: number;
-  icon?: JSX.Element;
+  icon?: React.ReactNode;
   id?: string;
   messages?: {
+    clear?: string;
     enterSelect?: string;
+    hidePassword?: string;
+    showPassword?: string;
     suggestionsCount?: string;
     suggestionsExist?: string;
     suggestionIsOpen?: string;
   };
   name?: string;
+  /**
+   * Called when the copy button is activated. The value is unmasked; do not
+   * log, persist, or transmit it unless explicitly required.
+   */
+  onClickCopy?: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    value: string,
+  ) => void | Promise<void>;
   onSelect?: (x: {
     target: React.RefObject<HTMLElement | null>['current'];
     suggestion: any;
@@ -45,9 +54,10 @@ export interface TextInputProps
     target: React.RefObject<HTMLElement | null>['current'];
     suggestion: any;
   }) => void;
-  onSuggestionsOpen?: () => void;
   onSuggestionsClose?: () => void;
-  placeholder?: PlaceHolderType;
+  onSuggestionsOpen?: () => void;
+  password?: boolean;
+  placeholder?: string | React.ReactNode;
   plain?: boolean | 'full';
   readOnlyCopy?: boolean;
   reverse?: boolean;

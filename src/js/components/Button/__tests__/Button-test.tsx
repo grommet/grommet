@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
@@ -11,6 +13,7 @@ import '@testing-library/jest-dom';
 import { Add, Next } from 'grommet-icons';
 import { Grommet, Button, Text } from '../..';
 import { ThemeType } from '../../../themes';
+import { grommet } from '../../../themes/grommet';
 
 describe('Button', () => {
   test('should have no accessibility violations', async () => {
@@ -140,6 +143,44 @@ describe('Button', () => {
     expect(screen.getByRole('button', { name: 'Primary Button' })).toHaveStyle({
       'background-color': '#7D4CDB',
     });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  // https://github.com/grommet/grommet/issues/8151
+  // theme.button.color aliases (e.g. 'text-strong') must resolve by the
+  // shade determined from the button's actual background, not the theme's
+  // ambient dark/light mode, or icon/animation colors can mismatch the label.
+  test('primary icon color resolves theme.button.color alias by background shade', () => {
+    const theme: ThemeType = {
+      button: {
+        color: 'text-strong',
+      },
+    };
+    const { container } = render(
+      <Grommet theme={theme} themeMode="light">
+        <Button icon={<Add />} primary color="black" onClick={() => {}} />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  // https://github.com/grommet/grommet/issues/8151
+  // when colorIsDark() can't determine a shade (e.g. background alpha < 0.5),
+  // the icon must fall back to the ambient theme.dark like backgroundStyle()
+  // does for the label, not default to the light shade.
+  test('primary icon color falls back to theme.dark when shade is unknown', () => {
+    const { container } = render(
+      <Grommet theme={grommet} themeMode="dark">
+        <Button
+          icon={<Add />}
+          primary
+          color="rgba(0, 0, 0, 0.3)"
+          onClick={() => {}}
+        />
+      </Grommet>,
+    );
+
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -681,5 +722,33 @@ describe('Button', () => {
     );
 
     expect(screen.getByLabelText('Add')).toBeInTheDocument();
+  });
+
+  test('children should render as plain by default', () => {
+    const { asFragment } = render(
+      <Grommet>
+        <Button>Default children</Button>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('options.button.childrenPlain false should not force plain on children', () => {
+    const { asFragment } = render(
+      <Grommet options={{ button: { childrenPlain: false } }}>
+        <Button>Styled children</Button>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('options.button.childrenPlain false should not affect explicit plain prop', () => {
+    const { asFragment } = render(
+      <Grommet options={{ button: { childrenPlain: false } }}>
+        <Button plain>Explicit plain</Button>
+        <Button plain={false}>Explicit not plain</Button>
+      </Grommet>,
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });

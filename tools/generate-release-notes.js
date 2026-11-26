@@ -1,0 +1,839 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+/* eslint-disable no-await-in-loop, no-continue */
+/* eslint-disable no-plusplus, no-restricted-syntax */
+
+/**
+ * Generate Grommet release notes from merged PRs between two Git tags.
+ *
+ * Usage:
+ *   yarn generate-release-notes
+ *     # latest tag → master, inserts a `# X.X.X` entry in CHANGELOG.md
+ *   yarn generate-release-notes -- --from v2.55.0 --to v2.56.0
+ *   yarn generate-release-notes -- --version v2.57.0
+ *   yarn generate-release-notes -- --output RELEASE_NOTES.md
+ *     # writes the file instead of touching the changelog
+ *   yarn generate-release-announcement -- --from v2.55.0 --to v2.56.0
+ *
+ * Options:
+ *   --from <tag>      Starting tag (exclusive). Auto-detected from latest
+ *                     tag if omitted.
+ *   --to   <tag|ref>  Ending tag or branch (inclusive). Defaults to HEAD /
+ *                     master.
+ *   --format <type>   Output type: release-notes | announcement. Defaults
+ *                     by script name.
+ *   --output <file>   Write markdown to file instead of stdout. Disables the
+ *                     default changelog update.
+ *   --changelog [file] Insert the generated notes at the top of the
+ *                     changelog (defaults to CHANGELOG.md).
+ *   --no-changelog    Leave the changelog untouched.
+ *   --version <ver>   Heading used for the changelog entry. Defaults to the
+ *                     --to tag when it looks like a version, otherwise a
+ *                     `X.X.X` placeholder.
+ *   --token <token>   GitHub token (falls back to GH_TOKEN env var).
+ *
+ * Required GitHub token scopes: public_repo (or repo for private repos).
+ */
+
+import {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  statSync,
+  writeFileSync,
+} from 'fs';
+import { join } from 'path';
+import {
+  formatReleaseSentence,
+  getSkipReason,
+  isTypeScriptChange,
+} from './release-notes-utils';
+
+const OWNER = 'grommet';
+const REPO = 'grommet';
+const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
+const GH_PR_URL = `https://github.com/${OWNER}/${REPO}/pull`;
+const GH_RELEASE_URL = `https://github.com/${OWNER}/${REPO}/releases/tag`;
+const GH_COMPARE_URL = `https://github.com/${OWNER}/${REPO}/compare`;
+
+const DEFAULT_CHANGELOG_FILE = 'CHANGELOG.md';
+
+/** Used as the changelog heading when the release version isn't known yet. */
+const PLACEHOLDER_VERSION = 'X.X.X';
+
+// ── Section configuration ───────────────────────────────────────────────────
+
+/**
+ * Map a GitHub label name to its release-notes section heading.
+ * Add new component labels here as they are introduced in the repo.
+ */
+const LABEL_SECTION_MAP = new Map([
+  ['DataTable', 'DataTable'],
+  ['DateInput', 'DateInput'],
+  ['DateTimeInput', 'DateTimeInput'],
+  ['TimeInput', 'TimeInput'],
+  ['FileInput', 'FileInput'],
+  ['Select', 'Select / SelectMultiple'],
+  ['SelectMultiple', 'Select / SelectMultiple'],
+  ['List', 'List'],
+  ['RadioButton', 'RadioButton / RadioButtonGroup'],
+  ['RadioButtonGroup', 'RadioButton / RadioButtonGroup'],
+  ['RangeSelector', 'RangeSelector'],
+  ['TypeScript', 'TypeScript'],
+  ['typescript', 'TypeScript'],
+  ['Beta', 'Beta'],
+  ['beta', 'Beta'],
+  ['Calendar', 'Calendar'],
+  ['TextInput', 'TextInput'],
+  ['MaskedInput', 'MaskedInput'],
+  ['Notification', 'Notification'],
+  ['Layer', 'Layer'],
+  ['Button', 'Button'],
+  ['Form', 'Form'],
+  ['FormField', 'FormField'],
+  ['Stepper', 'Stepper'],
+  ['Wizard', 'Wizard'],
+  ['Tabs', 'Tabs'],
+  ['Pagination', 'Pagination'],
+  ['Menu', 'Menu'],
+  ['Anchor', 'Anchor'],
+  ['CheckBox', 'CheckBox / CheckBoxGroup'],
+  ['CheckBoxGroup', 'CheckBoxGroup / CheckBox'],
+  ['Data', 'Data'],
+  ['DataChart', 'Chart / DataChart'],
+  ['Chart', 'Chart / DataChart'],
+  ['DataFilter', 'DataFilter'],
+]);
+
+/**
+ * The order sections appear in the final output.
+ * Sections not in this list are appended alphabetically at the end,
+ * before TypeScript and Beta which are always last.
+ */
+const SECTION_ORDER = [
+  'General',
+  'Anchor',
+  'Button',
+  'Calendar',
+  'Chart / DataChart',
+  'CheckBox',
+  'Data',
+  'DataFilter',
+  'DataTable',
+  'DateInput',
+  'DateTimeInput',
+  'FileInput',
+  'Form',
+  'FormField',
+  'Layer',
+  'List',
+  'MaskedInput',
+  'Menu',
+  'Notification',
+  'Pagination',
+  'RadioButton / RadioButtonGroup',
+  'RangeSelector',
+  'Select / SelectMultiple',
+  'Stepper',
+  'Tabs',
+  'TextInput',
+  'TimeInput',
+  'TypeScript',
+  'Beta',
+];
+
+/** These labels force a PR into the Beta section. */
+const BETA_LABELS = new Set(['beta', 'Beta']);
+
+/**
+ * Component sections that should always be grouped under Beta.
+ * We auto-detect from source and merge these defaults as a fallback.
+ */
+const DEFAULT_BETA_COMPONENT_SECTIONS = new Set([
+  'DateTimeInput',
+  'Stepper',
+  'TimeInput',
+  'Wizard',
+]);
+
+/** Component sections need at least this many entries to get their own heading. */
+const MIN_COMPONENT_SECTION_SIZE = 3;
+
+const BETA_WARNING_PATTERN =
+  /currently in beta[\s\S]*api is subject\s+to\s+change/i;
+
+function getSourceBetaComponentSections() {
+  const componentRoot = join(process.cwd(), 'src', 'js', 'components');
+  if (!existsSync(componentRoot)) return new Set();
+
+  const betaComponents = new Set();
+  const componentDirs = readdirSync(componentRoot);
+
+  for (const entry of componentDirs) {
+    const componentDir = join(componentRoot, entry);
+    if (!statSync(componentDir).isDirectory()) continue;
+
+    const componentFile = join(componentDir, `${entry}.js`);
+    if (!existsSync(componentFile)) continue;
+
+    try {
+      const content = readFileSync(componentFile, 'utf8');
+      if (BETA_WARNING_PATTERN.test(content)) {
+        betaComponents.add(entry);
+      }
+    } catch {
+      // Ignore file read/parsing issues and keep scanning.
+    }
+  }
+
+  return betaComponents;
+}
+
+const BETA_COMPONENT_SECTIONS = new Set([
+  ...Array.from(DEFAULT_BETA_COMPONENT_SECTIONS),
+  ...Array.from(getSourceBetaComponentSections()),
+]);
+
+// ── GitHub API helpers ───────────────────────────────────────────────────────
+
+function parseArgs() {
+  const argv = process.argv.slice(2);
+  const scriptName = process.argv[1] || '';
+  const args = {
+    from: null,
+    to: null,
+    format: scriptName.includes('announcement')
+      ? 'announcement'
+      : 'release-notes',
+    output: null,
+    changelog: null,
+    version: null,
+    token: process.env.GH_TOKEN || null,
+  };
+  for (let i = 0; i < argv.length; i++) {
+    const flag = argv[i];
+    if (flag === '--from') args.from = argv[++i];
+    else if (flag === '--to') args.to = argv[++i];
+    else if (flag === '--format') args.format = argv[++i];
+    else if (flag === '--output') args.output = argv[++i];
+    else if (flag === '--changelog') {
+      const next = argv[i + 1];
+      args.changelog =
+        next && !next.startsWith('--') ? argv[++i] : DEFAULT_CHANGELOG_FILE;
+    } else if (flag === '--no-changelog') args.changelog = false;
+    else if (flag === '--version') args.version = argv[++i];
+    else if (flag === '--token') args.token = argv[++i];
+    else if (!flag.startsWith('--') && !args.from) {
+      // Positional: first non-flag arg is --from, second is --to
+      args.from = flag;
+    } else if (!flag.startsWith('--') && !args.to) {
+      args.to = flag;
+    }
+  }
+  return args;
+}
+
+function getRequestHeaders(token) {
+  return {
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+  };
+}
+
+async function ghGet(url, token) {
+  const res = await fetch(url, {
+    headers: getRequestHeaders(token),
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    if (res.status === 403 && body.includes('API rate limit exceeded')) {
+      throw new Error(
+        'GitHub API rate limit exceeded. ' +
+          'Set GH_TOKEN or pass --token to generate release output.',
+      );
+    }
+    throw new Error(`GitHub API ${res.status} at ${url}:\n${body}`);
+  }
+  return res.json();
+}
+
+/**
+ * Resolve a tag name, branch name, or commit SHA to a commit SHA + date.
+ * Handles both lightweight and annotated tags.
+ */
+async function resolveRef(ref, token) {
+  if (!ref || ref === 'HEAD') {
+    // Resolve to the default branch's tip
+    const repo = await ghGet(`${API}`, token);
+    const branch = await ghGet(`${API}/branches/${repo.default_branch}`, token);
+    return {
+      sha: branch.commit.sha,
+      date: branch.commit.commit.committer.date,
+    };
+  }
+
+  // Try tag ref first
+  try {
+    const tagRef = await ghGet(`${API}/git/refs/tags/${ref}`, token);
+    let { sha } = tagRef.object;
+    // Annotated tag → resolve the tag object to get the commit SHA
+    if (tagRef.object.type === 'tag') {
+      const tagObj = await ghGet(`${API}/git/tags/${sha}`, token);
+      sha = tagObj.object.sha;
+    }
+    const commit = await ghGet(`${API}/commits/${sha}`, token);
+    return { sha, date: commit.commit.committer.date };
+  } catch {
+    // Not a tag — try as a branch or bare commit SHA
+    const commit = await ghGet(`${API}/commits/${ref}`, token);
+    return { sha: commit.sha, date: commit.commit.committer.date };
+  }
+}
+
+/** Return the name of the most recent tag in the repo. */
+async function getLatestTag(token) {
+  const tags = await ghGet(`${API}/tags?per_page=5`, token);
+  if (!tags.length) throw new Error('No tags found in repository.');
+  return tags[0].name;
+}
+
+// ── PR analysis ──────────────────────────────────────────────────────────────
+
+/**
+ * Map PR labels to a release-notes section heading.
+ * Falls back to title-prefix detection, then "General".
+ */
+function getSection(pr) {
+  const labelNames = pr.labels.map((l) => l.name);
+
+  if (isTypeScriptChange(pr)) return 'TypeScript';
+  if (labelNames.some((l) => BETA_LABELS.has(l))) return 'Beta';
+
+  for (const label of labelNames) {
+    const section = LABEL_SECTION_MAP.get(label);
+    if (section) return section;
+  }
+
+  // Conventional commit scope heuristic: "feat(Wizard): ..."
+  const scopeMatch = pr.title.match(/^[A-Za-z]+\(([^)]+)\):/);
+  if (scopeMatch) {
+    const scope = scopeMatch[1].trim();
+    for (const [label, section] of LABEL_SECTION_MAP) {
+      if (label.toLowerCase() === scope.toLowerCase()) return section;
+    }
+  }
+
+  // Title-prefix heuristic for unlabelled PRs
+  // Matches: "DataTable - Fix...", "DataTable: Fix...", "DataTable fix..."
+  const titleLower = pr.title.toLowerCase();
+  for (const [label, section] of LABEL_SECTION_MAP) {
+    const prefix = label.toLowerCase();
+    if (
+      titleLower.startsWith(`${prefix} `) ||
+      titleLower.startsWith(`${prefix}:`) ||
+      titleLower.startsWith(`${prefix}-`) ||
+      titleLower.startsWith(`${prefix},`)
+    ) {
+      return section;
+    }
+  }
+
+  return 'General';
+}
+
+/**
+ * Format a single PR as a release-notes bullet entry.
+ * Uses the PR description, falling back to the title for empty descriptions.
+ */
+function formatEntry(pr) {
+  const sentence = formatReleaseSentence(pr).replace(/[.!?]+$/, '');
+  return `- ${sentence}. ([#${pr.number}](${GH_PR_URL}/${pr.number}))`;
+}
+
+function formatTitlePhrase(title) {
+  const trimmed = title.trim().replace(/[.!?]+$/, '');
+  return trimmed.charAt(0).toLowerCase() + trimmed.slice(1);
+}
+
+function humanJoin(items) {
+  if (items.length === 0) return '';
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(', ')}, and ${items[items.length - 1]}`;
+}
+
+function unique(items) {
+  return items.filter((item, index) => item && items.indexOf(item) === index);
+}
+
+function getAnnouncementHighlights(prs) {
+  const highlightMatchers = [/^added\b/i, /^enhanced\b/i, /^improved\b/i];
+  return prs
+    .filter((pr) => highlightMatchers.some((matcher) => matcher.test(pr.title)))
+    .slice(0, 2)
+    .map((pr) => formatTitlePhrase(pr.title));
+}
+
+function getFixSummary(prs) {
+  const fixSections = unique(
+    prs
+      .filter((pr) => /^fixed\b/i.test(pr.title))
+      .map((pr) => pr.section)
+      .filter(
+        (section) => section && section !== 'General' && section !== 'Beta',
+      ),
+  );
+
+  if (fixSections.length === 0) return null;
+
+  const listedSections = fixSections.slice(0, 5);
+  const suffix = fixSections.length > 5 ? ', and more' : '';
+  return `There are also fixes across ${humanJoin(listedSections)}${suffix}.`;
+}
+
+function formatContributors(prs) {
+  const contributors = unique(
+    prs
+      .map((pr) => pr.user?.login)
+      .filter((login) => login && login !== 'app/dependabot'),
+  );
+
+  if (contributors.length === 0) return null;
+
+  const linkedContributors = contributors.map(
+    (login) => `<https://github.com/${login}|${login}>`,
+  );
+
+  return (
+    'Thank you to everyone who contributed to this release ' +
+    `${humanJoin(linkedContributors)}!`
+  );
+}
+
+function inferNextReleaseTag(fromTag, toValue) {
+  if (toValue && /^v\d+\.\d+\.\d+$/i.test(toValue)) return toValue;
+  const match = (fromTag || '').match(/^v(\d+)\./i);
+  if (match) return `v${match[1]}.x.x`;
+  return 'v2.x.x';
+}
+
+function extractComponentName(pr) {
+  const title = (pr.title || '').trim();
+
+  const scopeMatch = title.match(/^[A-Za-z]+\(([^)]+)\):/);
+  if (scopeMatch) return scopeMatch[1].trim();
+
+  const dashedMatch = title.match(/^([A-Za-z][A-Za-z0-9]+)/);
+  if (dashedMatch) return dashedMatch[1].trim();
+
+  return null;
+}
+
+/** Look for a known component name anywhere in the PR title. */
+function inferComponentFromText(pr) {
+  const text = pr.title || '';
+  for (const [label, section] of LABEL_SECTION_MAP) {
+    if (new RegExp(`\\b${label}\\b`, 'i').test(text)) return section;
+  }
+  return null;
+}
+
+function resolveHighlightComponent(pr) {
+  if (pr.section && pr.section !== 'General') return pr.section;
+  return extractComponentName(pr) || inferComponentFromText(pr) || pr.section;
+}
+
+function getFixComponents(prs) {
+  const fixed = [];
+  for (const pr of prs) {
+    const title = (pr.title || '').toLowerCase();
+    if (!/\bfix(e[ds])?\b/.test(title)) continue;
+
+    const component = resolveHighlightComponent(pr);
+    if (!component || component === 'General' || component === 'Beta') continue;
+    if (!fixed.includes(component)) fixed.push(component);
+  }
+  return fixed;
+}
+
+function getEnhancementComponents(prs) {
+  const enhanced = [];
+  for (const pr of prs) {
+    const title = (pr.title || '').toLowerCase();
+    if (/\bfix(e[ds])?\b/.test(title)) continue;
+
+    const component = resolveHighlightComponent(pr);
+    if (!component || component === 'General' || component === 'Beta') continue;
+    if (!enhanced.includes(component)) enhanced.push(component);
+  }
+  return enhanced;
+}
+
+function formatBetaDescription(pr) {
+  const title = (pr.title || '').trim().replace(/[.!?]+$/, '');
+  const lower = title.toLowerCase();
+  const component = extractComponentName(pr) || 'Component';
+
+  if (/feat\(|\badd\b/.test(lower)) {
+    return `${component} - allows you to guide users through multi-step forms.`;
+  }
+
+  if (/fix/.test(lower)) {
+    return `${component} - includes important bug fixes.`;
+  }
+
+  return `${component} - includes beta updates.`;
+}
+
+function getNewBetaComponentLines(prs) {
+  const betaAdds = prs.filter((pr) => {
+    const title = (pr.title || '').toLowerCase();
+    if (pr.section !== 'Beta') return false;
+    if (title.startsWith('feat(')) return true;
+    if (title.startsWith('add') && title.includes('component')) return true;
+    return false;
+  });
+
+  const seen = new Set();
+  const lines = [];
+  for (const pr of betaAdds) {
+    const component = extractComponentName(pr);
+    if (!component || seen.has(component.toLowerCase())) continue;
+    seen.add(component.toLowerCase());
+    lines.push(
+      `- **${component}** - allows you to guide users through multi-step forms.`,
+    );
+  }
+
+  return lines;
+}
+
+function normalizeSection(section) {
+  if (BETA_COMPONENT_SECTIONS.has(section)) return 'Beta';
+  return section;
+}
+
+function mentionsBetaComponent(pr) {
+  const text = `${pr.title || ''}\n${pr.body || ''}`.toLowerCase();
+  return Array.from(BETA_COMPONENT_SECTIONS).some((name) =>
+    text.includes(name.toLowerCase()),
+  );
+}
+
+function shouldForceIncludeAsBeta(pr) {
+  if (isTypeScriptChange(pr)) return false;
+  if (mentionsBetaComponent(pr)) return true;
+  const section = normalizeSection(getSection(pr));
+  return section === 'Beta';
+}
+
+function buildReleaseSections(prs) {
+  const sections = new Map(SECTION_ORDER.map((s) => [s, []]));
+
+  const counts = new Map();
+  for (const pr of prs) {
+    const normalizedSection = normalizeSection(pr.section);
+    counts.set(normalizedSection, (counts.get(normalizedSection) || 0) + 1);
+  }
+
+  for (const pr of prs) {
+    const normalizedSection = normalizeSection(pr.section);
+    let targetSection = normalizedSection;
+
+    const isCoreSection =
+      normalizedSection === 'General' ||
+      normalizedSection === 'Beta' ||
+      normalizedSection === 'TypeScript';
+
+    if (
+      !isCoreSection &&
+      (counts.get(normalizedSection) || 0) < MIN_COMPONENT_SECTION_SIZE
+    ) {
+      targetSection = 'General';
+    }
+
+    if (!sections.has(targetSection)) sections.set(targetSection, []);
+    sections.get(targetSection).push(formatEntry(pr));
+  }
+
+  return sections;
+}
+
+// ── Output formatting ────────────────────────────────────────────────────────
+
+function buildSectionOrder(populatedSections) {
+  const known = new Set(SECTION_ORDER);
+  const extra = Array.from(populatedSections.keys())
+    .filter((s) => !known.has(s))
+    .sort();
+
+  // Insert extras before TypeScript and Beta (the last two)
+  const ordered = [
+    ...SECTION_ORDER.slice(0, -2),
+    ...extra,
+    ...SECTION_ORDER.slice(-2),
+  ];
+  return ordered;
+}
+
+function formatReleaseNotes(sections) {
+  const order = buildSectionOrder(sections);
+  const blocks = [];
+
+  for (const name of order) {
+    const entries = sections.get(name);
+    if (!entries || entries.length === 0) continue;
+
+    const heading =
+      name === 'Beta' ? 'Beta - APIs are subject to change:' : `${name}:`;
+
+    // Only print the section heading when there are multiple sections
+    // (matches the pattern: single-section releases omit headings)
+    blocks.push({ heading, entries });
+  }
+
+  // Suppress headings if only one section has content
+  const lines = [];
+  if (blocks.length === 1 && blocks[0].heading === 'General:') {
+    for (const e of blocks[0].entries) lines.push(e);
+  } else {
+    for (const { heading, entries } of blocks) {
+      lines.push(heading);
+      lines.push('');
+      for (const e of entries) lines.push(e);
+      lines.push('');
+    }
+  }
+
+  return lines.join('\n').trim();
+}
+
+/** Changelog headings omit the leading `v` (e.g. `# 2.56.1`). */
+function normalizeVersionHeading(version) {
+  return String(version).trim().replace(/^v/i, '');
+}
+
+/**
+ * Insert the generated notes at the top of the changelog, replacing an
+ * existing entry for the same version when one is already present.
+ */
+function updateChangelog(file, version, markdown) {
+  const heading = `# ${normalizeVersionHeading(version)}`;
+  const entry = `${heading}\n\n${markdown}\n`;
+  const existing = existsSync(file) ? readFileSync(file, 'utf8') : '';
+  const lines = existing.split('\n');
+
+  const start = lines.findIndex((line) => line.trim() === heading);
+  let updated;
+  if (start === -1) {
+    updated = `${entry}\n${existing}`;
+  } else {
+    let end = start + 1;
+    while (end < lines.length && !/^# /.test(lines[end])) end += 1;
+    const before = lines.slice(0, start).join('\n');
+    const prefix = before && !before.endsWith('\n') ? `${before}\n` : before;
+    const rest = lines.slice(end).join('\n');
+    updated = `${prefix}${entry}\n${rest}`;
+  }
+
+  writeFileSync(file, updated, 'utf8');
+  console.error(`Changelog updated at ${file} under "${heading}".`);
+}
+
+function describeHighlightGroup(components, singular, plural, article) {
+  if (components.length === 0) return null;
+  if (components.length === 1) {
+    return `${article} ${singular} to ${components[0]}`;
+  }
+  return `${plural} to ${humanJoin(components)}`;
+}
+
+function formatAnnouncement(context) {
+  const fixComponents = getFixComponents(context.prs);
+  const enhancementComponents = getEnhancementComponents(context.prs);
+  const betaLines = getNewBetaComponentLines(context.prs);
+
+  const clauses = [
+    describeHighlightGroup(fixComponents, 'fix', 'fixes', 'a'),
+    describeHighlightGroup(
+      enhancementComponents,
+      'enhancement',
+      'enhancements',
+      'an',
+    ),
+  ].filter(Boolean);
+
+  const summaryLine =
+    clauses.length > 0
+      ? `This release included ${clauses.join(
+          ' as well as ',
+        )}. Check out the full <${
+          context.releaseUrl
+        }|release notes> for details.`
+      : `Check out the full <${context.releaseUrl}|release notes> for details.`;
+
+  const lines = [
+    `Grommet ${context.releaseLabel} is released`,
+    '',
+    summaryLine,
+  ];
+
+  if (betaLines.length > 0) {
+    lines.push('');
+    lines.push('**New BETA components** *(APIs are subject to change)*:');
+    lines.push('');
+    lines.push(...betaLines);
+  }
+
+  return lines.join('\n').trim();
+}
+
+// ── Main ─────────────────────────────────────────────────────────────────────
+
+const args = parseArgs();
+
+(async () => {
+  // ── 1. Resolve refs ────────────────────────────────────────────────────────
+  let fromTag = args.from;
+  if (!fromTag) {
+    fromTag = await getLatestTag(args.token);
+    console.error(`Auto-detected --from: ${fromTag}`);
+  }
+
+  const toValue = args.to || 'HEAD';
+  console.error(`Resolving refs: ${fromTag} → ${toValue}`);
+
+  const fromRef = await resolveRef(fromTag, args.token);
+  const toRef = await resolveRef(toValue, args.token);
+
+  // ── 2. Get commits between the two refs ────────────────────────────────────
+  console.error(`Fetching commits between ${fromTag} and ${toValue}...`);
+
+  const compare = await ghGet(
+    `${API}/compare/${fromRef.sha}...${toRef.sha}`,
+    args.token,
+  );
+
+  if (compare.total_commits > compare.commits.length) {
+    throw new Error(
+      `Compare API returned only ${compare.commits.length} of ${compare.total_commits} commits. ` +
+        'The release range is too large; please choose a smaller range or switch to a paginated strategy.',
+    );
+  }
+  // Extract PR numbers embedded in commit messages.
+  // GitHub squash-merge format:  "PR title (#1234)"
+  // GitHub merge-commit format:  "Merge pull request #1234 from ..."
+  const prNumbers = new Set();
+  for (const c of compare.commits) {
+    const matches = c.commit.message.matchAll(/#(\d+)/g);
+    for (const m of matches) prNumbers.add(Number(m[1]));
+  }
+
+  if (prNumbers.size === 0) {
+    console.error('No PR references found in commits. Output will be empty.');
+  } else {
+    console.error(`Found ${prNumbers.size} PR reference(s) in commits.`);
+  }
+
+  // ── 3. Fetch full PR details (for labels and body) ─────────────────────────
+  // Batch with a small concurrency limit to avoid rate limiting.
+  const CONCURRENCY = 5;
+  // Array.from (not spread) - the repo's loose-mode babel preset compiles
+  // `[...set]` to `[].concat(set)`, which mishandles non-array iterables.
+  const numbers = Array.from(prNumbers);
+  const prs = [];
+  const failedPulls = [];
+  for (let i = 0; i < numbers.length; i += CONCURRENCY) {
+    const batch = numbers.slice(i, i + CONCURRENCY);
+    const results = await Promise.all(
+      batch.map((n) =>
+        ghGet(`${API}/pulls/${n}`, args.token)
+          .then((pr) => ({ pr }))
+          .catch((error) => ({ error, number: n })),
+      ),
+    );
+    prs.push(
+      ...results.filter((result) => result.pr).map((result) => result.pr),
+    );
+    failedPulls.push(
+      ...results.filter((result) => result.error).map((result) => result.error),
+    );
+  }
+
+  if (prs.length === 0 && failedPulls.length > 0) {
+    throw failedPulls[0];
+  }
+
+  if (failedPulls.length > 0) {
+    console.error(`Warning: failed to fetch ${failedPulls.length} PR(s).`);
+  }
+
+  // ── 4. Filter, classify, and group ────────────────────────────────────────
+  const includedPrs = [];
+  let included = 0;
+  let skipped = 0;
+
+  for (const pr of prs) {
+    const skipReason = getSkipReason(pr);
+    if (skipReason) {
+      console.error(`  skip [${skipReason}] #${pr.number}: ${pr.title}`);
+      skipped++;
+      continue;
+    }
+
+    const forceIncludeAsBeta = shouldForceIncludeAsBeta(pr);
+    const section = forceIncludeAsBeta ? 'Beta' : getSection(pr);
+    console.error(`  include [${section}] #${pr.number}: ${pr.title}`);
+
+    includedPrs.push({ ...pr, section });
+    included++;
+  }
+
+  const sections = buildReleaseSections(includedPrs);
+
+  console.error(`\nSummary: ${included} included, ${skipped} skipped.\n`);
+
+  // ── 5. Format and output ───────────────────────────────────────────────────
+  const inferredReleaseTag = inferNextReleaseTag(fromTag, toValue);
+  const releaseLabel =
+    toValue !== 'HEAD' && /^v\d/.test(toValue)
+      ? toValue
+      : inferredReleaseTag || `changes through ${toValue}`;
+  const releaseUrl =
+    toValue !== 'HEAD' && /^v\d/.test(toValue)
+      ? `${GH_RELEASE_URL}/${toValue}`
+      : `${GH_COMPARE_URL}/${fromTag}...${toRef.sha}`;
+  const markdown =
+    args.format === 'announcement'
+      ? formatAnnouncement({
+          prs: includedPrs,
+          releaseLabel,
+          releaseUrl,
+          sections,
+        })
+      : formatReleaseNotes(sections);
+
+  if (args.output) {
+    writeFileSync(args.output, `${markdown}\n`, 'utf8');
+    console.error(`Release notes written to ${args.output}`);
+  } else {
+    process.stdout.write(`${markdown}\n`);
+  }
+
+  // Updating the changelog is the default unless notes were sent elsewhere.
+  const changelogFile =
+    args.changelog === false || args.format === 'announcement'
+      ? null
+      : args.changelog || (args.output ? null : DEFAULT_CHANGELOG_FILE);
+
+  if (changelogFile) {
+    const version =
+      args.version ||
+      (/^v?\d+\.\d+\.\d+$/i.test(toValue) ? toValue : PLACEHOLDER_VERSION);
+    updateChangelog(changelogFile, version, markdown);
+  }
+})().catch((err) => {
+  console.error(err.message || err);
+  process.exit(1);
+});

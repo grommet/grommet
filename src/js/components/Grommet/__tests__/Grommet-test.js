@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
@@ -5,7 +7,7 @@ import 'jest-styled-components';
 import { hpe as hpeTheme } from 'grommet-theme-hpe';
 
 import { Grommet } from '..';
-import { AnnounceContext } from '../../../contexts';
+import { AnnounceContext, ThemeContext } from '../../../contexts';
 import { grommet } from '../../../themes/grommet';
 import { MessageContext } from '../../../contexts/MessageContext';
 
@@ -59,6 +61,63 @@ describe('Grommet', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('uses WCAG color classification by default', () => {
+    const { getByText } = render(
+      <Grommet background="#00a4b3">
+        <ThemeContext.Consumer>
+          {(theme) => String(theme.dark)}
+        </ThemeContext.Consumer>
+      </Grommet>,
+    );
+
+    expect(getByText('false')).toBeTruthy();
+  });
+
+  test('legacyColorIsDark restores the previous classification', () => {
+    const { getByText } = render(
+      <Grommet background="#00a4b3" options={{ legacyColorIsDark: true }}>
+        <ThemeContext.Consumer>
+          {(theme) => String(theme.dark)}
+        </ThemeContext.Consumer>
+      </Grommet>,
+    );
+
+    expect(getByText('true')).toBeTruthy();
+  });
+
+  // eslint-disable-next-line max-len
+  test('updates background classification when legacyColorIsDark changes', () => {
+    const { getByText, rerender } = render(
+      <Grommet background="#00a4b3">
+        <ThemeContext.Consumer>
+          {(theme) => String(theme.dark)}
+        </ThemeContext.Consumer>
+      </Grommet>,
+    );
+
+    expect(getByText('false')).toBeTruthy();
+
+    rerender(
+      <Grommet background="#00a4b3" options={{ legacyColorIsDark: true }}>
+        <ThemeContext.Consumer>
+          {(theme) => String(theme.dark)}
+        </ThemeContext.Consumer>
+      </Grommet>,
+    );
+
+    expect(getByText('true')).toBeTruthy();
+
+    rerender(
+      <Grommet background="#00a4b3">
+        <ThemeContext.Consumer>
+          {(theme) => String(theme.dark)}
+        </ThemeContext.Consumer>
+      </Grommet>,
+    );
+
+    expect(getByText('false')).toBeTruthy();
   });
 
   test('announce', (done) => {

@@ -25,6 +25,7 @@ exports[`TextArea Event tests onFocus 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -113,6 +114,7 @@ HTMLCollection [
   line-height: 18px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -178,6 +180,7 @@ HTMLCollection [
   line-height: 20px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -243,6 +246,7 @@ HTMLCollection [
   line-height: 24px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -308,6 +312,7 @@ HTMLCollection [
   line-height: 28px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -373,6 +378,7 @@ HTMLCollection [
   line-height: 32px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -438,6 +444,7 @@ HTMLCollection [
   line-height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -503,6 +510,7 @@ HTMLCollection [
   line-height: 48px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -568,6 +576,7 @@ HTMLCollection [
   line-height: 60px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -633,6 +642,7 @@ HTMLCollection [
   line-height: 76px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -698,6 +708,7 @@ HTMLCollection [
   line-height: 96px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -762,6 +773,7 @@ HTMLCollection [
   font-size: 16px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -826,6 +838,7 @@ HTMLCollection [
   font-size: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -890,6 +903,7 @@ HTMLCollection [
   font-size: 100%;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1013,6 +1027,7 @@ exports[`TextArea basic 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1088,6 +1103,7 @@ exports[`TextArea basic outside grommet wrapper 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1169,6 +1185,7 @@ exports[`TextArea custom theme input font size 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1258,6 +1275,7 @@ exports[`TextArea disabled 1`] = `
   -webkit-appearance: none;
   opacity: 0.3;
   cursor: default;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1345,6 +1363,7 @@ exports[`TextArea fill 1`] = `
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   height: 100%;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1430,6 +1449,7 @@ exports[`TextArea focusIndicator 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1515,6 +1535,7 @@ exports[`TextArea placeholder 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1605,6 +1626,7 @@ exports[`TextArea plain 1`] = `
   border: none;
   width: 100%;
   -webkit-appearance: none;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1691,6 +1713,7 @@ exports[`TextArea resize false 1`] = `
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   resize: none;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1777,6 +1800,7 @@ exports[`TextArea resize horizontal 1`] = `
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   resize: horizontal;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1863,6 +1887,7 @@ exports[`TextArea resize true 1`] = `
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   resize: both;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -1949,6 +1974,7 @@ exports[`TextArea resize vertical 1`] = `
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
   resize: vertical;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -2034,6 +2060,7 @@ exports[`TextArea should apply a11yTitle or aria-label 1`] = `
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -2128,6 +2155,7 @@ exports[`TextArea size large 1`] = `
   line-height: 28px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -2215,6 +2243,7 @@ exports[`TextArea size medium 1`] = `
   line-height: 24px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 
@@ -2302,6 +2331,7 @@ exports[`TextArea size small 1`] = `
   line-height: 20px;
   border: 1px solid rgba(0, 0, 0, 0.33);
   border-radius: 4px;
+  scrollbar-color: rgba(0, 0, 0, 0.33) transparent;
   max-width: 100%;
 }
 

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -380,7 +382,8 @@ const Calendar = forwardRef(
           normalizeInput(referenceProp),
           onReference,
           value,
-          activeDate),
+          activeDate,
+        ),
       );
     }, [referenceProp, onReference, value, activeDate]);
 
@@ -627,7 +630,7 @@ const Calendar = forwardRef(
         }
         setActiveDate(nextActiveDate);
         setValue(result);
-        return [ result, nextActiveDate ];
+        return [result, nextActiveDate];
       },
       [activeDate, value, range],
     );

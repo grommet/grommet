@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 export * from './components/Accordion';
 export * from './components/AccordionPanel';
 export * from './components/Anchor';
@@ -28,6 +30,7 @@ export * from './components/DataTableColumns';
 export * from './components/DataTableGroupBy';
 export * from './components/DataView';
 export * from './components/DateInput';
+export * from './components/DateTimeInput';
 export * from './components/Diagram';
 export * from './components/Distribution';
 export * from './components/Drop';
@@ -94,6 +97,7 @@ export * from './components/Tip';
 export * from './components/ToggleGroup';
 export * from './components/Toolbar';
 export * from './components/Video';
+export * from './components/Wizard';
 export * from './components/WorldMap';
 export * from './contexts/AnnounceContext';
 export * from './contexts/ContainerTargetContext';

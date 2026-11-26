@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { transformSync } = require('@babel/core');
 const { mapSizeToken, SPACING_PROPS } = require('./sizeMapper');

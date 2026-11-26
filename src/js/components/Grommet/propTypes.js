@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import PropTypes from 'prop-types';
 import { backgroundDoc } from '../../utils/general-prop-types';
 
@@ -8,6 +10,9 @@ if (process.env.NODE_ENV !== 'production') {
     dir: PropTypes.oneOf(['rtl']),
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['min'])]),
     options: PropTypes.shape({
+      legacyColorIsDark: PropTypes.bool,
+      box: PropTypes.shape({ cssGap: PropTypes.bool }),
+      button: PropTypes.shape({ childrenPlain: PropTypes.bool }),
       layer: PropTypes.shape({ singleId: PropTypes.bool }),
       drop: PropTypes.shape({ checkContainingBlock: PropTypes.bool }),
     }),
@@ -96,6 +101,7 @@ if (process.env.NODE_ENV !== 'production') {
           rowsChanged: PropTypes.string,
           rowsSingle: PropTypes.string,
           searchBy: PropTypes.string,
+          sortable: PropTypes.string,
           total: PropTypes.string,
           totalSingle: PropTypes.string,
         }),
@@ -212,6 +218,13 @@ if (process.env.NODE_ENV !== 'production') {
         skipLinks: PropTypes.shape({
           skipTo: PropTypes.string,
         }),
+        stepper: PropTypes.shape({
+          completed: PropTypes.string,
+          error: PropTypes.string,
+          progress: PropTypes.string,
+          step: PropTypes.string,
+          subStep: PropTypes.string,
+        }),
         tabs: PropTypes.shape({
           nextTab: PropTypes.string,
           previousTab: PropTypes.string,
@@ -228,6 +241,21 @@ if (process.env.NODE_ENV !== 'production') {
           suggestionsCount: PropTypes.string,
           suggestionsExist: PropTypes.string,
           suggestionIsOpen: PropTypes.string,
+        }),
+        timeInput: PropTypes.shape({
+          activePeriodValue: PropTypes.string,
+          activeSection: PropTypes.string,
+          activeSectionValue: PropTypes.string,
+          chooseTime: PropTypes.string,
+          currentValue: PropTypes.string,
+          currentValueWithoutSeconds: PropTypes.string,
+          inputLabel: PropTypes.string,
+          invalidTime: PropTypes.string,
+          openDrop: PropTypes.string,
+          sectionHours: PropTypes.string,
+          sectionMeridiem: PropTypes.string,
+          sectionMinutes: PropTypes.string,
+          sectionSeconds: PropTypes.string,
         }),
         video: PropTypes.shape({
           audioDescriptions: PropTypes.string,

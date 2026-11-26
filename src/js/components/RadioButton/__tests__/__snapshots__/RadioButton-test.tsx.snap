@@ -63,6 +63,10 @@ exports[`RadioButton background-color check themed 1`] = `
   transform: scale(1);
 }
 
+input:checked+.c5 {
+  background: red;
+}
+
 @media only screen and (max-width: 768px) {
   .c4 {
     border: solid 2px rgba(0, 0, 0, 0.15);
@@ -244,6 +248,10 @@ exports[`RadioButton background-color themed symbolic 1`] = `
 
 .c5 {
   transform: scale(1);
+}
+
+input:checked+.c5 {
+  background-color: #7D4CDB;
 }
 
 @media only screen and (max-width: 768px) {

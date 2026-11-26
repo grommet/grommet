@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { Fragment } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import 'jest-styled-components';

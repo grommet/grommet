@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import PropTypes from 'prop-types';
 
 let PropType = {};
@@ -7,6 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
+        'aria-label': PropTypes.string,
         description: PropTypes.string,
         status: PropTypes.oneOf(['pending', 'completed', 'error', 'disabled']),
         disabledReason: PropTypes.string,
@@ -15,6 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
           PropTypes.shape({
             id: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
+            'aria-label': PropTypes.string,
             description: PropTypes.string,
             status: PropTypes.oneOf([
               'pending',
@@ -32,8 +36,10 @@ if (process.env.NODE_ENV !== 'production') {
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
     clickableSteps: PropTypes.bool,
     showDescription: PropTypes.bool,
+    errorAnnouncement: PropTypes.oneOf(['assertive', 'polite', false]),
     onStepClick: PropTypes.func,
     id: PropTypes.string,
+    'aria-label': PropTypes.string,
     children: PropTypes.node,
   };
 }

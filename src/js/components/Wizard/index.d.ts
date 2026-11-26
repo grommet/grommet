@@ -1,0 +1,204 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+import * as React from 'react';
+import { BoxExtendedProps } from '../Box';
+
+export type WizardShowProgress = 'horizontal' | 'vertical' | false;
+
+export type WizardStepStatus = 'pending' | 'completed' | 'error' | 'disabled';
+
+export type WizardTrigger =
+  | 'next'
+  | 'previous'
+  | 'goTo'
+  | 'skip'
+  | 'complete'
+  | 'cancel';
+
+export type WizardPhase =
+  | 'requested'
+  | 'validating'
+  | 'validated'
+  | 'navigated'
+  | 'blocked'
+  | 'completed'
+  | 'cancelled';
+
+export interface WizardStep<TValue = Record<string, any>> {
+  id: string;
+  title: string;
+  description?: React.ReactNode;
+  render?: (
+    step: WizardStep<TValue>,
+    api: WizardContextValue<TValue>,
+  ) => React.ReactNode;
+  validate?: (
+    value: TValue,
+  ) =>
+    | boolean
+    | string
+    | void
+    | { error?: string }
+    | Promise<boolean | string | void | { error?: string }>;
+  nextStep?: (value: TValue) => string | undefined | null;
+  /** Allows goTo(), skip(), and completion after failed validation without
+   * marking this step completed. next() still requires a valid step. */
+  skippable?: boolean;
+  /** Overrides the displayed status, not validation or completion results.
+   * An explicit error status also blocks next(). disabled: true takes
+   * precedence. */
+  status?: WizardStepStatus;
+  disabled?: boolean;
+  disabledReason?: string;
+  /** Overrides the stepper's validation message. An empty string suppresses
+   * generated text. Form failures do not generate a stepper message. */
+  errorMessage?: string;
+  children?: WizardStep<TValue>[];
+  'aria-label'?: string;
+}
+
+export type WizardStepResult<TValue = Record<string, any>> = Omit<
+  WizardStep<TValue>,
+  'children' | 'status'
+> & { status: WizardStepStatus };
+
+// Discriminated union for onStepChange events. Consumers can narrow on
+// `trigger` + `phase` to reason about event flow without inspecting DOM.
+export interface NavigationStepChangeEvent {
+  trigger: Exclude<WizardTrigger, 'cancel'>;
+  phase: Exclude<WizardPhase, 'cancelled'>;
+  from?: string;
+  to?: string;
+  error?: string;
+}
+
+export interface TerminalStepChangeEvent {
+  trigger: 'cancel' | 'complete';
+  phase: 'cancelled' | 'completed';
+  from?: string;
+}
+
+export type StepChangeEvent =
+  | NavigationStepChangeEvent
+  | TerminalStepChangeEvent;
+
+export interface WizardMessages {
+  previous?: string;
+  next?: string;
+  skip?: string;
+  cancel?: string;
+  close?: string;
+  complete?: string;
+  counter?: string;
+  progress?: string;
+  validationError?: string;
+}
+
+export interface WizardProps<TValue = Record<string, any>> {
+  steps: WizardStep<TValue>[];
+  clickableSteps?: boolean;
+  closable?: boolean;
+  currentStep?: string;
+  defaultStep?: string;
+  form?: boolean;
+  showProgress?: WizardShowProgress;
+  onStepChange?: (event: StepChangeEvent) => void;
+  /** completedSteps excludes failed and skipped steps. Completion validates
+   * the current step, not every earlier step. steps includes parent groups
+   * and children in depth-first order, without children arrays, with resolved
+   * statuses and error messages including the final validation result. */
+  onComplete?: (event: {
+    value: TValue;
+    completedSteps: string[];
+    steps: WizardStepResult<TValue>[];
+  }) => void;
+  onCancel?: (event: { value: TValue; reason: 'user' }) => void;
+  renderStep?: (
+    step: WizardStep<TValue>,
+    api: WizardContextValue<TValue>,
+  ) => React.ReactNode;
+  title?: React.ReactNode;
+  footer?: React.ReactNode;
+  scrollToTop?: boolean;
+  value?: TValue;
+  defaultValue?: TValue;
+  onChange?: (event: { value: TValue }) => void;
+  id?: string;
+  'aria-label'?: string;
+  messages?: WizardMessages;
+  children?: React.ReactNode;
+}
+
+declare const Wizard: <TValue = Record<string, any>>(
+  props: WizardProps<TValue> & { ref?: React.Ref<HTMLDivElement> },
+) => React.ReactElement;
+
+export { Wizard };
+
+export interface WizardContextValue<TValue = Record<string, any>> {
+  steps: WizardStep<TValue>[];
+  currentStep: string;
+  currentStepIndex: number;
+  currentStepObj?: WizardStep<TValue>;
+  totalSteps: number;
+  stepStates: Record<string, WizardStepStatus>;
+  /** Resolved stepper messages, including developer overrides, for steps
+   * whose resolved status is error. */
+  stepErrorMessages: Record<string, string | undefined>;
+  form: boolean;
+  formValue: TValue;
+  setFormValue: (next: TValue | ((prev: TValue) => TValue)) => void;
+  validationError?: string;
+  isValidating: boolean;
+  isBlocked: boolean;
+  isCompleted: boolean;
+  canGoNext: boolean;
+  next: () => void;
+  previous: () => void;
+  goTo: (stepId: string) => void;
+  skip: () => void;
+  complete: () => void;
+  cancel: () => void;
+  clickableSteps: boolean;
+  closable: boolean;
+  showProgress: WizardShowProgress;
+  renderStep?: (
+    step: WizardStep<TValue>,
+    api: WizardContextValue<TValue>,
+  ) => React.ReactNode;
+}
+
+export const WizardContext: React.Context<WizardContextValue>;
+
+export function useWizard<
+  TValue = Record<string, any>,
+>(): WizardContextValue<TValue>;
+
+export interface WizardHeaderProps extends Omit<BoxExtendedProps, 'title'> {
+  title?: React.ReactNode;
+  children?: React.ReactNode;
+}
+
+export const WizardHeader: React.FC<WizardHeaderProps>;
+
+export interface WizardProgressProps extends BoxExtendedProps {
+  'aria-label'?: string;
+  showDescription?: boolean;
+}
+
+export const WizardProgress: React.FC<WizardProgressProps>;
+
+export interface WizardStepHeaderProps extends BoxExtendedProps {}
+
+export const WizardStepHeader: React.FC<WizardStepHeaderProps>;
+
+export interface WizardContentProps<TValue = Record<string, any>>
+  extends BoxExtendedProps {}
+
+export const WizardContent: <TValue = Record<string, any>>(
+  props: WizardContentProps<TValue>,
+) => React.ReactElement;
+
+export interface WizardFooterProps extends BoxExtendedProps {}
+
+export const WizardFooter: React.FC<WizardFooterProps>;

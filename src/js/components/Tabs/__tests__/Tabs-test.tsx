@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import styled, { css } from 'styled-components';
 import 'jest-styled-components';
@@ -417,8 +419,7 @@ describe('Tabs', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     const plainTab = getByText('Title 1').parentElement!;
-    const plainTabStyle = window.getComputedStyle(plainTab);
-    expect(['', 'ButtonText']).toContain(plainTabStyle.borderBottom);
+    expect(plainTab).toHaveStyleRule('border', 'none');
   });
 
   test('should allow to extend tab styles', () => {

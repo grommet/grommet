@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useMemo, useState } from 'react';
 import { Descend } from 'grommet-icons/icons/Descend';
 import { DataContext } from '../../contexts/DataContext';

@@ -105,7 +105,7 @@ Grommet is using yarn v4.
 The components code lives in `src/js/components`. A few gotchas you may run
 into while contributing could include:
 
-- Documentation updates need to be filled with a separate pull request on
+- Documentation updates need to be filed with a separate pull request on
   [grommet-site].
 - Code coverage and unit-testing is an important process of development.
   A pre-commit hook exists which runs the test suite and aborts the commit if
@@ -134,7 +134,7 @@ A guide on commonly used labels added to issues and pull requests:
   after 1 week of no response.
 - `needs attention`: Applied to pull requests that have been waiting for a response or changes for a long period of time. This label gets applied because it is
   generally something the team wants to get in and indicates that it could get handed off to get it over the finish line.
-- `good first issue`: Indicates issues that are a good place start for new contributors.
+- `good first issue`: Indicates issues that are a good place to start for new contributors.
 - `help wanted`: A request for help from the community on a particular issue. Keep in mind this doesn't exclude feedback and collaboration on other issues that
   don't have this label on it.
 - `PRty`: Used by the grommet team to flag pull requests that we want to review in the biweekly "PRty" meeting.

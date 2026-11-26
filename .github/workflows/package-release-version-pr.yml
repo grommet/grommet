@@ -1,0 +1,178 @@
+name: Draft release version PR
+
+# First run prepares artifacts only. A second run creates the PR after review.
+on:
+  workflow_dispatch:
+    inputs:
+      from_tag:
+        description: 'Review phase: starting tag; latest tag if omitted'
+        required: false
+        type: string
+      to_tag:
+        description: 'Review phase: ending ref; must resolve to current master'
+        required: false
+        default: 'HEAD'
+        type: string
+      reviewed_run_id:
+        description: 'PR phase: successful review run ID; leave empty to prepare checklist and notes'
+        required: false
+        type: string
+      checklist_reviewed:
+        description: 'I reviewed this candidate’s checklist, notes, missing-test findings, and version scope'
+        required: false
+        default: false
+        type: boolean
+      bump_override:
+        description: 'Patch = fixes; minor = new functionality; major = breaking changes'
+        required: false
+        type: choice
+        default: 'review'
+        options:
+          - review
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+concurrency:
+  group: release-preparation
+  cancel-in-progress: false
+
+jobs:
+  draft-version-pr:
+    name: Review candidate or create release PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.2'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Resolve immutable candidate range
+        if: ${{ inputs.reviewed_run_id == '' }}
+        env:
+          FROM_TAG: ${{ inputs.from_tag }}
+          TO_TAG: ${{ inputs.to_tag }}
+        run: |
+          FROM_REF="${FROM_TAG:-$(git describe --tags --abbrev=0)}"
+          TO_REF="${TO_TAG:-HEAD}"
+          CANDIDATE_SHA=$(git rev-parse --verify "${TO_REF}^{commit}")
+          test "$CANDIDATE_SHA" = "$(git rev-parse HEAD)"
+          FROM_SHA=$(git rev-parse --verify "${FROM_REF}^{commit}")
+          echo "FROM_SHA=$FROM_SHA" >> "$GITHUB_ENV"
+          echo "CANDIDATE_SHA=$CANDIDATE_SHA" >> "$GITHUB_ENV"
+
+      - name: Run pre-release checklist before generating files
+        if: ${{ inputs.reviewed_run_id == '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn release-checklist -- --from "$FROM_SHA" --to "$CANDIDATE_SHA" > "$RUNNER_TEMP/release-checklist.md"
+          if grep -q '^WARNING:' "$RUNNER_TEMP/release-checklist.md"; then
+            cat "$RUNNER_TEMP/release-checklist.md"
+            exit 1
+          fi
+          mv "$RUNNER_TEMP/release-checklist.md" RELEASE_CHECKLIST.md
+
+      - name: Generate release drafts
+        if: ${{ inputs.reviewed_run_id == '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn generate-release-notes -- --from "$FROM_SHA" --to "$CANDIDATE_SHA" --output RELEASE_NOTES_DRAFT.md
+          yarn generate-release-announcement -- --from "$FROM_SHA" --to "$CANDIDATE_SHA" --output RELEASE_ANNOUNCEMENT_DRAFT.md
+          printf '%s\n' "$CANDIDATE_SHA" > RELEASE_CANDIDATE_SHA.txt
+
+      - name: Upload candidate for human review
+        if: ${{ inputs.reviewed_run_id == '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes-draft
+          path: |
+            RELEASE_NOTES_DRAFT.md
+            RELEASE_ANNOUNCEMENT_DRAFT.md
+            RELEASE_CHECKLIST.md
+            RELEASE_CANDIDATE_SHA.txt
+          if-no-files-found: error
+
+      - name: Explain next review step
+        if: ${{ inputs.reviewed_run_id == '' }}
+        run: |
+          {
+            echo '## Release candidate ready for review — no PR created'
+            echo 'Review the checklist and notes in the release-notes-draft artifact.'
+            echo 'Patch: compatible fixes. Minor: new compatible functionality (components, props, theme capabilities). Major: incompatible public changes.'
+            echo 'Resolve or accept missing-test findings and plan required browser QA.'
+            echo "Run again with reviewed_run_id=${GITHUB_RUN_ID}, checklist_reviewed=true, and an explicit bump."
+            echo 'The candidate must still be current master; otherwise prepare a fresh review.'
+            cat RELEASE_CHECKLIST.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify review authorization and run identity
+        if: ${{ inputs.reviewed_run_id != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEW_RUN: ${{ inputs.reviewed_run_id }}
+          REVIEWED: ${{ inputs.checklist_reviewed }}
+          BUMP: ${{ inputs.bump_override }}
+        run: |
+          [[ "$REVIEW_RUN" =~ ^[0-9]+$ ]] || exit 1
+          test "$REVIEWED" = 'true' || exit 1
+          [[ "$BUMP" =~ ^(patch|minor|major)$ ]] || exit 1
+          WORKFLOW_ID=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/package-release-version-pr.yml" --jq '.id')
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$REVIEW_RUN" > "$RUNNER_TEMP/review-run.json"
+          jq -e --argjson workflow "$WORKFLOW_ID" --arg sha "$(git rev-parse HEAD)" \
+            '.workflow_id == $workflow and .conclusion == "success" and .event == "workflow_dispatch" and .head_branch == "master" and .head_sha == $sha' \
+            "$RUNNER_TEMP/review-run.json"
+
+      - name: Download reviewed candidate
+        if: ${{ inputs.reviewed_run_id != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: release-notes-draft
+          run-id: ${{ inputs.reviewed_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify reviewed candidate is still current
+        if: ${{ inputs.reviewed_run_id != '' }}
+        run: |
+          test "$(cat RELEASE_CANDIDATE_SHA.txt)" = "$(git rev-parse HEAD)"
+          git fetch origin master
+          test "$(cat RELEASE_CANDIDATE_SHA.txt)" = "$(git rev-parse origin/master)"
+
+      - name: Update version and changelog from reviewed notes
+        if: ${{ inputs.reviewed_run_id != '' }}
+        id: version
+        env:
+          BUMP_OVERRIDE: ${{ inputs.bump_override }}
+          CHECKLIST_REVIEWED: ${{ inputs.checklist_reviewed }}
+        run: yarn babel-node tools/draft-release-version-pr.js
+
+      - name: Open release PR using Grommet template
+        if: ${{ inputs.reviewed_run_id != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          BRANCH="release/v${VERSION}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add package.json CHANGELOG.md
+          git commit -m "Release v${VERSION}"
+          git push origin "$BRANCH"
+          gh pr create --base master --head "$BRANCH" --title "Release v${VERSION}" --body-file PR_BODY.md

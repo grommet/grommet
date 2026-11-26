@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Box, ToggleGroup } from 'grommet';
 import { Bold, Italic, Underline } from 'grommet-icons';

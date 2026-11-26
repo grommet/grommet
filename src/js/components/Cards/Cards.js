@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { Fragment, useContext, useState } from 'react';
 import styled from 'styled-components';
 
@@ -205,8 +207,8 @@ const Cards = React.forwardRef(
             as={!(onOrder || sizeKey) && as === 'ul' ? 'li' : undefined}
           >
             <CardBody>
-              {(typeof item === 'string' && item) ??
-                (typeof item === 'object' && Object.values(item)[0]) ??
+              {(typeof item === 'string' && item) ||
+                (typeof item === 'object' && Object.values(item)[0]) ||
                 index}
             </CardBody>
           </Card>

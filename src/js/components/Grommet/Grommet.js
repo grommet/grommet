@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 
@@ -23,6 +25,7 @@ import { format, MessageContext } from '../../contexts/MessageContext';
 import defaultMessages from '../../languages/default.json';
 import { GrommetPropTypes } from './propTypes';
 import { AnalyticsProvider } from '../../contexts/AnalyticsContext';
+import { LEGACY_COLOR_IS_DARK } from '../../utils/legacyColorIsDark';
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
@@ -42,10 +45,12 @@ const Grommet = forwardRef((props, ref) => {
     ...rest
   } = props;
   const { background, dir, themeMode, userAgent } = props;
+  const legacyColorIsDark = options.legacyColorIsDark === true;
   const [stateResponsive, setResponsive] = useState();
 
   const theme = useMemo(() => {
     const nextTheme = deepMerge(baseTheme, themeProp || {});
+    nextTheme[LEGACY_COLOR_IS_DARK] = legacyColorIsDark;
 
     // if user provides specific menu alignment, we don't want
     // the defaults to be included at all (can cause issues with controlMirror)
@@ -86,7 +91,7 @@ const Grommet = forwardRef((props, ref) => {
     }
 
     return nextTheme;
-  }, [background, dir, themeMode, themeProp]);
+  }, [background, dir, legacyColorIsDark, themeMode, themeProp]);
 
   const messages = useMemo(() => {
     // combine the passed in messages, if any, with the default
