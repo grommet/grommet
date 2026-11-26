@@ -12,7 +12,7 @@ export const set = (obj, path, value) => {
     if (Object(acc[item]) === acc[item]) {
       return acc[item];
     }
-    acc[item] = Math.abs(parts[index + 1]) > 0 === +parts[index + 1] ? [] : {};
+    acc[item] = /^\d+$/.test(parts[index + 1]) ? [] : {};
     return acc[item];
   }, obj)[parts[parts.length - 1]] = value;
 
