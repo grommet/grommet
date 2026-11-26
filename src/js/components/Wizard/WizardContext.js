@@ -1,13 +1,18 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext } from 'react';
 
 // WizardContext exposes wizard state and navigation actions to descendants.
 export const WizardContext = React.createContext({
   steps: [],
+  clickableSteps: false,
+  closable: true,
   currentStep: '',
   currentStepIndex: 0,
   currentStepObj: undefined,
   totalSteps: 0,
   stepStates: {},
+  form: true,
   formValue: {},
   setFormValue: () => {},
   validationError: undefined,

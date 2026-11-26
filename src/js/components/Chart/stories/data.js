@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 // generate a data set
 const dataSet = {
   generateData: (count = 5, max = 100, min = 0) => {

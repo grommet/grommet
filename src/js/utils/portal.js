@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import css from 'postcss'; // eslint-disable-line max-len, import/no-extraneous-dependencies
 import prettier from 'prettier'; // eslint-disable-line max-len, import/no-extraneous-dependencies
 
@@ -7,14 +9,14 @@ export const createPortal = () => {
   document.body.appendChild(document.createElement('div'));
 };
 
-export const expectPortal = portalId => ({
+export const expectPortal = (portalId) => ({
   toMatchSnapshot: () => {
     const node = document.getElementById(portalId);
     if (node) {
       const styles = css
         .parse(document.getElementsByTagName('style')[0].innerHTML)
         .root();
-      styles.each(rule => {
+      styles.each((rule) => {
         // skip everything that is not media or rule
         if (
           ['atrule', 'rule'].indexOf(rule.type) < 0 ||
@@ -26,7 +28,7 @@ export const expectPortal = portalId => ({
           const selector = rule.selectors.join('');
           if (
             !Array.from(node.classList).some(
-              className => selector.indexOf(className) >= 0,
+              (className) => selector.indexOf(className) >= 0,
             )
           ) {
             rule.remove();

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { Attraction, Car, TreeOption, Cloud, Amazon } from 'grommet-icons';
 import { Box, Carousel, Text } from 'grommet';

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   forwardRef,
   useCallback,
@@ -453,6 +455,7 @@ const SelectContainer = forwardRef(
               ref={optionsRef}
               aria-multiselectable={multiple}
               onMouseMove={() => setKeyboardNavigation(false)}
+              {...passThemeFlag}
             >
               <InfiniteScroll
                 items={options}

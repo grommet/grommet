@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   useRef,
   forwardRef,
@@ -470,6 +472,7 @@ const Menu = forwardRef((props, ref) => {
                 role="menu"
                 a11yTitle={a11y}
                 {...(!grouped ? theme.menu.container : {})}
+                {...passThemeFlag}
               >
                 {menuContent}
               </Box>

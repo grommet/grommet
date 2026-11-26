@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 import { Omit, ColorType } from '../../utils';
 
@@ -36,15 +38,6 @@ export interface RangeSelectorExtendedProps
       'color' | 'onChange'
     > {}
 
-declare const RangeSelector: React.FC<
-  RangeSelectorProps &
-    Omit<
-      React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLDivElement>,
-        HTMLDivElement
-      >,
-      'color'
-    >
->;
+declare const RangeSelector: React.FC<RangeSelectorExtendedProps>;
 
 export { RangeSelector };

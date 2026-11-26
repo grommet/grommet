@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { AnnounceContext } from '../../contexts';
 import { Box } from '../Box';

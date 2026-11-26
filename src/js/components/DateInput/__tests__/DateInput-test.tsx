@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import 'jest-styled-components';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
@@ -1193,6 +1195,23 @@ describe('DateInput', () => {
       </Grommet>,
     );
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('container round overrides global input round', () => {
+    render(
+      <Grommet
+        theme={{
+          global: { input: { round: '40px' } },
+          dateInput: { container: { round: '2px' } },
+        }}
+      >
+        <DateInput format="mm/dd/yyyy" />
+      </Grommet>,
+    );
+
+    const input = screen.getByRole('textbox');
+    const dateInputContainer = input.parentElement?.parentElement;
+    expect(dateInputContainer).toHaveStyleRule('border-radius', '2px');
   });
 
   test('matches icon size to size prop when theme.icon.matchSize is true', () => {

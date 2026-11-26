@@ -1,9 +1,7 @@
-import {
-  FlattenInterpolation,
-  FlattenSimpleInterpolation,
-  ThemedStyledProps,
-} from 'styled-components';
-import { ReactComponentElement } from 'react';
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
+import { Interpolation } from 'styled-components';
+import { ReactElement } from 'react';
 import { Icon } from 'grommet-icons';
 
 import {
@@ -30,6 +28,7 @@ import {
   AlignType,
   WidthType,
   HeightType,
+  ThicknessType,
 } from '../utils';
 
 import { AnchorProps } from '../components/Anchor/index';
@@ -49,6 +48,30 @@ import { HeadingProps } from '../components/Heading';
 import { ParagraphProps } from '../components/Paragraph';
 import { SkeletonProps } from '../components/Skeleton/index';
 
+/**
+ * Themeable visual properties shared by component parts rendered as a Box.
+ * Keep structural, behavioral, and accessibility props out of theme parts.
+ */
+type BoxPartThemeType = Pick<
+  BoxProps,
+  | 'background'
+  | 'border'
+  | 'elevation'
+  | 'height'
+  | 'margin'
+  | 'pad'
+  | 'round'
+  | 'width'
+>;
+
+type BoxStateThemeType = Pick<
+  BoxPartThemeType,
+  'background' | 'border' | 'elevation' | 'pad' | 'round'
+>;
+
+/** Text presentation properties shared by themeable component text parts. */
+type TextThemeType = Pick<TextProps, 'color' | 'size' | 'weight'>;
+
 export declare const base: DeepReadonly<ThemeType>;
 export declare const generate: (
   baseSpacing?: number,
@@ -58,23 +81,25 @@ export declare const generate: (
 /**
  * ExtendProps represents the props that will be provided to an ExtendType.
  */
-type ExtendProps<TProps> = ThemedStyledProps<TProps, ThemeType>;
+type ExtendProps<TProps> = TProps & { theme: ThemeType };
 
 /**
  * ExtendValue represents a valid `extend` value, which can be a CSS string or a
  * styled-components interpolation. In the theme an ExtendValue can be provided
  * directly to `extend` or it can be computed as the result of an ExtendFn.
  */
-type ExtendValue<TProps> =
-  | string
-  | FlattenSimpleInterpolation
-  | FlattenInterpolation<ExtendProps<TProps>>;
+type ExtendValue<TProps> = Exclude<
+  Interpolation<ExtendProps<TProps>>,
+  (...args: any[]) => any
+>;
 
 /**
  * ExtendFn represents a function passed to `extend`. These functions receive
  * props and produce an ExtendValue.
  */
-type ExtendFn<TProps> = (props: ExtendProps<TProps>) => ExtendValue<TProps>;
+type ExtendFn<TProps> = {
+  bivarianceHack(props: ExtendProps<TProps>): ExtendValue<TProps>;
+}['bivarianceHack'];
 
 /**
  * ExtendType represents the type for `extend` values in the theme.
@@ -279,7 +304,7 @@ interface ButtonType {
   };
 }
 interface FormFieldLabelType extends TextProps {
-  requiredIndicator?: boolean | JSX.Element | string;
+  requiredIndicator?: boolean | ReactElement<unknown> | string;
 }
 
 type DigitalTexts =
@@ -291,48 +316,101 @@ type DigitalTexts =
   | 'xxlarge'
   | string;
 
-type ContainerExtend = {
+type ContainerExtend = BoxPartThemeType & {
   container?: {
     extend?: ExtendType;
   };
+  error?: BoxStateThemeType;
+  hover?: BoxStateThemeType;
 };
 
-interface StepperStateType {
-  indicator?: {
+interface StepType {
+  indicator?: BoxPartThemeType & {
     icon?: React.ReactNode | Icon;
     iconSize?: string;
-    background?: BackgroundType;
+    size?: string;
     color?: ColorType;
-    border?: ColorType;
-    substep?: {
-      iconSize?: string;
-    };
-    hover?: {
-      background?: BackgroundType;
-      border?: ColorType;
-      color?: ColorType;
-    };
+    align?: AlignType;
+    justify?:
+      | 'around'
+      | 'between'
+      | 'center'
+      | 'end'
+      | 'evenly'
+      | 'start'
+      | 'stretch';
   };
-  label?: TextProps;
-}
-
-interface StepperHelperTextStateType extends StepperStateType {
-  helperText?: {
-    color?: ColorType;
+  button?: BoxPartThemeType & {
+    gap?: GapType;
   };
-}
-
-interface StepperStatusStateType extends StepperStateType {
+  label?: TextThemeType;
+  description?: TextThemeType;
+  errorText?: TextThemeType;
+  disabledReason?: TextThemeType;
+  children?: BoxPartThemeType & {
+    gap?: GapType;
+  };
   connector?: {
+    // line type?
     color?: ColorType;
+    thickness?: ThicknessType;
+    gap?: GapType;
   };
+  // Interaction states
+  hover?: StepType;
+}
+interface StepperThemeType extends StepType {
+  container?: BoxPartThemeType & {
+    gap?: GapType | { row?: GapType; column?: GapType };
+  };
+  subStep?: Omit<StepType, 'children'>;
+  vertical?: StepType;
+  // Application States
+  pending?: StepType;
+  current?: StepType;
+  currentCompleted?: StepType;
+  completed?: StepType;
+  error?: StepType;
+  currentError?: StepType;
+  disabled?: StepType;
 }
 
-interface StepperStatusWithHelperTextStateType extends StepperStatusStateType {
-  helperText?: {
-    color?: ColorType;
+type TimeInputOptionThemeType = {
+  container?: BoxPartThemeType & {
+    hover?: BoxStateThemeType;
+    selected?: BoxStateThemeType & {
+      hover?: BoxStateThemeType;
+    };
   };
-}
+  text?: TextThemeType & {
+    selected?: TextThemeType;
+  };
+};
+
+type TimeInputButtonIconType = React.ReactNode | Icon;
+
+type TimeInputDropButtonThemeType =
+  | string
+  | { kind: string; icon?: TimeInputButtonIconType }
+  | (ButtonType & { icon?: TimeInputButtonIconType });
+
+type TimeInputThemeType = {
+  container?: BoxPartThemeType;
+  value?: BoxPartThemeType;
+  segment?: BoxPartThemeType &
+    TextThemeType & {
+      placeholder?: TextThemeType;
+      active?: BoxStateThemeType & TextThemeType;
+    };
+  dropButton?: TimeInputDropButtonThemeType;
+  drop?: BoxPartThemeType & {
+    gap?: GapType;
+    column?: BoxPartThemeType & {
+      gap?: GapType;
+    };
+    option?: TimeInputOptionThemeType;
+  };
+};
 
 export interface ThemeType {
   global?: {
@@ -406,6 +484,9 @@ export interface ThemeType {
       computer?: string;
     };
     colors?: Colors;
+    scrollbar?: {
+      width?: 'auto' | 'thin' | 'none';
+    };
     control?: {
       border?: {
         width?: string;
@@ -448,7 +529,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
-        [x: string]: string;
+        [x: string]: string | undefined;
       };
       dark?: {
         none?: string;
@@ -457,7 +538,7 @@ export interface ThemeType {
         medium?: string;
         large?: string;
         xlarge?: string;
-        [x: string]: string;
+        [x: string]: string | undefined;
       };
     };
     focus?: {
@@ -514,8 +595,11 @@ export interface ThemeType {
       background?: BackgroundType;
       color?: ColorType;
     };
-    input?: {
+    input?: BoxPartThemeType & {
+      disabled?: BoxStateThemeType;
       extend?: ExtendType;
+      focus?: BoxStateThemeType;
+      hover?: BoxStateThemeType;
       padding?:
         | string
         | {
@@ -531,12 +615,8 @@ export interface ThemeType {
         size?: string;
         weight?: number | string;
       };
-      readOnly?: {
-        background?: BackgroundType;
-        border?: {
-          color?: ColorType;
-        };
-      };
+      placeholder?: TextThemeType;
+      readOnly?: BoxStateThemeType;
       weight?: number | string;
     };
     opacity?: {
@@ -827,6 +907,15 @@ export interface ThemeType {
     width?: string;
   };
   checkBox?: {
+    control?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
+      selected?: BoxStateThemeType & {
+        hover?: BoxStateThemeType;
+      };
+    };
+    container?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
@@ -836,6 +925,7 @@ export interface ThemeType {
     };
     check?: {
       extend?: ExtendType;
+      /** @deprecated Use checkBox.control.round instead. */
       radius?: string;
       thickness?: string;
     };
@@ -846,6 +936,7 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      /** @deprecated Use checkBox.container.hover.background instead. */
       background?: {
         color?: ColorType;
       };
@@ -859,6 +950,7 @@ export interface ThemeType {
       checked?: React.ReactNode | Icon;
       indeterminate?: any;
     };
+    /** @deprecated Use checkBox.container.pad instead. */
     pad?: PadType;
     size?: string;
     toggle?: {
@@ -1025,6 +1117,43 @@ export interface ThemeType {
       size?: string;
     };
   };
+  dateTimeInput?: {
+    button?: {
+      margin?: string | object;
+    };
+    container?: {
+      round?: RoundType;
+    };
+    active?: {
+      background?: ColorType;
+      pad?: string;
+      indicator?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    drop?: {
+      pad?: PadType;
+      gap?: GapType;
+      border?: {
+        color?: ColorType;
+        size?: string;
+      };
+    };
+    calendar?: {
+      day?: {
+        selected?: {
+          background?: BackgroundType;
+        };
+      };
+    };
+    icon?: {
+      calendar?: React.ReactNode | Icon;
+    };
+    separator?: {
+      pad?: GapType;
+    };
+  };
   dataTable?: {
     body?: {
       extend?: ExtendType;
@@ -1186,6 +1315,7 @@ export interface ThemeType {
     gap?: GapType;
   };
   formField?: {
+    background?: BackgroundType;
     border?: BorderType & {
       error?: {
         color?: ColorType;
@@ -1229,6 +1359,12 @@ export interface ThemeType {
       container?: BoxProps;
       icon?: any;
     };
+    hover?: {
+      background?: BackgroundType;
+      border?: {
+        color?: ColorType;
+      };
+    };
     help?: {
       color?: ColorType;
       margin?: MarginType;
@@ -1250,7 +1386,7 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
-    checkBox?: ContainerExtend & { pad?: PadType };
+    checkBox?: ContainerExtend;
     checkBoxGroup?: ContainerExtend;
     textArea?: ContainerExtend;
     textInput?: ContainerExtend;
@@ -1258,10 +1394,12 @@ export interface ThemeType {
     maskedInput?: ContainerExtend;
     selectMultiple?: ContainerExtend;
     dateInput?: ContainerExtend;
+    dateTimeInput?: ContainerExtend;
     timeInput?: ContainerExtend;
     fileInput?: ContainerExtend;
     radioButton?: ContainerExtend;
     radioButtonGroup?: ContainerExtend;
+    rangeInput?: ContainerExtend;
     rangeSelector?: ContainerExtend;
     starRating?: ContainerExtend;
     thumbsRating?: ContainerExtend;
@@ -1844,30 +1982,47 @@ export interface ThemeType {
     };
   };
   radioButton?: {
-    extend?: ExtendType;
-    container?: {
+    control?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
+      selected?: BoxStateThemeType & {
+        hover?: BoxStateThemeType;
+      };
+    };
+    container?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
       extend?: ExtendType;
     };
+    /** @deprecated Use radioButton.control.background instead. */
     background?: {
       color?: ColorType;
     };
     border?: {
+      /** @deprecated Use radioButton.control.border.color instead. */
       color?: ColorType;
+      /** @deprecated Use radioButton.control.border.size instead. */
       width?: string;
     };
     check?: {
       color?: ColorType;
       extend?: ExtendType;
+      /** @deprecated Use radioButton.control.round instead. */
       radius?: string;
+      /** @deprecated Use radioButton.control.selected.background instead. */
       background?: {
         color?: ColorType;
       };
     };
+    /** @deprecated Use radioButton.control.selected.border.color instead. */
     color?: ColorType;
     hover?: {
       border?: {
+        /**
+         * @deprecated Use radioButton.control.hover.border.color and
+         * radioButton.control.selected.hover.border.color instead.
+         */
         color?: ColorType;
       };
+      /** @deprecated Use radioButton.container.hover.background instead. */
       background?: {
         color?: ColorType;
       };
@@ -1884,6 +2039,7 @@ export interface ThemeType {
     font?: {
       weight?: number | string;
     };
+    extend?: ExtendType;
   };
   nameValueList?: {
     gap?: {
@@ -1995,8 +2151,7 @@ export interface ThemeType {
     search?: {
       pad?: PadType;
     };
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37506
-    searchInput?: ReactComponentElement<any>;
+    searchInput?: ReactElement<any>;
     step?: number;
   };
   selectMultiple?: {
@@ -2057,6 +2212,7 @@ export interface ThemeType {
       unselected?: React.ReactNode | Icon;
     };
   };
+  stepper?: StepperThemeType;
   thumbsRating?: {
     dislike?: {
       color?: ColorType;
@@ -2136,122 +2292,6 @@ export interface ThemeType {
       small?: number;
       medium?: number;
       large?: number;
-    };
-  };
-  stepper?: {
-    indicator?: {
-      size?: string;
-      border?: {
-        width?: string;
-      };
-    };
-    label?: {
-      size?: string;
-      substep?: {
-        size?: string;
-      };
-    };
-    connector?: {
-      stroke?: {
-        width?: string;
-      };
-    };
-    description?: TextProps;
-    helperText?: {
-      size?: string;
-      color?: ColorType;
-    };
-    hover?: {
-      background?: BackgroundType;
-      border?: ColorType;
-    };
-    // States: [component].[state].[element].[property]
-    pending?: StepperStatusStateType;
-    current?: StepperStateType;
-    currentCompleted?: StepperStateType;
-    completed?: StepperStatusStateType;
-    error?: StepperStatusWithHelperTextStateType;
-    currentError?: StepperHelperTextStateType;
-    disabled?: StepperStatusWithHelperTextStateType;
-  };
-  wizard?: {
-    container?: {
-      gap?: GapType;
-      background?: BackgroundType;
-      extend?: ExtendType;
-    };
-    body?: {
-      pad?: PadType;
-      gap?: GridGapType;
-      extend?: ExtendType;
-    };
-    header?: {
-      pad?: PadType;
-      background?: BackgroundType;
-      border?: BorderType;
-      title?: {
-        size?: string;
-      };
-      close?: {
-        icon?: React.ReactNode | Icon;
-      };
-      extend?: ExtendType;
-    };
-    progress?: {
-      horizontal?: {
-        pad?: PadType;
-        extend?: ExtendType;
-      };
-      vertical?: {
-        width?: string;
-        pad?: PadType;
-        extend?: ExtendType;
-      };
-    };
-    stepHeader?: {
-      pad?: PadType;
-      gap?: GapType;
-      counter?: {
-        size?: string;
-        color?: ColorType;
-      };
-      title?: {
-        size?: string;
-        margin?: MarginType;
-      };
-      description?: {
-        size?: string;
-        color?: ColorType;
-        margin?: MarginType;
-      };
-      extend?: ExtendType;
-    };
-    content?: {
-      pad?: PadType;
-      background?: BackgroundType;
-      round?: RoundType;
-      margin?: MarginType;
-      extend?: ExtendType;
-    };
-    footer?: {
-      pad?: PadType;
-      gap?: GridGapType;
-      background?: BackgroundType;
-      border?: BorderType;
-      justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
-      button?: {
-        next?: { icon?: React.ReactNode | Icon };
-        complete?: { icon?: React.ReactNode | Icon };
-        previous?: { icon?: React.ReactNode | Icon };
-        cancel?: { icon?: React.ReactNode | Icon };
-        skip?: { icon?: React.ReactNode | Icon };
-      };
-      extend?: ExtendType;
-    };
-    error?: {
-      color?: ColorType;
-      size?: string;
-      margin?: MarginType;
     };
   };
   table?: {
@@ -2414,7 +2454,10 @@ export interface ThemeType {
       extend?: ExtendType;
     };
     icons?: {
+      clear?: React.ReactNode | Icon;
       copy?: React.ReactNode | Icon;
+      hidePassword?: React.ReactNode | Icon;
+      showPassword?: React.ReactNode | Icon;
     };
     placeholder?: {
       extend?: ExtendType;
@@ -2423,40 +2466,7 @@ export interface ThemeType {
       extend?: ExtendType;
     };
   };
-  timeInput?: {
-    button?: {
-      margin?: MarginType;
-    };
-    container?: {
-      round?: RoundType;
-    };
-    active?: {
-      background?: ColorType;
-      pad?: string;
-      indicator?: {
-        color?: ColorType;
-        size?: string;
-      };
-    };
-    drop?: {
-      option?: {
-        background?: ColorType;
-        hover?: {
-          background?: ColorType;
-        };
-        selected?: {
-          background?: ColorType;
-          color?: ColorType;
-          hover?: {
-            background?: ColorType;
-          };
-        };
-      };
-    };
-    icon?: {
-      clock?: React.ReactNode | Icon;
-    };
-  };
+  timeInput?: TimeInputThemeType;
   tip?: {
     content?: BoxProps;
     drop?: DropProps;
@@ -2513,6 +2523,73 @@ export interface ThemeType {
     time?: {
       container?: {
         pad?: PadType;
+      };
+    };
+  };
+  wizard?: {
+    container?: {
+      gap?: GapType;
+      background?: BackgroundType;
+    };
+    body?: {
+      pad?: PadType;
+      gap?: GridGapType;
+    };
+    header?: {
+      pad?: PadType;
+      background?: BackgroundType;
+      title?: {
+        size?: string;
+      };
+      close?: {
+        icon?: React.ReactNode | Icon;
+      };
+    };
+    progress?: {
+      horizontal?: {
+        pad?: PadType;
+      };
+      vertical?: {
+        width?: string;
+        pad?: PadType;
+      };
+    };
+    stepHeader?: {
+      pad?: PadType;
+      gap?: GapType;
+      counter?: {
+        size?: string;
+        color?: ColorType;
+      };
+      title?: {
+        size?: string;
+        margin?: MarginType;
+      };
+      description?: {
+        size?: string;
+        color?: ColorType;
+        margin?: MarginType;
+      };
+    };
+    content?: {
+      pad?: PadType;
+      gap?: GapType;
+      background?: BackgroundType;
+      round?: RoundType;
+      margin?: MarginType;
+    };
+    footer?: {
+      background?: BackgroundType;
+      border?: BorderType;
+      gap?: GridGapType;
+      pad?: PadType;
+      justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
+      button?: {
+        next?: { icon?: React.ReactNode | Icon };
+        complete?: { icon?: React.ReactNode | Icon };
+        previous?: { icon?: React.ReactNode | Icon };
+        cancel?: { icon?: React.ReactNode | Icon };
+        skip?: { icon?: React.ReactNode | Icon };
       };
     };
   };

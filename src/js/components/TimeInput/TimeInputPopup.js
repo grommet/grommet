@@ -1,15 +1,25 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 /* eslint-disable max-len */
 import React, { useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 import { useLayoutEffect } from '../../utils/use-isomorphic-layout-effect';
-import { focusStyle, normalizeColor } from '../../utils';
+import {
+  backgroundStyle,
+  borderStyle,
+  edgeStyle,
+  elevationStyle,
+  focusStyle,
+  roundStyle,
+} from '../../utils';
 import { useThemeValue } from '../../utils/useThemeValue';
 
 import { Box } from '../Box';
 import { Drop } from '../Drop';
 import { Text } from '../Text';
 import {
+  defaultHourForFormat,
   pad,
   getSectionName,
   SECTION_HOUR,
@@ -20,52 +30,43 @@ import {
 
 const PopupColumnBox = styled(Box)`
   scrollbar-gutter: stable;
-  scrollbar-width: thin;
 `;
 
-const PopupOption = styled.div`
-  box-sizing: border-box;
+const PopupOption = styled(Box)`
   cursor: pointer;
-  display: flex;
-  padding: ${(props) =>
-    `${props.theme.global.edgeSize.xxsmall} ${props.theme.global.edgeSize.xsmall}`};
-  border-radius: ${(props) => props.theme.global.control?.border?.radius};
-  background: ${(props) => {
-    if (props.$selected) {
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.selected?.background,
-        props.theme,
-      );
-    }
-
-    if (props.$active) {
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.hover?.background,
-        props.theme,
-      );
-    }
-
-    return normalizeColor(
-      props.theme.timeInput?.drop?.option?.background,
-      props.theme,
-    );
-  }};
 
   &:hover {
-    background: ${(props) => {
-      if (props.$selected) {
-        return normalizeColor(
-          props.theme.timeInput?.drop?.option?.selected?.hover?.background ||
-            props.theme.timeInput?.drop?.option?.selected?.background,
-          props.theme,
-        );
-      }
+    ${(props) => {
+      const { theme, $hoverState, $hoverBackground } = props;
+      const responsive =
+        props.responsive === undefined ? true : props.responsive;
+      const styles = [];
 
-      return normalizeColor(
-        props.theme.timeInput?.drop?.option?.hover?.background,
-        props.theme,
-      );
-    }};
+      if ($hoverBackground !== undefined)
+        styles.push(backgroundStyle($hoverBackground, theme));
+      if ($hoverState?.border !== undefined)
+        styles.push(borderStyle($hoverState.border, responsive, theme));
+      if ($hoverState?.elevation !== undefined)
+        styles.push(elevationStyle($hoverState.elevation));
+      if ($hoverState?.pad !== undefined)
+        styles.push(
+          edgeStyle(
+            'padding',
+            $hoverState.pad,
+            responsive,
+            theme.box.responsiveBreakpoint,
+            theme,
+          ),
+        );
+      if ($hoverState?.round !== undefined)
+        styles.push(
+          $hoverState.round === false
+            ? 'border-radius: 0;'
+            : roundStyle($hoverState.round, responsive, theme),
+        );
+
+      return styles;
+    }}
   }
 
   /*
@@ -79,77 +80,145 @@ const PopupOption = styled.div`
 
 const optionKey = (label, option) => `${label.toLowerCase()}-${option}`;
 
+const getDefaultPopupOption = ({ section, format, options }) => {
+  if (section === SECTION_HOUR) {
+    const defaultHour = defaultHourForFormat(format);
+    return options.includes(defaultHour) ? defaultHour : options[0];
+  }
+  if (section === SECTION_PERIOD) return 'AM';
+  return options[0];
+};
+
 const PopupColumn = ({
   activeSection,
   format,
   formatMessage,
+  inline,
   label,
   messages,
   onClickCommitOption,
-  onPointerCommitOption,
   onSetSection,
   options,
   section,
   sections,
   theme,
-}) => (
-  <PopupColumnBox
-    role="listbox"
-    aria-label={label}
-    gap="xxsmall"
-    height={{
-      max: theme.timeInput?.drop?.column?.maxHeight || theme.global.size.small,
-    }}
-    overflow="auto"
-    flex={{ grow: 0, shrink: 0 }}
-  >
-    {options.map((option) => {
-      const key = optionKey(label, option);
-      const selected =
-        (section === SECTION_HOUR && sections.hour === option) ||
-        (section === SECTION_MINUTE && sections.minute === option) ||
-        (section === SECTION_SECOND && sections.second === option) ||
-        (section === SECTION_PERIOD && sections.period === option);
+  passThemeFlag,
+}) => {
+  const columnTheme = theme.timeInput?.drop?.column || {};
 
-      const optionColor = selected
-        ? theme.timeInput?.drop?.option?.selected?.color || 'text'
-        : 'text';
-      const isActive = selected && activeSection === section;
+  return (
+    <PopupColumnBox
+      role="listbox"
+      aria-label={label}
+      overflow="auto"
+      flex={{ grow: 0, shrink: 0 }}
+      {...columnTheme}
+      {...passThemeFlag}
+    >
+      {options.map((option) => {
+        const key = optionKey(label, option);
+        const sectionHasValue =
+          (section === SECTION_HOUR && sections.hour !== undefined) ||
+          (section === SECTION_MINUTE && sections.minute !== undefined) ||
+          (section === SECTION_SECOND && sections.second !== undefined) ||
+          (section === SECTION_PERIOD && sections.period !== undefined);
 
-      return (
-        <PopupOption
-          key={key}
-          data-option-key={key}
-          role="option"
-          aria-selected={selected}
-          tabIndex={isActive ? 0 : -1}
-          aria-label={`${
-            section === SECTION_PERIOD ? option : pad(option)
-          } ${getSectionName(section, format, formatMessage, messages)}`}
-          $active={isActive}
-          $selected={selected}
-          onMouseDown={(event) => {
-            if (event.button !== 0) return;
-            // Commit on pointer press so momentum scroll does not swallow
-            // the first click commit on some trackpad/mouse flows.
-            event.preventDefault();
-            onPointerCommitOption(section, option);
-          }}
-          onClick={() => onClickCommitOption(section, option)}
-          onFocus={() => onSetSection(section)}
-        >
-          <Text
-            size={theme.global.input.font.size || 'small'}
-            weight={selected ? 'bold' : 'normal'}
-            color={optionColor}
+        // In empty state, keep focus defaults but avoid visually selecting
+        // options until the user makes an explicit choice.
+        const selected =
+          (section === SECTION_HOUR && sections.hour === option) ||
+          (section === SECTION_MINUTE && sections.minute === option) ||
+          (section === SECTION_SECOND && sections.second === option) ||
+          (section === SECTION_PERIOD && sections.period === option);
+
+        const optionColor = selected
+          ? theme.timeInput?.drop?.option?.text?.selected?.color ||
+            theme.timeInput?.drop?.option?.text?.color ||
+            'text'
+          : theme.timeInput?.drop?.option?.text?.color || 'text';
+        const optionContainer = theme.timeInput?.drop?.option?.container || {};
+        const {
+          hover: optionHover,
+          selected: selectedContainer = {},
+          ...baseOptionStyles
+        } = optionContainer;
+        const { hover: selectedHover, ...selectedOptionStyles } =
+          selectedContainer;
+        const optionStyles = selected
+          ? { ...baseOptionStyles, ...selectedOptionStyles }
+          : baseOptionStyles;
+        const hoverState = selected ? selectedHover : optionHover;
+        const hoverBackground = selected
+          ? hoverState?.background ??
+            selectedContainer.background ??
+            baseOptionStyles.background
+          : hoverState?.background;
+        const isActive = selected && activeSection === section;
+        let optionTabIndex = -1;
+        if (inline) {
+          // In inline mode each column needs exactly one tabbable option so Tab
+          // key lands on the option (with Grommet focus style) instead of the
+          // listbox container (which has no theme focus style). Use the selected
+          // value when set, otherwise fall back to the column's first option.
+          const defaultOption = getDefaultPopupOption({
+            section,
+            format,
+            options,
+          });
+          optionTabIndex =
+            selected || (!sectionHasValue && option === defaultOption) ? 0 : -1;
+        } else if (isActive) {
+          optionTabIndex = 0;
+        }
+
+        return (
+          <PopupOption
+            key={key}
+            role="option"
+            data-option-key={key}
+            aria-selected={selected}
+            tabIndex={optionTabIndex}
+            aria-label={`${
+              section === SECTION_PERIOD ? option : pad(option)
+            } ${getSectionName(section, format, formatMessage, messages)}`}
+            flex={false}
+            $hoverState={hoverState}
+            $hoverBackground={hoverBackground}
+            {...optionStyles}
+            // This option owns its inset :focus-visible indicator. Box's
+            // focus tracking can retain state when tabIndex becomes -1.
+            focusIndicator={false}
+            onClick={() => onClickCommitOption(section, option)}
+            onFocus={() => onSetSection(section)}
           >
-            {section === SECTION_PERIOD ? option : pad(option)}
-          </Text>
-        </PopupOption>
-      );
-    })}
-  </PopupColumnBox>
-);
+            <Text
+              size={
+                selected
+                  ? theme.timeInput?.drop?.option?.text?.selected?.size ||
+                    theme.timeInput?.drop?.option?.text?.size ||
+                    theme.global.input.font.size ||
+                    'small'
+                  : theme.timeInput?.drop?.option?.text?.size ||
+                    theme.global.input.font.size ||
+                    'small'
+              }
+              weight={
+                selected
+                  ? theme.timeInput?.drop?.option?.text?.selected?.weight ??
+                    theme.timeInput?.drop?.option?.text?.weight
+                  : theme.timeInput?.drop?.option?.text?.weight
+              }
+              color={optionColor}
+              textAlign="center"
+            >
+              {section === SECTION_PERIOD ? option : pad(option)}
+            </Text>
+          </PopupOption>
+        );
+      })}
+    </PopupColumnBox>
+  );
+};
 
 const TimeInputPopup = ({
   activeSection,
@@ -157,12 +226,11 @@ const TimeInputPopup = ({
   format,
   formatMessage,
   hoursOptions,
+  focusOnOpen = true,
   id,
   incrementSection,
   messages,
   minuteOptions,
-  moveSection,
-  onAccept,
   onClose,
   onFocusLeave,
   secondOptions,
@@ -173,11 +241,13 @@ const TimeInputPopup = ({
   target,
   dropProps,
   label,
+  inline = false,
+  onKeyDown: onKeyDownProp,
+  ...rest
 }) => {
-  const { theme } = useThemeValue();
+  const { theme, passThemeFlag } = useThemeValue();
   const dialogRef = useRef();
   const pointerDownInsideRef = useRef(false);
-  const pointerSelectionCommittedRef = useRef(false);
   const suppressNextAutoScrollRef = useRef(false);
   const wheelInteractionTimeoutRef = useRef();
   const pointerReleaseTimeoutRef = useRef();
@@ -223,25 +293,15 @@ const TimeInputPopup = ({
     [setActiveSection, setSectionValue],
   );
 
-  const commitPointerOptionSelection = useCallback(
+  // Commit on the up-event (click), not mousedown - see WCAG 2.5.2 (Pointer
+  // Cancellation). Committing on press would leave no way to abort by
+  // moving the pointer off-target before releasing.
+  const commitClickOptionSelection = useCallback(
     (section, option) => {
-      pointerSelectionCommittedRef.current = true;
       suppressNextAutoScroll();
       commitOptionSelection(section, option);
     },
     [commitOptionSelection, suppressNextAutoScroll],
-  );
-
-  const commitClickOptionSelection = useCallback(
-    (section, option) => {
-      if (pointerSelectionCommittedRef.current) {
-        pointerSelectionCommittedRef.current = false;
-        return;
-      }
-
-      commitOptionSelection(section, option);
-    },
-    [commitOptionSelection],
   );
 
   const onPopupWheelCapture = useCallback(() => {
@@ -295,6 +355,35 @@ const TimeInputPopup = ({
     sectionOrder.includes(section),
   );
 
+  const getSectionFromLabel = useCallback((listboxLabel) => {
+    if (listboxLabel === 'hour') return SECTION_HOUR;
+    if (listboxLabel === 'minute') return SECTION_MINUTE;
+    if (listboxLabel === 'second') return SECTION_SECOND;
+    if (listboxLabel === 'period') return SECTION_PERIOD;
+    return undefined;
+  }, []);
+
+  const getSectionFromEventTarget = useCallback(
+    (eventTarget) => {
+      const listboxNode = eventTarget?.closest?.('[role="listbox"]');
+      const ariaLabel = listboxNode?.getAttribute?.('aria-label');
+      return getSectionFromLabel(ariaLabel);
+    },
+    [getSectionFromLabel],
+  );
+
+  const getAdjacentSection = useCallback(
+    (section, delta) => {
+      const currentIndex = sectionOrder.indexOf(section);
+      if (currentIndex === -1) return sectionOrder[0] ?? section;
+
+      const nextIndex =
+        (currentIndex + delta + sectionOrder.length) % sectionOrder.length;
+      return sectionOrder[nextIndex] ?? section;
+    },
+    [sectionOrder],
+  );
+
   const scrollSelectedOptionsIntoView = useCallback(() => {
     if (pointerDownInsideRef.current) return;
     if (suppressNextAutoScrollRef.current) {
@@ -314,11 +403,29 @@ const TimeInputPopup = ({
 
     const sectionValue = {
       [SECTION_HOUR]:
-        sections.hour !== undefined ? sections.hour : hoursOptions[0],
+        sections.hour !== undefined
+          ? sections.hour
+          : getDefaultPopupOption({
+              section: SECTION_HOUR,
+              format,
+              options: hoursOptions,
+            }),
       [SECTION_MINUTE]:
-        sections.minute !== undefined ? sections.minute : minuteOptions[0],
+        sections.minute !== undefined
+          ? sections.minute
+          : getDefaultPopupOption({
+              section: SECTION_MINUTE,
+              format,
+              options: minuteOptions,
+            }),
       [SECTION_SECOND]:
-        sections.second !== undefined ? sections.second : secondOptions[0],
+        sections.second !== undefined
+          ? sections.second
+          : getDefaultPopupOption({
+              section: SECTION_SECOND,
+              format,
+              options: secondOptions,
+            }),
       [SECTION_PERIOD]: sections.period || 'AM',
     };
 
@@ -353,6 +460,7 @@ const TimeInputPopup = ({
       }
     });
   }, [
+    format,
     hoursOptions,
     minuteOptions,
     secondOptions,
@@ -371,15 +479,33 @@ const TimeInputPopup = ({
     const keyMap = {
       [SECTION_HOUR]: optionKey(
         'hour',
-        sections.hour !== undefined ? sections.hour : hoursOptions[0],
+        sections.hour !== undefined
+          ? sections.hour
+          : getDefaultPopupOption({
+              section: SECTION_HOUR,
+              format,
+              options: hoursOptions,
+            }),
       ),
       [SECTION_MINUTE]: optionKey(
         'minute',
-        sections.minute !== undefined ? sections.minute : minuteOptions[0],
+        sections.minute !== undefined
+          ? sections.minute
+          : getDefaultPopupOption({
+              section: SECTION_MINUTE,
+              format,
+              options: minuteOptions,
+            }),
       ),
       [SECTION_SECOND]: optionKey(
         'second',
-        sections.second !== undefined ? sections.second : secondOptions[0],
+        sections.second !== undefined
+          ? sections.second
+          : getDefaultPopupOption({
+              section: SECTION_SECOND,
+              format,
+              options: secondOptions,
+            }),
       ),
       [SECTION_PERIOD]: optionKey('period', sections.period || 'AM'),
     };
@@ -405,7 +531,14 @@ const TimeInputPopup = ({
     }
 
     return false;
-  }, [activeSection, hoursOptions, minuteOptions, secondOptions, sections]);
+  }, [
+    activeSection,
+    format,
+    hoursOptions,
+    minuteOptions,
+    secondOptions,
+    sections,
+  ]);
 
   useLayoutEffect(() => {
     // Avoid stealing pointer interactions: while the user is actively
@@ -415,6 +548,9 @@ const TimeInputPopup = ({
     const scrollRaf = requestAnimationFrame(() => {
       scrollSelectedOptionsIntoView();
     });
+
+    // DateTimeInput disables this so its Calendar can receive initial focus.
+    if (!focusOnOpen) return () => window.cancelAnimationFrame(scrollRaf);
 
     let rafB;
     const rafA = requestAnimationFrame(() => {
@@ -434,7 +570,121 @@ const TimeInputPopup = ({
       window.cancelAnimationFrame(rafA);
       if (rafB) window.cancelAnimationFrame(rafB);
     };
-  }, [focusCurrentPopupOption, scrollSelectedOptionsIntoView]);
+  }, [focusCurrentPopupOption, focusOnOpen, scrollSelectedOptionsIntoView]);
+
+  const dropTheme = theme.timeInput?.drop;
+  const { column, option, ...dropBoxTheme } = dropTheme;
+  const dropWidth = dropBoxTheme.width;
+  const popupWidth =
+    typeof dropWidth === 'object'
+      ? { ...dropWidth, max: dropWidth.max ?? '100%' }
+      : { width: dropWidth, max: '100%' };
+
+  const popupContent = (
+    <Box
+      ref={dialogRef}
+      role={inline ? undefined : 'dialog'}
+      aria-label={inline ? undefined : label}
+      direction="row"
+      width={popupWidth}
+      {...dropBoxTheme}
+      height={inline ? '100%' : dropBoxTheme.height}
+      pad={inline ? 'none' : dropBoxTheme.pad}
+      responsive={false}
+      onPointerDownCapture={markInteractionInProgress}
+      onPointerUpCapture={releaseInteractionAfterClick}
+      onPointerCancelCapture={clearInteractionInProgress}
+      onWheelCapture={onPopupWheelCapture}
+      onKeyDown={(event) => {
+        const eventSectionFromTarget = getSectionFromEventTarget(event.target);
+        const eventSectionFromActiveElement = getSectionFromEventTarget(
+          document.activeElement,
+        );
+        const eventSection =
+          eventSectionFromTarget ??
+          eventSectionFromActiveElement ??
+          activeSection;
+
+        if (event.key === 'Escape') {
+          if (onClose) {
+            event.preventDefault();
+            onClose();
+          }
+        } else if (event.key === 'Enter') {
+          event.preventDefault();
+          const focusedOption =
+            event.target?.closest?.('[role="option"]') ||
+            document.activeElement?.closest?.('[role="option"]');
+          focusedOption?.click?.();
+        } else if (event.key === ' ' || event.key === 'Spacebar') {
+          event.preventDefault();
+          const focusedOption =
+            event.target?.closest?.('[role="option"]') ||
+            document.activeElement?.closest?.('[role="option"]');
+          focusedOption?.click?.();
+        } else if (event.key === 'Tab') {
+          if (!inline) {
+            event.preventDefault();
+            setActiveSection(
+              getAdjacentSection(eventSection, event.shiftKey ? -1 : 1),
+            );
+          }
+        } else if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          setActiveSection(getAdjacentSection(eventSection, -1));
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          setActiveSection(getAdjacentSection(eventSection, 1));
+        } else if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          incrementSection(eventSection, -1, true);
+        } else if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          incrementSection(eventSection, 1, true);
+        }
+
+        onKeyDownProp?.(event);
+      }}
+      onBlurCapture={(event) => {
+        const nextFocusTarget = event.relatedTarget;
+        // Clicking the scrollbar blurs the focused option with
+        // relatedTarget = null. Keep the popup open for that interaction.
+        if (!nextFocusTarget) return;
+        // If the user is currently interacting with the popup (pointer
+        // down inside), don't close on blur. This prevents the popup
+        // from closing when clicking on a non-focusable area within
+        // the popup (e.g., the gap between columns or padding), which
+        // would otherwise move focus to the document body and trigger
+        // a false onFocusLeave.
+        if (pointerDownInsideRef.current) return;
+        if (!event.currentTarget.contains(nextFocusTarget)) {
+          onFocusLeave?.();
+        }
+      }}
+      {...rest}
+    >
+      {visiblePopupSections.map(({ section, label: sectionLabel, options }) => (
+        <PopupColumn
+          key={sectionLabel}
+          activeSection={activeSection}
+          format={format}
+          formatMessage={formatMessage}
+          inline={inline}
+          label={sectionLabel}
+          messages={messages}
+          onClickCommitOption={commitClickOptionSelection}
+          onSetSection={setActiveSection}
+          options={options}
+          section={section}
+          sections={sections}
+          theme={theme}
+          passThemeFlag={passThemeFlag}
+        />
+      ))}
+    </Box>
+  );
+
+  if (inline) return popupContent;
 
   return (
     <Drop
@@ -445,80 +695,7 @@ const TimeInputPopup = ({
       onClickOutside={onClose}
       {...dropProps}
     >
-      <Box
-        ref={dialogRef}
-        role="dialog"
-        aria-label={label}
-        direction="row"
-        width={{ width: theme.timeInput?.drop?.width, max: '100%' }}
-        minHeight={theme.timeInput?.drop?.minHeight}
-        gap="xsmall"
-        pad="small"
-        onPointerDownCapture={markInteractionInProgress}
-        onPointerUpCapture={releaseInteractionAfterClick}
-        onPointerCancelCapture={clearInteractionInProgress}
-        onWheelCapture={onPopupWheelCapture}
-        onKeyDown={(event) => {
-          if (event.key === 'Escape') {
-            event.preventDefault();
-            onClose();
-          } else if (event.key === ' ' || event.key === 'Spacebar') {
-            event.preventDefault();
-            const focusedOption =
-              event.target?.closest?.('[role="option"]') ||
-              document.activeElement?.closest?.('[role="option"]');
-            focusedOption?.click?.();
-          } else if (event.key === 'Tab') {
-            event.preventDefault();
-            setActiveSection(moveSection(event.shiftKey ? -1 : 1));
-          } else if (event.key === 'ArrowLeft') {
-            event.preventDefault();
-            setActiveSection(moveSection(-1));
-          } else if (event.key === 'ArrowRight') {
-            event.preventDefault();
-            setActiveSection(moveSection(1));
-          } else if (event.key === 'ArrowUp') {
-            event.preventDefault();
-            incrementSection(activeSection, -1);
-          } else if (event.key === 'ArrowDown') {
-            event.preventDefault();
-            incrementSection(activeSection, 1);
-          } else if (event.key === 'Enter') {
-            event.preventDefault();
-            onAccept?.();
-            onClose();
-          }
-        }}
-        onBlurCapture={(event) => {
-          const nextFocusTarget = event.relatedTarget;
-          // Clicking the scrollbar blurs the focused option with
-          // relatedTarget = null. Keep the popup open for that interaction.
-          if (!nextFocusTarget) return;
-          if (!event.currentTarget.contains(nextFocusTarget)) {
-            onFocusLeave?.();
-          }
-        }}
-      >
-        {visiblePopupSections.map(
-          ({ section, label: sectionLabel, options }) => (
-            <PopupColumn
-              key={sectionLabel}
-              activeSection={activeSection}
-              format={format}
-              formatMessage={formatMessage}
-              label={sectionLabel}
-              messages={messages}
-              onClickCommitOption={commitClickOptionSelection}
-              onPointerCommitOption={commitPointerOptionSelection}
-              onSetSection={setActiveSection}
-              options={options}
-              section={section}
-              sections={sections}
-              theme={theme}
-            />
-          ),
-        )}
-      </Box>
+      {popupContent}
     </Drop>
   );
 };

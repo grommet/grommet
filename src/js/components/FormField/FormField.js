@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, {
   Children,
   cloneElement,
@@ -7,11 +9,20 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
+  backgroundStyle,
+  borderStyle,
   containsFocus,
+  edgeStyle,
+  elevationStyle,
+  hasSideSpecificBorder,
+  isObject,
+  normalizeColor,
+  roundStyle,
   shouldKeepFocus,
+  styledComponentsConfig,
   withinDropPortal,
   PortalContext,
 } from '../../utils';
@@ -27,6 +38,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { FormContext } from '../Form/FormContext';
 import { FormFieldPropTypes } from './propTypes';
+import { FormFieldContext } from './FormFieldContext';
 import { useThemeValue } from '../../utils/useThemeValue';
 import { AnnounceContext } from '../../contexts/AnnounceContext';
 
@@ -50,6 +62,7 @@ const grommetInputNames = [
   'SelectMultiple',
   'TextArea',
   'DateInput',
+  'DateTimeInput',
   'TimeInput',
   'FileInput',
   'RadioButton',
@@ -68,12 +81,44 @@ const grommetInputPadNames = [
   'RangeSelector',
 ];
 
+// Ideally FormField should not need to know about which inputs are read-only
+// Consider FormFieldContext to establish an internal contract for inputs
+// See https://github.com/grommet/grommet/issues/8237
+const readOnlyInputNames = [
+  'TextInput',
+  'MaskedInput',
+  'TextArea',
+  'DateInput',
+  'DateTimeInput',
+  'TimeInput',
+];
+
+const isReadOnlyInput = (component, readOnly, readOnlyCopy, inline) => {
+  const name = component?.displayName;
+  return (
+    readOnlyInputNames.includes(name) &&
+    !(name === 'TimeInput' && inline) &&
+    (readOnly === true ||
+      ((name === 'TextInput' || name === 'DateInput') && readOnlyCopy === true))
+  );
+};
+
 const isGrommetInput = (comp) =>
   comp &&
   (grommetInputNames.indexOf(comp.displayName) !== -1 ||
     grommetInputPadNames.indexOf(comp.displayName) !== -1);
 
-const getFocusStyle = (props) => {
+const mergePartBorder = (border, override) => {
+  if (override === undefined) return border;
+  if (Array.isArray(border) && isObject(override) && !override.side)
+    return border.map((part) => mergePartBorder(part, override));
+  if (isObject(border) && isObject(override)) return { ...border, ...override };
+  if (typeof border === 'string' && isObject(override))
+    return { side: border, ...override };
+  return override;
+};
+
+const getFocusStyle = (props, content = false) => {
   if (
     props.focus &&
     props.containerFocus === false &&
@@ -81,22 +126,130 @@ const getFocusStyle = (props) => {
   ) {
     return null;
   }
-  return props.focus ? focusStyle({ justBorder: true }) : undefined;
+  if (!props.focus) return undefined;
+  if (content && props.$componentErrorBorder)
+    return css`
+      ${focusStyle({ forceOutline: true })}
+      ${props.border === false || props.border === undefined
+        ? 'border: none;'
+        : borderStyle(props.border, props.responsive ?? true, props.theme)}
+      ${isObject(props.border) &&
+      props.border.color !== undefined &&
+      `border-color: ${normalizeColor(props.border.color, props.theme)};`}
+    `;
+  return focusStyle({ justBorder: true });
+};
+
+const boxStateStyles = (state, props) => {
+  const { theme } = props;
+  const responsive = props.responsive ?? true;
+  const styles = [];
+  if (state.elevation !== undefined)
+    styles.push(elevationStyle(state.elevation));
+  if (state.pad !== undefined)
+    styles.push(
+      edgeStyle(
+        'padding',
+        state.pad,
+        responsive,
+        theme.box.responsiveBreakpoint,
+        theme,
+      ),
+    );
+  if (state.round !== undefined)
+    styles.push(
+      state.round === false
+        ? 'border-radius: 0;'
+        : roundStyle(state.round, responsive, theme),
+    );
+  return styles;
+};
+
+// The border color has to be painted by whichever element owns the border,
+// but the background belongs on the content element so it doesn't bleed
+// behind the label and messages when the border is positioned 'outer'.
+// FormField sets allowHover only when no higher priority state (disabled,
+// readOnly, error, focus) applies.
+const getHoverStyle = (role) => (props) => {
+  const formFieldTheme = props.theme.formField;
+  const hover = formFieldTheme?.hover;
+  const componentHover = formFieldTheme?.[props.componentName]?.hover;
+  if (!props.allowHover || (!hover && !componentHover)) return undefined;
+  const position = formFieldTheme?.border?.position;
+  const ownsBorder =
+    role === 'outer' ? position === 'outer' : position === 'inner';
+  const componentOwnsBorder =
+    role === 'outer' ? position === 'outer' : position !== 'outer';
+
+  const componentHoverBorder = componentHover?.border ?? undefined;
+  const componentHoverBackground = componentHover?.background ?? undefined;
+  const styles = [];
+  if (role === 'content') {
+    const background = componentHoverBackground ?? hover?.background;
+    if (background !== undefined)
+      styles.push(backgroundStyle(background, props.theme, false));
+    styles.push(
+      ...boxStateStyles(
+        {
+          elevation: componentHover?.elevation,
+          pad: componentHover?.pad,
+          round: componentHover?.round,
+        },
+        props,
+      ),
+    );
+  }
+  if (componentOwnsBorder && componentHoverBorder !== undefined) {
+    if (componentHoverBorder === false) styles.push('border: none;');
+    else if (
+      componentHoverBorder &&
+      typeof componentHoverBorder === 'object' &&
+      !Array.isArray(componentHoverBorder) &&
+      Object.keys(componentHoverBorder).every((key) => key === 'color')
+    ) {
+      if (componentHoverBorder.color !== undefined)
+        styles.push(
+          `border-color: ${normalizeColor(
+            componentHoverBorder.color,
+            props.theme,
+          )};`,
+        );
+    } else {
+      const hoverBorder = mergePartBorder(props.border, componentHoverBorder);
+      if (hasSideSpecificBorder(hoverBorder)) styles.push('border: none;');
+      styles.push(
+        borderStyle(hoverBorder, props.responsive ?? true, props.theme),
+      );
+    }
+  } else if (ownsBorder && hover?.border?.color !== undefined) {
+    styles.push(
+      `border-color: ${normalizeColor(hover.border.color, props.theme)};`,
+    );
+  }
+  if (styles.length === 0) return undefined;
+  return css`
+    &:hover {
+      ${styles}
+    }
+  `;
 };
 
 const FormFieldBox = styled(Box)`
   ${(props) => getFocusStyle(props)}
+  ${getHoverStyle('outer')}
   ${(props) => props.theme.formField?.extend}
 `;
 
 const FormFieldContentBox = styled(Box)`
-  ${(props) => getFocusStyle(props)}
+  ${(props) => getFocusStyle(props, true)}
+  ${getHoverStyle('content')}
   ${(props) =>
     props.theme.formField &&
     props.theme.formField[props?.componentName]?.container?.extend}
 `;
 
 const StyledContentsBox = styled(Box)`
+  ${getHoverStyle('content')}
   ${(props) =>
     props.theme.formField &&
     props.theme.formField[props?.componentName]?.container?.extend}
@@ -126,6 +279,24 @@ const ScreenReaderOnly = styled(Text)`
   border: 0;
 `;
 
+const StyledMessageContent = styled(Box).withConfig(styledComponentsConfig)`
+  ${(props) =>
+    props.$color && `color: ${normalizeColor(props.$color, props.theme)};`}
+`;
+
+const MessageContent = ({ message, id, color, ...rest }) => {
+  const { passThemeFlag } = useThemeValue();
+  return typeof message === 'string' ? (
+    <Text id={id} color={color} {...rest}>
+      {message}
+    </Text>
+  ) : (
+    <StyledMessageContent id={id} $color={color} {...rest} {...passThemeFlag}>
+      {message}
+    </StyledMessageContent>
+  );
+};
+
 const Message = ({ error, info, message, type, ...rest }) => {
   const { theme, passThemeFlag } = useThemeValue();
   if (message) {
@@ -137,24 +308,24 @@ const Message = ({ error, info, message, type, ...rest }) => {
       containerProps = theme.formField[type] && theme.formField[type].container;
     }
 
-    let messageContent;
-    if (typeof message === 'string')
-      messageContent = <Text {...rest}>{message}</Text>;
-    else messageContent = <Box {...rest}>{message}</Box>;
+    // id is in rest; extract it so we can place it on the outermost element
+    const { id, ...contentRest } = rest;
 
-    return icon || containerProps ? (
-      <StyledMessageContainer
-        direction="row"
-        messageType={type}
-        {...containerProps}
-        {...passThemeFlag}
-      >
-        {icon && <Box flex={false}>{icon}</Box>}
-        {messageContent}
-      </StyledMessageContainer>
-    ) : (
-      messageContent
-    );
+    if (icon || containerProps) {
+      return (
+        <StyledMessageContainer
+          direction="row"
+          messageType={type}
+          {...containerProps}
+          {...passThemeFlag}
+          id={id}
+        >
+          {icon && <Box flex={false}>{icon}</Box>}
+          <MessageContent message={message} {...contentRest} />
+        </StyledMessageContainer>
+      );
+    }
+    return <MessageContent message={message} id={id} {...contentRest} />;
   }
   return null;
 };
@@ -192,6 +363,47 @@ const Input = ({ component, disabled, invalid, name, onChange, ...rest }) => {
     />
   );
 };
+
+// Adds aria-describedby (linking to the error Message) and aria-invalid to
+// a Grommet input child when the field has an error. Merges with any
+// aria-describedby the consumer already put on the child instead of
+// overwriting it.
+const getChildErrorProps = (child, errorId, error) => {
+  if (!errorId && !error) return {};
+  const props = {};
+  if (errorId) {
+    const existingDescribedBy = child.props['aria-describedby'];
+    props['aria-describedby'] = existingDescribedBy
+      ? `${existingDescribedBy} ${errorId}`
+      : errorId;
+  }
+  if (error) props['aria-invalid'] = true;
+  return props;
+};
+
+// Backwards compatibility: defaults plain/focusIndicator/pad on a Grommet
+// input child, unless the consumer already set plain or focusIndicator.
+// This is the same logic FormField has always had; only pulled out into
+// its own function so it can be reasoned about independent of the newer
+// error-linking logic above.
+const getChildFocusProps = (
+  child,
+  themeBorder,
+  containerFocus,
+  formFieldTheme,
+) =>
+  !themeBorder ||
+  child.props.plain !== undefined ||
+  child.props.focusIndicator !== undefined
+    ? {}
+    : {
+        plain: true,
+        focusIndicator: !containerFocus,
+        pad:
+          child.type.displayName === 'CheckBox'
+            ? formFieldTheme?.checkBox?.pad
+            : undefined,
+      };
 
 const FormField = forwardRef(
   (
@@ -240,6 +452,10 @@ const FormField = forwardRef(
     });
     const formKind = formContext.kind;
     const [focus, setFocus] = useState();
+    const [fileDragOver, setFileDragOver] = useState(false);
+    const [focusIndicator, setFocusIndicator] = useState(true);
+    const fieldFocus = focus && focusIndicator;
+    const fieldContext = useMemo(() => ({ setFocusIndicator }), []);
     const formFieldRef = useForwardedRef(ref);
 
     const { formField: formFieldTheme } = theme;
@@ -257,21 +473,38 @@ const FormField = forwardRef(
 
     const readOnlyField = useMemo(() => {
       let readOnly = false;
+      if (!children && inForm) {
+        readOnly = isReadOnlyInput(
+          component || TextInput,
+          rest.readOnly,
+          rest.readOnlyCopy,
+          rest.inline,
+        );
+      }
       if (children) {
-        Children.map(children, (child) => {
+        Children.forEach(children, (child) => {
           if (
-            (child?.props?.readOnly === true ||
-              child?.props?.readOnlyCopy === true) &&
-            child.type &&
-            (child.type.displayName === 'TextInput' ||
-              child.type.displayName === 'DateInput')
+            child &&
+            isReadOnlyInput(
+              child.type,
+              child.props?.readOnly,
+              child.props?.readOnlyCopy,
+              child.props?.inline,
+            )
           ) {
             readOnly = true;
           }
         });
       }
       return readOnly;
-    }, [children]);
+    }, [
+      children,
+      component,
+      inForm,
+      rest.inline,
+      rest.readOnly,
+      rest.readOnlyCopy,
+    ]);
 
     const containerFocus = useMemo(() => {
       let focusIndicatorFlag = true;
@@ -288,6 +521,32 @@ const FormField = forwardRef(
       return focusIndicatorFlag;
     }, [children, theme.formField?.focus?.containerFocus]);
 
+    // Check if child is Select or SelectMultiple and modify htmlFor if needed
+    let adjustedHtmlFor = htmlFor;
+    if (htmlFor) {
+      let isSelectComponent = false;
+
+      // Check if children contain Select or SelectMultiple
+      if (children) {
+        Children.forEach(children, (child) => {
+          if (
+            child &&
+            child.type &&
+            (child.type.displayName === 'Select' ||
+              child.type.displayName === 'SelectMultiple') &&
+            child.props.id === htmlFor
+          ) {
+            isSelectComponent = true;
+          }
+        });
+      }
+
+      // If it's a Select component and htmlFor doesn't end with __input, add it
+      if (isSelectComponent && !htmlFor.endsWith('__input')) {
+        adjustedHtmlFor = `${htmlFor}__input`;
+      }
+    }
+
     // This is here for backwards compatibility. In case the child is a grommet
     // input component, set plain and focusIndicator props, if they aren't
     // already set.
@@ -297,45 +556,57 @@ const FormField = forwardRef(
         component === CheckBoxGroup ||
         component === RadioButtonGroup);
 
-    let contents =
-      (themeBorder &&
-        children &&
-        Children.map(children, (child) => {
-          if (
-            child &&
-            child.type &&
-            grommetInputPadNames.indexOf(child.type.displayName) !== -1
-          ) {
-            wantContentPad = true;
-          }
+    // id of the error Message, used to link it to its input via
+    // aria-describedby. Always computed when there's an error + htmlFor,
+    // regardless of theme border config.
+    const errorId =
+      error && htmlFor ? `grommet-${adjustedHtmlFor}__error` : undefined;
 
-          const isInputComponent =
-            child &&
-            child.type &&
-            grommetInputNames.indexOf(child.type.displayName) !== -1;
+    // Single Children.map pass applying both the error-linking props
+    // (getChildErrorProps) and the plain/focusIndicator/pad backwards-compat
+    // defaults (getChildFocusProps) to each Grommet input child. Must run
+    // the same way regardless of `error`, or a child's reconciliation key
+    // changes between renders - remounting it and losing state (e.g. a
+    // typed value) right when the error appears.
+    let contents;
+    if (children) {
+      contents = Children.map(children, (child) => {
+        if (!child || !child.type || !isGrommetInput(child.type)) return child;
 
-          if (
-            isInputComponent &&
-            child.props.plain === undefined &&
-            child.props.focusIndicator === undefined
-          ) {
-            return cloneElement(child, {
-              plain: true,
-              focusIndicator: !containerFocus,
-              pad:
-                child.type.displayName === 'CheckBox'
-                  ? formFieldTheme?.checkBox?.pad
-                  : undefined,
-            });
-          }
-          return child;
-        })) ||
-      children;
+        if (
+          themeBorder &&
+          grommetInputPadNames.indexOf(child.type.displayName) !== -1
+        ) {
+          wantContentPad = true;
+        }
+
+        const newProps = {
+          ...getChildErrorProps(child, errorId, error),
+          ...getChildFocusProps(
+            child,
+            themeBorder,
+            containerFocus,
+            formFieldTheme,
+          ),
+        };
+        return Object.keys(newProps).length
+          ? cloneElement(child, newProps)
+          : child;
+      });
+    } else {
+      contents = children;
+    }
 
     // put rest on container, unless we use internal Input
     let containerRest = rest;
     if (inForm) {
       if (!contents) containerRest = {};
+      // Merge aria-describedby with the error id rather than
+      // letting either one silently win.
+      const { 'aria-describedby': ariaDescribedBy, ...restWithoutAria } = rest;
+      const combinedAriaDescribedBy = errorId
+        ? [ariaDescribedBy, errorId].filter(Boolean).join(' ')
+        : ariaDescribedBy;
       contents = contents || (
         <Input
           component={component}
@@ -343,41 +614,138 @@ const FormField = forwardRef(
           invalid={!!error}
           name={name}
           label={component === CheckBox ? label : undefined}
-          {...rest}
+          {...restWithoutAria}
+          aria-describedby={combinedAriaDescribedBy || undefined}
         />
       );
     }
 
-    const themeContentProps = { ...formFieldTheme.content };
+    // Only inspect direct children. Generated inputs have no child to identify.
+    let childName;
+    Children.forEach(children, (child) => {
+      if (child && child.type) childName = child.type.displayName;
+    });
+    if (!children && inForm) childName = (component || TextInput).displayName;
+    if (childName?.length > 0)
+      childName = childName.charAt(0).toLowerCase() + childName.slice(1);
 
-    if (!pad && !wantContentPad) {
+    let outerBackground;
+
+    if (themeBorder && themeBorder.position === 'outer') {
+      if (error && formFieldTheme.error && formFieldTheme.error.background) {
+        outerBackground = formFieldTheme.error.background;
+      } else if (
+        fieldFocus &&
+        formFieldTheme.focus &&
+        formFieldTheme.focus.background &&
+        formFieldTheme.focus.background.color
+      ) {
+        outerBackground = formFieldTheme.focus.background.color;
+      } else if (
+        disabled &&
+        formFieldTheme.disabled &&
+        formFieldTheme.disabled.background
+      ) {
+        outerBackground = formFieldTheme.disabled.background;
+      }
+    }
+
+    const componentBoxProps = { ...(formFieldTheme[childName] || {}) };
+    const componentError =
+      error && !disabled && !readOnlyField
+        ? componentBoxProps.error
+        : undefined;
+    const componentBackground = componentBoxProps.background;
+    delete componentBoxProps.background;
+    delete componentBoxProps.container;
+    delete componentBoxProps.error;
+    delete componentBoxProps.hover;
+    if (childName === 'checkBox') delete componentBoxProps.pad;
+    const themeContentProps = {
+      ...formFieldTheme.content,
+      ...componentBoxProps,
+    };
+    if (componentError) {
+      ['elevation', 'pad', 'round'].forEach((property) => {
+        if (componentError[property] !== undefined)
+          themeContentProps[property] = componentError[property];
+      });
+    }
+    let componentBorder = componentBoxProps.border;
+    if (
+      componentError &&
+      (componentError.border !== undefined ||
+        componentBorder !== undefined ||
+        themeBorder?.position === 'inner')
+    ) {
+      const defaultBorder = themeBorder
+        ? { ...themeBorder, side: themeBorder.side || 'bottom' }
+        : undefined;
+      const normalBorder = componentBorder ?? defaultBorder;
+      const sharedErrorBorder =
+        formFieldTheme.error?.border ??
+        (themeBorder?.error?.color !== undefined
+          ? { color: themeBorder.error.color }
+          : undefined);
+      componentBorder =
+        normalBorder === false && componentError.border === undefined
+          ? false
+          : mergePartBorder(
+              mergePartBorder(
+                normalBorder === false ? defaultBorder : normalBorder,
+                sharedErrorBorder,
+              ),
+              componentError.border,
+            );
+      themeContentProps.border = componentBorder;
+    }
+    const background = componentBackground ?? formFieldTheme.background;
+    if (background !== undefined) {
+      // Existing outer state fills must remain visible through the content.
+      themeContentProps.background =
+        outerBackground !== undefined ? undefined : background;
+    }
+
+    if (
+      !pad &&
+      !wantContentPad &&
+      componentBoxProps.pad === undefined &&
+      componentError?.pad === undefined
+    ) {
       themeContentProps.pad = undefined;
     }
 
     if (themeBorder && themeBorder.position === 'inner') {
+      let stateBackground;
       if (readOnlyField) {
-        themeContentProps.background = theme.global.input.readOnly?.background;
+        stateBackground = theme.global.input.readOnly?.background;
       } else if (error && formFieldTheme.error) {
-        themeContentProps.background = formFieldTheme.error.background;
+        stateBackground = formFieldTheme.error.background;
       } else if (disabled && formFieldTheme.disabled) {
-        themeContentProps.background = formFieldTheme.disabled.background;
+        stateBackground = formFieldTheme.disabled.background;
       }
+      if (stateBackground !== undefined)
+        themeContentProps.background = stateBackground;
+    }
+    if (componentError) {
+      const errorBackground =
+        componentError.background ??
+        (themeBorder?.position !== 'outer'
+          ? formFieldTheme.error?.background
+          : undefined);
+      if (errorBackground !== undefined)
+        themeContentProps.background = errorBackground;
     }
 
     // fileinput handle
     // use fileinput plain use formfield to drive the border
     let isFileInputComponent;
-    if (
-      children &&
+    if (children) {
       Children.forEach(children, (child) => {
-        if (
-          child &&
-          child.type &&
-          child.type.displayName === 'FileInput'
-        )
+        if (child && child.type && child.type.displayName === 'FileInput')
           isFileInputComponent = true;
-      })
-    );
+      });
+    }
 
     if (
       component &&
@@ -387,15 +755,7 @@ const FormField = forwardRef(
       isFileInputComponent = true;
     }
 
-    let childName;
-    Children.forEach(children, (child) => {
-      if (child && child.type) {
-        childName = child.type.displayName;
-        // camelCase component name to match theme object key
-        if (childName?.length > 0)
-          childName = childName.charAt(0).toLowerCase() + childName.slice(1);
-      }
-    });
+    const allowHover = !disabled && !readOnlyField && !error && !focus;
 
     if (!themeBorder) {
       contents = (
@@ -405,6 +765,8 @@ const FormField = forwardRef(
           componentName={childName}
           {...themeContentProps}
           {...contentProps}
+          allowHover={allowHover} // internal prop
+          {...passThemeFlag}
         >
           {contents}
         </StyledContentsBox>
@@ -412,6 +774,7 @@ const FormField = forwardRef(
     }
 
     let borderColor;
+    let hasSharedStateBorderColor = false;
 
     if (
       disabled &&
@@ -419,39 +782,43 @@ const FormField = forwardRef(
       formFieldTheme.disabled.border.color
     ) {
       borderColor = formFieldTheme.disabled.border.color;
+      hasSharedStateBorderColor = true;
     } else if (readOnlyField && theme.global.input?.readOnly?.border?.color) {
       borderColor = theme.global.input?.readOnly?.border?.color;
+      hasSharedStateBorderColor = true;
     } else if (
       // backward compatibility check
-      (error && themeBorder && themeBorder.error.color) ||
+      (error && themeBorder?.error?.color) ||
       (error && formFieldTheme.error && formFieldTheme.error.border)
     ) {
       if (
-        themeBorder.error.color &&
+        themeBorder?.error?.color &&
         formFieldTheme.error.border === undefined
       ) {
         borderColor = themeBorder.error.color || 'status-critical';
+        hasSharedStateBorderColor = true;
       } else if (
         formFieldTheme.error.border &&
         formFieldTheme.error.border.color
       ) {
         borderColor = formFieldTheme.error.border.color || 'status-critical';
+        hasSharedStateBorderColor = true;
       }
     } else if (
-      focus &&
+      fieldFocus &&
       formFieldTheme.focus &&
       formFieldTheme.focus.border &&
       formFieldTheme.focus.border.color
     ) {
       borderColor = formFieldTheme.focus.border.color;
+      hasSharedStateBorderColor = true;
     } else {
       borderColor = (themeBorder && themeBorder.color) || 'border';
     }
 
-    let labelStyle;
-    if (formKind) {
-      labelStyle = { ...formFieldTheme[formKind].label };
-    } else labelStyle = { ...formFieldTheme.label };
+    const labelStyle = {
+      ...(formKind ? formFieldTheme[formKind].label : formFieldTheme.label),
+    };
 
     if (disabled) {
       labelStyle.color =
@@ -474,6 +841,25 @@ const FormField = forwardRef(
     let abutMargin;
     let outerStyle = style;
 
+    const resolvedComponentBorder =
+      componentBorder === undefined ||
+      componentBorder === false ||
+      componentError?.border !== undefined ||
+      !hasSharedStateBorderColor ||
+      borderColor === undefined
+        ? componentBorder
+        : mergePartBorder(componentBorder, { color: borderColor });
+
+    const fileDragBorder =
+      isFileInputComponent && fileDragOver && !disabled && !error
+        ? theme.fileInput.dragOver?.border
+        : undefined;
+    const withFileDragBorder = (border) => {
+      if (fileDragBorder === undefined) return border;
+      if (fileDragBorder === 'none' || fileDragBorder === false) return false;
+      return mergePartBorder(border, fileDragBorder);
+    };
+
     // If fileinput is wrapped in a formfield we want to use
     // the border style from the fileInput.theme. We also do not
     // want the foocus around the formfield since the the focus
@@ -483,32 +869,41 @@ const FormField = forwardRef(
       const innerProps =
         themeBorder.position === 'inner'
           ? {
-              border: {
-                ...themeBorder,
-                size: isFileInputComponent
-                  ? theme.fileInput.border.size
-                  : undefined,
-                style: isFileInputComponent
-                  ? theme.fileInput.border.style
-                  : undefined,
-                side: isFileInputComponent
-                  ? theme.fileInput.border.side
-                  : themeBorder.side || 'bottom',
-                color: borderColor,
-              },
-              round: formFieldTheme.round,
-              focus: isFileInputComponent ? undefined : focus,
+              border: withFileDragBorder(
+                resolvedComponentBorder !== undefined
+                  ? resolvedComponentBorder
+                  : {
+                      ...themeBorder,
+                      size: isFileInputComponent
+                        ? theme.fileInput.border.size
+                        : undefined,
+                      style: isFileInputComponent
+                        ? theme.fileInput.border.style
+                        : undefined,
+                      side: isFileInputComponent
+                        ? theme.fileInput.border.side
+                        : themeBorder.side || 'bottom',
+                      color: borderColor,
+                    },
+              ),
+              round:
+                componentError?.round ??
+                componentBoxProps.round ??
+                formFieldTheme.round,
+              focus: isFileInputComponent ? undefined : fieldFocus,
             }
           : {};
       contents = (
         <FormFieldContentBox
           disabledProp={disabled}
           error={error}
+          $componentErrorBorder={componentError?.border !== undefined}
           componentName={childName}
           {...themeContentProps}
           {...innerProps}
           {...contentProps}
           containerFocus={containerFocus} // internal prop
+          allowHover={allowHover} // internal prop
           {...passThemeFlag}
         >
           {contents}
@@ -543,20 +938,18 @@ const FormField = forwardRef(
         }
 
         outerStyle = {
-          position: focus ? 'relative' : undefined,
-          zIndex: focus ? 10 : undefined,
+          position: fieldFocus ? 'relative' : undefined,
+          zIndex: fieldFocus ? 10 : undefined,
           ...style,
         };
       }
     }
 
-    let outerBackground;
-
     if (themeBorder && themeBorder.position === 'outer') {
       if (error && formFieldTheme.error && formFieldTheme.error.background) {
         outerBackground = formFieldTheme.error.background;
       } else if (
-        focus &&
+        fieldFocus &&
         formFieldTheme.focus &&
         formFieldTheme.focus.background &&
         formFieldTheme.focus.background.color
@@ -574,9 +967,9 @@ const FormField = forwardRef(
     const outerProps =
       themeBorder && themeBorder.position === 'outer'
         ? {
-            border: { ...themeBorder, color: borderColor },
+            border: withFileDragBorder({ ...themeBorder, color: borderColor }),
             round: formFieldTheme.round,
-            focus,
+            focus: fieldFocus,
           }
         : {};
 
@@ -598,32 +991,6 @@ const FormField = forwardRef(
     if (typeof required === 'object' && required.indicator === false)
       showRequiredIndicator = false;
 
-    // Check if child is Select or SelectMultiple and modify htmlFor if needed
-    let adjustedHtmlFor = htmlFor;
-    if (htmlFor) {
-      let isSelectComponent = false;
-
-      // Check if children contain Select or SelectMultiple
-      if (children) {
-        Children.forEach(children, (child) => {
-          if (
-            child &&
-            child.type &&
-            (child.type.displayName === 'Select' ||
-              child.type.displayName === 'SelectMultiple') &&
-            child.props.id === htmlFor
-          ) {
-            isSelectComponent = true;
-          }
-        });
-      }
-
-      // If it's a Select component and htmlFor doesn't end with __input, add it
-      if (isSelectComponent && !htmlFor.endsWith('__input')) {
-        adjustedHtmlFor = `${htmlFor}__input`;
-      }
-    }
-
     return (
       <FormFieldBox
         ref={formFieldRef}
@@ -632,7 +999,12 @@ const FormField = forwardRef(
         margin={abut ? abutMargin : margin || { ...formFieldTheme.margin }}
         {...outerProps}
         style={outerStyle}
+        componentName={
+          themeBorder?.position === 'outer' ? childName : undefined
+        }
         containerFocus={containerFocus} // internal prop
+        allowHover={allowHover} // internal prop
+        onFocusCapture={() => setFocusIndicator(true)}
         onFocus={(event) => {
           const root = formFieldRef.current?.getRootNode();
           if (root) {
@@ -643,7 +1015,13 @@ const FormField = forwardRef(
           if (onFocus) onFocus(event);
         }}
         onBlur={(event) => {
-          setFocus(false);
+          const focusRemainsInside = formFieldRef.current?.contains(
+            event.relatedTarget,
+          );
+          if (!focusRemainsInside) {
+            setFocus(false);
+            setFocusIndicator(true);
+          }
 
           // if input has a drop and focus is within drop
           // prevent onBlur validation from running until
@@ -669,6 +1047,21 @@ const FormField = forwardRef(
             : undefined
         }
         {...containerRest}
+        onDragOverCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file' && !disabled)
+            setFileDragOver(true);
+          containerRest.onDragOverCapture?.(event);
+        }}
+        onDragLeaveCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file')
+            setFileDragOver(false);
+          containerRest.onDragLeaveCapture?.(event);
+        }}
+        onDropCapture={(event) => {
+          if (isFileInputComponent && event.target.type === 'file')
+            setFileDragOver(false);
+          containerRest.onDropCapture?.(event);
+        }}
         {...passThemeFlag}
       >
         {(label && component !== CheckBox) || help ? (
@@ -687,8 +1080,15 @@ const FormField = forwardRef(
             <Message message={help} {...themeHelpProps} />
           </>
         ) : undefined}
-        {contents}
-        <Message type="error" message={error} {...formFieldTheme.error} />
+        <FormFieldContext.Provider value={fieldContext}>
+          {contents}
+        </FormFieldContext.Provider>
+        <Message
+          type="error"
+          message={error}
+          {...formFieldTheme.error}
+          id={errorId}
+        />
         <Message type="info" message={info} {...themeInfoProps} />
       </FormFieldBox>
     );

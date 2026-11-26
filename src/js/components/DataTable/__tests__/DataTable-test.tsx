@@ -1,7 +1,18 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React, { useState } from 'react';
 import 'jest-styled-components';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import {
+  render,
+  fireEvent,
+  screen,
+  waitFor,
+  act,
+} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
+import { axe } from 'jest-axe';
+import 'jest-axe/extend-expect';
 
 import { Grommet } from '../../Grommet';
 import { Box } from '../../Box';
@@ -29,6 +40,33 @@ for (let i = 0; i < 95; i += 1) {
 }
 
 describe('DataTable', () => {
+  test('should have no accessibility violations for sortable columns', async () => {
+    jest.useFakeTimers();
+    const { container } = render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+          ]}
+          sort={{ property: 'a', direction: 'asc' }}
+          sortable
+        />
+      </Grommet>,
+    );
+    act(() => {
+      jest.runAllTimers();
+    });
+    jest.useRealTimers();
+
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
+  });
+
   test('empty', () => {
     const { container } = render(
       <Grommet>
@@ -176,6 +214,148 @@ describe('DataTable', () => {
     const headerCell = getByText('A');
     fireEvent.click(headerCell, {});
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('sortable columns have aria-sort="none" when unsorted and announce sortability', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[
+            { a: 'zero', b: 0 },
+            { a: 'one', b: 1 },
+          ]}
+          sortable
+        />
+      </Grommet>,
+    );
+
+    const headerA = screen.getByRole('columnheader', { name: /^A\b/ });
+    const headerB = screen.getByRole('columnheader', { name: /^B\b/ });
+    expect(headerA).toHaveAttribute('aria-sort', 'none');
+    expect(headerB).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', {
+        name: 'A sortable, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
+        name: 'B sortable, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
+
+    // once a column becomes the active sort, aria-sort reflects direction
+    // and the button's accessible name (from aria-labelledby: visible header
+    // text + an aria-hidden status/action span) updates to match, preserving
+    // the existing real-time sort announcement behavior since nothing is
+    // overridden via a static aria-label.
+    await user.click(
+      screen.getByRole('button', {
+        name: 'A sortable, activate to sort ascending',
+      }),
+    );
+    expect(headerA).toHaveAttribute('aria-sort', 'ascending');
+    expect(headerB).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', {
+        name: 'A sorted ascending, activate to sort descending',
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
+        name: 'B sortable, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole('button', {
+        name: 'A sorted ascending, activate to sort descending',
+      }),
+    );
+    expect(headerA).toHaveAttribute('aria-sort', 'descending');
+    expect(
+      screen.getByRole('button', {
+        name: 'A sorted descending, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
+  });
+
+  test('non-sortable column has no aria-sort', () => {
+    render(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A', sortable: false },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[{ a: 'one', b: 1 }]}
+          onSort={jest.fn()}
+          sortable
+        />
+      </Grommet>,
+    );
+
+    expect(screen.getByRole('columnheader', { name: 'A' })).not.toHaveAttribute(
+      'aria-sort',
+    );
+  });
+
+  test('sortable columns have aria-sort when sortable icon is not rendered', () => {
+    const { getByText } = render(
+      <Grommet theme={{ dataTable: { icons: { sortable: undefined } } }}>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'zero' }, { a: 'one' }]}
+          sortable
+        />
+      </Grommet>,
+    );
+
+    expect(getByText('A').closest('th')).toHaveAttribute('aria-sort', 'none');
+    expect(
+      screen.getByRole('button', {
+        name: 'A sortable, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
+  });
+
+  test('sortable column accessible name updates when sorted', () => {
+    const { rerender } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sort={{ property: 'a', direction: 'asc' }}
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A sorted ascending, activate to sort descending',
+      }),
+    ).toBeInTheDocument();
+
+    rerender(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A' }]}
+          data={[{ a: 'one' }]}
+          onSort={jest.fn()}
+          sort={{ property: 'a', direction: 'desc' }}
+        />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', {
+        name: 'A sorted descending, activate to sort ascending',
+      }),
+    ).toBeInTheDocument();
   });
 
   test('sort null data', () => {

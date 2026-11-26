@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 
 import { Box, Button, Form, FormField, TimeInput } from 'grommet';
@@ -14,6 +16,7 @@ export const TimeForm = () => {
         value={value}
         onChange={onChange}
         onSubmit={() => {
+          console.log('Form submitted with value:', value);
           setValue({ value: '' });
         }}
       >

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import { render, fireEvent, act, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
@@ -9,6 +11,15 @@ import { CaretDown, CaretUp, FormDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Box, Grommet, FormField, Form } from '../..';
 import { Select } from '..';
+
+const getComputedStyleValue = (property, value) => {
+  const element = document.createElement('div');
+  element.style[property] = value;
+  document.body.appendChild(element);
+  const computedValue = window.getComputedStyle(element)[property];
+  element.remove();
+  return computedValue;
+};
 
 describe('Select', () => {
   window.scrollTo = jest.fn();
@@ -868,18 +879,13 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     const selectButton = document.getElementById('test-open-id');
-    let style;
-
-    style = window.getComputedStyle(selectButton);
-    expect(style.background).toBe('purple');
+    expect(selectButton).toHaveStyleRule('background', 'purple');
 
     fireEvent.click(selectButton);
-    style = window.getComputedStyle(selectButton);
-    expect(style.background).toBe('lightgrey');
+    expect(selectButton).toHaveStyleRule('background', 'lightgrey');
 
     fireEvent.click(selectButton);
-    style = window.getComputedStyle(selectButton);
-    expect(style.background).toBe('purple');
+    expect(selectButton).toHaveStyleRule('background', 'purple');
   });
 
   test(`renders styled select options backwards compatible with legacy
@@ -912,7 +918,9 @@ describe('Select', () => {
 
     const optionButton = getByText('morning').closest('button');
     const style = window.getComputedStyle(optionButton.firstChild);
-    expect(style.background).toBe('lightblue');
+    expect(style.background).toBe(
+      getComputedStyleValue('background', 'lightblue'),
+    );
   });
 
   test('renders styled select options using select.options.container', () => {
@@ -944,7 +952,9 @@ describe('Select', () => {
 
     const optionButton = getByText('morning').closest('button');
     const style = window.getComputedStyle(optionButton.firstChild);
-    expect(style.background).toBe('lightgreen');
+    expect(style.background).toBe(
+      getComputedStyleValue('background', 'lightgreen'),
+    );
   });
 
   test('renders default clear button shows focus indicator', () => {
@@ -1059,15 +1069,17 @@ describe('Select', () => {
     const selectButton = getByPlaceholderText('Select...');
     fireEvent.click(selectButton);
 
-    let style;
     const optionButton = getByText('morning').closest('button');
-
-    style = window.getComputedStyle(optionButton.firstChild);
-    expect(style.background).not.toBe('lightblue');
-
-    style = window.getComputedStyle(optionButton.firstChild);
-    expect(style.background).toBe('lightgreen');
-    expect(style.borderBottom).toBe('2px solid blue');
+    const style = window.getComputedStyle(optionButton.firstChild);
+    expect(style.background).not.toBe(
+      getComputedStyleValue('background', 'lightblue'),
+    );
+    expect(style.background).toBe(
+      getComputedStyleValue('background', 'lightgreen'),
+    );
+    expect(style.borderBottom).toBe(
+      getComputedStyleValue('borderBottom', '2px solid blue'),
+    );
   });
 
   test('renders empty search with select.emptySearchMessage styling', () => {

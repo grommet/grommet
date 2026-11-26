@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import * as React from 'react';
 
 export interface TimeInputProps {
@@ -5,12 +7,14 @@ export interface TimeInputProps {
   disabled?: boolean;
   format?: '12' | '24';
   id?: string;
+  inline?: boolean;
   messages?: {
     activePeriodValue?: string;
     activeSection?: string;
     activeSectionValue?: string;
     chooseTime?: string;
     currentValue?: string;
+    currentValueWithoutSeconds?: string;
     inputLabel?: string;
     invalidTime?: string;
     openDrop?: string;
@@ -23,6 +27,7 @@ export interface TimeInputProps {
   name?: string;
   onChange?: (event: { value?: string }) => void;
   readOnly?: boolean;
+  showSeconds?: boolean;
   value?: string;
 }
 

@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 
 import 'jest-styled-components';
@@ -431,8 +433,7 @@ describe('Button kind', () => {
     );
 
     const button = getByText('Button');
-    // eslint-disable-next-line no-underscore-dangle
-    const cursorStyle = window.getComputedStyle(button)._values.cursor;
+    const cursorStyle = window.getComputedStyle(button).cursor;
     expect(cursorStyle).not.toBe('pointer');
     expect(cursorStyle).toBe('default');
   });

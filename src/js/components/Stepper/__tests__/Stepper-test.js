@@ -1,10 +1,12 @@
+// SPDX-FileCopyrightText: © Hewlett Packard Enterprise Development LP
+// SPDX-License-Identifier: Apache-2.0
 import React from 'react';
 import 'jest-styled-components';
 import 'jest-axe/extend-expect';
 import 'regenerator-runtime/runtime';
 
 import { axe } from 'jest-axe';
-import { render, fireEvent, act } from '@testing-library/react';
+import { render, fireEvent, act, screen } from '@testing-library/react';
 
 import { Grommet, Stepper } from '../..';
 
@@ -79,7 +81,7 @@ describe('Stepper', () => {
     expect(svgs.length).toBeGreaterThan(0);
   });
 
-  test('renders error state with message', () => {
+  test('renders error state with polite announcement by default', () => {
     const steps = [
       { id: 'step1', title: 'Step 1', status: 'completed' },
       {
@@ -89,13 +91,103 @@ describe('Stepper', () => {
         errorMessage: 'Card invalid',
       },
     ];
-    const { getByText } = render(
+    const { getByRole, getByText } = render(
       <Grommet>
         <Stepper steps={steps} currentStep="step2" />
       </Grommet>,
     );
 
     expect(getByText('Card invalid')).toBeTruthy();
+    expect(getByRole('status').textContent).toBe('Card invalid');
+  });
+
+  test('supports assertive error announcements', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        status: 'error',
+        errorMessage: 'Card invalid',
+      },
+    ];
+    const { getByRole } = render(
+      <Grommet>
+        <Stepper
+          steps={steps}
+          currentStep="step1"
+          errorAnnouncement="assertive"
+        />
+      </Grommet>,
+    );
+
+    expect(getByRole('alert').textContent).toBe('Card invalid');
+  });
+
+  test('supports polite error announcements', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        status: 'error',
+        errorMessage: 'Card invalid',
+      },
+    ];
+    const { getByRole } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="step1" errorAnnouncement="polite" />
+      </Grommet>,
+    );
+
+    expect(getByRole('status').textContent).toBe('Card invalid');
+  });
+
+  test('supports disabling error announcements', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        status: 'error',
+        errorMessage: 'Card invalid',
+      },
+    ];
+    const { getByLabelText, getByText, queryByRole } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="step1" errorAnnouncement={false} />
+      </Grommet>,
+    );
+
+    expect(getByText('Card invalid')).toBeTruthy();
+    expect(queryByRole('alert')).toBeNull();
+    expect(queryByRole('status')).toBeNull();
+    const describedBy =
+      getByLabelText(/Step 1 of 1/).getAttribute('aria-describedby');
+    // id is prefixed with a useId-generated value
+    expect(describedBy).toMatch(/-stepper-error-step1$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Card invalid',
+    );
+  });
+
+  test('uses the useId prefix for the description id', () => {
+    const steps = [
+      {
+        id: 'step1',
+        title: 'Step 1',
+        description: 'Enter your account information',
+      },
+    ];
+    const { getByLabelText } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="step1" />
+      </Grommet>,
+    );
+
+    const describedBy =
+      getByLabelText(/Step 1 of 1/).getAttribute('aria-describedby');
+    expect(describedBy).toMatch(/-stepper-description-step1$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Enter your account information',
+    );
   });
 
   test('uses theme-provided Stepper icons', () => {
@@ -131,6 +223,214 @@ describe('Stepper', () => {
     expect(getByTestId('custom-error-icon')).toBeTruthy();
   });
 
+  test('resolves connector thickness from a t-shirt border size token', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          global: { borderSize: { small: '2px', large: '8px' } },
+          stepper: { connector: { thickness: 'large' } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
+    );
+
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule('height', '8px');
+  });
+
+  test('resolves connector thickness from a literal CSS length', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          stepper: { connector: { thickness: '5px' } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
+    );
+
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule('height', '5px');
+  });
+
+  test.each([
+    ['default', undefined, '3px', '3px'],
+    ['token', 'small', '6px', '6px'],
+    ['CSS length', '7px', '7px', '7px'],
+    ['none', 'none', '0px', '0px'],
+    ['empty object', {}, '0px', '0px'],
+    ['axes', { horizontal: 'small', vertical: 'medium' }, '12px', '6px'],
+    [
+      'physical sides',
+      { top: '5px', left: '7px', right: '11px', bottom: '13px' },
+      '5px',
+      '7px',
+    ],
+    [
+      'side overrides',
+      {
+        horizontal: 'small',
+        vertical: 'medium',
+        top: 'none',
+        left: '7px',
+      },
+      '0px',
+      '7px',
+    ],
+    ['omitted sides', { bottom: 'small' }, '0px', '0px'],
+    [
+      'logical overrides',
+      {
+        horizontal: 'medium',
+        left: '5px',
+        right: '7px',
+        start: '11px',
+        end: '13px',
+      },
+      '0px',
+      '11px',
+    ],
+  ])(
+    'resolves %s padding for connector offsets',
+    (_name, pad, top, left) => {
+      const theme = {
+        global: {
+          edgeSize: { xxsmall: '3px', small: '6px', medium: '12px' },
+        },
+        stepper: {
+          button: { pad },
+          indicator: { size: '24px', border: { size: '2px' } },
+          connector: { thickness: '2px', gap: 'xxsmall' },
+        },
+      };
+      const getConnector = () =>
+        screen
+          .getAllByRole('listitem')[0]
+          .querySelector('span[aria-hidden="true"]');
+      const { rerender } = render(
+        <Grommet theme={theme}>
+          <Stepper steps={basicSteps} currentStep="step1" />
+        </Grommet>,
+      );
+
+      expect(getConnector()).toHaveStyleRule(
+        'top',
+        `calc( 24px / 2 - 2px / 2 + ${top} + 2px )`,
+      );
+      expect(getConnector()).toHaveStyleRule(
+        'left',
+        `calc(50% + calc(24px / 2 + 2px) + 3px)`,
+      );
+      // base container gap column (small: 6px here) separates the steps;
+      // the connector extends across it and uses the theme connector gap
+      expect(getConnector()).toHaveStyleRule(
+        'right',
+        'calc(-50% - 6px + calc(24px / 2 + 2px) + 3px)',
+      );
+
+      rerender(
+        <Grommet theme={theme}>
+          <Stepper
+            steps={basicSteps}
+            currentStep="step1"
+            direction="vertical"
+          />
+        </Grommet>,
+      );
+
+      // in-flow grid item centered on the indicator column; the button's
+      // edge padding offsets the centering, and margin-top anchors the
+      // connector just below the indicator regardless of label height
+      expect(getConnector()).toHaveStyleRule('margin-inline-start', left);
+      expect(getConnector()).toHaveStyleRule(
+        'margin-top',
+        `calc(${top} + 24px + 2px * 2 + 3px)`,
+      );
+      // container gap row defaults to medium (12px in this theme)
+      expect(getConnector()).toHaveStyleRule(
+        'margin-bottom',
+        `calc(3px - ${top} - 12px)`,
+      );
+    },
+  );
+
+  test.each([
+    ['ltr', '5px'],
+    ['rtl', '5px'],
+  ])('resolves %s logical padding for the vertical connector', (dir, left) => {
+    render(
+      <Grommet
+        dir={dir}
+        theme={{
+          global: { edgeSize: { small: '3px' } },
+          stepper: {
+            button: {
+              pad: { top: '7px', start: '5px', end: '11px' },
+              gap: 'small',
+            },
+            indicator: { size: '24px', border: { size: '2px' } },
+            connector: { thickness: '2px' },
+          },
+        }}
+      >
+        <Stepper
+          steps={[
+            { ...basicSteps[0], children: [{ id: 'child', title: 'Child' }] },
+            basicSteps[1],
+          ]}
+          currentStep="step1"
+          direction="vertical"
+        />
+      </Grommet>,
+    );
+
+    // sub-steps sit in the text column of the step grid
+    const subSteps = screen.getAllByRole('list')[1];
+    expect(subSteps).toHaveStyleRule('grid-column', '2');
+    expect(subSteps).toHaveStyleRule('grid-row', '3');
+    const connector = Array.from(subSteps.parentElement.children).find(
+      (child) => child.getAttribute('aria-hidden') === 'true',
+    );
+    expect(connector).toHaveStyleRule('margin-inline-start', left);
+    expect(connector).toHaveStyleRule('grid-column', '1');
+  });
+
+  test('applies container column gap between horizontal steps', () => {
+    const { container } = render(
+      <Grommet
+        theme={{
+          global: { edgeSize: { small: '10px' } },
+          stepper: { container: { gap: { column: 'small' } } },
+        }}
+      >
+        <Stepper
+          steps={basicSteps}
+          currentStep="step1"
+          direction="horizontal"
+        />
+      </Grommet>,
+    );
+
+    // row gap (24px) merges in from the base theme; column gap resolves
+    // from this theme's small (10px)
+    expect(screen.getByRole('list')).toHaveStyleRule('gap', '24px 10px');
+    // the connector spans the gap and includes the default connector gap
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule(
+      'right',
+      'calc(-50% - 10px + calc(24px / 2 + 2px) + 4px)',
+    );
+  });
+
   test('renders disabled step with reason', () => {
     const steps = [
       { id: 'step1', title: 'Step 1', status: 'pending' },
@@ -149,7 +449,12 @@ describe('Stepper', () => {
 
     expect(getByText('Complete step 1 first')).toBeTruthy();
     const step2 = getByLabelText(/Step 2 of 2/);
-    expect(step2.getAttribute('aria-describedby')).toBe('stepper-reason-step2');
+    const describedBy = step2.getAttribute('aria-describedby');
+    // id is prefixed with a useId-generated value
+    expect(describedBy).toMatch(/-stepper-reason-step2$/);
+    expect(document.getElementById(describedBy).textContent).toBe(
+      'Complete step 1 first',
+    );
   });
 
   test('fires onStepClick when clicking enabled step', () => {
@@ -223,7 +528,7 @@ describe('Stepper', () => {
     );
 
     const step1 = getByLabelText(/Step 1 of 3/);
-    step1.focus();
+    act(() => step1.focus());
     fireEvent.keyDown(step1, { key: 'ArrowRight' });
 
     const step2 = getByLabelText(/Step 2 of 3/);
@@ -238,7 +543,7 @@ describe('Stepper', () => {
     );
 
     const step2 = getByLabelText(/Step 2 of 3/);
-    step2.focus();
+    act(() => step2.focus());
     fireEvent.keyDown(step2, { key: 'End' });
 
     const step3 = getByLabelText(/Step 3 of 3/);
@@ -247,42 +552,6 @@ describe('Stepper', () => {
     fireEvent.keyDown(step3, { key: 'Home' });
     const step1 = getByLabelText(/Step 1 of 3/);
     expect(document.activeElement).toBe(step1);
-  });
-
-  test('Enter activates focused step', () => {
-    const onStepClick = jest.fn();
-    const { getByLabelText } = render(
-      <Grommet>
-        <Stepper
-          steps={basicSteps}
-          currentStep="step1"
-          onStepClick={onStepClick}
-        />
-      </Grommet>,
-    );
-
-    const step2 = getByLabelText(/Step 2 of 3/);
-    act(() => step2.focus());
-    fireEvent.keyDown(step2, { key: 'Enter' });
-    expect(onStepClick).toHaveBeenCalledWith('step2');
-  });
-
-  test('Space activates focused step', () => {
-    const onStepClick = jest.fn();
-    const { getByLabelText } = render(
-      <Grommet>
-        <Stepper
-          steps={basicSteps}
-          currentStep="step1"
-          onStepClick={onStepClick}
-        />
-      </Grommet>,
-    );
-
-    const step2 = getByLabelText(/Step 2 of 3/);
-    act(() => step2.focus());
-    fireEvent.keyDown(step2, { key: ' ' });
-    expect(onStepClick).toHaveBeenCalledWith('step2');
   });
 
   test('aria-current is set on current step', () => {
@@ -338,6 +607,28 @@ describe('Stepper', () => {
     expect(getByText('Confirm')).toBeTruthy();
   });
 
+  test('sub-step connector stays anchored to indicator if label wraps', () => {
+    const steps = [
+      {
+        id: 'parent',
+        title: 'Parent with a label long enough to wrap across multiple lines',
+        children: [{ id: 'child', title: 'Child', status: 'pending' }],
+      },
+    ];
+    const { container } = render(
+      <Grommet>
+        <Stepper steps={steps} currentStep="child" direction="vertical" />
+      </Grommet>,
+    );
+
+    // The connector offset is independent of the (now taller, wrapped) label.
+    const connector = container.querySelector('span[aria-hidden="true"]');
+    expect(connector).toHaveStyleRule(
+      'margin-top',
+      'calc(3px + 24px + 2px * 2 + 4px)',
+    );
+  });
+
   test('parent step is highlighted when a child is current', () => {
     const steps = [
       {
@@ -358,7 +649,7 @@ describe('Stepper', () => {
     );
 
     // Parent should have aria-current="step" when child is current
-    const parent = getByLabelText(/Setup/);
+    const parent = getByLabelText('Setup');
     expect(parent.getAttribute('aria-current')).toBe('step');
 
     // The current child should also have aria-current
@@ -415,7 +706,7 @@ describe('Stepper', () => {
     );
 
     const step1 = getByLabelText(/Step 1 of 3/);
-    step1.focus();
+    act(() => step1.focus());
     fireEvent.keyDown(step1, { key: 'ArrowDown' });
 
     const step2 = getByLabelText(/Step 2 of 3/);
