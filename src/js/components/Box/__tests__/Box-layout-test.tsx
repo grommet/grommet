@@ -64,6 +64,30 @@ describe('Box', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('responsive container does not crash when navigator is unavailable (SSR)', () => {
+    const originalNavigator = global.navigator;
+    // simulate a server-side rendering environment, where `navigator`
+    // is not defined on the global object
+    // @ts-expect-error simulating an environment without navigator
+    delete global.navigator;
+
+    try {
+      expect(() =>
+        render(
+          <Grommet>
+            <Box responsive="container" width="1280px">
+              <ResponsiveContext.Consumer>
+                {(size2) => size2}
+              </ResponsiveContext.Consumer>
+            </Box>
+          </Grommet>,
+        ),
+      ).not.toThrow();
+    } finally {
+      global.navigator = originalNavigator;
+    }
+  });
+
   test('responsive container small', () => {
     jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockReturnValue({
       width: 300,
