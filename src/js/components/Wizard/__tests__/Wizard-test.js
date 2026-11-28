@@ -702,7 +702,7 @@ describe('Wizard', () => {
       );
       await user.click(
         screen.getByRole('button', {
-          name: action === 'indicator' ? /Step 3 of 3: Step 3/i : action,
+          name: action === 'indicator' ? /Step 3 of 3\. Step 3/i : action,
           exact: true,
         }),
       );
@@ -795,7 +795,7 @@ describe('Wizard', () => {
     await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
     expect(screen.getByRole('heading', { name: 'Step 1' })).toBeTruthy();
     await user.click(
-      screen.getByRole('button', { name: /Step 2 of 2: Step 2/i }),
+      screen.getByRole('button', { name: /Step 2 of 2\. Step 2/i }),
     );
     expect(screen.getByRole('heading', { name: 'Step 2' })).toBeTruthy();
     expect(wizardState().states.step1).toBe('error');
@@ -1219,11 +1219,11 @@ describe('Wizard', () => {
     });
     await user.click(screen.getByRole('button', { name: 'Next', exact: true }));
     await user.click(
-      screen.getByRole('button', { name: /Step 1 of 3: Step 1/i }),
+      screen.getByRole('button', { name: /Step 1 of 3\. Step 1/i }),
     );
     expect(wizardState().states.step2).toBe('error');
     await user.click(
-      screen.getByRole('button', { name: /Step 2 of 3: Step 2/i }),
+      screen.getByRole('button', { name: /Step 2 of 3\. Step 2/i }),
     );
     rerender(
       <Wizard
@@ -1574,7 +1574,7 @@ describe('Wizard', () => {
     );
 
     await user.click(
-      screen.getByRole('button', { name: /Step 3 of 3: Step 3/i }),
+      screen.getByRole('button', { name: /Step 3 of 3\. Step 3/i }),
     );
 
     expect(screen.getByRole('heading', { name: 'Step 3' })).toBeTruthy();

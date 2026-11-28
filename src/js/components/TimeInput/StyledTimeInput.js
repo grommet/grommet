@@ -10,6 +10,7 @@ import {
   elevationStyle,
   focusStyle,
   heightStyle,
+  inputAppearanceStyle,
   inputStyle,
   normalizeColor,
   parseMetricToNum,
@@ -28,6 +29,15 @@ export const StyledTimeInputContainer = styled(Box).withConfig({
   position: relative;
   ${(props) => props.disabled && disabledStyle()}
   ${(props) => props.readOnlyProp && readOnlyStyle(props.theme)}
+  ${(props) =>
+    inputAppearanceStyle(props, {
+      wrapper: true,
+      skipPadding: true,
+      padSelector:
+        props.theme.timeInput?.value?.pad === undefined
+          ? '[role="group"]'
+          : undefined,
+    })}
   ${(props) =>
     props.focusIndicator !== false &&
     css`
@@ -79,6 +89,15 @@ export const StyledTimeInputDisplay = styled(Box)`
         props.theme,
       );
     }
+    const inputPad = props.theme.global.input.pad;
+    if (inputPad !== undefined)
+      return edgeStyle(
+        'padding',
+        inputPad,
+        props.responsive,
+        props.theme.box.responsiveBreakpoint,
+        props.theme,
+      );
     const inputPadding = props.theme.global.input.padding;
     if (!inputPadding) return undefined;
     if (typeof inputPadding !== 'object')

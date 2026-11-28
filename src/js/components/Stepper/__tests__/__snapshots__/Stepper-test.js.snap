@@ -12,6 +12,7 @@ exports[`Stepper renders horizontal steps 1`] = `
   width: 100%;
   padding: 0px;
   overflow: visible;
+  gap: 24px 12px;
 }
 
 .c3 {
@@ -149,10 +150,10 @@ exports[`Stepper renders horizontal steps 1`] = `
 .c2 {
   display: flex;
   position: relative;
+  min-width: 0;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  min-width: 0;
   overflow: visible;
 }
 
@@ -166,7 +167,14 @@ exports[`Stepper renders horizontal steps 1`] = `
 
 .c7 {
   box-sizing: content-box;
+  flex-direction: row;
   color: #FFFFFF;
+}
+
+.c7::before {
+  content: '\\200b';
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c4:focus-visible .c7 {
@@ -201,7 +209,14 @@ exports[`Stepper renders horizontal steps 1`] = `
 
 .c15 {
   box-sizing: content-box;
+  flex-direction: row;
   color: #000000;
+}
+
+.c15::before {
+  content: '\\200b';
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c4:focus-visible .c15 {
@@ -235,27 +250,13 @@ exports[`Stepper renders horizontal steps 1`] = `
 }
 
 .c13 {
-  border-radius: 6px;
-  top: calc(24px / 2 + 3px);
-  left: calc(50% + calc(24px / 2 + 3px));
-  right: calc(-50% + calc(24px / 2 + 3px));
-  height: 2px;
-  margin-inline-start: 3px;
-  margin-inline-end: 3px;
   position: absolute;
+  border-radius: 6px;
+  top: calc( 24px / 2 - 2px / 2 + 3px + 2px );
+  left: calc(50% + calc(24px / 2 + 2px) + 4px);
+  right: calc(-50% - 12px + calc(24px / 2 + 2px) + 4px);
+  height: 2px;
   background: rgba(0, 0, 0, 0.33);
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -301,7 +302,7 @@ exports[`Stepper renders horizontal steps 1`] = `
     >
       <button
         aria-current="step"
-        aria-label="Step 1 of 3: Step 1"
+        aria-label="Step 1 of 3. Step 1"
         class="c3 c4 c5"
         tabindex="0"
         type="button"
@@ -331,7 +332,7 @@ exports[`Stepper renders horizontal steps 1`] = `
           class="c10 c11"
         >
           <span
-            class="c12 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+            class="c12 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
           >
             Step 1
           </span>
@@ -347,7 +348,7 @@ exports[`Stepper renders horizontal steps 1`] = `
       class="c2"
     >
       <button
-        aria-label="Step 2 of 3: Step 2"
+        aria-label="Step 2 of 3. Step 2"
         class="c3 c4 c5"
         tabindex="-1"
         type="button"
@@ -362,7 +363,7 @@ exports[`Stepper renders horizontal steps 1`] = `
           class="c10 c11"
         >
           <span
-            class="c16 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+            class="c16 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
           >
             Step 2
           </span>
@@ -378,7 +379,7 @@ exports[`Stepper renders horizontal steps 1`] = `
       class="c2"
     >
       <button
-        aria-label="Step 3 of 3: Step 3"
+        aria-label="Step 3 of 3. Step 3"
         class="c3 c4 c5"
         tabindex="-1"
         type="button"
@@ -393,7 +394,7 @@ exports[`Stepper renders horizontal steps 1`] = `
           class="c10 c11"
         >
           <span
-            class="c16 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+            class="c16 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
           >
             Step 3
           </span>
@@ -416,6 +417,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   width: 100%;
   padding: 0px;
   overflow: visible;
+  gap: 24px 12px;
 }
 
 .c2 {
@@ -543,10 +545,10 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 .c1 {
   display: flex;
   position: relative;
+  min-width: 0;
   flex-direction: column;
   align-items: center;
   flex: 1;
-  min-width: 0;
   overflow: visible;
 }
 
@@ -560,7 +562,14 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 
 .c6 {
   box-sizing: content-box;
+  flex-direction: row;
   color: #FFFFFF;
+}
+
+.c6::before {
+  content: '\\200b';
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c3:focus-visible .c6 {
@@ -595,7 +604,14 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 
 .c14 {
   box-sizing: content-box;
+  flex-direction: row;
   color: #000000;
+}
+
+.c14::before {
+  content: '\\200b';
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c3:focus-visible .c14 {
@@ -629,27 +645,13 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
 }
 
 .c12 {
-  border-radius: 6px;
-  top: calc(24px / 2 + 3px);
-  left: calc(50% + calc(24px / 2 + 3px));
-  right: calc(-50% + calc(24px / 2 + 3px));
-  height: 2px;
-  margin-inline-start: 3px;
-  margin-inline-end: 3px;
   position: absolute;
+  border-radius: 6px;
+  top: calc( 24px / 2 - 2px / 2 + 3px + 2px );
+  left: calc(50% + calc(24px / 2 + 2px) + 4px);
+  right: calc(-50% - 12px + calc(24px / 2 + 2px) + 4px);
+  height: 2px;
   background: rgba(0, 0, 0, 0.33);
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c0 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -692,7 +694,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
   >
     <button
       aria-current="step"
-      aria-label="Step 1 of 3: Step 1"
+      aria-label="Step 1 of 3. Step 1"
       class="c2 c3 c4"
       tabindex="0"
       type="button"
@@ -722,7 +724,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
         class="c9 c10"
       >
         <span
-          class="c11 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+          class="c11 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
         >
           Step 1
         </span>
@@ -738,7 +740,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
     class="c1"
   >
     <button
-      aria-label="Step 2 of 3: Step 2"
+      aria-label="Step 2 of 3. Step 2"
       class="c2 c3 c4"
       tabindex="-1"
       type="button"
@@ -753,7 +755,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
         class="c9 c10"
       >
         <span
-          class="c15 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+          class="c15 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
         >
           Step 2
         </span>
@@ -769,7 +771,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
     class="c1"
   >
     <button
-      aria-label="Step 3 of 3: Step 3"
+      aria-label="Step 3 of 3. Step 3"
       class="c2 c3 c4"
       tabindex="-1"
       type="button"
@@ -784,7 +786,7 @@ exports[`Stepper renders outside Grommet wrapper 1`] = `
         class="c9 c10"
       >
         <span
-          class="c15 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+          class="c15 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
         >
           Step 3
         </span>
@@ -806,13 +808,14 @@ exports[`Stepper renders vertical steps 1`] = `
   height: 100%;
   padding: 0px;
   overflow: visible;
+  gap: 24px 12px;
 }
 
 .c3 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
-  align-items: flex-start;
+  align-items: baseline;
   background: none;
   border: solid 0px rgba(0, 0, 0, 0.33);
   min-width: 0;
@@ -842,7 +845,7 @@ exports[`Stepper renders vertical steps 1`] = `
   border-radius: 50%;
 }
 
-.c9 {
+.c8 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -852,7 +855,7 @@ exports[`Stepper renders vertical steps 1`] = `
   flex-direction: column;
 }
 
-.c13 {
+.c12 {
   display: flex;
   box-sizing: border-box;
   max-width: 100%;
@@ -872,13 +875,7 @@ exports[`Stepper renders vertical steps 1`] = `
   border-radius: 50%;
 }
 
-.c8 {
-  flex: 0 0 auto;
-  align-self: stretch;
-  width: 12px;
-}
-
-.c15 {
+.c14 {
   display: inline-block;
   flex: 0 0 auto;
   width: 24px;
@@ -887,36 +884,36 @@ exports[`Stepper renders vertical steps 1`] = `
   stroke: currentColor;
 }
 
-.c15 g {
+.c14 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c15 *:not([stroke])[fill='none'] {
+.c14 *:not([stroke])[fill='none'] {
   stroke-width: 0;
 }
 
-.c15 *[stroke*='#'],
-.c15 *[STROKE*='#'] {
+.c14 *[stroke*='#'],
+.c14 *[STROKE*='#'] {
   stroke: inherit;
   fill: none;
 }
 
-.c15 *[fill-rule],
-.c15 *[FILL-RULE],
-.c15 *[fill*='#'],
-.c15 *[FILL*='#'] {
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*='#'],
+.c14 *[FILL*='#'] {
   fill: inherit;
   stroke: none;
 }
 
-.c11 {
+.c10 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
 }
 
-.c16 {
+.c15 {
   font-size: 18px;
   line-height: 24px;
   color: #7D4CDB;
@@ -935,32 +932,37 @@ exports[`Stepper renders vertical steps 1`] = `
 .c2 {
   display: flex;
   position: relative;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-bottom: 24px;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: max-content minmax(0,max-content);
+  column-gap: 12px;
 }
 
-.c17 {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-bottom: 0px;
+.c5 {
+  grid-column: 1/-1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: subgrid;
 }
 
 .c5:focus-visible {
   outline: none;
 }
 
-.c10 {
-  overflow: hidden;
+.c9 {
   text-align: start;
-  padding-top: calc( (24px - 24px) / 2 + 2px );
 }
 
 .c7 {
   box-sizing: content-box;
+  flex-direction: row;
   color: #000000;
+}
+
+.c7::before {
+  content: '\\200b';
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c4:focus-visible .c7 {
@@ -993,63 +995,60 @@ exports[`Stepper renders vertical steps 1`] = `
   color: #000000;
 }
 
-.c14 {
+.c13 {
   box-sizing: content-box;
+  flex-direction: row;
   color: #FFFFFF;
 }
 
-.c4:focus-visible .c14 {
+.c13::before {
+  content: '\\200b';
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c4:focus-visible .c13 {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus-visible .c14 >circle,
-.c4:focus-visible .c14 >ellipse,
-.c4:focus-visible .c14 >line,
-.c4:focus-visible .c14 >path,
-.c4:focus-visible .c14 >polygon,
-.c4:focus-visible .c14 >polyline,
-.c4:focus-visible .c14 >rect {
+.c4:focus-visible .c13 >circle,
+.c4:focus-visible .c13 >ellipse,
+.c4:focus-visible .c13 >line,
+.c4:focus-visible .c13 >path,
+.c4:focus-visible .c13 >polygon,
+.c4:focus-visible .c13 >polyline,
+.c4:focus-visible .c13 >rect {
   outline: none;
   box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
-.c4:focus-visible .c14 ::-moz-focus-inner {
+.c4:focus-visible .c13 ::-moz-focus-inner {
   border: 0;
 }
 
-.c4:not([aria-disabled]):active .c14 {
+.c4:not([aria-disabled]):active .c13 {
   transform: scale(0.95);
 }
 
-.c4:not([aria-disabled]):hover .c14 {
+.c4:not([aria-disabled]):hover .c13 {
   background: color-mix(in srgb, #7D4CDB 90%, black 10%);
   border: solid 2px color-mix(in srgb, #7D4CDB 90%, black 10%);
   color: #FFFFFF;
 }
 
-.c12 {
-  border-radius: 6px;
-  left: calc( calc(24px / 2 + 3px) + 2px - 2px / 2 );
-  top: calc(24px + 3px +       (2px * 2) + 4px);
-  bottom: 0;
-  min-height: 12px;
+.c11 {
+  grid-column: 1;
+  grid-row: 1/span 3;
+  align-self: stretch;
   width: 2px;
-  margin-block: 0;
-  position: absolute;
+  border-radius: 6px;
+  pointer-events: none;
+  justify-self: center;
+  margin-inline-start: 3px;
+  margin-top: calc(3px + 24px + 2px * 2 + 4px);
+  margin-bottom: calc(4px - 3px - 24px);
   background: rgba(0, 0, 0, 0.33);
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c1 {
-    padding: 0px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1071,14 +1070,8 @@ exports[`Stepper renders vertical steps 1`] = `
 }
 
 @media only screen and (max-width: 768px) {
-  .c13 {
+  .c12 {
     border: solid 2px #7D4CDB;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .c8 {
-    width: 6px;
   }
 }
 
@@ -1094,7 +1087,7 @@ exports[`Stepper renders vertical steps 1`] = `
       class="c2"
     >
       <button
-        aria-label="Step 1 of 3: Step 1"
+        aria-label="Step 1 of 3. Step 1"
         class="c3 c4 c5"
         tabindex="-1"
         type="button"
@@ -1103,13 +1096,10 @@ exports[`Stepper renders vertical steps 1`] = `
           class="c6 c7"
         />
         <div
-          class="c8"
-        />
-        <div
-          class="c9 c10"
+          class="c8 c9"
         >
           <span
-            class="c11 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+            class="c10 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
           >
             Step 1
           </span>
@@ -1117,7 +1107,7 @@ exports[`Stepper renders vertical steps 1`] = `
       </button>
       <span
         aria-hidden="true"
-        class="c12"
+        class="c11"
         direction="vertical"
       />
     </li>
@@ -1126,18 +1116,18 @@ exports[`Stepper renders vertical steps 1`] = `
     >
       <button
         aria-current="step"
-        aria-label="Step 2 of 3: Step 2"
+        aria-label="Step 2 of 3. Step 2"
         class="c3 c4 c5"
         tabindex="0"
         type="button"
       >
         <div
-          class="c13 c14"
+          class="c12 c13"
         >
           <svg
             aria-hidden="true"
             aria-label="Status is okay"
-            class="c15"
+            class="c14"
             viewBox="0 0 12 12"
           >
             <circle
@@ -1150,13 +1140,10 @@ exports[`Stepper renders vertical steps 1`] = `
           </svg>
         </div>
         <div
-          class="c8"
-        />
-        <div
-          class="c9 c10"
+          class="c8 c9"
         >
           <span
-            class="c16 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+            class="c15 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
           >
             Step 2
           </span>
@@ -1164,15 +1151,15 @@ exports[`Stepper renders vertical steps 1`] = `
       </button>
       <span
         aria-hidden="true"
-        class="c12"
+        class="c11"
         direction="vertical"
       />
     </li>
     <li
-      class="c17"
+      class="c2"
     >
       <button
-        aria-label="Step 3 of 3: Step 3"
+        aria-label="Step 3 of 3. Step 3"
         class="c3 c4 c5"
         tabindex="-1"
         type="button"
@@ -1181,13 +1168,10 @@ exports[`Stepper renders vertical steps 1`] = `
           class="c6 c7"
         />
         <div
-          class="c8"
-        />
-        <div
-          class="c9 c10"
+          class="c8 c9"
         >
           <span
-            class="c11 StyledStepper__StyledStepLabel-sc-gmpe0p-3"
+            class="c10 StyledStepper__StyledStepLabel-sc-gmpe0p-4"
           >
             Step 3
           </span>

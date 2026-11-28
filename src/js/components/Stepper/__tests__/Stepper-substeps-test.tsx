@@ -7,7 +7,7 @@ import { axe } from 'jest-axe';
 import 'jest-axe/extend-expect';
 
 import { Grommet, Stepper } from '../..';
-import { useStepper } from '..';
+import { StepperStep, useStepper } from '..';
 import type { StepperProps, StepType } from '..';
 
 const steps: StepType[] = [
@@ -44,17 +44,20 @@ const Example = (props: Partial<StepperProps>) => (
 );
 
 const button = (title: string) =>
-  screen.getByRole('button', { name: new RegExp(`: ${title}$`) });
+  screen.getByRole('button', { name: new RegExp(`(^|[.:] )${title}$`) });
 
 const expectRows = (titles: string[]) => {
   const rows = within(
     screen.getByRole('list', { name: 'Setup progress' }),
   ).getAllByRole('button');
-  expect(rows.map((row) => row.getAttribute('aria-label'))).toEqual(
-    titles.map(
-      (title, index) => `Step ${index + 1} of ${titles.length}: ${title}`,
+  expect(
+    rows.map((row) =>
+      (row.getAttribute('aria-label') ?? '').replace(
+        /^Step \d+ of \d+\. (?:.*: )?/,
+        '',
+      ),
     ),
-  );
+  ).toEqual(titles);
   expect(rows.filter((row) => row.tabIndex === 0)).toHaveLength(1);
 };
 
@@ -110,7 +113,7 @@ describe('Stepper child reveal', () => {
 
     expect(
       screen.getByRole('button', {
-        name: 'Step 1 of 2: Account, completed',
+        name: 'Step 1 of 2. Account, completed',
       }),
     ).toBeTruthy();
   });
@@ -388,6 +391,35 @@ describe('Stepper child reveal', () => {
     expectRows(['Introduction', 'Account', 'Billing', 'Review']);
   });
 
+  test('custom StepperStep children use context for roving focus', async () => {
+    const user = userEvent.setup();
+    render(
+      <Grommet>
+        <Stepper
+          steps={[
+            { id: 'intro', title: 'Introduction' },
+            { id: 'account', title: 'Account' },
+          ]}
+          currentStep="intro"
+          direction="vertical"
+          aria-label="Custom setup"
+        >
+          <StepperStep stepId="intro" />
+          <StepperStep stepId="account" />
+        </Stepper>
+      </Grommet>,
+    );
+
+    await user.tab();
+    expect(document.activeElement).toBe(button('Introduction'));
+    expect(button('Introduction').tabIndex).toBe(0);
+    expect(button('Account').tabIndex).toBe(-1);
+    await user.keyboard('{ArrowDown}');
+    expect(document.activeElement).toBe(button('Account'));
+    expect(button('Introduction').tabIndex).toBe(-1);
+    expect(button('Account').tabIndex).toBe(0);
+  });
+
   test('keeps the roving target by id when earlier groups reveal children', async () => {
     const user = userEvent.setup();
     const onStepClick = jest.fn();
@@ -443,8 +475,168 @@ describe('Stepper child reveal', () => {
     expect(screen.getAllByRole('group')).toHaveLength(6);
     expect(screen.queryByRole('button')).toBeNull();
     expect(
-      screen.getByRole('group', { name: 'Step 4 of 6: Profile' }),
+      screen.getByRole('group', {
+        name: 'Step 3 of 6. Account: Profile',
+      }),
     ).toBeTruthy();
     expect(screen.queryByText('Card')).toBeNull();
+  });
+
+  test('announces leaf positions and error status without counting aggregate parents', () => {
+    render(
+      <Example
+        steps={[
+          { id: 'intro', title: 'Introduction' },
+          {
+            id: 'account',
+            title: 'Account',
+            children: [
+              { id: 'email', title: 'Email', status: 'completed' },
+              { id: 'profile', title: 'Profile', status: 'error' },
+            ],
+          },
+          { id: 'confirm', title: 'Confirm' },
+        ]}
+        currentStep="profile"
+      />,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Step 1 of 4. Introduction' }),
+    ).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Account' })).toBeTruthy();
+    expect(
+      screen.getByRole('button', { name: 'Step 4 of 4. Confirm' }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('button', {
+        name: 'Step 2 of 4. Account: Email, completed',
+      }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('button', {
+        name: 'Step 3 of 4. Account: Profile, error',
+      }),
+    ).toBeTruthy();
+  });
+
+  test('announces the parent title for a completed first sub-step', () => {
+    render(
+      <Example
+        currentStep="email"
+        steps={[
+          {
+            id: 'account',
+            title: 'Account Setup',
+            children: [
+              { id: 'email', title: 'Email', status: 'completed' },
+              { id: 'password', title: 'Password' },
+            ],
+          },
+          {
+            id: 'profile',
+            title: 'Profile Setup',
+            children: [
+              { id: 'name', title: 'Name' },
+              { id: 'photo', title: 'Photo' },
+            ],
+          },
+          { id: 'confirm', title: 'Confirm' },
+        ]}
+      />,
+    );
+
+    expect(
+      screen.getByRole('button', {
+        name: 'Step 1 of 5. Account Setup: Email, completed',
+      }),
+    ).toBeTruthy();
+  });
+
+  test('keeps positions and totals stable as groups reveal, including disabled leaves', () => {
+    const { rerender } = render(<Example />);
+    expect(button('Introduction').getAttribute('aria-label')).toBe(
+      'Step 1 of 6. Introduction',
+    );
+    expect(button('Review').getAttribute('aria-label')).toBe(
+      'Step 6 of 6. Review',
+    );
+
+    rerender(<Example currentStep="profile" />);
+    expect(button('Profile').getAttribute('aria-label')).toBe(
+      'Step 3 of 6. Account: Profile',
+    );
+    expect(button('Review').getAttribute('aria-label')).toBe(
+      'Step 6 of 6. Review',
+    );
+
+    rerender(<Example currentStep="card" />);
+    expect(button('Profile').getAttribute('aria-label')).toBe(
+      'Step 3 of 6. Account: Profile',
+    );
+    expect(button('Address').getAttribute('aria-label')).toBe(
+      'Step 5 of 6. Billing: Address',
+    );
+    expect(button('Address').getAttribute('aria-disabled')).toBe('true');
+    expect(button('Review').getAttribute('aria-label')).toBe(
+      'Step 6 of 6. Review',
+    );
+
+    rerender(<Example steps={steps.filter((step) => step.id !== 'account')} />);
+    expect(button('Review').getAttribute('aria-label')).toBe(
+      'Step 4 of 4. Review',
+    );
+  });
+
+  test('preserves aggregate status and custom labels with leaf numbering', () => {
+    render(
+      <Example
+        currentStep="email"
+        steps={[
+          {
+            id: 'account',
+            title: 'Account',
+            status: 'completed',
+            children: [
+              {
+                id: 'email',
+                title: 'Email',
+                'aria-label': 'Your email address',
+                status: 'error',
+              },
+            ],
+          },
+        ]}
+      />,
+    );
+    expect(
+      screen.getByRole('button', { name: 'Account, completed' }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('button', { name: 'Your email address, error' }),
+    ).toBeTruthy();
+  });
+
+  test('allows localized sub-step messages to reorder parent, child, and progress', () => {
+    render(
+      <Grommet
+        messages={{
+          messages: {
+            stepper: {
+              step: '{title} ({step}/{total})',
+              subStep: '{title} ({step}/{total}) - {parent}',
+            },
+          },
+        }}
+      >
+        <Stepper steps={steps} currentStep="profile" direction="vertical" />
+      </Grommet>,
+    );
+    expect(
+      screen.getByRole('button', { name: 'Profile (3/6) - Account' }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('button', { name: 'Introduction (1/6)' }),
+    ).toBeTruthy();
   });
 });

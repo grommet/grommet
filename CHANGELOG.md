@@ -1,3 +1,21 @@
+# 2.59.0
+
+General:
+- Added a `clear` prop to TextInput. (#8189)
+- Added theme support for fine-grained FormField, CheckBox, and RadioButton appearance controls. (#8232)
+- Fixed the TypeScript type of RangeSelectors `onChange`. (#8231)
+- Enhanced Cards to extend GridProps. (#8226) 
+
+Stepper - officially out of beta:
+- Added progressive reveal for nested Stepper sub-steps. (#8212)
+- Added a localized “completed” status to Stepper. (#8233)
+- Enhanced Stepper APIs and theming with exported StepperStep, clearer composable step props, StepperStep type exports, configurable connector gaps, and broader Box and Text theme support. (#8215, #8243, #8244)
+- Enhanced Stepper layout, connector positioning, alignment, and accessibility for nested and vertical steppers. (#8239)
+- Enhanced Stepper connector alignment for indicator border widths and configurable gaps. (#8246)
+- Fixed Stepper screen-reader announcements for nested hierarchy, parent numbering, and error status. (#8238)
+- Fixed Stepper connector rendering for wrapped labels and nested sub-steps. (#8208)
+
+
 # 2.58.0
 
 General:
@@ -10,6 +28,7 @@ General:
 - Fixed errors in the base theme TypeScript declarations. (#8178)
 
 TimeInput - officially out of beta:
+
 - Added theme customization for TimeInput and improved its `inline` integration with DateTimeInput. (#8183)
 - Added support for HH:mm values in `value` and `defaultValue` without requiring seconds. (#8180)
 - Added the TimeInput `inline` prop. (#8162)
@@ -27,8 +46,9 @@ TimeInput - officially out of beta:
 - Fixed segment and popup-button padding shrinking at responsive breakpoints. (#8197)
 - Enhanced internal display formatting and accessibility metadata reuse. (#8139)
 - Enhanced internal utilities by removing unused functions. (#8137)
-  
+
 Beta - APIs are subject to change:
+
 - Enhanced Wizard with `clickableSteps`, `closable`, and `form` props, React-node titles, and improved navigation and error handling. (#8132)
 - Enhanced Wizard validation to preserve `step` validation state and improve skippable-step behavior. (#8191)
 

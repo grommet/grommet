@@ -316,16 +316,12 @@ type DigitalTexts =
   | 'xxlarge'
   | string;
 
-type ContainerExtend = {
+type ContainerExtend = BoxPartThemeType & {
   container?: {
     extend?: ExtendType;
   };
-  hover?: {
-    background?: BackgroundType;
-    border?: {
-      color?: ColorType;
-    };
-  };
+  error?: BoxStateThemeType;
+  hover?: BoxStateThemeType;
 };
 
 interface StepType {
@@ -336,14 +332,14 @@ interface StepType {
     color?: ColorType;
     align?: AlignType;
     justify?:
-        | 'around'
-        | 'between'
-        | 'center'
-        | 'end'
-        | 'evenly'
-        | 'start'
-        | 'stretch';
-  }
+      | 'around'
+      | 'between'
+      | 'center'
+      | 'end'
+      | 'evenly'
+      | 'start'
+      | 'stretch';
+  };
   button?: BoxPartThemeType & {
     gap?: GapType;
   };
@@ -354,10 +350,12 @@ interface StepType {
   children?: BoxPartThemeType & {
     gap?: GapType;
   };
-  connector?: { // line type?
+  connector?: {
+    // line type?
     color?: ColorType;
     thickness?: ThicknessType;
-  }
+    gap?: GapType;
+  };
   // Interaction states
   hover?: StepType;
 }
@@ -365,7 +363,7 @@ interface StepperThemeType extends StepType {
   container?: BoxPartThemeType & {
     gap?: GapType | { row?: GapType; column?: GapType };
   };
-  subStep?: StepType;
+  subStep?: Omit<StepType, 'children'>;
   vertical?: StepType;
   // Application States
   pending?: StepType;
@@ -597,8 +595,11 @@ export interface ThemeType {
       background?: BackgroundType;
       color?: ColorType;
     };
-    input?: {
+    input?: BoxPartThemeType & {
+      disabled?: BoxStateThemeType;
       extend?: ExtendType;
+      focus?: BoxStateThemeType;
+      hover?: BoxStateThemeType;
       padding?:
         | string
         | {
@@ -614,12 +615,8 @@ export interface ThemeType {
         size?: string;
         weight?: number | string;
       };
-      readOnly?: {
-        background?: BackgroundType;
-        border?: {
-          color?: ColorType;
-        };
-      };
+      placeholder?: TextThemeType;
+      readOnly?: BoxStateThemeType;
       weight?: number | string;
     };
     opacity?: {
@@ -910,6 +907,15 @@ export interface ThemeType {
     width?: string;
   };
   checkBox?: {
+    control?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
+      selected?: BoxStateThemeType & {
+        hover?: BoxStateThemeType;
+      };
+    };
+    container?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
+    };
     border?: {
       color?: ColorType;
       width?: string;
@@ -919,6 +925,7 @@ export interface ThemeType {
     };
     check?: {
       extend?: ExtendType;
+      /** @deprecated Use checkBox.control.round instead. */
       radius?: string;
       thickness?: string;
     };
@@ -929,6 +936,7 @@ export interface ThemeType {
       border?: {
         color?: ColorType;
       };
+      /** @deprecated Use checkBox.container.hover.background instead. */
       background?: {
         color?: ColorType;
       };
@@ -942,6 +950,7 @@ export interface ThemeType {
       checked?: React.ReactNode | Icon;
       indeterminate?: any;
     };
+    /** @deprecated Use checkBox.container.pad instead. */
     pad?: PadType;
     size?: string;
     toggle?: {
@@ -1306,6 +1315,7 @@ export interface ThemeType {
     gap?: GapType;
   };
   formField?: {
+    background?: BackgroundType;
     border?: BorderType & {
       error?: {
         color?: ColorType;
@@ -1376,7 +1386,7 @@ export interface ThemeType {
         color?: ColorType;
       };
     };
-    checkBox?: ContainerExtend & { pad?: PadType };
+    checkBox?: ContainerExtend;
     checkBoxGroup?: ContainerExtend;
     textArea?: ContainerExtend;
     textInput?: ContainerExtend;
@@ -1384,10 +1394,12 @@ export interface ThemeType {
     maskedInput?: ContainerExtend;
     selectMultiple?: ContainerExtend;
     dateInput?: ContainerExtend;
+    dateTimeInput?: ContainerExtend;
     timeInput?: ContainerExtend;
     fileInput?: ContainerExtend;
     radioButton?: ContainerExtend;
     radioButtonGroup?: ContainerExtend;
+    rangeInput?: ContainerExtend;
     rangeSelector?: ContainerExtend;
     starRating?: ContainerExtend;
     thumbsRating?: ContainerExtend;
@@ -1970,30 +1982,47 @@ export interface ThemeType {
     };
   };
   radioButton?: {
-    extend?: ExtendType;
-    container?: {
+    control?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
+      selected?: BoxStateThemeType & {
+        hover?: BoxStateThemeType;
+      };
+    };
+    container?: BoxPartThemeType & {
+      hover?: BoxStateThemeType;
       extend?: ExtendType;
     };
+    /** @deprecated Use radioButton.control.background instead. */
     background?: {
       color?: ColorType;
     };
     border?: {
+      /** @deprecated Use radioButton.control.border.color instead. */
       color?: ColorType;
+      /** @deprecated Use radioButton.control.border.size instead. */
       width?: string;
     };
     check?: {
       color?: ColorType;
       extend?: ExtendType;
+      /** @deprecated Use radioButton.control.round instead. */
       radius?: string;
+      /** @deprecated Use radioButton.control.selected.background instead. */
       background?: {
         color?: ColorType;
       };
     };
+    /** @deprecated Use radioButton.control.selected.border.color instead. */
     color?: ColorType;
     hover?: {
       border?: {
+        /**
+         * @deprecated Use radioButton.control.hover.border.color and
+         * radioButton.control.selected.hover.border.color instead.
+         */
         color?: ColorType;
       };
+      /** @deprecated Use radioButton.container.hover.background instead. */
       background?: {
         color?: ColorType;
       };
@@ -2010,6 +2039,7 @@ export interface ThemeType {
     font?: {
       weight?: number | string;
     };
+    extend?: ExtendType;
   };
   nameValueList?: {
     gap?: {
